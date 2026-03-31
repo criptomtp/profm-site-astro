@@ -220,7 +220,7 @@ function renderBoard(){
       var progress=Math.round(done/7*100);
       var dateBadge=formatDateBadge(l.nextContact);
       var sourceBadge='<span class="kc-source-badge">'+(SOURCE_LABELS[l.source]||l.source)+'</span>';
-      return '<div class="kanban-card" onclick="openLead('+l.id+')" draggable="true" data-id="'+l.id+'">'+
+      return '<div class="kanban-card" data-id="'+l.id+'">'+
         '<div class="kc-company">'+esc(l.company)+'</div>'+
         '<div class="kc-contact">'+esc(l.contact)+'</div>'+
         '<div class="kc-meta">'+l.shipments+' відпр/день &middot; '+(TYPE_LABELS[l.type]||l.type)+'</div>'+
@@ -309,13 +309,24 @@ function initDragDrop(){
   var bodies=document.querySelectorAll('.kanban-body');
 
   cards.forEach(function(card){
+    var isDragging=false;
+    // Click handler - open lead card
+    card.addEventListener('click',function(){
+      if(isDragging)return;
+      var id=parseInt(card.getAttribute('data-id'));
+      if(id) openLead(id);
+    });
+    // Drag handlers (desktop only)
+    card.setAttribute('draggable','true');
     card.addEventListener('dragstart',function(e){
+      isDragging=true;
       draggedCardId=parseInt(card.getAttribute('data-id'));
       card.classList.add('dragging');
       e.dataTransfer.effectAllowed='move';
-      e.dataTransfer.setData('text/plain',draggedCardId);
+      e.dataTransfer.setData('text/plain',String(draggedCardId));
     });
     card.addEventListener('dragend',function(){
+      setTimeout(function(){isDragging=false;},100);
       card.classList.remove('dragging');
       draggedCardId=null;
       document.querySelectorAll('.kanban-col').forEach(function(c){c.classList.remove('drag-over');});
