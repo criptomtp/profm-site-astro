@@ -37,7 +37,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">РОЗРАХУНОК</div>
 <h2 class="sec-h2">Порахуйте вартість для вашого бізнесу</h2>
 <div class="calc-wrap">
-<div class="calc-form reveal">
+<div class="calc-form">
 <h3>Параметри бізнесу</h3>
 <div class="calc-field">
 <label>Відправлень на день</label>
@@ -66,7 +66,7 @@ import Base from '../../layouts/Base.astro';
 <div class="field-hint">Якщо більше 1 &mdash; додається доукомплектація</div>
 </div>
 </div>
-<div class="calc-results reveal">
+<div class="calc-results">
 <h3>Результат розрахунку</h3>
 <div class="res-row"><span class="res-label">Відправка</span><span><span class="res-value" id="resShipping">28 600</span> грн/мес <span class="res-sub" id="resShippingRate">(26 грн/замовлення)</span></span></div>
 <div class="res-row"><span class="res-label">Зберігання</span><span><span class="res-value" id="resStorage">3 250</span> грн/мес</span></div>
@@ -160,7 +160,7 @@ import Base from '../../layouts/Base.astro';
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:32px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}.badge-dark::before{background:var(--red)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
 
 .hero{position:relative;background:var(--black);color:var(--white);padding:120px 0 80px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('/images/tild3766-3932-4434-b537-333032623963__img_4801.jpg') center/cover;opacity:.12}

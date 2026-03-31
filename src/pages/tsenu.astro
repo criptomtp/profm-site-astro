@@ -68,14 +68,14 @@ import Base from '../layouts/Base.astro';
 <div class="badge badge-dark">ДОПОЛНИТЕЛЬНО</div>
 <h2 class="sec-h2">Дополнительные услуги</h2>
 <div class="extras-grid">
-<div class="extra-card reveal"><div class="extra-price">2.50₴</div><h3>Доукомплектация</h3><p>Каждый следующий товар в заказе</p></div>
-<div class="extra-card reveal"><div class="extra-price">2₴</div><h3>Товарный чек</h3><p>Добавление чека к заказу</p></div>
-<div class="extra-card reveal"><div class="extra-price">1.25₴</div><h3>Стикерование</h3><p>Печать и поклейка штрих-кода</p></div>
-<div class="extra-card reveal"><div class="extra-price">1.50₴</div><h3>Этикетка</h3><p>Печать и поклейка кастомной этикетки</p></div>
-<div class="extra-card reveal"><div class="extra-price">0.50₴</div><h3>FEFO контроль</h3><p>Контроль сроков для косметики, фармы</p></div>
-<div class="extra-card reveal"><div class="extra-price">2₴</div><h3>Печать документов</h3><p>ТТН, накладные (до 3 листов А4)</p></div>
-<div class="extra-card reveal"><div class="extra-price">5₴</div><h3>Гарантийный талон</h3><p>Заполнение гарантийного талона</p></div>
-<div class="extra-card reveal"><div class="extra-price">350₴</div><h3>Паллетирование</h3><p>Формирование и стретчирование паллеты</p></div>
+<div class="extra-card"><div class="extra-price">2.50₴</div><h3>Доукомплектация</h3><p>Каждый следующий товар в заказе</p></div>
+<div class="extra-card"><div class="extra-price">2₴</div><h3>Товарный чек</h3><p>Добавление чека к заказу</p></div>
+<div class="extra-card"><div class="extra-price">1.25₴</div><h3>Стикерование</h3><p>Печать и поклейка штрих-кода</p></div>
+<div class="extra-card"><div class="extra-price">1.50₴</div><h3>Этикетка</h3><p>Печать и поклейка кастомной этикетки</p></div>
+<div class="extra-card"><div class="extra-price">0.50₴</div><h3>FEFO контроль</h3><p>Контроль сроков для косметики, фармы</p></div>
+<div class="extra-card"><div class="extra-price">2₴</div><h3>Печать документов</h3><p>ТТН, накладные (до 3 листов А4)</p></div>
+<div class="extra-card"><div class="extra-price">5₴</div><h3>Гарантийный талон</h3><p>Заполнение гарантийного талона</p></div>
+<div class="extra-card"><div class="extra-price">350₴</div><h3>Паллетирование</h3><p>Формирование и стретчирование паллеты</p></div>
 </div>
 </div></section>
 
@@ -120,7 +120,7 @@ import Base from '../layouts/Base.astro';
 </div></section>
 
 <!-- SEO ARTICLE -->
-<section class="article-section reveal">
+<section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
 <h2>Как формируется стоимость фулфилмента в Украине</h2>
@@ -157,7 +157,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:bloc
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 .hero{position:relative;min-height:70vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 80px;overflow:hidden}

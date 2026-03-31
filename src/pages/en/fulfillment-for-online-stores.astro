@@ -42,12 +42,12 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="badge badge-dark">BENEFITS</div>
 <h2 class="sec-h2">Why online stores choose MTP</h2>
 <div class="ben-grid">
-<div class="ben-card reveal"><div class="ben-num">30"</div><h3>30-second picking</h3><p>Conveyor packing stations and WMS automation &mdash; every order picked and labeled in half a minute</p></div>
-<div class="ben-card reveal"><div class="ben-num">17</div><h3>17 days free on Nova Poshta</h3><p>Parcels stored at Nova Poshta for 17 days at no extra cost. Free returns via Nova Poshta</p></div>
-<div class="ben-card reveal"><div class="ben-num">8 hrs</div><h3>8 hours per month</h3><p>That is how much time the average client spends on logistics after switching to fulfillment. The rest goes to marketing and sales</p></div>
-<div class="ben-card reveal"><div class="ben-num">API</div><h3>Integration in 2 hours</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; connected on the same day</p></div>
-<div class="ben-card reveal"><div class="ben-num">3x</div><h3>3 generators + Starlink</h3><p>Uninterrupted operations even during blackouts. 2 fibre-optic providers &mdash; zero days of downtime since 2022</p></div>
-<div class="ben-card reveal"><div class="ben-num">99.5%</div><h3>Order accuracy</h3><p>Barcode scanning at every stage, photo documentation &mdash; minimal errors, minimal claims</p></div>
+<div class="ben-card"><div class="ben-num">30"</div><h3>30-second picking</h3><p>Conveyor packing stations and WMS automation &mdash; every order picked and labeled in half a minute</p></div>
+<div class="ben-card"><div class="ben-num">17</div><h3>17 days free on Nova Poshta</h3><p>Parcels stored at Nova Poshta for 17 days at no extra cost. Free returns via Nova Poshta</p></div>
+<div class="ben-card"><div class="ben-num">8 hrs</div><h3>8 hours per month</h3><p>That is how much time the average client spends on logistics after switching to fulfillment. The rest goes to marketing and sales</p></div>
+<div class="ben-card"><div class="ben-num">API</div><h3>Integration in 2 hours</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; connected on the same day</p></div>
+<div class="ben-card"><div class="ben-num">3x</div><h3>3 generators + Starlink</h3><p>Uninterrupted operations even during blackouts. 2 fibre-optic providers &mdash; zero days of downtime since 2022</p></div>
+<div class="ben-card"><div class="ben-num">99.5%</div><h3>Order accuracy</h3><p>Barcode scanning at every stage, photo documentation &mdash; minimal errors, minimal claims</p></div>
 </div>
 </div></section>
 
@@ -61,7 +61,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <blockquote>&laquo;We spent 6 hours a day packing instead of launching new products and working with influencers&raquo;</blockquote>
 <p><strong>MTP solution:</strong> full onboarding in 2 days. KeyCRM integration, transfer of 3,000 SKUs to the warehouse, branded packaging setup with tissue paper and stickers. Within a month the client tripled their ad budget because logistics was no longer the bottleneck.</p>
 </div>
-<div class="case-stats reveal">
+<div class="case-stats">
 <div class="case-stat"><div class="case-stat-val">80 &rarr; 400</div><div class="case-stat-label">orders/day</div></div>
 <div class="case-stat"><div class="case-stat-val">&minus;70%</div><div class="case-stat-label">logistics costs</div></div>
 <div class="case-stat"><div class="case-stat-val">2 days</div><div class="case-stat-label">full onboarding</div></div>
@@ -103,7 +103,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </div></section>
 
 <!-- SEO ARTICLE -->
-<section class="article-section reveal">
+<section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">USEFUL INFO</div>
 <h2>Fulfillment for online stores: how it works and who it suits</h2>
@@ -130,12 +130,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </section>
 
 <!-- CTA -->
-<section class="final-cta" id="ctaSection"><div class="ctr">
-<h2>Ready to hand your logistics<br>to professionals?</h2>
-<p class="sub">Leave your number &mdash; we will call back within 15 minutes and prepare a custom quote</p>
-<form class="final-form" id="finalForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Phone"><button type="submit">Call me back &#8594;</button></form>
-<div class="final-checks"><span>&#10003; Free consultation</span><span>&#10003; No obligations</span><span>&#10003; Contract in 1 day</span></div>
-</div></section>
+
 
 </Base>
 
@@ -207,7 +202,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 @media(max-width:768px){

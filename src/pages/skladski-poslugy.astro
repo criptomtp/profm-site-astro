@@ -38,12 +38,12 @@ import Base from '../layouts/Base.astro';
 <div class="badge badge-dark">УСЛУГИ</div>
 <h2 class="sec-h2">Что входит в складские услуги</h2>
 <div class="ben-grid">
-<div class="ben-card reveal"><div class="ben-num">&#9635;</div><h3>Адресное хранение</h3><p>Ячеечная система хранения с уникальным адресом для каждого товара. Температурный контроль 15-25&deg;C и мониторинг влажности</p></div>
-<div class="ben-card reveal"><div class="ben-num">&#9632;</div><h3>Палетное хранение</h3><p>Для крупногабаритных и тяжёлых товаров. Стеллажи до 2 тонн на ярус, от 450&nbsp;грн/палет/мес. Погрузчики и гидравлические тележки</p></div>
-<div class="ben-card reveal"><div class="ben-num">&#9997;</div><h3>Комплектация заказов</h3><p>Сборка, упаковка и маркировка заказов. Каждый заказ собирается за 30 секунд, сканирование штрих-кодов на каждом этапе</p></div>
-<div class="ben-card reveal"><div class="ben-num">&#10003;</div><h3>Приём товара</h3><p>Проверка количества и качества при приёмке. Фото-фиксация повреждений, размещение в WMS с присвоением штрих-кода</p></div>
-<div class="ben-card reveal"><div class="ben-num">&#128203;</div><h3>Управление запасами</h3><p>Регулярная инвентаризация через WMS. Сверка фактических и системных остатков, отчёт о расхождениях в течение 24 часов</p></div>
-<div class="ben-card reveal"><div class="ben-num">&#8634;</div><h3>Обработка возвратов</h3><p>Приём возвращённых товаров, проверка состояния и комплектности, фото-фиксация, возврат на полку или списание через WMS</p></div>
+<div class="ben-card"><div class="ben-num">&#9635;</div><h3>Адресное хранение</h3><p>Ячеечная система хранения с уникальным адресом для каждого товара. Температурный контроль 15-25&deg;C и мониторинг влажности</p></div>
+<div class="ben-card"><div class="ben-num">&#9632;</div><h3>Палетное хранение</h3><p>Для крупногабаритных и тяжёлых товаров. Стеллажи до 2 тонн на ярус, от 450&nbsp;грн/палет/мес. Погрузчики и гидравлические тележки</p></div>
+<div class="ben-card"><div class="ben-num">&#9997;</div><h3>Комплектация заказов</h3><p>Сборка, упаковка и маркировка заказов. Каждый заказ собирается за 30 секунд, сканирование штрих-кодов на каждом этапе</p></div>
+<div class="ben-card"><div class="ben-num">&#10003;</div><h3>Приём товара</h3><p>Проверка количества и качества при приёмке. Фото-фиксация повреждений, размещение в WMS с присвоением штрих-кода</p></div>
+<div class="ben-card"><div class="ben-num">&#128203;</div><h3>Управление запасами</h3><p>Регулярная инвентаризация через WMS. Сверка фактических и системных остатков, отчёт о расхождениях в течение 24 часов</p></div>
+<div class="ben-card"><div class="ben-num">&#8634;</div><h3>Обработка возвратов</h3><p>Приём возвращённых товаров, проверка состояния и комплектности, фото-фиксация, возврат на полку или списание через WMS</p></div>
 </div>
 </div></section>
 
@@ -52,7 +52,7 @@ import Base from '../layouts/Base.astro';
 <div class="badge">СКЛАДЫ</div>
 <h2 class="sec-h2">Два склада под Киевом</h2>
 <div class="wh-grid">
-<div class="wh-card reveal">
+<div class="wh-card">
 <h3>Склад Счастливое</h3>
 <div class="wh-loc">Бориспольский район, Киевская область</div>
 <ul>
@@ -65,7 +65,7 @@ import Base from '../layouts/Base.astro';
 <li>Охрана и видеонаблюдение 24/7</li>
 </ul>
 </div>
-<div class="wh-card reveal">
+<div class="wh-card">
 <h3>Склад Белогородка</h3>
 <div class="wh-loc">Западное направление, Киевская область</div>
 <ul>
@@ -115,7 +115,7 @@ import Base from '../layouts/Base.astro';
 </div></section>
 
 <!-- SEO ARTICLE -->
-<section class="article-section reveal">
+<section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
 <h2>Как выбрать склад для интернет-магазина в Киеве</h2>
@@ -136,12 +136,7 @@ import Base from '../layouts/Base.astro';
 </section>
 
 <!-- CTA -->
-<section class="final-cta" id="ctaSection"><div class="ctr">
-<h2>Готовы передать склад<br>профессионалам?</h2>
-<p class="sub">Оставьте номер &mdash; перезвоним в течение 15 минут и подготовим индивидуальный расчёт</p>
-<form class="final-form" id="finalForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Перезвоните мне &#8594;</button></form>
-<div class="final-checks"><span>&#10003; Бесплатная консультация</span><span>&#10003; Без обязательств</span><span>&#10003; Договор за 1 день</span></div>
-</div></section>
+
 
 </Base>
 
@@ -154,7 +149,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:bloc
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 .hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}

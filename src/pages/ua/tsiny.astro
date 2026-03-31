@@ -66,14 +66,14 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">ДОДАТКОВО</div>
 <h2 class="sec-h2">Додаткові послуги</h2>
 <div class="extras-grid">
-<div class="extra-card reveal"><div class="extra-price">2.50&#8372;</div><h3>Доукомплектація</h3><p>Кожен наступний товар у замовленні</p></div>
-<div class="extra-card reveal"><div class="extra-price">2&#8372;</div><h3>Товарний чек</h3><p>Додавання чеку до замовлення</p></div>
-<div class="extra-card reveal"><div class="extra-price">1.25&#8372;</div><h3>Стікерування</h3><p>Друк і поклейка штрих-коду</p></div>
-<div class="extra-card reveal"><div class="extra-price">1.50&#8372;</div><h3>Етикетка</h3><p>Друк і поклейка кастомної етикетки</p></div>
-<div class="extra-card reveal"><div class="extra-price">0.50&#8372;</div><h3>FEFO контроль</h3><p>Контроль термінів для косметики, фарми</p></div>
-<div class="extra-card reveal"><div class="extra-price">2&#8372;</div><h3>Друк документів</h3><p>ТТН, накладні (до 3 листів А4)</p></div>
-<div class="extra-card reveal"><div class="extra-price">5&#8372;</div><h3>Гарантійний талон</h3><p>Заповнення гарантійного талону</p></div>
-<div class="extra-card reveal"><div class="extra-price">350&#8372;</div><h3>Палетування</h3><p>Формування та стрейчування палети</p></div>
+<div class="extra-card"><div class="extra-price">2.50&#8372;</div><h3>Доукомплектація</h3><p>Кожен наступний товар у замовленні</p></div>
+<div class="extra-card"><div class="extra-price">2&#8372;</div><h3>Товарний чек</h3><p>Додавання чеку до замовлення</p></div>
+<div class="extra-card"><div class="extra-price">1.25&#8372;</div><h3>Стікерування</h3><p>Друк і поклейка штрих-коду</p></div>
+<div class="extra-card"><div class="extra-price">1.50&#8372;</div><h3>Етикетка</h3><p>Друк і поклейка кастомної етикетки</p></div>
+<div class="extra-card"><div class="extra-price">0.50&#8372;</div><h3>FEFO контроль</h3><p>Контроль термінів для косметики, фарми</p></div>
+<div class="extra-card"><div class="extra-price">2&#8372;</div><h3>Друк документів</h3><p>ТТН, накладні (до 3 листів А4)</p></div>
+<div class="extra-card"><div class="extra-price">5&#8372;</div><h3>Гарантійний талон</h3><p>Заповнення гарантійного талону</p></div>
+<div class="extra-card"><div class="extra-price">350&#8372;</div><h3>Палетування</h3><p>Формування та стрейчування палети</p></div>
 </div>
 </div></section>
 
@@ -118,7 +118,7 @@ import Base from '../../layouts/Base.astro';
 </div></section>
 
 <!-- SEO ARTICLE -->
-<section class="article-section reveal">
+<section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
 <h2>Як формується вартість фулфілменту в Україні</h2>
@@ -148,7 +148,7 @@ import Base from '../../layouts/Base.astro';
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 .hero{position:relative;min-height:70vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 80px;overflow:hidden}

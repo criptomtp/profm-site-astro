@@ -46,7 +46,7 @@ import Base from '../layouts/Base.astro';
 <div class="badge badge-dark">РАСЧЁТ</div>
 <h2 class="sec-h2">Посчитайте стоимость для вашего бизнеса</h2>
 <div class="calc-wrap">
-<div class="calc-form reveal">
+<div class="calc-form">
 <h3>Параметры бизнеса</h3>
 <div class="calc-field">
 <label>Отправлений в день</label>
@@ -75,7 +75,7 @@ import Base from '../layouts/Base.astro';
 <div class="field-hint">Если больше 1 &mdash; добавляется доукомплектация</div>
 </div>
 </div>
-<div class="calc-results reveal">
+<div class="calc-results">
 <h3>Результат расчёта</h3>
 <div class="res-row">
 <span class="res-label">Отправка</span>
@@ -217,7 +217,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:bloc
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:32px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}.badge-dark::before{background:var(--red)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
 
 .hero{position:relative;background:var(--black);color:var(--white);padding:120px 0 80px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('/images/tild3766-3932-4434-b537-333032623963__img_4801.jpg') center/cover;opacity:.12}

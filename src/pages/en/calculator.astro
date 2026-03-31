@@ -34,14 +34,14 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">ESTIMATE</div>
 <h2 class="sec-h2">Calculate costs for your business</h2>
 <div class="calc-wrap">
-<div class="calc-form reveal">
+<div class="calc-form">
 <h3>Business Parameters</h3>
 <div class="calc-field"><label>Shipments per day</label><input type="number" id="calcOrders" value="50" min="1" max="10000" step="1" aria-label="Orders per day"><div class="field-hint">Average number of orders you ship daily</div></div>
 <div class="calc-field"><label>Average item weight</label><select id="calcWeight" aria-label="Weight category"><option value="2" selected>up to 2 kg</option><option value="5">2-5 kg</option><option value="10">5-10 kg</option><option value="30">10-30 kg</option><option value="50">30+ kg</option></select><div class="field-hint">Weight of one item for receiving calculation</div></div>
 <div class="calc-field"><label>Storage volume, m&sup3;</label><input type="number" id="calcVolume" value="5" min="0" max="1000" step="0.5" aria-label="Storage volume"><div class="field-hint">How many cubic meters your products occupy in the warehouse</div></div>
 <div class="calc-field"><label>Average items per order</label><input type="number" id="calcItems" value="1.5" min="1" max="50" step="0.1" aria-label="Items per order"><div class="field-hint">If more than 1 &mdash; co-packing fee applies</div></div>
 </div>
-<div class="calc-results reveal">
+<div class="calc-results">
 <h3>Calculation Results</h3>
 <div class="res-row"><span class="res-label">Shipping</span><span><span class="res-value" id="resShipping">28 600</span> UAH/mo <span class="res-sub" id="resShippingRate">(26 UAH/order)</span></span></div>
 <div class="res-row"><span class="res-label">Storage</span><span><span class="res-value" id="resStorage">3 250</span> UAH/mo</span></div>
@@ -126,7 +126,7 @@ import Base from '../../layouts/Base.astro';
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
 .badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+
 .hero{position:relative;background:#000;color:#fff;padding:120px 0 80px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('/images/tild3766-3932-4434-b537-333032623963__img_4801.jpg') center/cover;opacity:.12}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
