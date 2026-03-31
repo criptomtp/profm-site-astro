@@ -220,7 +220,7 @@ function renderBoard(){
       var progress=Math.round(done/7*100);
       var dateBadge=formatDateBadge(l.nextContact);
       var sourceBadge='<span class="kc-source-badge">'+(SOURCE_LABELS[l.source]||l.source)+'</span>';
-      return '<div class="kanban-card" data-id="'+l.id+'">'+
+      return '<div class="kanban-card" data-id="'+l.id+'" onclick="openLead('+l.id+')">'+
         '<div class="kc-company">'+esc(l.company)+'</div>'+
         '<div class="kc-contact">'+esc(l.contact)+'</div>'+
         '<div class="kc-meta">'+l.shipments+' відпр/день &middot; '+(TYPE_LABELS[l.type]||l.type)+'</div>'+
