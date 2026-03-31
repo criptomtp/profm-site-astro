@@ -1,0 +1,15 @@
+/* FAQ Accordion */
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:#e63329;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* Force visibility on animated cards */
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.prob-card,.case-stat{
+  opacity:1!important;transform:none!important
+}
+
+/* Reveal animation (safe default) */
+.reveal{opacity:1;transform:none}
