@@ -157,7 +157,7 @@ import Base from '../layouts/Base.astro';
 
 <!-- TESTIMONIALS JS -->
 <script is:inline>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
 var testimonials=[
 {text:"Від 100 до 800 відправок на день за 3 місяці. MTP — команда яка реально закриває питання логістики.",name:"Олексій Рябцев",company:"Власник інтернет-магазину"},
 {text:"Зекономили 25 000 грн/місяць порівняно з власним складом. Рекомендую всім хто хоче масштабуватись.",name:"Павло Мокрієнко",company:"E-commerce підприємець"},
@@ -179,12 +179,12 @@ var dots=document.getElementById('testiDots');for(var i=0;i<total;i++){var d=doc
 document.getElementById('tPrev').addEventListener('click',function(){slideTo(cs-1);resetT();});
 document.getElementById('tNext').addEventListener('click',function(){slideTo(cs+1);resetT();});
 function resetT(){clearInterval(timer);timer=setInterval(function(){slideTo(cs+1);},6000);}resetT();
-})();
+});
 </script>
 
 <!-- FORM HANDLING JS -->
 <script is:inline>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
 function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка з головної',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Головна',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на головній',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Дякуємо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Передзвонимо найближчим часом</p></div>';setTimeout(function(){window.location.href='/ua/thanks/';},1500);});}
 var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
 
@@ -206,12 +206,12 @@ inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});
 inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
 }
 document.querySelectorAll('input[type="tel"]').forEach(applyPhoneMask);
-})();
+});
 </script>
 
 <!-- REVEAL ANIMATION + FLOAT NOTIFICATIONS JS -->
 <script is:inline>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
 var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 
@@ -224,7 +224,7 @@ var fn=document.getElementById('floatNotif'),ft=document.getElementById('fnText'
 if(!fn||!ft)return;
 function showFN(){var n=notifs[ni%notifs.length];ft.textContent='\uD83D\uDCE6 '+n.c+' \u00b7 '+n.t;fn.classList.add('show');setTimeout(function(){fn.classList.remove('show');},4000);ni++;}
 setTimeout(showFN,2500);setInterval(showFN,7000);
-})();
+});
 </script>
 
 <!-- VIDEO MODAL JS -->
