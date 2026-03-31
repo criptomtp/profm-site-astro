@@ -367,6 +367,7 @@ function initDragDrop(){
 
 /* ===== OPEN LEAD MODAL ===== */
 function openLead(id){
+  console.log('openLead called with id:', id, typeof id);
   try{
   var leads=getLeads();
   var lead=leads.find(function(l){return l.id===id;});
@@ -413,6 +414,7 @@ function openLead(id){
 
   document.getElementById('lmNewComment').value='';
   document.getElementById('lmTimelineNote').value='';
+  console.log('Opening modal for lead:', lead.company, lead.phone);
   m.classList.add('show');
   }catch(err){console.error('openLead error:',err);alert('Помилка відкриття картки: '+err.message);}
 }
@@ -688,9 +690,4 @@ document.addEventListener('keydown',function(e){
 });
 
 
-/* Auto-refresh board every 10 seconds (picks up new site leads) */
-setInterval(function(){
-  if(!document.querySelector('.lead-modal.show')){
-    renderBoard();
-  }
-}, 10000);
+/* Manual refresh only — click Оновити button */
