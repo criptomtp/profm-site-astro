@@ -216,24 +216,24 @@ import Base from '../layouts/Base.astro';
 <p class="section-subtitle">Ответы на главные вопросы об аутсорсинге логистики</p>
 <div class="faq-list">
 <div class="faq-item">
-<button class="faq-question">Как быстро начать работу с MTP?</button>
-<div class="faq-answer"><p>Подключение занимает от 1 до 3 рабочих дней. Подписываем договор, настраиваем интеграцию с вашей CRM или интернет-магазином, принимаем товар на склад — и вы готовы к отправкам. Персональный менеджер сопровождает на каждом этапе.</p></div>
+<button class="faq-q">Как быстро начать работу с MTP?</button>
+<div class="faq-a"><p>Подключение занимает от 1 до 3 рабочих дней. Подписываем договор, настраиваем интеграцию с вашей CRM или интернет-магазином, принимаем товар на склад — и вы готовы к отправкам. Персональный менеджер сопровождает на каждом этапе.</p></div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Какой минимальный объём заказов?</button>
-<div class="faq-answer"><p>Минимального порога нет — работаем даже с 1 отправлением в день. Однако экономически выгодно от 20 отправлений в день: именно с этого объёма динамический тариф значительно снижается, и вы получаете максимальную выгоду от аутсорсинга.</p></div>
+<button class="faq-q">Какой минимальный объём заказов?</button>
+<div class="faq-a"><p>Минимального порога нет — работаем даже с 1 отправлением в день. Однако экономически выгодно от 20 отправлений в день: именно с этого объёма динамический тариф значительно снижается, и вы получаете максимальную выгоду от аутсорсинга.</p></div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Как вы работаете во время блэкаутов?</button>
-<div class="faq-answer"><p>На складе установлены 3 промышленных генератора, подключены 2 оптоволоконных интернет-провайдера и терминал Starlink. Заказы собираются и отправляются без задержек даже при полном отключении электричества в регионе. За последние 2 года — ни одного простоя.</p></div>
+<button class="faq-q">Как вы работаете во время блэкаутов?</button>
+<div class="faq-a"><p>На складе установлены 3 промышленных генератора, подключены 2 оптоволоконных интернет-провайдера и терминал Starlink. Заказы собираются и отправляются без задержек даже при полном отключении электричества в регионе. За последние 2 года — ни одного простоя.</p></div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Работаете ли вы с маркетплейсами?</button>
-<div class="faq-answer"><p>Да, у нас полная интеграция с Rozetka, Prom.ua и другими площадками. Заказы автоматически загружаются в нашу WMS, накладные печатаются без вашего участия, статусы обновляются в реальном времени — всё в одном личном кабинете.</p></div>
+<button class="faq-q">Работаете ли вы с маркетплейсами?</button>
+<div class="faq-a"><p>Да, у нас полная интеграция с Rozetka, Prom.ua и другими площадками. Заказы автоматически загружаются в нашу WMS, накладные печатаются без вашего участия, статусы обновляются в реальном времени — всё в одном личном кабинете.</p></div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Можно ли посетить склад?</button>
-<div class="faq-answer"><p>Разумеется. Мы проводим экскурсии по складу в Щасливому по предварительной записи. Вы увидите все процессы: приёмку товара, адресное хранение, сборку и отправку заказов, а также познакомитесь с командой, которая будет работать с вашим товаром.</p></div>
+<button class="faq-q">Можно ли посетить склад?</button>
+<div class="faq-a"><p>Разумеется. Мы проводим экскурсии по складу в Щасливому по предварительной записи. Вы увидите все процессы: приёмку товара, адресное хранение, сборку и отправку заказов, а также познакомитесь с командой, которая будет работать с вашим товаром.</p></div>
 </div>
 </div>
 </div>
@@ -371,12 +371,12 @@ img{max-width:100%;height:auto;display:block}
 .faq-section{padding:80px 20px;background:#f5f5f5}
 .faq-list{max-width:800px;margin:0 auto}
 .faq-item{background:#fff;border-radius:10px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden}
-.faq-question{width:100%;padding:20px 28px;font-size:17px;font-weight:700;font-family:var(--fb);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;color:var(--black);transition:background .2s}
-.faq-question:hover{background:#f9f9f9}
-.faq-question::after{content:'+';font-size:24px;font-weight:300;color:var(--red);transition:transform .3s}
-.faq-item.open .faq-question::after{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
-.faq-answer p{padding:0 28px 20px;color:#555;font-size:15px;line-height:1.7}
+.faq-q{width:100%;padding:20px 28px;font-size:17px;font-weight:700;font-family:var(--fb);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;color:var(--black);transition:background .2s}
+.faq-q:hover{background:#f9f9f9}
+.faq-q::after{content:'+';font-size:24px;font-weight:300;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
+.faq-a p{padding:0 28px 20px;color:#555;font-size:15px;line-height:1.7}
 
 /* SEO ARTICLE */
 .seo-section{padding:80px 20px;background:#fff}
@@ -436,13 +436,13 @@ document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEven
 }
 
 // FAQ toggle
-document.querySelectorAll('.faq-question').forEach(function(btn){
+document.querySelectorAll('.faq-q').forEach(function(btn){
 btn.addEventListener('click',function(){
 var item=btn.parentElement;
-var answer=item.querySelector('.faq-answer');
+var answer=item.querySelector('.faq-a');
 var isOpen=item.classList.contains('open');
 document.querySelectorAll('.faq-item.open').forEach(function(el){
-el.classList.remove('open');el.querySelector('.faq-answer').style.maxHeight=null;
+el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;
 });
 if(!isOpen){item.classList.add('open');answer.style.maxHeight=answer.scrollHeight+'px';}
 });
