@@ -15,7 +15,7 @@ const isEn = lang === 'en';
   <h2 set:html={t.title} />
   <p class="sub">{t.sub}</p>
   <form class="final-form" id="finalForm">
-    <input type="tel" name="phone" placeholder={t.placeholder} required autocomplete="tel" aria-label="Phone">
+    <input type="tel" name="phone" placeholder={t.placeholder} required autocomplete="tel" aria-label="Phone" maxlength={isEn ? "20" : "13"}>
     <button type="submit">{t.btn}</button>
   </form>
   <div class="final-checks">
