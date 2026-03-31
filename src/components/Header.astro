@@ -54,10 +54,17 @@ const warehouseSlug = lang === 'en' ? 'warehouse-services' : 'skladski-poslugy';
 
 <script is:inline>
 (function(){
-var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
+var b=document.getElementById('navBurger'),l=document.getElementById('navLinks'),nav=document.querySelector('nav.nav,.nav');
 if(b&&l){
-  b.addEventListener('click',function(){b.classList.toggle('open');l.classList.toggle('open');});
-  l.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('open');l.classList.remove('open');}});
+  // Overlay for mobile menu
+  var ov=document.createElement('div');
+  ov.style.cssText='display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.6);z-index:9999;cursor:pointer';
+  if(nav)nav.appendChild(ov);
+  function syncOverlay(){var open=l.classList.contains('open');ov.style.display=open?'block':'none';document.body.style.overflow=open?'hidden':'';}
+  ov.addEventListener('click',function(){l.classList.remove('open');b.classList.remove('open');syncOverlay();});
+
+  b.addEventListener('click',function(){b.classList.toggle('open');l.classList.toggle('open');syncOverlay();});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('open');l.classList.remove('open');syncOverlay();}});
   document.querySelectorAll('.nav-dropdown').forEach(function(dd){
     var timer,menu=dd.querySelector('.nav-dropdown-menu');if(!menu)return;
     dd.addEventListener('mouseenter',function(){clearTimeout(timer);menu.style.display='block';});
