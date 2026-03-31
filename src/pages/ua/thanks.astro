@@ -1,12 +1,56 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Дякуємо! | MTP Group" lang="uk" showCTA={false}>
-<section style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 24px;">
-<div>
-<div style="font-size:64px;margin-bottom:24px;">✅</div>
-<h1 style="font-family:'DM Serif Display',serif;font-size:36px;margin-bottom:16px;">Дякуємо!</h1>
-<p style="font-size:18px;color:#666;max-width:400px;margin:0 auto;">Ми передзвонимо вам найближчим часом.</p>
+<Base title="Дякуємо за заявку | MTP Group" lang="uk" showCTA={false}>
+
+<section class="thanks-hero">
+<h1>Дякуємо за заявку</h1>
+<p>Ми зв'яжемось із вами протягом дня</p>
+<p class="sub">А поки що ознайомтесь із головними перевагами роботи з нами</p>
+</section>
+
+<section class="thanks-videos">
+<iframe src="https://www.youtube.com/embed/eP4FYJnyz_8" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/bHY3cFF9SlI" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/mE4N4CHwG7o" loading="lazy" allowfullscreen></iframe>
+</section>
+
+<section class="thanks-blog">
+<h2>Почитайте корисне</h2>
+<div class="thanks-blog-grid">
+<a href="/ua/blog/tpost/d0kknsayu1-fulfillment-chi-vlasnii-sklad-u-2025-str/" class="thanks-blog-card">
+<img src="/images/blog/--e-commerce_----.jpg" alt="Fulfillment vs власний склад" loading="lazy">
+<div class="card-text"><h3>Fulfillment чи власний склад у 2025</h3></div>
+</a>
+<a href="/ua/blog/tpost/699f3hz0v1-yak-pratsyu-fulflment-v-ukran-2025-ekspe/" class="thanks-blog-card">
+<img src="/images/blog/yak-pratsiuie-fulfil.jpg" alt="Як працює фулфілмент" loading="lazy">
+<div class="card-text"><h3>Як працює фулфілмент в Україні — 2025</h3></div>
+</a>
+<a href="/ua/blog/tpost/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/" class="thanks-blog-card">
+<img src="/images/blog/-------e-commerce---.jpg" alt="ТОП-5 помилок логістики" loading="lazy">
+<div class="card-text"><h3>ТОП-5 помилок логістики інтернет-магазину</h3></div>
+</a>
+<a href="/ua/blog/tpost/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/" class="thanks-blog-card">
+<img src="/images/blog/IMG_4888.JPG" alt="Як вибрати фулфілмент-оператора" loading="lazy">
+<div class="card-text"><h3>Як вибрати фулфілмент-оператора</h3></div>
+</a>
 </div>
 </section>
 </Base>
+
+<style is:global>
+.thanks-hero{background:#000;color:#fff;text-align:center;padding:80px 24px 60px}
+.thanks-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);font-weight:400;margin-bottom:16px}
+.thanks-hero p{color:rgba(255,255,255,.7);font-size:18px;max-width:500px;margin:0 auto}
+.thanks-hero .sub{font-size:15px;color:rgba(255,255,255,.5);margin-top:12px}
+.thanks-videos{display:flex;gap:20px;padding:60px 24px;max-width:1200px;margin:0 auto;flex-wrap:wrap}
+.thanks-videos iframe{flex:1;min-width:280px;aspect-ratio:16/9;border:none;border-radius:12px}
+.thanks-blog{padding:60px 24px;max-width:1200px;margin:0 auto}
+.thanks-blog h2{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;margin-bottom:24px}
+.thanks-blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.thanks-blog-card{border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .3s}
+.thanks-blog-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.thanks-blog-card img{width:100%;height:180px;object-fit:cover}
+.thanks-blog-card .card-text{padding:16px}
+.thanks-blog-card h3{font-size:16px;font-weight:500;line-height:1.4}
+</style>
