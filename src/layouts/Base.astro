@@ -80,15 +80,12 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
       var inp = heroForm.querySelector('input[name="phone"]');
       var ph = inp.value.trim();
       var clean = ph.replace(/\D/g,'');
-      if(clean.length < 7 || clean.length > 15){ inp.style.borderColor='#e63329'; return; }
+      if(clean.length < 7){ inp.style.borderColor='#e63329'; return; }
       fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
-      // Detect language for thank you message and redirect
-      var p = location.pathname;
-      var isEn = p.indexOf('/en/') === 0;
-      var isRu = p.indexOf('/ru/') === 0 || (p.indexOf('/ua/') !== 0 && p !== '/');
-      var msg = isEn ? 'Thank you! We will call back.' : isRu ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
-      var url = isEn ? '/en/thanks/' : isRu ? '/thanks/' : '/ua/thanks/';
-      heroForm.innerHTML='<p style="color:#22c55e;font-size:18px;font-weight:500">✅ ' + msg + '</p>';
+      var lang = document.documentElement.lang;
+      var msg = lang === 'en' ? 'Thank you! We will call back.' : lang === 'ru' ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
+      var url = lang === 'en' ? '/en/thanks/' : lang === 'ru' ? '/thanks/' : '/ua/thanks/';
+      heroForm.innerHTML='<p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 ' + msg + '</p>';
       setTimeout(function(){ window.location.href = url; }, 1500);
     });
   }
