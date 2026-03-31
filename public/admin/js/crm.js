@@ -356,13 +356,14 @@ function initDragDrop(){
 
 /* ===== OPEN LEAD MODAL ===== */
 function openLead(id){
+  try{
   var leads=getLeads();
   var lead=leads.find(function(l){return l.id===id;});
   if(!lead)return;
   var m=document.getElementById('leadModal');
   m.dataset.leadId=id;
 
-  document.getElementById('lmTitle').textContent=lead.company||'Деталі заявки';
+  document.getElementById('lmTitle').textContent=(lead.company&&lead.company!=='')?lead.company:'Заявка #'+lead.id;
   document.getElementById('lmCompany').value=lead.company;
   document.getElementById('lmContact').value=lead.contact;
   document.getElementById('lmPhone').value=lead.phone;
@@ -402,6 +403,7 @@ function openLead(id){
   document.getElementById('lmNewComment').value='';
   document.getElementById('lmTimelineNote').value='';
   m.classList.add('show');
+  }catch(err){console.error('openLead error:',err);alert('Помилка відкриття картки: '+err.message);}
 }
 
 function quickStatusChange(newStatus){
@@ -673,3 +675,11 @@ document.addEventListener('keydown',function(e){
     closeSettings();
   }
 });
+
+
+/* Auto-refresh board every 10 seconds (picks up new site leads) */
+setInterval(function(){
+  if(!document.querySelector('.lead-modal.show')){
+    renderBoard();
+  }
+}, 10000);
