@@ -23,7 +23,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">3PL FULFILLMENT IN UKRAINE</div>
 <h1>3PL Fulfillment in Ukraine.<br>Storage, Packing &amp; Shipping.</h1>
 <p class="hero-sub">We receive, store, pack and ship your products across Ukraine. You focus on sales — we handle the rest.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" autocomplete="tel" required autocomplete="tel"><button type="submit">Get a quote &#8594;</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel"><button type="submit">Get a quote &#8594;</button></form>
 <div class="hero-note">Free consultation &#183; We call back within 15 min</div>
 </div>
 <div class="hero-stats">
@@ -237,12 +237,6 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 }
 
 /* Form handler */
-function handleForm(form){
-form.addEventListener('submit',function(e){
-e.preventDefault();
-var ph=form.querySelector('input[name="phone"]').value;
-var clean=ph.replace(/\D/g,'');
-if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}
 var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
 leads.push({id:Date.now(),company:'Inquiry from EN homepage',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Homepage EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on EN homepage',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});
 localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
@@ -251,7 +245,5 @@ form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c
 setTimeout(function(){window.location.href='/en/thanks/';},1500);
 });
 }
-var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
-var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
 });
 </script>

@@ -23,7 +23,7 @@ import Base from '../layouts/Base.astro';
 <div class="badge">КАЛЬКУЛЯТОР</div>
 <h1>Калькулятор стоимости<br>фулфилмента</h1>
 <p class="hero-sub">Рассчитайте стоимость фулфилмента за 30 секунд. Актуальные тарифы 2026 года с динамической скидкой за объём.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт →</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт →</button></form>
 <div class="hero-note">Бесплатная консультация · Перезвоним за 15 минут</div>
 
 <div class="hero-stats">
@@ -413,8 +413,7 @@ document.getElementById(id).addEventListener('change',calculate);
 calculate();
 
 // FORM
-function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Калькулятора (RU)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Калькулятор RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Калькулятор RU: '+document.getElementById('calcOrders').value+' отпр/день, '+document.getElementById('calcVolume').value+' м3, итого ~'+document.getElementById('resTotal').textContent+' грн/мес',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Менеджер перезвонит с персональным расчётом</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
-var cf=document.getElementById('ctaForm');if(cf)handleForm(cf);
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Калькулятора (RU)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Калькулятор RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Калькулятор RU: '+document.getElementById('calcOrders').value+' отпр/день, '+document.getElementById('calcVolume').value+' м3, итого ~'+document.getElementById('resTotal').textContent+' грн/мес',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Менеджер перезвонит с персональным расчётом</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
 
 
 }

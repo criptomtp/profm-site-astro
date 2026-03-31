@@ -71,16 +71,25 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
       if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
     });
   });
-  // Hero form handler (any form with id="heroForm")
+  // Hero form handler — universal for all pages
   var heroForm = document.getElementById('heroForm');
-  if(heroForm){
+  if(heroForm && !heroForm.dataset.handled){
+    heroForm.dataset.handled = '1';
     heroForm.addEventListener('submit', function(e){
       e.preventDefault();
       var inp = heroForm.querySelector('input[name="phone"]');
       var ph = inp.value.trim();
-      if(ph.replace(/\D/g,'').length < 7){ inp.style.borderColor='#e63329'; return; }
+      var clean = ph.replace(/\D/g,'');
+      if(clean.length < 7 || clean.length > 15){ inp.style.borderColor='#e63329'; return; }
       fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
-      heroForm.innerHTML='<p style="color:#22c55e;font-size:18px;font-weight:500">✅ Дякуємо! Передзвонимо.</p>';
+      // Detect language for thank you message and redirect
+      var p = location.pathname;
+      var isEn = p.indexOf('/en/') === 0;
+      var isRu = p.indexOf('/ru/') === 0 || (p.indexOf('/ua/') !== 0 && p !== '/');
+      var msg = isEn ? 'Thank you! We will call back.' : isRu ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
+      var url = isEn ? '/en/thanks/' : isRu ? '/thanks/' : '/ua/thanks/';
+      heroForm.innerHTML='<p style="color:#22c55e;font-size:18px;font-weight:500">✅ ' + msg + '</p>';
+      setTimeout(function(){ window.location.href = url; }, 1500);
     });
   }
   // Reveal animation

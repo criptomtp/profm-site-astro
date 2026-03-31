@@ -22,7 +22,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">ФУЛФИЛМЕНТ В УКРАИНЕ</div>
 <h1>Делегируй логистику.<br>Масштабируй бизнес.</h1>
 <p class="hero-sub">Принимаем, храним и отправляем ваши товары.<br>Вы занимаетесь продажами — мы остальным.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" autocomplete="tel" required autocomplete="tel"><button type="submit">Начать &#8594;</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel"><button type="submit">Начать &#8594;</button></form>
 <div class="hero-note">Консультация бесплатная &#183; Перезвоним за 15 минут</div>
 </div>
 <div class="hero-stats">
@@ -183,8 +183,7 @@ function resetT(){clearInterval(timer);timer=setInterval(function(){slideTo(cs+1
 <!-- FORM HANDLING JS -->
 <script is:inline>
 document.addEventListener('DOMContentLoaded',function(){
-function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с главной RU',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Главная RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на главной RU',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/ru/thanks/';},1500);});}
-var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с главной RU',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Главная RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на главной RU',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/ru/thanks/';},1500);});}
 
 
 }

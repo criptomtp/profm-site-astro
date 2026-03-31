@@ -20,7 +20,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">ТАРИФИ 2026</div>
 <h1>Ціни на фулфілмент<br>для інтернет-магазинів</h1>
 <p class="hero-sub">Прозоре ціноутворення без прихованих платежів. Динамічний тариф &mdash; чим більше відправляєш, тим дешевше кожне замовлення. Пакувальні матеріали включені.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" autocomplete="tel" required autocomplete="tel" aria-label="Телефон"><button type="submit">Розрахувати вартість &#8594;</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel" aria-label="Телефон"><button type="submit">Розрахувати вартість &#8594;</button></form>
 <div class="hero-note">Індивідуальний розрахунок за 15 хвилин &#183; Без зобов'язань</div>
 </div>
 <div class="hero-stats">
@@ -241,13 +241,7 @@ document.addEventListener('DOMContentLoaded', function(){
     inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
   }
   
-  function handleForm(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      var ph=form.querySelector('input[name="phone"]').value;
-      var clean=ph.replace(/\D/g,'');
-      if(clean.length<12){form.querySelector('input').style.borderColor='#e63329';return;}
-      var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
+        var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
       leads.push({id:Date.now(),company:'Ціни на фулфілмент',contact:'',phone:ph,email:'',shipments:0,type:'pricing',source:'SEO landing tsiny',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма: ціни на фулфілмент',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});
       localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
       fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
@@ -255,7 +249,6 @@ document.addEventListener('DOMContentLoaded', function(){
       setTimeout(function(){window.location.href='/ua/thanks/';},1500);
     });
   }
-  var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
-});
+  });
 </script>
 </Base>

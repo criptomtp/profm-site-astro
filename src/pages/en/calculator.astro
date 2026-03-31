@@ -22,7 +22,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">CALCULATOR</div>
 <h1>Fulfillment<br>Cost Calculator</h1>
 <p class="hero-sub">Calculate fulfillment costs in 30 seconds. Actual 2026 rates with dynamic volume discounts.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote →</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote →</button></form>
 <div class="hero-note">Free consultation · We call back within 15 min</div>
 
 <div class="hero-stats">
@@ -220,9 +220,7 @@ document.getElementById('timeFreed').textContent=timeFreed;document.getElementBy
 calculate();
 
 function {}
-function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Lead from Calculator (EN)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Calculator EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Calculator EN: '+document.getElementById('calcOrders').value+' ship/day, '+document.getElementById('calcVolume').value+' m3, total ~'+document.getElementById('resTotal').textContent+' UAH/mo',date:new Date().toLocaleString('en-US')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Our manager will call back with a personalized quote</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
-var cf=document.getElementById('ctaForm');if(cf)handleForm(cf);
-var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Lead from Calculator (EN)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Calculator EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Calculator EN: '+document.getElementById('calcOrders').value+' ship/day, '+document.getElementById('calcVolume').value+' m3, total ~'+document.getElementById('resTotal').textContent+' UAH/mo',date:new Date().toLocaleString('en-US')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Our manager will call back with a personalized quote</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
 });
 </script>
 

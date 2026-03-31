@@ -214,13 +214,10 @@ function {
 
 }
 
-function handleForm(form){
-form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}
 var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Inquiry from About EN',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'About page EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on About EN page',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
 fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
 form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';
 setTimeout(function(){window.location.href='/en/thanks/';},1500);});
 }
-var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
 });
 </script>

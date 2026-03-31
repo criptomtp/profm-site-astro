@@ -197,12 +197,6 @@ t.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefau
 }
 
 /* Form handler: CRM localStorage + Telegram + redirect */
-function handleForm(form){
-form.addEventListener('submit',function(e){
-e.preventDefault();
-var ph=form.querySelector('input[name="phone"]').value;
-var clean=ph.replace(/\D/g,'');
-if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}
 /* Save to localStorage CRM */
 var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
 leads.push({id:Date.now(),company:'Запрос с RU guide',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Guide RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на RU guide',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});
@@ -215,7 +209,6 @@ fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'}
 setTimeout(function(){window.location.href='/thanks/';},800);
 });
 }
-var gf=document.getElementById('guideForm');if(gf)handleForm(gf);
 
 })();
 // Mobile nav: overlay + dropdown toggle

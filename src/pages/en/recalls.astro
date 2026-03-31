@@ -23,7 +23,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">CLIENT REVIEWS</div>
 <h1>What Our Clients Say<br>About MTP Group</h1>
 <p class="hero-sub">Real stories from 150+ e-commerce businesses across Ukraine. From startups shipping 10 orders a day to established brands processing thousands &mdash; hear directly from the entrepreneurs who trust us with their logistics.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote →</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" maxlength="20" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote →</button></form>
 <div class="hero-note">Free consultation · We call back within 15 min</div>
 
 </div>
@@ -160,8 +160,7 @@ document.addEventListener('DOMContentLoaded', function(){
 var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 function {}
-function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Inquiry from EN Reviews page',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Reviews EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on EN reviews page',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
-var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Inquiry from EN Reviews page',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Reviews EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on EN reviews page',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
 });
 </script>
 
