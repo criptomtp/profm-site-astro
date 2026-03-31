@@ -1,0 +1,301 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Калькулятор фулфілменту | MTP Group"
+  description="Розрахуйте вартість фулфілменту за 30 секунд. Динамічні тарифи від 18 грн/замовлення. Калькулятор MTP Group з актуальними цінами 2026. Склад у Щасливому, Бориспільський район."
+  canonical="https://fulfillmentmtp.com.ua/ua/calculator/"
+  lang="uk"
+  ogImage="https://fulfillmentmtp.com.ua/images/tild3766-3932-4434-b537-333032623963__img_4801.jpg"
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://fulfillmentmtp.com.ua/ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://fulfillmentmtp.com.ua/ua/services/"},{"@type":"ListItem","position":3,"name":"Калькулятор","item":"https://fulfillmentmtp.com.ua/ua/calculator/"}]}</script>`}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/calculator/">
+  <link rel="alternate" hreflang="ru" href="https://fulfillmentmtp.com.ua/calculator/">
+  <link rel="alternate" hreflang="en" href="https://fulfillmentmtp.com.ua/en/calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/calculator/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">КАЛЬКУЛЯТОР</div>
+<h1>Калькулятор вартості<br>фулфілменту</h1>
+<p class="hero-sub">Розрахуйте вартість фулфілменту за 30 секунд. Актуальні тарифи 2026 року з динамічною знижкою за обсяг.</p>
+<div class="hero-stats">
+<div><div class="hero-stat-val">від 18 грн</div><div class="hero-stat-label">за відправку</div></div>
+<div><div class="hero-stat-val">650 грн</div><div class="hero-stat-label">м&sup3;/мес зберігання</div></div>
+<div><div class="hero-stat-val">5 000 грн</div><div class="hero-stat-label">мінімум на місяць</div></div>
+</div>
+</div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section">
+<div class="ctr">
+<div class="badge badge-dark">РОЗРАХУНОК</div>
+<h2 class="sec-h2">Порахуйте вартість для вашого бізнесу</h2>
+<div class="calc-wrap">
+<div class="calc-form reveal">
+<h3>Параметри бізнесу</h3>
+<div class="calc-field">
+<label>Відправлень на день</label>
+<input type="number" id="calcOrders" value="50" min="1" max="10000" step="1" aria-label="Orders per day">
+<div class="field-hint">Середня кількість замовлень, які ви відправляєте щодня</div>
+</div>
+<div class="calc-field">
+<label>Середня вага товару</label>
+<select id="calcWeight" aria-label="Weight category">
+<option value="2" selected>до 2 кг</option>
+<option value="5">2-5 кг</option>
+<option value="10">5-10 кг</option>
+<option value="30">10-30 кг</option>
+<option value="50">30+ кг</option>
+</select>
+<div class="field-hint">Вага одного товару для розрахунку приймання</div>
+</div>
+<div class="calc-field">
+<label>Обсяг зберігання, м&sup3;</label>
+<input type="number" id="calcVolume" value="5" min="0" max="1000" step="0.5" aria-label="Storage volume">
+<div class="field-hint">Скільки кубічних метрів займає ваш товар на складі</div>
+</div>
+<div class="calc-field">
+<label>Середня кількість товарів у замовленні</label>
+<input type="number" id="calcItems" value="1.5" min="1" max="50" step="0.1" aria-label="Items per order">
+<div class="field-hint">Якщо більше 1 &mdash; додається доукомплектація</div>
+</div>
+</div>
+<div class="calc-results reveal">
+<h3>Результат розрахунку</h3>
+<div class="res-row"><span class="res-label">Відправка</span><span><span class="res-value" id="resShipping">28 600</span> грн/мес <span class="res-sub" id="resShippingRate">(26 грн/замовлення)</span></span></div>
+<div class="res-row"><span class="res-label">Зберігання</span><span><span class="res-value" id="resStorage">3 250</span> грн/мес</span></div>
+<div class="res-row"><span class="res-label">Приймання товару</span><span><span class="res-value" id="resReceiving">3 300</span> грн/мес</span></div>
+<div class="res-row"><span class="res-label">Доукомплектація</span><span><span class="res-value" id="resCopacking">1 375</span> грн/мес</span></div>
+<div class="res-total"><div class="res-row"><span class="res-label">РАЗОМ</span><span class="res-value" id="resTotal">36 525</span> <span style="font-size:14px;opacity:.8">грн/мес</span></div></div>
+<div class="res-cost-per"><div class="val" id="resCostPer">33.2</div><div class="lbl">Собівартість 1 відправки, грн</div></div>
+<div class="res-compare" id="resCompare">
+<div class="compare-title">Власний склад (розрахунок)</div>
+<div class="compare-row"><span>Оренда</span><span id="ownRent">15 000</span> грн</div>
+<div class="compare-row"><span>Персонал</span><span id="ownStaff">30 000</span> грн</div>
+<div class="compare-row"><span>WMS + софт</span><span id="ownWms">5 000</span> грн</div>
+<div class="compare-row"><span>Комунальні</span><span id="ownUtils">2 000</span> грн</div>
+<div class="compare-row"><span>Матеріали</span><span id="ownMaterials">1 650</span> грн</div>
+<div class="compare-total">Разом: <span id="ownTotal">53 650</span> грн/мес</div>
+<div style="text-align:center;margin-top:12px">Економія з MTP: <strong id="resSaving">34%</strong></div>
+</div>
+<div class="res-time" id="resTime">
+<strong>Економія часу:</strong> <span id="timeFreed">132</span> годин/міс вивільняється<br>
+&#8594; <span id="timeMarketing">79</span> год на маркетинг та продажі<br>
+&#8594; <span id="timePersonal">40</span> год на розвиток продукту
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TARIFF TABLE -->
+<section class="tariff-section">
+<div class="ctr">
+<div class="badge badge-dark">ТАРИФИ 2026</div>
+<h2 class="sec-h2">Повна тарифна сітка</h2>
+<p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:600px;margin-bottom:16px">Динамічний тариф: чим більше відправлень, тим нижча вартість за одиницю. Тариф визначається автоматично на основі середньоденного обсягу.</p>
+<table class="tariff-table">
+<thead><tr><th>Відправлень на день</th><th>Тариф за відправку</th></tr></thead>
+<tbody>
+<tr><td>0 &ndash; 5</td><td class="rate">26 грн</td></tr>
+<tr><td>6 &ndash; 10</td><td class="rate">25 грн</td></tr>
+<tr><td>11 &ndash; 20</td><td class="rate">24 грн</td></tr>
+<tr><td>21 &ndash; 50</td><td class="rate">23 грн</td></tr>
+<tr><td>51 &ndash; 75</td><td class="rate">22 грн</td></tr>
+<tr class="highlight"><td>76 &ndash; 100</td><td class="rate">21 грн</td></tr>
+<tr><td>101 &ndash; 150</td><td class="rate">20 грн</td></tr>
+<tr><td>151 &ndash; 200</td><td class="rate">19 грн</td></tr>
+<tr><td>200+</td><td class="rate">18 грн</td></tr>
+</tbody>
+</table>
+<p style="font-size:13px;color:var(--muted);margin-top:16px">* Зберігання: 650 грн/м&sup3;/мес. Приймання: 3 грн/од (до 2 кг) + 0.5 грн за кожен кг понад 2. Мінімальна оплата: 5 000 грн/мес.</p>
+</div>
+</section>
+
+<!-- ADDITIONAL SERVICES -->
+<section class="addons">
+<div class="ctr">
+<div class="badge">ДОДАТКОВІ ПОСЛУГИ</div>
+<h2 class="sec-h2">Додаткові сервіси</h2>
+<table class="addon-table">
+<thead><tr><th>Послуга</th><th>Вартість</th><th>Опис</th></tr></thead>
+<tbody>
+<tr><td>Доукомплектація</td><td class="price">2.5 грн/од</td><td>Збирання кількох товарів в одне замовлення. Додається за кожен товар починаючи з другого.</td></tr>
+<tr><td>Доставка на Розетку</td><td class="price">4 грн/замовлення</td><td>Підготовка та відправка замовлень через маркетплейс Rozetka за стандартами платформи.</td></tr>
+<tr><td>SMS-сповіщення</td><td class="price">2 грн/SMS</td><td>Автоматичне SMS-сповіщення покупцю про відправку замовлення або зміну статусу.</td></tr>
+<tr><td>Товарний чек</td><td class="price">2 грн/чек</td><td>Друк та вкладення товарного чеку в замовлення для юридичних та фізичних осіб.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- SEO ARTICLE -->
+<section class="seo-article">
+<div class="ctr">
+<h2>Як розрахувати вартість фулфілменту: повний гайд</h2>
+<p>Розрахунок вартості фулфілменту &mdash; перший крок до оптимізації логістичних витрат вашого інтернет-магазину. Багато підприємців помилково порівнюють лише вартість відправки, забуваючи про приховані витрати власного складу. У цьому гайді ми розберемо всі складові вартості фулфілменту та покажемо, як правильно оцінити економічну ефективність передачі логістики на аутсорс.</p>
+<h3>Складові вартості фулфілменту</h3>
+<p>Вартість фулфілменту складається з кількох компонентів: відправка (основний тариф за обробку та відправку замовлення), зберігання (оплата за обсяг товару на складі), прийом (приймання нового товару на склад) та додаткові послуги (доукомплектація, SMS, товарний чек). В MTP Group основний тариф &mdash; динамічний: від 26 грн при малих обсягах до 18 грн при 200+ відправленнях на день. Це означає, що зі зростанням вашого бізнесу собівартість кожного замовлення знижується автоматично.</p>
+<h3>Приховані витрати власного складу</h3>
+<p>Коли підприємці рахують витрати на власний склад, вони часто враховують лише оренду та зарплати. Але реальна картина значно ширша. Оренда складу від 15 000 грн на місяць. Зарплати комірників та пакувальників &mdash; від 25 000 грн. Комунальні послуги та інтернет &mdash; від 5 000 грн. Пакувальні матеріали &mdash; від 3 000 грн. Генератор та пальне &mdash; від 3 000 грн. Амортизація обладнання &mdash; від 2 000 грн. Програмне забезпечення &mdash; від 2 000 грн. Загалом мінімум 55 000 грн на місяць, навіть якщо у вас лише 50 замовлень на день. Наш калькулятор розраховує вартість власного складу динамічно, на основі ваших реальних обсягів.</p>
+<h3>Формула розрахунку для MTP Group</h3>
+<p>Загальна вартість фулфілменту = (відправлень на день &times; 22 робочих дні &times; тариф за рівнем) + (обсяг зберігання &times; 650 грн/м&sup3;) + (відправлення &times; 22 &times; вартість прийому) + доукомплектація. Мінімальна місячна оплата &mdash; 5 000 грн, що гарантує доступність навіть для початківців. Наприклад, при 50 замовленнях на день, 5 м&sup3; зберігання та 1.5 товарах у замовленні ваша місячна вартість складатиме приблизно 36 000 грн &mdash; на 35% менше, ніж власний склад.</p>
+<h3>Як обрати оптимальний тариф</h3>
+<p>Найефективніший спосіб знизити собівартість фулфілменту &mdash; збільшувати обсяги відправлень. Кожен наступний тарифний рівень знижує вартість на 1 грн за замовлення. Для магазину з 50 відправленнями на день перехід до 76 відправлень знижує вартість з 23 до 21 грн &mdash; це економія 2 200 грн на місяць. Тому фулфілмент особливо вигідний для бізнесів, які активно ростуть та інвестують у маркетинг.</p>
+<h3>Коли фулфілмент вигідніший за власний склад</h3>
+<p>За нашим досвідом, фулфілмент стає вигідним практично при будь-якому обсязі. При малих обсягах (до 20 замовлень на день) ви уникаєте фіксованих витрат на оренду та персонал. При середніх обсягах (20-100 на день) ви отримуєте масштабовану інфраструктуру без додаткових інвестицій. При великих обсягах (100+ на день) динамічний тариф робить вартість мінімальною, а ви можете зосередитися на розвитку продажів замість операційних процесів. Додаткова перевага &mdash; економія часу: наш калькулятор показує, скільки годин на місяць ви вивільняєте для маркетингу та розвитку продукту.</p>
+<p>Використовуйте наш калькулятор для швидкого розрахунку або зверніться до менеджера для більш точної оцінки з урахуванням специфіки вашого бізнесу. Ми проаналізуємо ваші потреби та запропонуємо оптимальне рішення. Склад у Щасливому (Бориспільський район) відкритий для екскурсій &mdash; приїжджайте подивитися, як працює сучасний фулфілмент зсередини.</p>
+</div>
+</section>
+
+<style is:global>
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:32px}
+.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
+.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}.badge-dark::before{background:var(--red)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
+.hero{position:relative;background:var(--black);color:var(--white);padding:120px 0 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('/images/tild3766-3932-4434-b537-333032623963__img_4801.jpg') center/cover;opacity:.12}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,6vw,72px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin-bottom:48px}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap}
+.hero-stat-val{font-family:var(--fb);font-size:clamp(28px,4vw,48px);font-weight:300;color:var(--white)}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:8px}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
+
+.calc-section{padding:80px 0 100px;background:var(--gray)}
+.calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.calc-form{background:var(--white);border-radius:12px;padding:40px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+.calc-form h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px}
+.calc-field{margin-bottom:24px}
+.calc-field label{display:block;font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.calc-field input,.calc-field select{width:100%;padding:14px 16px;border:1px solid #e0e0e0;border-radius:6px;font-size:16px;font-family:var(--fb);outline:none;transition:border-color .3s;background:var(--white);color:var(--black)}
+.calc-field input:focus,.calc-field select:focus{border-color:var(--red)}
+.calc-field .field-hint{font-size:12px;color:var(--muted);margin-top:4px}
+
+.calc-results{background:var(--black);border-radius:12px;padding:40px;color:var(--white)}
+.calc-results h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px;color:var(--white)}
+.res-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.res-row:last-of-type{border-bottom:none}
+.res-label{font-size:14px;color:rgba(255,255,255,.6)}
+.res-value{font-size:16px;font-weight:500;color:var(--white)}
+.res-sub{font-size:12px;color:rgba(255,255,255,.35);margin-left:8px;font-weight:300}
+.res-total{margin-top:24px;padding:24px;background:var(--red);border-radius:8px}
+.res-total .res-row{border-bottom:none;padding:8px 0}
+.res-total .res-label{color:rgba(255,255,255,.85);font-size:16px;font-weight:500}
+.res-total .res-value{font-family:var(--fd);font-size:28px}
+.res-cost-per{margin-top:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:8px;text-align:center}
+.res-cost-per .val{font-family:var(--fd);font-size:32px;color:var(--red)}
+.res-cost-per .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.res-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.res-compare strong{color:#22c55e;font-weight:500}
+.res-compare .compare-title{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
+.res-compare .compare-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.res-compare .compare-row:last-child{border-bottom:none}
+.res-compare .compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
+.res-time{margin-top:16px;padding:20px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.res-time strong{color:#22c55e;font-weight:500}
+
+.tariff-section{padding:100px 0}
+.tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
+.tariff-table th,.tariff-table td{padding:16px 24px;text-align:left;border-bottom:1px solid #e0e0e0}
+.tariff-table th{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;background:var(--gray)}
+.tariff-table td{font-size:15px}
+.tariff-table tr:hover td{background:rgba(230,51,41,.03)}
+.tariff-table .highlight{background:rgba(230,51,41,.06);font-weight:500}
+.tariff-table .rate{font-family:var(--fd);font-size:20px;color:var(--red)}
+
+.addons{padding:100px 0;background:#0a0a0a;color:var(--white)}
+.addon-table{width:100%;border-collapse:collapse;margin-top:48px}
+.addon-table th,.addon-table td{padding:16px 24px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+.addon-table th{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.addon-table td{font-size:15px;color:rgba(255,255,255,.7)}
+.addon-table .price{font-family:var(--fd);font-size:20px;color:var(--red)}
+
+.seo-article{padding:100px 0;background:var(--gray)}
+.seo-article h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,40px);font-weight:400;margin-bottom:32px}
+.seo-article h3{font-size:20px;font-weight:500;margin:32px 0 16px}
+.seo-article p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:16px;max-width:800px}
+
+@media(max-width:768px){
+.hero{padding:100px 0 60px}.hero-content{padding:0 24px}
+.hero h1{font-size:clamp(36px,9vw,48px)}
+.hero-stats{gap:24px}.hero-stats>div{min-width:calc(50% - 12px)}
+.calc-wrap{grid-template-columns:1fr}
+.tariff-table,.addon-table{font-size:13px}
+.tariff-table th,.tariff-table td,.addon-table th,.addon-table td{padding:12px 16px}
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+  var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+
+  function getRate(n){
+    if(n>200)return 18;if(n>150)return 19;if(n>100)return 20;
+    if(n>75)return 21;if(n>50)return 22;if(n>20)return 23;
+    if(n>10)return 24;if(n>5)return 25;return 26;
+  }
+  function fmt(n){return Math.round(n).toLocaleString('uk-UA');}
+  function calculate(){
+    var ordersPerDay=parseFloat(document.getElementById('calcOrders').value)||0;
+    var weight=parseFloat(document.getElementById('calcWeight').value)||2;
+    var volumeM3=parseFloat(document.getElementById('calcVolume').value)||0;
+    var avgItems=parseFloat(document.getElementById('calcItems').value)||1;
+    var rate=getRate(ordersPerDay);
+    var totalOrders=ordersPerDay*22;
+    var shipping=totalOrders*rate;
+    var storage=volumeM3*650;
+    var receiveCost=3;
+    if(weight>2)receiveCost+=((weight-2)*0.5);
+    var receiving=totalOrders*receiveCost;
+    var copacking=0;
+    if(avgItems>1){copacking=totalOrders*(avgItems-1)*2.5;}
+    var total=shipping+storage+receiving+copacking;
+    if(total<5000)total=5000;
+    var ownRent=Math.max(Math.ceil(ordersPerDay/50),1)*15000;
+    var ownStaff=Math.max(Math.ceil(ordersPerDay/30),2)*15000;
+    var ownWms=5000;
+    var ownUtils=2000;
+    var ownMaterials=Math.round(ordersPerDay*22*1.5);
+    var ownTotal=ownRent+ownStaff+ownWms+ownUtils+ownMaterials;
+    var timeOwnHours=Math.round(ordersPerDay*0.15*22);
+    var timeFreed=Math.min(timeOwnHours,160);
+    var timeMarketing=Math.round(timeFreed*0.6);
+    var timePersonal=Math.round(timeFreed*0.3);
+    var costPerOrder=totalOrders>0?(total/totalOrders):0;
+    document.getElementById('resShipping').textContent=fmt(shipping);
+    document.getElementById('resShippingRate').textContent='('+rate+' грн/замовлення)';
+    document.getElementById('resStorage').textContent=fmt(storage);
+    document.getElementById('resReceiving').textContent=fmt(receiving);
+    document.getElementById('resCopacking').textContent=fmt(copacking);
+    document.getElementById('resTotal').textContent=fmt(total);
+    document.getElementById('resCostPer').textContent=costPerOrder.toFixed(1);
+    document.getElementById('ownRent').textContent=fmt(ownRent);
+    document.getElementById('ownStaff').textContent=fmt(ownStaff);
+    document.getElementById('ownWms').textContent=fmt(ownWms);
+    document.getElementById('ownUtils').textContent=fmt(ownUtils);
+    document.getElementById('ownMaterials').textContent=fmt(ownMaterials);
+    document.getElementById('ownTotal').textContent=fmt(ownTotal);
+    var saving=ownTotal>0?Math.max(0,Math.round((1-total/ownTotal)*100)):0;
+    document.getElementById('resSaving').textContent=saving+'%';
+    document.getElementById('timeFreed').textContent=timeFreed;
+    document.getElementById('timeMarketing').textContent=timeMarketing;
+    document.getElementById('timePersonal').textContent=timePersonal;
+  }
+  ['calcOrders','calcWeight','calcVolume','calcItems'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',calculate);
+    document.getElementById(id).addEventListener('change',calculate);
+  });
+  calculate();
+});
+</script>
+</Base>
