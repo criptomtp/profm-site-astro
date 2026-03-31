@@ -71,6 +71,18 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
       if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
     });
   });
+  // Hero form handler (any form with id="heroForm")
+  var heroForm = document.getElementById('heroForm');
+  if(heroForm){
+    heroForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var inp = heroForm.querySelector('input[name="phone"]');
+      var ph = inp.value.trim();
+      if(ph.replace(/\D/g,'').length < 7){ inp.style.borderColor='#e63329'; return; }
+      fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+      heroForm.innerHTML='<p style="color:#22c55e;font-size:18px;font-weight:500">✅ Дякуємо! Передзвонимо.</p>';
+    });
+  }
   // Reveal animation
   if(typeof IntersectionObserver!=='undefined'){
     var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
