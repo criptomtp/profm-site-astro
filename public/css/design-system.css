@@ -1,0 +1,82 @@
+/* ==============================================
+   DESIGN-SYSTEM.CSS — Accessibility & contrast fixes
+   Lighthouse WCAG AA compliance (4.5:1 minimum)
+   Loaded after page styles to override low-contrast values
+   ============================================== */
+
+/* --- Text on dark backgrounds (min rgba 0.7 for AA) --- */
+
+/* Hero section */
+.hero-sub,
+.hero-text {
+  color: rgba(255,255,255,0.75) !important;
+}
+.hero-note {
+  color: rgba(255,255,255,0.65) !important;
+}
+.hero-stat-label {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Logos / clients */
+.logos-label {
+  color: rgba(255,255,255,0.8) !important;
+}
+.client-item {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Testimonials */
+.testi-author {
+  color: #fff !important;
+}
+.testi-company {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Problem/solution section */
+.prob-q {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* Footer */
+.footer p,
+.footer a {
+  color: rgba(255,255,255,0.65) !important;
+}
+.footer a:hover {
+  color: #fff !important;
+}
+.footer-bottom {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* Stat labels on dark bg */
+.stat-label {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+/* --- Muted text on light backgrounds --- */
+/* #aaa on white = 2.3:1 FAIL → #666 = 5.7:1 PASS */
+.logos-label[style*="light"],
+.card-muted {
+  color: #666 !important;
+}
+
+/* === Unlighthouse audit: contrast fixes === */
+.bo-badge {
+  color: rgba(255,255,255,0.85) !important;
+}
+p.sub,
+.sub {
+  color: rgba(255,255,255,0.75) !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999 !important;
+  opacity: 1 !important;
+}
+select {
+  color: #333 !important;
+}
+

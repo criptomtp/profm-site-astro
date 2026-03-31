@@ -1,0 +1,53 @@
+---
+interface Props { lang: 'uk' | 'ru' | 'en'; }
+const { lang } = Astro.props;
+
+const t = {
+  uk: { title:'Готовий делегувати<br>логістику?', sub:'Залиш номер — передзвонимо протягом 15 хвилин і розрахуємо умови', btn:'Передзвоніть мені →', c1:'Безкоштовна консультація', c2:"Без зобов'язань", c3:'Договір за 1 день', thanks:'/ua/thanks/' },
+  ru: { title:'Готовы передать<br>логистику?', sub:'Оставьте номер — перезвоним в течение 15 минут и подготовим расчёт', btn:'Перезвоните мне →', c1:'Бесплатная консультация', c2:'Без обязательств', c3:'Договор за 1 день', thanks:'/thanks/' },
+  en: { title:'Ready to outsource<br>logistics?', sub:'Leave your number — we call back within 15 minutes with a custom quote', btn:'Call me back →', c1:'Free consultation', c2:'No obligations', c3:'Contract in 1 day', thanks:'/en/thanks/' },
+}[lang];
+---
+<section class="final-cta" id="ctaSection">
+<div class="ctr">
+  <h2 set:html={t.title} />
+  <p class="sub">{t.sub}</p>
+  <form class="final-form" id="finalForm">
+    <input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Phone">
+    <button type="submit">{t.btn}</button>
+  </form>
+  <div class="final-checks">
+    <span>✓ {t.c1}</span><span>✓ {t.c2}</span><span>✓ {t.c3}</span>
+  </div>
+</div>
+</section>
+
+<style>
+.final-cta{padding:100px 0;background:#e63329;color:#fff;text-align:center}
+.final-cta h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
+.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
+.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
+.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;outline:none}
+.final-form input::placeholder{color:rgba(255,255,255,.45)}
+.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background .3s}
+.final-form button:hover{background:#222}
+.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
+@media(max-width:768px){.final-form{flex-direction:column}}
+</style>
+
+<script is:inline>
+(function(){
+  var form=document.getElementById('finalForm');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ph=form.querySelector('input[name="phone"]').value;
+    var clean=ph.replace(/\D/g,'');
+    if(clean.length<12){form.querySelector('input').style.borderColor='#fff';return;}
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    form.innerHTML='<p style="color:#fff;font-size:18px">✅ Дякуємо!</p>';
+    var thanks=document.getElementById('ctaSection');
+    setTimeout(function(){window.location.href=thanks?thanks.closest('[data-thanks]')?.dataset.thanks||'/ua/thanks/':'/ua/thanks/';},1500);
+  });
+})();
+</script>

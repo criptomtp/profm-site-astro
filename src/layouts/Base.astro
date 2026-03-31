@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  lang?: 'uk' | 'ru' | 'en';
+  ogImage?: string;
+  ogType?: string;
+  schema?: string;
+  showCTA?: boolean;
+}
+
+const {
+  title,
+  description = '',
+  canonical = '',
+  lang = 'uk',
+  ogImage = 'https://fulfillmentmtp.com.ua/images/tild6331-3130-4038-a230-386232353066__img_4897.jpg',
+  ogType = 'website',
+  schema = '',
+  showCTA = true,
+} = Astro.props;
+
+const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  {canonical && <link rel="canonical" href={canonical} />}
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content={ogType}>
+  <meta property="og:locale" content={locale}>
+  <meta property="og:image" content={ogImage}>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  {schema && <Fragment set:html={schema} />}
+  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MV5WZT5');</script>
+  <link rel="stylesheet" href="/css/nav-styles.css">
+  <link rel="stylesheet" href="/css/design-system.css">
+  <slot name="head" />
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV5WZT5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <Header lang={lang} />
+  <main>
+    <slot />
+  </main>
+  {showCTA && <CTA lang={lang} />}
+  <Footer lang={lang} />
+  <script is:inline src="/js/lang-switcher.js"></script>
+</body>
+</html>

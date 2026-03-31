@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /ua/thanks/
+Disallow: /thanks/
+Disallow: /en/thanks/
+Disallow: /files/
+Disallow: /schedule/
+Disallow: /new/
+
+Sitemap: https://fulfillmentmtp.com.ua/sitemap.xml
