@@ -3,9 +3,9 @@ interface Props { lang: 'uk' | 'ru' | 'en'; }
 const { lang } = Astro.props;
 
 const t = {
-  uk: { title:'Готовий делегувати<br>логістику?', sub:'Залиш номер — передзвонимо протягом 15 хвилин і розрахуємо умови', btn:'Передзвоніть мені →', c1:'Безкоштовна консультація', c2:"Без зобов'язань", c3:'Договір за 1 день', thanks:'/ua/thanks/', placeholder:'+380 __ ___ __ __' },
-  ru: { title:'Готовы передать<br>логистику?', sub:'Оставьте номер — перезвоним в течение 15 минут и подготовим расчёт', btn:'Перезвоните мне →', c1:'Бесплатная консультация', c2:'Без обязательств', c3:'Договор за 1 день', thanks:'/thanks/', placeholder:'+380 __ ___ __ __' },
-  en: { title:'Ready to outsource<br>logistics?', sub:'Leave your number — we call back within 15 minutes with a custom quote', btn:'Call me back →', c1:'Free consultation', c2:'No obligations', c3:'Contract in 1 day', thanks:'/en/thanks/', placeholder:'+__ ___ ___ __ __' },
+  uk: { title:'Готовий делегувати<br>логістику?', sub:'Залиш номер — передзвонимо протягом 15 хвилин і розрахуємо умови', btn:'Передзвоніть мені →', c1:'Безкоштовна консультація', c2:"Без зобов'язань", c3:'Договір за 1 день', thanks:'/ua/thanks/', placeholder:'+380XXXXXXXXX' },
+  ru: { title:'Готовы передать<br>логистику?', sub:'Оставьте номер — перезвоним в течение 15 минут и подготовим расчёт', btn:'Перезвоните мне →', c1:'Бесплатная консультация', c2:'Без обязательств', c3:'Договор за 1 день', thanks:'/thanks/', placeholder:'+380XXXXXXXXX' },
+  en: { title:'Ready to outsource<br>logistics?', sub:'Leave your number — we call back within 15 minutes with a custom quote', btn:'Call me back →', c1:'Free consultation', c2:'No obligations', c3:'Contract in 1 day', thanks:'/en/thanks/', placeholder:'Your phone number' },
 }[lang];
 
 const isEn = lang === 'en';
@@ -15,7 +15,7 @@ const isEn = lang === 'en';
   <h2 set:html={t.title} />
   <p class="sub">{t.sub}</p>
   <form class="final-form" id="finalForm">
-    <input type="tel" name="phone" placeholder={t.placeholder} required autocomplete="tel" aria-label="Phone" maxlength={isEn ? "20" : "13"}>
+    <input type="tel" name="phone" placeholder={t.placeholder} required autocomplete="tel" aria-label="Phone" maxlength={isEn ? "25" : "19"}>
     <button type="submit">{t.btn}</button>
   </form>
   <div class="final-checks">
@@ -79,7 +79,9 @@ const isEn = lang === 'en';
       localStorage.setItem('mtp_crm_leads', JSON.stringify(leads));
     } catch(err){}
 
-    form.innerHTML = '<p style="color:#fff;font-size:18px">✅</p>';
+    var lang = document.documentElement.lang;
+    var msg = lang === 'en' ? 'Thank you!' : lang === 'ru' ? 'Спасибо!' : 'Дякуємо!';
+    form.innerHTML = '<p style="color:#fff;font-size:18px">\u2705 ' + msg + '</p>';
     setTimeout(function(){ window.location.href = thanksUrl; }, 1200);
   });
 })();
