@@ -23,6 +23,9 @@ import Base from '../layouts/Base.astro';
 <div class="badge">КАЛЬКУЛЯТОР</div>
 <h1>Калькулятор стоимости<br>фулфилмента</h1>
 <p class="hero-sub">Рассчитайте стоимость фулфилмента за 30 секунд. Актуальные тарифы 2026 года с динамической скидкой за объём.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт →</button></form>
+<div class="hero-note">Бесплатная консультация · Перезвоним за 15 минут</div>
+
 <div class="hero-stats">
 <div>
 <div class="hero-stat-val">от 18 грн</div>
@@ -454,5 +457,19 @@ ddMenu.classList.toggle('mobile-open');
 }
 }
 })();
+});
+</script>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var form=document.getElementById('heroForm');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ph=form.querySelector('input[name="phone"]').value.trim();
+    if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
+  });
 });
 </script>

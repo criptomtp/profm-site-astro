@@ -23,6 +23,9 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">КАЛЬКУЛЯТОР</div>
 <h1>Калькулятор вартості<br>фулфілменту</h1>
 <p class="hero-sub">Розрахуйте вартість фулфілменту за 30 секунд. Актуальні тарифи 2026 року з динамічною знижкою за обсяг.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок →</button></form>
+<div class="hero-note">Безкоштовна консультація · Передзвонимо за 15 хвилин</div>
+
 <div class="hero-stats">
 <div><div class="hero-stat-val">від 18 грн</div><div class="hero-stat-label">за відправку</div></div>
 <div><div class="hero-stat-val">650 грн</div><div class="hero-stat-label">м&sup3;/мес зберігання</div></div>
@@ -301,3 +304,17 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 </Base>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var form=document.getElementById('heroForm');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ph=form.querySelector('input[name="phone"]').value.trim();
+    if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
+  });
+});
+</script>
