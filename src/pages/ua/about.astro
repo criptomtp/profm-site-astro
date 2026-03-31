@@ -23,6 +23,11 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">ПРО КОМПАНІЮ</div>
 <h1>Як працює фулфілмент<br>склад MTP Group</h1>
 <p class="hero-sub">Від маленького складу у 2015 до 60&nbsp;000+ відправлень на місяць &mdash; наша історія, технології та команда, яка стоїть за кожною посилкою.</p>
+<form class="hero-form" id="heroForm">
+  <input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel">
+  <button type="submit">Отримати розрахунок →</button>
+</form>
+<div class="hero-note">Безкоштовна консультація · Передзвонимо за 15 хвилин</div>
 </div>
 </section>
 
@@ -219,6 +224,12 @@ import Base from '../../layouts/Base.astro';
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero h1{font-family:var(--fd);font-size:clamp(42px,6vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
 .hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:620px}
+.hero-form{display:flex;gap:12px;max-width:460px;margin-top:28px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:#fff;color:#000}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
 
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
@@ -285,6 +296,15 @@ import Base from '../../layouts/Base.astro';
 document.addEventListener('DOMContentLoaded', function(){
   var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
   document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+
+  var form=document.getElementById('heroForm');
+  if(form)form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ph=form.querySelector('input[name="phone"]').value;
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    form.innerHTML='<p style="color:#22c55e;font-size:18px">✅ Дякуємо!</p>';
+    setTimeout(function(){window.location.href='/ua/thanks/';},1500);
+  });
 });
 </script>
 </Base>
