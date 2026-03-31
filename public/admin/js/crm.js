@@ -368,55 +368,66 @@ function initDragDrop(){
 /* ===== OPEN LEAD MODAL ===== */
 function openLead(id){
   console.log('openLead called with id:', id, typeof id);
-  try{
   var leads=getLeads();
   var lead=leads.find(function(l){return l.id===id;});
-  if(!lead)return;
+  if(!lead){console.error('Lead not found:',id);return;}
+  
+  // Ensure all fields exist
+  lead.company=lead.company||'';
+  lead.contact=lead.contact||'';
+  lead.phone=lead.phone||'';
+  lead.email=lead.email||'';
+  lead.shipments=lead.shipments||0;
+  lead.type=lead.type||'other';
+  lead.source=lead.source||'site';
+  lead.status=lead.status||'new';
+  lead.nextContact=lead.nextContact||'';
+  lead.onboarding=lead.onboarding||[false,false,false,false,false,false,false];
+  lead.timeline=lead.timeline||[];
+  lead.comments=lead.comments||[];
+
   var m=document.getElementById('leadModal');
+  if(!m){console.error('leadModal not found');return;}
   m.dataset.leadId=id;
 
-  document.getElementById('lmTitle').textContent=(lead.company&&lead.company!=='')?lead.company:'Заявка #'+lead.id;
-  document.getElementById('lmCompany').value=lead.company;
-  document.getElementById('lmContact').value=lead.contact;
-  document.getElementById('lmPhone').value=lead.phone;
-  document.getElementById('lmEmail').value=lead.email;
-  document.getElementById('lmShipments').value=lead.shipments;
-  document.getElementById('lmType').value=lead.type;
-  document.getElementById('lmSource').value=lead.source;
-  document.getElementById('lmNextContact').value=lead.nextContact||'';
+  var el;
+  el=document.getElementById('lmTitle');if(el)el.textContent=lead.company||'Заявка #'+lead.id;
+  el=document.getElementById('lmCompany');if(el)el.value=lead.company;
+  el=document.getElementById('lmContact');if(el)el.value=lead.contact;
+  el=document.getElementById('lmPhone');if(el)el.value=lead.phone;
+  el=document.getElementById('lmEmail');if(el)el.value=lead.email;
+  el=document.getElementById('lmShipments');if(el)el.value=lead.shipments;
+  el=document.getElementById('lmType');if(el)el.value=lead.type;
+  el=document.getElementById('lmSource');if(el)el.value=lead.source;
+  el=document.getElementById('lmNextContact');if(el)el.value=lead.nextContact;
 
-  // Phone/email links
-  var phoneLink=document.getElementById('lmPhoneLink');
-  var emailLink=document.getElementById('lmEmailLink');
-  phoneLink.href=lead.phone?'tel:'+lead.phone:'#';
-  emailLink.href=lead.email?'mailto:'+lead.email:'#';
+  el=document.getElementById('lmPhoneLink');if(el)el.href=lead.phone?'tel:'+lead.phone:'#';
+  el=document.getElementById('lmEmailLink');if(el)el.href=lead.email?'mailto:'+lead.email:'#';
 
-  // Status pills
-  var pillsEl=document.getElementById('lmStatusPills');
-  pillsEl.innerHTML=STATUSES.map(function(s){
+  el=document.getElementById('lmStatusPills');
+  if(el)el.innerHTML=STATUSES.map(function(s){
     var active=lead.status===s.id?' active':'';
     return '<span class="status-pill'+active+'" style="background:'+s.color+';color:#fff" data-status="'+s.id+'" onclick="quickStatusChange(\''+s.id+'\')">'+s.label+'</span>';
   }).join('');
 
-  // Onboarding
-  var obDiv=document.getElementById('lmOnboarding');
-  obDiv.innerHTML=ONBOARDING_STEPS.map(function(step,i){
-    return '<label class="ob-step"><input type="checkbox" data-step="'+i+'"'+(lead.onboarding[i]?' checked':'')+' onchange="toggleStep('+id+','+i+',this.checked)"> '+step+'</label>';
+  el=document.getElementById('lmOnboarding');
+  if(el)el.innerHTML=ONBOARDING_STEPS.map(function(step,i){
+    var checked=lead.onboarding&&lead.onboarding[i]?' checked':'';
+    return '<label class="ob-step"><input type="checkbox"'+checked+' onchange="toggleStep('+id+','+i+',this.checked)"> '+step+'</label>';
   }).join('');
-  var done=lead.onboarding.filter(Boolean).length;
-  document.getElementById('lmObProgress').textContent=done+' з 7 виконано';
+  
+  var done=(lead.onboarding||[]).filter(Boolean).length;
+  el=document.getElementById('lmObProgress');if(el)el.textContent=done+' з 7 виконано';
 
-  // Timeline
   renderTimeline(lead);
-
-  // Comments
   renderComments(lead);
 
-  document.getElementById('lmNewComment').value='';
-  document.getElementById('lmTimelineNote').value='';
-  console.log('Opening modal for lead:', lead.company, lead.phone);
+  el=document.getElementById('lmNewComment');if(el)el.value='';
+  el=document.getElementById('lmTimelineNote');if(el)el.value='';
+
+  console.log('Opening modal now');
   m.classList.add('show');
-  }catch(err){console.error('openLead error:',err);alert('Помилка відкриття картки: '+err.message);}
+  console.log('Modal should be visible, classList:', m.classList.toString());
 }
 
 function quickStatusChange(newStatus){
