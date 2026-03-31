@@ -22,7 +22,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">ФУЛФИЛМЕНТ В УКРАИНЕ</div>
 <h1>Делегируй логистику.<br>Масштабируй бизнес.</h1>
 <p class="hero-sub">Принимаем, храним и отправляем ваши товары.<br>Вы занимаетесь продажами — мы остальным.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel"><button type="submit">Начать &#8594;</button></form>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380" autocomplete="tel" required autocomplete="tel"><button type="submit">Начать &#8594;</button></form>
 <div class="hero-note">Консультация бесплатная &#183; Перезвоним за 15 минут</div>
 </div>
 <div class="hero-stats">
@@ -186,24 +186,8 @@ document.addEventListener('DOMContentLoaded',function(){
 function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input[name="phone"]').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с главной RU',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Главная RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на главной RU',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/ru/thanks/';},1500);});}
 var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
 
-function applyPhoneMask(inp){
-inp.addEventListener('input',function(){
-var v=this.value.replace(/\D/g,'');
-if(v.startsWith('380'))v=v.slice(2);else if(v.startsWith('38'))v=v.slice(2);else if(v.startsWith('80'))v='0'+v.slice(2);
-var m='+38 (';
-if(v.length>0)m+=v.substring(0,3);
-if(v.length>=3)m+=') ';
-if(v.length>3)m+=v.substring(3,6);
-if(v.length>=6)m+=' ';
-if(v.length>6)m+=v.substring(6,8);
-if(v.length>=8)m+=' ';
-if(v.length>8)m+=v.substring(8,10);
-this.value=m;
-});
-inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});
-inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
+
 }
-document.querySelectorAll('input[type="tel"]').forEach(applyPhoneMask);
 });
 </script>
 

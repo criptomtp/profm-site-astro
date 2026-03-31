@@ -193,24 +193,8 @@ t.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefau
 });
 
 /* Phone mask +38(0XX)XXX-XX-XX */
-function applyPhoneMask(inp){
-inp.addEventListener('input',function(){
-var v=this.value.replace(/\D/g,'');
-if(v.startsWith('380'))v=v.slice(2);else if(v.startsWith('38'))v=v.slice(2);else if(v.startsWith('80'))v='0'+v.slice(2);
-var m='+38 (';
-if(v.length>0)m+=v.substring(0,3);
-if(v.length>=3)m+=') ';
-if(v.length>3)m+=v.substring(3,6);
-if(v.length>=6)m+=' ';
-if(v.length>6)m+=v.substring(6,8);
-if(v.length>=8)m+=' ';
-if(v.length>8)m+=v.substring(8,10);
-this.value=m;
-});
-inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});
-inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
+
 }
-document.querySelectorAll('input[type="tel"]').forEach(applyPhoneMask);
 
 /* Form handler: CRM localStorage + Telegram + redirect */
 function handleForm(form){
