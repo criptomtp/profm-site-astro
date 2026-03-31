@@ -185,6 +185,13 @@ import Base from '../../layouts/Base.astro';
 </section>
 
 <style is:global>
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:#e63329;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
 :root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
 .ctr{max-width:1200px;margin:0 auto;padding:0 24px}
 .hero{background:#111;color:#fff;padding:140px 20px 80px;text-align:center}
@@ -247,6 +254,8 @@ import Base from '../../layouts/Base.astro';
 .faq-item.open .faq-question::after{transform:rotate(45deg)}
 .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
 .faq-answer p{padding:0 28px 20px;color:#555;font-size:15px;line-height:1.7}
+
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
 </style>
 
 <script is:inline>
