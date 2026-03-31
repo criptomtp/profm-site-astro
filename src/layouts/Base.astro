@@ -82,6 +82,8 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
       var clean = ph.replace(/\D/g,'');
       if(clean.length < 10){ inp.style.borderColor='#e63329'; return; }
       fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+      // Save to CRM
+      try{var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');var mx=leads.reduce(function(m,l){return Math.max(m,l.id||0);},0);leads.push({id:mx+1,company:'',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'site',status:'new',date:new Date().toISOString().slice(0,10),comments:[{text:'Hero форма: '+location.pathname,date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false],timeline:[],nextContact:''});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));}catch(e){}
       var lang = document.documentElement.lang;
       var msg = lang === 'en' ? 'Thank you! We will call back.' : lang === 'ru' ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
       var url = lang === 'en' ? '/en/thanks/' : lang === 'ru' ? '/thanks/' : '/ua/thanks/';

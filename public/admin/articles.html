@@ -4,8 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>MTP Admin — Статті</title>
+<title>MTP Admin — Контент</title>
 <link rel="stylesheet" href="css/admin.css">
+<style>
+.lang-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:1px}
+.lang-ua{background:#ffd700;color:#000}
+.lang-ru{background:#e0e0e0;color:#333}
+.lang-en{background:#2196f3;color:#fff}
+.tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:2px solid #e0e0e0;padding-bottom:0}
+.tab{padding:10px 20px;cursor:pointer;border:none;background:none;font-size:14px;font-weight:500;color:#888;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit}
+.tab.active{color:#000;border-bottom-color:#e63329}
+.tab:hover{color:#000}
+.stats-row{display:flex;gap:16px;margin-bottom:24px}
+.stat-card{flex:1;padding:16px;border:1px solid #e0e0e0;border-radius:8px;text-align:center}
+.stat-val{font-size:28px;font-weight:700}
+.stat-label{font-size:12px;color:#888;margin-top:4px}
+code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:12px}
+</style>
 </head>
 <body>
 <nav class="admin-nav">
@@ -14,7 +29,7 @@
 <div class="admin-links">
 <a href="dashboard.html">Дашборд</a>
 <a href="seo.html">SEO</a>
-<a href="articles.html">Статті</a>
+<a href="articles.html" class="active">Контент</a>
 <a href="crm.html">CRM</a>
 </div>
 <button class="admin-logout" onclick="logout()">Вийти</button>
@@ -22,17 +37,44 @@
 </nav>
 
 <main class="admin-main">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
-<h1 class="admin-title" style="margin-bottom:0">Статті блогу</h1>
-<a href="new-article.html" class="btn btn-primary">+ Нова стаття</a>
-</div>
-<p class="admin-subtitle">Всі опубліковані статті MTP Group</p>
+<h1 class="admin-title">Контент сайту</h1>
 
+<div class="stats-row">
+<div class="stat-card"><div class="stat-val" style="color:#ffd700">35</div><div class="stat-label">UA статей</div></div>
+<div class="stat-card"><div class="stat-val" style="color:#888">32</div><div class="stat-label">RU статей</div></div>
+<div class="stat-card"><div class="stat-val" style="color:#2196f3">35</div><div class="stat-label">EN статей</div></div>
+<div class="stat-card"><div class="stat-val">33</div><div class="stat-label">Основних сторінок</div></div>
+</div>
+
+<div class="tabs">
+<button class="tab active" onclick="showTab('articles',this)">Блог-статті <span id="articleCount"></span></button>
+<button class="tab" onclick="showTab('pages',this)">Основні сторінки</button>
+</div>
+
+<div id="articlesTab">
+<div style="display:flex;gap:8px;margin-bottom:16px">
+<select id="langFilter" onchange="renderArticles()" style="padding:8px;border:1px solid #e0e0e0;border-radius:6px">
+<option value="all">Всі мови</option>
+<option value="UA">UA</option>
+<option value="RU">RU</option>
+<option value="EN">EN</option>
+</select>
+</div>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Заголовок</th><th>Дата</th><th>Мова</th><th>Дії</th></tr></thead>
+<thead><tr><th>Заголовок</th><th>Мова</th><th>Дії</th></tr></thead>
 <tbody id="articlesBody"></tbody>
 </table>
+</div>
+</div>
+
+<div id="pagesTab" style="display:none">
+<div class="table-wrap">
+<table>
+<thead><tr><th>Сторінка</th><th>Мова</th><th>URL</th><th>Дії</th></tr></thead>
+<tbody id="pagesBody"></tbody>
+</table>
+</div>
 </div>
 </main>
 
@@ -41,6 +83,14 @@
 <script>
 checkAuth();
 renderArticles();
+renderPages();
+
+function showTab(tab, btn) {
+  document.getElementById('articlesTab').style.display = tab === 'articles' ? '' : 'none';
+  document.getElementById('pagesTab').style.display = tab === 'pages' ? '' : 'none';
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
+}
 </script>
 </body>
 </html>

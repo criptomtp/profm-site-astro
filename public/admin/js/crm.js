@@ -62,10 +62,21 @@ function getLeads(){
     return JSON.parse(JSON.stringify(defaultLeads));
   }
   var leads=JSON.parse(d);
-  // Migration: add missing fields
+  // Migration: add missing fields + fix site form leads
   leads.forEach(function(l){
     if(!l.timeline) l.timeline=[];
     if(l.nextContact===undefined) l.nextContact='';
+    if(!l.company && !l.contact && l.phone) l.company='Заявка з сайту';
+    if(!l.status) l.status='new';
+    if(!l.source) l.source='site';
+    if(!l.type) l.type='other';
+    if(!l.comments) l.comments=[];
+    if(!l.onboarding) l.onboarding=[false,false,false,false,false,false,false];
+    if(!l.shipments) l.shipments=0;
+    if(!l.email) l.email='';
+    if(!l.contact) l.contact='';
+    if(!l.date) l.date=new Date().toISOString().slice(0,10);
+    if(typeof l.id !== 'number') l.id=Date.now()+Math.random();
   });
   return leads;
 }
