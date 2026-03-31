@@ -1,0 +1,233 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент для интернет-магазина","description":"Полный цикл логистики для e-commerce: приём товара, хранение, комплектация, упаковка и отправка заказов по Украине","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправку (200+ заказов/день)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://fulfillmentmtp.com.ua/services"},{"@type":"ListItem","position":3,"name":"Фулфилмент для интернет-магазина","item":"https://fulfillmentmtp.com.ua/fulfilment-dlya-internet-magazynu/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит фулфилмент для интернет-магазина?","acceptedAnswer":{"@type":"Answer","text":"Отправка — от 18 грн/заказ (200+ заказов/день). Хранение — от 650 грн/м\u00b3/мес. Минимальный платёж — 5 000 грн/мес. Цена снижается с ростом объёмов."}},{"@type":"Question","name":"Как быстро можно начать работу?","acceptedAnswer":{"@type":"Answer","text":"Подключение занимает 1-3 дня: консультация, интеграция с CRM, передача товара на склад, тестовые отправки и запуск."}},{"@type":"Question","name":"С какими платформами вы интегрируетесь?","acceptedAnswer":{"@type":"Answer","text":"KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka и любая платформа с API."}},{"@type":"Question","name":"Какой минимальный объём заказов?","acceptedAnswer":{"@type":"Answer","text":"Мы работаем от 5 заказов в день. Для меньших объёмов действует минимальный платёж 5 000 грн/мес."}},{"@type":"Question","name":"Как отслеживать заказы и остатки?","acceptedAnswer":{"@type":"Answer","text":"Через личный кабинет в WMS: остатки в реальном времени, статусы заказов, отчёты по отправкам и возвратам."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м\u00b2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Фулфилмент для интернет-магазина | MTP Group"
+  description="Фулфилмент услуги для интернет-магазинов: хранение, упаковка, отправка от 18 грн/заказ. 6 000 отправок/день, 2 склада под Киевом."
+  canonical="https://fulfillmentmtp.com.ua/fulfilment-dlya-internet-magazynu/"
+  lang="ru"
+  ogImage="https://fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.jpg"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="ru" href="https://fulfillmentmtp.com.ua/fulfilment-dlya-internet-magazynu/">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">ФУЛФИЛМЕНТ</div>
+<h1>Фулфилмент для<br>интернет-магазина</h1>
+<p class="hero-sub">Вы продаёте &mdash; мы отправляем. Приём товара, хранение, упаковка и доставка заказов по всей Украине. От 18&nbsp;грн за отправку.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
+<div class="hero-note">Бесплатная консультация &#183; Индивидуальный расчёт за 15 мин</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">6 000</div><div class="hero-stat-label">отправок/день</div></div>
+<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">активных клиентов</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 сек</div><div class="hero-stat-label">сборка заказа</div></div>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits"><div class="ctr">
+<div class="badge badge-dark">ПРЕИМУЩЕСТВА</div>
+<h2 class="sec-h2">Почему интернет-магазины выбирают MTP</h2>
+<div class="ben-grid">
+<div class="ben-card reveal"><div class="ben-num">30"</div><h3>Сборка за 30 секунд</h3><p>Конвейерные упаковочные станции и автоматизация WMS &mdash; каждый заказ собран и промаркирован за полминуты</p></div>
+<div class="ben-card reveal"><div class="ben-num">17</div><h3>17 дней на НП бесплатно</h3><p>Хранение посылок на Новой Почте 17 дней без дополнительных расходов. Бесплатный возврат через НП</p></div>
+<div class="ben-card reveal"><div class="ben-num">8 ч</div><h3>8 часов в месяц</h3><p>Именно столько времени тратит средний клиент на логистику после перехода на фулфилмент. Остальное &mdash; маркетинг и продажи</p></div>
+<div class="ben-card reveal"><div class="ben-num">API</div><h3>Интеграция за 2 часа</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; подключение в день обращения</p></div>
+<div class="ben-card reveal"><div class="ben-num">3x</div><h3>3 генератора + Starlink</h3><p>Бесперебойная работа даже во время блэкаутов. 2 оптоволоконных провайдера &mdash; ни одного дня простоя с 2022 года</p></div>
+<div class="ben-card reveal"><div class="ben-num">99.5%</div><h3>Точность заказов</h3><p>Сканирование штрих-кодов на каждом этапе, фото-фиксация &mdash; минимум ошибок, минимум рекламаций</p></div>
+</div>
+</div></section>
+
+<!-- CASE STUDY -->
+<section class="case"><div class="ctr">
+<div class="badge">КЕЙС КЛИЕНТА</div>
+<h2 class="sec-h2">Интернет-магазин косметики: с 80 до 400 заказов в день</h2>
+<div class="case-inner">
+<div class="case-text">
+<p>Магазин натуральной косметики обратился в MTP Group, когда объём заказов превысил 80 в день. Два упаковщика не справлялись, посылки отправлялись с задержкой, Новая Почта начала штрафовать за поздние отправки.</p>
+<blockquote>&laquo;Мы тратили 6 часов в день на упаковку вместо того, чтобы запускать новые продукты и работать с блогерами&raquo;</blockquote>
+<p><strong>Решение MTP:</strong> полное подключение за 2 дня. Интеграция с KeyCRM, перевозка 3 000 SKU на склад, настройка брендированной упаковки с тишью и наклейками. Через месяц клиент увеличил рекламный бюджет в 3 раза, потому что логистика больше не была ограничением.</p>
+</div>
+<div class="case-stats reveal">
+<div class="case-stat"><div class="case-stat-val">80 &rarr; 400</div><div class="case-stat-label">заказов/день</div></div>
+<div class="case-stat"><div class="case-stat-val">&minus;70%</div><div class="case-stat-label">расходов на логистику</div></div>
+<div class="case-stat"><div class="case-stat-val">2 дня</div><div class="case-stat-label">полное подключение</div></div>
+</div>
+</div>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">ТАРИФЫ 2026</div>
+<h2 class="sec-h2">Сколько стоит фулфилмент</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>200+ заказов/день</span><span>от 18 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>100-199 заказов/день</span><span>от 20 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>50-99 заказов/день</span><span>от 22 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>0-49 заказов/день</span><span>от 26 грн</span></div>
+<div class="price-row"><span>Хранение</span><span>за м&sup3;/месяц</span><span>от 650 грн</span></div>
+<div class="price-row"><span>Приём товара</span><span>за единицу</span><span>от 3 грн</span></div>
+<div class="price-row price-highlight"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн</span></div>
+</div>
+<p class="price-note">Цена снижается с ростом объёмов. Точный расчёт &mdash; бесплатно за 15 минут.</p>
+<div class="price-cta"><button onclick="document.getElementById('finalForm').querySelector('input').focus();window.scrollTo({top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'})">Рассчитать для моего магазина &#8594;</button></div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Частые вопросы</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент для интернет-магазина?</button><div class="faq-a"><p>Отправка &mdash; от 18 грн за заказ при 200+ отправок/день. Хранение &mdash; от 650 грн за м&sup3;/мес. Минимальный платёж &mdash; 5 000 грн/мес. Чем больше объём &mdash; тем ниже цена за единицу.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как быстро можно начать работу?</button><div class="faq-a"><p>Подключение занимает 1-3 дня. День 1: консультация, договор, интеграция с CRM. День 2: передача товара на склад, сканирование в WMS. День 3: тестовые отправки и запуск. Большинство клиентов начинают отправлять заказы уже на 2-й день.</p></div></div>
+<div class="faq-item"><button class="faq-q">С какими CRM и платформами вы интегрируетесь?</button><div class="faq-a"><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka. Любая платформа с API &mdash; интеграция за 2-4 часа.</p></div></div>
+<div class="faq-item"><button class="faq-q">Какой минимальный объём заказов для старта?</button><div class="faq-a"><p>Мы работаем даже с 5 заказами в день. Для небольших объёмов действует минимальный месячный платёж 5 000 грн, покрывающий базовые услуги хранения и отправки.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как отслеживать заказы и остатки на складе?</button><div class="faq-a"><p>Через личный кабинет в нашей WMS-системе. Остатки в реальном времени, статусы каждого заказа, отчёты по отправкам и возвратам. Доступ 24/7 с любого устройства.</p></div></div>
+<div class="faq-item"><button class="faq-q">Работаете ли вы с возвратами?</button><div class="faq-a"><p>Да. Возвраты через Новую Почту &mdash; бесплатные (хранение 17 дней без оплаты). Мы принимаем возвращённый товар, проверяем состояние, возвращаем на полку или откладываем для списания &mdash; всё через WMS с фото-фиксацией.</p></div></div>
+<div class="faq-item"><button class="faq-q">Что будет если отключат электричество?</button><div class="faq-a"><p>На обоих складах установлено 3 генератора, подключён Starlink и 2 оптоволоконных провайдера. С 2022 года ни одного дня простоя из-за отключения. Заказы отправляются по графику независимо от ситуации с энергосетью.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section reveal">
+<div class="ctr">
+<div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
+<h2>Фулфилмент для интернет-магазина: как это работает и кому подходит</h2>
+<div class="article-content">
+<h3>Что такое фулфилмент для интернет-магазина?</h3>
+<p>Фулфилмент &mdash; это полный аутсорс складской логистики для интернет-магазина. Вместо того чтобы арендовать склад, нанимать упаковщиков и каждый день ездить на почту, вы передаёте весь этот процесс специализированному оператору. Оператор принимает ваш товар на склад, хранит его в организованной системе, а когда поступает заказ &mdash; автоматически комплектует, упаковывает и отправляет через Новую Почту или другого перевозчика.</p>
+<p>Для покупателя ничего не меняется &mdash; он получает посылку как обычно. Для вас меняется всё: вместо 6 часов в день на логистику вы тратите 8 часов в месяц на просмотр отчётов.</p>
+
+<h3>Когда интернет-магазину пора переходить на фулфилмент?</h3>
+<p>Если вы отправляете более 30 заказов в день и упаковка занимает более 3 часов &mdash; это первый сигнал. Другие признаки: пропущенные заборы Новой Почты, путаница в остатках, возвраты которые копятся без обработки, и самое главное &mdash; вы тратите время на упаковку вместо маркетинга и развития ассортимента.</p>
+<p>По опыту MTP Group, оптимальный момент для перехода &mdash; когда объём стабильно превышает 50 заказов в день. Но мы работаем и с магазинами от 5 заказов &mdash; для них действует минимальный месячный платёж.</p>
+
+<h3>Сколько стоит фулфилмент в Украине в 2026 году?</h3>
+<p>Стоимость фулфилмента складывается из трёх компонентов: отправка (от 18 грн за заказ), хранение (от 650 грн за м&sup3; в месяц) и приём товара (от 3 грн за единицу). Минимальный месячный платёж &mdash; 5 000 грн. Цена за отправку снижается с ростом объёма: при 200+ заказах в день &mdash; от 18 грн, при 50-99 &mdash; от 22 грн.</p>
+<p>Для сравнения: содержание собственного склада (аренда + зарплаты + коммуналка + упаковочные материалы) обходится минимум в 40 000-60 000 грн в месяц. Фулфилмент при тех же объёмах &mdash; от 15 000-25 000 грн. Разница &mdash; это деньги, которые вы можете инвестировать в рекламу и рост.</p>
+
+<h3>Как выбрать фулфилмент-оператора?</h3>
+<p>Ищите оператора с минимум 5-летним опытом, собственными складами (не субаренда), интеграцией с вашей CRM и главное &mdash; со статусом партнёра Новой Почты. MTP Group входит в ТОП-200 клиентов Новой Почты, что означает приоритетные тарифы на доставку, выделенные окна забора и ускоренное решение претензий. Обязательно посетите склад лично или через видеозвонок &mdash; увидите процессы вживую.</p>
+
+<h3>Что происходит после подключения?</h3>
+<p>Типичный путь клиента MTP: день 1 &mdash; консультация и договор. День 2 &mdash; передача товара, интеграция CRM, тестовые отправки. День 3 &mdash; полноценный запуск. Далее заказы поступают автоматически, склад упаковывает и отправляет, вы просматриваете дашборд раз в неделю. За 10 лет и 150+ клиентов мы отработали этот процесс до автоматизма &mdash; 30 секунд на сборку одного заказа, до 6 000 отправок в день.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta" id="ctaSection"><div class="ctr">
+<h2>Готовы передать логистику<br>профессионалам?</h2>
+<p class="sub">Оставьте номер &mdash; перезвоним в течение 15 минут и подготовим индивидуальный расчёт</p>
+<form class="final-form" id="finalForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Перезвоните мне &#8594;</button></form>
+<div class="final-checks"><span>&#10003; Бесплатная консультация</span><span>&#10003; Без обязательств</span><span>&#10003; Договор за 1 день</span></div>
+</div></section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
+.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
+.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.benefits{padding:100px 0}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
+.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
+.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+.case{padding:100px 0;background:#0a0a0a;color:#fff}
+.case-inner{display:flex;gap:80px;align-items:center}
+.case-text{flex:1.2}.case-text blockquote{font-family:var(--fd);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);line-height:1.5;border-left:3px solid var(--red);padding-left:20px;margin:20px 0}
+.case-text p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px}
+.case-stats{flex:.8;display:flex;flex-direction:column;gap:32px}
+.case-stat{text-align:center;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:8px}
+.case-stat-val{font-size:36px;font-weight:300;margin-bottom:4px}.case-stat-label{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.pricing{padding:100px 0;background:var(--gray)}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row:not(.price-header):hover{background:#fff}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+.price-cta{text-align:center}
+.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
+.price-cta button:hover{background:#c42b22}
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
+.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
+.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
+.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
+.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.final-form input::placeholder{color:rgba(255,255,255,.45)}.final-form input:focus{border-color:#fff}
+.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
+.final-form button:hover{background:#222}
+.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
+.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
+.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
+
+@media(max-width:768px){
+.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
+.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
+.ben-grid{grid-template-columns:1fr}
+.case-inner{flex-direction:column;gap:40px}
+.final-form{flex-direction:column}
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.faq-a');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+function applyMask(inp){inp.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.startsWith('380'))v=v.slice(2);else if(v.startsWith('38'))v=v.slice(2);var m='+38 (';if(v.length>0)m+=v.substring(0,3);if(v.length>=3)m+=') ';if(v.length>3)m+=v.substring(3,6);if(v.length>=6)m+=' ';if(v.length>6)m+=v.substring(6,8);if(v.length>=8)m+=' ';if(v.length>8)m+=v.substring(8,10);this.value=m;});inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});}
+document.querySelectorAll('input[type="tel"]').forEach(applyMask);
+function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Фулфилмент для интернет-магазина',contact:'',phone:ph,email:'',shipments:0,type:'ecommerce',source:'SEO landing fulfilment-dlya-internet-magazynu (RU)',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма: фулфилмент для интернет-магазина',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center"><p style="color:#22c55e;font-size:18px;font-weight:500">Спасибо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/';},1500);});}
+var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
+var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
+});
+</script>

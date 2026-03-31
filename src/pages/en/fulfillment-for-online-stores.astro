@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Fulfillment for Online Stores","description":"Full-cycle e-commerce logistics: receiving goods, storage, picking, packing and shipping orders across Ukraine","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"From 18 UAH per shipment (200+ orders/day)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://fulfillmentmtp.com.ua/en/services"},{"@type":"ListItem","position":3,"name":"Fulfillment for Online Stores","item":"https://fulfillmentmtp.com.ua/en/fulfillment-for-online-stores/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does fulfillment cost for an online store?","acceptedAnswer":{"@type":"Answer","text":"Shipping from 18 UAH/order (200+ orders/day). Storage from 650 UAH/m\u00b3/mo. Minimum fee 5,000 UAH/mo. Price decreases with volume growth."}},{"@type":"Question","name":"How quickly can we get started?","acceptedAnswer":{"@type":"Answer","text":"Onboarding takes 1-3 days: consultation, CRM integration, goods transfer to warehouse, test shipments and launch."}},{"@type":"Question","name":"Which platforms do you integrate with?","acceptedAnswer":{"@type":"Answer","text":"KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka and any platform with an API."}},{"@type":"Question","name":"What is the minimum order volume?","acceptedAnswer":{"@type":"Answer","text":"We work from 5 orders per day. For smaller volumes, a minimum monthly fee of 5,000 UAH applies."}},{"@type":"Question","name":"How do I track orders and inventory?","acceptedAnswer":{"@type":"Answer","text":"Through your personal WMS dashboard: real-time inventory, order statuses, shipment and return reports."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m\u00b2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Fulfillment for Online Stores | MTP Group"
+  description="Fulfillment services for online stores: storage, packing, shipping from 18 UAH/order. 6,000 shipments/day, 2 warehouses near Kyiv."
+  canonical="https://fulfillmentmtp.com.ua/en/fulfillment-for-online-stores/"
+  lang="en"
+  ogImage="https://fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.jpg"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="en" href="https://fulfillmentmtp.com.ua/en/fulfillment-for-online-stores/">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">FULFILLMENT</div>
+<h1>Fulfillment for<br>Online Stores</h1>
+<p class="hero-sub">You sell &mdash; we ship. Goods receiving, storage, packing and delivery across Ukraine. From 18&nbsp;UAH per shipment.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote &#8594;</button></form>
+<div class="hero-note">Free consultation &#183; Custom quote in 15 min</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">6,000</div><div class="hero-stat-label">shipments/day</div></div>
+<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">active clients</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 sec</div><div class="hero-stat-label">order picking</div></div>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits"><div class="ctr">
+<div class="badge badge-dark">BENEFITS</div>
+<h2 class="sec-h2">Why online stores choose MTP</h2>
+<div class="ben-grid">
+<div class="ben-card reveal"><div class="ben-num">30"</div><h3>30-second picking</h3><p>Conveyor packing stations and WMS automation &mdash; every order picked and labeled in half a minute</p></div>
+<div class="ben-card reveal"><div class="ben-num">17</div><h3>17 days free on Nova Poshta</h3><p>Parcels stored at Nova Poshta for 17 days at no extra cost. Free returns via Nova Poshta</p></div>
+<div class="ben-card reveal"><div class="ben-num">8 hrs</div><h3>8 hours per month</h3><p>That is how much time the average client spends on logistics after switching to fulfillment. The rest goes to marketing and sales</p></div>
+<div class="ben-card reveal"><div class="ben-num">API</div><h3>Integration in 2 hours</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; connected on the same day</p></div>
+<div class="ben-card reveal"><div class="ben-num">3x</div><h3>3 generators + Starlink</h3><p>Uninterrupted operations even during blackouts. 2 fibre-optic providers &mdash; zero days of downtime since 2022</p></div>
+<div class="ben-card reveal"><div class="ben-num">99.5%</div><h3>Order accuracy</h3><p>Barcode scanning at every stage, photo documentation &mdash; minimal errors, minimal claims</p></div>
+</div>
+</div></section>
+
+<!-- CASE STUDY -->
+<section class="case"><div class="ctr">
+<div class="badge">CLIENT CASE</div>
+<h2 class="sec-h2">Cosmetics store: from 80 to 400 orders per day</h2>
+<div class="case-inner">
+<div class="case-text">
+<p>A natural cosmetics store contacted MTP Group when order volume exceeded 80 per day. Two packers could not keep up, parcels were shipped late, and Nova Poshta started charging penalties for delayed pickups.</p>
+<blockquote>&laquo;We spent 6 hours a day packing instead of launching new products and working with influencers&raquo;</blockquote>
+<p><strong>MTP solution:</strong> full onboarding in 2 days. KeyCRM integration, transfer of 3,000 SKUs to the warehouse, branded packaging setup with tissue paper and stickers. Within a month the client tripled their ad budget because logistics was no longer the bottleneck.</p>
+</div>
+<div class="case-stats reveal">
+<div class="case-stat"><div class="case-stat-val">80 &rarr; 400</div><div class="case-stat-label">orders/day</div></div>
+<div class="case-stat"><div class="case-stat-val">&minus;70%</div><div class="case-stat-label">logistics costs</div></div>
+<div class="case-stat"><div class="case-stat-val">2 days</div><div class="case-stat-label">full onboarding</div></div>
+</div>
+</div>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">RATES 2026</div>
+<h2 class="sec-h2">How much does fulfillment cost</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Service</span><span>Condition</span><span>Price</span></div>
+<div class="price-row"><span>Order shipping</span><span>200+ orders/day</span><span>from 18 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>100-199 orders/day</span><span>from 20 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>50-99 orders/day</span><span>from 22 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>0-49 orders/day</span><span>from 26 UAH</span></div>
+<div class="price-row"><span>Storage</span><span>per m&sup3;/month</span><span>from 650 UAH</span></div>
+<div class="price-row"><span>Goods receiving</span><span>per unit</span><span>from 3 UAH</span></div>
+<div class="price-row price-highlight"><span>Minimum fee</span><span>per month</span><span>5,000 UAH</span></div>
+</div>
+<p class="price-note">Price decreases with volume growth. Exact quote &mdash; free within 15 minutes.</p>
+<div class="price-cta"><button onclick="document.getElementById('finalForm').querySelector('input').focus();window.scrollTo({top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'})">Calculate for my store &#8594;</button></div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">How much does fulfillment cost for an online store?</button><div class="faq-a"><p>Shipping &mdash; from 18 UAH per order at 200+ shipments/day. Storage &mdash; from 650 UAH per m&sup3;/mo. Minimum fee &mdash; 5,000 UAH/mo. The higher the volume &mdash; the lower the per-unit price.</p></div></div>
+<div class="faq-item"><button class="faq-q">How quickly can we get started?</button><div class="faq-a"><p>Onboarding takes 1-3 days. Day 1: consultation, contract, CRM integration. Day 2: goods transfer, WMS scanning. Day 3: test shipments and launch. Most clients start shipping on day 2.</p></div></div>
+<div class="faq-item"><button class="faq-q">Which CRM and platforms do you integrate with?</button><div class="faq-a"><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka. Any platform with an API &mdash; integration in 2-4 hours.</p></div></div>
+<div class="faq-item"><button class="faq-q">What is the minimum order volume to start?</button><div class="faq-a"><p>We work with as few as 5 orders per day. For smaller volumes, a minimum monthly fee of 5,000 UAH applies, covering basic storage and shipping services.</p></div></div>
+<div class="faq-item"><button class="faq-q">How do I track orders and inventory?</button><div class="faq-a"><p>Through your personal WMS dashboard. Real-time inventory, order statuses, shipment and return reports. 24/7 access from any device.</p></div></div>
+<div class="faq-item"><button class="faq-q">Do you handle returns?</button><div class="faq-a"><p>Yes. Nova Poshta returns are free (17 days of storage at no charge). We receive returned goods, inspect condition, re-shelve or set aside for write-off &mdash; all via WMS with photo documentation.</p></div></div>
+<div class="faq-item"><button class="faq-q">What happens during power outages?</button><div class="faq-a"><p>Both warehouses have 3 generators, Starlink, and 2 fibre-optic providers. Zero days of downtime since 2022. Orders ship on schedule regardless of the power grid situation.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section reveal">
+<div class="ctr">
+<div class="badge badge-dark">USEFUL INFO</div>
+<h2>Fulfillment for online stores: how it works and who it suits</h2>
+<div class="article-content">
+<h3>What is fulfillment for an online store?</h3>
+<p>Fulfillment is the complete outsourcing of warehouse logistics for an online store. Instead of renting a warehouse, hiring packers and driving to the post office every day, you hand the entire process to a specialized operator. The operator receives your goods, stores them in an organized system, and when an order comes in &mdash; automatically picks, packs and ships via Nova Poshta or another carrier.</p>
+<p>For the buyer nothing changes &mdash; they receive their parcel as usual. For you everything changes: instead of 6 hours a day on logistics, you spend 8 hours a month reviewing reports.</p>
+
+<h3>When should an online store switch to fulfillment?</h3>
+<p>If you ship more than 30 orders a day and packing takes more than 3 hours &mdash; that is the first signal. Other signs: missed Nova Poshta pickups, inventory confusion, returns piling up without processing, and most importantly &mdash; you are spending time packing instead of marketing and growing your product range.</p>
+<p>In MTP Group's experience, the optimal time to switch is when volume consistently exceeds 50 orders per day. But we also work with stores from 5 orders &mdash; a minimum monthly fee applies for them.</p>
+
+<h3>How much does fulfillment cost in Ukraine in 2026?</h3>
+<p>Fulfillment cost consists of three components: shipping (from 18 UAH per order), storage (from 650 UAH per m&sup3; per month) and goods receiving (from 3 UAH per unit). Minimum monthly fee &mdash; 5,000 UAH. Per-shipment price decreases with volume: at 200+ orders/day &mdash; from 18 UAH, at 50-99 &mdash; from 22 UAH.</p>
+<p>For comparison: maintaining your own warehouse (rent + salaries + utilities + packing materials) costs at least 40,000-60,000 UAH per month. Fulfillment at the same volumes &mdash; from 15,000-25,000 UAH. The difference is money you can invest in advertising and growth.</p>
+
+<h3>How to choose a fulfillment operator?</h3>
+<p>Look for an operator with at least 5 years of experience, their own warehouses (not subleased), integration with your CRM, and most importantly &mdash; Nova Poshta partner status. MTP Group is among Nova Poshta's Top 200 clients, which means priority shipping rates, dedicated pickup windows and faster claim resolution. Be sure to visit the warehouse in person or via video call &mdash; see the processes live.</p>
+
+<h3>What happens after onboarding?</h3>
+<p>Typical MTP client journey: day 1 &mdash; consultation and contract. Day 2 &mdash; goods transfer, CRM integration, test shipments. Day 3 &mdash; full launch. After that, orders arrive automatically, the warehouse picks and ships, and you check the dashboard once a week. Over 10 years and 150+ clients we have refined this process to perfection &mdash; 30 seconds per order, up to 6,000 shipments per day.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta" id="ctaSection"><div class="ctr">
+<h2>Ready to hand your logistics<br>to professionals?</h2>
+<p class="sub">Leave your number &mdash; we will call back within 15 minutes and prepare a custom quote</p>
+<form class="final-form" id="finalForm"><input type="tel" name="phone" placeholder="+38 (0__) ___ __ __" maxlength="19" required autocomplete="tel" aria-label="Phone"><button type="submit">Call me back &#8594;</button></form>
+<div class="final-checks"><span>&#10003; Free consultation</span><span>&#10003; No obligations</span><span>&#10003; Contract in 1 day</span></div>
+</div></section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
+.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
+.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.benefits{padding:100px 0}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
+.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
+.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+.case{padding:100px 0;background:#0a0a0a;color:#fff}
+.case-inner{display:flex;gap:80px;align-items:center}
+.case-text{flex:1.2}.case-text blockquote{font-family:var(--fd);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);line-height:1.5;border-left:3px solid var(--red);padding-left:20px;margin:20px 0}
+.case-text p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px}
+.case-stats{flex:.8;display:flex;flex-direction:column;gap:32px}
+.case-stat{text-align:center;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:8px}
+.case-stat-val{font-size:36px;font-weight:300;margin-bottom:4px}.case-stat-label{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.pricing{padding:100px 0;background:var(--gray)}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row:not(.price-header):hover{background:#fff}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+.price-cta{text-align:center}
+.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
+.price-cta button:hover{background:#c42b22}
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
+.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
+.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
+.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
+.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.final-form input::placeholder{color:rgba(255,255,255,.45)}.final-form input:focus{border-color:#fff}
+.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
+.final-form button:hover{background:#222}
+.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
+.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
+.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
+
+@media(max-width:768px){
+.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
+.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
+.ben-grid{grid-template-columns:1fr}
+.case-inner{flex-direction:column;gap:40px}
+.final-form{flex-direction:column}
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.faq-a');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+function applyMask(inp){inp.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.startsWith('380'))v=v.slice(2);else if(v.startsWith('38'))v=v.slice(2);var m='+38 (';if(v.length>0)m+=v.substring(0,3);if(v.length>=3)m+=') ';if(v.length>3)m+=v.substring(3,6);if(v.length>=6)m+=' ';if(v.length>6)m+=v.substring(6,8);if(v.length>=8)m+=' ';if(v.length>8)m+=v.substring(8,10);this.value=m;});inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});}
+document.querySelectorAll('input[type="tel"]').forEach(applyMask);
+function handleForm(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value;var clean=ph.replace(/\D/g,'');if(clean.length<12){form.querySelector('input').style.borderColor='#e63329';return;}var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Fulfillment for online stores',contact:'',phone:ph,email:'',shipments:0,type:'ecommerce',source:'SEO landing en/fulfillment-for-online-stores',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form: fulfillment for online stores (EN)',date:new Date().toLocaleString('en-GB')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center"><p style="color:#22c55e;font-size:18px;font-weight:500">Thank you!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/';},1500);});}
+var hf=document.getElementById('heroForm');if(hf)handleForm(hf);
+var ff=document.getElementById('finalForm');if(ff)handleForm(ff);
+});
+</script>

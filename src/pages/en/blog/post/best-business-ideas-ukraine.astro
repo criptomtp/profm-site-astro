@@ -112,4 +112,23 @@ article img{max-width:100%;height:auto;border-radius:8px;margin:16px 0}
 article table{width:100%;border-collapse:collapse;margin:16px 0}
 article th,article td{border:1px solid #e0e0e0;padding:10px 14px;text-align:left;font-size:15px}
 article th{background:#f5f5f5;font-weight:600}
+.faq-section{margin:40px 0 0}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-q{width:100%;padding:18px 0;font-size:17px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:22px;color:#e63329;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:15px;color:#555;line-height:1.7}
+.faq-item.open .faq-a{padding-bottom:16px}
 </style>
+
+<script is:inline>
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement;
+    var a=item.querySelector('.faq-a');
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+</script>

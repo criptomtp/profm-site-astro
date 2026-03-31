@@ -178,7 +178,7 @@ import Base from '../../layouts/Base.astro';
 .faq-q{display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:500}
 .faq-q span{font-size:22px;transition:transform .3s;color:var(--muted,#666)}.faq-item.open .faq-q span{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:15px;color:var(--muted,#666);line-height:1.7}
-.faq-item.open .faq-a{max-height:300px;padding-top:16px}
+.faq-item.open .faq-a{padding-top:16px}
 
 .seo-article{padding:100px 0}
 .seo-article h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;margin-bottom:40px}
@@ -220,11 +220,14 @@ function resetT(){clearInterval(timer);timer=setInterval(function(){slideTo(cs+1
 }
 
 /* FAQ accordion */
-document.querySelectorAll('.faq-item').forEach(function(item){
-item.addEventListener('click',function(){
-document.querySelectorAll('.faq-item').forEach(function(other){if(other!==item)other.classList.remove('open');});
-item.classList.toggle('open');
-});
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement;
+    var a=item.querySelector('.faq-a');
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
 });
 
 /* Phone mask */
