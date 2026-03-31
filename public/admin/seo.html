@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTP Admin — SEO Аналітика</title>
+<link rel="stylesheet" href="css/admin.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<nav class="admin-nav">
+<div class="admin-nav-inner">
+<div class="admin-logo"><span class="admin-logo-mtp">MTP</span> GROUP <span class="admin-logo-sub">ADMIN</span></div>
+<div class="admin-links">
+<a href="dashboard.html">Дашборд</a>
+<a href="seo.html" class="active">SEO</a>
+<a href="articles.html">Статті</a>
+<a href="crm.html">CRM</a>
+</div>
+<button class="admin-logout" onclick="logout()">Вийти</button>
+</div>
+</nav>
+
+<main class="admin-main">
+<h1 class="admin-title">SEO Аналітика</h1>
+<p class="admin-subtitle">Базова лінія зафіксована 23.03.2026</p>
+
+<div class="chart-wrap">
+<canvas id="posChart"></canvas>
+<div class="chart-note">
+&#x1F4CC; Базова лінія зафіксована 23.03.2026. Наступне оновлення після переключення домену.
+</div>
+</div>
+
+<div class="table-wrap">
+<div class="table-header"><h3>Всі запити</h3></div>
+<table>
+<thead><tr><th>Запит</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th><th>Тренд</th></tr></thead>
+<tbody id="seoTableBody"></tbody>
+</table>
+</div>
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/seo.js"></script>
+<script>
+checkAuth();
+initSeoChart();
+renderSeoTable(1);
+</script>
+</body>
+</html>

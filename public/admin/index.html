@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTP Admin — Вхід</title>
+<link rel="stylesheet" href="css/admin.css">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','653445518414631');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=653445518414631&ev=PageView&noscript=1"></noscript>
+</head>
+<body class="login-page">
+<div class="login-card">
+<div class="logo-line"><span>MTP</span> GROUP</div>
+<h1>Панель адміністратора</h1>
+<p style="color:#888;font-size:13px;margin-bottom:24px">Введіть дані для входу</p>
+<form onsubmit="handleLogin(event)">
+<input type="text" id="login" placeholder="Логін" autocomplete="username" required>
+<input type="password" id="password" placeholder="Пароль" autocomplete="current-password" required>
+<button type="submit" class="btn btn-primary">Увійти</button>
+</form>
+<div id="loginError" class="login-error"></div>
+</div>
+<script src="js/auth.js"></script>
+<script src="/js/lang-switcher.js"></script>
+</body>
+</html>

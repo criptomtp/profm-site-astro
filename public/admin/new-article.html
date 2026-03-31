@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTP Admin — Нова стаття</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav class="admin-nav">
+<div class="admin-nav-inner">
+<div class="admin-logo"><span class="admin-logo-mtp">MTP</span> GROUP <span class="admin-logo-sub">ADMIN</span></div>
+<div class="admin-links">
+<a href="dashboard.html">Дашборд</a>
+<a href="seo.html">SEO</a>
+<a href="articles.html">Статті</a>
+<a href="crm.html">CRM</a>
+</div>
+<button class="admin-logout" onclick="logout()">Вийти</button>
+</div>
+</nav>
+
+<main class="admin-main">
+<h1 class="admin-title">Нова стаття</h1>
+<p class="admin-subtitle">Створення нової публікації для блогу</p>
+
+<form onsubmit="publishArticle(event)" style="max-width:700px">
+<div class="form-group">
+<label>Заголовок</label>
+<input type="text" id="articleTitle" placeholder="Введіть заголовок статті" required>
+</div>
+
+<div class="form-group">
+<label>URL slug</label>
+<input type="text" id="articleSlug" placeholder="avtomatychno-z-zagolovku" required>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+<div class="form-group">
+<label>Мова</label>
+<select id="articleLang">
+<option value="UA">UA</option>
+<option value="RU">RU</option>
+<option value="EN">EN</option>
+</select>
+</div>
+<div class="form-group">
+<label>Категорія</label>
+<select id="articleCategory">
+<option value="blog">Блог</option>
+<option value="seo">SEO сторінка</option>
+<option value="news">Новина</option>
+</select>
+</div>
+<div class="form-group">
+<label>Дата публікації</label>
+<input type="date" id="articleDate" required>
+</div>
+</div>
+
+<div class="form-group">
+<label>Meta description</label>
+<textarea id="articleDesc" rows="3" maxlength="200" placeholder="Короткий опис для Google (до 155 символів)"></textarea>
+<div class="char-count" id="charCount">0/155</div>
+</div>
+
+<div class="form-group">
+<label>Зображення превʼю (URL)</label>
+<input type="text" id="articleImage" placeholder="https://fulfillmentmtp.com.ua/images/blog/...">
+</div>
+
+<div class="form-group">
+<label>Контент статті</label>
+<textarea id="articleContent" rows="20" placeholder="Введіть текст статті (HTML або Markdown)"></textarea>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn btn-outline" onclick="alert('Чернетку збережено (локально)')">Зберегти чернетку</button>
+<button type="submit" class="btn btn-primary">Опублікувати</button>
+</div>
+</form>
+</main>
+
+<div class="modal-overlay" id="publishModal">
+<div class="modal">
+<h3>Стаття готова до публікації</h3>
+<p>Скопіюйте згенерований HTML і збережіть як файл:</p>
+<code id="publishPath"></code>
+<p style="font-size:13px;color:#888;margin-top:12px">Або запустіть Claude Code для автоматичного створення файлу з повним шаблоном (Schema, OG-теги, шапка, футер).</p>
+<button class="btn btn-secondary" onclick="closeModal()">Закрити</button>
+</div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/articles.js"></script>
+<script>
+checkAuth();
+initNewArticle();
+document.getElementById('articleDate').valueAsDate = new Date();
+</script>
+</body>
+</html>
