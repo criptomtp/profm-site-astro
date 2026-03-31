@@ -6,10 +6,20 @@
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
 .faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
 
-/* Force visibility on animated cards */
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.prob-card,.case-stat{
-  opacity:1!important;transform:none!important
+/* Force ALL card types to be visible — kills any animation that hides content */
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,
+.case-stats,.case-stat,.case-card,.step,.prob-card,
+.rev-card,.vid-card,.extra-card,.price-card,.feature-card,
+.fade-in,.slide-up,.animate-in{
+  opacity:1!important;
+  transform:none!important;
+  animation:none!important;
 }
 
-/* Reveal animation (safe default) */
-.reveal{opacity:1;transform:none}
+/* Kill ALL fade/slide animations globally */
+@keyframes fadeIn{from{opacity:1}to{opacity:1}}
+@keyframes slideUp{from{opacity:1;transform:none}to{opacity:1;transform:none}}
+@keyframes fadeInUp{from{opacity:1;transform:none}to{opacity:1;transform:none}}
+
+/* Reveal animation (safe default — always visible) */
+.reveal{opacity:1!important;transform:none!important}

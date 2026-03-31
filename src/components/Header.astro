@@ -43,10 +43,10 @@ const warehouseSlug = lang === 'en' ? 'warehouse-services' : 'skladski-poslugy';
   <a href={`${p}/guide/`}>{t.tips}</a>
   <a href={`${p}/blog/`}>{t.blog}</a>
 </div>
-<div class="nav-right">
-  <a href="/" class:list={[{active: lang === 'uk'}]}>UA</a>
-  <a href="/ru/" class:list={[{active: lang === 'ru'}]}>RU</a>
-  <a href="/en/" class:list={[{active: lang === 'en'}]}>EN</a>
+<div class="nav-right" id="langSwitcher">
+  <a href="/" class:list={[{active: lang === 'uk'}]} data-lang="ua">UA</a>
+  <a href="/ru/" class:list={[{active: lang === 'ru'}]} data-lang="ru">RU</a>
+  <a href="/en/" class:list={[{active: lang === 'en'}]} data-lang="en">EN</a>
   <a href="tel:+380501444645" class="nav-phone">+38(050) 144-46-45</a>
 </div>
 <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
@@ -67,5 +67,55 @@ if(b&&l){
     t.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();this.closest('.nav-dropdown').classList.toggle('mobile-open');}});
   });
 }
+})();
+
+// Smart language switcher — redirects to same page in other language
+(function(){
+  var path = location.pathname;
+  var map = {
+    // UA↔RU↔EN slug mappings
+    'tsiny': {ru:'tsenu', en:'prices'},
+    'tsenu': {ua:'tsiny', en:'prices'},
+    'prices': {ua:'tsiny', ru:'tsenu'},
+    'fulfilment-dlya-internet-magazynu': {ru:'fulfilment-dlya-internet-magazynu', en:'fulfillment-for-online-stores'},
+    'fulfillment-for-online-stores': {ua:'fulfilment-dlya-internet-magazynu', ru:'fulfilment-dlya-internet-magazynu'},
+    'fulfilment-vazhkykh-tovariv': {ru:'fulfilment-vazhkykh-tovariv', en:'heavy-goods'},
+    'heavy-goods': {ua:'fulfilment-vazhkykh-tovariv', ru:'fulfilment-vazhkykh-tovariv'},
+    'skladski-poslugy': {ru:'skladski-poslugy', en:'warehouse-services'},
+    'warehouse-services': {ua:'skladski-poslugy', ru:'skladski-poslugy'},
+  };
+
+  document.querySelectorAll('#langSwitcher a[data-lang]').forEach(function(a){
+    var targetLang = a.dataset.lang;
+    var newPath = '/';
+
+    // Detect current page slug
+    var slug = path.replace(/^\/(?:ua|en|ru)\//, '/').replace(/^\//, '').replace(/\/$/, '');
+
+    // Homepage
+    if(!slug || slug === 'ru') {
+      if(targetLang === 'ua') newPath = '/';
+      else if(targetLang === 'ru') newPath = '/ru/';
+      else newPath = '/en/';
+    }
+    // Blog index
+    else if(slug === 'blog' || slug.match(/^(?:ua\/)?blog$/)) {
+      if(targetLang === 'ua') newPath = '/ua/blog/';
+      else if(targetLang === 'ru') newPath = '/blog/';
+      else newPath = '/en/blog/';
+    }
+    // Known pages with different slugs
+    else {
+      var baseSlug = slug.split('/').pop();
+      var mapped = map[baseSlug];
+      var targetSlug = mapped ? mapped[targetLang] || baseSlug : baseSlug;
+
+      if(targetLang === 'ua') newPath = '/ua/' + targetSlug + '/';
+      else if(targetLang === 'en') newPath = '/en/' + targetSlug + '/';
+      else newPath = '/' + targetSlug + '/'; // RU = root
+    }
+
+    a.href = newPath;
+  });
 })();
 </script>
