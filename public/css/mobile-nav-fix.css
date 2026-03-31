@@ -326,7 +326,11 @@ nav.nav .nav-logo span {
 body .nav {
   background-color: #000 !important;
   padding: 0 24px !important;
-  position: relative !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 10002 !important;
 }
 body .nav .nav-inner {
   display: flex !important;
