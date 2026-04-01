@@ -60,17 +60,10 @@ const isEn = lang === 'en';
       return;
     }
 
-    // Save to CRM database + notify Telegram
-    fetch('/api/leads', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        phone: ph,
-        page: location.pathname,
-        source: 'site',
-        comments: [{text:'Заявка з сайту: ' + location.pathname, date: new Date().toLocaleString('uk-UA')}]
-      })
-    }).catch(function(){});
+    // 1. Telegram notification (always works)
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    // 2. Save to CRM database
+    fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname,source:'site',comments:[{text:'Заявка з сайту: '+location.pathname,date:new Date().toLocaleString('uk-UA')}]})}).catch(function(){});
 
     var lang = document.documentElement.lang;
     var msg = lang === 'en' ? 'Thank you!' : lang === 'ru' ? 'Спасибо!' : 'Дякуємо!';
