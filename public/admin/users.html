@@ -2,7 +2,6 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8">
-<script>if(location.hostname==='fulfillmentmtp.com.ua')location.href=location.href.replace('://fulfillmentmtp','://www.fulfillmentmtp');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>MTP Admin — Користувачі</title>
@@ -95,7 +94,7 @@ var PERM_LABELS = {dashboard:'Дашборд',crm:'CRM',content:'Контент'
 var editingUserId = null;
 
 function loadUsers(){
-  fetch('https://www.fulfillmentmtp.com.ua/api/auth?action=users').then(function(r){return r.json();}).then(function(users){
+  fetch('/api/auth?action=users').then(function(r){return r.json();}).then(function(users){
     if(!Array.isArray(users)) return;
     var el = document.getElementById('usersList');
     el.innerHTML = users.map(function(u){
@@ -169,13 +168,13 @@ function saveUser(){
     // Update
     var body = {action:'update_user', id:editingUserId, name:name, role:role, permissions:permissions};
     if(password) body.password = password;
-    fetch('https://www.fulfillmentmtp.com.ua/api/auth?action=update_user',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(d){
+    fetch('/api/auth?action=update_user',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(d){
       if(d.ok){closeUserModal();loadUsers();}else{alert(d.error||'Помилка');}
     });
   } else {
     // Create
     if(!password){alert('Введіть пароль');return;}
-    fetch('https://www.fulfillmentmtp.com.ua/api/auth?action=create_user',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'create_user',username:username,password:password,name:name,role:role,permissions:permissions})}).then(function(r){return r.json();}).then(function(d){
+    fetch('/api/auth?action=create_user',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'create_user',username:username,password:password,name:name,role:role,permissions:permissions})}).then(function(r){return r.json();}).then(function(d){
       if(d.ok){closeUserModal();loadUsers();}else{alert(d.error||'Помилка');}
     });
   }
@@ -183,7 +182,7 @@ function saveUser(){
 
 function deleteUser(id){
   if(!confirm('Видалити користувача?')) return;
-  fetch('https://www.fulfillmentmtp.com.ua/api/auth?action=delete_user&id='+id,{method:'DELETE'}).then(function(r){return r.json();}).then(function(d){
+  fetch('/api/auth?action=delete_user&id='+id,{method:'DELETE'}).then(function(r){return r.json();}).then(function(d){
     if(d.ok) loadUsers(); else alert(d.error||'Помилка');
   });
 }

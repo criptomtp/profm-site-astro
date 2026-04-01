@@ -1,12 +1,12 @@
-/* Auth — API + hardcoded admin fallback */
-var API = 'https://www.fulfillmentmtp.com.ua/api/auth';
-
+/* Auth — simple + API */
 function checkAuth(){
   if(sessionStorage.getItem('isAdmin')!=='true') window.location.href='/admin/';
 }
-
 function getUser(){
   try{return JSON.parse(sessionStorage.getItem('mtp_user')||'{}');}catch(e){return {};}
+}
+function hasPermission(p){
+  var u=getUser();if(!u.permissions)return true;return u.permissions.indexOf(p)!==-1;
 }
 
 function handleLogin(e){
@@ -14,43 +14,41 @@ function handleLogin(e){
   var login=document.getElementById('login').value.trim();
   var pass=document.getElementById('password').value;
   var err=document.getElementById('loginError');
-  var btn=e.target.querySelector('button');
   err.style.display='none';
-  if(btn) btn.textContent='Входимо...';
-  sessionStorage.clear(); // Clear previous session
+  sessionStorage.clear();
 
-  fetch(API,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({action:'login',username:login,password:pass})
-  })
+  // Hardcoded users (always work, no API needed)
+  var USERS={
+    'mtp_admin':{password:'MTP2026secure!',name:'Адмін',role:'admin',permissions:['crm','dashboard','seo','content','settings','users']},
+    'manager1':{password:'Manager2026!',name:'Дмитро',role:'manager',permissions:['crm','dashboard']}
+  };
+
+  // Try hardcoded first
+  var u=USERS[login];
+  if(u && u.password===pass){
+    sessionStorage.setItem('isAdmin','true');
+    sessionStorage.setItem('mtp_user',JSON.stringify({name:u.name,role:u.role,permissions:u.permissions}));
+    window.location.href='/admin/dashboard.html';
+    return;
+  }
+
+  // Try API for dynamic users
+  fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'login',username:login,password:pass})})
   .then(function(r){return r.json();})
-  .then(function(data){
-    if(data.ok){
+  .then(function(d){
+    if(d.ok){
       sessionStorage.setItem('isAdmin','true');
-      sessionStorage.setItem('mtp_user',JSON.stringify(data.user||{}));
+      sessionStorage.setItem('mtp_user',JSON.stringify(d.user||{}));
       window.location.href='/admin/dashboard.html';
     } else {
       err.style.display='block';
-      err.textContent=data.error||'Невірний логін або пароль';
-      if(btn) btn.textContent='Увійти';
+      err.textContent=d.error||'Невірний логін або пароль';
     }
   })
   .catch(function(){
-    // API failed — try hardcoded admin only
-    if(login==='mtp_admin'&&pass==='MTP2026secure!'){
-      sessionStorage.setItem('isAdmin','true');
-      sessionStorage.setItem('mtp_user',JSON.stringify({name:'Адмін',role:'admin',permissions:['crm','dashboard','seo','content','settings','users']}));
-      window.location.href='/admin/dashboard.html';
-    } else {
-      err.style.display='block';
-      err.textContent='Помилка з\'єднання. Спробуйте ще раз.';
-      if(btn) btn.textContent='Увійти';
-    }
+    err.style.display='block';
+    err.textContent='Невірний логін або пароль';
   });
 }
 
-function logout(){
-  sessionStorage.clear();
-  window.location.href='/admin/';
-}
+function logout(){sessionStorage.clear();window.location.href='/admin/';}
