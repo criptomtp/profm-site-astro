@@ -17,6 +17,7 @@ function handleLogin(e){
   var btn=e.target.querySelector('button');
   err.style.display='none';
   if(btn) btn.textContent='Входимо...';
+  sessionStorage.clear(); // Clear previous session
 
   fetch(API,{
     method:'POST',
