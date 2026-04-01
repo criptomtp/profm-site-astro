@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTP Admin — Користувачі</title>
+<link rel="stylesheet" href="css/admin.css">
+<style>
+.user-card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:20px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.user-info{flex:1;min-width:200px}
+.user-name{font-weight:700;font-size:16px}
+.user-meta{font-size:13px;color:#888;margin-top:4px}
+.user-role{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.role-admin{background:#e63329;color:#fff}
+.role-manager{background:#2196f3;color:#fff}
+.role-viewer{background:#e0e0e0;color:#333}
+.perm-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.perm-chip{padding:3px 8px;background:#f5f5f5;border-radius:4px;font-size:11px;color:#666}
+.user-actions{display:flex;gap:8px}
+.lead-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;align-items:flex-start;justify-content:center;z-index:200;overflow-y:auto;padding:40px 16px}
+.lead-modal.show{display:flex}
+.lead-card{background:#fff;border-radius:12px;width:100%;max-width:500px;margin:auto}
+.lead-card-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #e0e0e0}
+.lead-card-header h2{font-size:18px;margin:0}
+.lead-close{background:none;border:none;font-size:24px;cursor:pointer;color:#888}
+.lead-card-body{padding:24px}
+.lead-card-footer{display:flex;gap:8px;justify-content:flex-end;padding:16px 24px;border-top:1px solid #e0e0e0}
+.perm-toggle{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:14px;cursor:pointer}
+.perm-toggle input{width:18px;height:18px;accent-color:#2196f3}
+</style>
+</head>
+<body>
+<nav class="admin-nav">
+<div class="admin-nav-inner">
+<div class="admin-logo"><span class="admin-logo-mtp">MTP</span> GROUP <span class="admin-logo-sub">ADMIN</span></div>
+<div class="admin-links">
+<a href="dashboard.html">Дашборд</a>
+<a href="seo.html">SEO</a>
+<a href="articles.html">Контент</a>
+<a href="crm.html">CRM</a>
+<a href="users.html" class="active">Команда</a>
+</div>
+<button class="admin-logout" onclick="logout()">Вийти</button>
+</div>
+</nav>
+
+<main class="admin-main">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+<h1 class="admin-title" style="margin-bottom:0">Команда</h1>
+<button class="btn btn-primary" onclick="openNewUser()">+ Додати користувача</button>
+</div>
+
+<div id="usersList"></div>
+</main>
+
+<!-- NEW/EDIT USER MODAL -->
+<div class="lead-modal" id="userModal">
+<div class="lead-card">
+<div class="lead-card-header"><h2 id="umTitle">Новий користувач</h2><button class="lead-close" onclick="closeUserModal()">&times;</button></div>
+<div class="lead-card-body">
+<div class="form-group"><label>Ім'я</label><input type="text" id="umName" placeholder="Олег Менеджер"></div>
+<div class="form-group"><label>Логін</label><input type="text" id="umUsername" placeholder="manager1"></div>
+<div class="form-group"><label>Пароль</label><input type="text" id="umPassword" placeholder="••••••"></div>
+<div class="form-group"><label>Роль</label>
+<select id="umRole">
+<option value="admin">Адмін (повний доступ)</option>
+<option value="manager" selected>Менеджер</option>
+<option value="viewer">Тільки перегляд</option>
+</select>
+</div>
+<div class="form-group"><label>Доступ до розділів</label>
+<label class="perm-toggle"><input type="checkbox" value="dashboard" checked> Дашборд</label>
+<label class="perm-toggle"><input type="checkbox" value="crm" checked> CRM</label>
+<label class="perm-toggle"><input type="checkbox" value="content"> Контент</label>
+<label class="perm-toggle"><input type="checkbox" value="seo"> SEO</label>
+<label class="perm-toggle"><input type="checkbox" value="settings"> Налаштування</label>
+<label class="perm-toggle"><input type="checkbox" value="users"> Управління командою</label>
+</div>
+</div>
+<div class="lead-card-footer">
+<button class="btn btn-outline" onclick="closeUserModal()">Скасувати</button>
+<button class="btn btn-primary" id="umSaveBtn" onclick="saveUser()">Створити</button>
+</div>
+</div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+checkAuth();
+
+var PERM_LABELS = {dashboard:'Дашборд',crm:'CRM',content:'Контент',seo:'SEO',settings:'Налаштування',users:'Команда'};
+var editingUserId = null;
+
+function loadUsers(){
+  fetch('/api/auth?action=users').then(function(r){return r.json();}).then(function(users){
+    if(!Array.isArray(users)) return;
+    var el = document.getElementById('usersList');
+    el.innerHTML = users.map(function(u){
+      var roleClass = u.role==='admin'?'role-admin':u.role==='manager'?'role-manager':'role-viewer';
+      var roleLabel = u.role==='admin'?'Адмін':u.role==='manager'?'Менеджер':'Перегляд';
+      var perms = (u.permissions||[]).map(function(p){return '<span class="perm-chip">'+(PERM_LABELS[p]||p)+'</span>';}).join('');
+      return '<div class="user-card">' +
+        '<div class="user-info">' +
+          '<div class="user-name">'+u.name+' <span class="user-role '+roleClass+'">'+roleLabel+'</span></div>' +
+          '<div class="user-meta">@'+u.username+'</div>' +
+          '<div class="perm-chips">'+perms+'</div>' +
+        '</div>' +
+        '<div class="user-actions">' +
+          '<button class="btn btn-outline btn-sm" onclick="editUser(\''+u.id+'\',\''+u.username+'\',\''+u.name+'\',\''+u.role+'\',\''+((u.permissions||[]).join(','))+'\')">Редагувати</button>' +
+          (u.id!=='admin'?'<button class="btn btn-outline btn-sm" style="color:#e63329" onclick="deleteUser(\''+u.id+'\')">Видалити</button>':'') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }).catch(function(){
+    document.getElementById('usersList').innerHTML = '<p style="color:#888">Не вдалось завантажити (API недоступне)</p>';
+  });
+}
+
+function openNewUser(){
+  editingUserId = null;
+  document.getElementById('umTitle').textContent = 'Новий користувач';
+  document.getElementById('umSaveBtn').textContent = 'Створити';
+  document.getElementById('umName').value = '';
+  document.getElementById('umUsername').value = '';
+  document.getElementById('umPassword').value = '';
+  document.getElementById('umRole').value = 'manager';
+  document.querySelectorAll('.perm-toggle input').forEach(function(cb){
+    cb.checked = cb.value==='dashboard'||cb.value==='crm';
+  });
+  document.getElementById('userModal').classList.add('show');
+}
+
+function editUser(id, username, name, role, permsStr){
+  editingUserId = id;
+  document.getElementById('umTitle').textContent = 'Редагувати: ' + name;
+  document.getElementById('umSaveBtn').textContent = 'Зберегти';
+  document.getElementById('umName').value = name;
+  document.getElementById('umUsername').value = username;
+  document.getElementById('umPassword').value = '';
+  document.getElementById('umRole').value = role;
+  var perms = permsStr.split(',');
+  document.querySelectorAll('.perm-toggle input').forEach(function(cb){
+    cb.checked = perms.indexOf(cb.value) !== -1;
+  });
+  document.getElementById('userModal').classList.add('show');
+}
+
+function closeUserModal(){document.getElementById('userModal').classList.remove('show');}
+
+function getSelectedPerms(){
+  var perms = [];
+  document.querySelectorAll('.perm-toggle input:checked').forEach(function(cb){perms.push(cb.value);});
+  return perms;
+}
+
+function saveUser(){
+  var name = document.getElementById('umName').value.trim();
+  var username = document.getElementById('umUsername').value.trim();
+  var password = document.getElementById('umPassword').value;
+  var role = document.getElementById('umRole').value;
+  var permissions = getSelectedPerms();
+
+  if(!name||!username){alert('Заповніть ім\'я і логін');return;}
+
+  if(editingUserId){
+    // Update
+    var body = {action:'update_user', id:editingUserId, name:name, role:role, permissions:permissions};
+    if(password) body.password = password;
+    fetch('/api/auth?action=update_user',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(d){
+      if(d.ok){closeUserModal();loadUsers();}else{alert(d.error||'Помилка');}
+    });
+  } else {
+    // Create
+    if(!password){alert('Введіть пароль');return;}
+    fetch('/api/auth?action=create_user',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'create_user',username:username,password:password,name:name,role:role,permissions:permissions})}).then(function(r){return r.json();}).then(function(d){
+      if(d.ok){closeUserModal();loadUsers();}else{alert(d.error||'Помилка');}
+    });
+  }
+}
+
+function deleteUser(id){
+  if(!confirm('Видалити користувача?')) return;
+  fetch('/api/auth?action=delete_user&id='+id,{method:'DELETE'}).then(function(r){return r.json();}).then(function(d){
+    if(d.ok) loadUsers(); else alert(d.error||'Помилка');
+  });
+}
+
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeUserModal();});
+
+loadUsers();
+</script>
+</body>
+</html>
