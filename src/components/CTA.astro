@@ -60,35 +60,17 @@ const isEn = lang === 'en';
       return;
     }
 
-    // Send to Telegram
-    fetch('/api/telegram', {
+    // Save to CRM database + notify Telegram
+    fetch('/api/leads', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({phone: ph, page: location.pathname})
-    }).catch(function(){});
-
-    // Save to localStorage in CRM format
-    try {
-      var leads = JSON.parse(localStorage.getItem('mtp_crm_leads') || '[]');
-      var maxId = leads.reduce(function(m,l){return Math.max(m,l.id||0);},0);
-      leads.push({
-        id: maxId + 1,
-        company: '',
-        contact: '',
+      body: JSON.stringify({
         phone: ph,
-        email: '',
-        shipments: 0,
-        type: 'other',
+        page: location.pathname,
         source: 'site',
-        status: 'new',
-        date: new Date().toISOString().slice(0,10),
-        comments: [{text:'Заявка з сайту: ' + location.pathname, date: new Date().toLocaleString('uk-UA')}],
-        onboarding: [false,false,false,false,false,false,false],
-        timeline: [],
-        nextContact: ''
-      });
-      localStorage.setItem('mtp_crm_leads', JSON.stringify(leads));
-    } catch(err){}
+        comments: [{text:'Заявка з сайту: ' + location.pathname, date: new Date().toLocaleString('uk-UA')}]
+      })
+    }).catch(function(){});
 
     var lang = document.documentElement.lang;
     var msg = lang === 'en' ? 'Thank you!' : lang === 'ru' ? 'Спасибо!' : 'Дякуємо!';

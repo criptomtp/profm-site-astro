@@ -55,12 +55,15 @@ var defaultLeads = [
 ];
 
 /* ===== STORAGE ===== */
+var _leadsCache=null;
+var _leadsLoading=false;
+
 function getLeads(){
+  // Return cache synchronously (for render)
+  if(_leadsCache) return _leadsCache;
+  // Fallback to localStorage while API loads
   var d=localStorage.getItem('mtp_crm_leads');
-  if(!d){
-    localStorage.setItem('mtp_crm_leads',JSON.stringify(defaultLeads));
-    return JSON.parse(JSON.stringify(defaultLeads));
-  }
+  if(!d) return defaultLeads.slice();
   var leads=JSON.parse(d);
   // Migration: add missing fields + fix site form leads
   leads.forEach(function(l){
@@ -80,7 +83,25 @@ function getLeads(){
   });
   return leads;
 }
-function saveLeads(leads){localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));}
+function saveLeads(leads){
+  _leadsCache=leads;
+  localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
+  // Async save to API
+  fetch('/api/leads',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(leads[leads.length-1]||{})}).catch(function(){});
+}
+
+function loadLeadsFromAPI(){
+  if(_leadsLoading) return;
+  _leadsLoading=true;
+  fetch('/api/leads').then(function(r){return r.json();}).then(function(data){
+    if(Array.isArray(data)&&data.length>0){
+      _leadsCache=data;
+      localStorage.setItem('mtp_crm_leads',JSON.stringify(data));
+      renderBoard();
+    }
+    _leadsLoading=false;
+  }).catch(function(){_leadsLoading=false;});
+}
 function getSettings(){var d=localStorage.getItem('mtp_crm_settings');return d?JSON.parse(d):{};}
 function saveSettings(s){localStorage.setItem('mtp_crm_settings',JSON.stringify(s));}
 function nextId(leads){return leads.reduce(function(m,l){return Math.max(m,l.id);},0)+1;}
@@ -543,6 +564,8 @@ function saveLead(){
     var now=new Date();
     lead.comments.push({text:cmt,date:now.toISOString().slice(0,10)+' '+now.toTimeString().slice(0,5)});
   }
+  // Save to API
+  fetch('/api/leads',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)}).catch(function(){});
   saveLeads(leads);
   closeLead();
   renderBoard();
@@ -552,6 +575,7 @@ function deleteLead(){
   if(!confirm('Видалити цю заявку?'))return;
   var m=document.getElementById('leadModal');
   var id=m.dataset.leadId;
+  fetch('/api/leads?id='+id,{method:'DELETE'}).catch(function(){});
   var leads=getLeads().filter(function(l){return String(l.id)!==String(id);});
   saveLeads(leads);
   closeLead();
@@ -603,6 +627,7 @@ function saveNewLead(){
     onboarding:[false,false,false,false,false,false,false],
     timeline:[]
   };
+  fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(newLead)}).then(function(r){return r.json();}).then(function(saved){if(saved.id)newLead.id=saved.id;}).catch(function(){});
   leads.push(newLead);
   saveLeads(leads);
   notifyNewLead(newLead);
