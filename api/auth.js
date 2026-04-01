@@ -91,8 +91,8 @@ export default async function handler(req, res) {
       return res.status(201).json({ ok: true, user: { id: newUser.id, username: newUser.username, name: newUser.name, role: newUser.role, permissions: newUser.permissions } });
     }
 
-    // UPDATE USER
-    if (req.method === 'PUT' && action === 'update_user') {
+    // UPDATE USER (POST or PUT)
+    if ((req.method === 'PUT' || req.method === 'POST') && action === 'update_user') {
       const { id, name, role, permissions, password } = req.body;
       const users = await getUsers();
       const idx = users.findIndex(u => u.id === id);

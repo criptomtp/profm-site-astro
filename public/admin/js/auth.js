@@ -24,8 +24,9 @@ function handleLogin(e) {
   var err = document.getElementById('loginError');
   err.style.display = 'none';
 
-  // Try API
-  fetch('/api/auth', {
+  // Try API (use same origin to avoid redirect)
+  var apiBase = window.location.origin;
+  fetch(apiBase + '/api/auth', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({action:'login', username:login, password:pass})
