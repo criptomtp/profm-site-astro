@@ -85,6 +85,30 @@ function openLead(id){
   document.getElementById('lmTelegram').value = lead.telegram||'';
   document.getElementById('lmTelegramGroup').value = lead.telegramGroup||'';
 
+  // Telegram links
+  var tgLink = document.getElementById('lmTgLink');
+  var tgGroupLink = document.getElementById('lmTgGroupLink');
+  if(tgLink){
+    var tg = lead.telegram||'';
+    if(tg){tgLink.href='https://t.me/'+tg.replace('@','');tgLink.style.display='';}
+    else{tgLink.href='#';tgLink.style.display='none';}
+  }
+  if(tgGroupLink){
+    var tgG = lead.telegramGroup||'';
+    if(tgG){tgGroupLink.href=tgG.startsWith('http')?tgG:'https://t.me/'+tgG;tgGroupLink.style.display='';}
+    else{tgGroupLink.href='#';tgGroupLink.style.display='none';}
+  }
+
+  // Update links on input change
+  document.getElementById('lmTelegram').oninput=function(){
+    var v=this.value.trim();
+    if(tgLink){tgLink.href=v?'https://t.me/'+v.replace('@',''):'#';tgLink.style.display=v?'':'none';}
+  };
+  document.getElementById('lmTelegramGroup').oninput=function(){
+    var v=this.value.trim();
+    if(tgGroupLink){tgGroupLink.href=v?(v.startsWith('http')?v:'https://t.me/'+v):'#';tgGroupLink.style.display=v?'':'none';}
+  };
+
   renderFiles(lead);
   renderComments(lead);
   document.getElementById('lmNewComment').value = '';
