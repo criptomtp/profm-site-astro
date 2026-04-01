@@ -220,7 +220,7 @@ function renderBoard(){
       var progress=Math.round(done/7*100);
       var dateBadge=formatDateBadge(l.nextContact);
       var sourceBadge='<span class="kc-source-badge">'+(SOURCE_LABELS[l.source]||l.source)+'</span>';
-      return '<div class="kanban-card" data-id="'+l.id+'" onclick="openLead('+l.id+')">'+
+      return '<div class="kanban-card" data-id="'+l.id+'" onclick="openLead(\''+l.id+'\')">'+
         '<div class="kc-company">'+esc(l.company)+'</div>'+
         '<div class="kc-contact">'+esc(l.contact)+'</div>'+
         '<div class="kc-meta">'+l.shipments+' відпр/день &middot; '+(TYPE_LABELS[l.type]||l.type)+'</div>'+
@@ -352,7 +352,7 @@ function initDragDrop(){
       if(!draggedCardId||!newStatus)return;
 
       var leads=getLeads();
-      var lead=leads.find(function(l){return l.id===draggedCardId;});
+      var lead=leads.find(function(l){return String(l.id)===String(draggedCardId);});
       if(!lead)return;
       var oldStatus=lead.status;
       if(oldStatus===newStatus)return;
@@ -369,7 +369,7 @@ function initDragDrop(){
 function openLead(id){
   console.log('openLead called with id:', id, typeof id);
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead){console.error('Lead not found:',id);return;}
   
   // Ensure all fields exist
@@ -432,9 +432,9 @@ function openLead(id){
 
 function quickStatusChange(newStatus){
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
+  var id=m.dataset.leadId;
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
   var oldStatus=lead.status;
   lead.status=newStatus;
@@ -482,9 +482,9 @@ function renderComments(lead){
 
 function addTimelineEntry(){
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
+  var id=m.dataset.leadId;
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
   var note=document.getElementById('lmTimelineNote').value.trim();
   if(!note)return;
@@ -500,9 +500,9 @@ function addTimelineEntry(){
 
 function addCommentFromModal(){
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
+  var id=m.dataset.leadId;
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
   var cmt=document.getElementById('lmNewComment').value.trim();
   if(!cmt)return;
@@ -517,9 +517,9 @@ function closeLead(){document.getElementById('leadModal').classList.remove('show
 
 function saveLead(){
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
+  var id=m.dataset.leadId;
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
   var oldStatus=lead.status;
   lead.company=document.getElementById('lmCompany').value;
@@ -551,8 +551,8 @@ function saveLead(){
 function deleteLead(){
   if(!confirm('Видалити цю заявку?'))return;
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
-  var leads=getLeads().filter(function(l){return l.id!==id;});
+  var id=m.dataset.leadId;
+  var leads=getLeads().filter(function(l){return String(l.id)!==String(id);});
   saveLeads(leads);
   closeLead();
   renderBoard();
@@ -560,7 +560,7 @@ function deleteLead(){
 
 function toggleStep(id,step,checked){
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
   lead.onboarding[step]=checked;
   saveLeads(leads);
@@ -613,9 +613,9 @@ function saveNewLead(){
 /* ===== NOTIFICATIONS ===== */
 function sendNotification(){
   var m=document.getElementById('leadModal');
-  var id=parseInt(m.dataset.leadId);
+  var id=m.dataset.leadId;
   var leads=getLeads();
-  var lead=leads.find(function(l){return l.id===id;});
+  var lead=leads.find(function(l){return String(l.id)===String(id);});
   if(!lead)return;
 
   var channel=document.getElementById('lmNotifyChannel').value;
