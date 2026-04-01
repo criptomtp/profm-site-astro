@@ -100,6 +100,7 @@
 <script src="js/auth.js"></script>
 <script>
 checkAuth();
+if(!hasPermission('dashboard')){alert('Немає доступу');window.location.href='/admin/dashboard.html';}
 
 var STATUSES = [
   {id:'new',label:'Нові',color:'#2196f3'},

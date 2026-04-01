@@ -146,6 +146,19 @@
 
 <script src="js/auth.js"></script>
 <script src="js/crm.js"></script>
-<script>checkAuth();</script>
+<script>checkAuth();
+if(!hasPermission('crm')){alert('Немає доступу');window.location.href='/admin/dashboard.html';}
+// Hide nav links without permission
+(function(){
+  var user=getUser();
+  var perms=user.permissions||[];
+  var map={'dashboard.html':'dashboard','crm.html':'crm','seo.html':'seo','articles.html':'content','users.html':'users'};
+  document.querySelectorAll('.admin-links a').forEach(function(a){
+    var href=a.getAttribute('href');
+    var p=map[href];
+    if(p && perms.indexOf(p)===-1) a.style.display='none';
+  });
+})();
+</script>
 </body>
 </html>

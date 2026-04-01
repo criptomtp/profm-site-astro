@@ -47,6 +47,7 @@
 <script src="js/seo.js"></script>
 <script>
 checkAuth();
+if(!hasPermission('seo')){alert('Немає доступу');window.location.href='/admin/dashboard.html';}
 initSeoChart();
 renderSeoTable(1);
 </script>
