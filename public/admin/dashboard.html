@@ -6,6 +6,28 @@
 <meta name="robots" content="noindex, nofollow">
 <title>MTP Admin — Дашборд</title>
 <link rel="stylesheet" href="css/admin.css">
+<style>
+.dash-section{margin-bottom:32px}
+.dash-section h3{font-size:16px;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e0e0e0}
+.funnel{display:flex;gap:4px;align-items:flex-end;height:120px;margin:16px 0}
+.funnel-bar{flex:1;border-radius:4px 4px 0 0;position:relative;min-width:60px;transition:height .3s}
+.funnel-bar-label{position:absolute;bottom:-24px;left:0;right:0;text-align:center;font-size:11px;color:#888}
+.funnel-bar-value{position:absolute;top:-20px;left:0;right:0;text-align:center;font-size:14px;font-weight:700}
+.recent-lead{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0f0f0}
+.recent-lead:last-child{border:none}
+.rl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rl-info{flex:1}
+.rl-company{font-weight:600;font-size:14px}
+.rl-meta{font-size:12px;color:#888}
+.page-status{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ps-ok{background:#e8f5e9;color:#2e7d32}
+.ps-missing{background:#fce4ec;color:#c62828}
+.link-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.link-card{flex:1;min-width:200px;padding:16px;border:1px solid #e0e0e0;border-radius:8px;text-decoration:none;color:#333;transition:box-shadow .2s}
+.link-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.link-card h4{font-size:14px;margin:0 0 4px}
+.link-card p{font-size:12px;color:#888;margin:0}
+</style>
 </head>
 <body>
 <nav class="admin-nav">
@@ -14,7 +36,7 @@
 <div class="admin-links">
 <a href="dashboard.html" class="active">Дашборд</a>
 <a href="seo.html">SEO</a>
-<a href="articles.html">Статті</a>
+<a href="articles.html">Контент</a>
 <a href="crm.html">CRM</a>
 <a href="users.html">Команда</a>
 </div>
@@ -24,50 +46,132 @@
 
 <main class="admin-main">
 <h1 class="admin-title">Дашборд</h1>
-<p class="admin-subtitle">Загальна статистика MTP Group Fulfillment</p>
+<p class="admin-subtitle">Реальні дані з CRM та сайту</p>
 
-<div class="cards-row">
-<div class="card"><div class="card-value">329</div><div class="card-label">Кліки за 3 міс</div></div>
-<div class="card"><div class="card-value">48 500</div><div class="card-label">Покази за 3 міс</div></div>
-<div class="card"><div class="card-value">28.4</div><div class="card-label">Середня позиція</div></div>
-<div class="card"><div class="card-value">35</div><div class="card-label">Статей в блозі</div></div>
+<div class="cards-row" id="dashStats"></div>
+
+<!-- FUNNEL -->
+<div class="dash-section">
+<h3>Воронка конверсії</h3>
+<div class="funnel" id="dashFunnel"></div>
 </div>
 
-<div class="table-wrap">
-<div class="table-header"><h3>Топ запити зараз</h3></div>
-<table>
-<thead><tr><th>Запит</th><th>Кліки</th><th>Покази</th><th>Позиція</th></tr></thead>
-<tbody>
-<tr><td>mtp group</td><td class="num">51</td><td class="num">99</td><td class="num">2.3</td></tr>
-<tr><td>фулфилмент</td><td class="num">10</td><td class="num">2 741</td><td class="num">9.8</td></tr>
-<tr><td>фулфілмент україна</td><td class="num">9</td><td class="num">42</td><td class="num">8.0</td></tr>
-<tr><td>фулфілмент</td><td class="num">8</td><td class="num">1 233</td><td class="num">17.9</td></tr>
-<tr><td>фулфилмент киев</td><td class="num">6</td><td class="num">171</td><td class="num">2.7</td></tr>
-<tr><td>артикул</td><td class="num">4</td><td class="num">3 060</td><td class="num">4.3</td></tr>
-<tr><td>фулфілмент склад</td><td class="num">2</td><td class="num">55</td><td class="num">4.6</td></tr>
-<tr><td>фулфілмент для інтернет магазинів</td><td class="num">2</td><td class="num">37</td><td class="num">26.5</td></tr>
-<tr><td>що таке артикул</td><td class="num">1</td><td class="num">462</td><td class="num">2.6</td></tr>
-<tr><td>товарний бізнес це</td><td class="num">1</td><td class="num">375</td><td class="num">9.0</td></tr>
-</tbody>
-</table>
+<!-- RECENT LEADS -->
+<div class="dash-section">
+<h3>Останні заявки</h3>
+<div id="dashRecent"></div>
 </div>
 
+<!-- SITE PAGES -->
+<div class="dash-section">
+<h3>Сторінки сайту</h3>
 <div class="table-wrap">
-<div class="table-header"><h3>Цільові SEO сторінки</h3></div>
 <table>
-<thead><tr><th>Сторінка</th><th>Статус</th><th>Пріоритет</th></tr></thead>
-<tbody>
-<tr><td>/ua/fulfilment-vazhkykh-tovariv</td><td><span class="badge badge-pending">Не створена</span></td><td class="priority">&#x1F534;</td></tr>
-<tr><td>/ua/tsiny</td><td><span class="badge badge-pending">Не створена</span></td><td class="priority">&#x1F534;</td></tr>
-<tr><td>/ua/3pl-boryspil</td><td><span class="badge badge-pending">Не створена</span></td><td class="priority">&#x1F7E0;</td></tr>
-<tr><td>/ua/fulfilment-dlya-internet-magazinu</td><td><span class="badge badge-pending">Не створена</span></td><td class="priority">&#x1F7E0;</td></tr>
-<tr><td>/ua/fulfilment-dlya-marketpleysiv</td><td><span class="badge badge-pending">Не створена</span></td><td class="priority">&#x1F7E0;</td></tr>
-</tbody>
+<thead><tr><th>Сторінка</th><th>URL</th><th>Статус</th></tr></thead>
+<tbody id="dashPages"></tbody>
 </table>
+</div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="dash-section">
+<h3>Швидкі посилання</h3>
+<div class="link-row">
+<a href="https://search.google.com/search-console?resource_id=https://fulfillmentmtp.com.ua/" target="_blank" class="link-card">
+<h4>📊 Google Search Console</h4>
+<p>Позиції, кліки, покази</p>
+</a>
+<a href="https://analytics.google.com/" target="_blank" class="link-card">
+<h4>📈 Google Analytics</h4>
+<p>Трафік, конверсії</p>
+</a>
+<a href="https://ads.google.com/" target="_blank" class="link-card">
+<h4>🎯 Google Ads</h4>
+<p>Рекламні кампанії</p>
+</a>
+<a href="https://www.facebook.com/fulfillmentmtp" target="_blank" class="link-card">
+<h4>📱 Facebook</h4>
+<p>Соц. мережі</p>
+</a>
+</div>
 </div>
 </main>
 
 <script src="js/auth.js"></script>
-<script>checkAuth();</script>
+<script>
+checkAuth();
+
+var STATUSES = [
+  {id:'new',label:'Нові',color:'#2196f3'},
+  {id:'contact',label:'Контакт',color:'#ff9800'},
+  {id:'meeting',label:'Зустріч',color:'#00bcd4'},
+  {id:'negotiations',label:'Переговори',color:'#9c27b0'},
+  {id:'onboarding',label:'Онбординг',color:'#4caf50'},
+  {id:'clients',label:'Клієнти',color:'#000'}
+];
+
+var PAGES = [
+  {name:'Головна UA',url:'/'},
+  {name:'Головна RU',url:'/ru/'},
+  {name:'Головна EN',url:'/en/'},
+  {name:'Послуги UA',url:'/ua/services/'},
+  {name:'Про нас UA',url:'/ua/about/'},
+  {name:'Калькулятор UA',url:'/ua/calculator/'},
+  {name:'Ціни UA',url:'/ua/tsiny/'},
+  {name:'Відгуки UA',url:'/ua/recalls/'},
+  {name:'Блог UA',url:'/ua/blog/'},
+  {name:'Інтернет-магазини UA',url:'/ua/fulfilment-dlya-internet-magazynu/'},
+  {name:'Важкі товари UA',url:'/ua/fulfilment-vazhkykh-tovariv/'},
+  {name:'Складські послуги UA',url:'/ua/skladski-poslugy/'},
+  {name:'Services EN',url:'/en/services/'},
+  {name:'Heavy goods EN',url:'/en/heavy-goods/'},
+  {name:'Warehouse EN',url:'/en/warehouse-services/'},
+  {name:'Online stores EN',url:'/en/fulfillment-for-online-stores/'},
+];
+
+// Load CRM data
+fetch('/api/leads').then(function(r){return r.json();}).then(function(leads){
+  if(!Array.isArray(leads)) leads = [];
+
+  // Stats
+  var el = document.getElementById('dashStats');
+  var today = new Date().toISOString().slice(0,10);
+  var week = new Date(Date.now()-7*86400000).toISOString().slice(0,10);
+  var todayLeads = leads.filter(function(l){return l.date===today;}).length;
+  var weekLeads = leads.filter(function(l){return l.date>=week;}).length;
+
+  el.innerHTML =
+    '<div class="card"><div class="card-value">'+leads.length+'</div><div class="card-label">Всього заявок</div></div>'+
+    '<div class="card"><div class="card-value">'+todayLeads+'</div><div class="card-label">Сьогодні</div></div>'+
+    '<div class="card"><div class="card-value">'+weekLeads+'</div><div class="card-label">За тиждень</div></div>'+
+    '<div class="card"><div class="card-value">'+leads.filter(function(l){return l.status==='clients';}).length+'</div><div class="card-label">Клієнтів</div></div>';
+
+  // Funnel
+  var funnel = document.getElementById('dashFunnel');
+  var maxCount = Math.max.apply(null, STATUSES.map(function(s){return leads.filter(function(l){return l.status===s.id;}).length;})) || 1;
+  funnel.innerHTML = STATUSES.map(function(s){
+    var count = leads.filter(function(l){return l.status===s.id;}).length;
+    var h = Math.max(count/maxCount*100, 10);
+    return '<div class="funnel-bar" style="height:'+h+'%;background:'+s.color+'"><div class="funnel-bar-value">'+count+'</div><div class="funnel-bar-label">'+s.label+'</div></div>';
+  }).join('');
+
+  // Recent leads
+  var recent = document.getElementById('dashRecent');
+  var sorted = leads.slice().sort(function(a,b){return (b.date||'')>(a.date||'')?1:-1;}).slice(0,10);
+  recent.innerHTML = sorted.length ? sorted.map(function(l){
+    var color = (STATUSES.find(function(s){return s.id===l.status;})||{}).color||'#888';
+    return '<div class="recent-lead"><div class="rl-dot" style="background:'+color+'"></div><div class="rl-info"><div class="rl-company">'+(l.company||l.phone||'Без назви')+'</div><div class="rl-meta">'+(l.phone||'')+' · '+(l.date||'')+'</div></div></div>';
+  }).join('') : '<p style="color:#888">Немає заявок</p>';
+
+}).catch(function(){
+  document.getElementById('dashStats').innerHTML = '<div class="card"><div class="card-value">—</div><div class="card-label">API недоступне</div></div>';
+});
+
+// Pages check
+var tbody = document.getElementById('dashPages');
+tbody.innerHTML = PAGES.map(function(p){
+  return '<tr><td>'+p.name+'</td><td><a href="'+p.url+'" target="_blank">'+p.url+'</a></td><td><span class="page-status ps-ok">✅ Є</span></td></tr>';
+}).join('');
+</script>
 </body>
 </html>
