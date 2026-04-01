@@ -1,0 +1,241 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Fulfillment for Marketplaces","description":"Full-cycle logistics for marketplace sellers: goods receiving, storage, packing and shipping orders via Rozetka, Prom, Kasta, OLX","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"From 18 UAH per shipment (200+ orders/day)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://fulfillmentmtp.com.ua/en/services"},{"@type":"ListItem","position":3,"name":"Fulfillment for Marketplaces","item":"https://fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does marketplace fulfillment cost?","acceptedAnswer":{"@type":"Answer","text":"Shipping from 18 UAH/order (200+ orders/day). Storage from 650 UAH/m\u00b3/mo. Minimum fee 5,000 UAH/mo. Price decreases with volume growth."}},{"@type":"Question","name":"Which marketplaces do you work with?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, OLX. We integrate directly with each platform's API for automatic order processing."}},{"@type":"Question","name":"How quickly can we get started?","acceptedAnswer":{"@type":"Answer","text":"Onboarding takes 1-3 days: consultation, marketplace and CRM integration, goods transfer to warehouse, test shipments and launch."}},{"@type":"Question","name":"Do I need a separate agreement with Nova Poshta?","acceptedAnswer":{"@type":"Answer","text":"No. We ship under our own account as a Nova Poshta partner. All waybills are created automatically and pickups happen on schedule — you don't need to do anything."}},{"@type":"Question","name":"How do I track orders and inventory?","acceptedAnswer":{"@type":"Answer","text":"Through your personal WMS dashboard: real-time inventory, order statuses from each marketplace, shipment and return reports."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m\u00b2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Fulfillment for Marketplaces in Ukraine | MTP Group"
+  description="Fulfillment for Rozetka, Prom, Kasta, OLX marketplaces: storage, packing, shipping from 18 UAH/order. 6,000 shipments/day, 2 warehouses near Kyiv."
+  canonical="https://fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/"
+  lang="en"
+  ogImage="https://fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.jpg"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="en" href="https://fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="ru" href="https://fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">MARKETPLACES</div>
+<h1>Fulfillment for<br>Marketplaces</h1>
+<p class="hero-sub">Sell on Rozetka, Prom, Kasta and OLX &mdash; we handle storage, packing and shipping. From 18&nbsp;UAH per shipment.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote &#8594;</button></form>
+<div class="hero-note">Free consultation &#183; Custom quote in 15 min</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">6,000</div><div class="hero-stat-label">shipments/day</div></div>
+<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">active clients</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 sec</div><div class="hero-stat-label">order picking</div></div>
+</div>
+</section>
+
+<!-- MARKETPLACES -->
+<section class="marketplaces"><div class="ctr">
+<div class="badge badge-dark">PLATFORMS</div>
+<h2 class="sec-h2">Marketplaces we work with</h2>
+<div class="mp-grid">
+<div class="mp-card">
+<h3>Rozetka</h3>
+<p>Ukraine's largest marketplace. Integration via Rozetka Seller API &mdash; orders arrive at the warehouse automatically. We pick, pack according to platform standards and ship via Nova Poshta or Rozetka courier. Labelling, barcoding and waybill printing &mdash; all included.</p>
+</div>
+<div class="mp-card">
+<h3>Prom.ua</h3>
+<p>Over 200,000 sellers on the platform. Through Prom API integration, orders reach our WMS in seconds. Automatic waybill generation, real-time inventory sync, status updates &mdash; you simply monitor sales in your dashboard.</p>
+</div>
+<div class="mp-card">
+<h3>Kasta</h3>
+<p>Fashion marketplace with strict packaging and delivery requirements. MTP Group ensures full compliance with Kasta standards: branded bags, proper labelling, same-day shipping. API integration &mdash; inventory and orders sync automatically.</p>
+</div>
+<div class="mp-card">
+<h3>OLX Delivery</h3>
+<p>For OLX sellers using the "OLX Delivery" option. We store your goods, and when a buyer places an order &mdash; we quickly pick and ship. We handle all product types: electronics, clothing, accessories, home goods.</p>
+</div>
+</div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works"><div class="ctr">
+<div class="badge">HOW IT WORKS</div>
+<h2 class="sec-h2">From order to delivery in 4 steps</h2>
+<div class="steps-grid">
+<div class="step-card"><div class="step-num">01</div><h3>Order on marketplace</h3><p>A buyer places an order on Rozetka, Prom, Kasta or OLX. The data is automatically sent to our WMS via API integration.</p></div>
+<div class="step-card"><div class="step-num">02</div><h3>Picking and packing</h3><p>A warehouse operator receives the task, locates the item by barcode, assembles the order and packs it according to platform standards. Average time &mdash; 30 seconds.</p></div>
+<div class="step-card"><div class="step-num">03</div><h3>Shipping</h3><p>The waybill is generated automatically. The parcel is handed to the carrier &mdash; Nova Poshta, Meest, Justin or courier delivery. The status updates on the marketplace automatically.</p></div>
+<div class="step-card"><div class="step-num">04</div><h3>Monitoring and reports</h3><p>You track everything through your dashboard: inventory, order statuses, returns, financial reports. Full transparency without a single call to the warehouse.</p></div>
+</div>
+</div></section>
+
+<!-- BENEFITS -->
+<section class="benefits"><div class="ctr">
+<div class="badge badge-dark">BENEFITS</div>
+<h2 class="sec-h2">Why marketplace sellers choose MTP</h2>
+<div class="ben-grid">
+<div class="ben-card"><div class="ben-num">30"</div><h3>30-second picking</h3><p>Conveyor packing stations and WMS automation &mdash; every order picked and labelled in half a minute</p></div>
+<div class="ben-card"><div class="ben-num">API</div><h3>Direct integration</h3><p>Rozetka, Prom, Kasta, OLX &mdash; automatic sync of orders, inventory and statuses through each platform's API</p></div>
+<div class="ben-card"><div class="ben-num">8 hrs</div><h3>8 hours per month</h3><p>That is how much time sellers spend on logistics after switching to fulfillment. The rest goes to marketing and scaling</p></div>
+<div class="ben-card"><div class="ben-num">4</div><h3>4 platforms at once</h3><p>Sell on all marketplaces from a single warehouse. One inventory, one process &mdash; multi-channel sales without chaos</p></div>
+<div class="ben-card"><div class="ben-num">3x</div><h3>3 generators + Starlink</h3><p>Uninterrupted operations even during blackouts. 2 fibre-optic providers &mdash; zero days of downtime since 2022</p></div>
+<div class="ben-card"><div class="ben-num">99.5%</div><h3>Order accuracy</h3><p>Barcode scanning at every stage, photo documentation &mdash; minimal errors, minimal claims on platforms</p></div>
+</div>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">RATES 2026</div>
+<h2 class="sec-h2">How much does marketplace fulfillment cost</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Service</span><span>Condition</span><span>Price</span></div>
+<div class="price-row"><span>Order shipping</span><span>200+ orders/day</span><span>from 18 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>100-199 orders/day</span><span>from 20 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>50-99 orders/day</span><span>from 22 UAH</span></div>
+<div class="price-row"><span>Order shipping</span><span>0-49 orders/day</span><span>from 26 UAH</span></div>
+<div class="price-row"><span>Storage</span><span>per m&sup3;/month</span><span>from 650 UAH</span></div>
+<div class="price-row"><span>Goods receiving</span><span>per unit</span><span>from 3 UAH</span></div>
+<div class="price-row price-highlight"><span>Minimum fee</span><span>per month</span><span>5,000 UAH</span></div>
+</div>
+<p class="price-note">Price decreases with volume growth. Exact quote &mdash; free within 15 minutes.</p>
+<div class="price-cta"><button onclick="document.getElementById('heroForm').querySelector('input').focus();window.scrollTo({top:0,behavior:'smooth'})">Calculate for my store &#8594;</button></div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Frequently asked questions</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">How much does marketplace fulfillment cost?</button><div class="faq-a"><p>Shipping &mdash; from 18 UAH per order at 200+ shipments/day. Storage &mdash; from 650 UAH per m&sup3;/mo. Minimum fee &mdash; 5,000 UAH/mo. The higher the volume &mdash; the lower the per-unit price.</p></div></div>
+<div class="faq-item"><button class="faq-q">Which marketplaces do you integrate with?</button><div class="faq-a"><p>Rozetka, Prom.ua, Kasta, OLX. We also work with CRM systems: KeyCRM, SalesDrive, Horoshop. Any platform with an API &mdash; integration in 2-4 hours.</p></div></div>
+<div class="faq-item"><button class="faq-q">How quickly can we get started?</button><div class="faq-a"><p>Onboarding takes 1-3 days. Day 1: consultation, contract, marketplace integration. Day 2: goods transfer, WMS scanning. Day 3: test shipments and launch. Most clients start shipping on day 2.</p></div></div>
+<div class="faq-item"><button class="faq-q">Can I sell on multiple platforms at once?</button><div class="faq-a"><p>Yes, and that is one of the key advantages. A single warehouse, a single inventory &mdash; while orders from all marketplaces are processed in one place. Inventory syncs in real time, eliminating overselling.</p></div></div>
+<div class="faq-item"><button class="faq-q">Do I need to ship parcels myself?</button><div class="faq-a"><p>No. We fully handle shipping: waybill creation, packing to platform standards, handoff to the carrier. You only monitor results in your dashboard.</p></div></div>
+<div class="faq-item"><button class="faq-q">How do I track orders and inventory?</button><div class="faq-a"><p>Through your personal WMS dashboard. Real-time inventory for each marketplace, order statuses, shipment and return reports. 24/7 access from any device.</p></div></div>
+<div class="faq-item"><button class="faq-q">Do you handle marketplace returns?</button><div class="faq-a"><p>Yes. We receive returned goods, inspect their condition, update the status on the marketplace and re-shelve or set aside for write-off &mdash; all via WMS with photo documentation.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">USEFUL INFO</div>
+<h2>Fulfillment for marketplaces in Ukraine: a complete guide</h2>
+<div class="article-content">
+<h3>What is marketplace fulfillment?</h3>
+<p>Marketplace fulfillment is the complete outsourcing of warehouse logistics for sellers operating on platforms such as Rozetka, Prom.ua, Kasta and OLX. Instead of storing inventory yourself, packing orders and queuing at the post office, you hand the entire process to a specialized operator. The operator stores your goods in their warehouse, automatically receives orders from marketplaces through API integrations and processes them: picks, packs according to each platform's standards and ships to the buyer.</p>
+<p>For the buyer the process looks exactly the same &mdash; they receive their parcel on time and in quality packaging. For you, everything changes fundamentally: instead of daily warehouse routine, you spend your time increasing sales, expanding your product range and launching on new platforms.</p>
+
+<h3>Why do marketplace sellers need fulfillment?</h3>
+<p>Every marketplace has its own requirements for shipping speed, packaging quality and labelling. Rozetka expects same-day shipping, Kasta requires branded bags and a specific labelling format, Prom and OLX have their own processing standards. If you sell on multiple platforms simultaneously, meeting all requirements becomes a serious operational burden.</p>
+<p>A fulfillment operator solves this problem: one warehouse handles orders from all marketplaces. Inventory syncs in real time, eliminating the situation where the same item is sold on two platforms at once. Packaging meets each platform's standards, and waybills are generated automatically.</p>
+
+<h3>How does marketplace integration work?</h3>
+<p>MTP Group connects to each marketplace's API directly. This means orders arrive at the warehouse automatically &mdash; no manual entry, no data copying, no errors. In parallel, we integrate with your CRM system (KeyCRM, SalesDrive, Horoshop, etc.) so you have a complete picture of sales from a single window.</p>
+<p>The integration process takes 2 to 4 hours. Once configured, the system runs fully automatically: order on marketplace &mdash; task in warehouse &mdash; picking &mdash; shipping &mdash; status update on platform. All without your involvement.</p>
+
+<h3>How much does marketplace fulfillment cost in 2026?</h3>
+<p>The cost consists of three components: order shipping (from 18 UAH at 200+ orders/day, from 26 UAH at lower volumes), storage (from 650 UAH per m&sup3;/month) and goods receiving (from 3 UAH per unit). Minimum fee &mdash; 5,000 UAH/month. The per-shipment price decreases with volume growth.</p>
+<p>For comparison: running your own mini-warehouse (rent, 1-2 packer salaries, utilities, packing materials) costs at least 35,000-55,000 UAH per month. Fulfillment at the same volumes &mdash; from 12,000-20,000 UAH. The difference is money you can invest in advertising, inventory purchasing and scaling your marketplace sales.</p>
+
+<h3>When should a seller switch to fulfillment?</h3>
+<p>The first signal is spending more than 3 hours a day on packing and shipping. The second is failing to ship orders on the same day and receiving penalties from the marketplace. The third is inventory confusion when selling on multiple platforms: an item sold on Rozetka but already ordered on Prom.</p>
+<p>Based on MTP Group's experience, the optimal moment is when the combined volume from all platforms exceeds 30-50 orders per day. But we also work with smaller volumes &mdash; the 5,000 UAH/month minimum fee covers basic storage and shipping services.</p>
+
+<h3>What happens after onboarding?</h3>
+<p>A typical MTP Group client journey: day 1 &mdash; consultation, contract and marketplace integration setup. Day 2 &mdash; goods transfer to warehouse, barcoding, test shipments. Day 3 &mdash; full launch. After that, orders arrive automatically from all connected platforms, the warehouse picks and ships, and you check the dashboard once a week. Over 10 years of operation and more than 150 clients, we have refined this process to perfection &mdash; 30 seconds per order, up to 6,000 shipments per day.</p>
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
+.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
+.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+
+.marketplaces{padding:100px 0;background:#fff}
+.mp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.mp-card{background:var(--gray);border-radius:8px;padding:36px 32px;border:1px solid #e0e0e0;transition:border-color .3s}
+.mp-card:hover{border-color:var(--red)}
+.mp-card h3{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:12px;color:var(--black)}
+.mp-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+.how-it-works{padding:100px 0;background:#0a0a0a;color:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step-card{padding:32px 24px;border:1px solid rgba(255,255,255,.08);border-radius:8px;transition:border-color .3s}
+.step-card:hover{border-color:var(--red)}
+.step-num{font-family:var(--fd);font-size:48px;color:var(--red);line-height:1;margin-bottom:16px}
+.step-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
+.step-card p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7}
+
+.benefits{padding:100px 0}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
+.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
+.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+.pricing{padding:100px 0;background:var(--gray)}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row:not(.price-header):hover{background:#fff}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+.price-cta{text-align:center}
+.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
+.price-cta button:hover{background:#c42b22}
+
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
+.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
+.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
+
+@media(max-width:768px){
+.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
+.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
+.mp-grid{grid-template-columns:1fr}
+.steps-grid{grid-template-columns:1fr}
+.ben-grid{grid-template-columns:1fr}
+}
+
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.step-card,.mp-card{opacity:1!important;transform:none!important}
+</style>
