@@ -1,8 +1,5 @@
-/* Simple Auth — works without API */
-var USERS = {
-  'mtp_admin': {password:'MTP2026secure!', name:'Адмін', role:'admin', permissions:['crm','dashboard','seo','content','settings','users']},
-  'manager1': {password:'Manager2026!', name:'Дмитро', role:'manager', permissions:['crm','dashboard']}
-};
+/* Auth — API + hardcoded admin fallback */
+var API = 'https://www.fulfillmentmtp.com.ua/api/auth';
 
 function checkAuth(){
   if(sessionStorage.getItem('isAdmin')!=='true') window.location.href='/admin/';
@@ -17,16 +14,39 @@ function handleLogin(e){
   var login=document.getElementById('login').value.trim();
   var pass=document.getElementById('password').value;
   var err=document.getElementById('loginError');
+  var btn=e.target.querySelector('button');
+  err.style.display='none';
+  if(btn) btn.textContent='Входимо...';
 
-  var user=USERS[login];
-  if(user && user.password===pass){
-    sessionStorage.setItem('isAdmin','true');
-    sessionStorage.setItem('mtp_user',JSON.stringify({name:user.name,role:user.role,permissions:user.permissions}));
-    window.location.href='/admin/dashboard.html';
-  } else {
-    err.style.display='block';
-    err.textContent='Невірний логін або пароль';
-  }
+  fetch(API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'login',username:login,password:pass})
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    if(data.ok){
+      sessionStorage.setItem('isAdmin','true');
+      sessionStorage.setItem('mtp_user',JSON.stringify(data.user||{}));
+      window.location.href='/admin/dashboard.html';
+    } else {
+      err.style.display='block';
+      err.textContent=data.error||'Невірний логін або пароль';
+      if(btn) btn.textContent='Увійти';
+    }
+  })
+  .catch(function(){
+    // API failed — try hardcoded admin only
+    if(login==='mtp_admin'&&pass==='MTP2026secure!'){
+      sessionStorage.setItem('isAdmin','true');
+      sessionStorage.setItem('mtp_user',JSON.stringify({name:'Адмін',role:'admin',permissions:['crm','dashboard','seo','content','settings','users']}));
+      window.location.href='/admin/dashboard.html';
+    } else {
+      err.style.display='block';
+      err.textContent='Помилка з\'єднання. Спробуйте ще раз.';
+      if(btn) btn.textContent='Увійти';
+    }
+  });
 }
 
 function logout(){
