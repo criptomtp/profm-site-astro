@@ -1,14 +1,9 @@
-/* Auth with API + fallback */
-var ADMIN_USER = 'mtp_admin';
-var ADMIN_PASS = 'MTP2026secure!';
-
+/* Auth */
 function getSession(){ return sessionStorage.getItem('mtp_session')||''; }
 function getUser(){ try{return JSON.parse(sessionStorage.getItem('mtp_user')||'{}');}catch(e){return {};} }
 
 function checkAuth() {
-  if(!sessionStorage.getItem('isAdmin') && !getSession()){
-    window.location.href = '/admin/';
-  }
+  if(!sessionStorage.getItem('isAdmin')) window.location.href = '/admin/';
 }
 
 function hasPermission(perm){
@@ -22,18 +17,20 @@ function handleLogin(e) {
   var login = document.getElementById('login').value.trim();
   var pass = document.getElementById('password').value;
   var err = document.getElementById('loginError');
+  var btn = e.target.querySelector('button[type="submit"]');
   err.style.display = 'none';
+  if(btn) btn.textContent = 'Входимо...';
 
-  // Try API (use same origin to avoid redirect)
-  var apiBase = window.location.origin;
-  fetch(apiBase + '/api/auth', {
+  // Always use www to avoid 307 redirect
+  var apiUrl = 'https://www.fulfillmentmtp.com.ua/api/auth';
+  // If on localhost, use relative
+  if(location.hostname === 'localhost' || location.hostname === '127.0.0.1') apiUrl = '/api/auth';
+
+  fetch(apiUrl, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({action:'login', username:login, password:pass})
-  }).then(function(r){
-    if(!r.ok) throw new Error('API error '+r.status);
-    return r.json();
-  }).then(function(data){
+  }).then(function(r){return r.json();}).then(function(data){
     if(data.ok){
       sessionStorage.setItem('isAdmin', 'true');
       sessionStorage.setItem('mtp_session', data.session||'');
@@ -42,17 +39,19 @@ function handleLogin(e) {
     } else {
       err.style.display = 'block';
       err.textContent = data.error || 'Невірний логін або пароль';
+      if(btn) btn.textContent = 'Увійти';
     }
   }).catch(function(e){
-    console.log('API auth failed, trying fallback:', e.message);
-    // Fallback to hardcoded admin
-    if(login === ADMIN_USER && pass === ADMIN_PASS){
+    console.error('Auth error:', e);
+    // Fallback: hardcoded admin only
+    if(login === 'mtp_admin' && pass === 'MTP2026secure!'){
       sessionStorage.setItem('isAdmin', 'true');
       sessionStorage.setItem('mtp_user', JSON.stringify({name:'Адмін',role:'admin',permissions:['crm','dashboard','seo','content','settings','users']}));
       window.location.href = '/admin/dashboard.html';
     } else {
       err.style.display = 'block';
-      err.textContent = 'Невірний логін або пароль (API недоступне — тільки адмін)';
+      err.textContent = 'Помилка з\'єднання. Спробуйте ще раз.';
+      if(btn) btn.textContent = 'Увійти';
     }
   });
 }
