@@ -1,8 +1,8 @@
 import { Redis } from '@upstash/redis';
 
 const redis = new Redis({
-  url: process.env.STORAGE_URL || process.env.KV_REST_API_URL,
-  token: process.env.STORAGE_REST_API_TOKEN || process.env.KV_REST_API_TOKEN,
+  url: process.env.storage_KV_REST_API_URL || process.env.STORAGE_URL || process.env.KV_REST_API_URL,
+  token: process.env.storage_KV_REST_API_TOKEN || process.env.STORAGE_REST_API_TOKEN || process.env.KV_REST_API_TOKEN,
 });
 
 const LEADS_KEY = 'mtp:leads';
