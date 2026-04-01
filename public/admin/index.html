@@ -5,23 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>MTP Admin — Вхід</title>
-<link rel="stylesheet" href="css/admin.css">
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','653445518414631');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=653445518414631&ev=PageView&noscript=1"></noscript>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',Arial,sans-serif;background:#000;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.login-card{background:#fff;padding:48px 40px;border-radius:16px;width:100%;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.logo{font-size:24px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+.logo span{background:#e63329;color:#fff;padding:3px 10px;border-radius:4px}
+.subtitle{color:#888;font-size:14px;margin-bottom:32px}
+h1{font-size:22px;font-weight:700;margin:16px 0 4px}
+input{width:100%;padding:14px 18px;border:1px solid #e0e0e0;border-radius:8px;font-size:15px;margin-bottom:12px;outline:none;transition:border-color .2s;font-family:inherit}
+input:focus{border-color:#000;box-shadow:0 0 0 3px rgba(0,0,0,.05)}
+.btn{width:100%;padding:14px;background:#e63329;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:8px;font-family:inherit}
+.btn:hover{background:#c42a22}
+.error{color:#e63329;font-size:13px;margin-top:12px;display:none}
+.footer-note{color:#444;font-size:12px;margin-top:24px}
+@media(max-width:480px){.login-card{padding:32px 24px;margin:16px;border-radius:12px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="login-page">
+<body>
 <div class="login-card">
-<div class="logo-line"><span>MTP</span> GROUP</div>
+<div class="logo"><span>MTP</span> GROUP</div>
 <h1>Панель адміністратора</h1>
-<p style="color:#888;font-size:13px;margin-bottom:24px">Введіть дані для входу</p>
+<p class="subtitle">Введіть дані для входу</p>
 <form onsubmit="handleLogin(event)">
 <input type="text" id="login" placeholder="Логін" autocomplete="username" required>
 <input type="password" id="password" placeholder="Пароль" autocomplete="current-password" required>
-<button type="submit" class="btn btn-primary">Увійти</button>
+<button type="submit" class="btn">Увійти</button>
 </form>
-<div id="loginError" class="login-error"></div>
+<div id="loginError" class="error"></div>
+<p class="footer-note">MTP Group Fulfillment © 2026</p>
 </div>
 <script src="js/auth.js"></script>
-<script src="/js/lang-switcher.js"></script>
 </body>
 </html>
