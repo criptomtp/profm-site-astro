@@ -2,23 +2,23 @@
 import Base from '../../layouts/Base.astro';
 
 const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент для маркетплейсів","description":"Фулфілмент для продавців маркетплейсів: Rozetka, Prom.ua, Kasta, OLX. Зберігання, пакування, відправка. Інтеграція з маркетплейсами через API.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (200+ замовлень/день)"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://fulfillmentmtp.com.ua/ua/services"},{"@type":"ListItem","position":3,"name":"Фулфілмент для маркетплейсів","item":"https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Які маркетплейси ви підтримуєте?","acceptedAnswer":{"@type":"Answer","text":"Ми інтегровані з Rozetka, Prom.ua, Kasta та OLX. Замовлення імпортуються автоматично через API — без ручного введення."}},{"@type":"Question","name":"Чи можна продавати на кількох маркетплейсах одночасно?","acceptedAnswer":{"@type":"Answer","text":"Так. Ми об'єднуємо замовлення з усіх маркетплейсів в одному складі. Єдиний залишок, єдина WMS — без плутанини."}},{"@type":"Question","name":"Скільки коштує фулфілмент для маркетплейсів?","acceptedAnswer":{"@type":"Answer","text":"Відправка — від 18 грн/замовлення при 200+ замовлень/день. Зберігання — від 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс."}},{"@type":"Question","name":"Як швидко обробляються замовлення?","acceptedAnswer":{"@type":"Answer","text":"Замовлення з маркетплейсу потрапляє у WMS автоматично. Середній час збору — 30 секунд. Відправка в день надходження замовлення."}},{"@type":"Question","name":"Чи підтримуєте ви FBO (fulfillment by operator)?","acceptedAnswer":{"@type":"Answer","text":"Так. MTP Group працює як зовнішній FBO-оператор: товар зберігається на нашому складі, замовлення обробляються автоматично, відправка через Нову Пошту."}},{"@type":"Question","name":"Чи є брендоване пакування для маркетплейсів?","acceptedAnswer":{"@type":"Answer","text":"Так. Ми пакуємо з урахуванням вимог кожного маркетплейсу: маркування, наклейки, вкладки. Брендована упаковка — за бажанням."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://fulfillmentmtp.com.ua/ua/services"},{"@type":"ListItem","position":3,"name":"Фулфілмент для маркетплейсів","item":"https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Які маркетплейси ви підтримуєте?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, OLX. Замовлення імпортуються автоматично через API. Якщо ваш маркетплейс має API — ми підключимося."}},{"@type":"Question","name":"Чи можна продавати на кількох маркетплейсах одночасно?","acceptedAnswer":{"@type":"Answer","text":"Так. Єдиний склад, єдиний залишок у WMS — замовлення з усіх платформ збираються і відправляються з одного місця."}},{"@type":"Question","name":"Скільки коштує фулфілмент для маркетплейсів?","acceptedAnswer":{"@type":"Answer","text":"Відправка — від 18 грн/замовлення при 200+ на день. Зберігання — 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс."}},{"@type":"Question","name":"Чим ви краще за FBO маркетплейсу?","acceptedAnswer":{"@type":"Answer","text":"Ви не прив'язані до одного маркетплейсу. Один склад — продажі скрізь. Контроль пакування, брендування, аналітика — у ваших руках."}},{"@type":"Question","name":"Як швидко можна почати?","acceptedAnswer":{"@type":"Answer","text":"Від заявки до першої відправки — 1-3 дні. Консультація, договір, приймання товару, налаштування API — усе за цей час."}},{"@type":"Question","name":"Що буде під час блекауту?","acceptedAnswer":{"@type":"Answer","text":"3 генератори, 2 оптоволоконних провайдери, Starlink. З 2022 року — жодного дня простою. Замовлення обробляються навіть без електрики."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
 ---
 <Base
-  title="Фулфілмент для маркетплейсів | MTP Group"
-  description="Фулфілмент для продавців маркетплейсів: Rozetka, Prom.ua, Kasta. Зберігання, пакування, відправка. Інтеграція з маркетплейсами через API."
-  canonical="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/"
+  title="Фулфілмент для маркетплейсів Rozetka, Prom, Kasta | MTP Group"
+  description="Продавай на маркетплейсах без свого складу. Від 18 грн/замовлення. Автоматичний імпорт, збір за 30 сек, відправка 4 рази/день. Кейс Carter's: з 12 до 72 замовлень/день."
+  canonical="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/"
   lang="uk"
   ogImage="https://fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.webp"
   schema={schemaJson}
 >
 <Fragment slot="head">
-  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
   <link rel="alternate" hreflang="ru" href="https://fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/">
   <link rel="alternate" hreflang="en" href="https://fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/">
-  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
 </Fragment>
 
 <!-- HERO -->
@@ -26,100 +26,140 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="hero-bg"></div>
 <div class="hero-content">
 <div class="badge">МАРКЕТПЛЕЙСИ</div>
-<h1>Фулфілмент для<br>маркетплейсів</h1>
-<p class="hero-sub">Продавай на Rozetka, Prom.ua, Kasta та OLX &mdash; ми зберігаємо, пакуємо і відправляємо. Автоматичний імпорт замовлень через API, відправка в день надходження.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
+<h1>Продавай на Rozetka, Prom, Kasta &mdash;<br>без свого складу</h1>
+<p class="hero-sub">Ти завантажуєш товар &mdash; ми зберігаємо, пакуємо і відправляємо. Замовлення з маркетплейсу потрапляє на склад автоматично через API. Збір за 30 секунд. Відправка того ж дня.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Розрахувати вартість &#8594;</button></form>
 <div class="hero-note">Безкоштовна консультація &#183; Індивідуальний розрахунок за 15 хв</div>
 </div>
 <div class="hero-stats">
 <div class="hero-stat"><div class="hero-stat-val">60 000+</div><div class="hero-stat-label">відправлень/місяць</div></div>
-<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">активних клієнтів</div></div>
-<div class="hero-stat"><div class="hero-stat-val">10 років</div><div class="hero-stat-label">досвіду</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 сек</div><div class="hero-stat-label">збір замовлення</div></div>
+<div class="hero-stat"><div class="hero-stat-val">10+ років</div><div class="hero-stat-label">досвіду</div></div>
 </div>
 </section>
 
-<!-- MARKETPLACES WE WORK WITH -->
+<!-- PAIN POINTS — unique to UA -->
+<section class="pains"><div class="ctr">
+<div class="badge badge-dark">ЗНАЙОМА СИТУАЦІЯ?</div>
+<h2 class="sec-h2">Три проблеми продавця маркетплейсу</h2>
+<div class="pains-grid">
+<div class="pain-card">
+<div class="pain-icon">&#128230;</div>
+<div class="pain-q">&laquo;Витрачаю більше часу на пакування, ніж на маркетинг&raquo;</div>
+<div class="pain-a">MTP бере на себе весь процес: прийом товару, зберігання, збір замовлення за 30 секунд, пакування з маркуванням маркетплейсу, відправка. Ти займаєшся лише продажами.</div>
+</div>
+<div class="pain-card">
+<div class="pain-icon">&#128293;</div>
+<div class="pain-q">&laquo;Чорна п'ятниця = хаос. Не встигаю обробити все за день&raquo;</div>
+<div class="pain-a">Ми обробляємо до 6 000 замовлень на день. У піковий сезон масштабуємось без зміни процесів. Клієнт ORNER виростав із 50 до 500+ відправлень/день &mdash; без затримок.</div>
+</div>
+<div class="pain-card">
+<div class="pain-icon">&#9889;</div>
+<div class="pain-q">&laquo;Блекаут &mdash; і рейтинг на маркетплейсі падає&raquo;</div>
+<div class="pain-a">3 генератори, 2 оптоволоконних провайдери, Starlink. З лютого 2022 року &mdash; жодного дня простою. Замовлення відправляються навіть без електрики.</div>
+</div>
+</div>
+</div></section>
+
+<!-- CASE STUDY — unique to UA -->
+<section class="case-study"><div class="ctr">
+<div class="badge">КЕЙС</div>
+<h2 class="sec-h2">Carter's: з 12 до 72 замовлень на день</h2>
+<div class="case-content">
+<div class="case-text">
+<p class="case-intro">Бренд дитячого одягу Carter's перейшов на фулфілмент MTP Group і за 3 місяці збільшив продажі в 5 разів &mdash; без найму додаткових працівників.</p>
+<div class="case-metrics">
+<div class="case-metric"><span class="cm-val">12 &#8594; 72</span><span class="cm-label">замовлень/день</span></div>
+<div class="case-metric"><span class="cm-val">30 &#8594; 14 грн</span><span class="cm-label">собівартість відправки</span></div>
+<div class="case-metric"><span class="cm-val">90 год</span><span class="cm-label">зекономлено на місяць</span></div>
+</div>
+<p class="case-quote">&laquo;Ми перестали думати про склад і зосередились на асортименті. Замовлення з Rozetka і Prom.ua обробляються автоматично &mdash; ми навіть не бачимо цього процесу.&raquo;</p>
+</div>
+</div>
+</div></section>
+
+<!-- MARKETPLACES -->
 <section class="marketplaces"><div class="ctr">
 <div class="badge badge-dark">ПЛАТФОРМИ</div>
 <h2 class="sec-h2">Маркетплейси, з якими ми працюємо</h2>
 <div class="mp-grid">
 <div class="mp-card">
 <h3>Rozetka</h3>
-<p>Автоматичний імпорт замовлень через API Rozetka. Друк етикеток за стандартами маркетплейсу. Пріоритетна відправка &mdash; щоб не пропустити дедлайн обробки. Контроль залишків у реальному часі.</p>
+<p>API-інтеграція: замовлення потрапляє в WMS автоматично. Друк етикеток за стандартами Rozetka. Відправка в день замовлення &mdash; критично для рейтингу продавця. Синхронізація залишків у реальному часі.</p>
 </div>
 <div class="mp-card">
 <h3>Prom.ua</h3>
-<p>Інтеграція з Prom.ua через API або CRM-посередник. Синхронізація залишків &mdash; товар не продається, якщо його немає на складі. Маркування та пакування за вимогами платформи.</p>
+<p>Підключення через API або CRM-посередник (KeyCRM, SalesDrive). Мульти-прайс: різні ціни для різних категорій. Автоматичне оновлення статусів. Пакування за вимогами платформи.</p>
 </div>
 <div class="mp-card">
 <h3>Kasta</h3>
-<p>Відправка в день замовлення &mdash; критично для рейтингу продавця на Kasta. Пакування з дотриманням вимог маркетплейсу. Обробка повернень з фото-фіксацією.</p>
+<p>Швидкість &mdash; головна метрика для Kasta. Затримка на 1 день = падіння в пошуку. Ми відправляємо в день замовлення. Обробка повернень із фото-фіксацією стану товару.</p>
 </div>
 <div class="mp-card">
 <h3>OLX Доставка</h3>
-<p>Підтримка формату OLX Доставка. Автоматичне створення ТТН через Нову Пошту. Швидка відправка &mdash; покупець отримує трек-номер одразу після оформлення.</p>
+<p>Підтримка формату OLX Доставка. Автоматичне створення ТТН через Нову Пошту. Покупець отримує трек-номер одразу після обробки. Ідеально для дрібного і середнього бізнесу.</p>
 </div>
 </div>
 </div></section>
 
-<!-- HOW IT WORKS -->
-<section class="steps"><div class="ctr">
-<div class="badge">ЯК ЦЕ ПРАЦЮЄ</div>
-<h2 class="sec-h2">Від замовлення до доставки &mdash; 4 кроки</h2>
-<div class="steps-grid">
-<div class="step">
-<div class="step-num">01</div>
-<h3>Замовлення надходить</h3>
-<p>Покупець оформлює замовлення на маркетплейсі. Воно автоматично імпортується в нашу WMS через API &mdash; жодного ручного введення.</p>
+<!-- COST COMPARISON — unique to UA -->
+<section class="comparison"><div class="ctr">
+<div class="badge badge-dark">ПОРІВНЯННЯ</div>
+<h2 class="sec-h2">Свій склад vs MTP Group</h2>
+<p class="comp-sub">Розрахунок для продавця з 100 замовленнями на день та 10 м&sup3; товару на складі</p>
+<div class="comp-table">
+<div class="comp-row comp-header"><span></span><span>Свій склад</span><span>MTP Group</span></div>
+<div class="comp-row"><span>Оренда складу</span><span>15 000 грн</span><span class="comp-yes">0 грн</span></div>
+<div class="comp-row"><span>Зберігання (10 м&sup3;)</span><span>&mdash;</span><span>6 500 грн</span></div>
+<div class="comp-row"><span>Пакувальник (1 людина)</span><span>18 000 грн</span><span class="comp-yes">0 грн</span></div>
+<div class="comp-row"><span>Комунальні + інтернет</span><span>4 000 грн</span><span class="comp-yes">0 грн</span></div>
+<div class="comp-row"><span>Пакувальні матеріали</span><span>5 000 грн</span><span class="comp-yes">Включено</span></div>
+<div class="comp-row"><span>Відправка (100/день &times; 22 дні)</span><span>Свій час</span><span>44 000 грн</span></div>
+<div class="comp-row"><span>WMS-система</span><span>3 000 грн</span><span class="comp-yes">Включено</span></div>
+<div class="comp-row"><span>Генератор / Starlink</span><span>10 000+ грн</span><span class="comp-yes">Включено</span></div>
+<div class="comp-row comp-total"><span>Разом на місяць</span><span>55 000+ грн</span><span class="comp-win">50 500 грн</span></div>
 </div>
-<div class="step">
-<div class="step-num">02</div>
-<h3>Збір і пакування</h3>
-<p>Оператор отримує завдання на збір. Товар сканується, перевіряється, пакується з маркуванням за вимогами конкретного маркетплейсу. Середній час &mdash; 30 секунд.</p>
+<p class="comp-note">А ще ви економите 90+ годин на місяць власного часу. Цей час &mdash; на маркетинг, асортимент, масштабування.</p>
+</div></section>
+
+<!-- ONBOARDING TIMELINE — unique to UA -->
+<section class="timeline"><div class="ctr">
+<div class="badge">СТАРТ</div>
+<h2 class="sec-h2">Від заявки до першої відправки &mdash; 3 дні</h2>
+<div class="tl-grid">
+<div class="tl-step">
+<div class="tl-day">День 1</div>
+<h3>Консультація і договір</h3>
+<p>Обговорюємо обсяги, маркетплейси, особливості товару. Підписуємо договір. Налаштовуємо API-інтеграцію з вашими маркетплейсами.</p>
 </div>
-<div class="step">
-<div class="step-num">03</div>
-<h3>Відправка</h3>
-<p>Створюється ТТН Нової Пошти. Посилка передається на забір. Статус автоматично оновлюється на маркетплейсі &mdash; покупець бачить трек у кабінеті.</p>
+<div class="tl-step">
+<div class="tl-day">День 2</div>
+<h3>Приймаємо товар</h3>
+<p>Привозите або надсилаєте товар на склад. Ми розвантажуємо, перевіряємо, штрихкодуємо і розміщуємо в адресному сховищі WMS.</p>
 </div>
-<div class="step">
-<div class="step-num">04</div>
-<h3>Відстеження і аналітика</h3>
-<p>Ти бачиш усе в особистому кабінеті: статуси відправлень, залишки, повернення, аналітику по кожному маркетплейсу. Звіти &mdash; автоматично.</p>
+<div class="tl-step">
+<div class="tl-day">День 3</div>
+<h3>Перша відправка</h3>
+<p>Замовлення з маркетплейсу потрапляє в WMS автоматично. Збір, пакування, етикетка, Нова Пошта. Ви бачите статус в кабінеті.</p>
 </div>
 </div>
 </div></section>
 
-<!-- BENEFITS -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">ПЕРЕВАГИ</div>
-<h2 class="sec-h2">Чому продавці маркетплейсів обирають MTP</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">API</div><h3>Автоматичний імпорт замовлень</h3><p>Замовлення з Rozetka, Prom.ua, Kasta та OLX потрапляють у WMS автоматично через API. Без копіювання, без помилок, без затримок.</p></div>
-<div class="ben-card"><div class="ben-num">FBO</div><h3>Альтернатива FBO</h3><p>Працюй як з власним FBO-складом: товар зберігається у нас, замовлення обробляються автоматично. Не потрібно відправляти товар на склад маркетплейсу.</p></div>
-<div class="ben-card"><div class="ben-num">4+</div><h3>Мульти-маркетплейс з одного складу</h3><p>Продавай одночасно на Rozetka, Prom.ua, Kasta і OLX &mdash; усі замовлення збираються з єдиного складу. Один залишок, нуль плутанини.</p></div>
-<div class="ben-card"><div class="ben-num">BOX</div><h3>Брендоване пакування</h3><p>Пакуємо з дотриманням вимог кожного маркетплейсу: етикетки, маркування, вкладки. Додаємо брендовані елементи за бажанням &mdash; тішью, наклейки, листівки.</p></div>
-<div class="ben-card"><div class="ben-num">24/7</div><h3>Дашборд аналітики</h3><p>Залишки, статуси, повернення, обсяги по кожному маркетплейсу &mdash; все в особистому кабінеті WMS. Доступ з будь-якого пристрою цілодобово.</p></div>
-<div class="ben-card"><div class="ben-num">NP</div><h3>Пріоритетна відправка</h3><p>60 000+ відправлень на місяць через Нову Пошту &mdash; пріоритетні тарифи, виділені вікна забору і прискорене вирішення претензій.</p></div>
-</div>
-</div></section>
-
-<!-- TARIFFS -->
+<!-- PRICING -->
 <section class="pricing"><div class="ctr">
 <div class="badge badge-dark">ТАРИФИ 2026</div>
-<h2 class="sec-h2">Скільки коштує фулфілмент для маркетплейсів</h2>
+<h2 class="sec-h2">Прозорі ціни без прихованих платежів</h2>
 <div class="price-table">
 <div class="price-row price-header"><span>Послуга</span><span>Умова</span><span>Ціна</span></div>
 <div class="price-row"><span>Відправка замовлення</span><span>200+ замовлень/день</span><span>від 18 грн</span></div>
 <div class="price-row"><span>Відправка замовлення</span><span>100-199 замовлень/день</span><span>від 20 грн</span></div>
 <div class="price-row"><span>Відправка замовлення</span><span>50-99 замовлень/день</span><span>від 22 грн</span></div>
 <div class="price-row"><span>Відправка замовлення</span><span>0-49 замовлень/день</span><span>від 26 грн</span></div>
-<div class="price-row"><span>Зберігання</span><span>за м&sup3;/місяць</span><span>від 650 грн</span></div>
+<div class="price-row"><span>Зберігання</span><span>за м&sup3;/місяць</span><span>650 грн</span></div>
 <div class="price-row"><span>Прийом товару</span><span>за одиницю</span><span>від 3 грн</span></div>
 <div class="price-row price-highlight"><span>Мінімальний платіж</span><span>на місяць</span><span>5 000 грн</span></div>
 </div>
-<p class="price-note">Ціна знижується зі зростанням обсягів. Точний розрахунок &mdash; безкоштовно за 15 хвилин.</p>
-<div class="price-cta"><button onclick="document.getElementById('finalForm').querySelector('input').focus();window.scrollTo({top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'})">Розрахувати для моїх маркетплейсів &#8594;</button></div>
+<p class="price-note">Ціна знижується зі зростанням обсягів. Індивідуальний розрахунок &mdash; безкоштовно за 15 хвилин.</p>
 </div></section>
 
 <!-- FAQ -->
@@ -127,46 +167,43 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="badge">FAQ</div>
 <h2 class="sec-h2">Часті запитання</h2>
 <div class="faq-list">
-<div class="faq-item"><button class="faq-q">Які маркетплейси ви підтримуєте?</button><div class="faq-a"><p>Ми інтегровані з Rozetka, Prom.ua, Kasta та OLX. Замовлення імпортуються автоматично через API &mdash; без ручного введення. Якщо ваш маркетплейс має API &mdash; ми підключимося.</p></div></div>
-<div class="faq-item"><button class="faq-q">Чи можна продавати на кількох маркетплейсах одночасно?</button><div class="faq-a"><p>Так. Ми об'єднуємо замовлення з усіх маркетплейсів в одному складі. Єдиний залишок товару в WMS &mdash; без ризику продати те, чого немає. Кожне замовлення маркується відповідно до вимог конкретної платформи.</p></div></div>
-<div class="faq-item"><button class="faq-q">Скільки коштує фулфілмент для маркетплейсів?</button><div class="faq-a"><p>Відправка &mdash; від 18 грн за замовлення при 200+ відправлень/день. Зберігання &mdash; від 650 грн за м&sup3;/міс. Мінімальний платіж &mdash; 5 000 грн/міс. Чим більше обсяг &mdash; тим нижча ціна за одиницю.</p></div></div>
-<div class="faq-item"><button class="faq-q">Як швидко обробляються замовлення з маркетплейсу?</button><div class="faq-a"><p>Замовлення потрапляє в WMS автоматично через API. Середній час збору одного замовлення &mdash; 30 секунд. Відправка &mdash; в день надходження замовлення. Це критично для рейтингу продавця на маркетплейсі.</p></div></div>
-<div class="faq-item"><button class="faq-q">Чи підтримуєте ви FBO (fulfillment by operator)?</button><div class="faq-a"><p>Так. MTP Group працює як зовнішній FBO-оператор: товар зберігається на нашому складі під Києвом (Щасливе, 2 800 м&sup2; + Білогородка, 1 100 м&sup2;), замовлення обробляються автоматично, відправка через Нову Пошту.</p></div></div>
-<div class="faq-item"><button class="faq-q">Чи є брендоване пакування для маркетплейсів?</button><div class="faq-a"><p>Так. Ми пакуємо з урахуванням вимог кожного маркетплейсу: правильне маркування, етикетки, штрих-коди. За бажанням додаємо брендовані елементи &mdash; тішью, наклейки, листівки, вкладки.</p></div></div>
+<div class="faq-item"><button class="faq-q">Які маркетплейси ви підтримуєте?</button><div class="faq-a"><p>Rozetka, Prom.ua, Kasta, OLX. Замовлення імпортуються автоматично через API &mdash; жодного ручного введення. Якщо ваш маркетплейс має API &mdash; ми підключимося за 1-2 дні.</p></div></div>
+<div class="faq-item"><button class="faq-q">Чи можна продавати на кількох маркетплейсах одночасно?</button><div class="faq-a"><p>Так. Це наша спеціалізація. Єдиний склад, єдиний залишок у WMS &mdash; замовлення з усіх платформ збираються і відправляються з одного місця. Закінчився товар &mdash; автоматично зникає з усіх маркетплейсів. Нуль ризику подвійного продажу.</p></div></div>
+<div class="faq-item"><button class="faq-q">Чим ви краще за FBO маркетплейсу?</button><div class="faq-a"><p>FBO прив'язує вас до одного маркетплейсу. У нас ви продаєте скрізь з одного складу. Контролюєте пакування (брендування, вкладки). Отримуєте повну аналітику. І платите менше за зберігання &mdash; FBO часто дорожче.</p></div></div>
+<div class="faq-item"><button class="faq-q">Скільки коштує і як розраховується ціна?</button><div class="faq-a"><p>Відправка &mdash; від 18 грн/замовлення (200+/день). Зберігання &mdash; 650 грн/м&sup3;/міс. Мінімум &mdash; 5 000 грн/міс. Чим більше обсяг &mdash; тим нижче за одиницю. Точний розрахунок робимо безкоштовно за 15 хвилин &mdash; потрібно лише знати кількість замовлень і об'єм товару.</p></div></div>
+<div class="faq-item"><button class="faq-q">Як швидко можна почати?</button><div class="faq-a"><p>Від заявки до першої відправки &mdash; 1-3 дні. День 1: консультація + договір + налаштування API. День 2: привозите товар, ми штрихкодуємо і розміщуємо. День 3: перше замовлення вже на Новій Пошті.</p></div></div>
+<div class="faq-item"><button class="faq-q">Що з блекаутами? Замовлення стоятимуть?</button><div class="faq-a"><p>Ні. 3 промислових генератори, 2 оптоволоконних провайдери, Starlink. З лютого 2022 року &mdash; нуль днів простою. Навіть під час найжорсткіших відключень замовлення відправлялися вчасно.</p></div></div>
 </div>
 </div></section>
 
-<!-- SEO ARTICLE -->
+<!-- SEO ARTICLE — unique to UA -->
 <section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
-<h2>Як працює фулфілмент для маркетплейсів в Україні</h2>
+<h2>Фулфілмент для маркетплейсів: як продавати на Rozetka, Prom і Kasta без свого складу</h2>
 <div class="article-content">
-<h3>Що таке фулфілмент для маркетплейсів?</h3>
-<p>Фулфілмент для маркетплейсів &mdash; це передача складської логістики зовнішньому оператору, який спеціалізується на обробці замовлень з торгових платформ. Замість того щоб тримати товар вдома, самостійно пакувати і їздити на Нову Пошту, ти передаєш усе це команді професіоналів. Оператор приймає товар на склад, зберігає його в організованій системі, а коли покупець натискає &laquo;Купити&raquo; на Rozetka чи Prom.ua &mdash; замовлення автоматично потрапляє в WMS-систему складу, де його збирають, пакують і відправляють.</p>
-<p>Для продавця на маркетплейсі це означає повну свободу: ти зосереджуєшся на асортименті, ціноутворенні та рекламі, а логістику бере на себе фулфілмент-оператор. Для покупця нічого не змінюється &mdash; він отримує посилку вчасно і з правильним маркуванням.</p>
+<h3>Навіщо продавцю маркетплейсу фулфілмент</h3>
+<p>Коли ти продаєш на одному маркетплейсі з 5-10 замовленнями на день &mdash; склад не потрібен. Вистачає запасної кімнати, коробок із Rozetka-маркету і поїздок на Нову Пошту. Але коли замовлень стає 30, 50, 100 на день &mdash; виникає стіна. Ти фізично не встигаєш пакувати, друкувати ТТН, їздити на пошту і при цьому закуповувати товар, запускати рекламу, відповідати клієнтам.</p>
+<p>Фулфілмент знімає цю стіну. Оператор бере на себе всю фізичну роботу: приймає товар, зберігає його на професійному складі з WMS-системою, а коли покупець натискає &laquo;Купити&raquo; &mdash; збирає замовлення за 30 секунд, пакує і передає на Нову Пошту. Для продавця залишається те, що він робить найкраще &mdash; продажі.</p>
 
-<h3>Чому маркетплейси вимагають швидкої обробки замовлень?</h3>
-<p>Кожен маркетплейс має внутрішній рейтинг продавця, який безпосередньо залежить від швидкості обробки замовлень. На Rozetka критично відправити товар протягом 24 годин після замовлення. На Kasta затримка навіть на один день може знизити видимість товарів у пошуку. Prom.ua враховує відсоток вчасних відправлень при ранжуванні продавців.</p>
-<p>Фулфілмент-оператор вирішує цю проблему системно: замовлення надходять автоматично через API, збір і пакування займають лічені хвилини, а відправка відбувається в той самий день. MTP Group обробляє до 6 000 замовлень на день &mdash; це потужність, яку жоден продавець не зможе організувати самостійно.</p>
+<h3>Мульти-маркетплейс: один склад &mdash; продажі скрізь</h3>
+<p>Головний біль продавця, який торгує на Rozetka, Prom.ua і Kasta одночасно &mdash; залишки. У тебе 100 одиниць товару. Покупець замовив 3 штуки на Rozetka, ще 2 &mdash; на Prom.ua. Залишилось 95, але ти ще не встиг оновити на Kasta. Там хтось замовляє ту саму позицію, якої вже немає &mdash; скасування, штраф, падіння рейтингу.</p>
+<p>Фулфілмент-оператор з WMS вирішує це повністю. Усі замовлення з усіх маркетплейсів обробляються з одного складу. Залишки оновлюються автоматично в реальному часі &mdash; якщо товар закінчився, він одразу зникає з усіх платформ. MTP Group підтримує інтеграцію з Rozetka, Prom.ua, Kasta і OLX через API &mdash; жодного ручного введення.</p>
 
-<h3>Мульти-маркетплейс стратегія: як продавати скрізь одночасно</h3>
-<p>Головна проблема продавців, які працюють на кількох маркетплейсах &mdash; контроль залишків. Якщо у тебе 100 одиниць товару і ти продаєш на Rozetka, Prom.ua та OLX одночасно, без централізованої системи легко продати те, чого вже немає. Це призводить до скасувань, штрафів і падіння рейтингу.</p>
-<p>Фулфілмент вирішує це через єдину WMS-систему: усі замовлення з усіх маркетплейсів обробляються з одного складу. Залишки оновлюються в реальному часі &mdash; якщо товар закінчився, він автоматично стає недоступним на всіх платформах. MTP Group підтримує інтеграцію з Rozetka, Prom.ua, Kasta та OLX з одного складу під Києвом &mdash; це дозволяє масштабувати продажі без ризику помилок.</p>
+<h3>Рейтинг продавця: чому швидкість відправки = гроші</h3>
+<p>Маркетплейси ранжують продавців за швидкістю обробки. На Rozetka потрібно відправити товар протягом 24 годин. На Kasta затримка на 1 день може знизити видимість у пошуку на тижні. Prom.ua враховує відсоток вчасних відправлень при визначенні позиції в каталозі.</p>
+<p>Це означає просту річ: якщо ти відправляєш повільно &mdash; маркетплейс показує тебе нижче, покупці йдуть до конкурентів, продажі падають. MTP Group відправляє замовлення в день надходження, 4 рази на день через Нову Пошту. 60 000+ відправлень на місяць &mdash; це потужність, яка гарантує вчасну обробку навіть у пікові дні.</p>
 
-<h3>FBO чи зовнішній фулфілмент: що обрати?</h3>
-<p>Деякі маркетплейси пропонують власне FBO (fulfillment by operator) &mdash; коли товар зберігається на складі маркетплейсу. Це зручно, але має обмеження: ти прив'язаний до одного маркетплейсу, не можеш контролювати пакування, і часто переплачуєш за зберігання. Зовнішній фулфілмент-оператор дає більшу гнучкість: товар на одному складі, продажі &mdash; на всіх платформах одночасно, пакування &mdash; за твоїми стандартами.</p>
-<p>MTP Group працює як зовнішній FBO: два склади під Києвом (Щасливе &mdash; 2 800 м&sup2;, Білогородка &mdash; 1 100 м&sup2;), інтеграція з усіма основними маркетплейсами, 10 років досвіду та 150+ активних клієнтів. Вартість відправки &mdash; від 18 грн за замовлення, зберігання &mdash; від 650 грн за м&sup3;/міс. Мінімальний платіж &mdash; 5 000 грн/міс. Підключення &mdash; 1-3 дні від консультації до першої відправки.</p>
+<h3>FBO маркетплейсу vs зовнішній фулфілмент: що обрати</h3>
+<p>FBO (fulfillment by operator) &mdash; це коли товар зберігається на складі самого маркетплейсу. Здається зручно, але є обмеження. Перше &mdash; прив'язка: товар на складі Rozetka не можна відправити покупцю з Prom.ua. Друге &mdash; контроль: ти не впливаєш на пакування. Третє &mdash; вартість: FBO часто дорожче за зовнішній фулфілмент, особливо за зберігання.</p>
+<p>Зовнішній оператор дає гнучкість: один склад &mdash; продажі на всіх платформах. Контроль пакування, брендування, вкладки. Повна аналітика. MTP Group працює як зовнішній фулфілмент з двома складами під Києвом (Щасливе + Білогородка, разом 3 900 м&sup2;), інтеграцією з основними маркетплейсами і 10+ роками досвіду. Вартість відправки &mdash; від 18 грн/замовлення, зберігання &mdash; 650 грн/м&sup3;/міс.</p>
 
-<h3>Як обрати фулфілмент для маркетплейсу?</h3>
-<p>При виборі фулфілмент-оператора для маркетплейсу зверни увагу на три речі. Перше &mdash; наявність готових інтеграцій з маркетплейсами через API, а не ручне введення замовлень. Друге &mdash; швидкість обробки: замовлення має бути зібране і відправлене в день надходження. Третє &mdash; досвід роботи саме з маркетплейсами, бо кожна платформа має свої вимоги до маркування, термінів і форматів відправки.</p>
-<p>Додатковий плюс &mdash; власні склади оператора (не суборенда), автономне електроживлення і резервний інтернет. На складах MTP Group встановлено 3 генератори та Starlink &mdash; з 2022 року жодного дня простою. Це гарантує, що замовлення з маркетплейсу будуть оброблені вчасно незалежно від ситуації з енергомережею.</p>
+<h3>Скільки реально заощаджує фулфілмент</h3>
+<p>Порахуємо для продавця зі 100 замовленнями на день. Свій склад: оренда 15 000 грн, пакувальник 18 000 грн, комунальні 4 000 грн, матеріали 5 000 грн, WMS 3 000 грн, генератор/інтернет 10 000+ грн &mdash; разом від 55 000 грн на місяць. Плюс 3-4 години твого часу щодня на логістику.</p>
+<p>З MTP Group: відправка 100 зам/день &times; 22 дні &times; 20 грн = 44 000 грн + зберігання 6 500 грн = 50 500 грн на місяць. Але головна економія &mdash; не гроші, а час. 90+ годин на місяць, які ти витрачав на склад, тепер витрачаєш на маркетинг, нові товари і масштабування. Клієнт Carter's саме так виріс із 12 до 72 замовлень на день за 3 місяці.</p>
 </div>
 </div>
 </section>
-
-<!-- CTA -->
-
 
 </Base>
 
@@ -177,7 +214,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,72px);font-weight:400;line-height:.95;margin-bottom:28px}
 .hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
 .hero-form{display:flex;gap:12px;max-width:460px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
@@ -192,76 +229,100 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
 .badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
 .badge-dark{border-color:#ccc;color:#666}
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* Pain points — unique to UA */
+.pains{padding:100px 0}
+.pains-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.pain-card{padding:40px 32px;background:var(--gray);border-radius:8px;position:relative}
+.pain-icon{font-size:36px;margin-bottom:20px}
+.pain-q{font-family:var(--fd);font-size:20px;font-weight:400;line-height:1.3;margin-bottom:16px;color:var(--black)}
+.pain-a{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* Case study — unique to UA */
+.case-study{padding:100px 0;background:#0a0a0a;color:#fff}
+.case-content{max-width:800px;margin:0 auto}
+.case-intro{font-size:18px;line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:40px}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+.case-metric{text-align:center;padding:24px 16px;border:1px solid rgba(255,255,255,.1);border-radius:8px}
+.cm-val{display:block;font-family:var(--fd);font-size:clamp(24px,3vw,36px);color:var(--red);margin-bottom:4px}
+.cm-label{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+.case-quote{font-family:var(--fd);font-size:clamp(18px,2.5vw,24px);font-weight:400;font-style:italic;color:rgba(255,255,255,.6);line-height:1.6;border-left:3px solid var(--red);padding-left:24px}
+
+/* Marketplaces */
 .marketplaces{padding:100px 0;background:#0a0a0a;color:#fff}
 .mp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .mp-card{padding:36px 32px;border:1px solid rgba(255,255,255,.08);border-radius:8px;transition:border-color .3s}
 .mp-card:hover{border-color:var(--red)}
 .mp-card h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:12px;color:#fff}
 .mp-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
-.steps{padding:100px 0;background:var(--gray)}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.step{text-align:center;padding:24px 16px}
-.step-num{font-family:var(--fd);font-size:56px;color:var(--red);line-height:1;margin-bottom:16px}
-.step h3{font-size:17px;font-weight:600;margin-bottom:8px}.step p{font-size:14px;color:var(--muted);line-height:1.6}
-.pricing{padding:100px 0;background:var(--gray)}
+
+/* Cost comparison — unique to UA */
+.comparison{padding:100px 0}
+.comp-sub{text-align:center;font-size:16px;color:var(--muted);margin:-36px auto 48px;max-width:500px}
+.comp-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.comp-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid #eee;font-size:15px}
+.comp-row:last-child{border:none}
+.comp-row>span{padding:14px 20px}
+.comp-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.comp-total{background:var(--gray);font-weight:600;font-size:16px}
+.comp-yes{color:#22c55e;font-weight:500}
+.comp-win{color:var(--red);font-weight:700;font-size:18px}
+.comp-note{text-align:center;font-size:15px;color:var(--muted);max-width:600px;margin:0 auto}
+
+/* Timeline — unique to UA */
+.timeline{padding:100px 0;background:var(--gray)}
+.tl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.tl-step{padding:40px 32px;position:relative;border-right:1px solid #ddd}
+.tl-step:last-child{border-right:none}
+.tl-day{font-family:var(--fd);font-size:42px;color:var(--red);margin-bottom:16px}
+.tl-step h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.tl-step p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* Pricing */
+.pricing{padding:100px 0}
 .price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
 .price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
 .price-row>span{flex:1;padding:14px 20px}
 .price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.price-row:not(.price-header):hover{background:#fff}
+.price-row:not(.price-header):hover{background:var(--gray)}
 .price-highlight{background:var(--red);color:#fff;font-weight:600}
-.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-cta{text-align:center}
-.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
-.price-cta button:hover{background:#c42b22}
+.price-note{text-align:center;font-size:15px;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* FAQ */
 .faq{padding:100px 0;background:#0a0a0a;color:#fff}
 .faq-list{max-width:700px;margin:0 auto}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
 .faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* Article */
 .article-section{background:#fff;padding:80px 8vw}
-.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
 .article-content{max-width:800px}
 .article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
 .article-content h3:first-child{margin-top:0}
 .article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
-.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
-.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
-.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
-.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
-.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.final-form input::placeholder{color:rgba(255,255,255,.45)}.final-form input:focus{border-color:#fff}
-.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
-.final-form button:hover{background:#222}
-.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
 
 @media(max-width:768px){
 .hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
 .hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.ben-grid{grid-template-columns:1fr}
+.pains-grid{grid-template-columns:1fr}
+.case-metrics{grid-template-columns:1fr}
 .mp-grid{grid-template-columns:1fr}
-.steps-grid{grid-template-columns:1fr}
-.final-form{flex-direction:column}
+.comp-row{grid-template-columns:1.5fr 1fr 1fr;font-size:13px}
+.comp-row>span{padding:10px 12px}
+.tl-grid{grid-template-columns:1fr}
+.tl-step{border-right:none;border-bottom:1px solid #ddd}
 }
 
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.mp-card{opacity:1!important;transform:none!important}
+.pain-card,.mp-card,.tl-step,.case-metric{opacity:1!important;transform:none!important}
 </style>
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.faq-a');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
-var forms=document.querySelectorAll('form');forms.forEach(function(form){var inp=form.querySelector('input[type="tel"]');if(!inp)return;inp.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>0&&v.substring(0,2)!=='38')v='38'+v;var f='';if(v.length>0)f='+'+v.substring(0,2);if(v.length>2)f+=' ('+v.substring(2,5);if(v.length>5)f+=') '+v.substring(5,8);if(v.length>8)f+='-'+v.substring(8,10);if(v.length>10)f+='-'+v.substring(10,12);this.value=f;});inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
-form.addEventListener('submit',function(e){e.preventDefault();var ph=inp.value.replace(/\D/g,'');if(ph.length<10){inp.style.borderColor='#e63329';return;}
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Фулфілмент для маркетплейсів',contact:'',phone:ph,email:'',shipments:0,type:'marketplace',source:'SEO landing fulfilment-dlya-marketpleysiv',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма: фулфілмент для маркетплейсів',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Дякуємо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Передзвонимо найближчим часом</p></div>';setTimeout(function(){window.location.href='/ua/thanks/';},1500);});});
 });
 </script>
