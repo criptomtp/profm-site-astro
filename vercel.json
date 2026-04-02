@@ -1,9 +1,15 @@
 {
   "redirects": [
     {
-      "source": "/:path*?amp=true",
-      "destination": "/:path*",
+      "source": "/tpost/:slug*",
+      "destination": "/blog/tpost/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/blog/tpost/:slug*",
+      "destination": "/blog/tpost/:slug*",
       "permanent": true
     }
-  ]
+  ],
+  "trailingSlash": true
 }
