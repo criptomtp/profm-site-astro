@@ -1,0 +1,412 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Fulfillment in Kyiv","description":"Kyiv-based fulfillment for international sellers entering Ukraine's $8B e-commerce market. 3,900 m² warehouse, from $0.41/order, English-speaking team.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"City","name":"Kyiv"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"From 18 UAH ($0.41) per shipment at 200+ orders/day"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services"},{"@type":"ListItem","position":3,"name":"Fulfillment Kyiv","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a Ukrainian legal entity to use your fulfillment in Kyiv?","acceptedAnswer":{"@type":"Answer","text":"No. We process shipments under our entity for your test launch. Ship goods to our Kyiv warehouse and start selling immediately. When volumes grow, we help register a local entity in 2-3 weeks."}},{"@type":"Question","name":"How do I ship my products to your Kyiv warehouse?","acceptedAnswer":{"@type":"Answer","text":"Send via DHL, FedEx, UPS, or a freight forwarder to our address near Boryspil Airport, Kyiv Oblast. We handle customs-cleared goods — unload, inspect, barcode, and shelve within 24 hours."}},{"@type":"Question","name":"Does your Kyiv team speak English?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dedicated English-speaking account managers. Dashboard, reports, and notifications all in English. We communicate via email, Telegram, WhatsApp, or Zoom."}},{"@type":"Question","name":"What happens during power outages in Kyiv?","acceptedAnswer":{"@type":"Answer","text":"Our warehouses run on 3 industrial diesel generators, 2 fiber-optic ISPs, and Starlink satellite. Zero days of downtime since February 2022."}},{"@type":"Question","name":"How are customer returns handled?","acceptedAnswer":{"@type":"Answer","text":"Nova Poshta returns arrive at our warehouse. We inspect condition with photo documentation, then restock or isolate per your guidelines. Everything visible in your dashboard."}},{"@type":"Question","name":"How fast do orders reach buyers from your Kyiv warehouse?","acceptedAnswer":{"@type":"Answer","text":"Same-day dispatch, 4 pickups daily. Kyiv metro area — next-day delivery. Rest of Ukraine — 1-2 days via Nova Poshta (10,000+ branches)."}},{"@type":"Question","name":"What is the minimum commitment?","acceptedAnswer":{"@type":"Answer","text":"5,000 UAH/month (~$114). No minimum order volume. Even 5 orders per day works — the per-order rate adjusts by volume tier."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00","geo":{"@type":"GeoCoordinates","latitude":"50.3167","longitude":"30.9333"}}</script>`;
+---
+<Base
+  title="Fulfillment in Kyiv — Gateway to Ukraine | MTP Group"
+  description="Kyiv fulfillment for international sellers. 3,900 m² warehouse, from $0.41/order, 3 generators, English team. No local entity needed."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-kiev/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+</Fragment>
+
+<!-- HERO — centered Apple-style -->
+<section class="fk-hero">
+<div class="fk-hero-glow"></div>
+<div class="fk-hero-inner">
+<div class="fk-hero-badge">KYIV, UKRAINE</div>
+<h1>Fulfillment in Kyiv.<br><span class="fk-hero-accent">Your gateway to Ukraine's $8B market.</span></h1>
+<p class="fk-hero-sub">Ship your inventory to our warehouse near Kyiv. We store, pack, and deliver to 37 million online buyers across Ukraine. No local entity. No Ukrainian staff. No risk.</p>
+<form class="fk-hero-form" id="heroForm"><input type="tel" name="phone" placeholder="Your phone or WhatsApp" maxlength="25" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote &#8594;</button></form>
+<div class="fk-hero-note">Free consultation &#183; English-speaking team &#183; Response in 15 min</div>
+</div>
+</section>
+
+<!-- WHY KYIV — 4 big stat cards -->
+<section class="fk-stats"><div class="ctr">
+<h2 class="sec-h2">Why Kyiv is your launchpad</h2>
+<div class="fk-stats-grid">
+<div class="fk-stat-card">
+<div class="fk-stat-num">$8B</div>
+<div class="fk-stat-label">e-commerce market</div>
+<p>Ukraine's online retail crossed $8 billion in 2024-2025. Growth continues as the economy digitizes. Minimal foreign competition compared to Western markets.</p>
+</div>
+<div class="fk-stat-card">
+<div class="fk-stat-num">3.5M</div>
+<div class="fk-stat-label">metro population</div>
+<p>Kyiv and its suburbs house 3.5 million consumers. Orders from our warehouse reach Kyiv buyers next day. Largest purchasing power in Ukraine.</p>
+</div>
+<div class="fk-stat-card">
+<div class="fk-stat-num">1 day</div>
+<div class="fk-stat-label">Kyiv delivery</div>
+<p>Our warehouses sit in Kyiv Oblast, minutes from Boryspil Airport. Same-day dispatch, 4 Nova Poshta pickups daily. Rest of Ukraine: 1-2 days.</p>
+</div>
+<div class="fk-stat-card">
+<div class="fk-stat-num">30-50%</div>
+<div class="fk-stat-label">cheaper than EU</div>
+<p>Warehousing, labor, and logistics cost a fraction of EU rates. Storage at ~$15/m&sup3;/mo, fulfillment from $0.41/order. Scale profitably from day one.</p>
+</div>
+</div>
+</div></section>
+
+<!-- NO LOCAL ENTITY — red section -->
+<section class="fk-no-entity">
+<div class="ctr">
+<div class="fk-ne-content">
+<h2>No local entity needed.</h2>
+<p class="fk-ne-lead">Most international sellers assume they need a Ukrainian company to sell here. They don't.</p>
+<div class="fk-ne-steps">
+<div class="fk-ne-step">
+<div class="fk-ne-num">1</div>
+<div><strong>Ship goods to our warehouse</strong><br>Via DHL, FedEx, UPS, or freight forwarder. We accept customs-cleared inventory at our Boryspil-area facility.</div>
+</div>
+<div class="fk-ne-step">
+<div class="fk-ne-num">2</div>
+<div><strong>We handle everything</strong><br>Storage, order processing, packing, Nova Poshta shipping, returns. All under our entity for your test launch.</div>
+</div>
+<div class="fk-ne-step">
+<div class="fk-ne-num">3</div>
+<div><strong>Register later (or never)</strong><br>When volumes grow, we connect you with legal partners to register a Ukrainian FOP or LLC in 2-3 weeks. Until then, zero bureaucracy.</div>
+</div>
+</div>
+<div class="fk-ne-countries">
+<span>Sellers from:</span>
+<span class="fk-ne-flag">&#127481;&#127479; Turkey</span>
+<span class="fk-ne-flag">&#127466;&#127482; EU</span>
+<span class="fk-ne-flag">&#127482;&#127480; United States</span>
+<span class="fk-ne-flag">&#127468;&#127463; United Kingdom</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- COST CALCULATOR — interactive -->
+<section class="fk-calculator"><div class="ctr">
+<div class="badge badge-dark">CALCULATOR</div>
+<h2 class="sec-h2">Estimate your monthly cost in Kyiv</h2>
+<div class="fk-calc-wrap">
+<div class="fk-calc-inputs">
+<label>Orders per day<input type="range" id="fkCalcOrders" min="5" max="500" value="50" step="5"><div class="fk-calc-val"><span id="fkCalcOrdersVal">50</span> orders/day</div></label>
+<label>Storage volume (m&sup3;)<input type="range" id="fkCalcVolume" min="1" max="50" value="5" step="1"><div class="fk-calc-val"><span id="fkCalcVolumeVal">5</span> m&sup3;</div></label>
+</div>
+<div class="fk-calc-result">
+<div class="fk-calc-total"><span id="fkCalcTotal">27,550</span> <small>UAH/mo</small></div>
+<div class="fk-calc-usd">&#8776; $<span id="fkCalcUsd">626</span>/mo</div>
+<div class="fk-calc-breakdown" id="fkCalcBreakdown">Fulfillment: 24,200 UAH + Storage: 3,250 UAH</div>
+<div class="fk-calc-note">Includes: WMS, packing, labels, Nova Poshta</div>
+</div>
+</div>
+</div></section>
+
+<!-- OUR KYIV FACILITY — warehouse tour with video -->
+<section class="fk-facility"><div class="ctr">
+<div class="fk-facility-grid">
+<div class="fk-facility-text">
+<div class="badge">OUR KYIV FACILITY</div>
+<h2>See where your orders ship from</h2>
+<ul class="fk-facility-list">
+<li><strong>3,900 m&sup2; total</strong> &mdash; Shchaslive (2,800 m&sup2;) + Bilohorodka (1,100 m&sup2;)</li>
+<li><strong>3 diesel generators</strong> &mdash; full autonomy during grid outages</li>
+<li><strong>Starlink + 2 fiber ISPs</strong> &mdash; triple internet redundancy</li>
+<li><strong>WMS address storage</strong> &mdash; barcode-based, real-time inventory</li>
+<li><strong>4 Nova Poshta pickups/day</strong> &mdash; same-day shipping guaranteed</li>
+<li><strong>30 seconds per order</strong> &mdash; pick, pack, label, done</li>
+</ul>
+</div>
+<div class="fk-facility-video">
+<div class="fk-video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="MTP Group Kyiv warehouse tour" width="640" height="360" loading="lazy">
+<div class="fk-play-overlay"><div class="fk-play-btn">&#9654;</div></div>
+</div>
+</div>
+</div>
+</div></section>
+
+<!-- YOUR OPTIONS — comparison table -->
+<section class="fk-options"><div class="ctr">
+<div class="badge badge-dark">COMPARISON</div>
+<h2 class="sec-h2">Your options for fulfillment in Kyiv</h2>
+<div class="fk-opt-table">
+<div class="fk-opt-row fk-opt-header"><span></span><span>Own setup</span><span>Local agent</span><span class="fk-opt-hl">MTP Group</span></div>
+<div class="fk-opt-row"><span>Setup time</span><span>2-3 months</span><span>2-4 weeks</span><span class="fk-opt-hl">1-3 days</span></div>
+<div class="fk-opt-row"><span>Local entity needed</span><span>Yes</span><span>Yes</span><span class="fk-opt-hl">No</span></div>
+<div class="fk-opt-row"><span>Warehouse</span><span>You lease</span><span>Shared, small</span><span class="fk-opt-hl">3,900 m&sup2; included</span></div>
+<div class="fk-opt-row"><span>Staff</span><span>You hire &amp; manage</span><span>Their team</span><span class="fk-opt-hl">Our team (EN-speaking)</span></div>
+<div class="fk-opt-row"><span>Power backup</span><span>You buy generators</span><span>Unlikely</span><span class="fk-opt-hl">3 generators + Starlink</span></div>
+<div class="fk-opt-row"><span>Min. investment</span><span>$2,000+/mo</span><span>$1,000+/mo</span><span class="fk-opt-hl">$114/mo</span></div>
+<div class="fk-opt-row"><span>Scale capacity</span><span>Limited by lease</span><span>Limited by partner</span><span class="fk-opt-hl">Up to 6,000 orders/day</span></div>
+</div>
+</div></section>
+
+<!-- PRICING with USD -->
+<section class="fk-pricing"><div class="ctr">
+<div class="badge badge-dark">PRICING 2026</div>
+<h2 class="sec-h2">Transparent pricing. UAH + USD.</h2>
+<div class="fk-price-table">
+<div class="fk-price-row fk-price-header"><span>Service</span><span>Condition</span><span>UAH</span><span>~USD</span></div>
+<div class="fk-price-row"><span>Order fulfillment</span><span>200+ orders/day</span><span>18 UAH</span><span>$0.41</span></div>
+<div class="fk-price-row"><span>Order fulfillment</span><span>100-199/day</span><span>20 UAH</span><span>$0.45</span></div>
+<div class="fk-price-row"><span>Order fulfillment</span><span>50-99/day</span><span>22 UAH</span><span>$0.50</span></div>
+<div class="fk-price-row"><span>Order fulfillment</span><span>0-49/day</span><span>26 UAH</span><span>$0.59</span></div>
+<div class="fk-price-row"><span>Storage</span><span>per m&sup3;/month</span><span>650 UAH</span><span>$14.77</span></div>
+<div class="fk-price-row"><span>Goods receiving</span><span>per unit</span><span>3 UAH</span><span>$0.07</span></div>
+<div class="fk-price-row fk-price-highlight"><span>Monthly minimum</span><span></span><span>5,000 UAH</span><span>$114</span></div>
+</div>
+<p class="fk-price-note">Includes: WMS dashboard, packing materials, labels, marketplace integration, Nova Poshta shipping. USD estimates at rate 1 USD = 44 UAH.</p>
+</div></section>
+
+<!-- FAQ — 7 international questions -->
+<section class="fk-faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Questions international sellers ask about Kyiv fulfillment</h2>
+<div class="fk-faq-list">
+<div class="fk-faq-item"><button class="fk-faq-q">Do I need a Ukrainian legal entity to start?</button><div class="fk-faq-a"><p>No. For your initial launch, we process shipments under our entity. This lets you validate the Ukrainian market with zero bureaucracy. When volumes justify it, we connect you with legal partners who register a Ukrainian FOP or LLC in 2-3 weeks. Sellers from Turkey, EU, US, and UK regularly use this approach.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">How do I get my products to your Kyiv warehouse?</button><div class="fk-faq-a"><p>Most international sellers ship via courier (DHL, FedEx, UPS) to our address near Boryspil Airport, Kyiv Oblast. Some use freight forwarders for larger volumes. We handle customs-cleared goods &mdash; once your shipment arrives, we unload, inspect, barcode, and shelve within 24 hours.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">Does your team speak English?</button><div class="fk-faq-a"><p>Yes. You get a dedicated English-speaking account manager. Your dashboard, inventory reports, and shipping notifications are all in English. We communicate via email, Telegram, WhatsApp, or Zoom &mdash; whatever works best for your timezone.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">What happens during power outages?</button><div class="fk-faq-a"><p>Our warehouses are equipped with 3 industrial diesel generators, 2 fiber-optic internet providers, and Starlink satellite backup. Since February 2022, we have had zero days of downtime &mdash; even during the most severe nationwide blackouts. Your orders ship on schedule every single day.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">How are customer returns handled?</button><div class="fk-faq-a"><p>When a buyer returns a product via Nova Poshta, it arrives at our warehouse. We inspect the condition with photo documentation per your guidelines, then either restock the item or set it aside. You see everything in your English-language dashboard in real-time.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">How fast do orders reach buyers?</button><div class="fk-faq-a"><p>Orders are picked and packed within 30 seconds. We dispatch 4 times daily via Nova Poshta. Kyiv metro area receives orders next day. The rest of Ukraine &mdash; 1-2 business days. Nova Poshta has 10,000+ branches and handles 80% of Ukrainian e-commerce deliveries.</p></div></div>
+<div class="fk-faq-item"><button class="fk-faq-q">What is the minimum to start?</button><div class="fk-faq-a"><p>5,000 UAH/month (~$114 USD). This covers WMS access, packing materials, labels, and fulfillment services. There is no minimum order volume &mdash; even 5 orders per day works. The per-order rate simply adjusts based on your volume tier (from $0.59 at 0-49/day down to $0.41 at 200+/day).</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="fk-article">
+<div class="ctr">
+<div class="badge badge-dark">GUIDE</div>
+<h2>Fulfillment in Kyiv: why Ukraine's capital is your best 3PL location</h2>
+<div class="fk-article-content">
+<h3>Kyiv as a logistics hub for international business</h3>
+<p>For an international seller evaluating Ukraine, the location of your fulfillment warehouse is the single most important operational decision. Kyiv Oblast is where 30-40% of all Ukrainian warehouse capacity is concentrated, and for good reason. The region sits at the intersection of every major transport corridor: the M-06/E40 highway connecting to the EU via Poland, the national railway hub, and Boryspil International Airport. When your inventory sits in a Kyiv-area warehouse, every order you receive can reach any buyer in Ukraine within 1-2 days. Kyiv city orders arrive the very next day.</p>
+
+<h3>The consumer market advantage</h3>
+<p>Kyiv's metropolitan area of 3.5 million people is Ukraine's wealthiest consumer market. Average household income exceeds the national average by 40-50%, and online shopping adoption leads the country. For a foreign brand entering Ukraine, the Kyiv buyer is typically your first customer. Having your warehouse 20 minutes from the city center means these high-value customers receive their orders faster than from any other location in the country &mdash; a direct advantage for marketplace seller ratings and repeat purchases.</p>
+
+<h3>Cost advantage over EU-based fulfillment</h3>
+<p>International sellers often compare operating in Ukraine to fulfillment from Poland or Romania. The numbers are stark. Ukrainian warehouse labor costs 30-50% less than neighboring EU countries. Storage at 650 UAH (~$15) per cubic meter per month is a fraction of Warsaw or Bucharest rates. Order processing from $0.41 is unmatched in the region. For a seller shipping 100 orders per day, the monthly saving versus an equivalent EU operation exceeds $1,500 &mdash; while serving the same end market.</p>
+
+<h3>Infrastructure resilience: generators, Starlink, and zero downtime</h3>
+<p>The question every international business asks about Ukraine: what about power outages? Professional fulfillment operators in Kyiv have invested heavily in energy independence. MTP Group's two warehouses near Kyiv run on 3 industrial diesel generators with automatic switchover, dual fiber-optic internet from separate providers, and Starlink satellite as a third backup layer. The result: zero days of downtime since February 2022, through the most challenging infrastructure period in Ukraine's modern history. Orders are processed and dispatched every single day, 365 days a year.</p>
+
+<h3>Nova Poshta: the backbone of Ukrainian e-commerce</h3>
+<p>Unlike Western markets where multiple carriers compete on roughly equal footing, Ukraine's e-commerce logistics are dominated by a single carrier: Nova Poshta. With over 10,000 branches, Nova Poshta handles approximately 80% of all e-commerce deliveries in Ukraine. This is an advantage for international sellers &mdash; you only need to master one logistics channel. MTP Group's Kyiv warehouses have 4 dedicated Nova Poshta pickups per day with priority tariffs, meaning your orders move through the system faster than individual sellers shipping from their own premises.</p>
+
+<h3>Getting started: the practical steps</h3>
+<p>The process for an international business to begin fulfilling from Kyiv is straightforward. Ship your customs-cleared inventory via international courier (DHL, FedEx, UPS) or freight forwarder to the warehouse near Boryspil Airport. No Ukrainian legal entity is required for the initial launch &mdash; the fulfillment partner processes shipments under their entity. You manage everything through an English-language dashboard: inventory levels, order status, returns, and analytics. When volumes justify incorporation (typically 50+ orders per day), registering a Ukrainian FOP takes 2-3 weeks through established legal partners. The minimum commitment is 5,000 UAH per month (~$114 USD) &mdash; genuinely accessible for brands testing a new market.</p>
+</div>
+</div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center">
+<div style="position:relative;width:90%;max-width:900px;aspect-ratio:16/9">
+<iframe id="videoIframe" width="100%" height="100%" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="border-radius:8px"></iframe>
+<button onclick="closeVideoModal()" style="position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer">&times;</button>
+</div>
+</div>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
+
+/* HERO — centered Apple-style, unique to EN Kyiv */
+.fk-hero{position:relative;min-height:100vh;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;overflow:hidden}
+.fk-hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(230,51,41,.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(255,255,255,.02) 0%,transparent 40%)}
+.fk-hero-inner{position:relative;z-index:2;max-width:860px}
+.fk-hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font-size:11px;font-weight:600;letter-spacing:3px;border-radius:2px;margin-bottom:32px}
+.fk-hero h1{font-family:var(--fd);font-size:clamp(32px,5.5vw,64px);font-weight:400;line-height:1.1;margin-bottom:28px}
+.fk-hero-accent{color:var(--red);display:block;margin-top:4px}
+.fk-hero-sub{font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.45);line-height:1.75;max-width:600px;margin:0 auto 40px}
+.fk-hero-form{display:flex;gap:12px;max-width:480px;margin:0 auto}
+.fk-hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.fk-hero-form input::placeholder{color:rgba(255,255,255,.25)}
+.fk-hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.fk-hero-form button{padding:16px 28px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.fk-hero-form button:hover{background:#c42b22}
+.fk-hero-note{font-size:13px;color:rgba(255,255,255,.25);margin-top:14px}
+
+/* WHY KYIV — 4 big stat cards */
+.fk-stats{padding:120px 0;background:var(--gray)}
+.fk-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fk-stat-card{padding:40px 28px;background:#fff;border-radius:14px;border:1px solid #e0e0e0;text-align:center;transition:border-color .3s}
+.fk-stat-card:hover{border-color:var(--red)}
+.fk-stat-num{font-family:var(--fd);font-size:clamp(36px,4vw,56px);font-weight:400;color:var(--red);line-height:1;margin-bottom:4px}
+.fk-stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:16px}
+.fk-stat-card p{font-size:13px;color:var(--muted);line-height:1.65;text-align:left}
+
+/* NO ENTITY — red section */
+.fk-no-entity{padding:100px 0;background:var(--red);color:#fff}
+.fk-ne-content{max-width:800px;margin:0 auto}
+.fk-ne-content h2{font-family:var(--fd);font-size:clamp(32px,5vw,56px);font-weight:400;margin-bottom:12px}
+.fk-ne-lead{font-size:clamp(16px,1.6vw,19px);opacity:.8;line-height:1.7;margin-bottom:48px}
+.fk-ne-steps{display:flex;flex-direction:column;gap:28px;margin-bottom:48px}
+.fk-ne-step{display:flex;gap:20px;align-items:flex-start}
+.fk-ne-num{width:40px;height:40px;min-width:40px;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:18px;margin-top:2px}
+.fk-ne-step div:last-child{font-size:15px;line-height:1.7}
+.fk-ne-step strong{font-size:16px}
+.fk-ne-countries{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+.fk-ne-countries>span:first-child{font-size:13px;opacity:.7;text-transform:uppercase;letter-spacing:1px}
+.fk-ne-flag{padding:6px 14px;background:rgba(255,255,255,.15);border-radius:4px;font-size:14px;font-weight:500}
+
+/* CALCULATOR */
+.fk-calculator{padding:100px 0}
+.fk-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:820px;margin:0 auto;align-items:center}
+.fk-calc-inputs{display:flex;flex-direction:column;gap:32px}
+.fk-calc-inputs label{font-size:14px;font-weight:500;display:block}
+.fk-calc-inputs input[type="range"]{width:100%;margin:12px 0 8px;accent-color:var(--red);height:6px}
+.fk-calc-val{font-size:13px;color:var(--muted)}
+.fk-calc-val span{font-weight:700;color:var(--black);font-size:18px}
+.fk-calc-result{background:var(--black);color:#fff;padding:48px 40px;border-radius:16px;text-align:center}
+.fk-calc-total{font-family:var(--fd);font-size:48px;line-height:1}
+.fk-calc-total small{font-size:18px;opacity:.5;font-family:var(--fb)}
+.fk-calc-usd{font-size:24px;color:var(--red);margin:8px 0 16px;font-weight:500}
+.fk-calc-breakdown{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:12px}
+.fk-calc-note{font-size:11px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px}
+
+/* FACILITY — warehouse tour */
+.fk-facility{padding:100px 0;background:#0a0a0a;color:#fff}
+.fk-facility-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.fk-facility-text h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin:16px 0 32px}
+.fk-facility-list{list-style:none;padding:0}
+.fk-facility-list li{font-size:15px;color:rgba(255,255,255,.7);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5}
+.fk-facility-list li strong{color:#fff}
+.fk-facility-video{position:relative}
+.fk-video-thumb{border-radius:12px;overflow:hidden;position:relative}
+.fk-video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:brightness(.5);transition:filter .3s}
+.fk-video-thumb:hover img{filter:brightness(.7)}
+.fk-play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.fk-play-btn{width:72px;height:72px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;transition:transform .3s}
+.fk-video-thumb:hover .fk-play-btn{transform:scale(1.1)}
+
+/* OPTIONS — comparison table */
+.fk-options{padding:100px 0;background:var(--gray)}
+.fk-opt-table{max-width:820px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.fk-opt-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;border-bottom:1px solid #eee;font-size:14px}
+.fk-opt-row:last-child{border:none}
+.fk-opt-row>span{padding:14px 16px}
+.fk-opt-header{background:var(--black);color:#fff;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.fk-opt-hl{background:rgba(230,51,41,.04);color:var(--red);font-weight:600}
+.fk-opt-header .fk-opt-hl{background:var(--red);color:#fff}
+
+/* PRICING */
+.fk-pricing{padding:100px 0}
+.fk-price-table{max-width:820px;margin:0 auto 32px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.fk-price-row{display:flex;border-bottom:1px solid #eee;font-size:14px}.fk-price-row:last-child{border:none}
+.fk-price-row>span{flex:1;padding:14px 16px}
+.fk-price-header{background:var(--black);color:#fff;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.fk-price-row:not(.fk-price-header):hover{background:var(--gray)}
+.fk-price-highlight{background:var(--red);color:#fff;font-weight:600}
+.fk-price-note{text-align:center;font-size:14px;color:var(--muted);max-width:650px;margin:0 auto}
+
+/* FAQ */
+.fk-faq{padding:100px 0;background:var(--black);color:var(--white)}
+.fk-faq-list{max-width:700px;margin:0 auto}
+.fk-faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.fk-faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.fk-faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.fk-faq-item.open .fk-faq-q::after{transform:rotate(45deg)}
+.fk-faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.fk-faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* ARTICLE */
+.fk-article{background:#fff;padding:80px 8vw}
+.fk-article h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.fk-article-content{max-width:800px}
+.fk-article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
+.fk-article-content h3:first-child{margin-top:0}
+.fk-article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+@media(max-width:768px){
+.fk-hero h1{font-size:clamp(26px,7vw,36px)}
+.fk-hero-form{flex-direction:column}.fk-hero-form button{width:100%}
+.fk-stats-grid{grid-template-columns:1fr 1fr}
+.fk-ne-steps{gap:20px}
+.fk-ne-countries{flex-direction:column;align-items:flex-start}
+.fk-calc-wrap{grid-template-columns:1fr}
+.fk-facility-grid{grid-template-columns:1fr}
+.fk-options .ctr{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fk-opt-table{min-width:600px}
+.fk-price-row{font-size:12px}.fk-price-row>span{padding:10px 10px}
+}
+
+@media(max-width:480px){
+.fk-stats-grid{grid-template-columns:1fr}
+}
+
+.fk-stat-card,.fk-ne-step,.fk-opt-row,.fk-price-row,.fk-faq-item{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+/* FAQ accordion */
+document.querySelectorAll('.fk-faq-q').forEach(function(btn){
+btn.addEventListener('click',function(){
+var item=btn.parentElement;
+var a=item.querySelector('.fk-faq-a');
+var open=item.classList.contains('open');
+document.querySelectorAll('.fk-faq-item.open').forEach(function(el){
+el.classList.remove('open');
+el.querySelector('.fk-faq-a').style.maxHeight=null;
+});
+if(!open){
+item.classList.add('open');
+a.style.maxHeight=a.scrollHeight+'px';
+}
+});
+});
+
+/* Cost Calculator */
+var ordersSlider=document.getElementById('fkCalcOrders');
+var volumeSlider=document.getElementById('fkCalcVolume');
+if(ordersSlider&&volumeSlider){
+function fkCalcUpdate(){
+var orders=parseInt(ordersSlider.value);
+var volume=parseInt(volumeSlider.value);
+document.getElementById('fkCalcOrdersVal').textContent=orders;
+document.getElementById('fkCalcVolumeVal').textContent=volume;
+var rate=orders>=200?18:orders>=100?20:orders>=50?22:26;
+var fulfillment=orders*22*rate;
+var storage=volume*650;
+var total=Math.max(fulfillment+storage,5000);
+var minApplied=total===5000&&(fulfillment+storage)<5000;
+document.getElementById('fkCalcTotal').textContent=total.toLocaleString('en-US');
+document.getElementById('fkCalcUsd').textContent=Math.round(total/44).toLocaleString('en-US');
+document.getElementById('fkCalcBreakdown').textContent='Fulfillment: '+fulfillment.toLocaleString('en-US')+' UAH + Storage: '+storage.toLocaleString('en-US')+' UAH'+(minApplied?' (min applied)':'');
+}
+ordersSlider.addEventListener('input',fkCalcUpdate);
+volumeSlider.addEventListener('input',fkCalcUpdate);
+fkCalcUpdate();
+}
+
+/* Video modal */
+window.openVideoModal=function(id){
+var m=document.getElementById('videoModal');
+m.style.display='flex';
+document.getElementById('videoIframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1';
+};
+window.closeVideoModal=function(){
+var m=document.getElementById('videoModal');
+m.style.display='none';
+document.getElementById('videoIframe').src='';
+};
+document.getElementById('videoModal').addEventListener('click',function(e){
+if(e.target===this) closeVideoModal();
+});
+});
+</script>

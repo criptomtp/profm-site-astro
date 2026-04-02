@@ -1,0 +1,289 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент у Києві","description":"Фулфілмент-послуги в Київській області: прийом, зберігання, пакування, відправка. 3 900 м² склад, 60 000+ відправлень/місяць, від 18 грн/замовлення.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"City","name":"Kyiv"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/services/"},{"@type":"ListItem","position":3,"name":"Фулфілмент Київ","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Де знаходиться склад MTP Group?","acceptedAnswer":{"@type":"Answer","text":"Два склади в Київській області: Щасливе (Бориспільський район, поруч з аеропортом) — 2 800 м² та Білогородка — 1 100 м². Загалом 3 900 м²."}},{"@type":"Question","name":"Скільки коштує фулфілмент у Києві?","acceptedAnswer":{"@type":"Answer","text":"Від 18 грн/замовлення при 200+ замовлень/день. Зберігання — 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс."}},{"@type":"Question","name":"Як швидко доставляється замовлення з вашого складу?","acceptedAnswer":{"@type":"Answer","text":"Відправка в день замовлення, 4 рази на день. По Києву — доставка наступного дня. По Україні — 1-2 дні через Нову Пошту."}},{"@type":"Question","name":"Чи працюєте ви під час блекаутів?","acceptedAnswer":{"@type":"Answer","text":"Так. 3 генератори, 2 оптоволоконних провайдери, Starlink. З 2022 року — жодного дня простою."}},{"@type":"Question","name":"З якими перевізниками ви працюєте?","acceptedAnswer":{"@type":"Answer","text":"Нова Пошта (основний), Укрпошта, Meest. Пріоритетні тарифи та виділені вікна забору."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00","geo":{"@type":"GeoCoordinates","latitude":"50.3167","longitude":"30.9333"}}</script>`;
+---
+<Base
+  title="Фулфілмент Київ — склад і відправка від 18 грн | MTP Group"
+  description="Фулфілмент у Київській області: 3 900 м² склад, відправка від 18 грн, збір за 30 сек. Щасливе + Білогородка. 10+ років, 150+ клієнтів."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-kiev/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">КИЇВ &middot; КИЇВСЬКА ОБЛАСТЬ</div>
+<h1>Фулфілмент у Києві.<br>Склад, пакування, відправка.</h1>
+<p class="hero-sub">Два склади в Київській області: Щасливе (2 800 м²) і Білогородка (1 100 м²). Від прийому товару до відправки Новою Поштою &mdash; 30 секунд на замовлення. 4 забори на день.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Розрахувати вартість &#8594;</button></form>
+<div class="hero-note">Безкоштовна консультація &#183; Розрахунок за 15 хвилин</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">3 900 м&sup2;</div><div class="hero-stat-label">два склади</div></div>
+<div class="hero-stat"><div class="hero-stat-val">60 000+</div><div class="hero-stat-label">відправлень/міс</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 сек</div><div class="hero-stat-label">збір замовлення</div></div>
+<div class="hero-stat"><div class="hero-stat-val">10+ років</div><div class="hero-stat-label">досвіду</div></div>
+</div>
+</section>
+
+<!-- WHY KYIV — geo advantage -->
+<section class="why-kyiv"><div class="ctr">
+<div class="badge badge-dark">ЛОКАЦІЯ</div>
+<h2 class="sec-h2">Чому Київська область &mdash; найкраще місце для складу</h2>
+<div class="wk-grid">
+<div class="wk-card"><div class="wk-icon">&#128205;</div><h3>Центр логістики України</h3><p>30-40% всіх складських площ країни. М-06/Е40 &mdash; пряме з'єднання з ЄС через Польщу. Аеропорт Бориспіль за 15 хвилин.</p></div>
+<div class="wk-card"><div class="wk-icon">&#128666;</div><h3>Доставка по Києву &mdash; наступного дня</h3><p>3.5-4 млн споживачів у столиці. Замовлення відправлене сьогодні &mdash; у покупця завтра. По Україні &mdash; 1-2 дні через Нову Пошту.</p></div>
+<div class="wk-card"><div class="wk-icon">&#9889;</div><h3>Автономність 24/7</h3><p>3 генератори, 2 оптоволоконних провайдери, Starlink. Жодного дня простою з лютого 2022. Замовлення обробляються навіть без електрики.</p></div>
+<div class="wk-card"><div class="wk-icon">&#128230;</div><h3>Нова Пошта &mdash; 10 000+ відділень</h3><p>80% e-commerce доставок в Україні. Пріоритетні тарифи MTP Group. 4 забори на день зі складу. Автоматичне створення ТТН.</p></div>
+</div>
+</div></section>
+
+<!-- TWO WAREHOUSES — map-like section -->
+<section class="warehouses"><div class="ctr">
+<div class="badge">СКЛАДИ</div>
+<h2 class="sec-h2">Два склади &mdash; диверсифікація ризиків</h2>
+<div class="wh-grid">
+<div class="wh-card">
+<div class="wh-name">Щасливе</div>
+<div class="wh-size">2 800 м&sup2;</div>
+<ul class="wh-features">
+<li>Бориспільський район, поруч з аеропортом</li>
+<li>Адресне зберігання WMS</li>
+<li>2 генератори + Starlink</li>
+<li>Зона приймання та пакування</li>
+<li>4 забори Нової Пошти/день</li>
+</ul>
+</div>
+<div class="wh-card">
+<div class="wh-name">Білогородка</div>
+<div class="wh-size">1 100 м&sup2;</div>
+<ul class="wh-features">
+<li>Київ-Святошинський район</li>
+<li>Ячеєчне зберігання</li>
+<li>1 генератор + резервний інтернет</li>
+<li>Зона обробки повернень</li>
+<li>FEFO-контроль для косметики</li>
+</ul>
+</div>
+</div>
+<p class="wh-note">Товар розподілений між двома складами &mdash; навіть якщо один недоступний, другий продовжує відправки.</p>
+</div></section>
+
+<!-- SERVICES — what we do -->
+<section class="services-full"><div class="ctr">
+<div class="badge badge-dark">ПОСЛУГИ</div>
+<h2 class="sec-h2">Повний цикл фулфілменту в Києві</h2>
+<div class="sf-grid">
+<div class="sf-card"><div class="sf-num">01</div><h3>Прийом товару</h3><p>Розвантаження, перевірка, штрихкодування, розміщення на адресному складі. Від 3 грн/одиниця.</p></div>
+<div class="sf-card"><div class="sf-num">02</div><h3>Зберігання WMS</h3><p>Ячеєчне зберігання з контролем залишків у реальному часі. FEFO для товарів з терміном придатності. 650 грн/м&sup3;/міс.</p></div>
+<div class="sf-card"><div class="sf-num">03</div><h3>Збір і пакування</h3><p>Збір замовлення за 30 секунд. Пакування за стандартами маркетплейсу або з вашим брендуванням. Вкладки, тішью, наклейки.</p></div>
+<div class="sf-card"><div class="sf-num">04</div><h3>Відправка</h3><p>Нова Пошта, Укрпошта, Meest. 4 забори на день. Автоматичне створення ТТН. Трекінг у вашому кабінеті. Від 18 грн/замовлення.</p></div>
+<div class="sf-card"><div class="sf-num">05</div><h3>Обробка повернень</h3><p>Приймаємо повернення від перевізників. Перевіряємо стан товару з фото-фіксацією. Повертаємо в оборот або ізолюємо брак.</p></div>
+<div class="sf-card"><div class="sf-num">06</div><h3>Аналітика і звіти</h3><p>Особистий кабінет 24/7: залишки, відправки, повернення, аналітика. Телеграм-бот з повідомленнями про кожну оплату.</p></div>
+</div>
+</div></section>
+
+<!-- CASE STUDY -->
+<section class="case-study"><div class="ctr">
+<div class="badge">КЕЙС</div>
+<h2 class="sec-h2">I.Love.My.Cycle: з 25 до 73 замовлень на день</h2>
+<div class="case-content">
+<p class="case-intro">Wellness-бренд I.Love.My.Cycle перевів логістику на наш склад у Щасливому. Результат за 3 місяці:</p>
+<div class="case-metrics">
+<div class="case-metric"><span class="cm-val">25 &#8594; 73</span><span class="cm-label">замовлень/день</span></div>
+<div class="case-metric"><span class="cm-val">33 &#8594; 14 грн</span><span class="cm-label">собівартість відправки</span></div>
+<div class="case-metric"><span class="cm-val">90 год</span><span class="cm-label">зекономлено на місяць</span></div>
+</div>
+</div>
+</div></section>
+
+<!-- PRICING -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">ТАРИФИ 2026</div>
+<h2 class="sec-h2">Прозорі ціни &mdash; без прихованих платежів</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Послуга</span><span>Умова</span><span>Ціна</span></div>
+<div class="price-row"><span>Відправка</span><span>200+ замовлень/день</span><span>від 18 грн</span></div>
+<div class="price-row"><span>Відправка</span><span>100-199/день</span><span>від 20 грн</span></div>
+<div class="price-row"><span>Відправка</span><span>50-99/день</span><span>від 22 грн</span></div>
+<div class="price-row"><span>Відправка</span><span>0-49/день</span><span>від 26 грн</span></div>
+<div class="price-row"><span>Зберігання</span><span>м&sup3;/місяць</span><span>650 грн</span></div>
+<div class="price-row"><span>Прийом товару</span><span>за одиницю</span><span>від 3 грн</span></div>
+<div class="price-row price-highlight"><span>Мінімальний платіж</span><span>на місяць</span><span>5 000 грн</span></div>
+</div>
+<p class="price-note">Конкуренти ховають ціни за формою &laquo;Залишити заявку&raquo;. Ми показуємо відразу &mdash; тому що нам нема чого приховувати.</p>
+</div></section>
+
+<!-- COMPETITORS COMPARISON — unique to this page -->
+<section class="vs-section"><div class="ctr">
+<div class="badge badge-dark">ПОРІВНЯННЯ</div>
+<h2 class="sec-h2">MTP Group vs конкуренти</h2>
+<div class="vs-table">
+<div class="vs-row vs-header"><span></span><span>MTP Group</span><span>Конкурент А</span><span>Свій склад</span></div>
+<div class="vs-row"><span>Ціни відкрито</span><span class="vs-win">Так, на сайті</span><span>Тільки після заявки</span><span>&mdash;</span></div>
+<div class="vs-row"><span>Мін. замовлення</span><span class="vs-win">Немає</span><span>50+/день</span><span>&mdash;</span></div>
+<div class="vs-row"><span>Швидкість збору</span><span class="vs-win">30 сек</span><span>Не вказано</span><span>5-10 хв</span></div>
+<div class="vs-row"><span>Генератори</span><span class="vs-win">3 + Starlink</span><span>Не вказано</span><span>Ваша проблема</span></div>
+<div class="vs-row"><span>Забори НП/день</span><span class="vs-win">4</span><span>1-2</span><span>Самостійно</span></div>
+<div class="vs-row"><span>Площа складу</span><span>3 900 м&sup2;</span><span>Різна</span><span>Оренда</span></div>
+<div class="vs-row"><span>Підключення</span><span class="vs-win">1-3 дні</span><span>1-2 тижні</span><span>1-3 місяці</span></div>
+</div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Часті запитання</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">Де знаходяться ваші склади?</button><div class="faq-a"><p>Два склади в Київській області. Щасливе (Бориспільський район) &mdash; 2 800 м², 15 хвилин від аеропорту. Білогородка (Київ-Святошинський район) &mdash; 1 100 м². Загальна площа &mdash; 3 900 м².</p></div></div>
+<div class="faq-item"><button class="faq-q">Як швидко замовлення дістанеться покупцю?</button><div class="faq-a"><p>Замовлення збирається за 30 секунд і відправляється в день надходження. По Києву &mdash; наступного дня. По Україні &mdash; 1-2 дні через Нову Пошту. 4 забори на день зі складу.</p></div></div>
+<div class="faq-item"><button class="faq-q">Скільки коштує фулфілмент у Києві?</button><div class="faq-a"><p>Від 18 грн/замовлення (200+/день). Зберігання &mdash; 650 грн/м³/міс. Мінімум &mdash; 5 000 грн/міс. Це дешевше, ніж оренда складу + зарплата пакувальника + комунальні.</p></div></div>
+<div class="faq-item"><button class="faq-q">Чи працюєте ви під час блекаутів?</button><div class="faq-a"><p>Так. 3 промислових генератори, 2 оптоволоконних провайдери, Starlink. З лютого 2022 року &mdash; жодного дня простою. Навіть під час найжорсткіших відключень замовлення відправлялися вчасно.</p></div></div>
+<div class="faq-item"><button class="faq-q">Які перевізники доступні?</button><div class="faq-a"><p>Нова Пошта (основний, 80% відправлень), Укрпошта (для економ-відправлень), Meest. Автоматичне створення ТТН, пріоритетні тарифи, 4 забори на день.</p></div></div>
+<div class="faq-item"><button class="faq-q">Як швидко можна почати?</button><div class="faq-a"><p>1-3 дні: день 1 &mdash; консультація + договір, день 2 &mdash; привозите товар, день 3 &mdash; перша відправка. Інтеграція з CRM або маркетплейсами &mdash; через API.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
+<h2>Фулфілмент у Києві: чому Київська область &mdash; оптимальне місце для e-commerce складу</h2>
+<div class="article-content">
+<h3>Київ &mdash; логістичний центр України</h3>
+<p>Київська область концентрує 30-40% всіх складських площ України. Це не випадковість &mdash; столичний регіон є перетином основних транспортних коридорів: автомагістралі М-06/Е40 (з'єднання з ЄС через Польщу), залізничні вузли, аеропорт Бориспіль. Для e-commerce продавця це означає одне: замовлення, відправлене з Київської області, потрапляє покупцю в будь-яку точку України за 1-2 дні. По Києву &mdash; наступного дня.</p>
+<p>3.5-4 мільйони жителів столичного регіону &mdash; це найбільший споживчий ринок країни. Продавець з фулфілмент-складом під Києвом має географічну перевагу перед конкурентами зі Львова, Одеси чи Харкова: швидша доставка = вищий рейтинг на маркетплейсі = більше продажів.</p>
+
+<h3>Чому фулфілмент, а не власний склад</h3>
+<p>Власний склад у Києві &mdash; це оренда від 15 000 грн/міс за невелике приміщення, зарплата пакувальника 18 000 грн, комунальні 4 000 грн, генератор (обов'язково з 2022 року) &mdash; ще 10 000+ грн. Разом &mdash; від 55 000 грн/міс, не рахуючи WMS-систему та ваш власний час. Фулфілмент-оператор замінює все це одним рахунком: від 5 000 грн/міс, усе включено.</p>
+<p>Але головна перевага &mdash; не гроші, а час. Замість 3-4 годин на день на пакування і поїздки на Нову Пошту, ви витрачаєте цей час на маркетинг, асортимент і масштабування. Клієнт I.Love.My.Cycle саме так виріс із 25 до 73 замовлень на день за 3 місяці після переходу на фулфілмент MTP Group.</p>
+
+<h3>Як обрати фулфілмент у Києві: 5 критеріїв</h3>
+<p>Перше &mdash; прозорість цін. Якщо оператор ховає тарифи за формою &laquo;Залишити заявку&raquo; &mdash; це червоний прапорець. MTP Group публікує ціни відкрито: від 18 грн за відправку, 650 грн за м&sup3; зберігання. Друге &mdash; автономність: генератори та резервний інтернет обов'язкові з 2022 року. Третє &mdash; швидкість: замовлення має бути зібране і відправлене в день надходження. Четверте &mdash; API-інтеграція з маркетплейсами (Rozetka, Prom.ua, Kasta). П'яте &mdash; два і більше склади для диверсифікації ризиків.</p>
+<p>MTP Group відповідає всім п'яти критеріям: два склади в Київській області (Щасливе + Білогородка, 3 900 м²), 3 генератори + Starlink, збір за 30 секунд, інтеграція з 8+ маркетплейсами, і ціни &mdash; на сайті. 10+ років досвіду, 150+ активних клієнтів, 60 000+ відправлень на місяць.</p>
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
+
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
+.hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,72px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
+.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
+.hero-stat-val{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;color:#fff;white-space:nowrap}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+
+.why-kyiv{padding:100px 0}
+.wk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.wk-card{padding:40px 32px;border:1px solid #e0e0e0;border-radius:12px}
+.wk-icon{font-size:32px;margin-bottom:16px}
+.wk-card h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.wk-card p{font-size:15px;color:var(--muted);line-height:1.7}
+
+.warehouses{padding:100px 0;background:#0a0a0a;color:#fff}
+.wh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:32px}
+.wh-card{padding:40px 36px;border:1px solid rgba(255,255,255,.1);border-radius:12px}
+.wh-name{font-family:var(--fd);font-size:28px;margin-bottom:4px}
+.wh-size{font-size:42px;font-family:var(--fd);color:var(--red);margin-bottom:20px}
+.wh-features{list-style:none;padding:0}
+.wh-features li{font-size:14px;color:rgba(255,255,255,.6);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);padding-left:20px;position:relative}
+.wh-features li::before{content:'✓';position:absolute;left:0;color:var(--red)}
+.wh-note{text-align:center;font-size:15px;color:rgba(255,255,255,.5);max-width:600px;margin:0 auto}
+
+.services-full{padding:100px 0;background:var(--gray)}
+.sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sf-card{padding:36px 28px;background:#fff;border-radius:12px;border:1px solid #e0e0e0}
+.sf-num{font-family:var(--fd);font-size:48px;color:rgba(0,0,0,.06);line-height:1;margin-bottom:8px}
+.sf-card h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.sf-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+.case-study{padding:100px 0;background:#0a0a0a;color:#fff}
+.case-content{max-width:800px;margin:0 auto}
+.case-intro{font-size:18px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:40px;text-align:center}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case-metric{text-align:center;padding:28px 16px;border:1px solid rgba(255,255,255,.1);border-radius:8px}
+.cm-val{display:block;font-family:var(--fd);font-size:clamp(24px,3vw,36px);color:var(--red);margin-bottom:4px}
+.cm-label{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+
+.pricing{padding:100px 0}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:var(--black);color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row:not(.price-header):hover{background:var(--gray)}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);max-width:600px;margin:0 auto;font-style:italic}
+
+.vs-section{padding:100px 0;background:var(--gray)}
+.vs-table{max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.vs-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;border-bottom:1px solid #eee;font-size:14px}
+.vs-row:last-child{border:none}
+.vs-row>span{padding:14px 16px}
+.vs-header{background:var(--black);color:#fff;font-weight:600;font-size:12px;text-transform:uppercase}
+.vs-win{color:var(--red);font-weight:600}
+
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+@media(max-width:768px){
+.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
+.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
+.wk-grid{grid-template-columns:1fr}
+.wh-grid{grid-template-columns:1fr}
+.sf-grid{grid-template-columns:1fr}
+.case-metrics{grid-template-columns:1fr}
+.vs-section .ctr{overflow-x:auto}.vs-table{min-width:600px}
+}
+
+.wk-card,.wh-card,.sf-card,.case-metric{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.faq-a');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+});
+</script>

@@ -1,0 +1,413 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент в Киеве","description":"Фулфилмент-услуги в Киевской области: приём, хранение, упаковка, отправка. 3 900 м² склад, 60 000+ отправлений/месяц, от 18 грн/заказ. 10+ лет опыта.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"City","name":"Kyiv"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправление"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/services"},{"@type":"ListItem","position":3,"name":"Фулфилмент Киев","item":"https://www.fulfillmentmtp.com.ua/fulfilment-kiev/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Где находятся склады MTP Group?","acceptedAnswer":{"@type":"Answer","text":"Два склада в Киевской области: Счастливое (Бориспольский район, рядом с аэропортом) — 2 800 м² и Белогородка — 1 100 м². Всего 3 900 м²."}},{"@type":"Question","name":"Сколько стоит фулфилмент в Киеве?","acceptedAnswer":{"@type":"Answer","text":"Отправка — от 18 грн/заказ (200+/день). Хранение — 650 грн/м³/мес. Минимальный платёж — 5 000 грн/мес."}},{"@type":"Question","name":"Работаете ли вы во время блэкаутов?","acceptedAnswer":{"@type":"Answer","text":"Да. 3 генератора, 2 оптоволоконных провайдера, Starlink. С 2022 года — ноль дней простоя."}},{"@type":"Question","name":"С какими перевозчиками вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Новая Почта (основной, 4 забора/день, 10 000+ отделений), Укрпошта, Meest."}},{"@type":"Question","name":"Как быстро собирается заказ?","acceptedAnswer":{"@type":"Answer","text":"Среднее время сборки — 30 секунд. До 6 000 заказов в день в пике."}},{"@type":"Question","name":"Какой минимальный объём для подключения?","acceptedAnswer":{"@type":"Answer","text":"Минимальный платёж — 5 000 грн/мес. Минимального количества заказов нет — мы работаем и с 10, и с 6 000 заказов в день."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00","geo":{"@type":"GeoCoordinates","latitude":"50.3167","longitude":"30.9333"}}</script>`;
+---
+<Base
+  title="Фулфилмент Киев — от 18 грн/заказ | MTP Group"
+  description="Фулфилмент в Киеве: 3 900 м² склад, сборка за 30 сек, от 18 грн/заказ. 10+ лет, 60 000+ отправлений/мес. Генераторы, Starlink, ноль простоев."
+  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-kiev/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-kiev/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+</Fragment>
+
+<!-- 1. HERO — centered Apple-style with animated red gradient -->
+<section class="kv-hero">
+<div class="kv-hero-gradient"></div>
+<div class="kv-hero-inner">
+<h1>Фулфилмент в Киеве.<br>Всё включено.</h1>
+<p class="kv-hero-sub">Приём товара, хранение, сборка за 30 секунд, отправка Новой Почтой 4 раза в день. Два склада под Киевом, 3 900 м&sup2;. Вы продаёте &mdash; мы делаем всё остальное.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Рассчитать стоимость &#8594;</button></form>
+<div class="hero-note">Бесплатно &#183; За 15 минут &#183; Без обязательств</div>
+</div>
+</section>
+
+<!-- 2. ANIMATED COUNTERS — data-target driven -->
+<section class="kv-counters">
+<div class="kv-counter-grid">
+<div class="kv-counter-item"><div class="kv-counter-num"><span class="counter-val" data-target="3900">3 900</span><span class="kv-counter-unit"> м&sup2;</span></div><div class="kv-counter-label">складских площадей</div></div>
+<div class="kv-counter-item"><div class="kv-counter-num"><span class="counter-val" data-target="60000">60 000</span><span class="kv-counter-unit">+</span></div><div class="kv-counter-label">отправлений в месяц</div></div>
+<div class="kv-counter-item"><div class="kv-counter-num"><span class="counter-val" data-target="30">30</span><span class="kv-counter-unit"> сек</span></div><div class="kv-counter-label">сборка заказа</div></div>
+<div class="kv-counter-item"><div class="kv-counter-num"><span class="counter-val" data-target="10">10</span><span class="kv-counter-unit">+ лет</span></div><div class="kv-counter-label">на рынке фулфилмента</div></div>
+</div>
+</section>
+
+<!-- 3. КАК ЭТО РАБОТАЕТ — horizontal timeline 09:00 → 18:00 -->
+<section class="kv-journey"><div class="ctr">
+<div class="badge badge-dark">ПРОЦЕСС</div>
+<h2 class="sec-h2">Как это работает</h2>
+<p class="kv-journey-sub">Путь заказа через наш склад &mdash; от оформления до доставки покупателю</p>
+<div class="kv-timeline-wrap">
+<div class="kv-timeline" id="kvTimeline">
+<div class="kv-timeline-track">
+<div class="kv-tl-step">
+<div class="kv-tl-time">09:00</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>Заказ поступает</h3>
+<p>Покупатель оформляет заказ на вашем сайте или маркетплейсе. Через API он мгновенно попадает в нашу WMS.</p>
+</div>
+</div>
+<div class="kv-tl-step">
+<div class="kv-tl-time">09:01</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>WMS создаёт задание</h3>
+<p>Система определяет стеллаж, полку, ячейку. Оператор получает маршрут на терминал.</p>
+</div>
+</div>
+<div class="kv-tl-step">
+<div class="kv-tl-time">09:02</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>Сборка за 30 секунд</h3>
+<p>Штрихкод сканируется, товар упаковывается, этикетка печатается. 30 секунд &mdash; и посылка готова.</p>
+</div>
+</div>
+<div class="kv-tl-step">
+<div class="kv-tl-time">12:00</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>Первый забор НП</h3>
+<p>Курьер Новой Почты забирает готовые посылки. Это первый из 4 заборов в день.</p>
+</div>
+</div>
+<div class="kv-tl-step">
+<div class="kv-tl-time">15:00</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>Покупатель видит трек</h3>
+<p>Статус обновляется автоматически. Трек-номер в маркетплейсе, уведомление покупателю.</p>
+</div>
+</div>
+<div class="kv-tl-step">
+<div class="kv-tl-time">18:00</div>
+<div class="kv-tl-dot"></div>
+<div class="kv-tl-card">
+<h3>Отчёт в кабинете</h3>
+<p>Итоги дня: заказы, отправки, остатки, возвраты. Всё в реальном времени, 24/7.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+
+<!-- 4. СКЛАД, КОТОРЫЙ НЕ ОСТАНАВЛИВАЕТСЯ — reliability with large facts -->
+<section class="kv-reliable"><div class="ctr">
+<h2 class="sec-h2">Склад, который не останавливается</h2>
+<p class="kv-reliable-sub">С февраля 2022 года &mdash; ноль дней простоя. Ни один заказ не был задержан из-за отключений.</p>
+<div class="kv-facts">
+<div class="kv-fact">
+<div class="kv-fact-num">3</div>
+<div class="kv-fact-text"><strong>промышленных генератора</strong><br>Полная автономность при отключении электричества. Переключение &mdash; автоматическое, за секунды.</div>
+</div>
+<div class="kv-fact">
+<div class="kv-fact-num">2+1</div>
+<div class="kv-fact-text"><strong>провайдера + Starlink</strong><br>Два оптоволоконных канала + спутниковый интернет. WMS работает всегда, данные не теряются.</div>
+</div>
+<div class="kv-fact">
+<div class="kv-fact-num">0</div>
+<div class="kv-fact-text"><strong>дней простоя с 2022</strong><br>Войны, блэкауты, обстрелы инфраструктуры &mdash; склад работал каждый день без перерыва.</div>
+</div>
+<div class="kv-fact">
+<div class="kv-fact-num">4</div>
+<div class="kv-fact-text"><strong>забора Новой Почтой в день</strong><br>Посылки уезжают со склада 4 раза в сутки. По Киеву &mdash; доставка на следующий день.</div>
+</div>
+</div>
+</div></section>
+
+<!-- 5. PRICING TABLE -->
+<section class="kv-pricing"><div class="ctr">
+<div class="badge">ТАРИФЫ 2026</div>
+<h2 class="sec-h2">Конкуренты прячут цены. Мы &mdash; нет.</h2>
+<div class="kv-price-table">
+<div class="kv-pr price-header"><span>Услуга</span><span>Условие</span><span>Стоимость</span></div>
+<div class="kv-pr"><span>Отправка заказа</span><span>200+ заказов/день</span><span>от 18 грн</span></div>
+<div class="kv-pr"><span>Отправка заказа</span><span>100&ndash;199 заказов/день</span><span>от 20 грн</span></div>
+<div class="kv-pr"><span>Отправка заказа</span><span>50&ndash;99 заказов/день</span><span>от 22 грн</span></div>
+<div class="kv-pr"><span>Отправка заказа</span><span>0&ndash;49 заказов/день</span><span>от 26 грн</span></div>
+<div class="kv-pr"><span>Хранение</span><span>за м&sup3;/месяц</span><span>650 грн</span></div>
+<div class="kv-pr"><span>Приёмка товара</span><span>за единицу</span><span>от 3 грн</span></div>
+<div class="kv-pr kv-pr-hl"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн</span></div>
+</div>
+<p class="kv-price-note">Цена снижается с ростом объёмов. Персональный расчёт &mdash; бесплатно за 15 минут.</p>
+</div></section>
+
+<!-- 6. СРАВНИТЕ САМИ — horizontal scroll cards -->
+<section class="kv-compare"><div class="ctr">
+<div class="badge badge-dark">ЭКОНОМИКА</div>
+<h2 class="sec-h2">Сравните сами</h2>
+<p class="kv-compare-sub">Сколько стоит собственный склад для 100 заказов/день vs фулфилмент MTP Group</p>
+</div>
+<div class="kv-compare-wrap">
+<div class="kv-compare-scroller" id="kvCompareScroller">
+<div class="kv-compare-track">
+<!-- Own warehouse card -->
+<div class="kv-cmp-card kv-cmp-own">
+<div class="kv-cmp-tag">Собственный склад</div>
+<div class="kv-cmp-rows">
+<div class="kv-cmp-row"><span>Аренда помещения</span><span>15 000 грн</span></div>
+<div class="kv-cmp-row"><span>Зарплата упаковщика</span><span>18 000 грн</span></div>
+<div class="kv-cmp-row"><span>Коммунальные услуги</span><span>4 000 грн</span></div>
+<div class="kv-cmp-row"><span>Упаковочные материалы</span><span>5 000 грн</span></div>
+<div class="kv-cmp-row"><span>WMS-система</span><span>3 000 грн</span></div>
+<div class="kv-cmp-row"><span>Генератор (обслуживание + топливо)</span><span>10 000 грн</span></div>
+</div>
+<div class="kv-cmp-total"><span>Итого</span><span>55 000 грн/мес</span></div>
+<div class="kv-cmp-note">+ 3-4 часа вашего времени каждый день</div>
+</div>
+<!-- MTP card -->
+<div class="kv-cmp-card kv-cmp-mtp">
+<div class="kv-cmp-tag">MTP Group Fulfillment</div>
+<div class="kv-cmp-rows">
+<div class="kv-cmp-row"><span>Отправка (100 заказов &times; 22 дня &times; 20 грн)</span><span>44 000 грн</span></div>
+<div class="kv-cmp-row"><span>Хранение (10 м&sup3; &times; 650 грн)</span><span>6 500 грн</span></div>
+</div>
+<div class="kv-cmp-total"><span>Итого</span><span>~50 500 грн/мес</span></div>
+<div class="kv-cmp-note">+ 0 часов вашего времени. Генератор, WMS, материалы &mdash; включены.</div>
+<div class="kv-cmp-saving">Экономия: до 90+ часов/мес вашего времени</div>
+</div>
+<!-- Small seller card -->
+<div class="kv-cmp-card kv-cmp-small">
+<div class="kv-cmp-tag">Для малых объёмов</div>
+<div class="kv-cmp-rows">
+<div class="kv-cmp-row"><span>Отправка (30 заказов &times; 22 дня &times; 26 грн)</span><span>17 160 грн</span></div>
+<div class="kv-cmp-row"><span>Хранение (5 м&sup3; &times; 650 грн)</span><span>3 250 грн</span></div>
+</div>
+<div class="kv-cmp-total"><span>Итого</span><span>~20 410 грн/мес</span></div>
+<div class="kv-cmp-note">Но минимум &mdash; 5 000 грн/мес. При малых объёмах &mdash; платите минимум.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. FAQ — 6 Russian-specific questions -->
+<section class="kv-faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Частые вопросы</h2>
+<div class="kv-faq-list">
+
+<div class="faq-item"><button class="faq-q">Где находятся склады MTP Group?</button><div class="faq-a"><p>Два склада в Киевской области. Счастливое (Бориспольский район, 15 минут от аэропорта) &mdash; 2 800 м&sup2;, основной склад с двумя генераторами и Starlink. Белогородка (Киево-Святошинский район) &mdash; 1 100 м&sup2;, с зоной обработки возвратов. Общая площадь &mdash; 3 900 м&sup2;.</p></div></div>
+
+<div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент в Киеве?</button><div class="faq-a"><p>Отправка &mdash; от 18 грн/заказ при 200+ заказов в день. Хранение &mdash; 650 грн за м&sup3; в месяц. Приёмка &mdash; от 3 грн/единица. Минимальный платёж &mdash; 5 000 грн/мес. Точный расчёт бесплатно за 15 минут &mdash; нужно только знать объём заказов и габариты товара.</p></div></div>
+
+<div class="faq-item"><button class="faq-q">Работаете ли вы во время блэкаутов?</button><div class="faq-a"><p>Да, без перебоев. На складах установлены 3 промышленных генератора, подключены 2 оптоволоконных провайдера и спутниковый Starlink. С февраля 2022 года &mdash; ни одного дня простоя. Заказы обрабатывались и отправлялись даже в самые тяжёлые периоды отключений.</p></div></div>
+
+<div class="faq-item"><button class="faq-q">С какими перевозчиками вы работаете?</button><div class="faq-a"><p>Основной перевозчик &mdash; Новая Почта: 10 000+ отделений по Украине, 4 забора в день со склада, автоматическое создание ТТН, приоритетные тарифы. Также работаем с Укрпоштой (экономные отправки) и Meest (международная логистика).</p></div></div>
+
+<div class="faq-item"><button class="faq-q">Как быстро собирается и отправляется заказ?</button><div class="faq-a"><p>Среднее время сборки одного заказа &mdash; 30 секунд. Отправка &mdash; в день поступления заказа. 4 забора Новой Почтой в день: заказ, поступивший утром, уже днём на пути к покупателю. По Киеву &mdash; доставка на следующий день. По Украине &mdash; 1-2 дня.</p></div></div>
+
+<div class="faq-item"><button class="faq-q">Какой минимальный объём для подключения?</button><div class="faq-a"><p>Минимального количества заказов нет. Минимальный платёж &mdash; 5 000 грн/мес. Мы работаем и с продавцами, у которых 10 заказов в день, и с бизнесами на 6 000 заказов в день. Подключение &mdash; от 1 до 3 дней.</p></div></div>
+
+</div>
+</div></section>
+
+<!-- 8. SEO ARTICLE -->
+<section class="kv-article">
+<div class="ctr">
+<div class="badge badge-dark">ПОЛЕЗНО</div>
+<h2>Фулфилмент в Киеве: как выбрать оператора и не переплатить</h2>
+<div class="kv-article-content">
+
+<h3>Почему Киев &mdash; главный логистический хаб Украины</h3>
+<p>Киевская область &mdash; это не просто столица. Это крупнейший логистический узел страны: здесь сосредоточено 30-40% всех складских площадей Украины. Автомагистрали М-06/Е40, железнодорожные развязки, международный аэропорт Борисполь &mdash; всё это делает регион идеальной точкой для складской логистики. Для продавца e-commerce это означает: заказ, отправленный из-под Киева, доходит до покупателя в любой точке Украины за 1-2 дня. По самому Киеву &mdash; уже на следующий день.</p>
+<p>Столичный регион &mdash; это 3,5-4 миллиона потенциальных покупателей в радиусе одного дня доставки. Продавец с фулфилмент-складом под Киевом объективно быстрее конкурентов из Львова, Одессы или Харькова. А скорость доставки &mdash; один из ключевых факторов ранжирования на маркетплейсах и конверсии в собственном интернет-магазине.</p>
+
+<h3>Скрытые расходы собственного склада</h3>
+<p>Многие продавцы начинают с собственного склада, не подсчитав реальную себестоимость. Аренда даже небольшого помещения в Киевской области &mdash; от 15 000 грн/мес. Зарплата одного упаковщика &mdash; 18 000 грн. Коммунальные услуги &mdash; 4 000 грн. Упаковочные материалы &mdash; 5 000 грн. WMS-система &mdash; от 3 000 грн. А с 2022 года генератор стал обязательной статьёй расходов: обслуживание и топливо &mdash; ещё 10 000 грн. Итого: 55 000 грн/мес минимум, не считая вашего собственного времени &mdash; а это 3-4 часа ежедневно на упаковку, поездки на почту и контроль.</p>
+<p>Фулфилмент-оператор заменяет все эти расходы одним счётом. Минимальный порог входа &mdash; 5 000 грн/мес. В эту цену уже входят склад, генераторы, WMS, упаковочные материалы и рабочая сила. Вы платите только за факт: за хранение, за отправку, за приёмку.</p>
+
+<h3>На что смотреть при выборе оператора</h3>
+<p>Первое &mdash; прозрачность цен. Если оператор не публикует тарифы на сайте и требует &laquo;оставить заявку&raquo; &mdash; скорее всего, цена зависит от того, насколько убедительно вас обработает менеджер. Надёжный оператор показывает цены открыто, потому что ему нечего скрывать.</p>
+<p>Второе &mdash; автономность. Генераторы и резервный интернет &mdash; не опция, а необходимость с 2022 года. Спросите прямо: сколько генераторов, какой интернет-резерв, были ли простои за последние два года.</p>
+<p>Третье &mdash; скорость сборки и количество заборов перевозчика. Если склад отправляет один раз в день &mdash; заказ, поступивший после обеда, уйдёт только завтра. Четвёртое &mdash; диверсификация: если у оператора один склад, то пожар, подтопление или любой форс-мажор останавливает всю вашу логистику.</p>
+<p>MTP Group прошла эту проверку: два склада (Счастливое + Белогородка, 3 900 м&sup2;), 3 генератора + Starlink, сборка за 30 секунд, 4 забора Новой Почтой в день, цены &mdash; на сайте. 10+ лет на рынке, 60 000+ отправлений в месяц.</p>
+
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
+
+/* 1. HERO — centered, animated red gradient */
+.kv-hero{position:relative;min-height:100vh;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
+.kv-hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(230,51,41,.12) 0%,rgba(230,51,41,.04) 30%,transparent 65%);animation:kvPulse 8s ease-in-out infinite alternate}
+@keyframes kvPulse{0%{opacity:.6;transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}
+.kv-hero-inner{position:relative;z-index:2;max-width:800px}
+.kv-hero h1{font-family:var(--fd);font-size:clamp(44px,8vw,96px);font-weight:400;line-height:.92;margin-bottom:28px;letter-spacing:-1px}
+.kv-hero-sub{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.5);line-height:1.75;max-width:620px;margin:0 auto 40px}
+.kv-hero .hero-form{display:flex;gap:12px;max-width:480px;margin:0 auto}
+.kv-hero .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.15);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.kv-hero .hero-form input::placeholder{color:rgba(255,255,255,.2)}
+.kv-hero .hero-form input:focus{border-color:rgba(255,255,255,.4)}
+.kv-hero .hero-form button{padding:16px 28px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.kv-hero .hero-form button:hover{background:#c42b22}
+.kv-hero .hero-note{font-size:13px;color:rgba(255,255,255,.25);margin-top:14px}
+
+/* 2. ANIMATED COUNTERS */
+.kv-counters{background:var(--black);color:var(--white);padding:40px 0 100px;border-top:1px solid rgba(255,255,255,.05)}
+.kv-counter-grid{display:flex;justify-content:center;gap:72px;max-width:1000px;margin:0 auto;padding:0 24px}
+.kv-counter-item{text-align:center;min-width:130px}
+.kv-counter-num{font-family:var(--fd);font-size:clamp(44px,6.5vw,76px);font-weight:400;line-height:1;white-space:nowrap}
+.counter-val{color:var(--white)}
+.kv-counter-unit{color:var(--red)}
+.kv-counter-label{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:2px;margin-top:8px}
+
+/* 3. JOURNEY TIMELINE — horizontal */
+.kv-journey{padding:120px 0;background:var(--white)}
+.kv-journey-sub{text-align:center;font-size:16px;color:var(--muted);margin:-36px 0 48px;line-height:1.6}
+.kv-timeline-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:16px}
+.kv-timeline-wrap::-webkit-scrollbar{display:none}
+.kv-timeline{min-width:100%}
+.kv-timeline-track{display:flex;gap:0;min-width:max-content;position:relative;padding:40px 0 0}
+.kv-timeline-track::before{content:'';position:absolute;top:58px;left:40px;right:40px;height:2px;background:#e0e0e0}
+.kv-tl-step{flex:1;min-width:180px;max-width:220px;padding:0 12px;position:relative;text-align:center}
+.kv-tl-time{font-family:var(--fd);font-size:20px;color:var(--red);margin-bottom:16px}
+.kv-tl-dot{width:16px;height:16px;background:var(--red);border-radius:50%;margin:0 auto 20px;position:relative;z-index:2;border:3px solid var(--white);box-shadow:0 0 0 2px var(--red)}
+.kv-tl-card{text-align:left}
+.kv-tl-card h3{font-size:15px;font-weight:600;margin-bottom:6px;color:var(--black)}
+.kv-tl-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* 4. RELIABILITY — large facts */
+.kv-reliable{padding:120px 0;background:#0a0a0a;color:var(--white)}
+.kv-reliable-sub{text-align:center;font-size:17px;color:rgba(255,255,255,.5);margin:-36px 0 64px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7}
+.kv-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;max-width:900px;margin:0 auto}
+.kv-fact{display:flex;gap:24px;align-items:flex-start}
+.kv-fact-num{font-family:var(--fd);font-size:clamp(48px,6vw,72px);color:var(--red);line-height:1;flex-shrink:0;min-width:80px;text-align:center}
+.kv-fact-text{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7}
+.kv-fact-text strong{color:#fff;font-weight:600;display:block;margin-bottom:4px}
+
+/* 5. PRICING */
+.kv-pricing{padding:100px 0;background:var(--gray)}
+.kv-price-table{max-width:700px;margin:0 auto 32px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;background:#fff}
+.kv-pr{display:flex;border-bottom:1px solid #eee;font-size:15px}.kv-pr:last-child{border:none}
+.kv-pr>span{flex:1;padding:14px 20px}
+.kv-pr.price-header{background:var(--black);color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.kv-pr:not(.price-header):hover{background:var(--gray)}
+.kv-pr-hl{background:var(--red)!important;color:#fff;font-weight:600}
+.kv-price-note{text-align:center;font-size:15px;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* 6. COMPARE — horizontal scroll cards */
+.kv-compare{padding:100px 0;background:var(--white);overflow:hidden}
+.kv-compare-sub{text-align:center;font-size:16px;color:var(--muted);margin:-36px 0 48px;line-height:1.6}
+.kv-compare-wrap{max-width:1200px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 24px 16px}
+.kv-compare-wrap::-webkit-scrollbar{display:none}
+.kv-compare-track{display:flex;gap:24px;min-width:max-content}
+.kv-cmp-card{flex-shrink:0;width:360px;padding:36px 32px;border-radius:16px;border:1px solid #e0e0e0;background:#fff}
+.kv-cmp-own{border-color:#ddd}
+.kv-cmp-mtp{border-color:var(--red);box-shadow:0 8px 40px rgba(230,51,41,.1)}
+.kv-cmp-small{border-color:#ddd}
+.kv-cmp-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #eee}
+.kv-cmp-mtp .kv-cmp-tag{color:var(--red);border-color:var(--red)}
+.kv-cmp-rows{margin-bottom:20px}
+.kv-cmp-row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;border-bottom:1px solid #f0f0f0}
+.kv-cmp-row span:last-child{font-weight:600;white-space:nowrap}
+.kv-cmp-total{display:flex;justify-content:space-between;padding:16px 0;font-size:18px;font-weight:700;border-top:2px solid var(--black)}
+.kv-cmp-mtp .kv-cmp-total{border-color:var(--red);color:var(--red)}
+.kv-cmp-note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5}
+.kv-cmp-saving{margin-top:16px;padding:12px 16px;background:rgba(230,51,41,.06);border-radius:8px;font-size:14px;font-weight:600;color:var(--red);text-align:center}
+
+/* 7. FAQ */
+.kv-faq{padding:100px 0;background:var(--black);color:var(--white)}
+.kv-faq-list{max-width:700px;margin:0 auto}
+.kv-faq .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.kv-faq .faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.kv-faq .faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.kv-faq .faq-item.open .faq-q::after{transform:rotate(45deg)}
+.kv-faq .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.kv-faq .faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* 8. SEO ARTICLE */
+.kv-article{background:#fff;padding:80px 8vw}
+.kv-article h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.kv-article-content{max-width:800px}
+.kv-article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
+.kv-article-content h3:first-child{margin-top:0}
+.kv-article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.kv-hero h1{font-size:clamp(32px,10vw,52px)}
+.kv-hero .hero-form{flex-direction:column}.kv-hero .hero-form button{width:100%}
+.kv-counter-grid{flex-wrap:wrap;gap:28px 40px}
+.kv-counter-item{min-width:40%}
+.kv-timeline-track{padding:20px 0 0}.kv-tl-step{min-width:160px}
+.kv-facts{grid-template-columns:1fr;gap:32px}
+.kv-fact{gap:16px}
+.kv-fact-num{min-width:60px;font-size:clamp(36px,10vw,56px)}
+.kv-compare-wrap{padding:0 16px 16px}
+.kv-cmp-card{width:300px}
+}
+
+/* Force visibility — no animation hiding */
+.kv-fact,.kv-tl-step,.kv-cmp-card,.kv-counter-item,.faq-item{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+btn.addEventListener('click', function(){
+var item = btn.parentElement;
+var a = item.querySelector('.faq-a');
+var open = item.classList.contains('open');
+document.querySelectorAll('.faq-item.open').forEach(function(el){
+el.classList.remove('open');
+el.querySelector('.faq-a').style.maxHeight = null;
+});
+if(!open){
+item.classList.add('open');
+a.style.maxHeight = a.scrollHeight + 'px';
+}
+});
+});
+
+/* Animated counters — same pattern as marketplace page */
+var counted = false;
+function animateCounters(){
+if(counted) return;
+var els = document.querySelectorAll('.counter-val[data-target]');
+if(!els.length) return;
+var rect = els[0].getBoundingClientRect();
+if(rect.top > window.innerHeight * 1.2) return;
+counted = true;
+els.forEach(function(el){
+var target = parseInt(el.dataset.target);
+var duration = target > 10000 ? 3000 : target > 100 ? 2500 : 1500;
+var startTime = null;
+function step(ts){
+if(!startTime) startTime = ts;
+var progress = Math.min((ts - startTime) / duration, 1);
+var eased = 1 - Math.pow(1 - progress, 4);
+var val = Math.floor(eased * target);
+el.textContent = val.toLocaleString('ru-RU').replace(/,/g, ' ');
+if(progress < 1) requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
+});
+}
+window.addEventListener('scroll', animateCounters, {passive: true});
+animateCounters();
+
+});
+</script>
