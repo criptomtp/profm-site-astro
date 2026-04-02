@@ -83,41 +83,41 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="badge badge-dark">ПЛАТФОРМИ</div>
 <h2 class="sec-h2">Маркетплейси, для яких ми відправляємо</h2>
 <div class="mp-grid">
-<div class="mp-card mp-main">
+<a href="https://rozetka.com.ua" target="_blank" rel="noopener" class="mp-card mp-main">
 <h3>Rozetka</h3>
 <div class="mp-stat">30 млн візитів/міс</div>
 <p>Пряма API-інтеграція: замовлення потрапляє в WMS автоматично. Друк етикеток за стандартами Rozetka. Відправка в день замовлення &mdash; критично для рейтингу продавця. Комісія: 5-20%.</p>
-</div>
-<div class="mp-card mp-main">
+</a>
+<a href="https://prom.ua" target="_blank" rel="noopener" class="mp-card mp-main">
 <h3>Prom.ua</h3>
 <div class="mp-stat">40 млн візитів/міс &middot; 100М+ товарів</div>
 <p>Підключення через API або CRM (KeyCRM, SalesDrive). Мульти-прайс: різні ціни для різних категорій. Синхронізація залишків і автоматичне оновлення статусів. Частина екосистеми EVO (Bigl, Zakupka).</p>
-</div>
-<div class="mp-card mp-main">
+</a>
+<a href="https://kasta.ua" target="_blank" rel="noopener" class="mp-card mp-main">
 <h3>Kasta</h3>
 <div class="mp-stat">400К відвідувачів/день &middot; 20К замовлень/день</div>
 <p>Швидкість &mdash; головна метрика для рейтингу на Kasta. Затримка на 1 день = падіння в пошуку. Ми відправляємо в день замовлення. 3 000+ продавців, 15 000+ брендів. Підтримуємо і FBK, і 3PL моделі.</p>
-</div>
-<div class="mp-card mp-main">
+</a>
+<a href="https://www.olx.ua" target="_blank" rel="noopener" class="mp-card mp-main">
 <h3>OLX</h3>
 <div class="mp-stat">60 млн візитів/міс &mdash; #1 за трафіком</div>
 <p>Підтримка формату OLX Доставка. Автоматичне створення ТТН через Нову Пошту. Покупець отримує трек-номер одразу. Ідеально для продавців з OLX PRO підпискою.</p>
-</div>
-<div class="mp-card">
+</a>
+<a href="https://epicentrk.ua" target="_blank" rel="noopener" class="mp-card">
 <h3>Epicentr</h3>
 <div class="mp-stat">20 млн візитів/міс &middot; 700К+ товарів</div>
 <p>Маркетплейс від найбільшої мережі будівельних гіпермаркетів. Низька конкуренція + високий трафік. Комісія 5-25%. Ми забезпечуємо пакування і відправку за стандартами Епіцентру.</p>
-</div>
-<div class="mp-card">
+</a>
+<a href="https://allo.ua" target="_blank" rel="noopener" class="mp-card">
 <h3>Allo</h3>
 <div class="mp-stat">7 млн візитів/міс</div>
 <p>Маркетплейс мережі електроніки. Єдиний каталог з товарами продавців. Кредитні програми, промо-акції. Ми обробляємо замовлення і відправляємо від вашого імені.</p>
 </div>
-<div class="mp-card">
+<a href="https://bigl.ua" target="_blank" rel="noopener" class="mp-card">
 <h3>Bigl.ua</h3>
 <div class="mp-stat">10 млн візитів/міс &middot; екосистема Prom</div>
 <p>Частина EVO Group. Строгий контроль якості &mdash; потрібен мінімальний рейтинг продавця. Комісія 5-20%. Інтеграція через Prom API або KeyCRM.</p>
-</div>
+</a>
 <div class="mp-card">
 <h3>Zakupka, F.ua та інші</h3>
 <div class="mp-stat">Будь-який маркетплейс із Новою Поштою</div>
@@ -277,6 +277,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .mp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .mp-card{padding:36px 32px;border:1px solid rgba(255,255,255,.08);border-radius:8px;transition:border-color .3s}
 .mp-card:hover{border-color:var(--red)}
+a.mp-card{text-decoration:none;display:block}
 .mp-card h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:8px;color:#fff}
 .mp-stat{font-size:12px;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
 .mp-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
