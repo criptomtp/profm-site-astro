@@ -18,6 +18,7 @@ const mega = {
       { href: '/ua/fulfilment-vazhkykh-tovariv/', label: 'Важкі товари 50+ кг' },
       { href: '/ua/skladski-poslugy/', label: 'Складські послуги' },
       { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Для маркетплейсів' },
+      { href: '/ua/fulfilment-kyiv/', label: 'Фулфілмент Київ' },
     ]},
     col2: { title: 'Інструменти', items: [
       { href: '/ua/calculator/', label: 'Калькулятор' },
@@ -33,6 +34,7 @@ const mega = {
       { href: '/fulfilment-vazhkykh-tovariv/', label: 'Тяжёлые товары 50+ кг' },
       { href: '/skladski-poslugy/', label: 'Складские услуги' },
       { href: '/fulfilment-dlya-marketpleysov/', label: 'Для маркетплейсов' },
+      { href: '/fulfilment-kiev/', label: 'Фулфилмент Киев' },
     ]},
     col2: { title: 'Инструменты', items: [
       { href: '/calculator/', label: 'Калькулятор' },
@@ -47,6 +49,7 @@ const mega = {
       { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
       { href: '/en/warehouse-services/', label: 'Warehouse services' },
       { href: '/en/fulfillment-for-marketplaces/', label: 'For marketplaces' },
+      { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
     ]},
     col2: { title: 'Tools', items: [
       { href: '/en/calculator/', label: 'Calculator' },
@@ -295,6 +298,9 @@ body{padding-top:0;margin:0}
     'fulfilment-dlya-marketpleysiv':{ru:'fulfilment-dlya-marketpleysov',en:'fulfillment-for-marketplaces'},
     'fulfilment-dlya-marketpleysov':{ua:'fulfilment-dlya-marketpleysiv',en:'fulfillment-for-marketplaces'},
     'fulfillment-for-marketplaces':{ua:'fulfilment-dlya-marketpleysiv',ru:'fulfilment-dlya-marketpleysov'},
+    'fulfilment-kyiv':{ru:'fulfilment-kiev',en:'fulfillment-kyiv'},
+    'fulfilment-kiev':{ua:'fulfilment-kyiv',en:'fulfillment-kyiv'},
+    'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'fulfilment-kiev'},
   };
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;
