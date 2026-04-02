@@ -24,32 +24,260 @@
 </nav>
 
 <main class="admin-main">
-<h1 class="admin-title">SEO Аналітика</h1>
-<p class="admin-subtitle">Базова лінія зафіксована 23.03.2026</p>
-
-<div class="chart-wrap">
-<canvas id="posChart"></canvas>
-<div class="chart-note">
-&#x1F4CC; Базова лінія зафіксована 23.03.2026. Наступне оновлення після переключення домену.
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+<div>
+<h1 class="admin-title" style="margin-bottom:4px">SEO Аналітика</h1>
+<p class="admin-subtitle" id="lastUpdate">Завантаження...</p>
 </div>
+<button onclick="syncNow()" style="padding:10px 20px;background:#e63329;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px">Оновити дані ↻</button>
 </div>
 
-<div class="table-wrap">
-<div class="table-header"><h3>Всі запити</h3></div>
+<!-- KPI Cards -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px" id="kpiCards">
+<div class="seo-kpi"><div class="seo-kpi-val" id="kpiClicks">—</div><div class="seo-kpi-label">Кліків за 7 днів</div></div>
+<div class="seo-kpi"><div class="seo-kpi-val" id="kpiImpressions">—</div><div class="seo-kpi-label">Показів</div></div>
+<div class="seo-kpi"><div class="seo-kpi-val" id="kpiAvgPos">—</div><div class="seo-kpi-label">Середня позиція</div></div>
+<div class="seo-kpi"><div class="seo-kpi-val" id="kpiPages">—</div><div class="seo-kpi-label">Сторінок в індексі</div></div>
+</div>
+
+<!-- Position chart -->
+<div class="chart-wrap" style="margin-bottom:32px">
+<h3 style="margin-bottom:16px">Динаміка позицій — ТОП-5 запитів</h3>
+<canvas id="posChart" height="100"></canvas>
+</div>
+
+<!-- Tabs -->
+<div style="display:flex;gap:8px;margin-bottom:24px">
+<button class="seo-tab active" onclick="showTab('queries')">Запити</button>
+<button class="seo-tab" onclick="showTab('pages')">Сторінки</button>
+<button class="seo-tab" onclick="showTab('issues')">Проблеми</button>
+</div>
+
+<!-- Queries table -->
+<div class="table-wrap" id="tabQueries">
 <table>
 <thead><tr><th>Запит</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th><th>Тренд</th></tr></thead>
 <tbody id="seoTableBody"></tbody>
 </table>
 </div>
+
+<!-- Pages table -->
+<div class="table-wrap" id="tabPages" style="display:none">
+<table>
+<thead><tr><th>Сторінка</th><th>Кліки</th><th>Покази</th><th>Позиція</th><th>Статус</th></tr></thead>
+<tbody id="pagesTableBody"></tbody>
+</table>
+</div>
+
+<!-- Issues table -->
+<div class="table-wrap" id="tabIssues" style="display:none">
+<table>
+<thead><tr><th>Проблема</th><th>Сторінка</th><th>Деталі</th><th>Пріоритет</th></tr></thead>
+<tbody id="issuesTableBody"></tbody>
+</table>
+</div>
 </main>
 
+<style>
+.seo-kpi{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:20px;text-align:center}
+.seo-kpi-val{font-size:32px;font-weight:700;color:#000;line-height:1}
+.seo-kpi-label{font-size:12px;color:#999;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+.seo-tab{padding:8px 20px;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500}
+.seo-tab.active{background:#000;color:#fff;border-color:#000}
+.pos-up{color:#22c55e;font-weight:600}
+.pos-down{color:#e63329;font-weight:600}
+.pos-same{color:#999}
+.status-indexed{color:#22c55e;font-weight:500}
+.status-not{color:#e63329;font-weight:500}
+.priority-high{background:#fee;color:#e63329;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.priority-medium{background:#fff3e0;color:#f57c00;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+</style>
+
 <script src="js/auth.js"></script>
-<script src="js/seo.js"></script>
 <script>
 checkAuth();
 if(!hasPermission('seo')){alert('Немає доступу');window.location.href='/admin/dashboard.html';}
-initSeoChart();
-renderSeoTable(1);
+
+var gscData = null;
+var posChart = null;
+
+function showTab(tab) {
+  document.querySelectorAll('.seo-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('[id^="tab"]').forEach(function(t){t.style.display='none'});
+  event.target.classList.add('active');
+  document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = '';
+}
+
+function loadData() {
+  fetch('/api/gsc').then(function(r){return r.json()}).then(function(data){
+    gscData = data;
+    renderDashboard();
+  }).catch(function(e){
+    document.getElementById('lastUpdate').textContent = 'Помилка завантаження: ' + e.message;
+  });
+}
+
+function renderDashboard() {
+  var latest = gscData.latest;
+  var history = gscData.history || [];
+
+  if (!latest || !latest.queries) {
+    document.getElementById('lastUpdate').textContent = 'Немає даних. Запустіть: python3 scripts/gsc-sync.py';
+    return;
+  }
+
+  // Last update
+  document.getElementById('lastUpdate').textContent = 'Дані за ' + latest.date + ' (оновлено ' + new Date(latest.timestamp).toLocaleString('uk-UA') + ')';
+
+  // KPI
+  var totalClicks = 0, totalImpr = 0, totalPos = 0, posCount = 0;
+  latest.queries.forEach(function(q){
+    totalClicks += q.clicks;
+    totalImpr += q.impressions;
+    if(q.position > 0){totalPos += q.position; posCount++;}
+  });
+  document.getElementById('kpiClicks').textContent = totalClicks.toLocaleString();
+  document.getElementById('kpiImpressions').textContent = totalImpr.toLocaleString();
+  document.getElementById('kpiAvgPos').textContent = posCount > 0 ? (totalPos / posCount).toFixed(1) : '—';
+  var indexedCount = latest.pages ? latest.pages.filter(function(p){return !p.notIndexed}).length : 0;
+  document.getElementById('kpiPages').textContent = indexedCount;
+
+  // Queries table
+  renderQueries(latest, history);
+
+  // Pages table
+  renderPages(latest);
+
+  // Issues
+  renderIssues(latest);
+
+  // Chart
+  renderChart(history);
+}
+
+function renderQueries(latest, history) {
+  var tbody = document.getElementById('seoTableBody');
+  var prevSnapshot = history.length > 1 ? history[history.length - 2] : null;
+
+  tbody.innerHTML = latest.queries.sort(function(a,b){return b.clicks - a.clicks}).map(function(q){
+    var trend = '';
+    if (prevSnapshot) {
+      var prev = prevSnapshot.queries.find(function(pq){return pq.q === q.q});
+      if (prev) {
+        var diff = prev.position - q.position;
+        if (diff > 0.5) trend = '<span class="pos-up">▲ ' + diff.toFixed(1) + '</span>';
+        else if (diff < -0.5) trend = '<span class="pos-down">▼ ' + Math.abs(diff).toFixed(1) + '</span>';
+        else trend = '<span class="pos-same">—</span>';
+      } else {
+        trend = '<span class="pos-same">new</span>';
+      }
+    } else {
+      trend = '<span class="pos-same">—</span>';
+    }
+    return '<tr>' +
+      '<td>' + q.q + (q.tracked ? ' ★' : '') + '</td>' +
+      '<td class="num">' + q.clicks + '</td>' +
+      '<td class="num">' + q.impressions.toLocaleString() + '</td>' +
+      '<td class="num">' + q.ctr + '%</td>' +
+      '<td class="num">' + q.position + '</td>' +
+      '<td>' + trend + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+function renderPages(latest) {
+  if (!latest.pages) return;
+  var tbody = document.getElementById('pagesTableBody');
+  tbody.innerHTML = latest.pages.sort(function(a,b){return b.clicks - a.clicks}).map(function(p){
+    var status = p.notIndexed
+      ? '<span class="status-not">Не індексована</span>'
+      : '<span class="status-indexed">В індексі</span>';
+    return '<tr>' +
+      '<td><a href="https://www.fulfillmentmtp.com.ua' + p.url + '" target="_blank">' + p.url + '</a></td>' +
+      '<td class="num">' + p.clicks + '</td>' +
+      '<td class="num">' + p.impressions.toLocaleString() + '</td>' +
+      '<td class="num">' + (p.position > 0 ? p.position : '—') + '</td>' +
+      '<td>' + status + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+function renderIssues(latest) {
+  var issues = [];
+
+  // Find pages not indexed
+  if (latest.pages) {
+    latest.pages.filter(function(p){return p.notIndexed}).forEach(function(p){
+      issues.push({problem:'Не індексована', page:p.url, detail:'Google ще не проіндексував', priority:'high'});
+    });
+  }
+
+  // Find keywords with bad positions
+  latest.queries.forEach(function(q){
+    if (q.position > 20 && q.impressions > 10) {
+      issues.push({problem:'Низька позиція', page:q.q, detail:'Позиція ' + q.position + ' при ' + q.impressions + ' показах', priority:'medium'});
+    }
+  });
+
+  var tbody = document.getElementById('issuesTableBody');
+  tbody.innerHTML = issues.map(function(i){
+    var cls = i.priority === 'high' ? 'priority-high' : 'priority-medium';
+    return '<tr><td>' + i.problem + '</td><td>' + i.page + '</td><td>' + i.detail + '</td><td><span class="' + cls + '">' + i.priority.toUpperCase() + '</span></td></tr>';
+  }).join('') || '<tr><td colspan="4" style="text-align:center;color:#999">Проблем не знайдено</td></tr>';
+}
+
+function renderChart(history) {
+  if (history.length < 1) return;
+
+  // Get top 5 queries from latest
+  var latest = history[history.length - 1];
+  var top5 = latest.queries.sort(function(a,b){return b.clicks - a.clicks}).slice(0, 5);
+  var labels = history.map(function(h){return h.date.slice(5)});
+  var colors = ['#e63329','#000','#2196f3','#4caf50','#ff9800'];
+
+  var datasets = top5.map(function(tq, idx){
+    return {
+      label: tq.q,
+      data: history.map(function(h){
+        var found = h.queries.find(function(q){return q.q === tq.q});
+        return found ? found.position : null;
+      }),
+      borderColor: colors[idx],
+      backgroundColor: colors[idx] + '15',
+      borderWidth: 2,
+      pointRadius: 3,
+      tension: 0.3,
+      spanGaps: true,
+    };
+  });
+
+  if (posChart) posChart.destroy();
+  posChart = new Chart(document.getElementById('posChart'), {
+    type: 'line',
+    data: { labels: labels, datasets: datasets },
+    options: {
+      responsive: true,
+      scales: {
+        y: { reverse: true, min: 0, max: 50, title: { display: true, text: 'Позиція (менше = краще)' } },
+        x: { title: { display: true, text: 'Дата' } }
+      },
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
+}
+
+function syncNow() {
+  event.target.textContent = 'Оновлення...';
+  event.target.disabled = true;
+  // This triggers the local sync script — user needs to run it manually
+  alert('Запустіть в терміналі:\npython3 scripts/gsc-sync.py\n\nПісля завершення натисніть OK — дані оновляться.');
+  loadData();
+  event.target.textContent = 'Оновити дані ↻';
+  event.target.disabled = false;
+}
+
+// Load on start
+loadData();
 </script>
 </body>
 </html>
