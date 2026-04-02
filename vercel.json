@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*?amp=true",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
+}
