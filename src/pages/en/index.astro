@@ -8,6 +8,7 @@ import Base from '../../layouts/Base.astro';
   lang="en"
 >
 <Fragment slot="head">
+<link rel="preload" as="image" href="/images/tild6130-6134-4234-a266-373262373033__img_4798.webp" fetchpriority="high">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv region","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv region","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua/en/","description":"3PL fulfillment for online stores in Ukraine","inLanguage":"en"}</script>
   <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/">
@@ -18,7 +19,7 @@ import Base from '../../layouts/Base.astro';
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-bg"></div>
+<div class="hero-bg"><img src="/images/tild6130-6134-4234-a266-373262373033__img_4798.webp" alt="" width="1920" height="1080" fetchpriority="high"></div>
 <div class="hero-content">
 <div class="badge">3PL FULFILLMENT IN UKRAINE</div>
 <h1>3PL Fulfillment in Ukraine.<br>Storage, Packing &amp; Shipping.</h1>
@@ -130,7 +131,8 @@ import Base from '../../layouts/Base.astro';
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
 
 .hero{position:relative;min-height:100vh;background:var(--black,#000);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:120px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('/images/tild6130-6134-4234-a266-373262373033__img_4798.webp') center/cover;opacity:.2}
+.hero-bg{position:absolute;inset:0;opacity:.2}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero h1{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(42px,6vw,76px);font-weight:400;line-height:.95;margin-bottom:28px;width:100%}
 .hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:540px;margin-bottom:48px}
@@ -232,18 +234,5 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
   });
 });
 
-/* Phone mask */
-
-}
-
-/* Form handler */
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
-leads.push({id:Date.now(),company:'Inquiry from EN homepage',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Homepage EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on EN homepage',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});
-localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
-fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
-form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';
-setTimeout(function(){window.location.href='/en/thanks/';},1500);
-});
-}
 });
 </script>
