@@ -179,8 +179,8 @@ import Base from '../../layouts/Base.astro';
 
 .faq{padding:120px 0;background:var(--gray,#f5f5f5)}
 .faq-item{border-bottom:1px solid #ddd;padding:28px 0;cursor:pointer}
-.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:500}
-.faq-q span{font-size:22px;transition:transform .3s;color:var(--muted,#666)}.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:500;color:var(--black,#000);background:none;border:none;width:100%;cursor:pointer;font-family:inherit;text-align:left}
+.faq-q span{font-size:22px;transition:transform .3s;color:var(--red,#e63329);flex-shrink:0;margin-left:16px}.faq-item.open .faq-q span{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:15px;color:var(--muted,#666);line-height:1.7}
 .faq-item.open .faq-a{padding-top:16px}
 
