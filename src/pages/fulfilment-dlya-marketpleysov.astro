@@ -3,107 +3,171 @@ import Base from '../layouts/Base.astro';
 
 const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент для маркетплейсов","description":"Полный цикл логистики для продавцов на маркетплейсах: приём товара, хранение, упаковка и отправка заказов через Rozetka, Prom, Kasta, OLX","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправку (200+ заказов/день)"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://fulfillmentmtp.com.ua/services"},{"@type":"ListItem","position":3,"name":"Фулфилмент для маркетплейсов","item":"https://fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит фулфилмент для маркетплейсов?","acceptedAnswer":{"@type":"Answer","text":"Отправка — от 18 грн/заказ (200+ заказов/день). Хранение — от 650 грн/м\u00b3/мес. Минимальный платёж — 5 000 грн/мес. Цена снижается с ростом объёмов."}},{"@type":"Question","name":"С какими маркетплейсами вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, OLX. Мы интегрируемся напрямую с API каждой площадки для автоматической обработки заказов."}},{"@type":"Question","name":"Как быстро можно подключиться?","acceptedAnswer":{"@type":"Answer","text":"Подключение занимает 1-3 дня: консультация, интеграция с маркетплейсом и CRM, передача товара на склад, тестовые отправки и запуск."}},{"@type":"Question","name":"Нужно ли мне отдельно договариваться с Новой Почтой?","acceptedAnswer":{"@type":"Answer","text":"Нет. Мы отправляем от своего имени как партнёр Новой Почты. Все ТТН создаются автоматически, заборы происходят по графику — вам не нужно ничего делать."}},{"@type":"Question","name":"Как отслеживать заказы и остатки?","acceptedAnswer":{"@type":"Answer","text":"Через личный кабинет в WMS: остатки в реальном времени, статусы заказов с каждого маркетплейса, отчёты по отправкам и возвратам."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м\u00b2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит фулфилмент для маркетплейсов?","acceptedAnswer":{"@type":"Answer","text":"Отправка — от 18 грн/заказ (200+/день). Хранение — 650 грн/м³/мес. Минимум — 5 000 грн/мес."}},{"@type":"Question","name":"С какими маркетплейсами вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, OLX, Epicentr, Allo, Bigl.ua — и любой другой, который работает с Новой Почтой."}},{"@type":"Question","name":"Как быстро подключиться?","acceptedAnswer":{"@type":"Answer","text":"1-3 дня: договор, API-интеграция, приёмка товара, первая отправка."}},{"@type":"Question","name":"Работаете ли вы с нерезидентами Украины?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы работаем с бизнесами из-за рубежа. Вы отправляете товар на наш склад — мы обрабатываем заказы на украинских маркетплейсах."}},{"@type":"Question","name":"Что будет при блэкауте?","acceptedAnswer":{"@type":"Answer","text":"3 генератора, 2 оптоволокна, Starlink. Ноль дней простоя с 2022 года."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
 ---
 <Base
-  title="Фулфилмент для маркетплейсов | MTP Group"
-  description="Фулфилмент для маркетплейсов Rozetka, Prom, Kasta, OLX: хранение, упаковка, отправка от 18 грн/заказ. 6 000 отправок/день, 2 склада под Киевом."
+  title="Фулфилмент для маркетплейсов Rozetka, Prom, Kasta | MTP Group"
+  description="Продавайте на маркетплейсах Украины без своего склада. От 18 грн/заказ. Автоматический импорт, сборка за 30 сек, отправка 4 раза/день. 3 900 м² склад под Киевом."
   canonical="https://fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/"
   lang="ru"
   ogImage="https://fulfillmentmtp.com.ua/images/tild6130-6134-4234-a266-373262373033__img_4798.webp"
   schema={schemaJson}
 >
 <Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
   <link rel="alternate" hreflang="ru" href="https://fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/">
-  <link rel="alternate" hreflang="uk" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
   <link rel="alternate" hreflang="en" href="https://fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/">
-  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="x-default" href="https://fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
 </Fragment>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
+<!-- HERO — Apple-style big statement -->
+<section class="ru-hero">
+<div class="ru-hero-bg"></div>
+<div class="ru-hero-inner">
 <div class="badge">МАРКЕТПЛЕЙСЫ</div>
-<h1>Фулфилмент для<br>маркетплейсов</h1>
-<p class="hero-sub">Продавайте на Rozetka, Prom, Kasta и OLX &mdash; мы берём на себя склад, упаковку и отправку. От 18&nbsp;грн за отправку заказа.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
-<div class="hero-note">Бесплатная консультация &#183; Индивидуальный расчёт за 15 мин</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">6 000</div><div class="hero-stat-label">отправок/день</div></div>
-<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">активных клиентов</div></div>
-<div class="hero-stat"><div class="hero-stat-val">30 сек</div><div class="hero-stat-label">сборка заказа</div></div>
+<h1>Вы продаёте.<br>Мы отправляем.</h1>
+<p class="ru-hero-sub">Фулфилмент для продавцов Rozetka, Prom, Kasta, OLX, Epicentr и других маркетплейсов Украины. Заказ поступает автоматически &mdash; мы собираем за 30 секунд и отправляем в тот же день.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
+<div class="hero-note">Бесплатная консультация &#183; Расчёт за 15 минут</div>
 </div>
 </section>
 
-<!-- MARKETPLACES -->
-<section class="marketplaces"><div class="ctr">
+<!-- ANIMATED COUNTERS — Apple-style -->
+<section class="counters">
+<div class="counter-grid">
+<div class="counter-item"><div class="counter-val" data-target="60000">0</div><div class="counter-unit">+</div><div class="counter-label">отправлений в месяц</div></div>
+<div class="counter-item"><div class="counter-val" data-target="6000">0</div><div class="counter-unit"></div><div class="counter-label">заказов в день (пик)</div></div>
+<div class="counter-item"><div class="counter-val" data-target="30">0</div><div class="counter-unit"> сек</div><div class="counter-label">сборка одного заказа</div></div>
+<div class="counter-item"><div class="counter-val" data-target="150">0</div><div class="counter-unit">+</div><div class="counter-label">активных клиентов</div></div>
+</div>
+</section>
+
+<!-- 3 SCENARIOS — unique to RU -->
+<section class="scenarios"><div class="ctr">
+<div class="badge badge-dark">КТО К НАМ ПРИХОДИТ</div>
+<h2 class="sec-h2">Три сценария подключения</h2>
+<div class="sc-grid">
+<div class="sc-card">
+<div class="sc-num">01</div>
+<h3>Масштабируете бизнес</h3>
+<p>У вас 50-100 заказов в день. Вы не успеваете паковать и продавать одновременно. Нужен склад, но нанимать людей &mdash; дорого и рискованно. Передаёте логистику нам, получаете время на маркетинг и рост.</p>
+<div class="sc-result">Результат: клиент Carter's вырос с 12 до 72 заказов/день за 3 месяца</div>
+</div>
+<div class="sc-card">
+<h3>Выходите на украинские маркетплейсы</h3>
+<div class="sc-num">02</div>
+<p>Вы из-за рубежа или из другого города. Хотите продавать на Rozetka, Prom, Kasta &mdash; но нет склада в Киеве. Отправляете товар к нам, мы интегрируемся с маркетплейсом и начинаем отправлять от вашего имени.</p>
+<div class="sc-result">Результат: подключение за 1-3 дня, первая отправка — на третий день</div>
+</div>
+<div class="sc-card">
+<div class="sc-num">03</div>
+<h3>Переходите со своего склада</h3>
+<p>Свой склад &mdash; это аренда 15 000 грн, зарплата 18 000 грн, коммуналка, генератор, WMS. Итого 55 000+ грн/мес плюс ваше время. У нас &mdash; всё включено от 5 000 грн/мес. И ноль головной боли.</p>
+<div class="sc-result">Результат: экономия до 49% по сравнению с собственным складом</div>
+</div>
+</div>
+</div></section>
+
+<!-- ORDER TIMELINE — unique to RU (visual "day of an order") -->
+<section class="order-day"><div class="ctr">
+<div class="badge">ПРОЦЕСС</div>
+<h2 class="sec-h2">Один день. Один заказ. Всё автоматически.</h2>
+<div class="od-timeline">
+<div class="od-step">
+<div class="od-time">09:00</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Заказ на маркетплейсе</h3><p>Покупатель нажимает &laquo;Купить&raquo; на Rozetka. Заказ автоматически поступает в нашу WMS через API.</p></div>
+</div>
+<div class="od-step">
+<div class="od-time">09:01</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Задание на сборку</h3><p>WMS создаёт задание. Оператор получает маршрут: стеллаж, полка, ячейка. Находит товар за секунды.</p></div>
+</div>
+<div class="od-step">
+<div class="od-time">09:02</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Сборка и упаковка</h3><p>Сканирование штрихкода, упаковка по стандартам маркетплейса, печать этикетки. Среднее время &mdash; 30 секунд.</p></div>
+</div>
+<div class="od-step">
+<div class="od-time">12:00</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Первый забор Новой Почтой</h3><p>Курьер Новой Почты забирает готовые посылки. Это первый из 4 заборов в день.</p></div>
+</div>
+<div class="od-step">
+<div class="od-time">14:00</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Трек-номер у покупателя</h3><p>Статус обновляется на маркетплейсе автоматически. Покупатель видит трек в кабинете.</p></div>
+</div>
+<div class="od-step">
+<div class="od-time">18:00</div>
+<div class="od-dot"></div>
+<div class="od-text"><h3>Отчёт в вашем кабинете</h3><p>Вы видите: сколько заказов обработано, сколько отправлено, какие остатки. Всё в реальном времени.</p></div>
+</div>
+</div>
+</div></section>
+
+<!-- MARKETPLACES — horizontal scroller (Apple-style) -->
+<section class="mp-section"><div class="ctr">
 <div class="badge badge-dark">ПЛОЩАДКИ</div>
-<h2 class="sec-h2">С какими маркетплейсами мы работаем</h2>
-<div class="mp-grid">
-<div class="mp-card">
-<h3>Rozetka</h3>
-<p>Крупнейший маркетплейс Украины. Интеграция через API Rozetka Seller &mdash; заказы приходят на склад автоматически. Мы комплектуем, упаковываем по стандартам площадки и отправляем через Новую Почту или курьером Rozetka. Маркировка, штрих-кодирование и печать накладных &mdash; всё включено.</p>
+<h2 class="sec-h2">Маркетплейсы, с которыми мы работаем</h2>
 </div>
-<div class="mp-card">
-<h3>Prom.ua</h3>
-<p>Более 200 000 продавцов на площадке. Через интеграцию с API Prom заказы поступают в нашу WMS за секунды. Автоматическое формирование ТТН, синхронизация остатков в реальном времени, обновление статусов &mdash; вы просто отслеживаете продажи в личном кабинете.</p>
+<div class="mp-scroller">
+<div class="mp-scroll-track">
+<div class="mp-s-card"><h3>Rozetka</h3><div class="mp-s-stat">30 млн/мес</div><p>Прямое API. Авто-импорт заказов, печать этикеток, синхронизация остатков в реальном времени.</p></div>
+<div class="mp-s-card"><h3>Prom.ua</h3><div class="mp-s-stat">40 млн/мес</div><p>100М+ товаров. Интеграция через API или KeyCRM/SalesDrive. Мульти-прайс, авто-статусы.</p></div>
+<div class="mp-s-card"><h3>Kasta</h3><div class="mp-s-stat">400К/день</div><p>Скорость = рейтинг. Отправка в день заказа. 3 000+ продавцов, поддержка FBK и 3PL.</p></div>
+<div class="mp-s-card"><h3>OLX</h3><div class="mp-s-stat">60 млн/мес</div><p>#1 по трафику. OLX Доставка, авто-ТТН через Новую Почту. Для OLX PRO продавцов.</p></div>
+<div class="mp-s-card"><h3>Epicentr</h3><div class="mp-s-stat">20 млн/мес</div><p>700К+ товаров. Низкая конкуренция + высокий трафик. Комиссия 5-25%.</p></div>
+<div class="mp-s-card"><h3>Allo</h3><div class="mp-s-stat">7 млн/мес</div><p>Электроника и техника. Единый каталог, кредитные программы, промо-акции.</p></div>
+<div class="mp-s-card"><h3>Bigl.ua</h3><div class="mp-s-stat">10 млн/мес</div><p>Экосистема Prom/EVO. Строгий контроль качества. Комиссия 5-20%.</p></div>
+<div class="mp-s-card"><h3>Любой другой</h3><div class="mp-s-stat">&infin;</div><p>Работаем с любым маркетплейсом, который использует Новую Почту. Подключение &mdash; 1-2 дня.</p></div>
 </div>
-<div class="mp-card">
-<h3>Kasta</h3>
-<p>Fashion-маркетплейс с жёсткими требованиями к упаковке и срокам. MTP Group обеспечивает соблюдение всех стандартов Kasta: фирменные пакеты, правильная маркировка, отправка в день заказа. Интеграция через API &mdash; остатки и заказы синхронизируются автоматически.</p>
 </div>
-<div class="mp-card">
-<h3>OLX Доставка</h3>
-<p>Для продавцов на OLX с опцией «Доставка OLX». Мы храним ваш товар, а когда покупатель оформляет заказ &mdash; быстро комплектуем и отправляем. Работаем с любым типом товаров: электроника, одежда, аксессуары, товары для дома.</p>
+</section>
+
+<!-- RELIABILITY — unique to RU -->
+<section class="reliability"><div class="ctr">
+<h2 class="sec-h2">Почему нам доверяют 150+ бизнесов</h2>
+<div class="rel-grid">
+<div class="rel-card">
+<div class="rel-icon">&#9889;</div>
+<h3>Ноль дней простоя с 2022</h3>
+<p>3 промышленных генератора, 2 оптоволоконных провайдера, Starlink. Даже во время самых жёстких блэкаутов заказы отправлялись вовремя.</p>
+</div>
+<div class="rel-card">
+<div class="rel-icon">&#128205;</div>
+<h3>2 склада под Киевом</h3>
+<p>Счастливое (рядом с аэропортом Борисполь) + Белогородка. Общая площадь 3 900 м&sup2;. Диверсификация рисков &mdash; товар не в одном месте.</p>
+</div>
+<div class="rel-card">
+<div class="rel-icon">&#128274;</div>
+<h3>Адресное хранение WMS</h3>
+<p>Каждый товар &mdash; в своей ячейке с штрихкодом. 99% точность сборки. Реальные остатки обновляются каждую секунду.</p>
+</div>
+<div class="rel-card">
+<div class="rel-icon">&#128176;</div>
+<h3>Шериф платежей</h3>
+<p>Телеграм-бот мониторит наложенные платежи в реальном времени. Вы видите: кто получил, кто оплатил, кто вернул. Без задержек.</p>
 </div>
 </div>
 </div></section>
 
-<!-- HOW IT WORKS -->
-<section class="how-it-works"><div class="ctr">
-<div class="badge">КАК ЭТО РАБОТАЕТ</div>
-<h2 class="sec-h2">От заказа до доставки за 4 шага</h2>
-<div class="steps-grid">
-<div class="step-card"><div class="step-num">01</div><h3>Заказ на маркетплейсе</h3><p>Покупатель оформляет заказ на Rozetka, Prom, Kasta или OLX. Данные автоматически поступают в нашу WMS-систему через API-интеграцию.</p></div>
-<div class="step-card"><div class="step-num">02</div><h3>Сборка и упаковка</h3><p>Оператор на складе получает задание, находит товар по штрих-коду, комплектует заказ и упаковывает согласно стандартам площадки. Среднее время &mdash; 30 секунд.</p></div>
-<div class="step-card"><div class="step-num">03</div><h3>Отправка</h3><p>ТТН создаётся автоматически. Посылка передаётся перевозчику &mdash; Новая Почта, Meest, Justin или курьерская доставка. Статус обновляется на маркетплейсе автоматически.</p></div>
-<div class="step-card"><div class="step-num">04</div><h3>Контроль и отчёты</h3><p>Вы отслеживаете всё через личный кабинет: остатки, статусы заказов, возвраты, финансовые отчёты. Полная прозрачность без единого звонка на склад.</p></div>
-</div>
-</div></section>
-
-<!-- BENEFITS -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">ПРЕИМУЩЕСТВА</div>
-<h2 class="sec-h2">Почему продавцы маркетплейсов выбирают MTP</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">30"</div><h3>Сборка за 30 секунд</h3><p>Конвейерные упаковочные станции и автоматизация WMS &mdash; каждый заказ собран и промаркирован за полминуты</p></div>
-<div class="ben-card"><div class="ben-num">API</div><h3>Прямая интеграция</h3><p>Rozetka, Prom, Kasta, OLX &mdash; автоматическая синхронизация заказов, остатков и статусов через API площадок</p></div>
-<div class="ben-card"><div class="ben-num">8 ч</div><h3>8 часов в месяц</h3><p>Столько времени тратит продавец на логистику после перехода на фулфилмент. Остальное &mdash; маркетинг и масштабирование</p></div>
-<div class="ben-card"><div class="ben-num">4</div><h3>4 площадки одновременно</h3><p>Продавайте на всех маркетплейсах из одного склада. Единый остаток, единый процесс &mdash; мультиканальные продажи без хаоса</p></div>
-<div class="ben-card"><div class="ben-num">3x</div><h3>3 генератора + Starlink</h3><p>Бесперебойная работа даже во время блэкаутов. 2 оптоволоконных провайдера &mdash; ни одного дня простоя с 2022 года</p></div>
-<div class="ben-card"><div class="ben-num">99.5%</div><h3>Точность заказов</h3><p>Сканирование штрих-кодов на каждом этапе, фото-фиксация &mdash; минимум ошибок, минимум рекламаций на площадках</p></div>
-</div>
-</div></section>
-
-<!-- TARIFFS -->
+<!-- PRICING -->
 <section class="pricing"><div class="ctr">
 <div class="badge badge-dark">ТАРИФЫ 2026</div>
-<h2 class="sec-h2">Сколько стоит фулфилмент для маркетплейсов</h2>
+<h2 class="sec-h2">Прозрачные цены. Без скрытых платежей.</h2>
 <div class="price-table">
 <div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена</span></div>
 <div class="price-row"><span>Отправка заказа</span><span>200+ заказов/день</span><span>от 18 грн</span></div>
 <div class="price-row"><span>Отправка заказа</span><span>100-199 заказов/день</span><span>от 20 грн</span></div>
 <div class="price-row"><span>Отправка заказа</span><span>50-99 заказов/день</span><span>от 22 грн</span></div>
 <div class="price-row"><span>Отправка заказа</span><span>0-49 заказов/день</span><span>от 26 грн</span></div>
-<div class="price-row"><span>Хранение</span><span>за м&sup3;/мес</span><span>от 650 грн</span></div>
-<div class="price-row"><span>Приём товара</span><span>за шт</span><span>от 3 грн</span></div>
-<div class="price-row price-highlight"><span>Минимальный платёж</span><span>в мес</span><span>5 000 грн</span></div>
+<div class="price-row"><span>Хранение</span><span>за м&sup3;/месяц</span><span>650 грн</span></div>
+<div class="price-row"><span>Приёмка товара</span><span>за единицу</span><span>от 3 грн</span></div>
+<div class="price-row price-highlight"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн</span></div>
 </div>
-<p class="price-note">Цена снижается с ростом объёмов. Точный расчёт &mdash; бесплатно за 15 минут.</p>
-<div class="price-cta"><button onclick="document.getElementById('heroForm').querySelector('input').focus();window.scrollTo({top:0,behavior:'smooth'})">Рассчитать для моего магазина &#8594;</button></div>
+<p class="price-note">Цена снижается с ростом объёмов. Персональный расчёт &mdash; бесплатно за 15 минут.</p>
 </div></section>
 
 <!-- FAQ -->
@@ -111,44 +175,35 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="badge">FAQ</div>
 <h2 class="sec-h2">Частые вопросы</h2>
 <div class="faq-list">
-<div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент для маркетплейсов?</button><div class="faq-a"><p>Отправка &mdash; от 18 грн за заказ при 200+ отправок/день. Хранение &mdash; от 650 грн за м&sup3;/мес. Минимальный платёж &mdash; 5 000 грн/мес. Чем больше объём &mdash; тем ниже цена за единицу.</p></div></div>
-<div class="faq-item"><button class="faq-q">С какими маркетплейсами вы интегрируетесь?</button><div class="faq-a"><p>Rozetka, Prom.ua, Kasta, OLX. Также работаем с CRM-системами: KeyCRM, SalesDrive, Horoshop. Любая платформа с API &mdash; интеграция за 2-4 часа.</p></div></div>
-<div class="faq-item"><button class="faq-q">Как быстро можно начать работу?</button><div class="faq-a"><p>Подключение занимает 1-3 дня. День 1: консультация, договор, интеграция с маркетплейсом. День 2: передача товара на склад, сканирование в WMS. День 3: тестовые отправки и запуск. Большинство клиентов начинают отправлять заказы уже на 2-й день.</p></div></div>
-<div class="faq-item"><button class="faq-q">Можно ли продавать на нескольких площадках одновременно?</button><div class="faq-a"><p>Да, и это одно из ключевых преимуществ. Единый склад, единый остаток товара &mdash; при этом заказы со всех маркетплейсов обрабатываются в одном месте. Остатки синхронизируются в реальном времени, исключая пересортицу.</p></div></div>
-<div class="faq-item"><button class="faq-q">Нужно ли мне самостоятельно отправлять посылки?</button><div class="faq-a"><p>Нет. Мы полностью берём на себя отправку: создание ТТН, упаковка по стандартам площадки, передача перевозчику. Вы только отслеживаете результаты в личном кабинете.</p></div></div>
-<div class="faq-item"><button class="faq-q">Как отслеживать заказы и остатки?</button><div class="faq-a"><p>Через личный кабинет в нашей WMS-системе. Остатки в реальном времени по каждому маркетплейсу, статусы заказов, отчёты по отправкам и возвратам. Доступ 24/7 с любого устройства.</p></div></div>
-<div class="faq-item"><button class="faq-q">Работаете ли вы с возвратами с маркетплейсов?</button><div class="faq-a"><p>Да. Мы принимаем возвращённый товар, проверяем состояние, обновляем статус на площадке и возвращаем товар на полку или откладываем для списания &mdash; всё через WMS с фото-фиксацией.</p></div></div>
+<div class="faq-item"><button class="faq-q">С какими маркетплейсами вы работаете?</button><div class="faq-a"><p>Rozetka, Prom.ua, Kasta, OLX, Epicentr, Allo, Bigl.ua. А также любой другой маркетплейс, который работает с Новой Почтой. Интеграция через API напрямую или через CRM (KeyCRM, SalesDrive).</p></div></div>
+<div class="faq-item"><button class="faq-q">Работаете ли вы с нерезидентами Украины?</button><div class="faq-a"><p>Да. Мы работаем с бизнесами из-за рубежа. Вы отправляете товар на наш склад под Киевом &mdash; мы обрабатываем заказы с украинских маркетплейсов и отправляем покупателям. Локальное юрлицо на вашей стороне не требуется.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как контролировать процесс удалённо?</button><div class="faq-a"><p>Личный кабинет WMS: остатки, статусы, отправки, возвраты &mdash; в реальном времени, с любого устройства. Телеграм-бот &laquo;Шериф платежей&raquo; уведомляет о каждом наложенном платеже. Ежедневные автоматические отчёты.</p></div></div>
+<div class="faq-item"><button class="faq-q">Сколько стоит и как рассчитывается цена?</button><div class="faq-a"><p>Отправка &mdash; от 18 грн/заказ (200+/день). Хранение &mdash; 650 грн/м&sup3;/мес. Минимум &mdash; 5 000 грн/мес. Точный расчёт делаем бесплатно за 15 минут &mdash; нужно только знать количество заказов и объём товара.</p></div></div>
+<div class="faq-item"><button class="faq-q">Что с блэкаутами?</button><div class="faq-a"><p>3 генератора, 2 оптоволоконных провайдера, Starlink. С февраля 2022 года &mdash; ноль дней простоя. Заказы обрабатываются и отправляются даже без электричества в сети.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как быстро можно подключиться?</button><div class="faq-a"><p>От заявки до первой отправки &mdash; 1-3 дня. День 1: консультация + договор + API. День 2: привозите товар, мы штрихкодируем. День 3: первый заказ уже на Новой Почте.</p></div></div>
 </div>
 </div></section>
 
-<!-- SEO ARTICLE -->
+<!-- SEO ARTICLE — unique to RU -->
 <section class="article-section">
 <div class="ctr">
-<div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
-<h2>Фулфилмент для маркетплейсов в Украине: полное руководство</h2>
+<div class="badge badge-dark">ПОЛЕЗНО</div>
+<h2>Фулфилмент для маркетплейсов в Украине: как продавать без склада и логистов</h2>
 <div class="article-content">
-<h3>Что такое фулфилмент для маркетплейсов?</h3>
-<p>Фулфилмент для маркетплейсов &mdash; это полный аутсорс складской логистики для продавцов, работающих на таких площадках, как Rozetka, Prom.ua, Kasta и OLX. Вместо того чтобы самостоятельно хранить товар, упаковывать заказы и стоять в очереди на отправку, вы передаёте весь процесс специализированному оператору. Оператор хранит ваш товар на своём складе, автоматически получает заказы с маркетплейсов через API и обрабатывает их: комплектует, упаковывает в соответствии со стандартами площадки и отправляет покупателю.</p>
-<p>Для покупателя процесс выглядит точно так же &mdash; он получает посылку вовремя и в качественной упаковке. Для вас всё кардинально меняется: вместо ежедневной рутины на складе вы тратите время на увеличение продаж, расширение ассортимента и вывод товаров на новые площадки.</p>
+<h3>Зачем продавцу на маркетплейсе фулфилмент-оператор</h3>
+<p>Когда вы продаёте 10 заказов в день &mdash; достаточно гаража и поездок на Новую Почту. Но когда заказов становится 50, 100, 200 в день &mdash; логистика превращается в основную работу. Вы нанимаете упаковщиков, арендуете склад, покупаете генератор, настраиваете WMS &mdash; и внезапно вместо продавца становитесь логистом. Фулфилмент-оператор возвращает вас к тому, что вы делаете лучше всего: продажам. Вы отправляете товар на склад оператора, а он принимает, хранит, собирает заказы и отправляет. Автоматически. Каждый день.</p>
 
-<h3>Зачем продавцу на маркетплейсе нужен фулфилмент?</h3>
-<p>Каждый маркетплейс предъявляет свои требования к скорости отправки, качеству упаковки и маркировке. Rozetka ожидает отправку в день заказа, Kasta требует фирменные пакеты и определённый формат маркировки, Prom и OLX имеют свои стандарты обработки. Если вы продаёте на нескольких площадках одновременно, соблюдение всех требований превращается в серьёзную операционную нагрузку.</p>
-<p>Фулфилмент-оператор решает эту проблему: один склад обрабатывает заказы со всех маркетплейсов. Остатки синхронизируются в реальном времени, исключая ситуацию, когда один и тот же товар продан на двух площадках одновременно. Упаковка соответствует стандартам каждой площадки, а ТТН создаётся автоматически.</p>
+<h3>Как устроен процесс: от заказа до доставки</h3>
+<p>Покупатель оформляет заказ на Rozetka или Prom.ua. Через API заказ автоматически попадает в WMS-систему склада &mdash; без ручного ввода, без задержек. Оператор получает задание: стеллаж, полка, ячейка. Находит товар, сканирует штрихкод, упаковывает по стандартам маркетплейса, печатает этикетку. Среднее время сборки &mdash; 30 секунд. Посылка передаётся на забор Новой Почте. Статус обновляется на маркетплейсе автоматически. Покупатель видит трек-номер. Вы видите отчёт в кабинете. Процесс повторяется 6 000 раз в день &mdash; это пиковая мощность MTP Group.</p>
 
-<h3>Как работает интеграция с маркетплейсами?</h3>
-<p>MTP Group подключается к API каждого маркетплейса напрямую. Это значит, что заказы приходят на склад автоматически &mdash; без ручного ввода, без копирования данных, без ошибок. Параллельно мы интегрируемся с вашей CRM-системой (KeyCRM, SalesDrive, Horoshop и др.), чтобы у вас была полная картина продаж из одного окна.</p>
-<p>Процесс интеграции занимает от 2 до 4 часов. После настройки система работает полностью автоматически: заказ на маркетплейсе &mdash; задание на складе &mdash; сборка &mdash; отправка &mdash; обновление статуса на площадке. Всё без вашего участия.</p>
+<h3>Мульти-маркетплейс: один склад &mdash; все площадки</h3>
+<p>Самая частая боль продавцов на нескольких маркетплейсах &mdash; дублирующиеся остатки. У вас 100 единиц товара, вы продаёте на Rozetka, Prom.ua и Kasta одновременно. Без централизованной системы легко продать то, чего уже нет. Итог: отмена, штраф, падение рейтинга. С фулфилмент-оператором все заказы со всех маркетплейсов обрабатываются с одного склада. Остатки обновляются в реальном времени. Товар закончился &mdash; автоматически исчезает со всех площадок. MTP Group поддерживает интеграцию с Rozetka, Prom.ua, Kasta, OLX, Epicentr, Allo и Bigl.ua из одного склада.</p>
 
-<h3>Сколько стоит фулфилмент для маркетплейсов в 2026 году?</h3>
-<p>Стоимость складывается из трёх компонентов: отправка заказа (от 18 грн при 200+ заказах/день, от 26 грн при меньших объёмах), хранение (от 650 грн за м&sup3;/мес) и приём товара (от 3 грн за шт). Минимальный платёж &mdash; 5 000 грн/мес. Цена за отправку снижается с ростом объёма.</p>
-<p>Для сравнения: собственный мини-склад (аренда помещения, зарплата 1-2 упаковщиков, коммунальные, упаковочные материалы) обходится минимум в 35 000-55 000 грн/мес. Фулфилмент при аналогичных объёмах &mdash; от 12 000-20 000 грн. Разница &mdash; это деньги, которые можно направить на рекламу, закупку товара и масштабирование продаж на маркетплейсах.</p>
+<h3>Надёжность: генераторы, Starlink и ноль простоев</h3>
+<p>Для маркетплейсов скорость = рейтинг. Задержка отправки на 1 день на Kasta &mdash; это падение в поисковой выдаче на недели. На Rozetka &mdash; штраф и снижение конверсии. Поэтому критически важно, чтобы склад работал каждый день, без исключений. На складах MTP Group установлены 3 промышленных генератора, 2 оптоволоконных провайдера и спутниковый Starlink. С февраля 2022 года &mdash; ноль дней простоя. Даже во время самых жёстких блэкаутов заказы обрабатывались и отправлялись вовремя.</p>
 
-<h3>Когда продавцу пора переходить на фулфилмент?</h3>
-<p>Первый сигнал &mdash; вы тратите более 3 часов в день на упаковку и отправку. Второй &mdash; не успеваете отправлять заказы в день оформления и получаете штрафы от маркетплейса. Третий &mdash; путаница в остатках при продаже на нескольких площадках: товар продан на Rozetka, но его уже заказали на Prom.</p>
-<p>По опыту MTP Group, оптимальный момент &mdash; когда суммарный объём со всех площадок превышает 30-50 заказов в день. Но мы работаем и с меньшими объёмами &mdash; минимальный платёж 5 000 грн/мес покрывает базовые услуги хранения и отправки.</p>
-
-<h3>Что происходит после подключения?</h3>
-<p>Типичный путь клиента MTP Group: день 1 &mdash; консультация, договор и настройка интеграции с маркетплейсами. День 2 &mdash; передача товара на склад, штрих-кодирование, тестовые отправки. День 3 &mdash; полноценный запуск. Далее заказы поступают автоматически со всех подключённых площадок, склад собирает и отправляет, а вы просматриваете дашборд раз в неделю. За 10 лет работы и более 150 клиентов мы отработали этот процесс до автоматизма &mdash; 30 секунд на сборку заказа, до 6 000 отправок в день.</p>
+<h3>Сколько стоит и как сэкономить</h3>
+<p>Собственный склад для 100 заказов/день обходится в 55 000+ грн/мес: аренда, зарплата, коммуналка, материалы, WMS, генератор. Плюс 3-4 часа вашего времени ежедневно. С MTP Group: отправка 100 заказов/день &times; 22 дня &times; 20 грн = 44 000 грн + хранение 6 500 грн = 50 500 грн/мес. Но главная экономия &mdash; 90+ часов в месяц. Время, которое вы тратили на склад, теперь тратите на маркетинг, ассортимент и масштабирование. Минимальный порог входа &mdash; 5 000 грн/мес. Точный расчёт &mdash; бесплатно.</p>
 </div>
 </div>
 </section>
@@ -158,84 +213,144 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <style is:global>
 :root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
 .ctr{max-width:1200px;margin:0 auto;padding:0 24px}
-.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
-.hero-form{display:flex;gap:12px;max-width:460px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:var(--red);border-color:var(--red)}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
-.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
-.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
-.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
 
-.marketplaces{padding:100px 0;background:#fff}
-.mp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.mp-card{background:var(--gray);border-radius:8px;padding:36px 32px;border:1px solid #e0e0e0;transition:border-color .3s}
-.mp-card:hover{border-color:var(--red)}
-.mp-card h3{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:12px;color:var(--black)}
-.mp-card p{font-size:14px;color:var(--muted);line-height:1.7}
+/* HERO — Apple-style full-screen statement */
+.ru-hero{position:relative;min-height:100vh;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
+.ru-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(230,51,41,.08) 0%,transparent 60%)}
+.ru-hero-inner{position:relative;z-index:2;max-width:800px}
+.ru-hero h1{font-family:var(--fd);font-size:clamp(48px,8vw,100px);font-weight:400;line-height:.9;margin-bottom:32px;letter-spacing:-1px}
+.ru-hero-sub{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.55);line-height:1.7;max-width:600px;margin:0 auto 40px}
+.ru-hero .hero-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
+.ru-hero .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.ru-hero .hero-form input::placeholder{color:rgba(255,255,255,.25)}.ru-hero .hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.ru-hero .hero-form button{padding:16px 24px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.ru-hero .hero-form button:hover{background:#c42b22}
+.ru-hero .hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
 
-.how-it-works{padding:100px 0;background:#0a0a0a;color:#fff}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.step-card{padding:32px 24px;border:1px solid rgba(255,255,255,.08);border-radius:8px;transition:border-color .3s}
-.step-card:hover{border-color:var(--red)}
-.step-num{font-family:var(--fd);font-size:48px;color:var(--red);line-height:1;margin-bottom:16px}
-.step-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.step-card p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7}
+/* Animated counters — Apple-style */
+.counters{background:var(--black);color:var(--white);padding:60px 0 100px;border-top:1px solid rgba(255,255,255,.06)}
+.counter-grid{display:flex;justify-content:center;gap:80px;max-width:1000px;margin:0 auto;padding:0 24px}
+.counter-item{text-align:center}
+.counter-val{font-family:var(--fd);font-size:clamp(48px,7vw,80px);font-weight:400;color:var(--white);display:inline}
+.counter-unit{font-family:var(--fd);font-size:clamp(48px,7vw,80px);font-weight:400;color:var(--red);display:inline}
+.counter-label{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:8px}
 
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+/* 3 Scenarios — unique to RU */
+.scenarios{padding:120px 0}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.sc-card{padding:48px 32px;border:1px solid #e0e0e0;border-radius:12px;position:relative;transition:border-color .3s}
+.sc-card:hover{border-color:var(--red)}
+.sc-num{font-family:var(--fd);font-size:64px;color:rgba(0,0,0,.06);position:absolute;top:16px;right:24px;line-height:1}
+.sc-card h3{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:16px}
+.sc-card p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.sc-result{font-size:13px;color:var(--red);font-weight:500;padding-top:16px;border-top:1px solid #eee}
 
+/* Order day timeline — unique to RU */
+.order-day{padding:120px 0;background:var(--black);color:var(--white)}
+.od-timeline{max-width:700px;margin:0 auto;position:relative;padding-left:80px}
+.od-timeline::before{content:'';position:absolute;left:56px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.08)}
+.od-step{position:relative;padding:0 0 48px 40px}
+.od-step:last-child{padding-bottom:0}
+.od-time{position:absolute;left:-80px;top:0;font-family:var(--fd);font-size:18px;color:var(--red);width:70px;text-align:right}
+.od-dot{position:absolute;left:-8px;top:4px;width:14px;height:14px;background:var(--red);border-radius:50%;border:3px solid var(--black)}
+.od-text h3{font-size:17px;font-weight:500;margin-bottom:6px;color:#fff}
+.od-text p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* Marketplace horizontal scroller — Apple-style */
+.mp-section{padding:100px 0;background:var(--gray);overflow:hidden}
+.mp-scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 24px 24px}
+.mp-scroller::-webkit-scrollbar{display:none}
+.mp-scroll-track{display:flex;gap:20px;min-width:max-content;padding:0 calc((100vw - 1200px)/2)}
+.mp-s-card{flex-shrink:0;width:280px;padding:32px 28px;background:#fff;border-radius:12px;border:1px solid #e0e0e0;transition:border-color .3s,transform .3s}
+.mp-s-card:hover{border-color:var(--red);transform:translateY(-4px)}
+.mp-s-card h3{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:6px}
+.mp-s-stat{font-size:12px;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.mp-s-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Reliability — unique to RU */
+.reliability{padding:120px 0}
+.rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:900px;margin:0 auto}
+.rel-card{padding:40px 32px;border:1px solid #e0e0e0;border-radius:12px}
+.rel-icon{font-size:36px;margin-bottom:16px}
+.rel-card h3{font-family:var(--fd);font-size:20px;font-weight:400;margin-bottom:8px}
+.rel-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* Pricing */
 .pricing{padding:100px 0;background:var(--gray)}
-.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
 .price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
 .price-row>span{flex:1;padding:14px 20px}
-.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-header{background:var(--black);color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
 .price-row:not(.price-header):hover{background:#fff}
 .price-highlight{background:var(--red);color:#fff;font-weight:600}
-.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-cta{text-align:center}
-.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
-.price-cta button:hover{background:#c42b22}
+.price-note{text-align:center;font-size:15px;color:var(--muted);max-width:500px;margin:0 auto}
 
-.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+/* FAQ */
+.faq{padding:100px 0;background:var(--black);color:var(--white)}
 .faq-list{max-width:700px;margin:0 auto}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
 .faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
 
+/* Article */
 .article-section{background:#fff;padding:80px 8vw}
-.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
 .article-content{max-width:800px}
-.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
 .article-content h3:first-child{margin-top:0}
 .article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
 
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
-
 @media(max-width:768px){
-.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.mp-grid{grid-template-columns:1fr}
-.steps-grid{grid-template-columns:1fr}
-.ben-grid{grid-template-columns:1fr}
+.ru-hero h1{font-size:clamp(36px,10vw,56px)}
+.ru-hero .hero-form{flex-direction:column}.ru-hero .hero-form button{width:100%}
+.counter-grid{flex-wrap:wrap;gap:32px 48px}
+.counter-item{min-width:40%}
+.sc-grid{grid-template-columns:1fr}
+.od-timeline{padding-left:60px}
+.od-time{left:-60px;font-size:14px;width:50px}
+.mp-scroll-track{padding:0 24px}
+.rel-grid{grid-template-columns:1fr}
 }
 
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.step-card,.mp-card{opacity:1!important;transform:none!important}
+.sc-card,.rel-card,.mp-s-card,.od-step{opacity:1!important;transform:none!important}
 </style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.faq-a');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+
+/* Animated counters */
+var counted=false;
+function animateCounters(){
+if(counted)return;
+var els=document.querySelectorAll('.counter-val[data-target]');
+if(!els.length)return;
+var rect=els[0].getBoundingClientRect();
+if(rect.top>window.innerHeight)return;
+counted=true;
+els.forEach(function(el){
+var target=parseInt(el.dataset.target);
+var start=0;
+var duration=2000;
+var startTime=null;
+function step(ts){
+if(!startTime)startTime=ts;
+var progress=Math.min((ts-startTime)/duration,1);
+var eased=1-Math.pow(1-progress,3);
+el.textContent=Math.floor(eased*target).toLocaleString('ru-RU');
+if(progress<1)requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
+});
+}
+window.addEventListener('scroll',animateCounters);
+animateCounters();
+});
+</script>
