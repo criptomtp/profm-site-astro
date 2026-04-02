@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/ua",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/tpost/:slug*",
       "destination": "/blog/tpost/:slug*",
       "permanent": true
