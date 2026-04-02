@@ -69,6 +69,22 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </div>
 </div></section>
 
+<!-- NO LOCAL ENTITY — unique to RU -->
+<section class="no-entity"><div class="ctr">
+<div class="ne-inner">
+<div class="ne-text">
+<h2>Нет юрлица в Украине? Начните без него.</h2>
+<p>Для тестового запуска на маркетплейсах регистрация не нужна. Вы отправляете товар на наш склад &mdash; мы оформляем отправки. Когда объёмы вырастут, поможем с регистрацией ФОП или ТОВ через наших партнёров.</p>
+<div class="ne-steps">
+<div class="ne-step"><span class="ne-num">1</span><span>Отправляете товар на наш склад</span></div>
+<div class="ne-step"><span class="ne-num">2</span><span>Мы подключаем маркетплейс и начинаем отправки</span></div>
+<div class="ne-step"><span class="ne-num">3</span><span>Когда бизнес вырос &mdash; оформляете юрлицо</span></div>
+</div>
+</div>
+<div class="ne-tag">Работаем с продавцами из Турции, Европы, США и стран СНГ</div>
+</div>
+</div></section>
+
 <!-- ORDER TIMELINE — unique to RU (visual "day of an order") -->
 <section class="order-day"><div class="ctr">
 <div class="badge">ПРОЦЕСС</div>
@@ -248,6 +264,16 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .sc-card p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:16px}
 .sc-result{font-size:13px;color:var(--red);font-weight:500;padding-top:16px;border-top:1px solid #eee}
 
+/* No entity section — unique to RU */
+.no-entity{padding:100px 0;background:var(--red);color:#fff}
+.ne-inner{max-width:800px;margin:0 auto}
+.ne-inner h2{font-family:var(--fd);font-size:clamp(28px,4vw,44px);font-weight:400;margin-bottom:20px}
+.ne-inner>p,.ne-text>p{font-size:17px;line-height:1.7;opacity:.9;margin-bottom:32px}
+.ne-steps{display:flex;gap:24px;margin-bottom:24px}
+.ne-step{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500}
+.ne-num{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.25);font-size:14px;font-weight:600;flex-shrink:0}
+.ne-tag{font-size:13px;opacity:.7;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+
 /* Order day timeline — unique to RU */
 .order-day{padding:120px 0;background:var(--black);color:var(--white)}
 .od-timeline{max-width:700px;margin:0 auto;position:relative;padding-left:80px}
@@ -312,6 +338,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .counter-grid{flex-wrap:wrap;gap:32px 48px}
 .counter-item{min-width:40%}
 .sc-grid{grid-template-columns:1fr}
+.ne-steps{flex-direction:column;gap:16px}
 .od-timeline{padding-left:60px}
 .od-time{left:-60px;font-size:14px;width:50px}
 .mp-scroll-track{padding:0 24px}
