@@ -69,6 +69,10 @@ import Base from '../../../layouts/Base.astro';
 
 <h2 id="how">Як працює фулфілмент: 6 етапів</h2>
 
+<div class="blog-infographic">
+<img src="/images/blog/fulfillment-process-6-steps.webp" alt="Інфографіка: 6 етапів фулфілменту — приймання, зберігання, комплектація, пакування, відправка, повернення" width="1200" height="669" loading="lazy">
+</div>
+
 <h3>Етап 1. Прийом товару</h3>
 <p>Ти привозиш або надсилаєш товар на склад оператора. Там його розвантажують, перевіряють комплектність, присвоюють штрихкоди (якщо їх немає) і розміщують в адресному сховищі. Кожна одиниця отримує свою ячейку з координатами в WMS-системі. Вартість: від 3 грн за одиницю.</p>
 
@@ -222,5 +226,7 @@ import Base from '../../../layouts/Base.astro';
 .blog-cta p{opacity:.85;margin-bottom:20px;font-size:15px}
 .blog-cta a{display:inline-block;padding:14px 28px;background:#000;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;transition:background .3s}
 .blog-cta a:hover{background:#333}
+.blog-infographic{margin:24px -24px;background:#f5f5f5;padding:24px;border-radius:12px;text-align:center}
+.blog-infographic img{max-width:100%;height:auto;border-radius:8px}
 @media(max-width:768px){.blog-hero-img{margin:-80px -24px 24px}}
 </style>
