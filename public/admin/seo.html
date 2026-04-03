@@ -23,7 +23,7 @@
 <h1 class="admin-title" style="margin-bottom:4px">SEO Аналітика</h1>
 <p class="admin-subtitle" id="lastUpdate">Завантаження...</p>
 </div>
-<button onclick="syncNow()" style="padding:10px 20px;background:#e63329;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px">Оновити дані ↻</button>
+<button id="syncBtn" style="padding:10px 20px;background:#e63329;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px">Оновити дані ↻</button>
 </div>
 
 <!-- KPI Cards -->
@@ -90,7 +90,7 @@
 <script src="js/auth.js"></script>
 <script>
 checkAuth();
-if(!hasPermission('seo')){window.location.href='/admin/dashboard.html';return;}
+if(!hasPermission('seo')){window.location.href='/admin/dashboard.html';}
 // Dynamic nav
 (function(){var u=getUser(),r=u.role,p=u.permissions||[],nav=[['dashboard.html','Головна'],['crm.html','CRM','crm'],['seo.html','SEO','seo'],['articles.html','Статті','content'],['users.html','Команда','users']],h='';nav.forEach(function(n){if(r==='admin'||!n[2]||p.indexOf(n[2])!==-1)h+='<a href="'+n[0]+'"'+(n[0]==='seo.html'?' class="active"':'')+'>'+n[1]+'</a>';});document.getElementById('navLinks').innerHTML=h;})();
 
@@ -274,7 +274,7 @@ function renderChart(history) {
 }
 
 function syncNow() {
-  var btn = document.querySelector('[onclick="syncNow()"]');
+  var btn = document.getElementById('syncBtn');
   btn.textContent = 'Оновлення...';
   btn.disabled = true;
   btn.style.opacity = '0.5';
@@ -296,6 +296,9 @@ function syncNow() {
     setTimeout(function(){btn.textContent='Оновити дані ↻';btn.style.background='#e63329';btn.style.opacity='1';btn.disabled=false;}, 3000);
   });
 }
+
+// Button handler
+document.getElementById('syncBtn').addEventListener('click', syncNow);
 
 // Load on start
 loadData();
