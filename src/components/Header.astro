@@ -303,11 +303,51 @@ body{padding-top:0;margin:0}
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'fulfilment-kiev'},
   };
   // Blog article map (full path mapping)
-  var blogMap = {
-    'scho-take-fulfilment':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
-    'chto-takoe-fulfilment':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
-    'what-is-fulfillment-complete-guide':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
-  };
+  var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
+    a('1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i','53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha','protect-store-from-fraud');
+    a('25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla','bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn','fulfillment-vs-own-warehouse');
+    a('2b5uuyxzx1-chto-nuzhno-znat-o-povedenii-pokupatelei','elrpmubzt1-scho-potrbno-znati-pro-povednku-pokuptsv','online-buyer-behavior-insights');
+    a('2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain','lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran','how-to-choose-fulfillment-operator');
+    a('2l10ulx751-kak-ukrainskim-predprinimatelyam-viiti-n','vzfshz9ht1-yak-ukranskim-pdprimtsyam-viiti-na-vrope','expand-to-european-marketplaces');
+    a('33bmy57t51-kakoi-biznes-otkrit-v-ukraine-vozmozhnos','edt36a00r1-yakii-bznes-vdkriti-v-ukran-mozhlivost-d','best-business-ideas-ukraine');
+    a('60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr','iyjgnyrmx1-rro-prro-dlya-bznesu-osoblivost-ta-vimog','fiscal-register-prro-business');
+    a('6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng','psumj0frr1-dohd-a-pributku-nema-de-vtracha-grosh-nt','where-online-store-loses-money');
+    a('8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i','xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per','product-business-ukraine-guide');
+    a('a5zlsrmfs1-chem-zamenit-rossiiskie-servisi-chek-lis','1zah21gka1-chim-zamniti-rosisk-servsi-chek-list-dly','replace-russian-services-ukraine-checklist');
+    a('ak35ism111-fulfilment-dlya-internet-magazina-odezhd','uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t','fulfillment-for-clothing-shoes');
+    a('do95mhtv41-naibolee-chastie-oshibki-v-logistike-vo','bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni','peak-season-logistics-mistakes');
+    a('e3uzpiaja1-5-glavnih-oshibok-pri-otkritii-internet','1uxlzxirt1-5-golovnih-pomilok-pd-chas-vdkrittya-nte','5-mistakes-starting-online-store');
+    a('fxaeldo931-pochemu-iyul-luchshee-vremya-proverit-v','5vlhyoip61-chomu-lipen-chas-perevriti-vash-sklad-ch','why-audit-warehouse-in-summer');
+    a('h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi','27jibr7e81-bznes-v-ukran-pd-chas-vini-vikliki-ta-mo','business-in-ukraine-during-war');
+    a('iavfdk7371-10-rabochih-sposobov-uvelichit-pribil-in','5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt','10-ways-increase-profit-ecommerce');
+    a('im5rupthp1-kak-podgotovit-internet-magazin-k-novogo','ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc','prepare-store-for-holidays');
+    a('jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi','rjmgtrmvb1-fulflment-scho-tse-sklki-koshtu-ta-nsh-v','fulfillment-cost-guide');
+    a('ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart','13ny6p72v1-yak-pdgotuvati-nternet-magazin-do-8-bere','prepare-online-store-march-8');
+    a('kahfgm2161-7-trendov-internet-torgovli-v-2022-godu','n2kn0z1f21-7-trendv-nternet-torgvl-u-2022-rots-scho','ecommerce-trends-2022');
+    a('keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o','699f3hz0v1-yak-pratsyu-fulflment-v-ukran-2025-ekspe','how-fulfillment-works-ukraine-2025');
+    a('l7otgimlh1-kak-internet-magazinu-podgotovitsya-k-dn','zmck0cika1-yak-nternet-magazinu-pdgotuvatisya-do-dn','prepare-store-valentines-day');
+    a('m2l0va78z1-chto-takoe-fulfilment-dlya-internet-maga','l69lld8l41-scho-take-fulflment-dlya-nternet-magazin','what-is-fulfillment-7-services');
+    a('mjrp3rx3z1-kak-internet-magazinu-rabotat-s-otzivami','1z05mldbb1-yak-nternet-magazinu-pratsyuvati-z-vdguk','how-to-handle-customer-reviews');
+    a('n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz','3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne','fiscal-register-requirements-ukraine');
+    a('o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar','8mcui07l11-yak-skorotiti-klkst-povernen-tovaru-v-nt','reduce-product-returns-ecommerce');
+    a('okobnaenu1-kak-otkrit-internet-magazin-vo-vremya-vo','jghdgatid1-yak-vdkriti-nternet-magazin-pd-chas-vini','online-store-during-wartime');
+    a('pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto','s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc','what-is-sla-in-logistics');
+    a('pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v','d0kknsayu1-fulfillment-chi-vlasnii-sklad-u-2025-str','fulfillment-vs-own-warehouse-2025');
+    a('tl4cc8e601-kak-internet-magazinu-rabotat-v-usloviya','mj3ulhpr21-yak-nternet-magazinu-pratsyuvati-v-umova','ecommerce-logistics-during-war');
+    a('xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m','gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter','top-5-logistics-mistakes-ecommerce');
+    a('yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os','k6e9sg89y1-yak-vdkriti-nternet-magazin-v-ukran-osno','how-to-start-online-store-ukraine');
+    // Articles without tpost (new articles)
+    m['scho-take-fulfilment']={ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'};
+    m['chto-takoe-fulfilment']=m['scho-take-fulfilment'];
+    m['what-is-fulfillment-complete-guide']=m['scho-take-fulfilment'];
+    // UA/EN only articles
+    m['2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo']={ua:'/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/',ru:'/blog/',en:'/en/blog/post/what-is-sku-article-number/'};
+    m['what-is-sku-article-number']={ua:'/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/',ru:'/blog/',en:'/en/blog/post/what-is-sku-article-number/'};
+    m['2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko']={ua:'/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/',ru:'/blog/',en:'/en/blog/post/mtp-group-fast-product-liquidation/'};
+    m['mtp-group-fast-product-liquidation']={ua:'/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/',ru:'/blog/',en:'/en/blog/post/mtp-group-fast-product-liquidation/'};
+    m['hmh91dbl11-mtp-group-fulfillment-naikrasch-fulflmen']={ua:'/ua/blog/tpost/hmh91dbl11-mtp-group-fulfillment-naikrasch-fulflmen/',ru:'/blog/',en:'/en/blog/post/mtp-group-best-fulfillment-operators/'};
+    m['mtp-group-best-fulfillment-operators']={ua:'/ua/blog/tpost/hmh91dbl11-mtp-group-fulfillment-naikrasch-fulflmen/',ru:'/blog/',en:'/en/blog/post/mtp-group-best-fulfillment-operators/'};
+    return m;})();
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;
     var slug=path.replace(/^\/(?:ua|en|ru)\//,'/').replace(/^\//,'').replace(/\/$/,'');
