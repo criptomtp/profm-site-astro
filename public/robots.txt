@@ -8,4 +8,4 @@ Disallow: /files/
 Disallow: /schedule/
 Disallow: /new/
 
-Sitemap: https://fulfillmentmtp.com.ua/sitemap.xml
+Sitemap: https://www.fulfillmentmtp.com.ua/sitemap-index.xml
