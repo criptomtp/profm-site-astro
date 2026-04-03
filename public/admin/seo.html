@@ -105,11 +105,22 @@ function showTab(tab) {
 }
 
 function loadData() {
-  fetch('/api/gsc/').then(function(r){return r.json()}).then(function(data){
+  document.getElementById('lastUpdate').textContent = 'Завантаження даних...';
+  fetch('/api/gsc/')
+  .then(function(r){
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function(data){
     gscData = data;
+    if(!data.latest || !data.latest.queries || data.latest.queries.length === 0){
+      document.getElementById('lastUpdate').textContent = 'Немає даних. Натисніть "Оновити дані"';
+      return;
+    }
     renderDashboard();
-  }).catch(function(e){
-    document.getElementById('lastUpdate').textContent = 'Помилка завантаження: ' + e.message;
+  })
+  .catch(function(e){
+    document.getElementById('lastUpdate').textContent = 'Помилка: ' + e.message + '. Натисніть "Оновити дані"';
   });
 }
 
