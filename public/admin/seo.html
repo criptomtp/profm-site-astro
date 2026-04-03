@@ -105,7 +105,7 @@ function showTab(tab) {
 }
 
 function loadData() {
-  fetch('/api/gsc').then(function(r){return r.json()}).then(function(data){
+  fetch('/api/gsc/').then(function(r){return r.json()}).then(function(data){
     gscData = data;
     renderDashboard();
   }).catch(function(e){
@@ -263,13 +263,27 @@ function renderChart(history) {
 }
 
 function syncNow() {
-  event.target.textContent = 'Оновлення...';
-  event.target.disabled = true;
-  // This triggers the local sync script — user needs to run it manually
-  alert('Запустіть в терміналі:\npython3 scripts/gsc-sync.py\n\nПісля завершення натисніть OK — дані оновляться.');
-  loadData();
-  event.target.textContent = 'Оновити дані ↻';
-  event.target.disabled = false;
+  var btn = document.querySelector('[onclick="syncNow()"]');
+  btn.textContent = 'Оновлення...';
+  btn.disabled = true;
+  btn.style.opacity = '0.5';
+  fetch('/api/gsc-sync/', {method:'POST', headers:{'Content-Type':'application/json'}})
+  .then(function(r){return r.json()})
+  .then(function(d){
+    if(d.ok){
+      btn.textContent = 'Готово! ' + d.queries + ' запитів';
+      btn.style.background = '#22c55e';
+      setTimeout(function(){loadData();btn.textContent='Оновити дані ↻';btn.style.background='#e63329';btn.style.opacity='1';btn.disabled=false;}, 1500);
+    } else {
+      btn.textContent = 'Помилка: ' + (d.error||'?').slice(0,30);
+      btn.style.background = '#666';
+      setTimeout(function(){btn.textContent='Оновити дані ↻';btn.style.background='#e63329';btn.style.opacity='1';btn.disabled=false;}, 3000);
+    }
+  })
+  .catch(function(e){
+    btn.textContent = 'Помилка мережі';
+    setTimeout(function(){btn.textContent='Оновити дані ↻';btn.style.background='#e63329';btn.style.opacity='1';btn.disabled=false;}, 3000);
+  });
 }
 
 // Load on start
