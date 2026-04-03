@@ -302,13 +302,22 @@ body{padding-top:0;margin:0}
     'fulfilment-kiev':{ua:'fulfilment-kyiv',en:'fulfillment-kyiv'},
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'fulfilment-kiev'},
   };
+  // Blog article map (full path mapping)
+  var blogMap = {
+    'scho-take-fulfilment':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
+    'chto-takoe-fulfilment':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
+    'what-is-fulfillment-complete-guide':{ua:'/ua/blog/scho-take-fulfilment/',ru:'/blog/chto-takoe-fulfilment/',en:'/en/blog/post/what-is-fulfillment-complete-guide/'},
+  };
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;
     var slug=path.replace(/^\/(?:ua|en|ru)\//,'/').replace(/^\//,'').replace(/\/$/,'');
     var np='/';
-    if(!slug||slug==='ru'){np=tl==='ua'?'/':tl==='ru'?'/ru/':'/en/';}
+    var lastSeg=slug.split('/').pop();
+    // Check blog article map first
+    if(blogMap[lastSeg]){np=blogMap[lastSeg][tl]||'/';}
+    else if(!slug||slug==='ru'){np=tl==='ua'?'/':tl==='ru'?'/ru/':'/en/';}
     else if(slug==='blog'||slug.match(/^(?:ua\/)?blog$/)){np=tl==='ua'?'/ua/blog/':tl==='ru'?'/blog/':'/en/blog/';}
-    else{var bs=slug.split('/').pop();var m=map[bs];var ts=m?m[tl]||bs:bs;np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}
+    else{var m=map[lastSeg];var ts=m?m[tl]||lastSeg:lastSeg;np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}
     a.href=np;
   });
 })();
