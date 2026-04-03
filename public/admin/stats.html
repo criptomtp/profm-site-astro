@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MTP Admin — Статистика</title>
+<link rel="stylesheet" href="css/admin.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat-card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:24px;text-align:center}
+.stat-val{font-size:36px;font-weight:700;line-height:1}
+.stat-label{font-size:12px;color:#999;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+.stat-red .stat-val{color:#e63329}
+.chart-section{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:24px;margin-bottom:24px}
+.chart-section h3{font-size:16px;font-weight:700;margin-bottom:16px}
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.link-card{display:block;padding:20px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;text-decoration:none;color:#333;transition:all .2s}
+.link-card:hover{border-color:#000;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.link-card h4{font-size:14px;font-weight:600;margin:0 0 4px}
+.link-card p{font-size:12px;color:#888;margin:0}
+@media(max-width:768px){.stat-grid{grid-template-columns:repeat(2,1fr)}.links-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="admin-nav">
+<div class="admin-nav-inner">
+<div class="admin-logo"><span class="admin-logo-mtp">MTP</span> GROUP <span class="admin-logo-sub">ADMIN</span></div>
+<div class="admin-links" id="navLinks"></div>
+<button class="admin-logout" onclick="logout()">Вийти</button>
+</div>
+</nav>
+
+<main class="admin-main">
+<h1 class="admin-title">Статистика сайту</h1>
+<p class="admin-subtitle" id="updateInfo">Завантаження...</p>
+
+<div class="stat-grid">
+<div class="stat-card"><div class="stat-val" id="sPages">—</div><div class="stat-label">Сторінок на сайті</div></div>
+<div class="stat-card stat-red"><div class="stat-val" id="sLeads">—</div><div class="stat-label">Заявок в CRM</div></div>
+<div class="stat-card"><div class="stat-val" id="sIndexed">—</div><div class="stat-label">В індексі Google</div></div>
+<div class="stat-card"><div class="stat-val" id="sNotIndexed">—</div><div class="stat-label">Не індексовані</div></div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+<div class="chart-section">
+<h3>Воронка CRM</h3>
+<canvas id="funnelChart" height="200"></canvas>
+</div>
+<div class="chart-section">
+<h3>Кліки за 7 днів (ТОП-5 запитів)</h3>
+<canvas id="clicksChart" height="200"></canvas>
+</div>
+</div>
+
+<div class="chart-section">
+<h3>Сторінки сайту</h3>
+<div style="max-height:400px;overflow-y:auto">
+<table style="width:100%">
+<thead><tr><th style="text-align:left">URL</th><th>Покази</th><th>Кліки</th><th>Позиція</th></tr></thead>
+<tbody id="pagesTable"></tbody>
+</table>
+</div>
+</div>
+
+<h3 style="margin:32px 0 16px">Швидкі посилання</h3>
+<div class="links-grid">
+<a href="https://search.google.com/search-console?resource_id=https://fulfillmentmtp.com.ua/" target="_blank" class="link-card"><h4>Google Search Console</h4><p>Позиції, індексація, помилки</p></a>
+<a href="https://analytics.google.com/" target="_blank" class="link-card"><h4>Google Analytics</h4><p>Трафік, поведінка</p></a>
+<a href="https://ads.google.com/" target="_blank" class="link-card"><h4>Google Ads</h4><p>Рекламні кампанії</p></a>
+</div>
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+checkAuth();
+
+// Dynamic nav
+(function(){var u=getUser(),r=u.role,p=u.permissions||[],nav=[['dashboard.html','Головна'],['crm.html','CRM','crm'],['stats.html','Статистика','dashboard'],['seo.html','SEO','seo'],['articles.html','Статті','content'],['users.html','Команда','users']],h='';nav.forEach(function(n){if(r==='admin'||!n[2]||p.indexOf(n[2])!==-1)h+='<a href="'+n[0]+'"'+(n[0]==='stats.html'?' class="active"':'')+'>'+n[1]+'</a>';});document.getElementById('navLinks').innerHTML=h;})();
+
+// Load data
+var totalPages = 144;
+document.getElementById('sPages').textContent = totalPages;
+
+// Load CRM leads
+fetch('/api/leads/').then(function(r){return r.json()}).then(function(leads){
+  if(Array.isArray(leads)){
+    document.getElementById('sLeads').textContent = leads.length;
+    // Funnel
+    var statuses = {new:0,contact:0,meeting:0,negotiation:0,onboarding:0,client:0};
+    leads.forEach(function(l){statuses[l.status]=(statuses[l.status]||0)+1;});
+    var labels = ['Нові','Контакт','Зустріч','Переговори','Онбординг','Клієнти'];
+    var values = [statuses.new,statuses.contact,statuses.meeting,statuses.negotiation,statuses.onboarding,statuses.client];
+    var colors = ['#e63329','#ff9800','#2196f3','#9c27b0','#4caf50','#000'];
+    new Chart(document.getElementById('funnelChart'),{
+      type:'bar',
+      data:{labels:labels,datasets:[{data:values,backgroundColor:colors}]},
+      options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true}}}
+    });
+  }
+}).catch(function(){document.getElementById('sLeads').textContent='0';});
+
+// Load GSC data
+fetch('/api/gsc/').then(function(r){return r.json()}).then(function(data){
+  if(data.latest && data.latest.pages){
+    var pages = data.latest.pages;
+    var indexed = pages.filter(function(p){return !p.notIndexed}).length;
+    var notIndexed = pages.filter(function(p){return p.notIndexed}).length;
+    document.getElementById('sIndexed').textContent = indexed;
+    document.getElementById('sNotIndexed').textContent = notIndexed;
+    document.getElementById('updateInfo').textContent = 'Дані GSC за ' + data.latest.date;
+
+    // Pages table
+    var tbody = document.getElementById('pagesTable');
+    tbody.innerHTML = pages.sort(function(a,b){return b.impressions-a.impressions}).slice(0,30).map(function(p){
+      return '<tr><td style="font-size:13px">' + p.url + '</td>' +
+        '<td class="num">' + p.impressions + '</td>' +
+        '<td class="num">' + p.clicks + '</td>' +
+        '<td class="num">' + (p.position>0?p.position:'—') + '</td></tr>';
+    }).join('');
+
+    // Clicks chart
+    if(data.latest.queries){
+      var top5 = data.latest.queries.sort(function(a,b){return b.clicks-a.clicks}).slice(0,5);
+      new Chart(document.getElementById('clicksChart'),{
+        type:'bar',
+        data:{
+          labels:top5.map(function(q){return q.q.length>20?q.q.slice(0,20)+'…':q.q}),
+          datasets:[{label:'Кліки',data:top5.map(function(q){return q.clicks}),backgroundColor:'#e63329'}]
+        },
+        options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+      });
+    }
+  } else {
+    document.getElementById('updateInfo').textContent = 'Немає даних GSC. Зайдіть в SEO → Оновити дані';
+    document.getElementById('sIndexed').textContent = '?';
+    document.getElementById('sNotIndexed').textContent = '?';
+  }
+}).catch(function(){
+  document.getElementById('updateInfo').textContent = 'Помилка завантаження GSC';
+});
+</script>
+</body>
+</html>
