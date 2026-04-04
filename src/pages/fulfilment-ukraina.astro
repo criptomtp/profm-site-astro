@@ -1,0 +1,316 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент в Украине","description":"Аутсорсинг логистики для интернет-магазинов. Хранение от 650 грн/м³, отправка от 18 грн. 10+ лет, 150+ клиентов, 2 склада в Киевской области.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправление"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Фулфилмент в Украине","item":"https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит фулфилмент в Украине?","acceptedAnswer":{"@type":"Answer","text":"Отправка от 18 грн/заказ (200+/день), хранение 650 грн/м³/мес. Минимальный платёж — 5 000 грн/мес."}},{"@type":"Question","name":"Что входит в стоимость отправки?","acceptedAnswer":{"@type":"Answer","text":"Сборка заказа, упаковка, создание ТТН, передача перевозчику. Доукомплектация — 2,50 грн/шт."}},{"@type":"Question","name":"Как быстро можно начать?","acceptedAnswer":{"@type":"Answer","text":"1-3 дня от заявки до первой отправки."}},{"@type":"Question","name":"Есть ли минимум заказов?","acceptedAnswer":{"@type":"Answer","text":"Нет. Минимальный платёж 5 000 грн/мес покрывает магазины от 10 заказов/день."}},{"@type":"Question","name":"Работает ли склад при отключениях света?","acceptedAnswer":{"@type":"Answer","text":"Да. 3 генератора, 2 провайдера + Starlink. Ни одного дня простоя с 2022 года."}}]}</script>`;
+---
+<Base
+  title="Фулфилмент в Украине — аутсорсинг логистики | MTP Group"
+  description="Фулфилмент для интернет-магазинов в Украине. Хранение 650 грн/м³, отправка от 18 грн. Экономия 49% vs свой склад. ROI-калькулятор, 150+ клиентов."
+  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+</Fragment>
+
+<!-- ═══════ HERO — MINIMALIST CORPORATE ═══════ -->
+<section class="fru-hero">
+<div class="fru-hero-inner">
+<div class="badge">АУТСОРСИНГ ЛОГИСТИКИ</div>
+<h1>Фулфилмент в Украине &mdash;<br>аутсорсинг логистики<br>для интернет-магазинов</h1>
+<p class="fru-sub">Хранение, сборка, упаковка, отправка. От 18 грн за заказ. Экономия 49% по сравнению с собственным складом.</p>
+<div class="fru-stats-row">
+<div class="fru-stat"><strong>от 18</strong> грн/заказ</div>
+<div class="fru-stat"><strong>650</strong> грн/м&sup3;/мес</div>
+<div class="fru-stat"><strong>30</strong> сек сборка</div>
+<div class="fru-stat"><strong>10+</strong> лет опыта</div>
+</div>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Рассчитать стоимость &#8594;</button></form>
+</div>
+</section>
+
+<!-- ═══════ ROI КАЛЬКУЛЯТОР ═══════ -->
+<section class="fru-calc"><div class="ctr">
+<h2 class="sec-h2">Сколько вы сэкономите</h2>
+<p class="sec-sub">Введите ваши параметры &mdash; увидите разницу</p>
+<div class="fru-calc-grid">
+<div class="fru-calc-inputs">
+<div class="fru-field">
+<label>Заказов в день</label>
+<input type="range" id="calcOrders" min="5" max="300" value="50" step="5">
+<output id="calcOrdersVal">50</output>
+</div>
+<div class="fru-field">
+<label>Объём хранения (м&sup3;)</label>
+<input type="range" id="calcStorage" min="1" max="30" value="2" step="1">
+<output id="calcStorageVal">2</output>
+</div>
+<div class="fru-field">
+<label>Товаров в среднем чеке</label>
+<input type="range" id="calcItems" min="1" max="5" value="1.5" step="0.5">
+<output id="calcItemsVal">1.5</output>
+</div>
+</div>
+<div class="fru-calc-result">
+<div class="fru-res-row">
+<div class="fru-res-card fru-res-own">
+<div class="fru-res-label">Свой склад</div>
+<div class="fru-res-price" id="resOwn">55 000</div>
+<div class="fru-res-unit">грн/мес</div>
+</div>
+<div class="fru-res-vs">vs</div>
+<div class="fru-res-card fru-res-mtp">
+<div class="fru-res-label">MTP Fulfillment</div>
+<div class="fru-res-price" id="resMtp">28 000</div>
+<div class="fru-res-unit">грн/мес</div>
+</div>
+</div>
+<div class="fru-res-save">Экономия: <strong id="resSave">27 000</strong> грн/мес (<span id="resPct">49</span>%)</div>
+<div class="fru-res-per">Стоимость 1 отправки: <strong id="resPer">25</strong> грн</div>
+</div>
+</div>
+</div></section>
+
+<!-- ═══════ 5 ШАГОВ ═══════ -->
+<section class="fru-steps"><div class="ctr">
+<h2 class="sec-h2">Как работает фулфилмент</h2>
+<div class="fru-steps-grid">
+<div class="fru-step">
+<div class="fru-step-num">01</div>
+<h3>Приёмка товара</h3>
+<p>Привозите товар на склад. Мы разгружаем, проверяем, штрихкодируем каждую единицу и размещаем в WMS.</p>
+</div>
+<div class="fru-step">
+<div class="fru-step-num">02</div>
+<h3>Хранение</h3>
+<p>Адресная система: каждый товар в своей ячейке. FEFO для косметики и БАДов. 650 грн/м&sup3;/мес.</p>
+</div>
+<div class="fru-step">
+<div class="fru-step-num">03</div>
+<h3>Сборка за 30 сек</h3>
+<p>Заказ попадает в WMS через API. Сборщик получает задание на терминал. Сканирует, комплектует, проверяет.</p>
+</div>
+<div class="fru-step">
+<div class="fru-step-num">04</div>
+<h3>Упаковка и ТТН</h3>
+<p>Упаковка по стандартам маркетплейса или бренда. ТТН создаётся автоматически. Фискальный чек через РРО.</p>
+</div>
+<div class="fru-step">
+<div class="fru-step-num">05</div>
+<h3>Отправка</h3>
+<p>4 забора Новой Почтой в день. Заказ до 14:00 &mdash; в Киеве завтра. По Украине &mdash; 1-2 дня.</p>
+</div>
+</div>
+</div></section>
+
+<!-- ═══════ ТАРИФЫ ═══════ -->
+<section class="fru-pricing"><div class="ctr">
+<h2 class="sec-h2">Тарифы на фулфилмент 2026</h2>
+<div class="fru-price-table-wrap">
+<table class="fru-price-table">
+<thead><tr><th>Услуга</th><th>Тариф</th><th>Примечание</th></tr></thead>
+<tbody>
+<tr><td>Хранение</td><td><strong>650 грн/м&sup3;/мес</strong></td><td>Ячеечное хранение с WMS</td></tr>
+<tr><td>Отправка (0-5/день)</td><td>26 грн/заказ</td><td>Стартовые объёмы</td></tr>
+<tr><td>Отправка (21-50/день)</td><td>23 грн/заказ</td><td>Средний бизнес</td></tr>
+<tr><td>Отправка (51-100/день)</td><td>22 грн/заказ</td><td>Растущий магазин</td></tr>
+<tr><td>Отправка (200+/день)</td><td><strong>18 грн/заказ</strong></td><td>Крупные объёмы</td></tr>
+<tr><td>Доукомплектация</td><td>2,50 грн/ед.</td><td>2+ товара в заказе</td></tr>
+<tr><td>Приёмка (до 2 кг)</td><td>3 грн/ед.</td><td>Разгрузка + размещение</td></tr>
+<tr><td>Минимальный платёж</td><td><strong>5 000 грн/мес</strong></td><td>Включает все услуги</td></tr>
+</tbody>
+</table>
+</div>
+</div></section>
+
+<!-- ═══════ FAQ — ВОПРОСЫ О СТОИМОСТИ ═══════ -->
+<section class="fru-faq"><div class="ctr">
+<h2 class="sec-h2">Вопросы о стоимости фулфилмента</h2>
+<div class="faq-list">
+<details class="faq-item"><summary>Сколько стоит фулфилмент в Украине?<span>+</span></summary><div class="faq-body">Отправка от 18 грн/заказ (при 200+/день), хранение 650 грн/м&sup3;/мес. Минимальный платёж &mdash; 5 000 грн/мес. Чем больше заказов &mdash; тем дешевле каждая отправка.</div></details>
+<details class="faq-item"><summary>Что входит в стоимость отправки?<span>+</span></summary><div class="faq-body">Сборка заказа, упаковка, создание ТТН, передача перевозчику (Новая Почта). Доукомплектация (2+ товара в чеке) &mdash; 2,50 грн/шт дополнительно.</div></details>
+<details class="faq-item"><summary>Как быстро можно подключиться?<span>+</span></summary><div class="faq-body">1&ndash;3 дня от заявки до первой отправки. Привозите товар &rarr; мы маркируем и размещаем &rarr; на следующий день уже отправляем.</div></details>
+<details class="faq-item"><summary>Есть ли минимум по количеству заказов?<span>+</span></summary><div class="faq-body">Нет. Минимальный платёж 5 000 грн/мес покрывает магазины от 10 заказов/день. Динамический тариф: растёте &mdash; цена за заказ снижается.</div></details>
+<details class="faq-item"><summary>Работает ли склад при отключениях электричества?<span>+</span></summary><div class="faq-body">Да. 3 промышленных генератора, 2 оптоволоконных провайдера + Starlink. Ни одного дня простоя с февраля 2022.</div></details>
+</div>
+</div></section>
+
+<!-- ═══════ SEO СТАТЬЯ ═══════ -->
+<section class="fru-article"><div class="ctr">
+<article class="fru-seo-text">
+<h2>Как работает фулфилмент в Украине</h2>
+<p>Фулфилмент &mdash; это полный аутсорсинг складской логистики. Оператор принимает товар на склад, хранит, собирает заказы, упаковывает и передаёт перевозчику. Для владельца интернет-магазина это означает освобождение от рутины: не нужно арендовать помещение, нанимать кладовщиков, покупать WMS-систему.</p>
+<p>В Украине рынок фулфилмента активно развивается с 2020 года. Пандемия ускорила переход в онлайн, а война показала ценность профессиональной инфраструктуры: генераторы, резервный интернет, географическая диверсификация складов. Магазины, которые работали &laquo;из квартиры&raquo;, столкнулись с блекаутами и простоями &mdash; а фулфилмент-операторы продолжали отправлять.</p>
+
+<h3>3PL vs собственный склад: что выгоднее</h3>
+<p>При 50 заказах в день собственный склад обходится в ~55 000 грн/мес: аренда (15 000), персонал (30 000), WMS (5 000), расходники (5 000). Фулфилмент &mdash; ~28 000 грн/мес за все услуги включительно. Экономия 49%.</p>
+<p>Но главная выгода &mdash; это время. Клиенты MTP Group экономят 90 часов в месяц, которые тратили на упаковку, поездки на почту и обработку возвратов. Это время идёт на маркетинг, расширение ассортимента и масштабирование бизнеса. Carter&rsquo;s вырос с 12 до 72 отправок/день за 3 месяца после перехода на фулфилмент.</p>
+
+<h3>На что обращать внимание при выборе оператора</h3>
+<p>Ключевые критерии: наличие WMS-системы (адресное хранение, штрихкоды), резервное питание (генераторы, Starlink), прозрачное ценообразование (без скрытых платежей), интеграции с вашей CRM и маркетплейсами (Rozetka, Prom.ua, Kasta), а также реальные кейсы с цифрами &mdash; не абстрактные &laquo;много клиентов&raquo;, а конкретные &laquo;рост с 12 до 72 заказов&raquo;.</p>
+</article>
+</div></section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="fru-cta"><div class="ctr">
+<h2>Готовы сократить расходы на логистику?</h2>
+<p>Оставьте номер &mdash; рассчитаем экономию за 15 минут.</p>
+<form class="hero-form" id="ctaForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Перезвоните мне &#8594;</button></form>
+<div class="fru-cta-phones">
+<a href="tel:+380501444645">+38 (050) 144-46-45</a>
+<a href="tel:+380938277767">+38 (093) 827-77-67</a>
+</div>
+</div></section>
+
+<style is:global>
+/* ═══════ RU FULFILLMENT UKRAINA — MINIMALIST CORPORATE ═══════ */
+.fru-hero{background:#fff;padding:120px 24px 80px;text-align:center}
+.fru-hero-inner{max-width:800px;margin:0 auto}
+.fru-hero h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0 0 20px;font-weight:800;letter-spacing:-.02em}
+.fru-sub{font-size:18px;color:#666;max-width:560px;margin:0 auto 36px;line-height:1.6}
+.fru-stats-row{display:flex;justify-content:center;gap:40px;margin-bottom:40px;flex-wrap:wrap}
+.fru-stat{font-size:14px;color:#888}
+.fru-stat strong{display:block;font-size:28px;color:#000;font-weight:800}
+
+/* CALC */
+.fru-calc{padding:80px 0;background:#f8f8f8}
+.fru-calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;align-items:start}
+.fru-calc-inputs{display:flex;flex-direction:column;gap:28px}
+.fru-field label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+.fru-field input[type="range"]{width:100%;accent-color:#e63329;height:6px;cursor:pointer}
+.fru-field output{display:block;text-align:right;font-size:24px;font-weight:800;color:#e63329;margin-top:4px}
+.fru-calc-result{background:#fff;border-radius:16px;padding:32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.fru-res-row{display:flex;gap:16px;align-items:center;margin-bottom:24px}
+.fru-res-card{flex:1;padding:24px;border-radius:12px;text-align:center}
+.fru-res-own{background:#f0f0f0}
+.fru-res-mtp{background:#000;color:#fff}
+.fru-res-label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:.6;margin-bottom:8px}
+.fru-res-price{font-size:32px;font-weight:800}
+.fru-res-unit{font-size:13px;opacity:.6}
+.fru-res-vs{font-size:14px;font-weight:700;color:#ccc}
+.fru-res-save{text-align:center;font-size:18px;color:#e63329;font-weight:700;margin-bottom:8px}
+.fru-res-per{text-align:center;font-size:14px;color:#888}
+
+/* STEPS */
+.fru-steps{padding:80px 0}
+.fru-steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:40px}
+.fru-step{text-align:center;padding:24px 16px}
+.fru-step-num{font-size:48px;font-weight:800;color:#e63329;opacity:.3;margin-bottom:12px}
+.fru-step h3{font-size:16px;margin:0 0 8px;font-weight:700}
+.fru-step p{font-size:14px;color:#666;line-height:1.6}
+
+/* PRICING TABLE */
+.fru-pricing{padding:80px 0;background:#f8f8f8}
+.fru-price-table-wrap{overflow-x:auto;margin-top:40px}
+.fru-price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.fru-price-table th{background:#000;color:#fff;padding:14px 20px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.fru-price-table td{padding:14px 20px;border-bottom:1px solid #f0f0f0;font-size:15px}
+.fru-price-table tr:last-child td{border:0}
+
+/* FAQ */
+.fru-faq{padding:80px 0}
+.faq-list{max-width:760px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-item summary{padding:20px 0;font-size:17px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary span{font-size:24px;color:#e63329;transition:transform .3s}
+.faq-item[open] summary span{transform:rotate(45deg)}
+.faq-body{padding:0 0 20px;font-size:15px;line-height:1.7;color:#555}
+
+/* ARTICLE */
+.fru-article{padding:80px 0;background:#f8f8f8}
+.fru-seo-text{max-width:760px;margin:0 auto}
+.fru-seo-text h2{font-size:28px;font-weight:800;margin:0 0 20px}
+.fru-seo-text h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+.fru-seo-text p{font-size:16px;line-height:1.8;color:#444;margin:0 0 16px}
+
+/* CTA */
+.fru-cta{padding:80px 0;background:#000;color:#fff;text-align:center}
+.fru-cta h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin:0 0 12px}
+.fru-cta p{opacity:.7;margin-bottom:32px;font-size:17px}
+.fru-cta-phones{margin-top:24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.fru-cta-phones a{color:#e63329;font-size:18px;font-weight:700;text-decoration:none}
+
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec-h2{font-size:clamp(24px,4vw,36px);text-align:center;margin:0 0 12px;font-weight:800}
+.sec-sub{text-align:center;color:#888;font-size:17px;margin:0 auto;max-width:560px}
+.badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:6px 16px;border:1.5px solid #e63329;border-radius:100px;color:#e63329;margin-bottom:16px}
+.hero-form{display:flex;max-width:440px;margin:0 auto;gap:0;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.1)}
+.hero-form input{flex:1;padding:16px 20px;border:0;font-size:16px;font-family:inherit;outline:none;min-width:0}
+.hero-form button{padding:16px 28px;background:#e63329;color:#fff;border:0;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
+.hero-form button:hover{background:#c62b22}
+
+@media(max-width:768px){
+.fru-stats-row{gap:20px}
+.fru-calc-grid{grid-template-columns:1fr}
+.fru-steps-grid{grid-template-columns:1fr 1fr;gap:16px}
+.fru-steps-grid .fru-step:last-child{grid-column:1/-1}
+.fru-price-table{font-size:14px}
+.fru-price-table th,.fru-price-table td{padding:10px 14px}
+}
+</style>
+
+<script is:inline>
+// ROI Calculator
+(function(){
+var ordersEl=document.getElementById('calcOrders');
+var storageEl=document.getElementById('calcStorage');
+var itemsEl=document.getElementById('calcItems');
+if(!ordersEl)return;
+
+function getRate(n){
+if(n>200)return 18;if(n>150)return 19;if(n>100)return 20;
+if(n>50)return 22;if(n>20)return 23;if(n>5)return 25;return 26;
+}
+function calc(){
+var orders=parseInt(ordersEl.value);
+var storage=parseFloat(storageEl.value);
+var items=parseFloat(itemsEl.value);
+document.getElementById('calcOrdersVal').textContent=orders;
+document.getElementById('calcStorageVal').textContent=storage;
+document.getElementById('calcItemsVal').textContent=items;
+
+var rate=getRate(orders);
+var days=22;
+var totalOrders=orders*days;
+var mtpStorage=storage*650;
+var mtpShipping=totalOrders*rate;
+var mtpExtras=totalOrders*Math.max(0,items-1)*2.5;
+var mtp=Math.max(mtpStorage+mtpShipping+mtpExtras,5000);
+
+var own=15000+30000+5000+3000+2000;
+var save=own-mtp;
+var pct=Math.round(save/own*100);
+var per=Math.round(mtp/totalOrders);
+
+document.getElementById('resOwn').textContent=own.toLocaleString('uk');
+document.getElementById('resMtp').textContent=Math.round(mtp).toLocaleString('uk');
+document.getElementById('resSave').textContent=Math.max(0,save).toLocaleString('uk');
+document.getElementById('resPct').textContent=Math.max(0,pct);
+document.getElementById('resPer').textContent=per;
+}
+ordersEl.addEventListener('input',calc);
+storageEl.addEventListener('input',calc);
+itemsEl.addEventListener('input',calc);
+calc();
+})();
+
+// Form
+document.querySelectorAll('.hero-form').forEach(function(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var phone=form.querySelector('input[name="phone"]').value.trim();
+if(!phone)return;
+fetch('/api/mtp-crm-leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:phone,source:'fulfilment-ukraina-ru'})}).catch(function(){});
+window.location.href='/thanks/';
+});
+});
+</script>
+</Base>

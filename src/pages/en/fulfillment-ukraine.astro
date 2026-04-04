@@ -1,0 +1,265 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Fulfillment Services in Ukraine","description":"3PL fulfillment for e-commerce in Ukraine. Storage from 650 UAH/m³ (~$15/m³), shipping from 18 UAH (~$0.41). Two warehouses near Kyiv, blackout-proof infrastructure.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Fulfillment Ukraine","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does fulfillment cost in Ukraine?","acceptedAnswer":{"@type":"Answer","text":"Shipping from 18 UAH (~$0.41) per order at 200+/day. Storage 650 UAH (~$15)/m³/month. Minimum fee: 5,000 UAH (~$114)/month."}},{"@type":"Question","name":"Is the warehouse operational during power outages?","acceptedAnswer":{"@type":"Answer","text":"Yes. 3 industrial generators, 2 fiber-optic ISPs + Starlink. Zero downtime since February 2022."}},{"@type":"Question","name":"How quickly can we start?","acceptedAnswer":{"@type":"Answer","text":"1-3 days from application to first shipment."}},{"@type":"Question","name":"Do you handle customs and international shipping?","acceptedAnswer":{"@type":"Answer","text":"We handle domestic fulfillment across Ukraine via Nova Poshta (10,000+ locations). For international shipping, we can prepare orders for your logistics partner."}},{"@type":"Question","name":"What integrations do you support?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, WooCommerce, OpenCart, Horoshop. CRM: KeyCRM, SalesDrive. Also API/Webhook for custom integrations."}},{"@type":"Question","name":"Is there a language barrier?","acceptedAnswer":{"@type":"Answer","text":"Our team communicates in English. Your personal account manager handles daily operations via Telegram or email."}}]}</script>`;
+---
+<Base
+  title="Fulfillment Services Ukraine — 3PL Warehouse | MTP Group"
+  description="3PL fulfillment in Ukraine for global brands. Storage ~$15/m³, shipping from $0.41/order. Blackout-proof warehouse, 150+ clients, 10+ years experience."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+</Fragment>
+
+<!-- ═══════ HERO — DARK TECH ═══════ -->
+<section class="fen-hero">
+<div class="fen-hero-grid"></div>
+<div class="fen-hero-content">
+<div class="fen-badge">3PL FULFILLMENT IN UKRAINE</div>
+<h1>Ukrainian Fulfillment<br>Services for<br>Global Brands</h1>
+<p class="fen-sub">Enter the Ukrainian e-commerce market with a local fulfillment partner. Two warehouses near Kyiv. Blackout-proof infrastructure. 10+ years of experience.</p>
+<div class="fen-hero-stats">
+<div class="fen-hstat"><strong>$0.41</strong><span>per order (from)</span></div>
+<div class="fen-hstat"><strong>$15</strong><span>per m&sup3;/month</span></div>
+<div class="fen-hstat"><strong>6,000</strong><span>orders/day capacity</span></div>
+<div class="fen-hstat"><strong>150+</strong><span>active clients</span></div>
+</div>
+<form class="fen-form" id="heroForm">
+<input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email">
+<input type="tel" name="phone" placeholder="+380 or international" maxlength="19" autocomplete="tel" aria-label="Phone">
+<button type="submit">Get a Quote &#8594;</button>
+</form>
+<div class="fen-note">Free consultation &middot; English-speaking team &middot; Reply within 24h</div>
+</div>
+</section>
+
+<!-- ═══════ WHY UKRAINE ═══════ -->
+<section class="fen-why"><div class="ctr">
+<div class="fen-badge" style="text-align:center">WHY UKRAINE</div>
+<h2 class="fen-h2">The Ukrainian E-Commerce Opportunity</h2>
+<p class="fen-sub-sec">Ukraine is one of Europe&rsquo;s fastest-growing e-commerce markets.</p>
+<div class="fen-why-grid">
+<div class="fen-why-card">
+<div class="fen-why-num">$8B+</div>
+<div class="fen-why-label">E-commerce market size</div>
+<p>Over 200 billion UAH in online sales annually. Growing 25-30% year-over-year despite the war.</p>
+</div>
+<div class="fen-why-card">
+<div class="fen-why-num">44M</div>
+<div class="fen-why-label">Population</div>
+<p>Large consumer base with high smartphone penetration. Instagram and marketplaces drive purchases.</p>
+</div>
+<div class="fen-why-card">
+<div class="fen-why-num">50%</div>
+<div class="fen-why-label">Lower costs vs EU</div>
+<p>Fulfillment in Ukraine costs roughly half of what you&rsquo;d pay in Poland or Germany. Same quality, lower overhead.</p>
+</div>
+<div class="fen-why-card">
+<div class="fen-why-num">10K+</div>
+<div class="fen-why-label">Nova Poshta locations</div>
+<p>Ukraine&rsquo;s #1 delivery network reaches every city and village. Next-day delivery to Kyiv, 1-2 days nationwide.</p>
+</div>
+</div>
+</div></section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="fen-how"><div class="ctr">
+<h2 class="fen-h2">How It Works</h2>
+<div class="fen-how-grid">
+<div class="fen-how-step">
+<div class="fen-how-num">01</div>
+<h3>Ship Your Products</h3>
+<p>Send inventory to our warehouse near Kyiv. We receive, inspect, barcode each unit and store in our WMS.</p>
+</div>
+<div class="fen-how-step">
+<div class="fen-how-num">02</div>
+<h3>Integrate Your Store</h3>
+<p>Connect via API, WooCommerce, OpenCart, or CSV. Orders flow into our WMS automatically.</p>
+</div>
+<div class="fen-how-step">
+<div class="fen-how-num">03</div>
+<h3>We Pick &amp; Pack</h3>
+<p>30 seconds per order. Custom packaging available. Fiscal receipts generated automatically (Ukrainian law).</p>
+</div>
+<div class="fen-how-step">
+<div class="fen-how-num">04</div>
+<h3>Delivered Nationwide</h3>
+<p>4 pickups by Nova Poshta daily. Kyiv &mdash; next day. All Ukraine &mdash; 1-2 days. Returns processed at warehouse.</p>
+</div>
+</div>
+</div></section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section class="fen-pricing"><div class="ctr">
+<h2 class="fen-h2">Transparent Pricing</h2>
+<p class="fen-sub-sec">All prices in UAH. USD equivalent at rate 44 UAH/$1.</p>
+<div class="fen-price-wrap">
+<table class="fen-price-table">
+<thead><tr><th>Service</th><th>UAH</th><th>~USD</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Storage</td><td><strong>650 /m&sup3;/mo</strong></td><td>~$15</td><td>WMS-managed, barcoded cells</td></tr>
+<tr><td>Shipping (0-5/day)</td><td>26 /order</td><td>~$0.59</td><td>Starting volumes</td></tr>
+<tr><td>Shipping (21-50/day)</td><td>23 /order</td><td>~$0.52</td><td>Medium business</td></tr>
+<tr><td>Shipping (51-100/day)</td><td>22 /order</td><td>~$0.50</td><td>Growing store</td></tr>
+<tr><td>Shipping (200+/day)</td><td><strong>18 /order</strong></td><td><strong>~$0.41</strong></td><td>High volume</td></tr>
+<tr><td>Multi-item order surcharge</td><td>2.50 /item</td><td>~$0.06</td><td>2+ items per order</td></tr>
+<tr><td>Receiving (per unit, &lt;2kg)</td><td>3 /unit</td><td>~$0.07</td><td>Unload + barcode + shelve</td></tr>
+<tr><td>Monthly minimum</td><td><strong>5,000</strong></td><td><strong>~$114</strong></td><td>All services included</td></tr>
+</tbody>
+</table>
+</div>
+</div></section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="fen-faq"><div class="ctr">
+<h2 class="fen-h2">Frequently Asked Questions</h2>
+<div class="faq-list">
+<details class="faq-item"><summary>How much does fulfillment cost in Ukraine?<span>+</span></summary><div class="faq-body">Shipping from 18 UAH (~$0.41) per order at 200+/day. Storage: 650 UAH (~$15)/m&sup3;/month. Minimum monthly fee: 5,000 UAH (~$114). Dynamic pricing: more orders = lower cost per order.</div></details>
+<details class="faq-item"><summary>Is the warehouse operational during power outages?<span>+</span></summary><div class="faq-body">Yes. We have 3 industrial diesel generators (2 primary + 1 backup), 2 fiber-optic ISPs, and Starlink. Zero downtime since February 2022.</div></details>
+<details class="faq-item"><summary>How quickly can we start?<span>+</span></summary><div class="faq-body">1-3 business days from signing to first shipment. Ship your inventory &rarr; we receive and barcode &rarr; start fulfilling the next day.</div></details>
+<details class="faq-item"><summary>Do you handle customs and international shipping?<span>+</span></summary><div class="faq-body">We specialize in domestic Ukrainian fulfillment via Nova Poshta (10,000+ pickup locations). For international logistics, we can prepare and label parcels for your carrier.</div></details>
+<details class="faq-item"><summary>What integrations are available?<span>+</span></summary><div class="faq-body">Marketplaces: Rozetka, Prom.ua, Kasta. CMS: WooCommerce, OpenCart, Horoshop. CRM: KeyCRM, SalesDrive, LP-CRM. Also REST API and Webhook for custom solutions.</div></details>
+<details class="faq-item"><summary>Is there a language barrier?<span>+</span></summary><div class="faq-body">No. Our team communicates in English. You&rsquo;ll have a dedicated account manager reachable via Telegram, email, or phone. All dashboards and reports are available in English.</div></details>
+</div>
+</div></section>
+
+<!-- ═══════ SEO ARTICLE ═══════ -->
+<section class="fen-article"><div class="ctr">
+<article class="fen-seo-text">
+<h2>Fulfillment Services in Ukraine: Guide for International Brands</h2>
+<p>Ukraine&rsquo;s e-commerce market has been growing at 25-30% annually, reaching over $8 billion in GMV. For international brands looking to tap into this market, local fulfillment is essential: Ukrainian consumers expect fast delivery (next-day in Kyiv, 1-2 days nationwide) and cash-on-delivery payment options.</p>
+<p>A 3PL (Third-Party Logistics) partner handles the entire post-purchase journey: receiving your inventory at a local warehouse, storing it in a WMS-managed facility, picking and packing orders, creating shipping labels, and handing parcels to Nova Poshta &mdash; Ukraine&rsquo;s dominant delivery network with 10,000+ locations.</p>
+
+<h3>Ukrainian E-Commerce Market Overview</h3>
+<p>The Ukrainian market presents a unique opportunity: large consumer base (44 million people), high smartphone and internet penetration, and significantly lower fulfillment costs compared to EU countries. A typical fulfillment operation in Ukraine costs roughly 50% less than equivalent services in Poland or Germany, while maintaining the same quality standards.</p>
+<p>Key marketplaces include Rozetka (Ukraine&rsquo;s Amazon equivalent), Prom.ua (marketplace aggregator), and Kasta (fashion-focused). Instagram commerce is also significant, with many brands selling directly through social media.</p>
+
+<h3>Why War-Time Resilience Matters</h3>
+<p>Since February 2022, infrastructure resilience has become a critical factor. Professional fulfillment operators invest in industrial generators, backup internet (multiple ISPs + Starlink), and geographic diversification of warehouses. MTP Group, for example, operates two warehouses in the Kyiv region (Boryspil and Bilohorodka) with 3 generators and has maintained zero downtime since the start of the full-scale invasion.</p>
+</article>
+</div></section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="fen-cta"><div class="ctr">
+<h2>Ready to Enter the Ukrainian Market?</h2>
+<p>Get a personalized quote and onboarding plan.</p>
+<form class="fen-form" id="ctaForm">
+<input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email">
+<button type="submit">Request a Quote &#8594;</button>
+</form>
+<div class="fen-cta-contact">
+<a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a>
+<a href="tel:+380501444645">+38 (050) 144-46-45</a>
+</div>
+</div></section>
+
+<style is:global>
+/* ═══════ EN FULFILLMENT UKRAINE — DARK TECH ═══════ */
+.fen-hero{position:relative;min-height:95vh;display:flex;align-items:center;background:#0a0a0a;overflow:hidden}
+.fen-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.5}
+.fen-hero-content{position:relative;max-width:900px;margin:0 auto;padding:120px 24px 80px;color:#fff}
+.fen-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.2em;padding:6px 18px;border:1.5px solid #00c853;border-radius:100px;color:#00c853;margin-bottom:24px}
+.fen-hero h1{font-size:clamp(36px,7vw,72px);line-height:1.05;margin:0 0 24px;font-weight:800;letter-spacing:-.03em}
+.fen-sub{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.6);max-width:600px;line-height:1.6;margin-bottom:40px}
+.fen-hero-stats{display:flex;gap:40px;margin-bottom:40px;flex-wrap:wrap}
+.fen-hstat strong{display:block;font-size:28px;color:#00c853;font-weight:800}
+.fen-hstat span{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em}
+.fen-form{display:flex;gap:8px;max-width:560px;flex-wrap:wrap}
+.fen-form input{flex:1;min-width:180px;padding:14px 18px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-family:inherit;outline:none}
+.fen-form input:focus{border-color:#00c853}
+.fen-form input::placeholder{color:rgba(255,255,255,.3)}
+.fen-form button{padding:14px 28px;background:#00c853;color:#000;border:0;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
+.fen-form button:hover{background:#00e676}
+.fen-note{margin-top:12px;font-size:12px;color:rgba(255,255,255,.3)}
+
+/* WHY */
+.fen-why{padding:80px 0;background:#111}
+.fen-h2{font-size:clamp(28px,4vw,42px);text-align:center;margin:0 0 12px;font-weight:800;color:#fff}
+.fen-sub-sec{text-align:center;color:rgba(255,255,255,.5);font-size:16px;margin:0 auto 40px;max-width:520px}
+.fen-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fen-why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 24px;transition:border-color .3s}
+.fen-why-card:hover{border-color:#00c853}
+.fen-why-num{font-size:42px;font-weight:800;color:#00c853;margin-bottom:4px}
+.fen-why-label{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:12px}
+.fen-why-card p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* HOW */
+.fen-how{padding:80px 0;background:#0a0a0a}
+.fen-how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.fen-how-step{padding:32px 24px;border-left:2px solid rgba(255,255,255,.08)}
+.fen-how-step:hover{border-color:#00c853}
+.fen-how-num{font-size:48px;font-weight:800;color:#00c853;opacity:.3;margin-bottom:12px}
+.fen-how-step h3{font-size:18px;color:#fff;margin:0 0 8px;font-weight:700}
+.fen-how-step p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* PRICING */
+.fen-pricing{padding:80px 0;background:#111}
+.fen-price-wrap{overflow-x:auto;margin-top:40px}
+.fen-price-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.03);border-radius:12px;overflow:hidden}
+.fen-price-table th{background:rgba(0,200,83,.1);color:#00c853;padding:14px 20px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid rgba(255,255,255,.08)}
+.fen-price-table td{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:15px;color:rgba(255,255,255,.7)}
+.fen-price-table tr:last-child td{border:0}
+.fen-price-table strong{color:#fff}
+
+/* FAQ */
+.fen-faq{padding:80px 0;background:#0a0a0a}
+.faq-list{max-width:760px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-item summary{padding:20px 0;font-size:17px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary span{font-size:24px;color:#00c853;transition:transform .3s}
+.faq-item[open] summary span{transform:rotate(45deg)}
+.faq-body{padding:0 0 20px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.5)}
+
+/* ARTICLE */
+.fen-article{padding:80px 0;background:#111}
+.fen-seo-text{max-width:760px;margin:0 auto}
+.fen-seo-text h2{font-size:28px;font-weight:800;margin:0 0 20px;color:#fff}
+.fen-seo-text h3{font-size:20px;font-weight:700;margin:32px 0 12px;color:#fff}
+.fen-seo-text p{font-size:16px;line-height:1.8;color:rgba(255,255,255,.6);margin:0 0 16px}
+
+/* CTA */
+.fen-cta{padding:80px 0;background:#0a0a0a;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.fen-cta h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin:0 0 12px;color:#fff}
+.fen-cta p{color:rgba(255,255,255,.5);margin-bottom:32px;font-size:17px}
+.fen-cta .fen-form{justify-content:center}
+.fen-cta-contact{margin-top:24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.fen-cta-contact a{color:#00c853;font-size:16px;font-weight:600;text-decoration:none}
+
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+
+@media(max-width:768px){
+.fen-hero-stats{gap:20px}
+.fen-why-grid,.fen-how-grid{grid-template-columns:1fr 1fr}
+.fen-form{flex-direction:column}
+.fen-form input,.fen-form button{width:100%}
+.fen-price-table{font-size:13px}
+.fen-price-table th,.fen-price-table td{padding:10px 12px}
+}
+</style>
+
+<script is:inline>
+document.querySelectorAll('.fen-form').forEach(function(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var email=form.querySelector('input[name="email"]');
+var phone=form.querySelector('input[name="phone"]');
+var data={source:'fulfillment-ukraine-en'};
+if(email)data.email=email.value.trim();
+if(phone)data.phone=phone.value.trim();
+if(!data.email&&!data.phone)return;
+fetch('/api/mtp-crm-leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
+window.location.href='/en/thanks/';
+});
+});
+</script>
+</Base>
