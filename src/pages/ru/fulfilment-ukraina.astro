@@ -1,21 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
 
 const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент в Украине","description":"Аутсорсинг логистики для интернет-магазинов. Хранение от 650 грн/м³, отправка от 18 грн. 10+ лет, 150+ клиентов, 2 склада в Киевской области.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправление"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Фулфилмент в Украине","item":"https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Фулфилмент в Украине","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит фулфилмент в Украине?","acceptedAnswer":{"@type":"Answer","text":"Отправка от 18 грн/заказ (200+/день), хранение 650 грн/м³/мес. Минимальный платёж — 5 000 грн/мес."}},{"@type":"Question","name":"Что входит в стоимость отправки?","acceptedAnswer":{"@type":"Answer","text":"Сборка заказа, упаковка, создание ТТН, передача перевозчику. Доукомплектация — 2,50 грн/шт."}},{"@type":"Question","name":"Как быстро можно начать?","acceptedAnswer":{"@type":"Answer","text":"1-3 дня от заявки до первой отправки."}},{"@type":"Question","name":"Есть ли минимум заказов?","acceptedAnswer":{"@type":"Answer","text":"Нет. Минимальный платёж 5 000 грн/мес покрывает магазины от 10 заказов/день."}},{"@type":"Question","name":"Работает ли склад при отключениях света?","acceptedAnswer":{"@type":"Answer","text":"Да. 3 генератора, 2 провайдера + Starlink. Ни одного дня простоя с 2022 года."}}]}</script>`;
 ---
 <Base
   title="Фулфилмент в Украине — аутсорсинг логистики | MTP Group"
   description="Фулфилмент для интернет-магазинов в Украине. Хранение 650 грн/м³, отправка от 18 грн. Экономия 49% vs свой склад. ROI-калькулятор, 150+ клиентов."
-  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/"
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/"
   lang="ru"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
   schema={schemaJson}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
-  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
 </Fragment>
@@ -309,7 +309,7 @@ e.preventDefault();
 var phone=form.querySelector('input[name="phone"]').value.trim();
 if(!phone)return;
 fetch('/api/mtp-crm-leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:phone,source:'fulfilment-ukraina-ru'})}).catch(function(){});
-window.location.href='/thanks/';
+window.location.href='/ru/thanks/';
 });
 });
 </script>
