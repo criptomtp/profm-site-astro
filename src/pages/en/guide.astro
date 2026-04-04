@@ -139,9 +139,4 @@ import Base from '../../layouts/Base.astro';
 @media(max-width:768px){.guide-form{flex-direction:column}}
 </style>
 
-<script is:inline>
-document.addEventListener('DOMContentLoaded', function(){
-function {}
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Inquiry from EN guide',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Guide EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form on EN guide page',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});setTimeout(function(){window.location.href='/en/thanks/';},800);});}
-});
-</script>
+<!-- dead CRM code removed -->
