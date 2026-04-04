@@ -86,10 +86,15 @@ img{max-width:100%;height:auto;display:block}
 .form-row button:hover{background:#c62b22}
 .form-note{text-align:center;margin-top:10px;font-size:12px;color:rgba(255,255,255,.4)}
 .ctr{max-width:1200px;margin:0 auto;padding:0 24px}
-.sec{padding:80px 20px}
-.sec-alt{background:#fafafa}
+.sec{padding:80px 20px;color:#1a1a1a;background:#fff}
+.sec-alt{background:#fafafa;color:#1a1a1a}
 .sec-dark{background:#000;color:#fff}
-.sec-title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,4vw,42px);text-align:center;margin:0 0 12px}
+.sec h2,.sec-alt h2{color:#000}
+.sec p,.sec-alt p{color:#444}
+.sec-dark h2{color:#fff}
+.sec-dark p{color:rgba(255,255,255,.85)}
+.sec-title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,4vw,42px);text-align:center;margin:0 0 12px;color:#000}
+.sec-dark .sec-title{color:#fff}
 .sec-sub{text-align:center;color:#888;font-size:16px;max-width:560px;margin:0 auto 40px}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .proof-card{background:#fff;border-radius:16px;overflow:visible;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .3s;min-height:350px}
