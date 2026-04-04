@@ -326,7 +326,6 @@ var ctaBottom=document.getElementById('ctaFormBottom');
 if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
 e.preventDefault();var em=this.email?this.email.value.trim():'';var ph=this.phone?this.phone.value.trim():'';
 if(!em&&!ph)return;
-fetch('https://api.telegram.org/bot5101559840:AAEMDoitpxXADVzDvEITvuVaAO4PSuRfNgg/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'234255114',text:'\ud83c\uddec\ud83c\udde7 New lead (fulfillment-ukraine)\nEmail: '+em+'\nPhone: '+ph})}).catch(function(){});
 fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,phone:ph,page:'/en/fulfillment-ukraine/',source:'cta-bottom'})}).catch(function(){});
 setTimeout(function(){window.location.href='/en/thanks/';},500);
 });}

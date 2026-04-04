@@ -352,7 +352,6 @@ setTimeout(function(){window.location.href='/ru/thanks/';},1500);
 var ctaBottom=document.getElementById('ctaFormBottom');
 if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
 e.preventDefault();var ph=this.phone.value.trim();if(!ph)return;
-fetch('https://api.telegram.org/bot5101559840:AAEMDoitpxXADVzDvEITvuVaAO4PSuRfNgg/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'234255114',text:'\ud83c\uddf7\ud83c\uddfa Новая заявка (fulfilment-ukraina-ru)\nТелефон: '+ph})}).catch(function(){});
 fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:'/ru/fulfilment-ukraina/',source:'cta-bottom'})}).catch(function(){});
 setTimeout(function(){window.location.href='/ru/thanks/';},500);
 });}
