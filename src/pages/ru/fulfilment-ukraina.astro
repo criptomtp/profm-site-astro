@@ -297,6 +297,22 @@ img{max-width:100%;height:auto;display:block}
 </article>
 </div></section>
 
+<section style="background:#e63329;padding:80px 20px;text-align:center">
+<div style="max-width:580px;margin:0 auto">
+<h2 style="font-size:36px;font-weight:800;color:#fff;margin:0 0 16px">Готовы делегировать логистику?</h2>
+<p style="font-size:18px;color:rgba(255,255,255,0.85);margin:0 0 32px">Оставьте номер &mdash; перезвоним за 15 минут и рассчитаем условия</p>
+<form id="ctaFormBottom" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 20px">
+<input type="tel" name="phone" placeholder="+380XXXXXXXXX" required maxlength="19" style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:260px">
+<button type="submit" style="background:#000;color:#fff;padding:16px 32px;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;white-space:nowrap">Перезвоните мне &#8594;</button>
+</form>
+<div style="display:flex;gap:24px;justify-content:center;color:rgba(255,255,255,0.7);font-size:13px;flex-wrap:wrap">
+<span>&#10003; Бесплатная консультация</span>
+<span>&#10003; Без обязательств</span>
+<span>&#10003; Ответ за 15 мин</span>
+</div>
+</div>
+</section>
+
 <footer class="ft"><div class="ft-grid">
 <div><h4>Поддержка</h4><p><a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a></p><p><a href="tel:+380501444645">+38(050) 144-46-45</a></p><p><a href="tel:+380938277767">+38(093) 827-77-67</a></p></div>
 <div><h4>Страницы</h4><p><a href="/services/">Услуги</a></p><p><a href="/about/">О нас</a></p><p><a href="/recalls/">Отзывы</a></p><p><a href="/blog/">Блог</a></p></div>
@@ -333,6 +349,13 @@ this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:500">\u2705 �
 setTimeout(function(){window.location.href='/ru/thanks/';},1500);
 });
 (function(){var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;if(!burger||!nav)return;function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});overlay.addEventListener('click',closeMenu);if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});})();
+var ctaBottom=document.getElementById('ctaFormBottom');
+if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
+e.preventDefault();var ph=this.phone.value.trim();if(!ph)return;
+fetch('https://api.telegram.org/bot5101559840:AAEMDoitpxXADVzDvEITvuVaAO4PSuRfNgg/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'234255114',text:'\ud83c\uddf7\ud83c\uddfa Новая заявка (fulfilment-ukraina-ru)\nТелефон: '+ph})}).catch(function(){});
+fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:'/ru/fulfilment-ukraina/',source:'cta-bottom'})}).catch(function(){});
+setTimeout(function(){window.location.href='/ru/thanks/';},500);
+});}
 </script>
 </body>
 </html>

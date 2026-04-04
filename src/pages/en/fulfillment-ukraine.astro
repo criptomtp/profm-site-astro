@@ -67,10 +67,10 @@ img{max-width:100%;height:auto;display:block}
 .hdr-overlay.open{display:block}
 .hdr-mobile-bottom{display:none}
 .hero-dark{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-dark-bg{position:absolute;inset:0}
-.hero-dark-bg img{width:100%;height:100%;object-fit:cover;opacity:.1}
+.hero-dark-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero-dark-bg img{width:100%;height:100%;object-fit:cover;opacity:.15;display:block}
 .hero-dark-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
-.hero-dark-inner{position:relative;max-width:880px;margin:0 auto;padding:120px 24px 80px}
+.hero-dark-inner{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:120px 24px 80px}
 .badge-en{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.2em;padding:6px 18px;border:1.5px solid #e63329;border-radius:100px;color:#e63329;margin-bottom:24px}
 .hero-dark h1{font-size:clamp(36px,7vw,72px);line-height:1.05;margin:0 0 20px;font-weight:800;letter-spacing:-.03em}
 .hero-dark-sub{font-size:clamp(16px,2vw,18px);color:rgba(255,255,255,.55);max-width:580px;line-height:1.65;margin-bottom:36px}
@@ -285,6 +285,23 @@ img{max-width:100%;height:auto;display:block}
 </article>
 </div></section>
 
+<section style="background:#e63329;padding:80px 20px;text-align:center">
+<div style="max-width:580px;margin:0 auto">
+<h2 style="font-size:36px;font-weight:800;color:#fff;margin:0 0 16px">Ready to Scale Your Logistics?</h2>
+<p style="font-size:18px;color:rgba(255,255,255,0.85);margin:0 0 32px">Leave your contact &mdash; we&rsquo;ll reply within 24 hours with a custom quote</p>
+<form id="ctaFormBottom" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 20px">
+<input type="email" name="email" placeholder="your@email.com" required style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:240px">
+<input type="tel" name="phone" placeholder="+380 or international" maxlength="19" style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:200px">
+<button type="submit" style="background:#000;color:#fff;padding:16px 32px;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;white-space:nowrap">Get a Quote &#8594;</button>
+</form>
+<div style="display:flex;gap:24px;justify-content:center;color:rgba(255,255,255,0.7);font-size:13px;flex-wrap:wrap">
+<span>&#10003; Free consultation</span>
+<span>&#10003; No obligations</span>
+<span>&#10003; Reply within 24h</span>
+</div>
+</div>
+</section>
+
 <footer class="ft"><div class="ft-grid">
 <div><h4>Contact</h4><p><a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a></p><p><a href="tel:+380501444645">+38(050) 144-46-45</a></p></div>
 <div><h4>Pages</h4><p><a href="/en/services/">Services</a></p><p><a href="/en/about/">About</a></p><p><a href="/en/blog/">Blog</a></p></div>
@@ -305,6 +322,14 @@ this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:500">\u2705 T
 setTimeout(function(){window.location.href='/en/thanks/';},1500);
 });
 (function(){var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;if(!burger||!nav)return;function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});overlay.addEventListener('click',closeMenu);if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});})();
+var ctaBottom=document.getElementById('ctaFormBottom');
+if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
+e.preventDefault();var em=this.email?this.email.value.trim():'';var ph=this.phone?this.phone.value.trim():'';
+if(!em&&!ph)return;
+fetch('https://api.telegram.org/bot5101559840:AAEMDoitpxXADVzDvEITvuVaAO4PSuRfNgg/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'234255114',text:'\ud83c\uddec\ud83c\udde7 New lead (fulfillment-ukraine)\nEmail: '+em+'\nPhone: '+ph})}).catch(function(){});
+fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,phone:ph,page:'/en/fulfillment-ukraine/',source:'cta-bottom'})}).catch(function(){});
+setTimeout(function(){window.location.href='/en/thanks/';},500);
+});}
 </script>
 </body>
 </html>
