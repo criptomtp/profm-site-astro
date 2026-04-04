@@ -30,15 +30,42 @@
 body{font-family:'DM Sans',sans-serif;color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:18px;font-weight:800;letter-spacing:.05em;color:#000}
-.nav-logo span{color:#e63329}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{color:#555;font-size:14px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:#000}
-.nav-lang{display:flex;gap:4px;margin-left:16px}
-.nav-lang a{padding:4px 10px;font-size:12px;font-weight:700;border:1.5px solid #ddd;border-radius:4px;color:#999;transition:all .2s}
-.nav-lang a.active{border-color:#e63329;color:#fff;background:#e63329}
+.hdr-spacer{height:64px;background:#000}
+.hdr{position:fixed;top:0;left:0;right:0;height:64px;background:#000;z-index:10000;display:flex;align-items:center;padding:0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;width:100%;margin:0 auto}
+.hdr-logo{font-family:'DM Sans',sans-serif;font-size:20px;color:#fff;text-decoration:none;white-space:nowrap;letter-spacing:1px;font-weight:800}
+.hdr-logo-mtp{color:#e63329}
+.hdr-nav{display:flex;align-items:center;gap:28px}
+.hdr-nav>a{color:rgba(255,255,255,.85);font-size:14px;text-decoration:none;transition:color .2s;font-family:'DM Sans',sans-serif}
+.hdr-nav>a:hover{color:#fff}
+.hdr-dd{position:relative}
+.hdr-dd-trigger{background:none;border:none;color:rgba(255,255,255,.85);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;padding:0}
+.hdr-dd-trigger:hover{color:#fff}
+.hdr-arrow{font-size:10px;transition:transform .2s}
+.hdr-dd.open .hdr-arrow{transform:rotate(180deg)}
+.hdr-mega{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;min-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.6);z-index:10001}
+.hdr-mega::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:rgba(255,255,255,.08);border-top:none}
+.hdr-dd.open .hdr-mega{display:grid;grid-template-columns:1fr 1fr auto;gap:0}
+.hdr-mega-col{padding:0 20px;border-right:1px solid rgba(255,255,255,.06)}
+.hdr-mega-col:first-child{padding-left:0}
+.hdr-mega-col:last-child{padding-right:0;border-right:none}
+.hdr-mega-col--cta{display:flex;align-items:flex-end}
+.hdr-mega-title{display:block;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2.5px;margin:0 0 10px;font-weight:600}
+.hdr-mega-col a{display:block;padding:6px 0;font-size:14px;color:rgba(255,255,255,.85);white-space:nowrap;text-decoration:none;transition:color .2s}
+.hdr-mega-col a:hover{color:#fff}
+.hdr-mega-cta{font-weight:600;color:#fff !important;font-size:13px !important;padding:10px 20px !important;background:rgba(255,255,255,.08);border-radius:8px;text-align:center}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-right a{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:color .2s;padding:4px 2px}
+.hdr-right a:hover,.hdr-right a.active{color:#fff}
+.hdr-phone{white-space:nowrap;color:rgba(255,255,255,.5) !important;font-size:12px !important}
+.hdr-burger{display:none;background:none;border:none;cursor:pointer;padding:12px;flex-direction:column;gap:5px;z-index:10001}
+.hdr-burger span{display:block;width:24px;height:2px;background:#fff;transition:transform .3s,opacity .3s;border-radius:2px}
+.hdr-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hdr-burger.open span:nth-child(2){opacity:0}
+.hdr-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.hdr-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999}
+.hdr-overlay.open{display:block}
+.hdr-mobile-bottom{display:none}
 .hero-corp{padding:140px 24px 80px;text-align:center;background:#fff}
 .hero-corp-inner{max-width:760px;margin:0 auto}
 .hero-corp h1{font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.15;margin:0 0 16px;letter-spacing:-.02em}
@@ -102,8 +129,27 @@ img{max-width:100%;height:auto;display:block}
 .ft p,.ft a{font-size:13px;line-height:2;color:rgba(255,255,255,.5);transition:color .2s}
 .ft a:hover{color:#fff}
 .ft-bottom{text-align:center;margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.25);max-width:1200px;margin-left:auto;margin-right:auto}
-@media(max-width:768px){
-.nav-links{display:none}
+@media(max-width:900px){
+.hdr{padding:0 16px}
+.hdr-burger{display:flex}
+.hdr-right{display:none}
+.hdr-nav{position:fixed;top:0;right:-300px;width:300px;max-width:85vw;height:100%;background:#111;flex-direction:column;align-items:stretch;padding:80px 24px 120px;gap:0;z-index:10000;transition:right .3s ease;overflow-y:auto}
+.hdr-nav.open{right:0}
+.hdr-nav>a{font-size:17px;padding:16px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.hdr-dd{width:100%}
+.hdr-dd-trigger{font-size:17px;padding:16px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.08);justify-content:space-between;color:#fff}
+.hdr-mega{position:static;transform:none;min-width:auto;display:none;border:none;box-shadow:none;background:rgba(255,255,255,.04);border-radius:8px;padding:12px 16px;margin:8px 0}
+.hdr-mega::before{display:none}
+.hdr-dd.open .hdr-mega{display:block}
+.hdr-mega-col{padding:8px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
+.hdr-mega-col:last-child{border-bottom:none}
+.hdr-mega-col a{font-size:15px;padding:10px 0}
+.hdr-mega-col--cta{display:block}
+.hdr-mobile-bottom{display:flex;flex-direction:column;gap:12px;margin-top:auto;padding:24px 0;border-top:1px solid rgba(255,255,255,.08)}
+.hdr-mobile-langs{display:flex;gap:12px}
+.hdr-lang-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:14px;font-weight:500;text-decoration:none}
+.hdr-lang-btn.active{background:#e63329;color:#fff}
+.hdr-mobile-phone{display:block;text-align:center;padding:14px;background:rgba(255,255,255,.06);border-radius:8px;color:#fff;text-decoration:none;font-size:16px}
 .kpi-row{gap:16px}
 .calc-grid{grid-template-columns:1fr}
 .steps-grid{grid-template-columns:1fr 1fr}.steps-grid .step:last-child{grid-column:1/-1}
@@ -112,17 +158,56 @@ img{max-width:100%;height:auto;display:block}
 </style>
 </head>
 <body>
-<nav class="nav">
-<a href="/ru/" class="nav-logo"><span>MTP</span> GROUP</a>
-<div class="nav-links">
-<a href="/services/">Услуги</a>
+<header class="hdr">
+<div class="hdr-inner">
+<a href="/ru/" class="hdr-logo"><span class="hdr-logo-mtp">MTP</span> GROUP</a>
+<nav class="hdr-nav" id="hdrNav">
 <a href="/about/">О нас</a>
-<a href="/blog/">Блог</a>
 <a href="/recalls/">Отзывы</a>
-<a href="tel:+380501444645">+38(050) 144-46-45</a>
-<div class="nav-lang"><a href="/ua/fulfilment-ukraina/">UA</a><a href="/ru/fulfilment-ukraina/" class="active">RU</a><a href="/en/fulfillment-ukraine/">EN</a></div>
+<div class="hdr-dd">
+<button class="hdr-dd-trigger" id="ddTrigger">Услуги <span class="hdr-arrow">&#9662;</span></button>
+<div class="hdr-mega" id="hdrMega">
+<div class="hdr-mega-col">
+<span class="hdr-mega-title">По нише</span>
+<a href="/fulfilment-dlya-internet-magazynu/">Интернет-магазины</a>
+<a href="/fulfilment-vazhkykh-tovariv/">Тяжёлые товары 50+ кг</a>
+<a href="/skladski-poslugy/">Складские услуги</a>
+<a href="/fulfilment-dlya-marketpleysov/">Для маркетплейсов</a>
+<a href="/fulfilment-kiev/">Фулфилмент Киев</a>
+<a href="/ru/fulfilment-ukraina/">Фулфилмент в Украине</a>
+</div>
+<div class="hdr-mega-col">
+<span class="hdr-mega-title">Инструменты</span>
+<a href="/calculator/">Калькулятор</a>
+<a href="/tsenu/">Цены</a>
+</div>
+<div class="hdr-mega-col hdr-mega-col--cta">
+<a href="/services/" class="hdr-mega-cta">Все услуги &rarr;</a>
+</div>
+</div>
+</div>
+<a href="/guide/">Советы</a>
+<a href="/blog/">Блог</a>
+<div class="hdr-mobile-bottom">
+<div class="hdr-mobile-langs">
+<a href="/ua/fulfilment-ukraina/" class="hdr-lang-btn">UA</a>
+<a href="/ru/fulfilment-ukraina/" class="hdr-lang-btn active">RU</a>
+<a href="/en/fulfillment-ukraine/" class="hdr-lang-btn">EN</a>
+</div>
+<a href="tel:+380501444645" class="hdr-mobile-phone">+38(050) 144-46-45</a>
 </div>
 </nav>
+<div class="hdr-right" id="langSwitcher">
+<a href="/ua/fulfilment-ukraina/">UA</a>
+<a href="/ru/fulfilment-ukraina/" class="active">RU</a>
+<a href="/en/fulfillment-ukraine/">EN</a>
+<a href="tel:+380501444645" class="hdr-phone">+38(050) 144-46-45</a>
+</div>
+<button class="hdr-burger" id="hdrBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+<div class="hdr-overlay" id="hdrOverlay"></div>
+<div class="hdr-spacer"></div>
 
 <section class="hero-corp">
 <div class="hero-corp-inner">
@@ -247,6 +332,7 @@ fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},bo
 this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:500">\u2705 Спасибо! Перезвоним.</p>';
 setTimeout(function(){window.location.href='/ru/thanks/';},1500);
 });
+(function(){var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;if(!burger||!nav)return;function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});overlay.addEventListener('click',closeMenu);if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});})();
 </script>
 </body>
 </html>
