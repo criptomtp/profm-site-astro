@@ -15,6 +15,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://www.fulfillmentmtp.com.ua/images/fulfilment-ukraina-hero-ru.jpg">
 <link rel="shortcut icon" href="/favicon.ico">
+<link rel="preload" as="image" href="/images/fulfilment-ukraina-hero-ru.jpg" fetchpriority="high">
 <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
 <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/">
 <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
@@ -216,7 +217,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="hdr-spacer"></div>
 
 <section class="hero-corp">
-<div class="hero-corp-bg"><img src="/images/fulfilment-ukraina-hero-ru.jpg" alt="Фулфилмент в Украине — склад MTP Group" width="1920" height="1080"></div>
+<div class="hero-corp-bg"><img src="/images/fulfilment-ukraina-hero-ru.jpg" alt="Фулфилмент в Украине — склад MTP Group" width="1920" height="1080" fetchpriority="high" loading="eager"></div>
 <div class="hero-corp-inner">
 <h1>Фулфилмент в Украине&mdash;<br>аутсорсинг логистики<br>для интернет-магазинов</h1>
 <p class="hero-sub">Хранение, сборка, упаковка, отправка. От 18 грн за заказ. Экономия 49% по сравнению с собственным складом.</p>
@@ -241,9 +242,9 @@ img{max-width:100%;height:auto;display:block}
 <p class="sec-sub">Введите параметры&mdash;увидите разницу</p>
 <div class="calc-grid">
 <div class="calc-inputs">
-<div class="field"><label>Заказов в день</label><input type="range" id="calcOrders" min="5" max="300" value="50" step="5"><output id="calcOrdersVal">50</output></div>
-<div class="field"><label>Объём хранения (м&sup3;)</label><input type="range" id="calcStorage" min="1" max="30" value="2" step="1"><output id="calcStorageVal">2</output></div>
-<div class="field"><label>Товаров в среднем чеке</label><input type="range" id="calcItems" min="1" max="5" value="1.5" step="0.5"><output id="calcItemsVal">1.5</output></div>
+<div class="field"><label for="calcOrders">Заказов в день</label><input type="range" id="calcOrders" min="5" max="300" value="50" step="5" aria-label="Заказов в день"><output id="calcOrdersVal">50</output></div>
+<div class="field"><label for="calcStorage">Объём хранения (м&sup3;)</label><input type="range" id="calcStorage" min="1" max="30" value="2" step="1" aria-label="Объём хранения"><output id="calcStorageVal">2</output></div>
+<div class="field"><label for="calcItems">Товаров в среднем чеке</label><input type="range" id="calcItems" min="1" max="5" value="1.5" step="0.5" aria-label="Товаров в среднем чеке"><output id="calcItemsVal">1.5</output></div>
 </div>
 <div class="calc-result">
 <div class="res-row">
@@ -309,8 +310,8 @@ img{max-width:100%;height:auto;display:block}
 <h2 style="font-size:36px;font-weight:800;color:#fff;margin:0 0 16px">Готовы делегировать логистику?</h2>
 <p style="font-size:18px;color:rgba(255,255,255,0.85);margin:0 0 32px">Оставьте номер &mdash; перезвоним за 15 минут и рассчитаем условия</p>
 <form id="ctaFormBottom" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 20px">
-<input type="tel" name="phone" placeholder="+380XXXXXXXXX" required maxlength="19" style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:260px">
-<button type="submit" style="background:#000;color:#fff;padding:16px 32px;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;white-space:nowrap">Перезвоните мне &#8594;</button>
+<input type="tel" name="phone" placeholder="+380XXXXXXXXX" required maxlength="19" aria-label="Телефон" style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:260px">
+<button type="submit" aria-label="Перезвоните мне" style="background:#000;color:#fff;padding:16px 32px;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;white-space:nowrap">Перезвоните мне &#8594;</button>
 </form>
 <div style="display:flex;gap:24px;justify-content:center;color:rgba(255,255,255,0.7);font-size:13px;flex-wrap:wrap">
 <span>&#10003; Бесплатная консультация</span>
