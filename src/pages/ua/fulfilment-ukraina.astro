@@ -366,6 +366,7 @@ img{max-width:100%;height:auto;display:block}
 </div><div class="ft-bottom">&copy; 2026 MTP Group Fulfillment. Всі права захищені.</div></footer>
 
 <script>
+document.body.style.overflow='';document.body.style.overflowX='hidden';document.body.style.overflowY='auto';
 (function(){
 var done=false;
 function animate(){if(done)return;done=true;
@@ -390,7 +391,7 @@ setTimeout(function(){window.location.href='/ua/thanks/';},1500);
 (function(){
 var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;
 if(!burger||!nav)return;
-function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';document.body.style.overflowY='auto';}
 burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});
 overlay.addEventListener('click',closeMenu);
 if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}

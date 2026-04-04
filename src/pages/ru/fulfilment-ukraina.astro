@@ -324,6 +324,7 @@ img{max-width:100%;height:auto;display:block}
 </div><div class="ft-bottom">&copy; 2026 MTP Group Fulfillment. Все права защищены.</div></footer>
 
 <script>
+document.body.style.overflow='';document.body.style.overflowX='hidden';document.body.style.overflowY='auto';
 (function(){
 var o=document.getElementById('calcOrders'),s=document.getElementById('calcStorage'),i=document.getElementById('calcItems');
 if(!o)return;
@@ -352,7 +353,7 @@ fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},bo
 this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:500">\u2705 Спасибо! Перезвоним.</p>';
 setTimeout(function(){window.location.href='/ru/thanks/';},1500);
 });
-(function(){var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;if(!burger||!nav)return;function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});overlay.addEventListener('click',closeMenu);if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});})();
+(function(){var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;if(!burger||!nav)return;function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';document.body.style.overflowY='auto';}burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});overlay.addEventListener('click',closeMenu);if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});})();
 var ctaBottom=document.getElementById('ctaFormBottom');
 if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
 e.preventDefault();var ph=this.phone.value.trim();if(!ph)return;
