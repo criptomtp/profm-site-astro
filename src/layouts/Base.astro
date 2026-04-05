@@ -41,6 +41,7 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
   <meta property="og:locale" content={locale}>
   <meta property="og:image" content={ogImage}>
   <link rel="shortcut icon" href="/favicon.ico">
+  {ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
