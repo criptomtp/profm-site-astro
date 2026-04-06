@@ -2,6 +2,11 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Спасибо за заявку | MTP Group" lang="ru" showCTA={false}>
+<Fragment slot="head">
+<script is:inline>
+if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/guFqCI665pYcEPO-h6UC','value':1.0,'currency':'UAH'});}
+</script>
+</Fragment>
 
 <section class="thanks-hero">
 <h1>Спасибо за заявку</h1>
