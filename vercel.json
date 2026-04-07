@@ -26,6 +26,11 @@
       "source": "/ru/blog/tpost/:slug*",
       "destination": "/blog/tpost/:slug*",
       "permanent": true
+    },
+    {
+      "source": "/ua/fulfilment-dlya-marketpleysov/",
+      "destination": "/ua/fulfilment-dlya-marketpleysiv/",
+      "permanent": true
     }
   ],
   "trailingSlash": true
