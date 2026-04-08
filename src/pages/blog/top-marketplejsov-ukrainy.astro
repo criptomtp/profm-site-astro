@@ -34,7 +34,20 @@ import Base from '../../layouts/Base.astro';
 <div><span style="font-size:28px;font-weight:800;color:#e63329;display:block">от 18 грн</span><span style="font-size:12px;opacity:.6">фулфилмент/заказ</span></div>
 </div>
 
-<h2 style="margin-top:40px">Формула расчёта маржи продавца</h2>
+<nav style="background:#fafafa;padding:20px 24px;border-radius:12px;margin:32px 0">
+<strong>Содержание:</strong>
+<ol style="margin:8px 0 0;padding-left:20px;font-size:15px;line-height:2">
+<li><a href="#formula" style="color:#e63329">Формула расчёта маржи</a></li>
+<li><a href="#rating" style="color:#e63329">Рейтинг маркетплейсов по ROI</a></li>
+<li><a href="#international" style="color:#e63329">Международные маркетплейсы</a></li>
+<li><a href="#chart" style="color:#e63329">Инфографика комиссий</a></li>
+<li><a href="#logistics" style="color:#e63329">FBO vs FBS vs 3PL</a></li>
+<li><a href="#faq" style="color:#e63329">FAQ</a></li>
+</ol>
+</nav>
+
+<h2 id="formula" style="margin-top:40px">Формула расчёта маржи продавца</h2>
+<p>Главная ошибка начинающих продавцов &mdash; выбирать маркетплейс по трафику, а не по маржинальности. Rozetka даёт максимальный трафик, но комиссия 15% может съесть всю прибыль при низкомаржинальных товарах. Prom даёт меньше трафика, но комиссия 2-4% &mdash; и прибыль на каждом заказе выше.</p>
 <p>Прежде чем выбирать маркетплейс &mdash; посчитайте маржу. Формула одинаковая для всех площадок:</p>
 <div style="background:#fafafa;padding:24px;border-radius:12px;margin:16px 0;font-family:monospace;font-size:15px;line-height:2">
 <strong>Чистая прибыль</strong> = Цена продажи<br>
@@ -68,8 +81,32 @@ import Base from '../../layouts/Base.astro';
 
 <h3>1. Rozetka &mdash; максимальный трафик</h3>
 <img src="/images/blog/marketplace-rozetka-homepage.webp" alt="Главная страница Rozetka" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>30+ млн визитов/месяц. Абонплата 120 грн/мес. Комиссия 5-27% (в среднем 15%). Дополнительно RozetkaPay 2-3%. Выплаты &mdash; на следующий рабочий день. FBO и FBS модели.</p>
-<p><strong>ROI-вердикт:</strong> Самый высокий потенциал оборота. При марже товара 40%+ и объёме 50+/день &mdash; это основной канал продаж. Минус &mdash; конкуренция с собственным ритейлом Rozetka.</p>
+<p>Безоговорочный лидер украинского e-commerce &mdash; 30+ млн визитов в месяц. Rozetka &mdash; это &laquo;Amazon для Украины&raquo;: электроника, одежда, косметика, продукты, товары для дома. Если вы продаёте онлайн в Украине &mdash; вам нужно быть на Rozetka.</p>
+
+<h4>Финансовые условия Rozetka 2026</h4>
+<ul>
+<li><strong>Комиссия:</strong> 5-27% в зависимости от категории (электроника 5-10%, одежда 12-18%, косметика 8-15%, продукты до 20%). Среднее по маркетплейсу ~15%</li>
+<li><strong>Абонплата:</strong> 120 грн/мес (не списывается если не было продаж)</li>
+<li><strong>RozetkaPay:</strong> 2-3% от суммы транзакции при онлайн-оплате + 15 грн + 1.5% за денежный перевод (наложенный платёж)</li>
+<li><strong>Выплаты:</strong> На следующий рабочий день после подтверждения доставки</li>
+</ul>
+
+<h4>Логистика: FBO vs FBS</h4>
+<p><strong>FBO</strong> &mdash; Rozetka хранит и отправляет товар со своего склада. Дополнительная комиссия +3-5%. Удобно, но товар &laquo;заморожен&raquo; &mdash; нельзя продавать через другие каналы.</p>
+<p><strong>FBS</strong> &mdash; вы отправляете сами в течение 24 часов. При 50+ заказах/день &mdash; физически сложно без <a href="/fulfilment-dlya-marketpleysov/" style="color:#e63329">фулфилмент-оператора</a>.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0">
+<div style="background:#f0fff0;padding:16px;border-radius:8px;border-left:4px solid #4caf50">
+<strong style="color:#2e7d32">Плюсы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>Максимальный трафик (30+ млн/мес)</li><li>Высокое доверие покупателей</li><li>Выплаты на следующий день</li><li>Rozetka Delivery + Новая Почта</li></ul>
+</div>
+<div style="background:#fff0f0;padding:16px;border-radius:8px;border-left:4px solid #e63329">
+<strong style="color:#c62828">Минусы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>Комиссия до 27% в отдельных категориях</li><li>Конкуренция с ритейлом Rozetka</li><li>Жёсткая модерация (3-7 дней)</li><li>FBO замораживает товар</li></ul>
+</div>
+</div>
+
+<p><strong>ROI-вердикт:</strong> Самый высокий потенциал оборота. При марже товара 40%+ и объёме 50+/день &mdash; это основной канал. Минус &mdash; комиссия 15% съедает существенную часть маржи.</p>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0">
 <img src="/images/blog/marketplace-rozetka-seller-dashboard.webp" alt="Аналитика заказов в кабинете Rozetka" style="width:100%;border-radius:8px;border:1px solid #eee" loading="lazy">
@@ -78,8 +115,29 @@ import Base from '../../layouts/Base.astro';
 
 <h3>2. Prom.ua &mdash; низкая комиссия, высокий ROI</h3>
 <img src="/images/blog/marketplace-prom-homepage.webp" alt="Главная Prom.ua" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия от 2.1% (режим &laquo;Эконом&raquo;) до 4.2% (стандарт). Пакеты: 1000 товаров = 6 700 грн/год, 6000 = 8 700 грн/год. Нет FBO &mdash; логистика на продавце.</p>
-<p><strong>ROI-вердикт:</strong> Самая низкая комиссия среди крупных маркетплейсов. При тех же 50 заказах/день маржа на 10-13% выше чем на Rozetka (комиссия 2-4% vs 15%). Но трафик меньше &mdash; нужна собственная реклама.</p>
+<p>Второй по трафику маркетплейс с 100 000+ активных продавцов. Prom &mdash; не классический маркетплейс: покупатель видит каталог, но заказывает на странице конкретного продавца. Это даёт больше контроля над брендом.</p>
+
+<h4>Тарифы Prom.ua 2026</h4>
+<ul>
+<li><strong>Комиссия:</strong> Единая ставка от 4.2%. &laquo;Эконом&raquo; &mdash; от 2.1% (меньше показов). &laquo;Турбо&raquo; &mdash; выше комиссия, но приоритет в выдаче</li>
+<li><strong>Пакеты:</strong> 1 000 товаров = 6 700 грн/год, 6 000 = 8 700 грн/год, 10 000 = 13 000 грн/год</li>
+<li><strong>ProSale:</strong> Часть пакета идёт на продвижение (1 300 &mdash; 4 000 грн)</li>
+<li><strong>FBO:</strong> Нет &mdash; логистика полностью на продавце</li>
+</ul>
+
+<h4>Расчёт ROI на Prom</h4>
+<p>Та же футболка 500 грн при комиссии 4.2%: 500 &minus; 200 &minus; 21 (комиссия) &minus; 23 (фулфилмент) &minus; 5 (упаковка) = <strong>251 грн прибыли (50%)</strong> vs 184 грн на Rozetka. Разница &mdash; 67 грн на каждом заказе. При 50 заказах/день = 3 350 грн/день дополнительной прибыли vs Rozetka.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0">
+<div style="background:#f0fff0;padding:16px;border-radius:8px;border-left:4px solid #4caf50">
+<strong style="color:#2e7d32">Плюсы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>Самая низкая комиссия (от 2.1%)</li><li>Собственный магазин на платформе</li><li>Google Shopping интеграция</li><li>Свобода в ценообразовании</li></ul>
+</div>
+<div style="background:#fff0f0;padding:16px;border-radius:8px;border-left:4px solid #e63329">
+<strong style="color:#c62828">Минусы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>Меньше трафика чем Rozetka</li><li>Нужна самостоятельная реклама</li><li>Нет FBO &mdash; логистика на продавце</li><li>Пакеты от 6 700 грн/год</li></ul>
+</div>
+</div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0">
 <img src="/images/blog/marketplace-prom-seller-tariffs.webp" alt="Тарифы Prom.ua" style="width:100%;border-radius:8px;border:1px solid #eee" loading="lazy">
@@ -88,25 +146,86 @@ import Base from '../../layouts/Base.astro';
 
 <h3>3. Kasta &mdash; fashion с быстрой оплатой</h3>
 <img src="/images/blog/marketplace-kasta-homepage.webp" alt="Главная Kasta" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия 3-20% + 20 грн/единица за доставку и возврат. Нет абонплаты. Выплаты на следующий день. Высокий % возвратов в fashion (30-40%).</p>
-<p><strong>ROI-вердикт:</strong> Отличная площадка для одежды и обуви, но возвраты съедают маржу. При цене товара 800 грн и комиссии 15%: 800 - 400 (себест.) - 120 (комиссия) - 20 (логистика Kasta) - 23 (фулфилмент) = 237 грн. Но если 35% возвратов &mdash; эффективная прибыль ~154 грн/заказ.</p>
+<p>Fashion-маркетплейс #1 в Украине. Одежда, обувь, аксессуары, beauty. Ежедневные flash-распродажи. В 2025 году Kasta получила новых инвесторов (DCH Group) и активно масштабируется.</p>
+
+<h4>Финансовые условия Kasta</h4>
+<ul>
+<li><strong>Комиссия:</strong> 3-20% + 20 грн/единица за доставку и возврат</li>
+<li><strong>Абонплата:</strong> Отсутствует &mdash; платите только за продажи</li>
+<li><strong>Выплаты:</strong> На следующий рабочий день (не позднее 3 дней)</li>
+<li><strong>Возвраты:</strong> Kasta берёт на себя обратную логистику, но 20 грн/шт</li>
+</ul>
+
+<h4>ROI-вердикт: осторожно с возвратами</h4>
+<p>При цене 800 грн и комиссии 15%: 800 &minus; 400 (себест.) &minus; 120 (комиссия) &minus; 20 (логистика) &minus; 23 (фулфилмент) = 237 грн. <strong>Но</strong> в fashion возвраты 30-40%. Эффективная прибыль: 237 &times; 0.65 = ~154 грн/заказ. Плюс 20 грн за каждый возврат. Фулфилмент-оператор типу <a href="/fulfilment-dlya-marketpleysov/" style="color:#e63329">MTP Group</a> помогает обработать возвраты быстро &mdash; проверка, переупаковка, возврат на полку в течение 24 часов.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0">
+<div style="background:#f0fff0;padding:16px;border-radius:8px;border-left:4px solid #4caf50">
+<strong style="color:#2e7d32">Плюсы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>Лояльная fashion-аудитория</li><li>Нет абонплаты</li><li>Быстрые выплаты</li><li>Мощные сезонные пики</li></ul>
+</div>
+<div style="background:#fff0f0;padding:16px;border-radius:8px;border-left:4px solid #e63329">
+<strong style="color:#c62828">Минусы</strong>
+<ul style="margin:8px 0 0;padding-left:16px;font-size:14px"><li>24 часа на отправку</li><li>Высокий % возвратов</li><li>Давление на скидки</li><li>20 грн/шт за возврат</li></ul>
+</div>
+</div>
 
 <h3>4. OLX &mdash; бесплатный старт</h3>
 <img src="/images/blog/marketplace-olx-homepage.webp" alt="Главная OLX" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия 0% за базовые объявления. Платное продвижение от 40 грн. OLX Доставка через Новую Почту. 15+ млн посетителей.</p>
-<p><strong>ROI-вердикт:</strong> Идеально для тестирования ниши с нулевыми инвестициями. Не нужен ФОП для старта. Минус &mdash; C2C-формат, меньше доверия к бизнес-продавцам.</p>
+<p>Самая популярная доска объявлений в Украине. 15+ млн посетителей. C2C-формат, но работает и для бизнеса. Бесплатные объявления (лимит по категории), платное продвижение от 40 грн. OLX Доставка через Новую Почту с онлайн-оплатой и защитой покупателя.</p>
+<p><strong>ROI-вердикт:</strong> Идеально для тестирования ниши с нулевыми инвестициями. Не нужен ФОП для старта. Создайте бесплатное объявление и уже получите первые заказы. Как только объём превысит 10-20/день &mdash; масштабируйтесь на Rozetka или Prom.</p>
+<p><strong>Когда OLX лучше:</strong> тестирование новой ниши (0 затрат), продажа остатков, ликвидация товара, локальные продажи (самовывоз), б/у товары.</p>
 
 <h3>5. Allo &mdash; электроника</h3>
 <img src="/images/blog/marketplace-allo-homepage.webp" alt="Главная Allo" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия 5-12%. Сильная омниканальность &mdash; самовывоз из 300+ магазинов. 10+ млн визитов.</p>
+<p>Маркетплейс от сети Allo &mdash; электроника, смартфоны, ноутбуки, бытовая техника. 10+ млн визитов/мес. Комиссия 5-12%. Омниканальное преимущество: покупатель заказывает онлайн &mdash; забирает в ближайшем магазине (300+ точек). Конкуренция с собственным ассортиментом Allo &mdash; основной минус.</p>
+<p><strong>ROI-вердикт:</strong> Подходит для продавцов электроники с конкурентными ценами. Низкая комиссия (5-12%) компенсирует конкуренцию с Allo-ритейлом.</p>
 
-<h3>6. Epicentr &mdash; стройматериалы и товары для дома</h3>
+<h3>6. Epicentr &mdash; стройматериалы, мебель, дом</h3>
 <img src="/images/blog/marketplace-epicentr-homepage.webp" alt="Главная Epicentr" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия 5-25% по CPS-модели. Стартовый взнос 1 100 грн. Абонплата 100 грн/год. Комиссия возвращается при отмене покупателем.</p>
+<p>Маркетплейс от одного из крупнейших ритейлеров Украины. 8+ млн визитов. Комиссия 5-25% по CPS-модели (только за выполненные заказы). Стартовый взнос 1 100 грн &mdash; это &laquo;стартовый баланс&raquo; для комиссий. Абонплата 100 грн/год. При отмене покупателем &mdash; комиссия возвращается через 14 дней.</p>
+<p><strong>ROI-вердикт:</strong> Отличная площадка для стройматериалов, мебели, инструментов. CPS-модель минимизирует риски &mdash; платите только за результат.</p>
 
-<h3>7. MAKEUP &mdash; beauty-сегмент</h3>
+<h3>7. MAKEUP &mdash; beauty и парфюмерия</h3>
 <img src="/images/blog/marketplace-makeup-homepage.webp" alt="Главная MAKEUP" style="width:100%;border-radius:8px;border:1px solid #eee;margin-bottom:16px" loading="lazy">
-<p>Комиссия 10-20%. Только оригинальная продукция с сертификатами. FEFO-контроль сроков годности обязателен. Платёжеспособная аудитория женщин 18-45.</p>
+<p>Специализированный beauty-маркетплейс с лояльной аудиторией женщин 18-45. Комиссия 10-20%. Только оригинальная продукция с сертификатами. FEFO-контроль сроков годности обязателен. Для продавцов косметики и парфюмерии &mdash; один из ключевых каналов.</p>
+<p><strong>Для beauty-брендов:</strong> MTP Group обеспечивает <a href="/fulfilment-dlya-marketpleysov/" style="color:#e63329">FEFO-хранение</a> для косметики и БАДов. Наш клиент Elemis работает с нами 7+ лет без единой рекламации по хранению.</p>
+
+<h2 style="margin-top:48px">Стратегия выбора: какой маркетплейс для какого товара</h2>
+<p>Не существует &laquo;лучшего&raquo; маркетплейса &mdash; есть лучший для вашего товара:</p>
+<ul>
+<li><strong>Начинающий (0-10 заказов/день):</strong> OLX для тестирования &rarr; Prom для масштабирования</li>
+<li><strong>Одежда и обувь:</strong> Kasta + Rozetka + Etsy (для handmade)</li>
+<li><strong>Электроника:</strong> Rozetka + Allo</li>
+<li><strong>Косметика:</strong> MAKEUP + Rozetka + Kasta</li>
+<li><strong>Стройматериалы, мебель:</strong> Epicentr + Rozetka</li>
+<li><strong>Международные продажи:</strong> Amazon + Etsy + eBay</li>
+<li><strong>Мультиканальный продавец (2+ площадки):</strong> <a href="/ru/" style="color:#e63329;font-weight:600">3PL фулфилмент MTP Group</a> для единой логистики</li>
+</ul>
+<p>Ключевой инсайт: маржа уменьшается с каждым дополнительным каналом (комиссия + логистика + возвраты). Единственный способ сохранить прибыльность при мультиканальности &mdash; оптимизировать логистику через 3PL-фулфилмент, где себестоимость отправки от 18 грн вместо 30-40 грн при самостоятельной работе.</p>
+<h3>Международные маркетплейсы для украинских продавцов</h3>
+<p>Если вы хотите выйти за пределы Украины, три платформы заслуживают внимания:</p>
+<p><strong>Amazon</strong> &mdash; крупнейший мировой маркетплейс. Комиссия 8-15% + $39.99/мес (Professional). FBA (Fulfillment by Amazon) позволяет отправить товар на склад Amazon в Европе &mdash; они сами хранят, пакуют и доставляют. Для подготовки товара к FBA можете использовать <a href="/ru/" style="color:#e63329">фулфилмент MTP Group</a> в Украине: мы подготовим, промаркируем и отправим палету на склад Amazon в ЕС. Начните с Amazon.de (Германия) &mdash; крупнейший рынок Amazon в Европе.</p>
+<p><strong>Etsy</strong> &mdash; глобальный маркетплейс для handmade, винтажа и уникальных товаров. Комиссия 6.5% + $0.20 за листинг. Идеально для украинских мастеров: вышиванки, керамика, украшения. После 2022 года покупатели из США и Европы активно поддерживают украинские бренды. Доставка через Укрпочту (200-400 грн, 2-4 недели).</p>
+<p><strong>eBay</strong> &mdash; аукционы и фиксированные цены. Комиссия 10-15%. 135+ млн покупателей в 190 странах. Подходит для электроники, коллекционных товаров, запчастей, refurbished техники.</p>
+
+<h3>Сравнение маржи на разных маркетплейсах</h3>
+<p>Одна и та же футболка (цена 500 грн, себестоимость 200 грн) на разных площадках:</p>
+<div style="overflow-x:auto;margin:16px 0">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<thead><tr style="background:#000;color:#fff"><th style="padding:10px 12px;text-align:left">Площадка</th><th style="padding:10px 12px;text-align:center">Комиссия</th><th style="padding:10px 12px;text-align:center">Чистая прибыль</th><th style="padding:10px 12px;text-align:center">Маржа</th></tr></thead>
+<tbody>
+<tr style="border-bottom:1px solid #eee"><td style="padding:8px 12px">OLX</td><td style="padding:8px 12px;text-align:center">0%</td><td style="padding:8px 12px;text-align:center;color:#2e7d32;font-weight:700">272 грн</td><td style="padding:8px 12px;text-align:center">54%</td></tr>
+<tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:8px 12px">Prom (Эконом)</td><td style="padding:8px 12px;text-align:center">2.1%</td><td style="padding:8px 12px;text-align:center;color:#2e7d32;font-weight:700">261 грн</td><td style="padding:8px 12px;text-align:center">52%</td></tr>
+<tr style="border-bottom:1px solid #eee"><td style="padding:8px 12px">Allo</td><td style="padding:8px 12px;text-align:center">8%</td><td style="padding:8px 12px;text-align:center;font-weight:700">232 грн</td><td style="padding:8px 12px;text-align:center">46%</td></tr>
+<tr style="border-bottom:1px solid #eee;background:#fafafa"><td style="padding:8px 12px">Kasta</td><td style="padding:8px 12px;text-align:center">15%+20грн</td><td style="padding:8px 12px;text-align:center;font-weight:700">177 грн</td><td style="padding:8px 12px;text-align:center">35%</td></tr>
+<tr><td style="padding:8px 12px">Rozetka</td><td style="padding:8px 12px;text-align:center">15%+2.5%</td><td style="padding:8px 12px;text-align:center;font-weight:700">184 грн</td><td style="padding:8px 12px;text-align:center">37%</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:13px;color:#888">* Расчёт при фулфилменте 23 грн/заказ + упаковка 5 грн, без учёта возвратов</p>
+
+<p>Эта статья обновляется ежемесячно. Последнее обновление &mdash; апрель 2026.</p>
 
 <h2 style="margin-top:48px">Сравнение комиссий: инфографика</h2>
 <div style="background:#fafafa;padding:24px;border-radius:12px;margin:20px 0">
@@ -122,8 +241,8 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<h2 style="margin-top:48px">Логистика: FBO vs FBS vs 3PL</h2>
-<p>Главная статья расходов после комиссии маркетплейса &mdash; логистика. Три модели:</p>
+<h2 style="margin-top:48px">Логистика: FBO vs FBS vs 3PL &mdash; что выбрать продавцу</h2>
+<p>Главная статья расходов после комиссии маркетплейса &mdash; логистика. От выбора модели зависит сколько времени и денег вы потратите. Особенно критично для мультиканальных продавцов (2+ маркетплейса одновременно).</p>
 
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0">
 <div style="background:#fff0f0;padding:20px;border-radius:12px;border-top:4px solid #e63329">
@@ -139,6 +258,20 @@ import Base from '../../layouts/Base.astro';
 <p style="font-size:14px;color:#444;margin:0">Внешний оператор (<a href="/ru/" style="color:#e63329">MTP Group</a>) хранит и отправляет через все каналы. От 18 грн/заказ.</p>
 </div>
 </div>
+
+<h3>Почему 3PL &mdash; лучший выбор для мультиканальных продавцов</h3>
+<p>Если вы продаёте одновременно на Rozetka, Prom.ua, Kasta и через Instagram &mdash; вам нужен единый склад с интеграцией во все каналы. При FBO вы бы хранили часть товара на складе Rozetka, часть на Kasta, часть дома для Instagram. Это хаос: остатки не синхронизированы, oversell (продажа товара которого нет) &mdash; ежедневная проблема.</p>
+<p>3PL-оператор типа <a href="/ru/" style="color:#e63329;font-weight:600">MTP Group</a> решает это: ВЕСЬ товар на одном складе. Заказ из любого канала автоматически попадает в WMS через API. Собирается за 30 секунд. Пакуется по стандартам каждого маркетплейса (Rozetka требует свои этикетки, Kasta &mdash; свои). Передаётся Новой Почте &mdash; 4 забора в день.</p>
+<p>При объёме 50 заказов/день экономия vs собственный склад составляет 27 000 грн/мес (49%). А при 100+/день динамический тариф MTP снижается до 20-22 грн/заказ &mdash; экономия ещё больше.</p>
+
+<h3>Как подключить фулфилмент для маркетплейсов</h3>
+<ol>
+<li><strong>Оставьте заявку</strong> &mdash; мы свяжемся за 15 минут и рассчитаем стоимость</li>
+<li><strong>Привезите товар</strong> на склад (Борисполь или Белогородка, Киевская обл.)</li>
+<li><strong>Мы маркируем</strong> каждую единицу штрихкодами и размещаем в WMS</li>
+<li><strong>Подключаем API</strong> с Rozetka, Prom, Kasta или вашей CRM</li>
+<li><strong>На следующий день</strong> &mdash; первый заказ собирается и отправляется</li>
+</ol>
 
 <h3>Сравнение стоимости логистики</h3>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0">
