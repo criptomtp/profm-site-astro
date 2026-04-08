@@ -1,0 +1,154 @@
+[
+  {
+    "timestamp": 1775222497958,
+    "nodes": 35,
+    "edges": 20,
+    "pageRankSum": 0.9999999999999991,
+    "confidences": [
+      0.495,
+      0.495,
+      0.495,
+      0.6600000000000001,
+      0.56,
+      0.7200000000000002,
+      0.495,
+      0.9400000000000004,
+      0.495,
+      0.495,
+      0.6100000000000001,
+      0.6100000000000001,
+      0.6700000000000002,
+      0.7700000000000002,
+      0.7400000000000002,
+      0.495,
+      0.495,
+      0.9400000000000004,
+      1,
+      0.495,
+      0.495,
+      0.8500000000000003,
+      0.495,
+      0.7400000000000002,
+      0.6400000000000001,
+      0.53,
+      0.495,
+      0.53,
+      0.495,
+      0.495,
+      0.7700000000000002,
+      0.495,
+      0.9200000000000004,
+      0.6600000000000001,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      4,
+      2,
+      6,
+      0,
+      10,
+      0,
+      0,
+      3,
+      3,
+      5,
+      7,
+      6,
+      0,
+      0,
+      12,
+      12,
+      0,
+      0,
+      9,
+      0,
+      6,
+      4,
+      1,
+      0,
+      1,
+      0,
+      0,
+      7,
+      0,
+      10,
+      4,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "mem-user-profile-user-profile",
+        "summary": "User Profile",
+        "confidence": 1,
+        "pageRank": 0.024377032055652927,
+        "accessCount": 12
+      },
+      {
+        "id": "mem-profm-google-ads-critical-issues-found--phase-1",
+        "summary": "Critical Issues Found (Phase 1 — pending manual fix by user)",
+        "confidence": 0.9400000000000004,
+        "pageRank": 0.05198306537175864,
+        "accessCount": 10
+      },
+      {
+        "id": "mem-user-profile----",
+        "summary": "---",
+        "confidence": 0.9400000000000004,
+        "pageRank": 0.024377032055652927,
+        "accessCount": 12
+      },
+      {
+        "id": "mem-user-profile----",
+        "summary": "---",
+        "confidence": 0.9400000000000004,
+        "pageRank": 0.024377032055652927,
+        "accessCount": 12
+      },
+      {
+        "id": "mem-project_astro_migration-status--live-on-fulfillmentmtp",
+        "summary": "Status: LIVE on fulfillmentmtp.com.ua",
+        "confidence": 0.9200000000000004,
+        "pageRank": 0.025931074835046572,
+        "accessCount": 10
+      },
+      {
+        "id": "mem-MEMORY----user-profile--user-profile-",
+        "summary": "- [User profile](user-profile.md) — Nikolaj, manages ProfM G",
+        "confidence": 0.8500000000000003,
+        "pageRank": 0.014016797849700169,
+        "accessCount": 9
+      },
+      {
+        "id": "mem-profm-vercel-migration-completed--2026-03-21-",
+        "summary": "Completed (2026-03-21)",
+        "confidence": 0.7700000000000002,
+        "pageRank": 0.036058196896026726,
+        "accessCount": 7
+      },
+      {
+        "id": "mem-profm-vercel-migration-remaining-setup--user-must-do-",
+        "summary": "Remaining Setup (user must do)",
+        "confidence": 0.7400000000000002,
+        "pageRank": 0.04466623682569725,
+        "accessCount": 6
+      },
+      {
+        "id": "mem-project_photoforge----",
+        "summary": "---",
+        "confidence": 0.7700000000000002,
+        "pageRank": 0.014016797849700169,
+        "accessCount": 7
+      },
+      {
+        "id": "mem-profm-google-ads-company-profile",
+        "summary": "Company Profile",
+        "confidence": 0.7200000000000002,
+        "pageRank": 0.036058196896026726,
+        "accessCount": 6
+      }
+    ]
+  }
+]

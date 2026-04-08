@@ -1,0 +1,23 @@
+{
+  "id": "session-1775129774138",
+  "startedAt": "2026-04-02T11:36:14.138Z",
+  "cwd": "/Users/nikolaj/My vibecode aplications/profm-site-astro",
+  "context": {
+    "lastMatchedPatterns": [
+      "mem-profm-vercel-migration-profm-site-migration--tilda---",
+      "mem-profm-google-ads-company-profile",
+      "mem-user-profile----",
+      "mem-profm-google-ads----",
+      "mem-profm-vercel-migration----"
+    ]
+  },
+  "metrics": {
+    "edits": 121,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "updatedAt": "2026-04-03T13:15:36.080Z",
+  "endedAt": "2026-04-03T13:21:37.959Z",
+  "duration": 92723821
+}

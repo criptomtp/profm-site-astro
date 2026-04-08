@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": 1775129774156,
-  "nodeCount": 34,
+  "updatedAt": 1775222653621,
+  "nodeCount": 35,
   "nodes": {
     "mem-MEMORY-project-memories": {
       "id": "mem-MEMORY-project-memories",
@@ -27,22 +27,22 @@
     "mem-profm-google-ads----": {
       "id": "mem-profm-google-ads----",
       "category": "profm-google-ads",
-      "confidence": 0.6600000000000001,
-      "accessCount": 4,
+      "confidence": 0.6900000000000002,
+      "accessCount": 5,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-profm-google-ads---project-con": {
       "id": "mem-profm-google-ads-profm-google-ads---project-con",
       "category": "profm-google-ads",
-      "confidence": 0.56,
-      "accessCount": 2,
+      "confidence": 0.6200000000000001,
+      "accessCount": 4,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-company-profile": {
       "id": "mem-profm-google-ads-company-profile",
       "category": "profm-google-ads",
-      "confidence": 0.7200000000000002,
-      "accessCount": 6,
+      "confidence": 0.7900000000000003,
+      "accessCount": 9,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-client-budget": {
@@ -55,7 +55,7 @@
     "mem-profm-google-ads-critical-issues-found--phase-1": {
       "id": "mem-profm-google-ads-critical-issues-found--phase-1",
       "category": "profm-google-ads",
-      "confidence": 0.9100000000000004,
+      "confidence": 0.7900000000000003,
       "accessCount": 9,
       "createdAt": 1775129774146
     },
@@ -76,36 +76,36 @@
     "mem-profm-google-ads-how-to-apply-": {
       "id": "mem-profm-google-ads-how-to-apply-",
       "category": "profm-google-ads",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.6200000000000001,
+      "accessCount": 4,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration----": {
       "id": "mem-profm-vercel-migration----",
       "category": "profm-vercel-migration",
-      "confidence": 0.6100000000000001,
-      "accessCount": 3,
+      "confidence": 0.7500000000000002,
+      "accessCount": 7,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-profm-site-migration--tilda---": {
       "id": "mem-profm-vercel-migration-profm-site-migration--tilda---",
       "category": "profm-vercel-migration",
-      "confidence": 0.6700000000000002,
-      "accessCount": 5,
+      "confidence": 0.8700000000000003,
+      "accessCount": 11,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-completed--2026-03-21-": {
       "id": "mem-profm-vercel-migration-completed--2026-03-21-",
       "category": "profm-vercel-migration",
-      "confidence": 0.7400000000000002,
+      "confidence": 0.7200000000000002,
       "accessCount": 6,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-remaining-setup--user-must-do-": {
       "id": "mem-profm-vercel-migration-remaining-setup--user-must-do-",
       "category": "profm-vercel-migration",
-      "confidence": 0.7100000000000002,
-      "accessCount": 5,
+      "confidence": 0.7300000000000002,
+      "accessCount": 7,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-why-": {
@@ -125,15 +125,15 @@
     "mem-user-profile----": {
       "id": "mem-user-profile----",
       "category": "user-profile",
-      "confidence": 0.9100000000000004,
-      "accessCount": 11,
+      "confidence": 0.8800000000000003,
+      "accessCount": 12,
       "createdAt": 1775129774150
     },
     "mem-user-profile-user-profile": {
       "id": "mem-user-profile-user-profile",
       "category": "user-profile",
-      "confidence": 1,
-      "accessCount": 12,
+      "confidence": 0.7000000000000002,
+      "accessCount": 6,
       "createdAt": 1775129774146
     },
     "mem-MEMORY-user-preferences": {
@@ -146,43 +146,43 @@
     "mem-MEMORY-project--mtp-agent": {
       "id": "mem-MEMORY-project--mtp-agent",
       "category": "core",
-      "confidence": 0.5,
-      "accessCount": 0,
+      "confidence": 0.6500000000000001,
+      "accessCount": 5,
       "createdAt": 1775129774148
     },
     "mem-MEMORY----user-profile--user-profile-": {
       "id": "mem-MEMORY----user-profile--user-profile-",
       "category": "core",
-      "confidence": 0.8200000000000003,
-      "accessCount": 8,
+      "confidence": 0.6500000000000001,
+      "accessCount": 5,
       "createdAt": 1775129774148
     },
     "mem-ads-check-command----": {
       "id": "mem-ads-check-command----",
       "category": "ads-check-command",
-      "confidence": 0.5,
-      "accessCount": 0,
+      "confidence": 0.53,
+      "accessCount": 1,
       "createdAt": 1775129774149
     },
     "mem-google-ads-api----": {
       "id": "mem-google-ads-api----",
       "category": "google-ads-api",
-      "confidence": 0.7400000000000002,
-      "accessCount": 6,
+      "confidence": 0.6500000000000001,
+      "accessCount": 5,
       "createdAt": 1775129774149
     },
     "mem-google-search-console----": {
       "id": "mem-google-search-console----",
       "category": "google-search-console",
-      "confidence": 0.6400000000000001,
-      "accessCount": 4,
+      "confidence": 0.6700000000000002,
+      "accessCount": 5,
       "createdAt": 1775129774149
     },
     "mem-phase1-completed----": {
       "id": "mem-phase1-completed----",
       "category": "phase1-completed",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.56,
+      "accessCount": 2,
       "createdAt": 1775129774149
     },
     "mem-MEMORY-deployment": {
@@ -202,8 +202,8 @@
     "mem-MEMORY-key-patterns": {
       "id": "mem-MEMORY-key-patterns",
       "category": "core",
-      "confidence": 0.5,
-      "accessCount": 0,
+      "confidence": 0.56,
+      "accessCount": 2,
       "createdAt": 1775129774150
     },
     "mem-MEMORY-memory-index": {
@@ -216,8 +216,8 @@
     "mem-project_photoforge----": {
       "id": "mem-project_photoforge----",
       "category": "project_photoforge",
-      "confidence": 0.7700000000000002,
-      "accessCount": 7,
+      "confidence": 0.6700000000000002,
+      "accessCount": 5,
       "createdAt": 1775129774151
     },
     "mem-project_astro_migration----": {
@@ -230,16 +230,23 @@
     "mem-project_astro_migration-status--live-on-fulfillmentmtp": {
       "id": "mem-project_astro_migration-status--live-on-fulfillmentmtp",
       "category": "project_astro_migration",
-      "confidence": 0.8900000000000003,
-      "accessCount": 9,
+      "confidence": 0.8500000000000003,
+      "accessCount": 11,
       "createdAt": 1775129774152
     },
     "mem-project_daughters_fund----": {
       "id": "mem-project_daughters_fund----",
       "category": "project_daughters_fund",
-      "confidence": 0.6600000000000001,
-      "accessCount": 4,
+      "confidence": 0.53,
+      "accessCount": 1,
       "createdAt": 1775129774152
+    },
+    "insight-1775222497951-18gu": {
+      "id": "insight-1775222497951-18gu",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1775222497951
     }
   },
   "edges": [
@@ -365,39 +372,40 @@
     }
   ],
   "pageRanks": {
-    "mem-MEMORY-project-memories": 0.014216061846894796,
-    "mem-MEMORY-user-memories": 0.02629971413877097,
-    "mem-MEMORY-feedback-memories": 0.03657080457168532,
-    "mem-profm-google-ads----": 0.014216061846894796,
-    "mem-profm-google-ads-profm-google-ads---project-con": 0.02629971413877097,
-    "mem-profm-google-ads-company-profile": 0.03657080457168532,
-    "mem-profm-google-ads-client-budget": 0.045301216236062536,
-    "mem-profm-google-ads-critical-issues-found--phase-1": 0.05272205901814281,
-    "mem-profm-google-ads-phase-1-actions--user-must-do-": 0.059029783981023785,
-    "mem-profm-google-ads-why-": 0.06439141464077577,
-    "mem-profm-google-ads-how-to-apply-": 0.06894894153483458,
-    "mem-profm-vercel-migration----": 0.014216061846894796,
-    "mem-profm-vercel-migration-profm-site-migration--tilda---": 0.02629971413877097,
-    "mem-profm-vercel-migration-completed--2026-03-21-": 0.03657080457168532,
-    "mem-profm-vercel-migration-remaining-setup--user-must-do-": 0.045301216236062536,
-    "mem-profm-vercel-migration-why-": 0.05272205901814281,
-    "mem-profm-vercel-migration-how-to-apply-": 0.059029783981023785,
-    "mem-user-profile----": 0.024723578189018512,
-    "mem-user-profile-user-profile": 0.024723578189018512,
-    "mem-MEMORY-user-preferences": 0.014216061846894796,
-    "mem-MEMORY-project--mtp-agent": 0.02629971413877097,
-    "mem-MEMORY----user-profile--user-profile-": 0.014216061846894796,
-    "mem-ads-check-command----": 0.014216061846894796,
-    "mem-google-ads-api----": 0.014216061846894796,
-    "mem-google-search-console----": 0.014216061846894796,
-    "mem-phase1-completed----": 0.014216061846894796,
-    "mem-MEMORY-deployment": 0.014216061846894796,
-    "mem-MEMORY-architecture": 0.02629971413877097,
-    "mem-MEMORY-key-patterns": 0.03657080457168532,
-    "mem-MEMORY-memory-index": 0.014216061846894796,
-    "mem-project_photoforge----": 0.014216061846894796,
-    "mem-project_astro_migration----": 0.014216061846894796,
-    "mem-project_astro_migration-status--live-on-fulfillmentmtp": 0.02629971413877097,
-    "mem-project_daughters_fund----": 0.014216061846894796
+    "mem-MEMORY-project-memories": 0.014016797849700169,
+    "mem-MEMORY-user-memories": 0.025931074835046572,
+    "mem-MEMORY-feedback-memories": 0.036058196896026726,
+    "mem-profm-google-ads----": 0.014016797849700169,
+    "mem-profm-google-ads-profm-google-ads---project-con": 0.025931074835046572,
+    "mem-profm-google-ads-company-profile": 0.036058196896026726,
+    "mem-profm-google-ads-client-budget": 0.04466623682569725,
+    "mem-profm-google-ads-critical-issues-found--phase-1": 0.05198306537175864,
+    "mem-profm-google-ads-phase-1-actions--user-must-do-": 0.05820238143925238,
+    "mem-profm-google-ads-why-": 0.06348886440907654,
+    "mem-profm-google-ads-how-to-apply-": 0.06798249986631208,
+    "mem-profm-vercel-migration----": 0.014016797849700169,
+    "mem-profm-vercel-migration-profm-site-migration--tilda---": 0.025931074835046572,
+    "mem-profm-vercel-migration-completed--2026-03-21-": 0.036058196896026726,
+    "mem-profm-vercel-migration-remaining-setup--user-must-do-": 0.04466623682569725,
+    "mem-profm-vercel-migration-why-": 0.05198306537175864,
+    "mem-profm-vercel-migration-how-to-apply-": 0.05820238143925238,
+    "mem-user-profile----": 0.024377032055652927,
+    "mem-user-profile-user-profile": 0.024377032055652927,
+    "mem-MEMORY-user-preferences": 0.014016797849700169,
+    "mem-MEMORY-project--mtp-agent": 0.025931074835046572,
+    "mem-MEMORY----user-profile--user-profile-": 0.014016797849700169,
+    "mem-ads-check-command----": 0.014016797849700169,
+    "mem-google-ads-api----": 0.014016797849700169,
+    "mem-google-search-console----": 0.014016797849700169,
+    "mem-phase1-completed----": 0.014016797849700169,
+    "mem-MEMORY-deployment": 0.014016797849700169,
+    "mem-MEMORY-architecture": 0.025931074835046572,
+    "mem-MEMORY-key-patterns": 0.036058196896026726,
+    "mem-MEMORY-memory-index": 0.014016797849700169,
+    "mem-project_photoforge----": 0.014016797849700169,
+    "mem-project_astro_migration----": 0.014016797849700169,
+    "mem-project_astro_migration-status--live-on-fulfillmentmtp": 0.025931074835046572,
+    "mem-project_daughters_fund----": 0.014016797849700169,
+    "insight-1775222497951-18gu": 0.014016797849700169
   }
 }
