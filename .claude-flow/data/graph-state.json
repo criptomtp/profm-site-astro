@@ -41,8 +41,8 @@
     "mem-profm-google-ads-company-profile": {
       "id": "mem-profm-google-ads-company-profile",
       "category": "profm-google-ads",
-      "confidence": 0.7900000000000003,
-      "accessCount": 9,
+      "confidence": 0.8200000000000003,
+      "accessCount": 10,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-client-budget": {
@@ -55,8 +55,8 @@
     "mem-profm-google-ads-critical-issues-found--phase-1": {
       "id": "mem-profm-google-ads-critical-issues-found--phase-1",
       "category": "profm-google-ads",
-      "confidence": 0.7900000000000003,
-      "accessCount": 9,
+      "confidence": 0.8200000000000003,
+      "accessCount": 10,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-phase-1-actions--user-must-do-": {
@@ -90,8 +90,8 @@
     "mem-profm-vercel-migration-profm-site-migration--tilda---": {
       "id": "mem-profm-vercel-migration-profm-site-migration--tilda---",
       "category": "profm-vercel-migration",
-      "confidence": 0.8700000000000003,
-      "accessCount": 11,
+      "confidence": 0.9000000000000004,
+      "accessCount": 12,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-completed--2026-03-21-": {
@@ -104,8 +104,8 @@
     "mem-profm-vercel-migration-remaining-setup--user-must-do-": {
       "id": "mem-profm-vercel-migration-remaining-setup--user-must-do-",
       "category": "profm-vercel-migration",
-      "confidence": 0.7300000000000002,
-      "accessCount": 7,
+      "confidence": 0.7600000000000002,
+      "accessCount": 8,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-why-": {
