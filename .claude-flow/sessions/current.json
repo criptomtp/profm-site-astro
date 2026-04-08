@@ -4,18 +4,18 @@
   "cwd": "/Users/nikolaj/My vibecode aplications/profm-site-astro",
   "context": {
     "lastMatchedPatterns": [
-      "mem-MEMORY----user-profile--user-profile-",
-      "mem-user-profile-user-profile",
-      "mem-google-ads-api----",
-      "mem-profm-google-ads-critical-issues-found--phase-1",
-      "mem-project_astro_migration-status--live-on-fulfillmentmtp"
+      "mem-profm-vercel-migration-remaining-setup--user-must-do-",
+      "mem-profm-google-ads-company-profile",
+      "mem-project_astro_migration-status--live-on-fulfillmentmtp",
+      "mem-profm-vercel-migration-profm-site-migration--tilda---",
+      "mem-profm-google-ads-critical-issues-found--phase-1"
     ]
   },
   "metrics": {
-    "edits": 171,
+    "edits": 176,
     "commands": 0,
     "tasks": 0,
     "errors": 0
   },
-  "updatedAt": "2026-04-08T09:55:43.619Z"
+  "updatedAt": "2026-04-08T10:41:27.191Z"
 }

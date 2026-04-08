@@ -132,8 +132,8 @@
     "mem-user-profile-user-profile": {
       "id": "mem-user-profile-user-profile",
       "category": "user-profile",
-      "confidence": 0.7000000000000002,
-      "accessCount": 6,
+      "confidence": 0.7300000000000002,
+      "accessCount": 7,
       "createdAt": 1775129774146
     },
     "mem-MEMORY-user-preferences": {
@@ -153,8 +153,8 @@
     "mem-MEMORY----user-profile--user-profile-": {
       "id": "mem-MEMORY----user-profile--user-profile-",
       "category": "core",
-      "confidence": 0.6500000000000001,
-      "accessCount": 5,
+      "confidence": 0.6800000000000002,
+      "accessCount": 6,
       "createdAt": 1775129774148
     },
     "mem-ads-check-command----": {
@@ -167,8 +167,8 @@
     "mem-google-ads-api----": {
       "id": "mem-google-ads-api----",
       "category": "google-ads-api",
-      "confidence": 0.6500000000000001,
-      "accessCount": 5,
+      "confidence": 0.6800000000000002,
+      "accessCount": 6,
       "createdAt": 1775129774149
     },
     "mem-google-search-console----": {
