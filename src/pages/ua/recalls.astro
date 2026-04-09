@@ -56,6 +56,41 @@ import Base from '../../layouts/Base.astro';
 <p>Як фулфілмент допоміг масштабувати інтернет-магазин</p>
 </div>
 </div>
+<div class="vid-card">
+<iframe src="https://www.youtube.com/embed/k7ET02dWB7k" title="Вся правда про MTP Group Fulfillment" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+<div class="vid-card-info">
+<h3>Вся правда про MTP Group</h3>
+<p>Чесний відгук Павла Мокрієнка про досвід роботи з фулфілментом</p>
+</div>
+</div>
+<div class="vid-card">
+<iframe src="https://www.youtube.com/embed/bUMM8S91quo" title="Відгук Влада Савицького про MTP Group" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+<div class="vid-card-info">
+<h3>Відгук Влада Савицького</h3>
+<p>Як працює склад MTP Group очима клієнта</p>
+</div>
+</div>
+<div class="vid-card">
+<iframe src="https://www.youtube.com/embed/nmJulGqRABw" title="Ріст в 4 рази з MTP Group" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+<div class="vid-card-info">
+<h3>Ріст в 4 рази</h3>
+<p>Як фулфілмент допоміг зробити x4 в e-commerce</p>
+</div>
+</div>
+<div class="vid-card">
+<iframe src="https://www.youtube.com/embed/KhYY0MsjLmU" title="Відгук Ігоря Бакалова про делегування логістики" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+<div class="vid-card-info">
+<h3>Відгук Ігоря Бакалова</h3>
+<p>Як правильно делегувати логістику інтернет-магазину</p>
+</div>
+</div>
+<div class="vid-card">
+<iframe src="https://www.youtube.com/embed/K3KHxItl2nk" title="Відгук Максима про роботу складу MTP Group" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+<div class="vid-card-info">
+<h3>Відгук Максима</h3>
+<p>Досвід роботи зі складом фулфілменту MTP Group</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -165,6 +200,12 @@ import Base from '../../layouts/Base.astro';
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero h1{font-family:var(--fd);font-size:clamp(42px,6vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
 .hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:520px}
+.hero-form{display:flex;gap:12px;max-width:460px;margin-top:32px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.35);margin-top:12px}
 .sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 .videos{padding:100px 0;background:var(--gray)}
@@ -203,6 +244,7 @@ import Base from '../../layouts/Base.astro';
 @media(max-width:768px){
 .hero{padding:100px 0 60px}.hero-content{padding:0 24px}
 .hero h1{font-size:clamp(36px,9vw,48px)}
+.hero-form{flex-direction:column}.hero-form button{width:100%}
 .vid-grid{grid-template-columns:1fr}
 .case-grid{grid-template-columns:1fr}
 .rev-grid{grid-template-columns:1fr}

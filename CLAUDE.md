@@ -34,3 +34,8 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - UA: src/pages/ua/[slug].astro
 - RU: src/pages/ru/[slug].astro
 - EN: src/pages/en/[slug].astro
+
+## Довідкові документи (docs/):
+- `docs/MTP_SEMANTIC_CORE_FULL.md` — повна матриця семантичного ядра: 120+ сторінок по осях (товарна категорія, тип бізнесу, географія, послуги, інтеграції). Використовувати при створенні нових SEO-сторінок.
+- `docs/LANGUAGE_AUDIT.md` — мовний аудит: 35 порушень (русизми в UA текстах, українізми в RU). Перевіряти при написанні контенту.
+- `docs/TITLES_TO_FIX.md` — тайтли >60 символів, які потребують скорочення.
