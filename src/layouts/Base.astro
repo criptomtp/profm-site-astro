@@ -110,7 +110,7 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
   </main>
   {showCTA && <CTA lang={lang} />}
   <Footer lang={lang} />
-  <script is:inline src="/js/lang-switcher.js"></script>
+  <script is:inline src="/js/lang-switcher.js" defer></script>
   <script is:inline>
   // Global lead submit function — used by all forms across the site
   window.mtpSubmitLead = function(phone, page) {
@@ -165,6 +165,45 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
     var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
     document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   }
+
+  // YouTube lite facade — replace all iframes with click-to-load thumbnails
+  document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(function(iframe){
+    var match = iframe.src.match(/embed\/([A-Za-z0-9_-]+)/);
+    if(!match) return;
+    var id = match[1];
+    var title = iframe.title || iframe.alt || 'YouTube video';
+    var parent = iframe.parentElement;
+    var facade = document.createElement('div');
+    facade.className = 'yt-facade';
+    facade.dataset.id = id;
+    facade.innerHTML = '<img src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+title+'" width="480" height="360" loading="lazy"><button class="yt-play" aria-label="Play: '+title+'"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button>';
+    // If iframe was absolutely positioned inside a container, replace container content
+    if(parent.style.position==='relative' && parent.style.paddingBottom){
+      parent.style.position='';parent.style.paddingBottom='';parent.style.height='';
+      parent.replaceChild(facade, iframe);
+    } else {
+      iframe.replaceWith(facade);
+    }
+  });
+  // Click handler for facades
+  document.addEventListener('click',function(e){
+    var facade=e.target.closest('.yt-facade');
+    if(!facade||facade.querySelector('iframe'))return;
+    var id=facade.dataset.id;
+    var iframe=document.createElement('iframe');
+    iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+    iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+    iframe.allowFullscreen=true;
+    iframe.title=facade.querySelector('img').alt;
+    facade.appendChild(iframe);
+  });
   </script>
+  <style>
+  .yt-facade{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;background:#000;cursor:pointer}
+  .yt-facade img{position:absolute;top:50%;left:50%;width:100%;height:auto;min-height:100%;transform:translate(-50%,-50%);object-fit:cover}
+  .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;opacity:.85;transition:opacity .2s;z-index:1}
+  .yt-facade:hover .yt-play{opacity:1}
+  .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;z-index:2}
+  </style>
 </body>
 </html>
