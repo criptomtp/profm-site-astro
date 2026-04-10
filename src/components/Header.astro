@@ -307,11 +307,11 @@ body{padding-top:0;margin:0}
     'fulfilment-kyiv':{ru:'fulfilment-kiev',en:'fulfillment-kyiv'},
     'fulfilment-kiev':{ua:'fulfilment-kyiv',en:'fulfillment-kyiv'},
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'fulfilment-kiev'},
-    'fulfilment-ukraina':{ru:'fulfilment-ukraina',en:'fulfillment-ukraine'},
-    'fulfillment-ukraine':{ua:'fulfilment-ukraina',ru:'fulfilment-ukraina'},
-    'fulfilment-dlya-maloho-biznesu':{ru:'fulfilment-dlya-malogo-biznesa',en:'fulfillment-for-small-business'},
+    'fulfilment-ukraina':{ru:'/ru/fulfilment-ukraina/',en:'fulfillment-ukraine'},
+    'fulfillment-ukraine':{ua:'fulfilment-ukraina',ru:'/ru/fulfilment-ukraina/'},
+    'fulfilment-dlya-maloho-biznesu':{ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-for-small-business'},
     'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-for-small-business'},
-    'fulfillment-for-small-business':{ua:'fulfilment-dlya-maloho-biznesu',ru:'fulfilment-dlya-malogo-biznesa'},
+    'fulfillment-for-small-business':{ua:'fulfilment-dlya-maloho-biznesu',ru:'/ru/fulfilment-dlya-malogo-biznesa/'},
   };
   // Blog article map (full path mapping)
   var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
@@ -372,7 +372,7 @@ body{padding-top:0;margin:0}
     if(blogMap[lastSeg]){np=blogMap[lastSeg][tl]||'/';}
     else if(!slug||slug==='ru'){np=tl==='ua'?'/':tl==='ru'?'/ru/':'/en/';}
     else if(slug==='blog'||slug.match(/^(?:ua\/)?blog$/)){np=tl==='ua'?'/ua/blog/':tl==='ru'?'/blog/':'/en/blog/';}
-    else{var m=map[lastSeg];var ts=m?m[tl]||lastSeg:lastSeg;np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}
+    else{var m=map[lastSeg];var ts=m?m[tl]||lastSeg:lastSeg;if(ts.charAt(0)==='/'){np=ts;}else{np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}}
     a.href=np;
   });
 })();
