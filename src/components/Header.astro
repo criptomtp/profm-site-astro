@@ -20,6 +20,7 @@ const mega = {
       { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Для маркетплейсів' },
       { href: '/ua/fulfilment-kyiv/', label: 'Фулфілмент Київ' },
       { href: '/ua/fulfilment-ukraina/', label: 'Фулфілмент в Україні' },
+      { href: '/ua/fulfilment-dlya-maloho-biznesu/', label: 'Для малого бізнесу' },
     ]},
     col2: { title: 'Інструменти', items: [
       { href: '/ua/calculator/', label: 'Калькулятор' },
@@ -37,6 +38,7 @@ const mega = {
       { href: '/fulfilment-dlya-marketpleysov/', label: 'Для маркетплейсов' },
       { href: '/fulfilment-kiev/', label: 'Фулфилмент Киев' },
       { href: '/ru/fulfilment-ukraina/', label: 'Фулфилмент в Украине' },
+      { href: '/ru/fulfilment-dlya-malogo-biznesa/', label: 'Для малого бизнеса' },
     ]},
     col2: { title: 'Инструменты', items: [
       { href: '/calculator/', label: 'Калькулятор' },
@@ -53,6 +55,7 @@ const mega = {
       { href: '/en/fulfillment-for-marketplaces/', label: 'For marketplaces' },
       { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
       { href: '/en/fulfillment-ukraine/', label: 'Fulfillment Ukraine' },
+      { href: '/en/fulfillment-for-small-business/', label: 'For small business' },
     ]},
     col2: { title: 'Tools', items: [
       { href: '/en/calculator/', label: 'Calculator' },
@@ -306,6 +309,9 @@ body{padding-top:0;margin:0}
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'fulfilment-kiev'},
     'fulfilment-ukraina':{ru:'fulfilment-ukraina',en:'fulfillment-ukraine'},
     'fulfillment-ukraine':{ua:'fulfilment-ukraina',ru:'fulfilment-ukraina'},
+    'fulfilment-dlya-maloho-biznesu':{ru:'fulfilment-dlya-malogo-biznesa',en:'fulfillment-for-small-business'},
+    'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-for-small-business'},
+    'fulfillment-for-small-business':{ua:'fulfilment-dlya-maloho-biznesu',ru:'fulfilment-dlya-malogo-biznesa'},
   };
   // Blog article map (full path mapping)
   var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
