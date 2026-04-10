@@ -13,57 +13,61 @@ const t = {
 
 const mega = {
   uk: {
-    col1: { title: 'За нішею', items: [
+    col1: { title: 'За типом бізнесу', items: [
       { href: '/ua/fulfilment-dlya-internet-magazynu/', label: 'Інтернет-магазини' },
+      { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Маркетплейси' },
+      { href: '/ua/fulfilment-dlya-maloho-biznesu/', label: 'Малий бізнес' },
+    ]},
+    col2: { title: 'За товарами', items: [
       { href: '/ua/fulfilment-vazhkykh-tovariv/', label: 'Важкі товари 50+ кг' },
       { href: '/ua/skladski-poslugy/', label: 'Складські послуги' },
-      { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Для маркетплейсів' },
-      { href: '/ua/fulfilment-kyiv/', label: 'Фулфілмент Київ' },
-      { href: '/ua/fulfilment-ukraina/', label: 'Фулфілмент в Україні' },
-      { href: '/ua/fulfilment-dlya-maloho-biznesu/', label: 'Для малого бізнесу' },
     ]},
-    col2: { title: 'Інструменти', items: [
+    col3: { title: 'За локацією', items: [
+      { href: '/ua/fulfilment-kyiv/', label: 'Фулфілмент Київ' },
+      { href: '/ua/fulfilment-ukraina/', label: 'По всій Україні' },
+    ]},
+    col4: { title: 'Інструменти', items: [
       { href: '/ua/calculator/', label: 'Калькулятор' },
       { href: '/ua/tsiny/', label: 'Ціни' },
-    ]},
-    col3: { title: '', items: [
-      { href: '/ua/services/', label: 'Всі послуги →' },
-    ]},
+    ], cta: { href: '/ua/services/', label: 'Всі послуги →' }},
   },
   ru: {
-    col1: { title: 'По нише', items: [
+    col1: { title: 'По типу бизнеса', items: [
       { href: '/fulfilment-dlya-internet-magazynu/', label: 'Интернет-магазины' },
+      { href: '/fulfilment-dlya-marketpleysov/', label: 'Маркетплейсы' },
+      { href: '/ru/fulfilment-dlya-malogo-biznesa/', label: 'Малый бизнес' },
+    ]},
+    col2: { title: 'По товарам', items: [
       { href: '/fulfilment-vazhkykh-tovariv/', label: 'Тяжёлые товары 50+ кг' },
       { href: '/skladski-poslugy/', label: 'Складские услуги' },
-      { href: '/fulfilment-dlya-marketpleysov/', label: 'Для маркетплейсов' },
-      { href: '/fulfilment-kiev/', label: 'Фулфилмент Киев' },
-      { href: '/ru/fulfilment-ukraina/', label: 'Фулфилмент в Украине' },
-      { href: '/ru/fulfilment-dlya-malogo-biznesa/', label: 'Для малого бизнеса' },
     ]},
-    col2: { title: 'Инструменты', items: [
+    col3: { title: 'По локации', items: [
+      { href: '/fulfilment-kiev/', label: 'Фулфилмент Киев' },
+      { href: '/ru/fulfilment-ukraina/', label: 'По всей Украине' },
+    ]},
+    col4: { title: 'Инструменты', items: [
       { href: '/calculator/', label: 'Калькулятор' },
       { href: '/tsenu/', label: 'Цены' },
-    ]},
-    col3: { title: '', items: [
-      { href: '/services/', label: 'Все услуги →' },
-    ]},
+    ], cta: { href: '/services/', label: 'Все услуги →' }},
   },
   en: {
-    col1: { title: 'By niche', items: [
+    col1: { title: 'By business type', items: [
+      { href: '/en/fulfillment-for-online-stores/', label: 'Online stores' },
+      { href: '/en/fulfillment-for-marketplaces/', label: 'Marketplaces' },
+      { href: '/en/fulfillment-for-small-business/', label: 'Small business' },
+    ]},
+    col2: { title: 'By product', items: [
       { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
       { href: '/en/warehouse-services/', label: 'Warehouse services' },
-      { href: '/en/fulfillment-for-marketplaces/', label: 'For marketplaces' },
-      { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
-      { href: '/en/fulfillment-ukraine/', label: 'Fulfillment Ukraine' },
-      { href: '/en/fulfillment-for-small-business/', label: 'For small business' },
     ]},
-    col2: { title: 'Tools', items: [
+    col3: { title: 'By location', items: [
+      { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
+      { href: '/en/fulfillment-ukraine/', label: 'All Ukraine' },
+    ]},
+    col4: { title: 'Tools', items: [
       { href: '/en/calculator/', label: 'Calculator' },
       { href: '/en/prices/', label: 'Prices' },
-    ]},
-    col3: { title: '', items: [
-      { href: '/en/services/', label: 'All services →' },
-    ]},
+    ], cta: { href: '/en/services/', label: 'All services →' }},
   },
 }[lang];
 ---
@@ -87,8 +91,14 @@ const mega = {
             <span class="hdr-mega-title">{mega.col2.title}</span>
             {mega.col2.items.map(i => <a href={i.href}>{i.label}</a>)}
           </div>
-          <div class="hdr-mega-col hdr-mega-col--cta">
-            {mega.col3.items.map(i => <a href={i.href} class="hdr-mega-cta">{i.label}</a>)}
+          <div class="hdr-mega-col">
+            <span class="hdr-mega-title">{mega.col3.title}</span>
+            {mega.col3.items.map(i => <a href={i.href}>{i.label}</a>)}
+          </div>
+          <div class="hdr-mega-col hdr-mega-col--tools">
+            <span class="hdr-mega-title">{mega.col4.title}</span>
+            {mega.col4.items.map(i => <a href={i.href}>{i.label}</a>)}
+            {mega.col4.cta && <a href={mega.col4.cta.href} class="hdr-mega-cta">{mega.col4.cta.label}</a>}
           </div>
         </div>
       </div>
@@ -143,13 +153,14 @@ const mega = {
 .hdr-dd.open .hdr-arrow{transform:rotate(180deg)}
 
 /* ============ MEGA MENU — 3 columns ============ */
-.hdr-mega{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;min-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.6);z-index:10001}
+.hdr-mega{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;min-width:580px;box-shadow:0 12px 48px rgba(0,0,0,.6);z-index:10001}
 .hdr-mega::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:rgba(255,255,255,.08);border-top:none}
-.hdr-dd.open .hdr-mega{display:grid;grid-template-columns:1fr 1fr auto;gap:0}
+.hdr-dd.open .hdr-mega{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:0}
 .hdr-mega-col{padding:0 20px;border-right:1px solid rgba(255,255,255,.06)}
 .hdr-mega-col:first-child{padding-left:0}
 .hdr-mega-col:last-child{padding-right:0;border-right:none}
-.hdr-mega-col--cta{display:flex;align-items:flex-end}
+.hdr-mega-col--tools{display:flex;flex-direction:column}
+.hdr-mega-col--tools .hdr-mega-cta{margin-top:auto}
 .hdr-mega-title{display:block;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2.5px;margin:0 0 10px;font-weight:600}
 .hdr-mega-col a{display:block;padding:6px 0;font-size:14px;color:rgba(255,255,255,.85);white-space:nowrap;text-decoration:none;transition:color .2s,padding-left .2s}
 .hdr-mega-col a:hover{color:#fff;padding-left:4px}
@@ -225,7 +236,7 @@ body{padding-top:0;margin:0}
   .hdr-mega-col:last-child{border-bottom:none}
   .hdr-mega-col a{font-size:15px;padding:10px 0;color:rgba(255,255,255,.8)}
   .hdr-mega-cta{background:rgba(230,51,41,.15);margin-top:8px;text-align:center;border-radius:6px;padding:12px 16px !important}
-  .hdr-mega-col--cta{display:block}
+  .hdr-mega-col--tools{display:block}
 
   /* Mobile bottom: langs + phone */
   .hdr-mobile-bottom{
