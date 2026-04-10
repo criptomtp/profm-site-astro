@@ -343,20 +343,6 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </div>
 </article>
 
-<!-- CTA -->
-<section class="final-cta" id="ctaSection">
-  <h2>Ready to scale without the overhead?</h2>
-  <p class="sub">Get a custom fulfillment quote in 15 minutes. No commitment required.</p>
-  <form class="final-form" id="finalForm">
-    <input type="tel" name="phone" placeholder="+380 or international number" maxlength="25" required autocomplete="tel" aria-label="Phone number">
-    <button type="submit">Request a quote &#8594;</button>
-  </form>
-  <div class="final-checks">
-    <span>Free consultation</span>
-    <span>USD/EUR invoicing</span>
-    <span>English-speaking team</span>
-  </div>
-</section>
 
 </Base>
 
@@ -584,7 +570,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 
   /* Form handling */
-  document.querySelectorAll('#heroForm, #finalForm').forEach(function(form){
+  document.querySelectorAll('#heroForm').forEach(function(form){
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var inp=form.querySelector('input[name="phone"]');
