@@ -6,7 +6,9 @@ var STATUSES = [
   {id:'meeting',label:'Зустріч',color:'#00bcd4'},
   {id:'negotiations',label:'Переговори',color:'#9c27b0'},
   {id:'onboarding',label:'Онбординг',color:'#4caf50'},
-  {id:'clients',label:'Клієнти',color:'#000'}
+  {id:'clients',label:'Клієнти',color:'#000'},
+  {id:'not_target',label:'Не наша ЦА',color:'#9e9e9e'},
+  {id:'buyout',label:'Викуп товару',color:'#795548'}
 ];
 
 var TYPE_LABELS = {heavy:'Важкі товари',cosmetics:'Косметика',clothing:'Одяг/взуття',electronics:'Електроніка',food:'Продукти',other:'Інше'};
