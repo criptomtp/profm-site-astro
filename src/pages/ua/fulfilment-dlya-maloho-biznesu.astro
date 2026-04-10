@@ -1,0 +1,486 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент для малого бізнесу","description":"Фулфілмент для малого бізнесу в Україні: пакування, зберігання, відправка від 18 грн/замовлення. WMS, інтеграція з CRM, генератори, Starlink.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (100+ замовлень/день)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/services/"},{"@type":"ListItem","position":3,"name":"Фулфілмент для малого бізнесу","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Який мінімальний обсяг замовлень для фулфілменту?","acceptedAnswer":{"@type":"Answer","text":"Ми працюємо від 5 замовлень на день. Для невеликих обсягів діє мінімальний місячний платіж 5 000 грн, який покриває базові послуги зберігання та відправки."}},{"@type":"Question","name":"Скільки коштує фулфілмент для 10 замовлень на день?","acceptedAnswer":{"@type":"Answer","text":"При 10 замовленнях/день (0-49 діапазон) — від 26 грн за відправлення. Плюс зберігання від 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс. Це дешевше ніж власний склад навіть на такому обсязі."}},{"@type":"Question","name":"Чи потрібен довгостроковий контракт?","acceptedAnswer":{"@type":"Answer","text":"Ні. Ми працюємо без прив'язки до довгострокових контрактів. Договір можна розірвати з попередженням за 14 днів. Ви платите тільки за фактичні послуги."}},{"@type":"Question","name":"Як працює склад під час блекаутів?","acceptedAnswer":{"@type":"Answer","text":"На обох складах встановлено 3 дизельних генератори, підключено Starlink і 2 оптоволоконних провайдери. З лютого 2022 року — жодного дня простою."}},{"@type":"Question","name":"З якими CRM ви інтегруєтесь?","acceptedAnswer":{"@type":"Answer","text":"KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka — інтеграція через API за 2-4 години. Якщо ваша CRM має API — підключимо."}},{"@type":"Question","name":"Як швидко можна підключитися?","acceptedAnswer":{"@type":"Answer","text":"1-3 дні. День 1: консультація + договір + інтеграція з CRM. День 2: привозите товар, ми штрихкодуємо і розміщуємо. День 3: перше замовлення вже на Новій Пошті."}},{"@type":"Question","name":"Чи можу я брендувати пакування?","acceptedAnswer":{"@type":"Answer","text":"Так. Ми працюємо з брендованими коробками, наклейками, тішью, листівками. Привозите свої матеріали або замовте друк через нас."}},{"@type":"Question","name":"Що робити з поверненнями?","acceptedAnswer":{"@type":"Answer","text":"Повернення через Нову Пошту ми приймаємо, перевіряємо стан товару і повертаємо на полицю. Все через WMS з фото-фіксацією. Зберігання повернень — 17 днів безкоштовно."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Фулфілмент для малого бізнесу від 18 грн | MTP Group"
+  description="Фулфілмент для малого бізнесу в Україні: зберігання, пакування, відправка від 18 грн. WMS-кабінет 24/7, генератори, інтеграція з CRM за 2 години."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+</Fragment>
+
+<!-- HERO — Split-screen comparison -->
+<section class="sb-hero">
+<div class="sb-hero-split">
+<div class="sb-hero-pain">
+<div class="sb-hero-pain-inner">
+<div class="sb-pain-label">ЗАРАЗ</div>
+<div class="sb-pain-line">Ваш гараж.</div>
+<div class="sb-pain-line">3 години пакування.</div>
+<div class="sb-pain-line">Excel-таблиця.</div>
+<div class="sb-pain-line sb-pain-dim">Пропущений забір НП.</div>
+<div class="sb-pain-line sb-pain-dim">Помилка в адресі.</div>
+</div>
+</div>
+<div class="sb-hero-solution">
+<div class="sb-hero-solution-inner">
+<div class="sb-solution-label">З MTP GROUP</div>
+<div class="sb-solution-line">Склад 3 900 м&sup2;.</div>
+<div class="sb-solution-line">30 секунд на замовлення.</div>
+<div class="sb-solution-line">WMS-система.</div>
+<div class="sb-solution-line sb-solution-bright">4 забори НП на день.</div>
+<div class="sb-solution-line sb-solution-bright">99.5% точність.</div>
+</div>
+</div>
+</div>
+<div class="sb-hero-center">
+<div class="badge">МАЛИЙ БІЗНЕС</div>
+<h1>Фулфілмент для<br>малого бізнесу</h1>
+<div class="sb-hero-price">від 18 <small>грн/відправка</small></div>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Розрахувати вартість &#8594;</button></form>
+<div class="sb-hero-note">Безкоштовна консультація &middot; Без довгострокових контрактів</div>
+</div>
+</section>
+
+<!-- THRESHOLD — Коли вже час? -->
+<section class="sb-threshold"><div class="ctr">
+<div class="badge badge-dark">МАСШТАБ</div>
+<h2 class="sec-h2">Коли малому бізнесу час на фулфілмент?</h2>
+<div class="sb-scale">
+<div class="sb-scale-bar">
+<div class="sb-scale-fill" style="width:100%"></div>
+<div class="sb-scale-mark" style="left:5%"><span class="sb-mark-dot"></span></div>
+<div class="sb-scale-mark" style="left:30%"><span class="sb-mark-dot sb-mark-warn"></span></div>
+<div class="sb-scale-mark" style="left:65%"><span class="sb-mark-dot sb-mark-crit"></span></div>
+</div>
+<div class="sb-scale-labels">
+<div class="sb-scale-item sb-scale-pos1">
+<div class="sb-scale-num">5&ndash;10</div>
+<div class="sb-scale-txt">замовлень/день</div>
+<div class="sb-scale-desc">Починайте думати. Порахуйте, скільки годин витрачаєте на пакування щодня.</div>
+</div>
+<div class="sb-scale-item sb-scale-pos2">
+<div class="sb-scale-num">30&ndash;50</div>
+<div class="sb-scale-txt">замовлень/день</div>
+<div class="sb-scale-desc">Критичний поріг. Ви вже пропускаєте забори, плутаєте адреси, не встигаєте.</div>
+</div>
+<div class="sb-scale-item sb-scale-pos3">
+<div class="sb-scale-num">100+</div>
+<div class="sb-scale-txt">замовлень/день</div>
+<div class="sb-scale-desc">Без фулфілменту неможливо. Кожна хвилина затримки &mdash; втрачений клієнт.</div>
+</div>
+</div>
+</div>
+</div></section>
+
+<!-- UNIT ECONOMICS BATTLE -->
+<section class="sb-economics"><div class="ctr">
+<div class="badge">ЕКОНОМІКА</div>
+<h2 class="sec-h2">Скільки ви справді витрачаєте?</h2>
+<p class="sb-econ-sub">Порівняння щомісячних витрат: власний склад проти MTP Group</p>
+<div class="sb-econ-table-wrap">
+<table class="sb-econ-table">
+<thead>
+<tr><th>Витрата</th><th>Свій склад</th><th>MTP Group</th></tr>
+</thead>
+<tbody>
+<tr class="sb-econ-vol"><td colspan="3"><strong>10 замовлень/день (~200/міс)</strong></td></tr>
+<tr><td>Оренда приміщення</td><td>8 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Зарплата пакувальника</td><td>12 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Пакувальні матеріали</td><td>2 000 грн</td><td>включено</td></tr>
+<tr><td>Комунальні + генератор</td><td>4 000 грн</td><td>включено</td></tr>
+<tr><td>WMS-система</td><td>1 500 грн</td><td>включено</td></tr>
+<tr><td>Відправка (200 зам.)</td><td>&mdash;</td><td>5 200 грн</td></tr>
+<tr class="sb-econ-total"><td>РАЗОМ</td><td>27 500 грн</td><td class="sb-econ-save">5 200 грн</td></tr>
+<tr class="sb-econ-vol"><td colspan="3"><strong>50 замовлень/день (~1 000/міс)</strong></td></tr>
+<tr><td>Оренда приміщення</td><td>15 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Зарплата (2 пакувальники)</td><td>28 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Пакувальні матеріали</td><td>5 000 грн</td><td>включено</td></tr>
+<tr><td>Комунальні + генератор</td><td>6 000 грн</td><td>включено</td></tr>
+<tr><td>WMS-система</td><td>2 500 грн</td><td>включено</td></tr>
+<tr><td>Відправка (1 000 зам.)</td><td>&mdash;</td><td>22 000 грн</td></tr>
+<tr class="sb-econ-total"><td>РАЗОМ</td><td>56 500 грн</td><td class="sb-econ-save">22 000 грн</td></tr>
+<tr class="sb-econ-vol"><td colspan="3"><strong>100 замовлень/день (~2 000/міс)</strong></td></tr>
+<tr><td>Оренда приміщення</td><td>20 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Зарплата (4 пакувальники)</td><td>56 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Пакувальні матеріали</td><td>10 000 грн</td><td>включено</td></tr>
+<tr><td>Комунальні + генератор</td><td>8 000 грн</td><td>включено</td></tr>
+<tr><td>WMS-система</td><td>3 500 грн</td><td>включено</td></tr>
+<tr><td>Відправка (2 000 зам.)</td><td>&mdash;</td><td>40 000 грн</td></tr>
+<tr class="sb-econ-total"><td>РАЗОМ</td><td>97 500 грн</td><td class="sb-econ-save">40 000 грн</td></tr>
+<tr class="sb-econ-vol"><td colspan="3"><strong>200 замовлень/день (~4 000/міс)</strong></td></tr>
+<tr><td>Оренда + утримання</td><td>35 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Зарплата (7 пакувальників)</td><td>98 000 грн</td><td>&mdash;</td></tr>
+<tr><td>Пакувальні матеріали</td><td>18 000 грн</td><td>включено</td></tr>
+<tr><td>Комунальні + генератор</td><td>12 000 грн</td><td>включено</td></tr>
+<tr><td>WMS-система</td><td>5 000 грн</td><td>включено</td></tr>
+<tr><td>Відправка (4 000 зам.)</td><td>&mdash;</td><td>72 000 грн</td></tr>
+<tr class="sb-econ-total"><td>РАЗОМ</td><td>168 000 грн</td><td class="sb-econ-save">72 000 грн</td></tr>
+</tbody>
+</table>
+</div>
+<p class="sb-econ-note">* Ціни MTP Group включають: зберігання, збір, пакування, матеріали, WMS, ТТН. <a href="/ua/tsiny/" style="color:var(--red)">Детальні тарифи &rarr;</a></p>
+</div></section>
+
+<!-- 5 PAIN → 5 SOLUTIONS -->
+<section class="sb-pains"><div class="ctr">
+<div class="badge">РІШЕННЯ</div>
+<h2 class="sec-h2">5 болів малого бізнесу &mdash; 5 рішень MTP</h2>
+<div class="sb-pains-grid">
+<div class="sb-pain-card">
+<div class="sb-pc-pain"><span class="sb-pc-icon">&#9203;</span><div class="sb-pc-pain-text">60% часу &mdash; на пакування замість продажів</div></div>
+<div class="sb-pc-arrow">&darr;</div>
+<div class="sb-pc-fix"><strong>8 годин на місяць</strong> &mdash; саме стільки витрачає середній клієнт MTP на логістику. Решта &mdash; маркетинг і зростання.</div>
+</div>
+<div class="sb-pain-card">
+<div class="sb-pc-pain"><span class="sb-pc-icon">&#128221;</span><div class="sb-pc-pain-text">Excel замість WMS &mdash; плутанина, пересортиця, втрачені товари</div></div>
+<div class="sb-pc-arrow">&darr;</div>
+<div class="sb-pc-fix"><strong>Особистий кабінет 24/7</strong> &mdash; залишки, статуси, звіти в реальному часі з будь-якого пристрою.</div>
+</div>
+<div class="sb-pain-card">
+<div class="sb-pc-pain"><span class="sb-pc-icon">&#9889;</span><div class="sb-pc-pain-text">Немає генератора &mdash; кожен блекаут зупиняє відправки</div></div>
+<div class="sb-pc-arrow">&darr;</div>
+<div class="sb-pc-fix"><strong>3 генератори + Starlink</strong> &mdash; з 2022 року жодного дня простою. 2 оптоволоконних провайдери.</div>
+</div>
+<div class="sb-pain-card">
+<div class="sb-pc-pain"><span class="sb-pc-icon">&#10060;</span><div class="sb-pc-pain-text">Помилки в замовленнях &mdash; пересорт, повернення, негативні відгуки</div></div>
+<div class="sb-pc-arrow">&darr;</div>
+<div class="sb-pc-fix"><strong>99.5% точність</strong> &mdash; сканування штрих-кодів на кожному етапі, фото-фіксація перед відправкою.</div>
+</div>
+<div class="sb-pain-card">
+<div class="sb-pc-pain"><span class="sb-pc-icon">&#128176;</span><div class="sb-pc-pain-text">Немає знижок від перевізників &mdash; повна ціна за кожну відправку</div></div>
+<div class="sb-pc-arrow">&darr;</div>
+<div class="sb-pc-fix"><strong>Оптові тарифи перевізників</strong> &mdash; 60 000+ відправлень/місяць від MTP дають вам ціну, недоступну поодинці.</div>
+</div>
+</div>
+</div></section>
+
+<!-- VIDEO: WAREHOUSE -->
+<section style="padding:80px 0;background:#0a0a0a">
+<div class="ctr" style="max-width:900px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+<div>
+<div class="badge">ВІДЕО</div>
+<h2 style="font-family:var(--fd);font-size:clamp(24px,3vw,36px);font-weight:400;color:#fff;margin-bottom:16px">Побачте склад зсередини</h2>
+<p style="color:rgba(255,255,255,.6);line-height:1.7">Від отримання замовлення до передачі Новій Пошті &mdash; весь процес за 2 хвилини. Подивіться, як працює склад, який обробляє 6 000 замовлень на день.</p>
+</div>
+<div class="yt-facade" data-id="pitb1uHWRuo"><img src="https://i.ytimg.com/vi/pitb1uHWRuo/hqdefault.jpg" alt="Як працює фулфілмент-склад MTP Group для малого бізнесу" width="480" height="360" loading="lazy"><button class="yt-play" aria-label="Play: Як працює склад MTP Group Fulfillment"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button></div>
+</div>
+</div>
+</section>
+
+<!-- GROWTH TIMELINE — 3 steps -->
+<section class="sb-timeline"><div class="ctr">
+<div class="badge badge-dark">ПІДКЛЮЧЕННЯ</div>
+<h2 class="sec-h2">Від заявки до першої відправки &mdash; 3 дні</h2>
+<div class="sb-tl-grid">
+<div class="sb-tl-step">
+<div class="sb-tl-day">День 1</div>
+<div class="sb-tl-connector"></div>
+<h3>Консультація</h3>
+<p>Обговорюємо обсяги, асортимент, вимоги до пакування. Підписуємо договір. Налаштовуємо інтеграцію з вашою CRM &mdash; за 2-4 години.</p>
+</div>
+<div class="sb-tl-step">
+<div class="sb-tl-day">День 2</div>
+<div class="sb-tl-connector"></div>
+<h3>Товар на складі</h3>
+<p>Привозите товар. Ми штрихкодуємо кожну одиницю, розміщуємо в адресному зберіганні WMS. Перевіряємо залишки разом.</p>
+</div>
+<div class="sb-tl-step sb-tl-step-last">
+<div class="sb-tl-day">День 3</div>
+<div class="sb-tl-connector"></div>
+<h3>Перша відправка</h3>
+<p>Перше замовлення приходить через API, збирається за 30 секунд, пакується і їде на Нову Пошту. Ви працюєте &mdash; ми відправляємо.</p>
+</div>
+</div>
+</div></section>
+
+<!-- DYNAMIC PRICING — 3 cards -->
+<section class="sb-pricing"><div class="ctr">
+<div class="badge">ТАРИФИ 2026</div>
+<h2 class="sec-h2">Тарифи для малого бізнесу</h2>
+<div class="sb-pr-cards">
+<div class="sb-pr-card">
+<div class="sb-pr-tier">Старт</div>
+<div class="sb-pr-range">5&ndash;30 замовлень/день</div>
+<div class="sb-pr-price">26 <small>грн/відправка</small></div>
+<ul>
+<li>Збір + пакування + ТТН</li>
+<li>Пакувальні матеріали включено</li>
+<li>WMS-кабінет 24/7</li>
+<li>Мін. платіж: 5 000 грн/міс</li>
+</ul>
+</div>
+<div class="sb-pr-card sb-pr-popular">
+<div class="sb-pr-badge-pop">ПОПУЛЯРНИЙ</div>
+<div class="sb-pr-tier">Зростання</div>
+<div class="sb-pr-range">30&ndash;100 замовлень/день</div>
+<div class="sb-pr-price">22 <small>грн/відправка</small></div>
+<ul>
+<li>Все з тарифу &laquo;Старт&raquo;</li>
+<li>Пріоритетний менеджер</li>
+<li>Брендоване пакування</li>
+<li>Звіти + аналітика</li>
+</ul>
+</div>
+<div class="sb-pr-card">
+<div class="sb-pr-tier">Масштаб</div>
+<div class="sb-pr-range">100+ замовлень/день</div>
+<div class="sb-pr-price">від 18 <small>грн/відправка</small></div>
+<ul>
+<li>Все з тарифу &laquo;Зростання&raquo;</li>
+<li>Індивідуальні тарифи НП</li>
+<li>Виділена лінія пакування</li>
+<li>SLA з гарантіями</li>
+</ul>
+</div>
+</div>
+<p class="sb-pr-note">Зберігання &mdash; від 650 грн/м&sup3;/міс. Прийом товару &mdash; від 3 грн/шт. <a href="/ua/kalkulyator-fulfillment/" style="color:var(--red);font-weight:600">Розрахувати точну ціну &rarr;</a></p>
+</div></section>
+
+<!-- FAQ -->
+<section class="sb-faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Часті запитання малого бізнесу</h2>
+<div class="sb-faq-list">
+<div class="sb-faq-item"><button class="sb-faq-q">Який мінімальний обсяг замовлень для фулфілменту?</button><div class="sb-faq-a"><p>Ми працюємо від 5 замовлень на день. Мінімальний місячний платіж &mdash; 5 000 грн, який покриває базові послуги зберігання, збору та відправки. Навіть для 5-10 замовлень на день це вигідніше, ніж утримувати власний склад.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Скільки коштує фулфілмент для 10 замовлень на день?</button><div class="sb-faq-a"><p>При 10 замовленнях на день (діапазон 0-49) &mdash; від 26 грн за відправлення. За місяць (200 замовлень) це 5 200 грн. Для порівняння: навіть мінімальний власний склад обійдеться у 25 000-30 000 грн. Різниця &mdash; 5 разів.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Чи потрібен довгостроковий контракт?</button><div class="sb-faq-a"><p>Ні. Ми працюємо без прив'язки до довгострокових контрактів. Договір можна розірвати з попередженням за 14 днів. Ви не ризикуєте &mdash; спробуйте і оціните сервіс.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Як працює склад під час блекаутів?</button><div class="sb-faq-a"><p>На обох складах (Щасливе і Білогородка) встановлено 3 промислових дизельних генератори. Підключено Starlink і 2 оптоволоконних провайдери. З лютого 2022 року &mdash; жодного дня простою. Ваші замовлення відправляються кожного дня.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">З якими CRM ви інтегруєтесь?</button><div class="sb-faq-a"><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; інтеграція через API за 2-4 години. Якщо ваша платформа має API &mdash; підключимо. Навіть якщо ви працюєте через Instagram або Telegram &mdash; є рішення.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Як швидко можна підключитися?</button><div class="sb-faq-a"><p>1-3 дні. День 1: безкоштовна консультація, договір, налаштування інтеграції. День 2: привозите товар, ми приймаємо і штрихкодуємо. День 3: перше реальне замовлення зібране і на Новій Пошті. Більшість клієнтів починають відправляти на 2-й день.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Чи можу я брендувати пакування?</button><div class="sb-faq-a"><p>Так. Ми працюємо з брендованими коробками, крафт-пакетами, тішью, наклейками, листівками-подяками. Привозите свої матеріали або замовте друк через нас. Ваш покупець отримає посилку з вашим брендом &mdash; без логотипів MTP.</p></div></div>
+<div class="sb-faq-item"><button class="sb-faq-q">Що робити з поверненнями?</button><div class="sb-faq-a"><p>Повернення через Нову Пошту ми приймаємо, перевіряємо стан товару, фото-фіксуємо і повертаємо на полицю або відкладаємо для списання. Все через WMS. Зберігання повернень &mdash; 17 днів без додаткової оплати.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="sb-article">
+<div class="ctr">
+<div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
+<h2>Фулфілмент для малого бізнесу в Україні: повний путівник</h2>
+<div class="sb-article-body">
+
+<h3>Чому малий бізнес переходить на фулфілмент</h3>
+<p>Малий бізнес в Україні стикається з унікальними викликами: обмежений бюджет, відсутність окремого складу, сезонні коливання попиту і постійна невизначеність через енергетичну ситуацію. Фулфілмент &mdash; це не розкіш для великих компаній, а інструмент виживання і зростання для підприємців, які відправляють від 5 замовлень на день.</p>
+<p>Типова ситуація: ФОП продає через Instagram або Prom.ua, пакує замовлення на кухні або в гаражі, щодня їздить на Нову Пошту. При 10-20 замовленнях це ще працює. При 30-50 &mdash; стає стіною, яка не дає рости. Замість того, щоб запускати нові товари або вкладати в рекламу, підприємець витрачає 4-5 годин на день на логістику.</p>
+
+<h3>Скільки насправді коштує &laquo;свій склад&raquo;</h3>
+<p>Коли підприємці кажуть &laquo;навіщо мені фулфілмент, я сам пакую&raquo; &mdash; вони рідко рахують реальну вартість. Оренда навіть маленького приміщення під Києвом &mdash; від 8 000 грн. Зарплата одного пакувальника &mdash; від 12 000 грн. Комунальні, генератор (обов'язково з 2022), пакувальні матеріали, WMS-система &mdash; ще 7 000-10 000 грн. Разом: 27 000-30 000 грн на місяць мінімум. І це без урахування вашого часу, який ви могли б витратити на продажі.</p>
+<p>Фулфілмент починається від 5 000 грн на місяць. При 50 замовленнях на день різниця між власним складом і фулфілментом &mdash; більше ніж двократна. Ці гроші &mdash; ваш рекламний бюджет, закупівля нових товарів, розвиток бренду.</p>
+
+<h3>Що входить у послугу фулфілменту для малого бізнесу</h3>
+<p>Повний цикл: прийом товару на склад (від 3 грн/шт), адресне зберігання у WMS (від 650 грн/м&sup3;/міс), автоматичний збір замовлення при надходженні через API, пакування за вашими стандартами (брендовані матеріали, тішью, наклейки), друк ТТН та відправка через Нову Пошту. 4 забори перевізником на день &mdash; о 10:00, 12:00, 15:00 та 17:00. Покупець у Києві отримує посилку наступного дня, по Україні &mdash; за 1-2 дні.</p>
+
+<h3>Як обрати фулфілмент-оператора: чеклист</h3>
+<p>Перше: прозорі ціни. Якщо оператор ховає тарифи за формою &laquo;залиште заявку&raquo; &mdash; будуть приховані доплати. Друге: генератори та резервний інтернет. З 2022 року це не опція, а необхідність. Третє: конкретна швидкість збору &mdash; запитайте цифру (у MTP Group &mdash; 30 секунд на замовлення). Четверте: кількість заборів Нової Пошти на день. П'яте: наявність мінімум двох складів для диверсифікації ризиків.</p>
+
+<h3>MTP Group: 10+ років досвіду і 150+ клієнтів</h3>
+<p>MTP Group &mdash; фулфілмент-оператор з двома складами під Києвом: Щасливе (2 800 м&sup2;) і Білогородка (1 100 м&sup2;). Потужність &mdash; до 6 000 відправлень на день. Працюємо з <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red)">інтернет-магазинами</a>, ФОП, брендами косметики, одягу, аксесуарів, подарунків. Інтегруємося з KeyCRM, SalesDrive, Horoshop, WooCommerce, Shopify, Prom.ua, Rozetka. Підключення &mdash; 1-3 дні. Без довгострокових контрактів.</p>
+<p style="margin-top:16px">Дивіться також: <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red);font-weight:600">фулфілмент для інтернет-магазинів</a> &middot; <a href="/ua/kalkulyator-fulfillment/" style="color:var(--red)">калькулятор вартості</a> &middot; <a href="/ua/vidhuky/" style="color:var(--red)">відгуки клієнтів</a></p>
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
+
+/* ===== HERO — SPLIT-SCREEN ===== */
+.sb-hero{position:relative;min-height:100vh;display:flex;flex-direction:column}
+.sb-hero-split{display:grid;grid-template-columns:1fr 1fr;min-height:60vh}
+.sb-hero-pain{background:var(--black);display:flex;align-items:center;justify-content:flex-end;padding:120px 40px 60px}
+.sb-hero-pain-inner{max-width:380px}
+.sb-pain-label{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:24px}
+.sb-pain-line{font-family:var(--fd);font-size:clamp(22px,2.8vw,34px);color:rgba(255,255,255,.85);line-height:1.3;margin-bottom:8px}
+.sb-pain-dim{font-size:clamp(16px,1.8vw,22px);color:rgba(255,255,255,.3);font-family:var(--fb)}
+.sb-hero-solution{background:#1a1a1a;display:flex;align-items:center;padding:120px 40px 60px;border-left:4px solid var(--red)}
+.sb-hero-solution-inner{max-width:380px}
+.sb-solution-label{font-size:11px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:24px;font-weight:600}
+.sb-solution-line{font-family:var(--fd);font-size:clamp(22px,2.8vw,34px);color:rgba(255,255,255,.85);line-height:1.3;margin-bottom:8px}
+.sb-solution-bright{font-size:clamp(16px,1.8vw,22px);color:var(--red);font-family:var(--fb);font-weight:600}
+.sb-hero-center{background:var(--black);padding:60px 24px 80px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.sb-hero-center .badge{margin-bottom:16px}
+.sb-hero-center h1{font-family:var(--fd);font-size:clamp(32px,5vw,64px);font-weight:400;color:var(--white);line-height:.95;margin-bottom:20px}
+.sb-hero-price{font-family:var(--fd);font-size:clamp(36px,5vw,60px);color:var(--red);margin-bottom:32px}
+.sb-hero-price small{font-size:18px;font-family:var(--fb);color:rgba(255,255,255,.4)}
+.sb-hero-center .hero-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
+.sb-hero-center .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.sb-hero-center .hero-form input::placeholder{color:rgba(255,255,255,.25)}
+.sb-hero-center .hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.sb-hero-center .hero-form button{padding:16px 28px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.sb-hero-center .hero-form button:hover{background:#c42b22}
+.sb-hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+
+/* ===== THRESHOLD SCALE ===== */
+.sb-threshold{padding:100px 0;background:var(--gray)}
+.sb-scale{max-width:900px;margin:0 auto}
+.sb-scale-bar{position:relative;height:8px;background:#ddd;border-radius:4px;margin-bottom:60px}
+.sb-scale-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#ddd 0%,#bbb 30%,var(--red) 65%,#8b0000 100%)}
+.sb-scale-mark{position:absolute;top:50%;transform:translateY(-50%)}
+.sb-mark-dot{display:block;width:16px;height:16px;border-radius:50%;background:#bbb;border:3px solid #fff;box-shadow:0 0 0 2px #ddd}
+.sb-mark-warn{background:#e6a829}
+.sb-mark-crit{background:var(--red)}
+.sb-scale-labels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.sb-scale-item{text-align:center}
+.sb-scale-num{font-family:var(--fd);font-size:clamp(32px,4vw,48px);color:var(--black);line-height:1}
+.sb-scale-txt{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.sb-scale-desc{font-size:14px;color:var(--muted);line-height:1.6}
+.sb-scale-pos3 .sb-scale-num{color:var(--red)}
+
+/* ===== UNIT ECONOMICS TABLE ===== */
+.sb-economics{padding:100px 0;background:#0a0a0a;color:#fff}
+.sb-econ-sub{text-align:center;font-size:16px;color:rgba(255,255,255,.5);margin-top:-36px;margin-bottom:48px}
+.sb-econ-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sb-econ-table{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse}
+.sb-econ-table th{padding:14px 20px;background:var(--red);color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.5px;text-align:left;font-weight:600}
+.sb-econ-table td{padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px;color:rgba(255,255,255,.7)}
+.sb-econ-table tbody tr:hover td{background:rgba(255,255,255,.02)}
+.sb-econ-vol td{background:rgba(255,255,255,.04)!important;border-bottom:none;padding-top:24px}
+.sb-econ-vol td strong{color:#fff;font-size:16px}
+.sb-econ-total td{font-weight:700;font-size:16px;color:#fff;border-top:2px solid rgba(255,255,255,.15);border-bottom:2px solid rgba(255,255,255,.08);padding:16px 20px}
+.sb-econ-save{color:var(--red)!important;font-size:18px!important}
+.sb-econ-note{text-align:center;font-size:14px;color:rgba(255,255,255,.4);margin-top:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.sb-econ-note a{text-decoration:underline}
+
+/* ===== 5 PAIN → 5 SOLUTIONS ===== */
+.sb-pains{padding:100px 0}
+.sb-pains-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sb-pain-card{background:var(--gray);border-radius:12px;padding:28px 20px;text-align:center;transition:border-color .3s;border:1px solid transparent}
+.sb-pain-card:hover{border-color:var(--red)}
+.sb-pc-pain{min-height:100px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.sb-pc-icon{font-size:28px;line-height:1}
+.sb-pc-pain-text{font-size:13px;color:var(--muted);line-height:1.5;font-weight:500}
+.sb-pc-arrow{font-size:24px;color:var(--red);margin:12px 0}
+.sb-pc-fix{font-size:13px;color:#333;line-height:1.6}
+.sb-pc-fix strong{color:var(--black);display:block;margin-bottom:4px;font-size:14px}
+
+/* ===== VIDEO (handled inline) ===== */
+
+/* ===== GROWTH TIMELINE ===== */
+.sb-timeline{padding:100px 0;background:var(--gray)}
+.sb-tl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:900px;margin:0 auto}
+.sb-tl-step{position:relative;padding:0 32px;text-align:center}
+.sb-tl-day{display:inline-block;padding:10px 24px;background:var(--black);color:#fff;font-family:var(--fd);font-size:20px;border-radius:4px;margin-bottom:20px}
+.sb-tl-connector{position:absolute;top:24px;right:-1px;width:calc(50% + 32px);height:2px;background:var(--red)}
+.sb-tl-step-last .sb-tl-connector{display:none}
+.sb-tl-step:first-child .sb-tl-connector{left:50%;width:calc(50% + 32px)}
+.sb-tl-step:nth-child(2) .sb-tl-connector{left:0;width:100%;right:auto}
+.sb-tl-step h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.sb-tl-step p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* ===== PRICING CARDS ===== */
+.sb-pricing{padding:100px 0;background:var(--white)}
+.sb-pr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:920px;margin:0 auto 32px}
+.sb-pr-card{padding:40px 28px;border:1px solid #e0e0e0;border-radius:12px;text-align:center;position:relative;transition:border-color .3s}
+.sb-pr-card:hover{border-color:var(--red)}
+.sb-pr-popular{border:2px solid var(--red);background:var(--black);color:#fff}
+.sb-pr-badge-pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;padding:4px 16px;font-size:11px;font-weight:700;letter-spacing:1px;border-radius:2px;text-transform:uppercase}
+.sb-pr-tier{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:4px}
+.sb-pr-popular .sb-pr-tier{color:rgba(255,255,255,.5)}
+.sb-pr-range{font-size:14px;color:var(--muted);margin-bottom:16px}
+.sb-pr-popular .sb-pr-range{color:rgba(255,255,255,.4)}
+.sb-pr-price{font-family:var(--fd);font-size:clamp(40px,5vw,56px);line-height:1;margin-bottom:24px}
+.sb-pr-popular .sb-pr-price{color:var(--red)}
+.sb-pr-price small{font-size:15px;font-family:var(--fb);opacity:.5;display:block;margin-top:4px}
+.sb-pr-card ul{list-style:none;padding:0;text-align:left}
+.sb-pr-card ul li{font-size:14px;padding:10px 0;border-top:1px solid #eee;color:var(--muted)}
+.sb-pr-popular ul li{border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+.sb-pr-note{text-align:center;font-size:15px;color:var(--muted);max-width:600px;margin:0 auto}
+
+/* ===== FAQ ===== */
+.sb-faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.sb-faq-list{max-width:700px;margin:0 auto}
+.sb-faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.sb-faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.sb-faq-item.open .sb-faq-q::after{transform:rotate(45deg)}
+.sb-faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.sb-faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* ===== SEO ARTICLE ===== */
+.sb-article{background:#fff;padding:80px 8vw}
+.sb-article h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.sb-article-body{max-width:800px}
+.sb-article-body h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
+.sb-article-body h3:first-child{margin-top:0}
+.sb-article-body p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+/* ===== YOUTUBE FACADE ===== */
+.yt-facade{position:relative;background:#000;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:16/9}
+.yt-facade img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s}
+.yt-facade:hover img{opacity:.5}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;opacity:.9;transition:opacity .3s}
+.yt-facade:hover .yt-play{opacity:1}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+.sb-hero-split{grid-template-columns:1fr;min-height:auto}
+.sb-hero-pain{padding:100px 24px 40px;justify-content:flex-start}
+.sb-hero-solution{padding:40px 24px;border-left:none;border-top:4px solid var(--red)}
+.sb-hero-center .hero-form{flex-direction:column}
+.sb-hero-center .hero-form button{width:100%}
+.sb-scale-labels{grid-template-columns:1fr;gap:32px}
+.sb-econ-table{font-size:13px}
+.sb-econ-table th,.sb-econ-table td{padding:8px 12px}
+.sb-pains-grid{grid-template-columns:1fr}
+.sb-tl-grid{grid-template-columns:1fr;gap:32px}
+.sb-tl-connector{display:none!important}
+.sb-pr-cards{grid-template-columns:1fr}
+}
+
+@media(min-width:769px) and (max-width:1024px){
+.sb-pains-grid{grid-template-columns:repeat(3,1fr)}
+.sb-pains-grid .sb-pain-card:nth-child(4),.sb-pains-grid .sb-pain-card:nth-child(5){grid-column:span 1}
+}
+
+/* force visible (no FOUC) */
+.sb-pain-card,.sb-tl-step,.sb-pr-card,.sb-scale-item{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+/* FAQ accordion */
+document.querySelectorAll('.sb-faq-q').forEach(function(btn){
+btn.addEventListener('click',function(){
+var item=btn.parentElement;
+var a=item.querySelector('.sb-faq-a');
+var open=item.classList.contains('open');
+document.querySelectorAll('.sb-faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.sb-faq-a').style.maxHeight=null;});
+if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+});
+});
+/* YouTube facade */
+document.querySelectorAll('.yt-facade').forEach(function(el){
+el.addEventListener('click',function(){
+var id=el.getAttribute('data-id');
+var iframe=document.createElement('iframe');
+iframe.setAttribute('src','https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0');
+iframe.setAttribute('frameborder','0');
+iframe.setAttribute('allowfullscreen','');
+iframe.setAttribute('allow','accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture');
+iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:none';
+el.style.position='relative';
+el.innerHTML='';
+el.appendChild(iframe);
+});
+});
+});
+</script>

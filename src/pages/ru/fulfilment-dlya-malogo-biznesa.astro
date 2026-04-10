@@ -1,0 +1,521 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент для малого бизнеса","description":"Аутсорсинг логистики для малого бизнеса: хранение от 650 грн/м3, отправка от 18 грн. Вход на рынок Украины без собственного склада.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправление (200+ заказов/день)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":3,"name":"Фулфилмент для малого бизнеса","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какой минимальный объем заказов для старта?","acceptedAnswer":{"@type":"Answer","text":"Мы работаем даже с 5 заказами в день. Для небольших объемов действует минимальный платеж 5 000 грн/мес, который покрывает базовые услуги хранения и отправки."}},{"@type":"Question","name":"Можно ли начать работу без личного визита в Украину?","acceptedAnswer":{"@type":"Answer","text":"Да. Договор подписывается удаленно, товар можно отправить транспортной компанией на наш склад. Интеграция с CRM проходит онлайн за 2-4 часа. Личный кабинет WMS доступен из любой точки мира."}},{"@type":"Question","name":"Сколько стоит фулфилмент для малого бизнеса?","acceptedAnswer":{"@type":"Answer","text":"Отправка — от 18 грн за заказ при 200+ отправлений/день. Хранение — от 650 грн за м3/мес. Прием товара — от 3 грн/ед. Минимальный платеж — 5 000 грн/мес."}},{"@type":"Question","name":"Какие CRM и платформы поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka. Любая платформа с API — интеграция за 2-4 часа."}},{"@type":"Question","name":"Что будет при отключении электричества?","acceptedAnswer":{"@type":"Answer","text":"На обоих складах установлены 3 генератора, подключен Starlink и 2 оптоволоконных провайдера. С 2022 года ни одного дня простоя из-за отключений."}},{"@type":"Question","name":"Как контролировать остатки и заказы удаленно?","acceptedAnswer":{"@type":"Answer","text":"Через личный кабинет WMS-системы: остатки в реальном времени, статусы каждого заказа, отчеты по отправлениям и возвратам. Доступ 24/7 из любой страны."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Фулфилмент для малого бизнеса от 18 грн | MTP Group"
+  description="Фулфилмент для малого бизнеса в Украине: хранение, упаковка, отправка от 18 грн. 10 лет опыта, 150+ клиентов, 3 генератора. Вход на рынок без склада."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+</Fragment>
+
+<!-- HERO: Split-screen comparison -->
+<section class="hero-split">
+<div class="hero-split-bg"></div>
+<div class="hero-split-inner">
+  <div class="hero-split-cards">
+    <div class="hero-card hero-card--old">
+      <div class="hero-card-label">Сейчас</div>
+      <ul class="hero-card-list">
+        <li>Ваш гараж</li>
+        <li>Часы на упаковку</li>
+        <li>Таблица Excel</li>
+      </ul>
+    </div>
+    <div class="hero-card hero-card--new">
+      <div class="hero-card-label">С MTP</div>
+      <ul class="hero-card-list">
+        <li>Склад MTP</li>
+        <li>30 секунд на заказ</li>
+        <li>WMS-система</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero-text">
+    <div class="badge">ФУЛФИЛМЕНТ ДЛЯ МАЛОГО БИЗНЕСА</div>
+    <h1>Передайте логистику<br>профессионалам</h1>
+    <p class="hero-sub">Вы продаете &mdash; мы храним, упаковываем, отправляем. Вход на рынок Украины без собственного склада. От&nbsp;18&nbsp;грн за&nbsp;отправление.</p>
+    <form class="hero-form" id="heroForm">
+      <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
+      <button type="submit">Получить расчет &#8594;</button>
+    </form>
+    <div class="hero-note">Бесплатная консультация &#183; Расчет за 15 минут</div>
+  </div>
+</div>
+</section>
+
+<!-- КОМУ ПОДХОДИТ ФУЛФИЛМЕНТ -->
+<section class="checklist-sec"><div class="ctr">
+<div class="badge badge-dark">ПРОВЕРЬТЕ СЕБЯ</div>
+<h2 class="sec-h2">Кому подходит фулфилмент</h2>
+<p class="sec-sub">Если совпали хотя бы 3 пункта &mdash; аутсорсинг логистики сэкономит вам деньги и время</p>
+<div class="check-grid">
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Отправляете 5+ заказов в день</h3>
+    <p>Упаковка и поездки на почту отнимают минимум 3 часа. Эти часы можно потратить на маркетинг и рост продаж.</p>
+  </div>
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Планируете масштабирование</h3>
+    <p>Когда заказов станет 50, 100, 500 &mdash; вам не придется арендовать склад, нанимать людей, покупать оборудование.</p>
+  </div>
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Заходите на рынок Украины</h3>
+    <p>Вы из Казахстана, Молдовы, Грузии или Армении? Получите склад в Киеве без открытия офиса и без личного присутствия.</p>
+  </div>
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Товар хранится дома или в гараже</h3>
+    <p>Когда коробки уже не помещаются, а ошибки при сборке учащаются &mdash; пора переходить на профессиональный склад с WMS.</p>
+  </div>
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Путаница в остатках</h3>
+    <p>Excel не справляется. Клиенты заказывают товар, которого нет. WMS-система решает это за день.</p>
+  </div>
+  <div class="check-card">
+    <span class="check-icon">&#10003;</span>
+    <h3>Нет ресурсов на логистику</h3>
+    <p>Вы &mdash; один или маленькая команда. Упаковка, этикетки, возвраты &mdash; всё это забирает силы, которые нужны на продукт.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- ЭКОНОМИКА АУТСОРСА -->
+<section class="economy-sec"><div class="ctr">
+<div class="badge">ЭКОНОМИКА</div>
+<h2 class="sec-h2" style="color:#fff">Собственный склад vs. MTP Fulfillment</h2>
+<p class="sec-sub" style="color:rgba(255,255,255,.5)">Сравнение затрат для бизнеса с 50 заказами в день</p>
+<div class="econ-table">
+  <div class="econ-row econ-header"><span>Статья расходов</span><span>Свой склад</span><span>MTP Group</span></div>
+  <div class="econ-row"><span>Аренда помещения</span><span>15 000 грн/мес</span><span class="econ-inc">Включено</span></div>
+  <div class="econ-row"><span>Зарплата 2 упаковщикам</span><span>32 000 грн/мес</span><span class="econ-inc">Включено</span></div>
+  <div class="econ-row"><span>Коммунальные</span><span>4 000 грн/мес</span><span class="econ-inc">Включено</span></div>
+  <div class="econ-row"><span>Упаковочные материалы</span><span>5 000 грн/мес</span><span>от 2 грн/ед</span></div>
+  <div class="econ-row"><span>WMS-система</span><span>3 000 грн/мес</span><span class="econ-inc">Включено</span></div>
+  <div class="econ-row"><span>Генераторы / Starlink</span><span>~120 000 грн (разово)</span><span class="econ-inc">Включено</span></div>
+  <div class="econ-row econ-total"><span>Итого в месяц</span><span>~59 000+ грн</span><span>~22 000 грн</span></div>
+</div>
+<p class="econ-note">Экономия &mdash; от 37 000 грн/мес, которые можно направить на рекламу и рост</p>
+</div></section>
+
+<!-- КАК ЭТО РАБОТАЕТ -->
+<section class="process-sec"><div class="ctr">
+<div class="badge badge-dark">ПРОЦЕСС</div>
+<h2 class="sec-h2">Как это работает</h2>
+<div class="process-grid">
+  <div class="process-step">
+    <div class="process-num">01</div>
+    <div class="process-icon">&#128230;</div>
+    <h3>Отправляете товар</h3>
+    <p>Вы отправляете товар на наш склад в Киевской области. Принимаем от транспортных компаний, курьерских служб или лично. Приемка &mdash; от 3 грн/единица.</p>
+  </div>
+  <div class="process-step">
+    <div class="process-num">02</div>
+    <div class="process-icon">&#128187;</div>
+    <h3>Подключаем CRM</h3>
+    <p>Интегрируем ваш магазин с WMS-системой за 2-4 часа. KeyCRM, SalesDrive, Shopify, WooCommerce, Prom.ua &mdash; любая платформа с API.</p>
+  </div>
+  <div class="process-step">
+    <div class="process-num">03</div>
+    <div class="process-icon">&#128666;</div>
+    <h3>Собираем и отправляем</h3>
+    <p>Заказ поступает автоматически. Склад комплектует, упаковывает и передает Новой Почте за 30 секунд. Фото-фиксация каждого отправления.</p>
+  </div>
+  <div class="process-step">
+    <div class="process-num">04</div>
+    <div class="process-icon">&#128200;</div>
+    <h3>Вы контролируете</h3>
+    <p>Остатки, статусы, возвраты &mdash; всё в личном кабинете WMS. Доступ 24/7 из любой точки мира. Вы занимаетесь бизнесом, а не коробками.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- VIDEO -->
+<section style="padding:80px 0;background:#0a0a0a">
+<div class="ctr" style="max-width:900px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+<div>
+<div class="badge">ВИДЕО</div>
+<h2 style="font-family:var(--fd);font-size:clamp(24px,3vw,36px);font-weight:400;color:#fff;margin-bottom:16px">Посмотрите, как работает склад</h2>
+<p style="color:rgba(255,255,255,.6);line-height:1.7">От получения заказа до передачи Новой Почте &mdash; весь процесс за 60 секунд.</p>
+</div>
+<div class="yt-facade" data-id="pitb1uHWRuo"><img src="https://i.ytimg.com/vi/pitb1uHWRuo/hqdefault.jpg" alt="Как работает склад MTP Group Fulfillment" width="480" height="360" loading="lazy"><button class="yt-play" aria-label="Смотреть: Как работает склад MTP Group Fulfillment"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button></div>
+</div>
+</div>
+</section>
+
+<!-- ГАРАНТИИ ДЛЯ МАЛОГО БИЗНЕСА -->
+<section class="trust-sec"><div class="ctr">
+<div class="badge badge-dark">НАДЕЖНОСТЬ</div>
+<h2 class="sec-h2">Гарантии для малого бизнеса</h2>
+<p class="sec-sub">Вы доверяете нам свой товар. Мы относимся к этому серьезно.</p>
+<div class="trust-grid">
+  <div class="trust-card">
+    <div class="trust-val">10 лет</div>
+    <h3>На рынке с 2014 года</h3>
+    <p>Прошли кризисы, пандемию, полномасштабное вторжение. Ни один клиент не потерял товар.</p>
+  </div>
+  <div class="trust-card">
+    <div class="trust-val">150+</div>
+    <h3>Активных клиентов</h3>
+    <p>От стартапов с 5 заказами/день до крупных магазинов с 500+. Индивидуальный подход к каждому.</p>
+  </div>
+  <div class="trust-card">
+    <div class="trust-val">3</div>
+    <h3>Генератора + Starlink</h3>
+    <p>Бесперебойная работа даже во время блэкаутов. 2 оптоволоконных провайдера. Ноль дней простоя с 2022 года.</p>
+  </div>
+  <div class="trust-card">
+    <div class="trust-val">2</div>
+    <h3>Склада в Киевской области</h3>
+    <p>Счастливое (Бориспольский район) и Белогородка. Общая площадь более 2 200 м&sup2;.</p>
+  </div>
+  <div class="trust-card">
+    <div class="trust-val">99.5%</div>
+    <h3>Точность сборки</h3>
+    <p>Сканирование штрих-кодов на каждом этапе. Фото-фиксация каждой посылки. Минимум рекламаций.</p>
+  </div>
+  <div class="trust-card">
+    <div class="trust-val">24/7</div>
+    <h3>Доступ к WMS</h3>
+    <p>Контролируйте остатки, статусы заказов и возвраты из любой страны мира. Прозрачность &mdash; наш принцип.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- ТАРИФЫ -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">ТАРИФЫ 2026</div>
+<h2 class="sec-h2">Стоимость фулфилмента</h2>
+<div class="price-cards">
+  <div class="price-card">
+    <div class="price-card-header">Старт</div>
+    <div class="price-card-vol">до 49 заказов/день</div>
+    <div class="price-card-price">от 26 <span>грн/заказ</span></div>
+    <ul class="price-card-list">
+      <li>Хранение от 650 грн/м&sup3;</li>
+      <li>Прием товара от 3 грн/ед</li>
+      <li>WMS-кабинет включен</li>
+      <li>Интеграция с CRM</li>
+      <li>Мин. платеж: 5 000 грн/мес</li>
+    </ul>
+  </div>
+  <div class="price-card price-card--pop">
+    <div class="price-card-badge">Популярный</div>
+    <div class="price-card-header">Рост</div>
+    <div class="price-card-vol">50-199 заказов/день</div>
+    <div class="price-card-price">от 20 <span>грн/заказ</span></div>
+    <ul class="price-card-list">
+      <li>Хранение от 650 грн/м&sup3;</li>
+      <li>Прием товара от 3 грн/ед</li>
+      <li>WMS-кабинет включен</li>
+      <li>Интеграция с CRM</li>
+      <li>Персональный менеджер</li>
+    </ul>
+  </div>
+  <div class="price-card">
+    <div class="price-card-header">Масштаб</div>
+    <div class="price-card-vol">200+ заказов/день</div>
+    <div class="price-card-price">от 18 <span>грн/заказ</span></div>
+    <ul class="price-card-list">
+      <li>Хранение от 650 грн/м&sup3;</li>
+      <li>Прием товара от 3 грн/ед</li>
+      <li>WMS-кабинет включен</li>
+      <li>Интеграция с CRM</li>
+      <li>Приоритетный SLA</li>
+    </ul>
+  </div>
+</div>
+<p class="price-note">Цена зависит от объема и специфики товара. Точный расчет &mdash; бесплатно за 15 минут.</p>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Частые вопросы</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">Какой минимальный объем заказов для старта?</button><div class="faq-a"><p>Мы работаем даже с 5 заказами в день. Для небольших объемов действует минимальный месячный платеж 5 000 грн, который покрывает базовые услуги хранения и отправки. Чем выше объем &mdash; тем ниже стоимость единицы.</p></div></div>
+<div class="faq-item"><button class="faq-q">Можно ли начать работу без личного визита в Украину?</button><div class="faq-a"><p>Да. Договор подписывается удаленно, товар можно отправить транспортной компанией прямо на наш склад. Интеграция с CRM проходит онлайн за 2-4 часа. Личный кабинет WMS доступен из любой точки мира &mdash; Алматы, Кишинев, Тбилиси, Ереван.</p></div></div>
+<div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент для малого бизнеса?</button><div class="faq-a"><p>Отправка &mdash; от 18 грн за заказ при 200+ отправлений/день. Хранение &mdash; от 650 грн за м&sup3; в месяц. Прием товара &mdash; от 3 грн за единицу. Минимальный платеж &mdash; 5 000 грн/мес. Для сравнения: собственный мини-склад с одним упаковщиком обойдется минимум в 40 000 грн/мес.</p></div></div>
+<div class="faq-item"><button class="faq-q">С какими CRM и платформами вы интегрируетесь?</button><div class="faq-a"><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka. Любая платформа с API &mdash; интеграция за 2-4 часа. Заказы поступают автоматически, без ручного ввода.</p></div></div>
+<div class="faq-item"><button class="faq-q">Что будет при отключении электричества?</button><div class="faq-a"><p>На обоих складах установлены 3 генератора, подключен Starlink и 2 оптоволоконных провайдера. С 2022 года &mdash; ни одного дня простоя из-за отключений. Заказы отправляются по графику независимо от ситуации с электросетью.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как контролировать остатки и заказы удаленно?</button><div class="faq-a"><p>Через личный кабинет WMS-системы. Остатки в реальном времени, статусы каждого заказа, отчеты по отправлениям и возвратам. Доступ 24/7 из любой страны мира. Мобильная версия работает на любом устройстве.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
+<h2>Фулфилмент для малого бизнеса: зачем, сколько стоит и как начать</h2>
+<div class="article-content">
+<h3>Что такое фулфилмент и зачем он малому бизнесу?</h3>
+<p>Фулфилмент &mdash; это полный аутсорсинг складской логистики. Вместо того чтобы арендовать помещение, нанимать упаковщиков и каждый день ездить на почту, вы передаете всю операционную цепочку специализированному оператору. Оператор принимает ваш товар на профессиональный склад, хранит его в организованной системе с адресным хранением, а когда поступает заказ &mdash; автоматически комплектует, упаковывает и передает перевозчику.</p>
+<p>Для малого бизнеса фулфилмент решает главную проблему &mdash; нехватку ресурсов. Когда в команде 1-3 человека, каждый час на счету. Три часа в день на упаковку &mdash; это 90 часов в месяц, которые можно было бы потратить на разработку продукта, маркетинг или переговоры с поставщиками. Фулфилмент возвращает эти часы владельцу бизнеса.</p>
+
+<h3>Когда пора переходить на аутсорсинг логистики?</h3>
+<p>Первый сигнал &mdash; отправка более 5 заказов в день с тенденцией к росту. Если вы уже отправляете 30 и более &mdash; собственная логистика становится тормозом роста. Типичные симптомы: пропущенные заборы перевозчика, ошибки при комплектации, накопление необработанных возвратов, товар хранится в непригодных условиях.</p>
+<p>Для предпринимателей из стран СНГ, которые выходят на украинский рынок, фулфилмент &mdash; единственный разумный вариант. Открывать собственный склад в другой стране &mdash; дорого и рискованно. Фулфилмент-оператор дает вам готовую инфраструктуру: склад, персонал, WMS-систему, интеграцию с местными маркетплейсами и службами доставки.</p>
+
+<h3>Сколько стоит фулфилмент для малого бизнеса в 2026 году?</h3>
+<p>Стоимость фулфилмента складывается из трех компонентов. Отправка &mdash; от 18 грн за заказ при 200+ отправлений в день (до 26 грн при объеме менее 50 заказов/день). Хранение &mdash; от 650 грн за кубический метр в месяц. Прием товара &mdash; от 3 грн за единицу. Минимальный месячный платеж составляет 5 000 грн.</p>
+<p>Для сравнения: содержание собственного мини-склада (аренда + зарплаты + коммунальные + упаковочные материалы + WMS-система) обходится минимум в 55 000-65 000 грн в месяц. Фулфилмент при тех же объемах &mdash; от 15 000 до 25 000 грн. Разница &mdash; это бюджет на рекламу и масштабирование.</p>
+
+<h3>Как выбрать надежного фулфилмент-оператора?</h3>
+<p>Обращайте внимание на опыт (минимум 5 лет), наличие собственных складов (не субаренда), интеграцию с вашей CRM, статус партнера Новой Почты. MTP Group работает с 2014 года, обслуживает 150+ активных клиентов, обрабатывает до 6 000 отправлений в день на двух складах общей площадью более 2 200 м&sup2;. На складах установлены 3 генератора и Starlink &mdash; ни одного дня простоя с 2022 года.</p>
+
+<h3>Как начать работу с MTP Group?</h3>
+<p>Подключение занимает 1-3 дня и не требует вашего личного присутствия. День первый &mdash; бесплатная консультация, расчет стоимости, подписание договора (удаленно). День второй &mdash; отправка товара на склад, интеграция CRM, сканирование позиций в WMS. День третий &mdash; тестовые отправления и полноценный запуск. Далее заказы обрабатываются автоматически: поступил заказ &mdash; собран за 30 секунд &mdash; передан перевозчику &mdash; вы видите статус в личном кабинете. Начните с бесплатного расчета &mdash; оставьте номер телефона, и мы перезвоним в течение 15 минут.</p>
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
+.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);padding:6px 14px;border:1px solid rgba(230,51,41,.25);border-radius:100px;margin-bottom:16px}
+.badge-dark{color:var(--red);border-color:rgba(230,51,41,.15)}
+.sec-h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin-bottom:16px}
+.sec-sub{font-size:16px;color:var(--muted);max-width:560px;margin-bottom:48px;line-height:1.6}
+
+/* ===== HERO SPLIT ===== */
+.hero-split{position:relative;min-height:100vh;background:var(--black);color:var(--white);display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
+.hero-split-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 60%,rgba(0,0,0,.5) 100%),url('/images/mtp-fulfillment-warehouse-hero.webp') center/cover no-repeat}
+.hero-split-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.hero-split-cards{display:flex;flex-direction:column;gap:20px}
+.hero-card{padding:32px;border-radius:12px;backdrop-filter:blur(8px)}
+.hero-card--old{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.hero-card--new{background:rgba(230,51,41,.12);border:1px solid rgba(230,51,41,.3)}
+.hero-card-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;color:rgba(255,255,255,.4)}
+.hero-card--new .hero-card-label{color:var(--red)}
+.hero-card-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.hero-card-list li{font-size:18px;font-weight:500;padding-left:0}
+.hero-card--old .hero-card-list li{color:rgba(255,255,255,.45);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.15)}
+.hero-card--new .hero-card-list li{color:#fff}
+.hero-text .badge{margin-bottom:20px}
+.hero-text h1{font-family:var(--fd);font-size:clamp(36px,4.5vw,64px);font-weight:400;line-height:1;margin-bottom:24px}
+.hero-sub{font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.55);line-height:1.7;max-width:520px;margin-bottom:32px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+
+/* ===== CHECKLIST ===== */
+.checklist-sec{padding:100px 0;background:var(--white)}
+.check-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.check-card{background:var(--gray);border-radius:8px;padding:32px 28px;transition:transform .3s,box-shadow .3s}
+.check-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
+.check-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;font-size:16px;font-weight:700;margin-bottom:16px}
+.check-card h3{font-size:17px;font-weight:600;margin-bottom:8px;font-family:var(--fb)}
+.check-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ===== ECONOMY TABLE ===== */
+.economy-sec{padding:100px 0;background:#0a0a0a;color:#fff}
+.econ-table{max-width:750px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.econ-row{display:flex;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+.econ-row:last-child{border:none}
+.econ-row>span{flex:1;padding:16px 20px}
+.econ-header{background:var(--red);color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.econ-row:not(.econ-header):hover{background:rgba(255,255,255,.03)}
+.econ-total{background:rgba(255,255,255,.06);font-weight:700;font-size:16px}
+.econ-inc{color:var(--red);font-weight:600}
+.econ-note{text-align:center;font-size:15px;color:rgba(255,255,255,.4);max-width:500px;margin:0 auto}
+
+/* ===== PROCESS ===== */
+.process-sec{padding:100px 0;background:var(--white)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:step}
+.process-step{position:relative;padding:36px 24px;text-align:center}
+.process-step::after{content:'';position:absolute;top:48px;right:-16px;width:32px;height:2px;background:#e0e0e0}
+.process-step:last-child::after{display:none}
+.process-num{font-family:var(--fd);font-size:14px;color:var(--red);font-weight:400;letter-spacing:1px;margin-bottom:8px}
+.process-icon{font-size:40px;margin-bottom:16px;line-height:1}
+.process-step h3{font-size:17px;font-weight:600;margin-bottom:8px;font-family:var(--fb)}
+.process-step p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ===== YT FACADE ===== */
+.yt-facade{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:16/9}
+.yt-facade img{width:100%;height:100%;object-fit:cover;display:block}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);border:none;cursor:pointer;transition:background .3s}
+.yt-facade:hover .yt-play{background:rgba(0,0,0,.5)}
+
+/* ===== TRUST ===== */
+.trust-sec{padding:100px 0;background:var(--gray)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.trust-card{background:#fff;border-radius:8px;padding:36px 28px;text-align:center;border:1px solid #eee;transition:border-color .3s}
+.trust-card:hover{border-color:var(--red)}
+.trust-val{font-family:var(--fd);font-size:clamp(36px,4vw,52px);color:var(--red);line-height:1;margin-bottom:12px}
+.trust-card h3{font-size:17px;font-weight:600;margin-bottom:8px;font-family:var(--fb)}
+.trust-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ===== PRICING CARDS ===== */
+.pricing{padding:100px 0;background:var(--white)}
+.price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto 32px}
+.price-card{background:var(--gray);border-radius:12px;padding:36px 28px;text-align:center;border:2px solid transparent;position:relative;transition:border-color .3s,transform .3s}
+.price-card:hover{border-color:#e0e0e0;transform:translateY(-4px)}
+.price-card--pop{border-color:var(--red);background:#fff;transform:scale(1.04)}
+.price-card--pop:hover{transform:scale(1.04) translateY(-4px)}
+.price-card-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap}
+.price-card-header{font-family:var(--fd);font-size:28px;font-weight:400;margin-bottom:4px}
+.price-card-vol{font-size:13px;color:var(--muted);margin-bottom:20px}
+.price-card-price{font-family:var(--fd);font-size:42px;color:var(--red);margin-bottom:24px;line-height:1}
+.price-card-price span{font-family:var(--fb);font-size:14px;color:var(--muted)}
+.price-card-list{list-style:none;text-align:left}
+.price-card-list li{padding:10px 0;border-bottom:1px solid #eee;font-size:14px;color:#444;padding-left:20px;position:relative}
+.price-card-list li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;background:var(--red)}
+.price-card-list li:last-child{border:none}
+.price-note{text-align:center;font-size:15px;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* ===== FAQ ===== */
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* ===== ARTICLE ===== */
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-split-inner{grid-template-columns:1fr;gap:32px}
+  .hero-split-cards{order:2}
+  .hero-text{order:1}
+  .hero-form{flex-direction:column}.hero-form button{width:100%}
+  .check-grid{grid-template-columns:1fr}
+  .econ-row{flex-direction:column}.econ-row>span{padding:8px 20px}
+  .econ-header{flex-direction:row}
+  .econ-row:not(.econ-header)>span:first-child{font-weight:600;padding-top:16px}
+  .econ-row:not(.econ-header)>span:last-child{padding-bottom:16px}
+  .process-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .process-step::after{display:none}
+  .trust-grid{grid-template-columns:1fr}
+  .price-cards{grid-template-columns:1fr;max-width:360px}
+  .price-card--pop{transform:none}
+  .price-card--pop:hover{transform:translateY(-4px)}
+  section[style*="grid-template-columns:1fr 1fr"]{display:block!important}
+  section[style*="grid-template-columns:1fr 1fr"]>div:first-child{margin-bottom:24px}
+}
+
+@media(max-width:480px){
+  .process-grid{grid-template-columns:1fr}
+}
+
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.check-card,.trust-card,.price-card,.process-step{opacity:1!important;transform-style:preserve-3d}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function(){
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var a = item.querySelector('.faq-a');
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){
+        el.classList.remove('open');
+        el.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!open){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* YouTube facade */
+  document.querySelectorAll('.yt-facade').forEach(function(el){
+    el.addEventListener('click', function(){
+      var id = el.getAttribute('data-id');
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('src','https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0');
+      iframe.setAttribute('frameborder','0');
+      iframe.setAttribute('allow','accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture');
+      iframe.setAttribute('allowfullscreen','');
+      iframe.style.position = 'absolute';
+      iframe.style.inset = '0';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      el.innerHTML = '';
+      el.style.position = 'relative';
+      el.appendChild(iframe);
+    });
+  });
+
+  /* Hero form */
+  var forms = document.querySelectorAll('#heroForm');
+  forms.forEach(function(form){
+    var inp = form.querySelector('input[name="phone"]');
+    if(!inp) return;
+    inp.addEventListener('input', function(){
+      this.value = this.value.replace(/[^0-9+() -]/g, '');
+    });
+    inp.addEventListener('focus', function(){
+      if(!this.value) this.value = '+38 (';
+    });
+    inp.addEventListener('blur', function(){
+      if(this.value === '+38 (') this.value = '';
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ph = inp.value.replace(/\D/g,'');
+      if(ph.length < 10){
+        inp.style.borderColor = 'var(--red)';
+        return;
+      }
+      var leads = JSON.parse(localStorage.getItem('mtp_crm_leads') || '[]');
+      leads.push({
+        id: Date.now(),
+        company: 'Фулфилмент для малого бизнеса (RU)',
+        contact: '',
+        phone: ph,
+        email: '',
+        shipments: 0,
+        type: 'small-business',
+        source: 'SEO landing fulfilment-dlya-malogo-biznesa RU',
+        status: 'new',
+        date: new Date().toISOString().split('T')[0],
+        comments: [{text: 'Форма: фулфилмент для малого бизнеса (RU)', date: new Date().toLocaleString('ru-RU')}],
+        onboarding: [false,false,false,false,false,false,false]
+      });
+      localStorage.setItem('mtp_crm_leads', JSON.stringify(leads));
+      fetch('/api/telegram', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({phone: ph, page: location.pathname})
+      }).catch(function(){});
+      if(window.mtpSubmitLead) window.mtpSubmitLead(ph);
+      form.innerHTML = '<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Спасибо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';
+      setTimeout(function(){
+        window.location.href = '/ru/thanks/';
+      }, 1500);
+    });
+  });
+});
+</script>
