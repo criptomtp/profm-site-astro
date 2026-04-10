@@ -211,7 +211,7 @@ localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
 /* Send to Telegram */
 
 
-fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
 /* Redirect */
 setTimeout(function(){window.location.href='/thanks/';},800);
 });

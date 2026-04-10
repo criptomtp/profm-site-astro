@@ -390,7 +390,7 @@ document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEven
 var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
 
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Отзывов (RU)',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Отзывы RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на странице Отзывы (RU)',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Отзывов (RU)',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Отзывы RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на странице Отзывы (RU)',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
 
 
 }
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     var ph=form.querySelector('input[name="phone"]').value.trim();
     if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
-    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
     form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
   });
 });

@@ -413,7 +413,7 @@ document.getElementById(id).addEventListener('change',calculate);
 calculate();
 
 // FORM
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Калькулятора (RU)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Калькулятор RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Калькулятор RU: '+document.getElementById('calcOrders').value+' отпр/день, '+document.getElementById('calcVolume').value+' м3, итого ~'+document.getElementById('resTotal').textContent+' грн/мес',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Менеджер перезвонит с персональным расчётом</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
+var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Заявка с Калькулятора (RU)',contact:'',phone:ph,email:'',shipments:document.getElementById('calcOrders').value||0,type:'other',source:'Калькулятор RU',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Калькулятор RU: '+document.getElementById('calcOrders').value+' отпр/день, '+document.getElementById('calcVolume').value+' м3, итого ~'+document.getElementById('resTotal').textContent+' грн/мес',date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center;padding:20px"><p style="color:#22c55e;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:8px">Менеджер перезвонит с персональным расчётом</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
 
 
 }
@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     var ph=form.querySelector('input[name="phone"]').value.trim();
     if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
-    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
+    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
     form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
   });
 });

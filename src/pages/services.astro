@@ -481,7 +481,7 @@ var page=window.location.pathname;
 var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
 leads.push({id:Date.now(),company:'Заявка с сайта',contact:'',phone:ph,email:'',shipments:0,type:'other',source:'Сайт — '+page,status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма на странице: '+page,date:new Date().toLocaleString('ru-RU')}],onboarding:[false,false,false,false,false,false,false]});
 localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
-fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:phone||ph,page:location.pathname})}).catch(function(){});
+fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:phone||ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(phone||ph);
 form.innerHTML='<p style="color:#4caf50;font-weight:bold;text-align:center;font-size:18px">Спасибо! Перезвоним в ближайшее время.</p>';
 setTimeout(function(){window.location.href='/thanks/';},1500);
 });

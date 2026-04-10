@@ -112,6 +112,35 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
   <Footer lang={lang} />
   <script is:inline src="/js/lang-switcher.js"></script>
   <script is:inline>
+  // Global lead submit function — used by all forms across the site
+  window.mtpSubmitLead = function(phone, page) {
+    var pg = page || location.pathname;
+    var ref = document.referrer || '';
+    var params = new URLSearchParams(location.search);
+    var utm = {
+      source: params.get('utm_source') || '',
+      medium: params.get('utm_medium') || '',
+      campaign: params.get('utm_campaign') || '',
+      term: params.get('utm_term') || '',
+      gclid: params.get('gclid') || ''
+    };
+    var leadData = {
+      phone: phone,
+      page: pg,
+      source: utm.gclid ? 'ads' : (utm.source || (ref.indexOf('google') > -1 ? 'google' : 'site')),
+      comments: [{
+        text: 'Форма: ' + pg +
+          (ref ? '\nРеферер: ' + ref : '') +
+          (utm.source ? '\nUTM: ' + utm.source + '/' + utm.medium + '/' + utm.campaign : '') +
+          (utm.term ? '\nЗапит: ' + utm.term : '') +
+          (utm.gclid ? '\nGCLID: ' + utm.gclid : ''),
+        date: new Date().toLocaleString('uk-UA')
+      }]
+    };
+    fetch('/api/telegram', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({phone: phone, page: pg})}).catch(function(){});
+    fetch('/api/leads', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(leadData)}).catch(function(){});
+  };
+
   // FAQ accordion — handled per-page (each FAQ page has its own handler)
   // Hero form handler — universal for all pages
   var heroForm = document.getElementById('heroForm');
@@ -123,8 +152,7 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
       var ph = inp.value.trim();
       var clean = ph.replace(/\D/g,'');
       if(clean.length < 10){ inp.style.borderColor='#e63329'; return; }
-      fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});
-      fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname,source:'site',comments:[{text:'Hero форма: '+location.pathname,date:new Date().toLocaleString('uk-UA')}]})}).catch(function(){});
+      window.mtpSubmitLead(ph, location.pathname);
       var lang = document.documentElement.lang;
       var msg = lang === 'en' ? 'Thank you! We will call back.' : lang === 'ru' ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
       var url = lang === 'en' ? '/en/thanks/' : lang === 'ru' ? '/thanks/' : '/ua/thanks/';
