@@ -431,23 +431,6 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-  /* FAQ accordion */
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var item = btn.parentElement;
-      var a = item.querySelector('.faq-a');
-      var open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el){
-        el.classList.remove('open');
-        el.querySelector('.faq-a').style.maxHeight = null;
-      });
-      if(!open){
-        item.classList.add('open');
-        a.style.maxHeight = a.scrollHeight + 'px';
-      }
-    });
-  });
-
   /* YouTube facade */
   document.querySelectorAll('.yt-facade').forEach(function(el){
     el.addEventListener('click', function(){

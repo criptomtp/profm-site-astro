@@ -321,9 +321,6 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-/* FAQ */
-document.querySelectorAll('.ek-faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.ek-faq-a');var open=item.classList.contains('open');document.querySelectorAll('.ek-faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.ek-faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
-
 /* Calculator */
 var oSlider=document.getElementById('ekOrders');
 var vSlider=document.getElementById('ekVolume');

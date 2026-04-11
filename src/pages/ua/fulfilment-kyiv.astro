@@ -314,8 +314,3 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .dm-zone,.wh-tour-card,.season-stat,.ky-pc{opacity:1!important;transform:none!important}
 </style>
 
-<script is:inline>
-document.addEventListener('DOMContentLoaded', function(){
-document.querySelectorAll('.ky-faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var a=item.querySelector('.ky-faq-a');var open=item.classList.contains('open');document.querySelectorAll('.ky-faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.ky-faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
-});
-</script>

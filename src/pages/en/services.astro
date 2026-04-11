@@ -23,9 +23,10 @@ import Base from '../../layouts/Base.astro';
 <div class="hero-line"></div>
 <p>Full-cycle order processing &mdash; from receiving your inventory to delivering it to your customers. Focus on growth while we handle logistics.</p>
 <form class="hero-form" id="heroForm">
-<input type="tel" name="phone" placeholder="+380 __ ___ __ __" required autocomplete="tel">
-<button type="submit">Get a Quote</button>
+<input type="tel" name="phone" placeholder="+380 __ ___ __ __" required autocomplete="tel" aria-label="Phone">
+<button type="submit">Get a Quote &#8594;</button>
 </form>
+<div class="hero-note">Free consultation &#183; We'll call back in 15 minutes</div>
 <div class="hero-stats">
 <div class="hero-stat"><strong>6,000+</strong><span>orders/day capacity</span></div>
 <div class="hero-stat"><strong>from 18</strong><span>UAH per shipment</span></div>
@@ -237,6 +238,7 @@ import Base from '../../layouts/Base.astro';
 .hero-form input::placeholder{color:rgba(255,255,255,.4)}.hero-form input:focus{border-color:var(--red,#e63329)}
 .hero-form button{padding:14px 32px;background:var(--red,#e63329);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:background .3s,box-shadow .3s;box-shadow:0 4px 20px rgba(230,51,41,.35)}
 .hero-form button:hover{background:#d41c1c;box-shadow:0 6px 28px rgba(230,51,41,.5)}
+.hero-note{text-align:center;font-size:13px;color:rgba(255,255,255,.4);margin-top:12px;margin-bottom:32px}
 .hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-top:16px}
 .hero-stat{text-align:center}.hero-stat strong{display:block;font-size:32px;font-weight:700;color:var(--red,#e63329)}.hero-stat span{font-size:14px;color:rgba(255,255,255,.55)}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -289,7 +291,6 @@ import Base from '../../layouts/Base.astro';
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-document.querySelectorAll('.faq-question').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.parentElement;var answer=item.querySelector('.faq-answer');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-answer').style.maxHeight=null;});if(!isOpen){item.classList.add('open');answer.style.maxHeight=answer.scrollHeight+'px';}});});
 var els=document.querySelectorAll('.fade-in');
 if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});},{threshold:0.15});els.forEach(function(el){obs.observe(el);});}else{els.forEach(function(el){el.classList.add('visible');});}
 });

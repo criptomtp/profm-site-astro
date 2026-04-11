@@ -249,7 +249,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </ul>
 </div>
 </div>
-<p class="sb-pr-note">Зберігання &mdash; від 650 грн/м&sup3;/міс. Прийом товару &mdash; від 3 грн/шт. <a href="/ua/kalkulyator-fulfillment/" style="color:var(--red);font-weight:600">Розрахувати точну ціну &rarr;</a></p>
+<p class="sb-pr-note">Зберігання &mdash; від 650 грн/м&sup3;/міс. Прийом товару &mdash; від 3 грн/шт. <a href="/ua/calculator/" style="color:var(--red);font-weight:600">Розрахувати точну ціну &rarr;</a></p>
 </div></section>
 
 <!-- FAQ -->
@@ -290,7 +290,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <h3>MTP Group: 10+ років досвіду і 150+ клієнтів</h3>
 <p>MTP Group &mdash; фулфілмент-оператор з двома складами під Києвом: Щасливе (2 800 м&sup2;) і Білогородка (1 100 м&sup2;). Потужність &mdash; до 6 000 відправлень на день. Працюємо з <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red)">інтернет-магазинами</a>, ФОП, брендами косметики, одягу, аксесуарів, подарунків. Інтегруємося з KeyCRM, SalesDrive, Horoshop, WooCommerce, Shopify, Prom.ua, Rozetka. Підключення &mdash; 1-3 дні. Без довгострокових контрактів.</p>
-<p style="margin-top:16px">Дивіться також: <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red);font-weight:600">фулфілмент для інтернет-магазинів</a> &middot; <a href="/ua/kalkulyator-fulfillment/" style="color:var(--red)">калькулятор вартості</a> &middot; <a href="/ua/vidhuky/" style="color:var(--red)">відгуки клієнтів</a></p>
+<p style="margin-top:16px">Дивіться також: <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red);font-weight:600">фулфілмент для інтернет-магазинів</a> &middot; <a href="/ua/calculator/" style="color:var(--red)">калькулятор вартості</a> &middot; <a href="/ua/recalls/" style="color:var(--red)">відгуки клієнтів</a></p>
 </div>
 </div>
 </section>
@@ -455,16 +455,6 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-/* FAQ accordion */
-document.querySelectorAll('.sb-faq-q').forEach(function(btn){
-btn.addEventListener('click',function(){
-var item=btn.parentElement;
-var a=item.querySelector('.sb-faq-a');
-var open=item.classList.contains('open');
-document.querySelectorAll('.sb-faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.sb-faq-a').style.maxHeight=null;});
-if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
-});
-});
 /* YouTube facade */
 document.querySelectorAll('.yt-facade').forEach(function(el){
 el.addEventListener('click',function(){
