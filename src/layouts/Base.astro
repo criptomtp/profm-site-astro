@@ -12,6 +12,7 @@ interface Props {
   ogType?: string;
   schema?: string;
   showCTA?: boolean;
+  preloadHero?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   ogType = 'website',
   schema = '',
   showCTA = true,
+  preloadHero = true,
 } = Astro.props;
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
@@ -45,7 +47,7 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  {ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
+  {preloadHero && ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet"></noscript>
@@ -187,14 +189,16 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
   });
   </script>
   <style>
-  .yt-facade{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;cursor:pointer;isolation:isolate;max-width:720px;margin-left:auto;margin-right:auto}
+  .yt-wrap{max-width:720px;margin:0 auto;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:3px;transition:border-color .4s ease,box-shadow .4s ease}
+  .yt-wrap:hover{border-color:rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+  .yt-facade{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
   .yt-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-  .yt-facade::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.15) 100%);z-index:1;transition:background .3s ease}
-  .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(12px) saturate(1.5);-webkit-backdrop-filter:blur(12px) saturate(1.5);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s cubic-bezier(.22,1,.36,1),background .3s ease;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+  .yt-facade::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.25);z-index:1;transition:background .3s ease}
+  .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(12px) saturate(1.5);-webkit-backdrop-filter:blur(12px) saturate(1.5);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s ease,background .3s ease;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
   .yt-facade .yt-play svg{margin-left:3px}
-  .yt-facade:hover img{transform:scale(1.05)}
-  .yt-facade:hover::after{background:linear-gradient(0deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.08) 40%,rgba(0,0,0,.08) 100%)}
-  .yt-facade:hover .yt-play{transform:translate(-50%,-50%) scale(1.1);background:rgba(255,255,255,.25);filter:drop-shadow(0 6px 20px rgba(0,0,0,.4))}
+  .yt-facade:hover img{transform:scale(1.03)}
+  .yt-facade:hover::after{background:rgba(0,0,0,.15)}
+  .yt-facade:hover .yt-play{transform:translate(-50%,-50%) scale(1.1);background:rgba(255,255,255,.25)}
   .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;z-index:3}
   </style>
 </body>
