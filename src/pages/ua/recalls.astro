@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var ph=form.querySelector('input[name="phone"]').value.trim();
     if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
     fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
-    form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
+    form.innerHTML='<p style="color:#fff;font-size:18px">\u2705 Дякуємо!</p>';
   });
 });
 </script>

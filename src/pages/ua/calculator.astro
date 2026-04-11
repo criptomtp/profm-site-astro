@@ -194,13 +194,13 @@ import Base from '../../layouts/Base.astro';
 .res-cost-per .val{font-family:var(--fd);font-size:32px;color:var(--red)}
 .res-cost-per .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
 .res-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
-.res-compare strong{color:#22c55e;font-weight:500}
+.res-compare strong{color:#fff;font-weight:500}
 .res-compare .compare-title{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
 .res-compare .compare-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .res-compare .compare-row:last-child{border-bottom:none}
 .res-compare .compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
-.res-time{margin-top:16px;padding:20px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
-.res-time strong{color:#22c55e;font-weight:500}
+.res-time{margin-top:16px;padding:20px;background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.res-time strong{color:#fff;font-weight:500}
 
 .tariff-section{padding:100px 0}
 .tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var ph=form.querySelector('input[name="phone"]').value.trim();
     if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
     fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
-    form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
+    form.innerHTML='<p style="color:#fff;font-size:18px">\u2705 Дякуємо!</p>';
   });
 });
 </script>

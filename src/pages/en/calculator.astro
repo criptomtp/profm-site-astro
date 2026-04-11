@@ -155,11 +155,11 @@ import Base from '../../layouts/Base.astro';
 .res-sub{font-size:12px;color:rgba(255,255,255,.35);margin-left:8px;font-weight:300}
 .res-total{margin-top:24px;padding:24px;background:var(--red,#e63329);border-radius:8px}.res-total .res-row{border-bottom:none;padding:8px 0}.res-total .res-label{color:rgba(255,255,255,.85);font-size:16px;font-weight:500}.res-total .res-value{font-family:var(--fd,'DM Serif Display',serif);font-size:28px}
 .res-cost-per{margin-top:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:8px;text-align:center}.res-cost-per .val{font-family:var(--fd,'DM Serif Display',serif);font-size:32px;color:var(--red,#e63329)}.res-cost-per .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
-.res-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}.res-compare strong{color:#22c55e;font-weight:500}
+.res-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}.res-compare strong{color:#fff;font-weight:500}
 .res-compare .compare-title{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
 .res-compare .compare-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}.res-compare .compare-row:last-child{border-bottom:none}
 .res-compare .compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
-.res-time{margin-top:16px;padding:20px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}.res-time strong{color:#22c55e;font-weight:500}
+.res-time{margin-top:16px;padding:20px;background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}.res-time strong{color:#fff;font-weight:500}
 .tariff-section{padding:100px 0}
 .tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
 .tariff-table th,.tariff-table td{padding:16px 24px;text-align:left;border-bottom:1px solid #e0e0e0}
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var ph=form.querySelector('input[name="phone"]').value.trim();
     if(ph.replace(/\D/g,'').length<10){form.querySelector('input').style.borderColor='#e63329';return;}
     fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
-    form.innerHTML='<p style="color:#22c55e;font-size:18px">\u2705 Дякуємо!</p>';
+    form.innerHTML='<p style="color:#fff;font-size:18px">\u2705 Дякуємо!</p>';
   });
 });
 </script>
