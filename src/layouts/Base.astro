@@ -168,38 +168,39 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
     document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   }
 
-  // YouTube facade — click to load iframe
+  // YouTube facade — click opens modal (same as homepage)
   document.addEventListener('click',function(e){
     var facade=e.target.closest('.yt-facade');
-    if(!facade||facade.querySelector('iframe'))return;
+    if(!facade)return;
     var id=facade.dataset.id;
-    var iframe=document.createElement('iframe');
-    iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
-    iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
-    iframe.allowFullscreen=true;
-    iframe.title=facade.querySelector('img').alt;
-    facade.appendChild(iframe);
+    var m=document.getElementById('ytModal');
+    if(!m){
+      m=document.createElement('div');m.id='ytModal';
+      m.innerHTML='<div class="ytm-inner"><iframe id="ytModalIframe" frameborder="0" allow="autoplay;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe><button class="ytm-close">&times;</button></div>';
+      m.className='ytm-overlay';document.body.appendChild(m);
+      m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('ytm-close')){m.style.display='none';document.getElementById('ytModalIframe').src='';document.body.style.overflow='';}});
+    }
+    document.getElementById('ytModalIframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+    m.style.display='flex';document.body.style.overflow='hidden';
   });
-  // Preconnect to YouTube on first hover
-  var ytPre=false;document.addEventListener('pointerover',function(e){
-    if(ytPre)return;if(e.target.closest('.yt-facade')){ytPre=true;
-    ['https://www.youtube.com','https://www.google.com'].forEach(function(u){
-      var l=document.createElement('link');l.rel='preconnect';l.href=u;document.head.appendChild(l);
-    });}
-  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('ytModal');if(m){m.style.display='none';document.getElementById('ytModalIframe').src='';document.body.style.overflow='';}}});
   </script>
   <style>
-  .yt-wrap{max-width:720px;margin:0 auto;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:3px;transition:border-color .4s ease,box-shadow .4s ease}
-  .yt-wrap:hover{border-color:rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3)}
-  .yt-facade{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
-  .yt-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-  .yt-facade::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.25);z-index:1;transition:background .3s ease}
-  .yt-facade .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(12px) saturate(1.5);-webkit-backdrop-filter:blur(12px) saturate(1.5);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s ease,background .3s ease;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
-  .yt-facade .yt-play svg{margin-left:3px}
-  .yt-facade:hover img{transform:scale(1.03)}
-  .yt-facade:hover::after{background:rgba(0,0,0,.15)}
-  .yt-facade:hover .yt-play{transform:translate(-50%,-50%) scale(1.1);background:rgba(255,255,255,.25)}
-  .yt-facade iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;z-index:3}
+  /* YouTube video facade — homepage style */
+  .yt-facade{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;max-width:720px;margin:0 auto}
+  .yt-facade img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;filter:brightness(.55);transition:filter .4s,transform .4s}
+  .yt-facade:hover img{filter:brightness(.75);transform:scale(1.02)}
+  .yt-facade .yt-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:1;background:none;border:none;cursor:pointer}
+  .yt-facade .yt-play-btn{width:72px;height:72px;background:rgba(230,51,41,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s;padding-left:5px}
+  .yt-facade .yt-play-btn svg{width:24px;height:28px}
+  .yt-facade:hover .yt-play-btn{transform:scale(1.1)}
+  .yt-facade .yt-play-label{font-size:13px;color:rgba(255,255,255,.8);letter-spacing:1px;text-transform:uppercase}
+  .yt-wrap{max-width:720px;margin:0 auto}
+  /* Video modal */
+  .ytm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99999;align-items:center;justify-content:center}
+  .ytm-inner{position:relative;width:90%;max-width:900px;aspect-ratio:16/9}
+  .ytm-inner iframe{width:100%;height:100%;border-radius:8px}
+  .ytm-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:36px;cursor:pointer;line-height:1}
   </style>
 </body>
 </html>
