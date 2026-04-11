@@ -51,15 +51,20 @@ import Base from '../../layouts/Base.astro';
 </section></div>
 </section>
 
-<!-- VIDEO: WAREHOUSE OPERATIONS -->
-<section style="padding:80px 0;background:var(--gray,#f5f5f5)">
-<div class="ctr" style="max-width:900px">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
-<div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer"><img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Як працює склад MTP Group Fulfillment" width="640" height="360" loading="lazy"><div class="play-overlay"><div class="play-btn-large">&#9654;</div></div></div>
+<section class="warehouse-tour">
+<div class="tour-inner">
+<div class="tour-text">
+<div class="badge">СКЛАД</div>
+<h2>Подивись як<br>працює склад</h2>
+<p>3 900 м² загальної площі сучасного складу у Київській області. Адресне зберігання, сканування кожного товару, відправка 4 рази на день.</p>
+<button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Дивитись екскурсію</button>
 </div>
-<div>
-<h2 style="font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(24px,3vw,36px);font-weight:400;margin-bottom:16px">Подивіться як працює наш склад</h2>
-<p style="color:var(--muted,#666);line-height:1.7">24 000+ переглядів — найпопулярніше відео на каналі. Від прийому товару до передачі Новій Пошті за 30 секунд.</p>
+<div class="tour-video">
+<div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Екскурсія по складу MTP Group" width="640" height="360" loading="lazy">
+<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Екскурсія по складу</span></div>
+</div>
+</div>
 </div>
 </section></div>
 </section>
@@ -244,7 +249,7 @@ import Base from '../../layouts/Base.astro';
 .story{padding:100px 0}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .story-img{border-radius:12px;overflow:hidden}
-.story-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.story-img img{width:100%;max-height:500px;object-fit:cover;border-radius:12px}
 .story-text p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:20px}
 .story-text p strong{color:var(--black);font-weight:500}
 .story-highlight{background:var(--red);color:var(--white);padding:24px 32px;border-radius:8px;margin-top:32px;font-size:15px;line-height:1.7}
