@@ -55,14 +55,14 @@ import Base from '../../layouts/Base.astro';
 <div class="tour-inner">
 <div class="tour-text">
 <div class="badge">СКЛАД</div>
-<h2>Подивись як<br>працює склад</h2>
-<p>3 900 м² загальної площі сучасного складу у Київській області. Адресне зберігання, сканування кожного товару, відправка 4 рази на день.</p>
+<h2>10 років<br>досвіду в дії</h2>
+<p>Від гаража до 3 900 м² — подивіться як виглядає склад, який обробляє 6 000 замовлень щодня.</p>
 <button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Дивитись екскурсію</button>
 </div>
 <div class="tour-video">
 <div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
-<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Екскурсія по складу MTP Group" width="640" height="360" loading="lazy">
-<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Екскурсія по складу</span></div>
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Історія складу MTP Group — від старту до 3900 м²" width="640" height="360" loading="lazy">
+<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Наша історія у відео</span></div>
 </div>
 </div>
 </div>
@@ -225,11 +225,6 @@ import Base from '../../layouts/Base.astro';
 </section>
 
 <style is:global>
-:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
-.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:32px}
-.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}.badge-dark::before{background:var(--red)}
 
 
 .hero{position:relative;min-height:80vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;overflow:hidden}
@@ -244,7 +239,6 @@ import Base from '../../layouts/Base.astro';
 .hero-form button:hover{background:#fff;color:#000}
 .hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
 
-.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 .story{padding:100px 0}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}

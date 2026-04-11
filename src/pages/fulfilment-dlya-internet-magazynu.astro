@@ -55,14 +55,14 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="tour-inner">
 <div class="tour-text">
 <div class="badge">СКЛАД</div>
-<h2>Посмотрите как<br>работает склад</h2>
-<p>3 900 м² современного склада в Киевской области. Адресное хранение, сканирование каждого товара, отправка 4 раза в день.</p>
-<button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Смотреть экскурсию</button>
+<h2>Ваши заказы —<br>наше дело</h2>
+<p>Увидьте как мы собираем, упаковываем и отправляем тысячи заказов для интернет-магазинов каждый день.</p>
+<button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Увидеть процесс</button>
 </div>
 <div class="tour-video">
 <div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
-<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Экскурсия по складу MTP Group" width="640" height="360" loading="lazy">
-<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Экскурсия по складу</span></div>
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Как MTP Group обрабатывает заказы интернет-магазинов" width="640" height="360" loading="lazy">
+<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Процесс фулфилмента</span></div>
 </div>
 </div>
 </div>
@@ -151,8 +151,6 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </Base>
 
 <style is:global>
-:root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
-.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
 .hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
@@ -216,10 +214,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .final-form button:hover{background:#222}
 .final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
 .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%}
 .badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
 
-.sec-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 
 @media(max-width:768px){
 .hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
