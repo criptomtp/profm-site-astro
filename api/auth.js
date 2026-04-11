@@ -7,32 +7,56 @@ const redis = new Redis({
 
 const USERS_KEY = 'mtp:users';
 const SESSIONS_KEY = 'mtp:sessions';
+const RATE_LIMIT_PREFIX = 'mtp:ratelimit:login:';
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW = 60; // seconds
 
-// Default admin user
-const DEFAULT_USERS = [
-  {
-    id: 'admin',
-    username: 'mtp_admin',
-    password: 'MTP2026secure!',
-    name: 'Адмін',
-    role: 'admin',
-    permissions: ['crm', 'dashboard', 'seo', 'content', 'settings', 'users']
-  }
-];
+function getDefaultUsers() {
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) return null;
+  return [
+    {
+      id: 'admin',
+      username: 'mtp_admin',
+      password: adminPassword,
+      name: 'Адмін',
+      role: 'admin',
+      permissions: ['crm', 'dashboard', 'seo', 'content', 'settings', 'users']
+    }
+  ];
+}
 
 async function getUsers() {
   const users = await redis.get(USERS_KEY);
   if (!users || !Array.isArray(users) || users.length === 0) {
-    await redis.set(USERS_KEY, DEFAULT_USERS);
-    return DEFAULT_USERS;
+    const defaults = getDefaultUsers();
+    if (!defaults) return null;
+    await redis.set(USERS_KEY, defaults);
+    return defaults;
   }
   return users;
 }
 
+function getClientIp(req) {
+  return req.headers['x-forwarded-for']?.split(',')[0]?.trim()
+    || req.headers['x-real-ip']
+    || req.socket?.remoteAddress
+    || 'unknown';
+}
+
+const ALLOWED_ORIGINS = [
+  'https://www.fulfillmentmtp.com.ua',
+  'https://fulfillmentmtp.com.ua',
+];
+
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Vary', 'Origin');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
@@ -41,10 +65,33 @@ export default async function handler(req, res) {
   try {
     // LOGIN
     if (req.method === 'POST' && action === 'login') {
+      // Check if ADMIN_PASSWORD is configured
+      if (!process.env.ADMIN_PASSWORD) {
+        return res.status(503).json({ error: 'Auth not configured' });
+      }
+
+      // Rate limiting: check failed attempts from this IP
+      const clientIp = getClientIp(req);
+      const rateLimitKey = RATE_LIMIT_PREFIX + clientIp;
+      const failedAttempts = (await redis.get(rateLimitKey)) || 0;
+      if (failedAttempts >= RATE_LIMIT_MAX) {
+        return res.status(429).json({ error: 'Too many failed attempts. Try again later.' });
+      }
+
       const { username, password } = req.body;
       const users = await getUsers();
+      if (!users) {
+        return res.status(503).json({ error: 'Auth not configured' });
+      }
       const user = users.find(u => u.username === username && u.password === password);
-      if (!user) return res.status(401).json({ error: 'Невірний логін або пароль' });
+      if (!user) {
+        // Increment failed attempts counter with TTL
+        await redis.set(rateLimitKey, failedAttempts + 1, { ex: RATE_LIMIT_WINDOW });
+        return res.status(401).json({ error: 'Невірний логін або пароль' });
+      }
+
+      // Successful login — clear rate limit counter
+      await redis.del(rateLimitKey);
 
       const sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2);
       const sessions = await redis.get(SESSIONS_KEY) || {};

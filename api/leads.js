@@ -7,12 +7,33 @@ const redis = new Redis({
 
 const LEADS_KEY = 'mtp:leads';
 
+const ALLOWED_ORIGINS = [
+  'https://www.fulfillmentmtp.com.ua',
+  'https://fulfillmentmtp.com.ua',
+];
+
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+  res.setHeader('Vary', 'Origin');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
+
+  // Require API key for non-POST methods (GET, PUT, DELETE are admin-only)
+  if (req.method !== 'POST') {
+    const apiKey = req.headers['x-api-key'];
+    const expectedKey = process.env.CRM_API_KEY;
+    if (!expectedKey) {
+      return res.status(503).json({ error: 'API key not configured on server' });
+    }
+    if (apiKey !== expectedKey) {
+      return res.status(401).json({ error: 'Unauthorized: invalid or missing API key' });
+    }
+  }
 
   try {
     // GET — all leads

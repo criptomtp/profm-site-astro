@@ -74,7 +74,7 @@ img{max-width:100%;height:auto;display:block}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero h1{font-family:var(--fd);font-size:clamp(42px,6vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.65);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.75);line-height:1.7;max-width:580px;margin-bottom:40px}
 .hero-form{display:flex;gap:12px;max-width:460px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
 .hero-form input::placeholder{color:rgba(255,255,255,.3)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
@@ -107,7 +107,7 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .tour-inner{display:flex;align-items:center;gap:80px;max-width:1200px;margin:0 auto}
 .tour-text{flex:1}
 .tour-text h2{font-family:var(--fd);font-size:clamp(40px,5vw,64px);color:#fff;line-height:.95;margin:20px 0 24px;font-weight:400}
-.tour-text p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:36px;max-width:400px}
+.tour-text p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:36px;max-width:400px}
 .tour-btn{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:#fff;background:transparent;border:1.5px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:100px;letter-spacing:.5px;transition:all .3s;cursor:pointer;font-family:var(--fb)}
 .tour-btn:hover{background:#fff;color:#000;border-color:#fff}
 .tour-video{flex:1.2}
@@ -119,13 +119,19 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .video-thumb:hover .play-btn-large{transform:scale(1.1)}
 .play-overlay span{font-size:14px;color:rgba(255,255,255,.8);letter-spacing:1px;text-transform:uppercase}
 @media(max-width:768px){.tour-inner{flex-direction:column;gap:40px}.tour-video{width:100%}}
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;padding:12px 24px;border-radius:0 0 8px 8px;font-size:14px;font-weight:600;z-index:100000;transition:top .2s}
+.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
   </style>
   <slot name="head" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Перейти до змісту</a>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV5WZT5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <Header lang={lang} />
-  <main>
+  <main id="main-content">
     <slot />
   </main>
   {showCTA && <CTA lang={lang} />}
