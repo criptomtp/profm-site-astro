@@ -154,15 +154,3 @@ article th{background:#f5f5f5;font-weight:600}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:15px;color:#555;line-height:1.7}
 .faq-item.open .faq-a{padding-bottom:16px}
 </style>
-
-<script is:inline>
-document.querySelectorAll('.faq-q').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=btn.parentElement;
-    var a=item.querySelector('.faq-a');
-    var open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-a').style.maxHeight=null;});
-    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
-  });
-});
-</script>
