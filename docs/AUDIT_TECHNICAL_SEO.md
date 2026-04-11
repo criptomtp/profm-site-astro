@@ -211,7 +211,7 @@ Run these URLs through PageSpeed Insights (mobile):
 
 Or use API:
 ```
-https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL&strategy=mobile&key=AIzaSyDkB8vcB7kMDKdB2g_eXcgZyPvvOXv_15c
+https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL&strategy=mobile&key=YOUR_API_KEY
 ```
 
 ---
