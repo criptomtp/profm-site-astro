@@ -10,7 +10,12 @@ if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/
 
 <section class="thanks-hero">
 <h1>Спасибо за заявку</h1>
-<p>Мы свяжемся с вами в течение дня</p>
+<p>Мы перезвоним вам в течение 15 минут</p>
+<div class="thanks-steps">
+  <div class="thanks-step"><span class="step-num">1</span><span>Наш менеджер перезвонит в течение 15 минут</span></div>
+  <div class="thanks-step"><span class="step-num">2</span><span>Обсудим ваши потребности и рассчитаем стоимость</span></div>
+  <div class="thanks-step"><span class="step-num">3</span><span>Подключение к складу за 1-3 дня</span></div>
+</div>
 <p class="sub">А пока ознакомьтесь с главными преимуществами работы с нами</p>
 </section>
 
@@ -48,6 +53,9 @@ if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/
 .thanks-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);font-weight:400;margin-bottom:16px}
 .thanks-hero p{color:rgba(255,255,255,.7);font-size:18px;max-width:500px;margin:0 auto}
 .thanks-hero .sub{font-size:15px;color:rgba(255,255,255,.5);margin-top:12px}
+.thanks-steps{display:flex;justify-content:center;gap:32px;margin:32px 0;flex-wrap:wrap}
+.thanks-step{display:flex;align-items:center;gap:12px;font-size:15px;color:rgba(255,255,255,.7)}
+.step-num{width:32px;height:32px;border-radius:50%;background:#e63329;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
 .thanks-videos{display:flex;gap:20px;padding:60px 24px;max-width:1200px;margin:0 auto;flex-wrap:wrap}
 .thanks-videos iframe{flex:1;min-width:280px;aspect-ratio:16/9;border:none;border-radius:12px}
 .thanks-blog{padding:60px 24px;max-width:1200px;margin:0 auto}

@@ -30,6 +30,10 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <p class="hero-sub">You sell &mdash; we ship. Goods receiving, storage, packing and delivery across Ukraine. From 18&nbsp;UAH per shipment.</p>
 <form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote &#8594;</button></form>
 <div class="hero-note">Free consultation &#183; Custom quote in 15 min</div>
+<a href="https://t.me/MTPGroupFulfillment_bot" target="_blank" rel="noopener" class="hero-tg">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.13l-1.97 9.28c-.15.67-.54.83-1.1.52l-3.03-2.24-1.46 1.41c-.16.16-.3.3-.61.3l.22-3.05 5.56-5.02c.24-.22-.05-.34-.37-.13l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.58-4.47c.53-.2 1-.05.87.94z"/></svg>
+  Or message us on Telegram &rarr;
+</a>
 </div>
 <div class="hero-stats">
 <div class="hero-stat"><div class="hero-stat-val">6,000</div><div class="hero-stat-label">shipments/day</div></div>
@@ -37,6 +41,11 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="hero-stat"><div class="hero-stat-val">30 sec</div><div class="hero-stat-label">order picking</div>
 </section></div>
 </section>
+<div class="hero-guarantees">
+  <span>&#10003; No long-term contract</span>
+  <span>&#10003; Trial period</span>
+  <span>&#10003; Exit in 1 day</span>
+</div>
 
 <!-- BENEFITS -->
 <section class="benefits"><div class="ctr">
@@ -158,8 +167,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .hero-form{display:flex;gap:12px;max-width:460px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
 .hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:transparent;color:#fff;border:2px solid #fff;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:var(--red);border-color:var(--red)}
+.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:#c42b22}
 .hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
 .hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
 .hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
