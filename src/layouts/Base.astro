@@ -255,7 +255,35 @@ body{padding-bottom:64px}
     var m=document.getElementById('videoModal');if(!m)return;
     document.getElementById('videoIframe').src='';m.style.display='none';document.body.style.overflow='';
   };
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeVideoModal();var ep=document.getElementById('exitPopup');if(ep)ep.style.display='none';}});
+
+  // Telegram click conversion tracking
+  document.addEventListener('click',function(e){var link=e.target.closest('a[href*="t.me/"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/fKOICMvozZocEPO-h6UC','value':1.0,'currency':'UAH'});}});
+
+  // Exit-intent popup (desktop only, 1x per session, not on /thanks/)
+  if(window.innerWidth>768 && !location.pathname.includes('/thanks')){
+    document.addEventListener('mouseout',function(e){
+      if(e.clientY<10 && !sessionStorage.getItem('exitShown')){
+        sessionStorage.setItem('exitShown','1');
+        var lang=document.documentElement.lang;
+        var titles={uk:'Зачекайте! Отримайте безкоштовний аудит логістики',ru:'Подождите! Получите бесплатный аудит логистики',en:'Wait! Get a free logistics audit'};
+        var subs={uk:'Порахуємо скільки ви зекономите з фулфілментом за 15 хвилин',ru:'Посчитаем сколько вы сэкономите с фулфилментом за 15 минут',en:'We\'ll calculate your savings with fulfillment in 15 minutes'};
+        var btns={uk:'Порахувати економію',ru:'Рассчитать экономию',en:'Calculate savings'};
+        var ep=document.createElement('div');ep.id='exitPopup';
+        ep.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100000;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)';
+        ep.innerHTML='<div style="background:#fff;border-radius:16px;padding:48px 40px;max-width:480px;width:90%;text-align:center;position:relative"><button onclick="document.getElementById(\'exitPopup\').style.display=\'none\'" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#999">&times;</button><h2 style="font-family:\'DM Serif Display\',serif;font-size:clamp(24px,4vw,32px);font-weight:400;margin-bottom:12px;color:#000">'+(titles[lang]||titles.uk)+'</h2><p style="font-size:15px;color:#666;margin-bottom:24px;line-height:1.6">'+(subs[lang]||subs.uk)+'</p><form id="exitForm" style="display:flex;gap:8px"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Phone" style="flex:1;padding:14px 16px;border:2px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none"><button type="submit" style="padding:14px 24px;background:#e63329;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap">'+(btns[lang]||btns.uk)+'</button></form><p style="font-size:12px;color:#999;margin-top:12px">✅ Без зобов\'язань · Результат за 15 хвилин</p></div>';
+        document.body.appendChild(ep);
+        ep.addEventListener('click',function(ev){if(ev.target===ep)ep.style.display='none';});
+        document.getElementById('exitForm').addEventListener('submit',function(ev){
+          ev.preventDefault();var ph=this.querySelector('input').value.trim();
+          if(ph.replace(/\\D/g,'').length<10)return;
+          if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
+          this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:600">✅ '+(lang==='en'?'Thank you!':lang==='ru'?'Спасибо!':'Дякуємо!')+'</p>';
+          setTimeout(function(){ep.style.display='none';},2000);
+        });
+      }
+    });
+  }
   </script>
   <!-- Sticky mobile CTA bar -->
   {!canonical?.includes('/thanks') && <div class="sticky-cta" id="stickyCta">
