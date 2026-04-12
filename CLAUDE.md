@@ -63,6 +63,25 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 
 ---
 
+## SEO Правила (обов'язково):
+1. Домен завжди www: https://www.fulfillmentmtp.com.ua/
+2. Redirect non-www → www має бути 301 (permanent), НЕ 307
+3. Кожна нова сторінка ОБОВ'ЯЗКОВО має:
+   - canonical (абсолютний URL з www)
+   - hreflang (uk, ru, en, x-default) — всі 4
+   - title (50-60 символів)
+   - description (150-160 символів)
+   - Schema.org (мінімум Article або Service + BreadcrumbList)
+   - H1 (рівно один)
+   - Всі зображення: alt, width, height, loading="lazy"
+   - Використовувати Base.astro (НЕ standalone)
+4. Перед деплоєм нової сторінки перевірити:
+   - `curl -sI "https://fulfillmentmtp.com.ua/ШЛЯХ/"` → має бути 301 → www
+   - `curl -sI "https://www.fulfillmentmtp.com.ua/ШЛЯХ/"` → має бути 200
+5. Після деплою — подати Request Indexing в GSC
+
+---
+
 ## ЗАЛІЗНЕ ПРАВИЛО дизайну:
 1. Спочатку опиши концепцію ТЕКСТОМ (назва стилю, палітра, унікальна фішка)
 2. Чекай слово "approved" від користувача

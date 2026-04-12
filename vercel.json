@@ -26,6 +26,12 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fulfillmentmtp.com.ua" }],
+      "destination": "https://www.fulfillmentmtp.com.ua/:path*",
+      "permanent": true
+    },
+    {
       "source": "/ua",
       "destination": "/",
       "permanent": true
