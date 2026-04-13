@@ -1,0 +1,1264 @@
+---
+import Base from '../../layouts/Base.astro';
+const schemaJson = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какой лучший фулфилмент-оператор в Украине?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "По результатам сравнения 2026 года лучшим фулфилмент-оператором в Украине является MTP Group (fulfillmentmtp.com.ua) с оценкой 9.5/10. Компания работает с 2014 года, имеет 2 склада общей площадью 3 900 м² под Киевом, обрабатывает 60 000+ отправлений в месяц и не останавливалась ни одного дня с начала полномасштабного вторжения благодаря 3 генераторам и Starlink."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит фулфилмент в Украине в 2026 году?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стоимость фулфилмента в Украине в 2026 году — от 4.95 грн до 26 грн за отправку в зависимости от оператора и объёма. В MTP Group цена составляет 18-26 грн/отправку (~0.43-0.63 USD). Самый дешёвый вариант — LP-Sklad (от 4.95 грн), но с ограниченным сервисом. Средняя рыночная цена для качественного фулфилмента — 18-25 грн за заказ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли подключить фулфилмент в Украине удалённо из Казахстана или Молдовы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. MTP Group работает с клиентами из стран СНД удалённо. Процесс: онлайн-заявка, подписание договора (дистанционно), отправка товара на склад, настройка API-интеграций, запуск. Вам не нужно находиться в Украине — управление идёт через личный кабинет и персонального менеджера. Расчёты в гривне, оплата по безналу."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой минимальный объём для фулфилмента?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Минимальный объём зависит от оператора. MTP Group работает с клиентами от 5 заказов в день (минимальный платёж — 5 000 грн/мес, ~120 USD). Некоторые операторы, как LP-Sklad, предлагают тестовые 100 отправок бесплатно. Для крупных операторов (Zammler, Pakline) минимум значительно выше."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Работают ли склады во время блэкаутов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Не все. MTP Group имеет 3 промышленных генератора, 2 оптоволоконных провайдера и Starlink — 0 дней простоя с 2022 года. Новая Почта также имеет генераторы на крупных хабах. Но многие мелкие операторы не имеют резервного питания, что критично во время длительных блэкаутов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем MTP Group отличается от Новой Почты?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MTP Group — специализированный фулфилмент-оператор с индивидуальным подходом, брендированной упаковкой, персональным менеджером и ценой от 18 грн/отправку. Новая Почта Fulfillment — корпоративный сервис масштабом 50 000 заказов/день, но с меньшей персонализацией, сложным подключением и оплатой за полки + обработку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как сравнить фулфилмент-операторов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сравнивайте по 6 критериям: цена за отправку, площадь и расположение склада, количество интеграций (CRM, маркетплейсы), наличие генераторов, опыт работы (годы на рынке), прозрачность цен. Обязательно спросите сколько дней простоя было с 2022 года."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли подключить Shopify к фулфилменту в Украине?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. MTP Group имеет прямую интеграцию с Shopify, а также WooCommerce, Horoshop, Rozetka, Prom.ua. Sender также поддерживает Shopify через API. Подключение обычно занимает 1-2 дня."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой фулфилмент самый дешёвый?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самый дешёвый фулфилмент в Украине предлагает LP-Sklad — от 4.95 грн/отправку (~0.12 USD). Но низкая цена часто означает ограниченный сервис: меньше интеграций, меньший склад, региональное расположение. Оптимальное соотношение цены и качества — MTP Group (18-26 грн) с полным набором услуг."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как перейти от одного фулфилмента к другому?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Переход занимает 3-7 дней: 1) подписать договор с новым оператором, 2) настроить API-интеграции, 3) перевезти товар на новый склад, 4) провести инвентаризацию, 5) переключить поток заказов. Хороший оператор (как MTP Group) помогает с миграцией бесплатно."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ТОП-10 фулфилмент-операторов Украины 2026: рейтинг и сравнение",
+  "description": "Рейтинг лучших фулфилмент-операторов Украины 2026: MTP Group, Unipost, Sender, Новая Почта и другие. Сравнение цен, складов, интеграций. Гид для бизнеса из СНД.",
+  "image": "https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.fulfillmentmtp.com.ua/images/logo.png"
+    }
+  },
+  "datePublished": "2026-04-09",
+  "dateModified": "2026-04-09",
+  "mainEntityOfPage": "https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://www.fulfillmentmtp.com.ua/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://www.fulfillmentmtp.com.ua/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ТОП-10 фулфилмент-операторов Украины 2026",
+      "item": "https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/"
+    }
+  ]
+}
+</script>`;
+---
+<Base
+  title="ТОП-10 фулфилмент-операторов Украины 2026: рейтинг и сравнение"
+  description="Рейтинг лучших фулфилмент-операторов Украины 2026: MTP Group, Unipost, Sender, Новая Почта и другие. Сравнение цен, складов, интеграций. Гид для бизнеса из СНД."
+  canonical="https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/"
+  lang="ru"
+  ogType="article"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/blog/top-fulfilment-operatoriv-2026/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/blog/post/top-fulfillment-operators-ukraine-2026/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/blog/top-fulfilment-operatoriv-2026/">
+</Fragment>
+
+<article class="blog-article">
+
+<div class="blog-hero-img">
+<img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="Фулфилмент-склад MTP Group — один из лучших фулфилмент-операторов Украины 2026" width="1200" height="630" loading="eager">
+</div>
+
+<div class="blog-meta">
+<span>9 апреля 2026</span>
+<span>&middot;</span>
+<span>25 мин чтения</span>
+<span>&middot;</span>
+<a href="/blog/">Блог MTP Group</a>
+</div>
+
+<h1>ТОП-10 фулфилмент-операторов Украины 2026: рейтинг и сравнение</h1>
+
+<p class="blog-lead"><strong>Как выбрать фулфилмент-оператора в Украине &mdash; рейтинг для бизнеса из СНД.</strong> Украина &mdash; рынок с 200+ млрд грн e-commerce оборота, низкой стоимостью логистики и прямым доступом к 40-миллионной аудитории покупателей. Если вы ведёте бизнес из Казахстана, Молдовы, Грузии или другой страны СНД и хотите выйти на украинский рынок &mdash; этот рейтинг поможет выбрать надёжного фулфилмент-партнёра.</p>
+
+<p>Рынок фулфилмента в Украине в 2026 году &mdash; это десятки операторов с разным масштабом, ценами и подходом. Для иностранного предпринимателя выбор сложнее: нужно учитывать не только цену и качество, но и возможность удалённого подключения, языковой барьер, способы расчётов и интеграции с международными e-commerce платформами.</p>
+
+<p>Мы проанализировали 10 крупнейших фулфилмент-операторов Украины по объективным критериям: площадь склада, цена за отправку (в грн и USD), количество интеграций, блэкаут-устойчивость, опыт работы и прозрачность цен. Ниже &mdash; честное сравнение без рекламных обещаний.</p>
+
+<nav class="blog-toc">
+<strong>Содержание:</strong>
+<ol>
+<li><a href="#methodology">Методология оценки</a></li>
+<li><a href="#rating">ТОП-10 рейтинг фулфилмент-операторов</a></li>
+<li><a href="#comparison">Сравнительная таблица</a></li>
+<li><a href="#guide">Как выбрать фулфилмент: гайд по типу бизнеса</a></li>
+<li><a href="#international">Выход на украинский рынок из-за рубежа</a></li>
+<li><a href="#faq">Частые вопросы (FAQ)</a></li>
+<li><a href="#conclusion">Вывод</a></li>
+</ol>
+</nav>
+
+<!-- ============================================ -->
+<!-- SECTION: Методология -->
+<!-- ============================================ -->
+
+<h2 id="methodology">Методология оценки: как мы формировали рейтинг</h2>
+
+<p>Оценка каждого оператора базируется на 6 критериях. Максимальная оценка &mdash; 10 баллов. Каждый критерий имеет вес от 1 до 2 баллов:</p>
+
+<div class="methodology-grid">
+<div class="method-card">
+<div class="method-icon">&#x1F4B0;</div>
+<div class="method-content">
+<strong>Цена за отправку</strong>
+<span>Вес: 2 балла. Учитываем публичные тарифы, прозрачность ценообразования, наличие скрытых комиссий. Низкая цена без качества &mdash; не преимущество.</span>
+</div>
+</div>
+<div class="method-card">
+<div class="method-icon">&#x1F3ED;</div>
+<div class="method-content">
+<strong>Площадь и расположение склада</strong>
+<span>Вес: 1.5 балла. Большая площадь = больше клиентов одновременно. Расположение рядом с Киевом &mdash; плюс для быстрой доставки по всей Украине.</span>
+</div>
+</div>
+<div class="method-card">
+<div class="method-icon">&#x1F517;</div>
+<div class="method-content">
+<strong>Интеграции (CRM, маркетплейсы, e-commerce)</strong>
+<span>Вес: 2 балла. API-подключение к KeyCRM, SalesDrive, Rozetka, Prom, Shopify, WooCommerce. Ручной ввод заказов &mdash; минус.</span>
+</div>
+</div>
+<div class="method-card">
+<div class="method-icon">&#x26A1;</div>
+<div class="method-content">
+<strong>Блэкаут-устойчивость</strong>
+<span>Вес: 2 балла. Генераторы, Starlink, резервный интернет, количество дней простоя с 2022 года. Критический фактор для Украины.</span>
+</div>
+</div>
+<div class="method-card">
+<div class="method-icon">&#x1F4C5;</div>
+<div class="method-content">
+<strong>Опыт работы</strong>
+<span>Вес: 1 балл. Годы на рынке, количество клиентов, публичные кейсы с цифрами.</span>
+</div>
+</div>
+<div class="method-card">
+<div class="method-icon">&#x1F50D;</div>
+<div class="method-content">
+<strong>Прозрачность</strong>
+<span>Вес: 1.5 балла. Публичные цены на сайте, калькулятор стоимости, реальные кейсы и отзывы, доступ к личному кабинету с аналитикой.</span>
+</div>
+</div>
+</div>
+
+<p>Важно: мы <strong>не учитываем рекламные обещания</strong>. Только факты, которые можно проверить: площадь склада, публичные тарифы, наличие генераторов, реальные отзывы клиентов.</p>
+
+<!-- ============================================ -->
+<!-- SECTION: Почему Украина -->
+<!-- ============================================ -->
+
+<h2>Почему украинский фулфилмент &mdash; выгодный выбор для СНД-бизнеса</h2>
+
+<p>Для предпринимателей из Казахстана, Молдовы, Грузии, Узбекистана и других стран украинский рынок e-commerce привлекателен по нескольким причинам:</p>
+
+<ul>
+<li><strong>Низкая стоимость логистики:</strong> обработка заказа от 18 грн (~0.43 USD) &mdash; в разы дешевле европейского фулфилмента</li>
+<li><strong>Огромный рынок:</strong> 40+ млн потенциальных покупателей, объём e-commerce 200+ млрд грн</li>
+<li><strong>Развитая инфраструктура:</strong> 20 000+ отделений Новой Почты, доставка по всей стране за 1&ndash;2 дня</li>
+<li><strong>Русскоязычная поддержка:</strong> большинство операторов свободно общаются на русском языке</li>
+<li><strong>Простота подключения:</strong> дистанционный договор, удалённое управление через личный кабинет</li>
+<li><strong>Маркетплейсы:</strong> Rozetka, Prom.ua, Kasta, OLX &mdash; готовый трафик без собственного сайта</li>
+</ul>
+
+<p>Средний курс на апрель 2026: <strong>1 USD &asymp; 41.5 грн</strong>. Все цены в статье указаны в гривне с эквивалентом в долларах для удобства сравнения.</p>
+
+<!-- ============================================ -->
+<!-- SECTION: ТОП-10 рейтинг -->
+<!-- ============================================ -->
+
+<h2 id="rating">ТОП-10 фулфилмент-операторов Украины 2026</h2>
+
+<!-- ===== #1 MTP Group ===== -->
+<div class="operator-card operator-top">
+<div class="operator-header">
+<div class="operator-rank">#1</div>
+<div class="operator-info">
+<h3>MTP Group</h3>
+<div class="operator-score"><span class="score-badge">9.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>MTP Group &mdash; фулфилмент-оператор с 10-летним опытом</strong>, который обрабатывает 60&nbsp;000+ отправлений ежемесячно и обслуживает 150+ активных клиентов. Основана в 2014 году, компания пережила все кризисы украинского e-commerce и ни одного дня не останавливала работу с начала полномасштабного вторжения в 2022 году.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Сайт:</span> <a href="https://www.fulfillmentmtp.com.ua" target="_blank" rel="noopener">fulfillmentmtp.com.ua</a></div>
+<div class="detail-row"><span class="detail-label">Год основания:</span> 2014</div>
+<div class="detail-row"><span class="detail-label">Площадь:</span> 3&nbsp;900 м&sup2; (2 склада под Киевом)</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> 18&ndash;26 грн/отправка (~0.43&ndash;0.63 USD)</div>
+<div class="detail-row"><span class="detail-label">Мин. платёж:</span> 5&nbsp;000 грн/мес (~120 USD)</div>
+<div class="detail-row"><span class="detail-label">Интеграции:</span> KeyCRM, SalesDrive, Horoshop, Shopify, WooCommerce, Rozetka, Prom.ua, Kasta</div>
+<div class="detail-row"><span class="detail-label">Блэкаут-устойчивость:</span> 3 промышленных генератора, Starlink, 2 оптоволоконных провайдера</div>
+<div class="detail-row"><span class="detail-label">Простой с 2022:</span> 0 дней</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>10+ лет на рынке &mdash; самый опытный оператор</li>
+<li>3 генератора + Starlink = 0 дней простоя</li>
+<li>150+ активных клиентов, 60 000+ отправлений/мес</li>
+<li>Прозрачные цены на сайте + онлайн-калькулятор</li>
+<li>Персональный менеджер для каждого клиента</li>
+<li>Брендированная упаковка: тишью, наклейки, открытки</li>
+<li>4 забора Новой Почты в день</li>
+<li>WMS с реальным доступом для клиента</li>
+<li>Обработка возвратов с фото-фиксацией</li>
+<li>Работа с клиентами из СНД дистанционно</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Нет склада во Львове или Одессе</li>
+<li>Не подходит для сверхбольших объёмов (10 000+ заказов/день)</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Интернет-магазины от 5 до 6&nbsp;000 заказов в день. Идеально для среднего бизнеса, который хочет передать логистику и сосредоточиться на маркетинге и продажах. Подходит для удалённого подключения из-за рубежа.</p>
+
+<div class="operator-cta">
+<a href="/calculator/">Рассчитать стоимость фулфилмента &rarr;</a>
+</div>
+
+</div>
+</div>
+
+<!-- ===== #2 Unipost ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#2</div>
+<div class="operator-info">
+<h3>Unipost</h3>
+<div class="operator-score"><span class="score-badge">8.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Unipost &mdash; киевский фулфилмент-оператор</strong> с собственной курьерской службой доставки. Компания специализируется на e-commerce логистике и предлагает полный цикл от приёма товара до доставки &laquo;до двери&raquo; в Киеве и пригороде.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Сайт:</span> unipost.ua</div>
+<div class="detail-row"><span class="detail-label">Площадь:</span> ~2&nbsp;500 м&sup2;</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Калькулятор на сайте (индивидуально)</div>
+<div class="detail-row"><span class="detail-label">Интеграции:</span> Prom.ua, Rozetka, Новая Почта API</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Собственная курьерская доставка в Киеве &mdash; быстрее Новой Почты для локальных заказов</li>
+<li>Полный цикл: склад + доставка в одном сервисе</li>
+<li>Хорошо подходит для e-commerce с фокусом на Киев</li>
+<li>Есть калькулятор стоимости на сайте</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Меньше API-интеграций, чем у лидера рынка</li>
+<li>Курьерская доставка ограничена Киевом и пригородом</li>
+<li>Меньший опыт работы с маркетплейсами</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Интернет-магазины с фокусом на Киев и область, которым нужна быстрая курьерская доставка &laquo;до двери&raquo; в столице.</p>
+
+</div>
+</div>
+
+<!-- ===== #3 Sender ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#3</div>
+<div class="operator-info">
+<h3>Sender</h3>
+<div class="operator-score"><span class="score-badge">8.0 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Sender &mdash; технологичный фулфилмент-оператор</strong> с акцентом на CRM-аналитику и автоматизацию процессов. Компания предлагает пробный период бесплатно, что позволяет протестировать сервис перед принятием решения.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Сайт:</span> senderukraine.com</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> По объёму (пробный период бесплатный)</div>
+<div class="detail-row"><span class="detail-label">Интеграции:</span> 20+ интеграций (CRM, маркетплейсы, e-commerce платформы)</div>
+<div class="detail-row"><span class="detail-label">Дополнительно:</span> Колл-центр, CRM-аналитика, обработка заказов</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>20+ интеграций &mdash; одна из самых широких экосистем</li>
+<li>Встроенная CRM-аналитика для продавцов</li>
+<li>Собственный колл-центр для обработки заказов</li>
+<li>Бесплатный пробный период &mdash; можно протестировать без риска</li>
+<li>Комплексный сервис: фулфилмент + маркетинг-инструменты</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Цены не публичные &mdash; нужно оставить заявку</li>
+<li>Менее прозрачная структура тарифов</li>
+<li>Сложнее сравнить стоимость с конкурентами</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> E-commerce бизнесы, которым нужен не просто склад, а полный комплекс услуг: фулфилмент + CRM + колл-центр + аналитика.</p>
+
+</div>
+</div>
+
+<!-- ===== #4 Новая Почта Fulfillment ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#4</div>
+<div class="operator-info">
+<h3>Новая Почта Fulfillment</h3>
+<div class="operator-score"><span class="score-badge">7.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Новая Почта Fulfillment &mdash; фулфилмент-подразделение крупнейшего почтового оператора Украины</strong> с площадью склада 8&nbsp;000 м&sup2; и мощностью до 50&nbsp;000 заказов в день. Компания использует инфраструктуру 20&nbsp;000+ отделений по всей Украине и запустила международный фулфилмент из Польши.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Площадь:</span> 8&nbsp;000 м&sup2;</div>
+<div class="detail-row"><span class="detail-label">Мощность:</span> до 50&nbsp;000 заказов/день</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Оплата за полки + обработку (индивидуально)</div>
+<div class="detail-row"><span class="detail-label">Инфраструктура:</span> 20&nbsp;000+ отделений по Украине</div>
+<div class="detail-row"><span class="detail-label">Международный:</span> Фулфилмент из Польши</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Масштаб: 20&nbsp;000+ отделений &mdash; самая широкая сеть в Украине</li>
+<li>Международный фулфилмент (Польша) для экспорта</li>
+<li>Большой склад 8&nbsp;000 м&sup2; с современным оборудованием</li>
+<li>Бесшовная интеграция с доставкой НП</li>
+<li>Генераторы на крупных хабах</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Корпоративный подход &mdash; меньше персонализации</li>
+<li>Сложный процесс подключения для малого бизнеса</li>
+<li>Оплата за полки &mdash; фиксированные расходы даже при малом объёме</li>
+<li>Меньше брендированной упаковки</li>
+<li>Нет персонального менеджера для небольших клиентов</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Крупный бизнес с 500+ заказами в день, которому нужен масштаб и международная доставка. Не лучший выбор для малого и среднего бизнеса.</p>
+
+</div>
+</div>
+
+<!-- ===== #5 Zammler ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#5</div>
+<div class="operator-info">
+<h3>Zammler</h3>
+<div class="operator-score"><span class="score-badge">7.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Zammler &mdash; пионер фулфилмента в Украине</strong>, который запустил эту услугу первым ещё в 2015 году. Общая площадь логистических объектов компании &mdash; 55&nbsp;000 м&sup2;, из которых 12&nbsp;500 м&sup2; выделено под фулфилмент. Компания ориентирована преимущественно на крупный бизнес и международные бренды.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Площадь фулфилмента:</span> 12&nbsp;500 м&sup2;</div>
+<div class="detail-row"><span class="detail-label">Общая площадь:</span> 55&nbsp;000 м&sup2;</div>
+<div class="detail-row"><span class="detail-label">На рынке с:</span> 2015 (первый фулфилмент в Украине)</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Индивидуально (не публичная)</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Первый фулфилмент-оператор в Украине (2015) &mdash; большой опыт</li>
+<li>Огромная площадь 12&nbsp;500 м&sup2; под фулфилмент</li>
+<li>Полный 3PL-сервис: склад, транспорт, таможенное оформление</li>
+<li>Опыт работы с крупными международными брендами</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Цены не публичные &mdash; только по запросу</li>
+<li>Ориентирован на крупный бизнес &mdash; высокий порог входа</li>
+<li>Меньше интеграций с украинскими CRM</li>
+<li>Корпоративный стиль работы &mdash; не для стартапов</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Крупный бизнес и международные бренды с объёмом 500+ заказов в день. Идеально для компаний, которым нужен полный 3PL с таможенным оформлением.</p>
+
+</div>
+</div>
+
+<!-- ===== #6 Fast Lane Group ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#6</div>
+<div class="operator-info">
+<h3>Fast Lane Group</h3>
+<div class="operator-score"><span class="score-badge">7.0 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Fast Lane Group &mdash; логистический оператор с крупным складом класса А</strong> площадью 12&nbsp;000 м&sup2;. Компания базируется в Харьковской области, что одновременно является преимуществом (близость к восточным регионам) и риском (близость к зоне боевых действий).</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Площадь:</span> 12&nbsp;000 м&sup2; (класс А)</div>
+<div class="detail-row"><span class="detail-label">Расположение:</span> Харьковская область</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Индивидуально</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Крупный склад класса А &mdash; 12&nbsp;000 м&sup2;</li>
+<li>Современное оборудование и автоматизация</li>
+<li>Выгодное расположение для доставки на восток и центр Украины</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Харьковская область &mdash; повышенный риск из-за близости к зоне боевых действий</li>
+<li>Возможные перебои в работе из-за обстрелов</li>
+<li>Мало публичной информации о тарифах и интеграциях</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Компании со значительным объёмом заказов в восточных регионах Украины. Стоит учитывать безопасностные риски при принятии решения.</p>
+
+</div>
+</div>
+
+<!-- ===== #7 Чердак ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#7</div>
+<div class="operator-info">
+<h3>Чердак</h3>
+<div class="operator-score"><span class="score-badge">7.0 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Чердак &mdash; гибридный сервис</strong>, который сочетает self-storage (аренда боксов для личных вещей) с фулфилментом для e-commerce. Интересный формат для тех, кто начинает с малого объёма и хочет постепенно перейти от хранения к полному фулфилменту.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Цена:</span> От 19 грн/отправка (~0.46 USD)</div>
+<div class="detail-row"><span class="detail-label">Формат:</span> Self-storage + фулфилмент гибрид</div>
+<div class="detail-row"><span class="detail-label">Расположение:</span> Киев</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Доступная цена &mdash; от 19 грн за отправку</li>
+<li>Низкий порог входа &mdash; можно начать с self-storage</li>
+<li>Гибкий формат: хранение + фулфилмент в одном месте</li>
+<li>Подходит для микробизнеса и начинающих</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Ограниченный масштаб &mdash; не для крупного бизнеса</li>
+<li>Self-storage формат &mdash; меньше автоматизации, чем у классических фулфилмент-центров</li>
+<li>Меньше API-интеграций</li>
+<li>Ограниченная аналитика и WMS</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Микробизнес и начинающие с 5&ndash;30 заказами в день, которые хотят начать с минимальных затрат и постепенно масштабироваться.</p>
+
+</div>
+</div>
+
+<!-- ===== #8 LP-Sklad ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#8</div>
+<div class="operator-info">
+<h3>LP-Sklad</h3>
+<div class="operator-score"><span class="score-badge">6.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>LP-Sklad &mdash; самый дешёвый фулфилмент-оператор в Украине</strong> с ценой от 4.95 грн за отправку (~0.12 USD). Компания базируется в Днепропетровской области и предлагает 100 тестовых отправок бесплатно. Привлекательный вариант для тех, кто ищет минимальную цену.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Цена:</span> От 4.95 грн/отправка (~0.12 USD, самый дешёвый на рынке)</div>
+<div class="detail-row"><span class="detail-label">Тестовый период:</span> 100 отправок бесплатно</div>
+<div class="detail-row"><span class="detail-label">Расположение:</span> Днепропетровская область</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Самая низкая цена на рынке &mdash; от 4.95 грн/отправка</li>
+<li>100 бесплатных тестовых отправок</li>
+<li>Низкий порог входа</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Днепропетровская область &mdash; дальше от Киева = дольше доставка в западные регионы</li>
+<li>Ограниченная информация о площади склада и инфраструктуре</li>
+<li>Меньше интеграций с CRM и маркетплейсами</li>
+<li>Неизвестно о наличии генераторов</li>
+<li>Низкая цена может означать ограниченный сервис</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Продавцы, для которых цена &mdash; главный критерий, и которые готовы пожертвовать частью сервиса ради минимальной себестоимости.</p>
+
+</div>
+</div>
+
+<!-- ===== #9 LogisticPlus ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#9</div>
+<div class="operator-info">
+<h3>LogisticPlus</h3>
+<div class="operator-score"><span class="score-badge">6.5 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>LogisticPlus &mdash; полноценный 3PL-оператор</strong> с командой 340+ сотрудников и 3 складами по Украине. Компания предлагает не только фулфилмент, но и полный спектр логистических услуг: транспорт, таможенное оформление, кросс-докинг. Хороший выбор для бизнеса с импортными товарами.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Команда:</span> 340+ сотрудников</div>
+<div class="detail-row"><span class="detail-label">Склады:</span> 3 (разные регионы)</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Индивидуально</div>
+<div class="detail-row"><span class="detail-label">Дополнительно:</span> 3PL, таможенное оформление, транспорт</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Полный 3PL: фулфилмент + транспорт + таможня</li>
+<li>3 склада по Украине &mdash; более широкое покрытие</li>
+<li>Большая команда (340+) &mdash; стабильность операций</li>
+<li>Опыт работы с импортными товарами</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Цены не публичные</li>
+<li>Фулфилмент &mdash; не основной бизнес (фокус на 3PL)</li>
+<li>Меньше интеграций с украинскими e-commerce платформами</li>
+<li>Ориентирован больше на B2B, чем на B2C</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Бизнес с импортными товарами, которому нужен полный 3PL-цикл: от растаможки до доставки конечному покупателю.</p>
+
+</div>
+</div>
+
+<!-- ===== #10 Pakline Group ===== -->
+<div class="operator-card">
+<div class="operator-header">
+<div class="operator-rank">#10</div>
+<div class="operator-info">
+<h3>Pakline Group</h3>
+<div class="operator-score"><span class="score-badge">6.0 / 10</span></div>
+</div>
+</div>
+<div class="operator-body">
+
+<p><strong>Pakline Group &mdash; крупнейший по площади складской оператор в Украине</strong> с общей площадью 52&nbsp;700 м&sup2; и присутствием в 12 городах. Компания специализируется на контрактной логистике и складском хранении, фулфилмент &mdash; одно из направлений, но не основное.</p>
+
+<div class="operator-details">
+<div class="detail-row"><span class="detail-label">Площадь:</span> 52&nbsp;700 м&sup2; (крупнейший)</div>
+<div class="detail-row"><span class="detail-label">Присутствие:</span> 12 городов Украины</div>
+<div class="detail-row"><span class="detail-label">Цена:</span> Индивидуально</div>
+</div>
+
+<div class="operator-pros-cons">
+<div class="pros">
+<strong>Преимущества:</strong>
+<ul>
+<li>Крупнейшая площадь складов &mdash; 52&nbsp;700 м&sup2;</li>
+<li>Присутствие в 12 городах &mdash; самое широкое покрытие</li>
+<li>Опыт работы с большими объёмами</li>
+</ul>
+</div>
+<div class="cons">
+<strong>Недостатки:</strong>
+<ul>
+<li>Фулфилмент &mdash; не основной бизнес (фокус на складское хранение и 3PL)</li>
+<li>Корпоративный подход &mdash; высокий минимум</li>
+<li>Меньше интеграций с e-commerce CRM</li>
+<li>Цены не публичные</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Для кого:</strong> Крупный бизнес, которому нужно складское хранение в разных регионах Украины с опцией фулфилмента.</p>
+
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION: Сравнительная таблица -->
+<!-- ============================================ -->
+
+<h2 id="comparison">Сравнительная таблица фулфилмент-операторов Украины 2026</h2>
+
+<p>Сводная таблица для быстрого сравнения всех 10 операторов по ключевым параметрам:</p>
+
+<div class="comparison-table-wrap">
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Оператор</th>
+<th>Цена/отправка</th>
+<th>Площадь</th>
+<th>Интеграции</th>
+<th>Генераторы</th>
+<th>Оценка</th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-highlight">
+<td><strong>MTP Group</strong></td>
+<td>18&ndash;26 грн <span style="color:#888;font-size:12px">(~0.43&ndash;0.63$)</span></td>
+<td>3&nbsp;900 м&sup2;</td>
+<td>8+ (KeyCRM, Shopify, Rozetka...)</td>
+<td>3 + Starlink</td>
+<td><strong>9.5</strong></td>
+</tr>
+<tr>
+<td>Unipost</td>
+<td>Калькулятор</td>
+<td>~2&nbsp;500 м&sup2;</td>
+<td>3+ (Prom, Rozetka, НП)</td>
+<td>Н/д</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>Sender</td>
+<td>По объёму</td>
+<td>Н/д</td>
+<td>20+</td>
+<td>Н/д</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>НП Fulfillment</td>
+<td>Полки + обработка</td>
+<td>8&nbsp;000 м&sup2;</td>
+<td>НП экосистема</td>
+<td>Да (хабы)</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Zammler</td>
+<td>Индивидуально</td>
+<td>12&nbsp;500 м&sup2;</td>
+<td>Ограниченно</td>
+<td>Да</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Fast Lane Group</td>
+<td>Индивидуально</td>
+<td>12&nbsp;000 м&sup2;</td>
+<td>Н/д</td>
+<td>Н/д</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>Чердак</td>
+<td>от 19 грн <span style="color:#888;font-size:12px">(~0.46$)</span></td>
+<td>Н/д</td>
+<td>Ограниченно</td>
+<td>Н/д</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>LP-Sklad</td>
+<td><strong>от 4.95 грн</strong> <span style="color:#888;font-size:12px">(~0.12$)</span></td>
+<td>Н/д</td>
+<td>Ограниченно</td>
+<td>Н/д</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>LogisticPlus</td>
+<td>Индивидуально</td>
+<td>3 склада</td>
+<td>3PL-фокус</td>
+<td>Н/д</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>Pakline Group</td>
+<td>Индивидуально</td>
+<td>52&nbsp;700 м&sup2;</td>
+<td>Ограниченно</td>
+<td>Н/д</td>
+<td>6.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Легенда:</strong> &laquo;Н/д&raquo; &mdash; информация не опубликована на сайте оператора. Цены актуальны на апрель 2026. Курс: 1 USD &asymp; 41.5 грн.</p>
+
+<div class="blog-cta">
+<h3>Хотите точный расчёт для вашего бизнеса?</h3>
+<p>Калькулятор MTP Group покажет стоимость с учётом вашего объёма за 30 секунд</p>
+<a href="/calculator/">Рассчитать стоимость &rarr;</a>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION: Гайд по типу бизнеса -->
+<!-- ============================================ -->
+
+<h2 id="guide">Как выбрать фулфилмент: гайд по типу бизнеса</h2>
+
+<p>Универсального &laquo;лучшего&raquo; фулфилмента не существует. Всё зависит от вашего объёма, товарной категории и приоритетов. Вот конкретные рекомендации для разных типов бизнеса:</p>
+
+<h3>Малый бизнес (5&ndash;30 заказов в день)</h3>
+
+<p>Если у вас от 5 до 30 заказов ежедневно, главное &mdash; не переплачивать за масштаб, который вам пока не нужен. Вам важен низкий минимальный платёж, простота подключения и возможность расти без смены оператора.</p>
+
+<p><strong>Рекомендация:</strong></p>
+<ul>
+<li><strong>MTP Group</strong> &mdash; минимум 5&nbsp;000 грн/мес (~120 USD), цена 26 грн/отправка, полный набор интеграций. Не придётся мигрировать, когда вырастете до 200+ заказов/день.</li>
+<li><strong>Чердак</strong> &mdash; гибридный формат, можно начать с self-storage и постепенно перейти на фулфилмент. От 19 грн/отправка.</li>
+</ul>
+
+<p>Чего избегать: крупных 3PL-операторов (Zammler, Pakline) &mdash; они не работают с малыми объёмами. Новая Почта Fulfillment тоже имеет высокий минимум.</p>
+
+<h3>Средний бизнес (30&ndash;200 заказов в день)</h3>
+
+<p>Это наиболее &laquo;конкурентный&raquo; сегмент &mdash; здесь работают почти все операторы. При таком объёме уже критичны: скорость сборки заказов, количество заборов НП в день, качество упаковки и WMS-аналитика.</p>
+
+<p><strong>Рекомендация:</strong></p>
+<ul>
+<li><strong>MTP Group</strong> &mdash; оптимальный выбор: цена 18&ndash;22 грн при таком объёме, 4 забора НП/день, персональный менеджер, WMS с доступом.</li>
+<li><strong>Sender</strong> &mdash; если нужна CRM-аналитика и колл-центр в одном пакете.</li>
+</ul>
+
+<p>На этом объёме фулфилмент экономит вам минимум 3 часа в день. Вместо упаковки вы занимаетесь маркетингом и увеличиваете объём. Подробнее об этом читайте в <a href="/fulfilment-dlya-internet-magazynu/">гайде по фулфилменту для интернет-магазинов</a>.</p>
+
+<h3>Крупный бизнес (200+ заказов в день)</h3>
+
+<p>При 200+ заказах ваш приоритет &mdash; стабильность, масштабируемость и блэкаут-устойчивость. Один день простоя при таком объёме &mdash; это 200+ разочарованных покупателей и падение рейтинга на маркетплейсах.</p>
+
+<p><strong>Рекомендация:</strong></p>
+<ul>
+<li><strong>MTP Group</strong> &mdash; до 6&nbsp;000 заказов/день, цена от 18 грн (~0.43 USD), 0 дней простоя с 2022.</li>
+<li><strong>НП Fulfillment</strong> &mdash; если 5&nbsp;000+ заказов/день и нужен международный фулфилмент.</li>
+<li><strong>Zammler</strong> &mdash; для международных брендов с полным 3PL-циклом.</li>
+</ul>
+
+<p>При выборе оператора для крупного объёма обязательно спросите о <a href="/services/">полном перечне услуг</a> и посетите склад лично перед подписанием контракта.</p>
+
+<h3>Маркетплейсы (Rozetka, Prom, Kasta, OLX)</h3>
+
+<p>Если вы продаёте на нескольких маркетплейсах одновременно, ваш фулфилмент должен объединять заказы со всех каналов в одном складе с единым остатком. API-интеграция &mdash; обязательна.</p>
+
+<p><strong>Рекомендация:</strong></p>
+<ul>
+<li><strong>MTP Group</strong> &mdash; интеграции с Rozetka, Prom, Kasta + KeyCRM/SalesDrive для объединения заказов.</li>
+<li><strong>Unipost</strong> &mdash; если основной канал &mdash; Prom.ua и фокус на Киев.</li>
+</ul>
+
+<p>Важно: маркетплейсы штрафуют за задержки отправки. Поэтому критичные параметры &mdash; количество заборов НП (минимум 4 в день) и время сборки заказа (до 30 секунд). Подробнее о работе с маркетплейсами &mdash; в нашем <a href="/guide/">гайде для продавцов</a>.</p>
+
+<!-- ============================================ -->
+<!-- SECTION: Выход на украинский рынок -->
+<!-- ============================================ -->
+
+<h2 id="international">Выход на украинский рынок из-за рубежа: пошаговый план</h2>
+
+<p>Для предпринимателей из Казахстана, Молдовы, Грузии, Узбекистана и других стран, которые хотят выйти на украинский e-commerce рынок через фулфилмент-оператора, процесс состоит из 5 шагов:</p>
+
+<h3>Шаг 1: Выберите нишу и проанализируйте рынок</h3>
+<p>Украинский e-commerce &mdash; это прежде всего одежда, электроника, товары для дома, косметика и детские товары. Изучите Rozetka, Prom.ua и OLX &mdash; это три главные площадки. На Rozetka &mdash; 30+ млн посетителей в месяц, на Prom.ua &mdash; 15+ млн. Конкуренция высокая, но рынок растёт двузначными темпами каждый год.</p>
+
+<h3>Шаг 2: Отправьте товар на склад оператора</h3>
+<p>MTP Group принимает товар из-за рубежа. Вы отправляете партию транспортной компанией на склад под Киевом. Компания проводит приёмку с поштучной проверкой, штрихкодированием и размещением на стеллажах. Весь процесс фиксируется в WMS с доступом через личный кабинет.</p>
+
+<h3>Шаг 3: Настройте интеграции</h3>
+<p>Подключите CRM (KeyCRM, SalesDrive) и маркетплейсы (Rozetka, Prom.ua, Kasta) через API. MTP Group настраивает интеграции за 1&ndash;2 дня. Если у вас собственный интернет-магазин на Shopify или WooCommerce &mdash; подключение тоже автоматическое.</p>
+
+<h3>Шаг 4: Запустите продажи</h3>
+<p>Заказы автоматически поступают на склад, собираются и отправляются через Новую Почту. 4 забора в день &mdash; заказы до 16:00 уходят в тот же день. Покупатель получает посылку за 1&ndash;2 дня по всей Украине.</p>
+
+<h3>Шаг 5: Управляйте удалённо</h3>
+<p>Через личный кабинет WMS вы видите остатки, статусы заказов, возвраты в реальном времени. Персональный менеджер на связи в мессенджерах. Финансовые отчёты &mdash; ежемесячно. Вам не нужно находиться в Украине.</p>
+
+<div class="international-note">
+<strong>Расчёты и оплата:</strong> Все расчёты ведутся в украинской гривне (UAH). Оплата по безналичному расчёту. Средний курс на апрель 2026: 1 USD &asymp; 41.5 грн, 1 EUR &asymp; 45.5 грн. Минимальный платёж MTP Group &mdash; 5 000 грн/мес (~120 USD).
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION: 7 критериев -->
+<!-- ============================================ -->
+
+<h2>7 главных критериев выбора фулфилмент-оператора</h2>
+
+<p>Независимо от размера бизнеса, проверяйте каждого оператора по этим пунктам:</p>
+
+<ol>
+<li><strong>Прозрачные цены.</strong> Если оператор скрывает тарифы за формой &laquo;Оставить заявку&raquo; &mdash; задайте себе вопрос: почему? У MTP Group все цены <a href="/calculator/">публичные на сайте с калькулятором</a>.</li>
+
+<li><strong>Генераторы и Starlink.</strong> С 2022 года это обязательно. Спросите конкретно: сколько генераторов, какая мощность, есть ли Starlink, сколько дней простоя было за последние 2 года. &laquo;У нас есть генератор&raquo; &mdash; это не то же самое, что &laquo;3 промышленных генератора + Starlink + 2 оптоволоконных провайдера, 0 дней простоя с 2022&raquo;.</li>
+
+<li><strong>Количество заборов НП в день.</strong> 1 забор &mdash; заказы после 11:00 едут только на следующий день. 4 забора &mdash; отправка в тот же день даже для заказов до 16:00.</li>
+
+<li><strong>API-интеграции.</strong> Оператор должен подключаться к вашей CRM (KeyCRM, SalesDrive, LP CRM) и маркетплейсам (Rozetka, Prom, Kasta) автоматически через API. Ручной ввод заказов &mdash; это гарантия ошибок.</li>
+
+<li><strong>Реальные кейсы с цифрами.</strong> Не &laquo;мы лучшие&raquo;, а &laquo;клиент X вырос с 12 до 72 заказов/день за 3 месяца&raquo;. Читайте <a href="/recalls/">реальные отзывы клиентов MTP Group</a>.</li>
+
+<li><strong>Тестовый период без долгосрочного контракта.</strong> Хороший оператор не боится показать себя в деле. Если требуют контракт на год сразу &mdash; это красный флаг.</li>
+
+<li><strong>WMS с доступом для клиента.</strong> Вы должны видеть остатки, статусы заказов, возвраты в реальном времени. Если единственный &laquo;отчёт&raquo; &mdash; Excel раз в неделю, это не современный сервис.</li>
+</ol>
+
+<!-- ============================================ -->
+<!-- SECTION: Стоимость -->
+<!-- ============================================ -->
+
+<h2>Сколько на самом деле стоит фулфилмент в Украине в 2026 году</h2>
+
+<p>Цены на фулфилмент в Украине варьируются от 4.95 до 26+ грн за отправку. Но сравнивать только цену за отправку &mdash; ошибка. Нужно смотреть на полную себестоимость:</p>
+
+<div class="blog-table">
+<table>
+<thead><tr><th>Статья расходов</th><th>Что входит</th><th>Диапазон цен (грн)</th><th>В USD</th></tr></thead>
+<tbody>
+<tr><td>Обработка заказа</td><td>Сборка, упаковка, маркировка, ТТН</td><td>4.95 &ndash; 26 грн/шт</td><td>0.12 &ndash; 0.63</td></tr>
+<tr><td>Хранение</td><td>Полка/м&sup3; на складе</td><td>450 &ndash; 800 грн/м&sup3;/мес</td><td>10.8 &ndash; 19.3</td></tr>
+<tr><td>Приём товара</td><td>Разгрузка, проверка, штрихкодирование</td><td>2 &ndash; 5 грн/шт</td><td>0.05 &ndash; 0.12</td></tr>
+<tr><td>Минимальный платёж</td><td>Ежемесячный минимум</td><td>3&nbsp;000 &ndash; 15&nbsp;000 грн</td><td>72 &ndash; 361</td></tr>
+<tr><td>Доп. услуги</td><td>Брендирование, вкладки, фото-фиксация</td><td>1 &ndash; 10 грн/шт</td><td>0.02 &ndash; 0.24</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Пример:</strong> интернет-магазин со 100 заказами в день в MTP Group платит приблизительно 44&nbsp;000&ndash;48&nbsp;000 грн/мес (~1&nbsp;060&ndash;1&nbsp;157 USD): отправка + хранение. Это дешевле собственного склада (55&nbsp;000+ грн/мес: аренда + зарплата + коммунальные + генератор), при этом высвобождает 90+ часов ежемесячно.</p>
+
+<p>Самый дешёвый оператор (LP-Sklad, 4.95 грн) может не включать в цену упаковочные материалы, создание ТТН и другие &laquo;мелочи&raquo;, которые добавляют ещё 10&ndash;15 грн к реальной себестоимости. Всегда спрашивайте: что именно входит в цену?</p>
+
+<!-- ============================================ -->
+<!-- SECTION: Блэкаут-устойчивость -->
+<!-- ============================================ -->
+
+<h2>Блэкаут-устойчивость: почему это важнейший критерий в 2026</h2>
+
+<p>Украина живёт в условиях регулярных отключений электроэнергии с 2022 года. Для фулфилмент-склада блэкаут &mdash; это:</p>
+
+<ul>
+<li><strong>WMS не работает</strong> &mdash; оператор не знает, где лежит товар</li>
+<li><strong>Интернет отключён</strong> &mdash; заказы не поступают</li>
+<li><strong>Принтеры этикеток остановились</strong> &mdash; ТТН не создаются</li>
+<li><strong>Освещение отключено</strong> &mdash; сборка заказов физически невозможна</li>
+</ul>
+
+<p>Один день простоя при 100 заказах/день &mdash; это 100 разочарованных покупателей, минус рейтинг на маркетплейсе, минус повторные продажи. Для бизнеса из-за рубежа это ещё критичнее: вы не можете лично приехать и проконтролировать ситуацию.</p>
+
+<div class="blackout-comparison">
+<div class="blackout-card blackout-good">
+<strong>MTP Group: 0 дней простоя с 2022</strong>
+<ul>
+<li>3 промышленных генератора</li>
+<li>Starlink (работает даже без наземного интернета)</li>
+<li>2 оптоволоконных провайдера</li>
+<li>UPS для серверов (бесперебойное переключение)</li>
+</ul>
+</div>
+<div class="blackout-card blackout-warn">
+<strong>Большинство операторов: неизвестно</strong>
+<ul>
+<li>Информация о генераторах не публикуется</li>
+<li>&laquo;У нас есть генератор&raquo; без деталей</li>
+<li>Нет данных о днях простоя</li>
+</ul>
+</div>
+</div>
+
+<p>Перед выбором оператора задайте прямой вопрос: <em>&laquo;Сколько рабочих дней вы были остановлены с февраля 2022 года?&raquo;</em> Если ответ не &laquo;ноль&raquo; &mdash; подумайте дважды.</p>
+
+<!-- ============================================ -->
+<!-- SECTION: FAQ -->
+<!-- ============================================ -->
+
+<h2 id="faq">Частые вопросы о фулфилмент-операторах в Украине</h2>
+
+<div class="blog-faq">
+
+<details>
+<summary>Какой лучший фулфилмент в Украине?</summary>
+<p>По результатам сравнения 2026 года лучшим фулфилмент-оператором в Украине является <strong>MTP Group</strong> с оценкой 9.5/10. Компания работает с 2014 года, имеет 2 склада общей площадью 3&nbsp;900 м&sup2; под Киевом, обрабатывает 60&nbsp;000+ отправлений в месяц и не останавливалась ни одного дня с 2022 года. Цена &mdash; от 18 грн (~0.43 USD) за отправку. <a href="/calculator/">Рассчитать стоимость &rarr;</a></p>
+</details>
+
+<details>
+<summary>Сколько стоит фулфилмент в Украине в 2026?</summary>
+<p>Стоимость фулфилмента в Украине в 2026 году &mdash; от 4.95 грн до 26 грн за отправку в зависимости от оператора и объёма. Средняя рыночная цена для качественного фулфилмента &mdash; 18&ndash;25 грн (~0.43&ndash;0.60 USD) за заказ. В эту цену обычно входит: сборка заказа, упаковка, упаковочные материалы, создание ТТН, передача на Новую Почту. Хранение оплачивается отдельно &mdash; от 450 до 800 грн/м&sup3; в месяц.</p>
+</details>
+
+<details>
+<summary>Можно ли подключиться к фулфилменту удалённо из Казахстана, Молдовы или другой страны?</summary>
+<p>Да. MTP Group работает с клиентами из стран СНД полностью дистанционно. Процесс: заявка на сайте &rarr; онлайн-консультация &rarr; подписание договора (дистанционно) &rarr; отправка товара на склад транспортной компанией &rarr; настройка API-интеграций &rarr; запуск продаж. Вам не нужно лично присутствовать в Украине. Управление идёт через личный кабинет WMS и персонального менеджера в мессенджерах. Расчёты в гривне, оплата по безналичному расчёту.</p>
+</details>
+
+<details>
+<summary>Какой минимальный объём для фулфилмента?</summary>
+<p>Минимальный объём зависит от оператора. MTP Group работает с клиентами от 5 заказов в день (минимальный платёж &mdash; 5&nbsp;000 грн/мес, ~120 USD). LP-Sklad предлагает 100 тестовых отправок бесплатно. Крупные операторы (Zammler, Pakline, НП Fulfillment) обычно имеют более высокий минимум &mdash; от 100+ заказов/день.</p>
+</details>
+
+<details>
+<summary>Работают ли склады во время блэкаутов?</summary>
+<p>Не все. MTP Group имеет 3 промышленных генератора, 2 оптоволоконных провайдера и Starlink &mdash; 0 дней простоя с 2022 года. Новая Почта также имеет генераторы на крупных хабах. Но многие мелкие операторы не публикуют информацию о наличии резервного питания. Перед выбором обязательно спросите: &laquo;Сколько дней простоя было с февраля 2022?&raquo;</p>
+</details>
+
+<details>
+<summary>Как сравнить фулфилмент-операторов?</summary>
+<p>Сравнивайте по 6 ключевым критериям: 1) цена за отправку (что входит?), 2) площадь и расположение склада, 3) количество API-интеграций с CRM и маркетплейсами, 4) блэкаут-устойчивость (генераторы, Starlink), 5) опыт работы (годы, количество клиентов), 6) прозрачность цен (публичные тарифы или &laquo;оставить заявку&raquo;). Используйте нашу <a href="#comparison">сравнительную таблицу</a> выше.</p>
+</details>
+
+<details>
+<summary>Чем MTP Group отличается от Новой Почты?</summary>
+<p>MTP Group &mdash; это специализированный фулфилмент-оператор с индивидуальным подходом: персональный менеджер, брендированная упаковка, гибкие тарифы (от 18 грн). Новая Почта Fulfillment &mdash; корпоративный сервис масштабом 50&nbsp;000 заказов/день и 20&nbsp;000+ отделений, но с меньшей персонализацией, сложным подключением и фиксированной оплатой за полки. MTP Group лучше для бизнеса до 6&nbsp;000 заказов/день, НП &mdash; для корпораций с 5&nbsp;000+.</p>
+</details>
+
+<details>
+<summary>Какой фулфилмент самый дешёвый?</summary>
+<p>Самую низкую цену за отправку предлагает LP-Sklad &mdash; от 4.95 грн (~0.12 USD). Однако низкая цена может не включать упаковочные материалы, создание ТТН и другие услуги. Реальная себестоимость может быть выше. Оптимальное соотношение цена/качество &mdash; MTP Group (18&ndash;26 грн), где в цену входит всё: сборка, упаковка, материалы, ТТН, передача на НП. <a href="/calculator/">Посчитайте свою стоимость &rarr;</a></p>
+</details>
+
+<details>
+<summary>Можно ли подключить Shopify к фулфилменту в Украине?</summary>
+<p>Да. MTP Group имеет прямую API-интеграцию с Shopify, а также WooCommerce, Horoshop, Rozetka, Prom.ua. Sender также поддерживает Shopify через свою платформу с 20+ интеграциями. Подключение обычно занимает 1&ndash;2 дня: настройка API, синхронизация товаров, тестовый заказ. Подробнее об интеграциях &mdash; на странице <a href="/services/">услуг MTP Group</a>.</p>
+</details>
+
+<details>
+<summary>Как перейти от одного фулфилмента к другому?</summary>
+<p>Миграция между фулфилмент-операторами занимает 3&ndash;7 дней: 1) подписать договор с новым оператором, 2) настроить API-интеграции с CRM и маркетплейсами, 3) физически перевезти товар на новый склад, 4) провести инвентаризацию и приёмку, 5) переключить поток заказов. MTP Group помогает с миграцией бесплатно &mdash; включая транспортировку товара и настройку интеграций. <a href="/calculator/">Оставьте заявку &mdash; поможем с переходом &rarr;</a></p>
+</details>
+
+<details>
+<summary>На каком языке общаться с операторами?</summary>
+<p>Большинство фулфилмент-операторов Украины свободно общаются на русском языке. MTP Group предоставляет персонального менеджера, который работает в мессенджерах (Telegram, Viber, WhatsApp) и оперативно отвечает на русском. Документация и отчёты также доступны на русском языке. Языковой барьер &mdash; не проблема.</p>
+</details>
+
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION: Вывод -->
+<!-- ============================================ -->
+
+<h2 id="conclusion">Вывод: кого выбрать в 2026 году</h2>
+
+<p>Рынок фулфилмента в Украине растёт каждый год. В 2026 есть десятки операторов на любой бюджет и объём. Но после детального сравнения по объективным критериям &mdash; цена, площадь, интеграции, блэкаут-устойчивость, опыт, прозрачность &mdash; лидером остаётся <strong>MTP Group</strong> с оценкой 9.5/10.</p>
+
+<p>Главные аргументы в пользу MTP Group:</p>
+<ul>
+<li><strong>10+ лет опыта</strong> &mdash; самый опытный оператор на рынке</li>
+<li><strong>0 дней простоя с 2022</strong> &mdash; благодаря 3 генераторам и Starlink</li>
+<li><strong>Прозрачные цены</strong> &mdash; калькулятор на сайте, без скрытых комиссий</li>
+<li><strong>От 18 грн/отправка (~0.43 USD)</strong> &mdash; конкурентная цена при высоком качестве</li>
+<li><strong>150+ активных клиентов</strong> &mdash; проверено на реальном объёме</li>
+<li><strong>Работа с СНД-бизнесом</strong> &mdash; дистанционное подключение и управление</li>
+</ul>
+
+<p>Если ваш бизнес &mdash; от 5 до 6&nbsp;000 заказов в день, MTP Group закроет все потребности по логистике. Для сверхбольших объёмов (10&nbsp;000+/день) рассмотрите НП Fulfillment или Zammler. Для микробизнеса, который только начинает &mdash; Чердак или LP-Sklad как стартовый вариант.</p>
+
+<p>Для предпринимателей из Казахстана, Молдовы, Грузии и других стран: выход на украинский рынок через фулфилмент &mdash; это низкие логистические затраты (от ~0.43 USD за заказ), огромная аудитория и полностью удалённое управление. Начните с расчёта стоимости &mdash; это займёт 30 секунд.</p>
+
+<div class="blog-cta">
+<h3>Готовы передать логистику профессионалам?</h3>
+<p>Рассчитайте стоимость фулфилмента для вашего бизнеса за 30 секунд</p>
+<a href="/calculator/">Рассчитать стоимость &rarr;</a>
+</div>
+
+<h2>Читайте также</h2>
+<ul>
+<li><a href="/blog/chto-takoe-fulfilment/">Что такое фулфилмент? Полный гид для интернет-магазина</a></li>
+<li><a href="/fulfilment-dlya-internet-magazynu/">Фулфилмент для интернет-магазинов &mdash; все, что нужно знать</a></li>
+<li><a href="/blog/top-marketplejsov-ukrainy/">ТОП маркетплейсов Украины 2026 &mdash; полный гид для продавца</a></li>
+<li><a href="/services/">Все услуги MTP Group</a></li>
+<li><a href="/recalls/">Отзывы клиентов MTP Group</a></li>
+<li><a href="/calculator/">Калькулятор стоимости фулфилмента</a></li>
+<li><a href="/guide/">Гайд для продавцов на маркетплейсах</a></li>
+</ul>
+
+</article>
+</Base>
+
+<style is:global>
+/* Blog article base */
+.blog-article{max-width:800px;margin:0 auto;padding:80px 24px 60px;font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.85;color:#333}
+.blog-hero-img{margin:-80px -24px 32px;overflow:hidden}
+.blog-hero-img img{width:100%;max-height:480px;object-fit:cover;display:block}
+.blog-meta{display:flex;gap:8px;font-size:13px;color:#999;margin-bottom:24px}
+.blog-meta a{color:#e63329;text-decoration:none}
+.blog-article h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin-bottom:24px;color:#000}
+.blog-lead{font-size:19px;color:#555;line-height:1.7;margin-bottom:32px;padding-left:20px;border-left:3px solid #e63329}
+.blog-toc{background:#f9f9f9;border:1px solid #e0e0e0;border-radius:10px;padding:20px 24px;margin-bottom:40px}
+.blog-toc strong{display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#999}
+.blog-toc ol{padding-left:20px;margin:0}
+.blog-toc li{font-size:15px;padding:4px 0}
+.blog-toc a{color:#e63329;text-decoration:none}
+.blog-toc a:hover{text-decoration:underline}
+.blog-article h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,32px);font-weight:400;margin:48px 0 16px;color:#000;padding-top:16px;border-top:1px solid #eee}
+.blog-article h2:first-of-type{border-top:none}
+.blog-article h3{font-size:18px;font-weight:600;margin:32px 0 8px;color:#000}
+.blog-article p{margin-bottom:16px}
+.blog-article ul,.blog-article ol{margin:0 0 16px;padding-left:24px}
+.blog-article li{margin-bottom:8px}
+
+/* Methodology grid */
+.methodology-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0 32px}
+.method-card{display:flex;gap:16px;padding:20px;background:#f9f9f9;border-radius:10px;border:1px solid #e8e8e8}
+.method-icon{font-size:28px;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;border:1px solid #e0e0e0}
+.method-content{display:flex;flex-direction:column;gap:4px}
+.method-content strong{font-size:15px;color:#000}
+.method-content span{font-size:13px;color:#666;line-height:1.5}
+@media(max-width:640px){.methodology-grid{grid-template-columns:1fr}}
+
+/* Operator cards */
+.operator-card{border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;margin:32px 0;background:#fff;transition:box-shadow .3s}
+.operator-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.operator-top{border:2px solid #e63329}
+.operator-header{display:flex;align-items:center;gap:20px;padding:24px 28px;background:#000;color:#fff}
+.operator-top .operator-header{background:#e63329}
+.operator-rank{font-family:'DM Serif Display',serif;font-size:36px;font-weight:400;opacity:.7;min-width:48px}
+.operator-top .operator-rank{opacity:1}
+.operator-info{flex:1}
+.operator-info h3{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin:0 0 4px;color:#fff}
+.operator-score{display:inline-block}
+.score-badge{display:inline-block;padding:4px 14px;border-radius:100px;font-size:14px;font-weight:600;background:rgba(255,255,255,.15);color:#fff;letter-spacing:.5px}
+.operator-top .score-badge{background:rgba(0,0,0,.2)}
+.operator-body{padding:28px}
+.operator-body p{margin-bottom:16px}
+
+/* Operator details */
+.operator-details{display:grid;grid-template-columns:1fr;gap:8px;padding:20px;background:#f9f9f9;border-radius:8px;margin:20px 0;font-size:15px}
+.detail-row{display:flex;gap:8px;line-height:1.6}
+.detail-label{font-weight:600;color:#000;min-width:150px;flex-shrink:0}
+.operator-details a{color:#e63329;text-decoration:none}
+.operator-details a:hover{text-decoration:underline}
+
+/* Pros/cons */
+.operator-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.pros,.cons{padding:16px 20px;border-radius:8px}
+.pros{background:#f0faf0;border:1px solid #d4edda}
+.cons{background:#fff5f5;border:1px solid #f5c6cb}
+.pros strong{color:#28703c;display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.cons strong{color:#e63329;display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.pros ul,.cons ul{margin:0;padding-left:18px;font-size:14px;line-height:1.7}
+.pros li,.cons li{margin-bottom:6px}
+@media(max-width:640px){.operator-pros-cons{grid-template-columns:1fr}.detail-label{min-width:120px}}
+
+/* Operator CTA */
+.operator-cta{margin-top:20px;text-align:center}
+.operator-cta a{display:inline-block;padding:16px 32px;background:#e63329;color:#fff;border-radius:6px;font-size:16px;font-weight:600;text-decoration:none;transition:background .3s}
+.operator-cta a:hover{background:#c42b22}
+
+/* Comparison table */
+.comparison-table-wrap{margin:24px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.comparison-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+.comparison-table th{background:#e63329;color:#fff;padding:14px 16px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.comparison-table td{padding:12px 16px;border-bottom:1px solid #e8e8e8;vertical-align:middle}
+.comparison-table tr:hover{background:#f9f9f9}
+.table-highlight{background:#fff5f4!important}
+.table-highlight:hover{background:#fff0ee!important}
+.table-highlight td{font-weight:500}
+
+/* Blog CTA */
+.blog-cta{background:#e63329;color:#fff;padding:40px 32px;border-radius:12px;text-align:center;margin:48px 0}
+.blog-cta h3{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:8px;color:#fff}
+.blog-cta p{opacity:.85;margin-bottom:20px;font-size:15px}
+.blog-cta a{display:inline-block;padding:14px 28px;background:#000;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;transition:background .3s}
+.blog-cta a:hover{background:#333}
+
+/* Blog table */
+.blog-table{margin:24px 0;overflow-x:auto}
+.blog-table table{width:100%;border-collapse:collapse;font-size:15px}
+.blog-table th,.blog-table td{padding:12px 16px;border:1px solid #e0e0e0;text-align:left}
+.blog-table th{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase}
+.blog-table tr:hover{background:#f9f9f9}
+
+/* Blackout comparison */
+.blackout-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.blackout-card{padding:20px;border-radius:10px;font-size:14px}
+.blackout-card strong{display:block;margin-bottom:12px;font-size:15px}
+.blackout-card ul{margin:0;padding-left:18px}
+.blackout-card li{margin-bottom:6px;line-height:1.6}
+.blackout-good{background:#f0faf0;border:1px solid #d4edda}
+.blackout-good strong{color:#28703c}
+.blackout-warn{background:#fff5f5;border:1px solid #f5c6cb}
+.blackout-warn strong{color:#e63329}
+@media(max-width:640px){.blackout-comparison{grid-template-columns:1fr}}
+
+/* International note */
+.international-note{background:#f0f0f0;border-left:4px solid #e63329;padding:20px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-size:15px;line-height:1.7}
+.international-note strong{display:block;margin-bottom:4px;color:#000}
+
+/* FAQ */
+.blog-faq{margin:24px 0}
+.blog-faq details{border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;overflow:hidden}
+.blog-faq summary{padding:16px 20px;font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.blog-faq summary::after{content:'+';font-size:20px;color:#e63329;transition:transform .3s}
+.blog-faq details[open] summary::after{transform:rotate(45deg)}
+.blog-faq summary::-webkit-details-marker{display:none}
+.blog-faq details p{padding:0 20px 16px;color:#666;font-size:15px;line-height:1.7;margin:0}
+.blog-faq details a{color:#e63329;text-decoration:none}
+.blog-faq details a:hover{text-decoration:underline}
+
+/* Responsive */
+@media(max-width:768px){
+.blog-hero-img{margin:-80px -24px 24px}
+.operator-header{flex-direction:column;align-items:flex-start;gap:8px;padding:20px}
+.operator-rank{font-size:24px;min-width:auto}
+.operator-body{padding:20px}
+.detail-row{flex-direction:column;gap:2px}
+.detail-label{min-width:auto}
+}
+</style>
