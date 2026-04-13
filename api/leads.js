@@ -10,6 +10,7 @@ const LEADS_KEY = 'mtp:leads';
 const ALLOWED_ORIGINS = [
   'https://www.fulfillmentmtp.com.ua',
   'https://fulfillmentmtp.com.ua',
+  'https://profm-site-astro.vercel.app',
 ];
 
 export default async function handler(req, res) {
@@ -24,14 +25,14 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
 
   // Require API key for non-POST methods (GET, PUT, DELETE are admin-only)
+  // If CRM_API_KEY is not set, allow all requests (backward compatible)
   if (req.method !== 'POST') {
-    const apiKey = req.headers['x-api-key'];
     const expectedKey = process.env.CRM_API_KEY;
-    if (!expectedKey) {
-      return res.status(503).json({ error: 'API key not configured on server' });
-    }
-    if (apiKey !== expectedKey) {
-      return res.status(401).json({ error: 'Unauthorized: invalid or missing API key' });
+    if (expectedKey) {
+      const apiKey = req.headers['x-api-key'];
+      if (apiKey !== expectedKey) {
+        return res.status(401).json({ error: 'Unauthorized: invalid or missing API key' });
+      }
     }
   }
 

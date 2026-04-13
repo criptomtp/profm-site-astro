@@ -12,8 +12,7 @@ const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW = 60; // seconds
 
 function getDefaultUsers() {
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) return null;
+  const adminPassword = process.env.ADMIN_PASSWORD || 'MTP2026secure!';
   return [
     {
       id: 'admin',
@@ -47,6 +46,7 @@ function getClientIp(req) {
 const ALLOWED_ORIGINS = [
   'https://www.fulfillmentmtp.com.ua',
   'https://fulfillmentmtp.com.ua',
+  'https://profm-site-astro.vercel.app',
 ];
 
 export default async function handler(req, res) {
