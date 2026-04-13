@@ -1,254 +1,26 @@
 ---
-// STANDALONE — no Base.astro import
----
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Фулфілмент в Україні — від 18 грн | MTP Group</title>
-<meta name="description" content="Фулфілмент для інтернет-магазинів в Україні. 2 склади, 3 генератори, Starlink. Відправка від 18 грн. 10+ років, 150+ клієнтів. Працюємо навіть під час блекаутів.">
-<link rel="canonical" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
-<meta property="og:title" content="Фулфілмент в Україні — від 18 грн | MTP Group">
-<meta property="og:description" content="Фулфілмент для інтернет-магазинів в Україні. 2 склади, 3 генератори, Starlink. Працюємо навіть під час блекаутів.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="uk_UA">
-<meta property="og:image" content="https://www.fulfillmentmtp.com.ua/images/fulfilment-ukraina-hero-ua.webp">
-<link rel="shortcut icon" href="/favicon.ico">
+import Base from '../../layouts/Base.astro';
 
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=AW-614588275';document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','AW-614588275');};},1500);
-document.addEventListener('click',function(e){var link=e.target.closest('a[href^="tel:"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/eh2qCJenw5kcEPO-h6UC','value':1.0,'currency':'UAH'});}});document.addEventListener('click',function(e){var link=e.target.closest('a[href*="t.me/"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/fKOICMvozZocEPO-h6UC','value':1.0,'currency':'UAH'});}});</script>
-<link rel="preload" as="image" href="/images/fulfilment-ukraina-hero-ua.webp" fetchpriority="high">
-<link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
-<link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/">
-<link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
-<link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент в Україні","description":"3PL фулфілмент для інтернет-магазинів в Україні. Зберігання від 650 грн/м³, відправка від 18 грн.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18"}}</script>
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент в Україні","description":"3PL фулфілмент для інтернет-магазинів в Україні. Зберігання від 650 грн/м³, відправка від 18 грн.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Фулфілмент в Україні","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Як контролюються грошові перекази від Нової Пошти?","acceptedAnswer":{"@type":"Answer","text":"Через систему «Шериф Платежів» — автоматичний контроль кожного грошового переказу з Telegram-сповіщеннями. Ви бачите кожне надходження в реальному часі."}},{"@type":"Question","name":"Чи працює MTP під час повітряних тривог?","acceptedAnswer":{"@type":"Answer","text":"Під час тривоги персонал переходить в укриття. WMS приймає замовлення автоматично. Після відбою робота відновлюється за 5-10 хвилин. За 4 роки жодне замовлення не втрачено."}},{"@type":"Question","name":"Для яких товарів не підходить фулфілмент?","acceptedAnswer":{"@type":"Answer","text":"Товари що потребують холодильника, небезпечні вантажі та міжнародна доставка. Великогабаритні понад 30 кг — обговорюється індивідуально (є окрема послуга для важких товарів)."}},{"@type":"Question","name":"Скільки фулфілмент-операторів працює в Україні і чим MTP відрізняється?","acceptedAnswer":{"@type":"Answer","text":"В Україні 15-20 фулфілмент-операторів. MTP Group — один з найбільших: 10+ років, 3 900 м² складів, 6 000 замовлень/день. Ключова відмінність — відкриті ціни без прихованих доплат."}},{"@type":"Question","name":"Які служби доставки працюють з вашого складу?","acceptedAnswer":{"@type":"Answer","text":"Нова Пошта (основна, 10 000+ відділень), Укрпошта, Meest. 4 забори Нової Пошти на день. Замовлення до 14:00 — в Києві завтра."}},{"@type":"Question","name":"Чи є доукомплектація замовлень і скільки вона коштує?","acceptedAnswer":{"@type":"Answer","text":"Так. Доукомплектація — 2,50 грн за додаткову одиницю товару в замовленні. Наприклад, якщо покупець замовив 3 товари — основний збір + 2 × 2,50 грн."}},{"@type":"Question","name":"Як порівняти вартість фулфілменту з власним складом в Україні?","acceptedAnswer":{"@type":"Answer","text":"Власний склад (оренда + зарплати + комуналка + генератор + WMS) — від 55 000 грн/міс. Фулфілмент при тих самих обсягах — від 28 000 грн. Економія 49%."}},{"@type":"Question","name":"Чи є реферальна програма для клієнтів MTP?","acceptedAnswer":{"@type":"Answer","text":"Так. Рекомендуйте MTP партнерам — отримуєте бонус на рахунок. Деталі уточнюйте у менеджера при підключенні."}}]}</script>
-<style is:global>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:hidden;overflow-y:auto;height:auto;min-height:100vh}
-body{font-family:'DM Sans',sans-serif;color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-.hdr-spacer{display:none}
-.hdr{position:fixed;top:0;left:0;right:0;height:64px;background:#000;z-index:10000;display:flex;align-items:center;padding:0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
-.hdr-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;width:100%;margin:0 auto}
-.hdr-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;text-decoration:none;white-space:nowrap;letter-spacing:1px}
-.hdr-logo-mtp{color:#e63329;font-weight:700}
-.hdr-nav{display:flex;align-items:center;gap:28px}
-.hdr-nav>a{color:rgba(255,255,255,.85);font-size:14px;text-decoration:none;transition:color .2s;font-family:'DM Sans',sans-serif;letter-spacing:.3px}
-.hdr-nav>a:hover{color:#fff}
-.hdr-dd{position:relative}
-.hdr-dd-trigger{background:none;border:none;color:rgba(255,255,255,.85);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;padding:0;letter-spacing:.3px}
-.hdr-dd-trigger:hover{color:#fff}
-.hdr-arrow{font-size:10px;transition:transform .2s}
-.hdr-dd.open .hdr-arrow{transform:rotate(180deg)}
-.hdr-mega{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#0a0a0a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;min-width:460px;box-shadow:0 12px 48px rgba(0,0,0,.6);z-index:10001}
-.hdr-mega::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:rgba(255,255,255,.08);border-top:none}
-.hdr-dd.open .hdr-mega{display:grid;grid-template-columns:1fr 1fr auto;gap:0}
-.hdr-mega-col{padding:0 20px;border-right:1px solid rgba(255,255,255,.06)}
-.hdr-mega-col:first-child{padding-left:0}
-.hdr-mega-col:last-child{padding-right:0;border-right:none}
-.hdr-mega-col--cta{display:flex;align-items:flex-end}
-.hdr-mega-title{display:block;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2.5px;margin:0 0 10px;font-weight:600}
-.hdr-mega-col a{display:block;padding:6px 0;font-size:14px;color:rgba(255,255,255,.85);white-space:nowrap;text-decoration:none;transition:color .2s,padding-left .2s}
-.hdr-mega-col a:hover{color:#fff;padding-left:4px}
-.hdr-mega-cta{font-weight:600;color:#fff !important;font-size:13px !important;padding:10px 20px !important;background:rgba(255,255,255,.08);border-radius:8px;text-align:center;transition:background .2s !important}
-.hdr-mega-cta:hover{background:rgba(255,255,255,.15) !important;padding-left:20px !important}
-.hdr-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:18px}
-.hdr-right{display:flex;align-items:center;gap:16px}
-.hdr-right a{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;transition:color .2s;font-family:'DM Sans',sans-serif;padding:4px 2px}
-.hdr-right a:hover,.hdr-right a.active{color:#fff}
-.hdr-phone{white-space:nowrap;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.5) !important;font-size:12px !important}
-.hdr-burger{display:none;background:none;border:none;cursor:pointer;padding:12px;flex-direction:column;gap:5px;z-index:10001}
-.hdr-burger span{display:block;width:24px;height:2px;background:#fff;transition:transform .3s,opacity .3s;border-radius:2px}
-.hdr-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hdr-burger.open span:nth-child(2){opacity:0}
-.hdr-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.hdr-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;backdrop-filter:blur(4px)}
-.hdr-overlay.open{display:block}
-.hdr-mobile-bottom{display:none}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
-.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.35;display:block}
-.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:100px 24px 80px;text-align:center;color:#fff}
-.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border:1.5px solid #e63329;border-radius:100px;color:#e63329;margin-bottom:20px}
-.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(32px,6vw,64px);line-height:1.08;margin:0 0 20px;font-weight:400;letter-spacing:-.02em}
-.hero-sub{font-size:clamp(16px,2.2vw,19px);color:rgba(255,255,255,.8);max-width:620px;margin:0 auto 40px;line-height:1.65}
-.counters{display:flex;justify-content:center;gap:48px;margin-bottom:40px;flex-wrap:wrap}
-.counter{text-align:center}
-.counter-num{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(36px,5vw,56px);color:#e63329}
-.counter-label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5)}
-.form-wrap{max-width:440px;margin:0 auto}
-.form-row{display:flex;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.3)}
-.form-row input{flex:1;padding:16px 20px;border:0;font-size:16px;font-family:inherit;outline:none;min-width:0}
-.form-row button{padding:16px 28px;background:#e63329;color:#fff;border:0;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
-.form-row button:hover{background:#c62b22}
-.form-note{text-align:center;margin-top:10px;font-size:12px;color:rgba(255,255,255,.4)}
-.sec{padding:80px 20px;color:#1a1a1a;background:#fff}
-.sec-alt{background:#fafafa;color:#1a1a1a}
-.sec-dark{background:#000;color:#fff}
-.sec h2,.sec-alt h2{color:#000}
-.sec p,.sec-alt p{color:#444}
-.sec-dark h2{color:#fff}
-.sec-dark p{color:rgba(255,255,255,.85)}
-.sec-title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,4vw,42px);text-align:center;margin:0 0 12px;color:#000}
-.sec-dark .sec-title{color:#fff}
-.sec-sub{text-align:center;color:#888;font-size:16px;max-width:560px;margin:0 auto 40px}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.proof-card{background:#fff;border-radius:16px;overflow:visible;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .3s;min-height:350px}
-.proof-card:hover{transform:translateY(-4px)}
-.proof-card img{width:100%;height:280px;object-fit:cover;border-radius:16px 16px 0 0;display:block}
-.proof-card-body{padding:24px}
-.proof-card h3{font-size:18px;margin:0 0 8px;font-weight:700}
-.proof-card p{font-size:14px;color:#666;line-height:1.65}
-.proof-zero{text-align:center;margin-top:48px;padding:36px;background:#000;border-radius:16px;color:#fff}
-.proof-zero-num{font-family:'DM Serif Display',Georgia,serif;font-size:96px;color:#e63329;line-height:1}
-.proof-zero-text{font-size:17px;margin-top:4px;color:rgba(255,255,255,.7)}
-.tariff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.tariff-card{background:#fafafa;border-radius:16px;padding:36px 24px;border:2px solid transparent}
-.tariff-featured{border-color:#e63329;background:#fff;box-shadow:0 4px 24px rgba(230,51,41,.1)}
-.tariff-label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#999;margin-bottom:6px}
-.tariff-price{font-family:'DM Serif Display',Georgia,serif;font-size:42px;margin-bottom:20px;line-height:1}
-.tariff-price span{font-size:15px;font-family:'DM Sans',sans-serif;color:#999}
-.tariff-card ul{list-style:none;padding:0}
-.tariff-card li{padding:8px 0;border-bottom:1px solid #eee;font-size:14px;color:#555}
-.tariff-card li::before{content:'\2713 ';color:#e63329;font-weight:700}
-.tariff-scale{margin-top:16px;padding-top:12px;border-top:2px solid #eee}
-.tariff-scale-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#777}
-.tariff-scale-row strong{color:#1a1a1a}
-.case-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center}
-.case-box{padding:28px;border-radius:16px}
-.case-before{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.case-after{background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2)}
-.case-box h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 16px;color:rgba(255,255,255,.5)}
-.case-metric{margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.6)}
-.case-metric span{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:36px;color:#fff;line-height:1.1}
-.case-after .case-metric span{color:#e63329}
-.case-box p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:12px}
-.case-arrow{font-size:48px;color:#e63329;text-align:center}
-.case-quote{text-align:center;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;margin-top:48px;color:rgba(255,255,255,.75);max-width:580px;margin-left:auto;margin-right:auto}
-.compare-wrap{overflow-x:auto}
-.compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 10px rgba(0,0,0,.05)}
-.compare-table th{background:#000;color:#fff;padding:14px 20px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
-.compare-table td{padding:13px 20px;border-bottom:1px solid #eee;font-size:14px}
-.compare-table tr:last-child td{border:0}
-.compare-total td{background:#f0f0f0;font-weight:700}
-.compare-badge{display:block;margin:20px auto 0;background:#e63329;color:#fff;padding:12px 32px;border-radius:100px;font-weight:700;font-size:17px;text-align:center;max-width:380px}
-.faq-list{max-width:760px;margin:0 auto}
-.faq-item{border-bottom:1px solid #e0e0e0}
-.faq-item summary{padding:18px 0;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary .faq-icon{font-size:22px;color:#e63329;transition:transform .3s;flex-shrink:0;margin-left:12px}
-.faq-item[open] summary .faq-icon{transform:rotate(45deg)}
-.faq-body{padding:0 0 18px;font-size:15px;line-height:1.7;color:#666}
-.seo-text{max-width:760px;margin:0 auto}
-.seo-text h2{font-family:'DM Serif Display',Georgia,serif;font-size:30px;margin:0 0 16px}
-.seo-text h3{font-size:20px;margin:28px 0 10px;font-weight:700}
-.seo-text p{font-size:15px;line-height:1.8;color:#555;margin:0 0 14px}
-.ft{background:#111;color:rgba(255,255,255,.7);padding:60px 24px 30px}
-.ft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1200px;margin:0 auto}
-.ft h4{color:#fff;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
-.ft p,.ft a{font-size:13px;line-height:2;color:rgba(255,255,255,.5);transition:color .2s}
-.ft a:hover{color:#fff}
-.ft-bottom{text-align:center;margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.25);max-width:1200px;margin-left:auto;margin-right:auto}
-@media(max-width:900px){
-.hdr{padding:0 16px}
-.hdr-burger{display:flex}
-.hdr-right{display:none}
-.hdr-nav{position:fixed;top:0;right:-300px;width:300px;max-width:85vw;height:100%;background:#111;flex-direction:column;align-items:stretch;padding:80px 24px 120px;gap:0;z-index:10000;transition:right .3s ease;overflow-y:auto;box-shadow:-4px 0 24px rgba(0,0,0,.6)}
-.hdr-nav.open{right:0}
-.hdr-nav>a{font-size:17px;padding:16px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
-.hdr-dd{width:100%}
-.hdr-dd-trigger{font-size:17px;padding:16px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.08);justify-content:space-between;color:#fff}
-.hdr-mega{position:static;transform:none;min-width:auto;display:none;border:none;box-shadow:none;background:rgba(255,255,255,.04);border-radius:8px;padding:12px 16px;margin:8px 0}
-.hdr-mega::before{display:none}
-.hdr-dd.open .hdr-mega{display:block}
-.hdr-mega-col{padding:8px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,.04)}
-.hdr-mega-col:last-child{border-bottom:none}
-.hdr-mega-col a{font-size:15px;padding:10px 0;color:rgba(255,255,255,.8)}
-.hdr-mega-cta{background:rgba(230,51,41,.15);margin-top:8px;text-align:center;border-radius:6px;padding:12px 16px !important}
-.hdr-mega-col--cta{display:block}
-.hdr-mobile-bottom{display:flex;flex-direction:column;gap:12px;margin-top:auto;padding:24px 0;border-top:1px solid rgba(255,255,255,.08)}
-.hdr-mobile-langs{display:flex;gap:12px}
-.hdr-lang-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);font-size:14px;font-weight:500;text-decoration:none;transition:background .2s}
-.hdr-lang-btn.active{background:#e63329;color:#fff}
-.hdr-mobile-phone{display:block;text-align:center;padding:14px;background:rgba(255,255,255,.06);border-radius:8px;color:#fff;text-decoration:none;font-size:16px}
-.counters{gap:24px}
-.proof-grid,.tariff-grid{grid-template-columns:1fr}
-.case-grid{grid-template-columns:1fr;text-align:center}
-.case-arrow{transform:rotate(90deg)}
-}
-.sec,.sec-alt,.sec-dark{display:block;visibility:visible;clip-path:none;opacity:1}
-.mid-cta{text-align:center;padding:40px 24px;background:rgba(230,51,41,.06);border-top:1px solid rgba(230,51,41,.1);border-bottom:1px solid rgba(230,51,41,.1)}
-.mid-cta-btn{display:inline-block;padding:16px 32px;background:#e63329;color:#fff;font-size:16px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .3s}
-.mid-cta-btn:hover{background:#c42b22}
-.mid-cta-tg{display:block;margin-top:10px;font-size:13px;color:#666;text-decoration:none;transition:color .2s}
-.mid-cta-tg:hover{color:#e63329}
-</style>
-</head>
-<body>
-<header class="hdr">
-<div class="hdr-inner">
-<a href="/" class="hdr-logo"><span class="hdr-logo-mtp">MTP</span> GROUP</a>
-<nav class="hdr-nav" id="hdrNav">
-<a href="/ua/about/">Про нас</a>
-<a href="/ua/recalls/">Відгуки</a>
-<div class="hdr-dd">
-<button class="hdr-dd-trigger" id="ddTrigger">Послуги <span class="hdr-arrow">&#9662;</span></button>
-<div class="hdr-mega" id="hdrMega">
-<div class="hdr-mega-col">
-<span class="hdr-mega-title">За нішею</span>
-<a href="/ua/fulfilment-dlya-internet-magazynu/">Інтернет-магазини</a>
-<a href="/ua/fulfilment-vazhkykh-tovariv/">Важкі товари 50+ кг</a>
-<a href="/ua/skladski-poslugy/">Складські послуги</a>
-<a href="/ua/fulfilment-dlya-marketpleysiv/">Для маркетплейсів</a>
-<a href="/ua/fulfilment-kyiv/">Фулфілмент Київ</a>
-<a href="/ua/fulfilment-ukraina/">Фулфілмент в Україні</a>
-</div>
-<div class="hdr-mega-col">
-<span class="hdr-mega-title">Інструменти</span>
-<a href="/ua/calculator/">Калькулятор</a>
-<a href="/ua/tsiny/">Ціни</a>
-</div>
-<div class="hdr-mega-col hdr-mega-col--cta">
-<a href="/ua/services/" class="hdr-mega-cta">Всі послуги &rarr;</a>
-</div>
-</div>
-</div>
-<a href="/ua/guide/">Поради</a>
-<a href="/ua/blog/">Блог</a>
-<div class="hdr-mobile-bottom">
-<div class="hdr-mobile-langs">
-<a href="/ua/fulfilment-ukraina/" class="hdr-lang-btn active">UA</a>
-<a href="/ru/fulfilment-ukraina/" class="hdr-lang-btn">RU</a>
-<a href="/en/fulfillment-ukraine/" class="hdr-lang-btn">EN</a>
-</div>
-<a href="tel:+380501444645" class="hdr-mobile-phone">+38(050) 144-46-45</a>
-</div>
-</nav>
-<div class="hdr-right" id="langSwitcher">
-<a href="/ua/fulfilment-ukraina/" class="active">UA</a>
-<a href="/ru/fulfilment-ukraina/">RU</a>
-<a href="/en/fulfillment-ukraine/">EN</a>
-<a href="tel:+380501444645" class="hdr-phone">+38(050) 144-46-45</a>
-</div>
-<button class="hdr-burger" id="hdrBurger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</header>
-<div class="hdr-overlay" id="hdrOverlay"></div>
-<div class="hdr-spacer"></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Як контролюються грошові перекази від Нової Пошти?","acceptedAnswer":{"@type":"Answer","text":"Через систему «Шериф Платежів» — автоматичний контроль кожного грошового переказу з Telegram-сповіщеннями. Ви бачите кожне надходження в реальному часі."}},{"@type":"Question","name":"Чи працює MTP під час повітряних тривог?","acceptedAnswer":{"@type":"Answer","text":"Під час тривоги персонал переходить в укриття. WMS приймає замовлення автоматично. Після відбою робота відновлюється за 5-10 хвилин. За 4 роки жодне замовлення не втрачено."}},{"@type":"Question","name":"Для яких товарів не підходить фулфілмент?","acceptedAnswer":{"@type":"Answer","text":"Товари що потребують холодильника, небезпечні вантажі та міжнародна доставка. Великогабаритні понад 30 кг — обговорюється індивідуально (є окрема послуга для важких товарів)."}},{"@type":"Question","name":"Скільки фулфілмент-операторів працює в Україні і чим MTP відрізняється?","acceptedAnswer":{"@type":"Answer","text":"В Україні 15-20 фулфілмент-операторів. MTP Group — один з найбільших: 10+ років, 3 900 м² складів, 6 000 замовлень/день. Ключова відмінність — відкриті ціни без прихованих доплат."}},{"@type":"Question","name":"Які служби доставки працюють з вашого складу?","acceptedAnswer":{"@type":"Answer","text":"Нова Пошта (основна, 10 000+ відділень), Укрпошта, Meest. 4 забори Нової Пошти на день. Замовлення до 14:00 — в Києві завтра."}},{"@type":"Question","name":"Чи є доукомплектація замовлень і скільки вона коштує?","acceptedAnswer":{"@type":"Answer","text":"Так. Доукомплектація — 2,50 грн за додаткову одиницю товару в замовленні. Наприклад, якщо покупець замовив 3 товари — основний збір + 2 × 2,50 грн."}},{"@type":"Question","name":"Як порівняти вартість фулфілменту з власним складом в Україні?","acceptedAnswer":{"@type":"Answer","text":"Власний склад (оренда + зарплати + комуналка + генератор + WMS) — від 55 000 грн/міс. Фулфілмент при тих самих обсягах — від 28 000 грн. Економія 49%."}},{"@type":"Question","name":"Чи є реферальна програма для клієнтів MTP?","acceptedAnswer":{"@type":"Answer","text":"Так. Рекомендуйте MTP партнерам — отримуєте бонус на рахунок. Деталі уточнюйте у менеджера при підключенні."}}]}</script>`;
+---
+<Base
+  title="Фулфілмент в Україні — від 18 грн | MTP Group"
+  description="Фулфілмент для інтернет-магазинів в Україні. 2 склади, 3 генератори, Starlink. Відправка від 18 грн. 10+ років, 150+ клієнтів. Працюємо навіть під час блекаутів."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-ukraina-hero-ua.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/">
+</Fragment>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-bg"><img src="/images/fulfilment-ukraina-hero-ua.webp" alt="Фулфілмент в Україні — склад MTP Group у Бориспілі" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
 <div class="hero-inner">
@@ -261,14 +33,15 @@ img{max-width:100%;height:auto;display:block}
 <div class="counter"><span class="counter-num" data-target="10">0</span><span class="counter-label">років на ринку</span></div>
 </div>
 <div class="form-wrap">
-<form class="form-row" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
-<div class="form-note">Безкоштовна консультація &middot; Передзвонимо за 15 хв</div>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
+<div class="hero-note">Безкоштовна консультація &middot; Передзвонимо за 15 хв</div>
 </div>
 </div>
 </section>
 
+<!-- RELIABILITY -->
 <section class="sec sec-alt"><div class="ctr">
-<div style="text-align:center"><div class="badge">НАДІЙНІСТЬ</div></div>
+<div style="text-align:center"><div class="badge badge-dark">НАДІЙНІСТЬ</div></div>
 <h2 class="sec-title">Чому MTP не зупиняється</h2>
 <p class="sec-sub">З 2022 року&mdash;жодного дня простою. Ось чому:</p>
 <div class="proof-grid">
@@ -288,13 +61,9 @@ img{max-width:100%;height:auto;display:block}
 <div class="proof-zero"><div class="proof-zero-num">0</div><div class="proof-zero-text">днів простою з лютого 2022</div></div>
 </div></section>
 
-<div class="mid-cta">
-  <a href="#heroForm" class="mid-cta-btn">Порахувати мою економію →</a>
-  <a href="https://t.me/nikolay_mtp?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%84%D1%83%D0%BB%D1%84%D1%96%D0%BB%D0%BC%D0%B5%D0%BD%D1%82.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%85%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%3F" target="_blank" rel="noopener" class="mid-cta-tg">або напишіть в Telegram →</a>
-</div>
-
+<!-- TARIFFS -->
 <section class="sec"><div class="ctr">
-<div style="text-align:center"><div class="badge">ТАРИФИ 2026</div></div>
+<div style="text-align:center"><div class="badge badge-dark">ТАРИФИ 2026</div></div>
 <h2 class="sec-title">Скільки коштує фулфілмент в Україні</h2>
 <p class="sec-sub">Динамічний тариф: більше відправляєш&mdash;дешевше кожне замовлення.</p>
 <div class="tariff-grid">
@@ -304,6 +73,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div></section>
 
+<!-- CASE STUDY -->
 <section class="sec sec-dark"><div class="ctr">
 <div style="text-align:center"><div class="badge">КЕЙС</div></div>
 <h2 class="sec-title">Carter&rsquo;s: з 12 до 72 відправок на день</h2>
@@ -316,11 +86,7 @@ img{max-width:100%;height:auto;display:block}
 <div class="case-quote">&laquo;Раніше я був пакувальником. Тепер я підприємець. Собівартість однієї відправки впала з 30 до 14 грн&mdash;ця різниця пішла на рекламу.&raquo;</div>
 </div></section>
 
-<div class="mid-cta">
-  <a href="#heroForm" class="mid-cta-btn">Порахувати мою економію →</a>
-  <a href="https://t.me/nikolay_mtp?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%84%D1%83%D0%BB%D1%84%D1%96%D0%BB%D0%BC%D0%B5%D0%BD%D1%82.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%85%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%3F" target="_blank" rel="noopener" class="mid-cta-tg">або напишіть в Telegram →</a>
-</div>
-
+<!-- COMPARISON TABLE -->
 <section class="sec sec-alt"><div class="ctr">
 <h2 class="sec-title">Свій склад vs фулфілмент MTP</h2>
 <p class="sec-sub">Порівняння для магазину з 50 відправками на день</p>
@@ -337,12 +103,13 @@ img{max-width:100%;height:auto;display:block}
 <div class="compare-badge">Економія: 27 000 грн/міс (49%)</div>
 </div></section>
 
+<!-- MID CTA -->
 <div class="mid-cta">
   <a href="#heroForm" class="mid-cta-btn">Порахувати мою економію →</a>
   <a href="https://t.me/nikolay_mtp?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%84%D1%83%D0%BB%D1%84%D1%96%D0%BB%D0%BC%D0%B5%D0%BD%D1%82.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%82%D0%B5%20%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%85%D1%83%D0%B2%D0%B0%D1%82%D0%B8%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%3F" target="_blank" rel="noopener" class="mid-cta-tg">або напишіть в Telegram →</a>
 </div>
 
-<!-- ECONOMICS FOR CLIENT -->
+<!-- ECONOMICS -->
 <section style="padding:80px 0;background:#000;color:#fff">
 <div style="max-width:900px;margin:0 auto;padding:0 24px;text-align:center">
 <div class="badge">ТВІЙ ПРИБУТОК</div>
@@ -382,6 +149,7 @@ WMS кабінет 24/7 <span style="float:right;color:#fff;font-weight:500">в�
 </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section style="padding:80px 0;background:#f5f5f5">
 <div style="max-width:1200px;margin:0 auto;padding:0 24px">
 <div style="text-align:center;margin-bottom:48px">
@@ -428,6 +196,7 @@ WMS кабінет 24/7 <span style="float:right;color:#fff;font-weight:500">в�
 </div>
 </section>
 
+<!-- FAQ -->
 <section class="sec"><div class="ctr">
 <h2 class="sec-title">Часті питання про фулфілмент в Україні</h2>
 <div class="faq-list" style="margin-top:40px">
@@ -442,6 +211,7 @@ WMS кабінет 24/7 <span style="float:right;color:#fff;font-weight:500">в�
 </div>
 </div></section>
 
+<!-- SEO TEXT -->
 <section class="sec sec-alt"><div class="ctr">
 <article class="seo-text">
 <h2>Як обрати фулфілмент оператора в Україні</h2>
@@ -464,30 +234,102 @@ WMS кабінет 24/7 <span style="float:right;color:#fff;font-weight:500">в�
 </article>
 </div></section>
 
-<section style="background:#e63329;padding:80px 20px;text-align:center">
-<div style="max-width:580px;margin:0 auto">
-<h2 style="font-family:'DM Serif Display',serif;font-size:40px;color:#fff;margin:0 0 16px">Готовий делегувати логістику?</h2>
-<p style="font-size:18px;color:rgba(255,255,255,0.85);margin:0 0 32px">Залиш номер &mdash; передзвонимо за 15 хвилин і розрахуємо умови</p>
-<form id="ctaFormBottom" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 20px">
-<input type="tel" name="phone" placeholder="+380XXXXXXXXX" required maxlength="19" aria-label="Телефон" style="padding:16px 20px;font-size:16px;border:none;border-radius:4px;width:260px">
-<button type="submit" aria-label="Передзвоніть мені" style="background:#000;color:#fff;padding:16px 32px;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;white-space:nowrap">Передзвоніть мені &#8594;</button>
-</form>
-<div style="display:flex;gap:24px;justify-content:center;color:rgba(255,255,255,0.7);font-size:13px;flex-wrap:wrap">
-<span>&#10003; Безкоштовна консультація</span>
-<span>&#10003; Без зобов&rsquo;язань</span>
-<span>&#10003; Відповідь за 15 хв</span>
-</div>
-</div>
-</section>
+</Base>
 
-<footer class="ft"><div class="ft-grid">
-<div><h4>Підтримка</h4><p><a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a></p><p><a href="tel:+380501444645">+38(050) 144-46-45</a></p><p><a href="tel:+380938277767">+38(093) 827-77-67</a></p></div>
-<div><h4>Сторінки</h4><p><a href="/ua/services/">Послуги</a></p><p><a href="/ua/about/">Про нас</a></p><p><a href="/ua/recalls/">Відгуки</a></p><p><a href="/ua/blog/">Блог</a></p></div>
-<div><h4>Соціальні мережі</h4><p><a href="https://www.facebook.com/fulfillmentmtp" target="_blank" rel="noopener">Facebook</a></p><p><a href="https://www.instagram.com/mtp_group/" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://www.youtube.com/@mtpgroup" target="_blank" rel="noopener">YouTube</a></p><p><a href="https://t.me/nikolay_mtp" target="_blank" rel="noopener">Telegram</a></p></div>
-</div><div class="ft-bottom">&copy; 2026 MTP Group Fulfillment. Всі права захищені.</div></footer>
+<style is:global>
+/* Page-specific hero layout (centered, with counters) */
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:100px 24px 80px;text-align:center;color:#fff}
+.counters{display:flex;justify-content:center;gap:48px;margin-bottom:40px;flex-wrap:wrap}
+.counter{text-align:center}
+.counter-num{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(36px,5vw,56px);color:#e63329}
+.counter-label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5)}
+.form-wrap{max-width:440px;margin:0 auto}
+/* Section base */
+.sec{padding:80px 20px;color:#1a1a1a;background:#fff}
+.sec-alt{background:#fafafa;color:#1a1a1a}
+.sec-dark{background:#000;color:#fff}
+.sec h2,.sec-alt h2{color:#000}
+.sec p,.sec-alt p{color:#444}
+.sec-dark h2{color:#fff}
+.sec-dark p{color:rgba(255,255,255,.85)}
+.sec-title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,4vw,42px);text-align:center;margin:0 0 12px;color:#000}
+.sec-dark .sec-title{color:#fff}
+.sec-sub{text-align:center;color:#888;font-size:16px;max-width:560px;margin:0 auto 40px}
+.sec,.sec-alt,.sec-dark{display:block;visibility:visible;clip-path:none;opacity:1}
+/* Proof grid */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.proof-card{background:#fff;border-radius:16px;overflow:visible;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .3s;min-height:350px}
+.proof-card:hover{transform:translateY(-4px)}
+.proof-card img{width:100%;height:280px;object-fit:cover;border-radius:16px 16px 0 0;display:block}
+.proof-card-body{padding:24px}
+.proof-card h3{font-size:18px;margin:0 0 8px;font-weight:700}
+.proof-card p{font-size:14px;color:#666;line-height:1.65}
+.proof-zero{text-align:center;margin-top:48px;padding:36px;background:#000;border-radius:16px;color:#fff}
+.proof-zero-num{font-family:'DM Serif Display',Georgia,serif;font-size:96px;color:#e63329;line-height:1}
+.proof-zero-text{font-size:17px;margin-top:4px;color:rgba(255,255,255,.7)}
+/* Tariff grid */
+.tariff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tariff-card{background:#fafafa;border-radius:16px;padding:36px 24px;border:2px solid transparent}
+.tariff-featured{border-color:#e63329;background:#fff;box-shadow:0 4px 24px rgba(230,51,41,.1)}
+.tariff-label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#999;margin-bottom:6px}
+.tariff-price{font-family:'DM Serif Display',Georgia,serif;font-size:42px;margin-bottom:20px;line-height:1}
+.tariff-price span{font-size:15px;font-family:'DM Sans',sans-serif;color:#999}
+.tariff-card ul{list-style:none;padding:0}
+.tariff-card li{padding:8px 0;border-bottom:1px solid #eee;font-size:14px;color:#555}
+.tariff-card li::before{content:'\2713 ';color:#e63329;font-weight:700}
+.tariff-scale{margin-top:16px;padding-top:12px;border-top:2px solid #eee}
+.tariff-scale-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:#777}
+.tariff-scale-row strong{color:#1a1a1a}
+/* Case study */
+.case-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center}
+.case-box{padding:28px;border-radius:16px}
+.case-before{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.case-after{background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2)}
+.case-box h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 16px;color:rgba(255,255,255,.5)}
+.case-metric{margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.6)}
+.case-metric span{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:36px;color:#fff;line-height:1.1}
+.case-after .case-metric span{color:#e63329}
+.case-box p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:12px}
+.case-arrow{font-size:48px;color:#e63329;text-align:center}
+.case-quote{text-align:center;font-family:'DM Serif Display',Georgia,serif;font-size:clamp(18px,2.5vw,26px);font-style:italic;margin-top:48px;color:rgba(255,255,255,.75);max-width:580px;margin-left:auto;margin-right:auto}
+/* Comparison table */
+.compare-wrap{overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 10px rgba(0,0,0,.05)}
+.compare-table th{background:#000;color:#fff;padding:14px 20px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.compare-table td{padding:13px 20px;border-bottom:1px solid #eee;font-size:14px}
+.compare-table tr:last-child td{border:0}
+.compare-total td{background:#f0f0f0;font-weight:700}
+.compare-badge{display:block;margin:20px auto 0;background:#e63329;color:#fff;padding:12px 32px;border-radius:100px;font-weight:700;font-size:17px;text-align:center;max-width:380px}
+/* Mid CTA */
+.mid-cta{text-align:center;padding:40px 24px;background:rgba(230,51,41,.06);border-top:1px solid rgba(230,51,41,.1);border-bottom:1px solid rgba(230,51,41,.1)}
+.mid-cta-btn{display:inline-block;padding:16px 32px;background:#e63329;color:#fff;font-size:16px;font-weight:600;border-radius:4px;text-decoration:none;transition:background .3s}
+.mid-cta-btn:hover{background:#c42b22}
+.mid-cta-tg{display:block;margin-top:10px;font-size:13px;color:#666;text-decoration:none;transition:color .2s}
+.mid-cta-tg:hover{color:#e63329}
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-item summary{padding:18px 0;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .faq-icon{font-size:22px;color:#e63329;transition:transform .3s;flex-shrink:0;margin-left:12px}
+.faq-item[open] summary .faq-icon{transform:rotate(45deg)}
+.faq-body{padding:0 0 18px;font-size:15px;line-height:1.7;color:#666}
+/* SEO text */
+.seo-text{max-width:760px;margin:0 auto}
+.seo-text h2{font-family:'DM Serif Display',Georgia,serif;font-size:30px;margin:0 0 16px}
+.seo-text h3{font-size:20px;margin:28px 0 10px;font-weight:700}
+.seo-text p{font-size:15px;line-height:1.8;color:#555;margin:0 0 14px}
+/* Mobile */
+@media(max-width:900px){
+.counters{gap:24px}
+.proof-grid,.tariff-grid{grid-template-columns:1fr}
+.case-grid{grid-template-columns:1fr;text-align:center}
+.case-arrow{transform:rotate(90deg)}
+}
+</style>
 
-<script>
-document.body.style.overflow='';document.body.style.overflowX='hidden';document.body.style.overflowY='auto';
+<script is:inline>
+// Counter animation
 (function(){
 var done=false;
 function animate(){if(done)return;done=true;
@@ -499,34 +341,4 @@ requestAnimationFrame(step);});}
 var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)animate();});},{threshold:.3});
 var c=document.querySelector('.counters');if(c)obs.observe(c);
 })();
-document.getElementById('heroForm').addEventListener('submit',function(e){
-e.preventDefault();var inp=this.querySelector('input[name="phone"]'),ph=inp.value.trim();
-if(ph.replace(/\D/g,'').length<10){inp.style.borderColor='#e63329';return;}
-fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:'/ua/fulfilment-ukraina/'})}).catch(function(){});
-fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:'/ua/fulfilment-ukraina/',source:'site'})}).catch(function(){});
-this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:500">\u2705 Дякуємо! Передзвонимо.</p>';
-setTimeout(function(){window.location.href='/ua/thanks/';},1500);
-});
-
-// Burger menu
-(function(){
-var burger=document.getElementById('hdrBurger'),nav=document.getElementById('hdrNav'),overlay=document.getElementById('hdrOverlay'),ddTrigger=document.getElementById('ddTrigger'),dd=ddTrigger?ddTrigger.closest('.hdr-dd'):null;
-if(!burger||!nav)return;
-function closeMenu(){burger.classList.remove('open');nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';document.body.style.overflowY='auto';}
-burger.addEventListener('click',function(){var o=nav.classList.contains('open');if(o){closeMenu();}else{burger.classList.add('open');nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}});
-overlay.addEventListener('click',closeMenu);
-if(ddTrigger&&dd){ddTrigger.addEventListener('click',function(e){e.preventDefault();dd.classList.toggle('open');});}
-document.addEventListener('click',function(e){if(dd&&!dd.contains(e.target))dd.classList.remove('open');});
-nav.querySelectorAll('a[href]').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=900)closeMenu();});});
-})();
-
-// CTA bottom form
-var ctaBottom=document.getElementById('ctaFormBottom');
-if(ctaBottom){ctaBottom.addEventListener('submit',function(e){
-e.preventDefault();var ph=this.phone.value.trim();if(!ph)return;
-fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:'/ua/fulfilment-ukraina/',source:'cta-bottom'})}).catch(function(){});
-setTimeout(function(){window.location.href='/ua/thanks/';},500);
-});}
 </script>
-</body>
-</html>
