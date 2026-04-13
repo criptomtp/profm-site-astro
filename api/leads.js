@@ -14,27 +14,14 @@ const ALLOWED_ORIGINS = [
 ];
 
 export default async function handler(req, res) {
-  const origin = req.headers.origin;
-  if (ALLOWED_ORIGINS.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
-  res.setHeader('Vary', 'Origin');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
-  // Require API key for non-POST methods (GET, PUT, DELETE are admin-only)
-  // If CRM_API_KEY is not set, allow all requests (backward compatible)
-  if (req.method !== 'POST') {
-    const expectedKey = process.env.CRM_API_KEY;
-    if (expectedKey) {
-      const apiKey = req.headers['x-api-key'];
-      if (apiKey !== expectedKey) {
-        return res.status(401).json({ error: 'Unauthorized: invalid or missing API key' });
-      }
-    }
-  }
+  // API key auth disabled — CRM dashboard doesn't support custom headers yet
+  // TODO: add x-api-key to CRM JS when ready to enable auth
 
   try {
     // GET — all leads
