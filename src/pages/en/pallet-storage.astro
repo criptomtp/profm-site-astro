@@ -2,218 +2,478 @@
 import Base from '../../layouts/Base.astro';
 ---
 <Base
-  title="Pallet Storage in Kyiv from 450 UAH/month | MTP Group"
-  description="Pallet storage near Kyiv: 320 pallet positions on racking, WMS tracking, temperature +5...+25°C. 3 backup generators, 24/7 security. MTP Group — from 450 UAH per pallet position."
+  title="Pallet Storage Kyiv — 320 Rack Positions | MTP Group"
+  description="Pallet storage in Kyiv region. 320 rack positions, WMS system, forklifts. For manufacturers and importers."
   canonical="https://www.fulfillmentmtp.com.ua/en/pallet-storage/"
   lang="en"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
-  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Pallet Storage in Kyiv","description":"Pallet storage on racking near Kyiv. 320 pallet positions, WMS tracking, temperature +5...+25°C, 24/7 security, 3 backup generators.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"450","description":"Pallet storage from 450 UAH per pallet position per month"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Pallet Storage","item":"https://www.fulfillmentmtp.com.ua/en/pallet-storage/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the minimum volume for pallet storage?","acceptedAnswer":{"@type":"Answer","text":"Starting from 1 pallet. No minimum threshold. We work with small batches as well as full warehouse loads."}},{"@type":"Question","name":"How much does storing one pallet cost?","acceptedAnswer":{"@type":"Answer","text":"From 450 UAH/month per pallet position. The price depends on volume and storage duration — the more pallets, the better the rate."}},{"@type":"Question","name":"What pallet sizes do you accept?","acceptedAnswer":{"@type":"Answer","text":"EUR 1200x800 mm and industrial 1200x1000 mm. Maximum pallet height with goods — up to 1.8 m."}},{"@type":"Question","name":"How is access to goods organised?","acceptedAnswer":{"@type":"Answer","text":"WMS with address-based storage — every pallet has a unique racking address. Stock reports are available 24/7 in your personal dashboard."}},{"@type":"Question","name":"What happens during a power outage?","acceptedAnswer":{"@type":"Answer","text":"3 generators + Starlink. The warehouse has operated continuously since 2022, including all blackouts. Dual fibre-optic lines ensure stable connectivity."}},{"@type":"Question","name":"Is cargo insurance available?","acceptedAnswer":{"@type":"Answer","text":"Basic insurance is included in the storage fee. Extended insurance is available for an additional charge under a separate agreement."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
+  showCTA={false}
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Pallet Storage Kyiv","description":"Pallet storage in Kyiv region. 320 rack positions, WMS tracking, forklifts, loading ramps.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"450","description":"Pallet storage from 450 UAH/pallet position/mo"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Pallet Storage","item":"https://www.fulfillmentmtp.com.ua/en/pallet-storage/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What pallet sizes do you accept?","acceptedAnswer":{"@type":"Answer","text":"EUR 1200x800 mm. Non-standard sizes are considered individually."}},{"@type":"Question","name":"What is the racking load capacity?","acceptedAnswer":{"@type":"Answer","text":"Up to 2 tonnes per tier, pallet height with goods up to 1.8 m."}},{"@type":"Question","name":"Products with expiry dates?","acceptedAnswer":{"@type":"Answer","text":"FEFO control is automatic through the WMS system."}},{"@type":"Question","name":"How does dispatch work?","acceptedAnswer":{"@type":"Answer","text":"Request — order assembly — stretch wrapping — documents. From 4 hours."}},{"@type":"Question","name":"Temperature control?","acceptedAnswer":{"@type":"Answer","text":"15-25°C, heating, humidity control."}},{"@type":"Question","name":"How much does unloading cost?","acceptedAnswer":{"@type":"Answer","text":"Pallet 80 UAH, box 20 UAH."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/">
-  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/paletnoe-khranenie/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/paletnoe-khranenie/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/pallet-storage/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/">
 </Fragment>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"><img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="Pallet storage by MTP Group — warehouse near Kyiv with racking" width="1920" height="1080" fetchpriority="high"></div>
-<div class="hero-content">
-<div class="badge">PALLET STORAGE</div>
-<h1>Pallet Storage<br>in Kyiv &mdash;<br>from 450&nbsp;UAH/mo</h1>
-<p class="hero-sub">320 pallet positions on racking. Reliable storage for manufacturers, importers and distributors. WMS tracking, 3 backup generators, 24/7 security.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Phone"><button type="submit">Reserve a spot &#8594;</button></form>
-<div class="hero-note">Free consultation &#183; We will call you back within 15 minutes</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">320</div><div class="hero-stat-label">pallet positions</div></div>
-<div class="hero-stat"><div class="hero-stat-val">450 UAH</div><div class="hero-stat-label">from / month</div></div>
-<div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-label">generators</div></div>
-</div>
-</div>
+<!-- S1: HERO -->
+<section class="pz-hero">
+  <div class="pz-hero-bg">
+    <img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="Pallet storage MTP Group — racking warehouse in Kyiv region" width="1920" height="1080" fetchpriority="high">
+  </div>
+  <div class="pz-hero-inner">
+    <div class="pz-hero-text">
+      <div class="badge">PALLET STORAGE</div>
+      <h1>Pallet Storage in Kyiv Region</h1>
+      <p class="pz-hero-sub">320 rack pallet positions. Address-based WMS system. Forklifts, loading ramps, 24/7 access.</p>
+      <a href="#pz-booking" class="pz-cta-btn">Book a spot &#8594;</a>
+    </div>
+    <div class="pz-hero-cards">
+      <div class="pz-float-card">
+        <span class="pz-float-val">320</span>
+        <span class="pz-float-label">pallet positions</span>
+      </div>
+      <div class="pz-float-card">
+        <span class="pz-float-val">from 450</span>
+        <span class="pz-float-label">UAH/mo</span>
+      </div>
+      <div class="pz-float-card">
+        <span class="pz-float-val">3</span>
+        <span class="pz-float-label">generators + Starlink</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- WHO IT'S FOR -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">WHO IT'S FOR</div>
-<h2 class="sec-h2">Who needs pallet storage</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">&#127981;</div><h3>Manufacturers</h3><p>Store finished goods before dispatch. Fast batch assembly based on distributor orders</p></div>
-<div class="ben-card"><div class="ben-num">&#128674;</div><h3>Importers</h3><p>Container and truck reception. Unloading, palletisation and racking placement with full WMS tracking</p></div>
-<div class="ben-card"><div class="ben-num">&#128666;</div><h3>Distributors</h3><p>Transit storage between deliveries. Cross-docking and regional redistribution of goods</p></div>
-<div class="ben-card"><div class="ben-num">&#128722;</div><h3>E-commerce</h3><p>Bulk inventory storage ahead of peak season. Fast pallet-level order assembly for marketplaces</p></div>
-</div>
-</div></section>
-
-<!-- PRICING -->
-<section class="pricing"><div class="ctr">
-<div class="badge badge-dark">PRICING 2026</div>
-<h2 class="sec-h2">Pallet storage rates</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Service</span><span>Condition</span><span>Price</span></div>
-<div class="price-row"><span>Pallet storage</span><span>per pallet position/mo</span><span>from 450 UAH</span></div>
-<div class="price-row"><span>Pallet receiving</span><span>unloading, placement</span><span>from 35 UAH</span></div>
-<div class="price-row"><span>Pallet dispatch</span><span>retrieval from racking</span><span>from 35 UAH</span></div>
-<div class="price-row"><span>Loading operations</span><span>per hour</span><span>from 150 UAH</span></div>
-<div class="price-row"><span>WMS tracking</span><span>address-based storage, 24/7 reports</span><span>Included</span></div>
-</div>
-<p class="price-note">Rates effective from 01.01.2026. Custom quote &mdash; free within 15 minutes.</p>
-<div class="price-cta"><button onclick="document.getElementById('heroForm').querySelector('input').focus();window.scrollTo({top:0,behavior:'smooth'})">Get a quote for my volume &#8594;</button></div>
-</div></section>
-
-<!-- STORAGE CONDITIONS -->
-<section class="advantages"><div class="ctr">
-<div class="badge badge-dark">CONDITIONS</div>
-<h2 class="sec-h2">Storage conditions</h2>
-<div class="adv-grid">
-<div class="adv-card"><div class="adv-icon">&#127777;</div><h3>Temperature +5...+25&deg;C</h3><p>Controlled climate for safe goods storage all year round.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128274;</div><h3>24/7 security + CCTV</h3><p>Round-the-clock physical security and full video surveillance coverage of the warehouse.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128187;</div><h3>WMS tracking per pallet</h3><p>Address-based storage down to individual cells. Real-time stock reports available 24/7.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128690;</div><h3>Forklifts and pallet jacks</h3><p>Electric forklifts for racking operations and manual pallet jacks for ground-level movement.</p></div>
-<div class="adv-card"><div class="adv-icon">&#9889;</div><h3>3 generators + Starlink</h3><p>Continuous operation since 2022, including all blackouts. Dual fibre-optic and satellite internet.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128737;</div><h3>Cargo insurance</h3><p>Basic insurance included in the storage fee. Extended coverage available under a separate agreement.</p></div>
-</div>
-</div></section>
-
-<!-- HOW TO START -->
-<section class="steps-section"><div class="ctr">
-<div class="badge">HOW TO START</div>
-<h2 class="sec-h2">How to get started</h2>
-<div class="steps-grid">
-<div class="step-card"><div class="step-num">1</div><h3>Submit a request</h3><p>Fill in the form or call us &mdash; we will discuss your volumes and requirements</p></div>
-<div class="step-card"><div class="step-num">2</div><h3>Warehouse tour</h3><p>Visit the warehouse in person. We will show you the racking, equipment and processes</p></div>
-<div class="step-card"><div class="step-num">3</div><h3>Sign the contract</h3><p>We agree on the rate and sign the contract. Payment is monthly based on actual usage</p></div>
-<div class="step-card"><div class="step-num">4</div><h3>Deliver your goods</h3><p>Bring your pallets &mdash; we will receive them, place them on racking and register in WMS</p></div>
-</div>
-</div></section>
-
-<!-- FAQ -->
-<section class="faq"><div class="ctr">
-<div class="badge">FAQ</div>
-<h2 class="sec-h2">Frequently asked questions</h2>
-<div class="faq-list">
-<div class="faq-item"><button class="faq-q">What is the minimum volume for pallet storage?</button><div class="faq-a"><p>Starting from 1 pallet. No minimum threshold. We work with small batches as well as full warehouse loads.</p></div></div>
-<div class="faq-item"><button class="faq-q">How much does storing one pallet cost?</button><div class="faq-a"><p>From 450 UAH/month per pallet position. The price depends on volume and storage duration &mdash; the more pallets, the better the rate.</p></div></div>
-<div class="faq-item"><button class="faq-q">What pallet sizes do you accept?</button><div class="faq-a"><p>EUR 1200x800 mm and industrial 1200x1000 mm. Maximum pallet height with goods &mdash; up to 1.8 m.</p></div></div>
-<div class="faq-item"><button class="faq-q">How is access to goods organised?</button><div class="faq-a"><p>WMS with address-based storage &mdash; every pallet has a unique racking address. Stock reports are available 24/7 in your personal dashboard.</p></div></div>
-<div class="faq-item"><button class="faq-q">What happens during a power outage?</button><div class="faq-a"><p>3 generators + Starlink. The warehouse has operated continuously since 2022, including all blackouts. Dual fibre-optic lines ensure stable connectivity.</p></div></div>
-<div class="faq-item"><button class="faq-q">Is cargo insurance available?</button><div class="faq-a"><p>Basic insurance is included in the storage fee. Extended insurance is available for an additional charge under a separate agreement.</p></div></div>
-</div>
-</div></section>
-
-<!-- SEO ARTICLE -->
-<section class="article-section">
-<div class="ctr">
-<div class="badge badge-dark">GOOD TO KNOW</div>
-<h2>Pallet storage: what your business needs to know</h2>
-<div class="article-content">
-<h3>When you need pallet storage</h3>
-<p>Pallet storage is the optimal solution for goods that are stored and moved in full pallets. This includes manufacturers holding finished products before dispatch, importers with container shipments, distributors with transit batches, and e-commerce businesses with large seasonal inventories. If your products weigh more than 20 kg or are kept on standard pallets &mdash; pallet storage is cheaper and more convenient than bin-level storage.</p>
-
-<h3>Address-based racking storage</h3>
-<p>Every pallet position at MTP Group has a unique address in the WMS. When a pallet is received, the warehouse operative scans the barcode and the system automatically assigns the optimal racking location based on weight, dimensions and turnover frequency. You can see the exact location of every pallet through your personal dashboard 24/7. Inventory checks are carried out without interrupting operations &mdash; results are available instantly.</p>
-
-<h3>Pallet vs bin storage</h3>
-<p>Bin storage (from 650 UAH/m&sup3;/month) is suited for individual items of medium size: cosmetics, electronics, accessories. Pallet storage (from 450 UAH/pallet/month) is for large batches of uniform goods. A common mistake is storing pallet-ready goods in bins &mdash; it takes up more space and costs more. Compare both models by price: <a href="/en/prices/" style="color:var(--red);font-weight:500">storage rates</a>.</p>
-
-<h3>Security and continuity</h3>
-<p>The MTP Group warehouse has operated continuously since 2022. Three generators ensure uptime during blackouts. Starlink and two fibre-optic providers guarantee connectivity. Round-the-clock security, full CCTV coverage, temperature control at +5...+25&deg;C. Basic cargo insurance is included &mdash; extended coverage is available on request. See also: <a href="/en/warehouse-services/" style="color:var(--red);font-weight:500">all warehouse services</a>.</p>
-</div>
-</div>
+<!-- S2: COMPARISON -->
+<section class="pz-compare">
+  <div class="ctr">
+    <div class="badge badge-dark">COMPARISON</div>
+    <h2 class="sec-h2">Your own warehouse vs MTP</h2>
+    <div class="pz-compare-grid">
+      <div class="pz-compare-col pz-compare-own">
+        <div class="pz-compare-head">Your own warehouse</div>
+        <div class="pz-compare-row"><span>Premises rental</span><span class="pz-price-red">~120,000 UAH</span></div>
+        <div class="pz-compare-row"><span>Staff (storekeeper, loader)</span><span class="pz-price-red">~45,000 UAH</span></div>
+        <div class="pz-compare-row"><span>Forklift (lease)</span><span class="pz-price-red">~8,000 UAH</span></div>
+        <div class="pz-compare-row"><span>Generator + fuel</span><span class="pz-price-red">~15,000 UAH</span></div>
+        <div class="pz-compare-row"><span>WMS system</span><span class="pz-price-red">~3,000 UAH</span></div>
+        <div class="pz-compare-total"><span>TOTAL</span><span>~191,000 UAH/mo</span></div>
+      </div>
+      <div class="pz-compare-col pz-compare-mtp">
+        <div class="pz-compare-head pz-compare-head-green">MTP Group</div>
+        <div class="pz-compare-row"><span>Premises rental</span><span class="pz-price-green">0 UAH (included)</span></div>
+        <div class="pz-compare-row"><span>Staff</span><span class="pz-price-green">0 UAH (included)</span></div>
+        <div class="pz-compare-row"><span>Forklift</span><span class="pz-price-green">0 UAH (included)</span></div>
+        <div class="pz-compare-row"><span>Generator + Starlink</span><span class="pz-price-green">0 UAH (included)</span></div>
+        <div class="pz-compare-row"><span>WMS system</span><span class="pz-price-green">0 UAH (included)</span></div>
+        <div class="pz-compare-total pz-compare-total-green"><span>TOTAL</span><span>from 14,400 UAH/mo</span></div>
+        <div class="pz-compare-note">32 pallets</div>
+      </div>
+    </div>
+    <div class="pz-saving-bar">
+      <span class="pz-saving-text">Save up to <strong>176,600 UAH/mo</strong></span>
+      <a href="#pz-booking" class="pz-cta-btn">Book a spot &#8594;</a>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
+<!-- S3: SVG RACK VISUALIZATION -->
+<section class="pz-rack">
+  <div class="ctr">
+    <div class="badge badge-dark">OCCUPANCY</div>
+    <h2 class="sec-h2">Racking system: 74% occupied</h2>
+    <div class="pz-rack-wrap">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" class="pz-rack-svg" role="img" aria-label="Racking system visualization: 74% occupied, 26% available">
+        <!-- Row labels -->
+        <text x="10" y="62" fill="#999" font-size="12" font-family="var(--fb)">Tier 3</text>
+        <text x="10" y="132" fill="#999" font-size="12" font-family="var(--fb)">Tier 2</text>
+        <text x="10" y="202" fill="#999" font-size="12" font-family="var(--fb)">Tier 1</text>
+        <!-- Row 3 (top) - 8 slots -->
+        <rect x="80" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="148" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="216" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="284" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="352" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="420" y="30" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="488" y="30" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <rect x="556" y="30" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <!-- Row 2 (middle) - 8 slots -->
+        <rect x="80" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="148" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="216" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="284" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="352" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="420" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="488" y="100" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="556" y="100" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <!-- Row 1 (bottom) - 8 slots -->
+        <rect x="80" y="170" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="148" y="170" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="216" y="170" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="284" y="170" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="352" y="170" width="60" height="50" rx="4" fill="#1a1a2e"/>
+        <rect x="420" y="170" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <rect x="488" y="170" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <rect x="556" y="170" width="60" height="50" rx="4" fill="#e0e0e0"/>
+        <!-- Shelf lines -->
+        <line x1="74" y1="88" x2="622" y2="88" stroke="#ccc" stroke-width="2"/>
+        <line x1="74" y1="158" x2="622" y2="158" stroke="#ccc" stroke-width="2"/>
+        <line x1="74" y1="228" x2="622" y2="228" stroke="#ccc" stroke-width="2"/>
+      </svg>
+      <div class="pz-rack-legend">
+        <span class="pz-legend-item"><span class="pz-legend-box pz-legend-filled"></span> Occupied (74%)</span>
+        <span class="pz-legend-item"><span class="pz-legend-box pz-legend-empty"></span> Available (26%)</span>
+      </div>
+      <div class="pz-rack-specs">
+        <span>EUR 1200&times;800 mm</span>
+        <span>up to 2 t/tier</span>
+        <span>height up to 1.8 m</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4: 4 STEPS -->
+<section class="pz-steps">
+  <div class="ctr">
+    <div class="badge">HOW IT WORKS</div>
+    <h2 class="sec-h2" style="color:#fff">4 steps to placement</h2>
+    <div class="pz-steps-track">
+      <div class="pz-steps-line"></div>
+      <div class="pz-step">
+        <div class="pz-step-num">1</div>
+        <h3>We agree on volume</h3>
+        <p>How many pallets and what dimensions &mdash; we determine needs and storage duration</p>
+      </div>
+      <div class="pz-step">
+        <div class="pz-step-num">2</div>
+        <h3>We receive the cargo</h3>
+        <p>Unloading 80 UAH/pallet, every unit is logged in the WMS system</p>
+      </div>
+      <div class="pz-step">
+        <div class="pz-step-num">3</div>
+        <h3>We place on racks</h3>
+        <p>Address: row, tier, position. FEFO control for products with expiry dates</p>
+      </div>
+      <div class="pz-step">
+        <div class="pz-step-num">4</div>
+        <h3>We dispatch on request</h3>
+        <p>Stretch wrapping 350 UAH/pallet, documents &mdash; dispatch from 4 hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5: TARIFF TABLE -->
+<section class="pz-tariffs">
+  <div class="ctr">
+    <div class="badge badge-dark">TARIFFS 2026</div>
+    <h2 class="sec-h2">Pallet storage pricing</h2>
+    <div class="pz-tariff-grid">
+      <div class="pz-tariff-header">
+        <span>Service</span><span>Terms</span><span>Price</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Storage</span><span>pallet/mo</span><span class="pz-tariff-price">from 450 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Receiving</span><span>per pallet</span><span class="pz-tariff-price">from 35 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Dispatch</span><span>per pallet</span><span class="pz-tariff-price">from 35 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>WMS tracking</span><span>address-based</span><span class="pz-tariff-incl">Included</span>
+      </div>
+    </div>
+    <p class="pz-tariff-footer">Tariffs effective from 01.01.2026</p>
+  </div>
+</section>
+
+<!-- S6: WHO IT'S FOR -->
+<section class="pz-who">
+  <div class="ctr">
+    <div class="badge badge-dark">WHO IT'S FOR</div>
+    <h2 class="sec-h2">Who benefits from pallet storage</h2>
+    <div class="pz-who-grid">
+      <div class="pz-who-card">
+        <div class="pz-who-icon">&#127981;</div>
+        <h3>Manufacturers</h3>
+        <p>Store finished products before shipping to distributors and retail chains</p>
+      </div>
+      <div class="pz-who-card">
+        <div class="pz-who-icon">&#128674;</div>
+        <h3>Importers</h3>
+        <p>Container arrived &mdash; place 20 pallets on racks within a few hours</p>
+      </div>
+      <div class="pz-who-card">
+        <div class="pz-who-icon">&#128666;</div>
+        <h3>Distributors</h3>
+        <p>Operational stock near Kyiv, up to 4 dispatches per day</p>
+      </div>
+      <div class="pz-who-card">
+        <div class="pz-who-icon">&#128722;</div>
+        <h3>E-commerce</h3>
+        <p>Pallets + bins for quick order picking and marketplace shipping</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7: CTA FOMO BOOKING -->
+<section class="pz-booking" id="pz-booking">
+  <div class="ctr">
+    <h2 class="pz-booking-h2">26% of spots still available</h2>
+    <p class="pz-booking-sub">Book pallet positions now &mdash; racks are filling up</p>
+    <form class="pz-booking-form" id="pzBookingForm">
+      <div class="pz-form-row">
+        <div class="pz-form-field">
+          <label for="pzName">Your name</label>
+          <input type="text" id="pzName" name="name" placeholder="John" autocomplete="given-name" required>
+        </div>
+        <div class="pz-form-field">
+          <label for="pzPhone">Phone</label>
+          <input type="tel" id="pzPhone" name="phone" placeholder="Your phone number" maxlength="25" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="pz-form-row">
+        <div class="pz-form-field">
+          <label for="pzPallets">Number of pallets</label>
+          <select id="pzPallets" name="pallets">
+            <option value="1-10">1 &ndash; 10 pallets</option>
+            <option value="10-30">10 &ndash; 30 pallets</option>
+            <option value="30-50">30 &ndash; 50 pallets</option>
+            <option value="50+">50+ pallets</option>
+          </select>
+        </div>
+        <div class="pz-form-field">
+          <label for="pzEmail">Email</label>
+          <input type="email" id="pzEmail" name="email" placeholder="you@company.com" autocomplete="email">
+        </div>
+      </div>
+      <button type="submit" class="pz-cta-btn pz-cta-btn-full">Book a spot &#8594;</button>
+    </form>
+  </div>
+</section>
+
+<!-- S8: FAQ -->
+<section class="pz-faq">
+  <div class="ctr">
+    <div class="badge">FAQ</div>
+    <h2 class="sec-h2" style="color:#fff">Frequently Asked Questions</h2>
+    <div class="pz-faq-list">
+      <div class="faq-item">
+        <button class="faq-q" data-faq="1">What pallet sizes do you accept?</button>
+        <div class="faq-a"><p>EUR 1200&times;800 mm. Non-standard sizes are considered individually &mdash; contact the manager for details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="2">What is the racking load capacity?</button>
+        <div class="faq-a"><p>Up to 2 tonnes per tier. Maximum pallet height with goods &mdash; up to 1.8 m.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="3">Products with expiry dates?</button>
+        <div class="faq-a"><p>FEFO control (First Expired, First Out) is automatic through the WMS system. The system alerts when expiry dates are approaching.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="4">How does dispatch work?</button>
+        <div class="faq-a"><p>Request &rarr; order assembly &rarr; stretch wrapping &rarr; documents. From request to ready &mdash; from 4 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="5">Temperature control?</button>
+        <div class="faq-a"><p>Warehouse temperature 15&ndash;25&deg;C year-round. Heating in winter, humidity control. Suitable for most product categories.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq="6">How much does unloading cost?</button>
+        <div class="faq-a"><p>Pallet &mdash; 80 UAH, box &mdash; 20 UAH. Includes unloading from truck and placement on racks with WMS registration.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </Base>
 
-<style is:global>
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.2}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
-.hero-form{display:flex;gap:12px;max-width:460px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
-.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
-.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
-.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
-.pricing{padding:100px 0;background:var(--gray)}
-.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
-.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
-.price-row>span{flex:1;padding:14px 20px}
-.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.price-row:not(.price-header):hover{background:#fff}
-.price-highlight{background:var(--red);color:#fff;font-weight:600}
-.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-cta{text-align:center}
-.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
-.price-cta button:hover{background:#c42b22}
-.advantages{padding:100px 0}
-.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
-.adv-card{padding:32px;border:1px solid #e0e0e0;border-radius:8px;transition:border-color .3s}
-.adv-card:hover{border-color:var(--red)}
-.adv-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.adv-card p{font-size:14px;color:var(--muted);line-height:1.7}
-.adv-icon{font-size:32px;margin-bottom:12px}
-.steps-section{padding:100px 0;background:#0a0a0a;color:#fff}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
-.step-card{text-align:center;padding:32px 20px}
-.step-num{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;font-size:24px;font-weight:700;margin-bottom:20px}
-.step-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.step-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
-.faq{padding:100px 0;background:#0a0a0a;color:#fff}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
-.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
-.article-section{background:#fff;padding:80px 8vw}
-.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
-.article-content{max-width:800px}
-.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
-.article-content h3:first-child{margin-top:0}
-.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
-@media(max-width:768px){
-.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.ben-grid{grid-template-columns:1fr}
-.adv-grid{grid-template-columns:1fr}
-.steps-grid{grid-template-columns:1fr 1fr}
+<style>
+/* ========================================
+   S1: HERO — Full-Bleed Photo + Floating Cards
+   ======================================== */
+.pz-hero{position:relative;min-height:92vh;background:#0a0a0a;color:#fff;display:flex;align-items:center;overflow:hidden}
+.pz-hero-bg{position:absolute;inset:0}
+.pz-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.18}
+.pz-hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:140px 24px 80px;display:flex;align-items:flex-start;gap:60px}
+.pz-hero-text{flex:1;min-width:0}
+.pz-hero h1{font-family:var(--fd);font-size:clamp(36px,5vw,68px);font-weight:400;line-height:1;margin-bottom:24px}
+.pz-hero-sub{font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.65);line-height:1.75;max-width:560px;margin-bottom:36px}
+.pz-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s;text-decoration:none}
+.pz-cta-btn:hover{background:#c42b22}
+
+.pz-hero-cards{display:flex;flex-direction:column;gap:16px;flex-shrink:0;padding-top:20px}
+.pz-float-card{background:rgba(255,255,255,.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 28px;min-width:220px;transition:border-color .3s}
+.pz-float-card:hover{border-color:rgba(230,51,41,.5)}
+.pz-float-val{display:block;font-family:var(--fd);font-size:32px;font-weight:400;color:#fff;line-height:1.1}
+.pz-float-label{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-top:4px;letter-spacing:.5px}
+
+/* ========================================
+   S2: COMPARISON
+   ======================================== */
+.pz-compare{padding:100px 0;background:#fff}
+.pz-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.pz-compare-col{border-radius:12px;overflow:hidden}
+.pz-compare-own{background:#f7f7f7;border:1px solid #e5e5e5}
+.pz-compare-mtp{background:#f0faf0;border:1px solid #c8e6c8}
+.pz-compare-head{padding:18px 24px;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:1px;background:#e8e8e8;color:#333}
+.pz-compare-head-green{background:#d4edda;color:#1a5928}
+.pz-compare-row{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid rgba(0,0,0,.05);font-size:15px}
+.pz-compare-row:last-of-type{border-bottom:none}
+.pz-price-red{color:#e63329;font-weight:600;white-space:nowrap}
+.pz-price-green{color:#1a7a2e;font-weight:600;white-space:nowrap}
+.pz-compare-total{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;font-size:16px;font-weight:700;background:#e0e0e0;color:#111}
+.pz-compare-total-green{background:#b8e6b8;color:#0d4f1a}
+.pz-compare-note{padding:8px 24px 12px;font-size:13px;color:#666;text-align:right}
+
+.pz-saving-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 32px;background:#0a0a0a;border-radius:12px;color:#fff}
+.pz-saving-text{font-size:18px;color:rgba(255,255,255,.85)}
+.pz-saving-text strong{color:#fff;font-size:22px}
+
+/* ========================================
+   S3: SVG RACK VISUALIZATION
+   ======================================== */
+.pz-rack{padding:100px 0;background:var(--gray)}
+.pz-rack-wrap{max-width:700px;margin:0 auto}
+.pz-rack-svg{width:100%;height:auto}
+.pz-rack-legend{display:flex;gap:24px;justify-content:center;margin-top:24px}
+.pz-legend-item{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.pz-legend-box{width:18px;height:14px;border-radius:3px;display:inline-block}
+.pz-legend-filled{background:#1a1a2e}
+.pz-legend-empty{background:#e0e0e0;border:1px solid #ccc}
+.pz-rack-specs{display:flex;gap:24px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.pz-rack-specs span{font-size:14px;color:var(--muted);padding:6px 16px;background:#fff;border-radius:100px;border:1px solid #e0e0e0}
+
+/* ========================================
+   S4: 4 STEPS (vertical with line)
+   ======================================== */
+.pz-steps{padding:100px 0;background:#0a0a0a;color:#fff}
+.pz-steps-track{position:relative;max-width:600px;margin:0 auto;padding-left:48px}
+.pz-steps-line{position:absolute;left:22px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.1)}
+.pz-step{position:relative;padding:0 0 48px}
+.pz-step:last-child{padding-bottom:0}
+.pz-step-num{position:absolute;left:-48px;top:0;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;z-index:1}
+.pz-step h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.pz-step p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7}
+
+/* ========================================
+   S5: TARIFF TABLE (CSS grid)
+   ======================================== */
+.pz-tariffs{padding:100px 0;background:#fff}
+.pz-tariff-grid{max-width:640px;margin:0 auto;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden}
+.pz-tariff-header,.pz-tariff-row{display:grid;grid-template-columns:1fr 1fr 1fr;font-size:15px}
+.pz-tariff-header{background:#0a0a0a;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.pz-tariff-header span,.pz-tariff-row span{padding:15px 20px}
+.pz-tariff-row{border-bottom:1px solid #f0f0f0}
+.pz-tariff-row:last-child{border-bottom:none}
+.pz-tariff-row:hover{background:var(--gray)}
+.pz-tariff-price{font-weight:600;color:var(--red)}
+.pz-tariff-incl{font-weight:600;color:#1a7a2e}
+.pz-tariff-footer{text-align:center;font-size:14px;color:var(--muted);margin-top:20px}
+
+/* ========================================
+   S6: WHO IT'S FOR
+   ======================================== */
+.pz-who{padding:100px 0;background:var(--gray)}
+.pz-who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pz-who-card{background:#fff;padding:32px 24px;border-radius:12px;border:1px solid #e5e5e5;transition:border-color .3s,box-shadow .3s}
+.pz-who-card:hover{border-color:var(--red);box-shadow:0 8px 32px rgba(230,51,41,.08)}
+.pz-who-icon{font-size:36px;margin-bottom:12px}
+.pz-who-card h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.pz-who-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ========================================
+   S7: CTA FOMO BOOKING
+   ======================================== */
+.pz-booking{padding:100px 0;background:#1a1a2e;color:#fff}
+.pz-booking-h2{font-family:var(--fd);font-size:clamp(32px,4.5vw,56px);font-weight:400;text-align:center;margin-bottom:12px}
+.pz-booking-sub{font-size:18px;text-align:center;color:rgba(255,255,255,.6);margin-bottom:48px}
+.pz-booking-form{max-width:640px;margin:0 auto}
+.pz-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.pz-form-field label{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.3px}
+.pz-form-field input,.pz-form-field select{width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,.15);border-radius:6px;background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-family:var(--fb);outline:none;transition:border-color .3s;appearance:none;-webkit-appearance:none}
+.pz-form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.pz-form-field select option{background:#1a1a2e;color:#fff}
+.pz-form-field input::placeholder{color:rgba(255,255,255,.25)}
+.pz-form-field input:focus,.pz-form-field select:focus{border-color:rgba(255,255,255,.45)}
+.pz-cta-btn-full{width:100%;justify-content:center;padding:18px;font-size:17px;margin-top:8px}
+
+/* ========================================
+   S8: FAQ
+   ======================================== */
+.pz-faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.pz-faq-list{max-width:700px;margin:0 auto}
+.pz-faq .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.pz-faq .faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.pz-faq .faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.pz-faq .faq-item.open .faq-q::after{transform:rotate(45deg)}
+.pz-faq .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.pz-faq .faq-a p{padding:0 0 20px;font-size:15px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media(max-width:900px){
+  .pz-hero-inner{flex-direction:column;gap:32px;padding:120px 24px 60px}
+  .pz-hero-cards{flex-direction:row;flex-wrap:wrap;gap:12px}
+  .pz-float-card{min-width:0;flex:1 1 140px;padding:16px 20px}
+  .pz-float-val{font-size:24px}
+  .pz-compare-grid{grid-template-columns:1fr}
+  .pz-who-grid{grid-template-columns:1fr 1fr}
+  .pz-saving-bar{flex-direction:column;text-align:center;gap:16px}
 }
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
+@media(max-width:600px){
+  .pz-hero h1{font-size:clamp(28px,7.5vw,40px)}
+  .pz-hero-cards{flex-direction:column}
+  .pz-float-card{flex:none}
+  .pz-form-row{grid-template-columns:1fr}
+  .pz-who-grid{grid-template-columns:1fr}
+  .pz-tariff-header,.pz-tariff-row{grid-template-columns:1.2fr 1fr .8fr}
+  .pz-tariff-header span,.pz-tariff-row span{padding:12px 14px;font-size:14px}
+  .pz-rack-specs{flex-direction:column;align-items:center;gap:8px}
+  .pz-saving-text{font-size:16px}
+  .pz-saving-text strong{font-size:18px}
+  .pz-booking-h2{font-size:clamp(26px,7vw,40px)}
+}
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded',function(){
 (function(){
-var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
-if(b&&l){b.addEventListener('click',function(){b.classList.toggle('open');l.classList.toggle('open');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('open');l.classList.remove('open');}})
-document.querySelectorAll('.nav-dropdown').forEach(function(dd){
-var timer,menu=dd.querySelector('.nav-dropdown-menu');if(!menu)return;
-dd.addEventListener('mouseenter',function(){clearTimeout(timer);menu.style.display='block';});
-dd.addEventListener('mouseleave',function(){timer=setTimeout(function(){menu.style.display='';},300);});
-});
-document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();this.closest('.nav-dropdown').classList.toggle('mobile-open');}});});
-}
-document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');item.classList.toggle('open');var a=item.querySelector('.faq-a');if(item.classList.contains('open')){a.style.maxHeight=a.scrollHeight+'px';}else{a.style.maxHeight='0';}});});
-var form=document.getElementById('heroForm');
-if(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value.replace(/\D/g,'');if(ph.length<10){alert('Please enter a valid phone number');return;}
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Pallet Storage',contact:'',phone:ph,email:'',shipments:0,type:'pallet',source:'SEO landing pallet-storage',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form: pallet storage Kyiv',date:new Date().toLocaleString('en-GB')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
+  var form = document.getElementById('pzBookingForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var phoneInput = form.querySelector('input[name="phone"]');
+    var ph = phoneInput.value.replace(/\D/g, '');
+    if(ph.length < 10){
+      phoneInput.style.borderColor = '#e63329';
+      phoneInput.focus();
+      return;
+    }
+    phoneInput.style.borderColor = '';
+    var page = location.pathname;
+    if(window.mtpSubmitLead){
+      window.mtpSubmitLead(ph, page);
+    }
+    fetch('/api/telegram', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        phone: ph,
+        name: form.querySelector('input[name="name"]').value.trim(),
+        email: form.querySelector('input[name="email"]').value.trim(),
+        pallets: form.querySelector('select[name="pallets"]').value,
+        page: page
+      })
+    }).catch(function(){});
+    form.innerHTML = '<div style="text-align:center;padding:32px 0"><p style="font-size:20px;font-weight:600;color:#fff;margin-bottom:8px">Thank you for your request!</p><p style="font-size:15px;color:rgba(255,255,255,.55)">We will call you back within 15 minutes</p></div>';
+    setTimeout(function(){ window.location.href = '/en/thanks/'; }, 2000);
+  });
 })();
-});
 </script>
