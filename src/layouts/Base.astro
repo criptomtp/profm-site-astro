@@ -221,15 +221,28 @@ body{padding-bottom:64px}
     heroForm.addEventListener('submit', function(e){
       e.preventDefault();
       var inp = heroForm.querySelector('input[name="phone"]');
+      var errEl = document.getElementById('heroFormError');
       var ph = inp.value.trim();
       var clean = ph.replace(/\D/g,'');
-      if(clean.length < 10){ inp.style.borderColor='#e63329'; return; }
+      if(clean.length < 10){
+        inp.classList.add('input-error');
+        if(errEl){ errEl.style.display='block'; }
+        return;
+      }
+      inp.classList.remove('input-error');
+      if(errEl){ errEl.style.display='none'; }
       window.mtpSubmitLead(ph, location.pathname);
       var lang = document.documentElement.lang;
       var msg = lang === 'en' ? 'Thank you! We will call back.' : lang === 'ru' ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
       var url = lang === 'en' ? '/en/thanks/' : lang === 'ru' ? '/thanks/' : '/ua/thanks/';
       heroForm.innerHTML='<p style="color:#fff;font-size:18px;font-weight:500">\u2705 ' + msg + '</p>';
-      setTimeout(function(){ window.location.href = url; }, 1500);
+      setTimeout(function(){ window.location.href = url; }, 2500);
+    });
+    // Clear error on input
+    heroForm.querySelector('input[name="phone"]').addEventListener('input', function(){
+      this.classList.remove('input-error');
+      var errEl = document.getElementById('heroFormError');
+      if(errEl){ errEl.style.display='none'; }
     });
   }
   // Reveal animation
@@ -278,7 +291,7 @@ body{padding-bottom:64px}
         ep.addEventListener('click',function(ev){if(ev.target===ep)ep.style.display='none';});
         document.getElementById('exitForm').addEventListener('submit',function(ev){
           ev.preventDefault();var ph=this.querySelector('input').value.trim();
-          if(ph.replace(/\\D/g,'').length<10)return;
+          if(ph.replace(/\D/g,'').length<10)return;
           if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
           this.innerHTML='<p style="color:#e63329;font-size:18px;font-weight:600">✅ '+(lang==='en'?'Thank you!':lang==='ru'?'Спасибо!':'Дякуємо!')+'</p>';
           setTimeout(function(){ep.style.display='none';},2000);

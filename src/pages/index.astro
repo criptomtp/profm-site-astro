@@ -25,8 +25,13 @@ import Base from '../layouts/Base.astro';
 <div class="badge">ФУЛФІЛМЕНТ В УКРАЇНІ</div>
 <h1>Фулфілмент для інтернет-магазинів.<br>Від 18 грн за відправку.</h1>
 <p class="hero-sub">Приймаємо, зберігаємо, пакуємо та відправляємо твої товари.<br>Ти займаєшся продажами &mdash; ми логістикою.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Почати &#8594;</button></form>
-<div class="hero-note">Консультація безкоштовна &#183; Передзвонимо за 15 хвилин</div>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
+<div class="hero-form-error" id="heroFormError" style="display:none">Введіть коректний номер телефону</div>
+<div class="hero-note">Безкоштовна консультація &#183; Передзвонимо за 15 хвилин</div>
+<div class="hero-micro-review">
+<div class="micro-review-avatar">ОР</div>
+<div class="micro-review-text"><strong>Олексій Рябцев:</strong> «Від 100 до 800 відправок за 3 місяці»</div>
+</div>
 </div>
 <div class="hero-stats">
 <div class="hero-stat"><div class="hero-stat-val">60&nbsp;000+</div><div class="hero-stat-label">відправлень/міс</div></div>
@@ -247,18 +252,24 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoMo
 <style is:global>
 
 
-.hero{position:relative;min-height:100vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:120px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;opacity:.2}
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:120px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;opacity:.35}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero h1{font-family:var(--fd);font-size:clamp(56px,8vw,110px);font-weight:400;line-height:.9;margin-bottom:32px;width:100%;max-width:none}
-.hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin-bottom:48px}
+.hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.75);line-height:1.7;max-width:520px;margin-bottom:48px}
 .hero-form{display:flex;gap:12px;max-width:480px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:var(--white);font-size:15px;font-family:var(--fb);outline:none;transition:border-color .3s}
 .hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form input.input-error{border-color:#e63329}
 .hero-form button{padding:16px 28px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s;letter-spacing:.5px}
 .hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:16px}
+.hero-form-error{font-size:13px;color:#e63329;margin-top:8px;max-width:480px}
+.hero-note{font-size:13px;color:rgba(255,255,255,.5);margin-top:16px}
+.hero-micro-review{display:flex;align-items:center;gap:12px;margin-top:20px;max-width:480px;padding:12px 16px;background:rgba(255,255,255,.06);border-radius:8px;border:1px solid rgba(255,255,255,.08)}
+.micro-review-avatar{width:36px;height:36px;border-radius:50%;background:#e63329;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.micro-review-text{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.micro-review-text strong{color:rgba(255,255,255,.9);font-weight:600}
 .hero-stats{position:relative;z-index:2;display:flex;flex-wrap:nowrap;gap:40px;padding:60px 8vw;margin-top:auto;border-top:1px solid rgba(255,255,255,.08)}
 .hero-stat{white-space:nowrap}
 .hero-stat-val{font-family:var(--fb);font-size:clamp(28px,4vw,48px);font-weight:300;color:var(--white);white-space:nowrap}
@@ -321,14 +332,18 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideoMo
 .play-overlay span{font-size:14px;color:rgba(255,255,255,.8);letter-spacing:1px;text-transform:uppercase}
 
 @media(max-width:768px){
+.hero{min-height:auto;padding-top:100px;padding-bottom:0}
 .hero-content{padding:0 24px}
 .hero h1{font-size:clamp(40px,10vw,56px)}
 .hero-form{flex-direction:column}.hero-form button{width:100%}
 .hero-stats{flex-wrap:wrap;gap:24px;padding:40px 24px}.hero-stat{min-width:calc(50% - 12px)}
+.hero-micro-review{margin-top:16px}
+.badge{font-size:12px}
 .prob-grid,.svc-grid{grid-template-columns:1fr}
 .steps-row{flex-direction:column;border-top:none}.step{border-right:none;border-bottom:1px solid #e0e0e0;padding:32px 0}
 .testi-arrow{display:none}
 .media-logos{gap:24px}.media-logos img{height:30px;object-fit:contain;}
 .tour-inner{flex-direction:column;gap:40px}.tour-video{width:100%}
+.hero-stat-label{font-size:12px}
 }
 </style>
