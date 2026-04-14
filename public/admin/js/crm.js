@@ -18,8 +18,17 @@ var leads = [];
 var currentLeadId = null;
 
 /* ===== API ===== */
+function getApiKey(){
+  var k=localStorage.getItem('mtp_api_key');
+  if(!k){k=prompt('Введіть API ключ для CRM:');if(k)localStorage.setItem('mtp_api_key',k);}
+  return k||'';
+}
+function authHeaders(){return {'Content-Type':'application/json','X-Api-Key':getApiKey()};}
 function apiGet(){
-  return fetch('/api/leads').then(function(r){return r.json();}).then(function(data){
+  return fetch('/api/leads',{headers:{'X-Api-Key':getApiKey()}}).then(function(r){
+    if(r.status===401){localStorage.removeItem('mtp_api_key');alert('Невірний API ключ');throw new Error('unauthorized');}
+    return r.json();
+  }).then(function(data){
     if(Array.isArray(data)) leads = data;
     return leads;
   }).catch(function(){
@@ -28,9 +37,9 @@ function apiGet(){
     return leads;
   });
 }
-function apiPost(lead){return fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)}).then(function(r){return r.json();}).catch(function(){return lead;});}
-function apiPut(lead){return fetch('/api/leads',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)}).catch(function(){});}
-function apiDelete(id){return fetch('/api/leads?id='+id,{method:'DELETE'}).catch(function(){});}
+function apiPost(lead){return fetch('/api/leads',{method:'POST',headers:authHeaders(),body:JSON.stringify(lead)}).then(function(r){return r.json();}).catch(function(){return lead;});}
+function apiPut(lead){return fetch('/api/leads',{method:'PUT',headers:authHeaders(),body:JSON.stringify(lead)}).catch(function(){});}
+function apiDelete(id){return fetch('/api/leads?id='+id,{method:'DELETE',headers:{'X-Api-Key':getApiKey()}}).catch(function(){});}
 function saveLocal(){localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));}
 
 /* ===== RENDER ===== */
