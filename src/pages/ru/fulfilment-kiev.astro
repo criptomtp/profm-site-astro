@@ -1,0 +1,274 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент в Киеве","description":"Фулфилмент-склад в Киевской области: 3 900 м², от 18 грн/заказ, доставка по Киеву — на следующий день.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"City","name":"Kyiv"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправку"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/services/"},{"@type":"ListItem","position":3,"name":"Фулфилмент Киев","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему фулфилмент-склад под Киевом — оптимальное расположение для доставки по Украине?","acceptedAnswer":{"@type":"Answer","text":"Киевская область — пересечение основных автомагистралей страны (М-06, М-01, М-05). Посылка из-под Киева доставляется в любой город за 1–2 дня, по столице — на следующий день. Аэропорт Борисполь — в 15 минутах от склада в Счастливом."}},{"@type":"Question","name":"Сколько раз в день происходит забор Новой Почтой?","acceptedAnswer":{"@type":"Answer","text":"4 раза ежедневно: 10:00, 12:00, 15:00 и 17:00. Заказ, поступивший до 14:00, уходит в тот же день. Это позволяет доставлять посылки по Киеву на следующий день."}},{"@type":"Question","name":"Как обеспечивается безопасность товара на складах?","acceptedAnswer":{"@type":"Answer","text":"Оба склада находятся под круглосуточным видеонаблюдением. Доступ только по пропускам. Территория охраняется 24/7. При приёмке — фото-фиксация каждой единицы. Все товары застрахованы по договору."}},{"@type":"Question","name":"Можно ли приехать и посмотреть склад перед подключением?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы проводим экскурсии по складу в Счастливом по предварительной записи. Вы увидите все процессы: приёмку, хранение, сборку и отправку заказов. Для удалённых клиентов — видеозвонок с демонстрацией."}},{"@type":"Question","name":"Как близость к хабам Новой Почты влияет на скорость доставки?","acceptedAnswer":{"@type":"Answer","text":"Оба наших склада расположены в 10–15 минутах от ближайших сортировочных центров Новой Почты. Это сокращает время на передачу посылок и гарантирует, что отправление попадёт в логистическую сеть в тот же день."}},{"@type":"Question","name":"Есть ли особенности последней мили при доставке по Киеву?","acceptedAnswer":{"@type":"Answer","text":"По Киеву доставка Новой Почтой — на следующий день после забора. Также доступна доставка курьером и адресная доставка через Новую Почту. Для крупногабаритных товаров — Нова Пошта Карго с доставкой до двери."}},{"@type":"Question","name":"Зачем нужны два склада, а не один?","acceptedAnswer":{"@type":"Answer","text":"Диверсификация рисков. Склад в Счастливом (2 800 м²) расположен на восточном направлении, Белогородка (1 100 м²) — на западном. Два направления забора — два маршрута до сортировочных центров. При форс-мажоре на одном складе второй продолжает работу."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+---
+<Base
+  title="Фулфилмент Киев — от 18 грн/заказ | MTP Group"
+  description="Фулфилмент в Киевской области: 3 900 м² склад, от 18 грн/заказ. Доставка по Киеву на следующий день. 150+ клиентов, 10+ лет, ноль простоев."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/">
+</Fragment>
+
+<!-- HERO — giant number -->
+<section class="kv-hero">
+<div class="kv-hero-inner">
+<div class="kv-hero-num">3 900</div>
+<div class="kv-hero-unit">м&sup2; склада под Киевом</div>
+<h1>Ваш склад без аренды.<br>Ваша логистика без логистов.</h1>
+<p class="kv-hero-sub">Счастливое + Белогородка. Два склада, 3 генератора, ноль простоев с 2022. Заказ собирается за 30 секунд, отправляется 4 раза в день.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
+</div>
+</section>
+
+<!-- COST BREAKDOWN -->
+<section class="kv-cost"><div class="ctr">
+<h2 class="sec-h2">Свой склад vs фулфилмент: считаем построчно</h2>
+<div class="kv-cost-grid">
+<div class="kv-cost-col">
+<div class="kv-cost-title">Свой склад</div>
+<div class="kv-cost-line"><span>Аренда помещения</span><span>15 000 грн</span></div>
+<div class="kv-cost-line"><span>Упаковщик (1 чел.)</span><span>18 000 грн</span></div>
+<div class="kv-cost-line"><span>Коммунальные + интернет</span><span>4 000 грн</span></div>
+<div class="kv-cost-line"><span>Упаковочные материалы</span><span>5 000 грн</span></div>
+<div class="kv-cost-line"><span>WMS-система</span><span>3 000 грн</span></div>
+<div class="kv-cost-line"><span>Генератор (аренда/топливо)</span><span>10 000 грн</span></div>
+<div class="kv-cost-total"><span>Итого в месяц</span><span>55 000+ грн</span></div>
+<div class="kv-cost-extra">+ 3-4 часа вашего времени каждый день</div>
+</div>
+<div class="kv-cost-vs">VS</div>
+<div class="kv-cost-col kv-cost-mtp">
+<div class="kv-cost-title">MTP Group</div>
+<div class="kv-cost-line"><span>Аренда</span><span class="kv-free">0 грн</span></div>
+<div class="kv-cost-line"><span>Персонал</span><span class="kv-free">Включено</span></div>
+<div class="kv-cost-line"><span>Коммунальные</span><span class="kv-free">Включено</span></div>
+<div class="kv-cost-line"><span>Материалы</span><span class="kv-free">Включено</span></div>
+<div class="kv-cost-line"><span>WMS</span><span class="kv-free">Включено</span></div>
+<div class="kv-cost-line"><span>3 генератора + Starlink</span><span class="kv-free">Включено</span></div>
+<div class="kv-cost-total"><span>Минимум</span><span>5 000 грн/мес</span></div>
+<div class="kv-cost-extra">+ 0 часов вашего времени</div>
+</div>
+</section></div></section>
+
+<!-- 24 HOURS -->
+<section class="kv-24h"><div class="ctr">
+<div class="badge">24 ЧАСА</div>
+<h2 class="sec-h2">Один день на складе MTP Group</h2>
+<div class="kv-24h-grid">
+<div class="kv-hour"><div class="kv-h-time">08:00</div><h3>Открытие</h3><p>Операторы на местах. WMS загружена. Генераторы на standby.</p></div>
+<div class="kv-hour"><div class="kv-h-time">09:00</div><h3>Первые заказы</h3><p>Заказы с маркетплейсов поступают через API. Сборка начинается автоматически.</p></div>
+<div class="kv-hour"><div class="kv-h-time">10:00</div><h3>1-й забор НП</h3><p>Первая партия уходит с Новой Почтой. Покупатель получит завтра.</p></div>
+<div class="kv-hour"><div class="kv-h-time">12:00</div><h3>2-й забор</h3><p>Параллельно &mdash; приёмка нового товара: разгрузка, штрихкодирование, размещение.</p></div>
+<div class="kv-hour"><div class="kv-h-time">15:00</div><h3>3-й забор</h3><p>Обработка возвратов: фото-фиксация, решение по каждому товару.</p></div>
+<div class="kv-hour"><div class="kv-h-time">17:00</div><h3>4-й забор + отчёт</h3><p>Последний забор. Автоматический отчёт: обработано, отправлено, остатки.</p></div>
+</section></div></section>
+
+<!-- SHERIFF -->
+<section class="kv-sheriff"><div class="ctr">
+<div class="kv-sh-grid">
+<div class="kv-sh-text">
+<div class="badge">КОНТРОЛЬ</div>
+<h2>Шериф платежей: деньги под контролем</h2>
+<p>60-70% заказов в украинском e-commerce &mdash; наложенный платёж. Ваши деньги &laquo;висят&raquo; 3-7 дней. Телеграм-бот &laquo;Шериф&raquo; отслеживает каждый платёж в реальном времени:</p>
+<ul>
+<li>&#10003; Кто получил посылку</li>
+<li>&#10003; Кто оплатил</li>
+<li>&#10003; Кто отказался</li>
+<li>&#10003; Когда деньги на счёте</li>
+</ul>
+</div>
+<div class="kv-sh-visual">
+<div class="kv-sh-msg"><span class="kv-sh-icon">&#128176;</span> <strong>Шериф:</strong> #4521 &mdash; оплачен. 1 240 грн.</div>
+<div class="kv-sh-msg"><span class="kv-sh-icon">&#9888;&#65039;</span> <strong>Шериф:</strong> #4518 &mdash; отказ. Возврат в обработке.</div>
+<div class="kv-sh-msg"><span class="kv-sh-icon">&#128176;</span> <strong>Шериф:</strong> #4525 &mdash; оплачен. 890 грн.</div>
+</div>
+</section></div></section>
+
+<section class="warehouse-tour">
+<div class="tour-inner">
+<div class="tour-text">
+<div class="badge">СКЛАД</div>
+<h2>Склад в Киеве —<br>отправка за час</h2>
+<p>Наш фулфилмент-центр расположен под Киевом. Расстояние до отделений Новой Почты и Укрпочты — 10 минут. Четыре отправки ежедневно.</p>
+<button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Посмотреть видео</button>
+</div>
+<div class="tour-video">
+<div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="Фулфилмент-склад MTP Group под Киевом — видео-обзор" width="640" height="360" loading="lazy">
+<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Склад изнутри</span></div>
+</div>
+</div>
+</div>
+</section></div>
+</section>
+
+<!-- CASE -->
+<section class="kv-case"><div class="ctr">
+<div class="badge">КЕЙС</div>
+<h2 class="sec-h2">Elemis: 7 лет без единой жалобы</h2>
+<div class="kv-case-content">
+<p class="kv-case-intro">Люксовый beauty-бренд работает с нами с 2019 года. Ноль нареканий на упаковку, ноль потерь. FEFO-контроль для товаров с ограниченным сроком.</p>
+<div class="kv-case-stats">
+<div class="kv-cs"><span class="kv-cs-val">7 лет</span><span class="kv-cs-label">работы</span></div>
+<div class="kv-cs"><span class="kv-cs-val">0</span><span class="kv-cs-label">жалоб</span></div>
+<div class="kv-cs"><span class="kv-cs-val">FEFO</span><span class="kv-cs-label">контроль сроков</span></div>
+</div>
+</section></div></section>
+
+<!-- PRICING -->
+<section class="kv-pricing"><div class="ctr">
+<div class="badge badge-dark">ТАРИФЫ 2026</div>
+<h2 class="sec-h2">Сколько стоит фулфилмент под Киевом</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена</span></div>
+<div class="price-row"><span>Отправка</span><span>200+ заказов/день</span><span>от 18 грн</span></div>
+<div class="price-row"><span>Отправка</span><span>100-199/день</span><span>от 20 грн</span></div>
+<div class="price-row"><span>Отправка</span><span>50-99/день</span><span>от 22 грн</span></div>
+<div class="price-row"><span>Отправка</span><span>0-49/день</span><span>от 26 грн</span></div>
+<div class="price-row"><span>Хранение</span><span>м&sup3;/месяц</span><span>650 грн</span></div>
+<div class="price-row"><span>Приёмка</span><span>за единицу</span><span>от 3 грн</span></div>
+<div class="price-row price-highlight"><span>Минимум</span><span>в месяц</span><span>5 000 грн</span></div>
+</div>
+<p class="price-note">Конкуренты прячут цены. Мы &mdash; нет.</p>
+</div></section>
+
+<!-- FAQ -->
+<section class="kv-faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Вопросы о фулфилменте в Киеве</h2>
+<div class="kv-faq-list">
+<div class="kv-faq-item"><button class="kv-faq-q">Почему склад под Киевом — оптимальное расположение для доставки по Украине?</button><div class="kv-faq-a"><p>Киевская область &mdash; пересечение основных автомагистралей (М-06, М-01, М-05). Посылка из-под Киева доставляется в любой город за 1&ndash;2 дня. По столице &mdash; на следующий день. Аэропорт Борисполь &mdash; в 15 минутах от нашего склада в Счастливом.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Сколько раз в день происходит забор Новой Почтой?</button><div class="kv-faq-a"><p>4 раза ежедневно: 10:00, 12:00, 15:00 и 17:00. Заказ, поступивший до 14:00, уходит в тот же день. Это позволяет доставлять посылки по Киеву уже на следующий день после оформления.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Как обеспечивается безопасность товара на складах?</button><div class="kv-faq-a"><p>Оба склада &mdash; под круглосуточным видеонаблюдением. Доступ только по пропускам. Территория охраняется 24/7. При приёмке &mdash; фото-фиксация каждой единицы. Все товары застрахованы по договору с материальной ответственностью.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Можно ли приехать и посмотреть склад перед подключением?</button><div class="kv-faq-a"><p>Да. Мы проводим экскурсии по складу в Счастливом по предварительной записи. Вы увидите все процессы: приёмку, хранение, сборку и отправку заказов. Для удалённых клиентов &mdash; видеозвонок с полной демонстрацией.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Как близость к хабам Новой Почты влияет на скорость доставки?</button><div class="kv-faq-a"><p>Оба склада расположены в 10&ndash;15 минутах от сортировочных центров Новой Почты. Это сокращает время передачи посылок и гарантирует попадание отправления в логистическую сеть в тот же день.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Есть ли особенности последней мили при доставке по Киеву?</button><div class="kv-faq-a"><p>По Киеву доставка Новой Почтой &mdash; на следующий день после забора. Также доступна доставка курьером и адресная доставка. Для крупногабаритных товаров &mdash; Нова Пошта Карго с доставкой до двери покупателя.</p></div></div>
+<div class="kv-faq-item"><button class="kv-faq-q">Зачем нужны два склада, а не один?</button><div class="kv-faq-a"><p>Диверсификация рисков. Счастливое (2 800 м&sup2;) &mdash; восточное направление, Белогородка (1 100 м&sup2;) &mdash; западное. Два маршрута до сортировочных центров Новой Почты. При форс-мажоре на одном складе второй продолжает работу без перебоев.</p></div></div>
+</section></div></section>
+
+<!-- SEO ARTICLE -->
+<section class="kv-article">
+<div class="ctr">
+<div class="badge badge-dark">ПОЛЕЗНО</div>
+<h2>Доставка из-под Киева: почему расположение склада определяет скорость</h2>
+<div class="kv-article-body">
+<h3>Логистическая карта Украины: почему Киев в центре</h3>
+<p>Через Киевскую область проходят три ключевые автомагистрали: М-06 (западное направление, Европа), М-01 (северное, Чернигов) и М-05 (южное, Одесса). Это делает столичный регион точкой, из которой посылка достигает любого города Украины за минимальное время. Для интернет-магазина, работающего по всей стране, склад под Киевом &mdash; не вопрос удобства, а вопрос конкурентного преимущества в скорости доставки.</p>
+
+<h3>Два склада &mdash; два направления забора</h3>
+<p>MTP Group использует стратегию географического разделения: склад в Счастливом (2 800 м&sup2;) &mdash; рядом с аэропортом Борисполь на восточном направлении, Белогородка (1 100 м&sup2;) &mdash; на западном, у выезда на Житомирскую трассу. Это не только повышает пропускную способность, но и снижает зависимость от одной точки. Форс-мажор на одном складе не останавливает работу &mdash; второй продолжает функционировать автономно.</p>
+
+<h3>Контроль денежного потока при наложенных платежах</h3>
+<p>В украинском e-commerce 60&ndash;70% заказов оплачиваются наложенным платежом. Деньги &laquo;зависают&raquo; на 3&ndash;7 дней между моментом получения посылки покупателем и зачислением средств на счёт продавца. Без системного контроля вы не знаете: кто получил, кто оплатил, кто отказался. Телеграм-бот &laquo;Шериф платежей&raquo; решает эту проблему: уведомления в реальном времени по каждой транзакции, сводный отчёт за день, мгновенное оповещение об отказах.</p>
+
+<h3>Сравнение: фулфилмент-центр vs коворкинг-склад в Киеве</h3>
+<p>На рынке появились коворкинг-склады &mdash; арендуемые ячейки без операторов и WMS. Формально дешевле: 2 000&ndash;5 000 грн/мес за место. Но вы по-прежнему пакуете сами, ездите на Новую Почту, ведёте учёт вручную. Фулфилмент-центр &mdash; это другой уровень: автоматизированная WMS, обученные операторы, 4 забора Новой Почтой, обработка возвратов и контроль платежей. Разница &mdash; как между гаражом и конвейером. Для бизнеса с 30+ заказами в день выбор очевиден.</p>
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+.badge{display:inline-block;padding:6px 16px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:600;letter-spacing:2px;border-radius:2px;text-transform:uppercase}
+.badge-dark{border-color:#ccc;color:#666}
+.sec-h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;text-align:center;margin:12px 0 48px}
+
+.kv-hero{background:var(--black);color:var(--white);padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.kv-hero-inner{position:relative;z-index:2;max-width:800px;margin:0 auto}
+.kv-hero-num{font-family:var(--fd);font-size:clamp(80px,18vw,200px);color:rgba(255,255,255,.03);line-height:.85;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;z-index:0}
+.kv-hero-unit{font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:3px;margin-bottom:24px;position:relative;z-index:2}
+.kv-hero h1{font-family:var(--fd);font-size:clamp(32px,5vw,64px);font-weight:400;line-height:1;margin-bottom:24px;position:relative;z-index:2}
+.kv-hero-sub{font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.5);line-height:1.7;max-width:560px;margin:0 auto 40px;position:relative;z-index:2}
+.kv-hero .hero-form{display:flex;gap:12px;max-width:460px;margin:0 auto;position:relative;z-index:2}
+.kv-hero .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.kv-hero .hero-form input::placeholder{color:rgba(255,255,255,.25)}.kv-hero .hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.kv-hero .hero-form button{padding:16px 28px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+
+.kv-cost{padding:100px 0;background:var(--gray)}
+.kv-cost-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;max-width:900px;margin:0 auto;align-items:start}
+.kv-cost-col{background:#fff;border-radius:12px;padding:36px 32px;border:1px solid #e0e0e0}
+.kv-cost-mtp{border-color:var(--red);border-width:2px}
+.kv-cost-title{font-family:var(--fd);font-size:22px;margin-bottom:24px;text-align:center}
+.kv-cost-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:14px;color:var(--muted)}
+.kv-cost-total{display:flex;justify-content:space-between;padding:16px 0 0;font-size:18px;font-weight:700;color:var(--black);border-top:2px solid var(--black)}
+.kv-cost-mtp .kv-cost-total{color:var(--red);border-color:var(--red)}
+.kv-cost-extra{text-align:center;font-size:13px;color:var(--muted);margin-top:12px;font-style:italic}
+.kv-free{color:#e63329;font-weight:600}
+.kv-cost-vs{font-family:var(--fd);font-size:48px;color:var(--red);align-self:center;text-align:center}
+
+.kv-24h{padding:100px 0}
+.kv-24h-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kv-hour{padding:36px 28px;border:1px solid #e0e0e0;border-radius:12px;transition:border-color .3s}
+.kv-hour:hover{border-color:var(--red)}
+.kv-h-time{font-family:var(--fd);font-size:32px;color:var(--red);margin-bottom:8px}
+.kv-hour h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.kv-hour p{font-size:13px;color:var(--muted);line-height:1.6}
+
+.kv-sheriff{padding:100px 0;background:#0a0a0a;color:#fff}
+.kv-sh-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.kv-sh-text h2{font-family:var(--fd);font-size:clamp(28px,4vw,44px);font-weight:400;margin:16px 0 20px}
+.kv-sh-text p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:16px}
+.kv-sh-text ul{list-style:none;padding:0}
+.kv-sh-text ul li{font-size:14px;color:rgba(255,255,255,.7);padding:6px 0}
+.kv-sh-visual{display:flex;flex-direction:column;gap:16px}
+.kv-sh-msg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 20px;font-size:14px;color:rgba(255,255,255,.7)}
+.kv-sh-icon{font-size:18px}
+
+.kv-case{padding:100px 0;background:var(--gray)}
+.kv-case-content{max-width:800px;margin:0 auto}
+.kv-case-intro{font-size:17px;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:40px}
+.kv-case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kv-cs{text-align:center;padding:32px 16px;border:1px solid #e0e0e0;border-radius:12px;background:#fff}
+.kv-cs-val{display:block;font-family:var(--fd);font-size:clamp(28px,4vw,42px);color:var(--red);margin-bottom:4px}
+.kv-cs-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+.kv-pricing{padding:100px 0}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:var(--black);color:#fff;font-weight:600;font-size:13px;text-transform:uppercase}
+.price-row:not(.price-header):hover{background:var(--gray)}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);font-style:italic}
+
+.kv-faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.kv-faq-list{max-width:700px;margin:0 auto}
+.kv-faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.kv-faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.kv-faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.kv-faq-item.open .kv-faq-q::after{transform:rotate(45deg)}
+.kv-faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.kv-faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+.kv-article{background:#fff;padding:80px 8vw}
+.kv-article h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px}
+.kv-article-body{max-width:800px}
+.kv-article-body h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:var(--black)}
+.kv-article-body h3:first-child{margin-top:0}
+.kv-article-body p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+@media(max-width:768px){
+.kv-hero h1{font-size:clamp(28px,7vw,40px)}
+.kv-hero .hero-form{flex-direction:column}.kv-hero .hero-form button{width:100%}
+.kv-cost-grid{grid-template-columns:1fr;gap:16px}
+.kv-cost-vs{font-size:32px}
+.kv-24h-grid{grid-template-columns:1fr}
+.kv-sh-grid{grid-template-columns:1fr}
+.kv-case-stats{grid-template-columns:1fr}
+}
+
+.kv-hour,.kv-cs,.kv-sh-msg,.kv-cost-col{opacity:1!important;transform:none!important}
+</style>
+

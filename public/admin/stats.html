@@ -84,8 +84,7 @@ var totalPages = 144;
 document.getElementById('sPages').textContent = totalPages;
 
 // Load CRM leads
-var _ak=localStorage.getItem('mtp_api_key')||'';
-fetch('/api/leads/',{headers:{'X-Api-Key':_ak}}).then(function(r){return r.json()}).then(function(leads){
+fetch('/api/leads/',{headers:{'Authorization':'Bearer '+getSessionToken()}}).then(function(r){return r.json()}).then(function(leads){
   if(Array.isArray(leads)){
     document.getElementById('sLeads').textContent = leads.length;
     // Funnel

@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis';
+import { verifySession } from './_session.js';
 
 const redis = new Redis({
   url: process.env.storage_KV_REST_API_URL || process.env.STORAGE_URL || process.env.KV_REST_API_URL,
@@ -27,6 +28,12 @@ function checkApiKey(req) {
   return expected && key === expected;
 }
 
+async function checkAuth(req) {
+  if (checkApiKey(req)) return true;
+  const session = await verifySession(req);
+  return !!session;
+}
+
 async function checkRateLimit(ip) {
   const key = RATE_LIMIT_PREFIX + ip;
   const count = await redis.incr(key);
@@ -41,7 +48,7 @@ export default async function handler(req, res) {
     res.setHeader('Vary', 'Origin');
   }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Api-Key');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Api-Key, Authorization');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
@@ -93,8 +100,9 @@ export default async function handler(req, res) {
       return res.status(201).json({ id: newLead.id, ok: true });
     }
 
-    // GET/PUT/DELETE — protected by API key (CRM only)
-    if (!checkApiKey(req)) {
+    // GET/PUT/DELETE — protected by API key or session (CRM)
+    const authorized = await checkAuth(req);
+    if (!authorized) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 

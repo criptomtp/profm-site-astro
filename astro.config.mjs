@@ -7,7 +7,6 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     sitemap({
-      lastmod: new Date(),
       filter: (page) =>
         !page.includes('/admin/') &&
         !page.includes('/thanks/') &&

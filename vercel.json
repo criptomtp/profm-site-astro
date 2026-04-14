@@ -50,6 +50,61 @@
       "source": "/ua/fulfilment-dlya-marketpleysov/",
       "destination": "/ua/fulfilment-dlya-marketpleysiv/",
       "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/ru/about/",
+      "permanent": true
+    },
+    {
+      "source": "/calculator/",
+      "destination": "/ru/calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/fulfilment-dlya-internet-magazynu/",
+      "destination": "/ru/fulfilment-dlya-internet-magazynu/",
+      "permanent": true
+    },
+    {
+      "source": "/fulfilment-dlya-marketpleysov/",
+      "destination": "/ru/fulfilment-dlya-marketpleysov/",
+      "permanent": true
+    },
+    {
+      "source": "/fulfilment-kiev/",
+      "destination": "/ru/fulfilment-kiev/",
+      "permanent": true
+    },
+    {
+      "source": "/fulfilment-vazhkykh-tovariv/",
+      "destination": "/ru/fulfilment-vazhkykh-tovariv/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/",
+      "destination": "/ru/guide/",
+      "permanent": true
+    },
+    {
+      "source": "/recalls/",
+      "destination": "/ru/recalls/",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/ru/services/",
+      "permanent": true
+    },
+    {
+      "source": "/skladski-poslugy/",
+      "destination": "/ru/skladski-poslugy/",
+      "permanent": true
+    },
+    {
+      "source": "/tsenu/",
+      "destination": "/ru/tsenu/",
+      "permanent": true
     }
   ],
   "trailingSlash": true
