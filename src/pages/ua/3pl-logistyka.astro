@@ -2,216 +2,773 @@
 import Base from '../../layouts/Base.astro';
 ---
 <Base
-  title="3PL логістика для інтернет-магазинів — від 18 грн | MTP Group"
-  description="3PL логістика під Києвом: зберігання, комплектація, доставка, повернення. Від 18 грн за відправлення. Інтеграція з CRM за 2 години. 150+ клієнтів, 60 000+ відправлень/міс."
+  title="3PL логістика для e-commerce — від 18 грн | MTP Group"
+  description="3PL логістика для інтернет-магазинів під Києвом: зберігання, збір, пакування, доставка, повернення. Інтеграція з CRM за 2 години. Від 18 грн/відправку. 150+ клієнтів."
   canonical="https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"
   lang="uk"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
-  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"3PL логістика для інтернет-магазинів","description":"Повний цикл 3PL логістики: зберігання, комплектація, доставка, повернення. Інтеграція з CRM за 2 години. 60 000+ відправлень на місяць.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"3PL фулфілмент від 18 грн за відправлення"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/services/"},{"@type":"ListItem","position":3,"name":"3PL логістика","item":"https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Скільки часу займає підключення?","acceptedAnswer":{"@type":"Answer","text":"2-3 робочих дні від заявки до першого відправлення."}},{"@type":"Question","name":"Який мінімальний обсяг замовлень?","acceptedAnswer":{"@type":"Answer","text":"Від 5 замовлень на день. Немає мінімального порогу."}},{"@type":"Question","name":"Як працює інтеграція з CRM?","acceptedAnswer":{"@type":"Answer","text":"Автоматична синхронізація. Замовлення з CRM → склад → відправка → статус назад в CRM."}},{"@type":"Question","name":"Скільки коштує фулфілмент?","acceptedAnswer":{"@type":"Answer","text":"Від 18 грн за відправлення. Ціна залежить від обсягу. Зберігання від 650 грн/м³."}},{"@type":"Question","name":"Що якщо мої обсяги зростуть?","acceptedAnswer":{"@type":"Answer","text":"Ми масштабуємось разом з вами. Від 10 до 10 000 замовлень на день без затримок."}},{"@type":"Question","name":"Які перевізники доступні?","acceptedAnswer":{"@type":"Answer","text":"Нова Пошта, Meest, Justin, УкрПошта та будь-який інший за запитом."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
+  showCTA={false}
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"3PL логістика для брендів","serviceType":"Third-Party Logistics","description":"Повний аутсорсинг складу та доставки: зберігання, збір, пакування, відправка, повернення, контроль грошей. Інтеграція з CRM за 2 години.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645","address":{"@type":"PostalAddress","addressLocality":"Щасливе","addressRegion":"Київська область","addressCountry":"UA"}},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"3PL фулфілмент від 18 грн за відправку"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/services/"},{"@type":"ListItem","position":3,"name":"3PL логістика","item":"https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Скільки коштує відправка?","acceptedAnswer":{"@type":"Answer","text":"18-26 грн залежно від обсягу. При 200+ відправлень/день — 18 грн."}},{"@type":"Question","name":"Як швидко підключитися?","acceptedAnswer":{"@type":"Answer","text":"3-5 робочих днів від заявки до першого відправлення."}},{"@type":"Question","name":"З якими CRM працюєте?","acceptedAnswer":{"@type":"Answer","text":"KeyCRM, SalesDrive, LP-CRM, Sitniks, Horoshop, OpenCart, WooCommerce, Rozetka, Prom + будь-яка система через API."}},{"@type":"Question","name":"Мінімум замовлень?","acceptedAnswer":{"@type":"Answer","text":"Мінімального обсягу немає. Мінімальний платіж — 5 000 грн/міс."}},{"@type":"Question","name":"Брендоване пакування?","acceptedAnswer":{"@type":"Answer","text":"Так, доукомплектація від 2,50 грн/товар."}},{"@type":"Question","name":"Як контролювати гроші?","acceptedAnswer":{"@type":"Answer","text":"Шериф Платежів — Telegram-сповіщення при кожному отриманні коштів від перевізника."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/">
-  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/3pl-logistika/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/3pl-logistics/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"><img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="3PL логістика MTP Group — фулфілмент для інтернет-магазинів" width="1920" height="1080" fetchpriority="high"></div>
-<div class="hero-content">
-<div class="badge">3PL ЛОГІСТИКА</div>
-<h1>3PL логістика для<br>інтернет-магазинів</h1>
-<p class="hero-sub">Повний цикл: зберігання, комплектація, доставка, повернення. Від підключення до масштабу за 2-3 дні. Від 18&nbsp;грн за відправлення.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Підключитись за 2-3 дні &#8594;</button></form>
-<div class="hero-note">Безкоштовна консультація &#183; Передзвонимо за 15 хвилин</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">60 000+</div><div class="hero-stat-label">відправлень/міс</div></div>
-<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">клієнтів</div></div>
-<div class="hero-stat"><div class="hero-stat-val">від 18 грн</div><div class="hero-stat-label">за відправлення</div></div>
-</div>
+<!-- ====== SECTION 1 — HERO ====== -->
+<section class="tpl-hero">
+  <div class="tpl-hero-inner ctr">
+    <div class="tpl-hero-text">
+      <div class="badge">3PL ЛОГІСТИКА</div>
+      <h1>3PL логістика для брендів&nbsp;&mdash; повний аутсорсинг складу та&nbsp;доставки</h1>
+      <p class="tpl-hero-sub">Ви розвиваєте продукт і маркетинг. Ми&nbsp;беремо на себе склад, збір, пакування, відправку, повернення та&nbsp;контроль грошей.</p>
+
+      <!-- Animated flow diagram -->
+      <div class="flow-diagram" aria-label="Схема роботи: Ваша CRM передає замовлення на MTP Склад, далі Нова Пошта доставляє Клієнту">
+        <div class="flow-box">Ваша CRM</div>
+        <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
+        <div class="flow-box flow-box--accent">MTP Склад</div>
+        <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
+        <div class="flow-box">Нова Пошта</div>
+        <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
+        <div class="flow-box">Клієнт</div>
+      </div>
+
+      <div class="crm-badges">
+        <span>KeyCRM</span>
+        <span>Horoshop</span>
+        <span>Prom</span>
+        <span>WooCommerce</span>
+        <span>Shopify</span>
+      </div>
+
+      <form class="tpl-hero-form" id="heroForm">
+        <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="given-name" aria-label="Ім'я">
+        <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
+        <select name="crm" aria-label="CRM система">
+          <option value="" disabled selected>Ваша CRM</option>
+          <option value="KeyCRM">KeyCRM</option>
+          <option value="Horoshop">Horoshop</option>
+          <option value="Prom.ua">Prom.ua</option>
+          <option value="WooCommerce">WooCommerce</option>
+          <option value="Shopify">Shopify</option>
+          <option value="OpenCart">OpenCart</option>
+          <option value="other">Інша</option>
+        </select>
+        <button type="submit">Підключитись за 2-3 дні &rarr;</button>
+      </form>
+      <div class="hero-note">Безкоштовна консультація &middot; Передзвонимо за 15 хвилин</div>
+    </div>
+
+    <div class="tpl-hero-stats">
+      <div class="tpl-stat"><strong>150+</strong><span>клієнтів</span></div>
+      <div class="tpl-stat"><strong>60 000+</strong><span>відправлень/міс</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECTION 2 — CASE STUDIES ====== -->
+<section class="cases-sec"><div class="ctr">
+  <div class="badge badge-dark">КЕЙСИ</div>
+  <h2 class="sec-h2">Результати клієнтів</h2>
+
+  <div class="cases-grid">
+    <!-- Case 1 -->
+    <div class="case-card">
+      <h3 class="case-name">Carter's Ukraine</h3>
+      <div class="case-split">
+        <div class="case-before">
+          <span class="case-label case-label--before">ДО</span>
+          <ul>
+            <li>10-12 відправок/день</li>
+            <li>30 грн/відправка</li>
+            <li>0 год на маркетинг</li>
+          </ul>
+        </div>
+        <div class="case-after">
+          <span class="case-label case-label--after">ПІСЛЯ</span>
+          <ul>
+            <li>60-72 відправки (&times;5)</li>
+            <li>14 грн (-53%)</li>
+            <li>90 год/міс вивільнено</li>
+          </ul>
+        </div>
+      </div>
+      <blockquote class="case-quote">&laquo;Ми думали аутсорс&nbsp;&mdash; це втрата контролю. Виявилось навпаки.&raquo;</blockquote>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case-card">
+      <h3 class="case-name">I.Love.My.Cycle</h3>
+      <div class="case-split">
+        <div class="case-before">
+          <span class="case-label case-label--before">ДО</span>
+          <ul>
+            <li>20-25 відправок/день</li>
+            <li>33 грн/відправка</li>
+          </ul>
+        </div>
+        <div class="case-after">
+          <span class="case-label case-label--after">ПІСЛЯ</span>
+          <ul>
+            <li>73 відправки/день (&times;3)</li>
+            <li>14 грн (-58%)</li>
+            <li>90 год/міс вивільнено</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case-card">
+      <h3 class="case-name">Біодобавки</h3>
+      <div class="case-split">
+        <div class="case-before">
+          <span class="case-label case-label--before">ДО</span>
+          <ul>
+            <li>10-15 відправок/день</li>
+            <li>60 грн/відправка</li>
+            <li>Проблеми з FEFO</li>
+          </ul>
+        </div>
+        <div class="case-after">
+          <span class="case-label case-label--after">ПІСЛЯ</span>
+          <ul>
+            <li>25-30 відправок (&times;2)</li>
+            <li>16 грн (-73%)</li>
+            <li>FEFO автоматизовано</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ====== SECTION 3 — ROI CALCULATOR ====== -->
+<section class="calc-sec" x-data="{
+  orders: 1500,
+  salary: 45000,
+  rent: 25000,
+  other: 10000,
+  get dailyOrders() { return Math.round(this.orders / 22) },
+  get pricePerOrder() {
+    const d = this.dailyOrders;
+    if (d <= 7) return 26;
+    if (d <= 34) return 23;
+    if (d <= 68) return 21;
+    return 18;
+  },
+  get storageEstimate() { return Math.round(this.orders * 0.005 * 650) },
+  get yourCost() { return this.salary + this.rent + this.other },
+  get mtpCost() { return this.orders * this.pricePerOrder + this.storageEstimate },
+  get saving() { return this.yourCost - this.mtpCost },
+  get savingPct() { return this.yourCost > 0 ? Math.round((this.saving / this.yourCost) * 100) : 0 },
+  get annualSaving() { return this.saving * 12 },
+  fmt(n) { return n.toLocaleString('uk-UA') }
+}">
+<div class="ctr">
+  <div class="badge badge-dark">КАЛЬКУЛЯТОР</div>
+  <h2 class="sec-h2">Порахуйте економію з MTP</h2>
+
+  <div class="calc-grid">
+    <div class="calc-sliders">
+      <div class="calc-field">
+        <label>Замовлень/місяць: <strong x-text="fmt(orders)"></strong></label>
+        <input type="range" min="100" max="5000" step="50" x-model.number="orders">
+      </div>
+      <div class="calc-field">
+        <label>Зарплати логістики: <strong x-text="fmt(salary) + ' грн'"></strong></label>
+        <input type="range" min="0" max="100000" step="1000" x-model.number="salary">
+      </div>
+      <div class="calc-field">
+        <label>Оренда складу: <strong x-text="fmt(rent) + ' грн'"></strong></label>
+        <input type="range" min="0" max="50000" step="1000" x-model.number="rent">
+      </div>
+      <div class="calc-field">
+        <label>Інші витрати: <strong x-text="fmt(other) + ' грн'"></strong></label>
+        <input type="range" min="0" max="30000" step="500" x-model.number="other">
+      </div>
+    </div>
+
+    <div class="calc-result">
+      <div class="calc-row">
+        <span>Ваші витрати</span>
+        <strong x-text="fmt(yourCost) + ' грн/міс'"></strong>
+      </div>
+      <div class="calc-row calc-row--accent">
+        <span>З MTP</span>
+        <strong x-text="fmt(mtpCost) + ' грн/міс'"></strong>
+      </div>
+      <div class="calc-row" x-show="mtpCost > 0">
+        <span>Ціна за відправку</span>
+        <strong x-text="pricePerOrder + ' грн'"></strong>
+      </div>
+      <div class="calc-divider"></div>
+      <div class="calc-row calc-row--big" x-show="saving > 0">
+        <span>Економія</span>
+        <strong x-text="fmt(saving) + ' грн/міс (' + savingPct + '%)'"></strong>
+      </div>
+      <div class="calc-row" x-show="saving > 0">
+        <span>За рік</span>
+        <strong x-text="fmt(annualSaving) + ' грн'"></strong>
+      </div>
+      <div class="calc-row calc-row--warn" x-show="saving <= 0">
+        <span>Вартість MTP</span>
+        <strong x-text="fmt(mtpCost) + ' грн/міс'"></strong>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
-<!-- ПОВНИЙ 3PL СЕРВІС -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">СЕРВІС</div>
-<h2 class="sec-h2">Повний 3PL сервіс</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">&#128230;</div><h3>Складське зберігання</h3><p>3 900 м&sup2; з WMS-системою. Адресне зберігання кожної одиниці товару. Від 650 грн/м&sup3;</p></div>
-<div class="ben-card"><div class="ben-num">&#127919;</div><h3>Комплектація замовлень</h3><p>Збираємо за вашими правилами: маркування, вкладки, подарункова упаковка. Середній час &mdash; 15 хв</p></div>
-<div class="ben-card"><div class="ben-num">&#128666;</div><h3>Доставка по Україні</h3><p>Нова Пошта, Meest, Justin, УкрПошта. Замовлення до 14:00 &mdash; відправка того ж дня</p></div>
-<div class="ben-card"><div class="ben-num">&#128259;</div><h3>Обробка повернень</h3><p>Приймаємо, перевіряємо, повертаємо на полицю або списуємо. Повний контроль через WMS</p></div>
-<div class="ben-card"><div class="ben-num">&#128202;</div><h3>WMS та аналітика</h3><p>Особистий кабінет 24/7. Залишки, відправки, повернення в реальному часі</p></div>
-<div class="ben-card"><div class="ben-num">&#129309;</div><h3>Персональний менеджер</h3><p>Один контакт для всіх питань. Відповідь за 15 хвилин у робочий час</p></div>
-</div>
+<!-- ====== SECTION 4 — INTEGRATIONS ====== -->
+<section class="integ-sec"><div class="ctr">
+  <div class="badge badge-dark">ІНТЕГРАЦІЇ</div>
+  <h2 class="sec-h2">Підключаємо вашу CRM за&nbsp;2&nbsp;години</h2>
+
+  <div class="integ-grid">
+    <div class="integ-badge integ-badge--ok">KeyCRM <span>&#10003;</span></div>
+    <div class="integ-badge integ-badge--ok">Horoshop <span>&#10003;</span></div>
+    <div class="integ-badge integ-badge--ok">Prom.ua <span>&#10003;</span></div>
+    <div class="integ-badge integ-badge--ok">WooCommerce <span>&#10003;</span></div>
+    <div class="integ-badge integ-badge--ok">Shopify <span>&#10003;</span></div>
+    <div class="integ-badge">Custom API</div>
+  </div>
+
+  <div class="integ-flow">
+    <div class="integ-step"><span class="integ-num">1</span><p>Замовлення &rarr; CRM</p></div>
+    <div class="integ-step"><span class="integ-num">2</span><p>Авто &rarr; MTP</p></div>
+    <div class="integ-step"><span class="integ-num">3</span><p>Збираємо</p></div>
+    <div class="integ-step"><span class="integ-num">4</span><p>Трекінг &rarr; CRM</p></div>
+  </div>
+
+  <p class="integ-note">Підключення за 2 години &middot; Ручна робота: 0</p>
 </div></section>
 
-<!-- ІНТЕГРАЦІЯ -->
-<section class="integrations"><div class="ctr">
-<div class="badge badge-dark">ІНТЕГРАЦІЯ</div>
-<h2 class="sec-h2">Інтеграція з CRM за 2 години</h2>
-<p class="integration-sub">Підключаємо вашу CRM автоматично. Замовлення потрапляють на склад без ручної роботи.</p>
-<div class="logo-grid">
-<div class="logo-badge">KeyCRM</div>
-<div class="logo-badge">Horoshop</div>
-<div class="logo-badge">Prom.ua</div>
-<div class="logo-badge">WooCommerce</div>
-<div class="logo-badge">Shopify</div>
-</div>
+<!-- ====== SECTION 5 — WHAT'S INCLUDED ====== -->
+<section class="included-sec"><div class="ctr">
+  <div class="badge badge-dark">СЕРВІС</div>
+  <h2 class="sec-h2">Що входить у 3PL</h2>
+
+  <div class="inc-item">
+    <div class="inc-text">
+      <h3>Прийом та зберігання</h3>
+      <p>FEFO-контроль строків придатності. Два склади під Києвом&nbsp;&mdash; 3&nbsp;900 м&sup2;. Адресне зберігання кожної одиниці. Дивіться <a href="/ua/services/" style="color:#e63329;font-weight:500">повний перелік послуг</a>.</p>
+    </div>
+    <div class="inc-num">01</div>
+  </div>
+
+  <div class="inc-item inc-item--reverse">
+    <div class="inc-num">02</div>
+    <div class="inc-text">
+      <h3>Збір та пакування</h3>
+      <p>Середній час збору&nbsp;&mdash; 30 секунд. Брендоване пакування, вкладки, подарункова упаковка за вашими правилами. Порахуйте вартість через <a href="/ua/calculator/" style="color:#e63329;font-weight:500">калькулятор вартості</a>.</p>
+    </div>
+  </div>
+
+  <div class="inc-item">
+    <div class="inc-text">
+      <h3>Відправка та ТТН</h3>
+      <p>4 відправки/день. Нова Пошта, Укрпошта, Rozetka Delivery. Автоматичне створення ТТН та статусів.</p>
+    </div>
+    <div class="inc-num">03</div>
+  </div>
+
+  <div class="inc-item inc-item--reverse">
+    <div class="inc-num">04</div>
+    <div class="inc-text">
+      <h3>Обробка повернень</h3>
+      <p>Щоденний забір повернень. Перевірка, повернення на полицю або списання. Повний контроль через WMS.</p>
+    </div>
+  </div>
+
+  <div class="inc-item">
+    <div class="inc-text">
+      <h3>Контроль грошей</h3>
+      <p>Шериф Платежів&nbsp;&mdash; Telegram-сповіщення при кожному отриманні коштів від перевізника. Жодна гривня не загубиться. Читайте <a href="/ua/recalls/" style="color:#e63329;font-weight:500">відгуки клієнтів</a> про нашу прозорість.</p>
+    </div>
+    <div class="inc-num">05</div>
+  </div>
+
+  <div class="inc-item inc-item--reverse">
+    <div class="inc-num">06</div>
+    <div class="inc-text">
+      <h3>Фіскалізація</h3>
+      <p>CheckBox РРО&nbsp;&mdash; фіскальні чеки автоматично. Відповідність законодавству без додаткових дій з вашого боку.</p>
+    </div>
+  </div>
+
+  <div class="inc-item">
+    <div class="inc-text">
+      <h3>SMS та автопродзвін</h3>
+      <p>Автоматичні SMS та продзвін покупцям. Підвищення викупу на 10-15%. Менше повернень, більше прибутку.</p>
+    </div>
+    <div class="inc-num">07</div>
+  </div>
 </div></section>
 
-<!-- ПОРІВНЯННЯ -->
-<section class="comparison"><div class="ctr">
-<div class="badge">ПОРІВНЯННЯ</div>
-<h2 class="sec-h2">Чому 3PL вигідніше</h2>
-<div class="compare-table">
-<div class="compare-row compare-header"><span>Параметр</span><span>In-house логістика</span><span>MTP Group 3PL</span></div>
-<div class="compare-row"><span>Вартість на місяць</span><span class="muted-val">~55 000 грн</span><span class="accent-val">~28 000 грн</span></div>
-<div class="compare-row"><span>Персонал</span><span class="muted-val">Найм і управління</span><span class="accent-val">Включено</span></div>
-<div class="compare-row"><span>Генератори</span><span class="muted-val">Ваші витрати</span><span class="accent-val">3 генератори + Starlink</span></div>
-<div class="compare-row"><span>WMS</span><span class="muted-val">Купити і обслуговувати</span><span class="accent-val">Включено</span></div>
-<div class="compare-row"><span>Масштабування</span><span class="muted-val">Місяці підготовки</span><span class="accent-val">Миттєво</span></div>
-<div class="compare-row"><span>Ризики</span><span class="muted-val">Всі на вас</span><span class="accent-val">Розділена відповідальність</span></div>
-</div>
+<!-- ====== SECTION 6 — CARRIERS ====== -->
+<section class="carriers-sec"><div class="ctr">
+  <div class="badge badge-dark">ПЕРЕВІЗНИКИ</div>
+  <h2 class="sec-h2">Доставляємо по всій Україні</h2>
+
+  <div class="carriers-grid">
+    <div class="carrier-card">
+      <strong>Нова Пошта</strong>
+      <span>same-day</span>
+    </div>
+    <div class="carrier-card">
+      <strong>Meest</strong>
+      <span>1-2 дні</span>
+    </div>
+    <div class="carrier-card">
+      <strong>Justin</strong>
+      <span>1-2 дні</span>
+    </div>
+    <div class="carrier-card">
+      <strong>Укрпошта</strong>
+      <span>2-5 днів</span>
+    </div>
+  </div>
+
+  <p class="carriers-note">Замовлення до 14:00 &rarr; відправка того ж дня</p>
 </div></section>
 
-<!-- ЯК ПІДКЛЮЧИТИСЬ -->
-<section class="steps-section"><div class="ctr">
-<div class="badge">ПІДКЛЮЧЕННЯ</div>
-<h2 class="sec-h2">Як підключитись</h2>
-<div class="steps-grid steps-3">
-<div class="step-card"><div class="step-num">1</div><div class="step-day">День 1</div><h3>Заявка та консультація</h3><p>Обговорюємо обсяги, інтеграцію з CRM, тарифи</p></div>
-<div class="step-card"><div class="step-num">2</div><div class="step-day">День 2</div><h3>Налаштування</h3><p>Підключаємо CRM, завозите товар на склад</p></div>
-<div class="step-card"><div class="step-num">3</div><div class="step-day">День 3</div><h3>Старт роботи</h3><p>Перші замовлення обробляються з нашого складу</p></div>
-</div>
-</div></section>
+<!-- ====== SECTION 7 — CTA ====== -->
+<section class="tpl-cta-sec">
+  <div class="ctr">
+    <div class="tpl-cta-timeline">
+      <div class="tpl-cta-step"><span>1</span> Заявка</div>
+      <div class="tpl-cta-arrow" aria-hidden="true">&rarr;</div>
+      <div class="tpl-cta-step"><span>2</span> Інтеграція CRM</div>
+      <div class="tpl-cta-arrow" aria-hidden="true">&rarr;</div>
+      <div class="tpl-cta-step"><span>3</span> Перше відправлення</div>
+    </div>
 
-<!-- FAQ -->
-<section class="faq"><div class="ctr">
-<div class="badge">FAQ</div>
-<h2 class="sec-h2">Часті запитання</h2>
-<div class="faq-list">
-<div class="faq-item"><button class="faq-q">Скільки часу займає підключення?</button><div class="faq-a"><p>2-3 робочих дні від заявки до першого відправлення. Інтеграція з CRM &mdash; за 2 години.</p></div></div>
-<div class="faq-item"><button class="faq-q">Який мінімальний обсяг замовлень?</button><div class="faq-a"><p>Від 5 замовлень на день. Немає мінімального порогу. Працюємо як з невеликими магазинами, так і з великими.</p></div></div>
-<div class="faq-item"><button class="faq-q">Як працює інтеграція з CRM?</button><div class="faq-a"><p>Автоматична синхронізація. Замовлення з CRM потрапляє на склад &rarr; збирається &rarr; відправляється &rarr; статус повертається в CRM.</p></div></div>
-<div class="faq-item"><button class="faq-q">Скільки коштує фулфілмент?</button><div class="faq-a"><p>Від 18 грн за відправлення. Ціна залежить від обсягу. Зберігання від 650 грн/м&sup3;. Точний розрахунок &mdash; безкоштовно за 15 хвилин.</p></div></div>
-<div class="faq-item"><button class="faq-q">Що якщо мої обсяги зростуть?</button><div class="faq-a"><p>Ми масштабуємось разом з вами. Від 10 до 10 000 замовлень на день без затримок. Два склади під Києвом &mdash; 3 900 м&sup2;.</p></div></div>
-<div class="faq-item"><button class="faq-q">Які перевізники доступні?</button><div class="faq-a"><p>Нова Пошта, Meest, Justin, УкрПошта та будь-який інший перевізник за запитом.</p></div></div>
-</div>
+    <h2>Підключіть 3PL за 3-5 днів</h2>
+    <p class="tpl-cta-sub">Заповніть форму&nbsp;&mdash; передзвонимо за 15 хвилин і порахуємо вартість</p>
+
+    <form class="tpl-cta-form" id="ctaForm">
+      <div class="tpl-cta-form-row">
+        <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="given-name" aria-label="Ім'я">
+        <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
+        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
+      </div>
+      <div class="tpl-cta-form-row">
+        <select name="crm" aria-label="CRM система">
+          <option value="" disabled selected>Ваша CRM</option>
+          <option value="KeyCRM">KeyCRM</option>
+          <option value="Horoshop">Horoshop</option>
+          <option value="Prom.ua">Prom.ua</option>
+          <option value="WooCommerce">WooCommerce</option>
+          <option value="Shopify">Shopify</option>
+          <option value="OpenCart">OpenCart</option>
+          <option value="other">Інша</option>
+        </select>
+        <select name="orders_day" aria-label="Замовлень на день">
+          <option value="" disabled selected>Замовлень/день</option>
+          <option value="5-10">5-10</option>
+          <option value="10-50">10-50</option>
+          <option value="50-100">50-100</option>
+          <option value="100-200">100-200</option>
+          <option value="200+">200+</option>
+        </select>
+        <button type="submit">Підключитись &rarr;</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ====== SECTION 8 — FAQ ====== -->
+<section class="faq-sec"><div class="ctr">
+  <div class="badge badge-dark">FAQ</div>
+  <h2 class="sec-h2">Часті запитання</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" data-faq>Скільки коштує відправка?</button>
+      <div class="faq-a"><p>18-26 грн за відправку залежно від обсягу. При 200+ відправлень/день&nbsp;&mdash; 18&nbsp;грн. Точний розрахунок безкоштовно за 15 хвилин.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" data-faq>Як швидко підключитися?</button>
+      <div class="faq-a"><p>3-5 робочих днів від заявки до першого відправлення. Інтеграція з CRM&nbsp;&mdash; за 2 години.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" data-faq>З якими CRM працюєте?</button>
+      <div class="faq-a"><p>KeyCRM, SalesDrive, LP-CRM, Sitniks, Horoshop, OpenCart, WooCommerce, Rozetka, Prom + будь-яка система через API.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" data-faq>Мінімум замовлень?</button>
+      <div class="faq-a"><p>Мінімального обсягу замовлень немає. Мінімальний платіж&nbsp;&mdash; 5&nbsp;000 грн/міс.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" data-faq>Брендоване пакування?</button>
+      <div class="faq-a"><p>Так, доукомплектація від 2,50 грн/товар. Вкладки, стікери, подарункова упаковка&nbsp;&mdash; за вашими правилами.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" data-faq>Контроль грошей?</button>
+      <div class="faq-a"><p>Шериф Платежів&nbsp;&mdash; Telegram-сповіщення при кожному отриманні коштів від перевізника. Повна прозорість.</p></div>
+    </div>
+  </div>
 </div></section>
 
 <!-- SEO ARTICLE -->
 <section class="article-section">
 <div class="ctr">
 <div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
-<h2>3PL логістика: чому це вигідніше власного складу</h2>
+<h2>Що таке 3PL логістика і чому вона потрібна e-commerce в Україні</h2>
 <div class="article-content">
-<h3>Що таке 3PL і кому це потрібно</h3>
-<p>3PL (Third-Party Logistics) &mdash; це передача логістики інтернет-магазину зовнішньому оператору. Оператор зберігає товар, збирає замовлення, відправляє через перевізників та обробляє повернення. Власник магазину фокусується на маркетингу та продажах, а не на складських процесах. Це вигідно з 10+ замовлень на день: при менших обсягах дешевше відправляти самостійно, при більших &mdash; власна логістика з&apos;їдає весь час.</p>
+<h3>3PL: визначення та суть моделі</h3>
+<p>3PL (Third-Party Logistics) &mdash; це передача логістичних операцій зовнішньому оператору. Інтернет-магазин делегує зберігання, збір замовлень, пакування, відправку та обробку повернень спеціалізованій компанії. Власник магазину фокусується на маркетингу, продажах і розвитку продукту, а не на складських процесах. В Україні модель 3PL стала масово затребуваною з 2022 року, коли ризики власної інфраструктури різко зросли через блекаути, переїзди та нестабільність.</p>
 
-<h3>Економіка: in-house vs 3PL</h3>
-<p>Типовий інтернет-магазин з 100 замовленнями на день витрачає на власну логістику ~55 000 грн/міс: оренда, персонал, пакувальні матеріали, комунальні, генератори. 3PL від MTP Group для тих же обсягів &mdash; ~28 000 грн/міс. Різниця &mdash; 27 000 грн, які можна інвестувати в рекламу та залучення клієнтів. При цьому ви не несете ризиків по персоналу, обладнанню та приміщенню.</p>
+<h3>Коли e-commerce потребує 3PL</h3>
+<p>Типовий поріг &mdash; від 10 замовлень на день. При менших обсягах дешевше відправляти самостійно. Але щойно магазин переростає 30-50 замовлень, власна логістика починає з'їдати весь час і ресурси: потрібно наймати комірника, орендувати склад, купувати пакувальні матеріали, вирішувати питання з генераторами. 3PL від MTP Group коштує від 18 грн за відправку при 200+ замовлень на день &mdash; це дешевше, ніж зарплата одного комірника. Порахуйте свою вигоду через <a href="/ua/calculator/" style="color:#e63329;font-weight:500">калькулятор вартості</a>.</p>
 
-<h3>Інтеграція з CRM: як це працює</h3>
-<p>MTP Group підключається до KeyCRM, Horoshop, Prom.ua, WooCommerce, Shopify за 2 години. Нове замовлення з CRM автоматично потрапляє на склад. Комірник збирає його за WMS-маршрутом, сканує штрих-коди, пакує та передає перевізнику. Статус оновлюється в CRM автоматично. Жодної ручної роботи з вашого боку. Дивіться також: <a href="/ua/fulfilment-dlya-internet-magazynu/" style="color:var(--red);font-weight:500">фулфілмент для інтернет-магазинів</a>.</p>
+<h3>Інтеграція з CRM &mdash; ключова перевага</h3>
+<p>Головна відмінність якісного 3PL від простого склад-сервісу &mdash; глибока інтеграція з CRM. MTP Group підключається до KeyCRM, Horoshop, Prom.ua, WooCommerce, Shopify за 2 години. Замовлення з CRM автоматично потрапляє на склад. Комірник збирає його за WMS-маршрутом, сканує штрих-коди, пакує та передає перевізнику. Статус оновлюється в CRM автоматично &mdash; жодної ручної роботи з вашого боку.</p>
 
 <h3>Масштабування без болю</h3>
-<p>Головна перевага 3PL &mdash; масштабування. Сезон, акція, вірусний рілс &mdash; ваші замовлення зростають з 50 до 500 на день. При власній логістиці це криза: треба більше людей, більше місця, більше пакувальних матеріалів. При 3PL &mdash; це просто більше замовлень у системі. MTP Group обробляє 60 000+ відправлень на місяць з двох складів &mdash; резерв потужності завжди є. Порівняйте тарифи: <a href="/ua/tsiny/" style="color:var(--red);font-weight:500">ціни на фулфілмент</a>.</p>
+<p>Головна перевага 3PL для українського e-commerce &mdash; здатність масштабуватися. Сезон, акція, вірусний рілс &mdash; ваші замовлення зростають з 50 до 500 на день. При власній логістиці це криза: потрібно більше людей, більше місця. При 3PL &mdash; це просто більше замовлень у системі. MTP Group обробляє 60&nbsp;000+ відправлень на місяць з двох складів під Києвом &mdash; резерв потужності завжди є. Дивіться <a href="/ua/recalls/" style="color:#e63329;font-weight:500">відгуки клієнтів</a>, які вже масштабувалися з нами.</p>
 </div>
 </div>
 </section>
 
-<!-- CTA -->
 </Base>
 
-<style is:global>
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.2}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
-.hero-form{display:flex;gap:12px;max-width:460px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
-.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
-.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
-.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
-.integrations{padding:80px 0;background:var(--gray)}
-.integration-sub{text-align:center;font-size:16px;line-height:1.6;max-width:600px;margin:0 auto 30px;color:var(--muted)}
-.logo-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px}
-.logo-badge{font-size:16px;font-weight:700;color:var(--black);padding:14px 28px;background:#fff;border-radius:8px;border:1px solid #e0e0e0}
-.comparison{padding:100px 0;background:#0a0a0a;color:#fff}
-.compare-table{max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden}
-.compare-row{display:flex;border-bottom:1px solid rgba(255,255,255,.08);font-size:15px}
-.compare-row:last-child{border:none}
-.compare-row>span{flex:1;padding:16px 24px}
-.compare-header{background:#1a1a1a;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
-.muted-val{color:rgba(255,255,255,.5)}
-.accent-val{color:#e63329;font-weight:600}
-.steps-section{padding:100px 0;background:#0a0a0a;color:#fff}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
-.steps-3{grid-template-columns:repeat(3,1fr)}
-.step-card{text-align:center;padding:32px 20px}
-.step-num{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;font-size:24px;font-weight:700;margin-bottom:20px}
-.step-day{font-size:13px;color:var(--red);font-weight:600;margin-bottom:10px}
-.step-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.step-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
-.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+<style>
+/* ===== HERO ===== */
+.tpl-hero{
+  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+  color:var(--white);padding:140px 0 60px;position:relative;overflow:hidden;
+}
+.tpl-hero-inner{display:flex;flex-direction:column;gap:48px}
+.tpl-hero-text{max-width:740px}
+.tpl-hero h1{font-family:var(--fd);font-size:clamp(32px,5vw,64px);font-weight:400;line-height:1.05;margin-bottom:24px}
+.tpl-hero-sub{font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:36px;max-width:620px}
+
+/* Flow diagram */
+.flow-diagram{
+  display:flex;align-items:center;gap:0;margin-bottom:24px;overflow-x:auto;
+  padding-bottom:8px;-webkit-overflow-scrolling:touch;
+}
+.flow-box{
+  padding:14px 20px;border:2px solid rgba(255,255,255,.25);border-radius:8px;
+  font-size:14px;font-weight:500;white-space:nowrap;flex-shrink:0;
+  background:rgba(255,255,255,.04);
+}
+.flow-box--accent{border-color:var(--red);background:rgba(230,51,41,.12);color:#fff}
+.flow-line{
+  width:48px;flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:center;
+}
+.flow-line::before{
+  content:'';position:absolute;top:50%;left:4px;right:4px;height:2px;
+  border-top:2px dashed rgba(255,255,255,.3);
+  animation:dashMove 1.2s linear infinite;
+}
+.flow-arrow{
+  position:relative;z-index:1;color:rgba(255,255,255,.5);font-size:18px;
+  background:transparent;display:none;
+}
+@keyframes dashMove{
+  0%{background-position:0 0}
+  100%{background-position:48px 0}
+}
+/* Better dash animation using background */
+.flow-line::before{
+  border-top:none;
+  height:2px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0,rgba(255,255,255,.4) 8px,transparent 8px,transparent 16px);
+  background-size:16px 2px;
+  animation:dashSlide 0.6s linear infinite;
+}
+@keyframes dashSlide{
+  0%{background-position:0 0}
+  100%{background-position:16px 0}
+}
+
+/* CRM badges */
+.crm-badges{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;
+}
+.crm-badges span{
+  font-size:12px;color:rgba(255,255,255,.5);padding:6px 14px;
+  border:1px solid rgba(255,255,255,.12);border-radius:100px;white-space:nowrap;
+}
+
+/* Hero form */
+.tpl-hero-form{display:flex;flex-wrap:wrap;gap:10px;max-width:600px}
+.tpl-hero-form input,
+.tpl-hero-form select{
+  flex:1 1 160px;padding:14px 16px;border:1px solid rgba(255,255,255,.2);border-radius:6px;
+  background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:var(--fb);outline:none;
+}
+.tpl-hero-form select{cursor:pointer;appearance:auto}
+.tpl-hero-form select option{color:#000;background:#fff}
+.tpl-hero-form input::placeholder{color:rgba(255,255,255,.3)}
+.tpl-hero-form input:focus,
+.tpl-hero-form select:focus{border-color:rgba(255,255,255,.5)}
+.tpl-hero-form button{
+  flex:1 1 100%;padding:16px 24px;background:var(--red);color:#fff;border:none;
+  border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--fb);
+  transition:background .3s;
+}
+.tpl-hero-form button:hover{background:#c42b22}
+
+/* Hero stats */
+.tpl-hero-stats{display:flex;gap:40px}
+.tpl-stat{border-left:3px solid var(--red);padding-left:16px}
+.tpl-stat strong{display:block;font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400}
+.tpl-stat span{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1.5px}
+
+/* ===== CASES ===== */
+.cases-sec{padding:100px 0;background:var(--white)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case-card{
+  background:var(--gray);border-radius:12px;padding:32px 28px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.case-name{font-family:var(--fd);font-size:22px;font-weight:400}
+.case-split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.case-before,.case-after{padding:16px;border-radius:8px}
+.case-before{background:rgba(230,51,41,.06);border:1px solid rgba(230,51,41,.12)}
+.case-after{background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.08)}
+.case-label{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:8px;padding:3px 8px;border-radius:4px;
+}
+.case-label--before{background:rgba(230,51,41,.1);color:#e63329}
+.case-label--after{background:rgba(0,0,0,.06);color:#000}
+.case-split ul{list-style:none;padding:0;margin:0}
+.case-split li{font-size:14px;line-height:1.8;color:var(--muted)}
+.case-quote{
+  font-style:italic;font-size:14px;color:var(--muted);line-height:1.6;
+  border-left:3px solid var(--red);padding-left:12px;margin-top:auto;
+}
+
+/* ===== CALCULATOR ===== */
+.calc-sec{padding:100px 0;background:var(--gray)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.calc-sliders{display:flex;flex-direction:column;gap:24px}
+.calc-field label{
+  display:flex;justify-content:space-between;font-size:15px;margin-bottom:8px;color:var(--black);
+}
+.calc-field label strong{color:var(--red)}
+.calc-field input[type="range"]{
+  width:100%;height:6px;border-radius:3px;appearance:none;background:#ddd;outline:none;cursor:pointer;
+}
+.calc-field input[type="range"]::-webkit-slider-thumb{
+  appearance:none;width:22px;height:22px;border-radius:50%;background:var(--red);cursor:pointer;
+  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.calc-field input[type="range"]::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;background:var(--red);cursor:pointer;
+  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.calc-result{
+  background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.calc-row{
+  display:flex;justify-content:space-between;align-items:center;padding:12px 0;
+  font-size:15px;border-bottom:1px solid #eee;
+}
+.calc-row:last-child{border-bottom:none}
+.calc-row--accent strong{color:var(--red)}
+.calc-row--big{font-size:18px}
+.calc-row--big strong{color:#e63329;font-size:20px}
+.calc-row--warn strong{color:var(--red)}
+.calc-divider{height:2px;background:var(--red);margin:8px 0;border-radius:1px}
+
+/* ===== INTEGRATIONS ===== */
+.integ-sec{padding:100px 0;background:var(--white)}
+.integ-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:48px;
+}
+.integ-badge{
+  text-align:center;padding:20px 12px;background:var(--gray);border-radius:10px;
+  font-size:15px;font-weight:600;border:1px solid #e0e0e0;
+}
+.integ-badge--ok span{color:#e63329;margin-left:4px}
+.integ-flow{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:20px}
+.integ-step{
+  display:flex;align-items:center;gap:8px;padding:12px 20px;
+  background:var(--gray);border-radius:8px;font-size:14px;
+}
+.integ-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;
+  font-size:13px;font-weight:700;flex-shrink:0;
+}
+.integ-note{text-align:center;font-size:15px;color:var(--muted)}
+
+/* ===== WHAT'S INCLUDED ===== */
+.included-sec{padding:100px 0;background:var(--gray)}
+.inc-item{
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+  padding:40px 0;border-bottom:1px solid #ddd;
+}
+.inc-item:last-child{border-bottom:none}
+.inc-item--reverse{grid-template-columns:auto 1fr}
+.inc-text h3{font-family:var(--fd);font-size:clamp(22px,2.5vw,32px);font-weight:400;margin-bottom:8px}
+.inc-text p{font-size:16px;color:var(--muted);line-height:1.7;max-width:560px}
+.inc-num{
+  font-family:var(--fd);font-size:clamp(48px,6vw,96px);font-weight:400;
+  color:rgba(0,0,0,.06);line-height:1;
+}
+
+/* ===== CARRIERS ===== */
+.carriers-sec{padding:80px 0;background:var(--white)}
+.carriers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.carrier-card{
+  text-align:center;padding:28px 16px;border:1px solid #e0e0e0;border-radius:10px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.carrier-card strong{font-size:17px}
+.carrier-card span{font-size:13px;color:var(--muted)}
+.carriers-note{text-align:center;font-size:15px;color:var(--red);font-weight:500}
+
+/* ===== CTA ===== */
+.tpl-cta-sec{
+  padding:80px 0;color:var(--white);text-align:center;
+  background:linear-gradient(135deg,#e63329 0%,#1a1a2e 100%);
+}
+.tpl-cta-timeline{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+.tpl-cta-step{
+  font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;
+}
+.tpl-cta-step span{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);font-weight:700;
+}
+.tpl-cta-arrow{font-size:18px;color:rgba(255,255,255,.5)}
+.tpl-cta-sec h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:12px}
+.tpl-cta-sub{font-size:17px;color:rgba(255,255,255,.75);margin-bottom:32px}
+.tpl-cta-form{max-width:640px;margin:0 auto}
+.tpl-cta-form-row{display:flex;gap:10px;margin-bottom:10px}
+.tpl-cta-form input,
+.tpl-cta-form select{
+  flex:1;padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:6px;
+  background:rgba(255,255,255,.08);color:#fff;font-size:15px;font-family:var(--fb);outline:none;
+}
+.tpl-cta-form select{cursor:pointer;appearance:auto}
+.tpl-cta-form select option{color:#000;background:#fff}
+.tpl-cta-form input::placeholder{color:rgba(255,255,255,.35)}
+.tpl-cta-form input:focus,
+.tpl-cta-form select:focus{border-color:rgba(255,255,255,.6)}
+.tpl-cta-form button{
+  flex:1;padding:16px 24px;background:#fff;color:var(--red);border:none;border-radius:6px;
+  font-size:16px;font-weight:700;cursor:pointer;font-family:var(--fb);transition:all .3s;
+}
+.tpl-cta-form button:hover{background:rgba(255,255,255,.9)}
+
+/* ===== FAQ ===== */
+.faq-sec{padding:100px 0;background:var(--white)}
 .faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
-.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-q{
+  width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;
+  color:var(--black);cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--fb);text-align:left;
+}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:12px}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+.faq-a p{padding:0 0 20px;font-size:15px;color:var(--muted);line-height:1.7}
+
+/* ===== ARTICLE ===== */
 .article-section{background:#fff;padding:80px 8vw}
 .article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
 .article-content{max-width:800px}
 .article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
 .article-content h3:first-child{margin-top:0}
 .article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
-@media(max-width:768px){
-.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.ben-grid{grid-template-columns:1fr}
-.adv-grid{grid-template-columns:1fr}
-.steps-grid,.steps-3{grid-template-columns:1fr}
-.compare-row{font-size:13px}.compare-row>span{padding:10px 12px}
-.logo-grid{gap:8px}.logo-badge{font-size:14px;padding:10px 16px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .integ-grid{grid-template-columns:repeat(3,1fr)}
 }
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
+@media(max-width:768px){
+  .tpl-hero{padding:120px 0 48px}
+  .tpl-hero-form{flex-direction:column}
+  .tpl-hero-form input,
+  .tpl-hero-form select,
+  .tpl-hero-form button{flex:1 1 auto}
+  .tpl-hero-stats{flex-direction:column;gap:20px}
+
+  /* Flow diagram vertical */
+  .flow-diagram{flex-direction:column;align-items:flex-start;gap:0}
+  .flow-line{width:auto;height:32px;flex-direction:column}
+  .flow-line::before{
+    top:4px;bottom:4px;left:50%;width:2px;height:calc(100% - 8px);
+    right:auto;
+    background:repeating-linear-gradient(180deg,rgba(255,255,255,.4) 0,rgba(255,255,255,.4) 8px,transparent 8px,transparent 16px);
+    background-size:2px 16px;
+    animation:dashSlideV 0.6s linear infinite;
+  }
+  @keyframes dashSlideV{
+    0%{background-position:0 0}
+    100%{background-position:0 16px}
+  }
+  .flow-box{align-self:stretch;text-align:center}
+
+  .crm-badges{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+
+  .cases-grid{grid-template-columns:1fr}
+  .case-split{grid-template-columns:1fr}
+  .calc-grid{grid-template-columns:1fr}
+  .integ-grid{grid-template-columns:repeat(2,1fr)}
+  .integ-flow{flex-wrap:wrap}
+
+  .inc-item,.inc-item--reverse{grid-template-columns:1fr;gap:8px}
+  .inc-num{font-size:48px}
+  .inc-item--reverse{direction:ltr}
+  .inc-item--reverse .inc-num{order:0}
+  .inc-item--reverse .inc-text{order:1}
+
+  .carriers-grid{grid-template-columns:repeat(2,1fr)}
+
+  .tpl-cta-form-row{flex-direction:column}
+  .tpl-cta-form button{width:100%}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  .flow-line::before{animation:none!important}
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+}
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded',function(){
 (function(){
-var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
-if(b&&l){b.addEventListener('click',function(){b.classList.toggle('open');l.classList.toggle('open');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('open');l.classList.remove('open');}})
-document.querySelectorAll('.nav-dropdown').forEach(function(dd){
-var timer,menu=dd.querySelector('.nav-dropdown-menu');if(!menu)return;
-dd.addEventListener('mouseenter',function(){clearTimeout(timer);menu.style.display='block';});
-dd.addEventListener('mouseleave',function(){timer=setTimeout(function(){menu.style.display='';},300);});
-});
-document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();this.closest('.nav-dropdown').classList.toggle('mobile-open');}});});
-}
-document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');item.classList.toggle('open');var a=item.querySelector('.faq-a');if(item.classList.contains('open')){a.style.maxHeight=a.scrollHeight+'px';}else{a.style.maxHeight='0';}});});
-var form=document.getElementById('heroForm');
-if(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name="phone"]').value.replace(/\D/g,'');if(ph.length<10){alert('Введіть коректний номер телефону');return;}
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'3PL логістика',contact:'',phone:ph,email:'',shipments:0,type:'3pl',source:'SEO landing 3pl-logistyka',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Форма: 3PL логістика',date:new Date().toLocaleString('uk-UA')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">\u2705 Дякуємо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Передзвонимо найближчим часом</p></div>';setTimeout(function(){window.location.href='/ua/thanks/';},1500);});}
+  // Hero form handler
+  var heroForm = document.getElementById('heroForm');
+  if(heroForm && !heroForm.dataset.handled){
+    heroForm.dataset.handled = '1';
+    heroForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ph = heroForm.querySelector('input[name="phone"]');
+      var clean = ph.value.replace(/\D/g, '');
+      if(clean.length < 10){ ph.style.borderColor = '#e63329'; return; }
+      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname);
+      heroForm.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500">&#10004; Дякуємо! Передзвонимо.</p>';
+      setTimeout(function(){ window.location.href = '/ua/thanks/'; }, 1500);
+    });
+  }
+
+  // CTA form handler
+  var ctaForm = document.getElementById('ctaForm');
+  if(ctaForm){
+    ctaForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ph = ctaForm.querySelector('input[name="phone"]');
+      var clean = ph.value.replace(/\D/g, '');
+      if(clean.length < 10){ ph.style.borderColor = '#fff'; return; }
+      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname);
+      ctaForm.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500">&#10004; Дякуємо! Передзвонимо найближчим часом.</p>';
+      setTimeout(function(){ window.location.href = '/ua/thanks/'; }, 1500);
+    });
+  }
 })();
-});
 </script>

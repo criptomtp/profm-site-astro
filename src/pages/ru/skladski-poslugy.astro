@@ -1,232 +1,941 @@
 ---
 import Base from '../../layouts/Base.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 ---
 <Base
-  title="Складские услуги для бизнеса в Киеве 24/7 | MTP Group"
-  description="Складские услуги под Киевом: хранение товаров от 650 грн/м³/мес, комплектация, инвентаризация. 3 900 м² складов, WMS-система, генераторы. MTP Group — 10+ лет опыта."
+  title="Складские услуги Киев — хранение товаров для интернет-магазинов | MTP Fulfillment"
+  description="Адресный склад в Борисполе и Белогородке. Хранение от 650 грн/м³. Сбор заказа за 30 секунд. 10+ лет опыта."
   canonical="https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/"
   lang="ru"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
-  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Складские услуги для интернет-магазинов","description":"Хранение товаров, комплектация заказов, инвентаризация и обработка возвратов на складах под Киевом. WMS-система, 3 900 м², генераторы.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"650","description":"Хранение от 650 грн/м³/мес"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/services/"},{"@type":"ListItem","position":3,"name":"Складские услуги","item":"https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какая точность учёта товаров на складе?","acceptedAnswer":{"@type":"Answer","text":"99,7% точности комплектации. Каждая операция (приём, перемещение, отгрузка) фиксируется в WMS со сканированием штрихкода. Регулярная инвентаризация с отчётом о расхождениях в течение 24 часов."}},{"@type":"Question","name":"Поддерживает ли склад FEFO-учёт для товаров с ограниченным сроком?","acceptedAnswer":{"@type":"Answer","text":"Да. WMS автоматически приоритизирует отгрузку товаров с ближайшей датой истечения (First Expired — First Out). Уведомление о приближении сроков — за 30 дней. Подходит для косметики, пищевых добавок и бытовой химии."}},{"@type":"Question","name":"Как обеспечивается пожарная безопасность на складах?","acceptedAnswer":{"@type":"Answer","text":"Оба склада оборудованы автоматической пожарной сигнализацией, порошковыми огнетушителями и эвакуационными выходами. Электропроводка соответствует нормам. Горючие материалы хранятся в отдельных зонах с дополнительной вентиляцией."}},{"@type":"Question","name":"Каковы условия страхования товаров на складе?","acceptedAnswer":{"@type":"Answer","text":"Все товары застрахованы по договору с материальной ответственностью. Если повреждение произошло по вине склада — полная компенсация по акту с фото-доказательствами. Стоимость товара фиксируется при приёмке."}},{"@type":"Question","name":"Меняются ли тарифы на хранение в зависимости от сезона?","acceptedAnswer":{"@type":"Answer","text":"Нет. Тариф на хранение фиксированный — 650 грн/м³/мес круглый год. Сезонных наценок нет. Единственное условие — предварительное бронирование дополнительных площадей за 2–3 недели до высокого сезона."}},{"@type":"Question","name":"Как организовано управление большим количеством SKU?","acceptedAnswer":{"@type":"Answer","text":"WMS-система поддерживает неограниченное количество SKU. Каждая позиция имеет штрихкод и привязана к конкретной ячейке. Поиск по коду, названию или артикулу — мгновенный. У наших клиентов — от 50 до 15 000 SKU на одном складе."}},{"@type":"Question","name":"Есть ли возможность временного хранения перед отправкой крупной партии?","acceptedAnswer":{"@type":"Answer","text":"Да. Вы можете завезти товар для накопления перед акцией, сезоном или отгрузкой в торговую сеть. Минимальный срок хранения — 1 месяц. Кросс-докинг (приём и немедленная отправка без размещения) — по согласованию."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
+  showCTA={false}
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Складские услуги для интернет-магазинов","description":"Адресный склад в Борисполе и Белогородке. Хранение от 650 грн/м³. Сбор заказа за 30 секунд, 4 отправки в день.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"650","description":"Хранение от 650 грн/м³/мес"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"Складские услуги","item":"https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какой минимальный объём товара?","acceptedAnswer":{"@type":"Answer","text":"Минимального нет — оплата за фактическое место. Мин. платёж 5 000 грн."}},{"@type":"Question","name":"Какая температура на складе?","acceptedAnswer":{"@type":"Answer","text":"15-25°C круглый год."}},{"@type":"Question","name":"Как работает WMS-учёт?","acceptedAnswer":{"@type":"Answer","text":"Штрих-код для каждого товара, адрес для каждой ячейки. Остатки онлайн 24/7."}},{"@type":"Question","name":"Есть ли палетное хранение?","acceptedAnswer":{"@type":"Answer","text":"Да, от 450 грн/палет/мес. До 2 тонн/ярус."}},{"@type":"Question","name":"Как проводится инвентаризация?","acceptedAnswer":{"@type":"Answer","text":"Плановая ежемесячно. Внеплановая за 24 часа."}},{"@type":"Question","name":"Есть ли страхование?","acceptedAnswer":{"@type":"Answer","text":"Договор с материальной ответственностью. Видеофиксация 24/7."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/warehouse-services/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<div class="badge">СКЛАДСКИЕ УСЛУГИ</div>
-<h1>Складские услуги<br>для интернет-магазинов<br>в Киеве</h1>
-<p class="hero-sub">Хранение, комплектация и отправка с двух складов под Киевом. WMS-система, генераторы, температурный контроль. От 650&nbsp;грн/м&sup3; в месяц.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
-<div class="hero-note">Бесплатная консультация &#183; Перезвоним в течение 15 минут</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">3 900 м&sup2;</div><div class="hero-stat-label">складских площадей</div></div>
-<div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-label">склада под Киевом</div></div>
-<div class="hero-stat"><div class="hero-stat-val">60 000+</div><div class="hero-stat-label">отправок/мес</div></div>
-</div>
-</div>
+<!-- SECTION 1 — HERO: SPLIT-SCREEN -->
+<section class="sp-hero">
+  <div class="sp-hero-video">
+    <video autoplay muted loop playsinline poster="/images/mtp-fulfillment-warehouse-hero.webp">
+      <source src="/videos/warehouse-tour.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="sp-hero-form-side">
+    <div class="sp-hero-inner">
+      <div class="badge">СКЛАДСКИЕ УСЛУГИ</div>
+      <h1>Складские услуги для интернет-магазинов в Киеве и области</h1>
+      <p class="sp-hero-sub">Передайте хранение, сбор и отправку заказов нам&nbsp;&mdash; вы занимаетесь продажами. Два склада. Адресная система. Сбор за 30&nbsp;секунд.</p>
+      <form class="sp-hero-form" id="heroFormSplit">
+        <input type="text" name="name" placeholder="Ваше имя" autocomplete="given-name" aria-label="Имя">
+        <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
+        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
+        <button type="submit">Рассчитать стоимость &rarr;</button>
+      </form>
+      <p class="sp-hero-note">Бесплатная консультация &middot; Перезвоним за 15 минут</p>
+      <a href="tel:+380501444645" class="sp-hero-phone">+380 50 144 46 45</a>
+    </div>
+  </div>
 </section>
 
-<!-- WHAT WE OFFER -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">УСЛУГИ</div>
-<h2 class="sec-h2">Что входит в складские услуги</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">&#9635;</div><h3>Адресное хранение</h3><p>Ячеечная система хранения с уникальным адресом для каждого товара. Температурный контроль 15-25&deg;C и мониторинг влажности</p></div>
-<div class="ben-card"><div class="ben-num">&#9632;</div><h3>Палетное хранение</h3><p>Для крупногабаритных и тяжёлых товаров. Стеллажи до 2 тонн на ярус, от 450&nbsp;грн/палет/мес. Погрузчики и гидравлические тележки</p></div>
-<div class="ben-card"><div class="ben-num">&#9997;</div><h3>Комплектация заказов</h3><p>Сборка, упаковка и маркировка заказов. Каждый заказ собирается за 30 секунд, сканирование штрих-кодов на каждом этапе</p></div>
-<div class="ben-card"><div class="ben-num">&#10003;</div><h3>Приём товара</h3><p>Проверка количества и качества при приёмке. Фото-фиксация повреждений, размещение в WMS с присвоением штрих-кода</p></div>
-<div class="ben-card"><div class="ben-num">&#128203;</div><h3>Управление запасами</h3><p>Регулярная инвентаризация через WMS. Сверка фактических и системных остатков, отчёт о расхождениях в течение 24 часов</p></div>
-<div class="ben-card"><div class="ben-num">&#8634;</div><h3>Обработка возвратов</h3><p>Приём возвращённых товаров, проверка состояния и комплектности, фото-фиксация, возврат на полку или списание через WMS</p></div>
-</div>
-</div></section>
-
-<!-- WAREHOUSES -->
-<section class="warehouses"><div class="ctr">
-<div class="badge">СКЛАДЫ</div>
-<h2 class="sec-h2">Два склада под Киевом</h2>
-<div class="wh-grid">
-<div class="wh-card">
-<h3>Склад Счастливое</h3>
-<div class="wh-loc">Бориспольский район, Киевская область</div>
-<ul>
-<li>2 800 м&sup2; складских площадей</li>
-<li>10 минут от аэропорта Борисполь</li>
-<li>3 генератора &mdash; бесперебойная работа при блэкаутах</li>
-<li>Starlink + 2 оптоволоконных провайдера</li>
-<li>Адресное и палетное хранение</li>
-<li>Температурный контроль 15-25&deg;C</li>
-<li>Охрана и видеонаблюдение 24/7</li>
-</ul>
-</div>
-<div class="wh-card">
-<h3>Склад Белогородка</h3>
-<div class="wh-loc">Западное направление, Киевская область</div>
-<ul>
-<li>1 100 м&sup2; складских площадей</li>
-<li>Удобный выезд на Житомирскую трассу</li>
-<li>Генератор для бесперебойной работы</li>
-<li>Ячеечное хранение</li>
-<li>Отдельные зоны приёмки и отправки</li>
-<li>Охрана и контроль доступа</li>
-</ul>
-</div>
-</div>
-</div></section>
-
-<!-- PRICING -->
-<section class="pricing"><div class="ctr">
-<div class="badge badge-dark">ТАРИФЫ 2026</div>
-<h2 class="sec-h2">Сколько стоит хранение</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена</span></div>
-<div class="price-row"><span>Хранение товаров</span><span>ячеечное, за м&sup3;/мес</span><span>от 650 грн</span></div>
-<div class="price-row"><span>Палетное хранение</span><span>за палет/мес</span><span>от 450 грн</span></div>
-<div class="price-row"><span>Приём товара</span><span>до 2 кг, за шт.</span><span>3 грн</span></div>
-<div class="price-row"><span>Приём товара</span><span>2-10 кг, за шт.</span><span>5 грн</span></div>
-<div class="price-row"><span>Приём товара</span><span>10-30 кг, за шт.</span><span>10 грн</span></div>
-<div class="price-row"><span>Приём товара</span><span>30+ кг, за шт.</span><span>20 грн</span></div>
-<div class="price-row"><span>Разгрузка коробок</span><span>за коробку</span><span>20 грн</span></div>
-<div class="price-row"><span>Разгрузка палет</span><span>за палет</span><span>80 грн</span></div>
-<div class="price-row price-highlight"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн</span></div>
-</div>
-<p class="price-note">Тарифы действуют с 01.01.2026. Точный расчёт &mdash; бесплатно за 15 минут.</p>
-<div class="price-cta"><button onclick="document.getElementById('finalForm').querySelector('input').focus();window.scrollTo({top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'})">Рассчитать для моего магазина &#8594;</button></div>
-</div></section>
-
-<!-- FAQ -->
-<section class="faq"><div class="ctr">
-<div class="badge">FAQ</div>
-<h2 class="sec-h2">Частые вопросы</h2>
-<div class="faq-list">
-<div class="faq-item"><button class="faq-q">Какая минимальная площадь хранения?</button><div class="faq-a"><p>Минимальной площади нет &mdash; вы оплачиваете только фактический объём товара в кубических метрах. Минимальный месячный платёж &mdash; 5 000 грн, покрывающий хранение и базовые услуги.</p></div></div>
-<div class="faq-item"><button class="faq-q">Есть ли контроль температуры на складе?</button><div class="faq-a"><p>Да. Оба склада отапливаются и имеют контроль влажности. Температура поддерживается в пределах 15-25&deg;C круглый год. Подходит для большинства категорий товаров: косметика, электроника, одежда, аксессуары, бытовая химия.</p></div></div>
-<div class="faq-item"><button class="faq-q">Как работает WMS-система?</button><div class="faq-a"><p>WMS (Warehouse Management System) &mdash; платформа управления складом. Каждый товар получает штрих-код, каждая ячейка &mdash; уникальный адрес. Заказы поступают автоматически через API из вашей CRM, система формирует оптимальный маршрут сборки, проверяет точность и печатает ТТН. Остатки и статусы заказов видны в реальном времени через личный кабинет.</p></div></div>
-<div class="faq-item"><button class="faq-q">Можно ли хранить крупногабаритный товар?</button><div class="faq-a"><p>Да. Для крупных и тяжёлых товаров (50+ кг) предлагаем палетное хранение от 450 грн/палет/мес. Стеллажи выдерживают до 2 тонн на ярус. На складе есть погрузчики и гидравлические тележки.</p></div></div>
-<div class="faq-item"><button class="faq-q">Как быстро можно подключиться?</button><div class="faq-a"><p>Подключение занимает 1-3 дня. День 1: консультация и договор. День 2: передача товара, сканирование в WMS, интеграция с CRM. День 3: тестовые отправки и запуск. Большинство клиентов начинают работать на 2-й день.</p></div></div>
-<div class="faq-item"><button class="faq-q">Что происходит во время блэкаутов?</button><div class="faq-a"><p>Склад в Счастливом оборудован 3 генераторами и Starlink. Два оптоволоконных провайдера обеспечивают резервный интернет. С 2022 года ни одного дня простоя. Заказы отправляются по графику независимо от ситуации с электричеством.</p></div></div>
-</div>
-</div></section>
-
-<!-- SEO ARTICLE -->
-<section class="article-section">
-<div class="ctr">
-<div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
-<h2>Как выбрать склад для интернет-магазина в Киеве</h2>
-<div class="article-content">
-<h3>Зачем интернет-магазину внешний склад?</h3>
-<p>Когда интернет-магазин вырастает до 30-50 заказов в день, содержание собственного склада становится отдельной задачей. Аренда помещения, зарплаты складских работников, коммуналка, упаковочные материалы &mdash; всё это складывается в 40 000-60 000 грн в месяц даже для небольшого склада. И это без учёта времени владельца, который вынужден решать логистические задачи вместо развития бизнеса.</p>
-<p>Внешний склад с услугами фулфилмента &mdash; это передача всей складской логистики профессиональному оператору. Вы храните товар на его складе, а он принимает, хранит, комплектует и отправляет заказы. Для покупателя ничего не меняется &mdash; посылка приходит как обычно. Для вас меняется всё: вместо ежедневной складской работы &mdash; просмотр дашборда раз в неделю.</p>
-
-<h3>На что обратить внимание при выборе склада</h3>
-<p>Первое &mdash; расположение. Склад под Киевом &mdash; оптимальный выбор для большинства интернет-магазинов Украины. Отсюда доставка через Новую Почту в любую точку страны максимально быстрая &mdash; подавляющее большинство посылок доходит за 1-2 дня. У MTP Group два склада в Киевской области: в Счастливом (Бориспольский район, 2 800 м&sup2;) и Белогородке (1 100 м&sup2;).</p>
-<p>Второе &mdash; система управления складом (WMS). Без WMS склад &mdash; это просто помещение с полками. С WMS каждый товар имеет штрих-код, каждая ячейка &mdash; адрес, каждый заказ &mdash; маршрут сборки. Это даёт 99,7% точности и 30 секунд на сборку заказа вместо 5-10 минут вручную.</p>
-
-<h3>Сколько стоит хранение товаров под Киевом в 2026 году</h3>
-<p>Стоимость складских услуг зависит от объёма товара и количества операций. Основные компоненты: хранение &mdash; от 650 грн за кубический метр в месяц, палетное хранение &mdash; от 450 грн за палет в месяц, приём товара &mdash; от 3 грн за единицу (до 2 кг). Минимальный месячный платёж &mdash; 5 000 грн.</p>
-<p>Для сравнения: аренда склада 100 м&sup2; под Киевом обойдётся в 15 000-25 000 грн/мес без коммуналки. Плюс зарплата кладовщика (18 000-25 000 грн), упаковочные материалы, интернет, охрана &mdash; итого от 50 000 грн в месяц. Фулфилмент-склад при тех же объёмах &mdash; от 10 000-20 000 грн.</p>
-</div>
-</div>
+<!-- SECTION 2 — TIMELINE: 5 STAGES -->
+<section class="tl-section">
+  <div class="ctr">
+    <div class="badge badge-dark">КАК ЭТО РАБОТАЕТ</div>
+    <h2 class="sec-h2">От привоза товара до контроля с телефона</h2>
+    <div class="tl-track">
+      <div class="tl-line" aria-hidden="true"></div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Привозите товар</h3>
+          <p>Разгрузим коробки (20&nbsp;грн/шт.) или палеты (80&nbsp;грн/шт.), проверим и зафиксируем в WMS.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Размещаем</h3>
+          <p>Каждая единица получает адрес: полка, ряд, ячейка. FEFO для косметики и БАДов.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Собираем</h3>
+          <p>Заказ из CRM &rarr; WMS автоматически. Сбор за 30&nbsp;секунд, 4&nbsp;отправки/день.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Храним</h3>
+          <p>t&deg; 15-25&deg;C, влажность, видеонаблюдение 24/7.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Контролируете</h3>
+          <p>Остатки, статусы через Telegram-Bot и кабинет. 15&nbsp;мин/день вместо 4&nbsp;часов.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
+<!-- SECTION 3 — INLINE CALCULATOR (ALPINE.JS) -->
+<section class="calc-section" id="calculator">
+  <div class="ctr">
+    <div class="badge badge-dark">КАЛЬКУЛЯТОР</div>
+    <h2 class="sec-h2">Сколько стоит складское обслуживание для вашего магазина</h2>
+    <p class="calc-sub">Введите параметры&nbsp;&mdash; мы посчитаем стоимость за месяц.</p>
 
+    <div class="calc-wrap" x-data="{
+      sku: 500,
+      orders: 50,
+      size: 'medium',
+      get sizeFactor() {
+        return this.size === 'small' ? 0.003 : this.size === 'medium' ? 0.008 : 0.02;
+      },
+      get pricePerOrder() {
+        if (this.orders <= 10) return 26;
+        if (this.orders <= 50) return 23;
+        if (this.orders <= 100) return 21;
+        return 18;
+      },
+      get storageCost() {
+        return Math.round(this.sku * this.sizeFactor * 650);
+      },
+      get pickingCost() {
+        return Math.round(this.orders * 22 * this.pricePerOrder);
+      },
+      get totalCost() {
+        return this.storageCost + this.pickingCost;
+      },
+      fmt(n) {
+        return n.toLocaleString('ru-RU');
+      }
+    }">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Количество SKU (наименований): <strong x-text="fmt(sku)"></strong></label>
+          <input type="range" min="50" max="5000" step="50" x-model.number="sku">
+          <div class="calc-range-labels"><span>50</span><span>5 000</span></div>
+        </div>
+        <div class="calc-field">
+          <label>Заказов в день: <strong x-text="fmt(orders)"></strong></label>
+          <input type="range" min="5" max="200" step="5" x-model.number="orders">
+          <div class="calc-range-labels"><span>5</span><span>200</span></div>
+        </div>
+        <div class="calc-field">
+          <label>Средний размер товара:</label>
+          <div class="calc-radio-group">
+            <label class="calc-radio" :class="{ active: size === 'small' }">
+              <input type="radio" name="size" value="small" x-model="size"> Мелкий
+            </label>
+            <label class="calc-radio" :class="{ active: size === 'medium' }">
+              <input type="radio" name="size" value="medium" x-model="size"> Средний
+            </label>
+            <label class="calc-radio" :class="{ active: size === 'large' }">
+              <input type="radio" name="size" value="large" x-model="size"> Крупный
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result-row">
+          <span>Хранение</span>
+          <span class="calc-val" x-text="fmt(storageCost) + ' грн'"></span>
+        </div>
+        <div class="calc-result-row">
+          <span>Комплектация</span>
+          <span class="calc-val" x-text="fmt(pickingCost) + ' грн'"></span>
+        </div>
+        <div class="calc-result-row calc-total">
+          <span>ИТОГО в месяц</span>
+          <span class="calc-val" x-text="fmt(totalCost) + ' грн'"></span>
+        </div>
+        <p class="calc-disclaimer">* Ориентировочный расчёт. Точную стоимость посчитаем за 15 минут после звонка.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — YOUTUBE EMBED + STATS -->
+<section class="vid-section">
+  <div class="ctr">
+    <div class="badge badge-dark">СКЛАД ИЗНУТРИ</div>
+    <h2 class="sec-h2">Посмотрите как работает наш склад</h2>
+    <div class="vid-player">
+      <YouTubeEmbed id="bHY3cFF9SlI" title="Экскурсия по складу MTP Group" />
+    </div>
+    <div class="vid-stats">
+      <div class="vid-stat">
+        <div class="vid-stat-val">3 900 м&sup2;</div>
+        <div class="vid-stat-label">складских площадей на двух объектах</div>
+      </div>
+      <div class="vid-stat">
+        <div class="vid-stat-val">60 000+</div>
+        <div class="vid-stat-label">отправлений ежемесячно</div>
+      </div>
+      <div class="vid-stat">
+        <div class="vid-stat-val">10+ лет</div>
+        <div class="vid-stat-label">опыта в фулфилменте</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — TESTIMONIALS CAROUSEL -->
+<section class="rev-section">
+  <div class="ctr">
+    <div class="badge badge-dark">ОТЗЫВЫ КЛИЕНТОВ</div>
+    <h2 class="sec-h2">Что говорят наши клиенты</h2>
+    <div class="rev-carousel">
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5 звёзд">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;Отправки выросли с 12 до 72/день, себестоимость упала с 30 до 14&nbsp;грн.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Владелец Carter's Ukraine</div>
+          <div class="rev-biz">Детская одежда &middot; 3 000+ SKU</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5 звёзд">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;За 7 лет работы с MTP&nbsp;&mdash; ни одной рекламации.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Представитель Elemis Ukraine</div>
+          <div class="rev-biz">Luxury-косметика &middot; FEFO-хранение</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 из 5 звёзд">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;Себестоимость упала с 33 до 14&nbsp;грн. 90&nbsp;часов/мес высвобождено.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Основательница I.Love.My.Cycle</div>
+          <div class="rev-biz">Wellness &middot; 200+ заказов/день</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — CTA -->
+<section class="sp-cta" id="ctaSection">
+  <div class="ctr">
+    <h2>Ваш товар заслуживает профессиональный склад</h2>
+    <p class="sp-cta-sub">Подключение за 3-5 дней. Без долгих контрактов.</p>
+    <form class="sp-cta-form" id="ctaFormBottom">
+      <input type="text" name="name" placeholder="Ваше имя" autocomplete="given-name" aria-label="Имя">
+      <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
+      <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
+      <button type="submit">Получить расчёт &rarr;</button>
+    </form>
+    <div class="sp-cta-checks">
+      <span>&#10003; Без долгосрочного контракта</span>
+      <span>&#10003; Тестовый период</span>
+      <span>&#10003; Выход за 1 день</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 — FAQ -->
+<section class="faq" id="faq">
+  <div class="ctr">
+    <div class="badge badge-dark">FAQ</div>
+    <h2 class="sec-h2">Частые вопросы</h2>
+    <div class="faq-q" data-faq>Какой минимальный объём товара?</div>
+    <div class="faq-a"><p>Минимального нет&nbsp;&mdash; оплата за фактическое место. Минимальный месячный платёж&nbsp;&mdash; 5&nbsp;000&nbsp;грн.</p></div>
+    <div class="faq-q" data-faq>Какая температура на складе?</div>
+    <div class="faq-a"><p>15-25&deg;C круглый год. Отопление зимой, контроль влажности. Подходит для косметики, электроники, одежды, бытовой химии.</p></div>
+    <div class="faq-q" data-faq>Как работает WMS-учёт?</div>
+    <div class="faq-a"><p>Штрих-код для каждого товара, адрес для каждой ячейки. WMS контролирует точность сбора и формирует оптимальный маршрут. Остатки онлайн 24/7.</p></div>
+    <div class="faq-q" data-faq>Есть ли палетное хранение?</div>
+    <div class="faq-a"><p>Да, от 450&nbsp;грн/палет/мес. Стеллажи выдерживают до 2&nbsp;тонн на ярус. Погрузчики и гидравлические рокла для перемещения.</p></div>
+    <div class="faq-q" data-faq>Как проводится инвентаризация?</div>
+    <div class="faq-a"><p>Плановая инвентаризация&nbsp;&mdash; ежемесячно. Внеплановая&nbsp;&mdash; по запросу в течение 24&nbsp;часов. Результаты с расхождениями по каждому SKU доступны в WMS-кабинете.</p></div>
+    <div class="faq-q" data-faq>Есть ли страхование?</div>
+    <div class="faq-a"><p>Официальный договор с материальной ответственностью за товар. Все операции фиксируются в WMS. Склад оборудован круглосуточной видеофиксацией и охраной.</p></div>
+  </div>
+</section>
+
+<script is:inline>
+(function(){
+  // Form handler for both hero and CTA forms
+  function handleForm(formId) {
+    var form = document.getElementById(formId);
+    if (!form || form.dataset.handled) return;
+    form.dataset.handled = '1';
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var phoneInput = form.querySelector('input[name="phone"]');
+      var ph = phoneInput.value.trim();
+      var clean = ph.replace(/\D/g, '');
+      if (clean.length < 10) {
+        phoneInput.style.borderColor = '#e63329';
+        phoneInput.focus();
+        return;
+      }
+      if (typeof window.mtpSubmitLead === 'function') {
+        window.mtpSubmitLead(ph, location.pathname);
+      }
+      form.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500;padding:16px 0">&#10004; Спасибо! Перезвоним за 15 минут.</p>';
+      setTimeout(function() {
+        window.location.href = '/thanks/';
+      }, 1500);
+    });
+  }
+  handleForm('heroFormSplit');
+  handleForm('ctaFormBottom');
+})();
+</script>
 
 </Base>
 
-<style is:global>
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
-
-.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
-.hero-form{display:flex;gap:12px;max-width:460px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
-.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
-.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
-.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
-.warehouses{padding:100px 0;background:#0a0a0a;color:#fff}
-.wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-.wh-card{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:40px 32px}
-.wh-card h3{font-family:var(--fd);font-size:28px;font-weight:400;margin-bottom:8px}
-.wh-card .wh-loc{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
-.wh-card ul{list-style:none;padding:0}
-.wh-card li{font-size:15px;color:rgba(255,255,255,.7);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:10px}
-.wh-card li:last-child{border-bottom:none}
-.wh-card li::before{content:'\2713';color:var(--red);font-weight:700}
-.pricing{padding:100px 0;background:var(--gray)}
-.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
-.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
-.price-row>span{flex:1;padding:14px 20px}
-.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.price-row:not(.price-header):hover{background:#fff}
-.price-highlight{background:var(--red);color:#fff;font-weight:600}
-.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-cta{text-align:center}
-.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
-.price-cta button:hover{background:#c42b22}
-.faq{padding:100px 0;background:#0a0a0a;color:#fff}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
-.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
-.article-section{background:#fff;padding:80px 8vw}
-.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
-.article-content{max-width:800px}
-.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
-.article-content h3:first-child{margin-top:0}
-.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
-.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
-.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
-.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
-.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
-.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.final-form input::placeholder{color:rgba(255,255,255,.45)}.final-form input:focus{border-color:#fff}
-.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
-.final-form button:hover{background:#222}
-.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
-
-@media(max-width:768px){
-.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.ben-grid{grid-template-columns:1fr}
-.wh-grid{grid-template-columns:1fr}
-.case-inner{flex-direction:column;gap:40px}
-.final-form{flex-direction:column}
+<style>
+/* ==========================================
+   SECTION 1 — HERO SPLIT-SCREEN
+   ========================================== */
+.sp-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white);
+}
+.sp-hero-video {
+  position: relative;
+  overflow: hidden;
+}
+.sp-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sp-hero-form-side {
+  display: flex;
+  align-items: center;
+  padding: 80px 48px 60px;
+}
+.sp-hero-inner {
+  max-width: 520px;
+  width: 100%;
+}
+.sp-hero-inner h1 {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3vw, 48px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.sp-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.sp-hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sp-hero-form input {
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--fb);
+  outline: none;
+  transition: border-color .2s;
+}
+.sp-hero-form input::placeholder {
+  color: rgba(255,255,255,.3);
+}
+.sp-hero-form input:focus {
+  border-color: rgba(255,255,255,.5);
+}
+.sp-hero-form button {
+  padding: 16px 24px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fb);
+  transition: background .3s;
+}
+.sp-hero-form button:hover {
+  background: #c42b22;
+}
+.sp-hero-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  margin-top: 14px;
+}
+.sp-hero-phone {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,.7);
+  transition: color .2s;
+}
+.sp-hero-phone:hover {
+  color: #fff;
 }
 
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
-</style>
+/* Mobile hero: video becomes background, form overlays */
+@media (max-width: 768px) {
+  .sp-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    position: relative;
+  }
+  .sp-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .sp-hero-video video {
+    opacity: .2;
+  }
+  .sp-hero-form-side {
+    position: relative;
+    z-index: 1;
+    padding: 120px 24px 60px;
+  }
+  .sp-hero-inner h1 {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+}
 
-<script is:inline>
-document.addEventListener('DOMContentLoaded', function(){
-var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
-);inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});}
-fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Спасибо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';});}
-});
-</script>
+/* ==========================================
+   SECTION 2 — TIMELINE
+   ========================================== */
+.tl-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+.tl-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+}
+.tl-line {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  height: 3px;
+  background: #e0e0e0;
+}
+.tl-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform-origin: left;
+}
+.tl-step {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.tl-dot {
+  width: 30px;
+  height: 30px;
+  background: var(--red);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 0 3px var(--red);
+}
+.tl-content h3 {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.tl-content p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Mobile: vertical timeline */
+@media (max-width: 768px) {
+  .tl-track {
+    flex-direction: column;
+    gap: 0;
+    padding-left: 30px;
+  }
+  .tl-line {
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+  .tl-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding-bottom: 32px;
+  }
+  .tl-dot {
+    flex-shrink: 0;
+    margin: 0;
+    position: relative;
+    left: -30px;
+  }
+  .tl-content {
+    padding-top: 2px;
+  }
+  .tl-content p {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* ==========================================
+   SECTION 3 — CALCULATOR
+   ========================================== */
+.calc-section {
+  padding: 100px 0;
+  background: var(--gray);
+}
+.calc-sub {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  margin-top: -32px;
+}
+.calc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 2px 24px rgba(0,0,0,.06);
+}
+.calc-field {
+  margin-bottom: 28px;
+}
+.calc-field label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+.calc-field label strong {
+  color: var(--red);
+  font-weight: 600;
+}
+.calc-field input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.calc-field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.calc-field input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.calc-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+.calc-radio-group {
+  display: flex;
+  gap: 8px;
+}
+.calc-radio {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  color: var(--muted);
+}
+.calc-radio input {
+  display: none;
+}
+.calc-radio.active {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(230,51,41,.04);
+}
+.calc-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calc-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+.calc-val {
+  font-weight: 600;
+  font-size: 18px;
+}
+.calc-total {
+  border-bottom: none;
+  padding-top: 24px;
+  margin-top: 8px;
+  border-top: 3px solid var(--red);
+}
+.calc-total span:first-child {
+  font-family: var(--fd);
+  font-size: 20px;
+}
+.calc-total .calc-val {
+  font-size: 28px;
+  color: var(--red);
+}
+.calc-disclaimer {
+  font-size: 13px;
+  color: #999;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .calc-wrap {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 32px;
+  }
+  .calc-total .calc-val {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================
+   SECTION 4 — VIDEO + STATS
+   ========================================== */
+.vid-section {
+  padding: 100px 0;
+  background: #fff;
+}
+.vid-player {
+  max-width: 800px;
+  margin: 0 auto 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.1);
+}
+.vid-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.vid-stat {
+  text-align: center;
+  padding: 28px 16px;
+  border-radius: 12px;
+  background: var(--gray);
+}
+.vid-stat-val {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.vid-stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .5px;
+}
+
+@media (max-width: 768px) {
+  .vid-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .vid-stat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 20px 24px;
+  }
+  .vid-stat-val {
+    font-size: 28px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ==========================================
+   SECTION 5 — TESTIMONIALS CAROUSEL
+   ========================================== */
+.rev-section {
+  padding: 100px 0;
+  background: var(--gray);
+}
+.rev-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.rev-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.rev-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rev-carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.rev-card {
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 300px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.rev-stars {
+  color: #f5a623;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.rev-quote {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--black);
+  margin: 0 0 auto;
+  padding-bottom: 24px;
+}
+.rev-author {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+.rev-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+}
+.rev-biz {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .rev-card {
+    flex: 0 0 85%;
+    min-width: 0;
+  }
+}
+
+/* ==========================================
+   SECTION 6 — CTA
+   ========================================== */
+.sp-cta {
+  padding: 100px 0;
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+}
+.sp-cta h2 {
+  font-family: var(--fd);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.sp-cta-sub {
+  font-size: 17px;
+  opacity: .85;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.sp-cta-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.sp-cta-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 6px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--fb);
+  outline: none;
+  transition: border-color .2s;
+}
+.sp-cta-form input::placeholder {
+  color: rgba(255,255,255,.45);
+}
+.sp-cta-form input:focus {
+  border-color: rgba(255,255,255,.7);
+}
+.sp-cta-form button {
+  padding: 16px 28px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fb);
+  white-space: nowrap;
+  transition: background .3s;
+}
+.sp-cta-form button:hover {
+  background: #222;
+}
+.sp-cta-checks {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  .sp-cta-form {
+    flex-direction: column;
+  }
+  .sp-cta-form input {
+    min-width: 0;
+    width: 100%;
+  }
+  .sp-cta-form button {
+    width: 100%;
+  }
+  .sp-cta-checks {
+    gap: 12px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SECTION 7 — FAQ
+   ========================================== */
+.faq {
+  padding: 100px 0;
+  background: #fff;
+}
+.faq .faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  background: none;
+  font-family: var(--fb);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
+  transition: color .2s;
+}
+.faq .faq-q:hover {
+  color: var(--red);
+}
+.faq .faq-q::after {
+  content: '+';
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform .3s;
+}
+.faq .faq-q.active::after {
+  content: '-';
+}
+.faq .faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.faq .faq-a p {
+  padding: 16px 0 20px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+</style>

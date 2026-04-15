@@ -1,340 +1,941 @@
 ---
 import Base from '../../layouts/Base.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 ---
 <Base
-  title="Warehouse Services for Online Stores in Kyiv | MTP Group"
-  description="Warehouse services near Kyiv: goods storage from 650 UAH/m³/mo, order picking, inventory management. 3,900 m² of warehouse space, WMS system, backup generators. MTP Group — 10+ years of experience."
+  title="Warehouse Services Kyiv — Storage for Online Stores | MTP Fulfillment"
+  description="Address-based warehouse in Boryspil and Bilohorodka. Storage from 650 UAH/m³. Order picking in 30 seconds, 4 shipments daily. 10+ years of experience."
   canonical="https://www.fulfillmentmtp.com.ua/en/warehouse-services/"
   lang="en"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
-  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Warehouse Services for Online Stores","description":"Goods storage, order picking, inventory management and returns processing at warehouses near Kyiv. WMS system, 3,900 m², backup generators.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"650","description":"Storage from 650 UAH/m³/mo"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Warehouse Services","item":"https://www.fulfillmentmtp.com.ua/en/warehouse-services/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What storage conditions do you maintain for temperature-sensitive products?","acceptedAnswer":{"@type":"Answer","text":"Both warehouses maintain temperature between 15-25 degrees C with humidity monitoring year-round. Suitable for cosmetics, electronics, pharmaceuticals (non-cold-chain), textiles, and household goods. FEFO (First Expired, First Out) zones available at the Bilohorodka warehouse."}},{"@type":"Question","name":"How does bin-level addressed storage differ from bulk storage?","acceptedAnswer":{"@type":"Answer","text":"In bin-level storage, every product receives a unique physical address in the warehouse — a specific shelf, row, and bin number tracked in our WMS. This enables 30-second order picking, 99.7% accuracy, and instant inventory lookups. Bulk storage simply piles goods in a zone, leading to slow retrieval and frequent errors."}},{"@type":"Question","name":"How are inventory audits conducted and how often?","acceptedAnswer":{"@type":"Answer","text":"We perform rolling cycle counts using barcode scanners, verifying a portion of inventory daily. Full warehouse audits are conducted monthly. If a discrepancy is found, a reconciliation report with photos is delivered within 24 hours. Your dashboard shows live stock levels at all times."}},{"@type":"Question","name":"What is the difference between cubic-metre storage and pallet storage pricing?","acceptedAnswer":{"@type":"Answer","text":"Cubic-metre storage (from 650 UAH/m3/mo) is used for small and medium items stored in bins on shelving. Pallet storage (from 450 UAH/pallet/mo) is for heavy or bulky items stored on pallets in reinforced racking. Choose based on your product size: items under 20 kg typically go to bin storage, heavier items to pallet positions."}},{"@type":"Question","name":"What happens during the goods receiving inspection process?","acceptedAnswer":{"@type":"Answer","text":"Every incoming shipment is quantity-checked against your packing list, visually inspected for damage, and photo-documented. Items are then barcoded (if untagged), entered into WMS with SKU data, and assigned to specific bin or pallet locations. Receiving costs from 3 UAH per unit for items under 2 kg."}},{"@type":"Question","name":"How do you handle multi-SKU businesses with thousands of product lines?","acceptedAnswer":{"@type":"Answer","text":"Our WMS is built for high-SKU complexity. We currently manage clients with 3,000+ SKUs. Every product gets a unique barcode and bin address. The system generates optimized picking routes across the warehouse, minimizing assembly time. Stock alerts notify you when any SKU drops below your reorder threshold."}},{"@type":"Question","name":"Can I store goods without using your fulfillment services?","acceptedAnswer":{"@type":"Answer","text":"Yes. Some clients use our warehouse purely for storage without order fulfillment. You can store goods, conduct your own inventory management via our WMS dashboard, and arrange your own shipping. Storage-only pricing starts from 650 UAH per cubic metre per month with a 5,000 UAH monthly minimum."}},{"@type":"Question","name":"Is 24/7 security provided at both warehouse locations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both the Shchaslive (2,800 m2) and Bilohorodka (1,100 m2) warehouses have round-the-clock security guards, CCTV camera coverage, controlled access, and warehouse goods insurance. Inventory is insured against theft, fire, and water damage."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
+  showCTA={false}
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Warehouse Services for Online Stores","description":"Address-based warehouse in Boryspil and Bilohorodka. Storage from 650 UAH/m³. Order picking in 30 seconds, 4 shipments daily.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"650","description":"Storage from 650 UAH/m³/mo"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Warehouse Services","item":"https://www.fulfillmentmtp.com.ua/en/warehouse-services/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the minimum product volume?","acceptedAnswer":{"@type":"Answer","text":"No minimum — you pay for actual space used. Minimum monthly payment is 5,000 UAH."}},{"@type":"Question","name":"What is the warehouse temperature?","acceptedAnswer":{"@type":"Answer","text":"15-25°C year-round."}},{"@type":"Question","name":"How does WMS tracking work?","acceptedAnswer":{"@type":"Answer","text":"Barcode for every product, address for every bin. Inventory available online 24/7."}},{"@type":"Question","name":"Is pallet storage available?","acceptedAnswer":{"@type":"Answer","text":"Yes, from 450 UAH/pallet/mo. Up to 2 tonnes per tier."}},{"@type":"Question","name":"How are inventory audits conducted?","acceptedAnswer":{"@type":"Answer","text":"Scheduled audits monthly. Unscheduled within 24 hours."}},{"@type":"Question","name":"Is insurance available?","acceptedAnswer":{"@type":"Answer","text":"Contract with material liability. 24/7 video surveillance."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/warehouse-services/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<div class="badge">WAREHOUSE SERVICES</div>
-<h1>Warehouse Services<br>for Online Stores<br>in Kyiv</h1>
-<p class="hero-sub">Storage, order picking and shipping from two warehouses near Kyiv. WMS system, backup generators, temperature control. From 650&nbsp;UAH/m&sup3; per month.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel" aria-label="Phone"><button type="submit">Get a quote &#8594;</button></form>
-<div class="hero-note">Free consultation &#183; We will call you back within 15 minutes</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">3,900 m&sup2;</div><div class="hero-stat-label">warehouse space</div></div>
-<div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-label">warehouses near Kyiv</div></div>
-<div class="hero-stat"><div class="hero-stat-val">60,000+</div><div class="hero-stat-label">shipments/mo</div></div>
-</div>
-</div>
+<!-- SECTION 1 — HERO: SPLIT-SCREEN -->
+<section class="sp-hero">
+  <div class="sp-hero-video">
+    <video autoplay muted loop playsinline poster="/images/mtp-fulfillment-warehouse-hero.webp">
+      <source src="/videos/warehouse-tour.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="sp-hero-form-side">
+    <div class="sp-hero-inner">
+      <div class="badge">WAREHOUSE SERVICES</div>
+      <h1>Warehouse Services for Online Stores in Kyiv</h1>
+      <p class="sp-hero-sub">Hand over storage, picking and shipping to us&nbsp;&mdash; you focus on sales. Two warehouses. Address-based system. Picking in 30&nbsp;seconds.</p>
+      <form class="sp-hero-form" id="heroFormSplit">
+        <input type="text" name="name" placeholder="Your name" autocomplete="given-name" aria-label="Name">
+        <input type="tel" name="phone" placeholder="Your phone number" maxlength="25" required autocomplete="tel" aria-label="Phone">
+        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
+        <button type="submit">Get a quote &rarr;</button>
+      </form>
+      <p class="sp-hero-note">Free consultation &middot; We call back within 15 minutes</p>
+      <a href="tel:+380501444645" class="sp-hero-phone">+380 50 144 46 45</a>
+    </div>
+  </div>
 </section>
 
-<!-- WHAT WE OFFER -->
-<section class="benefits"><div class="ctr">
-<div class="badge badge-dark">SERVICES</div>
-<h2 class="sec-h2">What our warehouse services include</h2>
-<div class="ben-grid">
-<div class="ben-card"><div class="ben-num">&#9635;</div><h3>Address-based storage</h3><p>Bin-level storage system with a unique address for every item. Temperature control at 15-25&deg;C and humidity monitoring year-round</p></div>
-<div class="ben-card"><div class="ben-num">&#9632;</div><h3>Pallet storage</h3><p>For oversized and heavy goods. Racking supports up to 2 tonnes per tier, from 450&nbsp;UAH/pallet/mo. Forklifts and pallet jacks on site</p></div>
-<div class="ben-card"><div class="ben-num">&#9997;</div><h3>Order picking</h3><p>Picking, packing and labelling of orders. Each order assembled in 30 seconds, barcode scanning at every stage</p></div>
-<div class="ben-card"><div class="ben-num">&#10003;</div><h3>Goods receiving</h3><p>Quantity and quality inspection upon arrival. Photo documentation of any damage, placement into WMS with barcode assignment</p></div>
-<div class="ben-card"><div class="ben-num">&#128203;</div><h3>Inventory management</h3><p>Regular stock checks powered by WMS. Reconciliation of actual vs. system stock, discrepancy report delivered within 24 hours</p></div>
-<div class="ben-card"><div class="ben-num">&#8634;</div><h3>Returns processing</h3><p>Receiving returned goods, condition and completeness inspection, photo documentation, restocking or write-off via WMS</p></div>
-</div>
-</div></section>
-
-<!-- WAREHOUSES -->
-<section class="warehouses"><div class="ctr">
-<div class="badge">WAREHOUSES</div>
-<h2 class="sec-h2">Two warehouses near Kyiv</h2>
-<div class="wh-grid">
-<div class="wh-card">
-<h3>Shchaslive Warehouse</h3>
-<div class="wh-loc">Boryspil district, Kyiv Oblast</div>
-<ul>
-<li>2,800 m&sup2; of warehouse space</li>
-<li>10 minutes from Boryspil Airport</li>
-<li>3 generators &mdash; uninterrupted operation during blackouts</li>
-<li>Starlink + 2 fibre-optic ISPs</li>
-<li>Address-based and pallet storage</li>
-<li>Temperature control 15-25&deg;C</li>
-<li>24/7 security and CCTV</li>
-</ul>
-</div>
-<div class="wh-card">
-<h3>Bilohorodka Warehouse</h3>
-<div class="wh-loc">Western direction, Kyiv Oblast</div>
-<ul>
-<li>1,100 m&sup2; of warehouse space</li>
-<li>Easy access from the Zhytomyr highway</li>
-<li>Generator for uninterrupted operation</li>
-<li>Bin-level storage</li>
-<li>Separate receiving and dispatch zones</li>
-<li>Security and access control</li>
-</ul>
-</div>
-</div>
-</div></section>
-
-<!-- PRICING -->
-<section class="pricing"><div class="ctr">
-<div class="badge badge-dark">RATES 2026</div>
-<h2 class="sec-h2">How much does storage cost</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Service</span><span>Condition</span><span>Price</span></div>
-<div class="price-row"><span>Goods storage</span><span>bin-level, per m&sup3;/mo</span><span>from 650 UAH</span></div>
-<div class="price-row"><span>Pallet storage</span><span>per pallet/mo</span><span>from 450 UAH</span></div>
-<div class="price-row"><span>Goods receiving</span><span>up to 2 kg, per unit</span><span>3 UAH</span></div>
-<div class="price-row"><span>Goods receiving</span><span>2-10 kg, per unit</span><span>5 UAH</span></div>
-<div class="price-row"><span>Goods receiving</span><span>10-30 kg, per unit</span><span>10 UAH</span></div>
-<div class="price-row"><span>Goods receiving</span><span>30+ kg, per unit</span><span>20 UAH</span></div>
-<div class="price-row"><span>Box unloading</span><span>per box</span><span>20 UAH</span></div>
-<div class="price-row"><span>Pallet unloading</span><span>per pallet</span><span>80 UAH</span></div>
-<div class="price-row price-highlight"><span>Minimum monthly fee</span><span>per month</span><span>5,000 UAH</span></div>
-</div>
-<p class="price-note">Rates effective from 01.01.2026. Exact quote &mdash; free within 15 minutes.</p>
-<div class="price-cta"><button onclick="document.getElementById('finalForm').querySelector('input').focus();window.scrollTo(&#123;top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'&#125;)">Get a quote for my store &#8594;</button></div>
-</div></section>
-
-<!-- CASE STUDY -->
-<section class="case"><div class="ctr">
-<div class="badge">CLIENT CASE STUDY</div>
-<h2 class="sec-h2">3,000+ SKUs in one warehouse: how we organised storage</h2>
-<div class="case-inner">
-<div class="case-text">
-<p>An accessories online store came to MTP Group with a problem: 3,200 product lines were stored in a garage, inventory counts took 3 days, and order errors reached 8% due to mix-ups.</p>
-<blockquote>&laquo;We were losing 40,000 UAH per month on wrong shipments and returns. After moving to the MTP warehouse, the first inventory count showed a discrepancy of just 0.3%&raquo;</blockquote>
-<p><strong>MTP solution:</strong> each of the 3,200 products was assigned a unique bin with an address in the WMS. Barcode scanning at every stage &mdash; from receiving to dispatch. Result: order accuracy rose from 92% to 99.7%, and inventory counts now take 4 hours instead of 3 days.</p>
-</div>
-<div class="case-stats">
-<div class="case-stat"><div class="case-stat-val">3,200</div><div class="case-stat-label">SKUs in the system</div></div>
-<div class="case-stat"><div class="case-stat-val">99.7%</div><div class="case-stat-label">order accuracy</div></div>
-<div class="case-stat"><div class="case-stat-val">4 hrs</div><div class="case-stat-label">full inventory count</div></div>
-</div>
-</div>
-</div></section>
-
-<!-- ADVANTAGES -->
-<section class="advantages"><div class="ctr">
-<div class="badge badge-dark">WHY US</div>
-<h2 class="sec-h2">Why clients choose MTP Group</h2>
-<div class="adv-grid">
-<div class="adv-card"><div class="adv-icon">&#128187;</div><h3>WMS system</h3><p>Full warehouse automation: address-based storage, picking routes, real-time stock control. Personal dashboard for clients 24/7.</p></div>
-<div class="adv-card"><div class="adv-icon">&#127919;</div><h3>99.7% accuracy</h3><p>Barcode scanning at every stage. Photo documentation at receiving and dispatch. Minimal errors, minimal complaints.</p></div>
-<div class="adv-card"><div class="adv-icon">&#9889;</div><h3>Blackout-proof operations</h3><p>3 generators, Starlink, 2 fibre-optic ISPs. Since 2022, zero days of downtime. Orders are shipped on schedule.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128197;</div><h3>10+ years of experience</h3><p>Operating since 2015. Serving 150+ online stores. 60,000+ shipments monthly from two warehouses.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128274;</div><h3>Goods security</h3><p>24/7 security, CCTV, access control. Warehouse goods insurance. Temperature and humidity monitoring.</p></div>
-<div class="adv-card"><div class="adv-icon">&#128640;</div><h3>Fast onboarding</h3><p>From the first call to the first shipment &mdash; 1-3 days. CRM integration in 2 hours. Seamless migration from your old warehouse.</p></div>
-</div>
-</div></section>
-
-<!-- FAQ -->
-<section class="faq"><div class="ctr">
-<div class="badge">FAQ</div>
-<h2 class="sec-h2">Frequently asked questions</h2>
-<div class="faq-list">
-<div class="faq-item"><button class="faq-q">What storage conditions do you maintain for temperature-sensitive products?</button><div class="faq-a"><p>Both warehouses maintain temperature between 15-25&deg;C with humidity monitoring year-round. Suitable for cosmetics, electronics, pharmaceuticals (non-cold-chain), textiles, and household goods. FEFO (First Expired, First Out) zones are available at the Bilohorodka warehouse for products with expiration dates.</p></div></div>
-<div class="faq-item"><button class="faq-q">How does bin-level addressed storage differ from bulk storage?</button><div class="faq-a"><p>In bin-level storage, every product receives a unique physical address in the warehouse &mdash; a specific shelf, row, and bin number tracked in our WMS. This enables 30-second order picking, 99.7% accuracy, and instant inventory lookups. Bulk storage simply piles goods in a zone, leading to slow retrieval and frequent errors.</p></div></div>
-<div class="faq-item"><button class="faq-q">How are inventory audits conducted and how often?</button><div class="faq-a"><p>We perform rolling cycle counts using barcode scanners, verifying a portion of inventory daily. Full warehouse audits are conducted monthly. If a discrepancy is found, a reconciliation report with photos is delivered within 24 hours. Your dashboard shows live stock levels at all times.</p></div></div>
-<div class="faq-item"><button class="faq-q">What is the difference between cubic-metre storage and pallet storage pricing?</button><div class="faq-a"><p>Cubic-metre storage (from 650 UAH/m&sup3;/mo) is used for small and medium items stored in bins on shelving. Pallet storage (from 450 UAH/pallet/mo) is for heavy or bulky items stored on pallets in reinforced racking. Choose based on your product size: items under 20 kg typically go to bin storage, heavier items to pallet positions.</p></div></div>
-<div class="faq-item"><button class="faq-q">What happens during the goods receiving inspection process?</button><div class="faq-a"><p>Every incoming shipment is quantity-checked against your packing list, visually inspected for damage, and photo-documented. Items are then barcoded (if untagged), entered into WMS with SKU data, and assigned to specific bin or pallet locations. Receiving costs from 3 UAH per unit for items under 2 kg.</p></div></div>
-<div class="faq-item"><button class="faq-q">How do you handle multi-SKU businesses with thousands of product lines?</button><div class="faq-a"><p>Our WMS is built for high-SKU complexity. We currently manage clients with 3,000+ SKUs. Every product gets a unique barcode and bin address. The system generates optimized picking routes across the warehouse, minimizing assembly time. Stock alerts notify you when any SKU drops below your reorder threshold.</p></div></div>
-<div class="faq-item"><button class="faq-q">Can I store goods without using your fulfillment services?</button><div class="faq-a"><p>Yes. Some clients use our warehouse purely for storage without order fulfillment. You can store goods, conduct your own inventory management via our WMS dashboard, and arrange your own shipping. Storage-only pricing starts from 650 UAH per cubic metre per month with a 5,000 UAH monthly minimum.</p></div></div>
-<div class="faq-item"><button class="faq-q">Is 24/7 security provided at both warehouse locations?</button><div class="faq-a"><p>Yes. Both the Shchaslive (2,800 m&sup2;) and Bilohorodka (1,100 m&sup2;) warehouses have round-the-clock security guards, CCTV camera coverage, controlled access, and warehouse goods insurance. Inventory is insured against theft, fire, and water damage.</p></div></div>
-</div>
-</div></section>
-
-<!-- SEO ARTICLE -->
-<section class="article-section">
-<div class="ctr">
-<div class="badge badge-dark">GOOD TO KNOW</div>
-<h2>Warehouse management systems for e-commerce: how WMS transforms storage operations</h2>
-<div class="article-content">
-<h3>Why a WMS is non-negotiable for modern warehousing</h3>
-<p>A warehouse without a WMS is a room with shelves. A warehouse with a WMS is a precision logistics machine. The difference is measurable: manual order picking takes 5-10 minutes per order with an error rate of 3-8%. WMS-driven picking at MTP Group takes 30 seconds per order with a 99.7% accuracy rate. The system assigns every product a unique barcode, every bin a physical address, and every order an optimized picking route. This is not an incremental improvement &mdash; it is a fundamentally different approach to warehouse operations.</p>
-
-<h3>Bin-level vs pallet-level storage: choosing the right model</h3>
-<p>The storage model you need depends on your product characteristics. Bin-level addressed storage is designed for small and medium items &mdash; cosmetics, accessories, electronics, clothing &mdash; stored in individual bins on multi-tier shelving. Each bin has a unique address (e.g., A-12-03), enabling instant location lookup and rapid picking. Pallet-level storage is for heavy, bulky, or high-volume items stored on reinforced racking with forklift access. MTP Group offers both models across our two warehouses, and many clients use a hybrid approach: fast-moving SKUs in bins for quick picking, bulk reserve inventory on pallets.</p>
-
-<h3>Inventory auditing: real-time accuracy vs annual counts</h3>
-<p>Traditional warehouses conduct inventory counts once or twice a year &mdash; a disruptive multi-day process that halts operations. Modern WMS-equipped warehouses use rolling cycle counts: a portion of inventory is verified daily using barcode scanners, ensuring continuous accuracy without operational interruptions. At MTP Group, full reconciliation reports are available within 24 hours if any discrepancy is detected. Your dashboard displays live stock levels at all times, and automated alerts trigger when any SKU drops below your configured reorder threshold.</p>
-
-<h3>Climate control and product-specific storage requirements</h3>
-<p>Not all products can share the same environment. Cosmetics degrade at high temperatures. Electronics are damaged by humidity. Pharmaceuticals require strict temperature ranges. MTP Group maintains both warehouses at 15-25&deg;C with continuous humidity monitoring. The Bilohorodka warehouse includes FEFO (First Expired, First Out) zones for products with expiration dates &mdash; the WMS automatically prioritizes older stock for dispatch, preventing waste and compliance issues.</p>
-
-<h3>Storage-only vs full fulfillment: what to choose</h3>
-<p>Not every business needs full fulfillment services. Some clients use MTP Group's warehouse purely for storage &mdash; they maintain their own shipping operations but benefit from our climate-controlled, WMS-tracked, secure facility. Storage-only pricing starts from 650 UAH per cubic metre per month. Other clients start with storage and gradually transition to full fulfillment as their order volume grows. The transition is seamless because their inventory is already barcoded and tracked in our WMS.</p>
-</div>
-</div>
+<!-- SECTION 2 — TIMELINE: 5 STAGES -->
+<section class="tl-section">
+  <div class="ctr">
+    <div class="badge badge-dark">HOW IT WORKS</div>
+    <h2 class="sec-h2">From delivering goods to monitoring from your phone</h2>
+    <div class="tl-track">
+      <div class="tl-line" aria-hidden="true"></div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Deliver your goods</h3>
+          <p>We unload boxes (20&nbsp;UAH/pc) or pallets (80&nbsp;UAH/pc), inspect and log them in WMS.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>We place them</h3>
+          <p>Each unit gets an address: shelf, row, bin. FEFO for cosmetics and supplements.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>We pick orders</h3>
+          <p>Orders from CRM &rarr; WMS automatically. Picking in 30&nbsp;seconds, 4&nbsp;shipments/day.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>We store</h3>
+          <p>t&deg; 15-25&deg;C, humidity control, CCTV 24/7.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>You stay in control</h3>
+          <p>Inventory and statuses via Telegram Bot and dashboard. 15&nbsp;min/day instead of 4&nbsp;hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
-</Base>
+<!-- SECTION 3 — INLINE CALCULATOR (ALPINE.JS) -->
+<section class="calc-section" id="calculator">
+  <div class="ctr">
+    <div class="badge badge-dark">CALCULATOR</div>
+    <h2 class="sec-h2">How much does warehouse service cost for your store</h2>
+    <p class="calc-sub">Enter your parameters&nbsp;&mdash; we will calculate the monthly cost.</p>
 
-<style is:global>
+    <div class="calc-wrap" x-data="{
+      sku: 500,
+      orders: 50,
+      size: 'medium',
+      get sizeFactor() {
+        return this.size === 'small' ? 0.003 : this.size === 'medium' ? 0.008 : 0.02;
+      },
+      get pricePerOrder() {
+        if (this.orders <= 10) return 26;
+        if (this.orders <= 50) return 23;
+        if (this.orders <= 100) return 21;
+        return 18;
+      },
+      get storageCost() {
+        return Math.round(this.sku * this.sizeFactor * 650);
+      },
+      get pickingCost() {
+        return Math.round(this.orders * 22 * this.pricePerOrder);
+      },
+      get totalCost() {
+        return this.storageCost + this.pickingCost;
+      },
+      fmt(n) {
+        return n.toLocaleString('en-US');
+      }
+    }">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Number of SKUs: <strong x-text="fmt(sku)"></strong></label>
+          <input type="range" min="50" max="5000" step="50" x-model.number="sku">
+          <div class="calc-range-labels"><span>50</span><span>5,000</span></div>
+        </div>
+        <div class="calc-field">
+          <label>Orders per day: <strong x-text="fmt(orders)"></strong></label>
+          <input type="range" min="5" max="200" step="5" x-model.number="orders">
+          <div class="calc-range-labels"><span>5</span><span>200</span></div>
+        </div>
+        <div class="calc-field">
+          <label>Average product size:</label>
+          <div class="calc-radio-group">
+            <label class="calc-radio" :class="{ active: size === 'small' }">
+              <input type="radio" name="size" value="small" x-model="size"> Small
+            </label>
+            <label class="calc-radio" :class="{ active: size === 'medium' }">
+              <input type="radio" name="size" value="medium" x-model="size"> Medium
+            </label>
+            <label class="calc-radio" :class="{ active: size === 'large' }">
+              <input type="radio" name="size" value="large" x-model="size"> Large
+            </label>
+          </div>
+        </div>
+      </div>
 
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+      <div class="calc-results">
+        <div class="calc-result-row">
+          <span>Storage</span>
+          <span class="calc-val" x-text="fmt(storageCost) + ' UAH'"></span>
+        </div>
+        <div class="calc-result-row">
+          <span>Picking & packing</span>
+          <span class="calc-val" x-text="fmt(pickingCost) + ' UAH'"></span>
+        </div>
+        <div class="calc-result-row calc-total">
+          <span>TOTAL per month</span>
+          <span class="calc-val" x-text="fmt(totalCost) + ' UAH'"></span>
+        </div>
+        <p class="calc-disclaimer">* Estimated calculation. We will provide an exact quote within 15 minutes of your call.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- SECTION 4 — YOUTUBE EMBED + STATS -->
+<section class="vid-section">
+  <div class="ctr">
+    <div class="badge badge-dark">INSIDE THE WAREHOUSE</div>
+    <h2 class="sec-h2">See how our warehouse operates</h2>
+    <div class="vid-player">
+      <YouTubeEmbed id="bHY3cFF9SlI" title="MTP Group warehouse tour" />
+    </div>
+    <div class="vid-stats">
+      <div class="vid-stat">
+        <div class="vid-stat-val">3,900 m&sup2;</div>
+        <div class="vid-stat-label">warehouse space across two facilities</div>
+      </div>
+      <div class="vid-stat">
+        <div class="vid-stat-val">60,000+</div>
+        <div class="vid-stat-label">shipments per month</div>
+      </div>
+      <div class="vid-stat">
+        <div class="vid-stat-val">10+ years</div>
+        <div class="vid-stat-label">of fulfillment experience</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
-.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
-.hero-form{display:flex;gap:12px;max-width:460px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
-.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
-.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
-.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-.benefits{padding:100px 0}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
-.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
-.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
-.warehouses{padding:100px 0;background:#0a0a0a;color:#fff}
-.wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-.wh-card{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:40px 32px}
-.wh-card h3{font-family:var(--fd);font-size:28px;font-weight:400;margin-bottom:8px}
-.wh-card .wh-loc{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
-.wh-card ul{list-style:none;padding:0}
-.wh-card li{font-size:15px;color:rgba(255,255,255,.7);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:10px}
-.wh-card li:last-child{border-bottom:none}
-.wh-card li::before{content:'\2713';color:var(--red);font-weight:700}
-.case{padding:100px 0;background:#0a0a0a;color:#fff}
-.case-inner{display:flex;gap:80px;align-items:center}
-.case-text{flex:1.2}.case-text blockquote{font-family:var(--fd);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);line-height:1.5;border-left:3px solid var(--red);padding-left:20px;margin:20px 0}
-.case-text p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px}
-.case-stats{flex:.8;display:flex;flex-direction:column;gap:32px}
-.case-stat{text-align:center;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:8px}
-.case-stat-val{font-size:36px;font-weight:300;margin-bottom:4px}.case-stat-label{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
-.pricing{padding:100px 0;background:var(--gray)}
-.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
-.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
-.price-row>span{flex:1;padding:14px 20px}
-.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.price-row:not(.price-header):hover{background:#fff}
-.price-highlight{background:var(--red);color:#fff;font-weight:600}
-.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.price-cta{text-align:center}
-.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
-.price-cta button:hover{background:#c42b22}
-.advantages{padding:100px 0}
-.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
-.adv-card{padding:32px;border:1px solid #e0e0e0;border-radius:8px;transition:border-color .3s}
-.adv-card:hover{border-color:var(--red)}
-.adv-card h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.adv-card p{font-size:14px;color:var(--muted);line-height:1.7}
-.adv-icon{font-size:32px;margin-bottom:12px}
-.faq{padding:100px 0;background:#0a0a0a;color:#fff}
-.faq-list{max-width:700px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
-.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
-.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
-.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
-.article-section{background:#fff;padding:80px 8vw}
-.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
-.article-content{max-width:800px}
-.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
-.article-content h3:first-child{margin-top:0}
-.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
-.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
-.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
-.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
-.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
-.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
-.final-form input::placeholder{color:rgba(255,255,255,.45)}.final-form input:focus{border-color:#fff}
-.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
-.final-form button:hover{background:#222}
-.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
+<!-- SECTION 5 — TESTIMONIALS CAROUSEL -->
+<section class="rev-section">
+  <div class="ctr">
+    <div class="badge badge-dark">CLIENT TESTIMONIALS</div>
+    <h2 class="sec-h2">What our clients say</h2>
+    <div class="rev-carousel">
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;Shipments grew from 12 to 72/day, cost per shipment dropped from 30 to 14&nbsp;UAH.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Owner, Carter's Ukraine</div>
+          <div class="rev-biz">Children's clothing &middot; 3,000+ SKU</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;In 7 years of working with MTP&nbsp;&mdash; not a single claim.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Representative, Elemis Ukraine</div>
+          <div class="rev-biz">Luxury cosmetics &middot; FEFO storage</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="rev-quote">&laquo;Cost per shipment dropped from 33 to 14&nbsp;UAH. 90&nbsp;hours/month freed up.&raquo;</blockquote>
+        <div class="rev-author">
+          <div class="rev-name">Founder, I.Love.My.Cycle</div>
+          <div class="rev-biz">Wellness &middot; 200+ orders/day</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- SECTION 6 — CTA -->
+<section class="sp-cta" id="ctaSection">
+  <div class="ctr">
+    <h2>Your products deserve a professional warehouse</h2>
+    <p class="sp-cta-sub">Onboarding in 3-5 days. No long-term contracts.</p>
+    <form class="sp-cta-form" id="ctaFormBottom">
+      <input type="text" name="name" placeholder="Your name" autocomplete="given-name" aria-label="Name">
+      <input type="tel" name="phone" placeholder="Your phone number" maxlength="25" required autocomplete="tel" aria-label="Phone">
+      <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
+      <button type="submit">Get a quote &rarr;</button>
+    </form>
+    <div class="sp-cta-checks">
+      <span>&#10003; No long-term contract</span>
+      <span>&#10003; Trial period</span>
+      <span>&#10003; Exit in 1 day</span>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-@media(max-width:768px){
-.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
-.ben-grid{grid-template-columns:1fr}
-.wh-grid{grid-template-columns:1fr}
-.adv-grid{grid-template-columns:1fr}
-.case-inner{flex-direction:column;gap:40px}
-.final-form{flex-direction:column}
-}
-
-
-.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
-</style>
+<!-- SECTION 7 — FAQ -->
+<section class="faq" id="faq">
+  <div class="ctr">
+    <div class="badge badge-dark">FAQ</div>
+    <h2 class="sec-h2">Frequently Asked Questions</h2>
+    <div class="faq-q" data-faq>What is the minimum product volume?</div>
+    <div class="faq-a"><p>No minimum&nbsp;&mdash; you pay for actual space used. Minimum monthly payment&nbsp;&mdash; 5,000&nbsp;UAH.</p></div>
+    <div class="faq-q" data-faq>What is the warehouse temperature?</div>
+    <div class="faq-a"><p>15-25&deg;C year-round. Heating in winter, humidity control. Suitable for cosmetics, electronics, clothing, household chemicals.</p></div>
+    <div class="faq-q" data-faq>How does WMS tracking work?</div>
+    <div class="faq-a"><p>Barcode for every product, address for every bin. WMS controls picking accuracy and generates optimal routes. Inventory online 24/7.</p></div>
+    <div class="faq-q" data-faq>Is pallet storage available?</div>
+    <div class="faq-a"><p>Yes, from 450&nbsp;UAH/pallet/mo. Racking supports up to 2&nbsp;tonnes per tier. Forklifts and hydraulic pallet jacks for movement.</p></div>
+    <div class="faq-q" data-faq>How are inventory audits conducted?</div>
+    <div class="faq-a"><p>Scheduled audits&nbsp;&mdash; monthly. Unscheduled&nbsp;&mdash; on request within 24&nbsp;hours. Results with discrepancies per SKU available in the WMS dashboard.</p></div>
+    <div class="faq-q" data-faq>Is insurance available?</div>
+    <div class="faq-a"><p>Official contract with material liability for goods. All operations are logged in WMS. Warehouse equipped with 24/7 CCTV and security.</p></div>
+  </div>
+</section>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded',function(){
-{"@context":"https://schema.org","@type":"Service","name":"Warehouse Services for Online Stores","description":"Goods storage, order picking, inventory management and returns processing at warehouses near Kyiv. WMS system, 3,900 m², backup generators.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"650","description":"Storage from 650 UAH/m³/mo"}}
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Warehouse Services","item":"https://www.fulfillmentmtp.com.ua/en/warehouse-services/"}]}
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the minimum storage area?","acceptedAnswer":{"@type":"Answer","text":"There is no minimum area — you only pay for the actual volume of goods in cubic metres. The minimum monthly fee is 5,000 UAH, which covers storage and basic services."}},{"@type":"Question","name":"Is there temperature control in the warehouse?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both warehouses are heated and humidity-controlled. The temperature is maintained between 15-25°C year-round, which is suitable for most product categories."}},{"@type":"Question","name":"How does the WMS system work?","acceptedAnswer":{"@type":"Answer","text":"WMS (Warehouse Management System) is a warehouse management platform. Each product has a barcode, each bin has an address. Orders arrive automatically via API, the system generates a picking route, checks accuracy, and prints shipping labels."}},{"@type":"Question","name":"Can you store oversized goods?","acceptedAnswer":{"@type":"Answer","text":"Yes. For oversized and heavy goods (50+ kg) we offer pallet storage from 450 UAH/pallet/mo. Racking supports loads up to 2 tonnes per tier."}},{"@type":"Question","name":"How quickly can we get started?","acceptedAnswer":{"@type":"Answer","text":"Onboarding takes 1-3 days: consultation and contract, goods transfer to the warehouse, CRM integration, test shipments. Most clients start shipping on day 2."}},{"@type":"Question","name":"What happens during power outages?","acceptedAnswer":{"@type":"Answer","text":"The Shchaslive warehouse is equipped with 3 generators and Starlink. Since 2022, zero days of downtime. Orders are shipped on schedule regardless of the power situation."}}]}
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m²"}],"openingHours":"Mo-Su 08:00-20:00"}
 (function(){
-var b=document.getElementById('navBurger'),l=document.getElementById('navLinks');
-if(b&&l){b.addEventListener('click',function(){b.classList.toggle('open');l.classList.toggle('open');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){b.classList.remove('open');l.classList.remove('open');}})
-document.querySelectorAll('.nav-dropdown').forEach(function(dd){
-var timer,menu=dd.querySelector('.nav-dropdown-menu');if(!menu)return;
-dd.addEventListener('mouseenter',function(){clearTimeout(timer);menu.style.display='block';});
-dd.addEventListener('mouseleave',function(){timer=setTimeout(function(){menu.style.display='';},300);});
-});
-;
-document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();this.closest('.nav-dropdown').classList.toggle('mobile-open');}});});
-}
-var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
-);inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});}
-var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');leads.push({id:Date.now(),company:'Warehouse Services',contact:'',phone:ph,email:'',shipments:0,type:'warehouse',source:'SEO landing warehouse-services EN',status:'new',date:new Date().toISOString().split('T')[0],comments:[{text:'Form: warehouse services Kyiv EN',date:new Date().toLocaleString('en-GB')}],onboarding:[false,false,false,false,false,false,false]});localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">\u2705 Thank you!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
+  // Form handler for both hero and CTA forms
+  function handleForm(formId) {
+    var form = document.getElementById(formId);
+    if (!form || form.dataset.handled) return;
+    form.dataset.handled = '1';
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var phoneInput = form.querySelector('input[name="phone"]');
+      var ph = phoneInput.value.trim();
+      var clean = ph.replace(/\D/g, '');
+      if (clean.length < 10) {
+        phoneInput.style.borderColor = '#e63329';
+        phoneInput.focus();
+        return;
+      }
+      if (typeof window.mtpSubmitLead === 'function') {
+        window.mtpSubmitLead(ph, location.pathname);
+      }
+      form.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500;padding:16px 0">&#10004; Thank you! We will call you back within 15 minutes.</p>';
+      setTimeout(function() {
+        window.location.href = '/en/thanks/';
+      }, 1500);
+    });
+  }
+  handleForm('heroFormSplit');
+  handleForm('ctaFormBottom');
 })();
-(function(){
-var nc=document.querySelector('.nav-center,#navLinks');
-var nav=document.querySelector('nav.nav,.nav');
-if(!nc||!nav)return;
-var ov=document.createElement('div');
-ov.className='nav-overlay-bg';
-ov.style.cssText='display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.6);z-index:1;cursor:pointer';
-nav.appendChild(ov);
-function sync(){
-var open=nc.classList.contains('open');
-ov.style.display=open?'block':'none';
-document.body.style.overflow=open?'hidden':'';
-}
-new MutationObserver(sync).observe(nc,{attributes:true,attributeFilter:['class']});
-ov.addEventListener('click',function(){
-nc.classList.remove('open');
-var b=document.querySelector('.nav-burger,#navBurger');
-if(b)b.classList.remove('open');
-sync();
-});
-var dd=nav.querySelector('.nav-dropdown');
-if(dd){
-var ddLink=dd.querySelector('a');
-var ddMenu=dd.querySelector('.nav-dropdown-menu');
-if(ddLink&&ddMenu){
-ddLink.addEventListener('click',function(e){
-if(window.innerWidth<=900){
-e.preventDefault();
-dd.classList.toggle('mobile-open');
-ddMenu.classList.toggle('mobile-open');
-}
-});
-}}
-})();
-});
 </script>
+
+</Base>
+
+<style>
+/* ==========================================
+   SECTION 1 — HERO SPLIT-SCREEN
+   ========================================== */
+.sp-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white);
+}
+.sp-hero-video {
+  position: relative;
+  overflow: hidden;
+}
+.sp-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sp-hero-form-side {
+  display: flex;
+  align-items: center;
+  padding: 80px 48px 60px;
+}
+.sp-hero-inner {
+  max-width: 520px;
+  width: 100%;
+}
+.sp-hero-inner h1 {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3vw, 48px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.sp-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.sp-hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sp-hero-form input {
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--fb);
+  outline: none;
+  transition: border-color .2s;
+}
+.sp-hero-form input::placeholder {
+  color: rgba(255,255,255,.3);
+}
+.sp-hero-form input:focus {
+  border-color: rgba(255,255,255,.5);
+}
+.sp-hero-form button {
+  padding: 16px 24px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fb);
+  transition: background .3s;
+}
+.sp-hero-form button:hover {
+  background: #c42b22;
+}
+.sp-hero-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  margin-top: 14px;
+}
+.sp-hero-phone {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,.7);
+  transition: color .2s;
+}
+.sp-hero-phone:hover {
+  color: #fff;
+}
+
+/* Mobile hero: video becomes background, form overlays */
+@media (max-width: 768px) {
+  .sp-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    position: relative;
+  }
+  .sp-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .sp-hero-video video {
+    opacity: .2;
+  }
+  .sp-hero-form-side {
+    position: relative;
+    z-index: 1;
+    padding: 120px 24px 60px;
+  }
+  .sp-hero-inner h1 {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+}
+
+/* ==========================================
+   SECTION 2 — TIMELINE
+   ========================================== */
+.tl-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+.tl-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+}
+.tl-line {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  height: 3px;
+  background: #e0e0e0;
+}
+.tl-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform-origin: left;
+}
+.tl-step {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.tl-dot {
+  width: 30px;
+  height: 30px;
+  background: var(--red);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 0 3px var(--red);
+}
+.tl-content h3 {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.tl-content p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Mobile: vertical timeline */
+@media (max-width: 768px) {
+  .tl-track {
+    flex-direction: column;
+    gap: 0;
+    padding-left: 30px;
+  }
+  .tl-line {
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+  .tl-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding-bottom: 32px;
+  }
+  .tl-dot {
+    flex-shrink: 0;
+    margin: 0;
+    position: relative;
+    left: -30px;
+  }
+  .tl-content {
+    padding-top: 2px;
+  }
+  .tl-content p {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* ==========================================
+   SECTION 3 — CALCULATOR
+   ========================================== */
+.calc-section {
+  padding: 100px 0;
+  background: var(--gray);
+}
+.calc-sub {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  margin-top: -32px;
+}
+.calc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 2px 24px rgba(0,0,0,.06);
+}
+.calc-field {
+  margin-bottom: 28px;
+}
+.calc-field label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+.calc-field label strong {
+  color: var(--red);
+  font-weight: 600;
+}
+.calc-field input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.calc-field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.calc-field input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.calc-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+.calc-radio-group {
+  display: flex;
+  gap: 8px;
+}
+.calc-radio {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  color: var(--muted);
+}
+.calc-radio input {
+  display: none;
+}
+.calc-radio.active {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(230,51,41,.04);
+}
+.calc-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calc-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+.calc-val {
+  font-weight: 600;
+  font-size: 18px;
+}
+.calc-total {
+  border-bottom: none;
+  padding-top: 24px;
+  margin-top: 8px;
+  border-top: 3px solid var(--red);
+}
+.calc-total span:first-child {
+  font-family: var(--fd);
+  font-size: 20px;
+}
+.calc-total .calc-val {
+  font-size: 28px;
+  color: var(--red);
+}
+.calc-disclaimer {
+  font-size: 13px;
+  color: #999;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .calc-wrap {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 32px;
+  }
+  .calc-total .calc-val {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================
+   SECTION 4 — VIDEO + STATS
+   ========================================== */
+.vid-section {
+  padding: 100px 0;
+  background: #fff;
+}
+.vid-player {
+  max-width: 800px;
+  margin: 0 auto 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.1);
+}
+.vid-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.vid-stat {
+  text-align: center;
+  padding: 28px 16px;
+  border-radius: 12px;
+  background: var(--gray);
+}
+.vid-stat-val {
+  font-family: var(--fd);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.vid-stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .5px;
+}
+
+@media (max-width: 768px) {
+  .vid-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .vid-stat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 20px 24px;
+  }
+  .vid-stat-val {
+    font-size: 28px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ==========================================
+   SECTION 5 — TESTIMONIALS CAROUSEL
+   ========================================== */
+.rev-section {
+  padding: 100px 0;
+  background: var(--gray);
+}
+.rev-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.rev-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.rev-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rev-carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.rev-card {
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 300px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.rev-stars {
+  color: #f5a623;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.rev-quote {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--black);
+  margin: 0 0 auto;
+  padding-bottom: 24px;
+}
+.rev-author {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+.rev-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+}
+.rev-biz {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .rev-card {
+    flex: 0 0 85%;
+    min-width: 0;
+  }
+}
+
+/* ==========================================
+   SECTION 6 — CTA
+   ========================================== */
+.sp-cta {
+  padding: 100px 0;
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+}
+.sp-cta h2 {
+  font-family: var(--fd);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.sp-cta-sub {
+  font-size: 17px;
+  opacity: .85;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.sp-cta-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.sp-cta-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 6px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--fb);
+  outline: none;
+  transition: border-color .2s;
+}
+.sp-cta-form input::placeholder {
+  color: rgba(255,255,255,.45);
+}
+.sp-cta-form input:focus {
+  border-color: rgba(255,255,255,.7);
+}
+.sp-cta-form button {
+  padding: 16px 28px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--fb);
+  white-space: nowrap;
+  transition: background .3s;
+}
+.sp-cta-form button:hover {
+  background: #222;
+}
+.sp-cta-checks {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  .sp-cta-form {
+    flex-direction: column;
+  }
+  .sp-cta-form input {
+    min-width: 0;
+    width: 100%;
+  }
+  .sp-cta-form button {
+    width: 100%;
+  }
+  .sp-cta-checks {
+    gap: 12px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SECTION 7 — FAQ
+   ========================================== */
+.faq {
+  padding: 100px 0;
+  background: #fff;
+}
+.faq .faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  background: none;
+  font-family: var(--fb);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
+  transition: color .2s;
+}
+.faq .faq-q:hover {
+  color: var(--red);
+}
+.faq .faq-q::after {
+  content: '+';
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform .3s;
+}
+.faq .faq-q.active::after {
+  content: '-';
+}
+.faq .faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.faq .faq-a p {
+  padding: 16px 0 20px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+</style>
