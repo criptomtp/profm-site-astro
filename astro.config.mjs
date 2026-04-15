@@ -13,6 +13,7 @@ export default defineConfig({
         !page.includes('/schedule/') &&
         !page.includes('/new/') &&
         !page.includes('/files/'),
+      lastmod: new Date(),
     }),
   ],
 });
