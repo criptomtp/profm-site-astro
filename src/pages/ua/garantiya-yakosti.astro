@@ -1,0 +1,283 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Гарантія Якості MTP: 99.8% Точність, Страховка, Компенсація';
+const description = 'Повна гарантія якості MTP фулфілменту. 99.8% точність комплектації, 100% страховка товару, СДва двічі перевірка, компенсація за помилки. Ваш ризик = 0.';
+const ogImage = 'https://profm.ua/images/quality-guarantee.jpg';
+
+const publishDate = new Date('2024-12-16').toISOString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  datePublished: publishDate
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Гарантія</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Гарантія Якості MTP<br />99.8% Точність
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Ми несемо ризик, а не ви. Якщо помилимось в комплектації чи доставці — платимо штраф. Ваш ризик = 0.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>99.8% точність</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>100% страховка</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>Подвійна перевірка</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Metrics -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Наші KPI Якості</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div class="text-center bg-white p-6 rounded border border-red-200">
+          <p class="text-4xl font-bold text-red-600 mb-2">99.8%</p>
+          <p class="text-gray-700 font-bold">Точність комплектації</p>
+          <p class="text-sm text-gray-600 mt-2">2 помилки на 1000 замовлень</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-red-200">
+          <p class="text-4xl font-bold text-red-600 mb-2">99%+</p>
+          <p class="text-gray-700 font-bold">Доставка за SLA</p>
+          <p class="text-sm text-gray-600 mt-2">Час доставки гарантований</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-red-200">
+          <p class="text-4xl font-bold text-red-600 mb-2">&lt;1%</p>
+          <p class="text-gray-700 font-bold">Пошкодження в дороге</p>
+          <p class="text-sm text-gray-600 mt-2">Професійна упаковка</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-red-200">
+          <p class="text-4xl font-bold text-red-600 mb-2">0 днів</p>
+          <p class="text-gray-700 font-bold">Час реакції на скаргу</p>
+          <p class="text-sm text-gray-600 mt-2">Розбір в цей же день</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Ensure Quality -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Як ми забезпечуємо якість</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-center text-lg">Крок 1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-3">Тренування персоналу</h3>
+            <p class="text-gray-700">Кожний комплектувальник проходить 40-годинне навчання. Вивчають правила комплектації, аккуратність, швидкість. Сертифікацію проходять щомісяця.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-center text-lg">Крок 2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-3">WMS сканування</h3>
+            <p class="text-gray-700">Кожен товар сканується QR-кодом. Комплектувальник сканує: взяв товар → сканував → помістив у коробку. Система перевіряє SKU, кількість, категорію.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-center text-lg">Крок 3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-3">Подвійна перевірка</h3>
+            <p class="text-gray-700">Після комплектації другий оператор перевіряє замовлення. Порівнює список товарів, кількість, вагу. Якщо не сходиться — повертає на переробку.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-center text-lg">Крок 4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-3">Контроль якості упаковки</h3>
+            <p class="text-gray-700">Перевіряємо упаковку: коробка міцна, закрита герметично, етикета приклеєна правильно, нема пошкоджень. Якщо потрібна переупаковка — робимо.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-center text-lg">Крок 5</div>
+          <div>
+            <h3 class="text-xl font-bold mb-3">Передача перевізнику</h3>
+            <p class="text-gray-700">Беремо фото замовлення перед відправкою. Передаємо перевізнику з супровідним листом. Все записується у WMS з часовою міткою.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance & Compensation -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Страховка & Компенсація</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-4">🛡️ Страховка товару</h3>
+          <p class="text-gray-700 mb-4">
+            Весь товар на нашому складі застрахований. Якщо пожежа, затоплення, крадіжка — компенсуємо вартість 100%.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Покриття:</strong> До 1000 грн за паль. Для критичних товарів — розширене покриття.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-4">✋ Перевізник страховка</h3>
+          <p class="text-gray-700 mb-4">
+            Всі замовлення у дороге застраховані. Якщо перевізник загубив чи пошкодив — платимо компенсацію.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Покриття:</strong> До 500 грн за замовлення. Для дорогих товарів — спеціальна полюс.</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-4 text-left">Тип помилки</th>
+              <th class="border p-4 text-center">Вартість для клієнта</th>
+              <th class="border p-4 text-center">Платить MTP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4">Невірна кількість товару</td>
+              <td class="border p-4 text-center">50-500 грн</td>
+              <td class="border p-4 text-center font-bold text-red-600">100%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Забув упаковати товар</td>
+              <td class="border p-4 text-center">100-1000 грн</td>
+              <td class="border p-4 text-center font-bold text-red-600">100%</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Пошкодження при упаковці</td>
+              <td class="border p-4 text-center">50-5000 грн</td>
+              <td class="border p-4 text-center font-bold text-red-600">100%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Доставка із затримкою &gt;24 год</td>
+              <td class="border p-4 text-center">Повернення доставки</td>
+              <td class="border p-4 text-center font-bold text-red-600">100%</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Втрата товара на складі</td>
+              <td class="border p-4 text-center">Вартість товара</td>
+              <td class="border p-4 text-center font-bold text-red-600">100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
+        <p class="font-bold mb-2">✓ Ви не платите штраф</p>
+        <p class="text-gray-700">
+          MTP несе весь ризик. Якщо ми помилимось — ви отримуєте компенсацію на місці. Не потрібно довгого розбирання або документів.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Metrics -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Метрики якості по місяцях</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-4 text-left">Метрика</th>
+              <th class="border p-4 text-center">Коли ми почали</th>
+              <th class="border p-4 text-center">Тепер (середнє)</th>
+              <th class="border p-4 text-center">Тренд</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4">Точність комплектації</td>
+              <td class="border p-4 text-center">98.5%</td>
+              <td class="border p-4 text-center">99.8%</td>
+              <td class="border p-4 text-center">📈 +1.3%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">SLA дотримання</td>
+              <td class="border p-4 text-center">97%</td>
+              <td class="border p-4 text-center">99.1%</td>
+              <td class="border p-4 text-center">📈 +2.1%</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Пошкодження товару</td>
+              <td class="border p-4 text-center">2.5%</td>
+              <td class="border p-4 text-center">0.8%</td>
+              <td class="border p-4 text-center">📈 -68%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Компенсацій (% замовлень)</td>
+              <td class="border p-4 text-center">1.2%</td>
+              <td class="border p-4 text-center">0.2%</td>
+              <td class="border p-4 text-center">📈 -83%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audit & Compliance -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Аудит & Контроль</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">📋 Щомісячні аудити</h3>
+          <p class="text-gray-700">Зовнішня компанія аудирує нашу роботу. Перевіряє документи, СДвойною процес, температуру складу. Результати прозорі для вас.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">🔍 ISO 9001 сертифіковано</h3>
+          <p class="text-gray-700">Ми сертифіковані на ISO 9001 (управління якістю). Це означає, що все документуємо і дотримуємось стандартів.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">📊 Прозорі звіти</h3>
+          <p class="text-gray-700">Щомісяця ви отримуєте детальні звіти: скільки замовлень, скільки помилок, компенсації, витрати.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">💬 Зворотній зв'язок</h3>
+          <p class="text-gray-700">Якщо у клієнта проблема — ми дізнаємось з рецензій, звіту від покупця. Аналізуємо причину і покращуємо процес.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Довірте якість нам</h2>
+      <p class="text-xl mb-8 opacity-90">
+        99.8% точність, 100% страховка, компенсація за помилки. Ваш ризик = 0.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити з гарантією якості
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
