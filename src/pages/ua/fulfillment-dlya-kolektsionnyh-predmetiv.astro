@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Колекційних Предметів: Цінність, Збереження, Гарантія';
+const description = 'Спеціалізований фулфілмент для колекційних предметів, карток, фігурок, монет. Контроль цінності, максимальний захист, документація, 100% страховка, доставка за 24-48 годин.';
+const ogImage = 'https://profm.ua/images/fulfillment-collectibles.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Колекційних Предметів<br />Цінність & Збереження
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Карти, фігурки, монети, вінілові пластинки. Контроль цінності, максимальний захист, документація, 100% страховка, доставка за 24-48 годин.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент колекційних предметів
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка колекційних предметів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💎 Висока цінність & ризик</h3>
+          <p class="text-gray-700">Рідка картка за 100,000 грн, монета за 50,000 грн. Втрата одного предмету — велика збитків. Потребується максимальна безпека.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Контроль умов & збереження</h3>
+          <p class="text-gray-700">Картки чутливі до вологи & температури. Монети іржавіють. Пластинки деформуються. Потребується ідеальні умови для збереження.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📸 Документування & грейдування</h3>
+          <p class="text-gray-700">Для колекціонерів важливо якість & стан предмету (grade). Потребується професійне документування, фото, грейдування.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🤝 Дорова взаємодія</h3>
+          <p class="text-gray-700">Колекціонери — цінять деталі. Потребується дружна комунікація, уважна обробка, прозорість у кожному взаємодієнні.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для колекційних предметів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль ідеальних умів</h3>
+          <p class="text-gray-700">40-60% вологості, 18-22°C температура. Дедикована зона для колекцій. Датчики кожні 2 години. Документація всіх показників.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Професійне документування</h3>
+          <p class="text-gray-700">Фото з усіх сторін, детальний опис стану. Профе професійне грейдування якості. Документація з печаткою & підписом.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Максимальний захист упаковки</h3>
+          <p class="text-gray-700">Картки в захисних рукавах, потім в коробці з піною. Монети в капсулах, потім в тісниці. Максимальна захист від будь-яких пошкоджень.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована доставка</h3>
+          <p class="text-gray-700">Дорогі колекції доставляємо спеціальним перевізником. GPS моніторинг. Фото перед & після. Максимальна безпека.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для колекційних предметів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за предметом)</span>
+            <span class="font-bold">50-150 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Професійне документування & фото</span>
+            <span class="font-bold">100-300 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Грейдування якості (опція)</span>
+            <span class="font-bold">200-500 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль ідеальних умів</span>
+            <span class="font-bold">+100 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціалізована доставка</span>
+            <span class="font-bold">300-600 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Платформа колекційних карток (100 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 100 × 100 = 10,000 грн<br/>
+          Документування & фото: 100 × 200 = 20,000 грн<br/>
+          Доставка спеціалізована: 100 × 450 = 45,000 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 75,000 грн/месяц = 750 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% контроль ідеальних умів</p>
+            <p class="text-gray-700">40-60% вологості, 18-22°C. Колекція зберігається в ідеальному стані. Жодних змін у якості.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lang">Професійне документування</p>
+            <p class="text-gray-700">Фото, опис, грейдування. Все задокументовано. Колекціонер точно знає що отримує.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Рідка картка розбилася при доставці — платимо 100%. Миттєва компенсація. Колекціонер захищен.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для платформ колекціонерів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Ідеальні умови, професійне документування, максимальний захист, 100% страховка, спеціалізована доставка.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент колекційних предметів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
