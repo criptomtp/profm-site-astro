@@ -1,0 +1,477 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Фулфілмент для Розетки: FBO рішення | MTP Group"
+  description="FBO фулфілмент для продавців Rozetka. Виконання замовлень, зберігання, доставка. Від 18 грн. Легка інтеграція з платформою. Без комісій Rozetka на складування."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-rozetka/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-rozetka-hero.webp"
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент для Розетки","description":"FBO (Fulfillment by Marketplace Operator) послуги для продавців Rozetka. Повна логістика: прийом товару, зберігання, комплектація, доставка через Rozetka Доставка.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"Ukraine"},"serviceType":"Fulfillment","offers":{"@type":"AggregateOffer","lowPrice":"18","highPrice":"650","priceCurrency":"UAH"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Як підключити фулфілмент до Rozetka?","acceptedAnswer":{"@type":"Answer","text":"1) Підписати договір з MTP, 2) Отримати API ключ, 3) Інтегрувати у профіль Rozetka, 4) Передати товар на склад. Інтеграція займає 2 години."}},{"@type":"Question","name":"Чи платять Rozetka комісію на складування?","acceptedAnswer":{"@type":"Answer","text":"Ні. Rozetka беруть 5-10% комісію на реалізацію товару, але при FBO з MTP они не беруть комісію на складування."}},{"@type":"Question","name":"Скільки дорого фулфілмент для Rozetka?","acceptedAnswer":{"@type":"Answer","text":"Від 18 грн за замовлення (200+/день) + 650 грн/м³ зберігання. Без прихованих комісій. Мінімум 5000 грн/місяць."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Фулфілмент для Rozetka","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-rozetka/"}]}</script>`}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-rozetka/">
+  <link rel="stylesheet" href="/css/fonts.css">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1>FBO Фулфілмент для Розетки: Перекладіть Логістику на Нас</h1>
+<div class="hero-line"></div>
+<p>Продавайте більше, пакуйте менше. Автоматична синхронізація замовлень, відправка через Rozetka Доставка, без прихованих комісій.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
+<div class="hero-note">Інтеграція за 2 години &#183; Перші замовлення в той же день</div>
+</div>
+</section>
+
+<!-- WHY ROZETKA SELLERS USE FULFILLMENT -->
+<section class="why-section">
+<div class="container">
+<h2>Чому Продавці Rozetka Вибирають Фулфілмент</h2>
+
+<div class="benefits-grid">
+
+<div class="benefit">
+<div class="benefit-icon">📦</div>
+<h3>Автоматична Синхронізація</h3>
+<p>Замовлення з Rozetka автоматично потрапляють у нашу систему. Ви не відповідаєте за скоординацію — все робиться в фоні.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">⚡</div>
+<h3>Швидша Обробка = Вищий Рейтинг</h3>
+<p>Фулфілмент отправляет товар за 4 години. На Rozetka це позитивно впливає на ваш рейтинг продавця (дельта швидкості доставки).</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">💰</div>
+<h3>Без Комісій на Складування</h3>
+<p>Rozetka не беруть комісію на зберігання при FBO. Ви платите тільки MTP, не платите Rozetka.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">📊</div>
+<h3>Масштабування Без Болю</h3>
+<p>Замовлення зростають на 20-50% на місяць? Фулфілмент масштабується автоматично, у вас не виникає проблем з місцем на складі.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🔄</div>
+<h3>Автоматичне Оновлення Залишків</h3>
+<p>Наша система синхронізує залишки з Rozetka в реальному часі. Перепродажу не буває. Клієнти завжди бачать правильну наявність.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🛡️</div>
+<h3>Відповідальність за Якість</h3>
+<p>100% матеріальна відповідальність за товар на складі. Якщо щось пошкоджено — ми компенсуємо. На Rozetka це гарантія вашої репутації.</p>
+</div>
+
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-works">
+<div class="container">
+<h2>Як Працює Фулфілмент для Rozetka</h2>
+
+<div class="steps-grid">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Клієнт замовляє на Rozetka</h3>
+<p>Ваш товар на маркетплейсі. Клієнт натискає "Купити" → замовлення автоматично потрапляє у нашу WMS.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Ми збираємо замовлення</h3>
+<p>За 30 секунд оператор знаходить товар на складі, сканує його, упаковує з брендуванням на ваш вибір.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Rozetka Доставка розвозить</h3>
+<p>Ми передаємо посилку у Rozetka Доставку (або партнері перевізнику). Клієнт отримує позначку про відправку в їхному профілі.</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Ви бачите звіт</h3>
+<p>В кабінеті MTP: кількість замовлень, вартість, залишки, рейтинги якості. Все в реальному часі.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PRICING FOR ROZETKA -->
+<section class="pricing-section">
+<div class="container">
+<h2>Вартість Фулфілменту для Rozetka</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+<h3>За Відправку</h3>
+<div class="price-value">від 18 грн</div>
+<p class="price-note">динамічний тариф залежно від обсягу</p>
+<ul>
+<li>200+ замовлень/день = 18 грн</li>
+<li>100-150 замовлень/день = 20 грн</li>
+<li>50-99 замовлень/день = 22 грн</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>За Зберігання</h3>
+<div class="price-value">650 грн/м³/міс</div>
+<p class="price-note">адресне зберігання у WMS</p>
+<ul>
+<li>Незалежно від типу товару</li>
+<li>Контроль температури</li>
+<li>Реальний час залишків</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>Додаткові Послуги</h3>
+<div class="price-value">від 0,50 грн</div>
+<p class="price-note">факультативно</p>
+<ul>
+<li>FEFO контроль: 0,50 грн/шт</li>
+<li>Доукомплектація: 2,50 грн/шт</li>
+<li>Етикетування: 1,25 грн/шт</li>
+</ul>
+</div>
+
+<div class="price-card highlight">
+<h3>Мінімальний Платіж</h3>
+<div class="price-value">5 000 грн/міс</div>
+<p class="price-note">якщо фактична вартість менше</p>
+<ul>
+<li>Гнучкість для стартапів</li>
+<li>Немає прихованих комісій</li>
+<li>Прозора вартість</li>
+</ul>
+</div>
+
+</div>
+
+<p class="pricing-note"><strong>Приклад:</strong> 75 замовлень/день × 23 грн × 20 днів = 34 500 грн. Плюс зберігання та додаткові = ~42 000 грн/місяць.</p>
+</section>
+
+<!-- ROZETKA-SPECIFIC BENEFITS -->
+<section class="rozetka-benefits">
+<div class="container">
+<h2>Переваги Саме для Rozetka Продавців</h2>
+
+<div class="rozetka-grid">
+
+<div class="rozetka-benefit">
+<h3>✅ Вищий Рейтинг на Платформі</h3>
+<p>Rozetka побільшує рейтинг продавців з швидкою доставкою. Фулфілмент МТП = гарантована обробка замовлення за 4 години. Ваш рейтинг + 0.2-0.5 пункта протягом місяця.</p>
+</div>
+
+<div class="rozetka-benefit">
+<h3>✅競争에 Вперед</h3>
+<p>Мають конкурентів на Rozetka, які обробляють замовлення по 2-3 дні? Ви будете процесс за 4 години. Це = більше покупців обирають вас.</p>
+</div>
+
+<div class="rozetka-benefit">
+<h3>✅ Автоматизація Rozetka FBO</h3>
+<p>Якщо ви користуєтесь Rozetka FBO (складування на їхньому складі), але платите комісії — переходьте до MTP FBO. Розетка не беруть комісію на скдаховку, вы платіте лише МТП.</p>
+</div>
+
+<div class="rozetka-benefit">
+<h3>✅ Контроль над Упаковкою</h3>
+<p>На Rozetka FBO упаковка однотипна. У MTP ви можете додати листівку, брендований шаблон, подарунок. Це підвищує задоволення клієнтів на 15-20%.</p>
+</div>
+
+</div>
+</section>
+
+<!-- INTEGRATION PROCESS -->
+<section class="integration-section">
+<div class="container">
+<h2>Як Інтегруватися з Rozetka за 2 години</h2>
+
+<div class="integration-steps">
+
+<div class="int-step">
+<h4>Крок 1: Документи (30 хвилин)</h4>
+<p>Скорочуємо договір MTP + API ключ від вашого профіля Rozetka. Ви надаєте реквізити, менеджер MTP отримує доступ.</p>
+</div>
+
+<div class="int-step">
+<h4>Крок 2: API Підключення (60 хвилин)</h4>
+<p>Розробник MTP підключає вашу Rozetka-API до нашої WMS. Замовлення починають синхронізуватися. Тестуємо на 3-5 замовленнях.</p>
+</div>
+
+<div class="int-step">
+<h4>Крок 3: Готово (30 хвилин)</h4>
+<p>Всі нові замовлення автоматично потрапляють у нашу систему. Ви можете відправити першу партію товару на склад і почати продавати.</p>
+</div>
+
+</div>
+
+<p class="integration-note">⚡ Кабінет для просмотра залишків, замовлень і звітів буде готовий ще в день інтеграції.</p>
+</section>
+
+<!-- SECTION: FAQ -->
+<section class="faq-section">
+<div class="container">
+<h2>Часті Питання від Rozetka Продавців</h2>
+
+<div class="faq-item">
+<h4>❓ Якщо товар повернув клієнт, як це обробляється?</h4>
+<p>✅ Клієнт повертає товар у Rozetka → Rozetka передає нам → ми перевіряємо якість і розміщуємо назад на склад або видаємо вам на домовленістю. Вартість розпаковки повернення = 50% від вартості фулфілменту. При 20 грн на замовлення = 10 грн на обробку повернення.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Чи інтегруються залишки в реальному часі?</h4>
+<p>✅ Так. Якщо товар закінчився на нашому складі, Rozetka автоматично бачить, що його нема в наявності (залишок = 0). Перепродажу не буває. Синхронізація кожні 15 хвилин.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Чи Rozetka Доставка доставляє в усі регіони?</h4>
+<p>✅ Та. Rozetka Доставка доставляє в більше міст, ніж Нова Пошта. Це дає вам перевагу: більш швидка доставка для більш клієнтів = більш високий рейтинг.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Чи можемо ми скасувати у будь-що момент?</h4>
+<p>✅ Так. Письмовим зверненням на 10 днів. Товар видимо вам назад або упаковуємо для доставки адресатові. Без штрафів, без прихованих витрат.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Скільки часу від запиту до першої відправки?</h4>
+<p>✅ Всього 1 тиждень: договір (1 день) + інтеграція (2 дні) + тестова партія (2-3 дні) + перша відправка (1 день). За 7 днів вже отримаєте перше замовлення.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+<div class="container">
+<h2>Готові Розширити Продажі на Rozetka?</h2>
+<p>Більше часу на маркетинг, менше часу на пакування. Передайте логістику на MTP.</p>
+<div class="cta-buttons">
+<a href="tel:+380501444645" class="btn btn-primary">☎️ +38 (050) 144-46-45</a>
+<a href="mailto:mtpgrouppromo@gmail.com" class="btn btn-secondary">✉️ mtpgrouppromo@gmail.com</a>
+</div>
+<p class="cta-note">Менеджер передзвонить протягом 30 хвилин з розрахунком вартості для вашого обсягу</p>
+</section>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, #e63329 0%, #cc2820 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: white;
+  margin: 20px auto;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero-form input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.hero-form button {
+  padding: 12px 30px;
+  background: white;
+  color: #e63329;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-note {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.why-section, .how-works, .pricing-section, .rozetka-benefits, .integration-section, .faq-section {
+  padding: 60px 0;
+}
+
+.benefits-grid, .steps-grid, .pricing-grid, .rozetka-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.benefit, .step, .price-card, .rozetka-benefit, .int-step {
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #e63329;
+  color: white;
+  border-radius: 50%;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.price-card {
+  border: 2px solid #ddd;
+}
+
+.price-card.highlight {
+  border: 2px solid #e63329;
+  background: #fff5f3;
+}
+
+.price-value {
+  font-size: 24px;
+  color: #e63329;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.faq-item {
+  padding: 20px;
+  margin-bottom: 15px;
+  background: white;
+  border-left: 4px solid #e63329;
+  border-radius: 4px;
+}
+
+.faq-item h4 {
+  margin-top: 0;
+  color: #e63329;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #e63329 0%, #cc2820 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: white;
+  color: #e63329;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #e63329;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero-form {
+    flex-direction: column;
+  }
+
+  .hero-form input, .hero-form button {
+    width: 100%;
+  }
+
+  .benefits-grid, .steps-grid, .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+
+</Base>
