@@ -1,0 +1,184 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Музичних Інструментів: Безпека, Якість, Доставка';
+const description = 'Спеціалізований фулфілмент для гітар, клавішних, барабанів, уповань. Захист від пошкоджень, контроль вологості, 100% страховка, безпечна доставка за 48 годин.';
+const ogImage = 'https://profm.ua/images/fulfillment-instruments.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Музичних Інструментів<br />Захист & Якість Звучання
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Гітари, клавішні, барабани, уповани, синтезатори. Максимальна амортизація, контроль вологості, 100% страховка, безпечна доставка за 48 годин.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент музичних інструментів
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Musical Instruments Need Special Care -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка музичних інструментів у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎸 Хрупкість & Дорога вартість</h3>
+          <p class="text-gray-700">Гітара за 10,000 грн легко розбивається при падінні. Одна удар — інструмент втрачає звучання, цінність, можливість повернення. Потребується максимальна амортизація.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Вологість & Деформація</h3>
+          <p class="text-gray-700">Дерев'яні інструменти деформуються при вологості &gt;70%. Струни іржавіють. Звучання змінюється. Потребується контроль вологості 40-60%.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Температурні коливання</h3>
+          <p class="text-gray-700">Деревина розширюється/стискується при температурних коливаннях. Це пошкоджує інструмент. Потребується стабільна температура 18-22°C.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Складна упаковка</h3>
+          <p class="text-gray-700">Інструменти потребують оригінальної упаковки, фірмового кейса. При розпаковуванні і переупаковуванні легко пошкодити. Потребується збереження оригіналу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Musical Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для музичних інструментів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Клімат-контроль 18-22°C & 40-60% вологості</h3>
+          <p class="text-gray-700">Дедикована зона для музичних інструментів. Точна температура & вологість. Датчики кожні 2 години. Документація всіх показників. Захист деревини.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Максимальна амортизація</h3>
+          <p class="text-gray-700">Інструменти в оригіальних кейсах, потім в нейтральній коробці з піною. Спеціальні розпірки для запобігання рухів. Захист з усіх сторін.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль технічного стану</h3>
+          <p class="text-gray-700">При прийманні перевіряємо інструмент: на цілісність, звучання, наявність всіх деталей. Записуємо стан. При доставці інструмент буде в тому ж стані.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована доставка 48 годин</h3>
+          <p class="text-gray-700">Дорогу інструменту доставляємо спеціальним перевізником. Без ударів, без вібрацій. GPS моніторинг. Фото перед & після доставки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для музичних інструментів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">50-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль технічного стану</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Клімат-контроль складування</span>
+            <span class="font-bold">+100 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціалізована доставка (48 час)</span>
+            <span class="font-bold">300-600 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Музичний магазин (50 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 50 × 75 = 3,750 грн<br/>
+          Доставка спеціалізована: 50 × 450 = 22,500 грн<br/>
+          Складування клімат: 2 палі × 100 = 200 грн/месяц = 200 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 26,450 грн/месяц = 529 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для музичних інструментів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Контроль температури & вологості 24/7</p>
+            <p class="text-gray-700">18-22°C & 40-60% вологості. Датчики кожні 2 години. Якщо відхилення — автоматичне сповіщення. Документація всіх показників.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Контроль технічного стану</p>
+            <p class="text-gray-700">При прийманні перевіряємо інструмент на цілісність, звучання, дефекти. Записуємо стан. При доставці інструмент буде в тому ж стані.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Гітара розбилася при доставці — платимо 100%. Миттєва компенсація. Клієнт отримує нову гітару без чекання.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Максимальна амортизація при транспортуванні</p>
+            <p class="text-gray-700">&lt;0.1% браку при доставці. Інструменти доставляються без ударів, без вібрацій. Максимальна бережність.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для музичних магазинів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Клімат-контроль, контроль звучання, 100% страховка, безпечна доставка за 48 годин.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент музичних інструментів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
