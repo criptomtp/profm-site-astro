@@ -1,0 +1,312 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Дистрибьюторів: B2B Логістика та Кроссдокінг';
+const description = 'MTP фулфілмент для оптовиків і дистрибьюторів. Кроссдокінг, розподіл по регіонах, масові замовлення. Оптимізуйте витрати розподілу без утримання багатьох складів.';
+const ogImage = 'https://profm.ua/images/fulfillment-distributors.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴100-₴5000'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Дистрибьюторів<br />Кроссдокінг і Розподіл
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Один склад замість п'яти. Імпорт → Прийом → Розподіл по регіонам. Економія 40-50% на логістиці для В2В бізнесу.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>Кроссдокінг за 24 години</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>Розподіл 50+ палет/день</span>
+        </div>
+      </div>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Розрахувати для дистрибьютора
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Distributors Choose MTP -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Чому дистрибьютори вибирають MTP</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Один хаб замість п'яти</h3>
+          <p class="text-gray-700">Управління одним складом дешевше і простіше. Замість наймання менеджерів у кожному місті, керуєте одним MTP менеджером.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Кроссдокінг без зберігання</h3>
+          <p class="text-gray-700">Товар приходить → розділяється на піддони → відразу відправляється розподільникам. Без витрат на довгострокове зберігання.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Оптова ставка доставки</h3>
+          <p class="text-gray-700">MTP переговорив ставки з перевізниками. За кількість палет ви платите 30-40% дешевше за індивідуальні замовлення.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Гнучкість у розподілі</h3>
+          <p class="text-gray-700">Коли імпортуєте контейнер 100 палет, розподіляєте залежно від попиту: 30 палет у Київ, 20 у Харків, 25 у Львів. Гнучко.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Контроль якості в одному місці</h3>
+          <p class="text-gray-700">Один контроль якості на вході = впевненість що розподільники отримають гарний товар. Менше рекламацій, менше повернень.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">WMS інтеграція для ERP</h3>
+          <p class="text-gray-700">MTP WMS синхронізується з вашою ERP системою. Запаси в реальному часі, мінус ручна робота.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distribution Model -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Модель розподілу: від імпорту до складів регіонів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Імпорт контейнера</h3>
+            <p class="text-gray-700">Ви замовляєте контейнер (100+ палет) з Азії чи ЄС. Приходить в Борисполь чи Одесу. MTP займається таможенням під ключ.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Прийом на головному складі</h3>
+            <p class="text-gray-700">Контейнер прибуває в Борисполь. Розвантажуємо, контроль якості, внесення в WMS. Дані синхронізуються з вашою ERP.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Розподіл по регіонах</h3>
+            <p class="text-gray-700">На основі прогнозу попиту розподіляємо товар: 30 палет у Київ, 25 у Харків, 20 у Львів, 25 у Інші міста. Оптимуємо маршрути.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Передача розподільникам</h3>
+            <p class="text-gray-700">Кожний розподільник отримує свої палети в установлений час. Контроль якості повторна на виході. TTN для кожного маршруту.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">5</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Звіти і облік</h3>
+            <p class="text-gray-700">Ви отримуєте звіти про кожний розподіл. Запаси синхронізуються в реальному часі. Журнали для аудиту під завдання.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Типові сценарії для дистрибьюторів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">📦 FMCG дистрибьютор</h3>
+          <p class="text-gray-700 mb-4">
+            Імпортуєте напої, снеки, побутову хімію. Розподіляєте по сітям супермаркетів у регіонах.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Економія:</strong> 45% на логістиці, -60% часу на управління</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">👗 Текстиль дистрибьютор</h3>
+          <p class="text-gray-700 mb-4">
+            Імпортуєте одяг і взуття. Розподіляєте на оптові базари у містах.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Економія:</strong> Розширення в нові регіони без капітальних вложень</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">🛠️ Промислові товари</h3>
+          <p class="text-gray-700 mb-4">
+            Розподіляєте тяжкі товари, обладнання, запасні части.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Вирішення:</strong> Спеціальна упаковка, гарантована доставка за SLA</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">🏪 Франчайзі мережі</h3>
+          <p class="text-gray-700 mb-4">
+            Управляєте логістикою для 20+ магазинів у різних містах.
+          </p>
+          <p class="text-sm text-gray-600"><strong>Вирішення:</strong> Синхронізація запасів для всіх філіалів</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для дистрибьюторів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-8 rounded border border-gray-200">
+          <h3 class="text-2xl font-bold mb-6">Кроссдокінг</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between">
+              <span>За паль (розвантаж, контроль, розподіл)</span>
+              <span class="font-bold">150 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Таможенне оформління (мін. партія 10 палет)</span>
+              <span class="font-bold">3000 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Контроль якості (вибірковий, 10%)</span>
+              <span class="font-bold">Включено</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded border border-gray-200">
+          <h3 class="text-2xl font-bold mb-6">Доставка регіонам</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between">
+              <span>Доставка паль у регіон (від Борисполю)</span>
+              <span class="font-bold">300-600 грн/паль</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Синхронізація з вашої ERP</span>
+              <span class="font-bold">1000 грн (один раз)</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Управління WMS менеджер</span>
+              <span class="font-bold">5000 грн/місяц</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="font-bold mb-4">Приклад: FMCG дистрибьютор (контейнер 100 палет)</h3>
+        <div class="grid grid-cols-3 gap-4 text-gray-700">
+          <div>
+            <p class="text-sm text-gray-600">Кроссдокінг</p>
+            <p class="font-bold">100 × 150 = 15,000 грн</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Доставка по регіонах</p>
+            <p class="font-bold">100 × 400 = 40,000 грн</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Управління</p>
+            <p class="font-bold">5,000 грн</p>
+          </div>
+        </div>
+        <p class="mt-4 text-center text-lg border-t pt-4">
+          <span class="text-gray-700">ВСЬОГО: </span>
+          <span class="font-bold text-red-600 text-2xl">60,000 грн</span>
+          <span class="text-gray-600 text-sm block mt-2">= 600 грн за паль (від 1200 грн при власних складах)</span>
+        </p>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded border border-blue-200">
+        <p class="font-bold mb-2">За великі обсяги (500+ палет/місяц)</p>
+        <p class="text-gray-700">Можна договоритися про фіксовану ставку з урахуванням обсягу. Знижка до 20% від стандартних ставок.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">FAQ для дистрибьюторів</h2>
+      <div class="space-y-6">
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Як MTP синхронізується з моєю ERP системою?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Через стандартне API. MTP розробив інтеграції з популярні ERP системи (1С, SAP, NavisionNav, Epicor). Налаштування займає 1-2 тижні. Запаси синхронізуються в реальному часі.</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи MTP гарантує якість товару при розподілі?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Контроль якості на вході (що зробити із контейнера) і на виході (перед доставкою розподільникам). Якщо пошкодження за вину MTP — компенсуємо вартість товару.</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Яка мінімальна партія для кроссдокінгу?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Мінімум 10 палет. Для менших партій можна використовувати складування і розподіл за замовленням (більш дорого).</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Як вибирається розподіл по регіонах?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">На основі попиту розподільників. Ви даєте нам очікувані кількості для кожного регіону. Коли контейнер приходить, розподіляємо відповідно. Можна змінити розподіл навіть після прибуття товару.</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можу я чутути розподільників від інших дистрибьюторів?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. MTP розділяє складські зони. Ваш товар в окремому місці. Жодного змішування з інших клієнтів.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Оптимізуйте розподіл з MTP</h2>
+      <p class="text-xl mb-8 opacity-90">
+        От імпорту до регіональних складів за один договір. Економія 40-50% на логістиці для дистрибьюторів.
+      </p>
+      <div class="bg-white bg-opacity-10 p-8 rounded backdrop-blur-sm mb-8">
+        <form class="space-y-4">
+          <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <input type="email" placeholder="Email або телефон" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <textarea placeholder="Яка товарна категорія? Обсяги палет, географія розподілу?" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500 h-24" required></textarea>
+          <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded transition">
+            Запросити розрахунок
+          </button>
+        </form>
+      </div>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <p class="text-sm opacity-75 mb-1">ТЕЛЕФОН</p>
+          <a href="tel:+380931234567" class="text-xl font-bold hover:opacity-80 transition">+38 (093) 123-45-67</a>
+        </div>
+        <div>
+          <p class="text-sm opacity-75 mb-1">EMAIL</p>
+          <a href="mailto:info@profm.ua" class="text-xl font-bold hover:opacity-80 transition">info@profm.ua</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
