@@ -1,0 +1,326 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Shopify: Інтеграція та Масштабування';
+const description = 'MTP фулфілмент для Shopify магазинів. API інтеграція, синхронізація запасів, доставка по Україні. Масштабуйте продажі без управління логістикою.';
+const ogImage = 'https://profm.ua/images/fulfillment-shopify-hero.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴18-₴150'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Shopify
+        <br />Синхронізація в Реальному Часі
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        API інтеграція з Shopify → автоматична комплектація → доставка по Україні. Масштабуйте без управління складом.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>30 хвилин на інтеграцію</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>Синхронізація реалтайм</span>
+        </div>
+      </div>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити інтеграцію
+      </a>
+    </div>
+  </section>
+
+  <!-- Benefits Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Чому Shopify + MTP</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Одна інтеграція, всі замовлення</h3>
+          <p class="text-gray-700">Замовлення з Shopify автоматично потрапляють до наша WMS. Не потрібно手動ніхто не переносить замовлення між системами.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Синхронізація запасів</h3>
+          <p class="text-gray-700">Товар в MTP = товар доступний у Shopify. Якщо товару немає на складі — кнопка покупки автоматично приховується.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Трекінг для клієнтів</h3>
+          <p class="text-gray-700">Після комплектації клієнт отримує TTN номер прямо у Shopify. Відслідковує доставку без звертання до вас.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Тестування інтеграції без ризику</h3>
+          <p class="text-gray-700">Запустимо інтеграцію на тестовому режимі. Перевіримо синхронізацію. Коли впевнені — вмикаємо праж.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Масштабування без проблем</h3>
+          <p class="text-gray-700">10 замовлень у день або 1000 — інтеграція справляється однаково. Немає обмежень на обсяг через API.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Дешевше, ніж Shopify Fulfillment</h3>
+          <p class="text-gray-700">Shopify Fulfillment Network недоступний в Україні. MTP дешевший за перевізники, які доступні у Shopify app store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Process -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Як працює інтеграція: 5 кроків</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Розташування API ключа</h3>
+            <p class="text-gray-700">Ви генеруєте API ключ у налаштуваннях Shopify. Даєте нам доступ тільки до необхідних разрешьень (читання замовлень, запасів).</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Синхронізація товарів</h3>
+            <p class="text-gray-700">Імпортуємо каталог товарів зі Shopify. Кожному товару надаємо SKU для ідентифікації на складі. Система готує вас до розміщення товару у нашому WMS.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Тестування замовлень</h3>
+            <p class="text-gray-700">Робимо тестові замовлення через Shopify. Перевіримо, що замовлення потрапляють до нас, комплектація розпочинається автоматично.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Розміщення товару</h3>
+            <p class="text-gray-700">Ви відправляєте партію товару на наш склад. Приймаємо, розміщуємо, вносимо в систему. Запаси автоматично синхронізуються з Shopify.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-lg">5</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Запуск у production</h3>
+            <p class="text-gray-700">Все готово! Нові замовлення з Shopify автоматично комплектуються та відправляються. Ви отримуєте TTN номери через Shopify API.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Технічні деталі інтеграції</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-4">Що синхронізується з Shopify</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><span class="font-bold">✓ Замовлення</span> — передаються до MTP в реальному часі</li>
+            <li><span class="font-bold">✓ TTN номери</span> — повертаються у Shopify замовлення</li>
+            <li><span class="font-bold">✓ Запаси</span> — оновлюються кожні 30 хвилин</li>
+            <li><span class="font-bold">✓ Статус замовлення</span> — "комплектація" → "відправлено"</li>
+            <li><span class="font-bold">✓ Побічні дані</span> — теги, складність замовлення, вага</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-4">Безпека та надійність</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><span class="font-bold">✓ OAuth 2.0</span> — безпечна авторизація</li>
+            <li><span class="font-bold">✓ Webhooks</span> — миттєве повідомлення про зміни</li>
+            <li><span class="font-bold">✓ Retry логіка</span> — автоматичні повторні спроби</li>
+            <li><span class="font-bold">✓ Журналування</span> — логи всіх операцій доступні вам</li>
+            <li><span class="font-bold">✓ 99.9% uptime</span> — гарантія доступності API</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-blue-50 p-6 rounded border border-blue-200">
+        <h3 class="font-bold mb-2">Потребує технічних знань?</h3>
+        <p class="text-gray-700">Ні. Інтеграція налаштовується через наш панель управління. Не потрібен доступ до коду Shopify. Якщо потрібна кастомізація — допоможемо нашим розробникам.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для Shopify магазинів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-8 rounded border border-gray-200">
+          <h3 class="text-2xl font-bold mb-6">Комплектація</h3>
+          <ul class="space-y-3">
+            <li class="flex justify-between">
+              <span>Базова (1-2 товари)</span>
+              <span class="font-bold">18 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>До 5 товарів</span>
+              <span class="font-bold">25 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Бризна маркування</span>
+              <span class="font-bold">1.50 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Друк TTN</span>
+              <span class="font-bold">0.50 грн</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded border border-gray-200">
+          <h3 class="text-2xl font-bold mb-6">Доставка + Складування</h3>
+          <ul class="space-y-3">
+            <li class="flex justify-between">
+              <span>Доставка по Україні</span>
+              <span class="font-bold">50-150 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Складування (опціонально)</span>
+              <span class="font-bold">400 грн/паль</span>
+            </li>
+            <li class="flex justify-between">
+              <span>API синхронізація</span>
+              <span class="font-bold">Безкоштовно</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Інтеграція (один раз)</span>
+              <span class="font-bold">Безкоштовно</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад для типового Shopify магазину (300 замовлень/місяц)</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>Комплектація: 300 × 25 = <strong>7,500 грн</strong></li>
+          <li>Доставка: 300 × 100 = <strong>30,000 грн</strong></li>
+          <li>Складування: 1 паль × 400 = <strong>400 грн</strong></li>
+          <li class="border-t pt-2 font-bold text-lg">ВСЬОГО: <strong class="text-red-600">37,900 грн</strong></li>
+          <li class="text-sm text-gray-600">На замовлення: 126 грн</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Для яких Shopify магазинів це ідеально</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">📦 Малі магазини (&lt;500 замовлень/місяц)</h3>
+          <p class="text-gray-700">Для маленьких пізніше найм складу та персоналу недоцільний. MTP починає экономити одразу.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">🚀 Стартапи з потенціалом</h3>
+          <p class="text-gray-700">Не знаєте, яким буде обсяг? MTP масштабується за день — від 10 до 1000 замовлень без зміни інтеграції.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">🌍 Мультиканальні продавці</h3>
+          <p class="text-gray-700">Один магазин на Shopify + свій сайт? MTP синхронізує запаси для обох каналів.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold text-red-600 mb-3">🎁 Сезонний бізнес</h3>
+          <p class="text-gray-700">Різдво — 5000 замовлень, літо — 500. MTP гнучко підлаштовується без контрактних зобов'язань.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">FAQ: Shopify інтеграція</h2>
+      <div class="space-y-6">
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи потрібно змінювати код на мою Shopify тему?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Ні. Інтеграція відбувається на рівні Shopify API. Немає змін у темі або коді. Все налаштовується через наш кабінет.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи синхронізуються варіанти товарів (розміри, кольори)?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Кожний варіант товару має свій SKU у нашій системі. Запаси синхронізуються для кожного варіанту окремо. Якщо S-розмір закінчився, у Shopify буде недоступний.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Як MTP дізнається про замовлення?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Через Shopify Webhooks. Коли клієнт оплачує замовлення у Shopify, ми тут же (у реальному часі) отримуємо повідомлення. Комплектація розпочинається одразу.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можна повернутися з MTP, якщо невдоволений?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Договір тримісячний з можливістю розірвання без штрафів. Якщо хочеш піти — забираєш товар зі складу або передаєш іншому логісту. Інтеграція з Shopify легко відключається.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Скільки часу інтеграція займає?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">30 хвилин активної роботи + 2-3 дні тестування. Генеруєш API ключ у Shopify → даєш нам доступ → синхронізуємо товари → тестуємо замовлення → запускаємо. Просто.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Готові запустити фулфілмент для Shopify?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Інтеграція займає 30 хвилин. Вже завтра перші замовлення комплектуватимуться автоматично.
+      </p>
+      <div class="bg-white bg-opacity-10 p-8 rounded backdrop-blur-sm">
+        <form class="space-y-4">
+          <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <input type="email" placeholder="Email або телефон" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <input type="url" placeholder="Посилання на ваш Shopify магазин" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" />
+          <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded transition">
+            Запустити інтеграцію
+          </button>
+        </form>
+      </div>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <p class="text-sm opacity-75 mb-1">ТЕЛЕФОН</p>
+          <a href="tel:+380931234567" class="text-xl font-bold hover:opacity-80 transition">+38 (093) 123-45-67</a>
+        </div>
+        <div>
+          <p class="text-sm opacity-75 mb-1">EMAIL</p>
+          <a href="mailto:info@profm.ua" class="text-xl font-bold hover:opacity-80 transition">info@profm.ua</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
