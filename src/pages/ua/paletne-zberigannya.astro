@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 ---
 <Base
   title="Палетне зберігання Київ — від 450 грн/міс | MTP Group"
-  description="Палетне зберігання під Києвом від 450 грн/місяць. 320 стелажних палетомісць, WMS-облік, 3 генератори, охорона 24/7. Для виробників, імпортерів та дистриб'юторів."
+  description="MTP Group: палетне зберігання від 450 грн/палета/міс. 320 місць, WMS, FEFO, 3 генератори, доступ 24/7. Для виробників, імпортерів. Швидкий вивіз."
   canonical="https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/"
   lang="uk"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
@@ -484,7 +484,6 @@ import Base from '../../layouts/Base.astro';
 
 <script is:inline>
 (function(){
-  document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');item.classList.toggle('open');var a=item.querySelector('.faq-a');if(item.classList.contains('open')){a.style.maxHeight=a.scrollHeight+'px';}else{a.style.maxHeight='0';}});});
   var heroForm = document.getElementById('heroForm');
   if(heroForm){heroForm.addEventListener('submit',function(e){e.preventDefault();var ph=heroForm.querySelector('input[name="phone"]').value.replace(/\D/g,'');if(ph.length<10){alert('Введіть коректний номер телефону');return;}
   fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);heroForm.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Дякуємо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Передзвонимо найближчим часом</p></div>';setTimeout(function(){window.location.href='/ua/thanks/';},1500);});}

@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 ---
 <Base
   title="Pallet Storage Kyiv — From 450 UAH/mo | MTP Group"
-  description="Pallet storage near Kyiv from 450 UAH/month. 320 rack positions with WMS tracking, 3 backup generators, 24/7 security. For manufacturers, importers and distributors."
+  description="Pallet storage Kyiv — 450 UAH/pallet/mo. 320 racks, WMS system, FEFO control, 3 generators, 24/7 access. For manufacturers, importers. Fast pickup."
   canonical="https://www.fulfillmentmtp.com.ua/en/pallet-storage/"
   lang="en"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
@@ -484,7 +484,6 @@ import Base from '../../layouts/Base.astro';
 
 <script is:inline>
 (function(){
-  document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');item.classList.toggle('open');var a=item.querySelector('.faq-a');if(item.classList.contains('open')){a.style.maxHeight=a.scrollHeight+'px';}else{a.style.maxHeight='0';}});});
   var heroForm = document.getElementById('heroForm');
   if(heroForm){heroForm.addEventListener('submit',function(e){e.preventDefault();var ph=heroForm.querySelector('input[name="phone"]').value.replace(/\D/g,'');if(ph.length<10){alert('Please enter a valid phone number');return;}
   fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);heroForm.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Thank you!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">We will call you back shortly</p></div>';setTimeout(function(){window.location.href='/en/thanks/';},1500);});}
