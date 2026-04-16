@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Медичних Товарів: Безпека, Гігієна, Сертифікація';
+const description = 'Спеціалізований фулфілмент для медичних товарів, ортопедичних виробів, здоров\'я. Сертифікація, гігієнічна обробка, температурний контроль, 100% страховка, доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-medical.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Медичних Товарів<br />Безпека & Сертифікація
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Компресійні чулки, ортопедичні подушки, тонометри, лікарські засоби. Сертифікація, гігієна, температурний контроль, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент медичних товарів
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка медичних товарів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏥 Безпека для здоров\'я</h3>
+          <p class="text-gray-700">Медичні товари впливають на здоров\'я людини. Сертифікація від МОЗ обов\'язкова. Гігієна максимальна. Контроль якості 100%.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Сертифікація & Дозволи</h3>
+          <p class="text-gray-700">Кожен медичний товар має сертифікат від МОЗ, дозвіл на продаж. Потребується повна документація & перевірка партій.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Температурна чутливість</h3>
+          <p class="text-gray-700">Деякі лікарські засоби потребують холодильника. Ортопедичні вироби чутливі до жару. Потребується температурний контроль.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Максимальна гігієна</h3>
+          <p class="text-gray-700">Компресійні чулки, ортопедичні подушки торкаються тіла людини. Потребується максимальна чистота при складуванні & упаковці.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для медичних товарів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль сертифікації 100%</h3>
+          <p class="text-gray-700">Перш ніж приймемо товар, перевіряємо наявність сертифіката від МОЗ, дозволу на продаж. Без документів товар не приймаємо.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Максимальна гігієна</h3>
+          <p class="text-gray-700">Персонал у стерильному одязі, перчатках. Щодня дезінфекція складу. Товари зберігаються в чистоті & гігієні.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Температурний контроль</h3>
+          <p class="text-gray-700">Для ліків — холодильник або контроль 10-25°C. Для ортопедичних виробів — контроль 15-25°C. Документація всіх показників.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% контроль якості</h3>
+          <p class="text-gray-700">Кожна позиція перевіряється на цілісність, чистоту, наявність сертифіката. Нулева допуск на браки для медичних товарів.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для медичних товарів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">25-40 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль сертифікації</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Максимальна гігієна & дезінфекція</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Температурне складування</span>
+            <span class="font-bold">+50 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (стандарт)</span>
+            <span class="font-bold">50-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Аптека/магазин здоров\'я (300 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 300 × 32 = 9,600 грн<br/>
+          Доставка: 300 × 75 = 22,500 грн<br/>
+          Складування: 2 палі × 50 = 100 грн/месяц = 100 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 32,200 грн/месяц = 107 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% контроль сертифікації</p>
+            <p class="text-gray-700">Без сертифіката від МОЗ товар не буде прийнято на склад. Максимальна безпека для здоров\'я клієнта.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lang">100% гігієнічна обробка</p>
+            <p class="text-gray-700">Максимальна чистота від приймання до доставки. Товар готовий для прямого контакту з тілом людини.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Медичний товар повернувся пошкодженим — платимо 100%. Клієнт отримує новий товар за 24 години.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для аптек & магазинів здоров\'я</h2>
+      <p class="text-xl mb-8 opacity-90">
+        100% сертифікація, максимальна гігієна, температурний контроль, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент медичних товарів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
