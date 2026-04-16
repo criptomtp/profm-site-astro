@@ -1,0 +1,344 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфилмент для косметики","description":"Специализированный фулфилмент для beauty-товаров с FEFO-контролем, температурным хранением и сборкой за 30 секунд","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Cosmetics Fulfillment","offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправку (200+ заказов/день)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как работает FEFO-контроль для косметики?","acceptedAnswer":{"@type":"Answer","text":"При приёмке каждая единица сканируется: штрихкод, дата производства, срок годности. WMS автоматически выбирает партию с ближайшим сроком при сборке заказа. Тариф: 0,50 грн/ед."}},{"@type":"Question","name":"Какие маркетплейсы поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta — интеграция через API за 2 часа. Также Shopify, WooCommerce, OpenCart, KeyCRM, SalesDrive, LP-CRM и другие."}},{"@type":"Question","name":"Сколько стоит фулфилмент для косметики?","acceptedAnswer":{"@type":"Answer","text":"Отправка от 18 грн/заказ (200+/день), хранение 650 грн/м³/мес, FEFO-контроль 0,50 грн/ед, доукомплектация 2,50 грн/ед. Минимальный платёж 5 000 грн/мес."}},{"@type":"Question","name":"Можно ли масштабировать объёмы?","acceptedAnswer":{"@type":"Answer","text":"Да. Мощность склада — до 6 000 заказов/сутки. Динамический тариф — чем больше объём, тем ниже цена."}},{"@type":"Question","name":"Как быстро подключиться?","acceptedAnswer":{"@type":"Answer","text":"1–3 дня от заявки до первой отправки. Интеграция с CRM или маркетплейсом — за 2 часа."}},{"@type":"Question","name":"Как обрабатываются возвраты?","acceptedAnswer":{"@type":"Answer","text":"Возврат принимается на складе, распаковывается, фото-фиксируется. Качественный товар возвращается на полку, повреждённый откладывается для списания."}},{"@type":"Question","name":"Что такое нотификация косметики 2026?","acceptedAnswer":{"@type":"Answer","text":"С августа 2026 Украина вводит обязательную нотификацию. Каждый продукт должен иметь PIF и пройти CPSR. MTP обеспечивает прослеживаемость партий в WMS."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"Фулфилмент для косметики","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/"}]}</script>`;
+---
+<Base
+  title="Фулфилмент для косметики Украина — от 18 грн | MTP"
+  description="Фулфилмент для косметики под Киевом. FEFO-контроль сроков, хранение 18–22°C, сборка за 30 сек. От 18 грн за отправку. Подключение за 2 дня."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-cosmetics-hero.jpg"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-cosmetics/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="badge">COSMETICS LOGISTICS</div>
+<h1>Фулфилмент для<br>косметики</h1>
+<p class="hero-sub">Масштабируйте продажи &mdash; логистику берём на себя. Хранение 18&ndash;22°С, FEFO-контроль сроков, сборка за 30&nbsp;секунд. До 6&nbsp;000 заказов в сутки.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
+<div class="hero-note">Бесплатная консультация &#183; Расчёт за 15 минут</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">60 000+</div><div class="hero-stat-label">отправок/месяц</div></div>
+<div class="hero-stat"><div class="hero-stat-val">30 сек</div><div class="hero-stat-label">сборка заказа</div></div>
+<div class="hero-stat"><div class="hero-stat-val">0 дней</div><div class="hero-stat-label">простоя с 2022</div></div>
+</div>
+</section>
+
+<!-- SCALE SCENARIOS -->
+<section class="benefits"><div class="ctr">
+<div class="badge badge-dark">МАСШТАБИРОВАНИЕ</div>
+<h2 class="sec-h2">Почему beauty-бренды выбирают аутсорсинг</h2>
+<div class="ben-grid">
+<div class="ben-card"><div class="ben-num">01</div><h3>Импорт и дистрибуция</h3><p>Вы ввозите 5&ndash;15 брендов, продаёте через сайт и маркетплейсы. Каждая партия &mdash; свой срок годности. MTP берёт партийный учёт, FEFO-ротацию и мультиканальную отправку. Вы управляете продажами.</p></div>
+<div class="ben-card"><div class="ben-num">02</div><h3>Маркетплейс-селлер</h3><p>Rozetka, Prom, Kasta одновременно. Каждый маркетплейс &mdash; свой формат ТТН, свои требования. MTP: единый склад, единый остаток, интеграция со всеми площадками. 4 забора Новой Почты в день.</p></div>
+<div class="ben-card"><div class="ben-num">03</div><h3>Собственный бренд</h3><p>Выпустили линейку кремов. Первые 20 заказов/день &mdash; справляетесь. При 50+ нужен склад, персонал, WMS. MTP: подключение за 1&ndash;3 дня, минимальный платёж 5 000 грн/мес &mdash; дешевле одного сотрудника.</p></div>
+<div class="ben-card"><div class="ben-num">FEFO</div><h3>Контроль сроков</h3><p>WMS сканирует дату при приёмке, привязывает к партии и ячейке. При сборке &mdash; автоматический FEFO-подбор. Человеческий фактор исключён. Стоимость: 0,50 грн/ед.</p></div>
+<div class="ben-card"><div class="ben-num">22°С</div><h3>Климат-контроль</h3><p>Складской комплекс с системой кондиционирования 18&ndash;22°С. 3 промышленных генератора &mdash; ни одного дня простоя даже во время блэкаутов. Кондиционер в комнате &ne; складская климатизация.</p></div>
+<div class="ben-card"><div class="ben-num">API</div><h3>Мультиканальность</h3><p>Rozetka, Prom, Kasta, Shopify, WooCommerce, KeyCRM, SalesDrive. Подключение за 2 часа. Единый остаток синхронизируется по всем каналам &mdash; без пересортицы.</p></div>
+</div>
+</div></section>
+
+<!-- PROCESS -->
+<section class="ck-how"><div class="ctr">
+<div class="badge badge-dark">ПРОЦЕСС</div>
+<h2 class="sec-h2">Как устроен фулфилмент</h2>
+
+<div class="ck-steps">
+
+<div class="ck-step">
+<div class="ck-step-num">1</div>
+<div class="ck-step-body">
+<h3>Приёмка и учёт</h3>
+<p>Привозите товар на склад в Борисполе или Белогородке. Каждая единица сканируется: штрихкод, дата производства, срок годности. Фотофиксация. Привязка к ячейке хранения по партиям. Для хрупких товаров &mdash; отдельная зона с защитным стеллажированием.</p>
+<div class="ck-step-price">Приёмка: 3 грн/ед. · FEFO-маркировка: 0,50 грн/ед.</div>
+</div>
+</div>
+
+<div class="ck-step">
+<div class="ck-step-num">2</div>
+<div class="ck-step-body">
+<h3>Хранение 18&ndash;22°С</h3>
+<p>Складской комплекс с климат-контролем. 3 промышленных генератора &mdash; ни одного дня простоя с 2022 года. WMS мониторит сроки годности: если партия приближается к критической дате, вы получаете уведомление в Telegram. Ежедневные отчёты: остатки, партии, сроки.</p>
+<div class="ck-step-price">Хранение: 650 грн/м³/мес · Промо-материалы: 300 грн/м³</div>
+</div>
+</div>
+
+<div class="ck-step">
+<div class="ck-step-num">3</div>
+<div class="ck-step-body">
+<h3>Сборка и отправка</h3>
+<p>Заказ поступает через API маркетплейса или CRM. WMS выбирает партию по FEFO &mdash; ближайший срок первым. Сборка за 30 секунд: проверка целостности, упаковка, доукомплектация (пробники, листовки). 4 забора Новой Почты в день. Большинство заказов доставляется на следующий день.</p>
+<div class="ck-step-price">Отправка: от 18 грн · Доукомплектация: 2,50 грн/ед.</div>
+</div>
+</div>
+
+<div class="ck-step">
+<div class="ck-step-num">4</div>
+<div class="ck-step-body">
+<h3>Возвраты и аналитика</h3>
+<p>Возврат обрабатывается на складе: распаковка, проверка состояния, фото-фиксация. Качественный товар автоматически возвращается на полку. Повреждённый &mdash; откладывается для списания по вашему решению. Ежедневный отчёт: остатки, отправки, возвраты, сроки годности.</p>
+<div class="ck-step-price">Возврат: 50% от (отправка + доукомплектация)</div>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<!-- COMPARISON -->
+<section class="pricing"><div class="ctr">
+<div class="badge badge-dark">СРАВНЕНИЕ</div>
+<h2 class="sec-h2">Свой склад vs MTP</h2>
+<p class="price-note">Расчёт для дистрибутора: 80 заказов/день, 5 м³ хранения, 3 маркетплейса + свой сайт</p>
+<div class="price-table">
+<div class="price-row price-header"><span>Статья расходов</span><span>Свой склад</span><span>MTP Fulfillment</span></div>
+<div class="price-row"><span>Аренда (80 м²)</span><span>~22 000 грн</span><span>Включено</span></div>
+<div class="price-row"><span>Персонал (3 чел.)</span><span>~45 000 грн</span><span>Включено</span></div>
+<div class="price-row"><span>WMS + интеграции</span><span>~8 000 грн</span><span>Включено</span></div>
+<div class="price-row"><span>Упаковка, материалы</span><span>~5 000 грн</span><span>Включено</span></div>
+<div class="price-row"><span>Коммунальные + генератор</span><span>~7 000 грн</span><span>Включено</span></div>
+<div class="price-row"><span>Логистика (услуга)</span><span>&mdash;</span><span>~35 200 грн</span></div>
+<div class="price-row"><span>Хранение + FEFO</span><span>&mdash;</span><span>~5 000 грн</span></div>
+<div class="price-row price-highlight"><span>Итого/месяц</span><span>~87 000 грн</span><span>~42 000 грн</span></div>
+</div>
+<p class="price-note">Экономия с MTP: ~45 000 грн/мес (52%). Тариф снижается с ростом объёмов.</p>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="ck-tariffs"><div class="ctr">
+<div class="badge badge-dark">ТАРИФЫ 2026</div>
+<h2 class="sec-h2">Стоимость фулфилмента</h2>
+<div class="price-table">
+<div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>200+ заказов/день</span><span>от 18 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>100-199 заказов/день</span><span>от 20 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>50-99 заказов/день</span><span>от 22 грн</span></div>
+<div class="price-row"><span>Отправка заказа</span><span>0-49 заказов/день</span><span>от 26 грн</span></div>
+<div class="price-row"><span>Хранение</span><span>за м³/месяц</span><span>от 650 грн</span></div>
+<div class="price-row"><span>FEFO-контроль</span><span>за единицу</span><span>0,50 грн</span></div>
+<div class="price-row"><span>Приёмка товара</span><span>за единицу</span><span>от 3 грн</span></div>
+<div class="price-row"><span>Доукомплектация (пробник, листовка)</span><span>за единицу</span><span>2,50 грн</span></div>
+<div class="price-row"><span>Стикеровка (штрихкод)</span><span>за единицу</span><span>1,25 грн</span></div>
+<div class="price-row price-highlight"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн</span></div>
+</div>
+<p class="price-note">Цена снижается с ростом объёмов. Точный расчёт &mdash; бесплатно за 15 минут.</p>
+<div class="price-cta"><button onclick="document.getElementById('finalForm')?.querySelector('input')?.focus();document.getElementById('ctaSection')&&window.scrollTo({top:document.getElementById('ctaSection').offsetTop,behavior:'smooth'})">Рассчитать для моего бизнеса &#8594;</button></div>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="ck-integrations"><div class="ctr">
+<div class="badge badge-dark">ИНТЕГРАЦИИ</div>
+<h2 class="sec-h2">Мультиканальные подключения</h2>
+<p class="ck-integ-text">Подключаем все площадки за 2 часа. Единый остаток &mdash; без пересортицы.</p>
+<div class="ck-integ-logos">
+  <img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy">
+  <img src="/images/logo-prom-ua.webp" alt="Prom.ua" width="120" height="40" loading="lazy">
+  <img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy">
+  <img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy">
+  <img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy">
+  <img src="/images/logo-nova-poshta.webp" alt="Новая Почта" width="120" height="40" loading="lazy">
+</div>
+<p class="ck-integ-note">Также: Shopify, WooCommerce, OpenCart, Хорошоп, LP-CRM, 1С, Укрпочта, Meest</p>
+</div></section>
+
+<!-- REGULATION 2026 -->
+<section class="case"><div class="ctr">
+<div class="badge">НОТИФИКАЦИЯ 2026</div>
+<h2 class="sec-h2">Что нужно знать импортёру</h2>
+<div class="case-inner">
+<div class="case-text">
+<p>С <strong>августа 2026</strong> года Украина вводит обязательную нотификацию косметической продукции по Техническому регламенту (гармонизация с нормами ЕС).</p>
+<p><strong>Для продавца:</strong> каждый продукт &mdash; PIF (Product Information File) + CPSR (оценка безопасности). Без нотификации &mdash; запрет на размещение на рынке.</p>
+<p><strong>Для склада:</strong> прослеживаемость партий (batch tracking), адресное хранение, возможность восстановить, какая партия ушла конкретному покупателю.</p>
+<blockquote>&laquo;MTP обеспечивает адресное хранение с партийным учётом в WMS. Каждая единица привязана к партии, дате и сроку. Полная прослеживаемость от приёмки до отправки.&raquo;</blockquote>
+<p style="font-size:13px;color:rgba(255,255,255,.4);font-style:italic">MTP не оказывает услуги нотификации документов. Мы обеспечиваем корректное хранение и логистику уже нотифицированной продукции.</p>
+</div>
+<div class="case-stats">
+<div class="case-stat"><div class="case-stat-val">FEFO</div><div class="case-stat-label">контроль сроков</div></div>
+<div class="case-stat"><div class="case-stat-val">Batch</div><div class="case-stat-label">партийный учёт</div></div>
+<div class="case-stat"><div class="case-stat-val">18&ndash;22°С</div><div class="case-stat-label">климат-контроль</div></div>
+</div>
+</div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+<div class="badge">FAQ</div>
+<h2 class="sec-h2">Частые вопросы</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">Как работает FEFO-контроль для косметики?</button><div class="faq-a"><p>При приёмке сканируется дата производства и срок годности каждой единицы. WMS привязывает данные к партии и ячейке хранения. При сборке заказа система автоматически направляет оператора к ближайшему сроку. Стоимость: 0,50 грн/ед.</p></div></div>
+<div class="faq-item"><button class="faq-q">Какие маркетплейсы поддерживаются?</button><div class="faq-a"><p>Rozetka, Prom.ua, Kasta &mdash; интеграция через API за 2 часа. Также: Shopify, WooCommerce, OpenCart, KeyCRM, SalesDrive, LP-CRM, Хорошоп. Единый остаток синхронизируется по всем площадкам в реальном времени.</p></div></div>
+<div class="faq-item"><button class="faq-q">Можно ли масштабировать объёмы при росте?</button><div class="faq-a"><p>Мощность склада &mdash; до 6 000 заказов/сутки. Тариф динамический: чем больше заказов, тем ниже цена (от 26 грн при 5/день до 18 грн при 200+/день). Не нужно нанимать персонал или арендовать площадь.</p></div></div>
+<div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент для дистрибутора?</button><div class="faq-a"><p>Зависит от объёма. Для 80 заказов/день &mdash; ~42 000 грн/мес. Минимальный платёж &mdash; 5 000 грн/мес. Хранение 650 грн/м³/мес, отправка от 18 грн/заказ. <a href="/ru/tsenu/" style="color:var(--red)">Полная тарифная сетка</a>.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как быстро подключиться?</button><div class="faq-a"><p>1&ndash;3 дня от заявки до первой отправки. Интеграция с CRM или маркетплейсом &mdash; за 2 часа через API. Привозите товар на склад в Борисполе или Белогородке. <a href="/ru/skladski-poslugy/" style="color:var(--red)">О складских услугах</a>.</p></div></div>
+<div class="faq-item"><button class="faq-q">Можно ли вкладывать пробники и листовки?</button><div class="faq-a"><p>Да. Доукомплектация &mdash; 2,50 грн/единица. Пробники, промо-карточки, подарки, благодарственные записки. Промо-материалы хранятся на складе за 300 грн/м³.</p></div></div>
+<div class="faq-item"><button class="faq-q">Как обрабатываются возвраты?</button><div class="faq-a"><p>Возврат на склад &rarr; распаковка &rarr; фото-фиксация &rarr; проверка целостности. Качественный товар автоматически на полку. Повреждённый &mdash; для списания по вашему решению. Все данные в WMS-кабинете с фото.</p></div></div>
+</div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">ПОЛЕЗНО ЗНАТЬ</div>
+<h2>Фулфилмент для beauty-бизнеса: гид для импортёра и дистрибутора</h2>
+<div class="article-content">
+
+<h3>Почему дистрибуторам косметики нужен специализированный склад</h3>
+<p>Дистрибуция beauty-товаров в Украине &mdash; это одновременная работа с 5&ndash;15 брендами, каждый со своими требованиями к хранению, упаковке и срокам годности. Когда вы управляете ассортиментом из 500+ SKU, собственный склад превращается в операционный хаос: разные партии одного товара с разными датами, мультиканальные продажи (свой сайт + 3 маркетплейса), сезонные пики в 2&ndash;3 раза выше среднего.</p>
+
+<p>Специализированный фулфилмент решает эту задачу системно. WMS-система ведёт партийный учёт автоматически: при приёмке каждая единица получает привязку к партии, дате производства и сроку годности. При сборке заказа система работает по принципу FEFO (First Expired, First Out) &mdash; товар с ближайшим сроком уходит первым. Это исключает ситуацию, когда свежая партия отправляется раньше старой, а старая потом уходит со склада за месяц до окончания срока &mdash; и вызывает возврат от недовольного клиента.</p>
+
+<p>Отдельная проблема &mdash; сезонность. Beauty-рынок имеет выраженные пики: 8 Марта, Чёрная пятница, предновогодний период. Объёмы могут вырасти в 3&ndash;5 раз за неделю. Собственный склад с двумя упаковщиками физически не справится с таким скачком. Вам придётся нанимать временный персонал, обучать их за пару дней и надеяться, что они не перепутают партии. Фулфилмент-оператор с мощностью до 6 000 заказов/сутки обработает любой пик без задержек.</p>
+
+<h3>Мультиканальные продажи: как не потерять контроль</h3>
+<p>Типичный дистрибутор beauty-товаров продаёт одновременно через Rozetka, Prom.ua, Kasta и собственный интернет-магазин. Каждый канал &mdash; это свой формат данных, свои требования к ТТН, свои SLA по скорости отправки. Без единого склада с интеграциями вы получаете: дублирование остатков &rarr; продажа товара, которого нет &rarr; отмена заказа &rarr; штраф от маркетплейса &rarr; падение рейтинга.</p>
+
+<p>MTP интегрируется со всеми основными площадками Украины за 2 часа через API. Заказ с любого канала автоматически попадает в WMS. Остаток синхронизируется в реальном времени: продали последнюю единицу на Rozetka &mdash; она снимается с Prom.ua мгновенно. Это не магия &mdash; это стандартная функция WMS, которая на собственном складе потребовала бы дорогостоящей настройки (WMS + кастомные интеграции + поддержка = от 8 000 грн/мес).</p>
+
+<p>Ещё один аспект мультиканальности &mdash; аналитика. Когда все заказы проходят через одну систему, вы видите полную картину: какой канал приносит больше заказов, какие товары чаще возвращают, какие партии расходятся быстрее. Эта информация критически важна для управления ассортиментом и планирования закупок. На собственном складе с Excel-таблицей такой аналитики вы не получите.</p>
+
+<h3>Экономика фулфилмента: когда выгодно передать логистику</h3>
+<p>Точка перехода &mdash; примерно 30&ndash;50 заказов в день. Ниже &mdash; можно справляться самостоятельно, хотя и с потерями в эффективности. Выше &mdash; собственный склад начинает требовать непропорционально больших инвестиций: второй-третий сотрудник, расширение площади, автоматизация, генератор для непрерывной работы.</p>
+
+<p>Реальный расчёт для дистрибутора с 80 заказами/день:</p>
+<ul>
+<li>Собственный склад: аренда + 3 сотрудника + WMS + коммунальные + генератор = ~87 000 грн/мес</li>
+<li>MTP фулфилмент: хранение + отправка + FEFO = ~42 000 грн/мес</li>
+<li>Разница: 45 000 грн/мес или 540 000 грн/год &mdash; это бюджет на маркетинг, закупку нового ассортимента или запуск ещё одного бренда</li>
+</ul>
+
+<p>При этом ваша логистика масштабируется вместе с продажами: тариф за отправку снижается с 26 грн (до 5 заказов/день) до 18 грн (200+/день). Это означает, что с ростом объёмов ваша юнит-экономика улучшается автоматически. На собственном складе всё наоборот: каждый рост объёмов требует пропорциональных инвестиций в персонал и площадь.</p>
+
+<p>Не забывайте о «скрытых» расходах собственного склада: больничные, отпуска, текучесть кадров, ошибки при сборке, воровство, обучение новых сотрудников, ремонт оборудования. Эти расходы не видны в ежемесячном отчёте, но накапливаются и съедают маржу. В фулфилменте все эти риски &mdash; на стороне оператора.</p>
+
+<h3>FEFO vs FIFO: критическая разница для косметики</h3>
+<p>FIFO (First In, First Out) &mdash; что первым пришло, то первым уходит. FEFO (First Expired, First Out) &mdash; уходит то, у чего ближе срок годности, независимо от даты поступления. Для косметики FEFO &mdash; не опция, а необходимость.</p>
+
+<p>Пример: на складе две партии одного крема. Партия А &mdash; поступила 3 месяца назад, остаток срока 9 месяцев. Партия Б &mdash; поступила неделю назад, но произведена раньше, остаток срока 5 месяцев. FIFO отправит партию А (старше на складе). FEFO отправит партию Б (ближе срок). Без FEFO партия Б провалится на складе и уйдёт клиенту с остатком 2 месяца &mdash; гарантированный возврат и негативный отзыв.</p>
+
+<p>В MTP FEFO встроен в WMS на системном уровне. Оператор не выбирает партию &mdash; система указывает конкретную ячейку. Стоимость контроля: 0,50 грн/ед. При 2 000 единиц/месяц это 1 000 грн &mdash; цена, которая предотвращает десятки возвратов и сотни грн потерь.</p>
+
+<h3>Как выбрать фулфилмент для beauty-товаров: критерии для дистрибутора</h3>
+<p>При оценке фулфилмент-оператора для косметики проверяйте не маркетинговые обещания, а технические возможности:</p>
+<ul>
+<li><strong>FEFO в WMS</strong> &mdash; автоматический, а не ручной. Попросите скриншот WMS с полем «срок годности»</li>
+<li><strong>Мультиканальная интеграция</strong> &mdash; API с Rozetka, Prom, Kasta и хотя бы одной CRM. Сколько часов займёт подключение?</li>
+<li><strong>Климат-контроль + генераторы</strong> &mdash; кондиционер в комнате &ne; складская система. Генератор &mdash; промышленный, не бытовой</li>
+<li><strong>Партийный учёт</strong> &mdash; можете ли вы проследить, какая партия ушла какому клиенту?</li>
+<li><strong>Обработка возвратов</strong> &mdash; проверяется ли состояние при возврате? Возвращается ли товар на полку или в брак?</li>
+<li><strong>Доукомплектация</strong> &mdash; можно ли вкладывать пробники, и сколько это стоит?</li>
+</ul>
+<p>MTP Group соответствует всем критериям: 10+ лет опыта, 2 склада в Киевской области (Борисполь + Белогородка), общая площадь 3 900 м², 3 генератора, 150+ клиентов. <a href="/ru/3pl-logistika/" style="color:var(--red);font-weight:500">Подробнее о 3PL-логистике</a>.</p>
+
+<h3>Нотификация косметики 2026: как подготовиться</h3>
+<p>С августа 2026 года Украина вводит обязательную нотификацию косметической продукции по Техническому регламенту (гармонизация с ЕС). Каждый продукт должен иметь PIF (Product Information File) и пройти CPSR (оценку безопасности). Без нотификации &mdash; запрет на размещение на рынке.</p>
+
+<p>Для складской логистики это добавляет требование прослеживаемости: нужно иметь возможность отследить, из какой партии отправлен конкретный товар конкретному покупателю. MTP Group обеспечивает полную прослеживаемость на уровне WMS: каждая единица привязана к партии, дате производства и сроку годности. При проверке &mdash; полный цепочка от приёмки до передачи перевозчику.</p>
+
+<p>Если вы планируете продолжать продажу косметики после августа 2026, убедитесь, что ваш складской оператор обеспечивает адресное хранение с партийным учётом. Без этого прослеживаемость невозможна, а без прослеживаемости &mdash; вы не подтвердите соответствие требованиям при проверке. Лучше подготовиться заранее, чем срочно искать нового оператора перед дедлайном.</p>
+
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+.hero{position:relative;min-height:90vh;background:var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('/images/fulfillment-cosmetics-hero.jpg') center/cover no-repeat;opacity:1}
+.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
+.hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.hero-form{display:flex;gap:12px;max-width:460px}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:#c42b22}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+.hero-stats{display:flex;gap:32px;padding:48px 8vw 0;margin-top:auto;position:relative;z-index:2}
+.hero-stat{border-top:3px solid var(--red);padding:20px 0;flex:1}
+.hero-stat-val{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:400;color:#fff;white-space:nowrap}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.benefits{padding:100px 0}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.ben-card{background:#fff;padding:36px 28px;transition:background .3s}.ben-card:hover{background:var(--gray)}
+.ben-num{font-family:var(--fd);font-size:42px;color:var(--red);line-height:1;margin-bottom:12px}
+.ben-card h3{font-size:17px;font-weight:500;margin-bottom:6px}.ben-card p{font-size:14px;color:var(--muted);line-height:1.6}
+.case{padding:100px 0;background:#0a0a0a;color:#fff}
+.case-inner{display:flex;gap:80px;align-items:center}
+.case-text{flex:1.2}.case-text blockquote{font-family:var(--fd);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);line-height:1.5;border-left:3px solid var(--red);padding-left:20px;margin:20px 0}
+.case-text p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px}
+.case-stats{flex:.8;display:flex;flex-direction:column;gap:32px}
+.case-stat{text-align:center;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:8px}
+.case-stat-val{font-size:36px;font-weight:300;margin-bottom:4px}.case-stat-label{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.pricing{padding:100px 0;background:var(--gray)}
+.price-table{max-width:700px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row:not(.price-header):hover{background:#fff}
+.price-highlight{background:var(--red);color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+.price-cta{text-align:center}
+.price-cta button{padding:16px 32px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);transition:background .3s}
+.price-cta button:hover{background:#c42b22}
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+.article-section{background:#fff;padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:20px 0 40px}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+.article-content ul{padding-left:24px;margin-bottom:16px}
+.article-content li{font-size:16px;line-height:1.85;color:#444;margin-bottom:6px}
+.ck-how{padding:100px 0}
+.ck-steps{max-width:700px;margin:0 auto}
+.ck-step{display:flex;gap:24px;margin-bottom:40px;position:relative}
+.ck-step::after{content:'';position:absolute;left:19px;top:48px;bottom:-40px;width:2px;background:#e0e0e0}
+.ck-step:last-child::after{display:none}
+.ck-step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;position:relative;z-index:1}
+.ck-step-body h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.ck-step-body p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.ck-step-price{font-size:13px;color:var(--red);font-weight:500}
+.ck-tariffs{padding:100px 0}
+.ck-integrations{padding:80px 0;text-align:center}
+.ck-integ-text{font-size:16px;color:var(--muted);max-width:560px;margin:0 auto 32px;text-align:center}
+.ck-integ-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-bottom:16px}
+.ck-integ-logos img{height:32px;width:auto;opacity:.6;transition:opacity .2s}
+.ck-integ-logos img:hover{opacity:1}
+.ck-integ-note{font-size:14px;color:var(--muted)}
+@media(max-width:768px){
+.hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
+.hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
+.ben-grid{grid-template-columns:1fr}
+.case-inner{flex-direction:column;gap:40px}
+}
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.case-stat,.step,.ck-step{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+var form=document.getElementById('heroForm');
+if(form){form.addEventListener('submit',function(e){e.preventDefault();var ph=form.querySelector('input[name=phone]').value.replace(/\D/g,'');if(ph.length<10)return;fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">\u2705 Спасибо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href="/ru/thanks/";},1500);});}
+});
+</script>
