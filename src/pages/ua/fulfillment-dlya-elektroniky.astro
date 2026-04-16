@@ -1,0 +1,255 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Електроніки: Страховка, Якість, Доставка за 24 часи';
+const description = 'Спеціалізований фулфілмент для електроніки. Антистатичні упаковки, 100% страховка, якість 99.95%, доставка за 24 години. Для маркетплейсів і власних магазинів.';
+const ogImage = 'https://profm.ua/images/fulfillment-electronics.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴25-₴50'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Електроніки<br />Страховка 100%, Якість 99.95%
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Смартфони, ноутбуки, навушники, планшети. Антистатичні упаковки, детальна документація, повна страховка, гарантія якості 99.95%.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>100% страховка</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>99.95% якість</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>Антистатичне упаковування</span>
+        </div>
+      </div>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент електроніки
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Electronics Need Special Handling -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Чому електроніка потребує спеціального підходу</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💰 Висока вартість повернень</h3>
+          <p class="text-gray-700">Смартфон вартістю 5000 грн повернувся пошкодженим = втрата 5000 грн + рецензія 1 зірка. Електроніка вимагає максимальної якості упаковки і обробки.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Електростатичний розряд</h3>
+          <p class="text-gray-700">Навушники, батареї, чіпи чутливі до ESD. Один розряд при упаковці = пошкоджений товар. Потребується антистатичне упаковування.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Складна документація</h3>
+          <p class="text-gray-700">Кожен гаджет має гарантію, серійний номер, IMEI. Потребується документація, перевірка активації, квитанція. Обичний логіст цього не зробить.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🚚 Трекінг дорогих замовлень</h3>
+          <p class="text-gray-700">Ноутбук вартістю 20K грн потребує підвищеного контролю. MTP робить фото кожного замовлення і передає спеціальним перевізником.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Electronics Handling -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Як MTP обробляє електроніку</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Прийом з документацією</h3>
+            <p class="text-gray-700">При приймації кожного гаджету перевіряємо: наявність упаковки, документів, гарантійного талона, IMEI (для смартфонів). Записуємо серійний номер у базу.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Антистатичне умови складу</h3>
+            <p class="text-gray-700">Електроніку зберігаємо у дедикованій зоні зі спеціальними антистатичними полицями. Персонал носить заземлені браслети при обробці. Вологість 45-65% для запобігання конденсації.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Спеціальна упаковка</h3>
+            <p class="text-gray-700">Використовуємо антистатичні пакети, повітряні бульбашки, піну для амортизації. Для дорогих гаджетів (ноутбуки) — дерев'яні ящики із прокладками.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Перевірка перед відправкою</h3>
+            <p class="text-gray-700">Кожне замовлення електроніки проходить 100% контроль якості (не 10% як звичайно). Перевіряємо: упаковка герметична, жодних дефектів, серійний номер правильний, документація в комплекті.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">5</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Спеціалізована доставка</h3>
+            <p class="text-gray-700">Дорогу електроніку передаємо спеціальним перевізником із підвищеним захистом. Відслідковуємо GPS. Клієнт отримує фото перед передачею та після доставки.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Services -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Спеціалізовані послуги для електроніки</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Комплектація</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Базова (смартфон, навушники)</span>
+              <span class="font-bold">25 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Складна (ноутбук, планшет)</span>
+              <span class="font-bold">50 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>100% контроль якості</span>
+              <span class="font-bold">Включено</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Документація & IMEI</span>
+              <span class="font-bold">Включено</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Страховка & Доставка</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>100% страховка товару</span>
+              <span class="font-bold">Включено</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Спеціалізована доставка</span>
+              <span class="font-bold">75-200 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>GPS відслідкування</span>
+              <span class="font-bold">Включено</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Фото до/після доставки</span>
+              <span class="font-bold">Включено</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин смартфонів (200 замовлень/місяц)</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>Комплектація: 200 × 25 = 5,000 грн</li>
+          <li>Доставка спеціалізована: 200 × 120 = 24,000 грн</li>
+          <li>Складування: 1 паль × 400 = 400 грн</li>
+          <li class="border-t pt-2 font-bold text-lg">ВСЬОГО: 29,400 грн/місяц = 147 грн/замовлення</li>
+          <li class="text-sm text-gray-600">Включено: 100% страховка, 99.95% якість, GPS, документація</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для електроніки</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.95%</p>
+          <p class="text-gray-700 font-bold">Точність комплектації</p>
+          <p class="text-sm text-gray-600 mt-2">1 помилка на 2000 замовлень</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Страховка товару</p>
+          <p class="text-sm text-gray-600 mt-2">Від пошкодження & крадіжки</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Дефекти при доставці</p>
+          <p class="text-sm text-gray-600 mt-2">Спеціальна упаковка & перевізник</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
+      <div class="space-y-6">
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можна зберігати дорогу електроніку у вас?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Дорога електроніка зберігається у дедикованій, запертій зоні зі спеціальною охороною 24/7. Кожен предмет каталогізується. Страховка 100%.</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи MTP може перевірити IMEI смартфона перед відправкою?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Ми маємо доступ до баз IMEI перевірки. Кожен смартфон перевіряємо перед запакуванням. Якщо IMEI не тогда в системі — повідомляємо вам.</p>
+        </details>
+        <details class="bg-white p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можна пакувати разом електроніку і інші товари?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Ні. Електроніку паку́єм окремо у спеціальні коробки. Це запобігає пошкодженню від інших товарів і забезпечує 100% якість контролю.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Безпечна логістика для електроніки</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Антистатичне упаковування, 100% страховка, 99.95% якість. Для маркетплейсів і магазинів.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент електроніки
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
