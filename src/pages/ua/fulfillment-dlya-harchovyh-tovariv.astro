@@ -1,0 +1,170 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Харчових Товарів: Температура, Якість, Гігієна';
+const description = 'Спеціалізований фулфілмент для продуктів, напоїв, десертів. Температурний контроль 15-25°C, холодні ланцюги, гігієнічна упаковка, швидка доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-food.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Харчових Товарів<br />Температурний Контроль & Гігієна
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Напої, снеки, десерти, органіка. Термоконтейнери, холодні ланцюги, гігієнічні стандарти, доставка за 24 години. Для маркетплейсів і власних магазинів.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент продуктів
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Food is Different -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка харчових товарів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Температурна чутливість</h3>
+          <p class="text-gray-700">Напої, морозиво, шоколад портяться при неправильній температурі. Потребується постійний контроль 15-25°C або холодильник для деяких товарів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⏱️ Термін придатності</h3>
+          <p class="text-gray-700">Продукти без реалізації за термін = 100% втрата. Потребується FIFO система (першим увійшов — першим вийшов) і контроль дат.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Гігієнічні стандарти</h3>
+          <p class="text-gray-700">Харчові товари мають дотримуватися HACCP стандартів. Потребується санітарна документація, дозволи, регулярні перевірки чистоти складу.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Документація & Сертифікація</h3>
+          <p class="text-gray-700">Кожен продукт має сертифікат якості, дозвіл від СЕС. Потребується документація для кожної партії, наслідування дозволів.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Food Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для харчових товарів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Температурний контроль 15-25°C</h3>
+            <p class="text-gray-700">Окремова дедикована зона для харчових товарів. Клімат-контроль 24/7. Датчики температури з автоматичним сповіщенням при відхиленні. Документація кожної години.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">FIFO система управління</h3>
+            <p class="text-gray-700">Першим увійшов — першим вийшов. Кожне замовлення перевіряємо по даті придатності. Якщо товар близький до закінчення терміну — повідомляємо клієнтові.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Гігієнічна упаковка & обробка</h3>
+            <p class="text-gray-700">Персонал носить рукавичка, маски, щодня дезинфекується зона. Упаковка пищевая с дотриманням HACCP. Термоконтейнери для доставки.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Холодна доставка</h3>
+            <p class="text-gray-700">Для чутливих товарів (морозиво, молочні продукти) — спеціальні рефрижерторні машини. GPS моніторинг температури під час доставки. Гарантія холодної ланцюга від 24 годин.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для харчових товарів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Комплектація & Складування</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Комплектація (за замовлення)</span>
+              <span class="font-bold">20-35 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Температурне складування</span>
+              <span class="font-bold">+50 грн/паль/місяц</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Холодильник (морозиво, молочні)</span>
+              <span class="font-bold">+150 грн/паль/місяц</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Холодна доставка</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Холодна доставка (до 24 км)</span>
+              <span class="font-bold">50-100 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Холодна доставка (далі)</span>
+              <span class="font-bold">150-250 грн</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Термоконтейнер & льід</span>
+              <span class="font-bold">Включено</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин напоїв (300 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 300 × 25 = 7,500 грн<br/>
+          Температурне складування: 1 паль × 450 = 450 грн<br/>
+          Холодна доставка: 300 × 80 = 24,000 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 31,950 грн/місяц = 106 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Холодна доставка харчових товарів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Температурний контроль, гігієнічні стандарти, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
