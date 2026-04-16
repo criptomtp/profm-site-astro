@@ -1,0 +1,185 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Офісних & Шкільних Товарів: Якість, Асортимент, Швидкість';
+const description = 'Спеціалізований фулфілмент для офісних товарів, канцелярії, шкільних матеріалів. Швидка комплектація, контроль якості, 100% страховка, доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-office.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Офісних & Шкільних Товарів<br />Швидкість & Точність
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Ручки, олівці, зошити, папір, папки. Швидка комплектація, контроль якості, 100% страховка, доставка за 24 години. Для школярів, офісів і магазинів.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент офісних товарів
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Office Products Need Special Care -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка офісних товарів у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📊 Висока асортиментна глибина</h3>
+          <p class="text-gray-700">В одному замовленні може бути 20+ артикулів: різні кольори ручок, різні розміри зошитів, різні види папії. Потребується швидка комплектація і чіткий контроль.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Швидкі замовлення, малі партії</h3>
+          <p class="text-gray-700">Середній час комплектації офісних товарів — 2-3 хвилини. Замовлення часто складаються з 10-50 позицій невеликої ваги. Потребується швидка система.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Об'ємність і легкість</h3>
+          <p class="text-gray-700">Папір, зошити легкі, але об'ємні. Коробка за 5 кг може бути 40×30×20 см. Потребується оптимізація складування для економії місця.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎓 Сезонна піки</h3>
+          <p class="text-gray-700">Шкільні покупки мають піки 1-2 раза на рік (перед школою, в новий рік). Потребується гнучка система для обробки великих піків замовлень.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Office Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для офісних товарів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Швидкісна комплектація 2-3 хв.</h3>
+          <p class="text-gray-700">Система складування розділена по категоріям і артикулам. Персонал навчений на швидку комплектацію. Для офісних товарів мета — 2-3 хвилини на замовлення.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль качества 99.95%</h3>
+          <p class="text-gray-700">Для офісних товарів помилки критичні (неправильна ручка = клієнт розчарований). Кожна позиція перевіряється перед відправкою. 99.95% точність.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Компактна упаковка</h3>
+          <p class="text-gray-700">Офісні товари упаковуємо в компактні коробки. Економія місця і вартості доставки. Максимально ефективна упаковка для лёгких товарів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Сезонна гнучкість</h3>
+          <p class="text-gray-700">При піках замовлень (перед школою) ми розширюємо персонал і відділ комплектації. Можемо обробляти 2-3 рази більше замовлень без затримок.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для офісних товарів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">15-25 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Компактна упаковка</span>
+            <span class="font-bold">5-10 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (легкі товари)</span>
+            <span class="font-bold">30-80 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% контроль якості</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин канцелярії (500 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 500 × 20 = 10,000 грн<br/>
+          Упаковка: 500 × 7 = 3,500 грн<br/>
+          Доставка: 500 × 55 = 27,500 грн<br/>
+          Складування: 2 палі × 200 = 400 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 41,400 грн/месяц = 83 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для офісних товарів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">99.95% точність комплектації</p>
+            <p class="text-gray-700">1 помилка на 2000 замовлень. Для офісних товарів це найвищий рівень. Кожна позиція проходить перевірку перед відправкою.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Швидка комплектація 2-3 хвилини</p>
+            <p class="text-gray-700">Офісні товари комплектуються швидко без суб'єкту на якість. Система складування оптимізована для швидкого доступу. &lt;3 хв. в середньому.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Коробка з офісними товарами приватилася мокра — платимо 100%. Миттєва компенсація. Клієнт отримує нові товари швидко.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Сезонна гнучкість</p>
+            <p class="text-gray-700">При піках замовлень (перед школою) ми збільшуємо персонал і можемо обробляти 2-3 рази більше замовлень. Без затримок, без браків.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для офісних & шкільних магазинів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Швидка комплектація, 99.95% точність, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент офісних товарів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
