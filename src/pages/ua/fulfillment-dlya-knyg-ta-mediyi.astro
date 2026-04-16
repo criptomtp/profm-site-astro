@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Книг & Медіа: Захист, Якість, Контроль';
+const description = 'Спеціалізований фулфілмент для книг, аудіокниг, фільмів. Захист від вологи, контроль якості, 100% страховка, швидка доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-books.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Книг & Медіа<br />Захист від Вологи & Контроль Якості
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Художні книги, навчальні матеріали, аудіокниги, медіа. Захист від вологи, контроль стану, 100% страховка, доставка за 24 години. Для видавництв і інтернет-магазинів.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент книг
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Books Need Special Care -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка книг і медіа у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Вологість & Плісень</h3>
+          <p class="text-gray-700">Книги абсолютно чутливі до вологи. Вологість &gt;70% = плісень на сторінках. Потребується сухе, добре провітрюване складування. Контроль вологості 40-60%.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📖 Деліката поверхня</h3>
+          <p class="text-gray-700">Обкладинка, сторінки потребують ніжного обхідження. Згин, подряпина, пошкодження поверхні = товар втрачає цінність. Потребується безпечна упаковка і транспортування.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📚 Різноманіття форматів</h3>
+          <p class="text-gray-700">Тонкі брошури, масивні енциклопедії, аудіокниги на CD, медіа-ящики. Кожен формат потребує різної упаковки і зберігання. Одна система не підходить всім.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎬 Медіа-контент (CD, DVD)</h3>
+          <p class="text-gray-700">CD, DVD чутливі до царапин, температурних коливань. Потребується кліматичний контроль. Упаковка повинна захищати від вологи і пилу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Books Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для книг і медіа</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль вологості 40-60%</h3>
+          <p class="text-gray-700">Дедикована зона для книг з точним клімат-контролем. Датчики вологості кожні 2 години. Якщо вологість піднялася &gt;70% — автоматичний включення осушувача. Запобігання плісені 100%.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Захист від пилу & світла</h3>
+          <p class="text-gray-700">Книги зберігаються на закритих полицях, засклених шафах. Без прямого сонячного світла. Щодня чищу від пилу. Максимальна чистота.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Безпечна упаковка</h3>
+          <p class="text-gray-700">Книги вкладаємо в картонні коробки з повітряною пленою. Для дорогих видань — дерев'яні ящики з прокладками. Максимальна амортизація при транспортуванні.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль якості перед відправкою</h3>
+          <p class="text-gray-700">Кожну книгу перевіряємо перед відправкою: цілісність обкладинки, відсутність пошкоджень, правильність (не путаємо видання). 99.9% точність комплектації.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для книг і медіа</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">10-20 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль якості 99.9%</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Безпечна упаковка</span>
+            <span class="font-bold">5-15 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль вологості</span>
+            <span class="font-bold">+25 грн/паль/місяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (стандарт)</span>
+            <span class="font-bold">40-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Видавництво / Книжний магазин (400 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 400 × 15 = 6,000 грн<br/>
+          Упаковка: 400 × 10 = 4,000 грн<br/>
+          Доставка: 400 × 70 = 28,000 грн<br/>
+          Контроль вологості: 2 палі × 25 = 50 грн/месяц = 50 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 38,050 грн/месяц = 95 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для книг</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">99.9% точність комплектації</p>
+            <p class="text-gray-700">Кожна книга перевіряється перед відправкою. Не путаємо видання, видання, мови. За місяць 1-2 помилки на 400 замовлень.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% контроль вологості</p>
+            <p class="text-gray-700">Вологість 40-60% 24/7. Датчики кожні 2 години. Документація всіх показників. Якщо вологість збільшилася — відразу сповіщаємо.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Книга повернулася мокра, зі слідами плісені — платимо 100%. Миттєва компенсація. Клієнт може без страху замовляти редкие видання.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Захист від пошкоджень при транспортуванні</p>
+            <p class="text-gray-700">Книги упаковуємо с максимальною амортизацією. &lt;0.2% браку при доставці. Дорогі видання доставляємо спеціальним перевізником.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для видавництв і книжних магазинів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Контроль вологості, захист від плісені, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент книг
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
