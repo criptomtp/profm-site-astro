@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Добавок & Вітамінів: Температура, Якість, Гігієна';
+const description = 'Спеціалізований фулфілмент для харчових добавок, вітамінів, добавок. Температурний контроль, гігієнічна обробка, сертифікація, 100% страховка, доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-supplements.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Добавок & Вітамінів<br />Температура, Якість, Гігієна
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Вітаміни, мінерали, білкові добавки, ОМега-3, пробіотики. Температурний контроль, гігієнічна обробка, сертифікація, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент добавок
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Supplements Are Complex -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка добавок & вітамінів у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Температурна чутливість</h3>
+          <p class="text-gray-700">Деякі вітаміни (Омега-3, пробіотики) портяться при температурі &gt;25°C. Потребується контроль 15-20°C або холодильник. Одна помилка при зберіганні = товар втрачає ефективність.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Сертифікація & Дозволи</h3>
+          <p class="text-gray-700">Кожна добавка повинна мати сертифікат від МОЗ, батьківське схвалення, інформацію про склад. Потребується документація, перевірка партій.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Гігієнічні стандарти</h3>
+          <p class="text-gray-700">Люди приймають добавки всередину. Потребується максимальна чистота і гігієна. Склад повинен відповідати GMP стандартам. Персонал - стерильне обладнання.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⏱️ Термін придатності</h3>
+          <p class="text-gray-700">Вітаміни мають строгий термін придатності. Потребується FIFO система для контролю дат. Товар близький до закінчення терміну - не відправляємо.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Supplements Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для добавок</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Температурний контроль 15-20°C</h3>
+          <p class="text-gray-700">Дедикована зона для температурно-чутливих добавок. Для Омега-3 і пробіотиків — окремий холодильник. Датчики кожні 2 години. Документація всіх показників.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ GMP-сертифіковано</h3>
+          <p class="text-gray-700">Склад відповідає GMP (Good Manufacturing Practice) стандартам для харчових добавок. Персонал має спеціальне навчання. Регулярні аудити від органів контролю.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ FIFO система управління</h3>
+          <p class="text-gray-700">Першим увійшов — першим вийшов. Кожна партія маркується датою надходження. При комплектації перевіряємо термін придатності. Товар близький до кінця терміну - не відправляємо.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Контроль якості</h3>
+          <p class="text-gray-700">Кожна упаковка перевіряється перед відправкою: цілісність упаковки, дата придатності, наявність всіх документів. Нулева допуск на браки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для добавок & вітамінів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">15-25 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Температурне складування (звичайне)</span>
+            <span class="font-bold">+25 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Холодильне складування (Омега-3, пробіотики)</span>
+            <span class="font-bold">+100 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% контроль якості</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (стандарт)</span>
+            <span class="font-bold">50-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин добавок (300 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 300 × 20 = 6,000 грн<br/>
+          Температурне складування: 1 паль × 25 = 25 грн/месяц = 25 грн<br/>
+          Холодильне складування: 1 паль × 100 = 100 грн/месяц = 100 грн<br/>
+          Доставка: 300 × 75 = 22,500 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 28,625 грн/месяц = 95 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для добавок</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% контроль температури</p>
+            <p class="text-gray-700">Температура 15-20°C 24/7. Датчики кожні 2 години. Якщо температура підвищилася — автоматичне включення кондиціонера. Документація всіх показників.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">GMP сертифікація</p>
+            <p class="text-gray-700">Склад відповідає GMP стандартам. Персонал має спеціальне навчання. Регулярні аудити від органів контролю якості. Безпека на першому місці.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% контроль терміну придатності</p>
+            <p class="text-gray-700">Кожна партія маркується. При комплектації перевіряємо дату придатності. Товар, який близький до кінця терміну — вилучаємо з обігу.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Добавка повернулася пошкодженою — платимо 100%. Миттєва компенсація. Клієнт може без страху замовляти дорогі добавки.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Безпечна логістика для добавок</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Температурний контроль, GMP стандарти, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент добавок
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
