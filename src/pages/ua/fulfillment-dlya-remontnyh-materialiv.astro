@@ -1,0 +1,185 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Ремонтних Матеріалів: Вага, Упаковка, Безпека';
+const description = 'Спеціалізований фулфілмент для ремонтних матеріалів, інструментів, будівельних матеріалів. Важкі виробів, спеціальна упаковка, 100% страховка, безпечна доставка за 24-48 годин.';
+const ogImage = 'https://profm.ua/images/fulfillment-diy.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Ремонтних Матеріалів<br />Важка Доставка & Безпечна Упаковка
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Пилки, краски, цвяхи, інструменти, плитка. Спеціальна упаковка для важких товарів, безпечна доставка, 100% страховка, доставка за 24-48 годин.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент будматеріалів
+      </a>
+    </div>
+  </section>
+
+  <!-- Why DIY Materials Need Special Handling -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка ремонтних матеріалів у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚖️ Вага & Об'єм</h3>
+          <p class="text-gray-700">Ящик цвяхів за 20 кг не влізе в звичайну коробку. Коробка з краскою за 50 кг вимагає спеціального опалювання. Потребується спеціальна упаковка і спеціальний транспорт.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔨 Гострі краї & Небезпека</h3>
+          <p class="text-gray-700">Пилки, гвоздики, цвяхи гострі й небезпечні. Потребується спеціальна упаковка щоб не пошкодити упаковку при доставці. Одна проколотая коробка = пошкоджений товар.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Вологість & Іржа</h3>
+          <p class="text-gray-700">Метали швидко іржавіють від вологи. Краска мерзне при температурі &lt;0°C. Потребується контроль вологості, температури при складуванні і доставці.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Крихкість матеріалів</h3>
+          <p class="text-gray-700">Плитка легко розбивається. Гіпсокартон ломається при падінні. Дерев'яні матеріали деформуються від вологи. Потребується спеціальна обробка при упаковці.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP DIY Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для ремонтних матеріалів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована упаковка по типам</h3>
+          <p class="text-gray-700">Для кожного матеріалу своя упаковка: картонні ящики для цвяхів, дерев'яні упаковки для плитки, спеціальні контейнери для красок. Максимальна захист від пошкоджень.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль вологості & температури</h3>
+          <p class="text-gray-700">Для металів — контроль вологості &lt;60% для запобігання іржави. Для красок — контроль температури 5-25°C для запобігання замерзанню. Документація всіх показників.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Безпечна доставка важких товарів</h3>
+          <p class="text-gray-700">Машини 5-20 тон з пакування для важких вантажів. Спеціалізовані перевізники. GPS моніторинг. Фото перед і після доставки. Бережне розвантаження.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Страховка & Компенсація</h3>
+          <p class="text-gray-700">Ящик плитки розбився при доставці — платимо 100% вартість. Не потрібно чекати претензій. Миттєва компенсація при приймацнні товару.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для ремонтних матеріалів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">30-50 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціальна упаковка (за позицію)</span>
+            <span class="font-bold">15-40 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль вологості & температури</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (до 50 км)</span>
+            <span class="font-bold">100-200 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин будматеріалів (150 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 150 × 40 = 6,000 грн<br/>
+          Упаковка: 150 × 25 = 3,750 грн<br/>
+          Доставка спеціалізована: 150 × 150 = 22,500 грн<br/>
+          Складування: 3 палі × 400 = 1,200 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 33,450 грн/месяц = 223 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для ремонтних матеріалів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">99.7% точність комплектації</p>
+            <p class="text-gray-700">Для ремонтних матеріалів це критично — неправильна величина плитки = неправильний ремонт. Кожна позиція перевіряється перед відправкою.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Плитка розбилася при доставці — платимо 100%. Не потрібна довга процедура претензій. Компенсація на місці.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Контроль умов складування</p>
+            <p class="text-gray-700">Вологість &lt;60% для запобігання іржави. Температура 5-25°C для красок. Документація кожної години. Якщо відхилення — автоматичне сповіщення.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Безпечна доставка важких предметів</p>
+            <p class="text-gray-700">Спеціальні машини, спеціалізовані перевізники. &lt;1% браку при доставці. GPS моніторинг від складу до дверей клієнта.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Безпечна логістика для будматеріалів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Спеціальна упаковка, контроль умов, 100% страховка, доставка за 24-48 годин.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент будматеріалів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
