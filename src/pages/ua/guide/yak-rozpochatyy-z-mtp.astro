@@ -1,0 +1,422 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const title = 'Як Розпочати з MTP: Повний Гайд для Нових Продавців';
+const description = 'Пошаговий гайд для запуску фулфілменту MTP. Від реєстрації до першого замовлення за 5 днів. Для ФОП, малих і великих бізнесів.';
+const ogImage = 'https://profm.ua/images/getting-started-mtp.jpg';
+
+const publishDate = new Date('2024-12-16').toISOString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description: description,
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Реєстрація в MTP',
+      text: 'Заповніть форму реєстрації з основною інформацією про бізнес'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Вибір пакету',
+      text: 'Оберіть пакет послуг залежно від обсягів замовлень'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Синхронізація товарів',
+      text: 'Завантажте каталог товарів або інтегруйтеся через API'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Доставка товару на склад',
+      text: 'Відправте першу партію товару на наш склад'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Запуск комплектації',
+      text: 'Підтвердіть готовність і почніть приймати замовлення'
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Гайд</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Як Розпочати з MTP<br />за 5 Днів
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Від реєстрації до першого замовлення, що комплектується автоматично. Детальна інструкція для новачків.
+      </p>
+      <a href="#step-1" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Почати розпочинати
+      </a>
+    </div>
+  </section>
+
+  <!-- Timeline Overview -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Графік розпочинання: 5 днів</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="text-center">
+          <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 font-bold text-lg">1</div>
+          <p class="font-bold text-sm">День 1:<br />Реєстрація</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 font-bold text-lg">2</div>
+          <p class="font-bold text-sm">День 2:<br />Синхронізація</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 font-bold text-lg">3</div>
+          <p class="font-bold text-sm">День 3:<br />Завантаження</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 font-bold text-lg">4</div>
+          <p class="font-bold text-sm">День 4:<br />Тестування</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 font-bold text-lg">5</div>
+          <p class="font-bold text-sm">День 5:<br />Запуск</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 1 -->
+  <section id="step-1" class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex gap-6 mb-12">
+        <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-3xl">1</div>
+        <div>
+          <h2 class="text-3xl font-bold mb-2">День 1: Реєстрація</h2>
+          <p class="text-gray-600">30 хвилин</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="text-xl font-bold mb-4">Що робити</h3>
+        <ol class="space-y-4 text-gray-700">
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">1.</span>
+            <span>Перейдіть на <strong>profm.ua/register</strong> або натисніть кнопку внизу</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">2.</span>
+            <span>Заповніть форму реєстрації (дані бізнесу, контакти, вид діяльності)</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">3.</span>
+            <span>Отримайте посилання на підтвердження email</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">4.</span>
+            <span>Підтвердіть email, залогіньтеся в панель управління</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">5.</span>
+            <span>Оберіть план: Стартовий (до 500 замовлень) чи Профі (500+)</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded border border-blue-200 mb-8">
+        <p class="font-bold mb-2">Потрібні документи?</p>
+        <p class="text-gray-700">На етапі реєстрації — ні. Договір укладаємо після, коли ви готові розпочати логістику.</p>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">Після реєстрації ви отримаєте:</h3>
+      <ul class="space-y-2 text-gray-700">
+        <li>✓ Доступ до панелі управління MTP</li>
+        <li>✓ API ключ для синхронізації</li>
+        <li>✓ Кабінет з інструментами для загрузки товарів</li>
+        <li>✓ Контакт вашого менеджера</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Step 2 -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex gap-6 mb-12">
+        <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-3xl">2</div>
+        <div>
+          <h2 class="text-3xl font-bold mb-2">День 2: Синхронізація платформи</h2>
+          <p class="text-gray-600">1-2 години</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="text-xl font-bold mb-4">Виберіть спосіб синхронізації</h3>
+        <div class="space-y-6">
+          <div class="p-4 border rounded bg-gray-50">
+            <h4 class="font-bold mb-2">Варіант A: Вже у вас інтеграція (Shopify, Prom, WooCommerce)</h4>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>Сгенеруйте API ключ у вашій платформі</li>
+              <li>Введіть ключ у панель MTP</li>
+              <li>Синхронізація розпочинається автоматично (займає &lt; 10 хв)</li>
+            </ol>
+          </div>
+          <div class="p-4 border rounded bg-gray-50">
+            <h4 class="font-bold mb-2">Варіант B: Власний магазин без API</h4>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>Завантажте CSV файл з товарами (шаблон надамо)</li>
+              <li>Заповніть SKU, назву, опис, ціну</li>
+              <li>Загрузіть файл у панель MTP</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 p-6 rounded border-l-4 border-yellow-500 mb-8">
+        <p class="font-bold mb-2">🎯 Що таке SKU?</p>
+        <p class="text-gray-700">Унікальний код товару (напр., "RED-SHIRT-XL"). Допомагає MTP ідентифікувати товар на складі. Можна використовувати свої коди або коди з магазину.</p>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">Після синхронізації перевірте:</h3>
+      <ul class="space-y-2 text-gray-700">
+        <li>✓ Всі товари завантажені (виберіть фільтр "стан товара")</li>
+        <li>✓ SKU коди однозначні</li>
+        <li>✓ Цены актуальні</li>
+        <li>✓ Фото завантажені (опціонально)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Step 3 -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex gap-6 mb-12">
+        <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-3xl">3</div>
+        <div>
+          <h2 class="text-3xl font-bold mb-2">День 3: Доставка товару на склад</h2>
+          <p class="text-gray-600">Залежить від вашої локації (1-5 днів)</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="text-xl font-bold mb-4">Як скомплектувати першу партію</h3>
+        <div class="space-y-4 text-gray-700">
+          <p><strong>Важливо:</strong> Зазвичай ми рекомендуємо перші партії розміром 2-5 палет. Це дозволяє протестувати всі операції без великих вложень.</p>
+
+          <p><strong>Крок 1:</strong> Упакуйте товар на коробки чи палети (стандартне упакування)</p>
+
+          <p><strong>Крок 2:</strong> Отримайте адресу нашого складу від менеджера. Зазвичай це:</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li>МТП Склад, Київ (основной хаб)</li>
+            <li>МТП Борисполь (для імпортів)</li>
+            <li>МТП Львів або МТП Харків</li>
+          </ul>
+
+          <p><strong>Крок 3:</strong> Напишіть нам про відправлення:</p>
+          <ul class="list-disc list-inside ml-4 space-y-1">
+            <li>Кількість палет та ящиків</li>
+            <li>Список товарів (бажано з SKU кодами)</li>
+            <li>Дата відправлення та перевізник</li>
+          </ul>
+
+          <p><strong>Крок 4:</strong> Ми отримуємо вашу доставку, розвантажуємо, розміщуємо на складі</p>
+        </div>
+      </div>
+
+      <div class="bg-green-50 p-6 rounded border-l-4 border-green-600 mb-8">
+        <p class="font-bold mb-2">✓ Тестування з малою партією</p>
+        <p class="text-gray-700">
+          Не повинні завантажувати всі товари відразу. Почніть з 2 палет (~50-100 товарів). Перевірте наш сервіс, потім завантажіть більше.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">За що MTP платить при приймання:</h3>
+      <ul class="space-y-2 text-gray-700">
+        <li>✓ Розвантаження вашої доставки</li>
+        <li>✓ Контроль якості (пошкодження, дефекти)</li>
+        <li>✓ Розміщення на складі з етикетуванням</li>
+        <li>✓ Внесення в WMS систему</li>
+        <li>✓ Перша синхронізація запасів</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Step 4 -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex gap-6 mb-12">
+        <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-3xl">4</div>
+        <div>
+          <h2 class="text-3xl font-bold mb-2">День 4: Тестування</h2>
+          <p class="text-gray-600">2-3 години</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="text-xl font-bold mb-4">Робимо тестові замовлення</h3>
+        <ol class="space-y-4 text-gray-700">
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">1.</span>
+            <span><strong>Разместимо тестовий рядок:</strong> Звернитесь до менеджера і скажіть скільки тестових замовлень вам потребується (5-10)</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">2.</span>
+            <span><strong>Робимо замовлення:</strong> Через вашу платформу (Shopify, Prom, мой сайт) оформите 5 тестових замовлень</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">3.</span>
+            <span><strong>Перевіримо синхронізацію:</strong> Замовлення потрапляють до нас, з'являються в WMS панелі</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">4.</span>
+            <span><strong>Комплектуємо вручну:</strong> Беремо товари, укупуємо, даємо вам звіт з фото</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="font-bold text-red-600 flex-shrink-0">5.</span>
+            <span><strong>Отримуєте звіт:</strong> Список замовлень, статусу, фото упаковки, TTN номери</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded border border-blue-200">
+        <p class="font-bold mb-2">Що перевіримо під час тестування?</p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✓ Чи замовлення автоматично потрапляють до MTP</li>
+          <li>✓ Чи правильно синхронізуються SKU коди</li>
+          <li>✓ Чи запаси оновлюються в реальному часі</li>
+          <li>✓ Чи правильно друкуються TTN етикети</li>
+          <li>✓ Чи якість упаковки задовільна</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 5 -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex gap-6 mb-12">
+        <div class="bg-red-600 text-white rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0 font-bold text-3xl">5</div>
+        <div>
+          <h2 class="text-3xl font-bold mb-2">День 5: Запуск</h2>
+          <p class="text-gray-600">30 хвилин</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded border-l-4 border-red-600 mb-8">
+        <h3 class="text-xl font-bold mb-4">Включаємо автоматичну комплектацію</h3>
+        <ol class="space-y-3 text-gray-700">
+          <li><strong>1. Підтвердіть готовність</strong> — напишіть менеджеру, що готові</li>
+          <li><strong>2. Включимо режим production</strong> — замовлення будуть комплектуватися автоматично</li>
+          <li><strong>3. Перевірте синхронізацію</strong> — зробіть одне справжнє замовлення і стежте за статусом</li>
+          <li><strong>4. Отримуйте TTN номери</strong> — вони будуть повертатися у вашу платформу</li>
+        </ol>
+      </div>
+
+      <div class="bg-green-50 p-6 rounded border-l-4 border-green-600 mb-8">
+        <p class="font-bold mb-2">🎉 Вітаємо!</p>
+        <p class="text-gray-700">
+          Ви розпочали логістику з MTP. Перші замовлення будуть комплектуватися за &lt; 30 хвилин і доставлятися за 24-48 годин.
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">Що робити далі</h3>
+      <ul class="space-y-2 text-gray-700">
+        <li>✓ Завантажте більше товарів (якщо потребується)</li>
+        <li>✓ Розширіть маркетинг і продажи</li>
+        <li>✓ Слідкуйте за метриками у панелі MTP</li>
+        <li>✓ Утримуйте зв'язок з менеджером для оптимізації</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Common Issues -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Розв'язання типових проблем</h2>
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">❓ Синхронізація не працює</h3>
+          <p class="text-gray-700"><strong>Рішення:</strong> Перевірте, чи ви дали MTP правильний API ключ. Увімкніть логування у панелі MTP і поділіться помилкою з менеджером. Зазвичай це займає 30 хвилин для розв'язання.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">❓ Замовлення приходить з опізненням</h3>
+          <p class="text-gray-700"><strong>Рішення:</strong> Webhooks можуть затримуватися на &lt; 5 хв під час навантажень. Перевірте статус у панелі MTP. Якщо затримка &gt; 1 години, це может бути проблема в API платформи (Shopify, Prom) — зв'яжіться з їхньою підтримкою.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">❓ SKU коди не збігаються</h3>
+          <p class="text-gray-700"><strong>Рішення:</strong> Переконайтеся, що в платформі і в MTP використовуються ідентичні SKU коди. Наприклад, "REDSHIRT-XL" в Shopify повинен бути точно "REDSHIRT-XL" в MTP (без пробілів, з правильним регістром).</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-3">❓ Товар приходить пошкоджено</h3>
+          <p class="text-gray-700"><strong>Рішення:</strong> Упакуйте товар з захистом (повітряні бульбашки, гофракартон). Розскажіть нам про матеріал упаковки. MTP допоможе оптимізувати логістику, щоб знизити пошкодження.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Часто задаванні питання</h2>
+      <div class="space-y-6">
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можу я скасувати замовлення раніше ніж за 3 місяці?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. Договір 3 місяце, але ви можете розірвати його раніше без штрафів. Просто напишіть нам за тиждень. Товар повертаємо або передаємо іншому логісту.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Коли я почну платити?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Першого числа після запуску. Рахунок готуємо на основі фактичних операцій (комплектацій, доставок, складування). Платіж у Privat24, банку або готівкою.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Потрібні УКД ліцензії на фулфілмент?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Ні. MTP має всі необхідні ліцензії. Ви залишаєтесь власником товару, ми просто керуємо логістикою. Ліцензії не потребується.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можна вести на кількох платформах одночасно?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Абсолютно. MTP синхронізує запаси з усіх платформ. Якщо товар куплений на Shopify — він відразу зникає з Prom, Instagram та вашого сайту.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Розпочніть з MTP сьогодні</h2>
+      <p class="text-xl mb-8 opacity-90">
+        За 5 днів у вас буде автоматична логістика. Виконуйте замовлення, ми керуємо складом.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+          Розпочати реєстрацію
+        </a>
+        <a href="tel:+380931234567" class="inline-block border-2 border-white text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-red-600 transition">
+          Зв'язатися з менеджером
+        </a>
+      </div>
+      <p class="mt-8 text-sm opacity-75">
+        Реєстрація безкоштовна. Платіть лише за послуги.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
