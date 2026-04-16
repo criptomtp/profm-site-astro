@@ -1,0 +1,334 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'MTP vs Альтернативи: Чому МТП Найкраще для Логістики';
+const description = 'Порівняння MTP з іншими варіантами: власна логістика, конкуренти, Rozetka логістика, маленькі логісти. Матриця вибору, ROI, переваги MTP.';
+const ogImage = 'https://profm.ua/images/mtp-vs-alternatives.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ComparisonChart',
+  name: title,
+  description: description,
+  datePublished: new Date('2024-12-16').toISOString()
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Порівняння</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        MTP vs Альтернативи<br />Чому МТП Найкраще
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Розглянули всі варіанти логістики. Це порівняння допоможе вам зробити правильний вибір.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparison Matrix -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Матриця порівняння</h2>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border p-3 text-left">Параметр</th>
+              <th class="border p-3 text-center bg-red-100">MTP</th>
+              <th class="border p-3 text-center">Власна логістика</th>
+              <th class="border p-3 text-center">Конкурент А</th>
+              <th class="border p-3 text-center">Rozetka доставка</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3 font-bold">Вартість на замовлення</td>
+              <td class="border p-3 text-center font-bold text-red-600">127 грн</td>
+              <td class="border p-3 text-center">140 грн</td>
+              <td class="border p-3 text-center">180 грн</td>
+              <td class="border p-3 text-center">200+ грн</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3 font-bold">Точність комплектації</td>
+              <td class="border p-3 text-center font-bold text-red-600">99.8%</td>
+              <td class="border p-3 text-center">98-99%</td>
+              <td class="border p-3 text-center">97-98%</td>
+              <td class="border p-3 text-center">99.5%</td>
+            </tr>
+            <tr>
+              <td class="border p-3 font-bold">Час комплектації</td>
+              <td class="border p-3 text-center font-bold text-red-600">&lt;30 хв</td>
+              <td class="border p-3 text-center">2-4 години</td>
+              <td class="border p-3 text-center">1-2 години</td>
+              <td class="border p-3 text-center">4-6 годин</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3 font-bold">Охоплення (міста)</td>
+              <td class="border p-3 text-center font-bold text-red-600">50+ міст</td>
+              <td class="border p-3 text-center">1-3 міста</td>
+              <td class="border p-3 text-center">10-15 міст</td>
+              <td class="border p-3 text-center">Усі міста</td>
+            </tr>
+            <tr>
+              <td class="border p-3 font-bold">SLA гарантія</td>
+              <td class="border p-3 text-center font-bold text-red-600">99%+</td>
+              <td class="border p-3 text-center">—</td>
+              <td class="border p-3 text-center">95-98%</td>
+              <td class="border p-3 text-center">95%+</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3 font-bold">API інтеграція</td>
+              <td class="border p-3 text-center font-bold text-red-600">✓ Вільна</td>
+              <td class="border p-3 text-center">✓ Своя розробка</td>
+              <td class="border p-3 text-center">✓ +5K грн</td>
+              <td class="border p-3 text-center">✓ Вільна</td>
+            </tr>
+            <tr>
+              <td class="border p-3 font-bold">Страховка товару</td>
+              <td class="border p-3 text-center font-bold text-red-600">100%</td>
+              <td class="border p-3 text-center">Ви несете</td>
+              <td class="border p-3 text-center">80-90%</td>
+              <td class="border p-3 text-center">95%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3 font-bold">Роль в рецензіях платформи</td>
+              <td class="border p-3 text-center font-bold text-red-600">⬆️ +0.2 звізд</td>
+              <td class="border p-3 text-center">Залежить від вас</td>
+              <td class="border p-3 text-center">Нейтральна</td>
+              <td class="border p-3 text-center">⬆️ +0.1 звізд</td>
+            </tr>
+            <tr>
+              <td class="border p-3 font-bold">Управління персоналом</td>
+              <td class="border p-3 text-center font-bold text-red-600">МТП керує</td>
+              <td class="border p-3 text-center">Ви керуєте</td>
+              <td class="border p-3 text-center">Вони керують</td>
+              <td class="border p-3 text-center">Вони керують</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3 font-bold">Мінімальний обсяг</td>
+              <td class="border p-3 text-center font-bold text-red-600">Немає</td>
+              <td class="border p-3 text-center">1000+ замовлень</td>
+              <td class="border p-3 text-center">500+ замовлень</td>
+              <td class="border p-3 text-center">100+ замовлень</td>
+            </tr>
+            <tr class="bg-red-50">
+              <td class="border p-3 font-bold text-lg">ЗАГАЛЬНА ОЦІНКА</td>
+              <td class="border p-3 text-center font-bold text-lg text-red-600">⭐⭐⭐⭐⭐</td>
+              <td class="border p-3 text-center">⭐⭐⭐☆☆</td>
+              <td class="border p-3 text-center">⭐⭐⭐⭐☆</td>
+              <td class="border p-3 text-center">⭐⭐⭐⭐☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Comparison -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Детальне порівняння варіантів</h2>
+
+      <div class="space-y-8">
+        <!-- Option 1 -->
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Варіант 1: Власна логістика</h3>
+            <span class="text-sm font-bold bg-yellow-100 px-3 py-1 rounded">⭐⭐⭐</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 text-gray-700 mb-4">
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Переваги:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Контроль 100%</li>
+                <li>✓ Жодних комісій</li>
+                <li>✓ Своя марка (персонал)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Недоліки:</p>
+              <ul class="text-sm space-y-1">
+                <li>✗ Витрати 140+ грн/замовлення</li>
+                <li>✗ Управління персоналом</li>
+                <li>✗ Обмежена географія</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600"><strong>Для кого:</strong> Великих компаній (5000+ замовлень) із стабільним обсягом і де контроль важливіший за вартість.</p>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="bg-white p-6 rounded border-l-4 border-gray-400">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Варіант 2: Конкурент А (другий гравець ринку)</h3>
+            <span class="text-sm font-bold bg-yellow-100 px-3 py-1 rounded">⭐⭐⭐⭐</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 text-gray-700 mb-4">
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Переваги:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ 97-98% точність</li>
+                <li>✓ 10-15 міст</li>
+                <li>✓ Знижена ціна для великих</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Недоліки:</p>
+              <ul class="text-sm space-y-1">
+                <li>✗ 180 грн/замовлення</li>
+                <li>✗ Слабша SLA</li>
+                <li>✗ Мінімум 500+ замовлень</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600"><strong>Для кого:</strong> Середніх компаній, які вже мають 500+ замовлень і потребують іншого логіста.</p>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="bg-white p-6 rounded border-l-4 border-blue-600">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Варіант 3: Rozetka логістика (внутрішня)</h3>
+            <span class="text-sm font-bold bg-yellow-100 px-3 py-1 rounded">⭐⭐⭐⭐</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 text-gray-700 mb-4">
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Переваги:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ 200+ грн але з комісією Rozetka</li>
+                <li>✓ Усі міста України</li>
+                <li>✓ Гарна репутація</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Недоліки:</p>
+              <ul class="text-sm space-y-1">
+                <li>✗ Лише для FBO</li>
+                <li>✗ Повільна комплектація</li>
+                <li>✗ Дорого для малих обсягів</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600"><strong>Для кого:</strong> Продавців, які хочуть тільки Rozetka FBO і готові платити премію за брендовану доставку.</p>
+        </div>
+
+        <!-- Option 4: MTP -->
+        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Варіант 4: MTP (рекомендуємо)</h3>
+            <span class="text-sm font-bold bg-red-200 px-3 py-1 rounded">⭐⭐⭐⭐⭐</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 text-gray-700 mb-4">
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Переваги:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ 127 грн (дешевше)</li>
+                <li>✓ 99.8% точність (найкраща)</li>
+                <li>✓ 50+ міст (найбільше)</li>
+                <li>✓ Немає мінімуму</li>
+                <li>✓ 100% страховка</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600 font-bold">Недоліки:</p>
+              <ul class="text-sm space-y-1">
+                <li>✓ Немає (серйозно!)</li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600"><strong>Для кого:</strong> Для всіх — від ФОП до енотерпрайзу. Мотло оцінка, гнучкість, якість.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decision Matrix -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Матриця вибору: Який варіант для вас?</h2>
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded">
+          <p class="font-bold text-lg mb-3">📊 Обсяг 100-500 замовлень на місяць?</p>
+          <p class="text-red-600 font-bold text-lg">→ MTP (єдиний варіант, що має смисл)</p>
+          <p class="text-gray-700 text-sm mt-2">Власна логістика = неможливо рентабельна. Конкуренти = мінімум 500. Rozetka = тільки для FBO. MTP = підходить ідеально.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <p class="font-bold text-lg mb-3">📈 Обсяг 500-5000 замовлень на місяць?</p>
+          <p class="text-red-600 font-bold text-lg">→ MTP або Конкурент А (залежить від вимог)</p>
+          <p class="text-gray-700 text-sm mt-2">MTP дешевше (127 vs 180), краще якість (99.8% vs 98%). Конкурент А може знижити ціну за великий обсяг. Вибір: якість або ціна. Рекомендуємо MTP.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <p class="font-bold text-lg mb-3">🚀 Обсяг 5000+ замовлень на місяць?</p>
+          <p class="text-red-600 font-bold text-lg">→ MTP (Enterprise) або Власна логістика</p>
+          <p class="text-gray-700 text-sm mt-2">На такому обсязі власна логістика стає економічна. Але MTP Enterprise дешевше, якіснміше, без управління персоналом. Рекомендуємо MTP Enterprise з SLA 99.5%.</p>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <p class="font-bold text-lg mb-3">🛒 Хочеш тільки Rozetka FBO?</p>
+          <p class="text-red-600 font-bold text-lg">→ MTP (офіційний партнер Rozetka)</p>
+          <p class="text-gray-700 text-sm mt-2">MTP — це офіційний партнер логістики Rozetka. Запуск за 3 дні. Комісія Rozetka на 30% нижче через MTP. Інші варіанти непотребни.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Comparison -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">ROI Порівняння за рік</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-4 text-left">Сценарій</th>
+              <th class="border p-4 text-center">Власна логістика</th>
+              <th class="border p-4 text-center">MTP</th>
+              <th class="border p-4 text-center">Економія</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4 font-bold">1000 замовлень/місяц (12000 за рік)</td>
+              <td class="border p-4 text-center">168,000 грн</td>
+              <td class="border p-4 text-center">152,400 грн</td>
+              <td class="border p-4 text-center font-bold text-green-600">15,600 грн (9%)</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4 font-bold">5000 замовлень/місяц (60000 за рік)</td>
+              <td class="border p-4 text-center">840,000 грн</td>
+              <td class="border p-4 text-center">762,000 грн</td>
+              <td class="border p-4 text-center font-bold text-green-600">78,000 грн (9%)</td>
+            </tr>
+            <tr>
+              <td class="border p-4 font-bold">10000 замовлень/місяц (120000 за рік)</td>
+              <td class="border p-4 text-center">1,680,000 грн</td>
+              <td class="border p-4 text-center">1,524,000 грн</td>
+              <td class="border p-4 text-center font-bold text-green-600">156,000 грн (9%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-gray-700 mt-6">
+        Економія в MTP — це не всього вартість комплектації. Потрібно добавити: економію на персоналі, оренту складу, управління, зменшення помилок і повернень. Реальна економія = 20-40% від загальних логістичних витрат.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Вибери MTP — найкраще рішення</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Дешевше, якіснмше, гнучче. Без мінімумів, без прихованих комісій.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити з MTP
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
