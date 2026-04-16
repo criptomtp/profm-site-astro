@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Jewelry & Accessories Fulfillment | 24/7 Security, RFID Inventory, Oxidation Prevention, 100% Insurance | MTP';
+const description = 'Specialized fulfillment for jewelry, watches, luxury accessories. 24/7 guarded storage, RFID tracking, 30-50% humidity oxidation prevention, specialized courier delivery, 100% insurance coverage.';
+const ogImage = 'https://profm.ua/images/fulfillment-jewelry.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴200-₴500'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Jewelry &amp; Accessories Fulfillment<br />24/7 Security, RFID Inventory, Oxidation Prevention
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Gold rings, diamond earrings, watches, luxury handbags. Guarded 24/7 secure vault storage, RFID tracking, 30-50% humidity oxidation control, specialized courier delivery, 100% insurance.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Jewelry Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Jewelry Requires Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💎 Extreme High-Value</h3>
+          <p class="text-gray-700">Gold ring worth 5000 UAH, diamond worth 30,000 UAH. Loss of single item = catastrophic financial impact. Requires maximum security, surveillance, and insured vault storage.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Precise Inventory Control</h3>
+          <p class="text-gray-700">Every piece tracked individually. High-value jewelry easily lost or misplaced. Requires RFID tags, barcodes, serial cataloging. Real-time inventory system mandatory.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔐 Theft Prevention 24/7</h3>
+          <p class="text-gray-700">Storage facility must have armed security, CCTV surveillance, alarm systems, biometric access. Staff vetted thoroughly. Jewelry is target for theft—maximum protective measures required.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✨ Oxidation Prevention</h3>
+          <p class="text-gray-700">Silver tarnishes at humidity &gt;70%. Gold discolors. Requires strict 30-50% humidity control. Anti-oxidizing packaging. Items must arrive pristine as if brand-new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Jewelry Fulfillment Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Maximum Security 24/7 with Guarded Vault</h3>
+          <p class="text-gray-700">Dedicated locked storage for high-value jewelry. Armed security on-site 24/7. CCTV surveillance covering all angles. Alarm system, biometric access controls, safes. Vetted personnel with background checks.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ RFID &amp; Barcode Inventory Tracking</h3>
+          <p class="text-gray-700">Every piece has RFID tag, barcode, or serial catalog number. Monthly inventory audits (1-2x/month). Real-time WMS system tracks location of every item. Zero loss guarantee with system verification.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Oxidation Prevention 30-50% Humidity</h3>
+          <p class="text-gray-700">Strict humidity control at 30-50% for gold, silver, precious metals. Desiccant treatments. Anti-tarnish packaging (acid-free tissue, silica gel). Items arrive bright and lustrous.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Specialized Courier with Full Chain-of-Custody</h3>
+          <p class="text-gray-700">High-value jewelry shipped via armored courier. GPS real-time tracking. Signature confirmation on delivery. Photo documentation before/after. Complete chain-of-custody documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Jewelry &amp; Accessories</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment, Security, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">30–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>RFID inventory &amp; cataloging</span>
+            <span class="font-bold">+100 UAH/month</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized luxury packaging</span>
+            <span class="font-bold">20–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>24/7 security &amp; vault storage</span>
+            <span class="font-bold">+300 UAH/month</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized armored courier</span>
+            <span class="font-bold">200–500 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Jewelry Store (100 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 100 × 40 = 4,000 UAH<br/>
+          Specialized packaging: 100 × 35 = 3,500 UAH<br/>
+          Armored courier delivery: 100 × 350 = 35,000 UAH<br/>
+          RFID inventory system: 100 UAH/month<br/>
+          24/7 security vault: 300 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 42,900 UAH/month = 429 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: RFID tracking, 30-50% humidity, 24/7 security, armored delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Theft Prevention</p>
+          <p class="text-sm text-gray-600 mt-2">24/7 security with CCTV, alarms, biometric access</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Inventory Tracking</p>
+          <p class="text-sm text-gray-600 mt-2">RFID tags, real-time WMS, monthly audits</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">30-50%</p>
+          <p class="text-gray-700 font-bold">Humidity Control</p>
+          <p class="text-sm text-gray-600 mt-2">Anti-tarnish packaging, desiccant treatment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Jewelry Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        24/7 guarded vault, RFID inventory, oxidation prevention, armored delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

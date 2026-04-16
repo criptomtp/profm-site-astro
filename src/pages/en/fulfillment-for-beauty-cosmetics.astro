@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Beauty & Cosmetics Fulfillment | Temperature Control 18-22°C, Fragile Glass, 99.9% Quality | MTP';
+const description = 'Specialized fulfillment for cosmetics, perfumes, serums, skincare. Climate control 18-22°C, anti-fragile glass protection, UV-light dark storage, 99.9% quality control, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-beauty.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴150'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Beauty &amp; Cosmetics Fulfillment<br />Temperature Stable, 99.9% Quality, Fragile Protection
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Perfumes, serums, oils, creams in glass flasks. Climate control 18-22°C, dark UV-protected storage, anti-fragile packaging, sterile hygiene handling, 99.9% quality control, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Beauty Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Beauty &amp; Cosmetics Require Special Care</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Temperature Stability</h3>
+          <p class="text-gray-700">Perfumes, oils, serums degrade above 25°C. Ingredients separate and lose efficacy. Requires strict 18-22°C control. One temperature spike = product ruined and unsellable.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Humidity &amp; Light Sensitivity</h3>
+          <p class="text-gray-700">Cosmetics degrade from moisture and direct sunlight. Requires dark, dry storage below 60% humidity. UV light exposure = oxidized, discolored, degraded formula within hours.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🍾 Fragile Glass Flask Packaging</h3>
+          <p class="text-gray-700">Perfumes in glass vials, creams in glass jars. Single crack = 100% product loss. Requires maximum protective padding during storage and transit. Glass containers are breakage risk.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✨ Hygiene &amp; Purity</h3>
+          <p class="text-gray-700">Cosmetics ultra-sensitive to contamination. Single hair in cream = 1-star review. Requires sterile handling: staff in gowns, masks, gloves. Daily sanitization of all surfaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Beauty &amp; Cosmetics Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Climate Control 18-22°C</h3>
+          <p class="text-gray-700">Dedicated temperature-stable zone. Hourly sensor monitoring with alerts for any deviation. Hourly documentation and compliance logging. Backup power for continuous climate control.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏭 Sterile Hygiene Handling</h3>
+          <p class="text-gray-700">Staff in sterile gowns, masks, gloves, caps. Daily warehouse sanitization protocol. Bacteriostatic container treatment. Highest hygiene standards for product purity.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Anti-Fragile Glass Protection</h3>
+          <p class="text-gray-700">Glass flasks wrapped in air cushioning, placed in protective cardboard boxes, then shipped in secondary protective outer box. Multi-layer shock absorption. Maximum damage prevention.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 100% Quality Control 99.9%</h3>
+          <p class="text-gray-700">Zero-defect QC: every item inspected (not 10% sampling). Seal integrity, appearance, smell, consistency, temperature at packing verified. Only perfect items ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Beauty &amp; Cosmetics</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Climate Storage, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">20–30 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% quality control inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Climate-controlled storage</span>
+            <span class="font-bold">+25 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–150 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Cosmetics Store on Rozetka FBO (400 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 400 × 25 = 10,000 UAH<br/>
+          Climate storage: 1 pallet × 425 = 425 UAH/month<br/>
+          Delivery across Ukraine: 400 × 100 = 40,000 UAH<br/>
+          <strong class="text-lg">TOTAL: 50,425 UAH/month = 126 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: temperature control, 99.9% quality, 100% insurance, sterile hygiene, fragile protection</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.9%</p>
+          <p class="text-gray-700 font-bold">Quality Control</p>
+          <p class="text-sm text-gray-600 mt-2">Zero-defect: every item 100% inspected</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">18-22°C</p>
+          <p class="text-gray-700 font-bold">Stable Temperature</p>
+          <p class="text-sm text-gray-600 mt-2">Hourly monitoring with automatic alerts</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Breakage Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Multi-layer protective glass packaging</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Perfect Your Beauty Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Climate control, 99.9% quality, sterile hygiene, fragile protection, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
