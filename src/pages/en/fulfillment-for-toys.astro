@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Toy Fulfillment | Safety 100% Control, Hygiene ДСТУ Standards, Kids-Safe | MTP';
+const description = 'Specialized toy fulfillment with safety compliance. 100% safety QC inspection, ДСТУ hygiene certification, detachable parts checked, sealed original packaging, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-toys.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Toy Fulfillment<br />100% Safety Control, ДСТУ Certified, Kids-Safe
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Building blocks, dolls, stuffed animals. 100% safety QC inspection, ДСТУ hygiene certification, no loose parts or sharp edges, daily sanitization, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Toy Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Toys Require Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">👶 Child Safety Priority</h3>
+          <p class="text-gray-700">Toys go directly into children's mouths and hands. Loose button, sharp edge, paint defect = child safety risk. Requires 100% zero-defect quality control before every shipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Certification &amp; Compliance</h3>
+          <p class="text-gray-700">Every toy must have ДСТУ compliance certification, safety agency approval, documentation. Requires batch tracking, certification verification, quality documentation for all shipments.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Original Sealed Packaging</h3>
+          <p class="text-gray-700">Toys must stay in original manufacturer packaging. Re-packaging risks product damage and loss of safety seals. Requires delicate handling and preservation of original box integrity.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Hygiene &amp; Sanitization</h3>
+          <p class="text-gray-700">Toys touched by children need maximum cleanliness. Warehouse must be dust-free, mold-free with daily sanitization. Staff must wear gloves and masks. High hygiene standards mandatory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Toy Fulfillment Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Safety Inspection</h3>
+          <p class="text-gray-700">Every toy checked before packing: all parts present, no sharp edges, paint integrity verified, packaging seals intact, instructions readable. Zero defects shipped. Safety first, always.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Hygenic Storage &amp; Handling</h3>
+          <p class="text-gray-700">Dedicated clean storage zone for toys. Daily sanitization protocol. Staff wears gloves and masks. Humidity &lt;60% prevents mold. Maximum cleanliness for child safety.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Original Packaging Preservation</h3>
+          <p class="text-gray-700">Toys stored in original manufacturer packaging. Secondary protective box for shipping. Multi-layer cushioning. &lt;0.1% damage rate. Original safety seals preserved on every package.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Certification Documentation</h3>
+          <p class="text-gray-700">All batches verified for ДСТУ certification, safety agency approval, manufacturing dates. Documentation tracked in system. Only certified toys accepted and shipped to customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Toys</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Quality Control, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">15–25 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% safety QC inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Safe protective packaging</span>
+            <span class="font-bold">10–20 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Toy Store (250 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 250 × 20 = 5,000 UAH<br/>
+          Packaging: 250 × 15 = 3,750 UAH<br/>
+          Delivery: 250 × 75 = 18,750 UAH<br/>
+          Storage (2 pallets): 2 × 400 = 800 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 28,300 UAH/month = 113 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 100% safety QC, hygiene certification, original packaging preservation, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Safety Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Safety QC Control</p>
+          <p class="text-sm text-gray-600 mt-2">Every toy inspected before shipping</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">ДСТУ</p>
+          <p class="text-gray-700 font-bold">Certified Hygiene</p>
+          <p class="text-sm text-gray-600 mt-2">Daily sanitization, staff certification</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.1%</p>
+          <p class="text-gray-700 font-bold">Damage Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Original packaging preserved</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Insurance Coverage</p>
+          <p class="text-sm text-gray-600 mt-2">Instant reimbursement for any damage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Toy Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        100% safety QC, ДСТУ certification, hygiene standards, original packaging preservation, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
