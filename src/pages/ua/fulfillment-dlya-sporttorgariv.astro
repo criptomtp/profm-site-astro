@@ -1,0 +1,185 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Спорттоварів: Доставка, Страховка, Асортимент';
+const description = 'Спеціалізований фулфілмент для спорттоварів. Від мяча до велосипеда, усім товарам нужна швидка доставка і надійна страховка. 100% страховка, 99.8% якість, доставка за 24-48 годин.';
+const ogImage = 'https://profm.ua/images/fulfillment-sports.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Спорттоварів<br />Швидка Доставка & Надійна Страховка
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Мячі, гантелі, велосипеди, одяг, взуття. Швидкісна комплектація, 100% страховка, 99.8% якість, доставка за 24-48 годин. Для спортивних магазинів і маркетплейсів.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент спорттоварів
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Sports Equipment is Complex -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка спорттоварів у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏃 Широкий асортимент</h3>
+          <p class="text-gray-700">Від малих предметів (спортивні рукавички) до великих (велосипеди). Кожен товар потребує різної упаковки, ціни, способу складування. Одна система зберігання не влаштовує всім.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Крихкість товарів</h3>
+          <p class="text-gray-700">Велосипеди, ролики, скейти при падінні розбиваються. Потребується спеціальна упаковка і ніжне обхідження. Одна брак при доставці = втрата 1000+ грн + рецензія.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Сезонність попиту</h3>
+          <p class="text-gray-700">Спорттовари мають сезонні піки: лижі взимку, велосипеди літом. Потребується гнучка зберігання, швидкі перевезення. 1000 велосипедів приходить за 2 тижні — потребується 48-годинна доставка всім.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🚚 Доставка до важких місць</h3>
+          <p class="text-gray-700">Велосипеди потребують спеціального транспорту. Важкі гантелі можуть пошкодити звичайні коробки. Потребується дорогий, спеціалізований перевізник.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Sports Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для спорттоварів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована упаковка</h3>
+          <p class="text-gray-700">Для кожного типу товару своя упаковка: картонні коробки для одягу, дерев'яні ящики для велосипедів, піна для хрупких предметів. Максимальний захист від пошкоджень.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Швидкісна комплектація</h3>
+          <p class="text-gray-700">Середня комплектація спорттоварів — 3-5 хв. (замість 10 хв. для звичайних товарів). Система зберігання розділена за розмірами, категоріями, вагою для швидкого доступу.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована доставка</h3>
+          <p class="text-gray-700">Для велосипедів, лиж, ролеризаторів — спеціальні машини. Персонал підготовлений до роботи з важкими і крихкими товарами. GPS мониторинг від складу до дверей.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Страховка & Компенсація</h3>
+          <p class="text-gray-700">Велосипед за 3000 грн повернувся пошкодженим — платимо 3000 грн. Миттєва компенсація без паперів і судових справ. 100% надійність для клієнта.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для спорттоварів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">25-40 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціальна упаковка (за позицію)</span>
+            <span class="font-bold">10-30 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (стандарт, до 50 км)</span>
+            <span class="font-bold">50-150 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка велосипедів (до 50 км)</span>
+            <span class="font-bold">150-300 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Спортивний магазин (100 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 100 × 30 = 3,000 грн<br/>
+          Упаковка: 100 × 20 = 2,000 грн<br/>
+          Доставка змішана: 75 × 100 + 25 × 250 = 13,250 грн<br/>
+          Складування: 2 палі × 400 = 800 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 19,050 грн/місяц = 190 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для спорттоварів</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">99.8% точність комплектації</p>
+            <p class="text-gray-700">Поки що 99.8% зберіганн усіх замовлень спорттоварів. За місяць 1-2 помилки на 500 замовлень. Для спорттоварів це найвищий рівень якості.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Велосипед розбився при доставці — платимо 100%. Не потрібна довга процедура претензії. Компенсація на місці.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Спеціальна обробка крихких товарів</p>
+            <p class="text-gray-700">Велосипеди, ролики, скейти упаковуються з максимальною амортизацією. Піна, повітряні бульбашки, картонні вставки. &lt;0.5% браку при доставці.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Контроль розмірів & ваги</p>
+            <p class="text-gray-700">Кожна позиція проходить перевірку розмірів та ваги. Якщо розмір не підходить в умовлену коробку — повідомляємо відразу, не чекаємо рекламацій від клієнтів.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для спортивних магазинів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Швидка комплектація, спеціальна упаковка, 100% страховка, доставка за 24-48 годин.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент спорттоварів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
