@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Books & Media Fulfillment | Humidity 40-60%, Mold Prevention, 99.9% Accuracy | MTP';
+const description = 'Specialized fulfillment for books, audiobooks, DVDs, CDs. Humidity control 40-60%, dust & light protection, format-flexible storage (thin pamphlets to encyclopedias), 99.9% accuracy, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-books.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴40-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Books &amp; Media Fulfillment<br />Humidity Control, Mold Prevention, 99.9% Accuracy
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Hardcover books, audiobooks, DVDs, CDs, vinyl records. Humidity control 40-60%, mold prevention, dust & UV-light protection, flexible format storage, 99.9% accuracy, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Books Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Books &amp; Media Require Special Care</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Moisture &amp; Mold Risk</h3>
+          <p class="text-gray-700">Books and paper are moisture-sensitive. Humidity &gt;70% = mold growth on pages in weeks. Requires strict 40-60% humidity control. One humid week ruins rare books permanently.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📖 Delicate Covers & Pages</h3>
+          <p class="text-gray-700">Dust, bending, scratches damage covers and pages. Books need gentle handling. Bent corner, creased spine, page crease = book loses value. Requires protective packaging and careful transport.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📚 Format Diversity</h3>
+          <p class="text-gray-700">Thin pamphlets, heavy encyclopedias, CDs, DVDs, vinyl records. Each requires different packaging and storage approach. One-size-fits-all system doesn't work for media diversity.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎬 Media Sensitivity</h3>
+          <p class="text-gray-700">CDs and DVDs scratch easily, degrade with temperature swings. Vinyl records warp if stored improperly. Requires climate control and protective packaging for all media formats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Books &amp; Media Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Humidity Control 40-60% with Continuous Monitoring</h3>
+          <p class="text-gray-700">Dedicated climate-controlled book storage zone. Humidity sensors every 2 hours. Auto-dehumidifier activation if humidity exceeds 70%. Complete mold prevention system with hourly logging.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Dust &amp; Light Protection</h3>
+          <p class="text-gray-700">Books stored on closed shelves in glass cabinets. Zero direct sunlight exposure. Daily dust removal. Maximum cleanliness and protection from environmental damage.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Safe Protective Packaging</h3>
+          <p class="text-gray-700">Books in cardboard boxes with air cushioning. Rare editions in wooden crates with padding separators. Multi-layer shock absorption. &lt;0.2% damage rate in transit.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Quality Control Before Shipment</h3>
+          <p class="text-gray-700">Every book inspected: cover integrity, page condition, correct edition, complete components. 99.9% accuracy guarantee. No mixed editions or damaged books shipped.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Books &amp; Media</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Quality Control, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">10–20 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>99.9% quality control inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Safe protective packaging</span>
+            <span class="font-bold">5–15 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Humidity control storage</span>
+            <span class="font-bold">+25 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">40–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Publishing House or Bookstore (400 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 400 × 15 = 6,000 UAH<br/>
+          Packaging: 400 × 10 = 4,000 UAH<br/>
+          Delivery: 400 × 70 = 28,000 UAH<br/>
+          Humidity control (2 pallets): 2 × 25 = 50 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 38,050 UAH/month = 95 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: humidity control 40-60%, mold prevention, dust protection, 99.9% accuracy, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.9%</p>
+          <p class="text-gray-700 font-bold">Accuracy Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Every book inspected before shipping</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">40-60%</p>
+          <p class="text-gray-700 font-bold">Humidity Control</p>
+          <p class="text-sm text-gray-600 mt-2">Hourly monitoring, mold prevention</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.2%</p>
+          <p class="text-gray-700 font-bold">Damage in Transit</p>
+          <p class="text-sm text-gray-600 mt-2">Protective packaging for all formats</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Protect Your Books & Media?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Humidity control 40-60%, mold prevention, dust & light protection, 99.9% accuracy, &lt;0.2% damage rate, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
