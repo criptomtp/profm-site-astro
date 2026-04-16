@@ -1,0 +1,171 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Абонентських Коробок: Регулярність, Оформлення, Задоволення';
+const description = 'Спеціалізований фулфілмент для абонентських коробок, subscription boxes. Щомісячна регулярність, красивий розпакунок, 100% страховка, швидка доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-subscription.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Абонентських Коробок<br />Радість & Очікування
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Для subscription boxes, абонентських служб, подарункових коробок. Щомісячна регулярність, красивий розпакунок, 100% задоволення, доставка за 24 години.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент абонентських коробок
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка абонентських коробок</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📅 Регулярність & календарь</h3>
+          <p class="text-gray-700">Кожен місяць в один день мусять бути готові. Не можна затримати, не можна забути. Потребується чітка календарна система.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎁 Унікальний розпакунок</h3>
+          <p class="text-gray-700">Розпакунок — частина досвіду. Потребується красивої упаковки, правильні матеріали, оформлення. Це впливає на задоволення абонента.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔄 Різні склади кожен місяць</h3>
+          <p class="text-gray-700">Кожен місяць в коробці різні товари. Потребується гнучка система комплектації. Не можна помиляться в складі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">😊 Задоволення абонента</h3>
+          <p class="text-gray-700">Якщо абонент незадоволений — скасує передплату. Потребується 100% якість & задоволення. Це метрика успіху.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для абонентських коробок</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Регулярна, календарна комплектація</h3>
+          <p class="text-gray-700">Кожен місяць в один день коробки готові. Розклад зберігається строго. Автоматизована система календаря & нагадувань.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Красивий розпакунок</h3>
+          <p class="text-gray-700">Опаковка, розташування товарів, оформлення — все обраховано для красивого розпакунку. Цьому приділяємо окремо часу & уваги.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Гнучка комплектація за меню</h3>
+          <p class="text-gray-700">Кожен місяць — інші товари за наперед розробленим меню. Система відстежує товари & склади. 100% точність в складі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Швидка доставка 24 години</h3>
+          <p class="text-gray-700">Абоненти очікують коробку. Доставляємо за 24 години без затримок. Отримання в день доставки — частина задоволення.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для абонентських коробок</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за коробкою)</span>
+            <span class="font-bold">40-80 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Красивий розпакунок & оформлення</span>
+            <span class="font-bold">20-50 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Регулярна календарна система</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (швидка, 24 час)</span>
+            <span class="font-bold">50-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Сервіс абонентських коробок (2000 коробок/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 2000 × 60 = 120,000 грн<br/>
+          Оформлення: 2000 × 35 = 70,000 грн<br/>
+          Доставка: 2000 × 75 = 150,000 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 340,000 грн/месяц = 170 грн/коробкою</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% регулярність доставки</p>
+            <p class="text-gray-700">Кожен місяць в один день. Не буває затримок, не буває забутих дат. Абоненти знають точно коли прийде коробка.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lang">99.99% точність в складі</p>
+            <p class="text-gray-700">Кожна коробка містить точно те що передбачено. Не буває помилок в складі. 100% задоволення абонента.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% красива упаковка</p>
+            <p class="text-gray-700">Розпакунок — частина досвіду. Всі коробки оформлені красиво. Абоненти отримують удоволення від розпакунку.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для абонентських сервісів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Регулярність, красивий розпакунок, 99.99% точність, 100% задоволення, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент абонентських коробок
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
