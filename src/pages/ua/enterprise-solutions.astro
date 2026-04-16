@@ -1,0 +1,260 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Корпоративний Фулфілмент: Рішення для Великих Продавців та Маркетплейсів';
+const description = 'MTP Enterprise Solutions для продавців 5000+ замовлень/місяц. Дедиковані менеджери, кастомна логістика, гарантія SLA 99.5%. Масштабування від 0 до 50000+ замовлень.';
+const ogImage = 'https://profm.ua/images/enterprise-fulfillment.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴10000-₴1000000'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Корпоративні рішення</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Великих Продавців<br />Дедиковане Управління
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Для продавців 5000+, маркетплейсів, і компаній з якісними вимогами. Дедиковані менеджери, кастомна логістика, SLA гарантія 99.5%.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запросити Enterprise консультацію
+      </a>
+    </div>
+  </section>
+
+  <!-- Enterprise Features -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Корпоративні Можливості</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">👤 Дедиковані менеджери</h3>
+          <p class="text-gray-700">Персональний Account Manager та Operations Manager. Вони фокусуються на вашому бізнесі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📊 Кастомний SLA договір</h3>
+          <p class="text-gray-700">Індивідуальні гарантії для вашого бізнесу. Наприклад, 99.5% доставка за 24 години, &lt;0.1% помилок.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏢 Дедиковані простори</h3>
+          <p class="text-gray-700">Для обсягів 10K+ палет — виділені зони складу, вхідні двері, WMS зона. Контролюєте простір.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔐 Контроль якості 100%</h3>
+          <p class="text-gray-700">Для критичних товарів — перевіримо 100% замовлень. Не 10% як звичайно. Для хай-квелітіс товарів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Пріоритетна обробка</h3>
+          <p class="text-gray-700">Ваші замовлення обробляються першими. &lt;15 хвилин для критичних, &lt; 30 для звичайних.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📡 Реал-тайм аналітика</h3>
+          <p class="text-gray-700">Дашборд з KPI, звітами, аналітикою. Бачите всі метрики у реальному часі.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Should Choose Enterprise -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Для кого Enterprise рішення</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Великі маркетплейс продавці (5000+ замовлень/місяц)</h3>
+          <p class="text-gray-700">Продаєте на Rozetka, Prom, їх як окремий кабінет з SLA договорами. Потребує якісної логістики на останньому місці.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Компанії в категоріях «хай-квелітіс»</h3>
+          <p class="text-gray-700">Електроніка, парфумерія, косметика з повернутим складом потребує максимальної якості і страхування.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Франчайзі мережі з багатьма філіалами</h3>
+          <p class="text-gray-700">Управління логістикою для 50+, 100+ магазинів потребує структури і контролю.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Виробники/Дистрибьютори з сезонними піками</h3>
+          <p class="text-gray-700">Новорічна сезон 50K замовлень, інші місяці 5K. MTP масштабується без проблем.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Компанії, які планують Rozetka FBO сертифікацію</h3>
+          <p class="text-gray-700">MTP — це офіційний партнер Rozetka для логістики. Ми забезпечуємо всі вимоги сертифікації.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">✓ Бізнеси з кастомними вимогами</h3>
+          <p class="text-gray-700">Спеціальна упаковка, гідроізоляція, клімат-контроль. Будемо робити, що потребує.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Levels -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Рівні обслуговування Enterprise</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border p-4 text-left">Метрика</th>
+              <th class="border p-4 text-center">Standard</th>
+              <th class="border p-4 text-center">Professional</th>
+              <th class="border p-4 text-center">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4">SLA гарантія доставки</td>
+              <td class="border p-4 text-center">99%</td>
+              <td class="border p-4 text-center">99.3%</td>
+              <td class="border p-4 text-center">99.5%+</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Точність комплектації</td>
+              <td class="border p-4 text-center">99.8%</td>
+              <td class="border p-4 text-center">99.9%</td>
+              <td class="border p-4 text-center">99.95%</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Час комплектації (макс)</td>
+              <td class="border p-4 text-center">&lt;30 хв</td>
+              <td class="border p-4 text-center">&lt;20 хв</td>
+              <td class="border p-4 text-center">&lt;15 хв</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Контроль якості</td>
+              <td class="border p-4 text-center">Вибіркова 10%</td>
+              <td class="border p-4 text-center">30%</td>
+              <td class="border p-4 text-center">100%</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Дедиковані менеджери</td>
+              <td class="border p-4 text-center">1</td>
+              <td class="border p-4 text-center">2</td>
+              <td class="border p-4 text-center">3+</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4">Реал-тайм аналітика</td>
+              <td class="border p-4 text-center">Зі затримкою</td>
+              <td class="border p-4 text-center">Реалтайм</td>
+              <td class="border p-4 text-center">Кастомний дашборд</td>
+            </tr>
+            <tr>
+              <td class="border p-4">Мінімальна партія</td>
+              <td class="border p-4 text-center">5000 замовлень</td>
+              <td class="border p-4 text-center">5000 замовлень</td>
+              <td class="border p-4 text-center">10000 замовлень</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Корпоративне Ціноутворення</h2>
+      <p class="text-center text-gray-700 mb-8">
+        Для Enterprise рішень ціноутворення індивідуальне на основі обсягів, географії, і специфіки товарів.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Professional</h3>
+          <p class="text-gray-700">5,000-10,000 замовлень</p>
+          <p class="text-2xl font-bold text-red-600 mt-4">За договором</p>
+          <p class="text-sm text-gray-600 mt-2">Економія ~15% від Standard</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Premium</h3>
+          <p class="text-gray-700">10,000-50,000 замовлень</p>
+          <p class="text-2xl font-bold text-red-600 mt-4">За договором</p>
+          <p class="text-sm text-gray-600 mt-2">Економія ~25% від Standard</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Custom</h3>
+          <p class="text-gray-700">50,000+ замовлень</p>
+          <p class="text-2xl font-bold text-red-600 mt-4">За договором</p>
+          <p class="text-sm text-gray-600 mt-2">До 40% економія</p>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded border border-blue-200">
+        <h3 class="font-bold mb-3">Приклад розрахунку (Premium, 10K замовлень)</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>Комплектація: 10,000 × 20 = 200,000 грн (знижка -20% від Standard)</li>
+          <li>Доставка: 10,000 × 90 = 900,000 грн (оптова ставка)</li>
+          <li>Дедиковані менеджери: 10,000 грн/місяц</li>
+          <li>SLA гарантія: 5,000 грн (один раз)</li>
+          <li class="border-t pt-2 font-bold">ВСЬОГО: ~1,115,000 грн/місяц</li>
+          <li class="text-sm text-gray-600">= 111 грн на замовлення (проти 127 грн Standard)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Технічна Підтримка Enterprise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-4">24/7 Поддержка</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li>✓ Chat перший відповідь &lt;15 хвилин</li>
+            <li>✓ Телефон +38 (093) 123-45-67 (цілодобово)</li>
+            <li>✓ Email для критичних проблем</li>
+            <li>✓ Дедиковані Slack канал для команди</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded">
+          <h3 class="text-lg font-bold mb-4">Управління Додачей</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li>✓ Щомісячні звіти про KPI</li>
+            <li>✓ Квартальні business reviews</li>
+            <li>✓ Пропозиції по оптимізації</li>
+            <li>✓ Плануванн на наступний період</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Запустіть Enterprise Фулфілмент</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Дедиковані менеджери, кастомна логістика, SLA гарантія. Для вашого великого бізнесу.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+380931234567" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+          Зв'язатися з менеджером
+        </a>
+      </div>
+      <p class="mt-8 text-sm opacity-75">
+        Консультація з Enterprise спеціалістом — безкоштовна. За 1-2 дні отримаєте кастомну пропозицію.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
