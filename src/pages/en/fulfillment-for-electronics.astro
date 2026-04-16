@@ -1,0 +1,203 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Electronics Fulfillment | Antistatic Handling, 99.95% Accuracy | MTP';
+const description = 'Specialized fulfillment for electronics: smartphones, laptops, headphones. Antistatic packaging, 100% insurance, 99.95% quality control, same-day processing, secure delivery across Ukraine.';
+const ogImage = 'https://profm.ua/images/fulfillment-electronics.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴25-₴50'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Electronics Fulfillment<br />99.95% Accuracy, 100% Insurance
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Smartphones, laptops, headphones, tablets. Antistatic packaging, full documentation, GPS tracking, 24-hour processing. Safe, secure fulfillment for high-value electronics.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+          Get Started
+        </a>
+        <a href="#services" class="inline-block border-2 border-white text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-red-600 transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Electronics Need Special Care</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💰 High-Value Protection</h3>
+          <p class="text-gray-700">A damaged smartphone (5,000+ UAH) = total loss + 1-star review. Electronics demand maximum packing quality and handling precision. One mistake costs you the sale.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ ESD Risk</h3>
+          <p class="text-gray-700">Earbuds, batteries, and chips are vulnerable to electrostatic discharge. One spark during packing = dead product. Requires antistatic packaging and trained personnel.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Complex Documentation</h3>
+          <p class="text-gray-700">Each device has serial number, IMEI, warranty card, manual. Missing documentation = unsellable product. Requires precise inventory control and QC.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🚚 Expensive in Transit</h3>
+          <p class="text-gray-700">Valuable goods need specialized courier. GPS tracking, signature confirmation, photo documentation. Standard delivery won't cut it for expensive items.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Electronics Fulfillment Services</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Receipt with Full Documentation</h3>
+            <p class="text-gray-700">Upon arrival, we verify: packaging integrity, serial number, IMEI, warranty cards, included accessories. Everything logged in our system with photos.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">ESD-Safe Storage</h3>
+            <p class="text-gray-700">Electronics stored in dedicated ESD zone with antistatic flooring. Staff wear grounded wrist straps. Humidity: 45-65% to prevent condensation and corrosion.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">100% Quality Control Before Shipment</h3>
+            <p class="text-gray-700">Not 10% sampling — every single device inspected: packaging hermetic seal, serial number correct, manual present, all accessories included. Zero-defect QC.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Specialized Courier Delivery</h3>
+            <p class="text-gray-700">High-value electronics ship via premium carrier with GPS tracking. Photo documentation before & after delivery. Signature required. Full chain-of-custody.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Electronics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Picking & QC</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Basic (phone, earbuds)</span>
+              <span class="font-bold">25 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Complex (laptop, tablet)</span>
+              <span class="font-bold">50 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>100% quality control</span>
+              <span class="font-bold">Included</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Documentation & IMEI check</span>
+              <span class="font-bold">Included</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Insurance & Delivery</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>100% insurance coverage</span>
+              <span class="font-bold">Included</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Specialized courier delivery</span>
+              <span class="font-bold">75-200 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>GPS tracking & photos</span>
+              <span class="font-bold">Included</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Storage (climate control)</span>
+              <span class="font-bold">400 UAH/pallet/mo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 p-6 rounded border-l-4 border-blue-600">
+        <h3 class="font-bold mb-3">Example: Smartphone Seller (200 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 200 × 25 = 5,000 UAH<br/>
+          Delivery: 200 × 120 = 24,000 UAH<br/>
+          Storage: 1 pallet × 400 = 400 UAH<br/>
+          <strong class="text-lg">TOTAL: 29,400 UAH/month = 147 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 100% insurance, 99.95% QC, GPS tracking, photo documentation</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.95%</p>
+          <p class="text-gray-700 font-bold">Picking Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">1 error per 2,000 orders maximum</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Insurance Coverage</p>
+          <p class="text-sm text-gray-600 mt-2">Damage or loss = full reimbursement</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Damage in Transit</p>
+          <p class="text-sm text-gray-600 mt-2">Specialized packaging & courier</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Electronics Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Antistatic handling, 99.95% accuracy, 100% insurance. Start shipping today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
