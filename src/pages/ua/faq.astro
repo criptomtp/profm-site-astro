@@ -1,0 +1,517 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="FAQ Фулфілмент питання | MTP Group"
+  description="Відповіді на 30+ питань про фулфілмент: ціни, послуги, інтеграції, мінімальне замовлення. Як почати роботу з MTP Group?"
+  canonical="https://www.fulfillmentmtp.com.ua/ua/faq/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/faq-hero.webp"
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Що таке фулфілмент?","acceptedAnswer":{"@type":"Answer","text":"Фулфілмент — це комплекс послуг на складі: приймання товару, його зберігання, збір замовлень і відправка покупцям. Замість того щоб займатися логістикою самому, ви передаєте це нам, а самі займаєтесь маркетингом і продажами."}},{"@type":"Question","name":"Чи можу я скористатися фулфілментом MTP, якщо я apenas почав бізнес?","acceptedAnswer":{"@type":"Answer","text":"Так. Мінімальний щомісячний платіж становить 5 000 грн. Якщо вартість послуг менше, ви все одно платите мінімум. Це дозволяє стартапам почати з MTP без великих витрат на налаштування власного складу."}},{"@type":"Question","name":"Як розраховується вартість фулфілменту?","acceptedAnswer":{"@type":"Answer","text":"Вартість складається з трьох компонентів: (1) зберігання товару — 650 грн за м³ на місяць, (2) відправка замовлення — від 18 до 26 грн (залежить від кількості замовлень на день), (3) додаткові послуги (доукомплектація, стікерування та інше). Усього порівнюється з мінімальним платежем 5 000 грн/місяц, і беремо більше значення."}},{"@type":"Question","name":"Яка мінімальна кількість замовлень на добу для роботи з MTP?","acceptedAnswer":{"@type":"Answer","text":"Немає мінімальної кількості замовлень. Навіть якщо ви маєте 1-2 замовлення на день, ми вас обслуговуватимемо по динамічному тарифу: 26 грн за замовлення (при 0-5 замовлень на день). Однак на більші обсяги ви отримаєте знижку: від 200+ замовлень на день тариф падає до 18 грн."}},{"@type":"Question","name":"Яка ціна палетного зберігання?","acceptedAnswer":{"@type":"Answer","text":"Палетне зберігання розраховується як звичайне зберігання: 650 грн за м³ на місяць. Крім того, за формування палети (стрейчування) ми беремо 350 грн (включено вартість палети). Це залежить від того, хочете ви зберігання окремих одиниць чи цілі палети."}},{"@type":"Question","name":"Яка вартість доукомплектації?","acceptedAnswer":{"@type":"Answer","text":"Доукомплектація (додавання додаткового товару при збір замовлення) коштує 2,50 грн за одиницю. Це дозволяє чітко контролювати витрати при вкладанні листівок, пробників, подарунків та інших матеріалів до посилки."}},{"@type":"Question","name":"Скільки часу вам потрібно, щоб зібрати і відправити замовлення?","acceptedAnswer":{"@type":"Answer","text":"Усереднений час збору одного замовлення становить 30 секунд. Замовлення обробляються 4 рази на день, тому ваш товар може бути відправлений в день отримання замовлення від клієнта."}},{"@type":"Question","name":"Чи скажете ви від себе товар перевізнику чи клієнти дають трек на вас?","acceptedAnswer":{"@type":"Answer","text":"Ми передаємо товар від вас. Клієнти натискають кнопку 'Замовити' в вашому магазині, платять вам, і замовлення потрапляє прямо до нас на склад через API. Ми збираємо його і відправляємо в Нову Пошту, а потім той доставляє до клієнта."}},{"@type":"Question","name":"Яка ваша доступність для інтеграції з моїм магазином?","acceptedAnswer":{"@type":"Answer","text":"Ми інтегруємося за 2 години з будь-яким популярним CRM/магазином: Rozetka, Prom.ua, Shopify, WooCommerce, OpenCart, Bitrix1C та іншими. API дозволяє автоматично синхронізувати залишки, замовлення та статуси."}},{"@type":"Question","name":"Чи сумісна ваша система з Zapier?","acceptedAnswer":{"@type":"Answer","text":"Так. Наш API сумісний з Zapier, тому ви можете автоматизувати багато процесів через популярні інтеграції без прямого кодування."}},{"@type":"Question","name":"Як я переглядаю залишки товару в реальному часі?","acceptedAnswer":{"@type":"Answer","text":"Маєте два способи: (1) офіційний кабінет MTP — в реальному часі бачите залишки, замовлення, розрахунки; (2) Telegram-бот (@MTPGroupFulfillment_bot) — вам приходять сповіщення про нові замовлення, платежі від перевізників та статуси обробки."}},{"@type":"Question","name":"Чи є відділення у інших містах, крім Бориспіля?","acceptedAnswer":{"@type":"Answer","text":"Основні склади розташовані у Бориспілі (біля аеропорту) та Білогородці (Київська область). Географічна диверсифікація гарантує, що при форс-мажорі на одній локації інша продовжує роботу. Ми також готуємо третій склад у Щасливому."}},{"@type":"Question","name":"Чи надаєте ви послуги лікування FEFO для фармації та косметики?","acceptedAnswer":{"@type":"Answer","text":"Так. Для товарів з обмеженим терміном дії (косметика, БАДи, лікарські засоби) ми застосовуємо FEFO контроль (First Expiry First Out). Тариф — 0,50 грн за одиницю. Це гарантує, що товар відпускається у порядку наближення терміну дійсності."}},{"@type":"Question","name":"Чи включена обробка повернень у фулфілмент?","acceptedAnswer":{"@type":"Answer","text":"Так. Розпаковка та обробка повернених товарів включена у послугу. Вартість розпаковки становить 50% від вартості (відправка + доукомплектація). Чи потрібно утилізувати товар чи повернути його вам на склад — обговорюється в договорі."}},{"@type":"Question","name":"Чи можна відправляти товари на адрес замовника, різні від адреси чергової доставки?","acceptedAnswer":{"@type":"Answer","text":"Так. Ви можете вказати різні адреси доставки для кожного замовлення. Ми обробимо таке замовлення правильно через API."}},{"@type":"Question","name":"Чи обробляєте ви замовлення, що надходять вночі?","acceptedAnswer":{"@type":"Answer","text":"Так. Ми працюємо 24/7, включаючи вихідні та святки. Замовлення обробляються 4 рази на день, тому навіть якщо замовлення прийшло вночі, воно буде зібрано й відправлено виконавцю наступного ранку."}},{"@type":"Question","name":"Як ви контролюєте точність комплектації?","acceptedAnswer":{"@type":"Answer","text":"WMS-система мінімізує людський фактор на 99%: кожна позиція сканується штрихкодом, система підказує де взяти товар, і кінцевий контроль перед відправкою гарантує, що все правильно. У разі помилки ми компенсуємо витрати."}},{"@type":"Question","name":"Чи видається гарантійний талон при відправці?","acceptedAnswer":{"@type":"Answer","text":"Так. Якщо у вас є гарантійні талони, ми їх заповнюємо (5 грн за талон) і вкладаємо в посилку. Це критично для техніки, гаджетів та інших гарантованих товарів."}},{"@type":"Question","name":"Чи включена фіскалізація чеків РРО?","acceptedAnswer":{"@type":"Answer","text":"Так. Ми проводимо фіскалізацію кожного замовлення через РРО (реєстратор розрахункових операцій). Покупець отримує чек з номером — ви працюєте в рамках закону без власного касового апарату."}},{"@type":"Question","name":"Як набирається статистика, якщо у вас нескільки каналів продажу?","acceptedAnswer":{"@type":"Answer","text":"Залишки синхронізуються централізовано: якщо товар є у вас на складі у MTP, то і на Rozetka, і на Prom.ua, і у вашому магазині бачитимуть правильні залишки. Це запобігає перепродажам і скаргам клієнтів."}},{"@type":"Question","name":"Чи можна здійснити тестування перед підписанням договору?","acceptedAnswer":{"@type":"Answer","text":"Так. Пропонуємо безкоштовний тестовий період: прихистіть 5-10 замовлень для перевірки якості роботи. Це допоможе вам переконатися у нашій надійності до офіційного запуску."}},{"@type":"Question","name":"Як щось не так з замовленням — яким чином ми вирішуємо конфлікти?","acceptedAnswer":{"@type":"Answer","text":"Офіційний договір SLA чітко описує процес. Якщо при комплектації допущена помилка, ми компенсуємо вартість товару. Матеріальна відповідальність зафіксована в договорі, все відбувається прозоро."}},{"@type":"Question","name":"Який мінімальний розмір замовлення палет?","acceptedAnswer":{"@type":"Answer","text":"Немає мінімального розміру палети. Ви можете складувати половину палети, чверть палети та інше. Розраховується все по обсягу (м³), тому гнучко підходить навіть малим партіям."}},{"@type":"Question","name":"Чи можете ви обробляти замовлення з кількома адресами доставки?","acceptedAnswer":{"@type":"Answer","text":"Так. B2B або корпоративні замовлення з кількома точками доставки обробляються як окремі замовлення з різними адресами. Система автоматично розділяє посилки."}},{"@type":"Question","name":"Які способи оплати у вас за послуги?","acceptedAnswer":{"@type":"Answer","text":"Ми приймаємо банківські переводи, карти, поточні рахунки. На кінець місяця ми надаємо рахунок на ваше найменування (якщо вам потрібна ФОП чи ЮЛ). Реквізити обговорюються в договорі."}},{"@type":"Question","name":"Можу я у будь-якої миттю розійтися з MTP?","acceptedAnswer":{"@type":"Answer","text":"Так. Договір дозволяє розірвати у будь-який момент за письмовим зверненням. Товар, що залишився на складі, ми можемо видати вам назад або упакувати для доставки адресатові."}},{"@type":"Question","name":"Чи є у вас готові шаблони для інтеграції через Webhooks?","acceptedAnswer":{"@type":"Answer","text":"Так. Для розробників у нас є REST API з повною документацією та примерами коду для Python, PHP та JavaScript. Webhooks дозволяють отримувати сповіщення про статусі замовлення в реальному часі."}},{"@type":"Question","name":"Як часто я отримую звіти про роботу?","acceptedAnswer":{"@type":"Answer","text":"Звіти доступні в кабінеті в реальному часі: кількість зібраних замовлень, вартість послуг, залишки товару. Також щомісяця ми надаємо детальний звіт за запитом (у форматі Excel або CSV)."}},{"@type":"Question","name":"Як взяти участь у програмі партнерства чи рефералу?","acceptedAnswer":{"@type":"Answer","text":"Ми надаємо комісійну схему для партнерів, які приносять нових клієнтів. Обговоріть деталі з нашим sales-відділом: +38 (050) 144-46-45."}},{"@type":"Question","name":"Як часто оновляються ціни?","acceptedAnswer":{"@type":"Answer","text":"Тарифи встановлені на весь 2026 рік (із ступня 01.01.2026). Якщо буде необхідність змінити, ми повідомимо за 30 днів до вступу в силу нових умов."}},{"@type":"Question","name":"Чи можемо ми обговорити спеціальні умови для великих партій?","acceptedAnswer":{"@type":"Answer","text":"Так. Для клієнтів з обсягом 500+ замовлень на місяць ми готові обговорити персональну цінову пропозицію та спеціальні умови. Зв'яжіться з менеджером: mtpgrouppromo@gmail.com."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","logo":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp","sameAs":["https://www.instagram.com/mtp_group/","https://www.facebook.com/fulfillmentmtp"],"address":{"@type":"PostalAddress","addressLocality":"Бориспіль","addressRegion":"Київська область","addressCountry":"UA"},"telephone":"+380501444645"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://www.fulfillmentmtp.com.ua/ua/faq/"}]}</script>`}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/faq/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/faq/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/faq/">
+  <link rel="stylesheet" href="/css/fonts.css">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1>FAQ Фулфілмент — відповіді на ваші питання</h1>
+<div class="hero-line"></div>
+<p>30+ питань про фулфілмент, ціни, інтеграції та те, як розпочати роботу</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Надіслати запит &#8594;</button></form>
+<div class="hero-note">Найбільш частозаймані питання з відповідями тут</div>
+</div>
+</section>
+
+<!-- FAQ SECTIONS -->
+<section class="faq-section">
+<div class="container">
+
+<!-- GENERAL QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Загальне про фулфілмент</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Що таке фулфілмент?</button>
+<div class="faq-answer">
+<p>Фулфілмент — це комплекс послуг на складі: приймання товару, його зберігання, збір замовлень і відправка покупцям. Замість того щоб займатися логістикою самому, ви передаєте це нам, а самі займаєтесь маркетингом і продажами.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Скільки часу потрібно, щоб зібрати і відправити замовлення?</button>
+<div class="faq-answer">
+<p>Усереднений час збору одного замовлення становить <strong>30 секунд</strong>. Замовлення обробляються <strong>4 рази на день</strong>, тому ваш товар може бути відправлений в день отримання замовлення від клієнта. За 6 років роботи у нас система отримала рейтинг 4,9/5 за точність.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Яка вам потрібна мінімальна кількість замовлень на добу?</button>
+<div class="faq-answer">
+<p>Немає мінімальної кількості замовлень. Навіть якщо ви маєте 1-2 замовлення на день, ми вас обслуговуватимемо. Однак мінімальний щомісячний платіж становить 5 000 грн — якщо фактична вартість послуг менше, ви все одно платите мінімум.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як працює динамічний тариф на відправку?</button>
+<div class="faq-answer">
+<p>Тариф залежить від кількості замовлень на добу:</p>
+<ul>
+<li><strong>0–5 замовлень</strong> = 26 грн за замовлення</li>
+<li><strong>6–20</strong> = 25 грн</li>
+<li><strong>21–50</strong> = 23 грн</li>
+<li><strong>51–100</strong> = 22 грн</li>
+<li><strong>101–150</strong> = 20 грн</li>
+<li><strong>151–200</strong> = 19 грн</li>
+<li><strong>200+</strong> = 18 грн</li>
+</ul>
+<p>Перерахунок здійснюється автоматично за підсумками місяця. Чим більше ви зростаєте, тим дешевша доставка.</p>
+</div>
+</div>
+
+</div>
+
+<!-- PRICING QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Ціна і розрахунок</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як розраховується вартість фулфілменту?</button>
+<div class="faq-answer">
+<p>Вартість складається з трьох компонентів:</p>
+<ol>
+<li><strong>Зберігання товару</strong> — 650 грн за м³ на місяць</li>
+<li><strong>Відправка замовлення</strong> — від 18 до 26 грн (залежить від обсягу)</li>
+<li><strong>Додаткові послуги</strong> — доукомплектація (2,50 грн), стікерування (1,25 грн), FEFO контроль (0,50 грн) та інше</li>
+</ol>
+<p>Усього порівнюється з мінімальним платежем <strong>5 000 грн/місяць</strong>, і беремо більше значення.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Яка ціна палетного зберігання?</button>
+<div class="faq-answer">
+<p>Палетне зберігання розраховується як звичайне: <strong>650 грн за м³ на місяць</strong>. За формування палети (стрейчування) беремо <strong>350 грн</strong> (включно вартість палети). Ви можете складувати половину палети, чверть палети та інше — розраховується все по обсягу.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Яка вартість доукомплектації?</button>
+<div class="faq-answer">
+<p>Доукомплектація (додавання додаткового товару при збір замовлення) коштує <strong>2,50 грн за одиницю</strong>. Це дозволяє контролювати витрати при вкладанні листівок, пробників, подарунків та інших матеріалів до посилки.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи можемо ми домовитися про спеціальні умови?</button>
+<div class="faq-answer">
+<p>Так. Для клієнтів з обсягом <strong>500+ замовлень на місяць</strong> ми готові обговорити персональну цінову пропозицію та спеціальні умови. Зв'яжіться з менеджером: <strong>mtpgrouppromo@gmail.com</strong> або +38 (050) 144-46-45.</p>
+</div>
+</div>
+
+</div>
+
+<!-- TECHNICAL & CAPABILITY QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Технічні можливості та послуги</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як я переглядаю залишки товару в реальному часі?</button>
+<div class="faq-answer">
+<p>Два способи:</p>
+<ol>
+<li><strong>Офіційний кабінет MTP</strong> — в реальному часі бачите залишки, замовлення, розрахунки</li>
+<li><strong>Telegram-бот</strong> (@MTPGroupFulfillment_bot) — отримуєте сповіщення про нові замовлення, платежі і статуси обробки</li>
+</ol>
+<p>API також дозволяє синхронізувати залишки на всіх ваших каналах продажу автоматично.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як ви контролюєте точність комплектації?</button>
+<div class="faq-answer">
+<p>WMS-система мінімізує людський фактор на <strong>99%</strong>: кожна позиція сканується штрихкодом, система підказує де взяти товар, і кінцевий контроль перед відправкою гарантує, що все правильно. У разі помилки ми компенсуємо витрати.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи обробляєте ви замовлення, що надходять вночі?</button>
+<div class="faq-answer">
+<p>Так. Ми працюємо <strong>24/7</strong>, включаючи вихідні та святки, навіть під час блекаутів (у нас є 3 генератори і 2 провайдери + Starlink). Замовлення обробляються 4 рази на день, тому навіть якщо замовлення прийшло вночі, воно буде зібрано й відправлено наступного ранку.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи надаєте ви послуги FEFO для фармації та косметики?</button>
+<div class="faq-answer">
+<p>Так. Для товарів з обмеженим терміном дії (косметика, БАДи, лікарські засоби) ми застосовуємо <strong>FEFO контроль</strong> (First Expiry First Out). Тариф — <strong>0,50 грн за одиницю</strong>. Це гарантує, що товар відпускається у порядку наближення терміну дійсності.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи включена обробка повернень у фулфілмент?</button>
+<div class="faq-answer">
+<p>Так. Розпаковка та обробка повернених товарів включена у послугу. Вартість розпаковки становить <strong>50% від вартості (відправка + доукомплектація)</strong>. Чи потрібно утилізувати товар чи повернути його на вашу локацію — обговорюється в договорі.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи включена фіскалізація чеків РРО?</button>
+<div class="faq-answer">
+<p>Так. Ми проводимо фіскалізацію кожного замовлення через РРО (реєстратор розрахункових операцій). Покупець отримує чек з номером — ви працюєте в рамках закону без власного касового апарату.</p>
+</div>
+</div>
+
+</div>
+
+<!-- INTEGRATION QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Інтеграції та технологія</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Яка доступність для інтеграції з моїм магазином?</button>
+<div class="faq-answer">
+<p>Ми інтегруємося <strong>за 2 години</strong> з будь-яким популярним CRM/магазином:</p>
+<ul>
+<li>Маркетплейси: Rozetka, Prom.ua, Kasta, OLX</li>
+<li>e-commerce: Shopify, WooCommerce, OpenCart, Bitrix</li>
+<li>CRM: 1С, амоCRM, Pipedrive</li>
+</ul>
+<p>API дозволяє автоматично синхронізувати залишки, замовлення та статуси.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи сумісна ваша система з Zapier?</button>
+<div class="faq-answer">
+<p>Так. Наш API сумісний з Zapier, тому ви можете автоматизувати багато процесів через популярні інтеграції без прямого кодування. Пришліть нам запит і ми допоможемо налаштувати.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як набирається статистика, якщо у вас нескільки каналів продажу?</button>
+<div class="faq-answer">
+<p>Залишки синхронізуються централізовано: якщо товар є у вас на складі у MTP, то і на Rozetka, і на Prom.ua, і у вашому магазині бачитимуть правильні залишки. Це запобігає перепродажам і скаргам клієнтів. Статистика продажів зібрається в одному кабінеті.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи є у вас готові шаблони для інтеграції через Webhooks?</button>
+<div class="faq-answer">
+<p>Так. Для розробників у нас є REST API з повною документацією та примерами коду для Python, PHP та JavaScript. Webhooks дозволяють отримувати сповіщення про статусі замовлення в реальному часі. Документація: <strong>api.fulfillmentmtp.com.ua</strong></p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як часто я отримую звіти про роботу?</button>
+<div class="faq-answer">
+<p>Звіти доступні в кабінеті в реальному часі: кількість зібраних замовлень, вартість послуг, залишки товару. Також щомісяця ми надаємо детальний звіт за запитом (у форматі Excel або CSV з усіма операціями).</p>
+</div>
+</div>
+
+</div>
+
+<!-- CONTRACT & LOGISTICS QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Договір та логістика</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи є офіційний договір з SLA та матеріальною відповідальністю?</button>
+<div class="faq-answer">
+<p>Так. Офіційний договір з чітким SLA: час збору замовлення, точність комплектації, терміни обробки повернень. <strong>Матеріальна відповідальність за товар на складі</strong> зафіксована в договорі. Всі операції фіксуються в WMS і не підлягають оскарженню.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи отримую я гарантійні талони при відправці?</button>
+<div class="faq-answer">
+<p>Так. Якщо у вас є гарантійні талони, ми їх заповнюємо (<strong>5 грн за талон</strong>) і вкладаємо в посилку. Це критично для техніки, гаджетів та інших гарантованих товарів.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи можу я розійтися з MTP у будь-який момент?</button>
+<div class="faq-answer">
+<p>Так. Договір дозволяє розірвати у будь-який момент за письмовим зверненням. Товар, що залишився на складі, ми можемо видати вам назад або упакувати для доставки адресатові по вашому вибору.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Де розташовані ваші склади?</button>
+<div class="faq-answer">
+<p>Основні склади розташовані у:</p>
+<ul>
+<li><strong>Бориспіль</strong> (біля аеропорту) — основний склад</li>
+<li><strong>Білогородка</strong> (Київська область) — додатковий склад</li>
+<li><strong>Щасливе</strong> (в розробці) — третій склад</li>
+</ul>
+<p>Географічна диверсифікація гарантує, що при форс-мажорі на одній локації інша продовжує роботу без переривання.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як щось не так з замовленням — яким чином ми вирішуємо конфлікти?</button>
+<div class="faq-answer">
+<p>Офіційний договір SLA чітко описує процес. Якщо при комплектації допущена помилка, ми компенсуємо вартість товару. Матеріальна відповідальність зафіксована в договорі, всі конфлікти вирішуються через менеджера (<strong>+38 (093) 827-77-67</strong>).</p>
+</div>
+</div>
+
+</div>
+
+<!-- GETTING STARTED QUESTIONS -->
+<div class="faq-category">
+<h2 class="category-title">Як розпочати</h2>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи можу я скористатися фулфілментом MTP, якщо я apenas почав бізнес?</button>
+<div class="faq-answer">
+<p>Так. Мінімальний щомісячний платіж становить <strong>5 000 грн</strong>. Якщо вартість послуг менше, ви все одно платите мінімум. Це дозволяє стартапам почати з MTP без великих витрат на налаштування власного складу.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Чи можна здійснити тестування перед підписанням договору?</button>
+<div class="faq-answer">
+<p>Так. Пропонуємо <strong>безкоштовний тестовий період</strong>: прихистіть 5-10 замовлень для перевірки якості роботи. Це допоможе вам переконатися у нашій надійності до офіційного запуску. Запитайте у менеджера: <strong>mtpgrouppromo@gmail.com</strong></p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Що мені потрібно для інтеграції?</button>
+<div class="faq-answer">
+<p>Мінімально: ваша найменування, адреса, контакти та дані про структуру замовлень (як вони надходять — через магазин, маркетплейс чи ручне внесення). Для автоматичної синхронізації залишків потрібно дозволити нам доступ до вашого CRM чи магазину — це одна кнопка у налаштуваннях.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Як часто оновляються ціни?</button>
+<div class="faq-answer">
+<p>Тарифи встановлені на весь 2026 рік (з 01.01.2026). Якщо буде необхідність змінити, ми повідомимо за 30 днів до вступу в силу нових умов.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">Які способи оплати у вас за послуги?</button>
+<div class="faq-answer">
+<p>Ми приймаємо банківські переводи, карти, поточні рахунки. На кінець місяця ми надаємо рахунок на ваше найменування (якщо вам потрібна ФОП чи ЮЛ). Реквізити обговорюються при підписанні договору.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+<div class="container">
+<h2>Готові розпочати?</h2>
+<p>Не знайшли відповідь на своє питання? Наші менеджери завжди готові допомогти.</p>
+<div class="cta-buttons">
+<button class="btn btn-primary" onclick="openContactForm()">Надіслати запит</button>
+<a href="tel:+380501444645" class="btn btn-secondary">Зателефонувати</a>
+</div>
+</div>
+</section>
+
+<style>
+.faq-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.faq-category {
+  margin-bottom: 50px;
+}
+
+.category-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e63329;
+  padding-bottom: 15px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-left: 3px solid #e63329;
+  padding-left: 20px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  padding: 15px 0;
+  position: relative;
+  padding-right: 30px;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  color: #e63329;
+  transition: transform 0.3s;
+}
+
+.faq-question:hover {
+  color: #e63329;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.faq-answer ul, .faq-answer ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.faq-answer li {
+  margin-bottom: 8px;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #e63329 0%, #cc2820 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: white;
+  color: #e63329;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #e63329;
+}
+
+@media (max-width: 768px) {
+  .category-title {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+  }
+
+  .cta-section {
+    padding: 40px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+function toggleFaq(element) {
+  const item = element.parentElement;
+  item.classList.toggle('active');
+}
+
+function openContactForm() {
+  const phone = prompt('Введіть ваш номер телефону:');
+  if (phone) {
+    const form = document.getElementById('heroForm');
+    const input = form.querySelector('input[name="phone"]');
+    input.value = phone;
+    form.submit();
+  }
+}
+
+function openVideoModal(videoId) {
+  // Implementation for video modal
+}
+
+// Auto-expand first item on load
+document.addEventListener('DOMContentLoaded', function() {
+  const firstQuestion = document.querySelector('.faq-question');
+  if (firstQuestion) {
+    firstQuestion.parentElement.classList.add('active');
+  }
+});
+</script>
+
+</Base>
