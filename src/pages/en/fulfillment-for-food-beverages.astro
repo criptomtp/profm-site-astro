@@ -1,0 +1,198 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Food & Beverage Fulfillment | Temperature Control 15-25°C, FIFO, Cold Chain | MTP';
+const description = 'Specialized fulfillment for food & beverages, snacks, desserts. Temperature control 15-25°C, FIFO system, HACCP hygiene standards, cold chain logistics, 24-hour delivery across Ukraine.';
+const ogImage = 'https://profm.ua/images/fulfillment-food.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴250'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Food &amp; Beverage Fulfillment<br />Temperature Control, FIFO, Cold Chain
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Beverages, snacks, desserts, organic products. Temperature control 15-25°C, FIFO system, HACCP-compliant hygiene, thermocontainers, cold chain 24-hour delivery. For marketplaces and D2C brands.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Food Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Food &amp; Beverages Need Special Care</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Temperature Sensitivity</h3>
+          <p class="text-gray-700">Beverages, ice cream, chocolate spoil at wrong temperatures. Requires constant monitoring 15-25°C or refrigeration for temperature-dependent products. One degree off = total loss.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⏱️ Shelf Life Control</h3>
+          <p class="text-gray-700">Products past expiry = 100% loss and health liability. Requires strict FIFO (First In First Out) system and date tracking to prevent expired goods from reaching customers.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Hygiene &amp; Safety Standards</h3>
+          <p class="text-gray-700">Food products must comply with HACCP and food safety regulations. Requires sanitary certification, regular health inspections, glove/mask protocols, daily warehouse disinfection.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Documentation &amp; Compliance</h3>
+          <p class="text-gray-700">Each product requires quality certificates and health authority approval. Must maintain batch documentation, handle regulatory audits, track certifications per shipment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Food &amp; Beverage Fulfillment Services</h2>
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Temperature Control 15-25°C 24/7</h3>
+            <p class="text-gray-700">Dedicated climate-controlled zone for food. Real-time temperature monitoring with automatic alerts. Hourly documentation and compliance logging. Backup power systems for continuous cold chain.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">FIFO System &amp; Expiry Management</h3>
+            <p class="text-gray-700">First In First Out: older inventory ships first. Every order checked for expiry date. Products within 7 days of expiry flagged. Automatic rotation prevents waste and regulatory violations.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">HACCP-Compliant Hygiene &amp; Packaging</h3>
+            <p class="text-gray-700">Staff gloves, masks, daily disinfection protocol. Food-grade packaging with HACCP certification. Separate zones for different product types (allergen protocols). Thermocontainers with ice packs included.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Cold Chain Delivery</h3>
+            <p class="text-gray-700">Temperature-sensitive products (ice cream, dairy, frozen items) shipped via refrigerated courier. GPS temperature monitoring throughout delivery. Guaranteed cold chain integrity. Same-day delivery within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Food &amp; Beverages</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Picking &amp; Storage</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Picking per order</span>
+              <span class="font-bold">20–35 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Temperature-controlled storage</span>
+              <span class="font-bold">+50 UAH/pallet/mo</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Cold storage (ice cream, dairy)</span>
+              <span class="font-bold">+150 UAH/pallet/mo</span>
+            </li>
+            <li class="flex justify-between">
+              <span>FIFO &amp; expiry management</span>
+              <span class="font-bold">Included</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-4">Cold Chain Delivery</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex justify-between">
+              <span>Cold delivery (up to 24 km)</span>
+              <span class="font-bold">50–100 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Cold delivery (regional)</span>
+              <span class="font-bold">150–250 UAH</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Thermocontainer &amp; ice packs</span>
+              <span class="font-bold">Included</span>
+            </li>
+            <li class="flex justify-between">
+              <span>GPS temperature tracking</span>
+              <span class="font-bold">Included</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Beverage Shop (300 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 300 × 25 = 7,500 UAH<br/>
+          Temperature storage: 1 pallet × 50 = 50 UAH<br/>
+          Cold delivery: 300 × 80 = 24,000 UAH<br/>
+          <strong class="text-lg">TOTAL: 31,550 UAH/month = 105 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: FIFO system, cold chain integrity, HACCP compliance, temperature logging</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Expiry Control</p>
+          <p class="text-sm text-gray-600 mt-2">No expired products shipped. FIFO rotation mandatory.</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">15-25°C</p>
+          <p class="text-gray-700 font-bold">Constant Temperature</p>
+          <p class="text-sm text-gray-600 mt-2">24/7 monitoring &amp; automatic alerts if deviation detected</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;4°C</p>
+          <p class="text-gray-700 font-bold">Cold Chain Integrity</p>
+          <p class="text-sm text-gray-600 mt-2">Refrigerated delivery with GPS temperature tracking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Food Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Temperature control, FIFO system, cold chain logistics, HACCP compliance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
