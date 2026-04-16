@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Home Decor & Interior Fulfillment | Fragile Glass, Ceramics, 100% Defect Inspection, <0.5% Damage | MTP';
+const description = 'Specialized fulfillment for wall art, mirrors, vases, light fixtures, ceramics. Maximum foam cushioning, visual defect inspection, specialized delivery, 24-48 hours, 100% insurance coverage across Ukraine.';
+const ogImage = 'https://profm.ua/images/fulfillment-decor.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴150-₴300'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Home Decor &amp; Interior Fulfillment<br />Fragile Item Specialists, <0.5% Damage Rate
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Wall art, mirrors, vases, light fixtures, ceramic pieces. Maximum foam cushioning, 100% visible defect inspection, specialized unloading crew, 24-48 hour delivery, 100% insurance.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Home Decor Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Home Decor Requires Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎨 Fragile Materials</h3>
+          <p class="text-gray-700">Mirrors, glass frames, ceramic vases break easily. Single impact = 100% product loss. Items are expensive: 2000 UAH painting, 1500 UAH mirror. Breakage = full refund + negative review.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌈 Aesthetic Value</h3>
+          <p class="text-gray-700">Customers pay for beauty. Even minor scratches on glass, chips on frame, dust smudges = 1-star review. Defect-free condition is essential. Requires careful inspection before shipping.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📏 Oversized &amp; Awkward Shapes</h3>
+          <p class="text-gray-700">Large mirror 150×100cm, art canvas 2×3m. Requires pallets, custom packaging, specialized transport, trained unloading crews. Standard shipping cannot handle oversized home decor.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Visible Defect Detection</h3>
+          <p class="text-gray-700">Must inspect every item for scratches, chips, dust, water damage before packing. 100% visual QC required. Pre-shipping defects must be caught and customer notified immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Home Decor Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Maximum Cushioning &amp; Protection</h3>
+          <p class="text-gray-700">Mirrors in foam-lined boxes with air cushioning. Glass frames with cardboard spacers. Ceramics wrapped in air bubble wrap then foam. Multi-layer shock absorption from all angles.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Visible Defect Inspection</h3>
+          <p class="text-gray-700">Every item checked before packing for scratches, chips, cracks, dust, water damage. Any defect found = customer notified BEFORE shipment, not after unpleasant surprise at door.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Specialized Fragile Delivery</h3>
+          <p class="text-gray-700">Two trained workers handle unloading. GPS tracking throughout journey. Photo documentation before delivery, after unloading, during placement. Careful handling protocol, not standard carriers.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Damage Insurance with Instant Reimbursement</h3>
+          <p class="text-gray-700">Mirror breaks in transit = 100% refund. No waiting for claims processing. Instant compensation on-site. Customer receives replacement immediately or full reimbursement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Home Decor</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Packaging, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">40–60 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized fragile packaging</span>
+            <span class="font-bold">30–80 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% visible defect inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized delivery (up to 50 km)</span>
+            <span class="font-bold">150–300 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Storage (per pallet/month)</span>
+            <span class="font-bold">400–500 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Home Decor Store (80 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 80 × 50 = 4,000 UAH<br/>
+          Specialized packaging: 80 × 55 = 4,400 UAH<br/>
+          Specialized delivery: 80 × 225 = 18,000 UAH<br/>
+          Storage (2 pallets): 2 × 400 = 800 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 27,200 UAH/month = 340 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: maximum cushioning, visible defect inspection, specialized delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Defect Inspection</p>
+          <p class="text-sm text-gray-600 mt-2">Every item checked for scratches, chips, dust</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Damage in Transit</p>
+          <p class="text-sm text-gray-600 mt-2">Maximum foam cushioning &amp; trained delivery</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Insurance Coverage</p>
+          <p class="text-sm text-gray-600 mt-2">Instant reimbursement for any damage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Protect Your Home Decor Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Maximum cushioning, 100% defect inspection, specialized delivery, &lt;0.5% damage rate, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

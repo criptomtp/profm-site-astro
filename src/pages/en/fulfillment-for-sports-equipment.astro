@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Sports Equipment Fulfillment | Fast Picking 3-5 Min, Fragile Bikes, 99.8% Quality | MTP';
+const description = 'Specialized fulfillment for sports equipment: balls, dumbbells, bicycles, roller skates, shoes. Fast 3-5 minute picking, specialized packaging per item type, fragile item protection, seasonal flexibility, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-sports.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴300'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Sports Equipment Fulfillment<br />Fast Picking, Fragile Protection, Seasonal Peaks
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Balls, dumbbells, bicycles, roller skates, sports apparel. 3-5 minute fast picking, specialized packaging per item type, &lt;0.5% damage rate on fragile items, seasonal volume flexibility, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Sports Equipment Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Sports Equipment Requires Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏃 Wide Assortment Diversity</h3>
+          <p class="text-gray-700">Small items (gloves), medium (dumbbells), large (bicycles). Each requires different packaging, storage location, handling method. One storage system cannot optimize all categories.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Fragile Equipment</h3>
+          <p class="text-gray-700">Bicycles, roller skates, skateboards break on impact. 3000 UAH bicycle damaged in transit = full loss + negative review. Requires maximum protective padding and careful handling protocols.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📈 Seasonal Demand Peaks</h3>
+          <p class="text-gray-700">Winter: skis, snowboards peak. Summer: bicycles, rollerblades peak. 1000 bicycles in 2 weeks requires 48-hour delivery. Storage must flex to handle seasonal surges without excess capacity year-round.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🚚 Specialized Transport</h3>
+          <p class="text-gray-700">Bicycles need special bicycle carriers or van transport. Heavy dumbbells require reinforced packaging and weight-rated vehicles. Standard courier cannot handle all sports equipment categories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Sports Equipment Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Specialized Packaging per Item Type</h3>
+          <p class="text-gray-700">Cardboard boxes for apparel, wooden crates for bicycles, foam padding for fragile items, reinforced boxes for heavy dumbbells. Custom packaging optimizes protection for each product category.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Ultra-Fast 3-5 Minute Picking</h3>
+          <p class="text-gray-700">Average sports equipment picking = 3-5 minutes (vs. 10 minutes standard). Storage system organized by size, category, weight for rapid access. Staff trained for speed while maintaining accuracy.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Specialized Delivery for Fragile Items</h3>
+          <p class="text-gray-700">Bicycles, roller skates, skateboards shipped via special carriers. Trained personnel handle fragile equipment carefully. GPS tracking throughout journey. Photo documentation before delivery and after placement.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Seasonal Flexibility &amp; 100% Insurance</h3>
+          <p class="text-gray-700">Storage capacity scales for seasonal peaks. Winter surge? We handle 2000+ units. Bicycle damaged in transit = 100% reimbursement. Instant compensation, no delays, no bureaucracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Sports Equipment</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Packaging, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Fast picking per order</span>
+            <span class="font-bold">25–40 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized packaging (per item)</span>
+            <span class="font-bold">10–30 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery (apparel, small items)</span>
+            <span class="font-bold">50–150 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized bicycle delivery (up to 50 km)</span>
+            <span class="font-bold">150–300 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Storage (seasonal flexibility)</span>
+            <span class="font-bold">300–500 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Sports Store (100 orders/month, mixed)</h3>
+        <p class="text-gray-700">
+          Picking: 100 × 30 = 3,000 UAH<br/>
+          Packaging: 100 × 20 = 2,000 UAH<br/>
+          Delivery (75 standard @ 100 + 25 bicycles @ 250): 13,250 UAH<br/>
+          Storage (2 pallets): 2 × 400 = 800 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 19,050 UAH/month = 190 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 3-5 min picking, specialized packaging, fragile protection, &lt;0.5% damage rate, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.8%</p>
+          <p class="text-gray-700 font-bold">Accuracy Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Industry-leading picking accuracy for sports items</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Damage Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Specialized packaging &amp; fragile handling</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">3-5 min</p>
+          <p class="text-gray-700 font-bold">Fast Picking Speed</p>
+          <p class="text-sm text-gray-600 mt-2">Quick fulfillment for seasonal peaks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Optimize Your Sports Equipment Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Fast 3-5 min picking, specialized packaging, fragile protection, &lt;0.5% damage rate, seasonal flexibility, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
