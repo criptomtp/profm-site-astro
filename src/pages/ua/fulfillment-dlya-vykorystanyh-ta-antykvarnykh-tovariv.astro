@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Вживаних & Антикварних Товарів: Історія, Якість, Гарантія';
+const description = 'Спеціалізований фулфілмент для вживаних товарів, антикварних предметів, вінтажу. Документування стану, контроль якості, прозорість, 100% страховка, доставка за 24-48 годин.';
+const ogImage = 'https://profm.ua/images/fulfillment-vintage.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Вживаних & Антикварних Товарів<br />Честь & Якість
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Вживані речі, антикварні предмети, вінтажу. Документування стану, контроль якості, фото, 100% страховка, доставка за 24-48 годин.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент вживаних товарів
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка вживаних & антикварних товарів</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📸 Документування стану</h3>
+          <p class="text-gray-700">Кожна вживана річ унікальна. Потребується докладне документування стану: фото з усіх сторін, опис дефектів, гарантія автентичності.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Контроль автентичності</h3>
+          <p class="text-gray-700">Для антикварних предметів — перевірка автентичності. Потребується експертиза, сертифікація. Без документів цінність знижується.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💰 Висока вартість & ризик</h3>
+          <p class="text-gray-700">Антиквар за 50,000 грн, вінтажна річ за 10,000 грн. Ризик втрати велика. Потребується максимальна безпека & страховка.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🤝 Прозорість для покупців</h3>
+          <p class="text-gray-700">Покупці вживаних товарів хочуть знати все про історію & стан. Потребується максимальна прозорість, докладна документація.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для вживаних товарів</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Докладне документування</h3>
+          <p class="text-gray-700">Фото з усіх сторін, детальний опис стану, дефектів, історії. Документація з фото & письмова. Максимальна прозорість для покупця.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль автентичності</h3>
+          <p class="text-gray-700">Для антикварних предметів — експертиза. Сертифікація автентичності. Без документів товар може мати знижену цінність.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Безпечне зберігання & упаковка</h3>
+          <p class="text-gray-700">Дорогий антиквар зберігається окремо з максимальною безпекою. Упаковка відповідно до характеру товару. Максимальна захист.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціалізована доставка</h3>
+          <p class="text-gray-700">Дорогий & крихкий антиквар доставляємо спеціальним перевізником. Фото перед & після доставки. GPS моніторинг. Максимальна безпека.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для вживаних товарів</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">40-80 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Документування & фото (за позицію)</span>
+            <span class="font-bold">50-150 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Контроль автентичності (опція)</span>
+            <span class="font-bold">200-500 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціалізована упаковка</span>
+            <span class="font-bold">30-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка спеціалізована (до 50 км)</span>
+            <span class="font-bold">150-400 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Магазин антикварю (40 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 40 × 60 = 2,400 грн<br/>
+          Документування: 40 × 100 = 4,000 грн<br/>
+          Доставка спеціалізована: 40 × 275 = 11,000 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 17,400 грн/месяц = 435 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% документування стану</p>
+            <p class="text-gray-700">Фото з усіх сторін, детальний опис. Покупець знає точно що отримує. Максимальна прозорість.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lang">Контроль автентичності</p>
+            <p class="text-gray-700">Для антикварних предметів — експертиза. Сертифікація автентичності. Без сумнівів у цінності.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Антиквар розбився при доставці — платимо 100%. Миттєва компенсація. Клієнт захищен.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для антикварних магазинів & платформ</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Докладне документування, контроль автентичності, прозорість, 100% страховка, спеціалізована доставка.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент вживаних товарів
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
