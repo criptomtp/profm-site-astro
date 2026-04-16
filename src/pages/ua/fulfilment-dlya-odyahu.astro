@@ -1,0 +1,499 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Фулфілмент для Одягу та Взуття: Склад, Доставка, Обробка | MTP"
+  description="Спеціалізований фулфілмент для fashion-селерів. Обробка замовлень за 15 хв, доставка 2-3 дні по Україні. Від 18 грн/замовлення. Інтеграція з Rozetka, Prom."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-odyahu/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-fashion-hero.webp"
+  schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Фулфілмент для Одягу та Взуття","description":"Спеціалізований фулфілмент для fashion і текстильних товарів. Обробка замовлень за 15 хвилин, доставка 2-3 дні, інтеграція з маркетплейсами, повернення за -50% вартості.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"Ukraine"},"serviceType":"Fulfillment","offers":{"@type":"AggregateOffer","lowPrice":"18","highPrice":"650","priceCurrency":"UAH"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Як повинна зберігатися текстильна продукція на складі?","acceptedAnswer":{"@type":"Answer","text":"Взуття і одяг зберігаються на вішаках і полицях при температурі 15-20°С і вологості 40-60%. Це запобігає висіканню, деформації і запаху. На складі МТП — система контролю мікроклімату для fashion-товарів."}},{"@type":"Question","name":"Скільки часу займає обробка замовлення одягу з кількома SKU?","acceptedAnswer":{"@type":"Answer","text":"15-25 хвилин на замовлення. Пікінг одного товару = 3-5 хвилин, пакування + перевірка розмірів = 7-10 хвилин, маркування + друк ТТН = 5 хвилин. Прискорено через регульні раритети і швидкі маршрути збирання."}},{"@type":"Question","name":"Як обробляються повернення одягу від клієнтів?","acceptedAnswer":{"@type":"Answer","text":"Клієнт повертає через маркетплейс. Ми приймаємо, перевіряємо відсутність дефектів (плями, розриви, запахи), перевіряємо ярлики (не повинні бути обрізані). Якщо все добре — розміщуємо назад на склад. Якщо дефект — утилізуємо або вичисляємо штраф за якість."}},{"@type":"Question","name":"Можна ли розміщувати на складі МТП великогабаритні речі (шуби, пальто, спортивні костюми)?","acceptedAnswer":{"@type":"Answer","text":"Так, у нас є окрема зона для великогабаритних речей. Вони зберігаються на вішаках, щоб уникнути морщин. Додаткова вартість за місце = +100 грн/м² на місяць замість 650 грн/м³."}},{"@type":"Question","name":"Чи можна додати до коробки листівку або упаковку фірми?","acceptedAnswer":{"@type":"Answer","text":"Абсолютно. Можна додати листівку зі своїм логотипом, бирку品牌, подарунок або вибір розміру (розпечатка). Вартість вставки листівки = 1,5-2 грн. Брендована упаковка = 2-3 грн за коробку."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Фулфілмент для Одягу","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-odyahu/"}]}</script>`}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-odyahu/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-odyahu/">
+  <link rel="stylesheet" href="/css/fonts.css">
+</Fragment>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<h1>Фулфілмент для Одягу та Взуття: від Складу до Клієнта</h1>
+<div class="hero-line"></div>
+<p>Спеціалізований склад для fashion-селерів. Обробка за 15 хвилин, доставка 2-3 дні по Україні, інтеграція з Rozetka та Prom. Від 18 грн/замовлення.</p>
+<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
+<div class="hero-note">Обробка за 15 хвилин &#183; Доставка 2-3 дні &#183; Інтеграція з маркетплейсами</div>
+</div>
+</section>
+
+<!-- WHY FASHION SELLERS -->
+<section class="why-section">
+<div class="container">
+<h2>Чому Fashion-Селери Вибирають МТП</h2>
+
+<div class="benefits-grid">
+
+<div class="benefit">
+<div class="benefit-icon">👕</div>
+<h3>Швидка Обробка Замовлень</h3>
+<p>15-25 хвилин від замовлення до готовності до відправки. Пікінг, перевірка розмірів, пакування — все оптимізовано для одягу. Великі обсяги не затримують доставку.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🎯</div>
+<h3>Контроль Якості Упаковки</h3>
+<p>Кожне замовлення перевіряється на наявність дефектів: плям, порвань, запахів. Неправильна розмірна сітка не іде на склад. Це зменшує повернення на 40-50%.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🚚</div>
+<h3>Доставка 2-3 Дні по Україні</h3>
+<p>Замовлення вийшло зі складу до 14:00 — покупець отримає товар наступного дня в Києві, за 2-3 дні в регіонах. Швидка доставка — це перевага в fashion-ринку.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">📦</div>
+<h3>Брендоване Пакування</h3>
+<p>Хочете, щоб коробка мала ваш логотип? Ми це робимо. Від 2-3 грн за коробку. Клієнти дарують 3x частіше отримані подарунки, якщо упаковка красива й брендована.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">♻️</div>
+<h3>Обробка Повернень</h3>
+<p>Клієнт повертає товар через маркетплейс. Ми його перевіряємо, розміщуємо назад на склад або утилізуємо. Вартість обробки = 50% від фулфілменту замовлення.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🏷️</div>
+<h3>Розмірна Логістика</h3>
+<p>Багато розмірів того ж товару? Ми їх розсортовуємо по ячейкам, щоб пікінг був швидшим. Система підказує оператору точне розташування розміру XL або S.</p>
+</div>
+
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-works">
+<div class="container">
+<h2>Як Працює Фулфілмент для Fashion</h2>
+
+<div class="steps-grid">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Передача на склад</h3>
+<p>Ви готуєте партію одягу. Вказуєте розміри, кольори, артикули. МТП приймає товар, розсортовує по розмірам, розміщує на полицях. Кожна одиниця отримує штрихкод.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Замовлення від клієнта</h3>
+<p>Клієнт замовляє розмір M, колір чорний на Rozetka. Замовлення автоматично потрапляє в WMS. Система знає точне розташування товару (полиця 5, ячейка 12).</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Збір та пакування</h3>
+<p>Оператор йде до ячейки, сканує товар, перевіряє якість (нема плям, порвань), потім пакує в коробку або конверт. Додає листівку з вашим логотипом, якщо замовляли.</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Доставка</h3>
+<p>Упаковане замовлення йде на площадку для доставки. Ми передаємо його Новій Пошті або нашим кур'єрам. Клієнт отримує товар за 1-3 дні залежно від регіону.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+<div class="container">
+<h2>Вартість Фулфілменту для Одягу</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+<h3>За Замовлення</h3>
+<div class="price-value">від 18 грн</div>
+<p class="price-note">обробка замовлення</p>
+<ul>
+<li>200+ замовлень/день = 18 грн</li>
+<li>100-150 замовлень/день = 20 грн</li>
+<li>50-99 замовлень/день = 25 грн</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>За Зберігання</h3>
+<div class="price-value">650 грн/м³/міс</div>
+<p class="price-note">адресне зберігання</p>
+<ul>
+<li>Clima control 15-20°С</li>
+<li>Розмірна розсортування</li>
+<li>Захист від вологи</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>Додаткові Послуги</h3>
+<div class="price-value">від 1,5 грн</div>
+<p class="price-note">опціонально</p>
+<ul>
+<li>Листівка з логотипом: 1,5 грн</li>
+<li>Брендована коробка: 2-3 грн</li>
+<li>Обробка повернення: 50% від тарифу</li>
+</ul>
+</div>
+
+<div class="price-card highlight">
+<h3>Середня Вартість</h3>
+<div class="price-value">22-28 грн</div>
+<p class="price-note">за замовлення одягу</p>
+<ul>
+<li>Обробка: 20 грн</li>
+<li>Листівка: 2-3 грн</li>
+<li>Пакування: 0 (вже в базовій)</li>
+</ul>
+</div>
+
+</div>
+
+<p class="pricing-note"><strong>Приклад:</strong> 100 замовлень/день × 25 грн × 22 дні = 55 000 грн. Плюс зберігання (150 м³) = +97 500 грн. Разом ~152 500 грн/місяць для селера з 100 замовленнями/день.</p>
+</section>
+
+<!-- SIZE & COMPLEXITY -->
+<section class="size-section">
+<div class="container">
+<h2>Обслуговування Різних Типів Одягу</h2>
+
+<div class="size-grid">
+
+<div class="size-card">
+<h3>📏 Звичайний Одяг</h3>
+<p><strong>Приклад:</strong> Футболка, штани, спідниця, гольф</p>
+<p><strong>Розміри:</strong> XS-XXL (5-7 розмірів)</p>
+<p><strong>Обробка:</strong> 10-15 хвилин на замовлення</p>
+<p><strong>Ціна:</strong> Базова тариф 18-20 грн</p>
+</div>
+
+<div class="size-card">
+<h3>👞 Взуття</h3>
+<p><strong>Приклад:</strong> Кросівки, туфлі, черевики</p>
+<p><strong>Розміри:</strong> 35-46 (12+ розмірів)</p>
+<p><strong>Обробка:</strong> 12-20 хвилин (більше розмірів = повільніше)</p>
+<p><strong>Ціна:</strong> +15% за розширену розмірну сітку</p>
+</div>
+
+<div class="size-card">
+<h3>🧥 Верхній Одяг</h3>
+<p><strong>Приклад:</strong> Куртка, пальто, світер, кофта</p>
+<p><strong>Розміри:</strong> XS-XXL з товстою тканиною</p>
+<p><strong>Обробка:</strong> 15-25 хвилин (важче упаковувати)</p>
+<p><strong>Ціна:</strong> +10-15% за обсяг</p>
+</div>
+
+<div class="size-card">
+<h3>👔 Преміум Колекції</h3>
+<p><strong>Приклад:</strong> Дизайнерський одяг, обмежені видання</p>
+<p><strong>Розміри:</strong> Вузька розмірна сітка (2-3 розміри)</p>
+<p><strong>Обробка:</strong> 20-30 хвилин (нижче якість упаковки)</p>
+<p><strong>Ціна:</strong> Можливі преміум-тарифи від 30 грн</p>
+</div>
+
+</div>
+</section>
+
+<!-- RETURNS & PROBLEMS -->
+<section class="returns-section">
+<div class="container">
+<h2>Обробка Проблем і Повернень</h2>
+
+<div class="return-grid">
+
+<div class="return-item">
+<h3>❌ Неправильний Розмір</h3>
+<p><strong>Що робиться:</strong> Клієнт повертає товар, що не підходить по розміру. МТП приймає, перевіряє, розміщує назад на склад. Вартість обробки = 50% від тарифу замовлення (тобто 9-10 грн на замовлення).</p>
+</div>
+
+<div class="return-item">
+<h3>⚠️ Пошкоджена Упаковка</h3>
+<p><strong>Що робиться:</strong> Якщо упаковка пошкоджена при доставці або містить дефекти (кров, плями), товар утилізується. МТП стягує вартість утилізації = 50 грн за одиницю.</p>
+</div>
+
+<div class="return-item">
+<h3>🚫 Невідповідність Опису</h3>
+<p><strong>Що робиться:</strong> Якщо клієнт отримав товар, що не відповідає оригіналу (іншого кольору, матеріалу), виплачується компенсація. МТП не несе відповідальність за опис селера.</p>
+</div>
+
+<div class="return-item">
+<h3>✂️ Дефектна Одяг</h3>
+<p><strong>Що робиться:</strong> Якщо на складі МТП знайдено дефект до передачі клієнтові, ми не відправляємо товар. Повідомляємо селера. Селер вирішує: повернути, утилізувати, або скласти зі знижкою.</p>
+</div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<h2>Часті Питання від Fashion-Селерів</h2>
+
+<div class="faq-item">
+<h4>❓ Скільки часу знадобиться на обробку, якщо у мене 500 замовлень в день?</h4>
+<p>✅ Максимальна пропускна спроможність МТП = 6000 замовлень на день на один склад. За 500 замовлень — легко. Усі замовлення будуть оброблені в той же день (від 08:00 до 20:00). Забори Нової Пошти — о 10:00, 12:00, 15:00, 17:00.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Чи можна тимчасово припинити фулфілмент, якщо мої замовлення зменшились?</h4>
+<p>✅ Так. Контракт дозволяє зменшити обсяг до 0 замовлень/день. Але мінімальна комісія за зберігання буде проставлена = залік за тилк одне місяце при припиненні раніше за цей період. Рекомендуємо звернутися за 15 днів до припинення.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Що робиться з товарами, які ніколи не замовляються (slow-movers)?</h4>
+<p>✅ Якщо товар не замовлявся 90 днів, МТП сповіщає селера й пропонує: 1) Залишити (платиш за зберігання), 2) Повернути собі (сплачуєш доставку), 3) Утилізувати (МТП утримує комісію). Це запобігає накопленню неліквідного матеріалу на складі.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Можна ли розміщувати на складі МТП обмежені видання або эксклюзивні колекції?</h4>
+<p>✅ Абсолютно. МТП має окрему преміум-зону з посиленим контролем якості. Можна налаштувати окрему полицю, вишу обробку (30 хвилин замість 15), інших пакування. Преміум-тариф = 35-40 грн за замовлення.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Скільки часу займає налаштування інтеграції з моєю розмірною таблицею?</h4>
+<p>✅ 2-4 дні. Ми синхронізуємо розмірну сітку з Rozetka чи Prom, розміщуємо товари по ячейкам згідно вашої розмірної таблиці, протестуємо на 10-20 замовленнях. Потім запускаємо в повну обробку.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>Готові Масштабувати Fashion-Бізнес?</h2>
+<p>МТП обслуговує 150+ fashion-селерів (одяг, взуття, аксесуари). Розуміємо логістику fashion: розмірна сітка, якість упаковки, швидка доставка, обробка повернень. Допомагаємо селерам зростати з 30 на 150+ замовлень на день.</p>
+<div class="cta-buttons">
+<a href="tel:+380501444645" class="btn btn-primary">☎️ +38 (050) 144-46-45</a>
+<a href="mailto:mtpgrouppromo@gmail.com" class="btn btn-secondary">✉️ mtpgrouppromo@gmail.com</a>
+</div>
+<p class="cta-note">Менеджер передзвонить протягом 30 хвилин з індивідуальною пропозицією</p>
+</section>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, #e63329 0%, #cc2820 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: white;
+  margin: 20px auto;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero-form input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.hero-form button {
+  padding: 12px 30px;
+  background: white;
+  color: #e63329;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-note {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.why-section, .how-works, .pricing-section, .size-section, .returns-section, .faq-section {
+  padding: 60px 0;
+}
+
+.benefits-grid, .steps-grid, .pricing-grid, .size-grid, .return-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.benefit, .step, .price-card, .size-card, .return-item {
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #e63329;
+  color: white;
+  border-radius: 50%;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.price-card {
+  border: 2px solid #ddd;
+}
+
+.price-card.highlight {
+  border: 2px solid #e63329;
+  background: #fff5f3;
+}
+
+.price-value {
+  font-size: 24px;
+  color: #e63329;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.price-note, .size-card p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.size-card {
+  text-align: left;
+}
+
+.size-card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.return-item {
+  text-align: left;
+  border-left: 4px solid #e63329;
+}
+
+.return-item h3 {
+  color: #e63329;
+  margin-top: 0;
+}
+
+.faq-item {
+  padding: 20px;
+  margin-bottom: 15px;
+  background: white;
+  border-left: 4px solid #e63329;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.faq-item h4 {
+  margin-top: 0;
+  color: #e63329;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #e63329 0%, #cc2820 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: white;
+  color: #e63329;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #e63329;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .benefits-grid, .steps-grid, .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+
+</Base>
