@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент для Одягу & Модних Товарів: Розміри, Якість, Зберігання';
+const description = 'Спеціалізований фулфілмент для одягу, взуття, аксесуарів. Контроль розмірів, гігієничне зберігання, антикомкування, 100% страховка, доставка за 24 години.';
+const ogImage = 'https://profm.ua/images/fulfillment-fashion.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент для Одягу & Модних Товарів<br />Розміри, Якість, Бережність
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Сукні, сорочки, штани, взуття, аксесуари. Контроль розмірів, гігієничне зберігання, бережна обробка, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент одягу
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Fashion Needs Special Care -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Специфіка одягу у логістиці</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">👗 Контроль розмірів</h3>
+          <p class="text-gray-700">Неправильний розмір — 90% повернень і гніві клієнти. XS, S, M, L, XL, XXL — кожна позиція мусить мати правильний розмір. Потребується 100% контроль перед відправкою.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Гігієна & Чистота</h3>
+          <p class="text-gray-700">Люди носять одяг на шкірі. Потребується максимальна чистота при складуванні. Без пилу, плісені, запахів. Персонал мусить працювати у чистому одязі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧴 Попередження Комків</h3>
+          <p class="text-gray-700">Одяг легко комкується при складуванні. Повернене плаття зі смусу = клієнт розчарований. Потребується спеціальна упаковка і вішання для запобігання смусу.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Вологість & Температура</h3>
+          <p class="text-gray-700">Деякі тканини чутливі до вологи (вовна шиються). Потребується контроль вологості 45-60% для запобігання плісені і деформації.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MTP Fashion Services -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги MTP для одягу</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% контроль розмірів</h3>
+          <p class="text-gray-700">Кожна позиція перевіряється на розмір перед відправкою. XS ≠ S. Неправильний розмір не буде відправлено. 99.99% точність для розмірів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Гігієнічне складування</h3>
+          <p class="text-gray-700">Дедикована, чиста зона для одягу. Персонал у чистому одязі, перчатках. Щодня дезінфекція. Без пилу, плісені, запахів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Спеціальна упаковка від смусу</h3>
+          <p class="text-gray-700">Плаття, сорочки вішаються на спеціальні вешалки для зберігання без смусу. Або складаються з використанням папіру для запобігання смусу. Доставляються розпрямленими.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Контроль вологості 45-60%</h3>
+          <p class="text-gray-700">Для чутливих тканин (вовна, шовк) — контроль вологості. Запобігання плісені, деформації, запахів. Документація всіх показників.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни для одягу</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Комплектація & Доставка</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Комплектація (за замовлення)</span>
+            <span class="font-bold">20-30 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% контроль розміру</span>
+            <span class="font-bold">Включено</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Спеціальна упаковка від смусу</span>
+            <span class="font-bold">10-15 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Гігієнічне складування</span>
+            <span class="font-bold">+25 грн/паль/месяц</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Доставка (стандарт)</span>
+            <span class="font-bold">50-100 грн</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% страховка</span>
+            <span class="font-bold">Включено</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Приклад: Онлайн-магазин одягу (350 замовлень/місяц)</h3>
+        <p class="text-gray-700">
+          Комплектація: 350 × 25 = 8,750 грн<br/>
+          Упаковка від смусу: 350 × 12 = 4,200 грн<br/>
+          Доставка: 350 × 75 = 26,250 грн<br/>
+          Складування: 2 палі × 25 = 50 грн/месяц = 50 грн<br/>
+          <strong class="text-lg">ВСЬОГО: 39,250 грн/месяц = 112 грн/замовлення</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Guarantee -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Гарантія якості для одягу</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">99.99% точність розмірів</p>
+            <p class="text-gray-700">Найвища пріоритет. Кожна позиція перевіряється на розмір перед відправкою. Неправильний розмір не буде відправлено.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">Відсутність смусу при доставці</p>
+            <p class="text-gray-700">Одяг складається спеціальним способом або вішається. Закриває папіром. Доставляється розпрямленим. Нульева смус гарантія.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% гігієнічна очистка</p>
+            <p class="text-gray-700">Персонал у чистому одязі, перчатках. Щодня дезінфекція. Одяг максимально чистий при доставці. Можна одягти одразу.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-3xl font-bold text-red-600">✓</span>
+          <div>
+            <p class="font-bold text-lg">100% страховка від пошкоджень</p>
+            <p class="text-gray-700">Плаття приватилося брудне, розірване — платимо 100%. Миттєва компенсація. Клієнт отримує нове плаття без чекання.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Логістика для модних магазинів</h2>
+      <p class="text-xl mb-8 opacity-90">
+        100% контроль розмірів, гігієнічна упаковка, нульева смус, 100% страховка, доставка за 24 години.
+      </p>
+      <a href="/#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Запустити фулфілмент одягу
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
