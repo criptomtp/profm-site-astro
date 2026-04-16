@@ -1,0 +1,335 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Фулфілмент у Борисполі: Логістика з Аеропорту до України';
+const description = 'Фулфілмент послуги у Борисполі та регіоні. Комплектація, складування, доставка. Оптимізуйте витрати з нашим складом навпроти аеропорту.';
+const ogImage = 'https://profm.ua/images/fulfillment-boryspil-hero.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  areaServed: {
+    '@type': 'City',
+    name: 'Boryspil',
+    addressCountry: 'UA'
+  },
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  priceRange: '₴18-₴150'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Фулфілмент у Борисполі
+        <br />Логістика з Міжнародного Аеропорту
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Склад у Борисполі — це доступ до 30 млн осіб в Центральній Україні. Імпорт→Склад→Доставка за 24 години.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>200м від аеропорту</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-yellow-300">✓</span>
+          <span>6000 м² складу</span>
+        </div>
+      </div>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Мовчи при вступлення на склад
+      </a>
+    </div>
+  </section>
+
+  <!-- Benefits Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Переваги складу у Борисполі</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Інтернаціональні імпорти</h3>
+          <p class="text-gray-700">Бльці доставляється з міжнародного аеропорту в Борисполі на наш склад за кілька годин. Таможенное оформління під ключ.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Охоплення 30 млн осіб</h3>
+          <p class="text-gray-700">Борисполь — це центр. З нашого складу доставляємо за 24 години в Київ, Львів, Харків, Миколаїв, Тернопіль, Полтаву.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Зберігання без бюрократії</h3>
+          <p class="text-gray-700">Тимчасове зберігання товару від імпорту до розподілу — 30 днів без додаткової плати за переви зберігання. Перевірка якості включена.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">API інтеграція з WMS</h3>
+          <p class="text-gray-700">Синхронізація запасів в реальному часі. Якщо товар приймають в Борисполі, твій кабінет відновлюється через 1 хв.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Кроссдокінг для B2B</h3>
+          <p class="text-gray-700">Товар приходить в Борисполь, перевантажується на распределительные центры в інших містах без зберігання у твоєму складі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">Об'єм для оптовиків</h3>
+          <p class="text-gray-700">Склад на 6000 м² гарантує місце для великих партій. Ставки за обсяги — від 10 паль зниження на 15%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Advantage -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Чому Борисполь — ключова локація</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Міжнародна логістика</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>500+ імпортних партій/місяць</strong> — товар прибуває в міжнародний аеропорт, ми прослідковуємо відп таможниці, приймаємо на склад</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>Таможенне оформління</strong> — ми допомагаємо з декларуванням, сертифікацією, всією бюрократією</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>Контроль якості</strong> — вбір непосредственно від аеропорту дозволяє виявити дефекти до розподілу</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Охоплення України</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>120 км від Києва</strong> — рейсу щодня у столицю. Доставка за 3-4 години</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>Ноч або Львів</strong> — 12-14 годин. Рейсу щодня через Київ</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-600 font-bold">✓</span>
+              <span><strong>Охоплення 30+ міст</strong> — через наші распределение мережу</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Breakdown -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Послуги на складі в Борисполі</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-xl font-bold mb-4">Прийняття від імпорту</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✓ Розвантаження доставки</li>
+            <li>✓ Контроль якості & кількості</li>
+            <li>✓ Таможенне оформління</li>
+            <li>✓ Розміщення на складі</li>
+            <li><strong class="text-red-600">Ціна: 30 грн за палю</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-xl font-bold mb-4">Зберігання (місячне)</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✓ Стандартна паль (3900 м²)</li>
+            <li>✓ Клімат-контроль 18-22°C</li>
+            <li>✓ Моніторинг за API</li>
+            <li>✓ Перша закупка — 30 днів без пересплати</li>
+            <li><strong class="text-red-600">Ціна: 400 грн/паль/місяць</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-xl font-bold mb-4">Комплектація & розподіл</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✓ Комплектація замовлень</li>
+            <li>✓ Друк етикет TTN</li>
+            <li>✓ Маркування &lt; 1 хв</li>
+            <li>✓ Передача перевізнику</li>
+            <li><strong class="text-red-600">Ціна: 18-30 грн/замовлення</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded border-t-4 border-red-600">
+          <h3 class="text-xl font-bold mb-4">Crossdocking (B2B)</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>✓ Розвантаження імпорту</li>
+            <li>✓ Пересортування по регіонам</li>
+            <li>✓ Вантаження на розподільники</li>
+            <li>✓ Без тривалого зберігання</li>
+            <li><strong class="text-red-600">Ціна: 150 грн за паль</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Приклад: Імпортер побутової техніки</h2>
+      <div class="bg-gradient-to-r from-red-50 to-white p-8 rounded border border-red-200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-bold mb-4">Сценарій: Закупка з Китаю</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li><strong>День 1:</strong> Контейнер прибуває на аеропорт Борисполь (сейчас за 10 днів з Шанхаю)</li>
+              <li><strong>День 2-3:</strong> Таможенне оформління (ми допомагаємо)</li>
+              <li><strong>День 4:</strong> Приймаємо товар на складі, контрол якості</li>
+              <li><strong>День 5-30:</strong> Зберігаємо на нашому складі, синхронізуємо запаси твого магазину</li>
+              <li><strong>Кожен день:</strong> Комплектуємо замовлення, відправляємо по Україні</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">Як MTP економить тобі</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li><span class="font-bold">Таможниця:</span> не потрібно наймати декларанта (+5000 грн/місяць)</li>
+              <li><span class="font-bold">Склад:</span> оренда в Борисполі скромна — 2000 грн проти 5000 грн в Київі</li>
+              <li><span class="font-bold">Персонал:</span> комплектувальник ≈ 12000 грн vs наша 18-30 грн за замовлення</li>
+              <li><span class="font-bold">Доставка:</span> оптова 30% дешевше через нас</li>
+            </ul>
+            <p class="mt-6 text-lg font-bold text-red-600">Економія: 35-40% від логістичних витрат</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Comparison -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Ціни на складі в Борисполі</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border p-4 text-left">Послуга</th>
+              <th class="border p-4 text-center">Ціна</th>
+              <th class="border p-4 text-left">Умови</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-4"><strong>Приймання від імпорту</strong></td>
+              <td class="border p-4 text-center">30 грн/паль</td>
+              <td class="border p-4">Розвантаження + контроль якості</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4"><strong>Зберігання стандарт</strong></td>
+              <td class="border p-4 text-center">400 грн/паль/місяць</td>
+              <td class="border p-4">Перші 30 днів безкоштовно</td>
+            </tr>
+            <tr>
+              <td class="border p-4"><strong>Клімат-контроль</strong></td>
+              <td class="border p-4 text-center">+100 грн/паль/місяць</td>
+              <td class="border p-4">Температура 18-22°C</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4"><strong>Комплектація</strong></td>
+              <td class="border p-4 text-center">18-30 грн/замовлення</td>
+              <td class="border p-4">Залежить від кількості товарів</td>
+            </tr>
+            <tr>
+              <td class="border p-4"><strong>Crossdocking</strong></td>
+              <td class="border p-4 text-center">150 грн/паль</td>
+              <td class="border p-4">Прямо від імпорту до розподільників</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-4"><strong>Доставка по Україні</strong></td>
+              <td class="border p-4 text-center">Від 50 грн</td>
+              <td class="border p-4">В залежності від міста</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">FAQ: Склад у Борисполі</h2>
+      <div class="space-y-6">
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи можна зберігати товар у Борисполі довгостроково?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Так. За стандартною ставкою 400 грн/паль/місяць. Якщо партія &lt;5 палів — договір на гнучких умовах. Якщо &gt;50 палів — можна домовитися про знижку 15-20%.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Як оформити товар від іноземного постачальника в Борисполі?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Ми допомагаємо на всіх етапах: від отримання B/L у аеропорту, через таможенне оформління, до розміщення на складі. Все робимо під ключ. Вартість таможування включена в загальні витрати (узгоджується индивідуально).</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Скільки часу від прибуття імпорту до розміщення на нашому складі?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Стандартно 2-3 дні. Якщо товар швидко потрібен — експресна таможниця &lt; 24 години, але це добавляє 20% до вартості таможення.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Чи безпечна логістика з Борисполя в віддалені міста (Львів, Одеса)?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Абсолютно. У нас партнерські мережі доставки у всіх великих містах. Товар відправляємо через надійних перевізників (ITL, Meest, Укрпошта та ін.). Кожна доставка застрахована.</p>
+        </details>
+        <details class="bg-gray-50 p-6 rounded cursor-pointer group">
+          <summary class="font-bold text-lg flex justify-between items-center">
+            Який мінімум палів для розміщення в Борисполі?
+            <span class="group-open:rotate-180 transition">↓</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Мінімум 1 паль. Без договірних обмежень на обсяги. Якщо партія росте — обговоримо коефіцієнти на 10+, 30+, 50+ палів.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Почніть логістику з Борисполя</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Додатково місце на складі + таможенне оформління = 72 години від прибуття імпорту до розпочатку продажів.
+      </p>
+      <div class="bg-white bg-opacity-10 p-8 rounded backdrop-blur-sm">
+        <form class="space-y-4">
+          <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <input type="email" placeholder="Email або телефон" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500" required />
+          <textarea placeholder="Яка кількість товара, які країни імпорту, якот у місяц?" class="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500 h-24" required></textarea>
+          <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded transition">
+            Запросити розрахунок
+          </button>
+        </form>
+      </div>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <p class="text-sm opacity-75 mb-1">ТЕЛЕФОН</p>
+          <a href="tel:+380931234567" class="text-xl font-bold hover:opacity-80 transition">+38 (093) 123-45-67</a>
+        </div>
+        <div>
+          <p class="text-sm opacity-75 mb-1">EMAIL</p>
+          <a href="mailto:info@profm.ua" class="text-xl font-bold hover:opacity-80 transition">info@profm.ua</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
