@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Supplements & Vitamins Fulfillment | GMP Certified, 15-20°C, FIFO, 100% MOZ Verified | MTP';
+const description = 'Specialized fulfillment for dietary supplements, vitamins, probiotics, Omega-3. GMP certified, 15-20°C temperature control, FIFO expiry system, MOZ verification, 100% quality, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-supplements.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Supplements &amp; Vitamins Fulfillment<br />GMP Certified, 15-20°C, FIFO Expiry Control
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Vitamins, minerals, protein supplements, Omega-3, probiotics. GMP certified facility, 15-20°C temperature control, FIFO expiry management, MOZ certification verification, 100% quality, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Supplements Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Supplements Require Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Temperature Sensitivity</h3>
+          <p class="text-gray-700">Probiotics, Omega-3, certain vitamins degrade above 25°C. Requires strict 15-20°C control. Separate refrigeration for heat-sensitive formulations. One temperature spike = product loses efficacy.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Certification &amp; Approval</h3>
+          <p class="text-gray-700">Every supplement requires MOZ health authority approval, certification documentation, ingredient verification. Non-compliant products = liability and legal issues.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 GMP Hygiene Standards</h3>
+          <p class="text-gray-700">Supplements taken internally by humans. Requires GMP (Good Manufacturing Practice) standards. Sterile handling, clean facilities, certified personnel. Food-grade cleanliness mandatory.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⏱️ Strict Expiry Control</h3>
+          <p class="text-gray-700">Expired vitamins = wasted money + health risk. Requires FIFO (First In First Out) system. Products near expiry flagged. Never ship expired inventory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Supplements Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ GMP Certified Facility</h3>
+          <p class="text-gray-700">Warehouse certified to GMP (Good Manufacturing Practice) standards. Staff trained in supplement handling. Regular audits from health authorities. Compliance guaranteed.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Temperature Control 15-20°C</h3>
+          <p class="text-gray-700">Dedicated climate-controlled zone. Separate refrigeration for probiotics and Omega-3. Hourly temperature sensors. Auto-alerts on any deviation. Zero degradation risk.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ FIFO Expiry Management</h3>
+          <p class="text-gray-700">First In First Out system mandatory. Every batch labeled with receipt date. Before picking: expiry checked. Products within 30 days of expiry flagged and held. Never ship expired supplements.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Quality &amp; Compliance</h3>
+          <p class="text-gray-700">Every package inspected: seal integrity, expiry date, documentation complete. MOZ certification verified at intake. Zero-defect QC policy on all supplements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Supplements &amp; Vitamins</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Compliance</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">15–25 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% expiry verification</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Temperature control storage</span>
+            <span class="font-bold">+25–100 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Supplement Brand (500 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 500 × 20 = 10,000 UAH<br/>
+          Temperature storage (3 pallets): 3 × 60 = 180 UAH/month<br/>
+          Delivery: 500 × 75 = 37,500 UAH<br/>
+          <strong class="text-lg">TOTAL: 47,680 UAH/month = 95 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: GMP certification, 15-20°C control, FIFO expiry system, MOZ verification, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Compliance Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">GMP</p>
+          <p class="text-gray-700 font-bold">Certified Facility</p>
+          <p class="text-sm text-gray-600 mt-2">Regular health authority audits</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">15-20°C</p>
+          <p class="text-gray-700 font-bold">Strict Temperature</p>
+          <p class="text-sm text-gray-600 mt-2">Zero efficacy degradation</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Expiry Control</p>
+          <p class="text-sm text-gray-600 mt-2">FIFO system, never expired shipped</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Supplements Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        GMP certified, 15-20°C temperature control, FIFO expiry management, MOZ verification, 100% quality, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Pet Products Fulfillment | Hygiene Isolation, Odor Control, 15-25°C Temp | MTP';
+const description = 'Specialized fulfillment for pet products, pet food, accessories. Hygiene isolation (separated storage), odor containment, 15-25°C temperature control, hermetic packaging, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-pets.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Pet Products Fulfillment<br />Hygiene Isolation, Odor Control, 15-25°C Storage
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Pet food, toys, accessories, health products. Separate hygiene-isolated storage, odor containment, 15-25°C temperature control, hermetic packaging, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Pet Products Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Pet Products Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Hygiene Isolation</h3>
+          <p class="text-gray-700">Pet products stored separately from food/human products. Contamination risk if mixed. Requires dedicated pet-only storage zone to prevent cross-contamination.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">👃 Odor Containment</h3>
+          <p class="text-gray-700">Pet food, litter, treats have strong odors. Uncontained smells contaminate other products. Requires airtight packaging and sealed storage compartments.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Temperature Control</h3>
+          <p class="text-gray-700">Pet food degradation 15-25°C optimal. Higher temps cause spoilage and mold. Requires climate monitoring and protection during transit.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Fragrance/Packaging</h3>
+          <p class="text-gray-700">Pet owners expect strong, pleasant smell from products. Requires hermetic, air-tight packaging to preserve original fragrance until delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Pet Products Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Dedicated Hygiene-Isolated Storage</h3>
+          <p class="text-gray-700">Pet products stored in separate sealed compartment. Zero cross-contamination risk. Daily cleaning protocol for pet zone. Completely isolated from food items.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Odor Containment System</h3>
+          <p class="text-gray-700">Hermetic packaging with odor-sealing technology. Multi-layer protection prevents smell leakage. Sealed storage compartments with air filtration.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Temperature Control 15-25°C</h3>
+          <p class="text-gray-700">Dedicated pet product climate zone. Hourly temperature monitoring. Food freshness preserved from storage to delivery. Mold prevention system active.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Hermetic Packaging</h3>
+          <p class="text-gray-700">All pet products sealed in airtight packaging. Fragrance and freshness locked in. No odor leakage into other shipments. Delivery experience premium quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Pet Products</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Packaging</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">15–25 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Hermetic packaging</span>
+            <span class="font-bold">10–20 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Temperature control storage</span>
+            <span class="font-bold">+25 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Pet Supply Store (200 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 200 × 20 = 4,000 UAH<br/>
+          Hermetic packaging: 200 × 15 = 3,000 UAH<br/>
+          Delivery: 200 × 75 = 15,000 UAH<br/>
+          Temperature storage (1 pallet): 1 × 25 = 25 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 22,025 UAH/month = 110 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: hygiene isolation, odor containment, 15-25°C control, hermetic packaging, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Hygiene Isolation</p>
+          <p class="text-sm text-gray-600 mt-2">Zero cross-contamination</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Sealed</p>
+          <p class="text-gray-700 font-bold">Odor Containment</p>
+          <p class="text-sm text-gray-600 mt-2">Hermetic packaging system</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">15-25°C</p>
+          <p class="text-gray-700 font-bold">Freshness Control</p>
+          <p class="text-sm text-gray-600 mt-2">Food quality guarantee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Pet Products Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Hygiene isolation, odor containment, 15-25°C temperature, hermetic packaging, premium delivery quality, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

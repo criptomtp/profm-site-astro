@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Baby Products Fulfillment | Maximum Hygiene, MOZ Certified, 100% Safety QC | MTP';
+const description = 'Specialized fulfillment for baby products, infant gear, strollers. Maximum hygiene, daily disinfection, MOZ certification verification, 100% safety inspection, ecological packaging, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-baby.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Baby Products Fulfillment<br />Maximum Hygiene, 100% Safety, MOZ Certified
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Strollers, car seats, bottles, pacifiers, baby gear. Maximum hygiene with daily disinfection, MOZ certification verification, 100% safety QC, sterile handling, ecological packaging, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Baby Products Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Baby Products Require Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">👶 Infant Safety Critical</h3>
+          <p class="text-gray-700">Baby products go directly on/in infants. Defective safety gear = injury risk. Requires 100% zero-defect quality and exhaustive safety testing before every shipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Maximum Hygiene</h3>
+          <p class="text-gray-700">Babies have weak immune systems. Contaminated products = health risk. Requires maximum cleanliness: sterile gloves, masks, daily disinfection protocols, no exceptions.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 MOZ Certification</h3>
+          <p class="text-gray-700">Every baby product must have MOZ health authority certification. Non-compliant products = business shutdown. Requires verification at intake, zero tolerance.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">♻️ Eco-Friendly Materials</h3>
+          <p class="text-gray-700">Parent expectations for baby products include non-toxic, eco-friendly materials. Requires safe packaging with BPA-free, non-toxic materials only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Baby Products Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Maximum Hygiene Protocol</h3>
+          <p class="text-gray-700">Sterile gloves, masks, sanitized equipment mandatory. Daily disinfection of all storage areas. Staff trained in infant hygiene standards. Zero contamination tolerance.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ MOZ Certification Verification</h3>
+          <p class="text-gray-700">Before accepting inventory: MOZ health certificate checked. Every product verified for compliance. If certification missing = product rejected immediately.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Safety QC Inspection</h3>
+          <p class="text-gray-700">Every baby product inspected: no sharp edges, no loose parts, all components secure, functional safety features tested. Zero defects shipped guaranteed.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Eco-Friendly Packaging</h3>
+          <p class="text-gray-700">BPA-free, non-toxic packaging materials only. Biodegradable boxes and materials. Parent expectations met: safe from production to delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Baby Products</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Safety</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">20–30 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% safety QC inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Eco-friendly packaging</span>
+            <span class="font-bold">10–20 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Baby Products Retailer (300 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 300 × 25 = 7,500 UAH<br/>
+          Packaging: 300 × 15 = 4,500 UAH<br/>
+          Delivery: 300 × 75 = 22,500 UAH<br/>
+          <strong class="text-lg">TOTAL: 34,500 UAH/month = 115 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: maximum hygiene, MOZ verification, 100% safety QC, eco-friendly packaging, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Safety &amp; Quality Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Hygiene Standard</p>
+          <p class="text-sm text-gray-600 mt-2">Sterile handling, daily disinfection</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">MOZ</p>
+          <p class="text-gray-700 font-bold">Certified Only</p>
+          <p class="text-sm text-gray-600 mt-2">Zero non-compliant products</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Zero</p>
+          <p class="text-gray-700 font-bold">Safety Defects</p>
+          <p class="text-sm text-gray-600 mt-2">100% QC, infant-safe guarantee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Baby Products Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Maximum hygiene, MOZ certification, 100% safety QC, eco-friendly packaging, sterile handling, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
