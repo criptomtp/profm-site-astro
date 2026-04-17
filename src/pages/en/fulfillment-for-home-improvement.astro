@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Home Improvement & DIY Fulfillment | Heavy-Duty Packing, 5-20 Ton Vehicles, &lt;1% Damage | MTP';
+const description = 'Specialized fulfillment for home improvement materials, construction supplies, DIY products. Material-specific heavy-duty packing, humidity &lt;60%, temperature 5-25°C, 99.7% accuracy, &lt;1% damage rate, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-diy.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴150-₴300'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Home Improvement &amp; DIY Fulfillment<br />Heavy-Duty Packing, 5-20 Ton Vehicles, Damage-Free Delivery
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Paint, nails, tiles, drywall, tools, lumber, building supplies. Material-specific heavy-duty packing, humidity control &lt;60%, temperature 5-25°C, 99.7% accuracy, &lt;1% damage rate, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Home Improvement Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Home Improvement Materials Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚖️ Weight &amp; Volume Challenge</h3>
+          <p class="text-gray-700">20kg nail box exceeds standard box capacity. 50kg paint containers require reinforced handling. Requires specialized heavy-duty packaging and transport equipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔨 Sharp Edges &amp; Hazards</h3>
+          <p class="text-gray-700">Nails, screws, saw blades are sharp and dangerous. Can puncture standard boxes during handling. Requires protective reinforced packing to prevent puncture/damage.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Humidity &amp; Temperature Sensitivity</h3>
+          <p class="text-gray-700">Metals rust above 60% humidity. Paint freezes below 0°C. Requires strict humidity &lt;60% and temperature 5-25°C control for storage and transit.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Material Fragility</h3>
+          <p class="text-gray-700">Tile breaks easily, drywall cracks on impact, lumber warps with humidity changes. Requires specialized handling protocols per material type.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Home Improvement Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Material-Specific Heavy-Duty Packing</h3>
+          <p class="text-gray-700">Nails in reinforced cardboard with internal dividers. Tile in wooden crates with cushioning. Paint in sealed containers with temperature insulation. Custom packing per material.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Humidity &amp; Temperature Control</h3>
+          <p class="text-gray-700">Metal storage humidity &lt;60% to prevent rust. Paint storage 5-25°C stable. Hourly monitoring with alerts. Complete environmental documentation.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 5-20 Ton Heavy-Duty Vehicles</h3>
+          <p class="text-gray-700">Specialized trucks for heavy construction materials. Professional drivers trained for fragile cargo. GPS monitoring. Photos before/after delivery. Careful unloading at destination.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Insurance &amp; Immediate Compensation</h3>
+          <p class="text-gray-700">Tile box breaks in transit: instant 100% payout. No claim forms, no waiting periods. Compensation at delivery or within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Home Improvement Materials</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Heavy-Duty Transport</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">30–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Material-specific heavy packing per item</span>
+            <span class="font-bold">15–40 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Climate control (humidity &lt;60%)</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized delivery (5-20 ton vehicle, up to 50km)</span>
+            <span class="font-bold">100–200 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Home Improvement Store (150 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 150 × 40 = 6,000 UAH<br/>
+          Heavy packing: 150 × 25 = 3,750 UAH<br/>
+          Specialized delivery: 150 × 150 = 22,500 UAH<br/>
+          Storage (3 pallets): 3 × 400 = 1,200 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 33,450 UAH/month = 223 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: material-specific packing, humidity &lt;60%, 5-25°C control, 5-20 ton vehicles, 99.7% accuracy, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Durability &amp; Safety Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.7%</p>
+          <p class="text-gray-700 font-bold">Picking Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">Correct tile size, material grade</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;1%</p>
+          <p class="text-gray-700 font-bold">Damage Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Heavy-duty packing, professional handling</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">5–20</p>
+          <p class="text-gray-700 font-bold">Ton Vehicles</p>
+          <p class="text-sm text-gray-600 mt-2">Specialized heavy-load transport</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your DIY & Home Improvement Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Material-specific heavy-duty packing, humidity &lt;60%, 99.7% accuracy, &lt;1% damage rate, 5-20 ton vehicles, 24-48 hour delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

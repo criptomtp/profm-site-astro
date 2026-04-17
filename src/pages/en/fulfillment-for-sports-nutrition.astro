@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Sports Nutrition Fulfillment | 15-20°C Temperature Control, FIFO Expiry System, 99.8% Accuracy | MTP';
+const description = 'Specialized fulfillment for protein powder, supplements, sports nutrition, BCAA, creatine. 15-20°C temperature control, FIFO expiry management, hygiene standards, 99.8% accuracy, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-sports-nutrition.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴80-₴200'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Sports Nutrition Fulfillment<br />Temperature Control, Expiry Management, Hygiene-First Handling
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Protein powder, sports supplements, BCAA, creatine, L-carnitine. 15-20°C temperature control, FIFO expiry management, hygiene standards, sealed odor-proof packing, 99.8% accuracy, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Sports Nutrition Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Sports Nutrition Needs Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Strict Temperature Sensitivity</h3>
+          <p class="text-gray-700">Protein powder degrades above 25°C. Some formulas sensitive to humidity swings. Requires strict 15-20°C control. One temperature spike = efficacy loss and customer dissatisfaction.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⏱️ Strict Expiry Management</h3>
+          <p class="text-gray-700">Sports supplements have strict 12-24 month expiry dates. Requires FIFO system. Products nearing expiration must be flagged. Never ship expired inventory to athletes.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🧼 Hygiene-Critical Products</h3>
+          <p class="text-gray-700">Athletes consume these products internally. Requires maximum cleanliness: sanitized facility, trained hygiene staff, zero dust/contamination tolerance. Food-grade warehouse standards mandatory.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Strong Odor &amp; Humidity Issues</h3>
+          <p class="text-gray-700">Protein powder has strong distinctive smell. Requires sealed packaging to prevent odor cross-contamination. Humidity &lt;60% prevents clumping and shelf-life degradation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Sports Nutrition Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Precise Temperature Control 15-20°C</h3>
+          <p class="text-gray-700">Dedicated climate-controlled zone for sports nutrition. 24/7 temperature monitoring. Hourly sensor readings. Automatic alerts on deviation. Complete environmental documentation.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ FIFO Expiry Management System</h3>
+          <p class="text-gray-700">Every batch labeled with receipt date. Before picking, expiry verified. Products within 60 days of expiration flagged and held. Zero expired supplements shipped.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Hygiene-First Facility Standards</h3>
+          <p class="text-gray-700">Staff in sanitary uniforms and gloves. Daily facility disinfection. Sealed hermetic packaging for odor control. Maximum cleanliness protocols. Food-grade warehouse certification.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Fast 24-48 Hour Delivery</h3>
+          <p class="text-gray-700">Athletes need supplements on schedule. 24-hour delivery to major cities. 48-hour delivery to remote regions. GPS tracking. Temperature-controlled transport.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Sports Nutrition</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Quality Control</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">20–30 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Sealed hermetic packing &amp; disinfection</span>
+            <span class="font-bold">10–15 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Temperature-controlled storage per pallet/month</span>
+            <span class="font-bold">+50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% expiry verification</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized delivery (24-48 hours)</span>
+            <span class="font-bold">50–150 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Sports Nutrition Online Store (400 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 400 × 25 = 10,000 UAH<br/>
+          Sealed packing: 400 × 12 = 4,800 UAH<br/>
+          Specialized delivery: 400 × 100 = 40,000 UAH<br/>
+          Storage (2 pallets): 2 × 50 = 100 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 54,900 UAH/month = 137 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 15-20°C control, FIFO expiry system, hygiene standards, sealed packing, 24-48 hour delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Athlete Safety Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">15–20°C</p>
+          <p class="text-gray-700 font-bold">Temperature Control</p>
+          <p class="text-sm text-gray-600 mt-2">Zero efficacy degradation</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Expiry Compliance</p>
+          <p class="text-sm text-gray-600 mt-2">FIFO system, never expired shipped</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.8%</p>
+          <p class="text-gray-700 font-bold">Picking Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">Verified every order</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your Sports Nutrition Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        15-20°C temperature control, FIFO expiry management, hygiene-first standards, sealed packaging, 99.8% accuracy, 24-48 hour delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
