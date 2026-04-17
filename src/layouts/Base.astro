@@ -40,11 +40,14 @@ const isUkrainian = pathParts[0] === 'ua' || pathParts.length === 1;
 const cleanPath = isEnglish || isRussian ? '/' + pathParts.slice(1).join('/') : currentUrl;
 const hreflangBase = 'https://www.fulfillmentmtp.com.ua';
 
+// Ensure consistent trailing slash for homepage (/) and other paths
+const normalizedPath = cleanPath === '/' ? '/' : cleanPath.endsWith('/') ? cleanPath : cleanPath + '/';
+
 const hreflangs = [
-  { lang: 'uk', url: `${hreflangBase}${cleanPath === '/' ? '' : cleanPath}` },
-  { lang: 'en', url: `${hreflangBase}/en${cleanPath === '/' ? '' : cleanPath}` },
-  { lang: 'ru', url: `${hreflangBase}/ru${cleanPath === '/' ? '' : cleanPath}` },
-  { lang: 'x-default', url: `${hreflangBase}${cleanPath === '/' ? '' : cleanPath}` }
+  { lang: 'uk', url: normalizedPath === '/' ? hreflangBase + '/' : hreflangBase + normalizedPath },
+  { lang: 'en', url: normalizedPath === '/' ? hreflangBase + '/en/' : hreflangBase + '/en' + normalizedPath },
+  { lang: 'ru', url: normalizedPath === '/' ? hreflangBase + '/ru/' : hreflangBase + '/ru' + normalizedPath },
+  { lang: 'x-default', url: normalizedPath === '/' ? hreflangBase + '/' : hreflangBase + normalizedPath }
 ];
 ---
 <!DOCTYPE html>
