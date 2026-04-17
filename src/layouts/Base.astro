@@ -28,6 +28,24 @@ const {
 } = Astro.props;
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
+
+// Generate hreflang tags for multi-language SEO
+const currentUrl = new URL(Astro.request.url).pathname;
+const pathParts = currentUrl.split('/').filter(Boolean);
+const isEnglish = pathParts[0] === 'en';
+const isRussian = pathParts[0] === 'ru';
+const isUkrainian = pathParts[0] === 'ua' || pathParts.length === 1;
+
+// Build clean path for hreflang (without language prefix)
+const cleanPath = isEnglish || isRussian ? '/' + pathParts.slice(1).join('/') : currentUrl;
+const hreflangBase = 'https://www.fulfillmentmtp.com.ua';
+
+const hreflangs = [
+  { lang: 'uk', url: `${hreflangBase}${cleanPath === '/' ? '' : cleanPath}` },
+  { lang: 'en', url: `${hreflangBase}/en${cleanPath === '/' ? '' : cleanPath}` },
+  { lang: 'ru', url: `${hreflangBase}/ru${cleanPath === '/' ? '' : cleanPath}` },
+  { lang: 'x-default', url: `${hreflangBase}${cleanPath === '/' ? '' : cleanPath}` }
+];
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -37,11 +55,17 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
   <title>{title}</title>
   <meta name="description" content={description}>
   {canonical && <link rel="canonical" href={canonical} />}
+  {hreflangs.map(h => <link rel="alternate" hreflang={h.lang} href={h.url} />)}
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content={ogType}>
   <meta property="og:locale" content={locale}>
   <meta property="og:image" content={ogImage}>
+  {canonical && <meta property="og:url" content={canonical}>}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
   {ogType === 'article' && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,"author":{"@type":"Organization","name":"MTP Group Fulfillment"},"publisher":{"@type":"Organization","name":"MTP Group","url":"https://www.fulfillmentmtp.com.ua"},"image":ogImage})} />}
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -53,7 +77,7 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet"></noscript>
   {schema && <Fragment set:html={schema} />}
   <script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=AW-614588275';document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','AW-614588275');};},1500);
+setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ELBRCEFL41';document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-ELBRCEFL41');gtag('config','AW-614588275');};},1500);
 setTimeout(function(){(function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MV5WZT5');},3000);
 document.addEventListener('click',function(e){var link=e.target.closest('a[href^="tel:"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/eh2qCJenw5kcEPO-h6UC','value':1.0,'currency':'UAH'});}});</script>
   <style is:inline>
@@ -100,8 +124,16 @@ img{max-width:100%;height:auto;display:block}
 .final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
 input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 1000px rgba(255,255,255,.1) inset!important;-webkit-text-fill-color:#fff!important;transition:background-color 5000s ease-in-out 0s;caret-color:#fff}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+/* YouTube facade — used by YouTubeEmbed.astro component */
+.yt-facade{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;cursor:pointer;background:#000}
+.yt-facade img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .3s;display:block}
+.yt-facade:hover img{opacity:.6}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer}
+.yt-play::before{content:'';width:72px;height:72px;background:rgba(230,51,41,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;position:absolute}
+.yt-facade:hover .yt-play::before{transform:scale(1.1);background:#e63329}
+.yt-play svg{position:relative;z-index:1;margin-left:5px}
 .svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.case-stat,.case-card,.step,.prob-card,.rev-card,.vid-card,.extra-card,.price-card,.feature-card,.fade-in,.slide-up,.animate-in,.reveal{opacity:1!important;transform:none!important}
-@media(max-width:768px){.hero-content{padding:0 24px}.hero h1{font-size:clamp(32px,8vw,48px)}.hero-form{flex-direction:column}.hero-form button{width:100%}.hero-stats{flex-wrap:wrap;gap:20px;padding:32px 24px 0}.hero-stat{min-width:calc(50% - 10px)}.final-form{flex-direction:column}}
+@media(max-width:768px){.hero{min-height:auto;padding:100px 0 40px}.hero-content{padding:0 24px}.hero h1{font-size:clamp(32px,8vw,48px)}.hero-form{flex-direction:column}.hero-form button{width:100%}.hero-stats{flex-wrap:wrap;gap:20px;padding:24px 24px 0}.hero-stat{min-width:calc(50% - 10px)}.final-form{flex-direction:column}}
 /* Warehouse tour — video section (used on all pages) */
 .warehouse-tour{background:#000;padding:100px 8vw}
 .tour-inner{display:flex;align-items:center;gap:80px;max-width:1200px;margin:0 auto}
@@ -157,6 +189,27 @@ body{padding-bottom:64px}
   <script is:inline src="/js/lang-switcher.js" defer></script>
   <script is:inline src="/js/faq.js" defer></script>
   <script is:inline>
+  // YouTube facade click handler — used by YouTubeEmbed.astro
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.yt-facade').forEach(function(el){
+      el.addEventListener('click', function(){
+        var id = el.dataset.id;
+        if(!id) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        iframe.style.cssText = 'position:absolute;inset:0;border:none';
+        iframe.allow = 'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+        iframe.allowFullscreen = true;
+        el.style.position = 'relative';
+        el.innerHTML = '';
+        el.appendChild(iframe);
+      });
+    });
+  });
+  </script>
+  <script is:inline>
   // Global lead submit function — used by all forms across the site
   window.mtpSubmitLead = function(phone, page) {
     var pg = page || location.pathname;
@@ -184,6 +237,14 @@ body{padding-bottom:64px}
     };
     fetch('/api/telegram', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({phone: phone, page: pg})}).catch(function(){});
     fetch('/api/leads', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(leadData)}).catch(function(){});
+    // GA4 form_submit event
+    if(typeof gtag==='function'){
+      gtag('event','form_submit',{event_category:'leads',event_label:pg,page_location:location.href,utm_source:utm.source,utm_medium:utm.medium,utm_campaign:utm.campaign});
+      gtag('event','generate_lead',{currency:'UAH',value:1.0});
+    }
+    // GTM dataLayer push
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'form_submit',event_category:'leads',event_label:pg,phone_masked:phone.slice(0,6)+'****'});
   };
 
   // Auto-insert Telegram link after hero-note

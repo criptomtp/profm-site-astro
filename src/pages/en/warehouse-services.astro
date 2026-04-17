@@ -16,7 +16,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/warehouse-services/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
 <!-- SECTION 1 — HERO: SPLIT-SCREEN -->
@@ -34,7 +33,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
       <form class="sp-hero-form" id="heroFormSplit">
         <input type="text" name="name" placeholder="Your name" autocomplete="given-name" aria-label="Name">
         <input type="tel" name="phone" placeholder="Your phone number" maxlength="25" required autocomplete="tel" aria-label="Phone">
-        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
         <button type="submit">Get a quote &rarr;</button>
       </form>
       <p class="sp-hero-note">Free consultation &middot; We call back within 15 minutes</p>
@@ -96,55 +94,24 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
     <h2 class="sec-h2">How much does warehouse service cost for your store</h2>
     <p class="calc-sub">Enter your parameters&nbsp;&mdash; we will calculate the monthly cost.</p>
 
-    <div class="calc-wrap" x-data="{
-      sku: 500,
-      orders: 50,
-      size: 'medium',
-      get sizeFactor() {
-        return this.size === 'small' ? 0.003 : this.size === 'medium' ? 0.008 : 0.02;
-      },
-      get pricePerOrder() {
-        if (this.orders <= 10) return 26;
-        if (this.orders <= 50) return 23;
-        if (this.orders <= 100) return 21;
-        return 18;
-      },
-      get storageCost() {
-        return Math.round(this.sku * this.sizeFactor * 650);
-      },
-      get pickingCost() {
-        return Math.round(this.orders * 22 * this.pricePerOrder);
-      },
-      get totalCost() {
-        return this.storageCost + this.pickingCost;
-      },
-      fmt(n) {
-        return n.toLocaleString('en-US');
-      }
-    }">
+    <div class="calc-wrap" id="calcWrap">
       <div class="calc-inputs">
         <div class="calc-field">
-          <label>Number of SKUs: <strong x-text="fmt(sku)"></strong></label>
-          <input type="range" min="50" max="5000" step="50" x-model.number="sku">
+          <label>Number of SKUs: <strong id="r-sku">500</strong></label>
+          <input type="range" min="50" max="5000" step="50" id="c-sku" value="500">
           <div class="calc-range-labels"><span>50</span><span>5,000</span></div>
         </div>
         <div class="calc-field">
-          <label>Orders per day: <strong x-text="fmt(orders)"></strong></label>
-          <input type="range" min="5" max="200" step="5" x-model.number="orders">
+          <label>Orders per day: <strong id="r-orders">50</strong></label>
+          <input type="range" min="5" max="200" step="5" id="c-orders" value="50">
           <div class="calc-range-labels"><span>5</span><span>200</span></div>
         </div>
         <div class="calc-field">
           <label>Average product size:</label>
           <div class="calc-radio-group">
-            <label class="calc-radio" :class="{ active: size === 'small' }">
-              <input type="radio" name="size" value="small" x-model="size"> Small
-            </label>
-            <label class="calc-radio" :class="{ active: size === 'medium' }">
-              <input type="radio" name="size" value="medium" x-model="size"> Medium
-            </label>
-            <label class="calc-radio" :class="{ active: size === 'large' }">
-              <input type="radio" name="size" value="large" x-model="size"> Large
-            </label>
+            <label class="calc-radio"><input type="radio" name="size" value="small"> Small</label>
+            <label class="calc-radio active"><input type="radio" name="size" value="medium" checked> Medium</label>
+            <label class="calc-radio"><input type="radio" name="size" value="large"> Large</label>
           </div>
         </div>
       </div>
@@ -152,15 +119,15 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
       <div class="calc-results">
         <div class="calc-result-row">
           <span>Storage</span>
-          <span class="calc-val" x-text="fmt(storageCost) + ' UAH'"></span>
+          <span class="calc-val" id="r-storage">1,300 UAH</span>
         </div>
         <div class="calc-result-row">
           <span>Picking & packing</span>
-          <span class="calc-val" x-text="fmt(pickingCost) + ' UAH'"></span>
+          <span class="calc-val" id="r-picking">57,500 UAH</span>
         </div>
         <div class="calc-result-row calc-total">
           <span>TOTAL per month</span>
-          <span class="calc-val" x-text="fmt(totalCost) + ' UAH'"></span>
+          <span class="calc-val" id="r-total">58,800 UAH</span>
         </div>
         <p class="calc-disclaimer">* Estimated calculation. We will provide an exact quote within 15 minutes of your call.</p>
       </div>
@@ -235,7 +202,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
     <form class="sp-cta-form" id="ctaFormBottom">
       <input type="text" name="name" placeholder="Your name" autocomplete="given-name" aria-label="Name">
       <input type="tel" name="phone" placeholder="Your phone number" maxlength="25" required autocomplete="tel" aria-label="Phone">
-      <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
       <button type="submit">Get a quote &rarr;</button>
     </form>
     <div class="sp-cta-checks">
@@ -251,18 +217,32 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   <div class="ctr">
     <div class="badge badge-dark">FAQ</div>
     <h2 class="sec-h2">Frequently Asked Questions</h2>
-    <div class="faq-q" data-faq>What is the minimum product volume?</div>
-    <div class="faq-a"><p>No minimum&nbsp;&mdash; you pay for actual space used. Minimum monthly payment&nbsp;&mdash; 5,000&nbsp;UAH.</p></div>
-    <div class="faq-q" data-faq>What is the warehouse temperature?</div>
-    <div class="faq-a"><p>15-25&deg;C year-round. Heating in winter, humidity control. Suitable for cosmetics, electronics, clothing, household chemicals.</p></div>
-    <div class="faq-q" data-faq>How does WMS tracking work?</div>
-    <div class="faq-a"><p>Barcode for every product, address for every bin. WMS controls picking accuracy and generates optimal routes. Inventory online 24/7.</p></div>
-    <div class="faq-q" data-faq>Is pallet storage available?</div>
-    <div class="faq-a"><p>Yes, from 450&nbsp;UAH/pallet/mo. Racking supports up to 2&nbsp;tonnes per tier. Forklifts and hydraulic pallet jacks for movement.</p></div>
-    <div class="faq-q" data-faq>How are inventory audits conducted?</div>
-    <div class="faq-a"><p>Scheduled audits&nbsp;&mdash; monthly. Unscheduled&nbsp;&mdash; on request within 24&nbsp;hours. Results with discrepancies per SKU available in the WMS dashboard.</p></div>
-    <div class="faq-q" data-faq>Is insurance available?</div>
-    <div class="faq-a"><p>Official contract with material liability for goods. All operations are logged in WMS. Warehouse equipped with 24/7 CCTV and security.</p></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" data-faq>What is the minimum product volume?</button>
+        <div class="faq-a"><p>No minimum&nbsp;&mdash; you pay for actual space used. Minimum monthly payment&nbsp;&mdash; 5,000&nbsp;UAH.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>What is the warehouse temperature?</button>
+        <div class="faq-a"><p>15-25&deg;C year-round. Heating in winter, humidity control. Suitable for cosmetics, electronics, clothing, household chemicals.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>How does WMS tracking work?</button>
+        <div class="faq-a"><p>Barcode for every product, address for every bin. WMS controls picking accuracy and generates optimal routes. Inventory online 24/7.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Is pallet storage available?</button>
+        <div class="faq-a"><p>Yes, from 450&nbsp;UAH/pallet/mo. Racking supports up to 2&nbsp;tonnes per tier. Forklifts and hydraulic pallet jacks for movement.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>How are inventory audits conducted?</button>
+        <div class="faq-a"><p>Scheduled audits&nbsp;&mdash; monthly. Unscheduled&nbsp;&mdash; on request within 24&nbsp;hours. Results with discrepancies per SKU available in the WMS dashboard.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Is insurance available?</button>
+        <div class="faq-a"><p>Official contract with material liability for goods. All operations are logged in WMS. Warehouse equipped with 24/7 CCTV and security.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -294,8 +274,54 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   }
   handleForm('heroFormSplit');
   handleForm('ctaFormBottom');
+
+  // Warehouse calculator (vanilla JS)
+  (function(){
+    var wrap = document.getElementById('calcWrap');
+    if(!wrap) return;
+    function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+    var cSku=document.getElementById('c-sku'), cOrders=document.getElementById('c-orders');
+    var radios=wrap.querySelectorAll('input[name="size"]');
+    function getSize(){ var v='medium'; radios.forEach(function(r){if(r.checked)v=r.value;}); return v; }
+    function update(){
+      var sku=parseInt(cSku.value), orders=parseInt(cOrders.value), size=getSize();
+      var sf=size==='small'?0.003:size==='medium'?0.008:0.02;
+      var ppo=orders<=10?26:orders<=50?23:orders<=100?21:18;
+      var sc=Math.round(sku*sf*650), pc=Math.round(orders*22*ppo), tc=sc+pc;
+      document.getElementById('r-sku').textContent=fmt(sku);
+      document.getElementById('r-orders').textContent=fmt(orders);
+      document.getElementById('r-storage').textContent=fmt(sc)+' UAH';
+      document.getElementById('r-picking').textContent=fmt(pc)+' UAH';
+      document.getElementById('r-total').textContent=fmt(tc)+' UAH';
+      wrap.querySelectorAll('.calc-radio').forEach(function(l){l.classList.remove('active');});
+      var sel=wrap.querySelector('.calc-radio input[value="'+size+'"]');
+      if(sel) sel.parentElement.classList.add('active');
+    }
+    cSku.addEventListener('input',update);
+    cOrders.addEventListener('input',update);
+    radios.forEach(function(r){r.addEventListener('change',update);});
+    update();
+  })();
 })();
 </script>
+
+<!-- SECTION 8 — SEO TEXT -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">GOOD TO KNOW</div>
+<h2>Warehouse Services for Online Stores: How to Choose a Fulfilment Operator</h2>
+<div class="article-content">
+<h3>What warehouse services for e-commerce really mean</h3>
+<p>Warehouse services for online stores are far more than just renting shelf space. They represent a complete fulfilment cycle: inbound receiving and placement, address-based storage in a WMS, order picking in 30 seconds, packing, four daily shipment runs, and returns processing. MTP Group covers all of this across two warehouses near Kyiv — in Boryspil district and Bilohorodka — totalling 3,900 m² of operational space. Over 10 years of experience and 60,000+ shipments per month.</p>
+<h3>Why address-based storage makes a difference</h3>
+<p>An address-based WMS means every single unit has its own location: aisle, rack, bin. When an order arrives from your CRM, the system automatically builds the picker's route. Picking takes 30 seconds. Stock levels are available online 24/7 through your personal dashboard. FEFO control automatically tracks expiry dates for cosmetics and supplements. Use our <a href="/en/calculator/" style="color:#e63329;font-weight:500">calculator</a> to estimate your monthly cost.</p>
+<h3>When it's time to outsource your warehouse</h3>
+<p>The tipping point is around 30–50 orders per day. Below that threshold, self-fulfilment is manageable. But once your store crosses 30 orders, in-house logistics starts to slow growth — you need a warehouse worker, storage space, packing supplies, and a backup generator. MTP Group takes care of the entire infrastructure. Storage from 650 UAH/m³/month, picking from 18 UAH per shipment. Read <a href="/en/recalls/" style="color:#e63329;font-weight:500">client reviews</a> from merchants who have already made the switch.</p>
+<h3>Uninterrupted operations during power outages</h3>
+<p>MTP Group warehouses are equipped with 3 generators and Starlink internet. Since 2022, there has not been a single missed shipment due to a power cut. WMS and picker terminals operate in offline mode. For e-commerce this is critical — your customers cannot wait for the lights to come back on. See the <a href="/en/services/" style="color:#e63329;font-weight:500">full list of services</a> we provide.</p>
+</div>
+</div>
+</section>
 
 </Base>
 
@@ -636,7 +662,7 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   border-bottom: none;
   padding-top: 24px;
   margin-top: 8px;
-  border-top: 3px solid var(--red);
+  border-top: 1px solid #e0e0e0;
 }
 .calc-total span:first-child {
   font-family: var(--fd);
@@ -902,7 +928,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   width: 100%;
   padding: 20px 0;
   border: none;
-  border-bottom: 1px solid #eee;
   background: none;
   font-family: var(--fb);
   font-size: 17px;
@@ -924,8 +949,15 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   margin-left: 16px;
   transition: transform .3s;
 }
-.faq .faq-q.active::after {
+.faq .faq-item.open .faq-q::after {
   content: '-';
+}
+.faq .faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.faq .faq-item {
+  border-bottom: 1px solid #eee;
 }
 .faq .faq-a {
   max-height: 0;
@@ -937,5 +969,29 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
+}
+
+/* ==========================================
+   SECTION 8 — ARTICLE / SEO TEXT
+   ========================================== */
+.article-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+.article-content h3 {
+  font-family: var(--fb);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 32px 0 12px;
+}
+.article-content h3:first-child {
+  margin-top: 0;
+}
+.article-content p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
 }
 </style>
