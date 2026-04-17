@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-assessment-scale": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "85d90aef7daf26886f04ccb91ec85c6690445c91760a91faa8a924340560ce4f"
+    },
+    "cognitive-walkthrough": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "ad504a1c91396d4bf40ab74142e5a55c4888f54218a4c6d497c743a012d7f3c9"
+    },
+    "don-norman-principles-audit": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "3c078a0bfeab8290ee65270a2e29a8f51c3b54ee3d0298355c1baae2dcd9966c"
+    },
+    "iso-42001-ai-governance": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "4ab3fa106f24e1637126f31b499bb1dac9538e1a3e59975724bc269317d0d605"
+    },
+    "nielsen-heuristics-audit": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "f535fb16ca59925110f71db8e2b9301df729e7184b16c9a50bc0a2af0c528f21"
+    },
+    "nist-ai-rmf": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "0c3e1011a5f0d53ac85ff290ace31f8842e93e683125e61a2365733b90ba6e3f"
+    },
+    "owasp-ai-testing": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "0971fc6ade6d87e3e6e405ce2d98ce85d1c928ef51f3ab6e97629c7863bd1a03"
+    },
+    "owasp-llm-top10": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "eab5f5e169b366b01f8373348617523e5b47554fb6394ccf70cb784f080b71cb"
+    },
+    "ui-design-review": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "6dc530be13e1defe7a20f8682e6c3fd993ec2d23ca4da66bfdf9043fac6de775"
+    },
+    "ux-audit-rethink": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "6b610a0799c3138348f0141fce247f75812a6ee0bfaedc21362fbd1f71eee328"
+    },
+    "wcag-accessibility-audit": {
+      "source": "mastepanoski/claude-skills",
+      "sourceType": "github",
+      "computedHash": "dbf9f85d025630e0ecf0a9e37f08639b5c759ea1662b48dd9b1001b720050c02"
+    }
+  }
+}

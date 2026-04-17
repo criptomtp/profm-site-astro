@@ -15,7 +15,7 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://img.youtube.com https://i.ytimg.com https://www.fulfillmentmtp.com.ua data:; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://api.telegram.org" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.youtube.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://img.youtube.com https://i.ytimg.com https://www.fulfillmentmtp.com.ua data:; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com https://www.google.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://api.telegram.org" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
@@ -29,82 +29,112 @@
       "source": "/:path*",
       "has": [{ "type": "host", "value": "fulfillmentmtp.com.ua" }],
       "destination": "https://www.fulfillmentmtp.com.ua/:path*",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/ua",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/tpost/:slug*",
       "destination": "/blog/tpost/:slug*",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/ru/blog/tpost/:slug*",
       "destination": "/blog/tpost/:slug*",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/ua/fulfilment-dlya-marketpleysov/",
       "destination": "/ua/fulfilment-dlya-marketpleysiv/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/about/",
       "destination": "/ru/about/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/calculator/",
       "destination": "/ru/calculator/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/fulfilment-dlya-internet-magazynu/",
       "destination": "/ru/fulfilment-dlya-internet-magazynu/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/fulfilment-dlya-marketpleysov/",
       "destination": "/ru/fulfilment-dlya-marketpleysov/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/fulfilment-kiev/",
       "destination": "/ru/fulfilment-kiev/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/fulfilment-vazhkykh-tovariv/",
       "destination": "/ru/fulfilment-vazhkykh-tovariv/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/guide/",
       "destination": "/ru/guide/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/recalls/",
       "destination": "/ru/recalls/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/services/",
       "destination": "/ru/services/",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/services",
+      "destination": "/ru/services/",
+      "statusCode": 301
     },
     {
       "source": "/skladski-poslugy/",
       "destination": "/ru/skladski-poslugy/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/tsenu/",
       "destination": "/ru/tsenu/",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/3pl-logistika/",
+      "destination": "/ru/3pl-logistika/",
+      "statusCode": 301
+    },
+    {
+      "source": "/paletnoe-khranenie/",
+      "destination": "/ru/paletnoe-khranenie/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/fulfilment-dlya-odyahu/",
+      "destination": "/ua/fulfilment-dlya-internet-magazynu/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/fulfilment-prom/",
+      "destination": "/ua/fulfilment-dlya-marketpleysiv/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/fulfilment-rozetka/",
+      "destination": "/ua/fulfilment-dlya-marketpleysiv/",
+      "statusCode": 301
     }
   ],
   "trailingSlash": true
