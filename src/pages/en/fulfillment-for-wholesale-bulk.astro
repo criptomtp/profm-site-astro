@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Wholesale & Bulk Fulfillment | 99.9% Accuracy, Real-Time Inventory, 2-4 Hour Processing | MTP';
+const description = 'Specialized fulfillment for wholesale, bulk orders, distributors. Large volume handling, real-time WMS inventory control, RFID tracking, 99.9% accuracy, fast 2-4 hour processing, 100% insurance.';
+const ogImage = 'https://profm.ua/images/fulfillment-wholesale.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴2-₴4 per unit'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Wholesale &amp; Bulk Fulfillment<br />Massive Scale, Precision Inventory, 2-4 Hour Processing
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Wholesale orders, bulk fulfillment, distributors, B2B companies. Large volume handling, real-time WMS inventory, RFID tracking, 99.9% accuracy, automated processing, 100% insurance, regional delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Wholesale Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Wholesale Orders Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Massive Volume Scale</h3>
+          <p class="text-gray-700">10,000–100,000+ units per month. Requires enterprise-grade logistics, automation, and inventory management. Standard small-package systems cannot scale.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Precise Inventory Control</h3>
+          <p class="text-gray-700">Every unit must be accounted for. RFID tags, barcodes, SKU numbers tracked. Real-time WMS database. Zero inventory loss tolerated.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Speed at Scale</h3>
+          <p class="text-gray-700">Bulk orders must process rapidly: 2-4 hours standard. Requires automation for picking, packing, verification. Manual processing cannot keep pace.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💰 High-Value Shipments</h3>
+          <p class="text-gray-700">Bulk orders often worth 100,000+ UAH. Requires full insurance, security, damage control. Loss of one shipment = major financial impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Wholesale &amp; Bulk Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Enterprise-Scale Logistics</h3>
+          <p class="text-gray-700">Process 10,000–100,000+ units monthly. Automated picking systems. Rapid order processing without delays. Scalable capacity for seasonal peaks.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Real-Time WMS Inventory Control</h3>
+          <p class="text-gray-700">RFID tags, barcode scanning, SKU catalogs. WMS database with real-time tracking. Automated alerts for stock levels. Complete chain-of-custody documentation.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Rapid Bulk Order Processing</h3>
+          <p class="text-gray-700">Average bulk order fulfillment: 2–4 hours. Automated systems for speed. Staff trained for accuracy at scale. No overtime delays.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 100% Quality Assurance</h3>
+          <p class="text-gray-700">Every batch inspected: quantity verified, quality checked, integrity confirmed. 99.9% accuracy rate on large-volume orders. Automated verification systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Wholesale &amp; Bulk</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Inventory</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking &amp; packing per unit</span>
+            <span class="font-bold">2–4 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>WMS inventory control &amp; verification</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Warehouse storage per pallet/month</span>
+            <span class="font-bold">300–500 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Regional delivery per km</span>
+            <span class="font-bold">0.50–1 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Wholesale Distributor (50,000 units/month)</h3>
+        <p class="text-gray-700">
+          Picking &amp; packing: 50,000 × 3 = 150,000 UAH<br/>
+          Storage (10 pallets): 10 × 400 = 4,000 UAH/month<br/>
+          Regional delivery: 50,000 units × avg 0.75 km = 37,500 UAH<br/>
+          <strong class="text-lg">TOTAL: 191,500 UAH/month = 3.83 UAH per unit</strong><br/>
+          <span class="text-sm text-gray-600">Includes: real-time WMS, RFID tracking, 2-4 hour processing, 99.9% accuracy, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Scale &amp; Reliability Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.9%</p>
+          <p class="text-gray-700 font-bold">Pick Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">At scale of 50,000+ units</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">2–4</p>
+          <p class="text-gray-700 font-bold">Hours Processing</p>
+          <p class="text-sm text-gray-600 mt-2">Bulk order fulfillment speed</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Inventory Tracked</p>
+          <p class="text-sm text-gray-600 mt-2">Real-time WMS control</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your Wholesale Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Enterprise logistics, real-time WMS, RFID inventory, 99.9% accuracy, 2-4 hour processing, regional delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

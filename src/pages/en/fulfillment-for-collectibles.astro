@@ -1,0 +1,171 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Collectibles Fulfillment | 40-60% Humidity Control, Professional Grading, GPS-Tracked Delivery | MTP';
+const description = 'Specialized fulfillment for collectibles, trading cards, figurines, coins, vinyl records. Humidity 40-60%, professional documentation, expert grading, maximum protection, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-collectibles.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴500-₴1000'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Collectibles Fulfillment<br />Museum-Grade Storage, Professional Grading, Specialized Delivery
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Trading cards, coins, figurines, vinyl records, memorabilia. Perfect humidity 40-60%, 18-22°C climate control, professional photo documentation, expert grading, maximum protection, 100% insurance, GPS-tracked delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Collectibles Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Collectibles Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💎 Extreme Value &amp; Risk</h3>
+          <p class="text-gray-700">Rare cards worth 100,000+ UAH, vintage coins 50,000+ UAH. Loss of one item = major financial damage. Requires maximum security and zero-loss protocols.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔍 Climate-Sensitive Storage</h3>
+          <p class="text-gray-700">Cards warp with humidity changes. Coins rust above 60% humidity. Vinyl warps at temperature swings. Requires stable 40-60% humidity, 18-22°C constant control.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📸 Professional Documentation</h3>
+          <p class="text-gray-700">Collectors demand proof of condition. Professional photos from all angles. Expert grading (mint, near-mint, excellent). Complete chain-of-custody documentation.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🤝 Collector Experience</h3>
+          <p class="text-gray-700">Collectors value details and transparency. Requires attentive handling, clear communication, visible care. White-glove treatment expected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Collectibles Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Museum-Grade Climate Control</h3>
+          <p class="text-gray-700">Dedicated collectibles vault: 40-60% humidity, 18-22°C constant temperature. Hourly sensor monitoring. Dedicated climate zone isolation. Complete environmental logging.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Professional Photo Documentation</h3>
+          <p class="text-gray-700">All angles photographed. Detailed condition description. Professional grading assessment. Comprehensive documentation with official seal and signature.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Maximum Protection Packaging</h3>
+          <p class="text-gray-700">Cards in protective sleeves, then foam-lined boxes. Coins in capsules, then rigid cases. Multi-layer shock absorption. Custom protective structures per item type.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Specialized Courier Delivery</h3>
+          <p class="text-gray-700">Premium collectibles via specialized courier. Real-time GPS tracking. Before/after photos. Chain-of-custody documentation. Insured transportation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Collectibles</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Documentation</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Handling &amp; packaging per item</span>
+            <span class="font-bold">50–150 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Professional photo &amp; documentation</span>
+            <span class="font-bold">100–300 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Expert grading (optional)</span>
+            <span class="font-bold">200–500 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Climate-controlled storage per pallet/month</span>
+            <span class="font-bold">+100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized courier delivery</span>
+            <span class="font-bold">300–600 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Collectibles Trading Platform (100 orders/month)</h3>
+        <p class="text-gray-700">
+          Handling &amp; packaging: 100 × 100 = 10,000 UAH<br/>
+          Photo documentation: 100 × 200 = 20,000 UAH<br/>
+          Specialized delivery: 100 × 450 = 45,000 UAH<br/>
+          <strong class="text-lg">TOTAL: 75,000 UAH/month = 750 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 40-60% humidity control, professional grading, maximum protection, GPS-tracked delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Collector Protection Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">40–60%</p>
+          <p class="text-gray-700 font-bold">Humidity Control</p>
+          <p class="text-sm text-gray-600 mt-2">Museum-grade preservation</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Professional</p>
+          <p class="text-gray-700 font-bold">Grading & Documentation</p>
+          <p class="text-sm text-gray-600 mt-2">Expert condition assessment</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Insured Delivery</p>
+          <p class="text-sm text-gray-600 mt-2">GPS-tracked, immediate claims</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Protect Your Collectibles Platform?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Museum-grade climate control, professional documentation, expert grading, maximum protection, GPS-tracked delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Subscription Box Fulfillment | Monthly Regularity, Premium Unboxing, 24-Hour Delivery | MTP';
+const description = 'Specialized fulfillment for subscription boxes, monthly delivery services. Monthly regularity, beautiful unboxing experience, flexible item curation, 99.99% accuracy, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-subscription.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴110-₴180'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Subscription Box Fulfillment<br />Monthly Regularity, Premium Unboxing, Subscriber Delight
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Subscription boxes, curated gift boxes, monthly services. Monthly regularity, premium unboxing experience, flexible item curation, 99.99% accuracy, beautiful packaging, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Subscription Box Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Subscription Boxes Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📅 Monthly Regularity</h3>
+          <p class="text-gray-700">Same day every month, boxes must ship on schedule. No delays, no forgotten dates. Subscribers expect consistency—one missed date = subscription cancellation. Requires calendar-driven system with zero tolerance for timing failures.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎁 Premium Unboxing Experience</h3>
+          <p class="text-gray-700">Unboxing is part of the subscription value. Beautiful packaging, curated presentation, delight factor—all matter. Subscriber satisfaction depends on first impression. Requires careful arrangement and premium packaging materials.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔄 Dynamic Monthly Curation</h3>
+          <p class="text-gray-700">Items change every month per preset curation menu. Different items, different quantities, different combinations. Flexible system must track all variations. No composition errors tolerated.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">😊 Subscriber Retention</h3>
+          <p class="text-gray-700">Unsatisfied subscriber = cancellation. Monthly revenue depends on retention. Requires 100% quality, 100% correctness, and 100% satisfaction. This is the success metric.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Subscription Box Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Monthly Calendar-Driven Fulfillment</h3>
+          <p class="text-gray-700">Same day every month, boxes ship on schedule. Automated calendar system with reminders and tracking. Zero missed dates. Subscriber confidence that boxes arrive predictably.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Premium Unboxing Presentation</h3>
+          <p class="text-gray-700">Expert curation of item arrangement within box. Premium padding, tissue, branded inserts. Unboxing video-worthy presentation. Every detail optimized for subscriber delight.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Flexible Monthly Curation System</h3>
+          <p class="text-gray-700">Each month different items per preset menu. System tracks all variations and combinations. 100% accuracy in composition. No substitutions without approval.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Fast 24-Hour Delivery</h3>
+          <p class="text-gray-700">Subscribers expect timely arrival. Ship within 24 hours of fulfillment. Fast delivery maintains excitement and reduces unboxing delays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Subscription Boxes</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Presentation</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking &amp; packing per box</span>
+            <span class="font-bold">40–80 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Premium presentation &amp; packaging</span>
+            <span class="font-bold">20–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Monthly calendar system</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Fast delivery (24 hours)</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Subscription Box Service (2,000 boxes/month)</h3>
+        <p class="text-gray-700">
+          Packing &amp; curation: 2,000 × 60 = 120,000 UAH<br/>
+          Premium presentation: 2,000 × 35 = 70,000 UAH<br/>
+          Delivery: 2,000 × 75 = 150,000 UAH<br/>
+          <strong class="text-lg">TOTAL: 340,000 UAH/month = 170 UAH per box</strong><br/>
+          <span class="text-sm text-gray-600">Includes: monthly regularity, premium unboxing, flexible curation, 24-hour delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Retention Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">Monthly Consistency</p>
+          <p class="text-sm text-gray-600 mt-2">Same-day shipping every month</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.99%</p>
+          <p class="text-gray-700 font-bold">Composition Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">Perfect items, every time</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Premium</p>
+          <p class="text-gray-700 font-bold">Unboxing Experience</p>
+          <p class="text-sm text-gray-600 mt-2">Subscriber delight guaranteed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your Subscription Box Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Monthly regularity, premium unboxing, flexible curation, 99.99% accuracy, beautiful packaging, 24-hour delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
