@@ -42,14 +42,17 @@ export default async function handler(req, res) {
 
     const phone = String(body.phone).slice(0, 20);
     const page = String(body.page || '/').slice(0, 100);
+    const name = String(body.name || '').slice(0, 50);
 
-    const text = [
+    const lines = [
       '🆕 <b>Нова заявка з сайту!</b>',
       '',
-      `📱 ${phone}`,
-      `📋 ${page}`,
-      `🕐 ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`,
-    ].join('\n');
+    ];
+    if (name) lines.push(`👤 ${name}`);
+    lines.push(`📱 ${phone}`);
+    lines.push(`📋 ${page}`);
+    lines.push(`🕐 ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`);
+    const text = lines.join('\n');
 
     const tgRes = await fetch(
       `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,

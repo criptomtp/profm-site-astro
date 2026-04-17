@@ -214,8 +214,9 @@ body{padding-bottom:64px}
   </script>
   <script is:inline>
   // Global lead submit function — used by all forms across the site
-  window.mtpSubmitLead = function(phone, page) {
+  window.mtpSubmitLead = function(phone, page, name) {
     var pg = page || location.pathname;
+    var nm = name || '';
     var ref = document.referrer || '';
     var params = new URLSearchParams(location.search);
     var utm = {
@@ -227,10 +228,12 @@ body{padding-bottom:64px}
     };
     var leadData = {
       phone: phone,
+      contact: nm,
       page: pg,
       source: utm.gclid ? 'ads' : (utm.source || (ref.indexOf('google') > -1 ? 'google' : 'site')),
       comments: [{
         text: 'Форма: ' + pg +
+          (nm ? '\nІм\'я: ' + nm : '') +
           (ref ? '\nРеферер: ' + ref : '') +
           (utm.source ? '\nUTM: ' + utm.source + '/' + utm.medium + '/' + utm.campaign : '') +
           (utm.term ? '\nЗапит: ' + utm.term : '') +
@@ -238,7 +241,7 @@ body{padding-bottom:64px}
         date: new Date().toLocaleString('uk-UA')
       }]
     };
-    fetch('/api/telegram', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({phone: phone, page: pg})}).catch(function(){});
+    fetch('/api/telegram', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({phone: phone, page: pg, name: nm})}).catch(function(){});
     fetch('/api/leads', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(leadData)}).catch(function(){});
     // GA4 form_submit event
     if(typeof gtag==='function'){

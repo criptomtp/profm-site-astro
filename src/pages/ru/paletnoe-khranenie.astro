@@ -484,7 +484,6 @@ import Base from '../../layouts/Base.astro';
 
 <script is:inline>
 (function(){
-  document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=this.closest('.faq-item');item.classList.toggle('open');var a=item.querySelector('.faq-a');if(item.classList.contains('open')){a.style.maxHeight=a.scrollHeight+'px';}else{a.style.maxHeight='0';}});});
   var heroForm = document.getElementById('heroForm');
   if(heroForm){heroForm.addEventListener('submit',function(e){e.preventDefault();var ph=heroForm.querySelector('input[name="phone"]').value.replace(/\D/g,'');if(ph.length<10){alert('Введите корректный номер телефона');return;}
   fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:ph,page:location.pathname})}).catch(function(){});if(window.mtpSubmitLead)window.mtpSubmitLead(ph);heroForm.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Спасибо!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">Перезвоним в ближайшее время</p></div>';setTimeout(function(){window.location.href='/thanks/';},1500);});}
@@ -501,15 +500,16 @@ import Base from '../../layouts/Base.astro';
     }
     phoneInput.style.borderColor = '';
     var page = location.pathname;
+    var nm = form.querySelector('input[name="name"]').value.trim();
     if(window.mtpSubmitLead){
-      window.mtpSubmitLead(ph, page);
+      window.mtpSubmitLead(ph, page, nm);
     }
     fetch('/api/telegram', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         phone: ph,
-        name: form.querySelector('input[name="name"]').value.trim(),
+        name: nm,
         email: form.querySelector('input[name="email"]').value.trim(),
         pallets: form.querySelector('select[name="pallets"]').value,
         page: page

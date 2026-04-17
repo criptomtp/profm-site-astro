@@ -281,8 +281,10 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
         phoneInput.focus();
         return;
       }
+      var nameInput = form.querySelector('input[name="name"]');
+      var nm = nameInput ? nameInput.value.trim() : '';
       if (typeof window.mtpSubmitLead === 'function') {
-        window.mtpSubmitLead(ph, location.pathname);
+        window.mtpSubmitLead(ph, location.pathname, nm);
       }
       form.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500;padding:16px 0">&#10004; Дякуємо! Передзвонимо за 15 хвилин.</p>';
       setTimeout(function() {

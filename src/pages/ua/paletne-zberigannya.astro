@@ -500,15 +500,16 @@ import Base from '../../layouts/Base.astro';
     }
     phoneInput.style.borderColor = '';
     var page = location.pathname;
+    var nm = form.querySelector('input[name="name"]').value.trim();
     if(window.mtpSubmitLead){
-      window.mtpSubmitLead(ph, page);
+      window.mtpSubmitLead(ph, page, nm);
     }
     fetch('/api/telegram', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         phone: ph,
-        name: form.querySelector('input[name="name"]').value.trim(),
+        name: nm,
         email: form.querySelector('input[name="email"]').value.trim(),
         pallets: form.querySelector('select[name="pallets"]').value,
         page: page

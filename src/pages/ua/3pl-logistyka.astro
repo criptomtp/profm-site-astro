@@ -709,7 +709,8 @@ a.integ-badge:hover{border-color:var(--red);box-shadow:0 2px 8px rgba(230,51,41,
       var ph = heroForm.querySelector('input[name="phone"]');
       var clean = ph.value.replace(/\D/g, '');
       if(clean.length < 10){ ph.style.borderColor = '#e63329'; return; }
-      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname);
+      var nm = heroForm.querySelector('input[name="name"]');
+      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname, nm ? nm.value.trim() : '');
       heroForm.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500">&#10004; Дякуємо! Передзвонимо.</p>';
       setTimeout(function(){ window.location.href = '/ua/thanks/'; }, 1500);
     });
@@ -723,7 +724,8 @@ a.integ-badge:hover{border-color:var(--red);box-shadow:0 2px 8px rgba(230,51,41,
       var ph = ctaForm.querySelector('input[name="phone"]');
       var clean = ph.value.replace(/\D/g, '');
       if(clean.length < 10){ ph.style.borderColor = '#fff'; return; }
-      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname);
+      var nm = ctaForm.querySelector('input[name="name"]');
+      if(window.mtpSubmitLead) window.mtpSubmitLead(ph.value.trim(), location.pathname, nm ? nm.value.trim() : '');
       ctaForm.innerHTML = '<p style="color:#fff;font-size:18px;font-weight:500">&#10004; Дякуємо! Передзвонимо найближчим часом.</p>';
       setTimeout(function(){ window.location.href = '/ua/thanks/'; }, 1500);
     });
