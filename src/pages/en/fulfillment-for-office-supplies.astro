@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Office & School Supplies Fulfillment | 2-3 Minute Picking, 99.95% Accuracy, Seasonal Peak Scaling | MTP';
+const description = 'Specialized fulfillment for office supplies, stationery, school materials. 2-3 minute picking, multi-SKU orders, 99.95% accuracy, compact packing, seasonal peak capacity, 100% insurance, 24-hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-office.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴120'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Office &amp; School Supplies Fulfillment<br />Ultra-Fast Picking, Multi-SKU Accuracy, Seasonal Flexibility
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Pens, pencils, notebooks, paper, folders, school materials. 2-3 minute picking, 10-50 SKU orders, 99.95% accuracy, compact efficient packing, seasonal peak scaling, 100% insurance, 24-hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Office Supplies Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Office Supplies Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📊 Extreme Product Assortment</h3>
+          <p class="text-gray-700">Single order contains 20+ different SKUs: pen colors, notebook sizes, paper types. Requires rapid categorization and precise picking from deep inventory depth.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚡ Speed Critical for Margins</h3>
+          <p class="text-gray-700">Average picking time: 2-3 minutes for 10-50 SKU orders. Margin-dependent business: slower fulfillment = lower profit. Requires optimized systems for velocity.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Lightweight, Voluminous</h3>
+          <p class="text-gray-700">Paper and notebooks lightweight but bulky: 5kg order = 40×30×20cm box. Requires volume optimization. Compact packing reduces shipping costs significantly.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎓 Extreme Seasonal Peaks</h3>
+          <p class="text-gray-700">Back-to-school (September) and New Year (December) = 2–3× volume increases. Requires flexible scaling without service degradation. Peak capacity must handle surges gracefully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Office Supplies Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Ultra-Fast 2-3 Minute Picking</h3>
+          <p class="text-gray-700">Warehouse organized by category and SKU. Staff trained for speed. Multi-item orders picked in 2-3 minutes standard. System designed for rapid multi-SKU fulfillment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 99.95% Picking Accuracy</h3>
+          <p class="text-gray-700">Wrong pen color = customer disappointment. Every SKU verified before shipment. 1 error per 2,000 orders maximum. Quality critical for office customer retention.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Compact, Cost-Efficient Packing</h3>
+          <p class="text-gray-700">Office supplies packed in compact boxes. Minimal wasted space. Optimized for lightweight shipping. Reduces delivery costs while maintaining protection.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Seasonal Peak Flexibility</h3>
+          <p class="text-gray-700">September and December peaks: we scale staff and processing capacity 2-3×. Handle 3× order volume without delays or quality loss. Guaranteed seasonal surge capacity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Office & School Supplies</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Packing</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">15–25 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Compact packing</span>
+            <span class="font-bold">5–10 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">30–80 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% quality control</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Office Supply Retailer (500 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 500 × 20 = 10,000 UAH<br/>
+          Packing: 500 × 7 = 3,500 UAH<br/>
+          Delivery: 500 × 55 = 27,500 UAH<br/>
+          Storage (2 pallets): 2 × 200 = 400 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 41,400 UAH/month = 83 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 2-3 minute picking, 99.95% accuracy, compact packing, 24-hour delivery, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Speed &amp; Accuracy Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">2–3</p>
+          <p class="text-gray-700 font-bold">Minutes Picking</p>
+          <p class="text-sm text-gray-600 mt-2">Multi-SKU order fulfillment</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.95%</p>
+          <p class="text-gray-700 font-bold">Accuracy Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Every SKU verified</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">3×</p>
+          <p class="text-gray-700 font-bold">Seasonal Scaling</p>
+          <p class="text-sm text-gray-600 mt-2">September/December peaks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your Office Supplies Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        2-3 minute picking, 99.95% accuracy, compact packing, seasonal 3× capacity scaling, 24-hour delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

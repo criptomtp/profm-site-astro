@@ -1,0 +1,171 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Art & Crafts Fulfillment | Material-Specific Packaging, Humidity Control, Premium Gift Wrapping | MTP';
+const description = 'Specialized fulfillment for art supplies, craft materials, paints, canvas, beads, paper. Material-specific packaging, humidity 40-60%, temperature 10-25°C, gift wrapping option, 99.8% accuracy, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-crafts.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴60-₴150'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Art &amp; Crafts Fulfillment<br />Specialized Packaging, Climate Control, Premium Gift Wrapping
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Art supplies, paints, canvas, paper, beads, craft materials. Material-specific packaging, humidity 40-60%, temperature 10-25°C, premium gift wrapping option, 99.8% accuracy, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Art & Crafts Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Art & Crafts Materials Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎨 Extreme Product Diversity</h3>
+          <p class="text-gray-700">Thin art paper to heavy paint jars. Tiny seed beads to large canvases. Each product type requires different handling. Requires flexible, specialized packing system.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Humidity &amp; Temperature Sensitivity</h3>
+          <p class="text-gray-700">Paper warps at humidity &gt;70%. Paint hardens or thins with temperature changes. Requires strict 40-60% humidity and 10-25°C temperature control.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🎁 Gift Purchase Context</h3>
+          <p class="text-gray-700">Craft materials often purchased as gifts. Premium presentation matters. Unboxing experience influences gift satisfaction. Presentation = part of the product value.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📦 Bulk &amp; Volume Challenge</h3>
+          <p class="text-gray-700">Craft supplies lightweight but bulky—0.5kg can occupy 30×30×15cm. Requires volume optimization for space efficiency without sacrificing protection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Art & Crafts Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Climate Control by Material Type</h3>
+          <p class="text-gray-700">Paper stored at 40-60% humidity. Paints at 10-25°C stable temperature. Textiles protected from light. Each material type in optimal microclimate.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Material-Specific Packaging</h3>
+          <p class="text-gray-700">Paper on space-efficient platforms. Paint jars in sealed containers. Beads in protective compartments. Canvas on roll tubes. Custom packaging per item type.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Quality Verification &amp; Integrity Check</h3>
+          <p class="text-gray-700">Each item inspected for integrity, completeness, specification match. 99.8% picking accuracy. Batch dates verified. Damage detected before shipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Premium Gift Wrapping Option</h3>
+          <p class="text-gray-700">Customers can select gift wrapping at checkout. Beautiful packaging with ribbon and presentation. Craft materials arrive gift-ready with zero additional effort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Art & Crafts</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Packaging</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">15–25 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Material-specific packing</span>
+            <span class="font-bold">5–15 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Premium gift wrapping (optional)</span>
+            <span class="font-bold">20–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Climate control included</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">40–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Art Supply Retailer (300 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking &amp; packing: 300 × (20 + 10) = 9,000 UAH<br/>
+          Delivery: 300 × 70 = 21,000 UAH<br/>
+          Climate-controlled storage (2 pallets): 2 × 300 = 600 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 30,600 UAH/month = 102 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: material-specific packing, 40-60% humidity, 10-25°C temperature, climate control, 99.8% accuracy, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Material Preservation Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.8%</p>
+          <p class="text-gray-700 font-bold">Picking Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">Every item verified</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">40–60%</p>
+          <p class="text-gray-700 font-bold">Humidity Control</p>
+          <p class="text-sm text-gray-600 mt-2">Paper & material preservation</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Premium</p>
+          <p class="text-gray-700 font-bold">Gift Presentation</p>
+          <p class="text-sm text-gray-600 mt-2">Wrap-ready delivery option</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Scale Your Art & Crafts Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Material-specific packaging, climate control (40-60% humidity), 99.8% accuracy, premium gift wrapping option, 24-48 hour delivery, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
