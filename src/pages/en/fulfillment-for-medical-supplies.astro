@@ -1,0 +1,171 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Medical Supplies Fulfillment | MOZ Certification, Zero-Defect QC, Regulatory Compliance | MTP';
+const description = 'Specialized fulfillment for medical supplies, healthcare products, equipment. MOZ certification verification, 10-25°C temperature control, zero-defect quality, regulatory compliance, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-medical.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴50-₴100'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Medical Supplies Fulfillment<br />MOZ Certification, Zero-Defect Quality, Regulatory Compliant
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Medical devices, healthcare products, diagnostic equipment. MOZ certification verification, 10-25°C temperature control, zero-defect QC, regulatory compliance documentation, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Medical Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Medical Requires Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📋 Regulatory Compliance</h3>
+          <p class="text-gray-700">Every medical product requires MOZ certification, regulatory approval, documentation. Non-compliant products = business shutdown + penalties. Zero tolerance for violations.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🏥 Health Safety Critical</h3>
+          <p class="text-gray-700">Defective medical supplies directly harm patient health. Single defect = lawsuits, liability, lost licenses. Requires absolute zero-defect quality control and documentation.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🌡️ Temperature Sensitivity</h3>
+          <p class="text-gray-700">Many medical products degrade outside 10-25°C range. Requires strict climate control and monitoring. Temperature excursions = product degradation and spoilage.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📝 Documentation Trail</h3>
+          <p class="text-gray-700">Regulatory audits require complete documentation: certificates, batch numbers, inspection records, delivery proof. Missing paperwork = non-sellable products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Medical Supplies Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ MOZ Certification Verification</h3>
+          <p class="text-gray-700">Before accepting inventory: MOZ certificate checked, regulatory approval verified. If certification missing = product rejected. 100% compliance gate on every shipment in.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Temperature Control 10-25°C</h3>
+          <p class="text-gray-700">Dedicated medical storage with precise climate control. Hourly temperature logging. Auto-alerts if deviation detected. Complete compliance documentation saved.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Zero-Defect QC Inspection</h3>
+          <p class="text-gray-700">100% of every batch inspected pre-shipment. No sampling. Complete visual inspection + documentation. Defective items flagged immediately, customer notified before shipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Regulatory Documentation</h3>
+          <p class="text-gray-700">Complete audit trail maintained. Batch numbers tracked. Inspection records saved. Delivery documentation includes certification proof. Audit-ready at all times.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Medical Supplies</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Fulfillment &amp; Compliance</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">25–40 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Zero-defect QC inspection</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Temperature control storage</span>
+            <span class="font-bold">+50 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Regulatory documentation</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Standard delivery</span>
+            <span class="font-bold">50–100 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Medical Supply Distributor (200 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 200 × 30 = 6,000 UAH<br/>
+          Temperature storage (2 pallets): 2 × 50 = 100 UAH/month<br/>
+          Delivery: 200 × 75 = 15,000 UAH<br/>
+          <strong class="text-lg">TOTAL: 21,100 UAH/month = 105 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: MOZ verification, 10-25°C control, zero-defect QC, regulatory documentation, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Compliance Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">100%</p>
+          <p class="text-gray-700 font-bold">MOZ Compliance</p>
+          <p class="text-sm text-gray-600 mt-2">Every batch certified before storage</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">Zero</p>
+          <p class="text-gray-700 font-bold">Defects Shipped</p>
+          <p class="text-sm text-gray-600 mt-2">100% QC inspection, no exceptions</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">10-25°C</p>
+          <p class="text-gray-700 font-bold">Regulated Temperature</p>
+          <p class="text-sm text-gray-600 mt-2">Hourly monitoring, audit trail</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Medical Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        MOZ certification, zero-defect quality, 10-25°C temperature control, regulatory compliance, audit-ready documentation, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Automotive Parts Fulfillment | 99.95% Accuracy, VIN/Part Verification, <0.5% Damage | MTP';
+const description = 'Specialized fulfillment for car parts, automotive components. 99.95% part number accuracy, VIN code verification, technical specification control, rust prevention <70% humidity, 100% insurance, 24-48 hour delivery.';
+const ogImage = 'https://profm.ua/images/fulfillment-automotive.jpg';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua/en/'
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'UA'
+  },
+  priceRange: '₴100-₴300'
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Automotive Parts Fulfillment<br />99.95% Accuracy, VIN Verification, Rust Prevention
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Engine components, suspension parts, electrical systems, brackets. 99.95% part number accuracy, VIN/specification verification, rust prevention &lt;70% humidity, heavy-item handling, 100% insurance, 24-48 hour delivery.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Start Automotive Fulfillment
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Automotive Parts Need Specialized Fulfillment</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">🔧 Part Number Precision</h3>
+          <p class="text-gray-700">Wrong part number shipped = incompatible with customer's vehicle. Cannot return easily. Requires 99.95% picking accuracy and part verification before every shipment.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">📝 VIN Code Verification</h3>
+          <p class="text-gray-700">Many parts are VIN-specific. Part works on 2020 Honda but not 2021. Requires catalog matching against VIN codes. Specification control mandatory for compatibility.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">⚙️ Technical Specifications</h3>
+          <p class="text-gray-700">Engine part with wrong tolerances = engine damage. Suspension part with wrong strength = safety hazard. Specifications must match exactly or liability increases exponentially.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-3">💧 Rust &amp; Corrosion</h3>
+          <p class="text-gray-700">Metal auto parts rust quickly at humidity &gt;70%. One humid week = unusable parts. Requires &lt;70% humidity control and protective coating on all metal components.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Automotive Parts Services</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ 99.95% Part Number Accuracy</h3>
+          <p class="text-gray-700">Every pick verified against customer order. Barcode scanned. Part label checked. Specification matched. Wrong part never ships. Accuracy rate: 1 error per 2000 orders maximum.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ VIN Code &amp; Specification Matching</h3>
+          <p class="text-gray-700">Parts cataloged by VIN compatibility. Specifications verified against database. Incompatible parts flagged and customer notified before shipment. 100% compatibility assurance.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Rust Prevention &lt;70% Humidity</h3>
+          <p class="text-gray-700">Dedicated climate-controlled storage for metal auto parts. Desiccant packets included in packaging. Protective coating on exposed metal. Zero rust on delivery.</p>
+        </div>
+        <div class="bg-white p-6 rounded border-l-4 border-red-600">
+          <h3 class="text-lg font-bold mb-2">✓ Heavy-Item Handling</h3>
+          <p class="text-gray-700">Heavy engine blocks, transmissions, suspension components. Forklift-rated handling. Shock-absorbent packaging. &lt;0.5% damage rate even for delicate mechanical assemblies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Pricing for Automotive Parts</h2>
+      <div class="bg-white p-6 rounded border border-gray-200 mb-8">
+        <h3 class="text-lg font-bold mb-4">Picking, Verification, Delivery</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex justify-between">
+            <span>Picking per order</span>
+            <span class="font-bold">30–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>VIN/part verification</span>
+            <span class="font-bold">Included</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Specialized packaging</span>
+            <span class="font-bold">20–50 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Rust prevention storage</span>
+            <span class="font-bold">+50 UAH/pallet/mo</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Delivery (up to 50 km)</span>
+            <span class="font-bold">100–300 UAH</span>
+          </li>
+          <li class="flex justify-between">
+            <span>100% insurance coverage</span>
+            <span class="font-bold">Included</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+        <h3 class="font-bold mb-3">Example: Auto Parts Retailer (150 orders/month)</h3>
+        <p class="text-gray-700">
+          Picking: 150 × 40 = 6,000 UAH<br/>
+          Packaging: 150 × 35 = 5,250 UAH<br/>
+          Delivery: 150 × 200 = 30,000 UAH<br/>
+          Storage (2 pallets): 2 × 50 = 100 UAH/month<br/>
+          <strong class="text-lg">TOTAL: 41,350 UAH/month = 275 UAH per order</strong><br/>
+          <span class="text-sm text-gray-600">Includes: 99.95% accuracy, VIN verification, rust prevention &lt;70%, heavy-item handling, 100% insurance</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Quality &amp; Technical Guarantees</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">99.95%</p>
+          <p class="text-gray-700 font-bold">Part Accuracy</p>
+          <p class="text-sm text-gray-600 mt-2">VIN verified, spec matched</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;0.5%</p>
+          <p class="text-gray-700 font-bold">Damage Rate</p>
+          <p class="text-sm text-gray-600 mt-2">Heavy-duty handling, shock protection</p>
+        </div>
+        <div class="text-center bg-white p-6 rounded border border-green-200">
+          <p class="text-4xl font-bold text-green-600 mb-2">&lt;70%</p>
+          <p class="text-gray-700 font-bold">Humidity Control</p>
+          <p class="text-sm text-gray-600 mt-2">Rust prevention for metal parts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-red-600 to-red-500 text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Automotive Fulfillment?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        99.95% part accuracy, VIN verification, specification matching, rust prevention &lt;70%, heavy-item handling, &lt;0.5% damage rate, 100% insurance. Start today.
+      </p>
+      <a href="#contact" class="inline-block bg-white text-red-600 px-8 py-4 rounded font-bold text-lg hover:bg-gray-100 transition">
+        Request a Quote
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>
