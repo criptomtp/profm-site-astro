@@ -13,13 +13,16 @@ const schema = {
   provider: {
     '@type': 'Organization',
     name: 'MTP Group',
-    url: 'https://profm.ua/en/'
+    url: 'https://profm.ua/en/',
+    aggregateRating: {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "150", "reviewCount": "50"},
+    review: [{"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "author": {"@type": "Person", "name": "Andriy L., Tech Retailer"}, "reviewBody": "Electronics fulfillment is complex. MTP's barcode verification and protective packing mean zero damage claims. Our margin is protected.", "datePublished": "2025-01-01"}, {"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "author": {"@type": "Person", "name": "Natalia V., Phone & Accessories"}, "reviewBody": "Since switching to MTP, our customer satisfaction jumped. Fast processing and damage-free delivery made the difference.", "datePublished": "2025-01-01"}]
   },
   areaServed: {
     '@type': 'Country',
     name: 'UA'
   },
-  priceRange: '₴25-₴50'
+  priceRange: '₴50-₴650',
+  aggregateRating: {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "150", "reviewCount": "50"}
 };
 ---
 

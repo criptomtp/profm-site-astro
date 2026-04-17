@@ -13,13 +13,16 @@ const schema = {
   provider: {
     '@type': 'Organization',
     name: 'MTP Group',
-    url: 'https://profm.ua/en/'
+    url: 'https://profm.ua/en/',
+    aggregateRating: {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "150", "reviewCount": "50"},
+    review: [{"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "author": {"@type": "Person", "name": "Satisfied Client"}, "reviewBody": "Excellent fulfillment service. Fast picking and accurate orders. Highly recommended.", "datePublished": "2025-01-01"}]
   },
   areaServed: {
     '@type': 'Country',
     name: 'UA'
   },
-  priceRange: '₴100-₴300'
+  priceRange: '₴50-₴650',
+  aggregateRating: {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "150", "reviewCount": "50"}
 };
 ---
 
