@@ -15,7 +15,6 @@ import Base from '../../layouts/Base.astro';
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/3pl-logistics/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
 <!-- ====== SECTION 1 — HERO ====== -->
@@ -27,37 +26,24 @@ import Base from '../../layouts/Base.astro';
       <p class="tpl-hero-sub">Вы развиваете продукт и маркетинг. Мы&nbsp;берём на себя склад, сбор, упаковку, отправку, возвраты и&nbsp;контроль денег.</p>
 
       <!-- Animated flow diagram -->
-      <div class="flow-diagram" aria-label="Схема работы: Ваша CRM передаёт заказы на MTP Склад, далее Нова Пошта доставляет Клиенту">
+      <div class="flow-diagram" aria-label="Схема работы: Ваша CRM передаёт заказы на MTP Склад, далее Служба доставки доставляет Клиенту">
         <div class="flow-box">Ваша CRM</div>
         <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
         <div class="flow-box flow-box--accent">MTP Склад</div>
         <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
-        <div class="flow-box">Нова Пошта</div>
+        <div class="flow-box">Служба доставки</div>
         <div class="flow-line" aria-hidden="true"><span class="flow-arrow">&rarr;</span></div>
         <div class="flow-box">Клиент</div>
       </div>
 
       <div class="crm-badges">
-        <span>KeyCRM</span>
-        <span>Horoshop</span>
-        <span>Prom</span>
-        <span>WooCommerce</span>
-        <span>Shopify</span>
+        <span>Rozetka</span><span>Prom.ua</span><span>Kasta</span><span>KeyCRM</span>
+        <span>SalesDrive</span><span>Нова Пошта</span><span>Meest</span><span>Checkbox</span>
       </div>
 
       <form class="tpl-hero-form" id="heroForm">
         <input type="text" name="name" placeholder="Ваше имя" autocomplete="given-name" aria-label="Имя">
         <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
-        <select name="crm" aria-label="CRM система">
-          <option value="" disabled selected>Ваша CRM</option>
-          <option value="KeyCRM">KeyCRM</option>
-          <option value="Horoshop">Horoshop</option>
-          <option value="Prom.ua">Prom.ua</option>
-          <option value="WooCommerce">WooCommerce</option>
-          <option value="Shopify">Shopify</option>
-          <option value="OpenCart">OpenCart</option>
-          <option value="other">Другая</option>
-        </select>
         <button type="submit">Подключиться за 2-3 дня &rarr;</button>
       </form>
       <div class="hero-note">Бесплатная консультация &middot; Перезвоним за 15 минут</div>
@@ -148,27 +134,7 @@ import Base from '../../layouts/Base.astro';
 </div></section>
 
 <!-- ====== SECTION 3 — ROI CALCULATOR ====== -->
-<section class="calc-sec" x-data="{
-  orders: 1500,
-  salary: 45000,
-  rent: 25000,
-  other: 10000,
-  get dailyOrders() { return Math.round(this.orders / 22) },
-  get pricePerOrder() {
-    const d = this.dailyOrders;
-    if (d <= 7) return 26;
-    if (d <= 34) return 23;
-    if (d <= 68) return 21;
-    return 18;
-  },
-  get storageEstimate() { return Math.round(this.orders * 0.005 * 650) },
-  get yourCost() { return this.salary + this.rent + this.other },
-  get mtpCost() { return this.orders * this.pricePerOrder + this.storageEstimate },
-  get saving() { return this.yourCost - this.mtpCost },
-  get savingPct() { return this.yourCost > 0 ? Math.round((this.saving / this.yourCost) * 100) : 0 },
-  get annualSaving() { return this.saving * 12 },
-  fmt(n) { return n.toLocaleString('ru-RU') }
-}">
+<section class="calc-sec" id="calc3pl">
 <div class="ctr">
   <div class="badge badge-dark">КАЛЬКУЛЯТОР</div>
   <h2 class="sec-h2">Посчитайте экономию с MTP</h2>
@@ -176,48 +142,46 @@ import Base from '../../layouts/Base.astro';
   <div class="calc-grid">
     <div class="calc-sliders">
       <div class="calc-field">
-        <label>Заказов/месяц: <strong x-text="fmt(orders)"></strong></label>
-        <input type="range" min="100" max="5000" step="50" x-model.number="orders">
+        <label>Заказов/месяц: <strong id="v-orders">1 500</strong></label>
+        <input type="range" min="100" max="5000" step="50" id="s-orders" value="1500">
       </div>
       <div class="calc-field">
-        <label>Зарплаты логистики: <strong x-text="fmt(salary) + ' грн'"></strong></label>
-        <input type="range" min="0" max="100000" step="1000" x-model.number="salary">
+        <label>Зарплаты логистики: <strong id="v-salary">45 000 грн</strong></label>
+        <input type="range" min="0" max="100000" step="1000" id="s-salary" value="45000">
       </div>
       <div class="calc-field">
-        <label>Аренда склада: <strong x-text="fmt(rent) + ' грн'"></strong></label>
-        <input type="range" min="0" max="50000" step="1000" x-model.number="rent">
+        <label>Аренда склада: <strong id="v-rent">25 000 грн</strong></label>
+        <input type="range" min="0" max="50000" step="1000" id="s-rent" value="25000">
       </div>
       <div class="calc-field">
-        <label>Прочие расходы: <strong x-text="fmt(other) + ' грн'"></strong></label>
-        <input type="range" min="0" max="30000" step="500" x-model.number="other">
+        <label>Прочие расходы: <strong id="v-other">10 000 грн</strong></label>
+        <input type="range" min="0" max="30000" step="500" id="s-other" value="10000">
       </div>
     </div>
-
     <div class="calc-result">
       <div class="calc-row">
         <span>Ваши расходы</span>
-        <strong x-text="fmt(yourCost) + ' грн/мес'"></strong>
+        <strong id="r-your-cost">80 000 грн/мес</strong>
       </div>
       <div class="calc-row calc-row--accent">
         <span>С MTP</span>
-        <strong x-text="fmt(mtpCost) + ' грн/мес'"></strong>
+        <strong id="r-mtp-cost">36 375 грн/мес</strong>
       </div>
-      <div class="calc-row" x-show="mtpCost > 0">
+      <div class="calc-row">
         <span>Цена за отправку</span>
-        <strong x-text="pricePerOrder + ' грн'"></strong>
+        <strong id="r-price-per">21 грн</strong>
       </div>
-      <div class="calc-divider"></div>
-      <div class="calc-row calc-row--big" x-show="saving > 0">
+      <div class="calc-row calc-row--big" id="row-saving">
         <span>Экономия</span>
-        <strong x-text="fmt(saving) + ' грн/мес (' + savingPct + '%)'"></strong>
+        <strong id="r-saving">43 625 грн/мес (55%)</strong>
       </div>
-      <div class="calc-row" x-show="saving > 0">
+      <div class="calc-row" id="row-annual">
         <span>За год</span>
-        <strong x-text="fmt(annualSaving) + ' грн'"></strong>
+        <strong id="r-annual">523 500 грн</strong>
       </div>
-      <div class="calc-row calc-row--warn" x-show="saving <= 0">
+      <div class="calc-row calc-row--warn" id="row-warn" style="display:none">
         <span>Стоимость MTP</span>
-        <strong x-text="fmt(mtpCost) + ' грн/мес'"></strong>
+        <strong id="r-warn-cost">—</strong>
       </div>
     </div>
   </div>
@@ -230,12 +194,17 @@ import Base from '../../layouts/Base.astro';
   <h2 class="sec-h2">Подключаем вашу CRM за&nbsp;2&nbsp;часа</h2>
 
   <div class="integ-grid">
-    <div class="integ-badge integ-badge--ok">KeyCRM <span>&#10003;</span></div>
-    <div class="integ-badge integ-badge--ok">Horoshop <span>&#10003;</span></div>
-    <div class="integ-badge integ-badge--ok">Prom.ua <span>&#10003;</span></div>
-    <div class="integ-badge integ-badge--ok">WooCommerce <span>&#10003;</span></div>
-    <div class="integ-badge integ-badge--ok">Shopify <span>&#10003;</span></div>
-    <div class="integ-badge">Custom API</div>
+    <a class="integ-badge integ-badge--ok" href="https://rozetka.com.ua/seller/" target="_blank" rel="noopener">Rozetka <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://prom.ua" target="_blank" rel="noopener">Prom.ua <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://kasta.ua" target="_blank" rel="noopener">Kasta <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://horoshop.ua" target="_blank" rel="noopener">Хорошоп <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://keycrm.app" target="_blank" rel="noopener">KeyCRM <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://salesdrive.ua" target="_blank" rel="noopener">SalesDrive <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://novaposhta.ua" target="_blank" rel="noopener">Нова Пошта <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://delivery.rozetka.com.ua" target="_blank" rel="noopener">Rozetka Delivery <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://ukrposhta.ua" target="_blank" rel="noopener">Укрпошта <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://meest.com" target="_blank" rel="noopener">Meest <span>&#10003;</span></a>
+    <a class="integ-badge integ-badge--ok" href="https://checkbox.ua" target="_blank" rel="noopener">Checkbox <span>&#10003;</span></a>
   </div>
 
   <div class="integ-flow">
@@ -325,7 +294,7 @@ import Base from '../../layouts/Base.astro';
       <span>1-2 дня</span>
     </div>
     <div class="carrier-card">
-      <strong>Justin</strong>
+      <strong>Delivery</strong>
       <span>1-2 дня</span>
     </div>
     <div class="carrier-card">
@@ -355,27 +324,6 @@ import Base from '../../layouts/Base.astro';
       <div class="tpl-cta-form-row">
         <input type="text" name="name" placeholder="Ваше имя" autocomplete="given-name" aria-label="Имя">
         <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
-        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
-      </div>
-      <div class="tpl-cta-form-row">
-        <select name="crm" aria-label="CRM система">
-          <option value="" disabled selected>Ваша CRM</option>
-          <option value="KeyCRM">KeyCRM</option>
-          <option value="Horoshop">Horoshop</option>
-          <option value="Prom.ua">Prom.ua</option>
-          <option value="WooCommerce">WooCommerce</option>
-          <option value="Shopify">Shopify</option>
-          <option value="OpenCart">OpenCart</option>
-          <option value="other">Другая</option>
-        </select>
-        <select name="orders_day" aria-label="Заказов в день">
-          <option value="" disabled selected>Заказов/день</option>
-          <option value="5-10">5-10</option>
-          <option value="10-50">10-50</option>
-          <option value="50-100">50-100</option>
-          <option value="100-200">100-200</option>
-          <option value="200+">200+</option>
-        </select>
         <button type="submit">Подключиться &rarr;</button>
       </div>
     </form>
@@ -571,18 +519,19 @@ import Base from '../../layouts/Base.astro';
 .calc-row--big{font-size:18px}
 .calc-row--big strong{color:#e63329;font-size:20px}
 .calc-row--warn strong{color:var(--red)}
-.calc-divider{height:2px;background:var(--red);margin:8px 0;border-radius:1px}
 
 /* ===== INTEGRATIONS ===== */
 .integ-sec{padding:100px 0;background:var(--white)}
 .integ-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:48px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:48px;
 }
 .integ-badge{
-  text-align:center;padding:20px 12px;background:var(--gray);border-radius:10px;
+  display:block;text-align:center;padding:20px 12px;background:var(--gray);border-radius:10px;
   font-size:15px;font-weight:600;border:1px solid #e0e0e0;
+  color:var(--black);text-decoration:none;transition:border-color .2s,box-shadow .2s;
 }
 .integ-badge--ok span{color:#e63329;margin-left:4px}
+a.integ-badge:hover{border-color:var(--red);box-shadow:0 2px 8px rgba(230,51,41,.12)}
 .integ-flow{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:20px}
 .integ-step{
   display:flex;align-items:center;gap:8px;padding:12px 20px;
@@ -762,5 +711,40 @@ import Base from '../../layouts/Base.astro';
       setTimeout(function(){ window.location.href = '/thanks/'; }, 1500);
     });
   }
+
+  // 3PL ROI calculator (vanilla JS)
+  (function(){
+    var el=document.getElementById('calc3pl');
+    if(!el) return;
+    function fmt(n){return Math.round(n).toLocaleString('uk-UA');}
+    var sO=document.getElementById('s-orders'),sSal=document.getElementById('s-salary');
+    var sR=document.getElementById('s-rent'),sOth=document.getElementById('s-other');
+    function update(){
+      var ord=parseInt(sO.value),sal=parseInt(sSal.value),rent=parseInt(sR.value),oth=parseInt(sOth.value);
+      var daily=Math.round(ord/22);
+      var ppo=daily<=7?26:daily<=34?23:daily<=68?21:18;
+      var storage=Math.round(ord*0.005*650);
+      var yourCost=sal+rent+oth, mtpCost=ord*ppo+storage, saving=yourCost-mtpCost;
+      var pct=yourCost>0?Math.round((saving/yourCost)*100):0;
+      document.getElementById('v-orders').textContent=fmt(ord);
+      document.getElementById('v-salary').textContent=fmt(sal)+' грн';
+      document.getElementById('v-rent').textContent=fmt(rent)+' грн';
+      document.getElementById('v-other').textContent=fmt(oth)+' грн';
+      document.getElementById('r-your-cost').textContent=fmt(yourCost)+' грн/мес';
+      document.getElementById('r-mtp-cost').textContent=fmt(mtpCost)+' грн/мес';
+      document.getElementById('r-price-per').textContent=ppo+' грн';
+      var rSav=document.getElementById('row-saving'),rAnn=document.getElementById('row-annual'),rWarn=document.getElementById('row-warn');
+      if(saving>0){
+        rSav.style.display='';rAnn.style.display='';rWarn.style.display='none';
+        document.getElementById('r-saving').textContent=fmt(saving)+' грн/мес ('+pct+'%)';
+        document.getElementById('r-annual').textContent=fmt(saving*12)+' грн';
+      } else {
+        rSav.style.display='none';rAnn.style.display='none';rWarn.style.display='';
+        document.getElementById('r-warn-cost').textContent=fmt(mtpCost)+' грн/мес';
+      }
+    }
+    [sO,sSal,sR,sOth].forEach(function(s){s.addEventListener('input',update);});
+    update();
+  })();
 })();
 </script>
