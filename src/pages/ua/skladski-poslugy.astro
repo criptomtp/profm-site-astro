@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 ---
 <Base
-  title="Складські послуги Київ — зберігання товарів для інтернет-магазинів | MTP Fulfillment"
-  description="Адресний склад у Бориспілі та Білогородці. Зберігання від 650 грн/м³. Збір замовлення за 30 секунд, 4 відправки на день. 10+ років досвіду, до 6 000 замовлень/добу."
+  title="Складські послуги Київ від 650 грн/м³ — 2 склади | MTP"
+  description="Складські послуги для інтернет-магазинів: адресне зберігання, збір за 30 сек, 6 000 відправок/добу. 2 склади під Києвом (Бориспіль + Білогородка). Від 650 грн/м³."
   canonical="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/"
   lang="uk"
   ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
@@ -16,7 +16,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/warehouse-services/">
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </Fragment>
 
 <!-- SECTION 1 — HERO: SPLIT-SCREEN -->
@@ -34,7 +33,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
       <form class="sp-hero-form" id="heroFormSplit">
         <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="given-name" aria-label="Ім'я">
         <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
-        <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
         <button type="submit">Розрахувати вартість &rarr;</button>
       </form>
       <p class="sp-hero-note">Безкоштовна консультація &middot; Передзвонимо за 15 хвилин</p>
@@ -96,55 +94,24 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
     <h2 class="sec-h2">Скільки коштує складське обслуговування для вашого магазину</h2>
     <p class="calc-sub">Введіть параметри&nbsp;&mdash; ми порахуємо вартість за місяць.</p>
 
-    <div class="calc-wrap" x-data="{
-      sku: 500,
-      orders: 50,
-      size: 'medium',
-      get sizeFactor() {
-        return this.size === 'small' ? 0.003 : this.size === 'medium' ? 0.008 : 0.02;
-      },
-      get pricePerOrder() {
-        if (this.orders <= 10) return 26;
-        if (this.orders <= 50) return 23;
-        if (this.orders <= 100) return 21;
-        return 18;
-      },
-      get storageCost() {
-        return Math.round(this.sku * this.sizeFactor * 650);
-      },
-      get pickingCost() {
-        return Math.round(this.orders * 22 * this.pricePerOrder);
-      },
-      get totalCost() {
-        return this.storageCost + this.pickingCost;
-      },
-      fmt(n) {
-        return n.toLocaleString('uk-UA');
-      }
-    }">
+    <div class="calc-wrap" id="calcWrap">
       <div class="calc-inputs">
         <div class="calc-field">
-          <label>Кількість SKU (найменувань): <strong x-text="fmt(sku)"></strong></label>
-          <input type="range" min="50" max="5000" step="50" x-model.number="sku">
+          <label>Кількість SKU (найменувань): <strong id="r-sku">500</strong></label>
+          <input type="range" min="50" max="5000" step="50" id="c-sku" value="500">
           <div class="calc-range-labels"><span>50</span><span>5 000</span></div>
         </div>
         <div class="calc-field">
-          <label>Замовлень на день: <strong x-text="fmt(orders)"></strong></label>
-          <input type="range" min="5" max="200" step="5" x-model.number="orders">
+          <label>Замовлень на день: <strong id="r-orders">50</strong></label>
+          <input type="range" min="5" max="200" step="5" id="c-orders" value="50">
           <div class="calc-range-labels"><span>5</span><span>200</span></div>
         </div>
         <div class="calc-field">
           <label>Середній розмір товару:</label>
           <div class="calc-radio-group">
-            <label class="calc-radio" :class="{ active: size === 'small' }">
-              <input type="radio" name="size" value="small" x-model="size"> Дрібний
-            </label>
-            <label class="calc-radio" :class="{ active: size === 'medium' }">
-              <input type="radio" name="size" value="medium" x-model="size"> Середній
-            </label>
-            <label class="calc-radio" :class="{ active: size === 'large' }">
-              <input type="radio" name="size" value="large" x-model="size"> Великий
-            </label>
+            <label class="calc-radio"><input type="radio" name="size" value="small"> Дрібний</label>
+            <label class="calc-radio active"><input type="radio" name="size" value="medium" checked> Середній</label>
+            <label class="calc-radio"><input type="radio" name="size" value="large"> Великий</label>
           </div>
         </div>
       </div>
@@ -152,15 +119,15 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
       <div class="calc-results">
         <div class="calc-result-row">
           <span>Зберігання</span>
-          <span class="calc-val" x-text="fmt(storageCost) + ' грн'"></span>
+          <span class="calc-val" id="r-storage">1 300 грн</span>
         </div>
         <div class="calc-result-row">
           <span>Комплектація</span>
-          <span class="calc-val" x-text="fmt(pickingCost) + ' грн'"></span>
+          <span class="calc-val" id="r-picking">57 500 грн</span>
         </div>
         <div class="calc-result-row calc-total">
           <span>РАЗОМ на місяць</span>
-          <span class="calc-val" x-text="fmt(totalCost) + ' грн'"></span>
+          <span class="calc-val" id="r-total">58 800 грн</span>
         </div>
         <p class="calc-disclaimer">* Орієнтовний розрахунок. Точну вартість порахуємо за 15 хвилин після дзвінка.</p>
       </div>
@@ -235,7 +202,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
     <form class="sp-cta-form" id="ctaFormBottom">
       <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="given-name" aria-label="Ім'я">
       <input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон">
-      <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">
       <button type="submit">Отримати розрахунок &rarr;</button>
     </form>
     <div class="sp-cta-checks">
@@ -251,19 +217,51 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   <div class="ctr">
     <div class="badge badge-dark">FAQ</div>
     <h2 class="sec-h2">Часті запитання</h2>
-    <div class="faq-q" data-faq>Який мінімальний об'єм товару?</div>
-    <div class="faq-a"><p>Мінімального немає&nbsp;&mdash; оплата за фактичне місце. Мінімальний місячний платіж&nbsp;&mdash; 5&nbsp;000&nbsp;грн.</p></div>
-    <div class="faq-q" data-faq>Яка температура на складі?</div>
-    <div class="faq-a"><p>15-25&deg;C цілий рік. Опалення взимку, контроль вологості. Підходить для косметики, електроніки, одягу, побутової хімії.</p></div>
-    <div class="faq-q" data-faq>Як працює WMS-облік?</div>
-    <div class="faq-a"><p>Штрих-код для кожного товару, адреса для кожної ячейки. WMS контролює точність збору і формує оптимальний маршрут. Залишки онлайн 24/7.</p></div>
-    <div class="faq-q" data-faq>Чи є палетне зберігання?</div>
-    <div class="faq-a"><p>Так, від 450&nbsp;грн/палет/міс. Стелажі витримують до 2&nbsp;тонн на ярус. Навантажувачі та гідравлічні рокли для переміщення.</p></div>
-    <div class="faq-q" data-faq>Як проводиться інвентаризація?</div>
-    <div class="faq-a"><p>Планова інвентаризація&nbsp;&mdash; щомісячно. Позапланова&nbsp;&mdash; за запитом протягом 24&nbsp;годин. Результати з розбіжностями по кожному SKU доступні в WMS-кабінеті.</p></div>
-    <div class="faq-q" data-faq>Чи є страхування?</div>
-    <div class="faq-a"><p>Офіційний договір з матеріальною відповідальністю за товар. Всі операції фіксуються в WMS. Склад обладнаний цілодобовою відеофіксацією та охороною.</p></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Який мінімальний об'єм товару?</button>
+        <div class="faq-a"><p>Мінімального немає&nbsp;&mdash; оплата за фактичне місце. Мінімальний місячний платіж&nbsp;&mdash; 5&nbsp;000&nbsp;грн.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Яка температура на складі?</button>
+        <div class="faq-a"><p>15-25&deg;C цілий рік. Опалення взимку, контроль вологості. Підходить для косметики, електроніки, одягу, побутової хімії.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Як працює WMS-облік?</button>
+        <div class="faq-a"><p>Штрих-код для кожного товару, адреса для кожної ячейки. WMS контролює точність збору і формує оптимальний маршрут. Залишки онлайн 24/7.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Чи є палетне зберігання?</button>
+        <div class="faq-a"><p>Так, від 450&nbsp;грн/палет/міс. Стелажі витримують до 2&nbsp;тонн на ярус. Навантажувачі та гідравлічні рокли для переміщення.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Як проводиться інвентаризація?</button>
+        <div class="faq-a"><p>Планова інвентаризація&nbsp;&mdash; щомісячно. Позапланова&nbsp;&mdash; за запитом протягом 24&nbsp;годин. Результати з розбіжностями по кожному SKU доступні в WMS-кабінеті.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-faq>Чи є страхування?</button>
+        <div class="faq-a"><p>Офіційний договір з матеріальною відповідальністю за товар. Всі операції фіксуються в WMS. Склад обладнаний цілодобовою відеофіксацією та охороною.</p></div>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- SECTION 8 — SEO TEXT -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
+<h2>Складські послуги для інтернет-магазинів: як вибрати фулфілмент-оператора</h2>
+<div class="article-content">
+<h3>Що таке складські послуги для e-commerce</h3>
+<p>Складські послуги для інтернет-магазинів — це не просто оренда місця для товару. Це повний цикл: прийом і розміщення, адресне зберігання в WMS-системі, збір замовлень за 30 секунд, пакування, відправка 4 рази на день і обробка повернень. MTP Group виконує всі ці функції на двох складах під Києвом — у Бориспільському районі та Білогородці — загальною площею 3 900 м². Більше 10 років досвіду та 60 000+ відправлень на місяць.</p>
+<h3>Переваги адресного зберігання</h3>
+<p>Адресна система означає, що кожна одиниця товару має власне місце в WMS: ряд, полиця, ячейка. При отриманні замовлення з CRM система автоматично будує маршрут для комірника. Збір займає 30 секунд. Залишки доступні онлайн 24/7 через особистий кабінет. FEFO-контроль автоматично відстежує терміни придатності для косметики та БАДів. Порахуйте вартість через <a href="/ua/calculator/" style="color:#e63329;font-weight:500">калькулятор</a>.</p>
+<h3>Коли пора делегувати склад</h3>
+<p>Поріг — від 30-50 замовлень на день. При менших обсягах зручніше відправляти самостійно. Але щойно магазин перевалює за 30 замовлень, власна логістика починає гальмувати зростання: потрібен комірник, склад, упаковка, генератор. MTP Group бере на себе всю цю інфраструктуру. Зберігання від 650 грн/м³/міс, збір від 18 грн за відправку. Читайте <a href="/ua/recalls/" style="color:#e63329;font-weight:500">відгуки клієнтів</a>, які вже делегували склад.</p>
+<h3>Безперебійна робота під час відключень</h3>
+<p>Склади MTP Group обладнані 3 генераторами та Starlink. З 2022 року жодного зриву відправок через відключення електроенергії. WMS і термінали комірників працюють в автономному режимі. Для e-commerce це критично: покупець не чекає, поки у вашому складі повернуть світло. Дивіться <a href="/ua/services/" style="color:#e63329;font-weight:500">повний перелік послуг</a>.</p>
+</div>
+</div>
 </section>
 
 <script is:inline>
@@ -294,6 +292,33 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   }
   handleForm('heroFormSplit');
   handleForm('ctaFormBottom');
+  // Warehouse calculator (vanilla JS)
+  (function(){
+    var wrap = document.getElementById('calcWrap');
+    if(!wrap) return;
+    function fmt(n){ return Math.round(n).toLocaleString('uk-UA'); }
+    var cSku=document.getElementById('c-sku'), cOrders=document.getElementById('c-orders');
+    var radios=wrap.querySelectorAll('input[name="size"]');
+    function getSize(){ var v='medium'; radios.forEach(function(r){if(r.checked)v=r.value;}); return v; }
+    function update(){
+      var sku=parseInt(cSku.value), orders=parseInt(cOrders.value), size=getSize();
+      var sf=size==='small'?0.003:size==='medium'?0.008:0.02;
+      var ppo=orders<=10?26:orders<=50?23:orders<=100?21:18;
+      var sc=Math.round(sku*sf*650), pc=Math.round(orders*22*ppo), tc=sc+pc;
+      document.getElementById('r-sku').textContent=fmt(sku);
+      document.getElementById('r-orders').textContent=fmt(orders);
+      document.getElementById('r-storage').textContent=fmt(sc)+' грн';
+      document.getElementById('r-picking').textContent=fmt(pc)+' грн';
+      document.getElementById('r-total').textContent=fmt(tc)+' грн';
+      wrap.querySelectorAll('.calc-radio').forEach(function(l){l.classList.remove('active');});
+      var sel=wrap.querySelector('.calc-radio input[value="'+size+'"]');
+      if(sel) sel.parentElement.classList.add('active');
+    }
+    cSku.addEventListener('input',update);
+    cOrders.addEventListener('input',update);
+    radios.forEach(function(r){r.addEventListener('change',update);});
+    update();
+  })();
 })();
 </script>
 
@@ -636,7 +661,7 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   border-bottom: none;
   padding-top: 24px;
   margin-top: 8px;
-  border-top: 3px solid var(--red);
+  border-top: 1px solid #e0e0e0;
 }
 .calc-total span:first-child {
   font-family: var(--fd);
@@ -895,6 +920,8 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   padding: 100px 0;
   background: #fff;
 }
+.faq .faq-list { max-width: 700px; margin: 0 auto; }
+.faq .faq-item { border-bottom: 1px solid #eee; }
 .faq .faq-q {
   display: flex;
   align-items: center;
@@ -902,7 +929,6 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   width: 100%;
   padding: 20px 0;
   border: none;
-  border-bottom: 1px solid #eee;
   background: none;
   font-family: var(--fb);
   font-size: 17px;
@@ -919,13 +945,13 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   content: '+';
   font-size: 24px;
   font-weight: 300;
-  color: var(--muted);
+  color: var(--red);
   flex-shrink: 0;
   margin-left: 16px;
   transition: transform .3s;
 }
-.faq .faq-q.active::after {
-  content: '-';
+.faq .faq-item.open .faq-q::after {
+  transform: rotate(45deg);
 }
 .faq .faq-a {
   max-height: 0;
@@ -938,4 +964,11 @@ import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
   color: var(--muted);
   line-height: 1.7;
 }
+/* Article SEO section */
+.article-section { background: #fff; padding: 80px 8vw; }
+.article-section h2 { font-family: var(--fd); font-size: clamp(28px,4vw,48px); font-weight: 400; margin: 20px 0 40px; }
+.article-content { max-width: 800px; }
+.article-content h3 { font-family: var(--fd); font-size: clamp(18px,2vw,26px); font-weight: 400; margin: 36px 0 12px; color: #000; }
+.article-content h3:first-child { margin-top: 0; }
+.article-content p { font-size: 16px; line-height: 1.85; color: #444; margin-bottom: 8px; }
 </style>
