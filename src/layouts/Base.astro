@@ -71,11 +71,12 @@ const hreflangs = [
   <meta name="twitter:image" content={ogImage}>
   {ogType === 'article' && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,"author":{"@type":"Organization","name":"MTP Group Fulfillment"},"publisher":{"@type":"Organization","name":"MTP Group","url":"https://www.fulfillmentmtp.com.ua"},"image":ogImage})} />}
   <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  {preloadHero && ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preload" as="font" type="font/ttf" crossorigin href="https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTg.ttf">
+  <link rel="preload" as="font" type="font/ttf" crossorigin href="https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2K_c.ttf">
+  {preloadHero && ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet"></noscript>
   {schema && <Fragment set:html={schema} />}
