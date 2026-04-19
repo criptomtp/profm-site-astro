@@ -2,18 +2,18 @@
 interface Props { lang: 'uk' | 'ru' | 'en'; }
 const { lang } = Astro.props;
 
-const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '';
+const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '/ru';
 const privacyPath = lang === 'uk' ? '/ua/privacy/' : lang === 'en' ? '/en/privacy/' : '/ru/privacy/';
 
 const t = {
-  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', privacy:'Політика конфіденційності', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.' },
-  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', privacy:'Политика конфиденциальности', copy:'© 2026 MTP Group Fulfillment. Все права защищены.' },
-  en: { support:'Support', pages:'Pages', social:'Social', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', privacy:'Privacy Policy', copy:'© 2026 MTP Group Fulfillment. All rights reserved.' },
+  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', faq:'FAQ', privacy:'Політика конфіденційності', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.' },
+  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', faq:'FAQ', privacy:'Политика конфиденциальности', copy:'© 2026 MTP Group Fulfillment. Все права защищены.' },
+  en: { support:'Support', pages:'Pages', social:'Social', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', faq:'FAQ', privacy:'Privacy Policy', copy:'© 2026 MTP Group Fulfillment. All rights reserved.' },
 }[lang];
 ---
 <footer class="footer"><div class="footer-grid">
 <div><h3>{t.support}</h3><p><a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a></p><p><a href="tel:+380501444645">+38(050) 144-46-45</a></p><p><a href="tel:+380938277767">+38(093) 827-77-67</a></p></div>
-<div><h3>{t.pages}</h3><p><a href={`${p}/services/`}>{t.services}</a></p><p><a href={`${p}/about/`}>{t.about}</a></p><p><a href={`${p}/recalls/`}>{t.reviews}</a></p><p><a href={`${p}/blog/`}>{t.blog}</a></p></div>
+<div><h3>{t.pages}</h3><p><a href={`${p}/services/`}>{t.services}</a></p><p><a href={`${p}/about/`}>{t.about}</a></p><p><a href={`${p}/recalls/`}>{t.reviews}</a></p><p><a href={lang === 'ru' ? '/blog/' : `${p}/blog/`}>{t.blog}</a></p><p><a href={`${p}/faq/`}>{t.faq}</a></p></div>
 <div><h3>{t.social}</h3><p><a href="https://www.facebook.com/fulfillmentmtp" target="_blank" rel="noopener">Facebook</a></p><p><a href="https://www.instagram.com/mtp_group/" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://www.youtube.com/@mtpgroup" target="_blank" rel="noopener">YouTube</a></p><p><a href="https://t.me/nikolay_mtp" target="_blank" rel="noopener">Telegram</a></p></div>
 </div><div class="footer-bottom"><a href={privacyPath}>{t.privacy}</a> &nbsp;|&nbsp; {t.copy}</div></footer>
 

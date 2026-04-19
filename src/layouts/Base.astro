@@ -79,6 +79,8 @@ const hreflangs = [
   {preloadHero && ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/stitch-tokens.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/stitch-tokens.css"></noscript>
   {schema && <Fragment set:html={schema} />}
   <script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 setTimeout(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ELBRCEFL41';document.head.appendChild(s);s.onload=function(){gtag('js',new Date());gtag('config','G-ELBRCEFL41');gtag('config','AW-614588275');};},1500);

@@ -14,6 +14,7 @@ const t = {
 const mega = {
   uk: {
     col1: { title: 'За типом бізнесу', items: [
+      { href: '/ua/fulfilment-ukraina/', label: 'Фулфілмент Україна' },
       { href: '/ua/fulfilment-dlya-internet-magazynu/', label: 'Інтернет-магазини' },
       { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Маркетплейси' },
       { href: '/ua/fulfilment-dlya-maloho-biznesu/', label: 'Малий бізнес' },
@@ -52,17 +53,14 @@ const mega = {
   },
   en: {
     col1: { title: 'By business type', items: [
-      { href: '/en/fulfillment-for-online-stores/', label: 'Online stores' },
-      { href: '/en/fulfillment-for-marketplaces/', label: 'Marketplaces' },
-      { href: '/en/fulfillment-for-small-business/', label: 'Small business' },
-      { href: '/en/fulfillment-for-cosmetics/', label: 'Cosmetics' },
+      { href: '/en/fulfillment-ukraine/', label: 'Fulfillment Ukraine' },
+      { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
+      { href: '/en/3pl-logistics/', label: '3PL Logistics' },
+      { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
     ]},
     col2: { title: 'Specialization', items: [
-      { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
       { href: '/en/warehouse-services/', label: 'Warehouse services' },
       { href: '/en/pallet-storage/', label: 'Pallet storage' },
-      { href: '/en/3pl-logistics/', label: '3PL logistics' },
-      { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
     ]},
     col3: { title: 'Tools', items: [
       { href: '/en/calculator/', label: 'Calculator' },
@@ -302,8 +300,7 @@ body{padding-top:0;margin:0}
   var path = location.pathname;
   var map = {
     'tsiny':{ru:'/ru/tsenu/',en:'prices'},'tsenu':{ua:'tsiny',en:'prices'},'prices':{ua:'tsiny',ru:'/ru/tsenu/'},
-    'fulfilment-dlya-internet-magazynu':{ru:'/ru/fulfilment-dlya-internet-magazynu/',en:'fulfillment-for-online-stores'},
-    'fulfillment-for-online-stores':{ua:'fulfilment-dlya-internet-magazynu',ru:'/ru/fulfilment-dlya-internet-magazynu/'},
+    'fulfilment-dlya-internet-magazynu':{ru:'/ru/fulfilment-dlya-internet-magazynu/',en:'fulfillment-ukraine'},
     'fulfilment-vazhkykh-tovariv':{ru:'/ru/fulfilment-vazhkykh-tovariv/',en:'heavy-goods'},
     'heavy-goods':{ua:'fulfilment-vazhkykh-tovariv',ru:'/ru/fulfilment-vazhkykh-tovariv/'},
     'skladski-poslugy':{ru:'/ru/skladski-poslugy/',en:'warehouse-services'},
@@ -314,20 +311,17 @@ body{padding-top:0;margin:0}
     '3pl-logistyka':{ru:'/ru/3pl-logistika/',en:'3pl-logistics'},
     '3pl-logistika':{ua:'3pl-logistyka',en:'3pl-logistics'},
     '3pl-logistics':{ua:'3pl-logistyka',ru:'/ru/3pl-logistika/'},
-    'fulfilment-dlya-marketpleysiv':{ru:'/ru/fulfilment-dlya-marketpleysov/',en:'fulfillment-for-marketplaces'},
-    'fulfilment-dlya-marketpleysov':{ua:'fulfilment-dlya-marketpleysiv',en:'fulfillment-for-marketplaces'},
-    'fulfillment-for-marketplaces':{ua:'fulfilment-dlya-marketpleysiv',ru:'/ru/fulfilment-dlya-marketpleysov/'},
+    'fulfilment-dlya-marketpleysiv':{ru:'/ru/fulfilment-dlya-marketpleysov/',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-marketpleysov':{ua:'fulfilment-dlya-marketpleysiv',en:'fulfillment-ukraine'},
     'fulfilment-kyiv':{ru:'/ru/fulfilment-kiev/',en:'fulfillment-kyiv'},
     'fulfilment-kiev':{ua:'fulfilment-kyiv',en:'fulfillment-kyiv'},
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'/ru/fulfilment-kiev/'},
     'fulfilment-ukraina':{ru:'/ru/fulfilment-ukraina/',en:'fulfillment-ukraine'},
     'fulfillment-ukraine':{ua:'fulfilment-ukraina',ru:'/ru/fulfilment-ukraina/'},
-    'fulfilment-dlya-maloho-biznesu':{ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-for-small-business'},
-    'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-for-small-business'},
-    'fulfillment-for-small-business':{ua:'fulfilment-dlya-maloho-biznesu',ru:'/ru/fulfilment-dlya-malogo-biznesa/'},
-    'fulfilment-dlya-kosmetyky':{ru:'/ru/fulfilment-dlya-kosmetiki/',en:'fulfillment-for-cosmetics'},
-    'fulfilment-dlya-kosmetiki':{ua:'fulfilment-dlya-kosmetyky',en:'fulfillment-for-cosmetics'},
-    'fulfillment-for-cosmetics':{ua:'fulfilment-dlya-kosmetyky',ru:'/ru/fulfilment-dlya-kosmetiki/'},
+    'fulfilment-dlya-maloho-biznesu':{ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-kosmetyky':{ru:'/ru/fulfilment-dlya-kosmetiki/',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-kosmetiki':{ua:'fulfilment-dlya-kosmetyky',en:'fulfillment-ukraine'},
   };
   // Blog article map (full path mapping)
   var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
@@ -383,9 +377,8 @@ body{padding-top:0;margin:0}
     m['top-fulfilment-operatorov-2026']={ua:'/ua/blog/top-fulfilment-operatoriv-2026/',ru:'/blog/top-fulfilment-operatorov-2026/',en:'/en/blog/post/top-fulfillment-operators-ukraine-2026/'};
     m['top-fulfillment-operators-ukraine-2026']={ua:'/ua/blog/top-fulfilment-operatoriv-2026/',ru:'/blog/top-fulfilment-operatorov-2026/',en:'/en/blog/post/top-fulfillment-operators-ukraine-2026/'};
     // Small business page
-    m['fulfilment-dlya-maloho-biznesu']={ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-for-small-business'};
-    m['fulfilment-dlya-malogo-biznesa']={ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-for-small-business'};
-    m['fulfillment-for-small-business']={ua:'fulfilment-dlya-maloho-biznesu',ru:'/ru/fulfilment-dlya-malogo-biznesa/'};
+    m['fulfilment-dlya-maloho-biznesu']={ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-ukraine'};
+    m['fulfilment-dlya-malogo-biznesa']={ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'};
     return m;})();
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;

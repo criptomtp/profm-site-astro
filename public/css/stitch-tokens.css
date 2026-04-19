@@ -1,0 +1,209 @@
+/*
+ * MTP Stitch design tokens + shared utilities.
+ * Source of truth for the Stitch-driven pages.
+ * Load once from Base.astro. Page-specific CSS lives inside each .astro via <style is:global>.
+ */
+
+:root {
+  /* Brand palette */
+  --mtp-red: #e63329;
+  --mtp-red-hover: #c4281f;
+  --mtp-black: #000;
+  --mtp-ink: #0a0a0a;
+  --mtp-white: #fff;
+  --mtp-muted-bg: #f3f3f3;
+  --mtp-muted-bg-soft: #f7f7f7;
+  --mtp-muted-text: #646464;
+  --mtp-muted-border: #e5e5e5;
+
+  /* Typography scale */
+  --mtp-font-display: 'Unbounded', system-ui, sans-serif;
+  --mtp-font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Spacing rhythm */
+  --mtp-section-y: clamp(48px, 7vw, 96px);
+  --mtp-gutter: clamp(16px, 3vw, 48px);
+
+  /* Radii */
+  --mtp-radius-pill: 999px;
+  --mtp-radius-card: 12px;
+}
+
+/* ============= LabelChip utilities ============= */
+.s-label {
+  display: inline-block;
+  font-family: var(--mtp-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--mtp-radius-pill);
+  line-height: 1;
+}
+.s-label--red { background: var(--mtp-red); color: var(--mtp-white); }
+.s-label--muted { background: var(--mtp-muted-bg); color: var(--mtp-muted-text); }
+.s-label--ghost { background: transparent; color: var(--mtp-muted-text); border: 1px solid var(--mtp-muted-border); }
+.s-label--dark { background: var(--mtp-ink); color: var(--mtp-white); }
+
+/* ============= StatsBar utilities ============= */
+.s-stats {
+  padding-block: var(--mtp-section-y);
+  background: var(--mtp-white);
+}
+.s-stats--muted { background: var(--mtp-muted-bg); }
+.s-stats--dark { background: var(--mtp-ink); }
+.s-stats--dark .s-stats__num { color: var(--mtp-red); }
+.s-stats--dark .s-stats__label { color: rgba(255, 255, 255, 0.75); }
+.s-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--mtp-gutter);
+}
+@media (min-width: 768px) {
+  .s-stats__grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+}
+.s-stats__item { text-align: left; }
+.s-stats__num {
+  display: block;
+  font-family: var(--mtp-font-display);
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 900;
+  color: var(--mtp-red);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.s-stats__label {
+  display: block;
+  font-family: var(--mtp-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mtp-muted-text);
+}
+
+/* ============= DarkCTA utilities ============= */
+.s-darkcta {
+  background: var(--mtp-ink);
+  color: var(--mtp-white);
+  padding-block: var(--mtp-section-y);
+  text-align: center;
+}
+.s-darkcta__inner { max-width: 900px; margin: 0 auto; padding: 0 var(--mtp-gutter); }
+.s-darkcta__title {
+  font-family: var(--mtp-font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.s-darkcta__sub {
+  font-family: var(--mtp-font-body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 32px;
+}
+.s-darkcta__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.s-darkcta__btn {
+  display: inline-block;
+  padding: 16px 32px;
+  font-family: var(--mtp-font-body);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+.s-darkcta__btn--primary { background: var(--mtp-red); color: var(--mtp-white); }
+.s-darkcta__btn--primary:hover { background: var(--mtp-red-hover); }
+.s-darkcta__btn--outline { border: 2px solid var(--mtp-white); color: var(--mtp-white); }
+.s-darkcta__btn--outline:hover { background: var(--mtp-white); color: var(--mtp-ink); }
+
+/* ============= Accordion utilities ============= */
+.s-acc { max-width: 900px; margin: 0 auto; padding: 0 var(--mtp-gutter); }
+.s-acc__item {
+  border-bottom: 1px solid var(--mtp-muted-border);
+}
+.s-acc__btn {
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mtp-font-body);
+  font-size: clamp(16px, 1.4vw, 18px);
+  font-weight: 600;
+  color: var(--mtp-ink);
+}
+.s-acc__btn:hover { color: var(--mtp-red); }
+.s-acc__icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.s-acc__item.open .s-acc__icon { transform: rotate(45deg); color: var(--mtp-red); }
+.s-acc__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.s-acc__item.open .s-acc__panel { max-height: 1000px; }
+.s-acc__content {
+  padding: 0 0 20px;
+  font-family: var(--mtp-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mtp-muted-text);
+}
+
+/* ============= SplitHero utilities ============= */
+.s-splithero { position: relative; overflow: hidden; }
+.s-splithero__bg { position: absolute; inset: 0; z-index: 0; }
+.s-splithero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+.s-splithero__grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 120px) var(--mtp-gutter);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .s-splithero__grid { grid-template-columns: 1.2fr 1fr; gap: 64px; }
+}
+.s-splithero__h1 {
+  font-family: var(--mtp-font-display);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 16px 0 24px;
+  color: var(--mtp-ink);
+}
+.s-splithero__sub {
+  font-family: var(--mtp-font-body);
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.5;
+  color: var(--mtp-muted-text);
+  margin: 0 0 32px;
+  max-width: 560px;
+}
+.s-splithero__img img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--mtp-radius-card);
+  display: block;
+}
