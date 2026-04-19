@@ -1,0 +1,36 @@
+---
+/*
+ * SplitHero — Industrial archetype hero with a 2-column grid (text + image) on desktop.
+ * Falls back to single column on mobile.
+ * Slots: "label", "actions". Props: headline (HTML allowed via set:html), sub, imgSrc, imgAlt, bgSrc, bgAlt.
+ */
+interface Props {
+  headline: string;
+  sub?: string;
+  imgSrc: string;
+  imgAlt: string;
+  imgWidth?: number;
+  imgHeight?: number;
+  bgSrc?: string;
+  bgAlt?: string;
+}
+const { headline, sub, imgSrc, imgAlt, imgWidth = 800, imgHeight = 600, bgSrc, bgAlt = '' } = Astro.props;
+---
+<section class="s-splithero">
+  {bgSrc && (
+    <div class="s-splithero__bg" aria-hidden="true">
+      <img src={bgSrc} alt={bgAlt} loading="eager" decoding="async" />
+    </div>
+  )}
+  <div class="s-splithero__grid">
+    <div class="s-splithero__text">
+      <slot name="label" />
+      <h1 class="s-splithero__h1" set:html={headline}></h1>
+      {sub && <p class="s-splithero__sub">{sub}</p>}
+      <slot name="actions" />
+    </div>
+    <div class="s-splithero__img">
+      <img src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} loading="eager" fetchpriority="high" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+/*
+ * StatsBar — 4-column stat grid used in Industrial and Editorial archetypes.
+ * Pass `items` as an array of { num, label }. On mobile collapses to 2 columns.
+ */
+interface StatItem { num: string; label: string; }
+interface Props {
+  items: StatItem[];
+  tone?: 'light' | 'muted' | 'dark';
+  class?: string;
+}
+const { items, tone = 'light', class: extraClass = '' } = Astro.props;
+const toneClass = tone === 'muted' ? 's-stats--muted' : tone === 'dark' ? 's-stats--dark' : '';
+---
+<section class={`s-stats ${toneClass} ${extraClass}`.trim()}>
+  <div class="s-stats__grid">
+    {items.map((item) => (
+      <div class="s-stats__item">
+        <span class="s-stats__num">{item.num}</span>
+        <span class="s-stats__label">{item.label}</span>
+      </div>
+    ))}
+  </div>
+</section>

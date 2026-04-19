@@ -1,0 +1,17 @@
+---
+/*
+ * LabelChip — small uppercase label used above H1/H2 across all three archetypes.
+ * Variant picks the color treatment per archetype.
+ *   red    → Industrial (hero eyebrow)
+ *   muted  → Editorial  (subtle eyebrow)
+ *   ghost  → Editorial/Direct (outline variant)
+ *   dark   → dark-section eyebrow
+ */
+interface Props {
+  text: string;
+  variant?: 'red' | 'muted' | 'ghost' | 'dark';
+  class?: string;
+}
+const { text, variant = 'red', class: extraClass = '' } = Astro.props;
+---
+<span class={`s-label s-label--${variant} ${extraClass}`.trim()}>{text}</span>

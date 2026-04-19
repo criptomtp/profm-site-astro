@@ -1,0 +1,27 @@
+---
+/*
+ * DarkCTA — dark conversion block used before the footer on most pages.
+ * Slot "title" and "sub" for headline and subcopy.
+ * Pass `primary` and optional `secondary` CTA props { label, href }.
+ */
+interface Cta { label: string; href: string; }
+interface Props {
+  title: string;
+  sub?: string;
+  primary: Cta;
+  secondary?: Cta;
+}
+const { title, sub, primary, secondary } = Astro.props;
+---
+<section class="s-darkcta">
+  <div class="s-darkcta__inner">
+    <h2 class="s-darkcta__title">{title}</h2>
+    {sub && <p class="s-darkcta__sub">{sub}</p>}
+    <div class="s-darkcta__actions">
+      <a href={primary.href} class="s-darkcta__btn s-darkcta__btn--primary">{primary.label}</a>
+      {secondary && (
+        <a href={secondary.href} class="s-darkcta__btn s-darkcta__btn--outline">{secondary.label}</a>
+      )}
+    </div>
+  </div>
+</section>
