@@ -8,3 +8,6 @@ gsc_token.json
 scripts/gsc_token.json
 *.credentials.json
 .vercel
+.env
+.env.local
+**/.claude-flow/
