@@ -6,7 +6,8 @@ import Base from '../../layouts/Base.astro';
   description="Ответы на 30+ вопросов о фулфилменте: цены, интеграции, сроки, возвраты. Как начать работу с MTP Group — склад под Киевом, от 18 грн/заказ."
   canonical="https://www.fulfillmentmtp.com.ua/ru/faq/"
   lang="ru"
-  ogImage="https://www.fulfillmentmtp.com.ua/images/faq-hero.webp"
+  showCTA={false}
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-process-overview.webp"
   schema={`<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое фулфилмент?","acceptedAnswer":{"@type":"Answer","text":"Фулфилмент — это аутсорсинг складской логистики. Вы привозите товар на склад MTP, а мы принимаем, храним, собираем и отправляем заказы покупателям. Вы занимаетесь продажами, мы — логистикой."}},{"@type":"Question","name":"Сколько стоит фулфилмент в MTP?","acceptedAnswer":{"@type":"Answer","text":"Отправка от 18 до 26 грн/заказ (динамический тариф — чем больше заказов, тем дешевле). Хранение 650 грн/м³/мес. Минимальный платёж 5 000 грн/мес."}},{"@type":"Question","name":"Есть ли минимальное количество заказов?","acceptedAnswer":{"@type":"Answer","text":"Нет минимума по заказам. Работаем от 1 до 6 000 заказов/день. Минимальный платёж — 5 000 грн/мес независимо от объёма."}},{"@type":"Question","name":"Как быстро собирается заказ?","acceptedAnswer":{"@type":"Answer","text":"Среднее время сборки — 30 секунд. Заказы обрабатываются 4 раза в день. Товар может быть отправлен в день получения заказа от клиента."}},{"@type":"Question","name":"С какими маркетплейсами и CRM работаете?","acceptedAnswer":{"@type":"Answer","text":"Rozetka, Prom.ua, Kasta, OLX, Shopify, WooCommerce, OpenCart. CRM: KeyCRM, SalesDrive, LP-CRM. Интеграция занимает 2 часа."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://www.fulfillmentmtp.com.ua/ru/faq/"}]}</script>`}
 >
 <Fragment slot="head">
@@ -18,35 +19,74 @@ import Base from '../../layouts/Base.astro';
 </Fragment>
 
 <!-- HERO -->
-<section class="hero">
-<div class="container">
-<h1>FAQ: Всё о фулфилменте для интернет-магазинов</h1>
-<div class="hero-line"></div>
-<p>30+ вопросов о ценах, интеграциях, сроках и старте работы с MTP Group. Реальные ответы без маркетинга.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
-<div class="hero-note">Склад под Киевом · От 18 грн/заказ · Старт за 1–3 дня</div>
+<section class="faq-hero">
+<div class="faq-hero__inner">
+  <span class="faq-hero__label">Частые вопросы</span>
+  <h1 class="faq-hero__title">Всё о фулфилменте<br>для интернет-магазинов</h1>
+  <p class="faq-hero__sub">30+ вопросов о ценах, интеграциях, сроках и старте работы с MTP&nbsp;Group. Реальные ответы без маркетинга.</p>
+  <div class="faq-hero__actions">
+    <a href="/ru/calculator/" class="faq-hero__btn faq-hero__btn--primary">Рассчитать стоимость</a>
+    <a href="tel:+380501444645" class="faq-hero__btn faq-hero__btn--outline">+38 (050) 144-46-45</a>
+  </div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="faq-stats">
+<div class="faq-stats__inner">
+  <div class="faq-stats__item">
+    <span class="faq-stats__num">60 000+</span>
+    <span class="faq-stats__label">отправлений / месяц</span>
+  </div>
+  <div class="faq-stats__item">
+    <span class="faq-stats__num">10+ лет</span>
+    <span class="faq-stats__label">на рынке</span>
+  </div>
+  <div class="faq-stats__item">
+    <span class="faq-stats__num">30 сек</span>
+    <span class="faq-stats__label">сборка заказа</span>
+  </div>
+  <div class="faq-stats__item">
+    <span class="faq-stats__num">24/7</span>
+    <span class="faq-stats__label">работа склада</span>
+  </div>
+</div>
+</section>
+
+<!-- CATEGORY NAV -->
+<section class="faq-nav">
+<div class="faq-nav__inner">
+  <a href="#basics" class="faq-nav__link faq-nav__link--active">Основы</a>
+  <a href="#pricing" class="faq-nav__link">Цены</a>
+  <a href="#warehouse" class="faq-nav__link">Склад</a>
+  <a href="#integrations" class="faq-nav__link">Интеграции</a>
+  <a href="#contract" class="faq-nav__link">Договор</a>
+  <a href="#start" class="faq-nav__link">Старт</a>
 </div>
 </section>
 
 <!-- FAQ SECTIONS -->
-<section class="faq-section">
-<div class="container">
+<section class="faq-main">
+<div class="faq-main__inner">
 
-<!-- ОБЩЕЕ -->
-<div class="faq-category">
-<h2 class="category-title">Основы фулфилмента</h2>
+<!-- ОСНОВЫ -->
+<div class="faq-block" id="basics">
+<div class="faq-block__header">
+  <span class="faq-block__num">01</span>
+  <h2 class="faq-block__title">Основы фулфилмента</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Что такое фулфилмент и зачем он нужен?</button>
-<div class="faq-answer">
-<p>Фулфилмент — это когда мы делаем склад вместо вас. Вы привозите товар на склад MTP, а дальше всё происходит автоматически: заказ поступил → мы собрали → отправили Новой Почтой → клиент получил. Вы занимаетесь маркетингом и продажами, мы — физической логистикой.</p>
+<div class="faq-card">
+<button class="faq-card__q"><span>Что такое фулфилмент и зачем он нужен?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
+<p>Фулфилмент — это когда мы делаем склад вместо вас. Вы привозите товар на склад MTP, а дальше всё происходит автоматически: заказ поступил &rarr; мы собрали &rarr; отправили Новой Почтой &rarr; клиент получил. Вы занимаетесь маркетингом и продажами, мы — физической логистикой.</p>
 <p>Выгодно при объёме <strong>от 30+ заказов/день</strong>: экономия на аренде склада, зарплатах кладовщиков и упаковочных материалах.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">За сколько дней можно начать работу?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>За сколько дней можно начать работу?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Стандартный старт — <strong>1–3 дня</strong> от заявки до первой отправки:</p>
 <ol>
 <li>День 1: подписываем договор, настраиваем интеграцию</li>
@@ -57,30 +97,32 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как быстро собирается и отправляется заказ?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как быстро собирается и отправляется заказ?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Среднее время сборки <strong>одного заказа — 30 секунд</strong>. Отправки происходят <strong>4 раза в день</strong>: утром, в обед и дважды вечером. Новая Почта забирает посылки прямо с нашего склада.</p>
 <p>Это значит: заказ, оформленный клиентом в 15:00, может уйти в тот же день.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Сколько заказов в день вы обрабатываете максимум?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Сколько заказов в день вы обрабатываете максимум?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Пиковая мощность — <strong>6 000 заказов в сутки</strong>. Это позволяет без проблем справляться с сезонными пиками (Чёрная пятница, 8 марта, Новый год) без дополнительных договорённостей с нашей стороны.</p>
 </div>
 </div>
-
 </div>
 
 <!-- ЦЕНЫ -->
-<div class="faq-category">
-<h2 class="category-title">Цены и расчёт</h2>
+<div class="faq-block" id="pricing">
+<div class="faq-block__header">
+  <span class="faq-block__num">02</span>
+  <h2 class="faq-block__title">Цены и расчёт</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Сколько стоит отправка одного заказа?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Сколько стоит отправка одного заказа?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Динамический тариф — цена снижается с ростом объёма:</p>
 <ul>
 <li><strong>0–5 заказов/день</strong> = 26 грн</li>
@@ -95,44 +137,46 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Сколько стоит хранение товара?</button>
-<div class="faq-answer">
-<p><strong>650 грн за м³ в месяц</strong>. Расчёт по фактически занятому объёму — без округления до паллеты. Если ваш товар занимает 2,3 м³ — платите за 2,3 м³.</p>
-<p>Для сравнения: аренда собственного склада в Киеве — от 120 грн/м² в месяц, плюс зарплата кладовщика, охрана, коммунальные. Фулфилмент MTP выгоднее при объёме от 20 м³.</p>
+<div class="faq-card">
+<button class="faq-card__q"><span>Сколько стоит хранение товара?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
+<p><strong>650 грн за м&sup3; в месяц</strong>. Расчёт по фактически занятому объёму — без округления до паллеты. Если ваш товар занимает 2,3 м&sup3; — платите за 2,3 м&sup3;.</p>
+<p>Для сравнения: аренда собственного склада в Киеве — от 120 грн/м&sup2; в месяц, плюс зарплата кладовщика, охрана, коммунальные. Фулфилмент MTP выгоднее при объёме от 20 м&sup3;.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Какой минимальный ежемесячный платёж?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Какой минимальный ежемесячный платёж?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p><strong>5 000 грн/месяц</strong> — это минимум независимо от объёма. Если фактические услуги составили 3 500 грн — всё равно платите 5 000 грн. Это позволяет работать даже с небольшим объёмом без штрафов за «недогруз».</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Что входит в стоимость отправки?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Что входит в стоимость отправки?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>В тариф на отправку включено: сборка заказа, упаковка в пакет или коробку, печать ТТН, сдача Новой Почте. <strong>Не включено:</strong> стоимость коробки (если нужна специальная), стикеровка (1,25 грн/шт), доукомплектация вложениями (2,50 грн/шт), FEFO-контроль (0,50 грн/шт).</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Можно ли договориться о специальных условиях?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Можно ли договориться о специальных условиях?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Для клиентов с объёмом <strong>500+ заказов в месяц</strong> обсуждаем персональное КП. Пишите: <strong>mtpgrouppromo@gmail.com</strong> или звоните: +38 (050) 144-46-45.</p>
 </div>
 </div>
-
 </div>
 
-<!-- ТЕХНИЧЕСКИЕ ВОЗМОЖНОСТИ -->
-<div class="faq-category">
-<h2 class="category-title">Возможности склада</h2>
+<!-- СКЛАД -->
+<div class="faq-block" id="warehouse">
+<div class="faq-block__header">
+  <span class="faq-block__num">03</span>
+  <h2 class="faq-block__title">Возможности склада</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Работает ли склад во время блэкаутов?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Работает ли склад во время блэкаутов?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. У нас:</p>
 <ul>
 <li><strong>3 промышленных генератора</strong> — запускаются автоматически при отключении</li>
@@ -143,16 +187,16 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как контролируется точность сборки?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как контролируется точность сборки?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>WMS (система управления складом) минимизирует человеческий фактор до <strong>99% точности</strong>: каждая позиция сканируется штрихкодом, система указывает, где взять товар и сколько, финальная проверка перед упаковкой. Если допустили ошибку — компенсируем стоимость товара по договору.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как я вижу остатки и заказы в реальном времени?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как я вижу остатки и заказы в реальном времени?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Два способа:</p>
 <ol>
 <li><strong>Личный кабинет MTP</strong> — остатки по каждому SKU, статусы заказов, история операций</li>
@@ -162,36 +206,38 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Есть ли FEFO-контроль для косметики и продуктов?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Есть ли FEFO-контроль для косметики и продуктов?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. FEFO (First Expired, First Out) — товары с ближайшим сроком годности уходят первыми. Применяется для косметики, БАДов, продуктов питания. Тариф — <strong>0,50 грн за единицу</strong>. Сканирование даты при приёмке обязательно.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Обрабатываете ли вы возвраты?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Обрабатываете ли вы возвраты?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Распаковка и обработка возвратов включена в услугу. Стоимость распаковки — <strong>50% от тарифа отправки</strong>. Что делать с возвратом — утилизировать, вернуть вам, снова пустить в оборот — фиксируется в договоре.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Проводите ли вы фискализацию (РРО)?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Проводите ли вы фискализацию (РРО)?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Каждый заказ фискализируется через РРО. Покупатель получает чек. Вы работаете в рамках украинского законодательства без собственного кассового аппарата.</p>
 </div>
 </div>
-
 </div>
 
 <!-- ИНТЕГРАЦИИ -->
-<div class="faq-category">
-<h2 class="category-title">Интеграции и технологии</h2>
+<div class="faq-block" id="integrations">
+<div class="faq-block__header">
+  <span class="faq-block__num">04</span>
+  <h2 class="faq-block__title">Интеграции и технологии</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">С какими платформами работаете?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>С какими платформами работаете?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Интегрируемся за <strong>2 часа</strong> с:</p>
 <ul>
 <li><strong>Маркетплейсы:</strong> Rozetka, Prom.ua, Kasta, OLX</li>
@@ -202,249 +248,208 @@ import Base from '../../layouts/Base.astro';
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Синхронизируются ли остатки на всех площадках сразу?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Синхронизируются ли остатки на всех площадках сразу?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Если вы продаёте на Rozetka и Prom.ua одновременно — остатки синхронизируются в реальном времени. Продали 1 единицу на Rozetka — на Prom.ua сразу показывается актуальный остаток. Перепродажи исключены.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Есть ли API и Webhooks для разработчиков?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Есть ли API и Webhooks для разработчиков?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. REST API с документацией, примерами кода (Python, PHP, JavaScript), Webhooks для уведомлений в реальном времени. Также совместимы с Zapier для no-code автоматизаций.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как часто формируются отчёты?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как часто формируются отчёты?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>В реальном времени в личном кабинете. Раз в месяц — детальный отчёт по запросу в Excel/CSV: все операции, стоимость услуг, остатки по SKU.</p>
 </div>
 </div>
-
 </div>
 
 <!-- ДОГОВОР -->
-<div class="faq-category">
-<h2 class="category-title">Договор и сотрудничество</h2>
+<div class="faq-block" id="contract">
+<div class="faq-block__header">
+  <span class="faq-block__num">05</span>
+  <h2 class="faq-block__title">Договор и сотрудничество</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Есть ли официальный договор и SLA?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Есть ли официальный договор и SLA?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Официальный договор с прописанным SLA: сроки сборки, точность комплектации, обработка возвратов. Материальная ответственность за товар на складе зафиксирована юридически. Все операции записываются в WMS и не подлежат оспариванию без доказательств.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Где находятся ваши склады?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Где находятся ваши склады?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Два склада в Киевской области:</p>
 <ul>
 <li><strong>Бориспоть</strong> (рядом с аэропортом) — основной склад</li>
-<li><strong>Белогородка</strong> (западное направление) — второй склад, 1 100 м²</li>
+<li><strong>Белогородка</strong> (западное направление) — второй склад, 1 100 м&sup2;</li>
 </ul>
-<p>Суммарная площадь — <strong>3 900 м²</strong>. Географическая диверсификация: при форс-мажоре на одной локации вторая продолжает работу.</p>
+<p>Суммарная площадь — <strong>3 900 м&sup2;</strong>. Географическая диверсификация: при форс-мажоре на одной локации вторая продолжает работу.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Можно ли расторгнуть договор в любой момент?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Можно ли расторгнуть договор в любой момент?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Договор расторгается по письменному обращению. Товар, оставшийся на складе, мы выдаём вам или упаковываем и отправляем на вашу новую локацию.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как решаются конфликтные ситуации?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как решаются конфликтные ситуации?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Через персонального менеджера. Если при сборке допущена ошибка — компенсируем стоимость товара. Все операции зафиксированы в WMS, разногласия решаются на основе данных системы, а не «кто сказал».</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Как оплачиваются услуги?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Как оплачиваются услуги?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Банковским переводом. В конце месяца выставляем счёт на ваше юрлицо или ФЛП. Детали оплаты прописаны в договоре при подписании.</p>
 </div>
 </div>
-
 </div>
 
 <!-- СТАРТ -->
-<div class="faq-category">
-<h2 class="category-title">Как начать работу</h2>
+<div class="faq-block" id="start">
+<div class="faq-block__header">
+  <span class="faq-block__num">06</span>
+  <h2 class="faq-block__title">Как начать работу</h2>
+</div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Можно ли начать с небольших объёмов?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Можно ли начать с небольших объёмов?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Минимального объёма нет. Работаем от 1 заказа в день. Минимальный платёж — 5 000 грн/мес. Если ваши фактические услуги меньше — платите минимум. По мере роста тариф на отправку автоматически снижается.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Можно ли протестировать перед подписанием договора?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Можно ли протестировать перед подписанием договора?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Да. Предлагаем <strong>бесплатный тест</strong>: обработайте 5–10 заказов через нас, убедитесь в качестве — и тогда подписывайте договор. Пишите нам: <strong>mtpgrouppromo@gmail.com</strong></p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Что нужно для интеграции с моим магазином?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Что нужно для интеграции с моим магазином?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Минимально: название компании, контакты, список SKU и то, как к вам поступают заказы (маркетплейс, CRM или вручную). Для автоматической синхронизации — доступ к вашей платформе (это одна кнопка в настройках большинства систем). Настраиваем за 2 часа.</p>
 </div>
 </div>
 
-<div class="faq-item">
-<button class="faq-question" onclick="toggleFaq(this)">Когда обновляются тарифы?</button>
-<div class="faq-answer">
+<div class="faq-card">
+<button class="faq-card__q"><span>Когда обновляются тарифы?</span><span class="faq-card__icon">+</span></button>
+<div class="faq-card__a">
 <p>Действующие тарифы зафиксированы на <strong>весь 2026 год</strong> (с 01.01.2026). При необходимости изменений — предупреждаем за 30 дней.</p>
 </div>
 </div>
-
 </div>
 
 </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-<div class="container">
-<h2>Не нашли ответ на свой вопрос?</h2>
-<p>Менеджеры отвечают в рабочее время. Обычно — в течение 15 минут.</p>
-<div class="cta-buttons">
-<button class="btn btn-primary" onclick="openContactForm()">Отправить запрос</button>
-<a href="tel:+380501444645" class="btn btn-secondary">Позвонить</a>
-</div>
-</div>
-</section>
 
 <style>
-.faq-section {
-  padding: 60px 0;
-  background: #fff;
-}
+/* ── HERO ── */
+.faq-hero{background:#0a0a0a;color:#fff;padding:100px 24px 80px;position:relative;overflow:hidden}
+.faq-hero::after{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(230,51,41,.15) 0%,transparent 70%);pointer-events:none}
+.faq-hero__inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.faq-hero__label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#e63329;margin-bottom:24px}
+.faq-hero__title{font-family:'FuturaPT',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;margin-bottom:24px;letter-spacing:-.02em}
+.faq-hero__sub{font-size:18px;color:rgba(255,255,255,.6);max-width:560px;line-height:1.6;margin-bottom:40px}
+.faq-hero__actions{display:flex;gap:16px;flex-wrap:wrap}
+.faq-hero__btn{display:inline-flex;align-items:center;padding:14px 32px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border-radius:4px;transition:all .3s}
+.faq-hero__btn--primary{background:#e63329;color:#fff}
+.faq-hero__btn--primary:hover{background:#cc2820;transform:translateY(-2px)}
+.faq-hero__btn--outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
+.faq-hero__btn--outline:hover{border-color:#fff;background:rgba(255,255,255,.05)}
 
-.faq-category {
-  margin-bottom: 50px;
-}
+/* ── STATS ── */
+.faq-stats{background:#f5f5f5;padding:48px 24px;border-bottom:1px solid rgba(0,0,0,.06)}
+.faq-stats__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.faq-stats__item{display:flex;flex-direction:column;gap:4px}
+.faq-stats__num{font-family:'FuturaPT',sans-serif;font-size:clamp(28px,3vw,42px);font-weight:700;color:#e63329;line-height:1}
+.faq-stats__label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888}
+@media(max-width:600px){.faq-stats__inner{grid-template-columns:repeat(2,1fr);gap:24px}}
 
-.category-title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #e63329;
-  padding-bottom: 15px;
-}
+/* ── NAV ── */
+.faq-nav{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:0;z-index:40;padding:0 24px}
+.faq-nav__inner{max-width:1100px;margin:0 auto;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.faq-nav__link{padding:18px 24px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#888;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
+.faq-nav__link:hover,.faq-nav__link--active{color:#000;border-bottom-color:#e63329}
 
-.faq-item {
-  margin-bottom: 20px;
-  border-left: 3px solid #e63329;
-  padding-left: 20px;
-}
+/* ── MAIN ── */
+.faq-main{background:#fff;padding:80px 24px}
+.faq-main__inner{max-width:900px;margin:0 auto}
 
-.faq-question {
-  background: none;
-  border: none;
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
-  cursor: pointer;
-  padding: 15px 0;
-  position: relative;
-  padding-right: 30px;
-}
+/* ── BLOCK ── */
+.faq-block{margin-bottom:72px}
+.faq-block__header{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,.08)}
+.faq-block__num{font-family:'FuturaPT',sans-serif;font-size:14px;font-weight:700;color:#e63329;letter-spacing:.1em}
+.faq-block__title{font-family:'FuturaPT',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#000}
 
-.faq-question::after {
-  content: '+';
-  position: absolute;
-  right: 0;
-  font-size: 24px;
-  color: #e63329;
-  transition: transform 0.3s;
-}
+/* ── CARD ── */
+.faq-card{border:1px solid rgba(0,0,0,.08);border-radius:6px;margin-bottom:8px;background:#fff;transition:box-shadow .3s}
+.faq-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.faq-card__q{display:flex;justify-content:space-between;align-items:center;width:100%;padding:20px 24px;font-size:16px;font-weight:500;color:#000;background:none;border:none;cursor:pointer;text-align:left;gap:16px;line-height:1.4}
+.faq-card__q span:first-child{flex:1}
+.faq-card__icon{font-size:24px;color:#e63329;font-weight:300;transition:transform .3s;flex-shrink:0;width:24px;text-align:center}
+.faq-card.active .faq-card__icon{transform:rotate(45deg)}
+.faq-card__q:hover{color:#e63329}
+.faq-card__a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 24px}
+.faq-card.active .faq-card__a{max-height:800px;padding:0 24px 24px}
+.faq-card__a p,.faq-card__a ul,.faq-card__a ol{font-size:15px;line-height:1.7;color:#555;margin-bottom:12px}
+.faq-card__a ul,.faq-card__a ol{padding-left:20px}
+.faq-card__a li{margin-bottom:6px}
+.faq-card__a strong{color:#222}
 
-.faq-question:hover { color: #e63329; }
 
-.faq-item.active .faq-question::after {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #444;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 600px;
-}
-
-.faq-answer p, .faq-answer ul, .faq-answer ol {
-  margin-bottom: 12px;
-}
-
-.faq-answer ul, .faq-answer ol {
-  padding-left: 20px;
-}
-
-.faq-answer li {
-  margin-bottom: 6px;
-}
-
-.hero { background: #000; color: #fff; padding: 80px 0; }
-.hero-line { width: 60px; height: 3px; background: #e63329; margin: 20px 0; }
-.hero h1 { font-size: clamp(28px,4vw,44px); font-weight: 700; margin-bottom: 16px; }
-.hero p { font-size: 18px; color: #ccc; margin-bottom: 32px; }
-.hero-form { display: flex; gap: 12px; max-width: 480px; }
-.hero-form input { flex: 1; padding: 14px 16px; border: none; border-radius: 8px; font-size: 15px; }
-.hero-form button { padding: 14px 24px; background: #e63329; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; }
-.hero-note { margin-top: 12px; font-size: 13px; color: #aaa; }
-@media (max-width: 600px) { .hero-form { flex-direction: column; } }
-
-.cta-section { background: #e63329; color: #fff; padding: 60px 0; text-align: center; }
-.cta-section h2 { font-size: 32px; margin-bottom: 12px; }
-.cta-section p { font-size: 16px; opacity: 0.9; margin-bottom: 32px; }
-.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; }
-.btn-primary { background: white; color: #e63329; border: none; }
-.btn-secondary { background: transparent; color: white; border: 2px solid white; }
-.btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
-
-@media (max-width: 768px) {
-  .category-title { font-size: 22px; }
-  .faq-question { font-size: 15px; }
-  .cta-buttons { flex-direction: column; align-items: center; }
-  .btn { width: 100%; max-width: 320px; text-align: center; }
+@media(max-width:768px){
+  .faq-hero{padding:80px 20px 60px}
+  .faq-hero__actions{flex-direction:column}
+  .faq-hero__btn{text-align:center;justify-content:center}
+  .faq-nav__link{padding:14px 16px;font-size:12px}
+  .faq-card__q{padding:16px 20px;font-size:15px}
+  .faq-card__a{padding:0 20px}
+  .faq-card.active .faq-card__a{padding:0 20px 20px}
 }
 </style>
 
-<script>
-function toggleFaq(element) {
-  const item = element.parentElement;
-  item.classList.toggle('active');
-}
-
-function openContactForm() {
-  const phone = prompt('Введите ваш номер телефона:');
-  if (phone) {
-    const form = document.getElementById('heroForm');
-    const input = form.querySelector('input[name="phone"]');
-    input.value = phone;
-    form.submit();
-  }
-}
-
+<script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
-  const firstQuestion = document.querySelector('.faq-question');
-  if (firstQuestion) firstQuestion.parentElement.classList.add('active');
+  // Accordion — event delegation
+  document.querySelectorAll('.faq-card__q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var card = this.closest('.faq-card');
+      var wasActive = card.classList.contains('active');
+      var block = card.closest('.faq-block');
+      block.querySelectorAll('.faq-card.active').forEach(function(c) { c.classList.remove('active'); });
+      if (!wasActive) card.classList.add('active');
+    });
+  });
+
+  // Sticky nav highlight
+  var links = document.querySelectorAll('.faq-nav__link');
+  var blocks = document.querySelectorAll('.faq-block');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('faq-nav__link--active'); });
+        var target = document.querySelector('.faq-nav__link[href="#' + e.target.id + '"]');
+        if (target) target.classList.add('faq-nav__link--active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -60% 0px' });
+  blocks.forEach(function(b) { obs.observe(b); });
 });
 </script>
 

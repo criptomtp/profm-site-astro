@@ -1,11 +1,26 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const partners = [
+  { href: 'https://rozetka.com.ua/',          src: '/images/logo-rozetka.webp',      alt: 'Rozetka' },
+  { href: 'https://prom.ua/',                 src: '/images/logo-prom.svg',      alt: 'Prom.ua' },
+  { href: 'https://kasta.ua/',                src: '/images/logo-kasta.webp',        alt: 'Kasta' },
+  { href: 'https://horoshop.ua/',             src: '/images/logo-horoshop-v2.jpg',     alt: 'Horoshop' },
+  { href: 'https://keycrm.app/',              src: '/images/logo-keycrm.webp',       alt: 'KeyCRM' },
+  { href: 'https://salesdrive.me/',           src: '/images/logo-salesdrive.webp',   alt: 'SalesDrive' },
+  { href: 'https://novaposhta.ua/',           src: '/images/logo-nova-poshta.svg',   alt: 'Nova Poshta' },
+  { href: 'https://rozetka.com.ua/delivery/', src: '/images/logo-rozetka.webp',      alt: 'Rozetka Delivery' },
+  { href: 'https://ukrposhta.ua/',            src: '/images/logo-ukrposhta.png',     alt: 'Ukrposhta' },
+  { href: 'https://meest.com/',               src: '/images/logo-meest.png',         alt: 'Meest' },
+  { href: 'https://checkbox.ua/',             src: '/images/logo-checkbox.png',      alt: 'Checkbox' },
+];
 ---
 <Base
   title="Fulfillment from $0.40 — MTP Group | 150+ clients, 10 years"
   description="Fulfillment services from 18 UAH/order. 3PL in Ukraine: receiving, storage, packing, shipping. 10 years, 150+ clients, blackout-proof warehouse."
   canonical="https://www.fulfillmentmtp.com.ua/en/"
   lang="en"
+  showCTA={false}
 >
 <Fragment slot="head">
 <link rel="preload" as="image" href="/images/mtp-fulfillment-warehouse-hero.webp" fetchpriority="high">
@@ -18,208 +33,545 @@ import Base from '../../layouts/Base.astro';
 </Fragment>
 
 <!-- HERO -->
-<section class="hero">
-<div class="hero-bg"><img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="MTP Group fulfillment warehouse — storage and shipping in Ukraine" width="1920" height="1080" fetchpriority="high"></div>
-<div class="hero-content">
-<div class="badge">3PL FULFILLMENT IN UKRAINE</div>
-<h1>3PL Fulfillment in Ukraine.<br>Storage, Packing &amp; Shipping.</h1>
-<p class="hero-sub">We receive, store, pack and ship your products across Ukraine. You focus on sales — we handle the rest.</p>
-<form class="hero-form" id="heroForm"><input type="tel" name="phone" aria-label="Phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel"><button type="submit">Get a quote &#8594;</button></form>
-<div class="hero-note">Free consultation &#183; We call back within 15 min</div>
-</div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">10&nbsp;years</div><div class="hero-stat-label">in business</div></div>
-<div class="hero-stat"><div class="hero-stat-val">150+</div><div class="hero-stat-label">active clients</div></div>
-<div class="hero-stat"><div class="hero-stat-val">60,000+</div><div class="hero-stat-label">shipments / mo</div></div>
-<div class="hero-stat"><div class="hero-stat-val">3,900&nbsp;m²</div><div class="hero-stat-label">two warehouses</div></div>
-</div>
-</div>
+<section class="en-hero" id="hero">
+  <div class="en-hero__bg"><img src="/images/mtp-fulfillment-warehouse-hero.webp" alt="MTP Group fulfillment warehouse — storage and shipping in Ukraine" width="1920" height="1080" fetchpriority="high"></div>
+  <div class="en-hero__grid">
+    <div class="en-hero__text">
+      <span class="en-label en-label--red">INDUSTRIAL LOGISTICS SOLUTIONS</span>
+      <h1 class="en-hero__h1">3PL Fulfillment<br>for Your E-commerce<br>in Ukraine</h1>
+      <p class="en-hero__sub">We process 60,000+ shipments per month with 99.9% accuracy. Your logistics under our control.</p>
+      <div class="en-hero__actions">
+        <form class="hero-form en-hero__form" id="heroForm">
+          <input type="tel" name="phone" aria-label="Phone" placeholder="+380XXXXXXXXX" maxlength="25" required autocomplete="tel">
+          <button type="submit">Get a quote &#8594;</button>
+        </form>
+      </div>
+      <div class="hero-note en-hero__note">Free consultation &middot; We call back within 15 min</div>
+    </div>
+    <div class="en-hero__img">
+      <img src="/images/mtp-warehouse-interior.webp" alt="MTP Group warehouse interior with organized shelving" width="800" height="600" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="en-stats">
+  <div class="en-stats__grid">
+    <div class="en-stats__item">
+      <span class="en-stats__num">60,000+</span>
+      <span class="en-stats__label">SHIPMENTS / MONTH</span>
+    </div>
+    <div class="en-stats__item">
+      <span class="en-stats__num">10+ YEARS</span>
+      <span class="en-stats__label">IN BUSINESS</span>
+    </div>
+    <div class="en-stats__item">
+      <span class="en-stats__num">30 SEC</span>
+      <span class="en-stats__label">ORDER ASSEMBLY</span>
+    </div>
+    <div class="en-stats__item">
+      <span class="en-stats__num">24/7</span>
+      <span class="en-stats__label">OPERATIONS</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="en-logos">
+  <div class="en-logos__inner">
+    <span class="en-label en-label--muted">INTEGRATIONS &amp; PARTNERS</span>
+    <div class="en-logos__marquee" aria-label="Integrations and partners">
+      <div class="en-logos__track">
+        {partners.map(p => (
+          <a href={p.href} target="_blank" rel="noopener" class="en-logos__item"><img src={p.src} alt={p.alt} width="120" height="40" loading="lazy" /></a>
+        ))}
+        {partners.map(p => (
+          <a href={p.href} target="_blank" rel="noopener" class="en-logos__item" aria-hidden="true" tabindex="-1"><img src={p.src} alt="" width="120" height="40" loading="lazy" /></a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BENTO -->
+<section class="en-svc">
+  <div class="en-svc__head">
+    <h2 class="en-svc__h2">Full-cycle fulfillment</h2>
+    <div class="en-svc__line"></div>
+  </div>
+  <div class="en-svc__bento">
+    <div class="en-svc__card en-svc__card--wide en-svc__card--light">
+      <div><span class="en-label en-label--red">STAGE 01</span><h3>Receiving &amp; Inbound</h3></div>
+      <p>Unloading, quality inspection, barcoding and placement into addressed warehouse locations. Same-day intake available.</p>
+    </div>
+    <div class="en-svc__card en-svc__card--dark">
+      <div><span class="en-label en-label--red">STAGE 02</span><h3>Storage (WMS)</h3></div>
+      <p>Cell-based storage with real-time WMS inventory tracking. Temperature-controlled zones for sensitive goods.</p>
+    </div>
+    <div class="en-svc__card en-svc__card--red">
+      <div><span class="en-label en-label--white">STAGE 03</span><h3>Order Assembly</h3></div>
+      <div class="en-svc__big-num">30 sec</div>
+    </div>
+    <div class="en-svc__card en-svc__card--span3 en-svc__card--gray">
+      <div class="en-svc__card-inner">
+        <div><span class="en-label en-label--red">STAGE 04</span><h3>Shipping via Nova Poshta</h3></div>
+        <div class="en-svc__features">
+          <span>&#9202; Same-day dispatch</span>
+          <span>&#128666; Priority logistics</span>
+        </div>
+      </div>
+      <img src="/images/mtp-warehouse-exterior.webp" alt="MTP warehouse exterior" width="400" height="280" loading="lazy" class="en-svc__bg-img">
+    </div>
+    <div class="en-svc__card en-svc__card--ctrl">
+      <span class="en-svc__icon">&#128202;</span>
+      <span>100% Inventory<br>Control</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS WE SOLVE -->
+<section class="en-prob">
+  <div class="en-prob__inner">
+    <h2 class="en-prob__h2">We solve your biggest pain points</h2>
+    <div class="en-prob__grid">
+      <div class="en-prob__card">
+        <div class="en-prob__stripe"></div>
+        <h3>Your own warehouse is expensive</h3>
+        <p>Rent, security, electricity, internet — we absorb these costs. You pay only for actual operations.</p>
+      </div>
+      <div class="en-prob__card">
+        <div class="en-prob__stripe"></div>
+        <h3>Packing errors</h3>
+        <p>Human error is minimized through our WMS system. Assembly accuracy: 99.9%.</p>
+      </div>
+      <div class="en-prob__card">
+        <div class="en-prob__stripe"></div>
+        <h3>Seasonal spikes</h3>
+        <p>We scale capacity for Black Friday and holiday rushes with zero shipping delays. Up to 6,000 orders per day.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- WHY UKRAINE -->
-<section class="why-ua"><div class="ctr">
-<div class="badge">WHY UKRAINE</div>
-<h2 class="sec-h2">Five reasons to fulfill from Ukraine</h2>
-<div class="why-grid">
-<div class="why-card"><div class="why-num">&#128176;</div><h3>Competitive pricing</h3><p>Storage, labor and shipping costs are up to 3x lower than in the EU — without sacrificing quality or speed. Warehousing starts at 650 UAH/m&sup3; per month.</p></div>
-<div class="why-card"><div class="why-num">&#9992;&#65039;</div><h3>Airport proximity</h3><p>Our main warehouse is located minutes from Boryspil International Airport (KBP), enabling fast inbound logistics for air-freighted inventory.</p></div>
-<div class="why-card"><div class="why-num">&#9889;</div><h3>Blackout-proof operations</h3><p>3 industrial generators, dual fiber-optic internet, and Starlink ensure uninterrupted fulfillment. Zero downtime since February 2022.</p></div>
-<div class="why-card"><div class="why-num">&#127942;</div><h3>10 years of experience</h3><p>Established in 2014, we have processed millions of orders. Our warehouse team handles peak seasons and flash sales without breaking a sweat.</p></div>
-<div class="why-card"><div class="why-num">&#128666;</div><h3>Top-50 Nova Poshta client</h3><p>Preferred partner status with Ukraine's largest carrier means priority pickup slots, discounted rates, and faster last-mile delivery nationwide.</p></div>
-</div>
-</div></section>
-
-<!-- SERVICES -->
-<section class="services"><div class="ctr">
-<div class="badge badge-dark">SERVICES</div>
-<h2 class="sec-h2">Full-cycle 3PL fulfillment</h2>
-<div class="svc-grid">
-<div class="svc-cell"><div class="svc-num">01</div><h3>Receiving &amp; Inbound</h3><p>Unloading, quality inspection, barcoding and placement into addressed warehouse locations. Same-day intake available.</p></div>
-<div class="svc-cell"><div class="svc-num">02</div><h3>Storage (WMS)</h3><p>Cell-based storage with real-time WMS inventory tracking. Temperature-controlled zones for sensitive goods.</p></div>
-<div class="svc-cell"><div class="svc-num">03</div><h3>Packing &amp; Shipping</h3><p>We pick, pack and dispatch 4 times daily via Nova Poshta, Ukrposhta, and Meest. Order assembled in 30 seconds.</p></div>
-<div class="svc-cell"><div class="svc-num">04</div><h3>Returns handling</h3><p>We receive returned parcels from carriers, inspect condition per your guidelines, and restock sellable items automatically.</p></div>
-<div class="svc-cell"><div class="svc-num">05</div><h3>Auto-callback (+15% buyout)</h3><p>Automated call system contacts each buyer after order placement, confirming details and boosting buyout rate by 10-15%.</p></div>
-<div class="svc-cell"><div class="svc-num">06</div><h3>Personal dashboard (24/7)</h3><p>Real-time analytics: inventory levels, shipment statuses, returns and financials. Accessible from any device around the clock.</p></div>
-</div>
-</div></section>
+<section class="en-why">
+  <div class="en-why__inner">
+    <span class="en-label en-label--white-dim">WHY UKRAINE</span>
+    <h2 class="en-why__h2">Five reasons to fulfill from Ukraine</h2>
+    <div class="en-why__grid">
+      <div class="en-why__card">
+        <h3>Competitive pricing</h3>
+        <p>Storage, labor and shipping costs are up to 3x lower than in the EU — without sacrificing quality or speed. Warehousing starts at 650&nbsp;UAH/m&sup3; per month.</p>
+      </div>
+      <div class="en-why__card">
+        <h3>Airport proximity</h3>
+        <p>Our main warehouse is located minutes from Boryspil International Airport (KBP), enabling fast inbound logistics for air-freighted inventory.</p>
+      </div>
+      <div class="en-why__card">
+        <h3>Blackout-proof operations</h3>
+        <p>3 industrial generators, dual fiber-optic internet, and Starlink ensure uninterrupted fulfillment. Zero downtime since February 2022.</p>
+      </div>
+      <div class="en-why__card">
+        <h3>10 years of experience</h3>
+        <p>Established in 2014, we have processed millions of orders. Our warehouse team handles peak seasons and flash sales without breaking a sweat.</p>
+      </div>
+      <div class="en-why__card">
+        <h3>Top Nova Poshta partner</h3>
+        <p>Preferred partner status with Ukraine's largest carrier means priority pickup slots, discounted rates, and faster last-mile delivery nationwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
-<section class="steps"><div class="ctr">
-<div class="badge badge-dark">PROCESS</div>
-<h2 class="sec-h2">Get started in 4 simple steps</h2>
-<div class="steps-row">
-<div class="step"><div class="step-num">01</div><h3>Submit an inquiry</h3><p>Tell us about your products and volumes. We prepare a tailored quote and sign the contract — often the same day.</p></div>
-<div class="step"><div class="step-num">02</div><h3>Send your goods</h3><p>Ship inventory to our Kyiv-region warehouse. We receive, inspect, barcode, and shelve everything upon arrival.</p></div>
-<div class="step"><div class="step-num">03</div><h3>Orders flow in</h3><p>Your CRM or marketplace sends orders directly to our WMS. We pick, pack, and hand off to the carrier within hours.</p></div>
-<div class="step"><div class="step-num">04</div><h3>You scale</h3><p>Focus on marketing and sales while we handle all warehouse operations — from 10 orders a day to 6,000.</p></div>
-</div>
-</div></section>
+<section class="en-steps">
+  <div class="en-steps__inner">
+    <h2 class="en-steps__h2">Get started in 4 simple steps</h2>
+    <div class="en-steps__grid">
+      <div class="en-steps__item">
+        <div class="en-steps__num en-steps__num--red">01</div>
+        <h4>Submit an inquiry</h4>
+        <p>Tell us about your products and volumes. We prepare a tailored quote and sign the contract — often the same day.</p>
+      </div>
+      <div class="en-steps__item">
+        <div class="en-steps__num">02</div>
+        <h4>Send your goods</h4>
+        <p>Ship inventory to our Kyiv-region warehouse. We receive, inspect, barcode, and shelve everything upon arrival.</p>
+      </div>
+      <div class="en-steps__item">
+        <div class="en-steps__num">03</div>
+        <h4>Orders flow in</h4>
+        <p>Your CRM or marketplace sends orders directly to our WMS. We pick, pack, and hand off to the carrier within hours.</p>
+      </div>
+      <div class="en-steps__item">
+        <div class="en-steps__num">04</div>
+        <h4>You scale</h4>
+        <p>Focus on marketing and sales while we handle all warehouse operations — from 10 orders a day to 6,000.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PREVIEW -->
+<section class="en-price">
+  <div class="en-price__inner">
+    <h2 class="en-price__h2">Transparent pricing</h2>
+    <div class="en-price__grid">
+      <div class="en-price__card">
+        <span class="en-label en-label--red">STORAGE</span>
+        <h3>Warehousing</h3>
+        <div class="en-price__val"><span class="en-price__big">650</span> UAH/m&sup3;</div>
+        <ul>
+          <li>Addressed cell storage</li>
+          <li>WMS inventory tracking</li>
+          <li>Real-time dashboard</li>
+        </ul>
+        <a href="/en/prices/" class="en-price__link">View full pricing &rarr;</a>
+      </div>
+      <div class="en-price__card en-price__card--featured">
+        <span class="en-label en-label--red">OPERATIONS</span>
+        <h3>Shipping</h3>
+        <div class="en-price__val"><span class="en-price__from">from</span> <span class="en-price__big">18</span> UAH</div>
+        <ul>
+          <li>Order assembly (30 sec)</li>
+          <li>Packing &amp; labeling</li>
+          <li>Same-day dispatch</li>
+        </ul>
+        <a href="/en/calculator/" class="en-price__link">Calculate your cost &rarr;</a>
+      </div>
+      <div class="en-price__card">
+        <span class="en-label en-label--red">ACCESS</span>
+        <h3>Minimum fee</h3>
+        <div class="en-price__val"><span class="en-price__big en-price__big--red">5,000</span> UAH/mo</div>
+        <ul>
+          <li>Monthly subscription</li>
+          <li>24/7 support included</li>
+          <li>Personal manager</li>
+        </ul>
+        <a href="/en/prices/" class="en-price__link">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
-<section class="testi"><div class="ctr">
-<div class="badge">CLIENTS</div>
-<h2 class="sec-h2" style="text-align:left">What our clients say</h2>
-<div class="testi-slider">
-<div class="testi-track" id="testiTrack"></div>
-<div class="testi-nav"><button class="testi-arrow" id="tPrev">&#8592;</button><div class="testi-dots" id="testiDots"></div><button class="testi-arrow" id="tNext">&#8594;</button></div>
-</div>
-</div></section>
+<section class="en-testi">
+  <div class="en-testi__inner">
+    <span class="en-label en-label--white-dim">CLIENTS</span>
+    <h2 class="en-testi__h2">What our clients say</h2>
+    <div class="en-testi__slider">
+      <div class="en-testi__track" id="testiTrack"></div>
+      <div class="en-testi__nav">
+        <button class="en-testi__arrow" id="tPrev">&#8592;</button>
+        <div class="en-testi__dots" id="testiDots"></div>
+        <button class="en-testi__arrow" id="tNext">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
-<section class="faq"><div class="ctr">
-<div class="badge badge-dark">FAQ</div>
-<h2 class="sec-h2">Frequently asked questions</h2>
-<div class="faq-item"><div class="faq-q">Can international companies use MTP Group fulfillment?<span>+</span></div><div class="faq-a">Absolutely. We work with businesses registered outside Ukraine. You ship inventory to our warehouse near Boryspil airport (Shchaslive village), and we handle all domestic fulfillment across Ukraine via Nova Poshta, Ukrposhta, and Meest. No local legal entity required on your side.</div></div>
-<div class="faq-item"><div class="faq-q">What languages does your team speak?<span>+</span></div><div class="faq-a">Our account managers communicate fluently in Ukrainian, Russian, and English. All dashboard interfaces, inventory reports, and shipping notifications are available in English so you always have full visibility.</div></div>
-<div class="faq-item"><div class="faq-q">How do you handle power outages?<span>+</span></div><div class="faq-a">Our warehouse is equipped with 3 industrial-grade diesel generators, 2 fiber-optic internet providers, and Starlink satellite backup. Since February 2022 we have maintained zero downtime — even during the most severe nationwide blackouts.</div></div>
-<div class="faq-item"><div class="faq-q">Which platforms and CRMs do you integrate with?<span>+</span></div><div class="faq-a">We integrate via API with Shopify, WooCommerce, OpenCart, Horoshop, Prom.ua, Rozetka, KeyCRM, SalesDrive and more. Custom integrations can be set up within 1-3 business days. If you use a platform we haven't listed — just ask.</div></div>
-<div class="faq-item"><div class="faq-q">How fast can we get started?<span>+</span></div><div class="faq-a">From first call to first shipment in as little as 1 business day. We sign the contract, receive your goods, barcode and shelve them, and start dispatching orders immediately. Most clients are fully operational within 24-48 hours.</div></div>
-</div></section>
+<section class="en-faq">
+  <div class="en-faq__inner">
+    <h2 class="en-faq__h2">Frequently asked questions</h2>
+    <div class="en-faq__list" id="faqList">
+      <div class="en-faq__item"><button class="en-faq__q" type="button">Can international companies use MTP Group fulfillment?<span class="en-faq__icon">+</span></button><div class="en-faq__a"><p>Absolutely. We work with businesses registered outside Ukraine. You ship inventory to our warehouse near Boryspil airport (Shchaslive village), and we handle all domestic fulfillment across Ukraine via Nova Poshta, Ukrposhta, and Meest. No local legal entity required on your side.</p></div></div>
+      <div class="en-faq__item"><button class="en-faq__q" type="button">What languages does your team speak?<span class="en-faq__icon">+</span></button><div class="en-faq__a"><p>Our account managers communicate fluently in Ukrainian, Russian, and English. All dashboard interfaces, inventory reports, and shipping notifications are available in English so you always have full visibility.</p></div></div>
+      <div class="en-faq__item"><button class="en-faq__q" type="button">How do you handle power outages?<span class="en-faq__icon">+</span></button><div class="en-faq__a"><p>Our warehouse is equipped with 3 industrial-grade diesel generators, 2 fiber-optic internet providers, and Starlink satellite backup. Since February 2022 we have maintained zero downtime — even during the most severe nationwide blackouts.</p></div></div>
+      <div class="en-faq__item"><button class="en-faq__q" type="button">Which platforms and CRMs do you integrate with?<span class="en-faq__icon">+</span></button><div class="en-faq__a"><p>We integrate via API with Shopify, WooCommerce, OpenCart, Horoshop, Prom.ua, Rozetka, KeyCRM, SalesDrive and more. Custom integrations can be set up within 1-3 business days. If you use a platform we haven't listed — just ask.</p></div></div>
+      <div class="en-faq__item"><button class="en-faq__q" type="button">How fast can we get started?<span class="en-faq__icon">+</span></button><div class="en-faq__a"><p>From first call to first shipment in as little as 1 business day. We sign the contract, receive your goods, barcode and shelve them, and start dispatching orders immediately. Most clients are fully operational within 24-48 hours.</p></div></div>
+    </div>
+    <a href="/en/faq/" class="en-faq__more">View all FAQ &rarr;</a>
+  </div>
+</section>
 
 <!-- SEO ARTICLE -->
-<section class="seo-article"><div class="ctr">
-<h2>Fulfillment Services in Ukraine: Complete Guide for International E-commerce Brands</h2>
+<section class="en-seo">
+  <div class="en-seo__inner">
+    <h2>Fulfillment Services in Ukraine: Complete Guide for International E-commerce Brands</h2>
 
-<h3>Why brands are choosing Ukraine for 3PL fulfillment</h3>
-<p>Over the past several years, Ukraine has emerged as an increasingly attractive location for third-party logistics. The combination of a highly skilled workforce, competitive labor costs, and strategic geographic positioning between the EU and Central Asia makes it a compelling option for e-commerce brands looking to serve the Ukrainian domestic market or establish a low-cost fulfillment hub for the broader Eastern European region. Warehousing rates in Ukraine typically run at a fraction of what companies pay in Poland, Germany, or the Baltics, yet the quality of service continues to improve as Ukrainian logistics providers invest heavily in technology and infrastructure.</p>
+    <h3>Why brands are choosing Ukraine for 3PL fulfillment</h3>
+    <p>Over the past several years, Ukraine has emerged as an increasingly attractive location for third-party logistics. The combination of a highly skilled workforce, competitive labor costs, and strategic geographic positioning between the EU and Central Asia makes it a compelling option for e-commerce brands looking to serve the Ukrainian domestic market or establish a low-cost fulfillment hub for the broader Eastern European region. Warehousing rates in Ukraine typically run at a fraction of what companies pay in Poland, Germany, or the Baltics, yet the quality of service continues to improve as Ukrainian logistics providers invest heavily in technology and infrastructure.</p>
 
-<h3>What does a 3PL fulfillment provider actually do?</h3>
-<p>A 3PL (third-party logistics) fulfillment company handles the entire physical supply chain on behalf of an online retailer. This includes receiving inbound inventory shipments, storing goods in a warehouse management system (WMS), picking and packing individual customer orders, labeling parcels with carrier barcodes, dispatching them through last-mile delivery networks, processing returns, and providing real-time reporting dashboards. The goal is to free the brand owner from all operational warehouse tasks so they can invest their time and capital into product development, marketing, and customer acquisition instead of managing shelves and shipping labels.</p>
+    <h3>What does a 3PL fulfillment provider actually do?</h3>
+    <p>A 3PL (third-party logistics) fulfillment company handles the entire physical supply chain on behalf of an online retailer. This includes receiving inbound inventory shipments, storing goods in a warehouse management system (WMS), picking and packing individual customer orders, labeling parcels with carrier barcodes, dispatching them through last-mile delivery networks, processing returns, and providing real-time reporting dashboards. The goal is to free the brand owner from all operational warehouse tasks so they can invest their time and capital into product development, marketing, and customer acquisition instead of managing shelves and shipping labels.</p>
 
-<h3>Key advantages of fulfillment near Boryspil Airport</h3>
-<p>Location matters enormously in logistics. A warehouse near Boryspil International Airport — Ukraine's busiest air cargo hub — gives brands a meaningful advantage when it comes to inbound goods arriving by air. Pallets can move from the tarmac to the warehouse floor within hours rather than days. This proximity also means faster turnaround when restocking inventory from overseas suppliers, reducing the time products sit in transit and improving overall cash-flow cycles. For e-commerce brands selling seasonal or trend-driven products, this speed-to-shelf can be the difference between capitalizing on a sales spike and missing the window entirely.</p>
+    <h3>Key advantages of fulfillment near Boryspil Airport</h3>
+    <p>Location matters enormously in logistics. A warehouse near Boryspil International Airport — Ukraine's busiest air cargo hub — gives brands a meaningful advantage when it comes to inbound goods arriving by air. Pallets can move from the tarmac to the warehouse floor within hours rather than days. This proximity also means faster turnaround when restocking inventory from overseas suppliers, reducing the time products sit in transit and improving overall cash-flow cycles. For e-commerce brands selling seasonal or trend-driven products, this speed-to-shelf can be the difference between capitalizing on a sales spike and missing the window entirely.</p>
 
-<h3>Blackout resilience: an underrated differentiator</h3>
-<p>Since early 2022, Ukraine's energy grid has faced unprecedented challenges, including targeted infrastructure attacks that caused rolling blackouts across the country. For any fulfillment center, uninterrupted power is non-negotiable — without it, warehouse management systems go offline, barcode scanners stop working, and carriers cannot collect parcels on schedule. MTP Group addressed this early and aggressively by installing three industrial diesel generators with automatic switchover, maintaining contracts with two independent fiber-optic internet providers, and deploying Starlink satellite terminals as a tertiary fallback. The result has been zero operational downtime since the start of the full-scale invasion — a claim very few fulfillment operators in Ukraine can credibly make.</p>
+    <h3>Blackout resilience: an underrated differentiator</h3>
+    <p>Since early 2022, Ukraine's energy grid has faced unprecedented challenges, including targeted infrastructure attacks that caused rolling blackouts across the country. For any fulfillment center, uninterrupted power is non-negotiable — without it, warehouse management systems go offline, barcode scanners stop working, and carriers cannot collect parcels on schedule. MTP Group addressed this early and aggressively by installing three industrial diesel generators with automatic switchover, maintaining contracts with two independent fiber-optic internet providers, and deploying Starlink satellite terminals as a tertiary fallback. The result has been zero operational downtime since the start of the full-scale invasion — a claim very few fulfillment operators in Ukraine can credibly make.</p>
 
-<h3>Cost comparison: Ukraine vs. EU fulfillment</h3>
-<p>For an average e-commerce business shipping 2,000 orders per month, moving fulfillment operations from a Western European warehouse to a Ukrainian 3PL can reduce total logistics costs by 40-60 percent. Storage alone starts at roughly 650 UAH per cubic meter per month (approximately 15 EUR), compared to 45-70 EUR in Poland or Germany. Labor costs for picking, packing, and quality control are proportionally lower as well. Meanwhile, domestic shipping via Nova Poshta starts from just 18 UAH per parcel, and Ukrposhta offers even cheaper options for lighter items. These savings compound rapidly as order volumes grow, making Ukraine an especially smart choice for brands in the scaling phase.</p>
+    <h3>Cost comparison: Ukraine vs. EU fulfillment</h3>
+    <p>For an average e-commerce business shipping 2,000 orders per month, moving fulfillment operations from a Western European warehouse to a Ukrainian 3PL can reduce total logistics costs by 40-60 percent. Storage alone starts at roughly 650 UAH per cubic meter per month (approximately 15 EUR), compared to 45-70 EUR in Poland or Germany. Labor costs for picking, packing, and quality control are proportionally lower as well. Meanwhile, domestic shipping via Nova Poshta starts from just 18 UAH per parcel, and Ukrposhta offers even cheaper options for lighter items. These savings compound rapidly as order volumes grow, making Ukraine an especially smart choice for brands in the scaling phase.</p>
 
-<h3>How to choose the right fulfillment partner</h3>
-<p>Not all 3PL providers are equal. When evaluating a fulfillment company in Ukraine, look for several critical factors: years of operating history (avoid startups with less than two years of track record), backup power infrastructure, WMS technology with real-time inventory visibility, established carrier relationships (top-tier Nova Poshta partner status is a strong signal), multilingual support for international clients, and transparent pricing with no hidden fees. Request a warehouse tour — either in person or via video call — and ask specifically about their contingency plans for power outages, peak season surges, and carrier delays. A mature operator will have documented answers for each scenario.</p>
+    <h3>How to choose the right fulfillment partner</h3>
+    <p>Not all 3PL providers are equal. When evaluating a fulfillment company in Ukraine, look for several critical factors: years of operating history (avoid startups with less than two years of track record), backup power infrastructure, WMS technology with real-time inventory visibility, established carrier relationships (top-tier Nova Poshta partner status is a strong signal), multilingual support for international clients, and transparent pricing with no hidden fees. Request a warehouse tour — either in person or via video call — and ask specifically about their contingency plans for power outages, peak season surges, and carrier delays. A mature operator will have documented answers for each scenario.</p>
 
-<h3>Getting started: what to expect in your first week</h3>
-<p>Onboarding with a professional fulfillment partner is faster than most brands expect. Typically, the process begins with a consultation call where you describe your product range, average order volume, and any special handling requirements. Within one business day, the provider prepares a contract and pricing proposal. Once signed, you ship your inventory to the warehouse — either from a domestic supplier or via international freight. Upon arrival, goods are inspected, barcoded if needed, and entered into the WMS. API integration with your online store or CRM is configured in parallel. Most brands go from initial inquiry to live order fulfillment within 48 hours. From that point forward, every new customer order flows automatically from your sales channel to the warehouse, where it is picked, packed, and dispatched without any manual intervention on your part.</p>
-</div></section>
+    <h3>Getting started: what to expect in your first week</h3>
+    <p>Onboarding with a professional fulfillment partner is faster than most brands expect. Typically, the process begins with a consultation call where you describe your product range, average order volume, and any special handling requirements. Within one business day, the provider prepares a contract and pricing proposal. Once signed, you ship your inventory to the warehouse — either from a domestic supplier or via international freight. Upon arrival, goods are inspected, barcoded if needed, and entered into the WMS. API integration with your online store or CRM is configured in parallel. Most brands go from initial inquiry to live order fulfillment within 48 hours. From that point forward, every new customer order flows automatically from your sales channel to the warehouse, where it is picked, packed, and dispatched without any manual intervention on your part.</p>
+  </div>
+</section>
+
+<!-- DARK CTA -->
+<section class="en-cta">
+  <div class="en-cta__dots"></div>
+  <div class="en-cta__content">
+    <h2>Ready to automate your logistics?</h2>
+    <p>Get a free test — we'll process your first 5-10 orders absolutely free!</p>
+    <div class="en-cta__btns">
+      <a href="#hero" class="en-cta__btn en-cta__btn--primary">Get started</a>
+      <a href="tel:+380501444645" class="en-cta__btn en-cta__btn--outline">+38 (050) 144-46-45</a>
+    </div>
+  </div>
+</section>
 
 </Base>
 
 <style is:global>
-.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
-.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+/* ====== EN HOMEPAGE — STITCH INDUSTRIAL REDESIGN ====== */
 
-.hero{position:relative;min-height:100vh;background:var(--black,#000);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:120px 0 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;opacity:.2}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
-.hero h1{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(42px,6vw,76px);font-weight:400;line-height:.95;margin-bottom:28px;width:100%}
-.hero-sub{font-size:clamp(16px,1.8vw,20px);color:rgba(255,255,255,.6);line-height:1.7;max-width:540px;margin-bottom:48px}
-.hero-form{display:flex;gap:12px;max-width:480px}
-.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb,'DM Sans',sans-serif);outline:none;transition:border-color .3s}
-.hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
-.hero-form button{padding:16px 28px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb,'DM Sans',sans-serif);white-space:nowrap;transition:all .3s}
-.hero-form button:hover{background:#c42b22}
-.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:16px}
-.hero-stats{position:relative;z-index:2;display:flex;flex-wrap:nowrap;gap:40px;padding:60px 8vw;margin-top:auto;border-top:1px solid rgba(255,255,255,.08)}
-.hero-stat{white-space:nowrap}.hero-stat-val{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,4vw,48px);font-weight:300;color:#fff;white-space:nowrap}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:8px}
+/* Labels */
+.en-label{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-family:var(--fb,'DM Sans',sans-serif)}
+.en-label--red{color:#e63329}
+.en-label--white{color:#fff}
+.en-label--white-dim{color:rgba(255,255,255,.5)}
+.en-label--muted{color:#999}
 
-.why-ua{padding:120px 0;background:#0a0a0a;color:#fff}
-.sec-h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:64px}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
-.why-card{background:#0a0a0a;padding:40px}
-.why-num{font-size:32px;margin-bottom:16px}
-.why-card h3{font-family:var(--fd,'DM Serif Display',serif);font-size:20px;font-weight:400;color:rgba(255,255,255,.9);line-height:1.3;margin-bottom:12px}
-.why-card p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.55)}
+/* ---- HERO ---- */
+.en-hero{position:relative;background:#f9f9f9;overflow:hidden;padding:100px 0 0;scroll-margin-top:64px}
+.en-hero__bg{position:absolute;inset:0;opacity:.03}
+.en-hero__bg img{width:100%;height:100%;object-fit:cover}
+.en-hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1400px;margin:0 auto;padding:0 48px}
+.en-hero__text{padding:40px 0 80px}
+.en-hero__h1{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.05;letter-spacing:-.03em;text-transform:uppercase;color:#000;margin:12px 0 24px}
+.en-hero__sub{font-size:clamp(16px,1.5vw,20px);color:#646464;line-height:1.6;max-width:520px;margin-bottom:32px}
+.en-hero__actions{display:flex;flex-direction:column;gap:12px;max-width:480px}
+.en-hero__form{display:flex;gap:8px}
+.en-hero__form input{flex:1;padding:16px 20px;border:1px solid rgba(0,0,0,.15);border-radius:4px;background:#fff;color:#000;font-size:15px;font-family:var(--fb,'DM Sans',sans-serif);outline:none;transition:border-color .3s}
+.en-hero__form input::placeholder{color:#999}
+.en-hero__form input:focus{border-color:#e63329}
+.en-hero__form button{padding:16px 28px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb,'DM Sans',sans-serif);white-space:nowrap;transition:background .3s}
+.en-hero__form button:hover{background:#c42b22}
+.en-hero__note{font-size:13px;color:#999;margin-top:12px}
+.en-hero__img{position:relative;overflow:hidden}
+.en-hero__img img{width:100%;height:100%;min-height:500px;object-fit:cover;filter:grayscale(60%) brightness(.8);transition:filter .6s,transform .6s}
+.en-hero__img:hover img{filter:grayscale(0) brightness(1);transform:scale(1.03)}
+/* Telegram link injected by Base.astro */
+.en-hero .hero-tg{margin-top:8px}
+.en-hero .hero-guar{font-size:12px;color:#999;margin-top:14px}
 
-.services{padding:120px 0}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #e0e0e0;border-left:1px solid #e0e0e0}
-.svc-cell{padding:40px 32px;border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;transition:background .3s}.svc-cell:hover{background:var(--gray,#f5f5f5)}
-.svc-num{font-size:12px;color:var(--red,#e63329);font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.svc-cell h3{font-size:18px;font-weight:500;margin-bottom:8px}.svc-cell p{font-size:14px;color:var(--muted,#666);line-height:1.6}
+/* ---- STATS ---- */
+.en-stats{background:#f3f3f3;padding:48px 0}
+.en-stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1400px;margin:0 auto;padding:0 48px}
+.en-stats__item{text-align:center}
+.en-stats__num{display:block;font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,3.5vw,48px);font-weight:900;color:#e63329;letter-spacing:-.02em;line-height:1}
+.en-stats__label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#646464;margin-top:8px}
 
-.steps{padding:120px 0}
-.steps-row{display:flex;gap:0;position:relative;border-top:1px solid #e0e0e0;margin-top:64px}
-.step{flex:1;padding:40px 32px 0;border-right:1px solid #e0e0e0}.step:last-child{border-right:none}
-.step-num{font-family:var(--fd,'DM Serif Display',serif);font-size:48px;color:var(--red,#e63329);margin-bottom:16px}
-.step h3{font-size:17px;font-weight:500;margin-bottom:8px}.step p{font-size:14px;color:var(--muted,#666);line-height:1.6}
+/* ---- INTEGRATIONS LOGOS (MARQUEE) ---- */
+.en-logos{padding:56px 0;background:#f9f9f9;border-top:1px solid rgba(0,0,0,.04);border-bottom:1px solid rgba(0,0,0,.04);overflow:hidden}
+.en-logos__inner{max-width:1400px;margin:0 auto;padding:0 48px;text-align:center}
+.en-logos__inner .en-label{margin-bottom:24px}
+.en-logos__marquee{position:relative;overflow:hidden;margin:0 -48px;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 80px,#000 calc(100% - 80px),transparent 100%)}
+.en-logos__track{display:flex;align-items:center;gap:40px;width:max-content;animation:en-logos-scroll 60s linear infinite;will-change:transform}
+.en-logos__marquee:hover .en-logos__track{animation-play-state:paused}
+.en-logos__item{padding:12px 20px;background:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:transform .2s;flex:0 0 auto}
+.en-logos__item:hover{transform:scale(1.05)}
+.en-logos__item img{height:32px;width:auto;object-fit:contain;filter:grayscale(40%);opacity:.7;transition:filter .3s,opacity .3s}
+.en-logos__item:hover img{filter:grayscale(0);opacity:1}
+@keyframes en-logos-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - 20px),0,0)}}
+@media (prefers-reduced-motion:reduce){.en-logos__track{animation:none}}
 
-.testi{padding:120px 0;background:#000;color:#fff;overflow:hidden}
-.testi .badge,.testi .sec-h2{text-align:left}
-.testi-slider{position:relative;max-width:800px;margin:0 auto}
-.testi-track{display:flex;transition:transform .5s ease}.testi-slide{min-width:100%;padding:0 24px;text-align:center}
-.testi-quote{font-family:var(--fd,'DM Serif Display',serif);font-style:italic;font-size:clamp(20px,2.5vw,28px);font-weight:400;line-height:1.5;margin-bottom:24px;color:rgba(255,255,255,.9)}
-.testi-author{font-size:14px;color:rgba(255,255,255,.4)}.testi-company{font-size:12px;color:rgba(255,255,255,.25);margin-top:4px}
-.testi-stars{color:var(--red,#e63329);letter-spacing:4px;margin-bottom:16px}
-.testi-nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:48px}
-.testi-arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:none;color:#fff;font-size:18px;cursor:pointer;transition:border-color .3s;display:flex;align-items:center;justify-content:center}.testi-arrow:hover{border-color:rgba(255,255,255,.4)}
-.testi-dots{display:flex;gap:6px}.testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);cursor:pointer;transition:background .3s}.testi-dot.active{background:var(--red,#e63329)}
+/* ---- SERVICES BENTO ---- */
+.en-svc{padding:96px 0;max-width:1400px;margin:0 auto;padding-left:48px;padding-right:48px}
+.en-svc__head{display:flex;align-items:baseline;gap:16px;margin-bottom:48px}
+.en-svc__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,4vw,48px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.1}
+.en-svc__line{height:3px;flex-grow:1;max-width:100px;background:#e63329}
+.en-svc__bento{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;grid-auto-rows:280px}
+.en-svc__card{padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.en-svc__card h3{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(18px,2vw,24px);font-weight:900;text-transform:uppercase;margin-top:8px}
+.en-svc__card p{font-size:14px;line-height:1.6;max-width:320px}
+.en-svc__card--wide{grid-column:span 2}
+.en-svc__card--span3{grid-column:span 3}
+.en-svc__card--light{background:#fff;color:#000}
+.en-svc__card--light p{color:#646464}
+.en-svc__card--dark{background:#1c1b1b;color:#fff}
+.en-svc__card--dark p{color:rgba(255,255,255,.6)}
+.en-svc__card--red{background:#e63329;color:#fff}
+.en-svc__card--red p{color:rgba(255,255,255,.8)}
+.en-svc__card--gray{background:#eae7e7;color:#000}
+.en-svc__card--gray p{color:#646464}
+.en-svc__card--ctrl{background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;text-transform:uppercase;font-size:14px;letter-spacing:.05em;border:1px solid rgba(0,0,0,.06)}
+.en-svc__icon{font-size:48px;margin-bottom:12px}
+.en-svc__big-num{font-size:clamp(40px,5vw,64px);font-weight:900;line-height:1;margin-top:auto}
+.en-svc__card-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.en-svc__features{display:flex;gap:32px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.en-svc__bg-img{position:absolute;top:0;right:0;height:100%;width:50%;object-fit:cover;opacity:.15;filter:grayscale(100%);transition:opacity .5s,filter .5s}
+.en-svc__card--gray:hover .en-svc__bg-img{opacity:1;filter:grayscale(0)}
 
-.faq{padding:120px 0;background:var(--gray,#f5f5f5)}
-.faq-item{border-bottom:1px solid #ddd;padding:28px 0;cursor:pointer}
-.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:500;color:var(--black,#000);background:none;border:none;width:100%;cursor:pointer;font-family:inherit;text-align:left}
-.faq-q span{font-size:22px;transition:transform .3s;color:var(--red,#e63329);flex-shrink:0;margin-left:16px}.faq-item.open .faq-q span{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:15px;color:var(--muted,#666);line-height:1.7}
-.faq-item.open .faq-a{padding-top:16px}
+/* ---- PROBLEMS ---- */
+.en-prob{padding:96px 0;background:#f3f3f3}
+.en-prob__inner{max-width:1400px;margin:0 auto;padding:0 48px}
+.en-prob__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(24px,3vw,36px);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:64px;letter-spacing:-.01em}
+.en-prob__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.en-prob__card{background:#fff;padding:40px;position:relative}
+.en-prob__stripe{position:absolute;top:0;left:0;width:4px;height:100%;background:#e63329}
+.en-prob__card h3{font-family:var(--fb,'DM Sans',sans-serif);font-size:18px;font-weight:900;text-transform:uppercase;margin-bottom:12px}
+.en-prob__card p{font-size:15px;color:#646464;line-height:1.7}
 
-.seo-article{padding:100px 0}
-.seo-article h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;margin-bottom:40px}
-.seo-article h3{font-size:20px;font-weight:500;margin:32px 0 12px}
-.seo-article p{font-size:15px;color:#444;line-height:1.8;margin-bottom:16px;max-width:780px}
+/* ---- WHY UKRAINE ---- */
+.en-why{padding:96px 0;background:#0a0a0a;color:#fff}
+.en-why__inner{max-width:1400px;margin:0 auto;padding:0 48px}
+.en-why__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,4vw,48px);font-weight:900;text-transform:uppercase;margin-bottom:64px;letter-spacing:-.02em}
+.en-why__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);overflow:hidden}
+.en-why__card{background:#0a0a0a;padding:40px}
+.en-why__card h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:12px}
+.en-why__card p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.5)}
 
-@media(max-width:768px){
-.hero{padding:100px 0 0}.hero-content{padding:0 24px}
-.hero h1{font-size:clamp(36px,9vw,52px)}
-.hero-form{flex-direction:column}.hero-form button{width:100%}
-.hero-stats{flex-wrap:wrap;gap:24px;padding:40px 24px}.hero-stat{min-width:calc(50% - 12px)}
-.why-grid,.svc-grid{grid-template-columns:1fr}
-.steps-row{flex-direction:column;border-top:none}.step{border-right:none;border-bottom:1px solid #e0e0e0;padding:32px 0}
-.testi-arrow{display:none}.final-form{flex-direction:column}
+/* ---- STEPS ---- */
+.en-steps{padding:96px 0}
+.en-steps__inner{max-width:1400px;margin:0 auto;padding:0 48px}
+.en-steps__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(24px,3vw,36px);font-weight:900;text-transform:uppercase;margin-bottom:64px;letter-spacing:-.01em}
+.en-steps__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
+.en-steps__grid::before{content:'';position:absolute;top:36px;left:0;right:0;height:2px;background:rgba(0,0,0,.06)}
+.en-steps__item{position:relative}
+.en-steps__num{width:72px;height:72px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;background:#1c1b1b;color:#fff;margin-bottom:24px}
+.en-steps__num--red{background:#e63329}
+.en-steps__item h4{font-size:17px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+.en-steps__item p{font-size:14px;color:#646464;line-height:1.6}
+
+/* ---- PRICING ---- */
+.en-price{padding:96px 0;background:#f9f9f9}
+.en-price__inner{max-width:1400px;margin:0 auto;padding:0 48px}
+.en-price__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(24px,3vw,36px);font-weight:900;text-transform:uppercase;margin-bottom:48px;letter-spacing:-.01em}
+.en-price__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
+.en-price__card{background:#fff;padding:48px 40px;border-top:4px solid #e63329}
+.en-price__card--featured{background:#1c1b1b;color:#fff;transform:scaleY(1.03);z-index:2;box-shadow:0 8px 40px rgba(0,0,0,.15)}
+.en-price__card--featured .en-price__link{color:#e63329}
+.en-price__card h3{font-size:22px;font-weight:900;text-transform:uppercase;margin:16px 0 24px}
+.en-price__val{margin-bottom:32px}
+.en-price__big{font-size:clamp(36px,4vw,48px);font-weight:900;letter-spacing:-.02em}
+.en-price__big--red{color:#e63329}
+.en-price__from{font-size:16px;color:#999;font-weight:400}
+.en-price__card ul{list-style:none;padding:0;margin:0 0 24px}
+.en-price__card li{padding:8px 0;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.en-price__card li::before{content:'';width:8px;height:8px;background:#e63329;border-radius:50%;flex-shrink:0}
+.en-price__card--featured li{color:rgba(255,255,255,.8)}
+.en-price__card--featured li::before{background:#e63329}
+.en-price__link{font-size:14px;font-weight:700;color:#e63329;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:color .2s}
+.en-price__link:hover{color:#000}
+.en-price__card--featured .en-price__link:hover{color:#fff}
+
+/* ---- TESTIMONIALS ---- */
+.en-testi{padding:96px 0;background:#0a0a0a;color:#fff;overflow:hidden}
+.en-testi__inner{max-width:1400px;margin:0 auto;padding:0 48px}
+.en-testi__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,4vw,48px);font-weight:900;text-transform:uppercase;margin-bottom:48px;letter-spacing:-.02em}
+.en-testi__slider{max-width:800px;margin:0 auto}
+.en-testi__track{display:flex;transition:transform .5s ease}
+.en-testi__slide{min-width:100%;padding:0 24px;text-align:center}
+.en-testi__stars{color:#e63329;letter-spacing:4px;margin-bottom:16px;font-size:18px}
+.en-testi__quote{font-family:var(--fd,'DM Serif Display',serif);font-style:italic;font-size:clamp(20px,2.5vw,28px);font-weight:400;line-height:1.5;margin-bottom:24px;color:rgba(255,255,255,.9)}
+.en-testi__author{font-size:14px;color:rgba(255,255,255,.4);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.en-testi__company{font-size:12px;color:rgba(255,255,255,.25);margin-top:4px}
+.en-testi__nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:48px}
+.en-testi__arrow{width:48px;height:48px;border:1px solid rgba(255,255,255,.15);background:none;color:#fff;font-size:18px;cursor:pointer;transition:border-color .3s,background .3s;display:flex;align-items:center;justify-content:center}
+.en-testi__arrow:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+.en-testi__dots{display:flex;gap:6px}
+.en-testi__dot{width:8px;height:8px;background:rgba(255,255,255,.15);cursor:pointer;transition:background .3s}
+.en-testi__dot.active{background:#e63329}
+
+/* ---- FAQ ---- */
+.en-faq{padding:96px 0;background:#f3f3f3}
+.en-faq__inner{max-width:900px;margin:0 auto;padding:0 48px}
+.en-faq__h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(24px,3vw,36px);font-weight:900;text-transform:uppercase;margin-bottom:48px;letter-spacing:-.01em}
+.en-faq__item{border-bottom:1px solid rgba(0,0,0,.08)}
+.en-faq__q{display:flex;justify-content:space-between;align-items:center;width:100%;padding:24px 0;font-size:17px;font-weight:700;color:#000;background:none;border:none;cursor:pointer;font-family:var(--fb,'DM Sans',sans-serif);text-align:left;gap:16px}
+.en-faq__icon{font-size:22px;color:#e63329;transition:transform .3s;flex-shrink:0}
+.en-faq__item.open .en-faq__icon{transform:rotate(45deg)}
+.en-faq__a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.en-faq__a p{font-size:15px;color:#646464;line-height:1.7;padding-bottom:24px}
+.en-faq__item.open .en-faq__a{max-height:400px}
+.en-faq__more{display:inline-block;margin-top:32px;font-size:14px;font-weight:700;color:#e63329;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;transition:color .2s}
+.en-faq__more:hover{color:#000}
+
+/* ---- SEO ARTICLE ---- */
+.en-seo{padding:96px 0}
+.en-seo__inner{max-width:900px;margin:0 auto;padding:0 48px}
+.en-seo__inner h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;margin-bottom:40px}
+.en-seo__inner h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+.en-seo__inner p{font-size:15px;color:#444;line-height:1.8;margin-bottom:16px}
+
+/* ---- DARK CTA ---- */
+.en-cta{position:relative;padding:120px 0;background:#0a0a0a;overflow:hidden;text-align:center}
+.en-cta__dots{position:absolute;inset:0;background-image:radial-gradient(#e63329 1px,transparent 1px);background-size:20px 20px;opacity:.15}
+.en-cta__content{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:0 48px}
+.en-cta h2{font-family:var(--fb,'DM Sans',sans-serif);font-size:clamp(28px,4vw,56px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:16px;line-height:1.1}
+.en-cta p{font-size:clamp(16px,1.8vw,22px);color:rgba(255,255,255,.5);margin-bottom:40px}
+.en-cta__btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.en-cta__btn{padding:18px 48px;font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;transition:all .3s;cursor:pointer;font-family:var(--fb,'DM Sans',sans-serif)}
+.en-cta__btn--primary{background:#e63329;color:#fff;border:2px solid #e63329}
+.en-cta__btn--primary:hover{background:#fff;color:#000;border-color:#fff}
+.en-cta__btn--outline{background:transparent;color:#fff;border:2px solid #fff}
+.en-cta__btn--outline:hover{background:#fff;color:#000}
+
+/* ---- MOBILE ---- */
+@media(max-width:900px){
+  .en-hero__grid{grid-template-columns:1fr;gap:24px;padding:0 24px}
+  .en-hero__text{padding:20px 0 40px}
+  .en-hero__img{max-height:300px}
+  .en-hero__img img{min-height:250px}
+  .en-hero__form{flex-direction:column}
+  .en-hero__form button{width:100%}
+  .en-stats__grid{grid-template-columns:repeat(2,1fr);gap:24px;padding:0 24px}
+  .en-logos__inner{padding:0 24px}
+  .en-logos__marquee{margin:0 -24px}
+  .en-logos__track{gap:20px;animation-duration:45s}
+  .en-logos__item{padding:8px 14px}
+  .en-logos__item img{height:24px}
+  @keyframes en-logos-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - 10px),0,0)}}
+  .en-svc{padding-left:24px;padding-right:24px}
+  .en-svc__bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .en-svc__card--wide,.en-svc__card--span3{grid-column:span 1}
+  .en-svc__card{min-height:200px}
+  .en-svc__bg-img{display:none}
+  .en-prob__inner,.en-why__inner,.en-steps__inner,.en-price__inner,.en-testi__inner,.en-faq__inner,.en-seo__inner,.en-cta__content{padding:0 24px}
+  .en-prob__grid,.en-why__grid,.en-steps__grid,.en-price__grid{grid-template-columns:1fr}
+  .en-steps__grid::before{display:none}
+  .en-price__card--featured{transform:none}
+  .en-testi__arrow{display:none}
+  .en-cta__btns{flex-direction:column;align-items:center}
+  .en-cta__btn{width:100%;max-width:320px;text-align:center}
 }
 </style>
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function(){
-/* Intersection Observer for .reveal */
-var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*.1+'s';obs.observe(el);});
+  /* Testimonials slider */
+  var testimonials=[
+    {text:"We grew from 100 to 800 shipments per day within 3 months. MTP genuinely solved our logistics bottleneck.",name:"Oleksii R.",company:"Online store owner"},
+    {text:"We saved over 25,000 UAH per month compared to running our own warehouse. Highly recommend for anyone scaling fast.",name:"Pavlo M.",company:"E-commerce entrepreneur"},
+    {text:"Handing logistics to MTP freed up 40 hours a month for marketing. A decision I wish I had made sooner.",name:"Anton B.",company:"CEO, BeautyBox"}
+  ];
+  var track=document.getElementById('testiTrack');
+  if(track){
+    track.innerHTML=testimonials.map(function(t){return '<div class="en-testi__slide"><div class="en-testi__stars">\u2605\u2605\u2605\u2605\u2605</div><div class="en-testi__quote">\u201C'+t.text+'\u201D</div><div class="en-testi__author">'+t.name+'</div><div class="en-testi__company">'+t.company+'</div></div>';}).join('');
+    var cs=0,total=testimonials.length,timer;
+    function slideTo(n){cs=((n%total)+total)%total;track.style.transform='translateX(-'+cs*100+'%)';document.querySelectorAll('.en-testi__dot').forEach(function(d,i){d.classList.toggle('active',i===cs);});}
+    var dots=document.getElementById('testiDots');
+    for(var i=0;i<total;i++){var d=document.createElement('div');d.className='en-testi__dot'+(i===0?' active':'');d.onclick=(function(x){return function(){slideTo(x);resetT();};})(i);dots.appendChild(d);}
+    document.getElementById('tPrev').addEventListener('click',function(){slideTo(cs-1);resetT();});
+    document.getElementById('tNext').addEventListener('click',function(){slideTo(cs+1);resetT();});
+    function resetT(){clearInterval(timer);timer=setInterval(function(){slideTo(cs+1);},6000);}resetT();
+  }
 
-/* Testimonials slider */
-var testimonials=[
-{text:"We grew from 100 to 800 shipments per day within 3 months. MTP genuinely solved our logistics bottleneck.",name:"Oleksii R.",company:"Online store owner"},
-{text:"We saved over 25,000 UAH per month compared to running our own warehouse. Highly recommend for anyone scaling fast.",name:"Pavlo M.",company:"E-commerce entrepreneur"},
-{text:"Handing logistics to MTP freed up 40 hours a month for marketing. A decision I wish I had made sooner.",name:"Anton B.",company:"CEO, BeautyBox"}
-];
-var track=document.getElementById('testiTrack');
-if(track){
-track.innerHTML=testimonials.map(function(t){return '<div class="testi-slide"><div class="testi-stars">\u2605\u2605\u2605\u2605\u2605</div><div class="testi-quote">\u201C'+t.text+'\u201D</div><div class="testi-author">'+t.name+'</div><div class="testi-company">'+t.company+'</div></div>';}).join('');
-var cs=0,total=testimonials.length,timer;
-function slideTo(n){cs=((n%total)+total)%total;track.style.transform='translateX(-'+cs*100+'%)';document.querySelectorAll('.testi-dot').forEach(function(d,i){d.classList.toggle('active',i===cs);});}
-var dots=document.getElementById('testiDots');for(var i=0;i<total;i++){var d=document.createElement('div');d.className='testi-dot'+(i===0?' active':'');d.onclick=(function(x){return function(){slideTo(x);resetT();};})(i);dots.appendChild(d);}
-document.getElementById('tPrev').addEventListener('click',function(){slideTo(cs-1);resetT();});
-document.getElementById('tNext').addEventListener('click',function(){slideTo(cs+1);resetT();});
-function resetT(){clearInterval(timer);timer=setInterval(function(){slideTo(cs+1);},6000);}resetT();
-}
-
+  /* FAQ accordion */
+  document.querySelectorAll('.en-faq__q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=this.closest('.en-faq__item');
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.en-faq__item.open').forEach(function(i){i.classList.remove('open');});
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
 });
 </script>

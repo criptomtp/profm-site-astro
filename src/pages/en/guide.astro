@@ -114,6 +114,18 @@ import Base from '../../layouts/Base.astro';
 </div>
 </section>
 
+<!-- CTA -->
+<section style="padding:60px 24px;background:#f5f5f5;text-align:center">
+<div style="max-width:600px;margin:0 auto">
+<h3 style="font-family:var(--fd,'DM Serif Display',serif);font-size:24px;font-weight:400;margin-bottom:16px">Ready to outsource logistics?</h3>
+<p style="font-size:15px;color:#666;line-height:1.7;margin-bottom:24px">Calculate your fulfillment savings or contact us for a free consultation.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="/en/calculator/" style="background:#e63329;color:#fff;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px">Calculator</a>
+<a href="/en/prices/" style="background:#000;color:#fff;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px">Pricing</a>
+</div>
+</div>
+</section>
+
 </Base>
 
 <style is:global>
@@ -139,6 +151,16 @@ import Base from '../../layouts/Base.astro';
 .guide-content p{font-size:15px;color:#444;line-height:1.8;margin-bottom:16px}
 .guide-content ul{padding-left:24px;margin-bottom:16px}.guide-content li{font-size:15px;color:#444;line-height:1.8;margin-bottom:6px}
 .guide-content blockquote{border-left:4px solid var(--red,#e63329);padding:16px 24px;margin:24px 0;background:var(--gray,#f5f5f5);border-radius:0 8px 8px 0;font-style:italic;color:var(--muted,#666);font-size:15px;line-height:1.7}
+.related-guides{padding:60px 24px;background:#f5f5f5}
+.related-guides-inner{max-width:1200px;margin:0 auto}
+.related-guides-inner h3{font-family:var(--fd,'DM Serif Display',serif);font-size:28px;font-weight:400;margin-bottom:32px}
+.related-guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.guide-card{position:relative;padding:24px;background:#fff;border-radius:8px;text-decoration:none;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.guide-card:hover{transform:translateY(-4px);box-shadow:0 8px 16px rgba(0,0,0,.12)}
+.guide-new-badge{position:absolute;top:16px;right:16px;background:var(--red,#e63329);color:#fff;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase}
+.guide-card-title{font-size:18px;font-weight:600;color:#000;margin:24px 0 12px}
+.guide-card-desc{font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;flex-grow:1}
+.guide-card-link{color:var(--red,#e63329);font-weight:600;font-size:14px}
 @media(max-width:768px){.guide-form{flex-direction:column}}
 </style>
 
