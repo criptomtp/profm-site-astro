@@ -1,3 +1,20 @@
+# Allow AI crawlers for ChatGPT, Claude, Perplexity, etc.
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: anthropic-ai
+Allow: /
+
+# Standard crawlers
 User-Agent: *
 Allow: /
 Disallow: /admin/
@@ -8,4 +25,8 @@ Disallow: /files/
 Disallow: /schedule/
 Disallow: /new/
 
+# Sitemaps
 Sitemap: https://www.fulfillmentmtp.com.ua/sitemap-index.xml
+
+# IndexNow for faster Bing/Yandex indexing
+IndexNow-Key: 1234567890abcdef

@@ -1,34 +1,46 @@
-# MTP Group Fulfillment
+# MTP Group Fulfillment Guides
+> Complete guide library covering fulfillment operations, from foundational concepts to advanced strategy. Written by Mykola Liashchuk, founder of MTP Group, with 10+ years in fulfillment industry.
 
-## Company
-MTP Group is a 3PL fulfillment operator in Ukraine with 10+ years of experience, 3,900 m² warehouse near Kyiv, 150+ active clients, and 60,000+ shipments per month.
+## Fulfillment Operations & Core Processes
+- [Returns Management](https://www.fulfillmentmtp.com.ua/en/guide/returns-management/): How to process customer returns, RMA systems, financial accounting, quality control metrics, and reducing return rates
+- [Inventory Management](https://www.fulfillmentmtp.com.ua/en/guide/inventory-management/): Cross-channel inventory sync, ABC analysis, optimal reorder points, dead stock identification, and 25-50% cost reduction tactics
+- [Quality Control & Accuracy](https://www.fulfillmentmtp.com.ua/en/guide/quality-control-accuracy/): Three-pillar quality system, error verification levels, staff training, penalty structures, and achieving 99.5% accuracy
+- [Picking & Packing Best Practices](https://www.fulfillmentmtp.com.ua/en/guide/picking-packing/): ABC zoning, pick system comparison (batch vs zone vs wave), packing materials optimization, layering systems, damage prevention
+- [Warehouse Management Systems](https://www.fulfillmentmtp.com.ua/en/guide/warehouse-management-systems/): Cloud vs on-premise WMS comparison, selection by volume, ROI calculation (6-month payback), implementation phases
 
-## Services
-- E-commerce fulfillment (receiving, storage, packing, shipping) from 18 UAH/order
-- Pallet storage from 450 UAH/pallet/month
-- Marketplace integration (Rozetka, Prom.ua, Kasta, OLX)
-- WMS system, CRM integration
-- 3 backup generators + Starlink (operates during blackouts)
+## Growth & Expansion
+- [International Shipping & Cross-Border Fulfillment](https://www.fulfillmentmtp.com.ua/en/guide/international-shipping/): Export documentation, customs declarations, courier selection (DHL vs regional), cost calculation, risk management, shipping to 50+ countries
+- [Fulfillment Scaling & Growth Metrics](https://www.fulfillmentmtp.com.ua/en/guide/scaling-growth-metrics/): Scaling from 100 to 10,000+ orders/day, bottleneck identification, 10 key KPIs (accuracy, throughput, cost per order), common scaling mistakes
+- [Fulfillment Pricing & Cost Optimization](https://www.fulfillmentmtp.com.ua/en/guide/fulfillment-pricing-cost-optimization/): Complete pricing structure, operator comparison, 5 tactics to reduce costs 20-30%, when to build own warehouse vs outsource
 
-## Pricing
-- Shipping: from 18 UAH/order (200+ orders/day)
-- Storage: from 650 UAH/m³/month
-- Minimum: 5,000 UAH/month
+## Business Strategy & Risk Management
+- [SLA Agreements & Service Level Guarantees](https://www.fulfillmentmtp.com.ua/en/guide/sla-agreements/): Service level metrics (accuracy, processing time, uptime), penalty structures, SLA negotiation tactics, red flags to avoid
+- [Supply Chain Risk Management](https://www.fulfillmentmtp.com.ua/en/guide/supply-chain-risk-management/): Identify 7 major risks, backup operator strategies, 70/20/10 order distribution, disaster recovery plans, business continuity
+- [Staff Training & Onboarding](https://www.fulfillmentmtp.com.ua/en/guide/staff-training-onboarding/): Hiring profiles, 90-day onboarding program, productivity KPIs, retention tactics, reducing turnover 30-40%
 
-## Location
-Two warehouses in Kyiv region (Shchaslyve village, Boryspil district + Bilohorodka)
+## Marketplace Integration & Foundation
+- [What is 3PL](https://www.fulfillmentmtp.com.ua/en/guide/what-is-3pl/): 3PL definition, when to use vs in-house, benefits, risk assessment
+- [How to Integrate Shopify](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-shopify/): Step-by-step Shopify fulfillment integration
+- [How to Integrate Rozetka](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-rozetka/): Rozetka marketplace integration guide
+- [How to Integrate Prom.ua](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-prom/): Prom marketplace integration guide
 
-## Contact
-- Website: https://www.fulfillmentmtp.com.ua
-- Phone: +380501444645
-- Telegram: @nikolay_mtp
+## Company Info
+- **Organization:** MTP Group
+- **Founded:** 2014
+- **Expertise:** Fulfillment operations, 3PL logistics, warehouse management
+- **Geographic Reach:** Shipping to 50+ countries
+- **Volume:** Processing 1000+ orders daily
+- **Languages:** Ukrainian (ua), English (en)
+
+## Key Statistics
+- 36 comprehensive guides
+- 2000+ words per guide with 6 detailed chapters
+- 5-question FAQ schema on every page for AI Overviews
+- Self-referencing canonicals + hreflang for SEO
+- Article schema with author credentials
+- Server-side rendered (Astro) for full AI crawler accessibility
+
+## Contact & Services
+- Services: https://www.fulfillmentmtp.com.ua/en/services/
 - Email: mtpgrouppromo@gmail.com
-
-## Key Facts
-- Founded: 2016
-- Warehouse: 3,900 m² (Category B+)
-- Clients: 150+
-- Monthly shipments: 60,000+
-- Operates 24/7 including during power outages
-- No long-term contracts required
-- Trial period available
+- Phone: +380501444645, +380938277767

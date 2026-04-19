@@ -2,7 +2,24 @@
   "mcpServers": {
     "ruflo": {
       "command": "npx",
-      "args": ["-y", "ruflo@latest", "mcp", "start"]
+      "args": [
+        "-y",
+        "ruflo@latest",
+        "mcp",
+        "start"
+      ]
+    },
+    "stitch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@_davideast/stitch-mcp@latest",
+        "proxy"
+      ],
+      "env": {
+        "STITCH_USE_SYSTEM_GCLOUD": "1",
+        "DOTENV_QUIET": "true"
+      }
     }
   }
 }

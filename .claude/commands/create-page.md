@@ -23,17 +23,40 @@
 
 ---
 
-### АГЕНТ 2 — ANALYZER + ДИЗАЙН КОНЦЕПЦІЯ
+### АГЕНТ 2 — ANALYZER + ВИБІР АРХЕТИПУ
 1. Середня довжина конкурентів, теми яких не розкривають
 2. План: мін. +20% слів від середнього конкурента
 3. Ключові слова і LSI
 4. Перевір docs/LANGUAGE_AUDIT.md
-5. **Придумай УНІКАЛЬНУ дизайн-концепцію:**
-   - Назва стилю (напр. "Growth Ladder", "Split Hero")
-   - Унікальна структура — не копіювати жодну існуючу сторінку сайту
-   - Унікальний hero layout
-   - 1 WOW-елемент (калькулятор, порівняльна таблиця, таймлайн, animated stats)
-   - Опиши концепцію ТЕКСТОМ → чекай "approved"
+5. **Обери архетип** з 3 варіантів (docs/design-system/archetypes/):
+   - **Industrial** — service-hub, міжнародна аудиторія, data-driven (ref: /en/)
+   - **Direct** — UA/RU home, calculator, contact, CRO landing (ref: /ua/ after redesign)
+   - **Editorial** — FAQ, blog, about, legal (ref: /en/faq/)
+6. Опиши: який archetype + чому + який WOW-елемент (1 шт) + які shared компоненти з src/components/stitch/
+
+---
+
+### АГЕНТ 2.5 — STITCH PREVIEW (НОВИЙ ЕТАП)
+
+**Мета**: показати user ВІЗУАЛ перед написанням коду — approval з картинкою, не з текстом.
+
+1. На базі архетипу і концепції зроби промпт для Stitch:
+   - Mention archetype signals (uppercase labels, stats bar → Industrial; overlay hero + badge → Direct; big typography + category nav → Editorial)
+   - Color palette: red #e63329, black #000, white #fff only
+   - Specific WOW-element
+
+2. `mcp__stitch__generate_screen_from_text` — base screen
+
+3. `mcp__stitch__generate_variants` — 2-3 варіанти hero (різне розміщення CTA, різна ієрархія)
+
+4. Експортуй артефакти в `docs/design-system/stitch-exports/YYYY-MM-DD_[slug]/`:
+   - `concept.md` — archetype, mood, WOW, Stitch prompt (твій), rationale
+   - `screenshot.png` — скрін base + variants (якщо є API для скрінів, використай; якщо ні — скрін через браузер)
+   - `export.html` (опціонально, тільки як reference)
+
+5. Показати user базовий screen + варіанти → чекати "approved" або "змінити"
+
+6. Тільки після "approved" → АГЕНТ 3 (Writer)
 
 ---
 
@@ -95,22 +118,36 @@
 
 ---
 
-### АГЕНТ 5 — DESIGN (після "approved" на концепцію)
+### АГЕНТ 5 — DESIGN (після "approved" на Stitch preview)
 
-**Правила унікального дизайну:**
-- Подивись на всі існуючі сторінки — твоя ВІДРІЗНЯЄТЬСЯ від всіх
-- Hero: інший layout ніж text+image
-  Варіанти: split-screen, full-screen overlay, centered велика типографіка, animated counters
-- Нові компоненти яких немає на сайті:
-  Варіанти: timeline, comparison table, step-by-step, stats grid, FAQ accordion, flip cards
-- Колір: ТІЛЬКИ #e63329 + #000 + #fff
-- 1 WOW-елемент що запам'ятовується
+**Правила:**
+- Astro код ВРУЧНУ — НЕ копіювати HTML зі Stitch export
+- Використовуй shared компоненти з `src/components/stitch/`:
+  - `<LabelChip text="..." variant="red|muted|ghost|dark" />`
+  - `<StatsBar items={[...]} tone="light|muted|dark" />`
+  - `<SplitHero headline="..." sub="..." imgSrc="..." imgAlt="..." bgSrc="...">...</SplitHero>`
+  - `<DarkCTA title="..." sub="..." primary={...} secondary={...} />`
+  - `<AccordionGroup items={[{q, a}, ...]} />`
+- Токени і утиліти `.s-*` підключено через `public/css/stitch-tokens.css` (автоматично з Base.astro)
+- Page-specific стилі — через `<style is:global>` в .astro з BEM префіксом (наприклад `ua-home__hero`)
+- Колір: ТІЛЬКИ #e63329 + #000 + #fff (використовуй var(--mtp-red) тощо)
 - Mobile-first, без важких бібліотек
 
-**ОБОВ'ЯЗКОВО додати на сторінку:**
-- Перемикач мов (ua/ru/en) — посилання на всі три версії
-- Додати сторінку в навігацію/хедер сайту (знайди компонент Header.astro або nav)
-- Breadcrumbs з посиланням на головну
+**ОБОВ'ЯЗКОВО — КРОС-МОВНА ПЕРЕЛІНКОВКА (часто забуваю!):**
+- Всі 3 версії (UA/RU/EN) створюються разом — не деплоїмо одну без інших двох
+- Hreflang на всіх 3 сторінках:
+  ```
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/[slug]/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/[slug]/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/[slug]/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/[slug]/">
+  ```
+- Додати в language-switcher map в `src/components/Header.astro` (рядок ~310) — всі 3 мови з правильними повними шляхами
+- Додати в навігацію (mega-menu в Header.astro) якщо це service/landing сторінка
+- Breadcrumbs з посиланням на головну (локалізовано по мові)
+
+**ADR:**
+- Створи `docs/design-system/pages/[slug].md` — archetype, mood deviations, Stitch export link, approval date
 
 ---
 

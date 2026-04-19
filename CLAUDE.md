@@ -37,13 +37,47 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 ## MULTI-AGENT PIPELINE для нових сторінок:
 При отриманні завдання "створи сторінку" або "напиши статтю":
 1. RESEARCHER — WebSearch + WebFetch конкурентів (топ-5 UA + топ-3 RU + топ-3 EN)
-2. ANALYZER — аналіз структури, довжини, ключових слів конкурентів
+2. ANALYZER — аналіз структури, довжини, ключових слів конкурентів + вибір архетипу (Industrial/Direct/Editorial)
+2.5. STITCH PREVIEW — generate_screen_from_text + 2-3 variants → експорт у docs/design-system/stitch-exports/[date]_[slug]/ → показати user → "approved"
 3. WRITER — написання UA + RU + EN (не переклади — різні кути атаки)
 4. IMAGE-GEN — генерація зображень через Pollinations.ai (безкоштовно)
-5. QA — перевірка SEO + PageSpeed + mobile + build
-6. DEPLOY — vercel --prod + фінальний звіт
+5. DESIGN — Astro код ВРУЧНУ за Stitch-референсом, використовуючи src/components/stitch/ (StatsBar, LabelChip, SplitHero, DarkCTA, AccordionGroup)
+6. QA — перевірка SEO + PageSpeed + mobile + build
+7. DEPLOY — vercel --prod + фінальний звіт
 
 Детальний опис pipeline: .claude/commands/create-page.md
+Редизайн існуючих сторінок: .claude/commands/redesign-page.md
+
+---
+
+## STITCH + ДИЗАЙН-СИСТЕМА (критично):
+
+**Source of truth**: `docs/design-system/`
+- `docs/design-system/archetypes/` — 3 moods (industrial / direct / editorial)
+- `docs/design-system/stitch-exports/` — Stitch артефакти (concept.md + screenshot.png)
+- `docs/design-system/pages/` — ADR на кожну сторінку
+
+**3 Moods — обовʼязково обирати один:**
+- **Industrial** — EN home, service-hub, міжнародна аудиторія (split hero, uppercase labels, stats bar)
+- **Direct** — UA home, RU home, calculator, contact, CRO landing (full-width hero з overlay, badge, hero form)
+- **Editorial** — FAQ, blog, about, legal (велика типографіка, без hero image, category nav)
+
+**Shared коду**:
+- `src/styles/stitch-tokens.css` — токени + утиліти (підключено в Base.astro)
+- `src/components/stitch/` — StatsBar, LabelChip, SplitHero, DarkCTA, AccordionGroup
+
+**Правила Stitch:**
+1. Stitch output = ВІЗУАЛЬНИЙ РЕФЕРЕНС, не код. HTML/CSS зі Stitch НЕ копіювати в .astro.
+2. Кожен approved concept експортується в `docs/design-system/stitch-exports/YYYY-MM-DD_[slug]/` (concept.md + screenshot.png) ДО написання коду.
+3. Per-page ADR у `docs/design-system/pages/[slug].md` — archetype, deviations, Stitch link, approval date.
+4. Токени (#e63329/#000/#fff) — фіксовані в Stitch і в коді, не міняються.
+
+**Редизайн priority Tier NOW:**
+1. `/ua/` home (Direct mood)
+2. `/ru/` home (Direct mood, інший акцент від UA)
+3. `/en/calculator/`, `/ua/calculator/`, `/ru/calculator/` (Direct mood)
+
+**Rollback trigger для редизайну**: CR -15% АБО positions -20% за 7 днів → git revert.
 
 ---
 
@@ -51,18 +85,26 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - [ ] Дослідження конкурентів (топ-5 Google UA/RU/EN)
 - [ ] Прочитати docs/MTP_SEMANTIC_CORE_FULL.md — релевантні ключові слова
 - [ ] Прочитати docs/LANGUAGE_AUDIT.md — мовні правила
+- [ ] Прочитати docs/design-system/archetypes/[mood].md — обраний mood
 - [ ] ls public/images/ — перевірити доступні зображення
 - [ ] Згенерувати hero + feature зображення (Pollinations.ai)
+- [ ] Stitch Preview: generate_screen_from_text + variants → export у docs/design-system/stitch-exports/
 - [ ] Створити UA: src/pages/ua/[slug].astro (мін. 1200 слів)
 - [ ] Створити RU: src/pages/ru/[slug].astro (інший кут, не переклад)
 - [ ] Створити EN: src/pages/en/[slug].astro (інший кут, не переклад)
+- [ ] **КРОС-МОВНА ПЕРЕЛІНКОВКА (обовʼязково, часто забуваю):**
+  - [ ] Всі 3 версії створені в одній задачі — не деплоїмо одну без інших двох
+  - [ ] Hreflang на всіх 3 сторінках (uk/ru/en/x-default) — повне взаємопосилання
+  - [ ] Додано в language-switcher map в src/components/Header.astro (рядок ~310) — всі 3 мови
+  - [ ] Перевірка: UA→RU, RU→EN, EN→UA — жодного 404
+  - [ ] Додано в навігацію (mega-menu в Header.astro) якщо це service/landing сторінка
 - [ ] Title до 60 символів (всі 3 мови)
 - [ ] Description 150-160 символів (всі 3 мови)
 - [ ] H1 один на сторінці
 - [ ] Schema.org розмітка
-- [ ] Hreflang теги (ua/ru/en)
 - [ ] Мінімум 3 внутрішні посилання
 - [ ] Перевірка мови (LANGUAGE_AUDIT.md)
+- [ ] ADR в docs/design-system/pages/[slug].md
 - [ ] npm run build — без помилок
 - [ ] PageSpeed перевірка (після деплою)
 - [ ] npx vercel --prod
@@ -97,8 +139,11 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 
 ## Дизайн (КРИТИЧНО):
 - Колір: ТІЛЬКИ #e63329 + #000 + #fff — ніякого зеленого, синього, фіолетового
-- Кожна сторінка: УНІКАЛЬНА структура і hero — не копіювати існуючі
-- UA / RU / EN: різний кут атаки, різна структура — НЕ переклади
+- Кожна сторінка обирає ОДИН з 3 archetypes (Industrial / Direct / Editorial) — див. docs/design-system/archetypes/
+- Hero і секції варіюються ВСЕРЕДИНІ archetype — без "10 різних стилів"
+- UA / RU / EN: різний кут атаки, різна структура, різні візуальні рішення — НЕ переклади
+- Shared: Base.astro, Header.astro, Footer.astro, stitch-tokens.css — єдині для всіх мов
+- Divergent: hero, секції, тон, layout — перекладно з archetype, не з іншої мови
 
 ---
 
@@ -138,6 +183,10 @@ curl -o "public/images/[slug]-hero.jpg" \
 - `docs/MTP_SEMANTIC_CORE_FULL.md` — семантичне ядро: 120+ сторінок. ОБОВ'ЯЗКОВО при нових SEO-сторінках.
 - `docs/LANGUAGE_AUDIT.md` — мовний аудит: 35 порушень. Перевіряти при написанні.
 - `docs/TITLES_TO_FIX.md` — тайтли >60 символів для виправлення.
+- `docs/design-system/README.md` — архетипи, Stitch workflow, priority queue.
+- `docs/design-system/archetypes/` — industrial.md, direct.md, editorial.md.
+- `docs/design-system/stitch-exports/` — Stitch артефакти (concept + screenshot) на approved концепцію.
+- `docs/design-system/pages/` — ADR + baseline на кожну створену/редизайнуту сторінку.
 
 ---
 
