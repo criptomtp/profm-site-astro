@@ -82,6 +82,11 @@
       "statusCode": 301
     },
     {
+      "source": "/faq/",
+      "destination": "/ru/faq/",
+      "statusCode": 301
+    },
+    {
       "source": "/guide/",
       "destination": "/ru/guide/",
       "statusCode": 301
@@ -135,7 +140,70 @@
       "source": "/ua/fulfilment-rozetka/",
       "destination": "/ua/fulfilment-dlya-marketpleysiv/",
       "statusCode": 301
-    }
+    },
+
+    { "source": "/en/fulfillment-for-online-stores/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-marketplaces/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-small-business/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-cosmetics/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-electronics/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-fashion/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-beauty-cosmetics/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-baby-products/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-food-beverages/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-furniture/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-home-decor/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-home-improvement/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-jewelry/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-medical-supplies/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-pet-products/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-sports-equipment/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-sports-nutrition/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-supplements-vitamins/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-toys/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-subscription-boxes/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-art-and-crafts/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-automotive-parts/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-books-media/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-collectibles/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-garden-outdoor/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-musical-instruments/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-office-supplies/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-used-and-vintage/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-wholesale-bulk/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+
+    { "source": "/en/guide/:slug/", "destination": "/en/guide/", "statusCode": 301 },
+    { "source": "/en/guide/:slug/:sub/", "destination": "/en/guide/", "statusCode": 301 },
+    { "source": "/ua/guide/:slug/", "destination": "/ua/guide/", "statusCode": 301 },
+    { "source": "/ua/guide/:slug/:sub/", "destination": "/ua/guide/", "statusCode": 301 },
+
+    { "source": "/ua/b2b-fulfilment/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/enterprise-solutions/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/komplektatsiya-zamovlen/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/garantiya-yakosti/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/mtp-vs-alternativy/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/fulfilment-dlya-fop/", "destination": "/ua/fulfilment-dlya-maloho-biznesu/", "statusCode": 301 },
+    { "source": "/ua/fulfilment-dlya-distributoriv/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/fulfilment-boryspil/", "destination": "/ua/fulfilment-kyiv/", "statusCode": 301 },
+    { "source": "/ua/fulfilment-po-vsiy-ukraini/", "destination": "/ua/fulfilment-ukraina/", "statusCode": 301 },
+    { "source": "/ua/rozetka-fbo/", "destination": "/ua/fulfilment-dlya-marketpleysiv/", "statusCode": 301 },
+    { "source": "/ua/fulfillment-shopify/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/fulfillment-prom-ua/", "destination": "/ua/fulfilment-dlya-marketpleysiv/", "statusCode": 301 },
+    { "source": "/ua/fulfillment-woocommerce/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/skladske-zberihannya/", "destination": "/ua/skladski-poslugy/", "statusCode": 301 },
+    { "source": "/ua/zberigannya-palet/", "destination": "/ua/paletne-zberigannya/", "statusCode": 301 },
+    { "source": "/ua/case-studies/roztochna-moda/", "destination": "/ua/recalls/", "statusCode": 301 },
+
+    { "source": "/ua/fulfillment-dlya-:slug*/", "destination": "/ua/services/", "statusCode": 301 },
+
+    { "source": "/ua/blog/case-ecodrive/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/chomu-fulfilment-deshevshyy/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/fulfilment-vs-vlasnyy-sklad/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/rinok-fulfilmentu-ukraina/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/vartist-fulfilmentu-2026/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/yak-perejty-na-fulfilment/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/yak-vybrati-fulfilment/", "destination": "/ua/blog/", "statusCode": 301 }
   ],
   "trailingSlash": true
 }
