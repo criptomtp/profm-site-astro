@@ -18,6 +18,7 @@ Allow: /
 User-Agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /api/
 Disallow: /ua/thanks/
 Disallow: /thanks/
 Disallow: /en/thanks/
