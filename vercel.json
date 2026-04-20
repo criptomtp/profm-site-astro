@@ -37,13 +37,13 @@
       "statusCode": 301
     },
     {
-      "source": "/tpost/:slug*",
-      "destination": "/blog/tpost/:slug*",
+      "source": "/tpost/:slug/",
+      "destination": "/blog/tpost/:slug/",
       "statusCode": 301
     },
     {
-      "source": "/ru/blog/tpost/:slug*",
-      "destination": "/blog/tpost/:slug*",
+      "source": "/ru/blog/tpost/:slug/",
+      "destination": "/blog/tpost/:slug/",
       "statusCode": 301
     },
     {
