@@ -109,7 +109,7 @@
     },
     {
       "source": "/calculator/",
-      "destination": "/ru/calculator/",
+      "destination": "/ua/calculator/",
       "statusCode": 301
     },
     {
