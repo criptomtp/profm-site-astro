@@ -2,7 +2,7 @@
 interface Props { lang: 'uk' | 'ru' | 'en'; }
 const { lang } = Astro.props;
 
-const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '';
+const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '/ru';
 const home = lang === 'uk' ? '/' : lang === 'en' ? '/en/' : '/ru/';
 
 const t = {
@@ -98,7 +98,7 @@ const mega = {
       </div>
 
       <a href={`${p}/guide/`}>{t.tips}</a>
-      <a href={`${p}/blog/`}>{t.blog}</a>
+      <a href={lang === 'ru' ? '/blog/' : `${p}/blog/`}>{t.blog}</a>
 
       <!-- Mobile-only: lang + phone inside nav -->
       <div class="hdr-mobile-bottom">
@@ -322,6 +322,15 @@ body{padding-top:0;margin:0}
     'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'},
     'fulfilment-dlya-kosmetyky':{ru:'/ru/fulfilment-dlya-kosmetiki/',en:'fulfillment-ukraine'},
     'fulfilment-dlya-kosmetiki':{ua:'fulfilment-dlya-kosmetyky',en:'fulfillment-ukraine'},
+    'calculator':{ua:'/ua/calculator/',ru:'/ru/calculator/',en:'/en/calculator/'},
+    'about':{ua:'/ua/about/',ru:'/ru/about/',en:'/en/about/'},
+    'faq':{ua:'/ua/faq/',ru:'/ru/faq/',en:'/en/faq/'},
+    'guide':{ua:'/ua/guide/',ru:'/ru/guide/',en:'/en/guide/'},
+    'privacy':{ua:'/ua/privacy/',ru:'/ru/privacy/',en:'/en/privacy/'},
+    'recalls':{ua:'/ua/recalls/',ru:'/ru/recalls/',en:'/en/recalls/'},
+    'services':{ua:'/ua/services/',ru:'/ru/services/',en:'/en/services/'},
+    'thanks':{ua:'/ua/thanks/',ru:'/thanks/',en:'/en/thanks/'},
+    'uslugi':{ua:'/ua/services/',ru:'/ru/uslugi/',en:'/en/services/'},
   };
   // Blog article map (full path mapping)
   var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
