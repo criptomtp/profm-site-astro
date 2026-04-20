@@ -29,26 +29,11 @@ const {
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
 
-// Generate hreflang tags for multi-language SEO
-const currentUrl = new URL(Astro.request.url).pathname;
-const pathParts = currentUrl.split('/').filter(Boolean);
-const isEnglish = pathParts[0] === 'en';
-const isRussian = pathParts[0] === 'ru';
-const isUkrainian = pathParts[0] === 'ua' || pathParts.length === 1;
-
-// Build clean path for hreflang (without language prefix)
-const cleanPath = isEnglish || isRussian ? '/' + pathParts.slice(1).join('/') : currentUrl;
-const hreflangBase = 'https://www.fulfillmentmtp.com.ua';
-
-// Ensure consistent trailing slash for homepage (/) and other paths
-const normalizedPath = cleanPath === '/' ? '/' : cleanPath.endsWith('/') ? cleanPath : cleanPath + '/';
-
-const hreflangs = [
-  { lang: 'uk', url: normalizedPath === '/' ? hreflangBase + '/' : hreflangBase + normalizedPath },
-  { lang: 'en', url: normalizedPath === '/' ? hreflangBase + '/en/' : hreflangBase + '/en' + normalizedPath },
-  { lang: 'ru', url: normalizedPath === '/' ? hreflangBase + '/ru/' : hreflangBase + '/ru' + normalizedPath },
-  { lang: 'x-default', url: normalizedPath === '/' ? hreflangBase + '/' : hreflangBase + normalizedPath }
-];
+// Hreflang is provided by each page via Fragment slot="head".
+// Auto-generation removed 2026-04-20 because the URL layout is non-uniform
+// (UA home at /, UA subpages at /ua/*, RU/EN at /ru/* and /en/*, blog posts
+// use different slugs per language) and auto-mapping produced wrong URLs
+// that duplicated the correct manual hreflangs.
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -58,7 +43,6 @@ const hreflangs = [
   <title>{title}</title>
   <meta name="description" content={description}>
   {canonical && <link rel="canonical" href={canonical} />}
-  {hreflangs.map(h => <link rel="alternate" hreflang={h.lang} href={h.url} />)}
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content={ogType}>
