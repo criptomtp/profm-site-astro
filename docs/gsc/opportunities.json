@@ -1,0 +1,87 @@
+{
+  "total": 9,
+  "generated_at": "2026-04-20T16:26:41.477331",
+  "opportunities": [
+    {
+      "query": "мтп",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/",
+      "clicks_90d": 0,
+      "impressions_90d": 191,
+      "avg_position": 6.4,
+      "ctr_pct": 0,
+      "opportunity_score": 30.0
+    },
+    {
+      "query": "артикул",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "clicks_90d": 0,
+      "impressions_90d": 119,
+      "avg_position": 5.5,
+      "ctr_pct": 0,
+      "opportunity_score": 21.6
+    },
+    {
+      "query": "sla",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_90d": 0,
+      "impressions_90d": 151,
+      "avg_position": 8.2,
+      "ctr_pct": 0,
+      "opportunity_score": 18.4
+    },
+    {
+      "query": "sla це",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_90d": 0,
+      "impressions_90d": 95,
+      "avg_position": 6.5,
+      "ctr_pct": 0,
+      "opportunity_score": 14.7
+    },
+    {
+      "query": "мтп",
+      "page": "https://www.fulfillmentmtp.com.ua/",
+      "clicks_90d": 0,
+      "impressions_90d": 72,
+      "avg_position": 8.2,
+      "ctr_pct": 0,
+      "opportunity_score": 8.8
+    },
+    {
+      "query": "товарний бізнес",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "clicks_90d": 0,
+      "impressions_90d": 65,
+      "avg_position": 9.2,
+      "ctr_pct": 0,
+      "opportunity_score": 7.0
+    },
+    {
+      "query": "товарный бизнес",
+      "page": "https://fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i",
+      "clicks_90d": 0,
+      "impressions_90d": 51,
+      "avg_position": 8.9,
+      "ctr_pct": 0,
+      "opportunity_score": 5.7
+    },
+    {
+      "query": "sla",
+      "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "clicks_90d": 0,
+      "impressions_90d": 36,
+      "avg_position": 10.3,
+      "ctr_pct": 0,
+      "opportunity_score": 3.5
+    },
+    {
+      "query": "фулфілмент",
+      "page": "https://www.fulfillmentmtp.com.ua/",
+      "clicks_90d": 0,
+      "impressions_90d": 36,
+      "avg_position": 13,
+      "ctr_pct": 0,
+      "opportunity_score": 2.8
+    }
+  ]
+}

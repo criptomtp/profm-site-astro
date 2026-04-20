@@ -1,0 +1,2345 @@
+{
+  "total": 334,
+  "period_days": 90,
+  "generated_at": "2026-04-20T16:26:46.824562",
+  "queries": [
+    {
+      "query": "мтп",
+      "clicks_90d": 0,
+      "impressions_90d": 263,
+      "ctr_pct": 0,
+      "avg_position": 6.9
+    },
+    {
+      "query": "sla",
+      "clicks_90d": 0,
+      "impressions_90d": 187,
+      "ctr_pct": 0,
+      "avg_position": 8.5
+    },
+    {
+      "query": "артикул",
+      "clicks_90d": 0,
+      "impressions_90d": 119,
+      "ctr_pct": 0,
+      "avg_position": 5.5
+    },
+    {
+      "query": "sla це",
+      "clicks_90d": 0,
+      "impressions_90d": 95,
+      "ctr_pct": 0,
+      "avg_position": 6.5
+    },
+    {
+      "query": "prom.ua",
+      "clicks_90d": 0,
+      "impressions_90d": 68,
+      "ctr_pct": 0,
+      "avg_position": 2.9
+    },
+    {
+      "query": "товарний бізнес",
+      "clicks_90d": 0,
+      "impressions_90d": 65,
+      "ctr_pct": 0,
+      "avg_position": 9.2
+    },
+    {
+      "query": "артикул це",
+      "clicks_90d": 0,
+      "impressions_90d": 61,
+      "ctr_pct": 0,
+      "avg_position": 2.2
+    },
+    {
+      "query": "mtp",
+      "clicks_90d": 0,
+      "impressions_90d": 56,
+      "ctr_pct": 0,
+      "avg_position": 3.8
+    },
+    {
+      "query": "товарный бизнес",
+      "clicks_90d": 0,
+      "impressions_90d": 52,
+      "ctr_pct": 0,
+      "avg_position": 8.8
+    },
+    {
+      "query": "фулфілмент",
+      "clicks_90d": 0,
+      "impressions_90d": 42,
+      "ctr_pct": 0,
+      "avg_position": 16.0
+    },
+    {
+      "query": "фулфилмент",
+      "clicks_90d": 0,
+      "impressions_90d": 34,
+      "ctr_pct": 0,
+      "avg_position": 16.6
+    },
+    {
+      "query": "склад фулфилмент",
+      "clicks_90d": 0,
+      "impressions_90d": 31,
+      "ctr_pct": 0,
+      "avg_position": 16.5
+    },
+    {
+      "query": "фулфилмент интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 30,
+      "ctr_pct": 0,
+      "avg_position": 15.7
+    },
+    {
+      "query": "товарний бізнес україна",
+      "clicks_90d": 0,
+      "impressions_90d": 27,
+      "ctr_pct": 0,
+      "avg_position": 5.6
+    },
+    {
+      "query": "фулфилмент в товарном бизнесе",
+      "clicks_90d": 0,
+      "impressions_90d": 26,
+      "ctr_pct": 0,
+      "avg_position": 13.3
+    },
+    {
+      "query": "фулфилмент для интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 26,
+      "ctr_pct": 0,
+      "avg_position": 10.3
+    },
+    {
+      "query": "how to calculate fulfillment cost per order",
+      "clicks_90d": 0,
+      "impressions_90d": 24,
+      "ctr_pct": 0,
+      "avg_position": 39.6
+    },
+    {
+      "query": "услуги фулфилмента",
+      "clicks_90d": 0,
+      "impressions_90d": 24,
+      "ctr_pct": 0,
+      "avg_position": 8.7
+    },
+    {
+      "query": "товарний бізнес в україні",
+      "clicks_90d": 0,
+      "impressions_90d": 22,
+      "ctr_pct": 0,
+      "avg_position": 6.2
+    },
+    {
+      "query": "фулфілмент для маркетплейсов дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 22,
+      "ctr_pct": 0,
+      "avg_position": 58.3
+    },
+    {
+      "query": "що таке артикул",
+      "clicks_90d": 1,
+      "impressions_90d": 21,
+      "ctr_pct": 4.76,
+      "avg_position": 2.3
+    },
+    {
+      "query": "товарний бізнес це",
+      "clicks_90d": 0,
+      "impressions_90d": 21,
+      "ctr_pct": 0,
+      "avg_position": 5.4
+    },
+    {
+      "query": "фулфилмент для магазинов",
+      "clicks_90d": 0,
+      "impressions_90d": 19,
+      "ctr_pct": 0,
+      "avg_position": 10.1
+    },
+    {
+      "query": "що таке sla",
+      "clicks_90d": 0,
+      "impressions_90d": 18,
+      "ctr_pct": 0,
+      "avg_position": 6.4
+    },
+    {
+      "query": "артикул товару",
+      "clicks_90d": 0,
+      "impressions_90d": 17,
+      "ctr_pct": 0,
+      "avg_position": 7.2
+    },
+    {
+      "query": "открыть интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 17,
+      "ctr_pct": 0,
+      "avg_position": 10.5
+    },
+    {
+      "query": "фулфилмент в товарке",
+      "clicks_90d": 0,
+      "impressions_90d": 17,
+      "ctr_pct": 0,
+      "avg_position": 23.8
+    },
+    {
+      "query": "fulfilment",
+      "clicks_90d": 0,
+      "impressions_90d": 16,
+      "ctr_pct": 0,
+      "avg_position": 21
+    },
+    {
+      "query": "fulfilment service",
+      "clicks_90d": 0,
+      "impressions_90d": 16,
+      "ctr_pct": 0,
+      "avg_position": 20.3
+    },
+    {
+      "query": "packaging fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 16,
+      "ctr_pct": 0,
+      "avg_position": 5.3
+    },
+    {
+      "query": "фулфилмент центры",
+      "clicks_90d": 0,
+      "impressions_90d": 16,
+      "ctr_pct": 0,
+      "avg_position": 20.2
+    },
+    {
+      "query": "фулфилмента",
+      "clicks_90d": 0,
+      "impressions_90d": 16,
+      "ctr_pct": 0,
+      "avg_position": 23.8
+    },
+    {
+      "query": "как открыть интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 9.6
+    },
+    {
+      "query": "как создать интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 36.3
+    },
+    {
+      "query": "плюсы фулфилмента",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 10.6
+    },
+    {
+      "query": "сколько стоит открыть интернет магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 35.9
+    },
+    {
+      "query": "скільки коштує складське зберігання для e-commerce магазину",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 2.3
+    },
+    {
+      "query": "fulfilment services",
+      "clicks_90d": 0,
+      "impressions_90d": 14,
+      "ctr_pct": 0,
+      "avg_position": 13.7
+    },
+    {
+      "query": "склад фулфілмент дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 14,
+      "ctr_pct": 0,
+      "avg_position": 51.1
+    },
+    {
+      "query": "фулфилмент украина",
+      "clicks_90d": 1,
+      "impressions_90d": 13,
+      "ctr_pct": 7.69,
+      "avg_position": 4.6
+    },
+    {
+      "query": "открыть свой интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 13,
+      "ctr_pct": 0,
+      "avg_position": 14.1
+    },
+    {
+      "query": "фулфилмент цены",
+      "clicks_90d": 0,
+      "impressions_90d": 13,
+      "ctr_pct": 0,
+      "avg_position": 2.5
+    },
+    {
+      "query": "sla що це",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 8.5
+    },
+    {
+      "query": "склад фулфілмент",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 50.6
+    },
+    {
+      "query": "создание интернет магазина украина",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 41.1
+    },
+    {
+      "query": "фулфилмент для интернет магазинов днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 50.8
+    },
+    {
+      "query": "фулфилмент днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 42.8
+    },
+    {
+      "query": "фулфілмент дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 49.8
+    },
+    {
+      "query": "фулфілмент київ",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 25.2
+    },
+    {
+      "query": "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу?",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 8.4
+    },
+    {
+      "query": "как открыть интернет магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 12.1
+    },
+    {
+      "query": "минусы фулфилмента",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 6.3
+    },
+    {
+      "query": "фул филмент",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 8.7
+    },
+    {
+      "query": "фулфилмент заказать",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 1.7
+    },
+    {
+      "query": "что такое фулфилмент",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 26.7
+    },
+    {
+      "query": "що таке артикул товару",
+      "clicks_90d": 0,
+      "impressions_90d": 11,
+      "ctr_pct": 0,
+      "avg_position": 4.1
+    },
+    {
+      "query": "sla в логистике",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 10.6
+    },
+    {
+      "query": "открыть интернет магазин украина",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 13.1
+    },
+    {
+      "query": "складські послуги",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 40
+    },
+    {
+      "query": "создать интернет магазин украина",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 45
+    },
+    {
+      "query": "услуга фулфилмент",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 11.9
+    },
+    {
+      "query": "что нужно чтобы открыть интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 10.2
+    },
+    {
+      "query": "послуги складу",
+      "clicks_90d": 0,
+      "impressions_90d": 9,
+      "ctr_pct": 0,
+      "avg_position": 37.1
+    },
+    {
+      "query": "прро це",
+      "clicks_90d": 0,
+      "impressions_90d": 9,
+      "ctr_pct": 0,
+      "avg_position": 31.6
+    },
+    {
+      "query": "склад фулфилмент киев",
+      "clicks_90d": 0,
+      "impressions_90d": 9,
+      "ctr_pct": 0,
+      "avg_position": 52.6
+    },
+    {
+      "query": "фулфилмент киев",
+      "clicks_90d": 0,
+      "impressions_90d": 9,
+      "ctr_pct": 0,
+      "avg_position": 29.8
+    },
+    {
+      "query": "фулфілмент для інтернет магазинів київ",
+      "clicks_90d": 0,
+      "impressions_90d": 9,
+      "ctr_pct": 0,
+      "avg_position": 51.7
+    },
+    {
+      "query": "fiscal representation ukraine",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 73.9
+    },
+    {
+      "query": "fulfilment логістика дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 39.2
+    },
+    {
+      "query": "склад фулфілмент київ",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 47.8
+    },
+    {
+      "query": "фулфилмент для интернет магазинов",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 21.6
+    },
+    {
+      "query": "фулфилмент для интернет магазинов киев",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 39.4
+    },
+    {
+      "query": "фулфілмент логістика дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 46.9
+    },
+    {
+      "query": "що таке рро та прро",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 40.6
+    },
+    {
+      "query": "fulfilment логистика киев",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 48.6
+    },
+    {
+      "query": "fulfilment логістика київ",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 51.1
+    },
+    {
+      "query": "артикул товару це",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 6.7
+    },
+    {
+      "query": "открыть интернет магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 12.6
+    },
+    {
+      "query": "рро",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 44.1
+    },
+    {
+      "query": "склад фулфилмент днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 36.3
+    },
+    {
+      "query": "управление интернет торговлей",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 15.9
+    },
+    {
+      "query": "фулфилмент логистика",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 32.3
+    },
+    {
+      "query": "фулфілмент для інтернет магазинів дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 41.3
+    },
+    {
+      "query": "что такое мтп",
+      "clicks_90d": 0,
+      "impressions_90d": 7,
+      "ctr_pct": 0,
+      "avg_position": 8.9
+    },
+    {
+      "query": "cosmetics fulfilment",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 83.8
+    },
+    {
+      "query": "sla підтримки платформ продажу надлишків",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "артикуль",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 6.2
+    },
+    {
+      "query": "интернет магазин открыть",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 9.7
+    },
+    {
+      "query": "как открыть свой интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 14.3
+    },
+    {
+      "query": "склад фулфилмент запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 39.5
+    },
+    {
+      "query": "сколько нужно денег для открытия интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 29.2
+    },
+    {
+      "query": "фулфилмент для интернет магазинов запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 53.2
+    },
+    {
+      "query": "фулфилмент для маркетплейсов киев",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 42.8
+    },
+    {
+      "query": "хмарна онлайн каса для інтернет-магазину",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 32.3
+    },
+    {
+      "query": "fulfillment costs",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 90.6
+    },
+    {
+      "query": "fulfillment of cosmetics",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 78.2
+    },
+    {
+      "query": "fulfillment provider cost",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 27.8
+    },
+    {
+      "query": "fulfilment center",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 1.8
+    },
+    {
+      "query": "fulfilment логистика днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 41.2
+    },
+    {
+      "query": "fulfilment логістика",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 32.4
+    },
+    {
+      "query": "order fulfilment costs",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 33.2
+    },
+    {
+      "query": "артикул товара",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 13
+    },
+    {
+      "query": "артикули",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "как запустить интернет магазин с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 36.4
+    },
+    {
+      "query": "как запустить свой интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 15.4
+    },
+    {
+      "query": "как создать свой интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 27.4
+    },
+    {
+      "query": "мтп это",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 11.6
+    },
+    {
+      "query": "рро для фоп это",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 39.4
+    },
+    {
+      "query": "рро прро це",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 34.2
+    },
+    {
+      "query": "рро это",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 41
+    },
+    {
+      "query": "складские услуги киев",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 23.2
+    },
+    {
+      "query": "снизить возвраты товара",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 5.2
+    },
+    {
+      "query": "советы по открытию интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 33.2
+    },
+    {
+      "query": "фулфилмент для маркетплейсов днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 28.2
+    },
+    {
+      "query": "фулфилмент логистика запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 36.6
+    },
+    {
+      "query": "фулфілмент для інтернет магазинів",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 50.8
+    },
+    {
+      "query": "фулфілмент логістика",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 25
+    },
+    {
+      "query": "фулфілмент україна",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "что требуется для открытия интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 12.2
+    },
+    {
+      "query": "demand ware fulfillment pricing",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 25.2
+    },
+    {
+      "query": "fulfillment cosmetics",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 84.2
+    },
+    {
+      "query": "fulfillment cost calculator",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 5.8
+    },
+    {
+      "query": "fulfilment solutions",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 19
+    },
+    {
+      "query": "fulfilment логистика запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 25.8
+    },
+    {
+      "query": "kasta.ua international delivery",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 10.8
+    },
+    {
+      "query": "запуск и продвижение интернет магазина с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 30
+    },
+    {
+      "query": "как запустить интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 25.2
+    },
+    {
+      "query": "как открыть прибыльный интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 19.2
+    },
+    {
+      "query": "как открыть свой интернет магазин с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 37.2
+    },
+    {
+      "query": "как самому открыть интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 73
+    },
+    {
+      "query": "как сделать интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 27.2
+    },
+    {
+      "query": "настройка рро для фоп",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 62
+    },
+    {
+      "query": "пошаговый план открытия интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 80.2
+    },
+    {
+      "query": "рро для фоп что это",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 38.5
+    },
+    {
+      "query": "складські послуги та обробку товарів",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 24.8
+    },
+    {
+      "query": "фулфилмент центр",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 72.2
+    },
+    {
+      "query": "фулфілмент для маркетплейсов запоріжжя",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 27.8
+    },
+    {
+      "query": "фулфілмент логістика київ",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 34.2
+    },
+    {
+      "query": "фулфілмент склад",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "що таке товарний бізнес",
+      "clicks_90d": 0,
+      "impressions_90d": 4,
+      "ctr_pct": 0,
+      "avg_position": 11.8
+    },
+    {
+      "query": "mtp group",
+      "clicks_90d": 1,
+      "impressions_90d": 3,
+      "ctr_pct": 33.33,
+      "avg_position": 1
+    },
+    {
+      "query": "3 pl",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 52.3
+    },
+    {
+      "query": "business fulfillment pricing",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 30.7
+    },
+    {
+      "query": "fulfilment логістика запоріжжя",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 31.3
+    },
+    {
+      "query": "sla - це",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "sla логистика",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 3.7
+    },
+    {
+      "query": "sla что это",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "аутсорсинг приема заказов",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 10.7
+    },
+    {
+      "query": "ведение интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 7
+    },
+    {
+      "query": "запуск интернет магазина с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 59.3
+    },
+    {
+      "query": "интернет магазин как открыть",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "как открыть интернет-магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 11.3
+    },
+    {
+      "query": "как открыть свой интернет магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "query": "как открыть свой магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 51.3
+    },
+    {
+      "query": "открыть бизнес в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 35.7
+    },
+    {
+      "query": "открыть интернет магазин с нуля пошаговая инструкция",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 72.3
+    },
+    {
+      "query": "раскрутка интернет магазина в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 70.7
+    },
+    {
+      "query": "регистрация интернет магазина в каталогах",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 53.3
+    },
+    {
+      "query": "склад фулфілмент запоріжжя",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 26.3
+    },
+    {
+      "query": "создание интернет магазина в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 20.3
+    },
+    {
+      "query": "создание нового интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 19
+    },
+    {
+      "query": "создание профессионального интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "товарний бізнес україни",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 5.3
+    },
+    {
+      "query": "фулфилмент запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 21.3
+    },
+    {
+      "query": "фулфилмент логистика днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 26.3
+    },
+    {
+      "query": "фулфилмент розетка",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 13
+    },
+    {
+      "query": "фулфілмент для інтернет магазинів запоріжжя",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 35.7
+    },
+    {
+      "query": "фулфілмент центр",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 45.7
+    },
+    {
+      "query": "что нужно для интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 7.7
+    },
+    {
+      "query": "что нужно для открытия интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 6.3
+    },
+    {
+      "query": "что нужно для открытия интернет магазина в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 10.7
+    },
+    {
+      "query": "як створити артикул товару",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 1.7
+    },
+    {
+      "query": "фулфилмент в украине",
+      "clicks_90d": 1,
+      "impressions_90d": 2,
+      "ctr_pct": 50.0,
+      "avg_position": 6.5
+    },
+    {
+      "query": "3pl fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 4.5
+    },
+    {
+      "query": "3pl оператор київ",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 51.5
+    },
+    {
+      "query": "3pl провайдер",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 72.5
+    },
+    {
+      "query": "3pl услуги",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 56.5
+    },
+    {
+      "query": "cosmetica fulfilment",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 81
+    },
+    {
+      "query": "cosmetics fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 87
+    },
+    {
+      "query": "cosmetics fulfillment services",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 95
+    },
+    {
+      "query": "fhnbrek",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 9.5
+    },
+    {
+      "query": "fulfillment beauty-cosmetics",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 83.5
+    },
+    {
+      "query": "fulfilment логистика",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 22
+    },
+    {
+      "query": "rozetka vs prom.ua comparison ukraine",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "rozetka vs prom.ua prices comparison",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 10.5
+    },
+    {
+      "query": "sla в логистике это",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 3.5
+    },
+    {
+      "query": "артикулу",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 5.5
+    },
+    {
+      "query": "где открыть интернет компанию",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 31.5
+    },
+    {
+      "query": "интернет магазин создать украина",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 63
+    },
+    {
+      "query": "как открыть продуктовый интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 12.5
+    },
+    {
+      "query": "как создать онлайн магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 12.5
+    },
+    {
+      "query": "концепция интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 72.5
+    },
+    {
+      "query": "обязательное рро для фоп",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 70.5
+    },
+    {
+      "query": "открытие интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "открыть интернет-компанию",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 22.5
+    },
+    {
+      "query": "програмний рро для юридичних осіб",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 44.5
+    },
+    {
+      "query": "програмный рро",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 58.5
+    },
+    {
+      "query": "рро для интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 40.5
+    },
+    {
+      "query": "рро для інтернет магазинів",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 15
+    },
+    {
+      "query": "рро це",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 28
+    },
+    {
+      "query": "рро що це",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 21
+    },
+    {
+      "query": "склад для інтернет-магазину",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 27.5
+    },
+    {
+      "query": "складський комплекс для e-commerce",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 46
+    },
+    {
+      "query": "складські послуги київ",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 12
+    },
+    {
+      "query": "товарный бизнес украина",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 9.5
+    },
+    {
+      "query": "фулфилмент для маркетплейсов запорожье",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 13.5
+    },
+    {
+      "query": "фулфилмент отслеживание",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 8.5
+    },
+    {
+      "query": "фулфілмент запоріжжя",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 16
+    },
+    {
+      "query": "фулфілмент що це",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 30
+    },
+    {
+      "query": "что такое sla в логистике",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "що таке прро",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 43
+    },
+    {
+      "query": "що таке рро",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 52
+    },
+    {
+      "query": "що таке сла",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 3.5
+    },
+    {
+      "query": "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу? оберіть одну правильну відповідь",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "(mtp)",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "3pl warehouse",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "3pl доставка",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 22
+    },
+    {
+      "query": "3pl доставка днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 27
+    },
+    {
+      "query": "3pl доставка киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "3pl доставка київ",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "3pl логистика",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 34
+    },
+    {
+      "query": "3pl логистика киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 26
+    },
+    {
+      "query": "3pl логістика",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 32
+    },
+    {
+      "query": "3pl логістика дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 25
+    },
+    {
+      "query": "3pl логістика київ",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 21
+    },
+    {
+      "query": "3pl оператор киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 16
+    },
+    {
+      "query": "3pl операторы украины",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 42
+    },
+    {
+      "query": "cosmetics and beauty fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 100
+    },
+    {
+      "query": "crm в фулфилменте",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "e fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "fulfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "fulfillment beauty products",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 97
+    },
+    {
+      "query": "fulfillment companies",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 7
+    },
+    {
+      "query": "fulfillment companies pricing",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 41
+    },
+    {
+      "query": "fulfillment cosmetics products",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 94
+    },
+    {
+      "query": "fulfillment service prices",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 24
+    },
+    {
+      "query": "fulfilment costs",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 94
+    },
+    {
+      "query": "fullfillment",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 12
+    },
+    {
+      "query": "logistics and fulfillment company",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "mtp global відгуки",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "mtp grupa",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 3
+    },
+    {
+      "query": "order fulfillment companies pricing",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 24
+    },
+    {
+      "query": "prom.ua api",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "rro",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 41
+    },
+    {
+      "query": "sla shipping",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 3
+    },
+    {
+      "query": "sla.",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "query": "sla/slo",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "top fulfillment solutions pricing",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "ups 3pl services",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "warehouse and fulfillment services",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "арикул",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "артикул товару приклад",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
+    },
+    {
+      "query": "артикула",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "артикулом",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "артікул",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "аутсорсинг 3pl",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 17
+    },
+    {
+      "query": "аутсорсинг 3pl днепр",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 20
+    },
+    {
+      "query": "аутсорсинг 3pl дніпро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 27
+    },
+    {
+      "query": "аутсорсинг доставки товаров",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "бизнес интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "query": "відгриміти",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 30
+    },
+    {
+      "query": "відкрити інтернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 63
+    },
+    {
+      "query": "европейские маркетплейсы",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "заказать интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 66
+    },
+    {
+      "query": "заказать интернет магазин цена",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 90
+    },
+    {
+      "query": "интернет магазин как открыть пошагово с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 73
+    },
+    {
+      "query": "как заполнять интернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 15
+    },
+    {
+      "query": "как открыть интернет магазин пошаговая инструкция",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 17
+    },
+    {
+      "query": "как открыть интернет магазин продуктов",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 12
+    },
+    {
+      "query": "как открыть онлайн магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "как открыть свой бизнес в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 24
+    },
+    {
+      "query": "как открыть свой онлайн магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 16
+    },
+    {
+      "query": "как открыть ювелирный интернет-магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 31
+    },
+    {
+      "query": "каким бизнесом заняться в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 46
+    },
+    {
+      "query": "какой бизнес можно открыть",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 50
+    },
+    {
+      "query": "какой бизнес открыть",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 50
+    },
+    {
+      "query": "какой бизнес открыть с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 71
+    },
+    {
+      "query": "какой открыть бизнес",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 50
+    },
+    {
+      "query": "купить",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 17
+    },
+    {
+      "query": "логистика b2b",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 15
+    },
+    {
+      "query": "логистика складские услуги",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 65
+    },
+    {
+      "query": "мтп вход",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "мтр",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "query": "невыкуп товара",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "онлайн магазин открыть",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "query": "открыть e-commerce компанию",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 83
+    },
+    {
+      "query": "палето место",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "покупателей",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "программное обеспечение рро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 60
+    },
+    {
+      "query": "программное рро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 58
+    },
+    {
+      "query": "програмний реєстратор розрахункових операцій",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 23
+    },
+    {
+      "query": "програмний рро це",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 46
+    },
+    {
+      "query": "прро для фоп",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 100
+    },
+    {
+      "query": "размещение положительных отзывов в интернете",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 12
+    },
+    {
+      "query": "разработать интернет магазин киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "разработка интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 46
+    },
+    {
+      "query": "разработка интернет магазина в киеве",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 88
+    },
+    {
+      "query": "разработка интернет магазина киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 97
+    },
+    {
+      "query": "разработка интернет магазина с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 72
+    },
+    {
+      "query": "раскрутка интернет магазина с нуля",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 95
+    },
+    {
+      "query": "регистратор расчетных операций",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 70
+    },
+    {
+      "query": "рро для салонів краси",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 16
+    },
+    {
+      "query": "рро касовий апарат",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 47
+    },
+    {
+      "query": "рро прро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 44
+    },
+    {
+      "query": "рро расшифровка",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 86
+    },
+    {
+      "query": "рро інтернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 24
+    },
+    {
+      "query": "рро/прро це",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 24
+    },
+    {
+      "query": "сервисы товарного бизнеса",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 47
+    },
+    {
+      "query": "складские услуги украина",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 23
+    },
+    {
+      "query": "складський комплекс для інтернет-магазинів",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 21
+    },
+    {
+      "query": "сла это",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "query": "создание и ведение интернет магазина",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 14
+    },
+    {
+      "query": "создание интернет магазин цены",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 83
+    },
+    {
+      "query": "создать интернет магазин в украине",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 29
+    },
+    {
+      "query": "создать интернет магазин киев",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "стоимость услуг фулфилмента",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 3
+    },
+    {
+      "query": "так",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
+    },
+    {
+      "query": "товарний",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "товарний бізнес відгуки",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 15
+    },
+    {
+      "query": "фулфилмент отзывы",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "фулфилмент склад",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
+      "query": "фулфилмент склад это",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "фулфілмент для товарного бізнесу",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "фулфілмент львів",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 23
+    },
+    {
+      "query": "фулфілмент сервіс",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "query": "фулфілмент це",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 50
+    },
+    {
+      "query": "фулфілменту",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "фуфилмент",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 8
+    },
+    {
+      "query": "что такое артикул",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 37
+    },
+    {
+      "query": "что такое товарный бизнес",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "що потрібно щоб відкрити інтернет магазин",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 37
+    },
+    {
+      "query": "що таке програмне рро",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 48
+    },
+    {
+      "query": "яка вартість?",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
+    },
+    {
+      "query": "які 3pl-провайдери для інтернет-магазину?",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1
+    }
+  ]
+}

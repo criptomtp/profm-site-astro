@@ -1,0 +1,751 @@
+{
+  "total_urls": 59,
+  "total_clicks_90d": 13,
+  "total_impressions_90d": 1910,
+  "by_action": {
+    "301_SPECIFIC": 5,
+    "301_HUB": 19,
+    "410_OR_HUB": 35
+  },
+  "generated_at": "2026-04-20T16:06:47.312687",
+  "period_days": 90,
+  "urls": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_90d": 2,
+      "impressions_90d": 365,
+      "ctr_pct": 0.55,
+      "avg_position": 7.1,
+      "top_queries": [
+        "sla",
+        "sla - це",
+        "sla підтримки платформ продажу надлишків",
+        "sla це",
+        "sla що це",
+        "sla.",
+        "sla/slo",
+        "что такое sla в логистике",
+        "що таке sla",
+        "що таке сла"
+      ],
+      "action": "301_SPECIFIC"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "clicks_90d": 1,
+      "impressions_90d": 336,
+      "ctr_pct": 0.3,
+      "avg_position": 5.0,
+      "top_queries": [
+        "що таке артикул",
+        "fhnbrek",
+        "арикул",
+        "артикул",
+        "артикул товара",
+        "артикул товару",
+        "артикул товару приклад",
+        "артикул товару це",
+        "артикул це",
+        "артикула"
+      ],
+      "action": "301_SPECIFIC"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
+      "clicks_90d": 1,
+      "impressions_90d": 295,
+      "ctr_pct": 0.34,
+      "avg_position": 24.1,
+      "top_queries": [
+        "ведение интернет магазина",
+        "заказать интернет магазин цена",
+        "запуск и продвижение интернет магазина с нуля",
+        "запуск интернет магазина с нуля",
+        "интернет магазин как открыть",
+        "интернет магазин как открыть пошагово с нуля",
+        "интернет магазин открыть",
+        "интернет магазин создать украина",
+        "как заполнять интернет магазин",
+        "как запустить интернет магазин"
+      ],
+      "action": "301_SPECIFIC"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "clicks_90d": 0,
+      "impressions_90d": 164,
+      "ctr_pct": 0,
+      "avg_position": 8.5,
+      "top_queries": [
+        "товарний",
+        "товарний бізнес",
+        "товарний бізнес в україні",
+        "товарний бізнес відгуки",
+        "товарний бізнес україна",
+        "товарний бізнес україни",
+        "товарний бізнес це",
+        "товарный бизнес",
+        "фулфілмент для товарного бізнесу",
+        "що таке товарний бізнес"
+      ],
+      "action": "301_SPECIFIC"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "clicks_90d": 0,
+      "impressions_90d": 98,
+      "ctr_pct": 0,
+      "avg_position": 8.3,
+      "top_queries": [
+        "sla",
+        "sla shipping",
+        "sla в логистике",
+        "sla в логистике это",
+        "sla логистика",
+        "sla что это",
+        "сла это",
+        "что такое sla в логистике"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i",
+      "clicks_90d": 0,
+      "impressions_90d": 67,
+      "ctr_pct": 0,
+      "avg_position": 10,
+      "top_queries": [
+        "товарный бизнес",
+        "товарный бизнес украина",
+        "что такое товарный бизнес"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/iyjgnyrmx1-rro-prro-dlya-bznesu-osoblivost-ta-vimog",
+      "clicks_90d": 0,
+      "impressions_90d": 56,
+      "ctr_pct": 0,
+      "avg_position": 36.3,
+      "top_queries": [
+        "rro",
+        "програмний реєстратор розрахункових операцій",
+        "програмний рро для юридичних осіб",
+        "програмний рро це",
+        "прро це",
+        "рро",
+        "рро для салонів краси",
+        "рро касовий апарат",
+        "рро прро",
+        "рро прро це"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "clicks_90d": 6,
+      "impressions_90d": 53,
+      "ctr_pct": 11.32,
+      "avg_position": 8.5,
+      "top_queries": [
+        "mtp group",
+        "так"
+      ],
+      "action": "301_SPECIFIC"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os",
+      "clicks_90d": 0,
+      "impressions_90d": 51,
+      "ctr_pct": 0,
+      "avg_position": 26.5,
+      "top_queries": [
+        "бизнес интернет магазин",
+        "где открыть интернет компанию",
+        "заказать интернет магазин",
+        "запуск и продвижение интернет магазина с нуля",
+        "как запустить интернет магазин",
+        "как запустить интернет магазин с нуля",
+        "как запустить свой интернет магазин",
+        "как открыть интернет магазин",
+        "как открыть интернет магазин в украине",
+        "как открыть интернет-магазин в украине"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
+      "clicks_90d": 0,
+      "impressions_90d": 39,
+      "ctr_pct": 0,
+      "avg_position": 35.2,
+      "top_queries": [
+        "услуга фулфилмент",
+        "фулфилмент",
+        "фулфилмент в товарке",
+        "фулфилмент в товарном бизнесе",
+        "фулфилмент украина",
+        "фулфилмент цены"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i",
+      "clicks_90d": 1,
+      "impressions_90d": 35,
+      "ctr_pct": 2.86,
+      "avg_position": 7.8,
+      "top_queries": [
+        "невыкуп товара"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
+      "clicks_90d": 0,
+      "impressions_90d": 34,
+      "ctr_pct": 0,
+      "avg_position": 12.3,
+      "top_queries": [
+        "минусы фулфилмента",
+        "плюсы фулфилмента",
+        "склад фулфилмент",
+        "фулфилмент для интернет магазина"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/m2l0va78z1-chto-takoe-fulfilment-dlya-internet-maga",
+      "clicks_90d": 0,
+      "impressions_90d": 32,
+      "ctr_pct": 0,
+      "avg_position": 46.2,
+      "top_queries": [
+        "услуга фулфилмент",
+        "фулфилмент",
+        "фулфилмент для интернет магазина",
+        "фулфилмент для интернет магазинов",
+        "фулфилмент интернет магазина",
+        "фулфілмент",
+        "фулфілмент для інтернет магазинів",
+        "что такое фулфилмент"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha",
+      "clicks_90d": 0,
+      "impressions_90d": 26,
+      "ctr_pct": 0,
+      "avg_position": 11.0,
+      "top_queries": [
+        "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу?",
+        "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу? оберіть одну правильну відповідь"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
+      "clicks_90d": 0,
+      "impressions_90d": 25,
+      "ctr_pct": 0,
+      "avg_position": 44.5,
+      "top_queries": [
+        "программное обеспечение рро",
+        "программное рро",
+        "програмный рро",
+        "регистратор расчетных операций",
+        "рро для фоп что это",
+        "рро для фоп это",
+        "рро расшифровка",
+        "рро это"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/",
+      "clicks_90d": 0,
+      "impressions_90d": 20,
+      "ctr_pct": 0,
+      "avg_position": 15.9,
+      "top_queries": [
+        "рро для інтернет магазинів",
+        "рро інтернет магазин",
+        "хмарна онлайн каса для інтернет-магазину"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/rjmgtrmvb1-fulflment-scho-tse-sklki-koshtu-ta-nsh-v",
+      "clicks_90d": 0,
+      "impressions_90d": 15,
+      "ctr_pct": 0,
+      "avg_position": 77.6,
+      "top_queries": [
+        "фулфилмент цены",
+        "фулфілмент",
+        "фулфілмент для інтернет магазинів",
+        "фулфілмент для інтернет магазинів київ",
+        "фулфілмент це"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/33bmy57t51-kakoi-biznes-otkrit-v-ukraine-vozmozhnos",
+      "clicks_90d": 0,
+      "impressions_90d": 14,
+      "ctr_pct": 0,
+      "avg_position": 38,
+      "top_queries": [
+        "как открыть свой бизнес в украине",
+        "каким бизнесом заняться в украине",
+        "какой бизнес можно открыть",
+        "какой бизнес открыть",
+        "какой бизнес открыть с нуля",
+        "какой открыть бизнес",
+        "открыть бизнес в украине"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn",
+      "clicks_90d": 0,
+      "impressions_90d": 14,
+      "ctr_pct": 0,
+      "avg_position": 33.7,
+      "top_queries": [
+        "склад для інтернет-магазину",
+        "склад фулфилмент",
+        "склад фулфілмент київ",
+        "складський комплекс для інтернет-магазинів",
+        "фулфилмент склад",
+        "фулфілмент що це"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar",
+      "clicks_90d": 1,
+      "impressions_90d": 13,
+      "ctr_pct": 7.69,
+      "avg_position": 6.2,
+      "top_queries": [
+        "снизить возвраты товара"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 35.9,
+      "top_queries": [
+        "фулфилмент в товарке",
+        "фулфилмент в товарном бизнесе",
+        "фулфилмент для интернет магазина",
+        "фулфилмент для интернет магазинов"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 78.6,
+      "top_queries": [
+        "фулфилмент для интернет магазина",
+        "фулфилмент интернет магазина",
+        "фулфілмент",
+        "фулфілмент для товарного бізнесу",
+        "фулфілмент для інтернет магазинів",
+        "фулфілмент для інтернет магазинів київ"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v/",
+      "clicks_90d": 0,
+      "impressions_90d": 12,
+      "ctr_pct": 0,
+      "avg_position": 29.1,
+      "top_queries": [
+        "склад фулфилмент",
+        "склад фулфілмент",
+        "склад фулфілмент дніпро",
+        "фулфилмент склад"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/d0kknsayu1-fulfillment-chi-vlasnii-sklad-u-2025-str",
+      "clicks_90d": 0,
+      "impressions_90d": 10,
+      "ctr_pct": 0,
+      "avg_position": 26.3,
+      "top_queries": [
+        "e fulfillment",
+        "склад фулфилмент",
+        "складський комплекс для e-commerce"
+      ],
+      "action": "301_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 64.5,
+      "top_queries": [
+        "настройка рро для фоп",
+        "обязательное рро для фоп",
+        "прро для фоп",
+        "рро это"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng/",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 6.9,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 63.5,
+      "top_queries": [
+        "фулфилмент для интернет магазина",
+        "фулфилмент для интернет магазинов",
+        "фулфилмент для интернет магазинов запорожье",
+        "фулфилмент интернет магазина"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 56.1,
+      "top_queries": [
+        "услуга фулфилмент",
+        "фулфилмент",
+        "фулфилмент в товарном бизнесе",
+        "фулфилмент украина"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/mjrp3rx3z1-kak-internet-magazinu-rabotat-s-otzivami/",
+      "clicks_90d": 0,
+      "impressions_90d": 8,
+      "ctr_pct": 0,
+      "avg_position": 7,
+      "top_queries": [
+        "размещение положительных отзывов в интернете"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 34.7,
+      "top_queries": [
+        "хмарна онлайн каса для інтернет-магазину"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "clicks_90d": 0,
+      "impressions_90d": 6,
+      "ctr_pct": 0,
+      "avg_position": 13.8,
+      "top_queries": [
+        "сервисы товарного бизнеса",
+        "товарный бизнес",
+        "товарный бизнес украина"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 13.8,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 5.2,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/k6e9sg89y1-yak-vdkriti-nternet-magazin-v-ukran-osno/",
+      "clicks_90d": 0,
+      "impressions_90d": 5,
+      "ctr_pct": 0,
+      "avg_position": 43,
+      "top_queries": [
+        "відкрити інтернет магазин",
+        "що потрібно щоб відкрити інтернет магазин"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko",
+      "clicks_90d": 1,
+      "impressions_90d": 4,
+      "ctr_pct": 25.0,
+      "avg_position": 2,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 10.7,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 30.7,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/vzfshz9ht1-yak-ukranskim-pdprimtsyam-viiti-na-vrope",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 11,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/iavfdk7371-10-rabochih-sposobov-uvelichit-pribil-in/",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 7,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o",
+      "clicks_90d": 0,
+      "impressions_90d": 3,
+      "ctr_pct": 0,
+      "avg_position": 5.3,
+      "top_queries": [
+        "crm в фулфилменте"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 2,
+      "top_queries": [
+        "sla",
+        "sla что это"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 7.5,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/do95mhtv41-naibolee-chastie-oshibki-v-logistike-vo/",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 7.5,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz/",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 40.5,
+      "top_queries": [
+        "рро для интернет магазина"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/okobnaenu1-kak-otkrit-internet-magazin-vo-vremya-vo/",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 6,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 23.5,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc",
+      "clicks_90d": 0,
+      "impressions_90d": 2,
+      "ctr_pct": 0,
+      "avg_position": 20,
+      "top_queries": [
+        "відгриміти"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/a5zlsrmfs1-chem-zamenit-rossiiskie-servisi-chek-lis",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 7,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/699f3hz0v1-yak-pratsyu-fulflment-v-ukran-2025-ekspe",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/jghdgatid1-yak-vdkriti-nternet-magazin-pd-chas-vini",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2b5uuyxzx1-chto-nuzhno-znat-o-povedenii-pokupatelei/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6,
+      "top_queries": [
+        "покупателей"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2l10ulx751-kak-ukrainskim-predprinimatelyam-viiti-n/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1,
+      "top_queries": [
+        "европейские маркетплейсы"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/a5zlsrmfs1-chem-zamenit-rossiiskie-servisi-chek-lis",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 1,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/e3uzpiaja1-5-glavnih-oshibok-pri-otkritii-internet/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 62,
+      "top_queries": [
+        "фулфилмент для интернет магазинов киев"
+      ],
+      "action": "410_OR_HUB"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/kahfgm2161-7-trendov-internet-torgovli-v-2022-godu/",
+      "clicks_90d": 0,
+      "impressions_90d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5,
+      "top_queries": [],
+      "action": "410_OR_HUB"
+    }
+  ]
+}
