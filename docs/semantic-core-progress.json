@@ -1,0 +1,62 @@
+{
+  "_description": "Persistent progress log for SEMANTIC_CORE_ROADMAP.xlsx. Update this file when tasks complete; re-run scripts/gen-semantic-excel.py to refresh the workbook. Format: tasks keyed by exact 'Task' column value from Roadmap Phases sheet.",
+  "_last_updated": "2026-04-20",
+  "completions": [
+    {
+      "task": "Переписати home title + meta з ціною",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "pending-phase0",
+      "notes": "UA home вже мав 'від 18 грн' в title/desc. RU home extended LocalBusiness schema (logo, sameAs, priceRange, areaServed, knowsAbout) + WebSite schema. EN home title changed from '$0.40' to '€0.40/order' (EU-relevant); LocalBusiness extended. Real 'price in meta' was already present — actual fix was schema enrichment for brand signals."
+    },
+    {
+      "task": "Organization schema для brand search",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "pending-phase0",
+      "notes": "UA home had full LocalBusiness schema already. Extended RU + EN home with: logo, image, sameAs (FB/LinkedIn/Telegram), priceRange 'UAH 18 - UAH 650', aggregateRating, areaServed, knowsAbout. Fixed broken /images/mtp-logo.webp reference (was missing, copied from Tilda legacy filename)."
+    },
+    {
+      "task": "Оновити /tsiny/ /tsenu/ /prices/ meta",
+      "status": "PARTIAL",
+      "date": "2026-04-20",
+      "commit": "pending-phase0",
+      "notes": "UA /tsiny/ and RU /tsenu/ already had '18 грн' in title/desc/FAQ schema — no change needed. EN /prices/ extended LocalBusiness schema with logo, sameAs, priceRange to match UA/RU quality."
+    },
+    {
+      "task": "Claim Google Business Profile",
+      "status": "MANUAL_USER_ACTION",
+      "date": null,
+      "commit": null,
+      "notes": "External task — user must claim at business.google.com. Recommended: entity name 'MTP Group Fulfillment', category 'Logistics service', both addresses (Щасливе + Білогородка), phone +380501444645, hours Mo-Su 08:00-20:00."
+    },
+    {
+      "task": "Видалити дубль generate_lead/form_submit на EN thanks",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "ff0bfe9",
+      "notes": "Fix A. en/thanks.astro: removed form_submit + generate_lead + dataLayer.push; kept only AdWords conversion event. Eliminates GA4 lead double-count for EN traffic."
+    },
+    {
+      "task": "Видалити дубль GTM noscript iframe з 23 blog pages",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "8a744c5",
+      "notes": "Fix B. Removed duplicate noscript iframe from 23 files; Base.astro:172 retained as single source of truth. 1 line deleted per file, no other changes."
+    },
+    {
+      "task": "Tilda 301 clean sweep (59 legacy URLs)",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "prior-session",
+      "notes": "vercel.json — 5 specific Tier 1 redirects + 3 catch-all patterns for /blog/tpost/, /ua/blog/tpost/, /en/blog/tpost/. All point directly to /ua/blog/ or /ua/about/ (no chained redirects). 132 redirects total, verified via curl."
+    },
+    {
+      "task": "GSC full audit + competitor research",
+      "status": "DONE",
+      "date": "2026-04-20",
+      "commit": "ff0bfe9",
+      "notes": "Generated docs/gsc/full-pages.{csv,json}, full-queries.{csv,json}, opportunities.{csv,json}, competitor-gap-research.md. 178 pages, 334 queries, 29 clicks, 4329 impressions (90d baseline)."
+    }
+  ]
+}

@@ -11,6 +11,15 @@ from openpyxl.comments import Comment
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'docs', 'SEMANTIC_CORE_ROADMAP.xlsx')
+PROGRESS_FILE = os.path.join(ROOT, 'docs', 'semantic-core-progress.json')
+
+# Load progress log — maps task name → {status, date, commit, notes}
+progress_map = {}
+if os.path.exists(PROGRESS_FILE):
+    with open(PROGRESS_FILE, encoding='utf-8') as f:
+        _p = json.load(f)
+        for c in _p.get('completions', []):
+            progress_map[c['task']] = c
 
 wb = Workbook()
 
@@ -364,7 +373,7 @@ ws.auto_filter.ref = f'A1:G{ws.max_row}'
 ws = wb.create_sheet('🗓️ Roadmap Phases')
 
 phases = [
-    ['Phase', 'Time', 'Task', 'Owner page / action', 'Priority', 'Status', 'Expected impact'],
+    ['Phase', 'Time', 'Task', 'Owner page / action', 'Priority', 'Status', 'Expected impact', 'Done date', 'Commit', 'Notes'],
     # Phase 0
     ['Phase 0', 'Цей тиждень', 'Переписати home title + meta з ціною', '/ua/ /ru/ /en/', 'P0', 'TODO', '+40-60 clicks/mo'],
     ['Phase 0', 'Цей тиждень', 'Organization schema для brand search', '/ua/ + /', 'P0', 'TODO', '+20-40 clicks/mo'],
@@ -410,16 +419,30 @@ phases = [
     ['Phase 4', 'Місяці 4-6', 'Archive/301 EN pages без трафіку', 'cleanup', 'P2', 'TODO', 'Consolidate signal'],
 ]
 
-for r in phases:
-    ws.append(r)
+for i, r in enumerate(phases):
+    if i == 0:
+        ws.append(r)
+    else:
+        # Lookup progress for this task
+        task_name = r[2]
+        done = progress_map.get(task_name)
+        if done:
+            status = '✅ ' + done.get('status', 'DONE')
+            r = list(r)
+            r[5] = status
+            r.extend([done.get('date', ''), done.get('commit', ''), done.get('notes', '')])
+        else:
+            r = list(r) + ['', '', '']
+        ws.append(r)
 
 style_header(ws)
 freeze(ws, 'A2')
-set_widths(ws, [12, 14, 50, 40, 10, 12, 35])
+set_widths(ws, [12, 14, 50, 40, 10, 16, 35, 12, 20, 60])
 
 for row_idx in range(2, ws.max_row + 1):
     phase = ws[f'A{row_idx}'].value
     prio = ws[f'E{row_idx}'].value
+    status = ws[f'F{row_idx}'].value or ''
     if phase == 'Phase 0':
         ws[f'A{row_idx}'].fill = P0_FILL
     elif phase == 'Phase 1':
@@ -438,7 +461,14 @@ for row_idx in range(2, ws.max_row + 1):
     elif prio == 'P2':
         ws[f'E{row_idx}'].fill = P2_FILL
 
-ws.auto_filter.ref = f'A1:G{ws.max_row}'
+    # Status color
+    if 'DONE' in status or 'PARTIAL' in status:
+        ws[f'F{row_idx}'].fill = DONE_FILL
+        ws[f'F{row_idx}'].font = Font(bold=True, color='1B5E20')
+    elif 'MANUAL' in status:
+        ws[f'F{row_idx}'].fill = P2_FILL
+
+ws.auto_filter.ref = f'A1:J{ws.max_row}'
 
 # ===== SHEET 7: v1 vs v2 =====
 ws = wb.create_sheet('🔄 v1 vs v2')
@@ -608,8 +638,57 @@ for row_idx in range(2, ws.max_row + 1):
 
 ws.auto_filter.ref = f'A1:G{ws.max_row}'
 
+# ===== SHEET 10: COMPLETION LOG =====
+ws = wb.create_sheet('📅 Completion log')
+ws['A1'] = 'COMPLETION LOG — хронологія виконаних задач'
+ws['A1'].font = Font(bold=True, size=14, color='E63329')
+ws.merge_cells('A1:F1')
+
+ws.append([])
+ws.append(['Date', 'Task', 'Status', 'Commit', 'Phase', 'Notes'])
+style_header(ws, row=3)
+
+# Sort completions by date desc (newest first)
+sorted_done = sorted(progress_map.values(), key=lambda c: c.get('date') or '0', reverse=True)
+
+for c in sorted_done:
+    status = c.get('status', 'DONE')
+    # Try to infer phase from task name (best-effort)
+    task = c['task']
+    phase = ''
+    if any(k in task.lower() for k in ['home title', 'organization schema', 'tsiny', 'gbp', 'google business']):
+        phase = 'Phase 0'
+    elif any(k in task.lower() for k in ['generate_lead', 'noscript', 'tilda']):
+        phase = 'Maintenance'
+    elif 'gsc' in task.lower() or 'competitor' in task.lower():
+        phase = 'Analysis'
+
+    ws.append([
+        c.get('date', '—'),
+        task,
+        '✅ ' + status,
+        c.get('commit', ''),
+        phase,
+        c.get('notes', '')[:200]
+    ])
+
+freeze(ws, 'A4')
+set_widths(ws, [12, 55, 22, 20, 14, 80])
+
+for row_idx in range(4, ws.max_row + 1):
+    status = ws[f'C{row_idx}'].value or ''
+    if 'DONE' in status:
+        ws[f'C{row_idx}'].fill = DONE_FILL
+    elif 'PARTIAL' in status:
+        ws[f'C{row_idx}'].fill = P1_FILL
+    elif 'MANUAL' in status:
+        ws[f'C{row_idx}'].fill = P2_FILL
+
+ws.auto_filter.ref = f'A3:F{ws.max_row}'
+
 # ===== SAVE =====
 wb.save(OUT)
 print(f'Saved: {OUT}')
 print(f'Sheets: {wb.sheetnames}')
+print(f'Completions tracked: {len(progress_map)}')
 print(f'Size: {os.path.getsize(OUT)/1024:.1f} KB')
