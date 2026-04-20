@@ -46,6 +46,57 @@
       "destination": "/blog/tpost/:slug/",
       "statusCode": 301
     },
+
+    { "source": "/fulfilment-ukraina/", "destination": "/ua/fulfilment-ukraina/", "statusCode": 301 },
+    { "source": "/ua/", "destination": "/", "statusCode": 301 },
+    { "source": "/ru/thanks/", "destination": "/thanks/", "statusCode": 301 },
+
+    { "source": "/fulfillment-for-clothing-shoes/", "destination": "/en/blog/post/fulfillment-for-clothing-shoes/", "statusCode": 301 },
+    { "source": "/peak-season-logistics-mistakes/", "destination": "/en/blog/post/peak-season-logistics-mistakes/", "statusCode": 301 },
+    { "source": "/replace-russian-services-ukraine-checklist/", "destination": "/en/blog/post/replace-russian-services-ukraine-checklist/", "statusCode": 301 },
+    { "source": "/expand-to-european-marketplaces/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/how-to-choose-fulfillment-operator/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/best-business-ideas-ukraine/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/product-business-ukraine-guide/", "destination": "/en/blog/", "statusCode": 301 },
+
+    { "source": "/en/fulfillment-for-clothing-shoes/", "destination": "/en/blog/post/fulfillment-for-clothing-shoes/", "statusCode": 301 },
+    { "source": "/en/fulfillment-for-clothing/", "destination": "/en/fulfillment-ukraine/", "statusCode": 301 },
+    { "source": "/en/peak-season-logistics-mistakes/", "destination": "/en/blog/post/peak-season-logistics-mistakes/", "statusCode": 301 },
+    { "source": "/en/replace-russian-services-ukraine-checklist/", "destination": "/en/blog/post/replace-russian-services-ukraine-checklist/", "statusCode": 301 },
+    { "source": "/en/expand-to-european-marketplaces/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/en/how-to-choose-fulfillment-operator/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/en/best-business-ideas-ukraine/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/en/product-business-ukraine-guide/", "destination": "/en/blog/", "statusCode": 301 },
+
+    { "source": "/ua/fulfillment-for-clothing-shoes/", "destination": "/ua/fulfilment-dlya-internet-magazynu/", "statusCode": 301 },
+    { "source": "/ua/peak-season-logistics-mistakes/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/replace-russian-services-ukraine-checklist/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/expand-to-european-marketplaces/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/how-to-choose-fulfillment-operator/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/best-business-ideas-ukraine/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ua/product-business-ukraine-guide/", "destination": "/ua/blog/", "statusCode": 301 },
+
+    { "source": "/ua/fulfilment-dlya-elektroniky/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/fulfilment-dlya-odyahu-ta-vzuttya/", "destination": "/ua/fulfilment-dlya-internet-magazynu/", "statusCode": 301 },
+
+    { "source": "/blog/tpost/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/ua/blog/tpost/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/en/blog/post/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/en/blog/fulfillment-vs-own-warehouse/", "destination": "/en/blog/post/fulfillment-vs-own-warehouse/", "statusCode": 301 },
+    { "source": "/en/blog/case-ecodrive/", "destination": "/en/blog/", "statusCode": 301 },
+    { "source": "/en/ua/calculator/", "destination": "/en/calculator/", "statusCode": 301 },
+
+    { "source": "/-/empty/", "destination": "/", "statusCode": 301 },
+    { "source": "/static3.tildacdn.com/", "destination": "/", "statusCode": 301 },
+
+    { "source": "/:s(xz8vfk1jg1[^/]+|3tdig7x6z1[^/]+|2fz7njsgn1[^/]+|ldos1bvrh1[^/]+|gdf6pzul31[^/]+|lgl2mu2gb1[^/]+|bl9h476gp1[^/]+)/", "destination": "/ua/blog/tpost/:s/", "statusCode": 301 },
+    { "source": "/ua/:s(xz8vfk1jg1[^/]+|3tdig7x6z1[^/]+|2fz7njsgn1[^/]+|ldos1bvrh1[^/]+|gdf6pzul31[^/]+|lgl2mu2gb1[^/]+|bl9h476gp1[^/]+)/", "destination": "/ua/blog/tpost/:s/", "statusCode": 301 },
+    { "source": "/en/:s(xz8vfk1jg1[^/]+|3tdig7x6z1[^/]+|2fz7njsgn1[^/]+|ldos1bvrh1[^/]+|gdf6pzul31[^/]+|lgl2mu2gb1[^/]+|bl9h476gp1[^/]+)/", "destination": "/ua/blog/tpost/:s/", "statusCode": 301 },
+
+    { "source": "/:s(25m6cs3xd1[^/]+|2k76ljgp91[^/]+|8emi42xu61[^/]+|h4mk9ml261[^/]+|ka4rkudet1[^/]+|keantd63p1[^/]+|o5x60a9nk1[^/]+|pdjm77ogc1[^/]+|xh1rdimut1[^/]+|yzhv774pa1[^/]+)/", "destination": "/blog/tpost/:s/", "statusCode": 301 },
+    { "source": "/ua/:s(25m6cs3xd1[^/]+|2k76ljgp91[^/]+|8emi42xu61[^/]+|h4mk9ml261[^/]+|ka4rkudet1[^/]+|keantd63p1[^/]+|o5x60a9nk1[^/]+|pdjm77ogc1[^/]+|xh1rdimut1[^/]+|yzhv774pa1[^/]+)/", "destination": "/blog/tpost/:s/", "statusCode": 301 },
+    { "source": "/en/:s(25m6cs3xd1[^/]+|2k76ljgp91[^/]+|8emi42xu61[^/]+|h4mk9ml261[^/]+|ka4rkudet1[^/]+|keantd63p1[^/]+|o5x60a9nk1[^/]+|pdjm77ogc1[^/]+|xh1rdimut1[^/]+|yzhv774pa1[^/]+)/", "destination": "/blog/tpost/:s/", "statusCode": 301 },
+
     {
       "source": "/ua/fulfilment-dlya-marketpleysov/",
       "destination": "/ua/fulfilment-dlya-marketpleysiv/",
