@@ -6,21 +6,21 @@
       "task": "Переписати home title + meta з ціною",
       "status": "DONE",
       "date": "2026-04-20",
-      "commit": "pending-phase0",
+      "commit": "6058d76",
       "notes": "UA home вже мав 'від 18 грн' в title/desc. RU home extended LocalBusiness schema (logo, sameAs, priceRange, areaServed, knowsAbout) + WebSite schema. EN home title changed from '$0.40' to '€0.40/order' (EU-relevant); LocalBusiness extended. Real 'price in meta' was already present — actual fix was schema enrichment for brand signals."
     },
     {
       "task": "Organization schema для brand search",
       "status": "DONE",
       "date": "2026-04-20",
-      "commit": "pending-phase0",
+      "commit": "6058d76",
       "notes": "UA home had full LocalBusiness schema already. Extended RU + EN home with: logo, image, sameAs (FB/LinkedIn/Telegram), priceRange 'UAH 18 - UAH 650', aggregateRating, areaServed, knowsAbout. Fixed broken /images/mtp-logo.webp reference (was missing, copied from Tilda legacy filename)."
     },
     {
       "task": "Оновити /tsiny/ /tsenu/ /prices/ meta",
       "status": "PARTIAL",
       "date": "2026-04-20",
-      "commit": "pending-phase0",
+      "commit": "6058d76",
       "notes": "UA /tsiny/ and RU /tsenu/ already had '18 грн' in title/desc/FAQ schema — no change needed. EN /prices/ extended LocalBusiness schema with logo, sameAs, priceRange to match UA/RU quality."
     },
     {
