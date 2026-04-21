@@ -1,0 +1,161 @@
+{
+  "photos": [
+    {
+      "file": "public/images/gbp/mtp-warehouse-exterior.jpg",
+      "source": "public/images/mtp-warehouse-exterior.webp",
+      "category": "EXTERIOR",
+      "caption_uk": "Фасад складу MTP Group у Київській області",
+      "caption_ru": "Фасад склада MTP Group в Киевской области",
+      "branch": "MTPFUL1",
+      "size_bytes": 206048,
+      "dimensions": "800x1112",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/warehouse-mtp-boryspil.jpg",
+      "source": "public/images/warehouse-mtp-boryspil.webp",
+      "category": "EXTERIOR",
+      "caption_uk": "Склад у Щасливому (Бориспільський район)",
+      "caption_ru": "Склад в Счастливом (Бориспольский район)",
+      "branch": "MTPFUL1",
+      "size_bytes": 226147,
+      "dimensions": "1200x673",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-warehouse-interior.jpg",
+      "source": "public/images/mtp-warehouse-interior.webp",
+      "category": "INTERIOR",
+      "caption_uk": "Інтер'єр складу: адресне зберігання товарів",
+      "caption_ru": "Интерьер склада: адресное хранение товаров",
+      "branch": "BOTH",
+      "size_bytes": 183177,
+      "dimensions": "800x1112",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/warehouse-mtp-storage.jpg",
+      "source": "public/images/warehouse-mtp-storage.webp",
+      "category": "INTERIOR",
+      "caption_uk": "Зона зберігання — стелажі та ячейки",
+      "caption_ru": "Зона хранения — стеллажи и ячейки",
+      "branch": "BOTH",
+      "size_bytes": 86273,
+      "dimensions": "800x533",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-packing-process.jpg",
+      "source": "public/images/mtp-packing-process.webp",
+      "category": "PROCESS",
+      "caption_uk": "Упаковка замовлень для відправки",
+      "caption_ru": "Упаковка заказов для отправки",
+      "branch": "BOTH",
+      "size_bytes": 97449,
+      "dimensions": "1200x673",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/warehouse-mtp-packing.jpg",
+      "source": "public/images/warehouse-mtp-packing.webp",
+      "category": "PROCESS",
+      "caption_uk": "Пакувальна зона MTP Group",
+      "caption_ru": "Упаковочная зона MTP Group",
+      "branch": "BOTH",
+      "size_bytes": 144475,
+      "dimensions": "800x533",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-warehouse-team-work.jpg",
+      "source": "public/images/mtp-warehouse-team-work.webp",
+      "category": "TEAM_AT_WORK",
+      "caption_uk": "Команда MTP Group за роботою",
+      "caption_ru": "Команда MTP Group за работой",
+      "branch": "BOTH",
+      "size_bytes": 191115,
+      "dimensions": "800x1112",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/warehouse-mtp-team.jpg",
+      "source": "public/images/warehouse-mtp-team.webp",
+      "category": "TEAM_AT_WORK",
+      "caption_uk": "Склад MTP: співробітники комплектують замовлення",
+      "caption_ru": "Склад MTP: сотрудники комплектуют заказы",
+      "branch": "BOTH",
+      "size_bytes": 72095,
+      "dimensions": "800x1128",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-team-ukraine.jpg",
+      "source": "public/images/mtp-team-ukraine.webp",
+      "category": "TEAM",
+      "caption_uk": "Команда MTP Group Fulfillment — 10 років на ринку України",
+      "caption_ru": "Команда MTP Group Fulfillment — 10 лет на рынке Украины",
+      "branch": "BOTH",
+      "size_bytes": 129441,
+      "dimensions": "1200x673",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-founder-nikolai-warehouse.jpg",
+      "source": "public/images/mtp-founder-nikolai-warehouse.webp",
+      "category": "OWNER",
+      "caption_uk": "Микола, засновник MTP Group, на складі",
+      "caption_ru": "Николай, основатель MTP Group, на складе",
+      "branch": "MTPFUL1",
+      "size_bytes": 180582,
+      "dimensions": "800x1112",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-generator-backup.jpg",
+      "source": "public/images/mtp-generator-backup.webp",
+      "category": "ADDITIONAL",
+      "caption_uk": "Резервне живлення: 3 генератори — склад працює під час блекаутів",
+      "caption_ru": "Резервное питание: 3 генератора — склад работает при блэкаутах",
+      "branch": "BOTH",
+      "size_bytes": 125974,
+      "dimensions": "1200x673",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-starlink-warehouse.jpg",
+      "source": "public/images/mtp-starlink-warehouse.webp",
+      "category": "ADDITIONAL",
+      "caption_uk": "Starlink забезпечує безперервний зв'язок 24/7",
+      "caption_ru": "Starlink обеспечивает непрерывную связь 24/7",
+      "branch": "BOTH",
+      "size_bytes": 79499,
+      "dimensions": "1200x669",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    },
+    {
+      "file": "public/images/gbp/mtp-fulfillment-warehouse-hero.jpg",
+      "source": "public/images/mtp-fulfillment-warehouse-hero.webp",
+      "category": "COVER",
+      "caption_uk": "MTP Group — фулфілмент для інтернет-магазинів України",
+      "caption_ru": "MTP Group — фулфилмент для интернет-магазинов Украины",
+      "branch": "BOTH",
+      "size_bytes": 188864,
+      "dimensions": "800x1200",
+      "uploaded_mtpful1": false,
+      "uploaded_mtpful2": false
+    }
+  ],
+  "skipped": []
+}

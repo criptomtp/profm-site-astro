@@ -7,6 +7,8 @@ token.json
 gsc_token.json
 scripts/gsc_token.json
 scripts/gbp-session/
+docs/gbp/_raw_*.html
+docs/gbp/screenshots/
 *.credentials.json
 .vercel
 .env
