@@ -20,9 +20,30 @@ const {
 } = Astro.props;
 
 const t = {
-  uk: { btn: 'Передзвоніть мені →', placeholder: '+380XXXXXXXXX', micro: '✓ Відповімо протягом 15 хвилин · без зобовʼязань', thanks: '/ua/thanks/' },
-  ru: { btn: 'Перезвоните мне →',   placeholder: '+380XXXXXXXXX', micro: '✓ Ответим в течение 15 минут · без обязательств', thanks: '/ru/thanks/' },
-  en: { btn: 'Call me back →',      placeholder: 'Your phone number', micro: '✓ We call back within 15 minutes · no obligations', thanks: '/en/thanks/' },
+  uk: {
+    btn: 'Передзвоніть мені →',
+    placeholder: '+380XXXXXXXXX',
+    micro: '✓ Відповімо протягом 15 хвилин · без зобовʼязань',
+    thanks: '/ua/thanks/',
+    tgLabel: 'Або напишіть в Telegram →',
+    tgUrl: 'https://t.me/nikolay_mtp?text=' + encodeURIComponent('Привіт! Цікавить фулфілмент. Можете розрахувати вартість?'),
+  },
+  ru: {
+    btn: 'Перезвоните мне →',
+    placeholder: '+380XXXXXXXXX',
+    micro: '✓ Ответим в течение 15 минут · без обязательств',
+    thanks: '/ru/thanks/',
+    tgLabel: 'Или напишите в Telegram →',
+    tgUrl: 'https://t.me/nikolay_mtp?text=' + encodeURIComponent('Здравствуйте! Интересует фулфилмент. Можете рассчитать стоимость?'),
+  },
+  en: {
+    btn: 'Call me back →',
+    placeholder: 'Your phone number',
+    micro: '✓ We call back within 15 minutes · no obligations',
+    thanks: '/en/thanks/',
+    tgLabel: 'Or message us on Telegram →',
+    tgUrl: 'https://t.me/nikolay_mtp?text=' + encodeURIComponent('Hi! Interested in fulfillment services. Can you calculate the cost?'),
+  },
 }[lang];
 
 const btnLabel = button || t.btn;
@@ -36,6 +57,10 @@ const maxlen = lang === 'en' ? '25' : '19';
     <button type="submit">{btnLabel}</button>
   </form>
   <p class="hero-cta__micro">{micro}</p>
+  <a class="hero-cta__tg" href={t.tgUrl} target="_blank" rel="noopener" aria-label={t.tgLabel}>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.13l-1.97 9.28c-.15.67-.54.83-1.1.52l-3.03-2.24-1.46 1.41c-.16.16-.3.3-.61.3l.22-3.05 5.56-5.02c.24-.22-.05-.34-.37-.13l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.58-4.47c.53-.2 1-.05.87.94z"/></svg>
+    <span>{t.tgLabel}</span>
+  </a>
 </div>
 
 <style>
@@ -45,6 +70,9 @@ const maxlen = lang === 'en' ? '25' : '19';
 .hero-cta__form button{border:0;padding:16px 24px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s;background:#e63329;color:#fff}
 .hero-cta__form button:hover{background:#c42d24}
 .hero-cta__micro{font-size:12px;margin:12px 0 0;letter-spacing:.02em;line-height:1.5}
+.hero-cta__tg{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .2s,color .2s,border-color .2s}
+.hero-cta__tg svg{flex-shrink:0;color:#0088cc}
+.hero-cta__tg span{line-height:1}
 
 /* Light theme (white backgrounds, editorial) */
 .hero-cta--light .hero-cta__form{border:2px solid #000;background:#fff}
@@ -52,6 +80,9 @@ const maxlen = lang === 'en' ? '25' : '19';
 .hero-cta--light .hero-cta__form input{color:#000}
 .hero-cta--light .hero-cta__form input::placeholder{color:#999}
 .hero-cta--light .hero-cta__micro{color:#666}
+.hero-cta--light .hero-cta__tg{color:#000;border:1.5px solid #000;background:#fff}
+.hero-cta--light .hero-cta__tg:hover{background:#000;color:#fff}
+.hero-cta--light .hero-cta__tg:hover svg{color:#4db8ff}
 
 /* Dark theme (dark overlays, direct mood) */
 .hero-cta--dark .hero-cta__form{border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
@@ -59,6 +90,9 @@ const maxlen = lang === 'en' ? '25' : '19';
 .hero-cta--dark .hero-cta__form input{color:#fff}
 .hero-cta--dark .hero-cta__form input::placeholder{color:rgba(255,255,255,.5)}
 .hero-cta--dark .hero-cta__micro{color:rgba(255,255,255,.6)}
+.hero-cta--dark .hero-cta__tg{color:#fff;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+.hero-cta--dark .hero-cta__tg:hover{background:#fff;color:#000}
+.hero-cta--dark .hero-cta__tg:hover svg{color:#0088cc}
 
 @media(max-width:640px){
   .hero-cta__form{flex-direction:column;border-radius:8px}
