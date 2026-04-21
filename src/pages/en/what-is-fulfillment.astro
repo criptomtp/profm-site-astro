@@ -80,6 +80,11 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
         <button type="submit">Get a quote →</button>
       </form>
       <div id="heroFormError" class="hero-form__error" role="alert" aria-live="polite"></div>
+      <div class="en-pil-hero__or"><span>or</span></div>
+      <a href="https://t.me/nikolay_mtp?text=Hi%21%20Interested%20in%20fulfillment%20services%20from%20Ukraine.%20Can%20you%20calculate%20the%20cost%3F" target="_blank" rel="noopener" class="en-pil-hero__tg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.13l-1.97 9.28c-.15.67-.54.83-1.1.52l-3.03-2.24-1.46 1.41c-.16.16-.3.3-.61.3l.22-3.05 5.56-5.02c.24-.22-.05-.34-.37-.13l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.58-4.47c.53-.2 1-.05.87.94z"/></svg>
+        Message us on Telegram
+      </a>
       <p class="en-pil-hero__note">Free consultation · We call back within 15 minutes · No obligations</p>
       <div class="en-pil-hero__links">
         <a href="/en/calculator/">Run the calculator</a>
@@ -709,6 +714,10 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
 .en-pil-hero__form .hero-form button{padding:12px 22px;background:var(--mtp-red);color:#fff;border:0;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s}
 .en-pil-hero__form .hero-form button:hover{background:#c62822}
 .en-pil-hero__form .hero-form__error{color:var(--mtp-red);font-family:'DM Sans',sans-serif;font-size:13px;min-height:18px;margin-top:6px}
+.en-pil-hero__or{display:flex;align-items:center;gap:12px;margin:14px 0;color:#9ca3af;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.en-pil-hero__or::before,.en-pil-hero__or::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.1)}
+.en-pil-hero__tg{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:520px;padding:14px 24px;background:#229ED9;color:#fff;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;text-decoration:none;transition:background .2s,transform .15s;box-sizing:border-box}
+.en-pil-hero__tg:hover{background:#1a86b8;transform:translateY(-1px)}
 .en-pil-hero__note{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--mtp-mute);margin:10px 0 14px}
 .en-pil-hero__links{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--mtp-mute);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .en-pil-hero__links a{color:var(--mtp-ink);text-decoration:none;border-bottom:1px solid var(--mtp-red);padding-bottom:2px}
