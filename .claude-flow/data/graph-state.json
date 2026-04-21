@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1776421961244,
+  "updatedAt": 1776780668866,
   "nodeCount": 35,
   "nodes": {
     "mem-MEMORY-project-memories": {
@@ -34,8 +34,8 @@
     "mem-profm-google-ads-profm-google-ads---project-con": {
       "id": "mem-profm-google-ads-profm-google-ads---project-con",
       "category": "profm-google-ads",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-company-profile": {
@@ -55,8 +55,8 @@
     "mem-profm-google-ads-critical-issues-found--phase-1": {
       "id": "mem-profm-google-ads-critical-issues-found--phase-1",
       "category": "profm-google-ads",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774146
     },
     "mem-profm-google-ads-phase-1-actions--user-must-do-": {
@@ -90,15 +90,15 @@
     "mem-profm-vercel-migration-profm-site-migration--tilda---": {
       "id": "mem-profm-vercel-migration-profm-site-migration--tilda---",
       "category": "profm-vercel-migration",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-completed--2026-03-21-": {
       "id": "mem-profm-vercel-migration-completed--2026-03-21-",
       "category": "profm-vercel-migration",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774146
     },
     "mem-profm-vercel-migration-remaining-setup--user-must-do-": {
@@ -125,15 +125,15 @@
     "mem-user-profile----": {
       "id": "mem-user-profile----",
       "category": "user-profile",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774150
     },
     "mem-user-profile-user-profile": {
       "id": "mem-user-profile-user-profile",
       "category": "user-profile",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774146
     },
     "mem-MEMORY-user-preferences": {
@@ -146,8 +146,8 @@
     "mem-MEMORY-project--mtp-agent": {
       "id": "mem-MEMORY-project--mtp-agent",
       "category": "core",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774148
     },
     "mem-MEMORY----user-profile--user-profile-": {
@@ -160,15 +160,15 @@
     "mem-ads-check-command----": {
       "id": "mem-ads-check-command----",
       "category": "ads-check-command",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774149
     },
     "mem-google-ads-api----": {
       "id": "mem-google-ads-api----",
       "category": "google-ads-api",
-      "confidence": 0.5800000000000001,
-      "accessCount": 2,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774149
     },
     "mem-google-search-console----": {
@@ -181,8 +181,8 @@
     "mem-phase1-completed----": {
       "id": "mem-phase1-completed----",
       "category": "phase1-completed",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774149
     },
     "mem-MEMORY-deployment": {
@@ -216,8 +216,8 @@
     "mem-project_photoforge----": {
       "id": "mem-project_photoforge----",
       "category": "project_photoforge",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774151
     },
     "mem-project_astro_migration----": {
@@ -230,15 +230,15 @@
     "mem-project_astro_migration-status--live-on-fulfillmentmtp": {
       "id": "mem-project_astro_migration-status--live-on-fulfillmentmtp",
       "category": "project_astro_migration",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774152
     },
     "mem-project_daughters_fund----": {
       "id": "mem-project_daughters_fund----",
       "category": "project_daughters_fund",
-      "confidence": 0.53,
-      "accessCount": 1,
+      "confidence": 0.5,
+      "accessCount": 0,
       "createdAt": 1775129774152
     },
     "insight-1775222497951-18gu": {

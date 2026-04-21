@@ -1,0 +1,544 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Скільки коштує підключення до фулфілменту?","acceptedAnswer":{"@type":"Answer","text":"Підключення — 0 грн. Ти платиш тільки з першого місяця роботи за фактичні операції. Мінімум — 5 000 грн/міс."}},
+    {"@type":"Question","name":"Який мінімальний обсяг для фулфілменту?","acceptedAnswer":{"@type":"Answer","text":"Мінімальний рахунок — 5 000 грн/міс. Це приблизно 150 замовлень із середнім чеком або 30 палет на зберіганні."}},
+    {"@type":"Question","name":"Як швидко можна підключитись до фулфілменту?","acceptedAnswer":{"@type":"Answer","text":"Від 1 до 3 робочих днів. 1 день — договір, 1 день — приймання першої партії, 1 день — інтеграція і тест."}},
+    {"@type":"Question","name":"Чи забираєте товар з мого складу?","acceptedAnswer":{"@type":"Answer","text":"Так, забираємо з Києва і Київської області безкоштовно при обсязі від 1 палети. З інших регіонів — через Нову Пошту/Делівері."}},
+    {"@type":"Question","name":"Що робити під час блекауту?","acceptedAnswer":{"@type":"Answer","text":"Нічого. 3 генератори на 36 годин автономії кожен, запас дизпалива на 5 діб, 2 Starlink-термінали. За 2022-2025 — 0 днів простою."}},
+    {"@type":"Question","name":"Хто відповідає за втрату товару?","acceptedAnswer":{"@type":"Answer","text":"MTP Group несе матеріальну відповідальність за товар на складі згідно договору. Втратили — компенсуємо вартість за закупівельною ціною."}}
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},
+    {"@type":"ListItem","position":2,"name":"Що таке фулфілмент","item":"https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/"}
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Що таке фулфілмент — повний гід для інтернет-магазинів 2026",
+  "description": "Як працює фулфілмент, скільки коштує, кому підходить, blackout-стійкий сервіс MTP Group.",
+  "author": {"@type":"Organization","name":"MTP Group Fulfillment"},
+  "publisher": {"@type":"Organization","name":"MTP Group","url":"https://www.fulfillmentmtp.com.ua"},
+  "datePublished": "2026-04-21",
+  "image": "https://www.fulfillmentmtp.com.ua/images/shcho-take-fulfilment-ua-hero.jpg"
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+<Base
+  title="Що таке фулфілмент — повний гід 2026 | MTP Group"
+  description="Фулфілмент простими словами: як працює, скільки коштує, коли переходити, порівняння зі своїм складом, blackout-стійкий сервіс MTP Group."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/shcho-take-fulfilment-ua-hero.jpg"
+  ogType="article"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="pillar-bc" aria-label="Breadcrumbs">
+  <div class="pillar-bc__inner">
+    <a href="/">Головна</a>
+    <span>›</span>
+    <span class="pillar-bc__current">Що таке фулфілмент</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pillar-hero">
+  <div class="pillar-hero__inner">
+    <div class="pillar-hero__main">
+      <span class="pillar-hero__chip">PILLAR GUIDE · 15 ХВ ЧИТАННЯ</span>
+      <h1 class="pillar-hero__title">Що таке <span class="pillar-hero__accent">фулфілмент</span>.<br>Повний гід для інтернет-магазинів у 2026</h1>
+      <p class="pillar-hero__lead">Фулфілмент — це логістичний сервіс, який виконує за магазин приймання, зберігання, комплектацію, пакування і відправку замовлень. У цьому гіді розберемо як саме працює процес, скільки реально коштує, коли переходити зі свого складу, і чому у 2026 blackout-стійкий фулфілмент став базовою інфраструктурою українського e-commerce.</p>
+      <div class="pillar-hero__actions">
+        <a href="/ua/calculator/" class="pillar-hero__btn pillar-hero__btn--primary">Розрахувати вартість</a>
+        <a href="#toc" class="pillar-hero__btn pillar-hero__btn--ghost">Переглянути розділи</a>
+      </div>
+    </div>
+    <aside class="pillar-toc" id="toc">
+      <span class="pillar-toc__title">У цьому гіді</span>
+      <ol class="pillar-toc__list">
+        <li><a href="#sec-01"><span>01</span> Що таке фулфілмент</a></li>
+        <li><a href="#sec-02"><span>02</span> 7 кроків процесу</a></li>
+        <li><a href="#sec-03"><span>03</span> Фулфілмент vs свій склад</a></li>
+        <li><a href="#sec-04"><span>04</span> Скільки коштує</a></li>
+        <li><a href="#sec-05"><span>05</span> Кому підходить</a></li>
+        <li><a href="#sec-06"><span>06</span> Blackout-стійкість</a></li>
+        <li><a href="#sec-07"><span>07</span> Як обрати оператора</a></li>
+        <li><a href="#sec-08"><span>08</span> FAQ</a></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- BLACKOUT RESILIENCE PANEL -->
+<section class="pillar-blackout" aria-label="Blackout-стійкість">
+  <div class="pillar-blackout__inner">
+    <div class="pillar-blackout__label">UNIQUE ADVANTAGE</div>
+    <h2 class="pillar-blackout__headline">3 генератори &nbsp;+&nbsp; Starlink &nbsp;=&nbsp; <em>0 днів простою</em> з 2022</h2>
+    <p class="pillar-blackout__sub">Поки 40% київських складів зупиняли прийом замовлень взимку 2022-2023, MTP Group відправляла кожен день. Дизель на 36 годин автономії, запас палива на 5 діб, резервний Starlink. <a href="#sec-06">Як це працює →</a></p>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="pillar-stats">
+  <div class="pillar-stats__inner">
+    <div class="pillar-stats__item"><span class="pillar-stats__num">150+</span><span class="pillar-stats__label">клієнтів</span></div>
+    <div class="pillar-stats__item"><span class="pillar-stats__num">60&nbsp;000</span><span class="pillar-stats__label">відправок / міс</span></div>
+    <div class="pillar-stats__item"><span class="pillar-stats__num">0</span><span class="pillar-stats__label">днів простою з 2022</span></div>
+    <div class="pillar-stats__item"><span class="pillar-stats__num">10 років</span><span class="pillar-stats__label">на ринку</span></div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="pillar-body">
+  <div class="pillar-body__inner">
+
+  <section class="pillar-sec" id="sec-01">
+    <div class="pillar-sec__num">01</div>
+    <h2>Що таке фулфілмент — визначення простими словами</h2>
+    <p class="pillar-lead">Фулфілмент — це логістичний сервіс, який виконує за магазин всі операції після того, як клієнт натиснув кнопку «купити». Замість того, щоб тримати склад, наймати комірників і самому бігати на пошту, ти передаєш ці функції спеціалізованому оператору — і платиш тільки за фактичні дії.</p>
+    <h3>Фулфілмент у двох реченнях</h3>
+    <p>Фулфілмент — це аутсорсинг складської і відправної логістики для інтернет-магазинів. Оператор фізично зберігає твій товар, отримує замовлення з твого сайту або CRM, комплектує, пакує і передає перевізнику — ти бачиш тільки статус у кабінеті і платиш за кожну операцію.</p>
+    <h3>Звідки термін (Amazon, 1990-ті)</h3>
+    <p>Слово «fulfillment» прийшло з американської логістики 1980-х, але масовим стало завдяки Amazon. У 1999 році Amazon запустив програму FBA (Fulfillment by Amazon), яка дозволила тисячам дрібних продавців зберігати товар на складах маркетплейсу і відправляти через логістичну мережу компанії. Це перевернуло e-commerce: маленькі бренди отримали доступ до інфраструктури рівня корпорації. У 2010-х модель прийшла в Європу, у 2015-му — в Україну. MTP Group запустила перший фулфілмент-склад у Щасливому у 2015 році.</p>
+    <h3>Чому в Україні це стало критичним у 2022–2026</h3>
+    <p>До повномасштабного вторгнення фулфілмент у нас був опцією «для тих, хто хоче масштабуватися». Після 24 лютого 2022 він став питанням виживання. Блекаути, релокація бізнесу, втрата власних складів у окупованих регіонах, призов комірників — все це зробило самостійну складську логістику у 2-3 рази дорожчою і в 5 разів ризикованішою. Професійний фулфілмент з генераторами, Starlink і розподіленою складською інфраструктурою став безпечнішим вибором. Станом на 2026 рік понад 40% українських інтернет-магазинів із обсягом від 100 замовлень на місяць працюють через фулфілмент-операторів.</p>
+  </section>
+
+  <section class="pillar-sec" id="sec-02">
+    <div class="pillar-sec__num">02</div>
+    <h2>Як працює фулфілмент: 7 кроків процесу</h2>
+    <p class="pillar-lead">За кожним «ваше замовлення відправлено» стоїть ланцюжок із семи операцій. У MTP Group вони автоматизовані через WMS і прозорі для клієнта через особистий кабінет. Ось як це виглядає зсередини.</p>
+
+    <ol class="pillar-steps">
+      <li>
+        <h3>Приймання товару</h3>
+        <p>Ти привозиш товар на склад сам або ми забираємо його у постачальника — із Києва, Львова, Одеси чи напряму з-під митниці. На прийманні комірник перевіряє кількість, штрих-коди, цілісність упаковки і складає акт. Товар без маркування ми промаркуємо — кожна SKU отримує унікальний код у нашій WMS. Приймання 1000 одиниць зазвичай займає 2–4 години.</p>
+      </li>
+      <li>
+        <h3>Маркування і контроль якості</h3>
+        <p>Для косметики — термін придатності і цілісність пломби. Для електроніки — пломби виробника. Для одягу — бирки, розмірна сітка, наявність дефектів. Товари з пошкодженнями відкладаються в «брак» — фотографуємо і повідомляємо тобі. Кращий відсів на вході = менше повернень від клієнтів.</p>
+      </li>
+      <li>
+        <h3>Розміщення на складі (WMS)</h3>
+        <p>Кожна SKU отримує «адресне» місце — полицю, комірку, палетне місце. WMS запам'ятовує, де що лежить, і при замовленні автоматично будує оптимальний маршрут для комірника. На 2800 м² у Щасливому це економить 30–40% часу на комплектації.</p>
+      </li>
+      <li>
+        <h3>Обробка замовлення</h3>
+        <p>Дані миттєво приходять до нас через інтеграцію з Rozetka, Prom.ua, Horoshop, KeyCRM, WooCommerce, OpenCart або SalesDrive. Система автоматично резервує товар, присвоює пріоритет і формує завдання на комплектацію. Замовлення до 15:00 — того ж дня. У нас 4 відправки щодня.</p>
+      </li>
+      <li>
+        <h3>Комплектація (picking)</h3>
+        <p>Комірник отримує на термінал завдання із маршрутом і штрих-кодами. Сканує товар у комірці — WMS підтверджує правильність SKU. Помилитися майже неможливо. У MTP Group точність picking становить 99,7%.</p>
+      </li>
+      <li>
+        <h3>Пакування і відправка</h3>
+        <p>Товар пакується у фірмову або нейтральну упаковку — за твоїм брифом. Вкладаємо чек, інструкцію, листівку, промо-код. Нова Пошта, Укрпошта, Meest — вибирає клієнт на чекауті, ми автоматично друкуємо потрібну накладну.</p>
+      </li>
+      <li>
+        <h3>Повернення і аналітика</h3>
+        <p>Клієнт відмовився — товар приходить назад. Ми приймаємо, оглядаємо, і якщо цілий — повертаємо на полицю. Щомісячна аналітика: топ-SKU, швидкість обороту, % повернень, середній чек.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="pillar-sec" id="sec-03">
+    <div class="pillar-sec__num">03</div>
+    <h2>Фулфілмент vs власний склад: порівняльна таблиця</h2>
+    <p class="pillar-lead">Головне питання, яке ставить кожен власник магазину — а це точно дешевше, ніж робити самому? Відповідь залежить від обсягу, але нижче — чесне порівняння за шістьма критеріями.</p>
+
+    <div class="pillar-table-wrap">
+      <table class="pillar-table">
+        <thead><tr><th>Критерій</th><th>Свій склад</th><th>Фулфілмент (MTP)</th></tr></thead>
+        <tbody>
+          <tr><td>Фіксовані витрати</td><td>Оренда 30–80 тис. грн + ФОП 2–3 комірники (40–60 тис. грн) + комуналка 10–15 тис. грн</td><td>Мінімум 5 000 грн/міс</td></tr>
+          <tr><td>Змінні витрати</td><td>Пакувальні матеріали + перевізники</td><td>Від 18 грн/замовлення (усе включно)</td></tr>
+          <tr><td>Час запуску</td><td>2–4 тижні</td><td>1–3 дні</td></tr>
+          <tr><td>Масштабування</td><td>Переїзд при зростанні х2–х3</td><td>Просто більше замовлень у системі</td></tr>
+          <tr><td>Uptime під блекаут</td><td>0–30%</td><td>100% (3 генератори + Starlink)</td></tr>
+          <tr><td>Ризик</td><td>Крадіжки, псування, помилки, травми</td><td>Застраховано, матеріальна відповідальність оператора</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="roi-formula">ROI-формула: коли переходити</h3>
+    <p>Простий розрахунок для магазину із середнім чеком 800 грн і 300 замовлень на місяць:</p>
+    <ul class="pillar-bullets">
+      <li><strong>Свій склад:</strong> оренда 35 000 + 2 комірники × 25 000 = 50 000 + комуналка 8 000 + пакування 6 000 = <strong>99 000 грн/міс</strong></li>
+      <li><strong>Фулфілмент MTP:</strong> 300 × 35 грн (усе включно) = <strong>10 500 грн/міс</strong></li>
+    </ul>
+    <p>Економія — 88 500 грн/міс, або 1,06 млн грн/рік. Точка беззбитковості власного складу — приблизно 2 500–3 000 замовлень на місяць. До цього обсягу фулфілмент завжди вигідніший. Детальне порівняння з кейсами читай у статті <a href="/ua/blog/fulfillment-vs-own-warehouse/">Фулфілмент vs власний склад</a>.</p>
+  </section>
+
+  <section class="pillar-sec" id="sec-04">
+    <div class="pillar-sec__num">04</div>
+    <h2>Скільки коштує фулфілмент в Україні: реальні тарифи 2026</h2>
+    <p class="pillar-lead">Ціноутворення у фулфілменті часто виглядає заплутано. У MTP ми придерживаємось прозорої трирівневої моделі, де ти бачиш за що платиш кожну копійку.</p>
+
+    <h3>З чого складається тариф (3 блоки)</h3>
+    <div class="pillar-price-grid">
+      <div class="pillar-price-card">
+        <span class="pillar-price-card__num">01</span>
+        <h4>Зберігання</h4>
+        <p>Плата за місце на складі. Від <strong>80 грн/місяць</strong> за палетомісце, від 25 грн/місяць за полицю 0,5 м³. Для 50 палет — 4 000 грн/міс, або ~13 грн на замовлення при 300 шт.</p>
+      </div>
+      <div class="pillar-price-card">
+        <span class="pillar-price-card__num">02</span>
+        <h4>Обробка замовлення</h4>
+        <p>Найбільша стаття: комплектація, пакування, ТТН, передача перевізнику. Від <strong>18 грн</strong> за замовлення з 1–3 позиціями, +3 грн за додаткову позицію. Вкладення листівки +1 грн, збірка набору від +5 грн.</p>
+      </div>
+      <div class="pillar-price-card">
+        <span class="pillar-price-card__num">03</span>
+        <h4>Повернення</h4>
+        <p>Окремий тариф: приймання повернення, перевірка, повернення на склад. Від <strong>15 грн</strong> за повернення. Пошкоджений товар — +фотозвіт 10 грн.</p>
+      </div>
+    </div>
+
+    <h3>Приклад 300 замов/міс (10 500 грн/міс)</h3>
+    <p>Магазин косметики: 300 замов/міс, середня позиція — 2 SKU, 15 палет, повернення 8% (24 шт).</p>
+    <ul class="pillar-bullets">
+      <li>Зберігання: 15 × 80 = 1 200 грн</li>
+      <li>Обробка: 300 × (18 + 3) = 6 300 грн</li>
+      <li>Повернення: 24 × 15 = 360 грн</li>
+      <li>Пакувальні матеріали: ~2 500 грн</li>
+      <li><strong>Разом: 10 360 грн/міс</strong>, або 34,5 грн за замовлення — все включно.</li>
+    </ul>
+
+    <h3>Приклад 1500 замов/міс (45 000 грн/міс)</h3>
+    <p>Магазин одягу: 1500 замов/міс, 60 палет, повернення 15%.</p>
+    <ul class="pillar-bullets">
+      <li>Зберігання: 60 × 80 = 4 800 грн</li>
+      <li>Обробка зі знижкою обсягу: 28 350 грн</li>
+      <li>Повернення: 225 × 15 = 3 375 грн</li>
+      <li>Пакувальні матеріали: ~9 000 грн</li>
+      <li><strong>Разом: ~45 500 грн/міс</strong>, або 30,3 грн за замовлення.</li>
+    </ul>
+    <p>Точний розрахунок під твій магазин зроби у <a href="/ua/calculator/">калькуляторі фулфілменту</a>, або подивись повний прайс у розділі <a href="/ua/tsiny/">Ціни</a>.</p>
+  </section>
+
+  <section class="pillar-sec" id="sec-05">
+    <div class="pillar-sec__num">05</div>
+    <h2>Кому підходить фулфілмент (і кому ні)</h2>
+    <p class="pillar-lead">Фулфілмент — не чарівна пігулка. Є профіль магазинів, для яких це обов'язково економічно вигідно, і є ті, кому краще поки що тримати склад удома.</p>
+
+    <h3>Ідеальний клієнт: 100–10 000 замовлень/міс</h3>
+    <p>Фулфілмент працює найкраще для магазинів із обсягом 100–10 000 замовлень на місяць. Нижня планка — ти вже не встигаєш сам, вартість твого часу перевищує вартість оператора. У MTP 68% клієнтів — магазини обсягом 200–3000 замов/міс. Ідеальний профіль: FMCG (косметика, побутхімія), одяг і взуття, електроніка, товари для дітей, добавки, аксесуари.</p>
+
+    <h3>Кому не підходить</h3>
+    <p>Фулфілмент погано працює для: ліків із рецептурним відпуском, алкоголю з ліцензією, живих квітів, індивідуального пошиву «під клієнта», ювелірки з особливими вимогами охорони. Також проблематичні товари вагою 50+ кг із індивідуальними габаритами (хоча <a href="/ua/fulfilment-vazhkykh-tovariv/">фулфілмент важких товарів</a> у нас є як окремий сервіс). Якщо у тебе менше 30–40 замовлень на місяць — мінімум 5000 грн з'їдає більшу частину маржі.</p>
+
+    <h3>Чек-лист «час переходити» (7 сигналів)</h3>
+    <ol class="pillar-checklist">
+      <li>Ти або партнер пакуєте товар 3+ години на день</li>
+      <li>Магазин уже має 80+ замовлень на місяць стабільно</li>
+      <li>Ти починаєш пропускати маркетинг і аналітику через логістику</li>
+      <li>Було 2+ серйозні помилки при пакуванні</li>
+      <li>Власний склад уже повний, потрібно розширюватися</li>
+      <li>Під блекаут ти втрачаєш 1–2 дні відправок</li>
+      <li>Хочеш вийти на маркетплейси і боїшся не встигати</li>
+    </ol>
+    <p>Якщо відмітив 3+ сигнали — фулфілмент окупиться вже у першому місяці.</p>
+
+    <h3>Галузеві рішення</h3>
+    <div class="pillar-industry-grid">
+      <a href="/ua/fulfilment-dlya-internet-magazynu/" class="pillar-industry-card"><strong>Інтернет-магазини</strong><span>Shopify, WooCommerce, Horoshop, OpenCart</span></a>
+      <a href="/ua/fulfilment-dlya-marketpleysiv/" class="pillar-industry-card"><strong>Маркетплейси</strong><span>Prom.ua, Rozetka, Kasta</span></a>
+      <a href="/ua/fulfilment-dlya-maloho-biznesu/" class="pillar-industry-card"><strong>Малий бізнес</strong><span>Від 50 замов/міс</span></a>
+      <a href="/ua/fulfilment-dlya-kosmetyky/" class="pillar-industry-card"><strong>Косметика</strong><span>Контроль вологості, термінів</span></a>
+      <a href="/ua/fulfilment-vazhkykh-tovariv/" class="pillar-industry-card"><strong>Важкі товари 50+ кг</strong><span>Палетне зберігання</span></a>
+    </div>
+  </section>
+
+  <section class="pillar-sec" id="sec-06">
+    <div class="pillar-sec__num">06</div>
+    <h2>Blackout-стійкий фулфілмент — наша унікальна перевага</h2>
+    <p class="pillar-lead">Від жовтня 2022 до весни 2024 майже всі українські склади пережили періоди, коли світло зникало на 8–16 годин на добу. Тисячі замовлень зависали на 2–5 днів. У MTP Group — 0 днів простою за цей період.</p>
+
+    <h3>Що відбувається зі складом під час відключень світла</h3>
+    <p>У стандартному складі без резервного живлення відбувається каскадний крах: перестає працювати сервер WMS (товари «зникають» із системи), перестають друкуватися ТТН (клієнти не отримують трек-номери), не працюють сканери (помилки 5–10%), не працює освітлення у стелажних зонах. Відправки зупиняються, клієнти нервують, обсяг повернень зростає на 15–20%.</p>
+
+    <h3>Генератори: потужність, автономність, пальне</h3>
+    <p>На обох складах MTP — 3 дизельних генератори загальною потужністю 180 кВт. Запускаються автоматично через 15 секунд після зникнення міського живлення. Автономність на одному баку — 36 годин безперервної роботи. На складі постійно зберігається запас дизпалива на 5 діб. Резервні генератори (2 із 3) — на випадок виходу одного з ладу.</p>
+
+    <h3>Starlink: чому це критично для WMS</h3>
+    <p>WMS — це хмарна система. Немає інтернету — немає роботи. Стаціонарний провайдер під час блекауту падає разом із містом. Тому обидва склади MTP обладнані Starlink-терміналами (основний + резервний). Швидкість 100–150 Мбіт/с, ping 40–60 мс — достатньо для роботи WMS, відео-нагляду і онлайн-кабінету. Перемикання автоматичне.</p>
+
+    <h3>Реальні цифри — 0 днів простою</h3>
+    <p>З 24 лютого 2022 по 21 квітня 2026 у MTP Group — <strong>0 днів повного простою складу</strong>. Під час найгірших блекаутів зими 2022–2023 ми працювали у штатному режимі, поки 40% київських складів зупинили прийом замовлень. За цей період ми прийняли на сервіс 32 нових клієнти, які переходили до нас із операторів, що не витягнули блекаут.</p>
+  </section>
+
+  <section class="pillar-sec" id="sec-07">
+    <div class="pillar-sec__num">07</div>
+    <h2>Фулфілмент, 3PL, дропшипінг: у чому різниця</h2>
+    <p class="pillar-lead">Терміни 3PL, фулфілмент і дропшипінг часто плутають. Різниця принципова — вона впливає на те, хто ризикує грошима і хто контролює якість.</p>
+
+    <div class="pillar-table-wrap">
+      <table class="pillar-table">
+        <thead><tr><th>Параметр</th><th>3PL</th><th>Фулфілмент</th><th>Дропшипінг</th></tr></thead>
+        <tbody>
+          <tr><td>Товар на складі</td><td>Твій</td><td>Твій</td><td>У постачальника</td></tr>
+          <tr><td>Хто пакує</td><td>Оператор</td><td>Оператор</td><td>Постачальник</td></tr>
+          <tr><td>Контроль якості</td><td>Ти або оператор</td><td>Оператор детально</td><td>Немає</td></tr>
+          <tr><td>Маржа</td><td>25–45%</td><td>25–45%</td><td>10–20%</td></tr>
+          <tr><td>Швидкість доставки</td><td>1–2 дні</td><td>1–2 дні</td><td>3–14 днів</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>3PL</strong> — загальний термін аутсорсу логістики. <strong>Фулфілмент</strong> — це 3PL + обробка e-commerce замовлень end-to-end. <strong>Дропшипінг</strong> — ти взагалі не маєш товару. Фулфілмент — золота середина між повним власним складом і ризикованим дропшипінгом.</p>
+
+    <h3>Як обрати фулфілмент-оператора: 10 критеріїв</h3>
+    <ol class="pillar-criteria">
+      <li><strong>Локація складу.</strong> Київська область — оптимально для всієї України. Питай адресу, не вір загальним «Київ».</li>
+      <li><strong>Uptime і резервування.</strong> Генератори, Starlink, резервний інтернет — обов'язкові мінімуми у 2026.</li>
+      <li><strong>Інтеграції.</strong> Rozetka, Prom, Horoshop, KeyCRM, WooCommerce, OpenCart, SalesDrive.</li>
+      <li><strong>Мінімальний обсяг.</strong> MTP бере від 5000 грн/міс — це ~150 замов/міс.</li>
+      <li><strong>Прозорість тарифу.</strong> Повний прайс із ВСІМА додатковими послугами. Ховаються — червоний прапор.</li>
+      <li><strong>SLA.</strong> Обробка до 24 годин, точність 99%+, час реакції — все прописано в договорі.</li>
+      <li><strong>Повернення.</strong> Хто приймає, з якою швидкістю, що з пошкодженими.</li>
+      <li><strong>Договір.</strong> Матеріальна відповідальність, страхування товару, терміни оплати.</li>
+      <li><strong>Відгуки і кейси.</strong> Проси 3–5 контактів поточних клієнтів.</li>
+      <li><strong>Тест-період.</strong> Можна завезти 50–100 одиниць і протестувати 2 тижні? У MTP — так.</li>
+    </ol>
+
+    <h3>Міфи про фулфілмент</h3>
+    <div class="pillar-myths">
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 1</span><p><strong>«Дорожчий за свій склад»</strong> — до 2500–3000 замовлень на місяць фулфілмент завжди дешевший.</p></div>
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 2</span><p><strong>«Я втрачу контроль»</strong> — у WMS-кабінеті ти бачиш більше, ніж у власному складі.</p></div>
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 3</span><p><strong>«Тільки для великих»</strong> — MTP працює з магазинами від 150 замов/міс.</p></div>
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 4</span><p><strong>«Всі фулфілменти однакові»</strong> — різниця може бути у 3 рази за якістю і 2 рази за ціною.</p></div>
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 5</span><p><strong>«Інтеграція складна»</strong> — стандартні CMS підключаються за 1 годину.</p></div>
+      <div class="pillar-myth"><span class="pillar-myth__tag">Міф 6</span><p><strong>«Помилки = мій хрест»</strong> — у договорі прописана матеріальна відповідальність оператора.</p></div>
+    </div>
+
+    <h3>Як розпочати з MTP Group</h3>
+    <ol class="pillar-steps pillar-steps--compact">
+      <li><h4>Заявка і консультація</h4><p>Протягом 30 хвилин менеджер передзвонює, обговорюємо обсяг, тип товару, інтеграції.</p></li>
+      <li><h4>Тестове розміщення</h4><p>Привозиш 50–200 одиниць товару. За 1–2 години приймаємо, маркуємо, розміщуємо.</p></li>
+      <li><h4>Інтеграція</h4><p>Підключаємо твою платформу. 5–10 тестових замовлень — переконуємось, що все працює.</p></li>
+      <li><h4>Запуск і KPI</h4><p>Повний перехід. Перший місяць — тижневі звіти з KPI: точність, швидкість, % повернень.</p></li>
+    </ol>
+  </section>
+
+  <section class="pillar-sec" id="sec-08">
+    <div class="pillar-sec__num">08</div>
+    <h2>Часті запитання</h2>
+
+    <div class="pillar-faq">
+      <details><summary>Скільки коштує підключення?</summary><p>Підключення — 0 грн. Ти платиш тільки з першого місяця роботи за фактичні операції. Мінімум — 5 000 грн/міс.</p></details>
+      <details><summary>Який мінімальний обсяг?</summary><p>Мінімальний рахунок — 5 000 грн/міс. Це приблизно 150 замовлень із середнім чеком або 30 палет на зберіганні.</p></details>
+      <details><summary>Як швидко підключитись?</summary><p>Від 1 до 3 робочих днів. 1 день — договір, 1 день — приймання першої партії, 1 день — інтеграція і тестування.</p></details>
+      <details><summary>Чи забираєте товар з мого складу?</summary><p>Так, забираємо з Києва і Київської області безкоштовно при обсязі від 1 палети. З інших регіонів — через Нову Пошту/Делівері.</p></details>
+      <details><summary>Що робити при блекауті?</summary><p>Нічого. 3 генератори на 36 годин автономії кожен, запас дизпалива на 5 діб, 2 Starlink-термінали. За 2022–2025 — 0 днів простою.</p></details>
+      <details><summary>Як працюєте з маркетплейсами?</summary><p>Пряма інтеграція з Prom.ua, Rozetka Marketplace, Kasta. Автоматично підтягуємо замовлення, друкуємо ТТН за форматом маркетплейсу, відправляємо у їхні сортувальні центри або напряму клієнту.</p></details>
+      <details><summary>Які інтеграції з CRM?</summary><p>KeyCRM, SalesDrive — нативні інтеграції. RetailCRM, Bitrix24 — через API. Кастомні CRM — API + 1–2 дні розробки.</p></details>
+      <details><summary>Хто відповідає за втрату товару?</summary><p>MTP Group несе матеріальну відповідальність за товар на складі згідно договору. Втратили — компенсуємо вартість за закупівельною ціною. Страхування товару включене у тариф для обсягів понад 500 000 грн складських залишків.</p></details>
+      <details><summary>Як обробляються повернення?</summary><p>Повернення через Нову Пошту або Укрпошту приходить на наш склад. Приймаємо протягом 24 годин, перевіряємо стан, робимо фото. Цілий товар — на полицю, пошкоджений — у зону браку.</p></details>
+      <details><summary>Чи можна самим приїхати на склад?</summary><p>Так, за попередньою домовленістю. Щасливе — 35 км від Києва, Білогородка — 20 км. Екскурсія + зустріч із керівником — безкоштовно, зазвичай 1 година.</p></details>
+      <details><summary>Як розраховуються повернення коштів?</summary><p>Якщо замовлення не відправлено з нашої провини — повертаємо 100% вартості обробки і компенсуємо повторну відправку. Якщо клієнт просто передумав — стандартна плата за операцію повернення.</p></details>
+      <details><summary>Чи приймаєте товари зі спецзберіганням?</summary><p>Косметика, побутова хімія, їжа в герметичній упаковці, електроніка — без проблем. БАДи — так. Ліки рецептурні, алкоголь, зброя, живі квіти — ні. Холодне зберігання до +4°C — обговорюємо індивідуально.</p></details>
+    </div>
+    <p class="pillar-faq-link">Не знайшов відповідь? Розгорнуті пояснення у розділі <a href="/ua/faq/">FAQ</a>.</p>
+  </section>
+
+  </div>
+</article>
+
+<!-- PRE-CTA: Telegram + calculator + phone callout -->
+<section class="pillar-pre">
+  <div class="pillar-pre__inner">
+    <span class="pillar-pre__chip">FULFILLMENT ПІД КЛЮЧ</span>
+    <h2 class="pillar-pre__title">Готові перевести логістику<br>на автопілот?</h2>
+    <p class="pillar-pre__sub">Оберіть зручний канал — Telegram, калькулятор або телефон. Нижче залиште номер, і ми передзвонимо протягом 15 хвилин.</p>
+    <div class="pillar-pre__actions">
+      <a href="https://t.me/nikolay_mtp?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%84%D1%83%D0%BB%D1%84%D1%96%D0%BB%D0%BC%D0%B5%D0%BD%D1%82%2C%20%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%85%D1%83%D0%B9%D1%82%D0%B5%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%2C%20%D0%B1%D1%83%D0%B4%D1%8C%20%D0%BB%D0%B0%D1%81%D0%BA%D0%B0" target="_blank" rel="noopener" class="pillar-pre__btn pillar-pre__btn--tg">
+        <span aria-hidden="true">✈</span> Написати в Telegram
+      </a>
+      <a href="/ua/calculator/" class="pillar-pre__btn pillar-pre__btn--primary">Калькулятор фулфілменту</a>
+      <a href="tel:+380501444645" class="pillar-pre__btn pillar-pre__btn--ghost">+38 (050) 144-46-45</a>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  :root{--pillar-red:#e63329;--pillar-black:#000;--pillar-white:#fff;--pillar-gray:#f5f5f5;--pillar-muted:#666}
+
+  /* Breadcrumbs */
+  .pillar-bc{background:#fff;border-bottom:1px solid rgba(0,0,0,.06);padding:14px 0;font-family:'DM Sans',sans-serif}
+  .pillar-bc__inner{max-width:1200px;margin:0 auto;padding:0 24px;font-size:13px;color:#666;display:flex;align-items:center;gap:8px}
+  .pillar-bc a{color:#666;transition:color .2s}
+  .pillar-bc a:hover{color:#000}
+  .pillar-bc__current{color:#000;font-weight:500}
+
+  /* Hero */
+  .pillar-hero{background:#fff;padding:60px 0 40px;border-bottom:1px solid #eee}
+  .pillar-hero__inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 320px;gap:60px;align-items:start}
+  .pillar-hero__chip{display:inline-block;background:#e63329;color:#fff;padding:6px 14px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:2px;font-family:'DM Sans',sans-serif;margin-bottom:24px}
+  .pillar-hero__title{font-family:'DM Serif Display',serif;font-size:64px;line-height:1.05;color:#000;margin:0 0 24px;letter-spacing:-1.5px}
+  .pillar-hero__accent{color:#e63329;font-style:italic}
+  .pillar-hero__lead{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;margin:0 0 32px;max-width:720px}
+  .pillar-hero__actions{display:flex;gap:12px;flex-wrap:wrap}
+  .pillar-hero__btn{padding:14px 28px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:.5px;transition:all .2s;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block}
+  .pillar-hero__btn--primary{background:#e63329;color:#fff}
+  .pillar-hero__btn--primary:hover{background:#c42d24}
+  .pillar-hero__btn--ghost{border:1px solid #000;color:#000}
+  .pillar-hero__btn--ghost:hover{background:#000;color:#fff}
+
+  /* Sticky TOC */
+  .pillar-toc{position:sticky;top:80px;background:#fafafa;border:1px solid #eaeaea;padding:24px;border-radius:8px;font-family:'DM Sans',sans-serif}
+  .pillar-toc__title{display:block;font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+  .pillar-toc__list{list-style:none;padding:0;margin:0;counter-reset:toc}
+  .pillar-toc__list li{border-top:1px solid #eaeaea}
+  .pillar-toc__list li:first-child{border-top:none}
+  .pillar-toc__list a{display:flex;align-items:baseline;gap:12px;padding:10px 0;font-size:14px;color:#333;transition:color .2s,padding-left .2s;text-decoration:none}
+  .pillar-toc__list a:hover{color:#e63329;padding-left:4px}
+  .pillar-toc__list a span{color:#e63329;font-weight:700;font-size:12px;min-width:24px}
+
+  /* Blackout Panel */
+  .pillar-blackout{background:#000;color:#fff;padding:40px 24px}
+  .pillar-blackout__inner{max-width:1200px;margin:0 auto;text-align:center}
+  .pillar-blackout__label{display:inline-block;font-size:11px;letter-spacing:3px;color:#e63329;font-weight:700;font-family:'DM Sans',sans-serif;margin-bottom:12px}
+  .pillar-blackout__headline{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;margin:0 0 16px;letter-spacing:-0.5px}
+  .pillar-blackout__headline em{color:#e63329;font-style:italic}
+  .pillar-blackout__sub{font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.7);max-width:720px;margin:0 auto;font-size:15px}
+  .pillar-blackout__sub a{color:#e63329;font-weight:600}
+
+  /* Stats */
+  .pillar-stats{background:#fff;padding:40px 0;border-bottom:1px solid #eee}
+  .pillar-stats__inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .pillar-stats__item{text-align:center;font-family:'DM Sans',sans-serif}
+  .pillar-stats__num{display:block;font-family:'DM Serif Display',serif;font-size:42px;color:#000;margin-bottom:4px}
+  .pillar-stats__label{display:block;font-size:12px;color:#666;text-transform:uppercase;letter-spacing:1.5px}
+
+  /* Article body */
+  .pillar-body{background:#fff;padding:80px 0;font-family:'DM Sans',sans-serif}
+  .pillar-body__inner{max-width:780px;margin:0 auto;padding:0 24px}
+  .pillar-sec{padding:60px 0;border-top:1px solid #eaeaea;scroll-margin-top:80px}
+  .pillar-sec:first-child{border-top:none;padding-top:0}
+  .pillar-sec__num{font-family:'DM Serif Display',serif;font-size:14px;color:#e63329;letter-spacing:3px;font-weight:400;margin-bottom:16px}
+  .pillar-body h2{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:#000;margin:0 0 24px;letter-spacing:-0.5px}
+  .pillar-body h3{font-family:'DM Serif Display',serif;font-size:24px;line-height:1.25;color:#000;margin:36px 0 12px;letter-spacing:-0.25px}
+  .pillar-body h4{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:600;color:#000;margin:0 0 8px}
+  .pillar-body p{font-size:17px;line-height:1.7;color:#333;margin:0 0 16px}
+  .pillar-lead{font-size:19px !important;color:#111 !important;font-weight:400}
+  .pillar-body a{color:#e63329;border-bottom:1px solid transparent;transition:border-color .2s}
+  .pillar-body a:hover{border-bottom-color:#e63329}
+  .pillar-body strong{color:#000;font-weight:600}
+
+  /* Step lists */
+  .pillar-steps{counter-reset:step;list-style:none;padding:0;margin:32px 0}
+  .pillar-steps li{counter-increment:step;position:relative;padding:20px 0 20px 60px;border-top:1px solid #eaeaea}
+  .pillar-steps li:first-child{border-top:none}
+  .pillar-steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:22px;font-family:'DM Serif Display',serif;color:#e63329;font-size:24px;font-weight:400}
+  .pillar-steps--compact li{padding:16px 0 16px 48px}
+  .pillar-steps--compact li::before{top:18px;font-size:20px}
+  .pillar-steps h3{margin:0 0 6px !important;font-size:20px !important}
+  .pillar-steps h4{margin-bottom:6px}
+
+  /* Table */
+  .pillar-table-wrap{overflow-x:auto;margin:24px 0 32px;border:1px solid #eaeaea;border-radius:8px}
+  .pillar-table{width:100%;border-collapse:collapse;font-size:15px}
+  .pillar-table th{background:#000;color:#fff;padding:14px 16px;text-align:left;font-weight:600;font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+  .pillar-table td{padding:14px 16px;border-top:1px solid #eaeaea;color:#333;vertical-align:top}
+  .pillar-table tr:nth-child(even) td{background:#fafafa}
+
+  /* Bullets / checklist */
+  .pillar-bullets{padding-left:22px;margin:16px 0 24px;list-style:disc}
+  .pillar-bullets li{padding:4px 0;color:#333;line-height:1.65}
+  .pillar-checklist{counter-reset:chk;list-style:none;padding:0;margin:20px 0}
+  .pillar-checklist li{counter-increment:chk;position:relative;padding:10px 0 10px 40px;border-bottom:1px solid #f0f0f0}
+  .pillar-checklist li::before{content:counter(chk);position:absolute;left:0;top:10px;width:26px;height:26px;background:#e63329;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif}
+
+  /* Price grid */
+  .pillar-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 32px}
+  .pillar-price-card{background:#fafafa;border:1px solid #eaeaea;padding:20px;border-radius:8px}
+  .pillar-price-card__num{display:block;font-family:'DM Serif Display',serif;color:#e63329;font-size:14px;letter-spacing:2px;margin-bottom:8px}
+  .pillar-price-card h4{margin:0 0 8px;font-size:17px}
+  .pillar-price-card p{font-size:14px;line-height:1.55;color:#444;margin:0}
+
+  /* Industry grid */
+  .pillar-industry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0 32px}
+  .pillar-industry-card{background:#fff;border:1px solid #eaeaea;padding:20px;border-radius:8px;display:flex;flex-direction:column;gap:4px;color:#000 !important;border-bottom:1px solid #eaeaea !important;transition:border-color .2s,transform .2s}
+  .pillar-industry-card:hover{border-color:#e63329 !important;transform:translateY(-2px)}
+  .pillar-industry-card strong{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400}
+  .pillar-industry-card span{font-size:13px;color:#666;font-family:'DM Sans',sans-serif}
+
+  /* Criteria list */
+  .pillar-criteria{counter-reset:crit;list-style:none;padding:0;margin:20px 0}
+  .pillar-criteria li{counter-increment:crit;position:relative;padding:12px 0 12px 48px;border-top:1px solid #eaeaea}
+  .pillar-criteria li:first-child{border-top:none}
+  .pillar-criteria li::before{content:counter(crit,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:'DM Serif Display',serif;color:#e63329;font-size:16px;font-weight:400}
+
+  /* Myths */
+  .pillar-myths{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0 32px}
+  .pillar-myth{background:#000;color:#fff;padding:20px;border-radius:8px}
+  .pillar-myth__tag{display:inline-block;background:#e63329;color:#fff;padding:4px 10px;font-size:10px;letter-spacing:1.5px;font-weight:700;margin-bottom:10px;border-radius:3px}
+  .pillar-myth p{margin:0;color:rgba(255,255,255,.85);font-size:14px;line-height:1.55}
+  .pillar-myth strong{color:#fff}
+
+  /* FAQ */
+  .pillar-faq{margin:20px 0;border-top:1px solid #eaeaea}
+  .pillar-faq details{border-bottom:1px solid #eaeaea;padding:16px 0}
+  .pillar-faq summary{cursor:pointer;font-weight:600;font-size:16px;color:#000;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:4px 0}
+  .pillar-faq summary::-webkit-details-marker{display:none}
+  .pillar-faq summary::after{content:'+';color:#e63329;font-size:20px;font-weight:400;transition:transform .2s}
+  .pillar-faq details[open] summary::after{transform:rotate(45deg)}
+  .pillar-faq details p{margin:12px 0 0;font-size:15px;line-height:1.6;color:#444}
+  .pillar-faq-link{text-align:center;margin-top:24px;color:#666}
+
+  /* CTA */
+  .pillar-pre{background:#fff;padding:80px 24px;text-align:center;border-top:1px solid rgba(0,0,0,.08)}
+  .pillar-pre__inner{max-width:820px;margin:0 auto}
+  .pillar-pre__chip{display:inline-block;background:#e63329;color:#fff;padding:6px 14px;font-size:11px;letter-spacing:2px;font-weight:700;font-family:'DM Sans',sans-serif;margin-bottom:20px;border-radius:4px}
+  .pillar-pre__title{font-family:'DM Serif Display',serif;font-size:clamp(30px,4.2vw,48px);line-height:1.1;margin:0 0 16px;letter-spacing:-1px;color:#000;font-weight:400}
+  .pillar-pre__sub{font-family:'DM Sans',sans-serif;color:#444;font-size:17px;line-height:1.6;max-width:600px;margin:0 auto 30px}
+  .pillar-pre__actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .pillar-pre__btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.3px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .2s;min-height:48px}
+  .pillar-pre__btn--tg{background:#000;color:#fff;border:1.5px solid #000}
+  .pillar-pre__btn--tg:hover{background:#e63329;border-color:#e63329}
+  .pillar-pre__btn--primary{background:#e63329;color:#fff;border:1.5px solid #e63329}
+  .pillar-pre__btn--primary:hover{background:#c42d24;border-color:#c42d24}
+  .pillar-pre__btn--ghost{background:#fff;border:1.5px solid #000;color:#000}
+  .pillar-pre__btn--ghost:hover{background:#000;color:#fff}
+
+  /* Mobile */
+  @media(max-width:900px){
+    .pillar-hero__inner{grid-template-columns:1fr;gap:32px}
+    .pillar-hero__title{font-size:40px}
+    .pillar-toc{position:static;order:-1}
+    .pillar-blackout__headline{font-size:26px}
+    .pillar-stats__inner{grid-template-columns:repeat(2,1fr)}
+    .pillar-stats__num{font-size:32px}
+    .pillar-body h2{font-size:30px}
+    .pillar-body h3{font-size:20px}
+    .pillar-body p,.pillar-lead{font-size:16px !important}
+    .pillar-sec{padding:40px 0}
+    .pillar-price-grid{grid-template-columns:1fr}
+    .pillar-myths{grid-template-columns:1fr}
+    .pillar-pre{padding:60px 20px}
+    .pillar-pre__actions{flex-direction:column;gap:10px}
+    .pillar-pre__btn{width:100%;justify-content:center}
+    .pillar-body__inner{padding:0 20px}
+    .pillar-table{font-size:13px}
+    .pillar-table th,.pillar-table td{padding:10px}
+  }
+</style>
+</Base>

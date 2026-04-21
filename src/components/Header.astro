@@ -14,6 +14,7 @@ const t = {
 const mega = {
   uk: {
     col1: { title: 'За типом бізнесу', items: [
+      { href: '/ua/shcho-take-fulfilment/', label: 'Що таке фулфілмент? — гід', badge: 'ГІД' },
       { href: '/ua/fulfilment-ukraina/', label: 'Фулфілмент Україна' },
       { href: '/ua/fulfilment-dlya-internet-magazynu/', label: 'Інтернет-магазини' },
       { href: '/ua/fulfilment-dlya-marketpleysiv/', label: 'Маркетплейси' },
@@ -34,6 +35,7 @@ const mega = {
   },
   ru: {
     col1: { title: 'По типу бизнеса', items: [
+      { href: '/ru/chto-takoe-fulfilment/', label: 'Что такое фулфилмент? — гайд', badge: 'ГАЙД' },
       { href: '/ru/fulfilment-dlya-internet-magazynu/', label: 'Интернет-магазины' },
       { href: '/ru/fulfilment-dlya-marketpleysov/', label: 'Маркетплейсы' },
       { href: '/ru/fulfilment-dlya-malogo-biznesa/', label: 'Малый бизнес' },
@@ -41,7 +43,7 @@ const mega = {
     ]},
     col2: { title: 'Специализация', items: [
       { href: '/ru/fulfilment-vazhkykh-tovariv/', label: 'Тяжёлые товары 50+ кг' },
-      { href: '/ru/skladski-poslugy/', label: 'Складские услуги' },
+      { href: '/ru/skladskie-uslugi/', label: 'Складские услуги' },
       { href: '/ru/paletnoe-khranenie/', label: 'Паллетное хранение' },
       { href: '/ru/3pl-logistika/', label: '3PL логистика' },
       { href: '/ru/fulfilment-kiev/', label: 'Фулфилмент Киев' },
@@ -53,6 +55,7 @@ const mega = {
   },
   en: {
     col1: { title: 'By business type', items: [
+      { href: '/en/what-is-fulfillment/', label: 'What is fulfillment? — Guide', badge: 'GUIDE' },
       { href: '/en/fulfillment-ukraine/', label: 'Fulfillment Ukraine' },
       { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
       { href: '/en/3pl-logistics/', label: '3PL Logistics' },
@@ -83,7 +86,7 @@ const mega = {
         <div class="hdr-mega" id="hdrMega">
           <div class="hdr-mega-col">
             <span class="hdr-mega-title">{mega.col1.title}</span>
-            {mega.col1.items.map(i => <a href={i.href}>{i.label}</a>)}
+            {mega.col1.items.map((i: any) => <a href={i.href}>{i.label}{i.badge && <span class="hdr-mega-badge">{i.badge}</span>}</a>)}
           </div>
           <div class="hdr-mega-col">
             <span class="hdr-mega-title">{mega.col2.title}</span>
@@ -158,6 +161,7 @@ const mega = {
 .hdr-mega-title{display:block;font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2.5px;margin:0 0 10px;font-weight:600}
 .hdr-mega-col a{display:block;padding:6px 0;font-size:14px;color:rgba(255,255,255,.85);white-space:nowrap;text-decoration:none;transition:color .2s,padding-left .2s}
 .hdr-mega-col a:hover{color:#fff;padding-left:4px}
+.hdr-mega-badge{display:inline-block;margin-left:8px;padding:1px 6px;font-size:9px;font-weight:700;letter-spacing:.14em;background:#e63329;color:#fff;border-radius:2px;vertical-align:middle;line-height:1.4}
 .hdr-mega-cta{font-weight:600;color:#fff !important;font-size:13px !important;padding:10px 20px !important;background:rgba(255,255,255,.08);border-radius:8px;text-align:center;transition:background .2s !important}
 .hdr-mega-cta:hover{background:rgba(255,255,255,.15) !important;padding-left:20px !important}
 .hdr-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:18px}
@@ -303,8 +307,9 @@ body{padding-top:0;margin:0}
     'fulfilment-dlya-internet-magazynu':{ru:'/ru/fulfilment-dlya-internet-magazynu/',en:'fulfillment-ukraine'},
     'fulfilment-vazhkykh-tovariv':{ru:'/ru/fulfilment-vazhkykh-tovariv/',en:'heavy-goods'},
     'heavy-goods':{ua:'fulfilment-vazhkykh-tovariv',ru:'/ru/fulfilment-vazhkykh-tovariv/'},
-    'skladski-poslugy':{ru:'/ru/skladski-poslugy/',en:'warehouse-services'},
-    'warehouse-services':{ua:'skladski-poslugy',ru:'/ru/skladski-poslugy/'},
+    'skladski-poslugy':{ru:'/ru/skladskie-uslugi/',en:'warehouse-services'},
+    'skladskie-uslugi':{ua:'skladski-poslugy',en:'warehouse-services'},
+    'warehouse-services':{ua:'skladski-poslugy',ru:'/ru/skladskie-uslugi/'},
     'paletne-zberigannya':{ru:'/ru/paletnoe-khranenie/',en:'pallet-storage'},
     'paletnoe-khranenie':{ua:'paletne-zberigannya',en:'pallet-storage'},
     'pallet-storage':{ua:'paletne-zberigannya',ru:'/ru/paletnoe-khranenie/'},
@@ -322,6 +327,9 @@ body{padding-top:0;margin:0}
     'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'},
     'fulfilment-dlya-kosmetyky':{ru:'/ru/fulfilment-dlya-kosmetiki/',en:'fulfillment-ukraine'},
     'fulfilment-dlya-kosmetiki':{ua:'fulfilment-dlya-kosmetyky',en:'fulfillment-ukraine'},
+    'shcho-take-fulfilment':{ua:'/ua/shcho-take-fulfilment/',ru:'/ru/chto-takoe-fulfilment/',en:'/en/what-is-fulfillment/'},
+    'chto-takoe-fulfilment':{ua:'/ua/shcho-take-fulfilment/',ru:'/ru/chto-takoe-fulfilment/',en:'/en/what-is-fulfillment/'},
+    'what-is-fulfillment':{ua:'/ua/shcho-take-fulfilment/',ru:'/ru/chto-takoe-fulfilment/',en:'/en/what-is-fulfillment/'},
     'calculator':{ua:'/ua/calculator/',ru:'/ru/calculator/',en:'/en/calculator/'},
     'about':{ua:'/ua/about/',ru:'/ru/about/',en:'/en/about/'},
     'faq':{ua:'/ua/faq/',ru:'/ru/faq/',en:'/en/faq/'},
@@ -330,7 +338,7 @@ body{padding-top:0;margin:0}
     'recalls':{ua:'/ua/recalls/',ru:'/ru/recalls/',en:'/en/recalls/'},
     'services':{ua:'/ua/services/',ru:'/ru/services/',en:'/en/services/'},
     'thanks':{ua:'/ua/thanks/',ru:'/thanks/',en:'/en/thanks/'},
-    'uslugi':{ua:'/ua/services/',ru:'/ru/uslugi/',en:'/en/services/'},
+    'uslugi':{ua:'/ua/services/',ru:'/ru/skladskie-uslugi/',en:'/en/services/'},
   };
   // Blog article map (full path mapping)
   var blogMap = (function(){var m={};function a(ru,ua,en){var r='/blog/tpost/'+ru+'/',u='/ua/blog/tpost/'+ua+'/',e='/en/blog/post/'+en+'/';var o={ua:u,ru:r,en:e};m[ru]=o;m[ua]=o;m[en]=o;}
@@ -394,11 +402,14 @@ body{padding-top:0;margin:0}
     var slug=path.replace(/^\/(?:ua|en|ru)\//,'/').replace(/^\//,'').replace(/\/$/,'');
     var np='/';
     var lastSeg=slug.split('/').pop();
-    // Check blog article map first
-    if(blogMap[lastSeg]){np=blogMap[lastSeg][tl]||'/';}
+    var isBlogPath=path.indexOf('/blog/')!==-1||path.match(/^\/(?:ua\/|en\/)?blog\/?$/);
+    // If path is inside /blog/, prefer blog article map; else prefer regular slug map first
+    if(isBlogPath&&blogMap[lastSeg]){np=blogMap[lastSeg][tl]||'/';}
     else if(!slug||slug==='ru'){np=tl==='ua'?'/':tl==='ru'?'/ru/':'/en/';}
     else if(slug==='blog'||slug.match(/^(?:ua\/)?blog$/)){np=tl==='ua'?'/ua/blog/':tl==='ru'?'/blog/':'/en/blog/';}
-    else{var m=map[lastSeg];var ts=m?m[tl]||lastSeg:lastSeg;if(ts.charAt(0)==='/'){np=ts;}else{np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}}
+    else if(map[lastSeg]){var m=map[lastSeg];var ts=m[tl]||lastSeg;if(ts.charAt(0)==='/'){np=ts;}else{np=tl==='ua'?'/ua/'+ts+'/':tl==='en'?'/en/'+ts+'/':'/'+ts+'/';}}
+    else if(blogMap[lastSeg]){np=blogMap[lastSeg][tl]||'/';}
+    else{np=tl==='ua'?'/ua/'+lastSeg+'/':tl==='en'?'/en/'+lastSeg+'/':'/'+lastSeg+'/';}
     a.href=np;
   });
 })();

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MTP MANIFESTO | РАЗБОР / CLIENT CASE STUDIES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Newsreader:ital,wght@0,200..800;1,200..800&amp;family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#e5bdb8",
+                        "surface-tint": "#bd0f10",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface-variant": "#5c403c",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#fdfcfc",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-dim": "#dadada",
+                        "on-surface": "#1b1b1b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "inverse-surface": "#303030",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#410001",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-container": "#646464",
+                        "surface-container": "#eeeeee",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary": "#5b5c5c",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed-variant": "#930005",
+                        "primary-container": "#de2d24",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-container": "#737575",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-background": "#1b1b1b",
+                        "primary": "#ba0a0d",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#ffb4a9",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#916f6a",
+                        "secondary-container": "#e2e2e2",
+                        "secondary": "#5e5e5e"
+                    },
+                    "fontFamily": {
+                        "serif": ["DM Serif Display", "serif"],
+                        "sans": ["DM Sans", "sans-serif"],
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Public Sans", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 1;
+            padding-right: 0.75rem;
+            color: #ba0a0d;
+            font-family: 'DM Serif Display', serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1b1b1b;
+            font-family: 'DM Sans', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'DM Serif Display', serif;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-stone-950 rectilinear-zero-radius w-full border-b border-stone-200 dark:border-stone-800">
+<div class="flex justify-between items-center px-8 py-6 max-w-[1920px] mx-auto">
+<div class="text-3xl font-serif font-black tracking-tighter text-stone-950 dark:text-white">
+                MTP MANIFESTO
+            </div>
+<nav class="hidden md:flex items-center space-x-8 font-['Newsreader'] uppercase tracking-tight font-black">
+<a class="text-stone-950 dark:text-white border-b-2 border-[#e63329] pb-1 hover:text-[#e63329] transition-colors duration-200" href="#">Case Studies</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#e63329] transition-colors duration-200" href="#">Logistics</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#e63329] transition-colors duration-200" href="#">Network</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#e63329] transition-colors duration-200" href="#">Archive</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#e63329] transition-colors duration-200" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="text-stone-950 dark:text-white transition-opacity active:opacity-80">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-[#ba0a0d] text-white px-6 py-2 uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-all">
+                    Inquire
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1920px] mx-auto px-8">
+<!-- Section 1: Label -->
+<div class="pt-8 border-t border-black mt-4">
+<span class="text-[11px] font-bold tracking-[0.2em] uppercase">РАЗБОР / CLIENT CASE STUDIES</span>
+</div>
+<!-- Section 2: Hero -->
+<section class="py-20 md:py-32">
+<div class="max-w-5xl">
+<p class="text-primary font-bold tracking-widest uppercase text-xs mb-6">МЕТРИКИ + ВИДЕОДОКАЗАТЕЛЬСТВО</p>
+<h1 class="text-6xl md:text-8xl leading-[0.9] tracking-tighter mb-8">150 клиентов. 10 лет. 60 000+ отправок в пик.</h1>
+<p class="text-2xl md:text-3xl text-stone-600 mb-10 max-w-3xl leading-snug">Разборы — с цифрами, видеоинтервью директоров и методологией.</p>
+<div class="flex flex-wrap gap-2">
+<span class="border border-stone-300 px-4 py-1 text-[10px] font-black uppercase tracking-widest">3PL</span>
+<span class="border border-stone-300 px-4 py-1 text-[10px] font-black uppercase tracking-widest">FULFILLMENT</span>
+<span class="border border-stone-300 px-4 py-1 text-[10px] font-black uppercase tracking-widest">LOGISTICS</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Case 1 Carter's -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-16 py-24 border-t border-stone-200">
+<div class="md:col-span-7">
+<div class="aspect-video bg-stone-950 flex items-center justify-center border border-[#ededed] relative group overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Close-up of organized high-end baby clothing in a modern warehouse setting with soft cinematic lighting and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJQp1-cA4w5zCw-clI5LpOvIEmOMERMODAF3FdCJPx8HsEi7TJ2LbmMGmJt1Yprg7Q0mlLJIZaCg4DdSnrd0Gdm5fCBTEKgrzL-asIoTIMn3TP6YXppFbOpKM6OYg5pFUb8HcbJIUQtYs12H7Yv6M_Q5cVrkyY-AEcgOPvfnqt8gXPqky4WFJaNtrnWuBbOLc6-Cr-tKvzMNdQsK26_2Yo4ZF6CPpGWoXW5k5VPJbeypUSZSM_VgwvdPvYZ3sJ4wXVDHnyx_TJYZRw"/>
+<div class="z-10 w-20 h-20 bg-primary flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<p class="mt-4 text-[11px] text-stone-500 tracking-widest uppercase font-bold">ВИДЕОИНТЕРВЬЮ · 12 МИН · АЛИСА ПЕТРОВА, CARTER'S UKRAINE</p>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center">
+<h2 class="text-4xl text-primary mb-8 leading-tight italic">«С 12 до 72 отправок в день за 18 месяцев»</h2>
+<div class="space-y-6 text-stone-800 leading-relaxed text-lg">
+<p class="drop-cap">Оптимизация логистических цепочек позволила бренду Carter's масштабировать присутствие на локальном рынке без расширения собственного штата склада. Мы внедрили систему сквозного контроля остатков, которая синхронизируется с маркетплейсами в реальном времени.</p>
+<p>Процесс интеграции занял всего 14 дней, после чего процент ошибок при комплектации снизился до рекордных 0.02%. Это позволило высвободить маркетинговый бюджет, ранее уходивший на компенсации возвратов.</p>
+</div>
+<div class="mt-12 pt-8 border-t border-stone-200 grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-stone-400 mb-1">Ниша</p>
+<p class="text-sm font-bold uppercase">Детская одежда</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-stone-400 mb-1">Период</p>
+<p class="text-sm font-bold uppercase">2022 — Наст. время</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Data Wall -->
+<section class="py-24 bg-surface-container-low -mx-8 px-8">
+<div class="max-w-[1920px] mx-auto">
+<h3 class="text-2xl font-serif mb-12">Таблица 1. Рост отправок клиентов</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-black">
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Клиент</th>
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Ниша</th>
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Старт</th>
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Сейчас</th>
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Лет</th>
+<th class="py-4 text-[11px] uppercase font-black tracking-widest">Задача</th>
+</tr>
+</thead>
+<tbody class="text-sm divide-y divide-stone-200">
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">Carter's</td>
+<td class="py-6 text-stone-500">Одежда</td>
+<td class="py-6">12 / день</td>
+<td class="py-6 text-primary font-bold">72 / день</td>
+<td class="py-6">1.5</td>
+<td class="py-6 italic">Масштабирование</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">Elemis</td>
+<td class="py-6 text-stone-500">Косметика</td>
+<td class="py-6">45 / день</td>
+<td class="py-6 text-primary font-bold">310 / день</td>
+<td class="py-6">7</td>
+<td class="py-6 italic">Zero Fault Logistics</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">ORNER</td>
+<td class="py-6 text-stone-500">Подарки</td>
+<td class="py-6">80 / день</td>
+<td class="py-6 text-primary font-bold">500+ / пик</td>
+<td class="py-6">4</td>
+<td class="py-6 italic">Пиковые нагрузки</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">I.Love.My.Cycle</td>
+<td class="py-6 text-stone-500">БАДы</td>
+<td class="py-6">5 / день</td>
+<td class="py-6 text-primary font-bold">45 / день</td>
+<td class="py-6">2</td>
+<td class="py-6 italic">D2C Модель</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">SaviSkin</td>
+<td class="py-6 text-stone-500">Косметика</td>
+<td class="py-6">10 / день</td>
+<td class="py-6 text-primary font-bold">65 / день</td>
+<td class="py-6">1</td>
+<td class="py-6 italic">Интеграция</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">Smart Case</td>
+<td class="py-6 text-stone-500">Аксессуары</td>
+<td class="py-6">30 / день</td>
+<td class="py-6 text-primary font-bold">120 / день</td>
+<td class="py-6">3</td>
+<td class="py-6 italic">Учет остатков</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">Bio-Kult</td>
+<td class="py-6 text-stone-500">Health</td>
+<td class="py-6">25 / день</td>
+<td class="py-6 text-primary font-bold">180 / день</td>
+<td class="py-6">5</td>
+<td class="py-6 italic">Холодная цепочка</td>
+</tr>
+<tr class="hover:bg-white transition-colors">
+<td class="py-6 font-bold uppercase">The Ordinary</td>
+<td class="py-6 text-stone-500">Beauty</td>
+<td class="py-6">100 / день</td>
+<td class="py-6 text-primary font-bold">420 / день</td>
+<td class="py-6">4</td>
+<td class="py-6 italic">Cross-border</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 5: Case 2 Elemis -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-16 py-24 border-t border-stone-200">
+<div class="order-2 md:order-1 flex flex-col justify-center">
+<h2 class="text-4xl text-primary mb-8 leading-tight italic">«7 лет без единой рекламации»</h2>
+<div class="space-y-6 text-stone-800 leading-relaxed text-lg">
+<p>Для премиального бренда косметики Elemis сервис — это не просто скорость, а безупречность. Каждая упаковка должна соответствовать гайдлайнам люкс-сегмента. Мы разработали индивидуальный протокол контроля качества "Double Check", где каждый заказ проходит двойную верификацию.</p>
+<p>Стабильность в течение семи лет позволила компании сфокусироваться исключительно на маркетинге и продукте, полностью передав операционную деятельность в наши руки.</p>
+<p>Сегодня Elemis является эталонным кейсом того, как аутсорсинг логистики превращается в стратегическое преимущество бренда.</p>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="aspect-video bg-stone-950 flex items-center justify-center border border-[#ededed] relative group overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Minimalist layout of high-end skincare products in glass bottles with dramatic lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByK8vyI3n-XrxPeh-0qrzsTyKxrfKBK4mqbFlVuoQJotY9VWPUeMk5TomsCNO6hWbFMF-AF6pNbzOTS1oui4nXMOHpGqYmIVKIUnVJBMk8nDHdsEsbG8eSiPJtuRg3VfohblvYv1omMaPQzB3SR607V-HEOlbm2vHpekilj670yruKV1mVPCiZfKa4T2jI9vJQDwcm7a3BCgAlgN7YH9_bQHwlyWK4wLLL3cVsweY5-eRsObzqaSRThNLPl6eW6UbFRGuOT4z7Aebv"/>
+<div class="z-10 w-20 h-20 bg-primary flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<p class="mt-4 text-[11px] text-stone-500 tracking-widest uppercase font-bold text-right">ВИДЕОРАЗБОР · 8 МИН · ELEMIS UKRAINE</p>
+</div>
+</section>
+<!-- Section 6: Case 3 ORNER -->
+<section class="py-24 border-t border-stone-200 flex flex-col items-center text-center">
+<div class="w-full md:w-3/5">
+<div class="aspect-video bg-stone-950 flex items-center justify-center border border-[#ededed] relative group overflow-hidden mb-6">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Dynamic shot of a bustling logistics center during peak season with motion blur of packages moving on conveyors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNHpp8eEj98r7e7ETu49acT_AXGtsEdKlKORSmMQOhlqx6YQPObCXodzRXMhAg9nb6aOMFi_ihSp6XWx8e_oIp8E2sIAXogDbhdbiFRulhvMKJ90fBI3884QguhSkUg4ePbOvsqzMl3g9JQjZ1RhA2v-mTphPEgOymzlat7vEpMXE2zgdJpbrwRsF-Uc4eEvaWnmPqVYqcTGuk2d2Rd7DlcNbC5N88glrf6xKeHSuBjhU6Kl_AAKcK9a3rWNGkGXbGQnCuI9h8kuE"/>
+<div class="z-10 w-20 h-20 bg-primary flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<p class="text-[11px] text-stone-500 tracking-widest uppercase font-bold mb-12">ВИДЕОИНТЕРВЬЮ · 15 МИН · МИХАИЛ КОВАЛЬ, ORNER</p>
+<h2 class="text-5xl text-primary mb-12 italic leading-tight max-w-2xl mx-auto">«500+ заказов в пиковый день Black Friday»</h2>
+<div class="space-y-8 text-stone-800 leading-relaxed text-xl max-w-3xl mx-auto text-left">
+<p>Для брендов подарков и декора пиковые нагрузки — главный вызов. ORNER сталкивался с проблемой "зашитого" склада ежегодно в ноябре и декабре. Переход на мощности MTP Group позволил бренду обрабатывать любой объем заказов без задержек.</p>
+<p>Мы внедрили автоматизированную систему сортировки хрупких грузов, что критично для продукции ORNER (керамика, декор). В период Black Friday 2023 года пропускная способность была увеличена в 8 раз без потери качества упаковки.</p>
+<p>Результат: рост лояльности клиентов и отсутствие негативных отзывов, связанных с доставкой в самый сложный период года.</p>
+</div>
+</div>
+</section>
+<!-- Section 7: Sectors -->
+<section class="bg-black text-white -mx-8 px-8 py-24">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<p class="text-primary font-bold tracking-widest uppercase text-xs mb-8">РАСПРЕДЕЛЕНИЕ КЛИЕНТОВ ПО НИШАМ</p>
+<h2 class="text-6xl md:text-8xl tracking-tighter leading-[0.9]">150 клиентов. 12 сегментов.</h2>
+</div>
+<div class="flex flex-col space-y-6">
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold uppercase tracking-widest">Одежда</span>
+<span class="text-primary font-serif text-2xl">32%</span>
+</div>
+<div class="h-[2px] bg-stone-800 w-full overflow-hidden">
+<div class="h-full bg-primary w-[32%]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold uppercase tracking-widest">Косметика</span>
+<span class="text-primary font-serif text-2xl">18%</span>
+</div>
+<div class="h-[2px] bg-stone-800 w-full overflow-hidden">
+<div class="h-full bg-primary w-[18%]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold uppercase tracking-widest">БАДы</span>
+<span class="text-primary font-serif text-2xl">14%</span>
+</div>
+<div class="h-[2px] bg-stone-800 w-full overflow-hidden">
+<div class="h-full bg-primary w-[14%]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold uppercase tracking-widest">Электроника</span>
+<span class="text-primary font-serif text-2xl">10%</span>
+</div>
+<div class="h-[2px] bg-stone-800 w-full overflow-hidden">
+<div class="h-full bg-primary w-[10%]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold uppercase tracking-widest">Другие (Книги, Игрушки, Декор)</span>
+<span class="text-primary font-serif text-2xl">26%</span>
+</div>
+<div class="h-[2px] bg-stone-800 w-full overflow-hidden">
+<div class="h-full bg-primary w-[26%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Archive Strip -->
+<section class="py-24 border-b border-stone-200">
+<p class="text-[11px] font-black tracking-[0.2em] uppercase mb-12">АРХИВ ВИДЕОРАЗБОРОВ · ДРУГИЕ КЛИЕНТЫ</p>
+<div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a young entrepreneur in a modern office, cinematic color grading" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP0SU3vf7EZZy388EhEt9tssYx3XD6S5TG-IZs2SvlN0b2uiqfEBBlqgn2KTTjBEQo3Ki8QutT8TzIi79s1SmbFaTax9ZFDM6a0yk4NWSLPTjIXULkoA3P8s3JURt7hE1DNfWUXM_rSXpvWQe-UmO5QHM49sYxf1vqp6SN1AKB-KfnJSVPYXN_Q63WfAvXu1eDLVLqg5wdD0RCBk85IwIgOvgiSLu_uCybh0DKblVxVFSWa8MN8Cld62N7j5go_B_XzhPFdAdvq-YJ"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Влад Савицкий</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">Основатель SaviSkin</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Lifestyle portrait of a business woman in a bright studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA26J0LRHsKWjETQ-xvpEW9_b0eSVghfloFmihAYX13n_Xzrgr_emXzMpN3VO5BqKxLuSvCC0q-LZdsA-mHsDbDjhj0S_7wvngPu_NwuFh4X5OupMwNUELfs0i5BaV9IhhxkG490n4cwtwRXOj4fWwqw3K_Ti03eKekw80ciyQNKgd6cF0HmM-ZYUgsS6SY5cC6yLGYM0h0icb4_mt0GMeRm855qPU9vL54rREdOSJiO7Bx1hSnKohEhj6dDYaEEjTL5mCPJZTT92gL"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Елена Громова</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">COO Bio-Kult</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close-up portrait of a man in a creative workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANzrifSQDQeJXP8KX_plIg2owrvTVXDrXGdxvBQ5MOEy3jDjMUTyKVrFUEROj30mmvV2IKD0evEd6EfdunnevxtzNZG_saunck1ysITTjMdMMfPAC3dT8EnT1_JMurdZiQ7j3F50uxwcbm0tcrX6uanILIGzc04Yp5HShv9cQhLhap0q1ryx_PALZikhm84xQr6IYhOyuYrR52WEeLnZQyLutOSh1al1iP1242PfdknZrnYVK3TEJ8Q15IDL6G93odVKRvswmxUTQq"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Иван Тесла</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">CEO Smart Case</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Professional woman looking at the camera in a modern warehouse hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4_5kpq2b804m4PAll9k23ddycKteq2Jx4URi3Liaxnk6OsIeSTFZ1Yq5gNzbtPhVQT7tDdSrf0vo9nou_2WWm9d1ERyLooqK13v6q_WbAJEG7VFhHqDN0XIxtFuvqzQeX6c1sFu5W2JUqxvaKFM75cqGWKP7Ia-8FNO6AYh97MvL3frNKVQdyQ-iIbBduqd_-qJJueQVgCiL-L97sWSu991mpH6oTbuXkhi1ryUksW_J_z8rzJDHTQd5NjrkWfyGWnw-ga8bWazDT"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Мария Лео</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">Founder ILMC</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Businessman in a suit walking through a glass office building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFfDpS6uqzm-2W7FG_CXi1urR29g4XNH6YzfaryBXSmcgS9C4qh_KOgr9v57xImJ5foEJKt2szKUvri3-wClfthZ0Rx-oEktbrTPSDt3NZn6lw1NUFhSfNM5hp-1J588vaAZbUF42tuEBUq6G_zr83Du3SBMMSYiVRDQy65qcJCpe72Rh5-fWZVcVp3qbR00rFfkTMk6wM6Ey42mZa3tB5ajkDm94tOpOpHr7-SRgu4pN9mlzTi4Rr83DbH-UByWKE3loGerrrPKdU"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Алексей Рож</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">Marketing Dir.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[180/100] bg-stone-200 mb-3 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Woman smiling in an industrial design office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDAb_8rM1OcZG36UctgsKT290aaeIMgRhDRNmZPnxQCRRlwgTm7vEcC66C4xdaE9PuWNismTwZkJly_p2VDhooUtgwGBmRgFPu51__e258igE3TGMDuORrrq5sVPwdEDnvSPoILti8WoWF3LXKN0UMpvqQS0I_j59mk0DuSkHFnmZuMFcODu1IGRxpIuhFfnhNsl0rZcUmTE2xf5tJ0Rtq3mBM1bvt_AFrSpm8FGFxG8kDcyutwVaualt_jnu1phD-b1wOrSHgvBTL"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+<span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+</div>
+</div>
+<p class="text-[10px] font-bold uppercase leading-tight">Ольга Крав</p>
+<p class="text-[10px] text-stone-500 uppercase tracking-tighter">Owner Loft Design</p>
+</div>
+</div>
+</section>
+<!-- Section 9: Methodology -->
+<section class="py-24 border-b border-stone-200">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="p-8 bg-stone-50">
+<p class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">OTIF</p>
+<p class="text-sm text-stone-600 mb-8 leading-relaxed">Показатель выполнения заказов в полном объеме и точно в срок. Наш золотой стандарт.</p>
+<p class="text-5xl font-serif text-primary">99.8%</p>
+</div>
+<div class="p-8 bg-stone-50">
+<p class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">Ошибки сборки</p>
+<p class="text-sm text-stone-600 mb-8 leading-relaxed">Процент несоответствия содержимого посылки заказу. Контролируется Double-Check.</p>
+<p class="text-5xl font-serif text-primary">0.02%</p>
+</div>
+<div class="p-8 bg-stone-50">
+<p class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">Время цикла</p>
+<p class="text-sm text-stone-600 mb-8 leading-relaxed">Среднее время от момента падения заказа в систему до его отгрузки курьеру.</p>
+<p class="text-5xl font-serif text-primary">1.5 ч</p>
+</div>
+</div>
+</section>
+<!-- Section 10: Dark CTA -->
+<section class="bg-black text-white py-24 px-12 -mx-8 flex flex-col items-center text-center">
+<h2 class="text-5xl md:text-7xl font-serif mb-6 leading-tight max-w-4xl">Готовы получить разбор своего магазина?</h2>
+<p class="text-stone-400 text-lg mb-12 max-w-2xl">Мы проведем бесплатный аудит вашей логистики и покажем точки роста в цифрах.</p>
+<button class="bg-primary text-white px-12 py-4 uppercase tracking-[0.2em] text-sm font-bold hover:scale-105 active:opacity-80 transition-all">
+                Получить разбор
+            </button>
+<p class="mt-8 text-stone-500 font-sans tracking-widest text-sm">+380 44 000 00 00</p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-900 rectilinear-zero-radius w-full mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full max-w-[1920px] mx-auto">
+<div class="text-xl font-serif font-black text-stone-950 dark:text-white mb-6 md:mb-0">
+                MTP MANIFESTO
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-sans text-xs tracking-widest uppercase font-bold">
+<a class="text-stone-600 dark:text-stone-400 hover:underline decoration-[#e63329] underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-stone-600 dark:text-stone-400 hover:underline decoration-[#e63329] underline-offset-4" href="#">Terms of Service</a>
+<a class="text-stone-600 dark:text-stone-400 hover:underline decoration-[#e63329] underline-offset-4" href="#">Carrier Relations</a>
+<a class="text-stone-600 dark:text-stone-400 hover:underline decoration-[#e63329] underline-offset-4" href="#">Sustainability</a>
+</div>
+<div class="mt-8 md:mt-0 font-sans text-[10px] tracking-widest uppercase text-stone-400">
+                © 2024 MTP MANIFESTO. GLOBAL LOGISTICS EDITORIAL.
+            </div>
+</div>
+</footer>
+</body></html>

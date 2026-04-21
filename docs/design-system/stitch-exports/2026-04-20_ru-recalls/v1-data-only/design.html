@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Архив Кейсов - ФУЛФИЛМЕНТ ОПЕРАТОР</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#410001",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#737575",
+                        "primary-container": "#de2d24",
+                        "surface-container": "#eeeeee",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary-container": "#646464",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-primary": "#ffb4a9",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#930005",
+                        "tertiary": "#5b5c5c",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e2e2e2",
+                        "outline": "#916f6a",
+                        "on-background": "#1b1b1b",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#bd0f10",
+                        "outline-variant": "#e5bdb8",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "primary-fixed": "#ffdad5",
+                        "on-surface-variant": "#5c403c",
+                        "inverse-surface": "#303030",
+                        "surface": "#f9f9f9",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#dadada",
+                        "primary": "#ba0a0d",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#fdfcfc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["DM Serif Display", "serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                        "label": ["DM Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1b1b1b;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'DM Serif Display', serif;
+        }
+        .text-display-lg {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        @media (min-width: 768px) {
+            .text-display-lg {
+                font-size: 6rem;
+            }
+        }
+        .text-headline-md {
+            font-size: 1.75rem;
+            line-height: 1.2;
+        }
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            color: #ba0a0d;
+            font-family: 'DM Serif Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-background selection:bg-primary selection:text-on-primary antialiased">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 docked full-width top border-t-4 border-zinc-900 dark:border-zinc-100 border-b border-zinc-200 dark:border-zinc-800 flat no shadows flex justify-between items-center px-8 h-20 w-full max-w-screen-2xl mx-auto font-serif text-sm tracking-widest uppercase">
+<div class="text-2xl font-serif font-black tracking-tighter text-zinc-900 dark:text-zinc-100">
+            АРХИВ КЕЙСОВ
+        </div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 h-full flex items-center" href="#">Услуги</a>
+<a class="border-b-2 border-zinc-900 dark:border-zinc-100 pb-1 text-zinc-900 dark:text-zinc-100 h-full flex items-center opacity-70 transition-opacity" href="#">Решения</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 h-full flex items-center" href="#">Отрасли</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 h-full flex items-center" href="#">Компания</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 h-full flex items-center" href="#">Контакты</a>
+</nav>
+<div class="hidden md:flex items-center">
+<a class="font-bold hover:text-zinc-500 transition-colors" href="#">Связаться</a>
+</div>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="w-full max-w-[1200px] mx-auto px-6 lg:px-8">
+<!-- Top Rule -->
+<div class="mt-8 border-t border-on-background pt-2 mb-24">
+<span class="font-label text-xs uppercase tracking-widest font-bold">РАЗБОР / CLIENT CASE STUDIES</span>
+</div>
+<!-- Hero -->
+<section class="py-[60px] md:py-[120px] flex flex-col items-start">
+<div class="bg-primary text-on-primary px-3 py-1 text-xs font-bold uppercase tracking-wider mb-8 inline-block">
+                МЕТРИКИ КЛИЕНТОВ — БЕЗ МАРКЕТИНГОВОЙ ВОДЫ
+            </div>
+<h1 class="font-headline text-display-lg text-on-background mb-8 max-w-4xl">
+                150 клиентов. 10 лет. <br/>
+                60 000+ отправок в пик.
+            </h1>
+<div class="flex flex-col md:flex-row gap-8 w-full max-w-4xl justify-between items-start md:items-end">
+<p class="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    Разборы ниже — с цифрами, таблицами и методологией. Мы не публикуем "истории успеха", мы публикуем данные логистических операций.
+                </p>
+<div class="flex gap-3 flex-wrap">
+<span class="px-4 py-2 border border-outline-variant text-sm font-label uppercase tracking-widest">3PL</span>
+<span class="px-4 py-2 border border-outline-variant text-sm font-label uppercase tracking-widest">Fulfillment</span>
+<span class="px-4 py-2 border border-outline-variant text-sm font-label uppercase tracking-widest">Ukraine 2026</span>
+</div>
+</div>
+</section>
+<!-- Data Wall -->
+<section class="py-[60px] md:py-[120px]">
+<h2 class="font-label text-xs uppercase tracking-widest font-bold mb-12 border-b border-surface-dim pb-4">Таблица 1. Выборка клиентов и операционных метрик</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body text-sm border-collapse">
+<thead>
+<tr class="border-b border-on-background">
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs">Клиент</th>
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs">Ниша</th>
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs">Старт</th>
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs text-right">Сейчас (отпр/мес)</th>
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs text-center">Лет с MTP</th>
+<th class="py-4 px-2 font-bold uppercase tracking-wider text-xs">Ключевая задача</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-dim">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-2 font-bold">Carter's</td>
+<td class="py-6 px-2 text-on-surface-variant">Детская одежда</td>
+<td class="py-6 px-2">12</td>
+<td class="py-6 px-2 text-right font-headline text-2xl text-primary">~2 100</td>
+<td class="py-6 px-2 text-center">2</td>
+<td class="py-6 px-2">Масштабирование в сезон</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-2 font-bold">Elemis</td>
+<td class="py-6 px-2 text-on-surface-variant">Косметика (FEFO)</td>
+<td class="py-6 px-2">150</td>
+<td class="py-6 px-2 text-right font-headline text-2xl text-primary">~4 500</td>
+<td class="py-6 px-2 text-center">7</td>
+<td class="py-6 px-2">Контроль сроков годности</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-2 font-bold">ORNER</td>
+<td class="py-6 px-2 text-on-surface-variant">Подарки / Декор</td>
+<td class="py-6 px-2">50</td>
+<td class="py-6 px-2 text-right font-headline text-2xl text-primary">~3 800</td>
+<td class="py-6 px-2 text-center">4</td>
+<td class="py-6 px-2">Пиковые нагрузки (Black Friday)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-2 font-bold">I.Love.My.Cycle</td>
+<td class="py-6 px-2 text-on-surface-variant">Спорт. инвентарь</td>
+<td class="py-6 px-2">80</td>
+<td class="py-6 px-2 text-right font-headline text-2xl text-primary">~1 200</td>
+<td class="py-6 px-2 text-center">3</td>
+<td class="py-6 px-2">Сложная комплектация</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Case Study 1 -->
+<section class="py-[60px] md:py-[120px] border-t border-surface-dim">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-start">
+<div class="md:col-span-4 sticky top-24">
+<h3 class="font-headline text-5xl leading-tight text-primary">
+                        «С 12 до 72 отправок в день за 18 месяцев»
+                    </h3>
+<div class="mt-8 font-label text-xs uppercase tracking-widest text-on-surface-variant">
+                        Carter's Ukraine
+                    </div>
+</div>
+<div class="md:col-span-8 font-body text-lg leading-relaxed space-y-8">
+<p class="drop-cap text-on-surface">
+                        Бренд детской одежды столкнулся с классической проблемой роста: складские процессы перестали успевать за объемом продаж. Ошибки в комплектации вели к возвратам, а ручной учет съедал маржу.
+                    </p>
+<p class="text-on-surface-variant">
+                        Интеграция с нашими системами заняла 14 дней. Мы внедрили штрихкодирование каждой единицы товара (SKU) и автоматизировали процесс сборки через WMS. Результат — нулевая толерантность к ошибкам комплектации.
+                    </p>
+<p class="text-on-surface-variant">
+                        За полтора года объем отгрузок вырос в шесть раз, при этом SLA по сборке заказа день в день (при оформлении до 15:00) удерживается на уровне 99.4%.
+                    </p>
+<div class="mt-12 pt-6 border-t border-outline-variant/20 font-label text-sm font-bold flex flex-wrap gap-4 text-on-surface-variant uppercase tracking-wider">
+<span>Ниша: детская одежда</span>
+<span class="text-surface-dim">·</span>
+<span>С нами с 2023</span>
+<span class="text-surface-dim">·</span>
+<span>Текущий объём: ~2 100 отправок/месяц</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-900 dark:bg-black text-zinc-100 font-serif text-xs uppercase tracking-widest full-width py-16 border-t border-zinc-800 flat no shadows flex flex-col md:flex-row justify-between items-center px-12 gap-8 w-full mt-24">
+<div class="text-xl font-serif italic text-zinc-100">
+            © 2024 ФУЛФИЛМЕНТ ОПЕРАТОР. ЭДИТОРИАЛ ИЗДАНИЕ.
+        </div>
+<nav class="flex flex-wrap gap-8 justify-center">
+<a class="text-white underline underline-offset-4" href="#">Политика конфиденциальности</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Условия использования</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Cookies</a>
+<a class="text-zinc-500 hover:text-white transition-colors" href="#">Карта сайта</a>
+</nav>
+</footer>
+</body></html>
