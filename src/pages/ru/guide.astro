@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 ---
 <Base
   title="Бренд из СНГ → рынок Украины: плейбук входа за 15 минут"
@@ -34,13 +35,13 @@ import Base from '../../layouts/Base.astro';
     <span class="pb-badge">ПЛЕЙБУК KZ · MD · GE · AM → UA · 2026</span>
     <h1 class="pb-h1">Бренд из СНГ выходит<br>на рынок Украины —<br>как это считать</h1>
     <p class="pb-sub">7 шагов за 15 минут: стоимость входа, таможня и валюта, украинский 3PL-бенчмарк, чек-лист оператора и типичные ошибки, которые разворачивают проект на старте.</p>
-    <div class="pb-hero-cta">
-      <form class="pb-hero-form" id="heroFormGuide" aria-label="Получить расчёт входа в Украину">
-        <input type="tel" name="phone" placeholder="+380XXXXXXXXX" required autocomplete="tel" aria-label="Телефон" maxlength="19">
-        <button type="submit">Получить расчёт →</button>
-      </form>
-      <p class="pb-hero-micro">✓ Ответ в течение 15 минут · KZ / MD / GE / AM → UA · расчёт в USD</p>
-    </div>
+    <HeroCTA
+      lang="ru"
+      theme="dark"
+      button="Получить расчёт →"
+      microCopy="✓ Ответ в течение 15 минут · KZ / MD / GE / AM → UA · расчёт в USD"
+      sourceTag="hero /ru/guide/ CIS playbook"
+    />
     <a href="#step-01" class="pb-cta-btn">Или пролистать плейбук ↓</a>
   </div>
   <div class="pb-stat-strip">
@@ -396,15 +397,7 @@ main.pb h1,main.pb h2,main.pb h3{
   margin:0 0 36px;
   color:#e8e8e8;
 }
-.pb-hero-cta{max-width:540px;margin:0 0 20px}
-.pb-hero-form{display:flex;gap:0;border:2px solid rgba(255,255,255,.3);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.06);transition:border-color .2s,background .2s}
-.pb-hero-form:focus-within{border-color:#e63329;background:rgba(255,255,255,.1)}
-.pb-hero-form input{flex:1;border:0;padding:16px 20px;font-size:16px;font-family:inherit;background:transparent;color:#fff;outline:none;min-width:0}
-.pb-hero-form input::placeholder{color:rgba(255,255,255,.5)}
-.pb-hero-form button{background:#e63329;color:#fff;border:0;padding:16px 24px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:inherit;cursor:pointer;white-space:nowrap;transition:background .2s}
-.pb-hero-form button:hover{background:#c82b21}
-.pb-hero-micro{font-size:12px;color:rgba(255,255,255,.6);margin:12px 0 0;letter-spacing:.02em}
-@media(max-width:640px){.pb-hero-form{flex-direction:column;border-radius:8px}.pb-hero-form input{border-bottom:1.5px solid rgba(255,255,255,.15);padding:14px 16px}.pb-hero-form button{padding:14px 20px}}
+.pb-hero-inner .hero-cta{margin-bottom:20px}
 .pb-cta-btn{
   display:inline-block;
   padding:14px 24px;
@@ -791,24 +784,4 @@ main.pb h1,main.pb h2,main.pb h3{
 }
 </style>
 
-<script is:inline>
-/* Hero form — CIS brand playbook */
-(function(){
-  var form=document.getElementById('heroFormGuide');
-  if(!form)return;
-  var inp=form.querySelector('input[name="phone"]');
-  inp.addEventListener('input',function(){this.value=this.value.replace(/[^0-9+() -]/g,'');});
-  inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});
-  inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var ph=inp.value.replace(/\D/g,'');
-    if(ph.length<10){inp.style.borderColor='#e63329';return;}
-    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:inp.value,page:location.pathname,source:'hero /ru/guide/ CIS playbook'})}).catch(function(){});
-    if(window.mtpSubmitLead)window.mtpSubmitLead(inp.value,location.pathname);
-    form.innerHTML='<div style="text-align:center;padding:14px 20px"><p style="color:#fff;font-size:17px;font-weight:600;margin:0">✅ Спасибо!</p><p style="color:rgba(255,255,255,.7);font-size:13px;margin:6px 0 0">Перезвоним в течение 15 минут с расчётом</p></div>';
-    setTimeout(function(){window.location.href='/ru/thanks/';},1500);
-  });
-})();
-</script>
 </Base>

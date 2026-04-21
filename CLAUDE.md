@@ -140,12 +140,26 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 ## ЗАЛІЗНЕ ПРАВИЛО CTA-форм (first-screen):
 **Кожна нова сторінка на першому екрані (hero) МУСИТЬ мати нашу стандартну CTA форму з перевіреною доставкою в Telegram.**
 
-- Стандартна форма = та, що рендериться `<CTA/>` (`src/components/CTA.astro`) — перевірена, надійно доставляє в Telegram через `window.mtpSubmitLead` → `/api/telegram` + `/api/leads`.
-- Декоративний hero тільки з кнопками "Розрахувати" / "Зателефонувати" БЕЗ поля телефону — **НЕ допустимо** для нових сторінок.
-- Якщо потрібна hero-версія форми — зробити окремий компонент `HeroCTA.astro` (дзеркало CTA.astro з унікальним id і власним submit handler), а не кастомний `<form id="heroForm">`.
-- `<form id="heroForm">` через Base.astro auto-handler — **НЕ вважається безпечним дефолтом** (був випадок коли ліди не доходили до Telegram). Використовувати тільки з live-тестом.
-- **QA gate**: не позначати сторінку готовою, поки не відправлено тестовий номер з hero-форми і не отримано повідомлення в Telegram (@nikolay_mtp). Це обов'язковий крок поряд з PageSpeed і Schema перевіркою.
-- Внизу сторінки — стандартний `<CTA/>` через `Base.astro` (showCTA=true). Дві форми на сторінці (hero + bottom) — це норма, головне не три.
+**🔒 Єдиний дозволений hero-компонент: `<HeroCTA/>` (`src/components/HeroCTA.astro`)**
+- Дзеркало `<CTA/>` з унікальним `id="heroLeadForm"` — НЕ конфліктує з `id="finalForm"` у bottom CTA.
+- Submit → `window.mtpSubmitLead(phone, page)` (з Base.astro) → `/api/telegram` + `/api/leads` + GA4 `form_submit` + GTM dataLayer.
+- Props: `lang` (uk/ru/en), `theme` (light/dark), `button` (custom label), `microCopy` (текст під формою), `sourceTag` (мітка для Telegram: "hero /ua/slug/ context").
+- Приклад:
+  ```astro
+  ---
+  import HeroCTA from '../../components/HeroCTA.astro';
+  ---
+  <HeroCTA lang="ru" theme="dark" button="Получить расчёт →" microCopy="✓ Ответ в течение 15 минут" sourceTag="hero /ru/slug/" />
+  ```
+
+**❌ Заборонено для нових сторінок:**
+- Декоративний hero тільки з кнопками "Розрахувати" / "Зателефонувати" БЕЗ поля телефону.
+- Кастомні `<form id="heroForm">` зі своїм inline-handler — флагуються як небезпечні (був випадок коли ліди не доходили до Telegram).
+- Копіпастити стилі форм у page-specific `<style>` — `HeroCTA.astro` має власні стилі + themes.
+
+**✅ Bottom CTA:** стандартний `<CTA/>` через `Base.astro` (showCTA=true) залишається. Дві форми на сторінці (hero + bottom) — це норма, головне не три.
+
+**QA gate**: не позначати сторінку готовою, поки не відправлено тестовий номер з hero-форми і не отримано повідомлення в Telegram (@nikolay_mtp). Це обов'язковий крок поряд з PageSpeed і Schema перевіркою.
 
 ---
 

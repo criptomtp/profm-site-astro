@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 ---
 <Base
   title="MTP Group — украинский фулфилмент для брендов из СНГ с 2015 года"
@@ -38,13 +39,13 @@ import Base from '../../layouts/Base.astro';
       <span>150+ клиентов</span>
       <span>Импорт + маркетплейсы</span>
     </div>
-    <div class="ab-hero-cta">
-      <form class="ab-hero-form" id="heroFormAbout" aria-label="Обсудить вход бренда из СНГ в Украину">
-        <input type="tel" name="phone" placeholder="+380XXXXXXXXX" required autocomplete="tel" aria-label="Телефон" maxlength="19">
-        <button type="submit">Обсудить вход →</button>
-      </form>
-      <p class="ab-hero-micro">✓ Ответ в течение 15 минут · KZ / MD / GE / AM / UZ → UA · без обязательств</p>
-    </div>
+    <HeroCTA
+      lang="ru"
+      theme="light"
+      button="Обсудить вход →"
+      microCopy="✓ Ответ в течение 15 минут · KZ / MD / GE / AM / UZ → UA · без обязательств"
+      sourceTag="hero /ru/about/ CIS"
+    />
   </div>
 </section>
 
@@ -290,25 +291,6 @@ function mtpAbCloseVideo(){
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){ mtpAbCloseVideo(); }
 });
-
-/* Hero form — CIS brand entry */
-(function(){
-  var form=document.getElementById('heroFormAbout');
-  if(!form)return;
-  var inp=form.querySelector('input[name="phone"]');
-  inp.addEventListener('input',function(){this.value=this.value.replace(/[^0-9+() -]/g,'');});
-  inp.addEventListener('focus',function(){if(!this.value)this.value='+38 (';});
-  inp.addEventListener('blur',function(){if(this.value==='+38 (')this.value='';});
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var ph=inp.value.replace(/\D/g,'');
-    if(ph.length<10){inp.style.borderColor='#e63329';return;}
-    fetch('/api/telegram',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phone:inp.value,page:location.pathname,source:'hero /ru/about/ CIS'})}).catch(function(){});
-    if(window.mtpSubmitLead)window.mtpSubmitLead(inp.value,location.pathname);
-    form.innerHTML='<div style="text-align:center;padding:14px 20px"><p style="color:#000;font-size:17px;font-weight:600;margin:0">✅ Спасибо!</p><p style="color:#666;font-size:13px;margin:6px 0 0">Перезвоним в течение 15 минут</p></div>';
-    setTimeout(function(){window.location.href='/ru/thanks/';},1500);
-  });
-})();
 </script>
 
 <style is:global>
@@ -368,15 +350,6 @@ main.ab{
   margin:0 0 32px;
 }
 .ab-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.ab-hero-cta{max-width:520px;margin-top:12px}
-.ab-hero-form{display:flex;gap:10px;border:1.5px solid #000;border-radius:6px;overflow:hidden;background:#fff;transition:border-color .2s}
-.ab-hero-form:focus-within{border-color:#e63329}
-.ab-hero-form input{flex:1;border:0;padding:16px 20px;font-size:16px;font-family:inherit;background:transparent;color:#000;outline:none;min-width:0}
-.ab-hero-form input::placeholder{color:#999}
-.ab-hero-form button{background:#e63329;color:#fff;border:0;padding:16px 24px;font-size:15px;font-weight:700;letter-spacing:.2px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:background .2s}
-.ab-hero-form button:hover{background:#c42d24}
-.ab-hero-micro{font-size:12px;color:#666;margin:12px 0 0;letter-spacing:.02em}
-@media(max-width:640px){.ab-hero-form{flex-direction:column;border-radius:8px}.ab-hero-form input{border-bottom:1.5px solid #eee;padding:14px 16px}.ab-hero-form button{padding:14px 20px}}
 .ab-tags span{
   font-size:12px;
   letter-spacing:.12em;

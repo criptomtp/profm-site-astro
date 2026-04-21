@@ -201,9 +201,11 @@ npm run build 2>&1 | grep -E "error|warning"
 - [ ] Якщо не працює — виправити map в Header.astro (рядок ~310)
 
 **ФОРМИ CTA (ЗАЛІЗНЕ правило):**
-- [ ] На першому екрані (hero) — СТАНДАРТНА CTA форма з input телефону
-- [ ] Hero форма використовує `<CTA/>` або `HeroCTA.astro` (НЕ кастомний `<form id="heroForm">` через Base auto-handler — не надійно)
-- [ ] Внизу — стандартний `<CTA/>` через Base.astro (showCTA=true)
+- [ ] Hero — ТІЛЬКИ `<HeroCTA lang="uk|ru|en" theme="light|dark" button="..." microCopy="..." sourceTag="hero /слug/"/>`
+  - Імпорт: `import HeroCTA from '../../components/HeroCTA.astro';`
+  - НЕ писати кастомні `<form id="heroForm">` з inline submit handler — флагуються як небезпечні
+  - НЕ використовувати `<CTA/>` у hero (його id `finalForm` вже використаний bottom-CTA у Base)
+- [ ] Bottom — стандартний `<CTA/>` через Base.astro (showCTA=true, дефолт)
 - [ ] Максимум 2 форми на сторінку (hero + footer), мінімум 3 секції контенту між ними
 - [ ] Декоративний hero тільки з кнопками "Розрахувати"/"Зателефонувати" без поля телефону — НЕ допустимо
 - [ ] **QA gate обов'язковий**: після деплою відправити тестовий номер з hero-форми → перевірити що лід прийшов у Telegram (@nikolay_mtp). Без цього сторінка НЕ готова.

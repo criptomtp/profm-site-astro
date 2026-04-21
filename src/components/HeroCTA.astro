@@ -1,0 +1,101 @@
+---
+// HeroCTA — standard first-screen CTA form (mirror of CTA.astro with unique id).
+// Uses window.mtpSubmitLead from Base.astro → /api/telegram + /api/leads + GA4 + GTM.
+// Proven Telegram delivery. Use this instead of custom <form id="heroForm">.
+interface Props {
+  lang: 'uk' | 'ru' | 'en';
+  theme?: 'light' | 'dark';
+  button?: string;          // custom button label
+  microCopy?: string;       // line below the form
+  sourceTag?: string;       // human label sent to Telegram (e.g. "hero /ru/about/ CIS")
+  className?: string;       // wrapper class for page-specific overrides
+}
+const {
+  lang,
+  theme = 'light',
+  button,
+  microCopy,
+  sourceTag = '',
+  className = '',
+} = Astro.props;
+
+const t = {
+  uk: { btn: 'Передзвоніть мені →', placeholder: '+380XXXXXXXXX', micro: '✓ Відповімо протягом 15 хвилин · без зобовʼязань', thanks: '/ua/thanks/' },
+  ru: { btn: 'Перезвоните мне →',   placeholder: '+380XXXXXXXXX', micro: '✓ Ответим в течение 15 минут · без обязательств', thanks: '/ru/thanks/' },
+  en: { btn: 'Call me back →',      placeholder: 'Your phone number', micro: '✓ We call back within 15 minutes · no obligations', thanks: '/en/thanks/' },
+}[lang];
+
+const btnLabel = button || t.btn;
+const micro = microCopy || t.micro;
+const maxlen = lang === 'en' ? '25' : '19';
+---
+
+<div class={`hero-cta hero-cta--${theme} ${className}`.trim()} data-thanks={t.thanks} data-source={sourceTag}>
+  <form class="hero-cta__form" id="heroLeadForm" aria-label={btnLabel}>
+    <input type="tel" name="phone" placeholder={t.placeholder} required autocomplete="tel" aria-label="Phone" maxlength={maxlen}>
+    <button type="submit">{btnLabel}</button>
+  </form>
+  <p class="hero-cta__micro">{micro}</p>
+</div>
+
+<style>
+.hero-cta{max-width:540px}
+.hero-cta__form{display:flex;gap:0;border-radius:6px;overflow:hidden;transition:border-color .2s,background .2s}
+.hero-cta__form input{flex:1;border:0;padding:16px 20px;font-size:16px;font-family:'DM Sans',sans-serif;background:transparent;outline:none;min-width:0}
+.hero-cta__form button{border:0;padding:16px 24px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s;background:#e63329;color:#fff}
+.hero-cta__form button:hover{background:#c42d24}
+.hero-cta__micro{font-size:12px;margin:12px 0 0;letter-spacing:.02em;line-height:1.5}
+
+/* Light theme (white backgrounds, editorial) */
+.hero-cta--light .hero-cta__form{border:2px solid #000;background:#fff}
+.hero-cta--light .hero-cta__form:focus-within{border-color:#e63329}
+.hero-cta--light .hero-cta__form input{color:#000}
+.hero-cta--light .hero-cta__form input::placeholder{color:#999}
+.hero-cta--light .hero-cta__micro{color:#666}
+
+/* Dark theme (dark overlays, direct mood) */
+.hero-cta--dark .hero-cta__form{border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+.hero-cta--dark .hero-cta__form:focus-within{border-color:#e63329;background:rgba(255,255,255,.1)}
+.hero-cta--dark .hero-cta__form input{color:#fff}
+.hero-cta--dark .hero-cta__form input::placeholder{color:rgba(255,255,255,.5)}
+.hero-cta--dark .hero-cta__micro{color:rgba(255,255,255,.6)}
+
+@media(max-width:640px){
+  .hero-cta__form{flex-direction:column;border-radius:8px}
+  .hero-cta__form input{padding:14px 16px}
+  .hero-cta--light .hero-cta__form input{border-bottom:1.5px solid #eee}
+  .hero-cta--dark .hero-cta__form input{border-bottom:1.5px solid rgba(255,255,255,.15)}
+  .hero-cta__form button{padding:14px 20px}
+}
+</style>
+
+<script is:inline>
+(function(){
+  var form = document.getElementById('heroLeadForm');
+  if(!form) return;
+  var wrap = form.closest('.hero-cta');
+  var inp = form.querySelector('input[name="phone"]');
+  var thanksUrl = wrap ? wrap.dataset.thanks : '/ua/thanks/';
+  var srcTag = wrap ? (wrap.dataset.source || '') : '';
+
+  inp.addEventListener('input', function(){ this.value = this.value.replace(/[^0-9+() -]/g,''); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ph = inp.value.trim();
+    var clean = ph.replace(/\D/g,'');
+    if(clean.length < 10){
+      inp.style.animation = 'shake .3s';
+      inp.style.borderColor = '#e63329';
+      setTimeout(function(){ inp.style.animation = ''; }, 300);
+      return;
+    }
+    // Canonical path: Base.astro's window.mtpSubmitLead → /api/telegram + /api/leads + GA4 + GTM
+    if(window.mtpSubmitLead) window.mtpSubmitLead(ph, location.pathname + (srcTag ? '#' + srcTag : ''));
+    var lang = document.documentElement.lang;
+    var msg = lang === 'en' ? 'Thank you!' : (lang === 'ru' ? 'Спасибо!' : 'Дякуємо!');
+    form.innerHTML = '<div style="text-align:center;padding:14px 20px;width:100%"><p style="font-size:17px;font-weight:600;margin:0">✅ ' + msg + '</p></div>';
+    setTimeout(function(){ window.location.href = thanksUrl; }, 1200);
+  });
+})();
+</script>
