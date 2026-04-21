@@ -3,6 +3,13 @@
   "_last_updated": "2026-04-20",
   "completions": [
     {
+      "task": "GBP audit + optimization plan",
+      "status": "DONE",
+      "date": "2026-04-21",
+      "commit": "pending",
+      "notes": "Built Playwright auth (scripts/gbp-auth.py) + audit (scripts/gbp-audit.py). Session stored in scripts/gbp-session/ (gitignored). Captured both branches, identified 5 priority actions: 1) reviews for MTPFUL2 (0/5208 views), 2) photo refresh (stale 3-4y), 3) rename to 'MTP Group Fulfillment', 4) fill description+services+products, 5) decide on paused Google Ads. Plan: docs/gbp/optimization-plan.md."
+    },
+    {
       "task": "Переписати home title + meta з ціною",
       "status": "DONE",
       "date": "2026-04-20",
@@ -25,10 +32,10 @@
     },
     {
       "task": "Claim Google Business Profile",
-      "status": "MANUAL_USER_ACTION",
-      "date": null,
-      "commit": null,
-      "notes": "External task — user must claim at business.google.com. Recommended: entity name 'MTP Group Fulfillment', category 'Logistics service', both addresses (Щасливе + Білогородка), phone +380501444645, hours Mo-Su 08:00-20:00."
+      "status": "DONE",
+      "date": "2026-04-21",
+      "commit": "n/a",
+      "notes": "Both branches already verified in group 'MTP Group фулфилмент' (id 111840383451580968640): MTPFUL1 (Щасливе) + MTPFUL2 (Білогородка). Audited via Playwright session. MTPFUL1: 4124 views/mo, 468 interactions. MTPFUL2: 5208 views/mo, 369 interactions, 0 reviews. Photos stale (1039 and 1579 days). Optimization plan in docs/gbp/optimization-plan.md."
     },
     {
       "task": "Видалити дубль generate_lead/form_submit на EN thanks",

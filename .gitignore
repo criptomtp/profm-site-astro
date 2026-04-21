@@ -6,6 +6,7 @@ client_secret.json
 token.json
 gsc_token.json
 scripts/gsc_token.json
+scripts/gbp-session/
 *.credentials.json
 .vercel
 .env
