@@ -92,25 +92,24 @@ export async function onRequest({ request, env }) {
         return json({ error: 'Invalid credentials' }, { status: 401, headers });
       }
 
-      // Block legacy scrypt hashes — cannot be verified in Workers runtime
-      if (isLegacyScryptHash(user.password)) {
-        return json({
-          error: 'Password migration required. Admin must reset password via ADMIN_PASSWORD env var (login with env value to re-hash).',
-        }, { status: 403, headers });
-      }
-
       let passwordMatch = false;
-      if (isPbkdf2Hash(user.password)) {
-        passwordMatch = await verifyPassword(password, user.password);
-      } else if (user.password === password) {
-        // Plain-text legacy match — migrate to PBKDF2
+
+      // Admin scrypt migration: if this is admin AND entered password matches env ADMIN_PASSWORD,
+      // accept login and re-hash to PBKDF2 regardless of what's stored (scrypt/plain/anything).
+      // Check this FIRST so scrypt-stored admin can still log in via env password.
+      if (user.id === 'admin' && env.ADMIN_PASSWORD && password === env.ADMIN_PASSWORD) {
         passwordMatch = true;
         user.password = await hashPassword(password);
         await redis.set(USERS_KEY, users);
-      }
-
-      // Admin migration path: if stored hash is scrypt AND password matches env ADMIN_PASSWORD, re-hash to PBKDF2
-      if (!passwordMatch && user.id === 'admin' && password === env.ADMIN_PASSWORD) {
+      } else if (isPbkdf2Hash(user.password)) {
+        passwordMatch = await verifyPassword(password, user.password);
+      } else if (isLegacyScryptHash(user.password)) {
+        // Non-admin scrypt user — cannot verify in Workers runtime. Admin must reset.
+        return json({
+          error: 'Password migration required. Admin must reset this user via users panel.',
+        }, { status: 403, headers });
+      } else if (user.password === password) {
+        // Plain-text legacy match — migrate to PBKDF2
         passwordMatch = true;
         user.password = await hashPassword(password);
         await redis.set(USERS_KEY, users);
