@@ -35,6 +35,4 @@ Disallow: /new/
 
 # Sitemaps
 Sitemap: https://www.fulfillmentmtp.com.ua/sitemap-index.xml
-
-# IndexNow for faster Bing/Yandex indexing
-IndexNow-Key: e2ea8b0e3992bc7743d624fb443d3434
+# IndexNow key file: /e2ea8b0e3992bc7743d624fb443d3434.txt
