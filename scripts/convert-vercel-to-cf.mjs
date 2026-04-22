@@ -120,15 +120,36 @@ for (const block of (vercel.headers || [])) {
 }
 
 // --- CF Pages specific: RFC 8288 Link headers for agent discovery ---
-// Homepage advertises sitemap + hreflang alternates via HTTP Link header so
+// Homepage advertises sitemap + hreflang alternates + API catalog via HTTP Link header so
 // agents (Claude, GPT crawlers, etc.) can discover structure without parsing HTML.
 // Checked by isitagentready.com — see /.well-known discussion in CLAUDE.md memory.
-hlines.push('# --- CF Pages specific: agent discovery (RFC 8288) ---');
+hlines.push('# --- CF Pages specific: agent discovery (RFC 8288 + RFC 9727) ---');
 hlines.push('/');
 hlines.push('  Link: </sitemap-index.xml>; rel="sitemap"');
 hlines.push('  Link: </ua/>; rel="alternate"; hreflang="uk"');
 hlines.push('  Link: </ru/>; rel="alternate"; hreflang="ru"');
 hlines.push('  Link: </en/>; rel="alternate"; hreflang="en"');
+hlines.push('  Link: </.well-known/api-catalog>; rel="api-catalog"');
+hlines.push('  Link: </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json;version=3.1.0"');
+hlines.push('  Link: </ua/api-docs/>; rel="service-doc"; hreflang="uk"; type="text/html"');
+hlines.push('  Link: </ru/api-docs/>; rel="service-doc"; hreflang="ru"; type="text/html"');
+hlines.push('  Link: </en/api-docs/>; rel="service-doc"; hreflang="en"; type="text/html"');
+hlines.push('');
+
+// Force correct Content-Type on extensionless .well-known/api-catalog and OpenAPI spec.
+// Without this CF Pages defaults to application/octet-stream which blocks agent parsing.
+hlines.push('# --- .well-known + OpenAPI Content-Type overrides ---');
+hlines.push('/.well-known/api-catalog');
+hlines.push('  Content-Type: application/linkset+json; charset=utf-8');
+hlines.push('  Access-Control-Allow-Origin: *');
+hlines.push('');
+hlines.push('/.well-known/skills/index.json');
+hlines.push('  Content-Type: application/json; charset=utf-8');
+hlines.push('  Access-Control-Allow-Origin: *');
+hlines.push('');
+hlines.push('/openapi.json');
+hlines.push('  Content-Type: application/vnd.oai.openapi+json;version=3.1.0; charset=utf-8');
+hlines.push('  Access-Control-Allow-Origin: *');
 hlines.push('');
 
 fs.writeFileSync(path.join(ROOT, 'public/_headers'), hlines.join('\n'), 'utf8');

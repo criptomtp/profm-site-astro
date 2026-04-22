@@ -1,0 +1,47 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.fulfillmentmtp.com.ua/",
+      "service-desc": [
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/openapi.json",
+          "type": "application/vnd.oai.openapi+json;version=3.1.0",
+          "title": "MTP Group Fulfillment REST API — OpenAPI 3.1 specification"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/ua/api-docs/",
+          "type": "text/html",
+          "hreflang": "uk",
+          "title": "Документація API — українською"
+        },
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/ru/api-docs/",
+          "type": "text/html",
+          "hreflang": "ru",
+          "title": "Документация API — на русском"
+        },
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/en/api-docs/",
+          "type": "text/html",
+          "hreflang": "en",
+          "title": "API documentation — in English"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/.well-known/skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills index — agent-invokable capabilities"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://www.fulfillmentmtp.com.ua/",
+          "title": "Operational"
+        }
+      ]
+    }
+  ]
+}

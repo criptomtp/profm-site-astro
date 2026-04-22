@@ -1,0 +1,677 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MTP Group Fulfillment REST API",
+    "version": "1.0.0",
+    "summary": "Order, inventory, and delivery API for e-commerce integrations with MTP Group fulfillment warehouse.",
+    "description": "REST API for integrating online stores with MTP Group (fulfillmentmtp.com.ua) fulfillment services. Supports order creation, inventory reporting, delivery management, and Nova Poshta / Ukrposhta carrier integration. All requests use HTTPS + UTF-8, JSON request/response bodies, authentication via `ApiKey` field obtained from MTP manager or via `GetToken` method.",
+    "contact": {
+      "name": "MTP Group Integration Support",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/api-docs/",
+      "email": "info@fulfillmentmtp.com.ua"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/privacy/"
+    },
+    "termsOfService": "https://www.fulfillmentmtp.com.ua/ua/privacy/"
+  },
+  "servers": [
+    {
+      "url": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api",
+      "description": "Primary API (order/inventory/product methods)"
+    },
+    {
+      "url": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v/json",
+      "description": "Delivery request API (v2)"
+    }
+  ],
+  "externalDocs": {
+    "description": "Human-readable integration guide",
+    "url": "https://www.fulfillmentmtp.com.ua/ua/api-docs/"
+  },
+  "tags": [
+    { "name": "Auth", "description": "Authentication and token management" },
+    { "name": "Orders", "description": "Customer order lifecycle (create, edit, cancel, status)" },
+    { "name": "Products", "description": "Product catalog and SKU management" },
+    { "name": "Inventory", "description": "Warehouse stock levels and movement reports" },
+    { "name": "Delivery", "description": "Inbound delivery requests to warehouse" },
+    { "name": "Returns", "description": "Return shipments from customers" },
+    { "name": "Reference", "description": "Nova Poshta reference data (cities, warehouses, streets)" }
+  ],
+  "components": {
+    "securitySchemes": {
+      "ApiKeyBody": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "ApiKey",
+        "description": "MTP-issued ApiKey. Note: the API expects the key as a JSON body field `ApiKey`, not as an HTTP header. Obtain via the `GetToken` method or from your MTP account manager."
+      }
+    },
+    "schemas": {
+      "ApiKey": {
+        "type": "string",
+        "description": "UUID-format API key issued by MTP Group.",
+        "example": "9a2c46ab-f629-46b4-88ce-XXXXXXXXX"
+      },
+      "StandardResponse": {
+        "type": "object",
+        "properties": {
+          "result": { "type": "string", "enum": ["ok", "error"], "description": "'ok' on success, 'error' on failure." },
+          "Data": { "description": "Method-specific response payload (object or array)." },
+          "errors": { "type": "array", "items": { "type": "string" }, "description": "List of error descriptions when result='error'." }
+        },
+        "required": ["result"]
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Product name" },
+          "count": { "type": "string", "description": "Quantity" },
+          "price": { "type": "string", "description": "Unit price" },
+          "sku": { "type": "string", "description": "Product SKU (article)" }
+        }
+      },
+      "DeliveryAddress": {
+        "type": "object",
+        "description": "Delivery address — fields depend on delivery_method.",
+        "properties": {
+          "WarehouseRef": { "type": "string", "description": "Nova Poshta warehouse UUID (for warehouse delivery)" },
+          "postcode": { "type": "string", "description": "Ukrposhta postcode" },
+          "DeliveryCity": { "type": "string", "description": "Nova Poshta city UUID (for address delivery)" },
+          "Street": { "type": "string" },
+          "House": { "type": "string" },
+          "Flat": { "type": "string" },
+          "NumberOfFloorsLifting": { "type": "string", "description": "Floor number for lifting service" },
+          "itMyTTN": { "type": "boolean", "description": "true if using own Nova Poshta TTN" },
+          "ttn": { "type": "string", "description": "Own TTN number" },
+          "ttnRef": { "type": "string", "description": "Own TTN reference UUID" }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id_order": { "type": "string", "description": "Client order ID" },
+          "external_id": { "type": "string" },
+          "key_order": { "type": "string", "description": "MTP internal key (used instead of id_order in EditOrder)" },
+          "date_order": { "type": "string", "description": "DD.MM.YYYY" },
+          "recipient": { "type": "string", "description": "Full name of recipient" },
+          "rec_phone": { "type": "string", "description": "Recipient phone, format 380XXXXXXXXX" },
+          "comment": { "type": "string" },
+          "serviceComment": { "type": "string" },
+          "Cost": { "type": "integer", "description": "Declared value (integer)" },
+          "Draft": { "type": "boolean", "description": "If true, order is reserved but not shipped" },
+          "PayerType": { "type": "string", "enum": ["Sender", "Recipient"], "description": "Who pays delivery" },
+          "payment_method": { "type": "string", "enum": ["Наличными", "На карту"], "description": "'На карту' if order is prepaid" },
+          "order_payment_sum": { "type": "string", "description": "COD amount; empty or '0' defaults to order total" },
+          "delivery_method": { "type": "string", "enum": ["Новая Почта", "Курьерская доставка Киев", "Самовывоз", "Ukrposhta"] },
+          "delivery_sender_id": { "type": "string", "description": "Nova Poshta sender ID — coordinate with MTP manager" },
+          "RecipientType": { "type": "string", "enum": ["Private person", "Organization"] },
+          "OrganizationName": { "type": "string", "description": "For Organization recipients" },
+          "EDRPOU": { "type": "string", "description": "Ukrainian legal entity ID" },
+          "OwnershipForm": { "type": "string", "description": "Nova Poshta ownership form REF" },
+          "products": { "type": "array", "items": { "$ref": "#/components/schemas/Product" } },
+          "delivery_address": { "$ref": "#/components/schemas/DeliveryAddress" }
+        }
+      }
+    }
+  },
+  "security": [{ "ApiKeyBody": [] }],
+  "paths": {
+    "/GetToken": {
+      "post": {
+        "operationId": "getToken",
+        "tags": ["Auth"],
+        "summary": "Obtain ApiKey by login/password",
+        "description": "Exchange login/password credentials for an ApiKey used in all subsequent calls.",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["login", "password"],
+                "properties": {
+                  "login": { "type": "string", "example": "FF" },
+                  "password": { "type": "string", "example": "password" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token issued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    { "$ref": "#/components/schemas/StandardResponse" },
+                    { "properties": { "Data": { "type": "object", "properties": { "ApiKey": { "$ref": "#/components/schemas/ApiKey" } } } } }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getCities": {
+      "post": {
+        "operationId": "getCities",
+        "tags": ["Reference"],
+        "summary": "Search Nova Poshta cities",
+        "description": "Returns Nova Poshta city reference matching the given partial name.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "CityName": { "type": "string", "example": "Київ" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "City list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/getWarehouses": {
+      "post": {
+        "operationId": "getWarehouses",
+        "tags": ["Reference"],
+        "summary": "Get Nova Poshta warehouses for a city",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "CityRef": { "type": "string", "description": "Nova Poshta city UUID" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Warehouse list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      },
+      "get": {
+        "operationId": "getWarehousesList",
+        "tags": ["Reference"],
+        "summary": "Get full Nova Poshta warehouse list (GET form)",
+        "parameters": [{ "name": "ApiKey", "in": "query", "schema": { "$ref": "#/components/schemas/ApiKey" }, "required": true }],
+        "responses": {
+          "200": { "description": "Warehouse list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/getStreet": {
+      "get": {
+        "operationId": "getStreet",
+        "tags": ["Reference"],
+        "summary": "Get Nova Poshta street reference",
+        "parameters": [{ "name": "ApiKey", "in": "query", "schema": { "$ref": "#/components/schemas/ApiKey" }, "required": true }],
+        "responses": {
+          "200": { "description": "Street list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/AddProduct": {
+      "post": {
+        "operationId": "addProduct",
+        "tags": ["Products"],
+        "summary": "Create or update a product in MTP catalog",
+        "description": "Adds a new product or updates an existing one by SKU. Use AnswerOption='Correct' for standard validation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "sku", "name"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "AnswerOption": { "type": "string", "example": "Correct" },
+                  "name": { "type": "string" },
+                  "sku": { "type": "string" },
+                  "barcode": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Product created or updated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/AddOrder": {
+      "post": {
+        "operationId": "addOrder",
+        "tags": ["Orders"],
+        "summary": "Create a new order",
+        "description": "Creates a new customer order with delivery via Nova Poshta, Ukrposhta, own courier, or pickup. Supports warehouse, address, and own-TTN delivery modes.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "order"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "order": { "$ref": "#/components/schemas/Order" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Order created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    { "$ref": "#/components/schemas/StandardResponse" },
+                    { "properties": { "Data": { "type": "object", "properties": { "id_order_FF": { "type": "string" }, "key_order": { "type": "string" } } } } }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EditOrder": {
+      "post": {
+        "operationId": "editOrder",
+        "tags": ["Orders"],
+        "summary": "Edit an existing order",
+        "description": "Same request shape as AddOrder but uses `key_order` instead of `id_order` to identify the order.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "order"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "order": { "$ref": "#/components/schemas/Order" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Order updated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/CancelOrder": {
+      "post": {
+        "operationId": "cancelOrder",
+        "tags": ["Orders"],
+        "summary": "Cancel an order",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "order"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "order": {
+                    "type": "object",
+                    "required": ["id_order"],
+                    "properties": { "id_order": { "type": "string" } }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Order cancelled", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ReportStatusOrder": {
+      "post": {
+        "operationId": "reportStatusOrder",
+        "tags": ["Orders"],
+        "summary": "Get status of one or more orders",
+        "description": "Returns MTP status, Nova Poshta TTN, and full tracking history for each order ID in the list.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "orders"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "orders": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status array",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id_order": { "type": "string" },
+                      "TTN": { "type": "string" },
+                      "DeliveryCost": { "type": "number" },
+                      "warnings": { "type": "array" },
+                      "status_TTN": { "type": "string" },
+                      "status_TTN_id": { "type": "string" },
+                      "status_TTN_date": { "type": "string" },
+                      "status_mtp": { "type": "string" },
+                      "status_mtp_id": { "type": "string" },
+                      "status_mtp_date": { "type": "string" },
+                      "tracking_novaposhta": { "type": "array", "items": { "type": "object" } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getStatusOrder": {
+      "get": {
+        "operationId": "getStatusOrderDict",
+        "tags": ["Orders"],
+        "summary": "Get dictionary of all MTP order statuses",
+        "responses": {
+          "200": { "description": "Status dictionary", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ListOrder": {
+      "post": {
+        "operationId": "listOrder",
+        "tags": ["Orders"],
+        "summary": "List orders within a date range (paginated)",
+        "description": "Returns up to 100 orders per page. Use `page` to iterate.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "datefrom", "dateto"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "datefrom": { "type": "string", "description": "YYYYMMDD", "example": "20260201" },
+                  "dateto": { "type": "string", "description": "YYYYMMDD", "example": "20260302" },
+                  "page": { "type": "integer", "minimum": 1, "example": 1 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Paginated order list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ListReturnOrder": {
+      "post": {
+        "operationId": "listReturnOrder",
+        "tags": ["Returns"],
+        "summary": "List customer returns within a date range (paginated)",
+        "description": "Returns up to 100 return receipts per page with line-item details including marriage (defective) flag.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "datefrom", "dateto"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "datefrom": { "type": "string", "example": "20260201" },
+                  "dateto": { "type": "string", "example": "20260302" },
+                  "page": { "type": "integer", "minimum": 1, "example": 1 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Paginated return list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ReportSklad": {
+      "post": {
+        "operationId": "reportSklad",
+        "tags": ["Inventory"],
+        "summary": "Stock levels report",
+        "description": "Returns current stock: `quantity` (on hand), `quantityAvailable` (available for sale), `stock` (accounting stock).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "ExcludeZero": { "type": "boolean", "description": "If true, omit SKUs with 0 stock" },
+                  "ShowStorageDate": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Stock report", "content": { "application/json": { "schema": { "type": "array", "items": { "type": "object" } } } } }
+        }
+      }
+    },
+    "/ReportMoveProduct": {
+      "post": {
+        "operationId": "reportMoveProduct",
+        "tags": ["Inventory"],
+        "summary": "Product movement report by SKU and date range",
+        "description": "Returns inbound/outbound movements, running balance, and source documents (movements, returns, decomposition, etc.).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "dataStart", "dataFinish"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "dataStart": { "type": "string", "description": "YYYYMMDDHHMMSS", "example": "20250101000000" },
+                  "dataFinish": { "type": "string", "description": "YYYYMMDDHHMMSS", "example": "20260301000000" },
+                  "productSku": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Movement report", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/senderDetails": {
+      "post": {
+        "operationId": "senderDetails",
+        "tags": ["Reference"],
+        "summary": "List available Nova Poshta senders (your own legal entities)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey"],
+                "properties": { "ApiKey": { "$ref": "#/components/schemas/ApiKey" } }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Sender list", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ListDeliveryRequest": {
+      "post": {
+        "operationId": "listDeliveryRequest",
+        "tags": ["Delivery"],
+        "summary": "List inbound delivery requests (supply to warehouse)",
+        "description": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json` (v2 endpoint). `method` field in body specifies operation.",
+        "servers": [{ "url": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v" }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["ApiKey", "method", "properties"],
+                "properties": {
+                  "ApiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "method": { "type": "string", "enum": ["ListDeliveryRequest"] },
+                  "properties": {
+                    "type": "object",
+                    "properties": {
+                      "datefrom": { "type": "string", "example": "20260201" },
+                      "dateto": { "type": "string", "example": "20260302" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Delivery request list", "content": { "application/json": { "schema": { "type": "object", "properties": { "success": { "type": "boolean" }, "Data": { "type": "array" }, "errors": { "type": "array" } } } } } }
+        }
+      }
+    },
+    "/AddDeliveryRequest": {
+      "post": {
+        "operationId": "addDeliveryRequest",
+        "tags": ["Delivery"],
+        "summary": "Create an inbound delivery request",
+        "description": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json` (v2 endpoint).",
+        "servers": [{ "url": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v" }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["apiKey", "method", "properties"],
+                "properties": {
+                  "apiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "method": { "type": "string", "enum": ["AddDeliveryRequest"] },
+                  "properties": {
+                    "type": "object",
+                    "required": ["idRequest", "dateOfDelivery", "deliveryMethod", "seatsAmount"],
+                    "properties": {
+                      "idRequest": { "type": "string", "description": "Inbound delivery number" },
+                      "dateOfDelivery": { "type": "string", "description": "Planned delivery date (DD.MM.YYYY)" },
+                      "deliveryMethod": { "type": "string", "enum": ["Новая почта", "На склад"] },
+                      "seatsAmount": { "type": "string" },
+                      "ttn": { "type": "string", "description": "TTN number if Nova Poshta" },
+                      "сomment": { "type": "string" },
+                      "products": { "type": "array", "items": { "$ref": "#/components/schemas/Product" } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Delivery request created", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StandardResponse" } } } }
+        }
+      }
+    },
+    "/ReportDeliveryRequest": {
+      "post": {
+        "operationId": "reportDeliveryRequest",
+        "tags": ["Delivery"],
+        "summary": "Get status of an inbound delivery request",
+        "description": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json`. Status values: 1=new, 2=arrived but not fully received, 3=receiving completed and confirmed.",
+        "servers": [{ "url": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v" }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["apiKey", "method", "properties"],
+                "properties": {
+                  "apiKey": { "$ref": "#/components/schemas/ApiKey" },
+                  "method": { "type": "string", "enum": ["ReportDeliveryRequest"] },
+                  "properties": {
+                    "type": "object",
+                    "required": ["id"],
+                    "properties": {
+                      "id": { "type": "string", "description": "Delivery request ID from AddDeliveryRequest" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Delivery request status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "Data": {
+                      "type": "object",
+                      "properties": {
+                        "id": { "type": "string" },
+                        "status": { "type": "integer", "enum": [1, 2, 3] },
+                        "products": { "type": "array", "items": { "$ref": "#/components/schemas/Product" } }
+                      }
+                    },
+                    "errors": { "type": "array" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

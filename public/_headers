@@ -15,9 +15,27 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
-# --- CF Pages specific: agent discovery (RFC 8288) ---
+# --- CF Pages specific: agent discovery (RFC 8288 + RFC 9727) ---
 /
   Link: </sitemap-index.xml>; rel="sitemap"
   Link: </ua/>; rel="alternate"; hreflang="uk"
   Link: </ru/>; rel="alternate"; hreflang="ru"
   Link: </en/>; rel="alternate"; hreflang="en"
+  Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json;version=3.1.0"
+  Link: </ua/api-docs/>; rel="service-doc"; hreflang="uk"; type="text/html"
+  Link: </ru/api-docs/>; rel="service-doc"; hreflang="ru"; type="text/html"
+  Link: </en/api-docs/>; rel="service-doc"; hreflang="en"; type="text/html"
+
+# --- .well-known + OpenAPI Content-Type overrides ---
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/.well-known/skills/index.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/openapi.json
+  Content-Type: application/vnd.oai.openapi+json;version=3.1.0; charset=utf-8
+  Access-Control-Allow-Origin: *
