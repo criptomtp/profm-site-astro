@@ -18,11 +18,14 @@ lines.push('# DO NOT EDIT MANUALLY — edit vercel.json and re-run the script.')
 lines.push('');
 
 function convertSourcePath(src) {
-  // In CF Pages _redirects source:
-  //   Named params: /:name (one segment)
+  // CF Pages _redirects source syntax:
+  //   Named params: /:name (matches one segment)
   //   Wildcard: /* (captured as :splat in destination)
-  // Vercel :name* (catch-all) → CF * in source
-  return src.replace(/:[a-zA-Z_]+\*/g, '*');
+  //   NO regex support — [^/]+ and similar must be rewritten to *
+  let s = src.replace(/:[a-zA-Z_]+\*/g, '*');
+  // Strip Vercel regex char classes — replace `[^/]+` with `*` (prefix match)
+  s = s.replace(/\[\^\/\]\+/g, '*');
+  return s;
 }
 
 function convertDestPath(dst) {
@@ -32,7 +35,6 @@ function convertDestPath(dst) {
 
 function expandRegexAlternatives(rule) {
   // Handle Vercel's `/:s(xxx|yyy|zzz)/` regex alternatives by expanding to multiple rules.
-  // Match pattern like `/prefix/:s(a|b|c)/suffix` -> emit one rule per alternative.
   const match = rule.source.match(/^(.*?):s\(([^)]+)\)(.*)$/);
   if (!match) return [rule];
   const [, prefix, alternatives, suffix] = match;
@@ -42,27 +44,48 @@ function expandRegexAlternatives(rule) {
   }));
 }
 
-const redirects = [];
+function isDynamic(src) {
+  // A rule is "dynamic" in CF terms if source contains * or :name params.
+  return /\*|:[a-zA-Z]/.test(src);
+}
+
+const staticRules = [];
+const dynamicRules = [];
+const skippedHostRules = [];
+
 for (const r of (vercel.redirects || [])) {
-  // Host-based rule: non-www → www
+  // Host-based apex→www: CF Pages _redirects does NOT support absolute URLs.
+  // Handle at the zone level via Cloudflare Bulk Redirects / Page Rules after DNS cutover.
   if (r.has && r.has.some(h => h.type === 'host' && h.value === 'fulfillmentmtp.com.ua')) {
-    // CF Pages external redirect: source = https://host/*  destination uses :splat
-    const src = convertSourcePath(r.source).replace(/^\/$/, '/*');
-    const dst = convertDestPath(r.destination || '');
-    redirects.push(`https://fulfillmentmtp.com.ua${src} ${dst} ${r.statusCode || 308}`);
+    skippedHostRules.push(`${r.source} → ${r.destination}`);
     continue;
   }
 
   for (const expanded of expandRegexAlternatives(r)) {
     const src = convertSourcePath(expanded.source);
     const dst = convertDestPath(expanded.destination);
-    redirects.push(`${src} ${dst} ${expanded.statusCode || 308}`);
+    const rule = `${src} ${dst} ${expanded.statusCode || 308}`;
+    if (isDynamic(src)) dynamicRules.push(rule);
+    else staticRules.push(rule);
   }
 }
 
-lines.push(...redirects);
+// Order: static rules first (no CF limit, matched faster), then dynamic rules (CF limit: 100).
+lines.push('# --- static rules (exact path match) ---');
+lines.push(...staticRules);
+lines.push('');
+lines.push('# --- dynamic rules (wildcards / named params, max 100) ---');
+lines.push(...dynamicRules);
+
 fs.writeFileSync(path.join(ROOT, 'public/_redirects'), lines.join('\n') + '\n', 'utf8');
-console.log(`✓ public/_redirects written (${redirects.length} rules)`);
+console.log(`✓ public/_redirects written: ${staticRules.length} static + ${dynamicRules.length} dynamic`);
+if (skippedHostRules.length) {
+  console.log(`  ⚠ Skipped ${skippedHostRules.length} apex-host rule(s) — add them via CF Dashboard Bulk Redirects:`);
+  skippedHostRules.forEach(r => console.log(`    ${r}`));
+}
+if (dynamicRules.length > 100) {
+  console.log(`  ⚠ Dynamic rules (${dynamicRules.length}) exceed CF Pages limit of 100. Move oldest to CF Bulk Redirects.`);
+}
 
 // ---------- _headers ----------
 const hlines = [];
