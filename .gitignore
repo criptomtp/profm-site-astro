@@ -14,3 +14,5 @@ docs/gbp/screenshots/
 .env
 .env.local
 **/.claude-flow/
+claude-seo/
+google-ads-skills/
