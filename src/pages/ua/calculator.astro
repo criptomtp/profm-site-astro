@@ -104,7 +104,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">ТАРИФИ 2026</div>
 <h2 class="sec-h2">Повна тарифна сітка</h2>
 <p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:600px;margin-bottom:16px">Динамічний тариф: чим більше відправлень, тим нижча вартість за одиницю. Тариф визначається автоматично на основі середньоденного обсягу.</p>
-<table class="tariff-table">
+<div class="table-wrap"><table class="tariff-table">
 <thead><tr><th>Відправлень на день</th><th>Тариф за відправку</th></tr></thead>
 <tbody>
 <tr><td>0 &ndash; 5</td><td class="rate">26 грн</td></tr>
@@ -117,7 +117,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>151 &ndash; 200</td><td class="rate">19 грн</td></tr>
 <tr><td>200+</td><td class="rate">18 грн</td></tr>
 </tbody>
-</table>
+</table></div>
 <p style="font-size:13px;color:var(--muted);margin-top:16px">* Зберігання: 650 грн/м&sup3;/мес. Приймання: 3 грн/од (до 2 кг) + 0.5 грн за кожен кг понад 2. Мінімальна оплата: 5 000 грн/мес.</p>
 </div>
 </section>
@@ -127,7 +127,7 @@ import Base from '../../layouts/Base.astro';
 <div class="ctr">
 <div class="badge">ДОДАТКОВІ ПОСЛУГИ</div>
 <h2 class="sec-h2">Додаткові сервіси</h2>
-<table class="addon-table">
+<div class="table-wrap"><table class="addon-table">
 <thead><tr><th>Послуга</th><th>Вартість</th><th>Опис</th></tr></thead>
 <tbody>
 <tr><td>Доукомплектація</td><td class="price">2.5 грн/од</td><td>Збирання кількох товарів в одне замовлення. Додається за кожен товар починаючи з другого.</td></tr>
@@ -135,7 +135,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>SMS-сповіщення</td><td class="price">2 грн/SMS</td><td>Автоматичне SMS-сповіщення покупцю про відправку замовлення або зміну статусу.</td></tr>
 <tr><td>Товарний чек</td><td class="price">2 грн/чек</td><td>Друк та вкладення товарного чеку в замовлення для юридичних та фізичних осіб.</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </section>
 
@@ -204,7 +204,8 @@ import Base from '../../layouts/Base.astro';
 .res-time strong{color:#fff;font-weight:500}
 
 .tariff-section{padding:100px 0}
-.tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:48px}
+.tariff-table{width:100%;border-collapse:collapse;min-width:320px}
 .tariff-table th,.tariff-table td{padding:16px 24px;text-align:left;border-bottom:1px solid #e0e0e0}
 .tariff-table th{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;background:var(--gray)}
 .tariff-table td{font-size:15px}
@@ -213,7 +214,7 @@ import Base from '../../layouts/Base.astro';
 .tariff-table .rate{font-family:var(--fd);font-size:20px;color:var(--red)}
 
 .addons{padding:100px 0;background:#0a0a0a;color:var(--white)}
-.addon-table{width:100%;border-collapse:collapse;margin-top:48px}
+.addon-table{width:100%;border-collapse:collapse;min-width:560px}
 .addon-table th,.addon-table td{padding:16px 24px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
 .addon-table th{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
 .addon-table td{font-size:15px;color:rgba(255,255,255,.7)}

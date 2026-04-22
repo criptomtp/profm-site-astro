@@ -133,7 +133,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">ТАРИФЫ 2026</div>
 <h2 class="sec-h2">Полная тарифная сетка</h2>
 <p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:600px;margin-bottom:16px">Динамический тариф: чем больше отправлений, тем ниже стоимость за единицу. Тариф определяется автоматически на основании среднедневного объёма.</p>
-<table class="tariff-table">
+<div class="table-wrap"><table class="tariff-table">
 <thead>
 <tr><th>Отправлений в день</th><th>Тариф за отправку</th></tr>
 </thead>
@@ -148,7 +148,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>151 &ndash; 200</td><td class="rate">19 грн</td></tr>
 <tr><td>200+</td><td class="rate">18 грн</td></tr>
 </tbody>
-</table>
+</table></div>
 <p style="font-size:13px;color:var(--muted);margin-top:16px">* Хранение: 650 грн/м&sup3;/мес. Приём: 3 грн/ед (до 2 кг) + 0.5 грн за каждый кг свыше 2. Минимальная оплата: 5 000 грн/мес.</p>
 </div>
 </section>
@@ -158,7 +158,7 @@ import Base from '../../layouts/Base.astro';
 <div class="ctr">
 <div class="badge">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</div>
 <h2 class="sec-h2">Дополнительные сервисы</h2>
-<table class="addon-table">
+<div class="table-wrap"><table class="addon-table">
 <thead>
 <tr><th>Услуга</th><th>Стоимость</th><th>Описание</th></tr>
 </thead>
@@ -168,7 +168,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>SMS-уведомления</td><td class="price">2 грн/SMS</td><td>Автоматическое SMS-уведомление покупателю об отправке заказа или смене статуса.</td></tr>
 <tr><td>Товарный чек</td><td class="price">2 грн/чек</td><td>Печать и вложение товарного чека в заказ для юридических и физических лиц.</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </section>
 
@@ -257,7 +257,8 @@ import Base from '../../layouts/Base.astro';
 .res-time strong{color:#fff;font-weight:500}
 
 .tariff-section{padding:100px 0}
-.tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:48px}
+.tariff-table{width:100%;border-collapse:collapse;min-width:320px}
 .tariff-table th,.tariff-table td{padding:16px 24px;text-align:left;border-bottom:1px solid #e0e0e0}
 .tariff-table th{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;background:var(--gray)}
 .tariff-table td{font-size:15px}
@@ -266,7 +267,7 @@ import Base from '../../layouts/Base.astro';
 .tariff-table .rate{font-family:var(--fd);font-size:20px;color:var(--red)}
 
 .addons{padding:100px 0;background:#0a0a0a;color:var(--white)}
-.addon-table{width:100%;border-collapse:collapse;margin-top:48px}
+.addon-table{width:100%;border-collapse:collapse;min-width:560px}
 .addon-table th,.addon-table td{padding:16px 24px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
 .addon-table th{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
 .addon-table td{font-size:15px;color:rgba(255,255,255,.7)}

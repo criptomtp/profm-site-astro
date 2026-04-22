@@ -195,16 +195,19 @@ body{padding-top:0;margin:0}
   .hdr-burger{display:flex}
   .hdr-right{display:none}
 
-  /* Slide-in panel */
+  /* Slide-in panel — transform-based positioning so offscreen state
+     doesn't expand document scrollWidth (root cause of ~57px horizontal
+     scroll bleed at 375px measured by Lighthouse on all mobile pages). */
   .hdr-nav{
-    position:fixed;top:0;right:-300px;width:300px;max-width:85vw;height:100%;
+    position:fixed;top:0;right:0;width:300px;max-width:85vw;height:100%;
     background:#111;flex-direction:column;align-items:stretch;
     padding:80px 24px 120px;gap:0;z-index:10000;
-    transition:right .3s ease;overflow-y:auto;
+    transform:translateX(100%);
+    transition:transform .3s ease;overflow-y:auto;
     box-shadow:-4px 0 24px rgba(0,0,0,.6);
     -webkit-overflow-scrolling:touch
   }
-  .hdr-nav.open{right:0}
+  .hdr-nav.open{transform:translateX(0)}
 
   /* Nav links */
   .hdr-nav>a{

@@ -78,7 +78,7 @@ import Base from '../../layouts/Base.astro';
 <div class="badge badge-dark">RATES 2026</div>
 <h2 class="sec-h2">Full Rate Schedule</h2>
 <p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:600px;margin-bottom:16px">Dynamic rates: the more shipments, the lower the cost per unit.</p>
-<table class="tariff-table">
+<div class="table-wrap"><table class="tariff-table">
 <thead><tr><th>Shipments per day</th><th>Rate per shipment</th></tr></thead>
 <tbody>
 <tr><td>0 &ndash; 5</td><td class="rate">26 UAH</td></tr>
@@ -91,7 +91,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>151 &ndash; 200</td><td class="rate">19 UAH</td></tr>
 <tr><td>200+</td><td class="rate">18 UAH</td></tr>
 </tbody>
-</table>
+</table></div>
 <p style="font-size:13px;color:var(--muted);margin-top:16px">* Storage: 650 UAH/m&sup3;/mo. Receiving: 3 UAH/item (up to 2 kg) + 0.5 UAH per each kg over 2. Minimum payment: 5,000 UAH/mo.</p>
 </div>
 </section>
@@ -101,7 +101,7 @@ import Base from '../../layouts/Base.astro';
 <div class="ctr">
 <div class="badge">ADDITIONAL SERVICES</div>
 <h2 class="sec-h2">Additional Services</h2>
-<table class="addon-table">
+<div class="table-wrap"><table class="addon-table">
 <thead><tr><th>Service</th><th>Cost</th><th>Description</th></tr></thead>
 <tbody>
 <tr><td>Co-packing</td><td class="price">2.5 UAH/unit</td><td>Assembling multiple items into one order. Charged for each item starting from the second.</td></tr>
@@ -109,7 +109,7 @@ import Base from '../../layouts/Base.astro';
 <tr><td>SMS notifications</td><td class="price">2 UAH/SMS</td><td>Automatic SMS notification to buyer about shipment dispatch or status change.</td></tr>
 <tr><td>Sales receipt</td><td class="price">2 UAH/receipt</td><td>Printing and enclosing a sales receipt for legal entities and individuals.</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </section>
 
@@ -162,14 +162,15 @@ import Base from '../../layouts/Base.astro';
 .res-compare .compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
 .res-time{margin-top:16px;padding:20px;background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}.res-time strong{color:#fff;font-weight:500}
 .tariff-section{padding:100px 0}
-.tariff-table{width:100%;border-collapse:collapse;margin-top:48px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:48px}
+.tariff-table{width:100%;border-collapse:collapse;min-width:320px}
 .tariff-table th,.tariff-table td{padding:16px 24px;text-align:left;border-bottom:1px solid #e0e0e0}
 .tariff-table th{font-size:12px;font-weight:500;color:var(--muted,#666);text-transform:uppercase;letter-spacing:1px;background:var(--gray,#f5f5f5)}
 .tariff-table td{font-size:15px}.tariff-table tr:hover td{background:rgba(230,51,41,.03)}
 .tariff-table .highlight{background:rgba(230,51,41,.06);font-weight:500}
 .tariff-table .rate{font-family:var(--fd,'DM Serif Display',serif);font-size:20px;color:var(--red,#e63329)}
 .addons{padding:100px 0;background:#0a0a0a;color:#fff}
-.addon-table{width:100%;border-collapse:collapse;margin-top:48px}
+.addon-table{width:100%;border-collapse:collapse;min-width:560px}
 .addon-table th,.addon-table td{padding:16px 24px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
 .addon-table th{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
 .addon-table td{font-size:15px;color:rgba(255,255,255,.7)}.addon-table .price{font-family:var(--fd,'DM Serif Display',serif);font-size:20px;color:var(--red,#e63329)}
