@@ -45,7 +45,6 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
   ogImage="https://www.fulfillmentmtp.com.ua/images/chto-takoe-fulfilment-ru-hero.jpg"
   ogType="article"
   schema={schemaJson}
-  preloadHero={false}
 >
 <Fragment slot="head">
   <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/">
@@ -88,7 +87,7 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
       </div>
     </div>
     <div class="ru-pil-hero__right">
-      <img src="/images/chto-takoe-fulfilment-ru-hero.jpg" alt="Современный фулфилмент-склад MTP Group" width="600" height="700" loading="lazy" decoding="async">
+      <img src="/images/chto-takoe-fulfilment-ru-hero.jpg" alt="Современный фулфилмент-склад MTP Group" width="600" height="700" loading="eager" fetchpriority="high">
       <div class="ru-pil-hero__data ru-pil-hero__data--1">
         <span class="ru-pil-hero__data-num">3900 м²</span>
         <span class="ru-pil-hero__data-lbl">2 склада в Киевской обл.</span>
