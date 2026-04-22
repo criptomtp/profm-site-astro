@@ -14,3 +14,10 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# --- CF Pages specific: agent discovery (RFC 8288) ---
+/
+  Link: </sitemap-index.xml>; rel="sitemap"
+  Link: </ua/>; rel="alternate"; hreflang="uk"
+  Link: </ru/>; rel="alternate"; hreflang="ru"
+  Link: </en/>; rel="alternate"; hreflang="en"

@@ -119,5 +119,17 @@ for (const block of (vercel.headers || [])) {
   hlines.push('');
 }
 
+// --- CF Pages specific: RFC 8288 Link headers for agent discovery ---
+// Homepage advertises sitemap + hreflang alternates via HTTP Link header so
+// agents (Claude, GPT crawlers, etc.) can discover structure without parsing HTML.
+// Checked by isitagentready.com — see /.well-known discussion in CLAUDE.md memory.
+hlines.push('# --- CF Pages specific: agent discovery (RFC 8288) ---');
+hlines.push('/');
+hlines.push('  Link: </sitemap-index.xml>; rel="sitemap"');
+hlines.push('  Link: </ua/>; rel="alternate"; hreflang="uk"');
+hlines.push('  Link: </ru/>; rel="alternate"; hreflang="ru"');
+hlines.push('  Link: </en/>; rel="alternate"; hreflang="en"');
+hlines.push('');
+
 fs.writeFileSync(path.join(ROOT, 'public/_headers'), hlines.join('\n'), 'utf8');
-console.log(`✓ public/_headers written (${(vercel.headers || []).length} blocks)`);
+console.log(`✓ public/_headers written (${(vercel.headers || []).length} blocks + Link headers)`);
