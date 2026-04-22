@@ -1,0 +1,203 @@
+{
+  "$schema": "https://www.fulfillmentmtp.com.ua/.well-known/skills/schema.json",
+  "version": "1.0",
+  "name": "MTP Group Fulfillment",
+  "description": "Agent-invokable capabilities for the MTP Group fulfillment warehouse — order placement, inventory lookup, delivery tracking, and returns management via REST API.",
+  "provider": {
+    "name": "MTP Group",
+    "url": "https://www.fulfillmentmtp.com.ua/",
+    "contact": "info@fulfillmentmtp.com.ua"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.fulfillmentmtp.com.ua/openapi.json",
+    "version": "3.1.0"
+  },
+  "authentication": {
+    "type": "apiKey",
+    "location": "body",
+    "parameter": "ApiKey",
+    "description": "UUID issued by MTP manager or obtained via /GetToken with login/password credentials."
+  },
+  "skills": [
+    {
+      "id": "create_order",
+      "name": "Create customer order",
+      "description": "Place a new customer order for fulfillment with Nova Poshta, Ukrposhta, own courier, or pickup delivery. Supports both private-person and legal-entity recipients.",
+      "operation": "addOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder",
+      "inputs": ["id_order", "recipient", "rec_phone", "products", "delivery_method", "delivery_address"],
+      "outputs": ["id_order_FF", "key_order"],
+      "category": "order_management"
+    },
+    {
+      "id": "edit_order",
+      "name": "Edit existing order",
+      "description": "Update recipient contacts, delivery address, or payment form for an existing order. Uses key_order instead of id_order.",
+      "operation": "editOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/EditOrder",
+      "inputs": ["key_order", "order_fields_to_update"],
+      "outputs": ["result", "id_order_FF"],
+      "category": "order_management"
+    },
+    {
+      "id": "cancel_order",
+      "name": "Cancel order",
+      "description": "Cancel a pending order by its client-assigned id_order. Cannot cancel already-shipped orders.",
+      "operation": "cancelOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/CancelOrder",
+      "inputs": ["id_order"],
+      "outputs": ["result"],
+      "category": "order_management"
+    },
+    {
+      "id": "check_order_status",
+      "name": "Check order status",
+      "description": "Retrieve current MTP and Nova Poshta status, TTN, delivery cost, and full Nova Poshta tracking history for one or more orders.",
+      "operation": "reportStatusOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/ReportStatusOrder",
+      "inputs": ["orders[]"],
+      "outputs": ["status_mtp", "status_TTN", "TTN", "tracking_novaposhta"],
+      "category": "order_tracking"
+    },
+    {
+      "id": "list_orders",
+      "name": "List orders by date range",
+      "description": "Paginated list of all orders (up to 100 per page) created within a given date range, including products and delivery info.",
+      "operation": "listOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/ListOrder",
+      "inputs": ["datefrom", "dateto", "page"],
+      "outputs": ["orders[]"],
+      "category": "order_tracking"
+    },
+    {
+      "id": "list_returns",
+      "name": "List customer returns",
+      "description": "Paginated list of returns received at the warehouse within a date range, including marriage (defective) flags.",
+      "operation": "listReturnOrder",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/ListReturnOrder",
+      "inputs": ["datefrom", "dateto", "page"],
+      "outputs": ["returns[]"],
+      "category": "returns"
+    },
+    {
+      "id": "upsert_product",
+      "name": "Create or update product",
+      "description": "Add a new SKU or update existing product metadata (name, barcode). Idempotent by SKU.",
+      "operation": "addProduct",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddProduct",
+      "inputs": ["sku", "name", "barcode"],
+      "outputs": ["sku", "name", "barcode"],
+      "category": "catalog"
+    },
+    {
+      "id": "stock_report",
+      "name": "Get stock levels",
+      "description": "Returns on-hand, available-for-sale, and accounting stock quantities for all SKUs. Can exclude zero-stock items.",
+      "operation": "reportSklad",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/ReportSklad",
+      "inputs": ["ExcludeZero", "ShowStorageDate"],
+      "outputs": ["sku", "quantity", "quantityAvailable", "stock", "barcode"],
+      "category": "inventory"
+    },
+    {
+      "id": "movement_report",
+      "name": "Product movement report",
+      "description": "Detailed inbound/outbound movement ledger for a specific SKU across a date range, with running balance and source documents.",
+      "operation": "reportMoveProduct",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/ReportMoveProduct",
+      "inputs": ["productSku", "dataStart", "dataFinish"],
+      "outputs": ["Period", "MovementDoc", "Quantity", "EndingBalance"],
+      "category": "inventory"
+    },
+    {
+      "id": "create_inbound_delivery",
+      "name": "Create inbound delivery request",
+      "description": "Register an upcoming inbound delivery to the warehouse (via Nova Poshta or direct to warehouse).",
+      "operation": "addDeliveryRequest",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v/json",
+      "inputs": ["idRequest", "dateOfDelivery", "deliveryMethod", "seatsAmount", "ttn", "products"],
+      "outputs": ["id"],
+      "category": "inbound_delivery"
+    },
+    {
+      "id": "check_inbound_delivery",
+      "name": "Check inbound delivery status",
+      "description": "Returns status (1=new, 2=arrived-not-fully-received, 3=completed) and line-item detail for an inbound delivery.",
+      "operation": "reportDeliveryRequest",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v/json",
+      "inputs": ["id"],
+      "outputs": ["id", "status", "products"],
+      "category": "inbound_delivery"
+    },
+    {
+      "id": "list_inbound_deliveries",
+      "name": "List inbound delivery requests",
+      "description": "List all inbound delivery requests within a date range.",
+      "operation": "listDeliveryRequest",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api2v/json",
+      "inputs": ["datefrom", "dateto"],
+      "outputs": ["deliveries[]"],
+      "category": "inbound_delivery"
+    },
+    {
+      "id": "search_cities",
+      "name": "Search Nova Poshta cities",
+      "description": "Find Nova Poshta cities by partial name — returns CityRef UUIDs needed for delivery addresses.",
+      "operation": "getCities",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/getCities",
+      "inputs": ["CityName"],
+      "outputs": ["cities[]"],
+      "category": "reference"
+    },
+    {
+      "id": "list_warehouses",
+      "name": "List Nova Poshta warehouses",
+      "description": "Returns all Nova Poshta warehouses for a given city (by CityRef).",
+      "operation": "getWarehouses",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/getWarehouses",
+      "inputs": ["CityRef"],
+      "outputs": ["warehouses[]"],
+      "category": "reference"
+    },
+    {
+      "id": "list_senders",
+      "name": "List Nova Poshta senders",
+      "description": "Returns the list of legal entities registered as Nova Poshta senders for the client's MTP account.",
+      "operation": "senderDetails",
+      "method": "POST",
+      "endpoint": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/senderDetails",
+      "inputs": [],
+      "outputs": ["senders[]"],
+      "category": "reference"
+    }
+  ],
+  "categories": [
+    { "id": "order_management", "name": "Order management" },
+    { "id": "order_tracking", "name": "Order tracking" },
+    { "id": "returns", "name": "Returns" },
+    { "id": "catalog", "name": "Product catalog" },
+    { "id": "inventory", "name": "Inventory" },
+    { "id": "inbound_delivery", "name": "Inbound delivery" },
+    { "id": "reference", "name": "Reference data" }
+  ],
+  "documentation": {
+    "uk": "https://www.fulfillmentmtp.com.ua/ua/api-docs/",
+    "ru": "https://www.fulfillmentmtp.com.ua/ru/api-docs/",
+    "en": "https://www.fulfillmentmtp.com.ua/en/api-docs/"
+  }
+}

@@ -122,7 +122,46 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
    - Schema.org (мінімум Article або Service + BreadcrumbList)
    - H1 (рівно один)
    - Всі зображення: alt, width, height, loading="lazy"
-   - Використовувати Base.astro (НЕ standalone)
+   - Використовувати Base.astro (НЕ standalone) — тільки Base гарантує що dual-md згенерує .md двійник
+
+---
+
+## DUAL-FILE MARKDOWN (`integrations/dual-md.mjs`):
+
+**Що робить:** під час `npm run build` для кожної HTML сторінки автоматично генерує `.md` версію поруч (наприклад, `/ua/foo/index.html` → `/ua/foo/index.md`). Без cron, без ручних кроків — працює автоматично на кожному build.
+
+**Навіщо:** AI агенти (ChatGPT, Claude, Perplexity, Cursor, Claude Code) отримують чисту markdown-версію контенту без nav/footer/CTA/scripts — у ~5-10× менше токенів, тому наші сторінки легше потрапляють у цитати AI search.
+
+**SEO захисти (критично, НЕ видаляти):**
+1. `/*.md` → `X-Robots-Tag: noindex, follow` у `dist/_headers` — Google не індексує .md
+2. Per-page `Link: <HTML-URL>; rel="canonical"` — вказує canonical-версію
+3. `.md` URLs **НЕ** у `sitemap-index.xml` — лише HTML у sitemap
+4. `robots.txt` **НЕ** блокує `*.md` — Googlebot мусить прочитати, щоб побачити noindex
+
+**Як працює з новими сторінками:**
+- Нічого не треба робити — якщо сторінка через `Base.astro`, .md згенерується автоматично.
+- Щоб виключити секцію з .md (наприклад декоративний hero-візуал), додай `data-md-skip` на елемент.
+- Exit popup, sticky-cta, форми — автоматично вирізаються.
+
+**Excluded from .md generation:**
+`/admin/*`, `/thanks/*`, `/api/*`, `/files/*`, `/schedule/*`, `/new/*`, `/blog/tpost/*`, `/404.html` — налаштовано в `integrations/dual-md.mjs` (`SKIP_ROUTES`).
+
+**Перевірка після build:**
+```bash
+npm run build
+# Шукай у виводі: [dual-md] X written, Y skipped, 0 errors, 0 thin
+ls dist/ua/[новий-slug]/index.md  # має існувати
+head -10 dist/ua/[новий-slug]/index.md  # frontmatter + clean content
+```
+
+**Якщо сторінка не згенерувала .md** — перевір:
+- Чи використовує `Base.astro` (не standalone)?
+- Чи `<main data-md-root>` присутній у rendered HTML (grep у dist)?
+- Чи маршрут не у SKIP_ROUTES?
+
+**Prior art:** docs.anthropic.com, vercel.com/docs, docs.stripe.com — всі роблять dual-file. Ми перший fulfillment провайдер у UA з цим.
+
+---
 4. Перед деплоєм нової сторінки перевірити:
    - `curl -sI "https://fulfillmentmtp.com.ua/ШЛЯХ/"` → має бути 301 → www
    - `curl -sI "https://www.fulfillmentmtp.com.ua/ШЛЯХ/"` → має бути 200

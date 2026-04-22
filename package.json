@@ -11,5 +11,11 @@
     "@astrojs/sitemap": "^3.7.2",
     "@upstash/redis": "^1.37.0",
     "astro": "^5.7.10"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.1",
+    "linkedom": "^0.18.12",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }

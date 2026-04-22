@@ -29,6 +29,18 @@ const {
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
 
+// Build the .md alternate href from canonical (fallback to current pathname).
+// Dual-file Markdown negotiation — LLM/AI clients can fetch clean .md version.
+// .md files are advertised via HTML <link rel=alternate> + HTTP Link header +
+// served with X-Robots-Tag: noindex to prevent duplicate content in Google index.
+const mdHref = (() => {
+  try {
+    const path = canonical ? new URL(canonical).pathname : Astro.url.pathname;
+    if (path === '/' || path === '') return '/index.md';
+    return path.endsWith('/') ? `${path}index.md` : `${path}/index.md`;
+  } catch { return null; }
+})();
+
 // Hreflang is provided by each page via Fragment slot="head".
 // Auto-generation removed 2026-04-20 because the URL layout is non-uniform
 // (UA home at /, UA subpages at /ua/*, RU/EN at /ru/* and /en/*, blog posts
@@ -43,6 +55,7 @@ const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
   <title>{title}</title>
   <meta name="description" content={description}>
   {canonical && <link rel="canonical" href={canonical} />}
+  {mdHref && <link rel="alternate" type="text/markdown" href={mdHref} />}
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content={ogType}>
@@ -176,7 +189,7 @@ body{padding-bottom:64px}
   <a href="#main-content" class="skip-link">Перейти до змісту</a>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV5WZT5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <Header lang={lang} />
-  <main id="main-content">
+  <main id="main-content" data-md-root data-md-title={title} data-md-description={description} data-md-lang={lang} data-md-canonical={canonical}>
     <slot />
   </main>
   {showCTA && <CTA lang={lang} />}

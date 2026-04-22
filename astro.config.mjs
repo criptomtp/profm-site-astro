@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import dualMd from './integrations/dual-md.mjs';
 
 export default defineConfig({
   site: 'https://www.fulfillmentmtp.com.ua',
   trailingSlash: 'always',
   build: { format: 'directory' },
   integrations: [
+    dualMd(),
     sitemap({
       filter: (page) =>
         !page.includes('/admin/') &&

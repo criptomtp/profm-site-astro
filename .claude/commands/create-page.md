@@ -193,6 +193,13 @@ npm run build 2>&1 | grep -E "error|warning"
 - [ ] Три версії — три різні кути, НЕ переклади
 - [ ] Унікальний дизайн — не схожий на інші сторінки
 
+**DUAL-MD (автогенерація .md для AI агентів):**
+- [ ] Сторінка використовує `Base.astro` (не standalone) — інакше `integrations/dual-md.mjs` не побачить її
+- [ ] Після `npm run build` у виводі — `[dual-md] X written, ...` і X збільшилось на 3 (UA + RU + EN)
+- [ ] Перевірити: `ls dist/ua/[slug]/index.md dist/ru/[slug]/index.md dist/en/[slug]/index.md` — всі три мусять існувати
+- [ ] `head -10 dist/ua/[slug]/index.md` — має бути frontmatter (title, description, lang, canonical) + чистий контент без форм/footer/CTA
+- [ ] Якщо якась декоративна секція (логотип marquee, дубльований візуал) потрапила в .md — додати `data-md-skip` на цей елемент у .astro
+
 **ПЕРЕМИКАЧ МОВ:**
 - [ ] UA→RU: перехід працює (не 404)
 - [ ] RU→EN: перехід працює (не 404)
