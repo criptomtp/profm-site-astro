@@ -79,7 +79,7 @@ const mdHref = (() => {
       and pushed LCP ~150ms. Fonts now load via the stylesheet below with
       `display=swap`, which is fine for DM Sans body + DM Serif headings. */}
   {preloadHero && ogImage && <link rel="preload" as="image" href={ogImage.replace('https://www.fulfillmentmtp.com.ua', '').replace('https://fulfillmentmtp.com.ua', '')} fetchpriority="high" />}
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap&subset=latin,cyrillic" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="/css/stitch-tokens.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/css/stitch-tokens.css"></noscript>
