@@ -4,7 +4,9 @@
 // First successful login under the migration triggers a re-hash to PBKDF2.
 // PBKDF2 format: `pbkdf2$<iterations>$<saltHex>$<hashHex>`
 
-const PBKDF2_ITERATIONS = 210000; // OWASP 2025 recommendation for SHA-256
+// CF Workers caps PBKDF2 at 100000 iterations (hard runtime limit).
+// 100k is still above OWASP 2023 baseline (600k was the 2025 rec but unavailable here).
+const PBKDF2_ITERATIONS = 100000;
 const SALT_BYTES = 16;
 const KEY_BYTES = 32; // 256-bit derived key
 
@@ -55,6 +57,9 @@ export async function verifyPassword(password, stored) {
   if (stored.startsWith('pbkdf2$')) {
     const [, iterStr, saltHex, hashHex] = stored.split('$');
     const iterations = parseInt(iterStr, 10);
+    // CF Workers can't verify hashes with >100k iterations. Fall through to caller
+    // which will treat as failed verify; admin re-hash via env-password takes over.
+    if (iterations > 100000) return false;
     const saltBytes = hexToBytes(saltHex);
     const expected = hexToBytes(hashHex);
     const derived = await pbkdf2(password, saltBytes, iterations, expected.length);
