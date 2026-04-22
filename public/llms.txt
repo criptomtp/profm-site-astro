@@ -1,46 +1,77 @@
-# MTP Group Fulfillment Guides
-> Complete guide library covering fulfillment operations, from foundational concepts to advanced strategy. Written by Mykola Liashchuk, founder of MTP Group, with 10+ years in fulfillment industry.
+# MTP Group Fulfillment
+> 3PL fulfillment operator in Ukraine. 3,900 m² warehouse near Kyiv, 150+ active e-commerce clients, 60,000+ shipments per month. Founded 2014. Written/published by Mykola Liashchuk.
 
-## Fulfillment Operations & Core Processes
-- [Returns Management](https://www.fulfillmentmtp.com.ua/en/guide/returns-management/): How to process customer returns, RMA systems, financial accounting, quality control metrics, and reducing return rates
-- [Inventory Management](https://www.fulfillmentmtp.com.ua/en/guide/inventory-management/): Cross-channel inventory sync, ABC analysis, optimal reorder points, dead stock identification, and 25-50% cost reduction tactics
-- [Quality Control & Accuracy](https://www.fulfillmentmtp.com.ua/en/guide/quality-control-accuracy/): Three-pillar quality system, error verification levels, staff training, penalty structures, and achieving 99.5% accuracy
-- [Picking & Packing Best Practices](https://www.fulfillmentmtp.com.ua/en/guide/picking-packing/): ABC zoning, pick system comparison (batch vs zone vs wave), packing materials optimization, layering systems, damage prevention
-- [Warehouse Management Systems](https://www.fulfillmentmtp.com.ua/en/guide/warehouse-management-systems/): Cloud vs on-premise WMS comparison, selection by volume, ROI calculation (6-month payback), implementation phases
-
-## Growth & Expansion
-- [International Shipping & Cross-Border Fulfillment](https://www.fulfillmentmtp.com.ua/en/guide/international-shipping/): Export documentation, customs declarations, courier selection (DHL vs regional), cost calculation, risk management, shipping to 50+ countries
-- [Fulfillment Scaling & Growth Metrics](https://www.fulfillmentmtp.com.ua/en/guide/scaling-growth-metrics/): Scaling from 100 to 10,000+ orders/day, bottleneck identification, 10 key KPIs (accuracy, throughput, cost per order), common scaling mistakes
-- [Fulfillment Pricing & Cost Optimization](https://www.fulfillmentmtp.com.ua/en/guide/fulfillment-pricing-cost-optimization/): Complete pricing structure, operator comparison, 5 tactics to reduce costs 20-30%, when to build own warehouse vs outsource
-
-## Business Strategy & Risk Management
-- [SLA Agreements & Service Level Guarantees](https://www.fulfillmentmtp.com.ua/en/guide/sla-agreements/): Service level metrics (accuracy, processing time, uptime), penalty structures, SLA negotiation tactics, red flags to avoid
-- [Supply Chain Risk Management](https://www.fulfillmentmtp.com.ua/en/guide/supply-chain-risk-management/): Identify 7 major risks, backup operator strategies, 70/20/10 order distribution, disaster recovery plans, business continuity
-- [Staff Training & Onboarding](https://www.fulfillmentmtp.com.ua/en/guide/staff-training-onboarding/): Hiring profiles, 90-day onboarding program, productivity KPIs, retention tactics, reducing turnover 30-40%
-
-## Marketplace Integration & Foundation
-- [What is 3PL](https://www.fulfillmentmtp.com.ua/en/guide/what-is-3pl/): 3PL definition, when to use vs in-house, benefits, risk assessment
-- [How to Integrate Shopify](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-shopify/): Step-by-step Shopify fulfillment integration
-- [How to Integrate Rozetka](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-rozetka/): Rozetka marketplace integration guide
-- [How to Integrate Prom.ua](https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-prom/): Prom marketplace integration guide
-
-## Company Info
-- **Organization:** MTP Group
-- **Founded:** 2014
-- **Expertise:** Fulfillment operations, 3PL logistics, warehouse management
-- **Geographic Reach:** Shipping to 50+ countries
-- **Volume:** Processing 1000+ orders daily
-- **Languages:** Ukrainian (ua), English (en)
-
-## Key Statistics
-- 36 comprehensive guides
-- 2000+ words per guide with 6 detailed chapters
-- 5-question FAQ schema on every page for AI Overviews
-- Self-referencing canonicals + hreflang for SEO
-- Article schema with author credentials
-- Server-side rendered (Astro) for full AI crawler accessibility
-
-## Contact & Services
-- Services: https://www.fulfillmentmtp.com.ua/en/services/
+## Company & Contact
+- Website: https://www.fulfillmentmtp.com.ua
+- Phone: +38 (050) 144-46-45 / +38 (093) 827-77-67
 - Email: mtpgrouppromo@gmail.com
-- Phone: +380501444645, +380938277767
+- Telegram: https://t.me/nikolay_mtp
+- Warehouses: Kyiv region (Shchaslyve, Boryspil district + Bilohorodka)
+- Languages: Ukrainian (uk), Russian (ru), English (en)
+
+## Core Content — What Is Fulfillment (Pillar Hub)
+- [Що таке фулфілмент — повний гайд (UA)](https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/): Комплексний hub про фулфілмент: як працює, хто потребує, ціни, відмінності від власного складу
+- [Что такое фулфилмент — полный гид (RU)](https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/): Руководство по фулфилменту для СНГ-бизнеса: модели, стоимость, сравнение
+- [What is Fulfillment — Complete Guide (EN)](https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/): Ukraine fulfillment for European e-commerce: market entry, 3PL vs own warehouse, pricing
+
+## Services
+- [Послуги фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/services/): Перелік послуг: приймання, зберігання, упаковка, доставка, інтеграції
+- [Услуги фулфилмента (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Каталог услуг для онлайн-ритейла
+- [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment services for cross-border e-commerce
+- [3PL-логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukraine e-commerce
+- [Складські послуги (UA)](https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/): Warehouse services, pallet storage, B2B handling
+- [Палетне зберігання (UA)](https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/): Pallet storage pricing and specs
+- [Fulfillment for E-commerce Stores (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/): Dedicated e-shop fulfillment
+- [Fulfillment for Marketplaces (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/): Rozetka, Prom, Kasta, OLX integration
+- [Fulfillment for Cosmetics (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Cosmetics vertical — fragile, expiry-date handling
+- [Fulfillment for Small Business (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry-tier fulfillment (from 100 orders/month)
+- [Fulfillment for Heavy Goods (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized/heavy items fulfillment
+- [Fulfillment in Kyiv (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/): Kyiv warehouse location, same-day courier radius
+- [Fulfillment across Ukraine (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/): Full-country coverage via Nova Poshta
+- [Heavy Goods Fulfillment (EN)](https://www.fulfillmentmtp.com.ua/en/heavy-goods/): Oversized item handling for international shippers
+- [Warehouse Services (EN)](https://www.fulfillmentmtp.com.ua/en/warehouse-services/): Pallet storage, cross-dock, B2B fulfillment
+- [Pallet Storage (EN)](https://www.fulfillmentmtp.com.ua/en/pallet-storage/): Bonded + climate-controlled pallet storage
+
+## Pricing
+- [Ціни на фулфілмент (UA)](https://www.fulfillmentmtp.com.ua/ua/tsiny/): From 18 UAH/order + 650 UAH/m³/month storage. Minimum 5,000 UAH/month.
+- [Цены на фулфилмент (RU)](https://www.fulfillmentmtp.com.ua/ru/tsenu/): Pricing structure for CIS clients
+- [Pricing (EN)](https://www.fulfillmentmtp.com.ua/en/prices/): Transparent pricing for EU/UK/US sellers entering Ukraine
+
+## Calculator (Interactive)
+- [Калькулятор фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/calculator/): Interactive cost calculator — 4 inputs, instant quote
+- [Калькулятор (RU)](https://www.fulfillmentmtp.com.ua/ru/calculator/): Калькулятор стоимости
+- [Cost Calculator (EN)](https://www.fulfillmentmtp.com.ua/en/calculator/): Monthly fulfillment cost estimate
+
+## Developer Integration (REST API)
+- [API Documentation (UA)](https://www.fulfillmentmtp.com.ua/ua/api-docs/): REST API для e-commerce інтеграцій, 18 методів, підключення за 1 день
+- [API Documentation (RU)](https://www.fulfillmentmtp.com.ua/ru/api-docs/): REST API для СНГ-интеграторов (Казахстан, Молдова, Грузия)
+- [API Documentation (EN)](https://www.fulfillmentmtp.com.ua/en/api-docs/): REST API for Shopify/WooCommerce/BigCommerce integrators entering Ukraine
+- [OpenAPI 3.1 Specification](https://www.fulfillmentmtp.com.ua/openapi.json): Machine-readable API spec (18 endpoints, 7 tag groups)
+- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Ready-to-import Postman collection
+
+## Knowledge & Reference
+- [Що таке фулфілмент? (UA guide)](https://www.fulfillmentmtp.com.ua/ua/guide/): Knowledge base entry point
+- [Что такое фулфилмент? (RU guide)](https://www.fulfillmentmtp.com.ua/ru/guide/): База знаний
+- [Fulfillment Guide (EN)](https://www.fulfillmentmtp.com.ua/en/guide/): Knowledge hub index
+- [FAQ (UA)](https://www.fulfillmentmtp.com.ua/ua/faq/): Frequently asked questions
+- [FAQ (RU)](https://www.fulfillmentmtp.com.ua/ru/faq/): Часто задаваемые вопросы
+- [FAQ (EN)](https://www.fulfillmentmtp.com.ua/en/faq/): FAQ for international integrators
+- [About MTP Group (UA)](https://www.fulfillmentmtp.com.ua/ua/about/): Company history, team, values
+- [About (RU)](https://www.fulfillmentmtp.com.ua/ru/about/): О компании
+- [About (EN)](https://www.fulfillmentmtp.com.ua/en/about/): Company profile for international partners
+- [Customer Reviews (UA)](https://www.fulfillmentmtp.com.ua/ua/recalls/): Client testimonials
+- [Отзывы клиентов (RU)](https://www.fulfillmentmtp.com.ua/ru/recalls/): Отзывы
+- [Reviews (EN)](https://www.fulfillmentmtp.com.ua/en/recalls/): Client case studies
+
+## Blog
+- [Блог (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/): UA e-commerce insights, logistics, fulfillment strategy
+- [Blog (EN)](https://www.fulfillmentmtp.com.ua/en/blog/): English posts on Ukraine e-commerce and fulfillment trends
+
+## Key Facts
+- Founded: 2014
+- Warehouse: 3,900 m² (Category B+), two locations in Kyiv region
+- Active clients: 150+
+- Monthly shipments: 60,000+
+- Backup power: 3 generators + Starlink (operates during blackouts)
+- Carriers integrated: Nova Poshta (primary), Ukrposhta, DHL (cross-border)
+- Languages served: Ukrainian, Russian, English

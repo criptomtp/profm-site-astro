@@ -105,6 +105,9 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - [ ] Мінімум 3 внутрішні посилання
 - [ ] Перевірка мови (LANGUAGE_AUDIT.md)
 - [ ] ADR в docs/design-system/pages/[slug].md
+- [ ] **Оновити `public/llms.txt`** — додати всі 3 нові URL (UA/RU/EN) у відповідну секцію (Services / Knowledge / Developer Integration / etc.) з коротким описом. При видаленні сторінки — прибрати запис. llms.txt НЕ повинен містити URL які не існують у `src/pages/` або 301-редіректять.
+- [ ] **Оновити `public/.well-known/api-catalog`** (якщо API/dev-ресурс) — додати до service-doc[].
+- [ ] Footer — якщо сторінка має з'явитися в навігації Footer, додати в `src/components/Footer.astro` відповідний стовпчик.
 - [ ] npm run build — без помилок
 - [ ] PageSpeed перевірка (після деплою)
 - [ ] npx vercel --prod
