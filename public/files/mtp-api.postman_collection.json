@@ -1,0 +1,2129 @@
+{
+    "item": [
+        {
+            "name": "GetToken",
+            "description": "",
+            "item": [
+                {
+                    "id": "45178ed1-054c-47a7-8220-902d0bce5cdd",
+                    "name": "Obtain ApiKey by login/password",
+                    "request": {
+                        "name": "Obtain ApiKey by login/password",
+                        "description": {
+                            "content": "Exchange login/password credentials for an ApiKey used in all subsequent calls.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "GetToken"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"login\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "c752c559-e90f-4df9-800e-80be9d25af7a",
+                            "name": "Token issued",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "GetToken"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"login\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": {\n    \"ApiKey\": \"<string>\"\n  },\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "getCities",
+            "description": "",
+            "item": [
+                {
+                    "id": "4b8ee52f-f221-435a-b552-f7ae5b818a16",
+                    "name": "Search Nova Poshta cities",
+                    "request": {
+                        "name": "Search Nova Poshta cities",
+                        "description": {
+                            "content": "Returns Nova Poshta city reference matching the given partial name.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "getCities"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"CityName\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "3c771576-38e7-4b52-8358-4bd470a199ba",
+                            "name": "City list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "getCities"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"CityName\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "getWarehouses",
+            "description": "",
+            "item": [
+                {
+                    "id": "838d64ee-da25-42e9-b705-b19ca1e40efb",
+                    "name": "Get Nova Poshta warehouses for a city",
+                    "request": {
+                        "name": "Get Nova Poshta warehouses for a city",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "getWarehouses"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"CityRef\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "4b94067c-444b-4294-aa7c-64b99235b880",
+                            "name": "Warehouse list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "getWarehouses"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"CityRef\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                },
+                {
+                    "id": "89c39e10-09a7-4097-9aa3-25eb261ed25f",
+                    "name": "Get full Nova Poshta warehouse list (GET form)",
+                    "request": {
+                        "name": "Get full Nova Poshta warehouse list (GET form)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "getWarehouses"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "ApiKey",
+                                    "value": "<string>"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "1f91319f-38e3-4634-8417-9fe28fe356f3",
+                            "name": "Warehouse list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "getWarehouses"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "disabled": false,
+                                            "description": {
+                                                "content": "(Required) ",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "ApiKey",
+                                            "value": "<string>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "getStreet",
+            "description": "",
+            "item": [
+                {
+                    "id": "51b71714-a11c-4aa5-af46-9f18d4ad17d0",
+                    "name": "Get Nova Poshta street reference",
+                    "request": {
+                        "name": "Get Nova Poshta street reference",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "getStreet"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) ",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "ApiKey",
+                                    "value": "<string>"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "1554c020-8a2d-44e7-88bb-b03c8020f8bc",
+                            "name": "Street list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "getStreet"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "disabled": false,
+                                            "description": {
+                                                "content": "(Required) ",
+                                                "type": "text/plain"
+                                            },
+                                            "key": "ApiKey",
+                                            "value": "<string>"
+                                        }
+                                    ],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AddProduct",
+            "description": "",
+            "item": [
+                {
+                    "id": "8a8b95e9-e726-4e8f-a07a-4fa37d4228b5",
+                    "name": "Create or update a product in MTP catalog",
+                    "request": {
+                        "name": "Create or update a product in MTP catalog",
+                        "description": {
+                            "content": "Adds a new product or updates an existing one by SKU. Use AnswerOption='Correct' for standard validation.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "AddProduct"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"name\": \"<string>\",\n  \"AnswerOption\": \"<string>\",\n  \"barcode\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "3994861c-c708-4a50-ad7d-eba2661dec82",
+                            "name": "Product created or updated",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "AddProduct"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"name\": \"<string>\",\n  \"AnswerOption\": \"<string>\",\n  \"barcode\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AddOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "779d3a7f-86bf-410b-8c89-59247b521329",
+                    "name": "Create a new order",
+                    "request": {
+                        "name": "Create a new order",
+                        "description": {
+                            "content": "Creates a new customer order with delivery via Nova Poshta, Ukrposhta, own courier, or pickup. Supports warehouse, address, and own-TTN delivery modes.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "AddOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\",\n    \"external_id\": \"<string>\",\n    \"key_order\": \"<string>\",\n    \"date_order\": \"<string>\",\n    \"recipient\": \"<string>\",\n    \"rec_phone\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"serviceComment\": \"<string>\",\n    \"Cost\": \"<integer>\",\n    \"Draft\": \"<boolean>\",\n    \"PayerType\": \"Sender\",\n    \"payment_method\": \"Наличными\",\n    \"order_payment_sum\": \"<string>\",\n    \"delivery_method\": \"Новая Почта\",\n    \"delivery_sender_id\": \"<string>\",\n    \"RecipientType\": \"Organization\",\n    \"OrganizationName\": \"<string>\",\n    \"EDRPOU\": \"<string>\",\n    \"OwnershipForm\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ],\n    \"delivery_address\": {\n      \"WarehouseRef\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"DeliveryCity\": \"<string>\",\n      \"Street\": \"<string>\",\n      \"House\": \"<string>\",\n      \"Flat\": \"<string>\",\n      \"NumberOfFloorsLifting\": \"<string>\",\n      \"itMyTTN\": \"<boolean>\",\n      \"ttn\": \"<string>\",\n      \"ttnRef\": \"<string>\"\n    }\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "15e65191-7c29-4bb3-ae5a-1b37c13a193e",
+                            "name": "Order created",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "AddOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\",\n    \"external_id\": \"<string>\",\n    \"key_order\": \"<string>\",\n    \"date_order\": \"<string>\",\n    \"recipient\": \"<string>\",\n    \"rec_phone\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"serviceComment\": \"<string>\",\n    \"Cost\": \"<integer>\",\n    \"Draft\": \"<boolean>\",\n    \"PayerType\": \"Sender\",\n    \"payment_method\": \"Наличными\",\n    \"order_payment_sum\": \"<string>\",\n    \"delivery_method\": \"Новая Почта\",\n    \"delivery_sender_id\": \"<string>\",\n    \"RecipientType\": \"Organization\",\n    \"OrganizationName\": \"<string>\",\n    \"EDRPOU\": \"<string>\",\n    \"OwnershipForm\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ],\n    \"delivery_address\": {\n      \"WarehouseRef\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"DeliveryCity\": \"<string>\",\n      \"Street\": \"<string>\",\n      \"House\": \"<string>\",\n      \"Flat\": \"<string>\",\n      \"NumberOfFloorsLifting\": \"<string>\",\n      \"itMyTTN\": \"<boolean>\",\n      \"ttn\": \"<string>\",\n      \"ttnRef\": \"<string>\"\n    }\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": {\n    \"id_order_FF\": \"<string>\",\n    \"key_order\": \"<string>\"\n  },\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "EditOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "07a809ab-82b0-423f-bd97-42385287fd92",
+                    "name": "Edit an existing order",
+                    "request": {
+                        "name": "Edit an existing order",
+                        "description": {
+                            "content": "Same request shape as AddOrder but uses `key_order` instead of `id_order` to identify the order.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "EditOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\",\n    \"external_id\": \"<string>\",\n    \"key_order\": \"<string>\",\n    \"date_order\": \"<string>\",\n    \"recipient\": \"<string>\",\n    \"rec_phone\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"serviceComment\": \"<string>\",\n    \"Cost\": \"<integer>\",\n    \"Draft\": \"<boolean>\",\n    \"PayerType\": \"Sender\",\n    \"payment_method\": \"Наличными\",\n    \"order_payment_sum\": \"<string>\",\n    \"delivery_method\": \"Новая Почта\",\n    \"delivery_sender_id\": \"<string>\",\n    \"RecipientType\": \"Organization\",\n    \"OrganizationName\": \"<string>\",\n    \"EDRPOU\": \"<string>\",\n    \"OwnershipForm\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ],\n    \"delivery_address\": {\n      \"WarehouseRef\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"DeliveryCity\": \"<string>\",\n      \"Street\": \"<string>\",\n      \"House\": \"<string>\",\n      \"Flat\": \"<string>\",\n      \"NumberOfFloorsLifting\": \"<string>\",\n      \"itMyTTN\": \"<boolean>\",\n      \"ttn\": \"<string>\",\n      \"ttnRef\": \"<string>\"\n    }\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "75e69b91-a238-487c-9bde-bc972977f9f1",
+                            "name": "Order updated",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "EditOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\",\n    \"external_id\": \"<string>\",\n    \"key_order\": \"<string>\",\n    \"date_order\": \"<string>\",\n    \"recipient\": \"<string>\",\n    \"rec_phone\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"serviceComment\": \"<string>\",\n    \"Cost\": \"<integer>\",\n    \"Draft\": \"<boolean>\",\n    \"PayerType\": \"Sender\",\n    \"payment_method\": \"Наличными\",\n    \"order_payment_sum\": \"<string>\",\n    \"delivery_method\": \"Новая Почта\",\n    \"delivery_sender_id\": \"<string>\",\n    \"RecipientType\": \"Organization\",\n    \"OrganizationName\": \"<string>\",\n    \"EDRPOU\": \"<string>\",\n    \"OwnershipForm\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ],\n    \"delivery_address\": {\n      \"WarehouseRef\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"DeliveryCity\": \"<string>\",\n      \"Street\": \"<string>\",\n      \"House\": \"<string>\",\n      \"Flat\": \"<string>\",\n      \"NumberOfFloorsLifting\": \"<string>\",\n      \"itMyTTN\": \"<boolean>\",\n      \"ttn\": \"<string>\",\n      \"ttnRef\": \"<string>\"\n    }\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CancelOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "44fb9463-5077-45ba-aefb-1c62fd55aebb",
+                    "name": "Cancel an order",
+                    "request": {
+                        "name": "Cancel an order",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "CancelOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\"\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "8f4f5219-03a6-4cdd-870a-c246a00b7450",
+                            "name": "Order cancelled",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "CancelOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"order\": {\n    \"id_order\": \"<string>\"\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReportStatusOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "32d830f2-8a58-477e-95df-85cf5902e696",
+                    "name": "Get status of one or more orders",
+                    "request": {
+                        "name": "Get status of one or more orders",
+                        "description": {
+                            "content": "Returns MTP status, Nova Poshta TTN, and full tracking history for each order ID in the list.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "ReportStatusOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"orders\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "c8930aab-4801-4c47-879e-86200b1dacf7",
+                            "name": "Status array",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "ReportStatusOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"orders\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "[\n  {\n    \"id_order\": \"<string>\",\n    \"TTN\": \"<string>\",\n    \"DeliveryCost\": \"<number>\",\n    \"warnings\": \"<array>\",\n    \"status_TTN\": \"<string>\",\n    \"status_TTN_id\": \"<string>\",\n    \"status_TTN_date\": \"<string>\",\n    \"status_mtp\": \"<string>\",\n    \"status_mtp_id\": \"<string>\",\n    \"status_mtp_date\": \"<string>\"\n  },\n  {\n    \"id_order\": \"<string>\",\n    \"TTN\": \"<string>\",\n    \"DeliveryCost\": \"<number>\",\n    \"warnings\": \"<array>\",\n    \"status_TTN\": \"<string>\",\n    \"status_TTN_id\": \"<string>\",\n    \"status_TTN_date\": \"<string>\",\n    \"status_mtp\": \"<string>\",\n    \"status_mtp_id\": \"<string>\",\n    \"status_mtp_date\": \"<string>\"\n  }\n]",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "getStatusOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "01507e8d-ec0f-480b-af9f-ad0b4425f3d3",
+                    "name": "Get dictionary of all MTP order statuses",
+                    "request": {
+                        "name": "Get dictionary of all MTP order statuses",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "getStatusOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "03f1c01f-dd97-48de-9f7b-6b6dcf40f760",
+                            "name": "Status dictionary",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "getStatusOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "GET",
+                                "body": {}
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ListOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "1a32995f-dff0-4c3b-a6f5-131c6c455cb9",
+                    "name": "List orders within a date range (paginated)",
+                    "request": {
+                        "name": "List orders within a date range (paginated)",
+                        "description": {
+                            "content": "Returns up to 100 orders per page. Use `page` to iterate.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "ListOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"datefrom\": \"<string>\",\n  \"dateto\": \"<string>\",\n  \"page\": \"<integer>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "334bf39c-dbda-4df3-aff4-593871f501e5",
+                            "name": "Paginated order list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "ListOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"datefrom\": \"<string>\",\n  \"dateto\": \"<string>\",\n  \"page\": \"<integer>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ListReturnOrder",
+            "description": "",
+            "item": [
+                {
+                    "id": "599a31d8-4ea7-4521-bfe3-2d1c58a6286a",
+                    "name": "List customer returns within a date range (paginated)",
+                    "request": {
+                        "name": "List customer returns within a date range (paginated)",
+                        "description": {
+                            "content": "Returns up to 100 return receipts per page with line-item details including marriage (defective) flag.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "ListReturnOrder"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"datefrom\": \"<string>\",\n  \"dateto\": \"<string>\",\n  \"page\": \"<integer>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "d910522c-eed6-4804-a01e-b6c16762020f",
+                            "name": "Paginated return list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "ListReturnOrder"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"datefrom\": \"<string>\",\n  \"dateto\": \"<string>\",\n  \"page\": \"<integer>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReportSklad",
+            "description": "",
+            "item": [
+                {
+                    "id": "171ecfff-5eb2-4e4e-b19d-c079bbf3d232",
+                    "name": "Stock levels report",
+                    "request": {
+                        "name": "Stock levels report",
+                        "description": {
+                            "content": "Returns current stock: `quantity` (on hand), `quantityAvailable` (available for sale), `stock` (accounting stock).",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "ReportSklad"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"ExcludeZero\": \"<boolean>\",\n  \"ShowStorageDate\": \"<boolean>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "60794981-c4ef-468b-bf7b-29368b3fa59f",
+                            "name": "Stock report",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "ReportSklad"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"ExcludeZero\": \"<boolean>\",\n  \"ShowStorageDate\": \"<boolean>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "[]",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReportMoveProduct",
+            "description": "",
+            "item": [
+                {
+                    "id": "0d2b255d-b969-4558-ad92-e4f5aade08e4",
+                    "name": "Product movement report by SKU and date range",
+                    "request": {
+                        "name": "Product movement report by SKU and date range",
+                        "description": {
+                            "content": "Returns inbound/outbound movements, running balance, and source documents (movements, returns, decomposition, etc.).",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "path": [
+                                "ReportMoveProduct"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"dataStart\": \"<string>\",\n  \"dataFinish\": \"<string>\",\n  \"productSku\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "e17bad7a-df13-4a18-a676-5fd142f4fd1a",
+                            "name": "Movement report",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "ReportMoveProduct"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"dataStart\": \"<string>\",\n  \"dataFinish\": \"<string>\",\n  \"productSku\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "senderDetails",
+            "description": "",
+            "item": [
+                {
+                    "id": "40ed2a1c-ff31-449a-b3a3-408309f0e947",
+                    "name": "List available Nova Poshta senders (your own legal entities)",
+                    "request": {
+                        "name": "List available Nova Poshta senders (your own legal entities)",
+                        "description": {},
+                        "url": {
+                            "path": [
+                                "senderDetails"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\"\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "0552bb60-751b-4c51-b5cd-7703e0c905a4",
+                            "name": "Sender list",
+                            "originalRequest": {
+                                "url": {
+                                    "path": [
+                                        "senderDetails"
+                                    ],
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ListDeliveryRequest",
+            "description": "",
+            "item": [
+                {
+                    "id": "1ae06b32-4bc1-4f6e-bdc7-f7261411f033",
+                    "name": "List inbound delivery requests (supply to warehouse)",
+                    "request": {
+                        "name": "List inbound delivery requests (supply to warehouse)",
+                        "description": {
+                            "content": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json` (v2 endpoint). `method` field in body specifies operation.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "protocol": "https",
+                            "port": "34443",
+                            "path": [
+                                "MTPGroupFulfillment",
+                                "hs",
+                                "api2v",
+                                "ListDeliveryRequest"
+                            ],
+                            "host": [
+                                "fulfillment",
+                                "in",
+                                "ua"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"method\": \"ListDeliveryRequest\",\n  \"properties\": {\n    \"datefrom\": \"<string>\",\n    \"dateto\": \"<string>\"\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "5df94796-f006-4dc4-aa38-4e44ac35b7cd",
+                            "name": "Delivery request list",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "https",
+                                    "port": "34443",
+                                    "path": [
+                                        "MTPGroupFulfillment",
+                                        "hs",
+                                        "api2v",
+                                        "ListDeliveryRequest"
+                                    ],
+                                    "host": [
+                                        "fulfillment",
+                                        "in",
+                                        "ua"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"ApiKey\": \"<string>\",\n  \"method\": \"ListDeliveryRequest\",\n  \"properties\": {\n    \"datefrom\": \"<string>\",\n    \"dateto\": \"<string>\"\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"success\": \"<boolean>\",\n  \"Data\": \"<array>\",\n  \"errors\": \"<array>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AddDeliveryRequest",
+            "description": "",
+            "item": [
+                {
+                    "id": "62de9075-f753-4523-9f4d-d7f227c2d22c",
+                    "name": "Create an inbound delivery request",
+                    "request": {
+                        "name": "Create an inbound delivery request",
+                        "description": {
+                            "content": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json` (v2 endpoint).",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "protocol": "https",
+                            "port": "34443",
+                            "path": [
+                                "MTPGroupFulfillment",
+                                "hs",
+                                "api2v",
+                                "AddDeliveryRequest"
+                            ],
+                            "host": [
+                                "fulfillment",
+                                "in",
+                                "ua"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"apiKey\": \"<string>\",\n  \"method\": \"AddDeliveryRequest\",\n  \"properties\": {\n    \"idRequest\": \"<string>\",\n    \"dateOfDelivery\": \"<string>\",\n    \"deliveryMethod\": \"Новая почта\",\n    \"seatsAmount\": \"<string>\",\n    \"ttn\": \"<string>\",\n    \"сomment\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ]\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "0ec6ed56-d7e2-4b87-b11e-138032dc01dd",
+                            "name": "Delivery request created",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "https",
+                                    "port": "34443",
+                                    "path": [
+                                        "MTPGroupFulfillment",
+                                        "hs",
+                                        "api2v",
+                                        "AddDeliveryRequest"
+                                    ],
+                                    "host": [
+                                        "fulfillment",
+                                        "in",
+                                        "ua"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"apiKey\": \"<string>\",\n  \"method\": \"AddDeliveryRequest\",\n  \"properties\": {\n    \"idRequest\": \"<string>\",\n    \"dateOfDelivery\": \"<string>\",\n    \"deliveryMethod\": \"Новая почта\",\n    \"seatsAmount\": \"<string>\",\n    \"ttn\": \"<string>\",\n    \"сomment\": \"<string>\",\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"result\": \"ok\",\n  \"Data\": \"\",\n  \"errors\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReportDeliveryRequest",
+            "description": "",
+            "item": [
+                {
+                    "id": "586473c7-bf97-449e-87be-13b1e799a9d9",
+                    "name": "Get status of an inbound delivery request",
+                    "request": {
+                        "name": "Get status of an inbound delivery request",
+                        "description": {
+                            "content": "⚠ Uses base URL `/MTPGroupFulfillment/hs/api2v/json`. Status values: 1=new, 2=arrived but not fully received, 3=receiving completed and confirmed.",
+                            "type": "text/plain"
+                        },
+                        "url": {
+                            "protocol": "https",
+                            "port": "34443",
+                            "path": [
+                                "MTPGroupFulfillment",
+                                "hs",
+                                "api2v",
+                                "ReportDeliveryRequest"
+                            ],
+                            "host": [
+                                "fulfillment",
+                                "in",
+                                "ua"
+                            ],
+                            "query": [],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"apiKey\": \"<string>\",\n  \"method\": \"ReportDeliveryRequest\",\n  \"properties\": {\n    \"id\": \"<string>\"\n  }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "auth": null
+                    },
+                    "response": [
+                        {
+                            "id": "14e9b48b-0b77-428c-b596-b77dce75d3f4",
+                            "name": "Delivery request status",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "https",
+                                    "port": "34443",
+                                    "path": [
+                                        "MTPGroupFulfillment",
+                                        "hs",
+                                        "api2v",
+                                        "ReportDeliveryRequest"
+                                    ],
+                                    "host": [
+                                        "fulfillment",
+                                        "in",
+                                        "ua"
+                                    ],
+                                    "query": [],
+                                    "variable": []
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "description": {
+                                            "content": "Added as a part of security scheme: apikey",
+                                            "type": "text/plain"
+                                        },
+                                        "key": "ApiKey",
+                                        "value": "<API Key>"
+                                    }
+                                ],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"apiKey\": \"<string>\",\n  \"method\": \"ReportDeliveryRequest\",\n  \"properties\": {\n    \"id\": \"<string>\"\n  }\n}",
+                                    "options": {
+                                        "raw": {
+                                            "headerFamily": "json",
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": "{\n  \"success\": \"<boolean>\",\n  \"Data\": {\n    \"id\": \"<string>\",\n    \"status\": 1,\n    \"products\": [\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"count\": \"<string>\",\n        \"price\": \"<string>\",\n        \"sku\": \"<string>\"\n      }\n    ]\n  },\n  \"errors\": \"<array>\"\n}",
+                            "cookie": [],
+                            "_postman_previewlanguage": "json"
+                        }
+                    ],
+                    "event": [],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    }
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "type": "any",
+                "value": "ApiKey",
+                "key": "key"
+            },
+            {
+                "type": "any",
+                "value": "{{apiKey}}",
+                "key": "value"
+            },
+            {
+                "type": "any",
+                "value": "header",
+                "key": "in"
+            }
+        ]
+    },
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api"
+        }
+    ],
+    "info": {
+        "_postman_id": "dc70f3b6-6339-4133-9cd6-bc1b15a24ac4",
+        "name": "MTP Group Fulfillment REST API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "REST API for integrating online stores with MTP Group (fulfillmentmtp.com.ua) fulfillment services. Supports order creation, inventory reporting, delivery management, and Nova Poshta / Ukrposhta carrier integration. All requests use HTTPS + UTF-8, JSON request/response bodies, authentication via `ApiKey` field obtained from MTP manager or via `GetToken` method.\n\nContact Support:\n Name: MTP Group Integration Support\n Email: info@fulfillmentmtp.com.ua",
+            "type": "text/plain"
+        }
+    }
+}

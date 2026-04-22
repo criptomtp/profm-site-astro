@@ -1,0 +1,404 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"MTP Fulfillment REST API — документація","description":"Повна документація REST API MTP Group: автентифікація, замовлення, склад, доставка, Нова Пошта. Postman collection, OpenAPI 3.1, інтерактивна пісочниця.","inLanguage":"uk-UA","url":"https://www.fulfillmentmtp.com.ua/ua/api-docs/","dependencies":"REST, JSON, HTTPS","proficiencyLevel":"Intermediate","author":{"@type":"Organization","name":"MTP Group","url":"https://www.fulfillmentmtp.com.ua/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/ua/"},{"@type":"ListItem","position":2,"name":"API документація","item":"https://www.fulfillmentmtp.com.ua/ua/api-docs/"}]}</script>`;
+---
+<Base
+  title="API документація MTP Fulfillment — REST, OpenAPI, Postman"
+  description="REST API MTP Group: автентифікація, замовлення, склад, Нова Пошта. OpenAPI 3.1, Postman collection, інтерактивна пісочниця. UA/RU/EN."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/api-docs/"
+  lang="uk"
+  showCTA={true}
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-process-overview.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/api-docs/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/api-docs/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/api-docs/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/api-docs/">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+</Fragment>
+
+<section class="apidoc-hero">
+  <div class="apidoc-hero__inner">
+    <span class="apidoc-hero__label">REST API · OpenAPI 3.1 · v1.0</span>
+    <h1 class="apidoc-hero__title">Підключіть склад<br>до свого магазину<br><span class="apidoc-hero__accent">за 1 день</span></h1>
+    <p class="apidoc-hero__sub">Повний REST API для e-commerce інтеграторів: замовлення, склад, доставка Новою Поштою та Укрпоштою, статуси в реальному часі. 18 методів, JSON, HTTPS.</p>
+    <div class="apidoc-hero__actions">
+      <a href="/openapi.json" class="apidoc-btn apidoc-btn--primary" download>Завантажити OpenAPI 3.1</a>
+      <a href="/files/mtp-api.postman_collection.json" class="apidoc-btn apidoc-btn--outline" download>Postman Collection</a>
+      <a href="#playground" class="apidoc-btn apidoc-btn--ghost">Відкрити пісочницю ↓</a>
+    </div>
+    <div class="apidoc-hero__cta">
+      <HeroCTA lang="uk" theme="dark" button="Отримати ApiKey →" microCopy="✓ Менеджер видасть ключ та допоможе з інтеграцією" sourceTag="hero /ua/api-docs/" />
+    </div>
+  </div>
+</section>
+
+<section class="apidoc-stats">
+  <div class="apidoc-stats__inner">
+    <div class="apidoc-stats__item"><span class="apidoc-stats__num">18</span><span class="apidoc-stats__label">REST методів</span></div>
+    <div class="apidoc-stats__item"><span class="apidoc-stats__num">7</span><span class="apidoc-stats__label">груп ендпоінтів</span></div>
+    <div class="apidoc-stats__item"><span class="apidoc-stats__num">99.5%</span><span class="apidoc-stats__label">SLA uptime</span></div>
+    <div class="apidoc-stats__item"><span class="apidoc-stats__num">{'<'}300мс</span><span class="apidoc-stats__label">p95 latency</span></div>
+  </div>
+</section>
+
+<section class="apidoc-nav" aria-label="Розділи документації">
+  <div class="apidoc-nav__inner">
+    <a href="#quickstart" class="apidoc-nav__link">Quick Start</a>
+    <a href="#auth" class="apidoc-nav__link">Автентифікація</a>
+    <a href="#endpoints" class="apidoc-nav__link">Ендпоінти</a>
+    <a href="#examples" class="apidoc-nav__link">Приклади коду</a>
+    <a href="#playground" class="apidoc-nav__link">Пісочниця</a>
+    <a href="#errors" class="apidoc-nav__link">Помилки</a>
+    <a href="#faq" class="apidoc-nav__link">FAQ</a>
+  </div>
+</section>
+
+<section class="apidoc-main">
+<div class="apidoc-main__inner">
+
+<article class="apidoc-section" id="quickstart">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">01</span>
+    <h2 class="apidoc-section__title">Quick Start — 5 хвилин до першого запиту</h2>
+  </div>
+  <p class="apidoc-lead">API MTP Fulfillment працює на двох базових URL: основний (замовлення, склад, товари) і v2 (заявки на приймання). Всі запити — <code>POST</code>, body у JSON, автентифікація через поле <code>ApiKey</code> в тілі запиту.</p>
+
+  <div class="apidoc-steps">
+    <div class="apidoc-step">
+      <span class="apidoc-step__num">1</span>
+      <div>
+        <h3>Отримайте ApiKey</h3>
+        <p>Напишіть вашому менеджеру або використайте метод <code>GetToken</code> з обліковими даними. Ключ діє до відкликання.</p>
+      </div>
+    </div>
+    <div class="apidoc-step">
+      <span class="apidoc-step__num">2</span>
+      <div>
+        <h3>Імпортуйте колекцію</h3>
+        <p>Завантажте <a href="/files/mtp-api.postman_collection.json" download>Postman Collection</a> або <a href="/openapi.json" download>OpenAPI 3.1 JSON</a> і відкрийте у вашому інструменті.</p>
+      </div>
+    </div>
+    <div class="apidoc-step">
+      <span class="apidoc-step__num">3</span>
+      <div>
+        <h3>Зробіть тестовий запит</h3>
+        <p>Викличте <code>AddOrder</code> з тестовими даними. Ми повернемо ID замовлення та статус. В пісочниці нижче можна спробувати без коду.</p>
+      </div>
+    </div>
+    <div class="apidoc-step">
+      <span class="apidoc-step__num">4</span>
+      <div>
+        <h3>Налаштуйте webhook статусів</h3>
+        <p>Підпишіться на <code>ReportStatusOrder</code>, щоб отримувати зміни статусів (новий → зібраний → відправлений → доставлений).</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="apidoc-section" id="auth">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">02</span>
+    <h2 class="apidoc-section__title">Автентифікація</h2>
+  </div>
+  <p>API використовує простий ApiKey у тілі кожного запиту. <strong>Не у заголовку</strong> — саме у JSON body як поле <code>ApiKey</code>. Такий дизайн історично склався під 1С-інтеграції і зберігається для сумісності.</p>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>POST /GetToken — отримати ApiKey</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`curl -X POST 'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/GetToken' \\
+  -H 'Content-Type: application/json' \\
+  -d '{"Login":"your_login","Password":"your_password"}'`}</code></pre>
+  </div>
+
+  <div class="apidoc-callout">
+    <strong>Безпека:</strong> зберігайте ApiKey у серверному середовищі — ніколи у JS браузера. Ротуйте ключі раз на 90 днів. Для тестів попросіть менеджера окремий stage-ключ.
+  </div>
+</article>
+
+<article class="apidoc-section" id="endpoints">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">03</span>
+    <h2 class="apidoc-section__title">Групи ендпоінтів</h2>
+  </div>
+  <p>API згруповано за доменними моделями. Нижче — огляд; повний список параметрів і відповідей у OpenAPI специфікації.</p>
+
+  <div class="apidoc-endpoints">
+    <div class="apidoc-endpoint">
+      <h3>Auth <span class="apidoc-endpoint__tag">1 метод</span></h3>
+      <ul><li><code>GetToken</code> — отримати ApiKey по логіну/паролю</li></ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Orders <span class="apidoc-endpoint__tag">6 методів</span></h3>
+      <ul>
+        <li><code>AddOrder</code> — створити замовлення клієнту</li>
+        <li><code>EditOrder</code> — редагувати до моменту збору</li>
+        <li><code>CancelOrder</code> — скасувати замовлення</li>
+        <li><code>ReportStatusOrder</code> — список змін статусів за період</li>
+        <li><code>getStatusOrder</code> — поточний статус одного замовлення</li>
+        <li><code>ListOrder</code> — реєстр замовлень</li>
+      </ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Products <span class="apidoc-endpoint__tag">1 метод</span></h3>
+      <ul><li><code>AddProduct</code> — додати SKU у каталог</li></ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Inventory <span class="apidoc-endpoint__tag">2 методи</span></h3>
+      <ul>
+        <li><code>ReportSklad</code> — залишки на складі</li>
+        <li><code>ReportMoveProduct</code> — рухи товарів за період</li>
+      </ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Delivery <span class="apidoc-endpoint__tag">3 методи (v2)</span></h3>
+      <ul>
+        <li><code>ListDeliveryRequest</code> — список заявок на приймання</li>
+        <li><code>AddDeliveryRequest</code> — нова заявка на приймання</li>
+        <li><code>ReportDeliveryRequest</code> — звіт по заявках</li>
+      </ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Returns <span class="apidoc-endpoint__tag">1 метод</span></h3>
+      <ul><li><code>ListReturnOrder</code> — реєстр повернень</li></ul>
+    </div>
+    <div class="apidoc-endpoint">
+      <h3>Reference <span class="apidoc-endpoint__tag">4 методи</span></h3>
+      <ul>
+        <li><code>getCities</code> — довідник міст Нової Пошти</li>
+        <li><code>getWarehouses</code> — відділення у місті</li>
+        <li><code>getStreet</code> — вулиці для адресної доставки</li>
+        <li><code>senderDetails</code> — реквізити відправника</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article class="apidoc-section" id="examples">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">04</span>
+    <h2 class="apidoc-section__title">Приклади коду</h2>
+  </div>
+  <p>Нижче — готові сніпети створення замовлення. Підставте свій ApiKey, адаптуйте поля під ваш магазин.</p>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>cURL — створення замовлення</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`curl -X POST 'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder' \\
+  -H 'Content-Type: application/json' \\
+  -d '{
+    "ApiKey": "YOUR_API_KEY",
+    "OrderNumber": "WEB-10542",
+    "Recipient": {"Name": "Петренко О.", "Phone": "+380501234567"},
+    "Delivery": {"Carrier": "NovaPoshta", "City": "Київ", "Warehouse": "№12"},
+    "Items": [{"SKU": "TSHIRT-BLK-L", "Qty": 1, "Price": 550}]
+  }'`}</code></pre>
+  </div>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>Node.js — створення замовлення</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`const res = await fetch('https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    ApiKey: process.env.MTP_API_KEY,
+    OrderNumber: order.id,
+    Recipient: { Name: order.name, Phone: order.phone },
+    Delivery: { Carrier: 'NovaPoshta', City: order.city, Warehouse: order.branch },
+    Items: order.items.map(i => ({ SKU: i.sku, Qty: i.qty, Price: i.price }))
+  })
+});
+const data = await res.json();`}</code></pre>
+  </div>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>Python — створення замовлення</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`import os, requests
+
+r = requests.post(
+    'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder',
+    json={
+        'ApiKey': os.environ['MTP_API_KEY'],
+        'OrderNumber': order['id'],
+        'Recipient': {'Name': order['name'], 'Phone': order['phone']},
+        'Delivery': {'Carrier': 'NovaPoshta', 'City': order['city'], 'Warehouse': order['branch']},
+        'Items': [{'SKU': i['sku'], 'Qty': i['qty'], 'Price': i['price']} for i in order['items']]
+    }
+)
+r.raise_for_status()`}</code></pre>
+  </div>
+</article>
+
+<article class="apidoc-section" id="playground">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">05</span>
+    <h2 class="apidoc-section__title">Інтерактивна пісочниця</h2>
+  </div>
+  <p>Swagger UI нижче зчитує наш OpenAPI 3.1 файл і дозволяє викликати будь-який метод прямо зі сторінки. Для бойових викликів — підставте свій <code>ApiKey</code> у тіло запиту. Без ключа працюють тільки довідкові методи (getCities, getWarehouses).</p>
+  <div id="swagger-ui" class="apidoc-swagger"></div>
+  <noscript><p class="apidoc-callout">Для роботи пісочниці потрібен JavaScript. Без JS скористайтеся <a href="/files/mtp-api.postman_collection.json" download>Postman Collection</a>.</p></noscript>
+</article>
+
+<article class="apidoc-section" id="errors">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">06</span>
+    <h2 class="apidoc-section__title">Помилки та обмеження</h2>
+  </div>
+  <p>API повертає HTTP 200 навіть для бізнес-помилок — статус операції передається у полі <code>Result</code> тіла відповіді. Мережеві помилки (400/401/500) означають проблему з форматом запиту або авторизацією.</p>
+  <div class="apidoc-table">
+    <table>
+      <thead><tr><th>Код Result</th><th>Значення</th><th>Дія</th></tr></thead>
+      <tbody>
+        <tr><td><code>0</code></td><td>OK</td><td>Операція успішна</td></tr>
+        <tr><td><code>1</code></td><td>Auth failed</td><td>Перевірте ApiKey</td></tr>
+        <tr><td><code>2</code></td><td>Validation error</td><td>Подивіться поле <code>Message</code></td></tr>
+        <tr><td><code>3</code></td><td>Not found</td><td>Ресурс (замовлення, SKU) не існує</td></tr>
+        <tr><td><code>9</code></td><td>Internal</td><td>Напишіть у підтримку з ID запиту</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Rate limits:</strong> 60 запитів/хвилина на ApiKey. Для вивантажень звітів (ReportSklad, ReportMoveProduct) — не частіше ніж 1 раз на хвилину. Перевищення ліміту дає HTTP 429.</p>
+</article>
+
+<article class="apidoc-section" id="faq">
+  <div class="apidoc-section__head">
+    <span class="apidoc-section__num">07</span>
+    <h2 class="apidoc-section__title">FAQ для розробників</h2>
+  </div>
+  <details class="apidoc-faq"><summary>Чи є sandbox-середовище?</summary><p>Так. Менеджер видає окремий stage-ApiKey, дані з нього не потрапляють на виробничий склад. Той самий URL, інший ключ.</p></details>
+  <details class="apidoc-faq"><summary>Як підписатися на webhook зміни статусу?</summary><p>Напишіть URL у карточку вашої інтеграції — наш сервер буде POST-ити JSON на нього при кожній зміні статусу. Ретраї 3 рази з експоненційним бекофом.</p></details>
+  <details class="apidoc-faq"><summary>Чи підтримуєте GraphQL?</summary><p>Ні, тільки REST. GraphQL не в roadmap — 18 методів не виправдовують накладні витрати.</p></details>
+  <details class="apidoc-faq"><summary>Чи є офіційний SDK?</summary><p>Поки ні. Бібліотеки для Node.js і PHP — у roadmap на 2026 Q3. Поточний обхід — ваш власний HTTP-клієнт.</p></details>
+  <details class="apidoc-faq"><summary>Як інтегрувати з Prom.ua / Rozetka / Horoshop?</summary><p>Horoshop має готовий модуль — запитайте менеджера. Для Prom/Rozetka — пишіть свій connector поверх нашого API; типово тиждень роботи одного розробника.</p></details>
+  <details class="apidoc-faq"><summary>Чи підтримуєте масові операції (batch)?</summary><p>Частково — <code>AddOrder</code> приймає масив замовлень в одному запиті до 100 шт. Для більших обсягів — черга на вашій стороні з rate-limit контролем.</p></details>
+</article>
+
+</div>
+</section>
+
+<section class="apidoc-related">
+  <div class="apidoc-related__inner">
+    <h2>Корисне поруч</h2>
+    <div class="apidoc-related__grid">
+      <a href="/ua/calculator/" class="apidoc-related__card"><span>Калькулятор вартості</span><em>Розрахуйте вартість для вашого обсягу →</em></a>
+      <a href="/ua/services/" class="apidoc-related__card"><span>Послуги фулфілменту</span><em>Склад, комплектація, доставка, повернення →</em></a>
+      <a href="/ua/faq/" class="apidoc-related__card"><span>FAQ загальний</span><em>30+ відповідей про фулфілмент →</em></a>
+      <a href="/ua/shcho-take-fulfilment/" class="apidoc-related__card"><span>Що таке фулфілмент</span><em>Повний гайд для підприємців →</em></a>
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  // Swagger UI via CDN — loaded only on this page, deferred.
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css';
+  document.head.appendChild(link);
+
+  const s = document.createElement('script');
+  s.src = 'https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui-bundle.js';
+  s.onload = () => {
+    window.SwaggerUIBundle({
+      url: '/openapi.json',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      docExpansion: 'list',
+      defaultModelsExpandDepth: -1,
+      tryItOutEnabled: true,
+      persistAuthorization: true,
+    });
+  };
+  document.body.appendChild(s);
+
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const pre = btn.closest('.apidoc-code').querySelector('pre');
+      try {
+        await navigator.clipboard.writeText(pre.textContent);
+        const o = btn.textContent; btn.textContent = 'Copied ✓';
+        setTimeout(() => btn.textContent = o, 1500);
+      } catch {}
+    });
+  });
+</script>
+
+<style is:global>
+  .apidoc-hero{background:#000;color:#fff;padding:clamp(60px,10vw,120px) 20px 80px;position:relative;overflow:hidden}
+  .apidoc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right, rgba(230,51,41,.18), transparent 60%);pointer-events:none}
+  .apidoc-hero__inner{max-width:1200px;margin:0 auto;position:relative}
+  .apidoc-hero__label{display:inline-block;font:600 12px/1 'Inter',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#e63329;border:1px solid rgba(230,51,41,.4);padding:8px 14px;border-radius:4px;margin-bottom:28px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .apidoc-hero__title{font:800 clamp(40px,7vw,76px)/1.02 'Inter',system-ui,sans-serif;letter-spacing:-.025em;margin:0 0 22px;color:#fff}
+  .apidoc-hero__accent{color:#e63329}
+  .apidoc-hero__sub{font:400 clamp(17px,2vw,21px)/1.55 'Inter',system-ui,sans-serif;color:rgba(255,255,255,.78);max-width:720px;margin:0 0 36px}
+  .apidoc-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+  .apidoc-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;font:600 15px/1 'Inter',system-ui,sans-serif;text-decoration:none;border-radius:6px;transition:all .15s;border:1px solid transparent}
+  .apidoc-btn--primary{background:#e63329;color:#fff}
+  .apidoc-btn--primary:hover{background:#c82a23}
+  .apidoc-btn--outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+  .apidoc-btn--outline:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .apidoc-btn--ghost{background:transparent;color:rgba(255,255,255,.72);padding-left:8px}
+  .apidoc-btn--ghost:hover{color:#fff}
+  .apidoc-hero__cta{max-width:560px;margin-top:32px}
+  .apidoc-stats{background:#0a0a0a;color:#fff;border-top:1px solid rgba(255,255,255,.08);padding:40px 20px}
+  .apidoc-stats__inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .apidoc-stats__item{display:flex;flex-direction:column;gap:4px}
+  .apidoc-stats__num{font:800 clamp(28px,4vw,40px)/1 'Inter',system-ui,sans-serif;letter-spacing:-.02em;color:#fff}
+  .apidoc-stats__label{font:500 13px/1.3 'Inter',system-ui,sans-serif;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em}
+  .apidoc-nav{position:sticky;top:68px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
+  .apidoc-nav__inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:14px 20px;scrollbar-width:none}
+  .apidoc-nav__inner::-webkit-scrollbar{display:none}
+  .apidoc-nav__link{white-space:nowrap;padding:8px 14px;font:600 14px/1 'Inter',system-ui,sans-serif;color:#555;text-decoration:none;border-radius:4px}
+  .apidoc-nav__link:hover{background:#f5f5f5;color:#000}
+  .apidoc-main{padding:80px 20px;background:#fff}
+  .apidoc-main__inner{max-width:900px;margin:0 auto}
+  .apidoc-section{margin-bottom:80px;scroll-margin-top:140px}
+  .apidoc-section__head{display:flex;align-items:baseline;gap:20px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #000}
+  .apidoc-section__num{font:800 14px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#e63329;letter-spacing:.1em}
+  .apidoc-section__title{font:800 clamp(26px,3.5vw,40px)/1.15 'Inter',system-ui,sans-serif;letter-spacing:-.02em;margin:0;color:#000}
+  .apidoc-lead{font:400 18px/1.6 'Inter',system-ui,sans-serif;color:#333;margin:0 0 28px}
+  .apidoc-section p{font:400 16px/1.65 'Inter',system-ui,sans-serif;color:#333;margin:0 0 16px}
+  .apidoc-section code{font:500 .92em ui-monospace,SFMono-Regular,Menlo,monospace;background:#f4f4f4;padding:2px 6px;border-radius:3px;color:#e63329}
+  .apidoc-steps{display:grid;gap:20px;margin-top:24px}
+  .apidoc-step{display:flex;gap:20px;padding:20px;background:#fafafa;border-left:3px solid #e63329;border-radius:0 6px 6px 0}
+  .apidoc-step__num{flex:0 0 auto;width:36px;height:36px;display:grid;place-items:center;background:#000;color:#fff;border-radius:50%;font:800 16px/1 'Inter',system-ui,sans-serif}
+  .apidoc-step h3{font:700 17px/1.3 'Inter',system-ui,sans-serif;margin:0 0 6px;color:#000}
+  .apidoc-step p{font-size:15px;margin:0}
+  .apidoc-code{margin:20px 0;border:1px solid #e5e5e5;border-radius:8px;overflow:hidden;background:#0d0d0d}
+  .apidoc-code__head{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#1a1a1a;color:#aaa;font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;border-bottom:1px solid #2a2a2a}
+  .apidoc-code__copy{background:transparent;color:#aaa;border:1px solid #333;padding:4px 10px;border-radius:3px;font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
+  .apidoc-code__copy:hover{color:#fff;border-color:#555}
+  .apidoc-code pre{margin:0;padding:18px;overflow-x:auto;font:500 13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:#e5e5e5;background:#0d0d0d}
+  .apidoc-code pre code{background:transparent;color:#e5e5e5;padding:0}
+  .apidoc-callout{margin:20px 0;padding:16px 20px;background:#fff5f4;border-left:3px solid #e63329;font-size:15px;border-radius:0 6px 6px 0}
+  .apidoc-endpoints{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:24px}
+  .apidoc-endpoint{padding:20px;background:#fff;border:1px solid #e5e5e5;border-radius:8px}
+  .apidoc-endpoint h3{font:800 16px/1.2 'Inter',system-ui,sans-serif;margin:0 0 12px;color:#000;display:flex;justify-content:space-between;align-items:center}
+  .apidoc-endpoint__tag{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#888;background:#f4f4f4;padding:3px 8px;border-radius:3px;text-transform:uppercase}
+  .apidoc-endpoint ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .apidoc-endpoint li{font:500 14px/1.4 'Inter',system-ui,sans-serif;color:#333;padding-left:16px;position:relative}
+  .apidoc-endpoint li::before{content:'→';position:absolute;left:0;color:#e63329}
+  .apidoc-table{overflow-x:auto;margin:20px 0}
+  .apidoc-table table{width:100%;border-collapse:collapse;font:500 14px/1.4 'Inter',system-ui,sans-serif}
+  .apidoc-table th,.apidoc-table td{text-align:left;padding:12px 14px;border-bottom:1px solid #eee}
+  .apidoc-table th{background:#fafafa;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.05em;color:#555}
+  .apidoc-faq{margin:10px 0;border:1px solid #e5e5e5;border-radius:8px;padding:0 20px;background:#fff}
+  .apidoc-faq summary{font:700 16px/1.4 'Inter',system-ui,sans-serif;color:#000;padding:16px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .apidoc-faq summary::after{content:'+';font:300 24px/1 'Inter',system-ui,sans-serif;color:#e63329}
+  .apidoc-faq[open] summary::after{content:'−'}
+  .apidoc-faq p{padding:0 0 18px}
+  .apidoc-swagger{background:#fff;border:1px solid #e5e5e5;border-radius:8px;margin-top:24px;min-height:400px}
+  .apidoc-swagger .swagger-ui{font-family:'Inter',system-ui,sans-serif !important}
+  .apidoc-related{padding:60px 20px;background:#fafafa;border-top:1px solid #eee}
+  .apidoc-related__inner{max-width:1200px;margin:0 auto}
+  .apidoc-related h2{font:800 28px/1.2 'Inter',system-ui,sans-serif;margin:0 0 24px;color:#000}
+  .apidoc-related__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .apidoc-related__card{display:flex;flex-direction:column;gap:6px;padding:20px;background:#fff;border:1px solid #e5e5e5;border-radius:8px;text-decoration:none;transition:all .15s}
+  .apidoc-related__card:hover{border-color:#e63329;transform:translateY(-2px)}
+  .apidoc-related__card span{font:700 16px/1.3 'Inter',system-ui,sans-serif;color:#000}
+  .apidoc-related__card em{font:500 14px/1.4 'Inter',system-ui,sans-serif;color:#666;font-style:normal}
+  @media(max-width:768px){.apidoc-stats__inner{grid-template-columns:repeat(2,1fr)}.apidoc-hero__title{font-size:42px}.apidoc-step{flex-direction:column;gap:12px}}
+</style>
+</Base>
