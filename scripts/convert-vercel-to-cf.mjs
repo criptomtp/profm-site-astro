@@ -77,6 +77,18 @@ lines.push('');
 lines.push('# --- dynamic rules (wildcards / named params, max 100) ---');
 lines.push(...dynamicRules);
 
+// CF Pages specific rules — appended AFTER all vercel.json rules.
+// Must stay at the bottom: CF matches first-match-wins, and the catch-all
+// below is the last-resort soft-404 killer.
+lines.push('');
+lines.push('# --- CF Pages specific (bottom of file — last match wins) ---');
+// /sitemap.xml was returning HTML (hit the catch-all). Canonical sitemap is sitemap-index.xml.
+lines.push('/sitemap.xml  /sitemap-index.xml  301');
+// Real 404 for anything not matched above. Serves /404.html with status 404.
+// Without this, unknown URLs fall through to SPA-style serving and get 200 + homepage HTML.
+// Astro builds `dist/404.html` (flat file), so we reference it explicitly.
+lines.push('/*  /404.html  404');
+
 fs.writeFileSync(path.join(ROOT, 'public/_redirects'), lines.join('\n') + '\n', 'utf8');
 console.log(`✓ public/_redirects written: ${staticRules.length} static + ${dynamicRules.length} dynamic`);
 if (skippedHostRules.length) {

@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Сторінку не знайдено (404) | MTP Group Fulfillment';
+const description = 'Вибачте, цю сторінку не знайдено. Поверніться на головну або оберіть послугу фулфілменту.';
+---
+<Base
+  title={title}
+  description={description}
+  lang="uk"
+  canonical="https://www.fulfillmentmtp.com.ua/404/"
+  showCTA={false}
+  preloadHero={false}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, follow">
+  </Fragment>
+
+  <section class="nf">
+    <div class="nf-inner">
+      <div class="nf-code">404</div>
+      <h1>Сторінку не знайдено</h1>
+      <p>Схоже, ця сторінка переїхала, або ви перейшли за застарілим посиланням.</p>
+
+      <div class="nf-actions">
+        <a href="/" class="btn-primary">На головну</a>
+        <a href="/ua/blog/" class="btn-secondary">Блог</a>
+        <a href="/ua/tsiny/" class="btn-secondary">Ціни</a>
+        <a href="/ua/shcho-take-fulfilment/" class="btn-secondary">Що таке фулфілмент</a>
+      </div>
+
+      <div class="nf-popular">
+        <h2>Популярні послуги</h2>
+        <ul>
+          <li><a href="/ua/3pl-logistyka/">3PL логістика</a></li>
+          <li><a href="/ua/skladski-poslugy/">Складські послуги</a></li>
+          <li><a href="/ua/paletne-zberigannya/">Палетне зберігання</a></li>
+          <li><a href="/ua/fulfilment-ukraina/">Фулфілмент Україна</a></li>
+          <li><a href="/ua/fulfilment-kyiv/">Фулфілмент Київ</a></li>
+        </ul>
+      </div>
+
+      <p class="nf-contact">
+        Не знайшли потрібне? <a href="tel:+380951234567">+38 (095) 123-45-67</a> або
+        <a href="https://t.me/mtpgroup" rel="noopener">Telegram</a>
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .nf { min-height: 60vh; padding: 80px 20px; background: #fff; }
+    .nf-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .nf-code {
+      font-family: var(--fd);
+      font-size: clamp(96px, 15vw, 180px);
+      color: #e63329;
+      line-height: 1;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .nf h1 {
+      font-family: var(--fd);
+      font-size: clamp(28px, 4vw, 44px);
+      color: #000;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .nf p { font-size: 17px; color: #444; line-height: 1.6; margin-bottom: 32px; }
+    .nf-actions {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      margin-bottom: 48px;
+    }
+    .btn-primary, .btn-secondary {
+      display: inline-block; padding: 14px 28px; border-radius: 100px;
+      font-size: 15px; font-weight: 500; letter-spacing: .3px;
+      transition: all .2s;
+    }
+    .btn-primary { background: #e63329; color: #fff; }
+    .btn-primary:hover { background: #b8231c; }
+    .btn-secondary { background: #f5f5f5; color: #000; border: 1px solid #e5e5e5; }
+    .btn-secondary:hover { background: #e5e5e5; }
+    .nf-popular {
+      text-align: left; max-width: 440px; margin: 0 auto 32px;
+      padding: 24px; background: #f9f9f9; border-radius: 12px;
+    }
+    .nf-popular h2 {
+      font-family: var(--fb); font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; color: #666;
+      margin-bottom: 12px;
+    }
+    .nf-popular ul { list-style: none; padding: 0; }
+    .nf-popular li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    .nf-popular li:last-child { border-bottom: none; }
+    .nf-popular a { color: #000; font-size: 15px; }
+    .nf-popular a:hover { color: #e63329; }
+    .nf-contact { font-size: 14px; color: #666; }
+    .nf-contact a { color: #e63329; font-weight: 500; }
+  </style>
+</Base>

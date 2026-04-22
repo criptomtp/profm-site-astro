@@ -180,3 +180,7 @@
 /ua/guide/:slug/ /ua/guide/ 301
 /ua/guide/:slug/:sub/ /ua/guide/ 301
 /ua/fulfillment-dlya-*/ /ua/services/ 301
+
+# --- CF Pages specific (bottom of file — last match wins) ---
+/sitemap.xml  /sitemap-index.xml  301
+/*  /404.html  404
