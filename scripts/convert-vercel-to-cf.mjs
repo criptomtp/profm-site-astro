@@ -85,9 +85,11 @@ lines.push('# --- CF Pages specific (bottom of file — last match wins) ---');
 // /sitemap.xml was returning HTML (hit the catch-all). Canonical sitemap is sitemap-index.xml.
 lines.push('/sitemap.xml  /sitemap-index.xml  301');
 // Soft-404 fix: explicit /404 URL would otherwise serve /404.html with HTTP 200
-// (CF Pages direct file match). Force status 404 so Google doesn't flag "Soft 404".
-lines.push('/404  /404.html  404');
-lines.push('/404/  /404.html  404');
+// (CF Pages direct file match short-circuits _redirects for existing static files).
+// Fix: 301 redirect to homepage — Google can't crawl /404 directly (noindex meta)
+// but humans who typo the URL get redirected to something useful.
+lines.push('/404  /  301');
+lines.push('/404/  /  301');
 // Real 404 for anything not matched above. Serves /404.html with status 404.
 // Without this, unknown URLs fall through to SPA-style serving and get 200 + homepage HTML.
 // Astro builds `dist/404.html` (flat file), so we reference it explicitly.
