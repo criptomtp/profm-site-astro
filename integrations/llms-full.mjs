@@ -85,6 +85,9 @@ const PATHS = [
   '/ua/faq/',
   '/ru/faq/',
   '/en/faq/',
+  '/glosariy/',
+  '/ru/glossariy/',
+  '/en/glossary/',
 
   // Top pillar-linked blog posts
   '/ua/blog/scho-take-fulfilment/',

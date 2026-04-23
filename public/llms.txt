@@ -59,6 +59,9 @@ For any individual page as clean markdown, append `.md` to the URL (e.g. https:/
 - [FAQ (UA)](https://www.fulfillmentmtp.com.ua/ua/faq/): Frequently asked questions
 - [FAQ (RU)](https://www.fulfillmentmtp.com.ua/ru/faq/): Часто задаваемые вопросы
 - [FAQ (EN)](https://www.fulfillmentmtp.com.ua/en/faq/): FAQ for international integrators
+- [Glossary (UA)](https://www.fulfillmentmtp.com.ua/glosariy/): Глосарій термінів — 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking
+- [Glossary (RU)](https://www.fulfillmentmtp.com.ua/ru/glossariy/): Глоссарий терминов фулфилмента и e-commerce логистики для СНГ
+- [Glossary (EN)](https://www.fulfillmentmtp.com.ua/en/glossary/): E-commerce fulfillment and logistics glossary with Schema.org DefinedTermSet
 - [About MTP Group (UA)](https://www.fulfillmentmtp.com.ua/ua/about/): Company history, team, values
 - [About (RU)](https://www.fulfillmentmtp.com.ua/ru/about/): О компании
 - [About (EN)](https://www.fulfillmentmtp.com.ua/en/about/): Company profile for international partners

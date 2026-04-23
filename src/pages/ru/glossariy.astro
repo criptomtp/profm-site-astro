@@ -1,0 +1,191 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const terms = [
+  { id: 'fulfillment', name: 'Фулфилмент (Fulfillment)' },
+  { id: '3pl', name: '3PL (Third-Party Logistics)' },
+  { id: 'fba-fbo-fbs', name: 'FBA / FBO / FBS' },
+  { id: 'pick-pack', name: 'Pick and Pack (пик-пак)' },
+  { id: 'wms', name: 'WMS (Warehouse Management System)' },
+  { id: 'sku', name: 'SKU (Stock Keeping Unit)' },
+  { id: 'sla', name: 'SLA (Service Level Agreement)' },
+  { id: 'cross-docking', name: 'Cross-docking' }
+];
+
+const definedTermSet = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Глоссарий фулфилмента и логистики e-commerce",
+  "url": "https://www.fulfillmentmtp.com.ua/ru/glossariy/",
+  "inLanguage": "ru",
+  "hasDefinedTerm": [
+    { "@type": "DefinedTerm", "termCode": "fulfillment", "name": "Фулфилмент", "description": "Логистическая услуга по обработке заказов интернет-магазина: приёмка, хранение, комплектация, упаковка, отправка и обработка возвратов.", "url": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/" },
+    { "@type": "DefinedTerm", "termCode": "3PL", "name": "3PL", "description": "Third-Party Logistics — внешний логистический провайдер, обеспечивающий склад и отправку для онлайн-магазина или B2B-продавца.", "url": "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/" },
+    { "@type": "DefinedTerm", "termCode": "FBA", "name": "FBA", "description": "Fulfillment by Amazon — программа хранения и отправки товаров через склады Amazon. Обобщённо — модель фулфилмента через маркетплейс." },
+    { "@type": "DefinedTerm", "termCode": "FBO", "name": "FBO", "description": "Fulfillment by Operator — товар хранится на складе маркетплейса или 3PL-оператора, он же обрабатывает и доставляет." },
+    { "@type": "DefinedTerm", "termCode": "FBS", "name": "FBS", "description": "Fulfillment by Seller — товар на складе продавца, маркетплейс принимает заказы, продавец сам комплектует и отправляет." },
+    { "@type": "DefinedTerm", "termCode": "pick-pack", "name": "Pick and Pack", "description": "Комплектация заказа со склада (picking) и упаковка под отправку (packing). Основная единица тарификации фулфилмента." },
+    { "@type": "DefinedTerm", "termCode": "WMS", "name": "WMS", "description": "Warehouse Management System — система управления складом: адресное хранение, маршруты комплектации, остатки в реальном времени." },
+    { "@type": "DefinedTerm", "termCode": "SKU", "name": "SKU", "description": "Stock Keeping Unit — уникальный учётный код товарной позиции. Один SKU = один товар в конкретной вариации." },
+    { "@type": "DefinedTerm", "termCode": "SLA", "name": "SLA", "description": "Service Level Agreement — гарантированный уровень сервиса в договоре: скорость комплектации, точность picking, время ответа." },
+    { "@type": "DefinedTerm", "termCode": "cross-docking", "name": "Cross-docking", "description": "Логистическая модель без хранения: товар перегружается с входящей машины на исходящую." }
+  ]
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.fulfillmentmtp.com.ua/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://www.fulfillmentmtp.com.ua/ru/glossariy/" }
+  ]
+};
+
+const schemaBlob = `<script type="application/ld+json">${JSON.stringify(definedTermSet)}</script><script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+---
+<Base
+  title="Глоссарий фулфилмента: 3PL, FBA, WMS, SKU, SLA | MTP Group"
+  description="Словарь терминов фулфилмента и e-commerce логистики для СНГ: 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking. С привязкой к украинскому рынку."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/glossariy/"
+  lang="ru"
+  showCTA={true}
+  schema={schemaBlob}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/glosariy/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/glossariy/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/glossary/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/glosariy/">
+  <link rel="stylesheet" href="/css/fonts.css">
+</Fragment>
+
+<section class="glos-hero">
+  <div class="glos-hero__inner">
+    <nav aria-label="Навигация" class="glos-breadcrumbs"><a href="/ru/">Главная</a> / <span>Глоссарий</span></nav>
+    <span class="glos-hero__label">Справочник</span>
+    <h1 class="glos-hero__title">Глоссарий фулфилмента<br>и логистики e-commerce</h1>
+    <p class="glos-hero__sub">10 ключевых терминов для продавцов СНГ, работающих с украинскими 3PL-операторами и маркетплейсами. Без воды — с привязкой к практике.</p>
+  </div>
+</section>
+
+<nav class="glos-toc" aria-label="Оглавление">
+  <div class="glos-toc__inner">
+    {terms.map(t => <a href={`#${t.id}`} class="glos-toc__link">{t.name}</a>)}
+  </div>
+</nav>
+
+<article class="glos-body">
+<div class="glos-body__inner">
+
+<section class="glos-term" id="fulfillment">
+<h2>Фулфилмент (Fulfillment)</h2>
+<p class="glos-term__lede">Логистический сервис, который обрабатывает заказ интернет-магазина от приёмки товара до отправки покупателю и возвратов.</p>
+<p>Для продавцов из Казахстана, Молдовы, Грузии или Беларуси фулфилмент в Украине — способ выйти на украинский рынок без собственного юрлица и склада. Оператор принимает товар на границе или на таможенном терминале, хранит в WMS, интегрируется с Rozetka/Prom.ua, отправляет через Новую Почту, оформляет возвраты. Детально — в <a href="/ru/chto-takoe-fulfilment/">пилларе «Что такое фулфилмент»</a>. Тарифы — <a href="/ru/tsenu/">прайс</a>.</p>
+</section>
+
+<section class="glos-term" id="3pl">
+<h2>3PL (Third-Party Logistics)</h2>
+<p class="glos-term__lede">Внешний логистический провайдер, который берёт на себя склад и отправки онлайн-магазина или B2B-продавца.</p>
+<p>3PL — «третья сторона» между производителем/продавцом и конечным покупателем. В классификации PL-уровней: 1PL — сам продавец везёт товар, 2PL — наёмный перевозчик, 3PL — полный аутсорс складской и отправной логистики, 4PL — управление несколькими 3PL. Для СНГ-продавцов, выходящих на украинский рынок, 3PL в Украине — базовая инфраструктура. Подробнее — <a href="/ru/3pl-logistika/">3PL-логистика</a>.</p>
+</section>
+
+<section class="glos-term" id="fba-fbo-fbs">
+<h2>FBA / FBO / FBS</h2>
+<p class="glos-term__lede">Три модели работы продавца с маркетплейсом по складу и отправке.</p>
+<dl class="glos-dl">
+  <dt>FBA (Fulfillment by Amazon)</dt>
+  <dd>Изначальная программа Amazon — товар хранится и отправляется со складов маркетплейса. <a href="https://en.wikipedia.org/wiki/Fulfillment_by_Amazon" rel="noopener external" target="_blank">История FBA в Wikipedia</a>. В СНГ термин часто используют как собирательное «фулфилмент через маркетплейс».</dd>
+  <dt>FBO (Fulfillment by Operator)</dt>
+  <dd>Товар лежит на складе маркетплейса или 3PL-оператора. В Украине это Rozetka FBO, Prom.ua FBO, Kasta FBO. Аналог в РФ — Ozon FBO, WB FBO (но для СНГ-продавцов, заходящих в украинский рынок, актуальны именно украинские программы).</dd>
+  <dt>FBS (Fulfillment by Seller)</dt>
+  <dd>Товар остаётся у продавца, маркетплейс только принимает заказы, вы сами комплектуете и отправляете. Подходит для тех, у кого собственный склад уже есть.</dd>
+</dl>
+<p><strong>RealFBS</strong> — гибридная модель: ваш фулфилмент-оператор (например, MTP Group) выполняет заказы по стандартам маркетплейса, товар движется в логистике маркетплейса. Для большинства продавцов малого и среднего масштаба это оптимально: сохраняете контроль над инвентарём, получаете скорость маркетплейса.</p>
+</section>
+
+<section class="glos-term" id="pick-pack">
+<h2>Pick and Pack (пик-пак)</h2>
+<p class="glos-term__lede">Комплектация заказа со склада (picking) и упаковка под отправку (packing). Основная единица тарификации фулфилмента.</p>
+<p><strong>Picking</strong>: сотрудник получает задание на терминал (ТСД), проходит маршрут по WMS, сканирует штрихкоды SKU. Современные подходы — voice-picking, pick-by-light, batch-picking (одновременно несколько заказов).</p>
+<p><strong>Packing</strong>: подбор коробки под размер, защитные материалы (воздушно-пузырчатая плёнка, бумажный наполнитель), наклейка накладной, вложение чека/промо-листовки. У MTP Group точность pick-pack — 99,7%.</p>
+</section>
+
+<section class="glos-term" id="wms">
+<h2>WMS (Warehouse Management System)</h2>
+<p class="glos-term__lede">Программное обеспечение для управления складом: адресное хранение SKU, маршруты picking, остатки в реальном времени, аналитика.</p>
+<p>Без WMS склад работает «по памяти кладовщика» — масштабироваться невозможно. С WMS каждая SKU имеет адрес ячейки, каждое движение сканируется, интеграция с CRM/маркетплейсами — по API. Остатки на витрине обновляются в реальном времени. У MTP Group — собственная WMS с интеграциями Rozetka, Prom.ua, Horoshop, KeyCRM, SalesDrive, WooCommerce.</p>
+</section>
+
+<section class="glos-term" id="sku">
+<h2>SKU (Stock Keeping Unit)</h2>
+<p class="glos-term__lede">Уникальный учётный код товарной позиции. Один SKU = один товар в конкретной вариации (размер / цвет / упаковка).</p>
+<p>Пример: футболка Basic White в 3 размерах × 4 цветах = 12 SKU. Каждый SKU отслеживается отдельно: остаток, оборачиваемость, процент возвратов. На упаковке SKU кодируется штрихкодом (EAN-13, Code 128, GTIN). Правильное SKU-ведение — основа корректных остатков, точного picking и честной ABC-XYZ аналитики.</p>
+</section>
+
+<section class="glos-term" id="sla">
+<h2>SLA (Service Level Agreement)</h2>
+<p class="glos-term__lede">Гарантированный уровень сервиса, зафиксированный в договоре с оператором.</p>
+<p>Типичные SLA в фулфилменте: cut-off (до какого времени заказ уходит сегодня), срок комплектации, точность picking (%), время ответа менеджера, время обработки возвратов. У MTP Group: cut-off 15:00 для отправок день-в-день, 4 забора перевозчиков в сутки, точность picking 99,7%, ответ менеджера в рабочее время — до 15 минут.</p>
+</section>
+
+<section class="glos-term" id="cross-docking">
+<h2>Cross-docking</h2>
+<p class="glos-term__lede">Модель логистики без хранения: товар перегружается с входящей машины на исходящую.</p>
+<p>Применяется для быстроходных категорий (продукты, сезонные товары), когда хранение не требуется. Сокращает время в цепочке, но требует точного планирования входящих и исходящих потоков. Для большинства СНГ-продавцов, выходящих на украинский e-commerce рынок, подходит классический фулфилмент с хранением, а не cross-docking.</p>
+</section>
+
+</div>
+</article>
+
+<section class="glos-related">
+  <div class="glos-related__inner">
+    <h2>Читать дальше</h2>
+    <ul>
+      <li><a href="/ru/chto-takoe-fulfilment/">Что такое фулфилмент — полный гайд</a></li>
+      <li><a href="/ru/3pl-logistika/">3PL-логистика для СНГ-бизнеса</a></li>
+      <li><a href="/ru/tsenu/">Тарифы фулфилмента 2026</a></li>
+      <li><a href="/ru/calculator/">Онлайн-калькулятор</a></li>
+      <li><a href="/ru/faq/">FAQ — 30+ ответов</a></li>
+    </ul>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+.glos-hero{background:#000;color:#fff;padding:140px 8vw 64px}
+.glos-hero__inner{max-width:880px}
+.glos-breadcrumbs{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:32px}
+.glos-breadcrumbs a{color:rgba(255,255,255,.6);text-decoration:none}
+.glos-breadcrumbs a:hover{color:#fff}
+.glos-hero__label{display:inline-block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#e63329;margin-bottom:18px;font-weight:600}
+.glos-hero__title{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(40px,6vw,76px);font-weight:400;line-height:1;margin:0 0 24px;color:#fff}
+.glos-hero__sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.65);line-height:1.6;max-width:640px}
+.glos-toc{border-bottom:1px solid #e8e8e8;background:#fafafa;padding:28px 8vw}
+.glos-toc__inner{display:flex;flex-wrap:wrap;gap:8px 14px;max-width:1100px;margin:0 auto}
+.glos-toc__link{font-size:13px;font-weight:500;color:#000;background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:8px 16px;text-decoration:none;transition:all .2s}
+.glos-toc__link:hover{background:#e63329;color:#fff;border-color:#e63329}
+.glos-body{padding:64px 8vw 80px}
+.glos-body__inner{max-width:760px;margin:0 auto}
+.glos-term{padding:36px 0;border-bottom:1px solid #eee;scroll-margin-top:24px}
+.glos-term:last-child{border-bottom:none}
+.glos-term h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,40px);font-weight:400;line-height:1.1;margin:0 0 18px;color:#000}
+.glos-term__lede{font-size:17px;line-height:1.55;color:#000;font-weight:500;margin:0 0 16px;padding-left:16px;border-left:3px solid #e63329}
+.glos-term p{font-size:15px;line-height:1.7;color:#333;margin:0 0 14px}
+.glos-term a{color:#e63329;text-decoration:underline;text-underline-offset:3px}
+.glos-term a:hover{text-decoration:none}
+.glos-dl{margin:12px 0}
+.glos-dl dt{font-weight:600;color:#000;margin-top:14px;font-size:15px}
+.glos-dl dd{margin:4px 0 0;padding-left:16px;font-size:15px;line-height:1.6;color:#333}
+.glos-related{background:#0a0a0a;color:#fff;padding:64px 8vw}
+.glos-related__inner{max-width:760px;margin:0 auto}
+.glos-related h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,40px);font-weight:400;margin:0 0 24px;color:#fff}
+.glos-related ul{list-style:none;padding:0;margin:0}
+.glos-related li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.glos-related li:last-child{border-bottom:none}
+.glos-related a{color:rgba(255,255,255,.85);text-decoration:none;font-size:16px;display:flex;align-items:center;gap:14px}
+.glos-related a::before{content:'→';color:#e63329;font-weight:700}
+.glos-related a:hover{color:#fff}
+@media(max-width:640px){.glos-hero{padding:110px 6vw 48px}.glos-body{padding:48px 6vw 64px}.glos-related{padding:48px 6vw}.glos-toc{padding:20px 6vw}}
+</style>
+</content>

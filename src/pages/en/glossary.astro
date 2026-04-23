@@ -1,0 +1,191 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const terms = [
+  { id: 'fulfillment', name: 'Fulfillment' },
+  { id: '3pl', name: '3PL (Third-Party Logistics)' },
+  { id: 'fba-fbo-fbs', name: 'FBA / FBO / FBS' },
+  { id: 'pick-pack', name: 'Pick and Pack' },
+  { id: 'wms', name: 'WMS (Warehouse Management System)' },
+  { id: 'sku', name: 'SKU (Stock Keeping Unit)' },
+  { id: 'sla', name: 'SLA (Service Level Agreement)' },
+  { id: 'cross-docking', name: 'Cross-docking' }
+];
+
+const definedTermSet = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "E-commerce fulfillment and logistics glossary",
+  "url": "https://www.fulfillmentmtp.com.ua/en/glossary/",
+  "inLanguage": "en",
+  "hasDefinedTerm": [
+    { "@type": "DefinedTerm", "termCode": "fulfillment", "name": "Fulfillment", "description": "A logistics service covering every operation after checkout: receiving inventory, storage, picking, packing, shipping, and returns.", "url": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/" },
+    { "@type": "DefinedTerm", "termCode": "3PL", "name": "3PL", "description": "Third-Party Logistics — an external logistics provider that runs warehouse and shipping operations for an online store or B2B seller.", "url": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "DefinedTerm", "termCode": "FBA", "name": "FBA", "description": "Fulfillment by Amazon — Amazon's program for storing and shipping third-party seller inventory. Also used as a generic term for marketplace fulfillment." },
+    { "@type": "DefinedTerm", "termCode": "FBO", "name": "FBO", "description": "Fulfillment by Operator — inventory stored and shipped by a marketplace or 3PL operator on the seller's behalf." },
+    { "@type": "DefinedTerm", "termCode": "FBS", "name": "FBS", "description": "Fulfillment by Seller — inventory stays at the seller's warehouse; the marketplace only forwards orders, the seller picks, packs, and ships." },
+    { "@type": "DefinedTerm", "termCode": "pick-pack", "name": "Pick and Pack", "description": "Order picking from warehouse bins and packing for shipment. The core billable unit in fulfillment pricing." },
+    { "@type": "DefinedTerm", "termCode": "WMS", "name": "WMS", "description": "Warehouse Management System — software for bin-level addressable storage, pick routing, real-time inventory, and analytics." },
+    { "@type": "DefinedTerm", "termCode": "SKU", "name": "SKU", "description": "Stock Keeping Unit — a unique identifier for one product variant (size / color / packaging). Encoded as a barcode on packaging." },
+    { "@type": "DefinedTerm", "termCode": "SLA", "name": "SLA", "description": "Service Level Agreement — contractual guarantees on cutoff time, pick accuracy, response time, and returns handling." },
+    { "@type": "DefinedTerm", "termCode": "cross-docking", "name": "Cross-docking", "description": "A logistics model where incoming goods are transferred directly to outbound trucks without warehouse storage." }
+  ]
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://www.fulfillmentmtp.com.ua/en/glossary/" }
+  ]
+};
+
+const schemaBlob = `<script type="application/ld+json">${JSON.stringify(definedTermSet)}</script><script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+---
+<Base
+  title="Fulfillment Glossary: 3PL, FBA, WMS, SKU, SLA Explained | MTP Group"
+  description="E-commerce fulfillment and logistics glossary: 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking. Short, practical definitions for DTC operators."
+  canonical="https://www.fulfillmentmtp.com.ua/en/glossary/"
+  lang="en"
+  showCTA={true}
+  schema={schemaBlob}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/glosariy/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/glossariy/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/glossary/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/glosariy/">
+  <link rel="stylesheet" href="/css/fonts.css">
+</Fragment>
+
+<section class="glos-hero">
+  <div class="glos-hero__inner">
+    <nav aria-label="Breadcrumb" class="glos-breadcrumbs"><a href="/en/">Home</a> / <span>Glossary</span></nav>
+    <span class="glos-hero__label">Reference</span>
+    <h1 class="glos-hero__title">Fulfillment &amp; E-commerce<br>Logistics Glossary</h1>
+    <p class="glos-hero__sub">Short, practical definitions of the 10 terms every DTC operator and 3PL buyer should know. Written for founders evaluating fulfillment partners in Ukraine and the EU.</p>
+  </div>
+</section>
+
+<nav class="glos-toc" aria-label="Table of contents">
+  <div class="glos-toc__inner">
+    {terms.map(t => <a href={`#${t.id}`} class="glos-toc__link">{t.name}</a>)}
+  </div>
+</nav>
+
+<article class="glos-body">
+<div class="glos-body__inner">
+
+<section class="glos-term" id="fulfillment">
+<h2>Fulfillment</h2>
+<p class="glos-term__lede">The logistics layer between a customer clicking "buy" and the order arriving at their door. Includes receiving, storage, picking, packing, shipping, and returns.</p>
+<p>Outsourcing fulfillment means handing physical operations to a 3PL and paying per activity (per-order handling, per-cubic-meter storage). For brands shipping into the EU, Ukraine-based fulfillment beats German or Czech 3PLs on landed cost by 40–60%. Full breakdown in the <a href="/en/what-is-fulfillment/">What is Fulfillment pillar</a>. Rates — <a href="/en/prices/">pricing page</a>.</p>
+</section>
+
+<section class="glos-term" id="3pl">
+<h2>3PL (Third-Party Logistics)</h2>
+<p class="glos-term__lede">An external logistics provider running warehouse and shipping operations for an online store or B2B seller.</p>
+<p>The "third party" sits between the manufacturer/seller and the end customer. The PL hierarchy: 1PL — the seller self-ships; 2PL — a hired carrier; 3PL — full warehouse + shipping outsourcing; 4PL — a manager coordinating multiple 3PLs. For DTC brands entering the EU via Ukraine, a local 3PL is the baseline infrastructure. See <a href="/en/3pl-logistics/">3PL logistics in Ukraine</a>.</p>
+</section>
+
+<section class="glos-term" id="fba-fbo-fbs">
+<h2>FBA / FBO / FBS</h2>
+<p class="glos-term__lede">Three models for how a seller splits inventory and fulfillment with a marketplace.</p>
+<dl class="glos-dl">
+  <dt>FBA (Fulfillment by Amazon)</dt>
+  <dd>The original Amazon program — inventory lives on Amazon's warehouses, Amazon picks and ships. See the <a href="https://en.wikipedia.org/wiki/Fulfillment_by_Amazon" rel="noopener external" target="_blank">FBA history on Wikipedia</a>. The term is often used generically for "fulfilled by the marketplace."</dd>
+  <dt>FBO (Fulfillment by Operator)</dt>
+  <dd>Inventory stored and shipped by a marketplace operator or a 3PL partner. In Ukraine: Rozetka FBO, Prom.ua FBO, Kasta FBO.</dd>
+  <dt>FBS (Fulfillment by Seller)</dt>
+  <dd>Inventory stays at the seller's warehouse; the marketplace only routes orders; the seller picks, packs, and hands to a carrier. Works when you already have warehouse capacity.</dd>
+</dl>
+<p><strong>RealFBS</strong> — a hybrid: your 3PL (e.g. MTP Group) fulfills to marketplace standards, but shipping moves through marketplace logistics. The practical middle ground for most SMB sellers.</p>
+</section>
+
+<section class="glos-term" id="pick-pack">
+<h2>Pick and Pack</h2>
+<p class="glos-term__lede">Picking items from warehouse bins and packing them for shipment. The primary billable event in fulfillment pricing.</p>
+<p><strong>Picking</strong>: a picker works a WMS-optimized route, scans barcodes at each bin, and the system blocks mis-picks at the scanner. Modern approaches: voice-picking, pick-by-light, batch-picking (combining multiple orders in one tour).</p>
+<p><strong>Packing</strong>: right-size carton selection, protective fill (bubble wrap, paper void fill), carrier label printing, inserts (invoices, thank-you cards, promo codes). MTP Group's pick accuracy runs at 99.7%.</p>
+</section>
+
+<section class="glos-term" id="wms">
+<h2>WMS (Warehouse Management System)</h2>
+<p class="glos-term__lede">Software that runs a warehouse: bin-level addressable storage, pick routing, real-time inventory, analytics.</p>
+<p>Without a WMS, a warehouse runs on the floor manager's memory — it cannot scale. With a WMS, every SKU has a bin address, every movement is barcode-scanned, and integrations push real-time stock into Shopify, WooCommerce, BigCommerce, Rozetka, Prom.ua via API or webhook. MTP Group operates a proprietary WMS with out-of-the-box connectors for all major Ukrainian marketplaces and international e-commerce platforms.</p>
+</section>
+
+<section class="glos-term" id="sku">
+<h2>SKU (Stock Keeping Unit)</h2>
+<p class="glos-term__lede">A unique identifier for one product variant. One SKU = one concrete product in one size/color/packaging.</p>
+<p>Example: a "Basic White T-shirt" available in 3 sizes × 4 colors = 12 SKUs. Each SKU tracks its own stock level, velocity, return rate. On packaging, SKUs appear as barcodes (EAN-13, Code 128, GTIN). Clean SKU hygiene is the foundation for accurate inventory, correct pick tickets, and honest ABC-XYZ analysis.</p>
+</section>
+
+<section class="glos-term" id="sla">
+<h2>SLA (Service Level Agreement)</h2>
+<p class="glos-term__lede">Contractual guarantees from the fulfillment operator: cutoff time, pick accuracy, response time, returns handling.</p>
+<p>Typical fulfillment SLAs: cutoff (when an order still ships today), pick-to-ship time, pick accuracy (%), manager response time, returns turnaround. MTP Group operates a 15:00 same-day cutoff, four daily carrier pickups, 99.7% pick accuracy, and a 15-minute response window during business hours.</p>
+</section>
+
+<section class="glos-term" id="cross-docking">
+<h2>Cross-docking</h2>
+<p class="glos-term__lede">A logistics model where goods move directly from the inbound dock to an outbound truck without warehouse storage.</p>
+<p>Used for fast-moving categories (grocery, seasonal goods) where storage is unnecessary. Shortens lead time but demands precise inbound/outbound scheduling. For most DTC brands, classic fulfillment with storage is the right default; cross-docking is an edge case.</p>
+</section>
+
+</div>
+</article>
+
+<section class="glos-related">
+  <div class="glos-related__inner">
+    <h2>Read next</h2>
+    <ul>
+      <li><a href="/en/what-is-fulfillment/">What is Fulfillment — complete guide</a></li>
+      <li><a href="/en/3pl-logistics/">3PL logistics in Ukraine</a></li>
+      <li><a href="/en/prices/">2026 fulfillment pricing</a></li>
+      <li><a href="/en/calculator/">Online cost calculator</a></li>
+      <li><a href="/en/faq/">FAQ — 30+ answers</a></li>
+    </ul>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+.glos-hero{background:#000;color:#fff;padding:140px 8vw 64px}
+.glos-hero__inner{max-width:880px}
+.glos-breadcrumbs{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:32px}
+.glos-breadcrumbs a{color:rgba(255,255,255,.6);text-decoration:none}
+.glos-breadcrumbs a:hover{color:#fff}
+.glos-hero__label{display:inline-block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#e63329;margin-bottom:18px;font-weight:600}
+.glos-hero__title{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(40px,6vw,76px);font-weight:400;line-height:1;margin:0 0 24px;color:#fff}
+.glos-hero__sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.65);line-height:1.6;max-width:640px}
+.glos-toc{border-bottom:1px solid #e8e8e8;background:#fafafa;padding:28px 8vw}
+.glos-toc__inner{display:flex;flex-wrap:wrap;gap:8px 14px;max-width:1100px;margin:0 auto}
+.glos-toc__link{font-size:13px;font-weight:500;color:#000;background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:8px 16px;text-decoration:none;transition:all .2s}
+.glos-toc__link:hover{background:#e63329;color:#fff;border-color:#e63329}
+.glos-body{padding:64px 8vw 80px}
+.glos-body__inner{max-width:760px;margin:0 auto}
+.glos-term{padding:36px 0;border-bottom:1px solid #eee;scroll-margin-top:24px}
+.glos-term:last-child{border-bottom:none}
+.glos-term h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,40px);font-weight:400;line-height:1.1;margin:0 0 18px;color:#000}
+.glos-term__lede{font-size:17px;line-height:1.55;color:#000;font-weight:500;margin:0 0 16px;padding-left:16px;border-left:3px solid #e63329}
+.glos-term p{font-size:15px;line-height:1.7;color:#333;margin:0 0 14px}
+.glos-term a{color:#e63329;text-decoration:underline;text-underline-offset:3px}
+.glos-term a:hover{text-decoration:none}
+.glos-dl{margin:12px 0}
+.glos-dl dt{font-weight:600;color:#000;margin-top:14px;font-size:15px}
+.glos-dl dd{margin:4px 0 0;padding-left:16px;font-size:15px;line-height:1.6;color:#333}
+.glos-related{background:#0a0a0a;color:#fff;padding:64px 8vw}
+.glos-related__inner{max-width:760px;margin:0 auto}
+.glos-related h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(28px,3.5vw,40px);font-weight:400;margin:0 0 24px;color:#fff}
+.glos-related ul{list-style:none;padding:0;margin:0}
+.glos-related li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.glos-related li:last-child{border-bottom:none}
+.glos-related a{color:rgba(255,255,255,.85);text-decoration:none;font-size:16px;display:flex;align-items:center;gap:14px}
+.glos-related a::before{content:'→';color:#e63329;font-weight:700}
+.glos-related a:hover{color:#fff}
+@media(max-width:640px){.glos-hero{padding:110px 6vw 48px}.glos-body{padding:48px 6vw 64px}.glos-related{padding:48px 6vw}.glos-toc{padding:20px 6vw}}
+</style>
+</content>
