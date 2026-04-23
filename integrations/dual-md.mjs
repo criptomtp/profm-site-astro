@@ -25,7 +25,6 @@ import * as turndownPluginGfm from 'turndown-plugin-gfm';
 const SKIP_ROUTES = [
   '/admin/', '/thanks/', '/api/', '/files/', '/schedule/', '/new/',
   '/ua/thanks/', '/ru/thanks/', '/en/thanks/',
-  '/blog/tpost/', '/ua/blog/tpost/', '/ru/blog/tpost/', '/en/blog/tpost/',
   '/404.html',
 ];
 

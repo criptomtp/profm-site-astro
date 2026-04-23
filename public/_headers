@@ -18,10 +18,9 @@
 # --- CF Pages specific: agent discovery (RFC 8288 + RFC 9727) ---
 /
   Link: </sitemap-index.xml>; rel="sitemap"
-  Link: <https://www.fulfillmentmtp.com.ua/ua/>; rel="alternate"; hreflang="uk"
-  Link: <https://www.fulfillmentmtp.com.ua/ru/>; rel="alternate"; hreflang="ru"
-  Link: <https://www.fulfillmentmtp.com.ua/en/>; rel="alternate"; hreflang="en"
-  Link: <https://www.fulfillmentmtp.com.ua/ua/>; rel="alternate"; hreflang="x-default"
+  Link: </ua/>; rel="alternate"; hreflang="uk"
+  Link: </ru/>; rel="alternate"; hreflang="ru"
+  Link: </en/>; rel="alternate"; hreflang="en"
   Link: </.well-known/api-catalog>; rel="api-catalog"
   Link: </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json;version=3.1.0"
   Link: </ua/api-docs/>; rel="service-doc"; hreflang="uk"; type="text/html"

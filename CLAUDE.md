@@ -89,9 +89,9 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - [ ] ls public/images/ — перевірити доступні зображення
 - [ ] Згенерувати hero + feature зображення (Pollinations.ai)
 - [ ] Stitch Preview: generate_screen_from_text + variants → export у docs/design-system/stitch-exports/
-- [ ] Створити UA: src/pages/ua/[slug].astro (мін. 1200 слів)
-- [ ] Створити RU: src/pages/ru/[slug].astro (інший кут, не переклад)
-- [ ] Створити EN: src/pages/en/[slug].astro (інший кут, не переклад)
+- [ ] Створити UA: **`src/pages/[slug].astro`** (БЕЗ `/ua/` префіксу — нова URL policy) мін. 1200 слів
+- [ ] Створити RU: `src/pages/ru/[slug].astro` (інший кут, не переклад)
+- [ ] Створити EN: `src/pages/en/[slug].astro` (інший кут, не переклад)
 - [ ] **КРОС-МОВНА ПЕРЕЛІНКОВКА (обовʼязково, часто забуваю):**
   - [ ] Всі 3 версії створені в одній задачі — не деплоїмо одну без інших двох
   - [ ] Hreflang на всіх 3 сторінках (uk/ru/en/x-default) — повне взаємопосилання
@@ -215,10 +215,47 @@ head -10 dist/ua/[новий-slug]/index.md  # frontmatter + clean content
 
 ---
 
-## Структура Astro сторінок:
-- UA: src/pages/ua/[slug].astro
-- RU: src/pages/ru/[slug].astro
-- EN: src/pages/en/[slug].astro
+## Структура Astro сторінок + URL Policy:
+
+**URL Policy (зафіксовано 2026-04-22):**
+- UA = основна мова сайту → **НОВІ UA сторінки БЕЗ префіксу `/ua/`**
+  - Приклад: `/shcho-take-fulfilment/`, `/tsiny/`, `/calculator/` (НЕ `/ua/...`)
+- RU завжди з префіксом `/ru/`
+- EN завжди з префіксом `/en/`
+- Home `/` = UA (канонічна без префіксу)
+
+**Файлова структура (нові сторінки):**
+- UA: `src/pages/[slug].astro` (корінь, без `ua/` папки)
+- RU: `src/pages/ru/[slug].astro`
+- EN: `src/pages/en/[slug].astro`
+
+**Старі `/ua/*` сторінки — НЕ мігруємо:**
+- Залишаються на своїх URL (`/ua/tsiny/`, `/ua/about/`, `/ua/blog/*` etc)
+- Рішення (2026-04-22): перевірка показала що поточна структура hreflang-консистентна — всі sibling UA/RU/EN правильно вказують один на одного; `/ua/` home 301-иться на `/`; Google з таким патерном справляється
+- Аудит C-1 перебільшив ризик — реальної проблеми немає
+- Міграційний план як довідка зберігається у `docs/url-migration/batch-candidates.md` на випадок перегляду через 6-12 міс
+
+**Hreflang для нових UA (без префіксу) — обов'язково всі 4:**
+```html
+<link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/slug/">
+<link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/slug/">
+<link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/slug/">
+<link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/slug/">
+```
+
+**Language-switcher (Header.astro ~рядок 310):**
+- UA: `/slug/` (без `/ua/`)
+- RU: `/ru/slug/`
+- EN: `/en/slug/`
+
+**Canonical на нових UA сторінках:**
+```html
+<link rel="canonical" href="https://www.fulfillmentmtp.com.ua/slug/">
+```
+
+**❌ ЗАБОРОНЕНО для нових сторінок:**
+- Створювати UA у `src/pages/ua/[slug].astro` — це legacy структура
+- Додавати `/ua/` у hreflang `uk` альтернативу для нових сторінок
 
 ---
 
@@ -261,12 +298,12 @@ curl -o "public/images/[slug]-hero.jpg" \
 ## Формат фінального звіту:
 ```
 ## ✅ ЗВІТ: [назва]
-✅ UA: /ua/[slug]/ — X слів
+✅ UA: /[slug]/ — X слів (нова URL policy, без /ua/ префіксу)
 ✅ RU: /ru/[slug]/ — X слів
 ✅ EN: /en/[slug]/ — X слів
 ✅ Зображення: згенеровано X шт
 ✅ Build: без помилок
 ✅ PageSpeed Mobile: X/100
-✅ Deploy: https://fulfillmentmtp.com.ua/ua/[slug]/
+✅ Deploy: https://www.fulfillmentmtp.com.ua/[slug]/
 ⚠️ Увага: [якщо є нюанси]
 ```

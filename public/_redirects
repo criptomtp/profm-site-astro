@@ -3,10 +3,7 @@
 
 # --- static rules (exact path match) ---
 /ua / 301
-/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/ /ua/blog/ 301
-/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/ /ua/blog/ 301
 /blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/ /ru/ 301
-/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/ /ua/blog/ 301
 /ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /ua/about/ 301
 /fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
 /ua/ / 301

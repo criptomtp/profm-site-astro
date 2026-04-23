@@ -36,10 +36,7 @@
       "destination": "/",
       "statusCode": 301
     },
-    { "source": "/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/", "destination": "/ua/blog/", "statusCode": 301 },
-    { "source": "/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/", "destination": "/ua/blog/", "statusCode": 301 },
     { "source": "/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/", "destination": "/ru/", "statusCode": 301 },
-    { "source": "/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/", "destination": "/ua/blog/", "statusCode": 301 },
     { "source": "/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/", "destination": "/ua/about/", "statusCode": 301 },
 
     { "source": "/tpost/:slug/", "destination": "/ua/blog/", "statusCode": 301 },

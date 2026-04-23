@@ -64,12 +64,14 @@
 
 **КРИТИЧНО: НЕ переклади. Три окремі сторінки з різними кутами атаки.**
 
-**🇺🇦 UA** (src/pages/ua/[slug].astro):
+**🇺🇦 UA** (`src/pages/[slug].astro` — БЕЗ `/ua/` префіксу, нова URL policy):
+- URL: `https://www.fulfillmentmtp.com.ua/[slug]/` (не `/ua/[slug]/`)
 - Аудиторія: українські підприємці, e-commerce в Україні
 - Кут: практична користь — гривня, Нова Пошта, Rozetka, Prom.ua, реалії воєнного часу
 - Тон: діловий але теплий
 - SEO: українські запити, Google.com.ua
 - Мін. 1200 слів, унікальна структура H2/H3
+- Див. CLAUDE.md розділ "Структура Astro сторінок + URL Policy" для деталей
 
 **🇷🇺 RU** (src/pages/ru/[slug].astro):
 - Аудиторія: СНД бізнес (Казахстан, Молдова, Грузія) + рускомовні підприємці України
@@ -135,14 +137,17 @@
 
 **ОБОВ'ЯЗКОВО — КРОС-МОВНА ПЕРЕЛІНКОВКА (часто забуваю!):**
 - Всі 3 версії (UA/RU/EN) створюються разом — не деплоїмо одну без інших двох
-- Hreflang на всіх 3 сторінках:
+- Hreflang на всіх 3 сторінках (UA БЕЗ `/ua/` префіксу — нова URL policy):
   ```
-  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/[slug]/">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/[slug]/">
   <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/[slug]/">
   <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/[slug]/">
-  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/[slug]/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/[slug]/">
   ```
-- Додати в language-switcher map в `src/components/Header.astro` (рядок ~310) — всі 3 мови з правильними повними шляхами
+- Додати в language-switcher map в `src/components/Header.astro` (рядок ~310):
+  - UA → `/[slug]/` (без `/ua/`)
+  - RU → `/ru/[slug]/`
+  - EN → `/en/[slug]/`
 - Додати в навігацію (mega-menu в Header.astro) якщо це service/landing сторінка
 - Breadcrumbs з посиланням на головну (локалізовано по мові)
 
@@ -278,7 +283,7 @@ done
 - WOW-елемент: [опис]
 
 ### Сторінки:
-UA: /ua/[slug]/ — X слів | для українських підприємців
+UA: /[slug]/ — X слів | для українських підприємців (URL без /ua/ префіксу — нова policy)
 RU: /ru/[slug]/ — X слів | для СНД бізнесу
 EN: /en/[slug]/ — X слів | для міжнародного бізнесу
 
@@ -315,7 +320,7 @@ EN: без зауважень
 - Internal links: X шт.
 
 ### Деплой:
-https://fulfillmentmtp.com.ua/ua/[slug]/
-https://fulfillmentmtp.com.ua/ru/[slug]/
-https://fulfillmentmtp.com.ua/en/[slug]/
+https://www.fulfillmentmtp.com.ua/[slug]/          ← UA (без /ua/)
+https://www.fulfillmentmtp.com.ua/ru/[slug]/
+https://www.fulfillmentmtp.com.ua/en/[slug]/
 ```
