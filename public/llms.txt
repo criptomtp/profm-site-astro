@@ -19,7 +19,7 @@ For any individual page as clean markdown, append `.md` to the URL (e.g. https:/
 
 ## Services
 - [Послуги фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/services/): Перелік послуг: приймання, зберігання, упаковка, доставка, інтеграції
-- [Услуги фулфилмента (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Каталог услуг для онлайн-ритейла
+- [Услуги фулфилмента для брендов из СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Выход на рынок Украины для продавцов из Казахстана, Молдовы, Грузии, Армении, Узбекистана — таможня, УкрСЕПРО, Rozetka/Prom, 21-дневный онбординг, расчёт в USD/EUR
 - [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment services for cross-border e-commerce
 - [3PL-логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukraine e-commerce
 - [Складські послуги (UA)](https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/): Warehouse services, pallet storage, B2B handling

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MTP GROUP | 3PL LOGISTICS FOR CIS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .uppercase-spacing {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-primary": "#ffb4a9",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "on-tertiary-container": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "tertiary-fixed": "#bd0f10",
+                    "on-tertiary-fixed-variant": "#ffdad5",
+                    "primary": "#000000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary": "#ffdad5",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#1b1b1b",
+                    "secondary": "#5e5e5e",
+                    "background": "#f9f9f9",
+                    "outline": "#777777",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-low": "#f3f3f3",
+                    "on-primary": "#ffdad5",
+                    "secondary-container": "#d4d4d4",
+                    "primary-fixed-dim": "#930005",
+                    "on-primary-container": "#ffffff",
+                    "on-primary-fixed-variant": "#ffdad5",
+                    "on-background": "#1b1b1b",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "surface-dim": "#dadada",
+                    "tertiary": "#7e0004",
+                    "secondary-fixed-dim": "#ababab",
+                    "secondary-fixed": "#c6c6c6",
+                    "surface-tint": "#bd0f10",
+                    "on-surface-variant": "#474747",
+                    "primary-fixed": "#bd0f10",
+                    "tertiary-container": "#de2d24",
+                    "tertiary-fixed-dim": "#930005",
+                    "primary-container": "#7e0004",
+                    "on-surface": "#1b1b1b",
+                    "error": "#e63329",
+                    "on-primary-fixed": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c6c6c6",
+                    "inverse-surface": "#303030",
+                    "on-error-container": "#410002",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "display": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-error selection:text-white">
+<!-- TopNavBar from JSON Logic -->
+<nav class="fixed top-0 w-full z-50 border-b-4 border-black dark:border-white bg-white dark:bg-black flex justify-between items-center h-20 px-8">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white font-headline">MTP GROUP</div>
+<div class="hidden md:flex gap-8 font-['Space_Grotesk'] uppercase tracking-[0.08em] text-sm font-semibold">
+<a class="text-[#e63329] border-b-4 border-[#e63329] pb-1" href="#">УСЛУГИ</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-100" href="#">МАРШРУТЫ</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-100" href="#">ТАРИФЫ</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-100" href="#">КОНТАКТЫ</a>
+</div>
+<button class="bg-primary text-white font-['Space_Grotesk'] uppercase tracking-[0.08em] text-sm font-semibold px-6 py-3 hover:bg-error transition-colors duration-100">
+            ПОЛУЧИТЬ РАСЧЁТ
+        </button>
+</nav>
+<!-- HERO SECTION -->
+<header class="pt-32 pb-20 bg-primary min-h-[870px] flex flex-col justify-center px-8 md:px-16 overflow-hidden relative">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(#e63329_1px,transparent_1px)] [background-size:40px_40px]"></div>
+</div>
+<div class="relative z-10 max-w-6xl">
+<div class="inline-block bg-error px-4 py-2 mb-8">
+<span class="text-white font-label font-semibold uppercase-spacing text-xs">ВЫХОД НА РЫНОК УКРАИНЫ ЧЕРЕЗ ЛОКАЛЬНЫЙ 3PL</span>
+</div>
+<h1 class="text-white text-5xl md:text-8xl font-black tracking-tighter leading-none mb-8 font-display">
+                Украинский фулфилмент для брендов из СНГ
+            </h1>
+<p class="text-[#999] text-xl md:text-2xl max-w-3xl mb-12 font-body leading-relaxed">
+                Таможня, ВЭД-договор, УкрСЕПРО, UAH settlement — берём на себя. <br class="hidden md:block"/>
+                Ваш товар на украинском складе за <span class="text-white">21 день.</span>
+</p>
+<button class="bg-error text-white text-lg md:text-xl font-headline font-bold uppercase-spacing px-10 py-6 hover:bg-white hover:text-black transition-all duration-100 inline-flex items-center gap-4">
+                ПОЛУЧИТЬ РАСЧЁТ 21-ДНЕВНОГО ОНБОРДИНГА
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- STATS BAR -->
+<section class="bg-primary border-t-4 border-error">
+<div class="grid grid-cols-2 md:grid-cols-4 divide-x-0 md:divide-x-2 divide-white/10">
+<div class="p-8 md:p-12 border-b-2 md:border-b-0 border-white/10">
+<div class="text-error text-5xl md:text-7xl font-black font-display mb-2">5</div>
+<div class="text-white font-label font-bold uppercase-spacing text-xs opacity-60">стран-клиентов СНГ</div>
+</div>
+<div class="p-8 md:p-12 border-b-2 md:border-b-0 border-white/10">
+<div class="text-error text-5xl md:text-7xl font-black font-display mb-2">21 дн</div>
+<div class="text-white font-label font-bold uppercase-spacing text-xs opacity-60">онбординг с таможней</div>
+</div>
+<div class="p-8 md:p-12">
+<div class="text-error text-5xl md:text-7xl font-black font-display mb-2">60k</div>
+<div class="text-white font-label font-bold uppercase-spacing text-xs opacity-60">отправок/мес</div>
+</div>
+<div class="p-8 md:p-12">
+<div class="text-error text-5xl md:text-7xl font-black font-display mb-2">99.8%</div>
+<div class="text-white font-label font-bold uppercase-spacing text-xs opacity-60">OTIF</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: SERVICES -->
+<section class="py-24 px-8 md:px-16 bg-white">
+<div class="mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase font-display">
+                ЧТО ВХОДИТ В ВЫХОД <br/> НА РЫНОК УКРАИНЫ
+            </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-black">
+<!-- Grid Items with 4px left border logic -->
+<div class="p-10 border-b-2 md:border-r-2 border-black flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">01</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">ТАМОЖЕННОЕ ОФОРМЛЕНИЕ</h3>
+<p class="text-secondary font-body">Полный цикл очистки грузов из KZ, MD, GE, AM. Свои брокеры в штате.</p>
+</div>
+</div>
+<div class="p-10 border-b-2 md:border-r-2 border-black flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">02</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">ВЭД-КОНТРАКТ</h3>
+<p class="text-secondary font-body">Предоставление технического импортера или работа по вашему прямому контракту.</p>
+</div>
+</div>
+<div class="p-10 border-b-2 border-black flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">03</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">УкрСЕПРО / ISO</h3>
+<p class="text-secondary font-body">Сертификация продукции для соответствия локальным техническим регламентам.</p>
+</div>
+</div>
+<div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">04</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">MULTI-CURRENCY SETTLEMENT</h3>
+<p class="text-secondary font-body">Прием платежей в UAH, конвертация и перевод выручки в валюту страны бренда.</p>
+</div>
+</div>
+<div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">05</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">АДРЕСНОЕ ХРАНЕНИЕ WMS</h3>
+<p class="text-secondary font-body">Склад класса А в Киевском узле. Сверхточный учет каждой единицы товара.</p>
+</div>
+</div>
+<div class="p-10 flex flex-col justify-between min-h-[320px] hover:bg-surface-container-low transition-colors">
+<span class="text-error text-7xl font-black font-display leading-none">06</span>
+<div>
+<h3 class="text-2xl font-black font-display mb-4 uppercase">INTEGRATION MATRIX</h3>
+<p class="text-secondary font-body">Бесшовная связка вашей ERP с локальными маркетплейсами и службами доставки.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TIMELINE -->
+<section class="py-24 px-8 md:px-16 bg-[#111] text-white relative overflow-hidden">
+<div class="mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase font-display">
+                21-ДНЕВНЫЙ <br/> ONBOARDING TIMELINE
+            </h2>
+</div>
+<div class="relative py-12">
+<!-- Connecting Line -->
+<div class="absolute top-[calc(3rem+12px)] left-0 w-full h-1 bg-error/30 hidden md:block"></div>
+<div class="flex flex-col md:flex-row justify-between gap-12 relative">
+<!-- Step 1 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">1</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">Договор</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">3</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">Таможня открыта</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">7</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">Первая партия</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 4 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">10</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">WMS integration</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 5 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">14</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">Test orders</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 6 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">18</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">Scale to prod</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+<!-- Step 7 -->
+<div class="flex-1 flex flex-col items-start md:items-center text-left md:text-center group">
+<div class="w-12 h-12 bg-error flex items-center justify-center font-black text-xl mb-6 z-10">21</div>
+<div class="font-label font-bold uppercase-spacing text-xs mb-2">SLA activated</div>
+<div class="h-1 w-full bg-error mb-4 md:hidden"></div>
+</div>
+</div>
+</div>
+<div class="mt-20 inline-flex border-2 border-white/20 p-6 gap-8">
+<div class="flex flex-col">
+<span class="text-white/40 font-label font-bold uppercase-spacing text-[10px]">UA BRAND</span>
+<span class="text-xl font-headline font-bold">14 ДНЕЙ</span>
+</div>
+<div class="w-[1px] bg-white/20"></div>
+<div class="flex flex-col">
+<span class="text-error font-label font-bold uppercase-spacing text-[10px]">CIS BRAND</span>
+<span class="text-xl font-headline font-bold">+7 ДНЕЙ (ВЭД &amp; ТАМОЖНЯ)</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: INTEGRATION MATRIX -->
+<section class="py-24 px-8 md:px-16 bg-white">
+<div class="mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase font-display">
+                INTEGRATION MATRIX <br/> ДЛЯ БРЕНДА ИЗ СНГ
+            </h2>
+</div>
+<div class="space-y-4">
+<!-- Matrix Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 items-center border-4 border-black p-6 md:p-10 gap-8">
+<div class="md:col-span-5">
+<span class="text-secondary font-label font-bold uppercase-spacing text-xs mb-4 block">YOUR CIS MARKET</span>
+<div class="text-3xl font-black font-display uppercase">Kaspi Kazakhstan / OZON CIS</div>
+</div>
+<div class="md:col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-error text-6xl">arrow_forward</span>
+</div>
+<div class="md:col-span-5 text-right md:text-left">
+<span class="text-secondary font-label font-bold uppercase-spacing text-xs mb-4 block">МЫ ПОДКЛЮЧАЕМ К UA MARKET</span>
+<div class="text-3xl font-black font-display uppercase">Rozetka / Prom / Epicentr</div>
+</div>
+</div>
+<!-- Matrix Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 items-center border-4 border-black p-6 md:p-10 gap-8">
+<div class="md:col-span-5">
+<span class="text-secondary font-label font-bold uppercase-spacing text-xs mb-4 block">YOUR ERP / OMS</span>
+<div class="text-3xl font-black font-display uppercase">1C / Bitrix24 / SAP</div>
+</div>
+<div class="md:col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-error text-6xl">sync</span>
+</div>
+<div class="md:col-span-5 text-right md:text-left">
+<span class="text-secondary font-label font-bold uppercase-spacing text-xs mb-4 block">UA COURIER ECOSYSTEM</span>
+<div class="text-3xl font-black font-display uppercase">Nova Poshta / Ukrposhta API</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: SLA TABLE -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-low">
+<div class="mb-16">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase font-display">
+                SLA ДЛЯ CROSS-BORDER <br/> ОТЛИЧАЕТСЯ ОТ ВНУТРЕННЕГО
+            </h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border-4 border-black text-left">
+<thead>
+<tr class="bg-black text-white">
+<th class="p-6 font-headline uppercase-spacing text-sm">Metric Name</th>
+<th class="p-6 font-headline uppercase-spacing text-sm">Domestic Standard</th>
+<th class="p-6 font-headline uppercase-spacing text-sm">MTP Cross-Border SLA</th>
+</tr>
+</thead>
+<tbody class="bg-white">
+<tr class="border-b-2 border-black">
+<td class="p-6 font-bold uppercase-spacing text-xs">Orders to carrier</td>
+<td class="p-6">Next Day</td>
+<td class="p-6 bg-error/5 font-black text-error">Same Day (Order before 14:00)</td>
+</tr>
+<tr class="border-b-2 border-black">
+<td class="p-6 font-bold uppercase-spacing text-xs">Pick accuracy</td>
+<td class="p-6">98.5%</td>
+<td class="p-6 font-black">99.98%</td>
+</tr>
+<tr class="border-b-2 border-black">
+<td class="p-6 font-bold uppercase-spacing text-xs">Customs clearance</td>
+<td class="p-6">N/A</td>
+<td class="p-6 font-black">Max 48 Hours</td>
+</tr>
+<tr>
+<td class="p-6 font-bold uppercase-spacing text-xs">Multi-currency reconcile</td>
+<td class="p-6">Weekly</td>
+<td class="p-6 bg-error/5 font-black text-error">T+1 Settlement</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- CTA BLOCK -->
+<section class="bg-primary py-32 px-8 text-center relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<div class="text-[20vw] font-black font-display tracking-tighter text-white">MTP</div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="text-white text-4xl md:text-7xl font-black font-display mb-12 uppercase">
+                Посчитайте ваш выход <br/> на рынок Украины
+            </h2>
+<button class="bg-error text-white text-2xl font-black font-display uppercase px-16 py-8 hover:bg-white hover:text-black transition-all duration-100 flex items-center gap-6 mx-auto">
+                ПОЛУЧИТЬ РАСЧЁТ
+                <span class="material-symbols-outlined text-4xl">arrow_forward</span>
+</button>
+<p class="text-white/60 mt-8 font-label uppercase-spacing text-sm font-bold">
+                Перезвоним за 15 минут. Без автодозвонов.
+            </p>
+</div>
+</section>
+<!-- Footer from JSON Logic -->
+<footer class="w-full border-t-8 border-[#e63329] bg-black text-white p-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<div class="text-4xl font-black text-white mb-8 font-headline">MTP GROUP</div>
+<p class="font-['Inter'] uppercase tracking-[0.1em] text-xs font-bold text-white/60">
+                © 2024 MTP GROUP LOGISTICS. ALL RIGHTS RESERVED. OPERATIONAL HUB CIS.
+            </p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-8 font-['Inter'] uppercase tracking-[0.1em] text-xs font-bold">
+<a class="text-white/60 hover:text-white hover:underline decoration-4" href="#">ПОЛИТИКА</a>
+<a class="text-white/60 hover:text-white hover:underline decoration-4" href="#">ТЕРМИНЫ</a>
+<a class="text-white/60 hover:text-white hover:underline decoration-4" href="#">API</a>
+<a class="text-white/60 hover:text-white hover:underline decoration-4 text-[#e63329]" href="#">СТАТУС</a>
+</div>
+<div class="mt-12 md:mt-0 flex gap-4">
+<div class="w-12 h-12 border-2 border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-12 h-12 border-2 border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
