@@ -22,4 +22,29 @@ export default defineConfig({
       lastmod: new Date(),
     }),
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            const name = assetInfo.names?.[0] || assetInfo.name || '';
+            if (name.endsWith('.css')) {
+              const src = typeof assetInfo.source === 'string'
+                ? assetInfo.source
+                : assetInfo.source instanceof Uint8Array
+                  ? Buffer.from(assetInfo.source).toString('utf8')
+                  : '';
+              if (src.includes('.hdr-logo-mtp') || src.includes('.hdr-spacer')) {
+                return '_astro/header.[hash][extname]';
+              }
+              if (src.includes('.footer-grid') || src.includes('.footer-bottom')) {
+                return '_astro/footer.[hash][extname]';
+              }
+            }
+            return '_astro/[name].[hash][extname]';
+          },
+        },
+      },
+    },
+  },
 });
