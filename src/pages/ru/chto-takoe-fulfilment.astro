@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
 const faqSchema = {
@@ -113,6 +114,8 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
 <!-- BODY -->
 <article class="ru-pil-body">
 <div class="ru-pil-body__inner">
+
+  <AuthorByline lang="ru" datePublished="2026-04-03" dateModified="2026-04-22" readingTime="15" />
 
   <section class="ru-pil-sec" id="r1">
     <div class="ru-pil-sec__num">01</div>
