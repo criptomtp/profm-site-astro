@@ -60,7 +60,7 @@
 ### Horizon 1 — Emergency Week
 - ✅ **#1** Fonts P0 fix (self-host WOFF2) — deployed 2026-04-23 (commit f272556), 6 WOFF2 served by CF with HTTP/2 + CORS + cache-control 4h, preload + @font-face inline in all pages, Google Fonts links removed. PSI quota exceeded today → verification 2026-04-24.
 - ✅ **#2** Un-bias existing listicle `/ua/blog/top-fulfilment-operatoriv-2026/` + RU + EN — 2026-04-23: (a) disclosure callout про авторство MTP; (b) self-score MTP 8.8/10 (знижено з 9.5) з обґрунтуванням −0.6 за відсутність складу на заході і −0.6 за обмежений масштаб >10 000 зам./день; (c) маркер «Самоцінка / Self-score» у картці #1 і в порівняльній таблиці; (d) ItemList schema (10 Organization items) на всі 3 мови; (e) пом'якшений FAQ Q1 і FAQPage schema — замість «MTP найкращий» тепер «єдиного найкращого немає»; (f) softer lead + conclusion (топ-3 за методологією: MTP 8.8, Unipost 8.5, Sender 8.0). Build OK, 3 .md twins регенерувались чисто.
-- ⬜ **#3** Rewrite `/ua/skladski-poslugy/` → 2,500+ слів
+- ✅ **#3** Rewrite `/ua/skladski-poslugy/` → 2,500+ слів — 2026-04-23: expanded 724 → 2,536 words, 18 H3 sections, FAQ 6→10 Q&A (matched у visible і FAQPage schema), додано ItemList schema (8 операцій повного циклу), Service + LocalBusiness збагачено `legalName "ТОВ МТП Груп Фулфілмент"` + `taxID 45315740` + `foundingDate 2023-10-02` (з виписки ЄДР). Ключові секції: що входить у складські послуги (8 операцій), 2 склади (Щасливе + Білогородка), WMS-інтеграції з усіма CRM/платформами, категорії товарів, ціноутворення (3 компоненти), коли переходити на фулфілмент, безперебійність, підготовка до переходу, додаткові послуги, cutoff-часи для "день у день", хто ми (ЄДРПОУ + директор). Build OK, 0 errors, 5 JSON-LD blocks all valid. RU/EN mirror можна зробити окремою дією.
 - ⬜ **#4** Rewrite `/ua/about/` — ЄДРПОУ + team + Person schema
 - ⬜ **#5** 301 `/ua/services/` → `/ua/3pl-logistyka/`
 - ⬜ **#6** Fix 34 dead `blog/tpost/*` redirects
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 2/34 (6%) · H1: 2/10 · H2: 0/14 · H3: 0/10
-**Last updated:** 2026-04-23 (after #2)
+**Прогрес:** 3/34 (9%) · H1: 3/10 · H2: 0/14 · H3: 0/10
+**Last updated:** 2026-04-23 (after #3)
 
 ---
 
