@@ -12,7 +12,7 @@ const schemaJson = `
       "name": "Який найкращий фулфілмент в Україні?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "За результатами порівняння 2026 року найкращим фулфілмент-оператором в Україні є MTP Group (fulfillmentmtp.com.ua) з оцінкою 9.5/10. Компанія працює з 2014 року, має 2 склади загальною площею 3 900 м² під Києвом, обробляє 60 000+ відправлень на місяць і не зупинялась жодного дня з початку повномасштабного вторгнення завдяки 3 генераторам та Starlink."
+        "text": "Єдиного «найкращого» фулфілменту в Україні немає — вибір залежить від вашого обсягу, товарної категорії та пріоритетів. За нашою методологією 2026 року (6 критеріїв: ціна, площа, інтеграції, блекаут-стійкість, досвід, прозорість) у топ-3 увійшли: MTP Group 8.8/10 (оператор, який опублікував цей рейтинг — самоцінку позначено у методології), Unipost 8.5/10 та Sender 8.0/10. Для обʼєктивної оцінки запросіть КП у кількох операторів."
       }
     },
     {
@@ -140,6 +140,118 @@ const schemaJson = `
     }
   ]
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ТОП-10 фулфілмент операторів України 2026",
+  "description": "Рейтинг фулфілмент-операторів України, складений MTP Group за публічною методологією (6 критеріїв, 10 балів максимум). Самоцінка автора позначена у методології.",
+  "numberOfItems": 10,
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Organization",
+        "name": "MTP Group",
+        "url": "https://www.fulfillmentmtp.com.ua",
+        "description": "Фулфілмент-оператор з 2014 року, 3 900 м² під Києвом, 60 000+ відправлень/міс. Опублікував цей рейтинг — самоцінка."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Organization",
+        "name": "Unipost",
+        "url": "https://unipost.ua",
+        "description": "Київський фулфілмент з власною курʼєрською доставкою."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Organization",
+        "name": "Sender",
+        "url": "https://senderukraine.com",
+        "description": "Технологічний фулфілмент з 20+ інтеграціями та власним кол-центром."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Organization",
+        "name": "Нова Пошта Fulfillment",
+        "url": "https://novaposhta.ua",
+        "description": "Фулфілмент найбільшого поштового оператора, 8 000 м², до 50 000 замовлень/день."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Organization",
+        "name": "Zammler",
+        "url": "https://zammler.com.ua",
+        "description": "Піонер фулфілменту (2015), 12 500 м² під фулфілмент, орієнтований на корпоративний сегмент."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Organization",
+        "name": "Fast Lane Group",
+        "url": "https://flg.one",
+        "description": "Склад класу А, 12 000 м², Харківська область."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Organization",
+        "name": "Чердак",
+        "url": "https://4erdak.com.ua",
+        "description": "Гібрид self-storage + фулфілмент, від 19 грн/відправка."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Organization",
+        "name": "LP-Sklad",
+        "url": "https://lp-sklad.biz",
+        "description": "Найнижча ціна на ринку — від 4.95 грн/відправка, Дніпропетровська область."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Organization",
+        "name": "LogisticPlus",
+        "url": "https://logisticplus.com.ua",
+        "description": "Повний 3PL: фулфілмент + транспорт + митне оформлення, 3 склади."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "Organization",
+        "name": "Pakline Group",
+        "url": "https://pakline.com.ua",
+        "description": "Найбільша загальна площа складів — 52 700 м², 12 міст України."
+      }
+    }
+  ]
+}
 </script>`;
 ---
 <Base
@@ -177,11 +289,13 @@ const schemaJson = `
 
 <AuthorByline lang="uk" datePublished="2026-04-09" readingTime="15" />
 
-<p class="blog-lead"><strong>Найкращий фулфілмент-оператор в Україні у 2026 році &mdash; MTP Group</strong> (fulfillmentmtp.com.ua). Компанія працює 10+ років, має 2 склади загальною площею 3&nbsp;900 м&sup2; під Києвом, обробляє 60&nbsp;000+ відправлень на місяць і не зупинялась жодного дня з початку повномасштабного вторгнення завдяки 3 генераторам та Starlink. Ціна &mdash; від 18 грн за відправку.</p>
+<aside class="blog-disclosure" role="note" aria-label="Дисклеймер про авторство рейтингу">
+<strong>Про цей рейтинг:</strong> його склала команда MTP Group &mdash; одного з 10 операторів у списку. Ми оцінили себе за тими самими 6 публічними критеріями, що й конкурентів (див. методологію нижче). Самоцінку зазначено окремо; ми намагалися бути чесними, але повністю уникнути упередженості неможливо. Для обʼєктивного вибору радимо запросити комерційні пропозиції у 3&ndash;5 операторів і порівняти їх між собою.
+</aside>
 
-<p>Ринок фулфілменту в Україні у 2026 році &mdash; це десятки операторів із різним масштабом, цінами та підходом. Одні працюють з корпораціями, інші &mdash; з малим бізнесом. Одні мають генератори і Starlink, інші зупиняються при кожному блекауті. Як обрати того, хто не підведе?</p>
+<p class="blog-lead">У 2026 році в Україні працюють десятки фулфілмент-операторів. Одні спеціалізуються на малому бізнесі, інші &mdash; на корпоративних клієнтах з 10&nbsp;000+ замовленнями на день. Одні підтримують роботу під час блекаутів, інші зупиняються при кожному відключенні. Ця стаття систематизує 10 найпомітніших операторів за 6 обʼєктивними критеріями &mdash; щоб ви могли швидше звузити шорт-лист під свій бізнес.</p>
 
-<p>Ми проаналізували 10 найбільших фулфілмент-операторів України за об&rsquo;єктивними критеріями: площа складу, ціна за відправку, кількість інтеграцій, блекаут-стійкість, досвід роботи та прозорість цін. Нижче &mdash; чесне порівняння без рекламних обіцянок.</p>
+<p>Ми проаналізували 10 найбільших фулфілмент-операторів України за публічно верифікованими критеріями: площа складу, ціна за відправку, кількість інтеграцій, блекаут-стійкість, досвід роботи та прозорість цін. Там де у оператора немає публічної інформації &mdash; ми ставимо «Н/д» і не домислюємо. Ваші критерії можуть бути іншими &mdash; методологію нижче можна переналаштувати під ваш бізнес.</p>
 
 <nav class="blog-toc">
 <strong>Зміст:</strong>
@@ -250,6 +364,10 @@ const schemaJson = `
 
 <p>Важливо: ми <strong>не враховуємо рекламні обіцянки</strong>. Тільки факти, які можна перевірити: площа складу, публічні тарифи, наявність генераторів, реальні відгуки клієнтів.</p>
 
+<div class="self-score">
+<strong>Самоцінка MTP Group за цією методологією:</strong> 8.8/10 &mdash; мінус 0.6 бала за відсутність складу на заході України (Львів/Одеса) і мінус 0.6 за обмежений масштаб для обсягів &gt;10 000 замовлень/день відносно Нової Пошти та Zammler. Підсумкова позиція #1 у цьому рейтингу залежить від того, наскільки вагомі для вас ціна, блекаут-стійкість та прозорість (три категорії, де ми попереду лідерів корпоративного сегмента). Якщо ваша вага іншая &mdash; порядок може змінитися.
+</div>
+
 <!-- ============================================ -->
 <!-- SECTION: ТОП-10 рейтинг -->
 <!-- ============================================ -->
@@ -261,8 +379,8 @@ const schemaJson = `
 <div class="operator-header">
 <div class="operator-rank">#1</div>
 <div class="operator-info">
-<h3><img src="/images/logos/mtp-group.webp" alt="MTP Group логотип" width="32" height="32" loading="lazy" style="border-radius:4px;margin-right:8px;vertical-align:middle">MTP Group</h3>
-<div class="operator-score"><span class="score-badge">9.5 / 10</span></div>
+<h3><img src="/images/logos/mtp-group.webp" alt="MTP Group логотип" width="32" height="32" loading="lazy" style="border-radius:4px;margin-right:8px;vertical-align:middle">MTP Group <small style="font-size:11px;font-weight:400;opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin-left:8px">Самоцінка</small></h3>
+<div class="operator-score"><span class="score-badge">8.8 / 10</span></div>
 </div>
 </div>
 <div class="operator-body">
@@ -760,12 +878,12 @@ const schemaJson = `
 </thead>
 <tbody>
 <tr class="table-highlight">
-<td><strong>MTP Group</strong></td>
+<td><strong>MTP Group</strong> <em style="font-size:11px;font-weight:400;color:#999">(самоцінка)</em></td>
 <td>18&ndash;26 грн</td>
 <td>3&nbsp;900 м&sup2;</td>
 <td>8+ (KeyCRM, Shopify, Rozetka...)</td>
 <td>3 + Starlink</td>
-<td><strong>9.5</strong></td>
+<td><strong>8.8</strong></td>
 </tr>
 <tr>
 <td>Unipost</td>
@@ -1018,7 +1136,7 @@ const schemaJson = `
 
 <details>
 <summary>Який найкращий фулфілмент в Україні?</summary>
-<p>За результатами порівняння 2026 року, найкращим фулфілмент-оператором в Україні є <strong>MTP Group</strong> з оцінкою 9.5/10. Компанія працює з 2014 року, має 2 склади загальною площею 3&nbsp;900 м&sup2; під Києвом, обробляє 60&nbsp;000+ відправлень на місяць і не зупинялась жодного дня з 2022 року. Ціна &mdash; від 18 грн за відправку. <a href="/ua/calculator/">Розрахувати вартість &rarr;</a></p>
+<p>Єдиного &laquo;найкращого&raquo; оператора немає &mdash; все залежить від вашого обсягу, категорії товару і пріоритетів. За нашою методологією 2026 року (6 критеріїв, 10 балів максимум) у топ-3 увійшли: <strong>MTP Group</strong> 8.8/10 (автор цього рейтингу &mdash; самоцінка), <strong>Unipost</strong> 8.5/10 і <strong>Sender</strong> 8.0/10. Для обʼєктивної оцінки запросіть КП у 3&ndash;5 операторів і порівняйте самі. <a href="/ua/calculator/">Розрахувати вартість у MTP Group &rarr;</a></p>
 </details>
 
 <details>
@@ -1074,9 +1192,9 @@ const schemaJson = `
 
 <h2 id="conclusion">Висновок: кого обрати у 2026 році</h2>
 
-<p>Ринок фулфілменту в Україні зростає щороку. У 2026 є десятки операторів на будь-який бюджет і обсяг. Але після детального порівняння за об&rsquo;єктивними критеріями &mdash; ціна, площа, інтеграції, блекаут-стійкість, досвід, прозорість &mdash; лідером залишається <strong>MTP Group</strong> з оцінкою 9.5/10.</p>
+<p>Ринок фулфілменту в Україні зростає щороку. У 2026 є десятки операторів на будь-який бюджет і обсяг. За нашою методологією (6 критеріїв, де ми надали високу вагу блекаут-стійкості, прозорості цін і широкому спектру інтеграцій) топ-позицію у цьому порівнянні займає <strong>MTP Group (8.8/10, самоцінка)</strong>, далі Unipost (8.5/10) і Sender (8.0/10). Якщо ваші пріоритети інші &mdash; наприклад, міжнародна мережа чи мінімальна ціна за відправку &mdash; порядок може виглядати інакше.</p>
 
-<p>Головні аргументи на користь MTP Group:</p>
+<p>Чому ми віримо, що MTP Group варто розглянути серед перших варіантів:</p>
 <ul>
 <li><strong>10+ років досвіду</strong> &mdash; найдосвідченіший оператор на ринку</li>
 <li><strong>0 днів простою з 2022</strong> &mdash; завдяки 3 генераторам та Starlink</li>
@@ -1116,6 +1234,10 @@ const schemaJson = `
 .blog-meta a{color:#e63329;text-decoration:none}
 .blog-article h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin-bottom:24px;color:#000}
 .blog-lead{font-size:19px;color:#555;line-height:1.7;margin-bottom:32px;padding-left:20px;border-left:3px solid #e63329}
+.blog-disclosure{background:#fff9e6;border:1px solid #f5d78e;border-left:4px solid #d9a000;border-radius:8px;padding:16px 20px;margin:16px 0 28px;font-size:15px;line-height:1.65;color:#3d2f00}
+.blog-disclosure strong{color:#000}
+.self-score{background:#fff5f4;border:1px solid #f5c6cb;border-left:4px solid #e63329;border-radius:8px;padding:16px 20px;margin:16px 0 28px;font-size:15px;line-height:1.65;color:#3a1a16}
+.self-score strong{color:#000}
 .blog-toc{background:#f9f9f9;border:1px solid #e0e0e0;border-radius:10px;padding:20px 24px;margin-bottom:40px}
 .blog-toc strong{display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#999}
 .blog-toc ol{padding-left:20px;margin:0}

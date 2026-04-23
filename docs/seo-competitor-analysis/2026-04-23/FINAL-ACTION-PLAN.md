@@ -59,7 +59,7 @@
 
 ### Horizon 1 — Emergency Week
 - ✅ **#1** Fonts P0 fix (self-host WOFF2) — deployed 2026-04-23 (commit f272556), 6 WOFF2 served by CF with HTTP/2 + CORS + cache-control 4h, preload + @font-face inline in all pages, Google Fonts links removed. PSI quota exceeded today → verification 2026-04-24.
-- ⬜ **#2** Un-bias existing listicle `/ua/blog/top-fulfilment-operatoriv-2026/`
+- ✅ **#2** Un-bias existing listicle `/ua/blog/top-fulfilment-operatoriv-2026/` + RU + EN — 2026-04-23: (a) disclosure callout про авторство MTP; (b) self-score MTP 8.8/10 (знижено з 9.5) з обґрунтуванням −0.6 за відсутність складу на заході і −0.6 за обмежений масштаб >10 000 зам./день; (c) маркер «Самоцінка / Self-score» у картці #1 і в порівняльній таблиці; (d) ItemList schema (10 Organization items) на всі 3 мови; (e) пом'якшений FAQ Q1 і FAQPage schema — замість «MTP найкращий» тепер «єдиного найкращого немає»; (f) softer lead + conclusion (топ-3 за методологією: MTP 8.8, Unipost 8.5, Sender 8.0). Build OK, 3 .md twins регенерувались чисто.
 - ⬜ **#3** Rewrite `/ua/skladski-poslugy/` → 2,500+ слів
 - ⬜ **#4** Rewrite `/ua/about/` — ЄДРПОУ + team + Person schema
 - ⬜ **#5** 301 `/ua/services/` → `/ua/3pl-logistyka/`
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 1/34 (3%) · H1: 1/10 · H2: 0/14 · H3: 0/10
-**Last updated:** 2026-04-23 (after #1)
+**Прогрес:** 2/34 (6%) · H1: 2/10 · H2: 0/14 · H3: 0/10
+**Last updated:** 2026-04-23 (after #2)
 
 ---
 

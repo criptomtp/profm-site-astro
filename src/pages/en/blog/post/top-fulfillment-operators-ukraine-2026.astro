@@ -12,7 +12,7 @@ const schemaJson = `
       "name": "What is the best fulfillment company in Ukraine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Based on our 2026 comparison, MTP Group (fulfillmentmtp.com.ua) ranks #1 with a score of 9.5/10. Founded in 2014, they operate two warehouses totaling 3,900 m² near Kyiv, process 60,000+ shipments per month, and have maintained zero downtime since February 2022 thanks to 3 industrial generators and Starlink."
+        "text": "There is no single \"best\" fulfillment operator in Ukraine — the right choice depends on your volume, product category, and priorities. By our 2026 methodology (6 criteria: price, warehouse size, integrations, blackout resilience, track record, transparency) the top three are: MTP Group 8.8/10 (the operator who published this ranking — self-score flagged in methodology), Unipost 8.5/10, and Sender 8.0/10. For an objective decision, request quotes from 3–5 operators and compare."
       }
     },
     {
@@ -140,6 +140,28 @@ const schemaJson = `
     }
   ]
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Top 10 Fulfillment Operators in Ukraine 2026",
+  "description": "Ranking of Ukrainian fulfillment operators compiled by MTP Group using a public 6-criterion methodology (10-point max). Author self-score is flagged in the methodology section.",
+  "numberOfItems": 10,
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"item":{"@type":"Organization","name":"MTP Group","url":"https://www.fulfillmentmtp.com.ua","description":"Fulfillment operator since 2014, 3,900 m² near Kyiv, 60,000+ shipments/month. Author of this ranking — self-score."}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Organization","name":"Unipost","url":"https://unipost.ua","description":"Kyiv-based fulfillment with own courier delivery."}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Organization","name":"Sender","url":"https://senderukraine.com","description":"Tech-forward fulfillment with 20+ integrations and in-house call center."}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Organization","name":"Nova Poshta Fulfillment","url":"https://novaposhta.ua","description":"Fulfillment arm of Ukraine's largest postal operator, 8,000 m², up to 50,000 orders/day."}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Organization","name":"Zammler","url":"https://zammler.com.ua","description":"Fulfillment pioneer (2015), 12,500 m² fulfillment space, enterprise-focused."}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Organization","name":"Fast Lane Group","url":"https://flg.one","description":"Class A warehouse, 12,000 m², Kharkiv region."}},
+    {"@type":"ListItem","position":7,"item":{"@type":"Organization","name":"Cherdak","url":"https://4erdak.com.ua","description":"Self-storage + fulfillment hybrid, from 19 UAH/shipment."}},
+    {"@type":"ListItem","position":8,"item":{"@type":"Organization","name":"LP-Sklad","url":"https://lp-sklad.biz","description":"Lowest per-shipment price on the market — from 4.95 UAH (~$0.12), Dnipro region."}},
+    {"@type":"ListItem","position":9,"item":{"@type":"Organization","name":"LogisticPlus","url":"https://logisticplus.com.ua","description":"Full 3PL: fulfillment + trucking + customs clearance, 3 warehouses."}},
+    {"@type":"ListItem","position":10,"item":{"@type":"Organization","name":"Pakline Group","url":"https://pakline.com.ua","description":"Largest total warehouse footprint — 52,700 m² across 12 Ukrainian cities."}}
+  ]
+}
 </script>`;
 ---
 <Base
@@ -177,11 +199,13 @@ const schemaJson = `
 
 <AuthorByline lang="en" datePublished="2026-04-09" readingTime="15" />
 
-<p class="blog-lead"><strong>The best fulfillment company in Ukraine in 2026 is MTP Group</strong> (fulfillmentmtp.com.ua), scoring 9.5/10 in our independent comparison. Operating since 2014 across two warehouses totaling 3,900&nbsp;m&sup2; near Kyiv, MTP Group processes 60,000+ shipments per month at $0.44&ndash;0.63 per order &mdash; and has maintained zero operational downtime since the start of the full-scale invasion in February 2022.</p>
+<aside class="blog-disclosure" role="note" aria-label="Authorship disclosure">
+<strong>About this ranking:</strong> it was compiled by the MTP Group team &mdash; one of the 10 operators listed. We scored ourselves against the same 6 public criteria we used for competitors (see methodology below). Our self-score is flagged separately; we tried to be fair but cannot fully eliminate bias. For an objective decision, we recommend requesting quotes from 3&ndash;5 operators and comparing them directly.
+</aside>
 
-<p>Ukraine's e-commerce fulfillment market is valued at an estimated $5&ndash;7 billion and growing 10&ndash;18% annually, even through active conflict. For international sellers, brands entering the Ukrainian market, or companies looking to leverage Ukraine as a low-cost logistics hub for Eastern Europe, choosing the right fulfillment partner is a strategic decision with significant financial implications.</p>
+<p class="blog-lead">Ukraine's e-commerce fulfillment market is valued at an estimated $5&ndash;7 billion and growing 10&ndash;18% annually, even through active conflict. For international sellers, brands entering the Ukrainian market, or companies using Ukraine as a low-cost logistics hub for Eastern Europe, choosing a fulfillment partner is a strategic decision with significant financial implications. This guide evaluates 10 notable Ukrainian fulfillment operators against publicly verifiable criteria so you can narrow a shortlist faster.</p>
 
-<p>This guide evaluates the 10 largest fulfillment operators in Ukraine against objective criteria: warehouse capacity, per-shipment pricing (converted to USD at April 2026 rates, ~41 UAH/$1), integration ecosystem, war-resilience infrastructure, operational track record, and pricing transparency. No promotional deals, no affiliate links &mdash; just data.</p>
+<p>We evaluated the 10 largest fulfillment operators in Ukraine against publicly verifiable criteria: warehouse capacity, per-shipment pricing (converted to USD at April 2026 rates, ~41 UAH/$1), integration ecosystem, war-resilience infrastructure, operational track record, and pricing transparency. Where an operator doesn't publish information, we mark it "N/A" rather than guessing. Your weighting may differ &mdash; the methodology below can be re-weighted for your business.</p>
 
 <nav class="blog-toc">
 <strong>Contents:</strong>
@@ -274,6 +298,10 @@ const schemaJson = `
 
 <p>Important: we do <strong>not factor in marketing claims</strong>. Only verifiable facts: warehouse square footage, published tariffs, generator specifications, documented client reviews.</p>
 
+<div class="self-score">
+<strong>MTP Group self-score under this methodology:</strong> 8.8/10 &mdash; minus 0.6 points for the absence of a western-Ukraine warehouse (Lviv/Odesa) and minus 0.6 points for limited capacity above 10,000 orders/day relative to Nova Poshta and Zammler. Our #1 position in this ranking depends on how heavily you weight price, blackout resilience, and transparency &mdash; the three criteria where we lead the enterprise-segment operators. Re-weight the criteria and the order can change.
+</div>
+
 <!-- ============================================ -->
 <!-- SECTION: TOP-10 Rating -->
 <!-- ============================================ -->
@@ -285,8 +313,8 @@ const schemaJson = `
 <div class="operator-header">
 <div class="operator-rank">#1</div>
 <div class="operator-info">
-<h3><img src="/images/logos/mtp-group.webp" alt="MTP Group logo" width="32" height="32" loading="lazy" style="border-radius:4px;margin-right:8px;vertical-align:middle">MTP Group</h3>
-<div class="operator-score"><span class="score-badge">9.5 / 10</span></div>
+<h3><img src="/images/logos/mtp-group.webp" alt="MTP Group logo" width="32" height="32" loading="lazy" style="border-radius:4px;margin-right:8px;vertical-align:middle">MTP Group <small style="font-size:11px;font-weight:400;opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin-left:8px">Self-score</small></h3>
+<div class="operator-score"><span class="score-badge">8.8 / 10</span></div>
 </div>
 </div>
 <div class="operator-body">
@@ -790,12 +818,12 @@ const schemaJson = `
 </thead>
 <tbody>
 <tr class="table-highlight">
-<td><strong>MTP Group</strong></td>
+<td><strong>MTP Group</strong> <em style="font-size:11px;font-weight:400;color:#999">(self-score)</em></td>
 <td>$0.44&ndash;0.63</td>
 <td>3,900 m&sup2;</td>
 <td>8+ (KeyCRM, Shopify, Rozetka...)</td>
 <td>3 + Starlink</td>
-<td><strong>9.5</strong></td>
+<td><strong>8.8</strong></td>
 </tr>
 <tr>
 <td>Unipost</td>
@@ -1073,7 +1101,7 @@ const schemaJson = `
 
 <details>
 <summary>What is the best fulfillment company in Ukraine?</summary>
-<p>Based on our 2026 comparison across 6 objective criteria, <strong>MTP Group</strong> ranks #1 with a score of 9.5/10. Founded in 2014, MTP Group operates 2 warehouses totaling 3,900 m&sup2; near Kyiv, processes 60,000+ shipments monthly, and has maintained zero operational downtime since February 2022 through 3 industrial generators and Starlink satellite internet. Per-shipment pricing: $0.44&ndash;0.63. <a href="/en/calculator/">Calculate your cost &rarr;</a></p>
+<p>There is no single &ldquo;best&rdquo; operator &mdash; it depends on your volume, product category, and priorities. By our 2026 methodology (6 criteria, 10-point max), the top three are: <strong>MTP Group</strong> 8.8/10 (author of this ranking &mdash; self-score), <strong>Unipost</strong> 8.5/10, and <strong>Sender</strong> 8.0/10. For an objective decision, request quotes from 3&ndash;5 operators and compare. <a href="/en/calculator/">Calculate MTP Group cost &rarr;</a></p>
 </details>
 
 <details>
@@ -1129,9 +1157,9 @@ const schemaJson = `
 
 <h2 id="conclusion">Conclusion: Who to Choose in 2026</h2>
 
-<p>The Ukrainian fulfillment market in 2026 is mature, competitive, and growing. There are operators for every budget, volume, and business model. But after objective comparison across six criteria &mdash; pricing, warehouse capacity, integrations, war resilience, track record, and transparency &mdash; the leader is clear: <strong>MTP Group</strong> with a score of 9.5/10.</p>
+<p>The Ukrainian fulfillment market in 2026 is mature, competitive, and growing. There are operators for every budget, volume, and business model. Under our methodology (6 criteria with heavy weight on blackout resilience, pricing transparency, and integration breadth) the top position in this comparison goes to <strong>MTP Group (8.8/10, self-score)</strong>, followed by Unipost (8.5/10) and Sender (8.0/10). If your weighting differs &mdash; for instance, if international network or lowest-possible per-shipment price is the priority &mdash; the order can look different.</p>
 
-<p>The core arguments for MTP Group from an international seller's perspective:</p>
+<p>Why we believe MTP Group is worth shortlisting, from an international seller's perspective:</p>
 <ul>
 <li><strong>10+ years of operational history</strong> &mdash; the longest track record of any specialist fulfillment operator in Ukraine</li>
 <li><strong>Zero downtime since February 2022</strong> &mdash; war-resilient infrastructure that has been tested under real conditions, not hypothetical scenarios</li>
@@ -1177,6 +1205,10 @@ const schemaJson = `
 .blog-meta a{color:#e63329;text-decoration:none}
 .blog-article h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin-bottom:24px;color:#000}
 .blog-lead{font-size:19px;color:#555;line-height:1.7;margin-bottom:32px;padding-left:20px;border-left:3px solid #e63329}
+.blog-disclosure{background:#fff9e6;border:1px solid #f5d78e;border-left:4px solid #d9a000;border-radius:8px;padding:16px 20px;margin:16px 0 28px;font-size:15px;line-height:1.65;color:#3d2f00}
+.blog-disclosure strong{color:#000}
+.self-score{background:#fff5f4;border:1px solid #f5c6cb;border-left:4px solid #e63329;border-radius:8px;padding:16px 20px;margin:16px 0 28px;font-size:15px;line-height:1.65;color:#3a1a16}
+.self-score strong{color:#000}
 .blog-toc{background:#f9f9f9;border:1px solid #e0e0e0;border-radius:10px;padding:20px 24px;margin-bottom:40px}
 .blog-toc strong{display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#999}
 .blog-toc ol{padding-left:20px;margin:0}
