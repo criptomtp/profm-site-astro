@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
 const faqSchema = {
@@ -120,6 +121,15 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
 <div class="en-pil-article__inner">
 
 <AuthorByline lang="en" datePublished="2026-04-03" dateModified="2026-04-22" readingTime="15" />
+
+<KeyTakeaways lang="en" items={[
+  "Fulfillment is the outsourced logistics layer between a customer's 'buy' click and their front door: inventory, storage, pick, pack, ship, returns.",
+  "The end-to-end process breaks into 7 stages — receiving, putaway, storage, order processing, pick/pack, dispatch, returns handling.",
+  "At MTP Group pricing starts at ~$0.46 (18 ₴) per order processed and ~$17 (650 ₴) per pallet/month; minimum monthly fee is ~$130 (5,000 ₴).",
+  "A private warehouse only becomes cheaper above ~10,000 orders/month — below that, outsourced fulfillment is 30–50% less expensive once rent, wages, and downtime are factored in.",
+  "For Ukraine and EU cross-border e-commerce: power-resilient warehouses, integrations with Nova Poshta, Ukrposhta, Rozetka, Prom, OLX, Kasta, plus export to EU via Poland.",
+  "A typical trigger to outsource fulfillment: >200 orders/month, your team no longer ships same-day, or in-house logistics exceeds 25% of revenue."
+]} />
 
 <!-- 01 DEFINITION -->
 <section class="en-pil-sec" id="definition">

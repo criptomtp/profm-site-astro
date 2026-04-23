@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
 const faqSchema = {
@@ -116,6 +117,15 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
 <div class="ru-pil-body__inner">
 
   <AuthorByline lang="ru" datePublished="2026-04-03" dateModified="2026-04-22" readingTime="15" />
+
+  <KeyTakeaways lang="ru" items={[
+    "Фулфилмент — это аутсорсинг всей складской и отправочной логистики: оператор хранит товар, обрабатывает заказы, комплектует, упаковывает и передаёт перевозчику.",
+    "Процесс состоит из 7 этапов: приёмка, размещение, хранение, обработка заказа, пик/пак, отправка, обработка возвратов.",
+    "В MTP Group стоимость стартует от 18 ₴ за обработанный заказ и 650 ₴ за паллетоместо в месяц; минимальный ежемесячный платёж — 5 000 ₴.",
+    "Собственный склад окупается от 10 000+ заказов/мес — до этого объёма фулфилмент дешевле на 30–50% с учётом аренды, зарплат и рисков.",
+    "Для СНГ-рынка через Украину: работающие в блэкауты склады, интеграции с Новой Почтой, Укрпочтой, Rozetka, Prom, OLX, Kasta в одном кабинете.",
+    "Фулфилмент нужен от 200 заказов/мес, когда команда не успевает упаковывать или собственный склад съедает больше 25% выручки."
+  ]} />
 
   <section class="ru-pil-sec" id="r1">
     <div class="ru-pil-sec__num">01</div>

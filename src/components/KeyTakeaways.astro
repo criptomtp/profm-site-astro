@@ -1,0 +1,85 @@
+---
+interface Props {
+  lang?: 'uk' | 'ru' | 'en';
+  items: string[];
+}
+
+const { lang = 'uk', items } = Astro.props;
+
+const labels = {
+  uk: { heading: 'Головне за 30 секунд', srRole: 'Ключові висновки статті' },
+  ru: { heading: 'Главное за 30 секунд', srRole: 'Ключевые выводы статьи' },
+  en: { heading: 'Key Takeaways', srRole: 'Article key takeaways' },
+} as const;
+
+const t = labels[lang];
+---
+
+<aside class="key-takeaways" role="note" aria-label={t.srRole}>
+  <div class="key-takeaways__head">
+    <span class="key-takeaways__icon" aria-hidden="true">★</span>
+    <h2 class="key-takeaways__title">{t.heading}</h2>
+  </div>
+  <ul class="key-takeaways__list">
+    {items.map((text) => (
+      <li class="key-takeaways__item">{text}</li>
+    ))}
+  </ul>
+</aside>
+
+<style is:global>
+  .key-takeaways {
+    margin: 2.5rem 0 3rem;
+    padding: 1.75rem 1.75rem 1.5rem;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    border-left: 4px solid #e63329;
+    border-radius: 4px;
+  }
+  .key-takeaways__head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 1rem;
+  }
+  .key-takeaways__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #e63329;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .key-takeaways__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .key-takeaways__list {
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    list-style: disc;
+  }
+  .key-takeaways__item {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0 0 0.55rem;
+  }
+  .key-takeaways__item:last-child { margin-bottom: 0; }
+  .key-takeaways__item strong { color: #000; font-weight: 700; }
+  @media (max-width: 640px) {
+    .key-takeaways { padding: 1.25rem 1.25rem 1rem; margin: 2rem 0 2.5rem; }
+    .key-takeaways__title { font-size: 0.95rem; }
+    .key-takeaways__item { font-size: 0.95rem; }
+  }
+</style>
