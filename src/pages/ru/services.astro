@@ -379,12 +379,12 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceS
     <span class="ru-srv-section__label">ИНТЕГРАЦИИ</span>
     <h2 class="ru-srv-section__title">Подключаем вашу учётную систему за 1 день</h2>
     <div class="ru-srv-integrations__row">
-      <img src="/images/logo-rozetka.webp" alt="Rozetka" loading="lazy" width="140" height="44">
-      <img src="/images/logo-prom-ua-dark.webp" alt="Prom.ua" loading="lazy" width="140" height="44">
-      <img src="/images/logo-keycrm.webp" alt="KeyCRM" loading="lazy" width="140" height="44">
-      <img src="/images/logo-woocommerce.webp" alt="WooCommerce" loading="lazy" width="140" height="44">
-      <img src="/images/logo-opencart.webp" alt="OpenCart" loading="lazy" width="140" height="44">
-      <img src="/images/logo-salesdrive.webp" alt="SalesDrive" loading="lazy" width="140" height="44">
+      <a href="https://rozetka.com.ua" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт Rozetka"><img src="/images/logo-rozetka.webp" alt="Rozetka" loading="lazy" width="140" height="44"></a>
+      <a href="https://prom.ua" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт Prom.ua"><img src="/images/logo-prom-ua-dark.webp" alt="Prom.ua" loading="lazy" width="140" height="44"></a>
+      <a href="https://keycrm.app" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт KeyCRM"><img src="/images/logo-keycrm.webp" alt="KeyCRM" loading="lazy" width="140" height="44"></a>
+      <a href="https://woocommerce.com" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт WooCommerce"><img src="/images/logo-woocommerce.webp" alt="WooCommerce" loading="lazy" width="140" height="44"></a>
+      <a href="https://www.opencart.com" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт OpenCart"><img src="/images/logo-opencart.webp" alt="OpenCart" loading="lazy" width="140" height="44"></a>
+      <a href="https://salesdrive.ua" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт SalesDrive"><img src="/images/logo-salesdrive.webp" alt="SalesDrive" loading="lazy" width="140" height="44"></a>
     </div>
   </div>
 </section>
@@ -578,8 +578,11 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceS
   .ru-srv-integrations{padding:70px 20px;background:#f5f5f5}
   .ru-srv-integrations__inner{max-width:1280px;margin:0 auto;text-align:center}
   .ru-srv-integrations__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;max-width:1000px;margin:40px auto 0}
+  .ru-srv-integrations__row a{display:inline-flex;align-items:center;padding:4px;transition:transform 0.2s}
+  .ru-srv-integrations__row a:hover{transform:translateY(-2px)}
+  .ru-srv-integrations__row a:focus-visible{outline:2px solid var(--ru-srv-red);outline-offset:4px}
   .ru-srv-integrations__row img{height:40px;width:auto;filter:grayscale(100%);opacity:0.55;transition:opacity 0.3s,filter 0.3s}
-  .ru-srv-integrations__row img:hover{filter:grayscale(0);opacity:1}
+  .ru-srv-integrations__row a:hover img{filter:grayscale(0);opacity:1}
 
   /* FAQ */
   .ru-srv-faq{padding:80px 20px;background:#fff}
