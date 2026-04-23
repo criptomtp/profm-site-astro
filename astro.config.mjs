@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import dualMd from './integrations/dual-md.mjs';
+import llmsFull from './integrations/llms-full.mjs';
 import { buildLastmodMap } from './integrations/lastmod-map.mjs';
 
 const lastmodMap = buildLastmodMap();
@@ -12,6 +13,7 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     dualMd(),
+    llmsFull(),
     sitemap({
       filter: (page) =>
         !page.includes('/admin/') &&
