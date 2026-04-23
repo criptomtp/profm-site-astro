@@ -58,7 +58,7 @@
 **Легенда:** ⬜ не розпочато · 🟡 в роботі · ✅ зроблено · ❌ відкладено/скасовано
 
 ### Horizon 1 — Emergency Week
-- ⬜ **#1** Fonts P0 fix (self-host WOFF2)
+- ✅ **#1** Fonts P0 fix (self-host WOFF2) — deployed 2026-04-23 (commit f272556), 6 WOFF2 served by CF with HTTP/2 + CORS + cache-control 4h, preload + @font-face inline in all pages, Google Fonts links removed. PSI quota exceeded today → verification 2026-04-24.
 - ⬜ **#2** Un-bias existing listicle `/ua/blog/top-fulfilment-operatoriv-2026/`
 - ⬜ **#3** Rewrite `/ua/skladski-poslugy/` → 2,500+ слів
 - ⬜ **#4** Rewrite `/ua/about/` — ЄДРПОУ + team + Person schema
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 0/34 (0%) · H1: 0/10 · H2: 0/14 · H3: 0/10
-**Last updated:** 2026-04-23
+**Прогрес:** 1/34 (3%) · H1: 1/10 · H2: 0/14 · H3: 0/10
+**Last updated:** 2026-04-23 (after #1)
 
 ---
 
