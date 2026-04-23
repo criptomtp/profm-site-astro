@@ -36,32 +36,42 @@ import Base from '../../layouts/Base.astro';
 <!-- TARIFF TABLE -->
 <section class="pricing"><div class="ctr">
 <div class="badge badge-dark">SHIPPING</div>
-<h2 class="sec-h2">Rate per shipment</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Shipments per day</span><span>Rate per order</span></div>
-<div class="price-row"><span>0 &ndash; 5</span><span>26 UAH</span></div>
-<div class="price-row"><span>6 &ndash; 20</span><span>25 UAH</span></div>
-<div class="price-row"><span>21 &ndash; 50</span><span>23 UAH</span></div>
-<div class="price-row"><span>51 &ndash; 100</span><span>22 UAH</span></div>
-<div class="price-row"><span>101 &ndash; 150</span><span>20 UAH</span></div>
-<div class="price-row"><span>151 &ndash; 200</span><span>19 UAH</span></div>
-<div class="price-row price-highlight"><span>Over 200</span><span>18 UAH</span></div>
-</div>
+<h2 class="sec-h2" id="tariff-shipping">Rate per shipment</h2>
+<table class="price-table" aria-labelledby="tariff-shipping">
+<caption class="vh">Per-order processing rate by daily shipping volume.</caption>
+<thead>
+<tr class="price-row price-header"><th scope="col">Shipments per day</th><th scope="col">Rate per order</th></tr>
+</thead>
+<tbody>
+<tr class="price-row"><td>0 &ndash; 5</td><td>26 UAH</td></tr>
+<tr class="price-row"><td>6 &ndash; 20</td><td>25 UAH</td></tr>
+<tr class="price-row"><td>21 &ndash; 50</td><td>23 UAH</td></tr>
+<tr class="price-row"><td>51 &ndash; 100</td><td>22 UAH</td></tr>
+<tr class="price-row"><td>101 &ndash; 150</td><td>20 UAH</td></tr>
+<tr class="price-row"><td>151 &ndash; 200</td><td>19 UAH</td></tr>
+<tr class="price-row price-highlight"><td>Over 200</td><td>18 UAH</td></tr>
+</tbody>
+</table>
 
 <div class="badge badge-dark">STORAGE &amp; RECEIVING</div>
-<h2 class="sec-h2" style="margin-top:20px">Storage and inventory receiving</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Service</span><span>Rate</span></div>
-<div class="price-row"><span>Product storage (bin-level)</span><span class="price-accent">650 UAH/m&sup3;/mo</span></div>
-<div class="price-row"><span>Promo materials storage</span><span>300 UAH/m&sup3;/mo</span></div>
-<div class="price-row"><span>Receiving (up to 2 kg)</span><span>3 UAH/unit</span></div>
-<div class="price-row"><span>Receiving (2&ndash;10 kg)</span><span>5 UAH/unit</span></div>
-<div class="price-row"><span>Receiving (10&ndash;30 kg)</span><span>10 UAH/unit</span></div>
-<div class="price-row"><span>Receiving (30+ kg)</span><span>20 UAH/unit</span></div>
-<div class="price-row"><span>Box unloading</span><span>20 UAH</span></div>
-<div class="price-row"><span>Pallet unloading</span><span>80 UAH</span></div>
-<div class="price-row price-highlight"><span>Minimum monthly payment</span><span>5 000 UAH</span></div>
-</div>
+<h2 class="sec-h2" id="tariff-storage" style="margin-top:20px">Storage and inventory receiving</h2>
+<table class="price-table" aria-labelledby="tariff-storage">
+<caption class="vh">Storage, inventory receiving and unloading rates.</caption>
+<thead>
+<tr class="price-row price-header"><th scope="col">Service</th><th scope="col">Rate</th></tr>
+</thead>
+<tbody>
+<tr class="price-row"><td>Product storage (bin-level)</td><td class="price-accent">650 UAH/m&sup3;/mo</td></tr>
+<tr class="price-row"><td>Promo materials storage</td><td>300 UAH/m&sup3;/mo</td></tr>
+<tr class="price-row"><td>Receiving (up to 2 kg)</td><td>3 UAH/unit</td></tr>
+<tr class="price-row"><td>Receiving (2&ndash;10 kg)</td><td>5 UAH/unit</td></tr>
+<tr class="price-row"><td>Receiving (10&ndash;30 kg)</td><td>10 UAH/unit</td></tr>
+<tr class="price-row"><td>Receiving (30+ kg)</td><td>20 UAH/unit</td></tr>
+<tr class="price-row"><td>Box unloading</td><td>20 UAH</td></tr>
+<tr class="price-row"><td>Pallet unloading</td><td>80 UAH</td></tr>
+<tr class="price-row price-highlight"><td>Minimum monthly payment</td><td>5 000 UAH</td></tr>
+</tbody>
+</table>
 </div></section>
 
 <!-- EXTRAS -->
@@ -83,19 +93,26 @@ import Base from '../../layouts/Base.astro';
 <!-- COMPARISON -->
 <section class="compare"><div class="ctr">
 <div class="badge">COMPARISON</div>
-<h2 class="sec-h2">Fulfillment vs In-house warehouse</h2>
+<h2 class="sec-h2" id="comp-heading">Fulfillment vs In-house warehouse</h2>
 <p style="text-align:center;color:rgba(255,255,255,.5);margin-top:-32px;margin-bottom:40px;font-size:15px">Calculation for a store with 50 orders/day and 2 m&sup3; storage</p>
-<div class="comp-table">
-<div class="comp-row comp-header"><div class="comp-cell">Cost item</div><div class="comp-cell">In-house</div><div class="comp-cell">MTP Fulfillment</div></div>
-<div class="comp-row"><div class="comp-cell">Warehouse rent (50 m&sup2;)</div><div class="comp-cell">~15 000 UAH</div><div class="comp-cell">Included</div></div>
-<div class="comp-row"><div class="comp-cell">Staff (2 people)</div><div class="comp-cell">~30 000 UAH</div><div class="comp-cell">Included</div></div>
-<div class="comp-row"><div class="comp-cell">WMS system</div><div class="comp-cell">~5 000 UAH</div><div class="comp-cell">Included</div></div>
-<div class="comp-row"><div class="comp-cell">Packing materials</div><div class="comp-cell">~3 000 UAH</div><div class="comp-cell">Included</div></div>
-<div class="comp-row"><div class="comp-cell">Utilities</div><div class="comp-cell">~2 000 UAH</div><div class="comp-cell">Included</div></div>
-<div class="comp-row"><div class="comp-cell">Shipping</div><div class="comp-cell">&mdash;</div><div class="comp-cell">~25 300 UAH</div></div>
-<div class="comp-row"><div class="comp-cell">Storage (2 m&sup3;)</div><div class="comp-cell">&mdash;</div><div class="comp-cell">1 300 UAH</div></div>
-<div class="comp-row comp-total"><div class="comp-cell">TOTAL per month</div><div class="comp-cell">~55 000 UAH</div><div class="comp-cell">~28 000 UAH</div></div>
-</div>
+<table class="comp-table" aria-labelledby="comp-heading">
+<caption class="vh">Fulfillment vs in-house warehouse monthly cost comparison</caption>
+<thead>
+<tr class="comp-row comp-header"><th scope="col" class="comp-cell">Cost item</th><th scope="col" class="comp-cell">In-house</th><th scope="col" class="comp-cell">MTP Fulfillment</th></tr>
+</thead>
+<tbody>
+<tr class="comp-row"><th scope="row" class="comp-cell">Warehouse rent (50 m&sup2;)</th><td class="comp-cell">~15 000 UAH</td><td class="comp-cell">Included</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Staff (2 people)</th><td class="comp-cell">~30 000 UAH</td><td class="comp-cell">Included</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">WMS system</th><td class="comp-cell">~5 000 UAH</td><td class="comp-cell">Included</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Packing materials</th><td class="comp-cell">~3 000 UAH</td><td class="comp-cell">Included</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Utilities</th><td class="comp-cell">~2 000 UAH</td><td class="comp-cell">Included</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Shipping</th><td class="comp-cell">&mdash;</td><td class="comp-cell">~25 300 UAH</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Storage (2 m&sup3;)</th><td class="comp-cell">&mdash;</td><td class="comp-cell">1 300 UAH</td></tr>
+</tbody>
+<tfoot>
+<tr class="comp-row comp-total"><th scope="row" class="comp-cell">TOTAL per month</th><td class="comp-cell">~55 000 UAH</td><td class="comp-cell">~28 000 UAH</td></tr>
+</tfoot>
+</table>
 <div class="comp-savings">Savings: ~27,000 UAH/mo (49%)</div>
 </div></section>
 
@@ -159,9 +176,11 @@ import Base from '../../layouts/Base.astro';
 .hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
 .sec-h2{font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(32px,4.5vw,56px);font-weight:400;margin-bottom:48px}
 .pricing{padding:100px 0}
-.price-table{max-width:750px;margin:0 auto 48px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.price-table{width:100%;max-width:750px;margin:0 auto 48px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.price-table thead,.price-table tbody{display:block}
 .price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
-.price-row>span{flex:1;padding:14px 20px}
+.price-row>span,.price-row>td,.price-row>th{flex:1;padding:14px 20px;text-align:left;font-weight:inherit}
 .price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
 .price-row:not(.price-header):hover{background:var(--gray,#f5f5f5)}
 .price-highlight{background:var(--red,#e63329);color:#fff;font-weight:600}
@@ -172,9 +191,11 @@ import Base from '../../layouts/Base.astro';
 .extra-price{font-family:var(--fd,'DM Serif Display',serif);font-size:28px;color:var(--red,#e63329);margin-bottom:8px}
 .extra-card h3{font-size:15px;font-weight:500;margin-bottom:4px}.extra-card p{font-size:13px;color:var(--muted,#666)}
 .compare{padding:100px 0;background:#0a0a0a;color:#fff}
-.comp-table{max-width:800px;margin:0 auto;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.comp-table{width:100%;max-width:800px;margin:0 auto;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-collapse:separate;border-spacing:0;table-layout:fixed}
+.comp-table thead,.comp-table tbody,.comp-table tfoot{display:block}
+.comp-table tfoot .comp-row:last-child{border-bottom:none}
 .comp-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.06)}.comp-row:last-child{border:none}
-.comp-cell{padding:14px 20px;font-size:14px;color:rgba(255,255,255,.7)}
+.comp-cell{padding:14px 20px;font-size:14px;color:rgba(255,255,255,.7);text-align:left;font-weight:inherit}
 .comp-header{background:rgba(255,255,255,.05)}.comp-header .comp-cell{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:#fff}
 .comp-total{background:rgba(255,255,255,.08)}.comp-total .comp-cell{font-weight:600;color:#fff;font-size:15px}.comp-total .comp-cell:last-child{color:var(--red,#e63329)}
 .comp-savings{text-align:center;margin-top:32px;font-family:var(--fd,'DM Serif Display',serif);font-size:clamp(24px,3vw,36px);color:var(--red,#e63329)}

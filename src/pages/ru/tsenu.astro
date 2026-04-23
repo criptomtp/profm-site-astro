@@ -36,32 +36,42 @@ import Base from '../../layouts/Base.astro';
 <!-- TARIFF TABLE -->
 <section class="pricing"><div class="ctr">
 <div class="badge badge-dark">ОТПРАВЛЕНИЯ</div>
-<h2 class="sec-h2">Тариф за отправление &mdash; динамическая шкала</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Отправлений в день</span><span>Тариф за заказ</span></div>
-<div class="price-row"><span>0 &ndash; 5</span><span>26 грн</span></div>
-<div class="price-row"><span>6 &ndash; 20</span><span>25 грн</span></div>
-<div class="price-row"><span>21 &ndash; 50</span><span>23 грн</span></div>
-<div class="price-row"><span>51 &ndash; 100</span><span>22 грн</span></div>
-<div class="price-row"><span>101 &ndash; 150</span><span>20 грн</span></div>
-<div class="price-row"><span>151 &ndash; 200</span><span>19 грн</span></div>
-<div class="price-row price-highlight"><span>Более 200</span><span>18 грн</span></div>
-</div>
+<h2 class="sec-h2" id="tariff-shipping">Тариф за отправление &mdash; динамическая шкала</h2>
+<table class="price-table" aria-labelledby="tariff-shipping">
+<caption class="vh">Тариф за обработку заказа в зависимости от количества отправлений в день.</caption>
+<thead>
+<tr class="price-row price-header"><th scope="col">Отправлений в день</th><th scope="col">Тариф за заказ</th></tr>
+</thead>
+<tbody>
+<tr class="price-row"><td>0 &ndash; 5</td><td>26 грн</td></tr>
+<tr class="price-row"><td>6 &ndash; 20</td><td>25 грн</td></tr>
+<tr class="price-row"><td>21 &ndash; 50</td><td>23 грн</td></tr>
+<tr class="price-row"><td>51 &ndash; 100</td><td>22 грн</td></tr>
+<tr class="price-row"><td>101 &ndash; 150</td><td>20 грн</td></tr>
+<tr class="price-row"><td>151 &ndash; 200</td><td>19 грн</td></tr>
+<tr class="price-row price-highlight"><td>Более 200</td><td>18 грн</td></tr>
+</tbody>
+</table>
 
 <div class="badge badge-dark">ХРАНЕНИЕ И ПРИЁМ</div>
-<h2 class="sec-h2" style="margin-top:20px">Хранение и приём товара</h2>
-<div class="price-table">
-<div class="price-row price-header"><span>Услуга</span><span>Тариф</span></div>
-<div class="price-row"><span>Хранение товара (ячеечное)</span><span class="price-accent">650 грн/м&sup3;/мес</span></div>
-<div class="price-row"><span>Хранение учётных материалов</span><span>300 грн/м&sup3;/мес</span></div>
-<div class="price-row"><span>Приём товара (до 2 кг)</span><span>3 грн/шт.</span></div>
-<div class="price-row"><span>Приём товара (2&ndash;10 кг)</span><span>5 грн/шт.</span></div>
-<div class="price-row"><span>Приём товара (10&ndash;30 кг)</span><span>10 грн/шт.</span></div>
-<div class="price-row"><span>Приём товара (30+ кг)</span><span>20 грн/шт.</span></div>
-<div class="price-row"><span>Разгрузка коробки</span><span>20 грн</span></div>
-<div class="price-row"><span>Разгрузка паллеты</span><span>80 грн</span></div>
-<div class="price-row price-highlight"><span>Минимальный ежемесячный платёж</span><span>5 000 грн</span></div>
-</div>
+<h2 class="sec-h2" id="tariff-storage" style="margin-top:20px">Хранение и приём товара</h2>
+<table class="price-table" aria-labelledby="tariff-storage">
+<caption class="vh">Тарифы на хранение товара, приём и разгрузку.</caption>
+<thead>
+<tr class="price-row price-header"><th scope="col">Услуга</th><th scope="col">Тариф</th></tr>
+</thead>
+<tbody>
+<tr class="price-row"><td>Хранение товара (ячеечное)</td><td class="price-accent">650 грн/м&sup3;/мес</td></tr>
+<tr class="price-row"><td>Хранение учётных материалов</td><td>300 грн/м&sup3;/мес</td></tr>
+<tr class="price-row"><td>Приём товара (до 2 кг)</td><td>3 грн/шт.</td></tr>
+<tr class="price-row"><td>Приём товара (2&ndash;10 кг)</td><td>5 грн/шт.</td></tr>
+<tr class="price-row"><td>Приём товара (10&ndash;30 кг)</td><td>10 грн/шт.</td></tr>
+<tr class="price-row"><td>Приём товара (30+ кг)</td><td>20 грн/шт.</td></tr>
+<tr class="price-row"><td>Разгрузка коробки</td><td>20 грн</td></tr>
+<tr class="price-row"><td>Разгрузка паллеты</td><td>80 грн</td></tr>
+<tr class="price-row price-highlight"><td>Минимальный ежемесячный платёж</td><td>5 000 грн</td></tr>
+</tbody>
+</table>
 </div></section>
 
 <!-- EXTRAS -->
@@ -85,17 +95,24 @@ import Base from '../../layouts/Base.astro';
 <div class="badge">СРАВНЕНИЕ</div>
 <h2 class="sec-h2">Фулфилмент vs собственный склад</h2>
 <p style="text-align:center;color:rgba(255,255,255,.5);margin-top:-32px;margin-bottom:40px;font-size:15px">Расчёт для магазина с 50 заказами в день и 2 м&sup3; хранения</p>
-<div class="comp-table">
-<div class="comp-row comp-header"><div class="comp-cell">Статья расходов</div><div class="comp-cell">Собственный склад</div><div class="comp-cell">MTP Fulfillment</div></div>
-<div class="comp-row"><div class="comp-cell">Аренда склада (50 м&sup2;)</div><div class="comp-cell">~15 000 грн</div><div class="comp-cell">Включено</div></div>
-<div class="comp-row"><div class="comp-cell">Персонал (2 человека)</div><div class="comp-cell">~30 000 грн</div><div class="comp-cell">Включено</div></div>
-<div class="comp-row"><div class="comp-cell">WMS-система</div><div class="comp-cell">~5 000 грн</div><div class="comp-cell">Включено</div></div>
-<div class="comp-row"><div class="comp-cell">Упаковочные материалы</div><div class="comp-cell">~3 000 грн</div><div class="comp-cell">Включено</div></div>
-<div class="comp-row"><div class="comp-cell">Коммунальные</div><div class="comp-cell">~2 000 грн</div><div class="comp-cell">Включено</div></div>
-<div class="comp-row"><div class="comp-cell">Отправка</div><div class="comp-cell">&mdash;</div><div class="comp-cell">~25 300 грн</div></div>
-<div class="comp-row"><div class="comp-cell">Хранение (2 м&sup3;)</div><div class="comp-cell">&mdash;</div><div class="comp-cell">1 300 грн</div></div>
-<div class="comp-row comp-total"><div class="comp-cell">ИТОГО в месяц</div><div class="comp-cell">~55 000 грн</div><div class="comp-cell">~28 000 грн</div></div>
-</div>
+<table class="comp-table">
+<caption class="vh">Сравнение месячных расходов на собственный склад и MTP Fulfillment для магазина с 50 заказами/день и 2&nbsp;м³ хранения.</caption>
+<thead>
+<tr class="comp-row comp-header"><th scope="col" class="comp-cell">Статья расходов</th><th scope="col" class="comp-cell">Собственный склад</th><th scope="col" class="comp-cell">MTP Fulfillment</th></tr>
+</thead>
+<tbody>
+<tr class="comp-row"><th scope="row" class="comp-cell">Аренда склада (50 м&sup2;)</th><td class="comp-cell">~15 000 грн</td><td class="comp-cell">Включено</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Персонал (2 человека)</th><td class="comp-cell">~30 000 грн</td><td class="comp-cell">Включено</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">WMS-система</th><td class="comp-cell">~5 000 грн</td><td class="comp-cell">Включено</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Упаковочные материалы</th><td class="comp-cell">~3 000 грн</td><td class="comp-cell">Включено</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Коммунальные</th><td class="comp-cell">~2 000 грн</td><td class="comp-cell">Включено</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Отправка</th><td class="comp-cell">&mdash;</td><td class="comp-cell">~25 300 грн</td></tr>
+<tr class="comp-row"><th scope="row" class="comp-cell">Хранение (2 м&sup3;)</th><td class="comp-cell">&mdash;</td><td class="comp-cell">1 300 грн</td></tr>
+</tbody>
+<tfoot>
+<tr class="comp-row comp-total"><th scope="row" class="comp-cell">ИТОГО в месяц</th><td class="comp-cell">~55 000 грн</td><td class="comp-cell">~28 000 грн</td></tr>
+</tfoot>
+</table>
 <div class="comp-savings">Экономия: ~27 000 грн/мес (49%)</div>
 </div></section>
 
@@ -170,10 +187,13 @@ import Base from '../../layouts/Base.astro';
 .hero-stat-val{font-family:var(--fd);font-size:clamp(32px,4vw,56px);font-weight:400;color:#fff;white-space:nowrap}
 .hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
 
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .pricing{padding:100px 0}
-.price-table{max-width:750px;margin:0 auto 48px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0}
-.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child{border:none}
-.price-row>span{flex:1;padding:14px 20px}
+.price-table{max-width:750px;width:100%;margin:0 auto 48px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.price-table caption{text-align:left}
+.price-table thead,.price-table tbody{display:block}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}.price-row:last-child,tbody .price-row:last-child{border:none}
+.price-row>span,.price-row>td,.price-row>th{flex:1;padding:14px 20px;text-align:left;font-weight:inherit}
 .price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
 .price-row:not(.price-header):hover{background:var(--gray)}
 .price-highlight{background:var(--red);color:#fff;font-weight:600}
@@ -185,10 +205,12 @@ import Base from '../../layouts/Base.astro';
 .extra-card h3{font-size:15px;font-weight:500;margin-bottom:4px}
 .extra-card p{font-size:13px;color:var(--muted)}
 .compare{padding:100px 0;background:#0a0a0a;color:#fff}
-.comp-table{max-width:800px;margin:0 auto;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.comp-table{max-width:800px;width:100%;margin:0 auto;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-collapse:separate;border-spacing:0;table-layout:fixed}
+.comp-table caption{text-align:left}
+.comp-table thead,.comp-table tbody,.comp-table tfoot{display:block}
 .comp-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.06)}
-.comp-row:last-child{border:none}
-.comp-cell{padding:14px 20px;font-size:14px;color:rgba(255,255,255,.7)}
+.comp-table tfoot .comp-row:last-child{border-bottom:none}
+.comp-cell{padding:14px 20px;font-size:14px;color:rgba(255,255,255,.7);text-align:left;font-weight:inherit}
 .comp-header{background:rgba(255,255,255,.05)}
 .comp-header .comp-cell{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:#fff}
 .comp-total{background:rgba(255,255,255,.08)}
