@@ -281,7 +281,7 @@ PSI JSON responses saved (ephemeral `/tmp`, not checked into git):
 
 To re-run:
 ```bash
-K=AIzaSyAbqmjvUtub0r1_13Ek7RxpcKoa7MRwyV8  # PSI+CrUX key (unrestricted)
+K="$GOOGLE_PSI_API_KEY"  # export to env; key rotated 2026-04-23 (was exposed in earlier commit)
 curl -s "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://novaposhta.ua/for-business/fulfillment/&strategy=mobile&category=performance&key=$K" | jq
 curl -s -X POST "https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=$K" -H "Content-Type: application/json" -d '{"url":"https://novaposhta.ua/for-business/fulfillment/","formFactor":"PHONE"}' | jq
 ```
