@@ -13,6 +13,7 @@ interface Props {
   schema?: string;
   showCTA?: boolean;
   preloadHero?: boolean;
+  autoArticle?: boolean;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   schema = '',
   showCTA = true,
   preloadHero = true,
+  autoArticle = true,
 } = Astro.props;
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
@@ -40,6 +42,13 @@ const mdHref = (() => {
     return path.endsWith('/') ? `${path}index.md` : `${path}/index.md`;
   } catch { return null; }
 })();
+
+// Detect existing Article/BlogPosting/NewsArticle schema in the `schema` prop
+// to avoid duplicate JSON-LD. Handles both minified (`"@type":"Article"`) and
+// pretty-printed (`"@type": "Article"`) JSON. If a page embeds Article schema
+// via `<Fragment slot="head">`, pass `autoArticle={false}` to opt out.
+const hasArticleSchemaInProp = /"@type"\s*:\s*"(Article|BlogPosting|NewsArticle)"/.test(schema);
+const shouldAutoInsertArticle = ogType === 'article' && autoArticle && !hasArticleSchemaInProp;
 
 // Hreflang is provided by each page via Fragment slot="head".
 // Auto-generation removed 2026-04-20 because the URL layout is non-uniform
@@ -66,7 +75,7 @@ const mdHref = (() => {
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImage}>
-  {ogType === 'article' && !schema.includes('"@type":"Article"') && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,"author":{"@type":"Person","name":lang==='uk'?'Микола Лящук':lang==='ru'?'Николай Лящук':'Mykola Liashchuk',"jobTitle":lang==='uk'?'Засновник MTP Group Fulfillment':lang==='ru'?'Основатель MTP Group Fulfillment':'Founder, MTP Group Fulfillment',"url":lang==='uk'?'https://www.fulfillmentmtp.com.ua/ua/about/':lang==='ru'?'https://www.fulfillmentmtp.com.ua/ru/about/':'https://www.fulfillmentmtp.com.ua/en/about/',"sameAs":["https://t.me/nikolay_mtp","https://www.linkedin.com/company/mtp-group-fulfillment"]},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"}},"image":ogImage})} />}
+  {shouldAutoInsertArticle && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,"author":{"@type":"Person","name":lang==='uk'?'Микола Лящук':lang==='ru'?'Николай Лящук':'Mykola Liashchuk',"jobTitle":lang==='uk'?'Засновник MTP Group Fulfillment':lang==='ru'?'Основатель MTP Group Fulfillment':'Founder, MTP Group Fulfillment',"url":lang==='uk'?'https://www.fulfillmentmtp.com.ua/ua/about/':lang==='ru'?'https://www.fulfillmentmtp.com.ua/ru/about/':'https://www.fulfillmentmtp.com.ua/en/about/',"sameAs":["https://t.me/nikolay_mtp","https://www.linkedin.com/company/mtp-group-fulfillment"]},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"}},"image":ogImage})} />}
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
