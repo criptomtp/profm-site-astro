@@ -114,6 +114,10 @@
 /ua/blog/yak-perejty-na-fulfilment/ /ua/blog/ 301
 /ua/blog/yak-pidklyuchytysia-do-fulfilmentu/ /ua/blog/ 301
 /ua/blog/yak-vybrati-fulfilment/ /ua/blog/ 301
+/ua/how-to-choose-fulfillment-provider/ /ua/blog/ 301
+/scho-take-3pl/ /ua/shcho-take-fulfilment/ 301
+/css/fonts-tildasans / 301
+/css/fonts-tildasans/ / 301
 
 # --- dynamic rules (wildcards / named params, max 100) ---
 /tpost/:slug/ /ua/blog/ 301
@@ -177,6 +181,18 @@
 /ua/guide/:slug/ /ua/guide/ 301
 /ua/guide/:slug/:sub/ /ua/guide/ 301
 /ua/fulfillment-dlya-*/ /ua/services/ 301
+/fulfillment-for-*/ /ua/services/ 301
+/ua/fulfillment-for-*/ /ua/services/ 301
+/ru/fulfillment-for-*/ /ru/services/ 301
+/ru/fulfillment-dlya-*/ /ru/services/ 301
+/guide/*/ /ua/guide/ 301
+/ru/guide/*/ /ru/guide/ 301
+/ru/ua/blog/tpost/*/ /ua/blog/ 301
+/en/ua/blog/tpost/*/ /ua/blog/ 301
+/ru/ua/guide/*/ /ru/guide/ 301
+/en/ua/guide/*/ /en/guide/ 301
+/ru/ua/*/ /ru/:splat/ 301
+/en/ua/*/ /en/:splat/ 301
 
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301

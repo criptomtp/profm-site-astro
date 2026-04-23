@@ -254,7 +254,27 @@
     { "source": "/ua/blog/vartist-fulfilmentu-2026/", "destination": "/ua/blog/", "statusCode": 301 },
     { "source": "/ua/blog/yak-perejty-na-fulfilment/", "destination": "/ua/blog/", "statusCode": 301 },
     { "source": "/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/", "destination": "/ua/blog/", "statusCode": 301 },
-    { "source": "/ua/blog/yak-vybrati-fulfilment/", "destination": "/ua/blog/", "statusCode": 301 }
+    { "source": "/ua/blog/yak-vybrati-fulfilment/", "destination": "/ua/blog/", "statusCode": 301 },
+
+    { "source": "/fulfillment-for-:slug*/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/fulfillment-for-:slug*/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ru/fulfillment-for-:slug*/", "destination": "/ru/services/", "statusCode": 301 },
+    { "source": "/ru/fulfillment-dlya-:slug*/", "destination": "/ru/services/", "statusCode": 301 },
+
+    { "source": "/guide/:slug*/", "destination": "/ua/guide/", "statusCode": 301 },
+    { "source": "/ru/guide/:slug*/", "destination": "/ru/guide/", "statusCode": 301 },
+
+    { "source": "/ru/ua/blog/tpost/:slug*/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/en/ua/blog/tpost/:slug*/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/ru/ua/guide/:slug*/", "destination": "/ru/guide/", "statusCode": 301 },
+    { "source": "/en/ua/guide/:slug*/", "destination": "/en/guide/", "statusCode": 301 },
+    { "source": "/ru/ua/:slug*/", "destination": "/ru/:slug*/", "statusCode": 301 },
+    { "source": "/en/ua/:slug*/", "destination": "/en/:slug*/", "statusCode": 301 },
+
+    { "source": "/ua/how-to-choose-fulfillment-provider/", "destination": "/ua/blog/", "statusCode": 301 },
+    { "source": "/scho-take-3pl/", "destination": "/ua/shcho-take-fulfilment/", "statusCode": 301 },
+    { "source": "/css/fonts-tildasans", "destination": "/", "statusCode": 301 },
+    { "source": "/css/fonts-tildasans/", "destination": "/", "statusCode": 301 }
   ],
   "trailingSlash": true
 }
