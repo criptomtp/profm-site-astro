@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import dualMd from './integrations/dual-md.mjs';
+import { buildLastmodMap } from './integrations/lastmod-map.mjs';
+
+const lastmodMap = buildLastmodMap();
+const buildDate = new Date();
 
 export default defineConfig({
   site: 'https://www.fulfillmentmtp.com.ua',
@@ -19,7 +23,11 @@ export default defineConfig({
         !page.includes('/ua/blog/tpost/') &&
         !page.includes('/ru/blog/tpost/') &&
         !page.includes('/en/blog/tpost/'),
-      lastmod: new Date(),
+      serialize(item) {
+        const iso = lastmodMap.get(item.url);
+        item.lastmod = iso || buildDate.toISOString();
+        return item;
+      },
     }),
   ],
   vite: {
