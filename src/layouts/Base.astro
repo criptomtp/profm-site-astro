@@ -14,6 +14,8 @@ interface Props {
   showCTA?: boolean;
   preloadHero?: boolean;
   autoArticle?: boolean;
+  datePublished?: string;
+  dateModified?: string;
 }
 
 const {
@@ -27,6 +29,8 @@ const {
   showCTA = true,
   preloadHero = true,
   autoArticle = true,
+  datePublished = '',
+  dateModified = '',
 } = Astro.props;
 
 const locale = lang === 'uk' ? 'uk_UA' : lang === 'ru' ? 'ru_RU' : 'en_US';
@@ -75,7 +79,7 @@ const shouldAutoInsertArticle = ogType === 'article' && autoArticle && !hasArtic
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImage}>
-  {shouldAutoInsertArticle && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,"author":{"@type":"Person","name":lang==='uk'?'Микола Лящук':lang==='ru'?'Николай Лящук':'Mykola Liashchuk',"jobTitle":lang==='uk'?'Засновник MTP Group Fulfillment':lang==='ru'?'Основатель MTP Group Fulfillment':'Founder, MTP Group Fulfillment',"url":lang==='uk'?'https://www.fulfillmentmtp.com.ua/ua/about/':lang==='ru'?'https://www.fulfillmentmtp.com.ua/ru/about/':'https://www.fulfillmentmtp.com.ua/en/about/',"sameAs":["https://t.me/nikolay_mtp","https://www.linkedin.com/company/mtp-group-fulfillment"]},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"}},"image":ogImage})} />}
+  {shouldAutoInsertArticle && <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title.slice(0,110),"description":description,...(datePublished?{datePublished}:{}),...(dateModified?{dateModified}:datePublished?{dateModified:datePublished}:{}),"author":{"@type":"Person","name":lang==='uk'?'Микола Лящук':lang==='ru'?'Николай Лящук':'Mykola Liashchuk',"jobTitle":lang==='uk'?'Засновник MTP Group Fulfillment':lang==='ru'?'Основатель MTP Group Fulfillment':'Founder, MTP Group Fulfillment',"url":lang==='uk'?'https://www.fulfillmentmtp.com.ua/ua/about/':lang==='ru'?'https://www.fulfillmentmtp.com.ua/ru/about/':'https://www.fulfillmentmtp.com.ua/en/about/',"sameAs":["https://t.me/nikolay_mtp","https://www.linkedin.com/company/mtp-group-fulfillment","https://www.youtube.com/@mtpgroup","https://www.facebook.com/mtpgroupua"]},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"},"sameAs":["https://www.facebook.com/mtpgroupua","https://www.linkedin.com/company/mtp-group-fulfillment","https://www.youtube.com/@mtpgroup","https://t.me/nikolay_mtp"]},"image":ogImage})} />}
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">

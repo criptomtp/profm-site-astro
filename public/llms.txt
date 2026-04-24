@@ -1,83 +1,90 @@
 # MTP Group Fulfillment
-> 3PL fulfillment operator in Ukraine. 3,900 m² warehouse near Kyiv, 150+ active e-commerce clients, 60,000+ shipments per month. Founded 2014. Written/published by Mykola Liashchuk.
 
-For the full text of all priority pages concatenated (UA + RU + EN), fetch: https://www.fulfillmentmtp.com.ua/llms-full.txt
-For any individual page as clean markdown, append `.md` to the URL (e.g. https://www.fulfillmentmtp.com.ua/ua/services/index.md).
+> 3PL fulfillment operator in Ukraine. Two warehouses (3,900 m² total) in Kyiv region serving 150+ active e-commerce clients with 60,000+ shipments per month. Operating since 2014. Director-authored content by Mykola Liashchuk (founder).
+
+Key facts: 3,900 m² Category B+ warehouse (Shchaslyve 2,800 m² + Bilohorodka 1,100 m²), 150+ active clients, 60,000+ monthly shipments, integrations with Nova Poshta / Ukrposhta / DHL, OTIF 99.8%, backup power (3 generators + Starlink) — operates during blackouts, languages: Ukrainian / Russian / English, pricing from 18 UAH/order + 650 UAH/m³/month storage.
+
+For any individual page as clean Markdown, append `.md` to the URL (e.g. `https://www.fulfillmentmtp.com.ua/ua/services/index.md`).
 
 ## Company & Contact
-- Website: https://www.fulfillmentmtp.com.ua
-- Phone: +38 (050) 144-46-45 / +38 (093) 827-77-67
-- Email: mtpgrouppromo@gmail.com
-- Telegram: https://t.me/nikolay_mtp
-- Warehouses: Kyiv region (Shchaslyve, Boryspil district + Bilohorodka)
-- Languages: Ukrainian (uk), Russian (ru), English (en)
 
-## Core Content — What Is Fulfillment (Pillar Hub)
-- [Що таке фулфілмент — повний гайд (UA)](https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/): Комплексний hub про фулфілмент: як працює, хто потребує, ціни, відмінності від власного складу
-- [Что такое фулфилмент — полный гид (RU)](https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/): Руководство по фулфилменту для СНГ-бизнеса: модели, стоимость, сравнение
-- [What is Fulfillment — Complete Guide (EN)](https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/): Ukraine fulfillment for European e-commerce: market entry, 3PL vs own warehouse, pricing
+- [Website](https://www.fulfillmentmtp.com.ua): Main entry point
+- [Phone](tel:+380501444645): +38 (050) 144-46-45 / +38 (093) 827-77-67
+- [Email](mailto:mtpgrouppromo@gmail.com): mtpgrouppromo@gmail.com
+- [Telegram](https://t.me/nikolay_mtp): Direct line to founder
+- [LinkedIn](https://www.linkedin.com/company/mtp-group-fulfillment): Company page
+- [YouTube](https://www.youtube.com/@mtpgroup): Warehouse tours, case studies
+- [Facebook](https://www.facebook.com/mtpgroupua): News, updates
+
+## Pillar Content — What Is Fulfillment
+
+- [Що таке фулфілмент — повний гайд (UA)](https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/): Comprehensive Ukrainian-market hub: how it works, who needs it, pricing, fulfillment vs own warehouse
+- [Что такое фулфилмент — полный гид (RU)](https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/): Russian-language guide focused on CIS-business audience: models, costs, comparison
+- [What is Fulfillment — Complete Guide (EN)](https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/): English overview for EU/UK e-commerce: market entry, 3PL vs in-house, pricing
 
 ## Services
-- [Послуги фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/services/): Перелік послуг: приймання, зберігання, упаковка, доставка, інтеграції
-- [Услуги фулфилмента для брендов из СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Выход на рынок Украины для продавцов из Казахстана, Молдовы, Грузии, Армении, Узбекистана — таможня, УкрСЕПРО, Rozetka/Prom, 21-дневный онбординг, расчёт в USD/EUR
-- [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment services for cross-border e-commerce
-- [3PL-логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukraine e-commerce
+
+- [Послуги фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/services/): Receiving, storage, packing, shipping, integrations
+- [Услуги фулфилмента для брендов из СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Ukraine-market entry for sellers from Kazakhstan, Moldova, Georgia, Armenia, Uzbekistan — customs, UkrSEPRO, Rozetka/Prom, 21-day onboarding, USD/EUR billing
+- [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment for cross-border e-commerce
+- [3PL логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukrainian e-commerce
 - [Складські послуги (UA)](https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/): Warehouse services, pallet storage, B2B handling
-- [Палетне зберігання (UA)](https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/): Pallet storage pricing and specs
+- [Палетне зберігання (UA)](https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/): Pallet storage pricing and specifications
 - [Fulfillment for E-commerce Stores (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/): Dedicated e-shop fulfillment
 - [Fulfillment for Marketplaces (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/): Rozetka, Prom, Kasta, OLX integration
 - [Fulfillment for Cosmetics (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Cosmetics vertical — fragile, expiry-date handling
-- [Fulfillment for Small Business (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry-tier fulfillment (from 100 orders/month)
-- [Fulfillment for Heavy Goods (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized/heavy items fulfillment
-- [Fulfillment in Kyiv (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/): Kyiv warehouse location, same-day courier radius
-- [Fulfillment across Ukraine (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/): Full-country coverage via Nova Poshta
+- [Fulfillment for Small Business (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry tier (from 100 orders/month)
+- [Fulfillment for Heavy Goods (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized/heavy-item handling
+- [Fulfillment in Kyiv (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/): Kyiv warehouse, same-day courier radius
+- [Fulfillment across Ukraine (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/): Country-wide coverage via Nova Poshta
 - [Heavy Goods Fulfillment (EN)](https://www.fulfillmentmtp.com.ua/en/heavy-goods/): Oversized item handling for international shippers
 - [Warehouse Services (EN)](https://www.fulfillmentmtp.com.ua/en/warehouse-services/): Pallet storage, cross-dock, B2B fulfillment
 - [Pallet Storage (EN)](https://www.fulfillmentmtp.com.ua/en/pallet-storage/): Bonded + climate-controlled pallet storage
 
 ## Pricing
-- [Ціни на фулфілмент (UA)](https://www.fulfillmentmtp.com.ua/ua/tsiny/): From 18 UAH/order + 650 UAH/m³/month storage. Minimum 5,000 UAH/month.
+
+- [Ціни на фулфілмент (UA)](https://www.fulfillmentmtp.com.ua/ua/tsiny/): From 18 UAH/order + 650 UAH/m³/month storage; 5,000 UAH/month minimum
 - [Цены на фулфилмент (RU)](https://www.fulfillmentmtp.com.ua/ru/tsenu/): Pricing structure for CIS clients
 - [Pricing (EN)](https://www.fulfillmentmtp.com.ua/en/prices/): Transparent pricing for EU/UK/US sellers entering Ukraine
 
 ## Calculator (Interactive)
-- [Калькулятор фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/calculator/): Interactive cost calculator — 4 inputs, instant quote
-- [Калькулятор (RU)](https://www.fulfillmentmtp.com.ua/ru/calculator/): Калькулятор стоимости
+
+- [Калькулятор фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/calculator/): 4 inputs, instant quote
+- [Калькулятор (RU)](https://www.fulfillmentmtp.com.ua/ru/calculator/): Стоимость в USD/EUR
 - [Cost Calculator (EN)](https://www.fulfillmentmtp.com.ua/en/calculator/): Monthly fulfillment cost estimate
 
-## Developer Integration (REST API)
-- [API Documentation (UA)](https://www.fulfillmentmtp.com.ua/ua/api-docs/): REST API для e-commerce інтеграцій, 18 методів, підключення за 1 день
-- [API Documentation (RU)](https://www.fulfillmentmtp.com.ua/ru/api-docs/): REST API для СНГ-интеграторов (Казахстан, Молдова, Грузия)
-- [API Documentation (EN)](https://www.fulfillmentmtp.com.ua/en/api-docs/): REST API for Shopify/WooCommerce/BigCommerce integrators entering Ukraine
-- [OpenAPI 3.1 Specification](https://www.fulfillmentmtp.com.ua/openapi.json): Machine-readable API spec (18 endpoints, 7 tag groups)
-- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Ready-to-import Postman collection
+## Developer Integration
+
+- [API Documentation (UA)](https://www.fulfillmentmtp.com.ua/ua/api-docs/): REST API, 18 methods, 1-day onboarding
+- [API Documentation (RU)](https://www.fulfillmentmtp.com.ua/ru/api-docs/): REST API for CIS integrators
+- [API Documentation (EN)](https://www.fulfillmentmtp.com.ua/en/api-docs/): REST API for Shopify/WooCommerce/BigCommerce
 
 ## Knowledge & Reference
+
 - [Що таке фулфілмент? (UA guide)](https://www.fulfillmentmtp.com.ua/ua/guide/): Knowledge base entry point
 - [Что такое фулфилмент? (RU guide)](https://www.fulfillmentmtp.com.ua/ru/guide/): База знаний
 - [Fulfillment Guide (EN)](https://www.fulfillmentmtp.com.ua/en/guide/): Knowledge hub index
 - [FAQ (UA)](https://www.fulfillmentmtp.com.ua/ua/faq/): Frequently asked questions
 - [FAQ (RU)](https://www.fulfillmentmtp.com.ua/ru/faq/): Часто задаваемые вопросы
-- [FAQ (EN)](https://www.fulfillmentmtp.com.ua/en/faq/): FAQ for international integrators
-- [Glossary (UA)](https://www.fulfillmentmtp.com.ua/glosariy/): Глосарій термінів — 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking
-- [Glossary (RU)](https://www.fulfillmentmtp.com.ua/ru/glossariy/): Глоссарий терминов фулфилмента и e-commerce логистики для СНГ
-- [Glossary (EN)](https://www.fulfillmentmtp.com.ua/en/glossary/): E-commerce fulfillment and logistics glossary with Schema.org DefinedTermSet
+- [FAQ (EN)](https://www.fulfillmentmtp.com.ua/en/faq/): International integrator FAQ
+- [Glossary (UA)](https://www.fulfillmentmtp.com.ua/glosariy/): 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking
+- [Glossary (RU)](https://www.fulfillmentmtp.com.ua/ru/glossariy/): Глоссарий e-commerce логистики для СНГ
+- [Glossary (EN)](https://www.fulfillmentmtp.com.ua/en/glossary/): E-commerce fulfillment glossary with Schema.org DefinedTermSet
 - [About MTP Group (UA)](https://www.fulfillmentmtp.com.ua/ua/about/): Company history, team, values
 - [About (RU)](https://www.fulfillmentmtp.com.ua/ru/about/): О компании
 - [About (EN)](https://www.fulfillmentmtp.com.ua/en/about/): Company profile for international partners
 - [Customer Reviews (UA)](https://www.fulfillmentmtp.com.ua/ua/recalls/): Client testimonials
-- [Отзывы клиентов (RU)](https://www.fulfillmentmtp.com.ua/ru/recalls/): Отзывы
+- [Отзывы клиентов (RU)](https://www.fulfillmentmtp.com.ua/ru/recalls/): Отзывы клиентов
 - [Reviews (EN)](https://www.fulfillmentmtp.com.ua/en/recalls/): Client case studies
 
 ## Blog
+
 - [Блог (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/): UA e-commerce insights, logistics, fulfillment strategy
 - [Blog (EN)](https://www.fulfillmentmtp.com.ua/en/blog/): English posts on Ukraine e-commerce and fulfillment trends
 
-## Key Facts
-- Founded: 2014
-- Warehouse: 3,900 m² (Category B+), two locations in Kyiv region
-- Active clients: 150+
-- Monthly shipments: 60,000+
-- Backup power: 3 generators + Starlink (operates during blackouts)
-- Carriers integrated: Nova Poshta (primary), Ukrposhta, DHL (cross-border)
-- Languages served: Ukrainian, Russian, English
+## Optional
+
+- [Full text dump (UA + RU + EN concatenated)](https://www.fulfillmentmtp.com.ua/llms-full.txt): All priority pages in one Markdown file for ingest
+- [OpenAPI 3.1 Specification](https://www.fulfillmentmtp.com.ua/openapi.json): Machine-readable API spec (18 endpoints, 7 tag groups)
+- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Ready-to-import Postman collection
+- [API Catalog (RFC 9727)](https://www.fulfillmentmtp.com.ua/.well-known/api-catalog): Standardised API discovery resource
