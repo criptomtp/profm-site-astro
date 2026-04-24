@@ -1,0 +1,298 @@
+---
+interface Props {
+  lang?: 'uk' | 'ru' | 'en';
+}
+
+const { lang = 'uk' } = Astro.props;
+
+type Link = { href: string; title: string; sub?: string };
+type Group = { label: string; eyebrow: string; links: Link[] };
+
+const data: Record<'uk' | 'ru' | 'en', { heading: string; lead: string; groups: Group[] }> = {
+  uk: {
+    heading: 'Карта фулфілмент-екосистеми MTP',
+    lead: 'Pillar — це вступ. Нижче — 30+ сторінок із цінами, послугами, галузями та локаціями. Обери розділ, який ближчий до твого випадку.',
+    groups: [
+      {
+        label: 'Послуги',
+        eyebrow: '01',
+        links: [
+          { href: '/ua/services/', title: 'Усі послуги фулфілменту', sub: 'Приймання, зберігання, комплектація, відправка, повернення' },
+          { href: '/ua/3pl-logistyka/', title: '3PL-логістика', sub: 'Аутсорсинг повного логістичного циклу' },
+          { href: '/ua/skladski-poslugy/', title: 'Складські послуги', sub: 'Зберігання, обробка, інвентаризація' },
+          { href: '/ua/paletne-zberigannya/', title: 'Палетне зберігання', sub: 'Від 12 грн/палето-місце на добу' },
+          { href: '/ua/fulfilment-vazhkykh-tovariv/', title: 'Фулфілмент важких товарів', sub: 'Меблі, побутова техніка, габарит' },
+        ],
+      },
+      {
+        label: 'Для кого',
+        eyebrow: '02',
+        links: [
+          { href: '/ua/fulfilment-dlya-internet-magazynu/', title: 'Для інтернет-магазину', sub: 'Shopify, WooCommerce, Horoshop, OpenCart' },
+          { href: '/ua/fulfilment-dlya-marketpleysiv/', title: 'Для маркетплейсів', sub: 'Rozetka, Prom, Kasta, Allo' },
+          { href: '/ua/fulfilment-dlya-kosmetyky/', title: 'Для косметики', sub: 'Маркування, температурний режим, дзеркальна упаковка' },
+          { href: '/ua/fulfilment-dlya-maloho-biznesu/', title: 'Для малого бізнесу', sub: 'Від 100 замовлень/міс, без мінімуму на старті' },
+        ],
+      },
+      {
+        label: 'Локації',
+        eyebrow: '03',
+        links: [
+          { href: '/ua/fulfilment-kyiv/', title: 'Фулфілмент Київ', sub: '2 склади: Щасливе (2800 м²) і Білогородка (1100 м²)' },
+          { href: '/ua/fulfilment-ukraina/', title: 'Фулфілмент Україна', sub: 'Покриття: Київ, область, відправка по всій країні' },
+        ],
+      },
+      {
+        label: 'Інструменти',
+        eyebrow: '04',
+        links: [
+          { href: '/ua/calculator/', title: 'Калькулятор вартості', sub: 'Розрахунок під твої обсяги за 60 секунд' },
+          { href: '/ua/tsiny/', title: 'Ціни 2026', sub: 'Прозорий прайс без зірочок і прихованих платежів' },
+          { href: '/ua/guide/', title: 'Гід для початківців', sub: 'Покроково: від 0 замовлень до автоматизації' },
+          { href: '/ua/faq/', title: 'FAQ — 40 питань', sub: 'Все що питають перед запуском' },
+        ],
+      },
+    ],
+  },
+  ru: {
+    heading: 'Карта фулфилмент-экосистемы MTP',
+    lead: 'Pillar — это вступление. Ниже — 30+ страниц с ценами, услугами, отраслями и локациями. Выбери раздел, ближе к твоему случаю.',
+    groups: [
+      {
+        label: 'Услуги',
+        eyebrow: '01',
+        links: [
+          { href: '/ru/services/', title: 'Все услуги фулфилмента', sub: 'Приёмка, хранение, комплектация, отправка, возвраты' },
+          { href: '/ru/3pl-logistika/', title: '3PL-логистика', sub: 'Аутсорсинг полного логистического цикла' },
+          { href: '/ru/skladskie-uslugi/', title: 'Складские услуги', sub: 'Хранение, обработка, инвентаризация' },
+          { href: '/ru/paletnoe-khranenie/', title: 'Паллетное хранение', sub: 'От 12 грн/паллето-место в сутки' },
+          { href: '/ru/fulfilment-vazhkykh-tovariv/', title: 'Фулфилмент тяжёлых товаров', sub: 'Мебель, бытовая техника, габарит' },
+        ],
+      },
+      {
+        label: 'Для кого',
+        eyebrow: '02',
+        links: [
+          { href: '/ru/fulfilment-dlya-internet-magazynu/', title: 'Для интернет-магазина', sub: 'Shopify, WooCommerce, Horoshop, OpenCart' },
+          { href: '/ru/fulfilment-dlya-marketpleysov/', title: 'Для маркетплейсов', sub: 'Rozetka, Prom, Kasta, Allo + СНГ' },
+          { href: '/ru/fulfilment-dlya-kosmetiki/', title: 'Для косметики', sub: 'Маркировка, температурный режим, упаковка' },
+          { href: '/ru/fulfilment-dlya-malogo-biznesa/', title: 'Для малого бизнеса', sub: 'От 100 заказов/мес, без минимума на старте' },
+        ],
+      },
+      {
+        label: 'Локации',
+        eyebrow: '03',
+        links: [
+          { href: '/ru/fulfilment-kiev/', title: 'Фулфилмент Киев', sub: '2 склада: Счастливое (2800 м²) и Белогородка (1100 м²)' },
+          { href: '/ru/fulfilment-ukraina/', title: 'Фулфилмент Украина', sub: 'Хаб для СНГ: Казахстан, Молдова, Грузия, ЕС' },
+        ],
+      },
+      {
+        label: 'Инструменты',
+        eyebrow: '04',
+        links: [
+          { href: '/ru/calculator/', title: 'Калькулятор стоимости', sub: 'Расчёт под твои объёмы за 60 секунд' },
+          { href: '/ru/tsenu/', title: 'Цены 2026', sub: 'Прозрачный прайс без звёздочек' },
+          { href: '/ru/guide/', title: 'Гид для начинающих', sub: 'Пошагово: от 0 заказов до автоматизации' },
+          { href: '/ru/faq/', title: 'FAQ — 40 вопросов', sub: 'Всё что спрашивают перед запуском' },
+        ],
+      },
+    ],
+  },
+  en: {
+    heading: 'The MTP fulfillment ecosystem map',
+    lead: 'This pillar is an introduction. Below — 30+ pages with pricing, services, industries, and locations. Pick the section closest to your case.',
+    groups: [
+      {
+        label: 'Services',
+        eyebrow: '01',
+        links: [
+          { href: '/en/services/', title: 'All fulfillment services', sub: 'Receiving, storage, pick-pack, ship, returns' },
+          { href: '/en/3pl-logistics/', title: '3PL logistics', sub: 'Full-stack outsourced logistics' },
+          { href: '/en/warehouse-services/', title: 'Warehouse services', sub: 'Storage, handling, inventory management' },
+          { href: '/en/pallet-storage/', title: 'Pallet storage', sub: 'From $0.30/pallet/day, 4,000 m² total' },
+          { href: '/en/heavy-goods/', title: 'Heavy goods fulfillment', sub: 'Furniture, appliances, oversized SKUs' },
+        ],
+      },
+      {
+        label: 'Locations',
+        eyebrow: '02',
+        links: [
+          { href: '/en/fulfillment-kyiv/', title: 'Fulfillment in Kyiv', sub: '2 facilities: Shchaslyve (2,800 m²) and Bilohorodka (1,100 m²)' },
+          { href: '/en/fulfillment-ukraine/', title: 'Fulfillment in Ukraine', sub: 'EU gateway: Nova Poshta International, Meest, DHL, UPS' },
+        ],
+      },
+      {
+        label: 'Tools',
+        eyebrow: '03',
+        links: [
+          { href: '/en/calculator/', title: 'Pricing calculator', sub: 'Cost estimate for your volume in 60 seconds' },
+          { href: '/en/prices/', title: 'Pricing 2026', sub: 'Transparent rates, no asterisks, no hidden fees' },
+          { href: '/en/guide/', title: "Operator's guide", sub: 'Step-by-step: from zero orders to automation' },
+          { href: '/en/faq/', title: 'FAQ — 40 questions', sub: 'Everything brands ask before going live' },
+          { href: '/en/glossary/', title: 'Fulfillment glossary', sub: 'Plain-English definitions of 50+ terms' },
+        ],
+      },
+    ],
+  },
+};
+
+const t = data[lang];
+const ariaLabels = {
+  uk: 'Карта pillar-екосистеми',
+  ru: 'Карта pillar-экосистемы',
+  en: 'Pillar ecosystem map',
+};
+---
+
+<section class="pillar-hub" aria-label={ariaLabels[lang]}>
+  <div class="pillar-hub__inner">
+    <header class="pillar-hub__head">
+      <span class="pillar-hub__eyebrow">HUB</span>
+      <h2 class="pillar-hub__title">{t.heading}</h2>
+      <p class="pillar-hub__lead">{t.lead}</p>
+    </header>
+
+    <div class="pillar-hub__grid">
+      {t.groups.map((group) => (
+        <div class="pillar-hub__group">
+          <div class="pillar-hub__group-head">
+            <span class="pillar-hub__group-num">{group.eyebrow}</span>
+            <h3 class="pillar-hub__group-label">{group.label}</h3>
+          </div>
+          <ul class="pillar-hub__list">
+            {group.links.map((link) => (
+              <li class="pillar-hub__item">
+                <a class="pillar-hub__link" href={link.href}>
+                  <span class="pillar-hub__link-title">{link.title}</span>
+                  {link.sub && <span class="pillar-hub__link-sub">{link.sub}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .pillar-hub {
+    margin: 4rem 0 4.5rem;
+    padding: 3rem 0;
+    background: #0a0a0a;
+    color: #fff;
+  }
+  .pillar-hub__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .pillar-hub__head {
+    max-width: 760px;
+    margin: 0 0 2.75rem;
+  }
+  .pillar-hub__eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e63329;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid #e63329;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+  .pillar-hub__title {
+    font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .pillar-hub__lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+  }
+  .pillar-hub__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem 2.25rem;
+  }
+  .pillar-hub__group {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 1.25rem;
+  }
+  .pillar-hub__group-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0 0 1rem;
+  }
+  .pillar-hub__group-num {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #e63329;
+    letter-spacing: 0.1em;
+  }
+  .pillar-hub__group-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+  }
+  .pillar-hub__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .pillar-hub__item {
+    margin: 0;
+  }
+  .pillar-hub__link {
+    display: block;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-decoration: none;
+    transition: padding-left 0.18s ease, color 0.18s ease;
+  }
+  .pillar-hub__link:hover,
+  .pillar-hub__link:focus-visible {
+    padding-left: 0.5rem;
+    color: #e63329;
+    outline: none;
+  }
+  .pillar-hub__link-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .pillar-hub__link-sub {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 400;
+  }
+  .pillar-hub__link:hover .pillar-hub__link-sub,
+  .pillar-hub__link:focus-visible .pillar-hub__link-sub {
+    color: rgba(255, 255, 255, 0.78);
+  }
+  @media (max-width: 700px) {
+    .pillar-hub { margin: 3rem 0 3.5rem; padding: 2.25rem 0; }
+    .pillar-hub__head { margin-bottom: 2rem; }
+    .pillar-hub__title { font-size: 1.65rem; }
+    .pillar-hub__lead { font-size: 0.98rem; }
+    .pillar-hub__grid { gap: 1.5rem 1.5rem; }
+    .pillar-hub__link { padding: 0.75rem 0; }
+  }
+</style>
