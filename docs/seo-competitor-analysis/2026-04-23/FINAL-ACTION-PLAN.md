@@ -67,7 +67,7 @@
 - ⬜ **#7** Fix gtag form conversions (3 fixes)
 - ⬜ **#8** Full calculator на `/ua/3pl-logistyka/` + `/ua/paletne-zberigannya/`
 - ⬜ **#9** GSC URL Inspection + Request Reindex (8 pillar URLs)
-- ⬜ **#10** Schema residue fix — EN blog Article datePublished template
+- ✅ **#10** Schema residue fix — EN blog Article `datePublished`/`dateModified` template (2026-04-24)
 
 ### Horizon 2 — Competitive Moves
 - ⬜ **#11** NEW `/top-fulfilment-ukraine-2026/` listicle UA/RU/EN
@@ -81,8 +81,8 @@
 - ⬜ **#19** 3 flagship case studies (Carter's, Elemis, ORNER)
 - ⬜ **#20** Person schema Микола Лящук + author byline
 - ⬜ **#21** YouTube канал + 3 відео
-- ⬜ **#22** llms.txt rewrite to llmstxt.org spec
-- ⬜ **#23** Expand Organization sameAs (LinkedIn/FB/YT/Crunchbase/GBP)
+- ✅ **#22** llms.txt rewrite to llmstxt.org spec (2026-04-24)
+- ✅ **#23** Expand Organization sameAs — LinkedIn (/company + /in), FB, YouTube, GBP CID (2026-04-24, + розгорнуто на blog постах)
 - ⬜ **#24** 10 UA blog posts batch 1
 
 ### Horizon 3 — Structural Moat
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 4/34 (12%) · H1: 4/10 · H2: 0/14 · H3: 0/10
-**Last updated:** 2026-04-24 (after #4)
+**Прогрес:** 7/34 (21%) · H1: 5/10 · H2: 2/14 · H3: 0/10
+**Last updated:** 2026-04-24 (after #10, #22, #23)
 
 ---
 

@@ -65,7 +65,13 @@ const isEn = lang === 'en';
     var lang = document.documentElement.lang;
     var msg = lang === 'en' ? 'Thank you!' : lang === 'ru' ? 'Спасибо!' : 'Дякуємо!';
     form.innerHTML = '<p style="color:#fff;font-size:18px">\u2705 ' + msg + '</p>';
-    setTimeout(function(){ window.location.href = thanksUrl; }, 1200);
+    // Navigate after gtag confirms hits were sent; fallback ensures redirect if blocked.
+    var navigated = false;
+    var goThanks = function(){ if(navigated) return; navigated = true; window.location.href = thanksUrl; };
+    if(typeof gtag==='function'){
+      gtag('event','page_view',{event_callback:goThanks,event_timeout:1500});
+    }
+    setTimeout(goThanks, 1800);
   });
 })();
 </script>

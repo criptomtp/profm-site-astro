@@ -265,14 +265,20 @@ body{padding-bottom:64px}
     };
     fetch('/api/telegram', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({phone: phone, page: pg, name: nm})}).catch(function(){});
     fetch('/api/leads', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(leadData)}).catch(function(){});
-    // GA4 form_submit event
+    // Unique ID prevents double-count if user double-submits or /thanks/ bookmarked
+    var txnId = 'lead_' + Date.now() + '_' + Math.floor(Math.random()*1e6);
+    try { sessionStorage.setItem('mtp_lead_txn', txnId); } catch(_){}
+    // GA4 + Google Ads conversion — fire immediately on submit (not on /thanks/ load)
+    // so Ads attribution survives even if the redirect is blocked/slow.
     if(typeof gtag==='function'){
-      gtag('event','form_submit',{event_category:'leads',event_label:pg,page_location:location.href,utm_source:utm.source,utm_medium:utm.medium,utm_campaign:utm.campaign});
-      gtag('event','generate_lead',{currency:'UAH',value:1.0});
+      gtag('event','form_submit',{event_category:'leads',event_label:pg,page_location:location.href,utm_source:utm.source,utm_medium:utm.medium,utm_campaign:utm.campaign,transaction_id:txnId});
+      gtag('event','generate_lead',{currency:'UAH',value:800,transaction_id:txnId});
+      gtag('event','conversion',{send_to:'AW-614588275/guFqCI665pYcEPO-h6UC',value:800,currency:'UAH',transaction_id:txnId});
     }
     // GTM dataLayer push
     window.dataLayer=window.dataLayer||[];
-    window.dataLayer.push({event:'form_submit',event_category:'leads',event_label:pg,phone_masked:phone.slice(0,6)+'****'});
+    window.dataLayer.push({event:'form_submit',event_category:'leads',event_label:pg,phone_masked:phone.slice(0,6)+'****',transaction_id:txnId});
+    return txnId;
   };
 
   // Auto-insert Telegram link after hero-note
@@ -325,7 +331,14 @@ body{padding-bottom:64px}
       var msg = lang === 'en' ? 'Thank you! We will call back.' : lang === 'ru' ? 'Спасибо! Перезвоним.' : 'Дякуємо! Передзвонимо.';
       var url = lang === 'en' ? '/en/thanks/' : lang === 'ru' ? '/thanks/' : '/ua/thanks/';
       heroForm.innerHTML='<p style="color:#fff;font-size:18px;font-weight:500">\u2705 ' + msg + '</p>';
-      setTimeout(function(){ window.location.href = url; }, 2500);
+      // Redirect AFTER gtag confirms conversion was sent (event_callback).
+      // Fallback timeout ensures navigation even if gtag is blocked by ad-blocker.
+      var navigated = false;
+      var goThanks = function(){ if(navigated) return; navigated = true; window.location.href = url; };
+      if(typeof gtag==='function'){
+        gtag('event','page_view',{event_callback:goThanks,event_timeout:2000});
+      }
+      setTimeout(goThanks, 2500);
     });
     // Clear error on input
     heroForm.querySelector('input[name="phone"]').addEventListener('input', function(){
