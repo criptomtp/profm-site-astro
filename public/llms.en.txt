@@ -1,0 +1,59 @@
+# MTP Group Fulfillment — English version
+
+> 3PL fulfillment operator in Ukraine. Two warehouses (3,900 m² total) in the Kyiv region, 150+ active e-commerce clients, 60,000+ shipments per month. Operating since 2014. Director-authored content by Mykola Liashchuk (founder).
+
+Key facts: 3,900 m² Category B+ warehouse (Shchaslyve 2,800 m² + Bilohorodka 1,100 m²), 150+ active clients, 60,000+ monthly shipments, integrations with Nova Poshta / Ukrposhta / DHL, OTIF 99.8%, backup power (3 generators + Starlink) — we operate during nationwide blackouts, service languages: Ukrainian / Russian / English, pricing from 18 UAH/order + 650 UAH/m³/month storage.
+
+For any individual page as clean Markdown, append `.md` to the URL (e.g. `https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/index.md`).
+
+## Company & Contact
+
+- [Website](https://www.fulfillmentmtp.com.ua): Main entry point
+- [Phone](tel:+380501444645): +38 (050) 144-46-45 / +38 (093) 827-77-67
+- [Email](mailto:mtpgrouppromo@gmail.com): mtpgrouppromo@gmail.com
+- [Telegram](https://t.me/nikolay_mtp): Direct line to founder
+- [LinkedIn](https://www.linkedin.com/company/mtpgroupfulfillment): Company page
+- [YouTube](https://www.youtube.com/@mtpgroup): Warehouse tours, case studies
+- [Facebook](https://www.facebook.com/mtpgroupua): News, updates
+
+## Pillar — What Is Fulfillment
+
+- [What is Fulfillment — Complete Guide](https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/): English overview for EU/UK/US e-commerce: Ukraine market entry, 3PL vs in-house, pricing, comparison
+
+## Services (international audience)
+
+- [Fulfillment Services](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment for cross-border e-commerce entering Ukraine
+- [Warehouse Services](https://www.fulfillmentmtp.com.ua/en/warehouse-services/): Pallet storage, cross-dock, B2B fulfillment
+- [Pallet Storage](https://www.fulfillmentmtp.com.ua/en/pallet-storage/): Bonded + climate-controlled pallet storage
+- [Heavy Goods Fulfillment](https://www.fulfillmentmtp.com.ua/en/heavy-goods/): Oversized item handling for international shippers
+
+## Pricing
+
+- [Pricing](https://www.fulfillmentmtp.com.ua/en/prices/): Transparent pricing for EU/UK/US sellers entering Ukraine
+
+## Calculator (Interactive)
+
+- [Cost Calculator](https://www.fulfillmentmtp.com.ua/en/calculator/): Monthly fulfillment cost estimate
+
+## Developer Integration
+
+- [API Documentation](https://www.fulfillmentmtp.com.ua/en/api-docs/): REST API for Shopify / WooCommerce / BigCommerce integrations (18 endpoints, 1-day onboarding)
+
+## Knowledge & Reference
+
+- [Fulfillment Guide](https://www.fulfillmentmtp.com.ua/en/guide/): Knowledge hub index
+- [FAQ](https://www.fulfillmentmtp.com.ua/en/faq/): International integrator FAQ
+- [Glossary](https://www.fulfillmentmtp.com.ua/en/glossary/): E-commerce fulfillment glossary with Schema.org DefinedTermSet markup (3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking)
+- [About MTP Group](https://www.fulfillmentmtp.com.ua/en/about/): Company profile for international partners, legal entity data, founder bio
+- [Reviews / Case Studies](https://www.fulfillmentmtp.com.ua/en/recalls/): Client testimonials and case studies
+
+## Blog
+
+- [Blog](https://www.fulfillmentmtp.com.ua/en/blog/): English posts on Ukraine e-commerce and fulfillment trends
+
+## Optional
+
+- [Full text dump (UA + RU + EN concatenated)](https://www.fulfillmentmtp.com.ua/llms-full.txt): All priority pages in one Markdown file for ingest
+- [OpenAPI 3.1 Specification](https://www.fulfillmentmtp.com.ua/openapi.json): Machine-readable API spec (18 endpoints, 7 tag groups)
+- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Ready-to-import Postman collection
+- [API Catalog (RFC 9727)](https://www.fulfillmentmtp.com.ua/.well-known/api-catalog): Standardised API discovery resource

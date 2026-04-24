@@ -1,0 +1,65 @@
+# MTP Group Fulfillment — Українська версія
+
+> 3PL-оператор фулфілменту в Україні. Два склади (сумарно 3 900 м²) у Київській області, 150+ активних e-commerce клієнтів, 60 000+ відправлень на місяць. Працюємо з 2014 року. Контент автора: Микола Лящук, засновник.
+
+Ключові факти: склад категорії B+ площею 3 900 м² (Щасливе 2 800 м² + Білогородка 1 100 м²), 150+ активних клієнтів, 60 000+ відправлень на місяць, інтеграції з Новою Поштою / Укрпоштою / DHL, OTIF 99.8%, резервне живлення (3 генератори + Starlink) — працюємо під час блекаутів, мови обслуговування: українська / російська / англійська, ціни від 18 грн/замовлення + 650 грн/м³/місяць за зберігання.
+
+Кожну сторінку можна отримати як чистий Markdown — додайте `.md` до URL (наприклад, `https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/index.md`).
+
+## Компанія та контакти
+
+- [Сайт](https://www.fulfillmentmtp.com.ua): Головна точка входу
+- [Телефон](tel:+380501444645): +38 (050) 144-46-45 / +38 (093) 827-77-67
+- [Email](mailto:mtpgrouppromo@gmail.com): mtpgrouppromo@gmail.com
+- [Telegram](https://t.me/nikolay_mtp): Пряма лінія до засновника
+- [LinkedIn](https://www.linkedin.com/company/mtpgroupfulfillment): Сторінка компанії
+- [YouTube](https://www.youtube.com/@mtpgroup): Тури складом, кейси клієнтів
+- [Facebook](https://www.facebook.com/mtpgroupua): Новини, оновлення
+
+## Гайд — Що таке фулфілмент
+
+- [Що таке фулфілмент — повний гайд](https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/): Як працює фулфілмент, кому він потрібен, ціни, фулфілмент vs власний склад
+
+## Послуги
+
+- [3PL логістика](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Приймання, зберігання, пакування, відправлення, інтеграції
+- [Складські послуги](https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/): Повний цикл складських операцій, WMS-облік, 8 ключових операцій, 2 склади
+- [Палетне зберігання](https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/): 500 грн/палета/міс до 500 кг, без ПДВ
+- [Фулфілмент для інтернет-магазину](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/): Спеціалізований фулфілмент для e-shop
+- [Фулфілмент для маркетплейсів](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/): Rozetka, Prom, Kasta, OLX
+- [Фулфілмент для косметики](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Вертикаль косметики — термін придатності, крихкі SKU
+- [Фулфілмент для малого бізнесу](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry-tier (від 100 замовлень/міс)
+- [Фулфілмент важких товарів](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized + важкі SKU
+- [Фулфілмент Київ](https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/): Склад у Київській області, same-day-доставка по місту
+- [Фулфілмент по Україні](https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/): Покриття всієї країни через Нову Пошту
+
+## Ціни
+
+- [Ціни на фулфілмент](https://www.fulfillmentmtp.com.ua/ua/tsiny/): Від 18 грн/замовлення + 650 грн/м³/місяць; мінімум 5 000 грн/місяць
+
+## Калькулятор (інтерактивний)
+
+- [Калькулятор фулфілменту](https://www.fulfillmentmtp.com.ua/ua/calculator/): 4 вхідні поля — миттєвий розрахунок
+
+## Інтеграції для розробників
+
+- [API-документація](https://www.fulfillmentmtp.com.ua/ua/api-docs/): REST API, 18 методів, онбординг за 1 день
+
+## База знань
+
+- [Що таке фулфілмент? (коротко)](https://www.fulfillmentmtp.com.ua/ua/guide/): Точка входу в базу знань
+- [FAQ](https://www.fulfillmentmtp.com.ua/ua/faq/): Часті питання
+- [Глосарій](https://www.fulfillmentmtp.com.ua/glosariy/): 3PL, FBA/FBO/FBS, pick-pack, WMS, SKU, SLA, cross-docking
+- [Про MTP Group](https://www.fulfillmentmtp.com.ua/ua/about/): Історія компанії, команда, юр. дані
+- [Відгуки клієнтів](https://www.fulfillmentmtp.com.ua/ua/recalls/): Реальні відгуки з іменами і бізнесами
+
+## Блог
+
+- [Блог](https://www.fulfillmentmtp.com.ua/ua/blog/): Аналітика e-commerce, логістики, стратегії фулфілменту
+
+## Додатково
+
+- [Повний текстовий дамп (UA+RU+EN)](https://www.fulfillmentmtp.com.ua/llms-full.txt): Усі пріоритетні сторінки в одному Markdown-файлі
+- [OpenAPI 3.1 специфікація](https://www.fulfillmentmtp.com.ua/openapi.json): Машино-читана специфікація API (18 ендпойнтів)
+- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Готовий до імпорту
+- [API Catalog (RFC 9727)](https://www.fulfillmentmtp.com.ua/.well-known/api-catalog): Стандартизована точка виявлення API

@@ -21,6 +21,42 @@ Allow: /
 User-Agent: anthropic-ai
 Allow: /
 
+# Google AI (Gemini / AI Overviews grounding — distinct from search Googlebot)
+User-Agent: Google-Extended
+Allow: /
+
+# Apple Intelligence / Siri grounding
+User-Agent: Applebot-Extended
+Allow: /
+
+# Meta AI (Meta AI, Meta Llama grounding)
+User-Agent: Meta-ExternalAgent
+Allow: /
+
+# ByteDance / Doubao / Toutiao AI grounding
+User-Agent: Bytespider
+Allow: /
+
+# Common Crawl (public web corpus, used by many LLMs)
+User-Agent: CCBot
+Allow: /
+
+# Mistral AI
+User-Agent: MistralAI-User
+Allow: /
+
+# Cohere
+User-Agent: cohere-ai
+Allow: /
+
+# You.com
+User-Agent: YouBot
+Allow: /
+
+# Diffbot (knowledge graph for LLMs)
+User-Agent: Diffbot
+Allow: /
+
 # Standard crawlers
 User-Agent: *
 Allow: /

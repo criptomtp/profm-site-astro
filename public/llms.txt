@@ -81,6 +81,14 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 - [Блог (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/): UA e-commerce insights, logistics, fulfillment strategy
 - [Blog (EN)](https://www.fulfillmentmtp.com.ua/en/blog/): English posts on Ukraine e-commerce and fulfillment trends
 
+## Localized llms.txt variants
+
+For language-routing agents (Perplexity, Google AI Overviews by country) — each file lists only that language's pages with a localized header.
+
+- [llms.uk.txt — Ukrainian index](https://www.fulfillmentmtp.com.ua/llms.uk.txt): UA pages only, Ukrainian prose
+- [llms.ru.txt — Russian index](https://www.fulfillmentmtp.com.ua/llms.ru.txt): RU pages only (CIS audience focus), Russian prose
+- [llms.en.txt — English index](https://www.fulfillmentmtp.com.ua/llms.en.txt): EN pages only (EU/UK/US audience), English prose
+
 ## Optional
 
 - [Full text dump (UA + RU + EN concatenated)](https://www.fulfillmentmtp.com.ua/llms-full.txt): All priority pages in one Markdown file for ingest

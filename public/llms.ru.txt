@@ -1,0 +1,56 @@
+# MTP Group Fulfillment — Русская версия
+
+> 3PL-оператор фулфилмента в Украине. Два склада (общая площадь 3 900 м²) в Киевской области, 150+ активных e-commerce клиентов, 60 000+ отправлений в месяц. Работаем с 2014 года. Авторский контент: Николай Лящук, основатель.
+
+Ключевые факты: склад категории B+ площадью 3 900 м² (Счастливое 2 800 м² + Белогородка 1 100 м²), 150+ активных клиентов, 60 000+ отправлений в месяц, интеграции с Новой Почтой / Укрпочтой / DHL, OTIF 99.8%, резервное питание (3 генератора + Starlink) — работаем во время блэкаутов, языки обслуживания: украинский / русский / английский, цены от 18 грн/заказ + 650 грн/м³/месяц за хранение.
+
+Каждую страницу можно получить как чистый Markdown — добавьте `.md` к URL (например, `https://www.fulfillmentmtp.com.ua/ru/services/index.md`).
+
+## Компания и контакты
+
+- [Сайт](https://www.fulfillmentmtp.com.ua): Главный вход
+- [Телефон](tel:+380501444645): +38 (050) 144-46-45 / +38 (093) 827-77-67
+- [Email](mailto:mtpgrouppromo@gmail.com): mtpgrouppromo@gmail.com
+- [Telegram](https://t.me/nikolay_mtp): Прямая линия с основателем
+- [LinkedIn](https://www.linkedin.com/company/mtpgroupfulfillment): Страница компании
+- [YouTube](https://www.youtube.com/@mtpgroup): Экскурсии по складу, кейсы
+- [Facebook](https://www.facebook.com/mtpgroupua): Новости
+
+## Гид — Что такое фулфилмент
+
+- [Что такое фулфилмент — полный гид](https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/): Как работает фулфилмент, кому он нужен, цены, фулфилмент vs собственный склад (фокус на ЕАЭС-аудиторию)
+
+## Услуги (с фокусом на бизнес из СНГ)
+
+- [Услуги фулфилмента для брендов из СНГ](https://www.fulfillmentmtp.com.ua/ru/services/): Вход на рынок Украины для продавцов из Казахстана, Молдовы, Грузии, Армении, Узбекистана — таможня, УкрСЕПРО, Rozetka/Prom, онбординг 21 день, биллинг в USD/EUR
+
+## Цены
+
+- [Цены на фулфилмент](https://www.fulfillmentmtp.com.ua/ru/tsenu/): Структура цен для СНГ-клиентов
+
+## Калькулятор (интерактивный)
+
+- [Калькулятор](https://www.fulfillmentmtp.com.ua/ru/calculator/): Стоимость в USD/EUR
+
+## Интеграции для разработчиков
+
+- [API-документация](https://www.fulfillmentmtp.com.ua/ru/api-docs/): REST API для интеграторов из СНГ
+
+## База знаний
+
+- [Что такое фулфилмент? (кратко)](https://www.fulfillmentmtp.com.ua/ru/guide/): База знаний
+- [FAQ](https://www.fulfillmentmtp.com.ua/ru/faq/): Часто задаваемые вопросы
+- [Глоссарий](https://www.fulfillmentmtp.com.ua/ru/glossariy/): Глоссарий e-commerce логистики
+- [О компании](https://www.fulfillmentmtp.com.ua/ru/about/): О компании, команда, юр. данные
+- [Отзывы клиентов](https://www.fulfillmentmtp.com.ua/ru/recalls/): Отзывы клиентов
+
+## Блог
+
+- [Блог](https://www.fulfillmentmtp.com.ua/blog/): Публикации на русском — логистика, e-commerce в Украине, выход из СНГ
+
+## Дополнительно
+
+- [Полный текстовый дамп (UA+RU+EN)](https://www.fulfillmentmtp.com.ua/llms-full.txt): Все приоритетные страницы в одном Markdown-файле
+- [OpenAPI 3.1](https://www.fulfillmentmtp.com.ua/openapi.json): Машиночитаемая спецификация API
+- [Postman Collection](https://www.fulfillmentmtp.com.ua/files/mtp-api.postman_collection.json): Готовая к импорту коллекция
+- [API Catalog (RFC 9727)](https://www.fulfillmentmtp.com.ua/.well-known/api-catalog): Стандартизованный ресурс API-discovery
