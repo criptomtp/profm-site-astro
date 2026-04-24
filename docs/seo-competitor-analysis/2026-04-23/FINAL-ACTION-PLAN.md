@@ -79,7 +79,7 @@
 - ⬜ **#17** 15-post Nova Poshta cluster
 - ⬜ **#18** `/ua/integrations/` hub — 20+ інтеграцій
 - ⬜ **#19** 3 flagship case studies (Carter's, Elemis, ORNER)
-- ⬜ **#20** Person schema Микола Лящук + author byline
+- ✅ **#20** Person schema Микола Лящук + author byline — 2026-04-24: (a) Base.astro auto-Article Person розширено: `image` + `worksFor` + `knowsAbout` (5 entities) + особистий LinkedIn `/in/mtp-group-258b69334` + виправлено компанійний `/company/mtp-group-fulfillment` → `/company/mtpgroupfulfillment` (сайт-wide canonical). (b) 3 pillar pages (UA/RU/EN) — Person author збагачено image/worksFor/knowsAbout/особистий+компанійний LinkedIn. (c) 6 blog Article schemas конвертовано Organization→Person Микола з повним профілем (UA scho-take-fulfilment + top-marketpleysiv, RU chto-takoe-fulfilment + top-marketplejsov, EN what-is-fulfillment-complete-guide + top-marketplaces-ukraine); 3 top-operator блог-пости (UA/RU/EN) також переведено Organization→Person. (d) 3 about-сторінки отримали standalone Person JSON-LD блок з `@id` (локальний anchor), `nationality`, `knowsLanguage` (uk/ru/en), `knowsAbout` 10 localized entities, `sameAs` 5 URL, `alternateName` (crosslingual name forms). AuthorByline компонент уже рендериться на всіх 12 статтях (3 pillar + 9 blog). Build clean 112 pages / 108 .md / **0 JSON-LD parse errors site-wide validated**. Fix bonus: pre-existing JSON escape bug в EN top-operators FAQPage (`\"best\"` → `\\"best\\"` у template literal).
 - ⬜ **#21** YouTube канал + 3 відео
 - ✅ **#22** llms.txt rewrite to llmstxt.org spec (2026-04-24)
 - ✅ **#23** Expand Organization sameAs — LinkedIn (/company + /in), FB, YouTube, GBP CID (2026-04-24, + розгорнуто на blog постах)
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 12/34 (35%) · H1: 10/10 · H2: 2/14 · H3: 0/10
-**Last updated:** 2026-04-24 (after #9)
+**Прогрес:** 13/34 (38%) · H1: 10/10 · H2: 3/14 · H3: 0/10
+**Last updated:** 2026-04-24 (after #20)
 
 ---
 
