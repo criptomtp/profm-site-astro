@@ -36,7 +36,6 @@ const PATHS = [
   '/en/about/',
 
   // Services hub
-  '/ua/services/',
   '/ru/services/',
   '/en/services/',
 
@@ -131,7 +130,7 @@ export default function llmsFull() {
           '> Full text of priority pages in Ukrainian, Russian, and English. ' +
           'Generated from the canonical HTML content on ' + built + '. ' +
           'For the short navigation index see ' + SITE + '/llms.txt. ' +
-          'For individual pages, fetch <URL>.md (e.g. ' + SITE + '/ua/services/index.md).'
+          'For individual pages, fetch <URL>.md (e.g. ' + SITE + '/ua/3pl-logistyka/index.md).'
         );
         parts.push('');
         parts.push('## About');

@@ -2,6 +2,7 @@
 # DO NOT EDIT MANUALLY — edit vercel.json and re-run the script.
 
 # --- static rules (exact path match) ---
+/ua/services/ /ua/3pl-logistyka/ 301
 /ua / 301
 /fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
 /ua/ / 301
@@ -30,7 +31,7 @@
 /ua/how-to-choose-fulfillment-operator/ /ua/blog/ 301
 /ua/best-business-ideas-ukraine/ /ua/blog/ 301
 /ua/product-business-ukraine-guide/ /ua/blog/ 301
-/ua/fulfilment-dlya-elektroniky/ /ua/services/ 301
+/ua/fulfilment-dlya-elektroniky/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-dlya-odyahu-ta-vzuttya/ /ua/fulfilment-dlya-internet-magazynu/ 301
 /blog/tpost/ /ua/blog/ 301
 /ua/blog/tpost/ /ua/blog/ 301
@@ -88,19 +89,19 @@
 /en/fulfillment-for-office-supplies/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-used-and-vintage/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-wholesale-bulk/ /en/fulfillment-ukraine/ 301
-/ua/b2b-fulfilment/ /ua/services/ 301
-/ua/enterprise-solutions/ /ua/services/ 301
-/ua/komplektatsiya-zamovlen/ /ua/services/ 301
-/ua/garantiya-yakosti/ /ua/services/ 301
-/ua/mtp-vs-alternativy/ /ua/services/ 301
+/ua/b2b-fulfilment/ /ua/3pl-logistyka/ 301
+/ua/enterprise-solutions/ /ua/3pl-logistyka/ 301
+/ua/komplektatsiya-zamovlen/ /ua/3pl-logistyka/ 301
+/ua/garantiya-yakosti/ /ua/3pl-logistyka/ 301
+/ua/mtp-vs-alternativy/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-dlya-fop/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/ua/fulfilment-dlya-distributoriv/ /ua/services/ 301
+/ua/fulfilment-dlya-distributoriv/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-boryspil/ /ua/fulfilment-kyiv/ 301
 /ua/fulfilment-po-vsiy-ukraini/ /ua/fulfilment-ukraina/ 301
 /ua/rozetka-fbo/ /ua/fulfilment-dlya-marketpleysiv/ 301
-/ua/fulfillment-shopify/ /ua/services/ 301
+/ua/fulfillment-shopify/ /ua/3pl-logistyka/ 301
 /ua/fulfillment-prom-ua/ /ua/fulfilment-dlya-marketpleysiv/ 301
-/ua/fulfillment-woocommerce/ /ua/services/ 301
+/ua/fulfillment-woocommerce/ /ua/3pl-logistyka/ 301
 /ua/skladske-zberihannya/ /ua/skladski-poslugy/ 301
 /ua/zberigannya-palet/ /ua/paletne-zberigannya/ 301
 /ua/case-studies/roztochna-moda/ /ua/recalls/ 301
@@ -121,7 +122,7 @@
 /blog/tpost/yzhv774pa1*/ /ru/services/ 301
 /ua/blog/tpost/2lpu5l5sa1*/ /ua/about/ 301
 /ua/blog/tpost/s7non1f0y1*/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/tpost/2fz7njsgn1*/ /ua/services/ 301
+/ua/blog/tpost/2fz7njsgn1*/ /ua/3pl-logistyka/ 301
 /ua/blog/tpost/xz8vfk1jg1*/ /ua/ 301
 /blog/tpost/8emi42xu61*/ /ru/ 301
 /tpost/:slug/ /ua/blog/ 301
@@ -184,9 +185,9 @@
 /en/guide/:slug/:sub/ /en/guide/ 301
 /ua/guide/:slug/ /ua/guide/ 301
 /ua/guide/:slug/:sub/ /ua/guide/ 301
-/ua/fulfillment-dlya-*/ /ua/services/ 301
-/fulfillment-for-*/ /ua/services/ 301
-/ua/fulfillment-for-*/ /ua/services/ 301
+/ua/fulfillment-dlya-*/ /ua/3pl-logistyka/ 301
+/fulfillment-for-*/ /ua/3pl-logistyka/ 301
+/ua/fulfillment-for-*/ /ua/3pl-logistyka/ 301
 /ru/fulfillment-for-*/ /ru/services/ 301
 /ru/fulfillment-dlya-*/ /ru/services/ 301
 /guide/*/ /ua/guide/ 301

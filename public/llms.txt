@@ -4,7 +4,7 @@
 
 Key facts: 3,900 m² Category B+ warehouse (Shchaslyve 2,800 m² + Bilohorodka 1,100 m²), 150+ active clients, 60,000+ monthly shipments, integrations with Nova Poshta / Ukrposhta / DHL, OTIF 99.8%, backup power (3 generators + Starlink) — operates during blackouts, languages: Ukrainian / Russian / English, pricing from 18 UAH/order + 650 UAH/m³/month storage.
 
-For any individual page as clean Markdown, append `.md` to the URL (e.g. `https://www.fulfillmentmtp.com.ua/ua/services/index.md`).
+For any individual page as clean Markdown, append `.md` to the URL (e.g. `https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/index.md`).
 
 ## Company & Contact
 
@@ -24,10 +24,9 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 
 ## Services
 
-- [Послуги фулфілменту (UA)](https://www.fulfillmentmtp.com.ua/ua/services/): Receiving, storage, packing, shipping, integrations
+- [3PL логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukrainian e-commerce — receiving, storage, packing, shipping, integrations
 - [Услуги фулфилмента для брендов из СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Ukraine-market entry for sellers from Kazakhstan, Moldova, Georgia, Armenia, Uzbekistan — customs, UkrSEPRO, Rozetka/Prom, 21-day onboarding, USD/EUR billing
 - [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment for cross-border e-commerce
-- [3PL логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukrainian e-commerce
 - [Складські послуги (UA)](https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/): Warehouse services, pallet storage, B2B handling
 - [Палетне зберігання (UA)](https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/): Pallet storage pricing and specifications
 - [Fulfillment for E-commerce Stores (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/): Dedicated e-shop fulfillment

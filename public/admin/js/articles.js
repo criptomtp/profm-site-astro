@@ -645,14 +645,14 @@ var PAGES = [
     "path": "/en/about/"
   },
   {
-    "title": "Послуги",
+    "title": "3PL-логістика",
     "lang": "UA",
-    "path": "/ua/services/"
+    "path": "/ua/3pl-logistyka/"
   },
   {
     "title": "Услуги",
     "lang": "RU",
-    "path": "/services/"
+    "path": "/ru/services/"
   },
   {
     "title": "Services",

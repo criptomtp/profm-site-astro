@@ -6,7 +6,7 @@
     ['/ua/recalls/', '/recalls/', '/en/recalls/'],
     ['/ua/guide/', '/guide/', '/en/guide/'],
     ['/ua/calculator/', '/calculator/', '/en/calculator/'],
-    ['/ua/services/', '/services/', '/en/services/'],
+    ['/ua/3pl-logistyka/', '/ru/services/', '/en/services/'],
     ['/ua/fulfilment-vazhkykh-tovariv/', '/fulfilment-vazhkykh-tovariv/', '/en/heavy-goods/'],
     ['/ua/thanks/', '/thanks/', '/en/thanks/'],
     ['/ua/tsiny/', '/tsenu/', '/en/prices/'],

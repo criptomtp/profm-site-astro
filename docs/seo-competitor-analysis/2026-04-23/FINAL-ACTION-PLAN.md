@@ -62,9 +62,9 @@
 - ✅ **#2** Un-bias existing listicle `/ua/blog/top-fulfilment-operatoriv-2026/` + RU + EN — 2026-04-23: (a) disclosure callout про авторство MTP; (b) self-score MTP 8.8/10 (знижено з 9.5) з обґрунтуванням −0.6 за відсутність складу на заході і −0.6 за обмежений масштаб >10 000 зам./день; (c) маркер «Самоцінка / Self-score» у картці #1 і в порівняльній таблиці; (d) ItemList schema (10 Organization items) на всі 3 мови; (e) пом'якшений FAQ Q1 і FAQPage schema — замість «MTP найкращий» тепер «єдиного найкращого немає»; (f) softer lead + conclusion (топ-3 за методологією: MTP 8.8, Unipost 8.5, Sender 8.0). Build OK, 3 .md twins регенерувались чисто.
 - ✅ **#3** Rewrite `/ua/skladski-poslugy/` → 2,500+ слів — 2026-04-23: expanded 724 → 2,536 words, 18 H3 sections, FAQ 6→10 Q&A (matched у visible і FAQPage schema), додано ItemList schema (8 операцій повного циклу), Service + LocalBusiness збагачено `legalName "ТОВ МТП Груп Фулфілмент"` + `taxID 45315740` + `foundingDate 2023-10-02` (з виписки ЄДР). Ключові секції: що входить у складські послуги (8 операцій), 2 склади (Щасливе + Білогородка), WMS-інтеграції з усіма CRM/платформами, категорії товарів, ціноутворення (3 компоненти), коли переходити на фулфілмент, безперебійність, підготовка до переходу, додаткові послуги, cutoff-часи для "день у день", хто ми (ЄДРПОУ + директор). Build OK, 0 errors, 5 JSON-LD blocks all valid. RU/EN mirror можна зробити окремою дією.
 - ✅ **#4** Rewrite `/ua/about/` — ЄДРПОУ + team + Person schema — 2026-04-24: (a) нова секція "Команда і юридична особа" з 3 картками (Микола Лящук — засновник бренду, Свентух О.М. — директор ТОВ, 50+ спеціалістів) + legal block з усіма реквізитами (повна назва, ЄДРПОУ 45315740, дата реєстрації 02.10.2023, номер запису в ЄДР, КВЕД 52.10, юр. адреса, операційні адреси); (b) Organization schema збагачено `legalName`, `taxID`, `foundingDate`, `founder` (Person Микола Лящук), `employee` (Person Свентух О.М.), `numberOfEmployees`, `foundingLocation`; (c) додано LocalBusiness + AboutPage schema. Слів 1,131 → 1,409 (+25%). 4 JSON-LD blocks all valid. H1=1. Build OK. **+ RU + EN mirrored 2026-04-24:** `/ru/about/` 1562 → 1875 слів (+20%), `/en/about/` 1298 → 1693 слів (+30%), обидві отримали Organization + Person (founder + employee) + LocalBusiness (legalName, taxID, foundingDate, 2 adresses) + AboutPage schema; RU з російськомовними картками і legal DL (ООО «МТП Груп Фулфілмент», код ЕГРПОУ, типовой устав); EN з англомовними картками і legal DL (LLC, EDRPOU, KVED translated), framed для міжнародної due-diligence / KYC / tender audience.
-- ⬜ **#5** 301 `/ua/services/` → `/ua/3pl-logistyka/`
+- ✅ **#5** 301 `/ua/services/` → `/ua/3pl-logistyka/` — redirect in `_redirects` + `vercel.json`; 13 chain destinations fixed; 21 internal links updated; `src/pages/ua/services.astro` deleted; llms.txt + lang-switcher + articles.js + llms-full.mjs cleaned; build 0 missing (2026-04-24)
 - ⬜ **#6** Fix 34 dead `blog/tpost/*` redirects
-- ⬜ **#7** Fix gtag form conversions (3 fixes)
+- ✅ **#7** Fix gtag form conversions — (a) Ads conversion now fires on form submit (mtpSubmitLead) not on /thanks/ page-view — survives blocked/slow redirects; (b) transaction_id dedupe + value raised 1→800 UAH; (c) event_callback redirect replaces hard-coded 2500ms setTimeout; removed redundant page-load conversion from /thanks/, /ua/thanks/, /en/thanks/ (2026-04-24, commit 6d9b555)
 - ⬜ **#8** Full calculator на `/ua/3pl-logistyka/` + `/ua/paletne-zberigannya/`
 - ⬜ **#9** GSC URL Inspection + Request Reindex (8 pillar URLs)
 - ✅ **#10** Schema residue fix — EN blog Article `datePublished`/`dateModified` template (2026-04-24)
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 7/34 (21%) · H1: 5/10 · H2: 2/14 · H3: 0/10
-**Last updated:** 2026-04-24 (after #10, #22, #23)
+**Прогрес:** 9/34 (26%) · H1: 7/10 · H2: 2/14 · H3: 0/10
+**Last updated:** 2026-04-24 (after #5)
 
 ---
 
