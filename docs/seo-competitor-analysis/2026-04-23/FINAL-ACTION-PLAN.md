@@ -65,7 +65,7 @@
 - ✅ **#5** 301 `/ua/services/` → `/ua/3pl-logistyka/` — redirect in `_redirects` + `vercel.json`; 13 chain destinations fixed; 21 internal links updated; `src/pages/ua/services.astro` deleted; llms.txt + lang-switcher + articles.js + llms-full.mjs cleaned; build 0 missing (2026-04-24)
 - ✅ **#6** Fix 34 dead `blog/tpost/*` redirects — 2026-04-24: removed 35 dead tpost cards from `src/pages/ua/blog/index.astro` + 32 from `src/pages/blog/index.astro` (all were 301'd back to /ua/blog/ causing infinite-loop crawl-budget leak). Kept 3 real UA blog cards (top-fulfilment-operatoriv-2026, top-marketpleysiv-ukrayiny, scho-take-fulfilment). Added new "EXPLORE MORE" section with 6 curated links in each index → pillar, 3PL, calculator, vertical LPs, recalls. Build clean 112 pages / 108 .md twins / 0 errors.
 - ✅ **#7** Fix gtag form conversions — (a) Ads conversion now fires on form submit (mtpSubmitLead) not on /thanks/ page-view — survives blocked/slow redirects; (b) transaction_id dedupe + value raised 1→800 UAH; (c) event_callback redirect replaces hard-coded 2500ms setTimeout; removed redundant page-load conversion from /thanks/, /ua/thanks/, /en/thanks/ (2026-04-24, commit 6d9b555)
-- ⬜ **#8** Full calculator на `/ua/3pl-logistyka/` + `/ua/paletne-zberigannya/`
+- ✅ **#8** Full calculator на `/ua/3pl-logistyka/` + `/ua/paletne-zberigannya/` — 2026-04-24: (a) `/ua/3pl-logistyka/` S3 — 4-slider ROI заменен на FULL калькулятор (orders/weight/volume/items → shipping + storage + receiving + copacking + cost/order + own-warehouse compare + time saved); prefix `tpl*` щоб уникнути id-conflict з іншими формами. (b) `/ua/paletne-zberigannya/` — нова S5.5 секція (pallets/weight/months/cycles → storage + in + out + total + per-month + own-warehouse compare). Тариф оновлено: **500 грн/європалета/міс до 500 кг, вище — індивідуально, усі ціни без ПДВ** (як попросив клієнт). Tariff table і footer секції S5 також оновлено. Build clean 112 pages / 108 .md / 0 errors.
 - ⬜ **#9** GSC URL Inspection + Request Reindex (8 pillar URLs)
 - ✅ **#10** Schema residue fix — EN blog Article `datePublished`/`dateModified` template (2026-04-24)
 
@@ -97,8 +97,8 @@
 - ⬜ **#33** Content hub `/knowledge/`
 - ⬜ **#34** Monitor + iterate (weekly GSC + AI pulse)
 
-**Прогрес:** 10/34 (29%) · H1: 8/10 · H2: 2/14 · H3: 0/10
-**Last updated:** 2026-04-24 (after #6)
+**Прогрес:** 11/34 (32%) · H1: 9/10 · H2: 2/14 · H3: 0/10
+**Last updated:** 2026-04-24 (after #8)
 
 ---
 

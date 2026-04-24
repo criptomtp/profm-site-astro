@@ -139,59 +139,71 @@ import Base from '../../layouts/Base.astro';
   </div>
 </div></section>
 
-<!-- ====== SECTION 3 — ROI CALCULATOR ====== -->
+<!-- ====== SECTION 3 — FULL CALCULATOR ====== -->
 <section class="calc-sec" id="calc3pl">
 <div class="ctr">
   <div class="badge badge-dark">КАЛЬКУЛЯТОР</div>
-  <h2 class="sec-h2">Порахуйте економію з MTP</h2>
+  <h2 class="sec-h2">Порахуйте вартість для вашого бізнесу</h2>
+  <p class="calc-intro">Динамічний тариф від <strong>18&nbsp;грн/замовлення</strong>. Чим більше відправлень &mdash; тим нижча вартість. Порівняння зі своїм складом у реальному часі.</p>
 
-  <div class="calc-grid">
-    <div class="calc-sliders">
-      <div class="calc-field">
-        <label>Замовлень/місяць: <strong id="v-orders">1 500</strong></label>
-        <input type="range" min="100" max="5000" step="50" id="s-orders" value="1500">
+  <div class="calc3-wrap">
+    <div class="calc3-form">
+      <h3>Параметри бізнесу</h3>
+      <div class="calc3-field">
+        <label>Відправлень на день</label>
+        <input type="number" id="tplOrders" value="50" min="1" max="10000" step="1" aria-label="Orders per day">
+        <div class="calc3-hint">Середня кількість замовлень, які ви відправляєте щодня</div>
       </div>
-      <div class="calc-field">
-        <label>Зарплати логістики: <strong id="v-salary">45 000 грн</strong></label>
-        <input type="range" min="0" max="100000" step="1000" id="s-salary" value="45000">
+      <div class="calc3-field">
+        <label>Середня вага товару</label>
+        <select id="tplWeight" aria-label="Weight category">
+          <option value="2" selected>до 2 кг</option>
+          <option value="5">2&ndash;5 кг</option>
+          <option value="10">5&ndash;10 кг</option>
+          <option value="30">10&ndash;30 кг</option>
+          <option value="50">30+ кг</option>
+        </select>
+        <div class="calc3-hint">Вага одного товару для розрахунку приймання</div>
       </div>
-      <div class="calc-field">
-        <label>Оренда складу: <strong id="v-rent">25 000 грн</strong></label>
-        <input type="range" min="0" max="50000" step="1000" id="s-rent" value="25000">
+      <div class="calc3-field">
+        <label>Обсяг зберігання, м&sup3;</label>
+        <input type="number" id="tplVolume" value="5" min="0" max="1000" step="0.5" aria-label="Storage volume">
+        <div class="calc3-hint">Скільки кубічних метрів займає ваш товар на складі</div>
       </div>
-      <div class="calc-field">
-        <label>Інші витрати: <strong id="v-other">10 000 грн</strong></label>
-        <input type="range" min="0" max="30000" step="500" id="s-other" value="10000">
+      <div class="calc3-field">
+        <label>Середня кількість товарів у замовленні</label>
+        <input type="number" id="tplItems" value="1.5" min="1" max="50" step="0.1" aria-label="Items per order">
+        <div class="calc3-hint">Якщо більше 1 &mdash; додається доукомплектація</div>
       </div>
     </div>
 
-    <div class="calc-result">
-      <div class="calc-row">
-        <span>Ваші витрати</span>
-        <strong id="r-your-cost">80 000 грн/міс</strong>
+    <div class="calc3-results">
+      <h3>Результат розрахунку</h3>
+      <div class="calc3-row"><span class="calc3-label">Відправка</span><span><span class="calc3-value" id="tplShipping">28 600</span> грн/мес <span class="calc3-sub" id="tplShippingRate">(26 грн/замовлення)</span></span></div>
+      <div class="calc3-row"><span class="calc3-label">Зберігання</span><span><span class="calc3-value" id="tplStorage">3 250</span> грн/мес</span></div>
+      <div class="calc3-row"><span class="calc3-label">Приймання товару</span><span><span class="calc3-value" id="tplReceiving">3 300</span> грн/мес</span></div>
+      <div class="calc3-row"><span class="calc3-label">Доукомплектація</span><span><span class="calc3-value" id="tplCopacking">1 375</span> грн/мес</span></div>
+      <div class="calc3-total"><div class="calc3-row"><span class="calc3-label">РАЗОМ</span><span class="calc3-value" id="tplTotal">36 525</span> <span style="font-size:14px;opacity:.8">грн/мес</span></div></div>
+      <div class="calc3-costper"><div class="val" id="tplCostPer">33.2</div><div class="lbl">Собівартість 1 відправки, грн</div></div>
+      <div class="calc3-compare">
+        <div class="calc3-compare-title">Власний склад (розрахунок)</div>
+        <div class="calc3-compare-row"><span>Оренда</span><span id="tplOwnRent">15 000</span> грн</div>
+        <div class="calc3-compare-row"><span>Персонал</span><span id="tplOwnStaff">30 000</span> грн</div>
+        <div class="calc3-compare-row"><span>WMS + софт</span><span id="tplOwnWms">5 000</span> грн</div>
+        <div class="calc3-compare-row"><span>Комунальні</span><span id="tplOwnUtils">2 000</span> грн</div>
+        <div class="calc3-compare-row"><span>Матеріали</span><span id="tplOwnMaterials">1 650</span> грн</div>
+        <div class="calc3-compare-total">Разом: <span id="tplOwnTotal">53 650</span> грн/мес</div>
+        <div style="text-align:center;margin-top:12px">Економія з MTP: <strong id="tplSaving">34%</strong></div>
       </div>
-      <div class="calc-row calc-row--accent">
-        <span>З MTP</span>
-        <strong id="r-mtp-cost">36 375 грн/міс</strong>
-      </div>
-      <div class="calc-row">
-        <span>Ціна за відправку</span>
-        <strong id="r-price-per">21 грн</strong>
-      </div>
-      <div class="calc-row calc-row--big" id="row-saving">
-        <span>Економія</span>
-        <strong id="r-saving">43 625 грн/міс (55%)</strong>
-      </div>
-      <div class="calc-row" id="row-annual">
-        <span>За рік</span>
-        <strong id="r-annual">523 500 грн</strong>
-      </div>
-      <div class="calc-row calc-row--warn" id="row-warn" style="display:none">
-        <span>Вартість MTP</span>
-        <strong id="r-warn-cost">—</strong>
+      <div class="calc3-time">
+        <strong>Економія часу:</strong> <span id="tplTimeFreed">132</span> годин/міс вивільняється<br>
+        &#8594; <span id="tplTimeMarketing">79</span> год на маркетинг та продажі<br>
+        &#8594; <span id="tplTimePersonal">40</span> год на розвиток продукту
       </div>
     </div>
   </div>
+
+  <p class="calc3-footnote">* Мінімальна місячна оплата: 5&nbsp;000 грн. Приймання: 3&nbsp;грн/од (до 2&nbsp;кг) + 0.5&nbsp;грн за кожен кг понад 2. Зберігання: 650&nbsp;грн/м&sup3;/міс. Повний тарифний прайс &mdash; на сторінці <a href="/ua/calculator/" style="color:#e63329;font-weight:500">калькулятор</a>.</p>
 </div>
 </section>
 
@@ -503,38 +515,42 @@ import Base from '../../layouts/Base.astro';
   border-left:3px solid var(--red);padding-left:12px;margin-top:auto;
 }
 
-/* ===== CALCULATOR ===== */
+/* ===== FULL CALCULATOR ===== */
 .calc-sec{padding:100px 0;background:var(--gray)}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.calc-sliders{display:flex;flex-direction:column;gap:24px}
-.calc-field label{
-  display:flex;justify-content:space-between;font-size:15px;margin-bottom:8px;color:var(--black);
-}
-.calc-field label strong{color:var(--red)}
-.calc-field input[type="range"]{
-  width:100%;height:6px;border-radius:3px;appearance:none;background:#ddd;outline:none;cursor:pointer;
-}
-.calc-field input[type="range"]::-webkit-slider-thumb{
-  appearance:none;width:22px;height:22px;border-radius:50%;background:var(--red);cursor:pointer;
-  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15);
-}
-.calc-field input[type="range"]::-moz-range-thumb{
-  width:22px;height:22px;border-radius:50%;background:var(--red);cursor:pointer;
-  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15);
-}
-.calc-result{
-  background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.06);
-}
-.calc-row{
-  display:flex;justify-content:space-between;align-items:center;padding:12px 0;
-  font-size:15px;border-bottom:1px solid #eee;
-}
-.calc-row:last-child{border-bottom:none}
-.calc-row--accent strong{color:var(--red)}
-.calc-row--big{font-size:18px}
-.calc-row--big strong{color:#e63329;font-size:20px}
-.calc-row--warn strong{color:var(--red)}
-.calc-divider{height:2px;background:var(--red);margin:8px 0;border-radius:1px}
+.calc-intro{font-size:17px;color:var(--muted);line-height:1.7;max-width:720px;margin:8px 0 40px}
+.calc-intro strong{color:var(--black)}
+.calc3-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.calc3-form{background:var(--white);border-radius:12px;padding:40px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+.calc3-form h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px}
+.calc3-field{margin-bottom:24px}
+.calc3-field label{display:block;font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.calc3-field input,.calc3-field select{width:100%;padding:14px 16px;border:1px solid #e0e0e0;border-radius:6px;font-size:16px;font-family:var(--fb);outline:none;transition:border-color .3s;background:var(--white);color:var(--black)}
+.calc3-field input:focus,.calc3-field select:focus{border-color:var(--red)}
+.calc3-hint{font-size:12px;color:var(--muted);margin-top:4px}
+.calc3-results{background:var(--black);border-radius:12px;padding:40px;color:var(--white)}
+.calc3-results h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px;color:var(--white)}
+.calc3-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.calc3-row:last-of-type{border-bottom:none}
+.calc3-label{font-size:14px;color:rgba(255,255,255,.6)}
+.calc3-value{font-size:16px;font-weight:500;color:var(--white)}
+.calc3-sub{font-size:12px;color:rgba(255,255,255,.35);margin-left:8px;font-weight:300}
+.calc3-total{margin-top:24px;padding:24px;background:var(--red);border-radius:8px}
+.calc3-total .calc3-row{border-bottom:none;padding:8px 0}
+.calc3-total .calc3-label{color:rgba(255,255,255,.85);font-size:16px;font-weight:500}
+.calc3-total .calc3-value{font-family:var(--fd);font-size:28px}
+.calc3-costper{margin-top:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:8px;text-align:center}
+.calc3-costper .val{font-family:var(--fd);font-size:32px;color:var(--red)}
+.calc3-costper .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.calc3-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.calc3-compare strong{color:#fff;font-weight:500}
+.calc3-compare-title{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
+.calc3-compare-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.calc3-compare-row:last-child{border-bottom:none}
+.calc3-compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
+.calc3-time{margin-top:16px;padding:20px;background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.calc3-time strong{color:#fff;font-weight:500}
+.calc3-footnote{font-size:13px;color:var(--muted);margin-top:32px;line-height:1.7;max-width:900px}
+@media(max-width:768px){.calc3-wrap{grid-template-columns:1fr}.calc3-form,.calc3-results{padding:28px}}
 
 /* ===== INTEGRATIONS ===== */
 .integ-sec{padding:100px 0;background:var(--white)}
@@ -730,39 +746,60 @@ a.integ-badge:hover{border-color:var(--red);box-shadow:0 2px 8px rgba(230,51,41,
       setTimeout(function(){ window.location.href = '/ua/thanks/'; }, 1500);
     });
   }
-  // 3PL ROI calculator (vanilla JS)
+  // 3PL full calculator (vanilla JS, orders/volume/weight/items)
   (function(){
     var el=document.getElementById('calc3pl');
     if(!el) return;
-    function fmt(n){return Math.round(n).toLocaleString('uk-UA');}
-    var sO=document.getElementById('s-orders'),sSal=document.getElementById('s-salary');
-    var sR=document.getElementById('s-rent'),sOth=document.getElementById('s-other');
-    function update(){
-      var ord=parseInt(sO.value),sal=parseInt(sSal.value),rent=parseInt(sR.value),oth=parseInt(sOth.value);
-      var daily=Math.round(ord/22);
-      var ppo=daily<=7?26:daily<=34?23:daily<=68?21:18;
-      var storage=Math.round(ord*0.005*650);
-      var yourCost=sal+rent+oth, mtpCost=ord*ppo+storage, saving=yourCost-mtpCost;
-      var pct=yourCost>0?Math.round((saving/yourCost)*100):0;
-      document.getElementById('v-orders').textContent=fmt(ord);
-      document.getElementById('v-salary').textContent=fmt(sal)+' грн';
-      document.getElementById('v-rent').textContent=fmt(rent)+' грн';
-      document.getElementById('v-other').textContent=fmt(oth)+' грн';
-      document.getElementById('r-your-cost').textContent=fmt(yourCost)+' грн/міс';
-      document.getElementById('r-mtp-cost').textContent=fmt(mtpCost)+' грн/міс';
-      document.getElementById('r-price-per').textContent=ppo+' грн';
-      var rSav=document.getElementById('row-saving'),rAnn=document.getElementById('row-annual'),rWarn=document.getElementById('row-warn');
-      if(saving>0){
-        rSav.style.display='';rAnn.style.display='';rWarn.style.display='none';
-        document.getElementById('r-saving').textContent=fmt(saving)+' грн/міс ('+pct+'%)';
-        document.getElementById('r-annual').textContent=fmt(saving*12)+' грн';
-      } else {
-        rSav.style.display='none';rAnn.style.display='none';rWarn.style.display='';
-        document.getElementById('r-warn-cost').textContent=fmt(mtpCost)+' грн/міс';
-      }
+    function getRate(n){
+      if(n>200)return 18;if(n>150)return 19;if(n>100)return 20;
+      if(n>75)return 21;if(n>50)return 22;if(n>20)return 23;
+      if(n>10)return 24;if(n>5)return 25;return 26;
     }
-    [sO,sSal,sR,sOth].forEach(function(s){s.addEventListener('input',update);});
-    update();
+    function fmt(n){return Math.round(n).toLocaleString('uk-UA');}
+    function calc(){
+      var oPerDay=parseFloat(document.getElementById('tplOrders').value)||0;
+      var w=parseFloat(document.getElementById('tplWeight').value)||2;
+      var vol=parseFloat(document.getElementById('tplVolume').value)||0;
+      var items=parseFloat(document.getElementById('tplItems').value)||1;
+      var rate=getRate(oPerDay);
+      var totalO=oPerDay*22;
+      var shipping=totalO*rate;
+      var storage=vol*650;
+      var recCost=3;if(w>2)recCost+=((w-2)*0.5);
+      var receiving=totalO*recCost;
+      var copack=items>1?totalO*(items-1)*2.5:0;
+      var total=shipping+storage+receiving+copack;if(total<5000)total=5000;
+      var ownRent=Math.max(Math.ceil(oPerDay/50),1)*15000;
+      var ownStaff=Math.max(Math.ceil(oPerDay/30),2)*15000;
+      var ownWms=5000,ownUtils=2000,ownMat=Math.round(oPerDay*22*1.5);
+      var ownTot=ownRent+ownStaff+ownWms+ownUtils+ownMat;
+      var tFreed=Math.min(Math.round(oPerDay*0.15*22),160);
+      var tMkt=Math.round(tFreed*0.6),tPers=Math.round(tFreed*0.3);
+      var costPer=totalO>0?(total/totalO):0;
+      document.getElementById('tplShipping').textContent=fmt(shipping);
+      document.getElementById('tplShippingRate').textContent='('+rate+' грн/замовлення)';
+      document.getElementById('tplStorage').textContent=fmt(storage);
+      document.getElementById('tplReceiving').textContent=fmt(receiving);
+      document.getElementById('tplCopacking').textContent=fmt(copack);
+      document.getElementById('tplTotal').textContent=fmt(total);
+      document.getElementById('tplCostPer').textContent=costPer.toFixed(1);
+      document.getElementById('tplOwnRent').textContent=fmt(ownRent);
+      document.getElementById('tplOwnStaff').textContent=fmt(ownStaff);
+      document.getElementById('tplOwnWms').textContent=fmt(ownWms);
+      document.getElementById('tplOwnUtils').textContent=fmt(ownUtils);
+      document.getElementById('tplOwnMaterials').textContent=fmt(ownMat);
+      document.getElementById('tplOwnTotal').textContent=fmt(ownTot);
+      var save=ownTot>0?Math.max(0,Math.round((1-total/ownTot)*100)):0;
+      document.getElementById('tplSaving').textContent=save+'%';
+      document.getElementById('tplTimeFreed').textContent=tFreed;
+      document.getElementById('tplTimeMarketing').textContent=tMkt;
+      document.getElementById('tplTimePersonal').textContent=tPers;
+    }
+    ['tplOrders','tplWeight','tplVolume','tplItems'].forEach(function(id){
+      var n=document.getElementById(id);if(!n)return;
+      n.addEventListener('input',calc);n.addEventListener('change',calc);
+    });
+    calc();
   })();
 })();
 </script>
