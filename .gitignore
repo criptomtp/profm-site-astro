@@ -8,6 +8,7 @@ gsc_token.json
 scripts/gsc_token.json
 scripts/ga4_token.json
 scripts/gbp-session/
+scripts/linkedin-session/
 docs/gbp/_raw_*.html
 docs/gbp/screenshots/
 *.credentials.json
