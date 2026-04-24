@@ -217,23 +217,185 @@ def build_report(creds, prop, days=14):
         req = RunRealtimeReportRequest(
             property=f'properties/{pid}',
             dimensions=[Dimension(name='eventName')],
-            metrics=[Metric(name='eventCount'), Metric(name='activeUsers')],
+            metrics=[Metric(name='eventCount')],
             limit=20,
         )
         resp = client.run_realtime_report(req)
         if resp.rows:
-            out.append('| Event | Events | Users |')
-            out.append('|---|---:|---:|')
+            out.append('| Event | Events |')
+            out.append('|---|---:|')
             for r in resp.rows:
                 name = r.dimension_values[0].value
                 ec = r.metric_values[0].value
-                au = r.metric_values[1].value
-                out.append(f'| `{name}` | {ec} | {au} |')
+                out.append(f'| `{name}` | {ec} |')
         else:
             out.append('_(realtime порожній — ніхто не на сайті)_')
         out.append('')
     except Exception as e:
         out.append(f'❌ {e}\n')
+
+    # 2d. Detailed event log — last N form_submits with full attribution
+    out.append(f'### 2d. Детальний лог: останні form_submit з джерелом і landing page\n')
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient
+        from google.analytics.data_v1beta.types import (
+            DateRange, Dimension, Metric, RunReportRequest, FilterExpression, Filter, OrderBy
+        )
+        client = BetaAnalyticsDataClient(credentials=creds)
+        req = RunReportRequest(
+            property=f'properties/{pid}',
+            dimensions=[Dimension(name=d) for d in [
+                'dateHourMinute', 'pagePath', 'sessionSource', 'sessionMedium',
+                'sessionCampaignName', 'landingPagePlusQueryString'
+            ]],
+            metrics=[Metric(name='eventCount')],
+            date_ranges=[DateRange(start_date=f'{days}daysAgo', end_date='today')],
+            dimension_filter=FilterExpression(
+                filter=Filter(field_name='eventName',
+                              string_filter=Filter.StringFilter(value='form_submit'))
+            ),
+            order_bys=[OrderBy(dimension=OrderBy.DimensionOrderBy(dimension_name='dateHourMinute'),
+                               desc=True)],
+            limit=30,
+        )
+        resp = client.run_report(req)
+        if resp.rows:
+            out.append('| Час (Kiev) | Сторінка форми | Source | Medium | Campaign | Landing |')
+            out.append('|---|---|---|---|---|---|')
+            for r in resp.rows:
+                v = [d.value for d in r.dimension_values]
+                ts = v[0]
+                ts_fmt = f'{ts[:8]} {ts[8:10]}:{ts[10:12]}' if len(ts) >= 12 else ts
+                out.append(f'| `{ts_fmt}` | `{v[1][:40]}` | {v[2]} | {v[3]} | {v[4][:20]} | `{v[5][:40]}` |')
+        else:
+            out.append('_(жодного form_submit за період)_')
+        out.append('')
+    except Exception as e:
+        out.append(f'❌ Помилка детального логу: {str(e)[:200]}\n')
+
+    # 7. GSC organic search queries → landing pages
+    out.append(f'## 7. Google Search Console — топ запити які приводять на сайт\n')
+    out.append('_Organic keywords агреговано з GSC. Per-user keyword відсутній — Google шифрує "(not provided)" з 2011._\n')
+    try:
+        gsc_token_file = os.path.join(os.path.dirname(__file__), 'gsc_token.json')
+        if not os.path.exists(gsc_token_file):
+            out.append('⚠️ `gsc_token.json` не знайдено — пропускаю. Запусти `python3 scripts/gsc-auth.py`.\n')
+        else:
+            from google.oauth2.credentials import Credentials as GCreds
+            from google.auth.transport.requests import Request
+            gcreds = GCreds.from_authorized_user_file(gsc_token_file,
+                ['https://www.googleapis.com/auth/webmasters.readonly'])
+            if not gcreds.valid and gcreds.expired and gcreds.refresh_token:
+                gcreds.refresh(Request())
+            from googleapiclient.discovery import build as gbuild
+            sc = gbuild('searchconsole', 'v1', credentials=gcreds, cache_discovery=False)
+            end_date = datetime.now().strftime('%Y-%m-%d')
+            start_date = (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
+            req_body = {
+                'startDate': start_date, 'endDate': end_date,
+                'dimensions': ['query', 'page'],
+                'rowLimit': 50,
+            }
+            r = sc.searchanalytics().query(siteUrl='https://www.fulfillmentmtp.com.ua/', body=req_body).execute()
+            rows = r.get('rows', [])
+            rows.sort(key=lambda x: x.get('clicks', 0), reverse=True)
+            if rows:
+                out.append('| Запит | Landing page | Clicks | Impr | CTR | Pos |')
+                out.append('|---|---|---:|---:|---:|---:|')
+                for row in rows[:30]:
+                    q, p = row['keys']
+                    p_short = p.replace('https://www.fulfillmentmtp.com.ua', '')[:50]
+                    clicks = row.get('clicks', 0)
+                    impr = row.get('impressions', 0)
+                    ctr = f"{row.get('ctr', 0)*100:.1f}%"
+                    pos = f"{row.get('position', 0):.1f}"
+                    out.append(f'| `{q[:40]}` | `{p_short}` | {clicks} | {impr} | {ctr} | {pos} |')
+            else:
+                out.append('_(GSC порожній за період)_')
+        out.append('')
+    except Exception as e:
+        out.append(f'❌ GSC помилка: {str(e)[:200]}\n')
+
+    # 8. AI search referrers (Perplexity, ChatGPT, Bing Copilot, Gemini)
+    out.append(f'## 8. AI-пошук і реферали (Perplexity, ChatGPT, Bing Copilot, Gemini)\n')
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient as B
+        from google.analytics.data_v1beta.types import (
+            DateRange, Dimension, Metric, RunReportRequest, FilterExpression,
+            FilterExpressionList, Filter
+        )
+        client = B(credentials=creds)
+        ai_hosts = ['perplexity.ai', 'chat.openai.com', 'chatgpt.com',
+                    'copilot.microsoft.com', 'bing.com', 'gemini.google.com',
+                    'claude.ai', 'you.com', 'phind.com']
+        ai_filter = FilterExpression(
+            or_group=FilterExpressionList(expressions=[
+                FilterExpression(filter=Filter(field_name='sessionSource',
+                    string_filter=Filter.StringFilter(
+                        value=h,
+                        match_type=Filter.StringFilter.MatchType.CONTAINS)))
+                for h in ai_hosts
+            ])
+        )
+        req = RunReportRequest(
+            property=f'properties/{pid}',
+            dimensions=[Dimension(name='sessionSource'), Dimension(name='sessionMedium'),
+                        Dimension(name='landingPagePlusQueryString')],
+            metrics=[Metric(name='sessions'), Metric(name='totalUsers')],
+            date_ranges=[DateRange(start_date=f'{days}daysAgo', end_date='today')],
+            dimension_filter=ai_filter,
+            limit=30,
+        )
+        resp = client.run_report(req)
+        if resp.rows:
+            out.append('| Source | Medium | Landing | Sessions | Users |')
+            out.append('|---|---|---|---:|---:|')
+            for r in resp.rows:
+                v = [d.value for d in r.dimension_values]
+                m = [d.value for d in r.metric_values]
+                out.append(f'| {v[0]} | {v[1]} | `{v[2][:50]}` | {m[0]} | {m[1]} |')
+        else:
+            out.append('_(жодного візиту з AI-пошуку — або їх ще немає, або CSP блокував до 2026-04-24 10:40)_')
+        out.append('')
+    except Exception as e:
+        out.append(f'❌ AI-referrers помилка: {str(e)[:200]}\n')
+
+    # 9. Google Ads keywords (per-click, requires GCLID auto-tagging)
+    out.append(f'## 9. Google Ads — ключові слова з реклами\n')
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient as B
+        from google.analytics.data_v1beta.types import (
+            DateRange, Dimension, Metric, RunReportRequest, FilterExpression, Filter
+        )
+        client = B(credentials=creds)
+        req = RunReportRequest(
+            property=f'properties/{pid}',
+            dimensions=[Dimension(name='googleAdsKeyword'),
+                        Dimension(name='googleAdsCampaignName'),
+                        Dimension(name='googleAdsAdGroupName')],
+            metrics=[Metric(name='sessions'), Metric(name='keyEvents')],
+            date_ranges=[DateRange(start_date=f'{days}daysAgo', end_date='today')],
+            dimension_filter=FilterExpression(
+                filter=Filter(field_name='sessionSource',
+                              string_filter=Filter.StringFilter(value='google'))
+            ),
+            limit=30,
+        )
+        resp = client.run_report(req)
+        rows_with_kw = [r for r in resp.rows if r.dimension_values[0].value not in ('(not set)', '')]
+        if rows_with_kw:
+            out.append('| Keyword | Campaign | AdGroup | Sessions | Конверсії |')
+            out.append('|---|---|---|---:|---:|')
+            for r in rows_with_kw[:30]:
+                v = [d.value for d in r.dimension_values]
+                m = [d.value for d in r.metric_values]
+                out.append(f'| `{v[0][:40]}` | {v[1][:25]} | {v[2][:25]} | {m[0]} | {m[1]} |')
+        else:
+            out.append('_(жодного Google Ads keyword — або реклама не лила трафік за період, або auto-tagging GCLID вимкнено)_\n')
+            out.append('Перевірка: Google Ads → Account Settings → Tracking → Auto-tagging має бути ON.')
+        out.append('')
+    except Exception as e:
+        out.append(f'❌ Google Ads keywords помилка: {str(e)[:200]}\n')
 
     # 6. Recommendations
     out.append('## 6. Діагностика і рекомендації\n')

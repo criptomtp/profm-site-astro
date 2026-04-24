@@ -3,7 +3,7 @@
 - Property ID: `286651314`
 - Account: Fulfillmentmtp
 - Time zone: Europe/Kiev · Currency: USD
-- Period: last 14 days · generated 2026-04-24T10:31:08
+- Period: last 14 days · generated 2026-04-24T11:08:04
 
 ## 1. Всі події за останні 14 днів (топ-25 за кількістю)
 
@@ -49,6 +49,26 @@ _(немає даних)_
 ## 5. Realtime (останні 30 хв)
 
 ❌ 400 Selected dimensions and metrics cannot be queried together.
+
+### 2d. Детальний лог: останні form_submit з джерелом і landing page
+
+_(жодного form_submit за період)_
+
+## 7. Google Search Console — топ запити які приводять на сайт
+
+_Organic keywords агреговано з GSC. Per-user keyword відсутній — Google шифрує "(not provided)" з 2011._
+
+❌ GSC помилка: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+
+## 8. AI-пошук і реферали (Perplexity, ChatGPT, Bing Copilot, Gemini)
+
+_(жодного візиту з AI-пошуку — або їх ще немає, або CSP блокував до 2026-04-24 10:40)_
+
+## 9. Google Ads — ключові слова з реклами
+
+_(жодного Google Ads keyword — або реклама не лила трафік за період, або auto-tagging GCLID вимкнено)_
+
+Перевірка: Google Ads → Account Settings → Tracking → Auto-tagging має бути ON.
 
 ## 6. Діагностика і рекомендації
 
