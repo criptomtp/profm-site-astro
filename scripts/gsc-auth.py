@@ -55,10 +55,16 @@ def authenticate():
         creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
 
     if not creds or not creds.valid:
+        refreshed = False
         if creds and creds.expired and creds.refresh_token:
-            from google.auth.transport.requests import Request
-            creds.refresh(Request())
-        else:
+            try:
+                from google.auth.transport.requests import Request
+                creds.refresh(Request())
+                refreshed = True
+            except Exception as e:
+                print(f'⚠️  Refresh token revoked/expired ({e.__class__.__name__}). Re-authorizing...')
+                creds = None
+        if not refreshed and not creds:
             flow = InstalledAppFlow.from_client_secrets_file(CREDS_FILE, SCOPES)
             creds = flow.run_local_server(port=8090, prompt='consent')
 

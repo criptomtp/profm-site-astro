@@ -296,7 +296,7 @@ def build_report(creds, prop, days=14):
                 'dimensions': ['query', 'page'],
                 'rowLimit': 50,
             }
-            r = sc.searchanalytics().query(siteUrl='https://www.fulfillmentmtp.com.ua/', body=req_body).execute()
+            r = sc.searchanalytics().query(siteUrl='sc-domain:fulfillmentmtp.com.ua', body=req_body).execute()
             rows = r.get('rows', [])
             rows.sort(key=lambda x: x.get('clicks', 0), reverse=True)
             if rows:
