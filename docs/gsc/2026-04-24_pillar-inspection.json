@@ -1,0 +1,342 @@
+[
+  {
+    "path": "/ua/shcho-take-fulfilment/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=jlDhR8vd6iPjUkECVFAv3Q&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-24T07:06:24Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/glosariy/"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ru/chto-takoe-fulfilment/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=fMK5y2l6Bsg4IHlw6Ag2Kw&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-21T15:01:51Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/en/what-is-fulfillment/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=ql1jCWrYvBZRsmowSZwXTA&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-21T15:01:51Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/glosariy/"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ua/3pl-logistyka/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=7cf_crissKwa_LJt50q6lQ&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-16T19:38:55Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/ua/guide/",
+            "https://www.fulfillmentmtp.com.ua/ua/fulfillment-dlya-bizhuteriyi/"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ua/paletne-zberigannya/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=V1TnjD0cJsxw3B96-ReB7g&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-15T16:28:47Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
+          "sitemap": [
+            "https://www.fulfillmentmtp.com.ua/sitemap-index.xml"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ua/skladski-poslugy/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=_oFpAuhC0fJAwRrDk1v2Jg&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-24T08:42:06Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o?amp=true"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            },
+            {
+              "richResultType": "Часті запитання",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ua/about/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=76yN0JXs3Y4w_lsiMttuBw&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-23T14:59:13Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/about/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/about/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/about"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        },
+        "richResultsResult": {
+          "verdict": "PASS",
+          "detectedItems": [
+            {
+              "richResultType": "Ланцюжки навігації",
+              "items": [
+                {
+                  "name": "Елемент без назви"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "path": "/ua/blog/",
+    "raw": {
+      "inspectionResult": {
+        "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=sc-domain:fulfillmentmtp.com.ua&id=JwXHXofw4zpKH3-j_iIOzg&utm_medium=link&utm_source=api",
+        "indexStatusResult": {
+          "verdict": "PASS",
+          "coverageState": "Надіслано та проіндексовано",
+          "robotsTxtState": "ALLOWED",
+          "indexingState": "INDEXING_ALLOWED",
+          "lastCrawlTime": "2026-04-24T13:49:27Z",
+          "pageFetchState": "SUCCESSFUL",
+          "googleCanonical": "https://www.fulfillmentmtp.com.ua/ua/blog/",
+          "userCanonical": "https://www.fulfillmentmtp.com.ua/ua/blog/",
+          "referringUrls": [
+            "https://www.fulfillmentmtp.com.ua/ua/blog"
+          ],
+          "crawledAs": "MOBILE"
+        },
+        "mobileUsabilityResult": {
+          "verdict": "VERDICT_UNSPECIFIED"
+        }
+      }
+    }
+  }
+]
