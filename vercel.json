@@ -36,8 +36,13 @@
       "destination": "/",
       "statusCode": 301
     },
-    { "source": "/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/", "destination": "/ru/", "statusCode": 301 },
-    { "source": "/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/", "destination": "/ua/about/", "statusCode": 301 },
+    { "source": "/blog/tpost/yzhv774pa1[^/]+/", "destination": "/ru/services/", "statusCode": 301 },
+    { "source": "/ua/blog/tpost/2lpu5l5sa1[^/]+/", "destination": "/ua/about/", "statusCode": 301 },
+
+    { "source": "/ua/blog/tpost/s7non1f0y1[^/]+/", "destination": "/ua/blog/scho-take-fulfilment/", "statusCode": 301 },
+    { "source": "/ua/blog/tpost/2fz7njsgn1[^/]+/", "destination": "/ua/services/", "statusCode": 301 },
+    { "source": "/ua/blog/tpost/xz8vfk1jg1[^/]+/", "destination": "/ua/", "statusCode": 301 },
+    { "source": "/blog/tpost/8emi42xu61[^/]+/", "destination": "/ru/", "statusCode": 301 },
 
     { "source": "/tpost/:slug/", "destination": "/ua/blog/", "statusCode": 301 },
     { "source": "/ru/blog/tpost/:slug/", "destination": "/ua/blog/", "statusCode": 301 },
