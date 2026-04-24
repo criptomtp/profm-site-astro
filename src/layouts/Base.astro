@@ -100,7 +100,7 @@ const shouldAutoInsertArticle = ogType === 'article' && autoArticle && !hasArtic
 gtag('js',new Date());gtag('set',{transport_type:'beacon'});gtag('config','G-ELBRCEFL41',{send_page_view:true,transport_type:'beacon'});gtag('config','AW-614588275',{transport_type:'beacon'});
 (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ELBRCEFL41';document.head.appendChild(s);})();
 (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MV5WZT5');
-document.addEventListener('click',function(e){var link=e.target.closest('a[href^="tel:"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/eh2qCJenw5kcEPO-h6UC','value':1.0,'currency':'UAH'});}});</script>
+document.addEventListener('click',function(e){var link=e.target.closest('a[href^="tel:"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/eh2qCJenw5kcEPO-h6UC','value':1.0,'currency':'UAH'});gtag('event','phone_click',{event_category:'engagement',event_label:link.getAttribute('href'),page_location:location.href,transport_type:'beacon'});}});</script>
   <style is:inline>
 /* INLINED: design-system.css + page-components.css */
 :root{--black:#000;--white:#fff;--red:#e63329;--gray:#f5f5f5;--muted:#666;--fd:'DM Serif Display',serif;--fb:'DM Sans',sans-serif}
@@ -356,7 +356,7 @@ body{padding-bottom:64px}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeVideoModal();var ep=document.getElementById('exitPopup');if(ep)ep.style.display='none';}});
 
   // Telegram click conversion tracking
-  document.addEventListener('click',function(e){var link=e.target.closest('a[href*="t.me/"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/fKOICMvozZocEPO-h6UC','value':1.0,'currency':'UAH'});}});
+  document.addEventListener('click',function(e){var link=e.target.closest('a[href*="t.me/"]');if(link&&typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-614588275/fKOICMvozZocEPO-h6UC','value':1.0,'currency':'UAH'});gtag('event','telegram_click',{event_category:'engagement',event_label:link.getAttribute('href'),page_location:location.href,transport_type:'beacon'});}});
 
   // Exit-intent popup (desktop only, 1x per session, not on /thanks/, 15s delay)
   if(window.innerWidth>768 && !location.pathname.includes('/thanks')){
