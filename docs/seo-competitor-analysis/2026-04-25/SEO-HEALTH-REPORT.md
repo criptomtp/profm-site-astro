@@ -100,8 +100,8 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 - L1: Wikipedia entity page for "MTP Group" (off-site, 8-16h) — biggest remaining AI-search ceiling
 - ~~L2: YouTube embeds on all 3 pillars (component `YouTubeEmbed.astro` already built)~~ ✅ **DONE 2026-04-25 (Batch L)** — warehouse tour video `bHY3cFF9SlI` embedded as `<figure>` with caption on UA + RU + EN pillars, slotted between the 7-stages section and the next section. Facade-load (no iframe until click) preserves CWV.
 - L3: Per-language sitemap split (currently single `sitemap-0.xml`)
-- L4: Brittle string-replace in `integrations/image-sitemap.mjs` (works but fragile)
-- L5: Per-child `<lastmod>` missing in `sitemap-index.xml`
+- ~~L4: Brittle string-replace in `integrations/image-sitemap.mjs` (works but fragile)~~ ✅ **DONE 2026-04-25 (Batch L)** — replaced `indexXml.replace('</sitemapindex>', insert)` with regex-based extraction of all `<loc>` entries + full XML rebuild from scratch. Idempotent (no double-injection of image sitemap on re-run), handles arbitrary child sitemap counts, future-proof for L3 split.
+- ~~L5: Per-child `<lastmod>` missing in `sitemap-index.xml`~~ ✅ **DONE 2026-04-25 (Batch L)** — every `<sitemap>` entry now carries `<lastmod>` derived from each child file's mtime in `dist/`. Google can now tell which child sitemap actually changed between crawls (was previously forced to re-fetch all children unconditionally). Validated via Python ElementTree — XML well-formed, both children have valid ISO-8601 lastmod.
 - ~~L6: Responsive `srcset` for hero image on EN + pillar (-100–300ms mobile LCP)~~ ✅ **DONE 2026-04-25 (Batch L)** — generated 480w variant of `mtp-fulfillment-warehouse-hero.webp` (42 KB vs 62 KB), wired `srcset` + `sizes` + responsive `imagesrcset` preload on EN home. Pillar UA hero is typography-only (Editorial archetype) — no `<img>`, srcset N/A; LCP there is text and already covered by font preload + critical CSS.
 
 ---

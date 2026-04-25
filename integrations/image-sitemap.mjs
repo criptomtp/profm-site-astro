@@ -118,14 +118,38 @@ ${urlEntries.join('\n')}
         const outPath = path.join(distDir, 'sitemap-images.xml');
         fs.writeFileSync(outPath, xml, 'utf8');
 
+        // Rebuild sitemap-index.xml with our image sitemap appended AND a
+        // <lastmod> for every child sitemap entry. The original astrojs/sitemap
+        // output omits <lastmod>, which means Google can't tell which child
+        // sitemap actually changed between crawls. We use each child file's
+        // mtime as the authoritative lastmod (sitemaps.org spec: "Date the file
+        // at <loc> changed").
         const indexPath = path.join(distDir, 'sitemap-index.xml');
         if (fs.existsSync(indexPath)) {
-          let indexXml = fs.readFileSync(indexPath, 'utf8');
-          if (!indexXml.includes('sitemap-images.xml')) {
-            const insert = `<sitemap><loc>${SITE}/sitemap-images.xml</loc></sitemap></sitemapindex>`;
-            indexXml = indexXml.replace('</sitemapindex>', insert);
-            fs.writeFileSync(indexPath, indexXml, 'utf8');
-          }
+          const indexXml = fs.readFileSync(indexPath, 'utf8');
+          // Extract every existing <loc> inside <sitemap>...</sitemap>
+          const locRe = /<sitemap[^>]*>\s*<loc>([^<]+)<\/loc>/g;
+          const childLocs = [];
+          let lm;
+          while ((lm = locRe.exec(indexXml)) !== null) childLocs.push(lm[1].trim());
+
+          const imageSitemapUrl = `${SITE}/sitemap-images.xml`;
+          if (!childLocs.includes(imageSitemapUrl)) childLocs.push(imageSitemapUrl);
+
+          const entries = childLocs.map(loc => {
+            let lastmod = new Date().toISOString();
+            if (loc.startsWith(SITE + '/')) {
+              const rel = loc.slice(SITE.length + 1);
+              const filePath = path.join(distDir, rel);
+              if (fs.existsSync(filePath)) {
+                lastmod = new Date(fs.statSync(filePath).mtime).toISOString();
+              }
+            }
+            return `  <sitemap>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </sitemap>`;
+          });
+
+          const newIndexXml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join('\n')}\n</sitemapindex>\n`;
+          fs.writeFileSync(indexPath, newIndexXml, 'utf8');
         }
 
         const headersPath = path.join(distDir, '_headers');
