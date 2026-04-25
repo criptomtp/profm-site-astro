@@ -30,13 +30,13 @@ export default defineConfig({
         if (/^https:\/\/www\.fulfillmentmtp\.com\.ua\/(ru\/|en\/)?$/.test(url)) {
           item.changefreq = 'daily';
           item.priority = 1.0;
-        } else if (/\/shcho-take-fulfilment\/|\/chto-takoe-fulfilment\/|\/what-is-fulfillment\/$/.test(url)) {
+        } else if (/^https:\/\/www\.fulfillmentmtp\.com\.ua\/(ua|ru|en)\/(shcho-take-fulfilment|chto-takoe-fulfilment|what-is-fulfillment)\/$/.test(url)) {
           item.changefreq = 'weekly';
           item.priority = 0.9;
         } else if (/\/(tsiny|tsenu|prices|calculator)\/$/.test(url)) {
           item.changefreq = 'weekly';
           item.priority = 0.9;
-        } else if (/\/(3pl-logistyka|skladski-poslugy|services|paletne-zberigannya|fulfilment-|pallet-storage|warehouse-services|heavy-goods)/.test(url)) {
+        } else if (/\/(3pl-logistyka|3pl-logistics|3pl-logistika|skladski-poslugy|skladskie-uslugi|services|paletne-zberigannya|paletnoe-khranenie|fulfilment-|fulfillment-|pallet-storage|warehouse-services|heavy-goods)/.test(url)) {
           item.changefreq = 'monthly';
           item.priority = 0.8;
         } else if (/\/blog\/$/.test(url)) {

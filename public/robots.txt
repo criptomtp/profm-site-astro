@@ -65,6 +65,7 @@ Disallow: /api/
 Disallow: /ua/thanks/
 Disallow: /thanks/
 Disallow: /en/thanks/
+Allow: /files/mtp-api.postman_collection.json
 Disallow: /files/
 Disallow: /schedule/
 Disallow: /new/

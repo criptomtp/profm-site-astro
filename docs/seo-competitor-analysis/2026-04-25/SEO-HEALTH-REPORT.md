@@ -68,19 +68,19 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 | C2 | UA pillar mobile LCP **5.5s** — same root cause as C1, missing font preload bundle | `dist/ua/shcho-take-fulfilment/index.html` | 05-performance §1 |
 | C3 | Footer has **no legal entity / EDRPOU / year founded** — biggest remaining E-E-A-T trust gap, despite About now carrying it | `src/components/Footer.astro` | 02-content P0 |
 | C4 | `ru/recalls/` source has **0 Review entries** (UA + EN have 10 each) — orphan AggregateRating risk re-introduced if not back-ported | `src/pages/ru/recalls.astro` | 03-schema gap #1 |
-| C5 | Postman Collection at `/files/mtp-api.postman_collection.json` is `Disallow:` in `robots.txt` despite being listed in `llms.txt` as agent resource — AI agents respecting robots will skip it | `public/robots.txt` + `public/llms.txt` | 06-ai-search gap #4 |
+| ~~C5~~ | ~~Postman Collection at `/files/mtp-api.postman_collection.json` is `Disallow:` in `robots.txt`~~ ✅ **FIXED 2026-04-25 (Batch G4)** — added `Allow: /files/mtp-api.postman_collection.json` line | `public/robots.txt` + `public/llms.txt` | 06-ai-search gap #4 |
 
 ### 🔴 High (fix within 1 week)
 
 | # | Issue | File / Path | Audit ref |
 |---|-------|-------------|-----------|
-| H1 | Deprecated **HowTo schema** in `/ru/guide/` — Google deprecated 2023, currently a negative signal | `src/pages/ru/guide.astro` | 03-schema gap #2 |
-| H2 | All 3 `/guide/` Articles missing `datePublished` + `dateModified` | `src/pages/{ua,ru,en}/guide.astro` | 03-schema gap #3 |
+| ~~H1~~ | ~~Deprecated **HowTo schema** in `/ru/guide/`~~ ✅ **FIXED 2026-04-25 (Batch G5)** — replaced with Article schema | `src/pages/ru/guide.astro` | 03-schema gap #2 |
+| ~~H2~~ | ~~All 3 `/guide/` Articles missing `datePublished` + `dateModified`~~ ✅ **FIXED 2026-04-25 (Batch G5)** — Article schema with dates + Person author on all 3 | `src/pages/{ua,ru,en}/guide.astro` | 03-schema gap #3 |
 | H3 | `AuthorByline` missing on services / pricing / calculator / about / recalls landings (currently only pillars + blog) | `src/pages/{ua,ru,en}/{services,3pl-*,tsiny,tsenu,prices,calculator,about,recalls}.astro` | 02-content P0 |
 | H4 | UA + RU pillars have only **6 FAQ pairs** vs EN's 12 — expand to 15-20 for AI Overview / Perplexity citation density | `src/pages/{ua,ru}/{shcho-take-fulfilment,chto-takoe-fulfilment}.astro` | 06-ai-search gap #2 |
 | H5 | Two new thin pages: `/ru/paletnoe-khranenie/` 702w + `/en/pallet-storage/` 784w (below 800-floor) | source files | 02-content P0 |
 | H6 | New UA root URL policy (CLAUDE.md) **not actually shipped** — pillars still only exist at `/ua/*`, no `/shcho-take-fulfilment/`, `/tsiny/`, `/calculator/` at root | `src/pages/*.astro` | 01-technical |
-| H7 | Sitemap serialize() regexes UA-only — 9 EN/RU service pages fall to 0.5 default priority instead of 0.8 | `astro.config.mjs` serialize() | 04-sitemap gap A |
+| ~~H7~~ | ~~Sitemap serialize() regexes UA-only — 9 EN/RU service pages fall to 0.5 default priority~~ ✅ **FIXED 2026-04-25 (Batch G6)** — regex extended to cover `3pl-logistics`, `3pl-logistika`, `paletnoe-khranenie`, `skladskie-uslugi`, `services`, `fulfillment-` | `astro.config.mjs` serialize() | 04-sitemap gap A |
 
 ### 🟡 Medium (fix within 1 month)
 
@@ -91,7 +91,7 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 | M3 | 6th sameAs (X or Instagram) missing — Base.astro Person.sameAs = 5, publisher = 4 | `src/layouts/Base.astro` line 82 |
 | M4 | EN pillar lacks the "30-second TL;DR" box that UA + RU carry | `src/pages/en/what-is-fulfillment.astro` |
 | M5 | RU + EN `/services/` still 200 OK while UA equivalent retired — language asymmetry | `src/pages/{ru,en}/services.astro` |
-| M6 | Blog pillar regex `/blog/chto-takoe-fulfilment/` accidentally promoted to 0.9 (should be 0.6) | `astro.config.mjs` serialize() |
+| ~~M6~~ | ~~Blog pillar regex `/blog/chto-takoe-fulfilment/` accidentally promoted to 0.9~~ ✅ **FIXED 2026-04-25 (Batch G6)** — pillar regex anchored to `(ua|ru|en)/` lang-prefix only; verified `/blog/chto-takoe-fulfilment/` now serializes at 0.6 | `astro.config.mjs` serialize() |
 | M7 | `_headers` only sets explicit Content-Type for `sitemap-images.xml` — `sitemap-0.xml` + `sitemap-index.xml` rely on CF default | `public/_headers` |
 | M8 | Consolidate duplicate `gtag.js` loads into single GTM container (-115 KiB JS bundle on every page) | `src/layouts/Base.astro` |
 
@@ -114,9 +114,12 @@ Bundle the C-tier fixes — all small, high-impact, no hard dependencies:
 1. **G1** (1h) — Add EDRPOU + ТОВ "МТП Груп Фулфілмент" + "since 2014" + LinkedIn/YouTube/Telegram links to `Footer.astro` (3 langs).
 2. **G2** (2h) — Propagate font preload + inline critical header CSS to EN home + UA pillar HTML templates; disable Cloudflare Email Obfuscation in CF Pages dashboard.
 3. **G3** (45min) — Port 10 Reviews from UA recalls to RU recalls (translate, add @id linkage).
-4. **G4** (15min) — Carve `Allow: /files/mtp-api.postman_collection.json` into `robots.txt` before the `Disallow: /files/` block.
-5. **G5** (15min) — Remove HowTo schema from `/ru/guide/`, add `datePublished` + `dateModified` to all 3 guide pages.
-6. **G6** (30min) — Fix sitemap serialize() regex coverage for EN + RU service slugs.
+4. ~~**G4** (15min)~~ ✅ **DONE 2026-04-25** — `Allow: /files/mtp-api.postman_collection.json` carved into `robots.txt`.
+5. ~~**G5** (15min)~~ ✅ **DONE 2026-04-25** — HowTo removed from `/ru/guide/`, Article schema with dates + Person author on all 3 guide pages.
+6. ~~**G6** (30min)~~ ✅ **DONE 2026-04-25** — sitemap serialize() regex extended to EN+RU slugs; pillar regex anchored to lang-prefix (M6 also fixed).
+
+**Mechanical Triage (G4+G5+G6) shipped:** closes 1 Critical + 2 High + 1 Medium in one push.
+Remaining Batch G items (G1+G2+G3) handle the heavier C-tier work — proceed in next session.
 
 After Batch G, projected scores: Technical 93, Content 86, Schema 91, Performance 89, AI 92 → Health Score ~91.
 
