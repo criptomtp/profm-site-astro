@@ -98,11 +98,11 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 ### 🔵 Low (backlog)
 
 - L1: Wikipedia entity page for "MTP Group" (off-site, 8-16h) — biggest remaining AI-search ceiling
-- L2: YouTube embeds on all 3 pillars (component `YouTubeEmbed.astro` already built)
+- ~~L2: YouTube embeds on all 3 pillars (component `YouTubeEmbed.astro` already built)~~ ✅ **DONE 2026-04-25 (Batch L)** — warehouse tour video `bHY3cFF9SlI` embedded as `<figure>` with caption on UA + RU + EN pillars, slotted between the 7-stages section and the next section. Facade-load (no iframe until click) preserves CWV.
 - L3: Per-language sitemap split (currently single `sitemap-0.xml`)
 - L4: Brittle string-replace in `integrations/image-sitemap.mjs` (works but fragile)
 - L5: Per-child `<lastmod>` missing in `sitemap-index.xml`
-- L6: Responsive `srcset` for hero image on EN + pillar (-100–300ms mobile LCP)
+- ~~L6: Responsive `srcset` for hero image on EN + pillar (-100–300ms mobile LCP)~~ ✅ **DONE 2026-04-25 (Batch L)** — generated 480w variant of `mtp-fulfillment-warehouse-hero.webp` (42 KB vs 62 KB), wired `srcset` + `sizes` + responsive `imagesrcset` preload on EN home. Pillar UA hero is typography-only (Editorial archetype) — no `<img>`, srcset N/A; LCP there is text and already covered by font preload + critical CSS.
 
 ---
 

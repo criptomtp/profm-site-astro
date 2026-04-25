@@ -4,6 +4,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 import PillarHub from '../../components/PillarHub.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -166,6 +167,11 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
       <li><h3>Упаковка и отправка</h3><p>Товар упаковывается в коробку, пакет или термоконверт — по требованиям хрупкости и маркетплейса. Далее 4 забора в день: <a href="https://novaposhta.ua/" rel="noopener external" target="_blank">Новая Почта</a>, <a href="https://www.ukrposhta.ua/" rel="noopener external" target="_blank">Укрпочта</a>, Meest, плюс международная логистика. Для клиентов из СНГ особенно ценна международная отправка: оформляем экспортные документы и передаём посылку перевозчику напрямую в Казахстан, Молдову, Грузию, страны ЕС.</p></li>
       <li><h3>Обработка возвратов</h3><p>Возврат — это не «товар вернулся, всё забыли». Оператор принимает возврат, проверяет комплектность, фотографирует, определяет годность к перепродаже. Средний срок обработки возврата — 48 часов, повреждённые товары фотографируются для страхового кейса.</p></li>
     </ol>
+
+    <figure class="ru-pil-video">
+      <YouTubeEmbed id="bHY3cFF9SlI" title="Экскурсия по складу MTP Group — 2800 м² в Щасливом" />
+      <figcaption>Видео-экскурсия по складу: WMS-учёт, стеллажи, зона комплектации, отправка через Новую Почту, Укрпочту и международная логистика для бизнеса СНГ.</figcaption>
+    </figure>
   </section>
 
   <section class="ru-pil-sec ru-pil-sec--dark" id="r3">
@@ -438,6 +444,8 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
   .ru-pil-body strong{color:inherit;font-weight:600}
 
   /* Steps */
+  .ru-pil-video{margin:48px 0 8px;max-width:880px}
+  .ru-pil-video figcaption{font-family:'DM Sans',sans-serif;font-size:14px;color:#666;margin-top:14px;line-height:1.5}
   .ru-pil-steps{counter-reset:step;list-style:none;padding:0;margin:32px 0}
   .ru-pil-steps li{counter-increment:step;position:relative;padding:20px 0 20px 60px;border-top:1px solid #eaeaea}
   .ru-pil-steps li:first-child{border-top:none}

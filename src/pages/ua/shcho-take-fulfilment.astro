@@ -4,6 +4,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 import KeyTakeaways from '../../components/KeyTakeaways.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 import PillarHub from '../../components/PillarHub.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -189,6 +190,11 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
         <p>Клієнт відмовився — товар приходить назад. Ми приймаємо, оглядаємо, і якщо цілий — повертаємо на полицю. Щомісячна аналітика: топ-SKU, швидкість обороту, % повернень, середній чек.</p>
       </li>
     </ol>
+
+    <figure class="pillar-video">
+      <YouTubeEmbed id="bHY3cFF9SlI" title="Екскурсія по складу MTP Group — 2800 м² у Щасливому" />
+      <figcaption>Відео-екскурсія по складу MTP Group: WMS, стелажі, зона комплектації, відправка через Нову Пошту й Укрпошту.</figcaption>
+    </figure>
   </section>
 
   <section class="pillar-sec" id="sec-03">
@@ -484,6 +490,8 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
   .pillar-steps h4{margin-bottom:6px}
 
   /* Table */
+  .pillar-video{margin:48px 0 8px;max-width:880px}
+  .pillar-video figcaption{font-family:'DM Sans',sans-serif;font-size:14px;color:#666;margin-top:14px;line-height:1.5}
   .pillar-table-wrap{overflow-x:auto;margin:24px 0 32px;border:1px solid #eaeaea;border-radius:8px}
   .pillar-table{width:100%;border-collapse:collapse;font-size:15px}
   .pillar-table th{background:#000;color:#fff;padding:14px 16px;text-align:left;font-weight:600;font-size:13px;letter-spacing:.5px;text-transform:uppercase}
