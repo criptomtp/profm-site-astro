@@ -66,7 +66,7 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 |---|-------|-------------|-----------|
 | C1 | EN home mobile LCP **7.8s** (target ≤2.5s) — render-blocking `header.BgfblYv3.css` (480ms) + Cloudflare Email Obfuscation (482ms) + no font preload bundle on `/en/` | `dist/en/index.html` + CF Pages dashboard | 05-performance §1 |
 | C2 | UA pillar mobile LCP **5.5s** — same root cause as C1, missing font preload bundle | `dist/ua/shcho-take-fulfilment/index.html` | 05-performance §1 |
-| C3 | Footer has **no legal entity / EDRPOU / year founded** — biggest remaining E-E-A-T trust gap, despite About now carrying it | `src/components/Footer.astro` | 02-content P0 |
+| ~~C3~~ | ~~Footer has **no legal entity / EDRPOU / year founded**~~ ✅ **FIXED 2026-04-25 (Batch G1)** — added trust block: "MTP Group · since 2014" + "ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740" across all 3 langs | `src/components/Footer.astro` | 02-content P0 |
 | ~~C4~~ | ~~`ru/recalls/` source has **0 Review entries**~~ ✅ **FIXED 2026-04-25 (Batch G3)** — 10 Reviews translated UA→RU, @id linkage to `#business`, aggregateRating reviewCount 3→10 | `src/pages/ru/recalls.astro` | 03-schema gap #1 |
 | ~~C5~~ | ~~Postman Collection at `/files/mtp-api.postman_collection.json` is `Disallow:` in `robots.txt`~~ ✅ **FIXED 2026-04-25 (Batch G4)** — added `Allow: /files/mtp-api.postman_collection.json` line | `public/robots.txt` + `public/llms.txt` | 06-ai-search gap #4 |
 
@@ -111,7 +111,7 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 Bundle the C-tier fixes — all small, high-impact, no hard dependencies:
 
 **Batch G (4–6h total):**
-1. **G1** (1h) — Add EDRPOU + ТОВ "МТП Груп Фулфілмент" + "since 2014" + LinkedIn/YouTube/Telegram links to `Footer.astro` (3 langs).
+1. ~~**G1** (1h)~~ ✅ **DONE 2026-04-25** — Footer trust block (brand year + ТОВ + ЄДРПОУ 45315740) shipped across 3 langs. Social links (FB/IG/YT/LI/TG) were already present.
 2. **G2** (2h) — Propagate font preload + inline critical header CSS to EN home + UA pillar HTML templates; disable Cloudflare Email Obfuscation in CF Pages dashboard.
 3. ~~**G3** (45min)~~ ✅ **DONE 2026-04-25** — 10 Reviews translated UA→RU with @id linkage; reviewCount 3→10.
 4. ~~**G4** (15min)~~ ✅ **DONE 2026-04-25** — `Allow: /files/mtp-api.postman_collection.json` carved into `robots.txt`.

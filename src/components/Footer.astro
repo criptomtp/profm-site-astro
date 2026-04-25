@@ -6,9 +6,9 @@ const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '/ru';
 const privacyPath = lang === 'uk' ? '/ua/privacy/' : lang === 'en' ? '/en/privacy/' : '/ru/privacy/';
 
 const t = {
-  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', knowledge:'Знання', developers:'Розробникам', apiDocs:'API документація', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', faq:'FAQ', guide:'Що таке фулфілмент?', prices:'Ціни', calculator:'Калькулятор', glossary:'Глосарій', privacy:'Політика конфіденційності', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.' },
-  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', knowledge:'Знания', developers:'Разработчикам', apiDocs:'API документация', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', faq:'FAQ', guide:'Что такое фулфилмент?', prices:'Цены', calculator:'Калькулятор', glossary:'Глоссарий', privacy:'Политика конфиденциальности', copy:'© 2026 MTP Group Fulfillment. Все права защищены.' },
-  en: { support:'Support', pages:'Pages', social:'Social', knowledge:'Knowledge', developers:'Developers', apiDocs:'API docs', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', faq:'FAQ', guide:'What is fulfillment?', prices:'Prices', calculator:'Calculator', glossary:'Glossary', privacy:'Privacy Policy', copy:'© 2026 MTP Group Fulfillment. All rights reserved.' },
+  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', knowledge:'Знання', developers:'Розробникам', apiDocs:'API документація', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', faq:'FAQ', guide:'Що таке фулфілмент?', prices:'Ціни', calculator:'Калькулятор', glossary:'Глосарій', privacy:'Політика конфіденційності', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.', brandLine:'MTP Group · на ринку з 2014 року', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
+  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', knowledge:'Знания', developers:'Разработчикам', apiDocs:'API документация', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', faq:'FAQ', guide:'Что такое фулфилмент?', prices:'Цены', calculator:'Калькулятор', glossary:'Глоссарий', privacy:'Политика конфиденциальности', copy:'© 2026 MTP Group Fulfillment. Все права защищены.', brandLine:'MTP Group · работаем с 2014 года', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
+  en: { support:'Support', pages:'Pages', social:'Social', knowledge:'Knowledge', developers:'Developers', apiDocs:'API docs', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', faq:'FAQ', guide:'What is fulfillment?', prices:'Prices', calculator:'Calculator', glossary:'Glossary', privacy:'Privacy Policy', copy:'© 2026 MTP Group Fulfillment. All rights reserved.', brandLine:'MTP Group · operating since 2014', legalLine:'TOV «МТП Груп Фулфілмент» (Ukrainian LLC) · EDRPOU 45315740' },
 }[lang];
 
 const pillarHref = lang === 'uk' ? '/ua/shcho-take-fulfilment/' : lang === 'en' ? '/en/what-is-fulfillment/' : '/ru/chto-takoe-fulfilment/';
@@ -21,7 +21,7 @@ const glossaryHref = lang === 'uk' ? '/glosariy/' : lang === 'en' ? '/en/glossar
 <div><h3>{t.knowledge}</h3><p><a href={pillarHref}>{t.guide}</a></p><p><a href={glossaryHref}>{t.glossary}</a></p><p><a href={pricesHref}>{t.prices}</a></p><p><a href={`${p}/calculator/`}>{t.calculator}</a></p></div>
 <div><h3>{t.developers}</h3><p><a href={`${p}/api-docs/`}>{t.apiDocs}</a></p><p><a href="/openapi.json" target="_blank" rel="noopener">{t.openapi}</a></p><p><a href="/files/mtp-api.postman_collection.json" download>{t.postman}</a></p></div>
 <div><h3>{t.social}</h3><p><a href="https://www.facebook.com/fulfillmentmtp" target="_blank" rel="noopener">Facebook</a></p><p><a href="https://www.instagram.com/mtp_group/" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://www.youtube.com/@mtpgroup" target="_blank" rel="noopener">YouTube</a></p><p><a href="https://www.linkedin.com/company/mtpgroupfulfillment/" target="_blank" rel="noopener">LinkedIn</a></p><p><a href="https://t.me/nikolay_mtp" target="_blank" rel="noopener">Telegram</a></p></div>
-</div><div class="footer-bottom"><a href={privacyPath}>{t.privacy}</a> &nbsp;|&nbsp; {t.copy}</div></footer>
+</div><div class="footer-bottom"><div class="footer-trust"><span class="footer-brand">{t.brandLine}</span> &nbsp;·&nbsp; <span class="footer-legal">{t.legalLine}</span></div><div class="footer-meta"><a href={privacyPath}>{t.privacy}</a> &nbsp;|&nbsp; {t.copy}</div></div></footer>
 
 <style>
 .footer{background:#111;color:rgba(255,255,255,.7);padding:60px 24px 30px}
@@ -30,4 +30,8 @@ const glossaryHref = lang === 'uk' ? '/glosariy/' : lang === 'en' ? '/en/glossar
 .footer p,.footer a{font-size:14px;line-height:2;color:rgba(255,255,255,.5);transition:color .2s}
 .footer a:hover{color:#fff}
 .footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:rgba(255,255,255,.3);max-width:1200px;margin-left:auto;margin-right:auto}
+.footer-trust{margin-bottom:8px;font-size:12.5px;color:rgba(255,255,255,.45);letter-spacing:.2px;line-height:1.6}
+.footer-trust .footer-brand{color:rgba(255,255,255,.6);font-weight:500}
+.footer-trust .footer-legal{color:rgba(255,255,255,.4)}
+.footer-meta{font-size:13px;color:rgba(255,255,255,.3)}
 </style>
