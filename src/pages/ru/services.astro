@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
 const serviceSchema = {
@@ -118,6 +119,8 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceS
     </div>
   </div>
 </section>
+<AuthorByline lang="ru" />
+
 
 <!-- STATS BAR (Industrial required) -->
 <section class="ru-srv-stats">

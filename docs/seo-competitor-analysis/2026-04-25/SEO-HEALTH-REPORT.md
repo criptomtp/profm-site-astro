@@ -76,7 +76,7 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 |---|-------|-------------|-----------|
 | ~~H1~~ | ~~Deprecated **HowTo schema** in `/ru/guide/`~~ ✅ **FIXED 2026-04-25 (Batch G5)** — replaced with Article schema | `src/pages/ru/guide.astro` | 03-schema gap #2 |
 | ~~H2~~ | ~~All 3 `/guide/` Articles missing `datePublished` + `dateModified`~~ ✅ **FIXED 2026-04-25 (Batch G5)** — Article schema with dates + Person author on all 3 | `src/pages/{ua,ru,en}/guide.astro` | 03-schema gap #3 |
-| H3 | `AuthorByline` missing on services / pricing / calculator / about / recalls landings (currently only pillars + blog) | `src/pages/{ua,ru,en}/{services,3pl-*,tsiny,tsenu,prices,calculator,about,recalls}.astro` | 02-content P0 |
+| ~~H3~~ | ~~`AuthorByline` missing on services / pricing / calculator / about / recalls landings (currently only pillars + blog)~~ ✅ **FIXED 2026-04-25 (Batch H3)** — AuthorByline component wired into 17 landing pages (3pl-*, tsiny/tsenu/prices, calculator, services, about, recalls × ua/ru/en) via codemod; build verified, 112 pages clean | `src/pages/{ua,ru,en}/{services,3pl-*,tsiny,tsenu,prices,calculator,about,recalls}.astro` | 02-content P0 |
 | H4 | UA + RU pillars have only **6 FAQ pairs** vs EN's 12 — expand to 15-20 for AI Overview / Perplexity citation density | `src/pages/{ua,ru}/{shcho-take-fulfilment,chto-takoe-fulfilment}.astro` | 06-ai-search gap #2 |
 | H5 | Two new thin pages: `/ru/paletnoe-khranenie/` 702w + `/en/pallet-storage/` 784w (below 800-floor) | source files | 02-content P0 |
 | H6 | New UA root URL policy (CLAUDE.md) **not actually shipped** — pillars still only exist at `/ua/*`, no `/shcho-take-fulfilment/`, `/tsiny/`, `/calculator/` at root | `src/pages/*.astro` | 01-technical |
