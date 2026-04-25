@@ -48,5 +48,11 @@
 /sitemap-index.xml
   Content-Type: application/xml; charset=utf-8
 
-/sitemap-0.xml
+/sitemap-uk.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-ru.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-en.xml
   Content-Type: application/xml; charset=utf-8

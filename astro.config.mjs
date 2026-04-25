@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import dualMd from './integrations/dual-md.mjs';
 import llmsFull from './integrations/llms-full.mjs';
 import imageSitemap from './integrations/image-sitemap.mjs';
+import sitemapLangSplit from './integrations/sitemap-lang-split.mjs';
 import { buildLastmodMap } from './integrations/lastmod-map.mjs';
 
 const lastmodMap = buildLastmodMap();
@@ -58,6 +59,7 @@ export default defineConfig({
         return item;
       },
     }),
+    sitemapLangSplit(),
     imageSitemap(),
   ],
   vite: {
