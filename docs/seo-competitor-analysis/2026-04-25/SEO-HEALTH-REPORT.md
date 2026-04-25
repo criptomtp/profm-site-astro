@@ -67,7 +67,7 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 | C1 | EN home mobile LCP **7.8s** (target ≤2.5s) — render-blocking `header.BgfblYv3.css` (480ms) + Cloudflare Email Obfuscation (482ms) + no font preload bundle on `/en/` | `dist/en/index.html` + CF Pages dashboard | 05-performance §1 |
 | C2 | UA pillar mobile LCP **5.5s** — same root cause as C1, missing font preload bundle | `dist/ua/shcho-take-fulfilment/index.html` | 05-performance §1 |
 | C3 | Footer has **no legal entity / EDRPOU / year founded** — biggest remaining E-E-A-T trust gap, despite About now carrying it | `src/components/Footer.astro` | 02-content P0 |
-| C4 | `ru/recalls/` source has **0 Review entries** (UA + EN have 10 each) — orphan AggregateRating risk re-introduced if not back-ported | `src/pages/ru/recalls.astro` | 03-schema gap #1 |
+| ~~C4~~ | ~~`ru/recalls/` source has **0 Review entries**~~ ✅ **FIXED 2026-04-25 (Batch G3)** — 10 Reviews translated UA→RU, @id linkage to `#business`, aggregateRating reviewCount 3→10 | `src/pages/ru/recalls.astro` | 03-schema gap #1 |
 | ~~C5~~ | ~~Postman Collection at `/files/mtp-api.postman_collection.json` is `Disallow:` in `robots.txt`~~ ✅ **FIXED 2026-04-25 (Batch G4)** — added `Allow: /files/mtp-api.postman_collection.json` line | `public/robots.txt` + `public/llms.txt` | 06-ai-search gap #4 |
 
 ### 🔴 High (fix within 1 week)
@@ -113,7 +113,7 @@ Bundle the C-tier fixes — all small, high-impact, no hard dependencies:
 **Batch G (4–6h total):**
 1. **G1** (1h) — Add EDRPOU + ТОВ "МТП Груп Фулфілмент" + "since 2014" + LinkedIn/YouTube/Telegram links to `Footer.astro` (3 langs).
 2. **G2** (2h) — Propagate font preload + inline critical header CSS to EN home + UA pillar HTML templates; disable Cloudflare Email Obfuscation in CF Pages dashboard.
-3. **G3** (45min) — Port 10 Reviews from UA recalls to RU recalls (translate, add @id linkage).
+3. ~~**G3** (45min)~~ ✅ **DONE 2026-04-25** — 10 Reviews translated UA→RU with @id linkage; reviewCount 3→10.
 4. ~~**G4** (15min)~~ ✅ **DONE 2026-04-25** — `Allow: /files/mtp-api.postman_collection.json` carved into `robots.txt`.
 5. ~~**G5** (15min)~~ ✅ **DONE 2026-04-25** — HowTo removed from `/ru/guide/`, Article schema with dates + Person author on all 3 guide pages.
 6. ~~**G6** (30min)~~ ✅ **DONE 2026-04-25** — sitemap serialize() regex extended to EN+RU slugs; pillar regex anchored to lang-prefix (M6 also fixed).
