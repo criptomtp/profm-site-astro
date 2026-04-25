@@ -88,12 +88,12 @@ Six remediation batches (A → F) shipped between 04-23 and 04-25 closed the lar
 |---|-------|-------------|
 | M1 | 48 inner pages (mostly EN blog) missing BreadcrumbList | `src/pages/en/blog/post/*.astro` |
 | M2 | `dateModified` missing on all spoke + landing schemas (only Article pages have it) | various service / landing pages |
-| M3 | 6th sameAs (X or Instagram) missing — Base.astro Person.sameAs = 5, publisher = 4 | `src/layouts/Base.astro` line 82 |
-| M4 | EN pillar lacks the "30-second TL;DR" box that UA + RU carry | `src/pages/en/what-is-fulfillment.astro` |
-| M5 | RU + EN `/services/` still 200 OK while UA equivalent retired — language asymmetry | `src/pages/{ru,en}/services.astro` |
+| ~~M3~~ | ~~6th sameAs (X or Instagram) missing — Base.astro Person.sameAs = 5, publisher = 4~~ ✅ **FIXED 2026-04-25 (Batch M)** — Instagram `https://www.instagram.com/mtp_group/` added to both Person.sameAs and publisher.sameAs (now 6 + 5) | `src/layouts/Base.astro` line 82 |
+| ~~M4~~ | ~~EN pillar lacks the "30-second TL;DR" box that UA + RU carry~~ ✅ **FIXED 2026-04-25 (Batch M)** — EN pillar already had `<KeyTakeaways>` with 6 bullets (matching UA+RU); only the heading wording differed ("Key Takeaways" vs UA "Головне за 30 секунд"). Renamed EN heading to "The 30-Second Takeaway" so the box is now explicitly framed as a 30-second read across all 3 languages. | `src/components/KeyTakeaways.astro` |
+| ~~M5~~ | ~~RU + EN `/services/` still 200 OK while UA equivalent retired — language asymmetry~~ ✅ **CLOSED 2026-04-25 (Batch M, by-clarification)** — verified `/ru/services/` (625 lines, CIS-audience hub for Kazakhstan/Moldova/Georgia) and `/en/services/` (299 lines, international service hub) are intentional standalone hubs distinct from `/skladskie-uslugi/` and `/3pl-logistics/`. UA `/ua/services/` was retired because UA-audience flow consolidated to `/ua/3pl-logistyka/`. Asymmetry is by-design and documented; no action required. | `src/pages/{ru,en}/services.astro` |
 | ~~M6~~ | ~~Blog pillar regex `/blog/chto-takoe-fulfilment/` accidentally promoted to 0.9~~ ✅ **FIXED 2026-04-25 (Batch G6)** — pillar regex anchored to `(ua|ru|en)/` lang-prefix only; verified `/blog/chto-takoe-fulfilment/` now serializes at 0.6 | `astro.config.mjs` serialize() |
 | M7 | `_headers` only sets explicit Content-Type for `sitemap-images.xml` — `sitemap-0.xml` + `sitemap-index.xml` rely on CF default | `public/_headers` |
-| M8 | Consolidate duplicate `gtag.js` loads into single GTM container (-115 KiB JS bundle on every page) | `src/layouts/Base.astro` |
+| M8 | Consolidate duplicate `gtag.js` loads into single GTM container (-115 KiB JS bundle on every page) | `src/layouts/Base.astro` | ⏸ **DEFERRED 2026-04-25** — pre-flight required: GTM container `GTM-MV5WZT5` must contain (a) GA4 Configuration tag for `G-ELBRCEFL41` firing on All Pages, (b) AdWords Conversion Linker tag for `AW-614588275`, (c) phone-click + form-submit triggers replicating current direct-gtag handlers. Removing the direct `gtag.js` load before that wiring is verified breaks analytics + phone-call attribution. Recommend: open GTM workspace → confirm tag inventory → preview-mode dry run on staging → only then drop direct gtag from Base.astro. Owner: requires user/Nikolay action since GTM config is outside the repo. |
 
 ### 🔵 Low (backlog)
 

@@ -69,8 +69,10 @@ async def main():
         page.on('response', on_response)
 
         print(f'→ open {URL}')
-        await page.goto(URL, wait_until='domcontentloaded')
-        await page.wait_for_timeout(2000)
+        await page.goto(URL, wait_until='networkidle')
+        # Wait for gtag.js to actually be loaded as a real function
+        await page.wait_for_function('typeof window.gtag === "function" && window.google_tag_data', timeout=15000)
+        await page.wait_for_timeout(1000)
 
         print(f'→ fill + submit hero form ({TEST_PHONE})')
         await page.fill('#heroForm input[name="phone"]', TEST_PHONE)

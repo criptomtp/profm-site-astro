@@ -3,7 +3,7 @@
 - Property ID: `286651314`
 - Account: Fulfillmentmtp
 - Time zone: Europe/Kiev · Currency: USD
-- Period: last 14 days · generated 2026-04-24T11:08:04
+- Period: last 14 days · generated 2026-04-24T11:32:23
 
 ## 1. Всі події за останні 14 днів (топ-25 за кількістю)
 
@@ -48,7 +48,20 @@ _(немає даних)_
 
 ## 5. Realtime (останні 30 хв)
 
-❌ 400 Selected dimensions and metrics cannot be queried together.
+| Event | Events |
+|---|---:|
+| `page_view` | 27 |
+| `ads_conversion__fulfillmentmtp_com_ua__1` | 13 |
+| `ads_conversion__https_fulfillmentmtp_c_4` | 13 |
+| `ads_conversion__https_fulfillmentmtp_c_5` | 13 |
+| `ads_conversion__https_fulfillmentmtp_c_6` | 13 |
+| `first_visit` | 13 |
+| `form_start` | 13 |
+| `session_start` | 13 |
+| `user_engagement` | 13 |
+| `ads_conversion___1` | 3 |
+| `form_submit` | 3 |
+| `generate_lead` | 3 |
 
 ### 2d. Детальний лог: останні form_submit з джерелом і landing page
 
@@ -58,7 +71,38 @@ _(жодного form_submit за період)_
 
 _Organic keywords агреговано з GSC. Per-user keyword відсутній — Google шифрує "(not provided)" з 2011._
 
-❌ GSC помилка: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+| Запит | Landing page | Clicks | Impr | CTR | Pos |
+|---|---|---:|---:|---:|---:|
+| `mtp group` | `/` | 2 | 7 | 28.6% | 1.1 |
+| `товарный бизнес` | `https://fulfillmentmtp.com.ua/blog/tpost/8emi42xu6` | 2 | 97 | 2.1% | 9.1 |
+| `mtp group` | `/ru/` | 1 | 1 | 100.0% | 1.0 |
+| `sla` | `/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits` | 1 | 182 | 0.5% | 8.4 |
+| `товарний бізнес` | `/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-o` | 1 | 133 | 0.8% | 9.1 |
+| `фулфилмент в украине` | `/services/` | 1 | 2 | 50.0% | 3.0 |
+| `фулфилмент киев` | `https://fulfillmentmtp.com.ua/` | 1 | 8 | 12.5% | 1.6 |
+| `фулфилмент украина` | `/ru/` | 1 | 6 | 16.7% | 4.8 |
+| `фулфілмент україна` | `/` | 1 | 13 | 7.7% | 2.8 |
+| `що таке артикул` | `/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pr` | 1 | 39 | 2.6% | 2.9 |
+| `(mtp)` | `/` | 0 | 1 | 0.0% | 1.0 |
+| `3 pl` | `/ua/3pl-logistyka/` | 0 | 5 | 0.0% | 50.4 |
+| `3pl fulfillment` | `/en/` | 0 | 2 | 0.0% | 4.5 |
+| `3pl fulfillment` | `/en/guide/what-is-3pl/` | 0 | 1 | 0.0% | 71.0 |
+| `3pl fulfilment` | `/en/guide/what-is-3pl/` | 0 | 1 | 0.0% | 81.0 |
+| `3pl warehouse` | `/en/` | 0 | 1 | 0.0% | 10.0 |
+| `3pl доставка` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 22.0 |
+| `3pl доставка днепр` | `/ru/3pl-logistika/` | 0 | 1 | 0.0% | 27.0 |
+| `3pl доставка киев` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 6.0 |
+| `3pl доставка київ` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 8.0 |
+| `3pl логистика` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 34.0 |
+| `3pl логистика киев` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 26.0 |
+| `3pl логістика` | `/ua/3pl-logistyka/` | 0 | 2 | 0.0% | 40.0 |
+| `3pl логістика` | `/ua/guide/scho-take-3pl/` | 0 | 1 | 0.0% | 31.0 |
+| `3pl логістика дніпро` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 25.0 |
+| `3pl логістика київ` | `/ua/3pl-logistyka/` | 0 | 1 | 0.0% | 21.0 |
+| `3pl оператор киев` | `/ru/3pl-logistika/` | 0 | 1 | 0.0% | 16.0 |
+| `3pl оператор київ` | `/ua/3pl-logistyka/` | 0 | 2 | 0.0% | 25.5 |
+| `3pl оператор київ` | `/ua/blog/rinok-fulfilmentu-ukraina/` | 0 | 1 | 0.0% | 77.0 |
+| `3pl операторы украины` | `/ru/3pl-logistika/` | 0 | 1 | 0.0% | 42.0 |
 
 ## 8. AI-пошук і реферали (Perplexity, ChatGPT, Bing Copilot, Gemini)
 

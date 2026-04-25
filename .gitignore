@@ -18,3 +18,4 @@ docs/gbp/screenshots/
 **/.claude-flow/
 claude-seo/
 google-ads-skills/
+scripts/gsc_token.json.revoked-*
