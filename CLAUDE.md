@@ -217,12 +217,17 @@ head -10 dist/ua/[новий-slug]/index.md  # frontmatter + clean content
 
 ## Структура Astro сторінок + URL Policy:
 
-**URL Policy (зафіксовано 2026-04-22):**
+**URL Policy (зафіксовано 2026-04-22, уточнено 2026-04-25 — Batch H6):**
 - UA = основна мова сайту → **НОВІ UA сторінки БЕЗ префіксу `/ua/`**
-  - Приклад: `/shcho-take-fulfilment/`, `/tsiny/`, `/calculator/` (НЕ `/ua/...`)
+  - Приклад (гіпотетичні майбутні URL): `/fulfilment-dlya-knyzhok/`, `/sezonna-logistyka/` створюються одразу як `src/pages/[slug].astro`
 - RU завжди з префіксом `/ru/`
 - EN завжди з префіксом `/en/`
 - Home `/` = UA (канонічна без префіксу)
+
+**⚠️ Grandfather clause — НЕ створювати дублі при root для існуючих `/ua/*`:**
+- Pillars (`/ua/shcho-take-fulfilment/`), pricing (`/ua/tsiny/`), calculator (`/ua/calculator/`), services etc. **залишаються на /ua/** — не мігруємо в root, не створюємо там дублі
+- Причина: hreflang триплети UA↔RU↔EN вже sibling-консистентні; перенос призведе до 301-ланцюгів і тимчасової втрати позицій без виграшу в SEO
+- H6 в audit 2026-04-25 закрито shipping policy clarification (а не міграцією) — рішення перегляне через 6-12 міс якщо буде причина
 
 **Файлова структура (нові сторінки):**
 - UA: `src/pages/[slug].astro` (корінь, без `ua/` папки)
