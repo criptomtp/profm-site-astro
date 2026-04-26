@@ -686,46 +686,6 @@
       "statusCode": 301
     },
     {
-      "source": "/ua/blog/case-ecodrive/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/chomu-fulfilment-deshevshyy/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/fulfilment-vs-vlasnyy-sklad/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/rinok-fulfilmentu-ukraina/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/vartist-fulfilmentu-2026/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/yak-perejty-na-fulfilment/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ua/blog/yak-vybrati-fulfilment/",
-      "destination": "/ua/blog/",
-      "statusCode": 301
-    },
-    {
       "source": "/fulfillment-for-:slug*/",
       "destination": "/ua/3pl-logistyka/",
       "statusCode": 301
