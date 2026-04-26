@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#007dad",
+                    "tertiary": "#00638a",
+                    "outline-variant": "#e5bdb8",
+                    "surface-tint": "#bd0f10",
+                    "on-tertiary-fixed-variant": "#004c6b",
+                    "on-background": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#c6e7ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-fixed": "#001e2d",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#fcfcff",
+                    "on-primary-container": "#fffbff",
+                    "on-surface": "#1c1b1b",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#de2d24",
+                    "on-primary-fixed": "#410001",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface-variant": "#5c403c",
+                    "primary-fixed": "#ffdad5",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "background": "#fcf9f8",
+                    "tertiary-fixed-dim": "#82cfff",
+                    "secondary-container": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-high": "#eae7e7",
+                    "secondary": "#5e5e5e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "primary": "#ba0a0d",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb4a9",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "on-primary-fixed-variant": "#930005",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary-container": "#646464",
+                    "error": "#ba1a1a",
+                    "outline": "#916f6a",
+                    "surface-variant": "#e5e2e1",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "0rem"
+            },
+            "fontFamily": {
+                    "headline": ["Work Sans"],
+                    "display": ["Work Sans"],
+                    "body": ["Work Sans"],
+                    "label": ["Work Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-white">
+<!-- TopNavBar Execution from JSON -->
+<nav class="fixed top-0 w-full z-50 rounded-none border-none bg-[#ffffff] flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-black">MTP GROUP</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">Послуги</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">Про нас</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">Відгуки</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">Блог</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">FAQ</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-[#e63329] transition-colors duration-150" href="#">Ціни</a>
+</div>
+<button class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] bg-[#e63329] text-white px-6 py-3 hover:bg-black transition-colors duration-150">ЗВ’ЯЗАТИСЬ</button>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-[1280px] mx-auto px-8 py-16 md:py-24">
+<div class="flex flex-col md:flex-row gap-16 md:gap-0">
+<!-- Left Content (60%) -->
+<div class="md:w-[60%] pr-0 md:pr-16">
+<p class="text-[#e63329] font-bold text-[0.75rem] uppercase tracking-[0.1rem] mb-6">
+                        ФУЛФІЛМЕНТ ДЛЯ ROZETKA · СЕЛЕРАМ МАРКЕТПЛЕЙСУ
+                    </p>
+<h1 class="text-[2.75rem] md:text-[3.5rem] leading-[1.1] font-black tracking-[-0.02em] text-black mb-8">
+<span class="text-[#e63329]">Альтернатива</span> Rozetka FBO для категорій, які вона не приймає
+                    </h1>
+<p class="text-secondary text-[1rem] leading-[1.6] max-w-xl mb-12">
+                        Меблі, габарит, побутова техніка, крихке скло — ми приймаємо те, що Rozetka FF відкидає. Multi-marketplace, контроль над брендом, без комісії з продажу.
+                    </p>
+<div class="flex flex-col gap-3">
+<form class="flex flex-col sm:flex-row gap-0 max-w-lg">
+<input class="bg-surface-container-highest border-none h-14 px-6 focus:ring-0 focus:border-b-2 focus:border-primary w-full text-black placeholder-secondary font-bold" placeholder="+38 (0__) ___ __ __" type="tel"/>
+<button class="bg-[#e63329] text-white px-8 py-4 font-bold uppercase tracking-[0.08rem] hover:bg-black transition-colors duration-150 whitespace-nowrap" type="submit">
+                                Отримати розрахунок →
+                            </button>
+</form>
+<p class="text-[0.75rem] uppercase tracking-[0.05rem] text-secondary font-bold">
+                            ✓ Передзвонимо за 15 хвилин · Без зобов'язань
+                        </p>
+</div>
+</div>
+<!-- Right Content (40% - Stats Bar) -->
+<div class="md:w-[40%] flex flex-col">
+<div class="grid grid-cols-1 divide-y divide-outline-variant/15 border-l-0 md:border-l-[12px] border-black">
+<div class="bg-surface-container-low p-8 flex flex-col justify-center">
+<span class="text-[#e63329] font-bold text-[0.75rem] uppercase tracking-[0.1rem] mb-2">Швидкість обробки</span>
+<div class="text-[2.75rem] font-black tracking-tighter text-black uppercase">24 ГОД</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary">обробка замовлень</div>
+</div>
+<div class="bg-surface p-8 flex flex-col justify-center">
+<span class="text-[#e63329] font-bold text-[0.75rem] uppercase tracking-[0.1rem] mb-2">Старт роботи</span>
+<div class="text-[2.75rem] font-black tracking-tighter text-black uppercase">2-3 ДНІ</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary">до підключення</div>
+</div>
+<div class="bg-surface-container-low p-8 flex flex-col justify-center">
+<span class="text-[#e63329] font-bold text-[0.75rem] uppercase tracking-[0.1rem] mb-2">Фінансова вигода</span>
+<div class="text-[2.75rem] font-black tracking-tighter text-black uppercase">0%</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary">комісії з продажу</div>
+</div>
+<div class="bg-surface p-8 flex flex-col justify-center">
+<span class="text-[#e63329] font-bold text-[0.75rem] uppercase tracking-[0.1rem] mb-2">Масштаб мережі</span>
+<div class="text-[2.75rem] font-black tracking-tighter text-black uppercase">4 СКЛАДИ</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary">Київ + область</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Strip -->
+<section class="w-full bg-surface-container-high border-y-0 py-12">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-8 grayscale opacity-50 contrast-125">
+<div class="text-[1.5rem] font-black tracking-tighter">ROZETKA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">PROM.UA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">KASTA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">ALLO</div>
+<div class="text-[1.5rem] font-black tracking-tighter">HOROSHOP</div>
+</div>
+</div>
+</section>
+<!-- Secondary Industrial Block -->
+<section class="max-w-[1280px] mx-auto px-8 py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+<div class="bg-black p-12 text-white flex flex-col justify-between aspect-video md:aspect-auto">
+<h2 class="text-[2rem] font-bold leading-tight">ПРОФЕСІЙНИЙ ФУЛФІЛМЕНТ ДЛЯ КРИХКИХ ТА ГАБАРИТНИХ ТОВАРІВ</h2>
+<div class="h-2 w-24 bg-primary"></div>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Warehouse logistics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="interior of a modern high-tech warehouse with tall racking systems and professional lighting industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrgoPfgKzlgiRc9HEStglZ1oPmPya9tA1KnDr6vmVz8Qx8LrWAeSrgEvEanr3dZY1iMc3vEBsRfELJkM2H_UL8E44Ph-RlZ0XG9bodjv8BL-Q0MDc_MBScPhEEw8aY2zGxbwixRu51VcxEQd_imhOZhdfaVuQYRpOXQhDETT_Ji8-k7ht1qP-bmhRzPa92o9iLht8kNchIs88prJ0OAV8t1n5HVavrvSzrKEiK5AYuVhJZ-7grGLaAhwCR6h9CEWoGms-6oWiqWRIu"/>
+<div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Execution from JSON -->
+<footer class="bg-black text-white w-full rounded-none">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-12 py-16 gap-8">
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="text-xl font-bold text-white uppercase tracking-[0.2rem]">MTP GROUP</div>
+<p class="font-['Work_Sans'] text-[0.875rem] leading-[1.6] text-zinc-400">
+                    Надійний партнер у світі логістики. Ми забезпечуємо точність кожного відправлення та контроль над вашим ланцюгом поставок.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-4">
+<a class="font-['Work_Sans'] text-[0.875rem] text-zinc-400 hover:text-[#e63329] transition-colors" href="#">Контакти</a>
+<a class="font-['Work_Sans'] text-[0.875rem] text-zinc-400 hover:text-[#e63329] transition-colors" href="#">Партнерам</a>
+<a class="font-['Work_Sans'] text-[0.875rem] text-zinc-400 hover:text-[#e63329] transition-colors" href="#">Політика конфіденційності</a>
+<a class="font-['Work_Sans'] text-[0.875rem] text-zinc-400 hover:text-[#e63329] transition-colors" href="#">Rozetka Integration</a>
+<a class="font-['Work_Sans'] text-[0.875rem] text-zinc-400 hover:text-[#e63329] transition-colors" href="#">Умови сервісу</a>
+</div>
+</div>
+<div class="px-12 pb-8">
+<div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Work_Sans'] text-[0.75rem] text-zinc-500 uppercase tracking-widest">© 2024 MTP GROUP. FULFILLMENT PRECISION.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">factory</span>
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">inventory</span>
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">local_shipping</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

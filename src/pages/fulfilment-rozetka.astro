@@ -1,0 +1,322 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import LabelChip from '../components/stitch/LabelChip.astro';
+import StatsBar from '../components/stitch/StatsBar.astro';
+import DarkCTA from '../components/stitch/DarkCTA.astro';
+import AccordionGroup from '../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'Які категорії товарів Rozetka FBO не приймає, а MTP приймає?', a: '<p>Rozetka FF відмовляє у прийомі габаритних меблів (понад 30 кг або 1.5 м у будь-якому вимірі), великої побутової техніки (холодильники, пральні машини), крихкого скла та порцеляни без посиленого пакування виробника, дзеркал і вітрин, а також SKU що потребують спеціальних умов зберігання (косметика з вологим кліматом, БАДи з контрольованою температурою). MTP Group приймає всі ці категорії: у нас 4 склади загальною площею 4 100 м² з зонами +2…+8°C і +18…+24°C, мобільне обладнання для габаритних товарів, посилене багатошарове пакування для крихкого. Ми обслуговуємо понад 80 брендів цих категорій.</p>' },
+  { q: 'Скільки коштує фулфілмент MTP проти комісії Rozetka FBO?', a: '<p>Rozetka FBO бере 4-35% комісії з продажу плюс 100 грн/міс за "outlet". Це значить що з замовлення на 1 000 грн ти віддаєш від 40 до 350 грн комісії — і ця сума залежить від категорії, яку Rozetka визначає сама. MTP Group стягує тільки за фактичні операції: приймання, зберігання, комплектацію, відправку — без % від продажу. Типовий тариф 18-35 грн/замовлення (залежить від обсягу і складності пакування). На замовленні в 1 000 грн ти економиш 5-32% порівняно з Rozetka FBO. Точний розрахунок — у <a href="/ua/calculator/">калькуляторі</a>.</p>' },
+  { q: 'Чи можу я продавати на Rozetka, Prom.ua і Kasta одночасно з вашого складу?', a: '<p>Так, це наша основна модель. У одному WMS живе єдиний залишок на SKU; коли надходить замовлення з Rozetka, Prom або Kasta — система резервує штуку, друкує етикетку у форматі того маркетплейсу і відправляє в день надходження. Ми тримаємо нативні API-інтеграції з Rozetka Marketplace, Prom.ua, Kasta, OLX, Allo, Bigl, Epicentr, а також з твоїм власним сайтом (Horoshop, WooCommerce, Shopify, OpenCart). Жодного "lock-in" в одну платформу.</p>' },
+  { q: 'Чи можете приготувати вантаж до відправки в Rozetka FBO?', a: '<p>Так. Якщо ти все-таки вирішив зайти у Rozetka FBO для частини асортименту, MTP виступає префулфілмент-партнером: приймаємо великий вантаж від твого постачальника або з імпорту, проводимо QC, маркуємо штрихкодом Rozetka, формуємо палети за стандартами Rozetka FBO (1.2×0.8 м, висота до 1.5 м, висновки етикеток у видимих місцях), оформлюємо ТТН до сортувального центру Rozetka в Бровари або Чубинське. Ти економиш 7-10 робочих днів і не платиш за помилки відмови вантажу.</p>' },
+  { q: 'Як ваш SLA порівнюється з вимогами Rozetka до часу відповіді селера?', a: '<p>Rozetka визначає рейтинг продавця за швидкістю обробки звернень: ідеал — менше 30 хвилин, нормально — до 2 годин, погано — до 24 годин, недопустимо — більше 24 годин. MTP працює як твій бек-офіс: середній час обробки замовлення (від отримання до етикетки) — 24 хвилини в робочі години, ескалація на оператора — 8 хвилин. Це означає що твій рейтинг на Rozetka залишається у зеленій зоні навіть коли ти у відпустці чи на конференції.</p>' },
+  { q: 'Що буде з товаром під час блекауту чи повітряної тривоги?', a: '<p>З лютого 2022 року на наших складах — нуль днів простою. Інфраструктура: 3 промислових генератори (2× 60 кВт + 1× 100 кВт) з автономією 36 годин кожен, запас дизпалива на 5 діб, 2 Starlink-термінали для зв\'язку з API маркетплейсів, дублюючі оптоволоконні канали від двох провайдерів. Під час повітряної тривоги операції на пакувальних столах не зупиняються — згідно з протоколом Бориспільського району. Замовлення з Rozetka і Prom продовжують надходити, оброблятися і відправлятися.</p>' },
+  { q: 'Як ви забезпечуєте збереження бренду — коробка, вкладиш, паковий матеріал?', a: '<p>Rozetka FBO використовує свою фірмову коричневу коробку з логотипом Rozetka — клієнт бачить ім\'я Rozetka, а не твій бренд. У MTP коробка і паковий матеріал — твої. Ми зберігаємо твій брендований скотч, вкладиші, наклейки, картки лояльності, пробники, наклейки "thank you for shopping". Кожне замовлення фотографується перед запечатуванням — фото зберігаються у твоєму кабінеті 7 днів. Витрата матеріалів — за фактом, без націнки.</p>' },
+  { q: 'Які інтеграції з CRM ви підтримуєте для управління замовленнями Rozetka?', a: '<p>Нативні: KeyCRM, SalesDrive — підключення за 1-2 робочих дні, замовлення синхронізуються в обидва боки кожні 30 секунд. Через відкритий API: RetailCRM, Bitrix24, Odoo, AmoCRM, OneBox. Кастомні CRM — підключаємо за 2-3 дні через REST API з webhook-сповіщеннями. Усі статуси Rozetka (нове, в обробці, відправлено, отримано, повернення) автоматично транслюються у твій CRM, і навпаки — твоя команда може ставити коментарі, які бачить наш склад.</p>' },
+  { q: 'Хто несе матеріальну відповідальність за товар на вашому складі?', a: '<p>MTP Group згідно з договором повністю компенсує вартість втраченого або пошкодженого товару за закупівельною ціною. Для обсягів понад 500 000 грн складських залишків страхування включене у тариф (Універсальна страхова, до 5 млн грн на склад). Інвентаризація — раз на квартал, з твоєю присутністю; розбіжності в межах 0.3% компенсуємо без обговорення. Прозорий журнал переміщень доступний у кабінеті 24/7.</p>' },
+  { q: 'Як швидко я можу підключитись і почати відправляти з Rozetka через MTP?', a: '<p>Стандартний онбордінг — 2-3 робочих дні. Перший день: підписання договору і NDA, узгодження тарифу, видача доступів до WMS і кабінету. Другий день: приймання першої партії товару (з твого складу безкоштовно по Києву і області від 1 палети, з регіонів — Нова Пошта/Делівері). Третій день: API-підключення до твого Rozetka-кабінету, тестове замовлення, верифікація друку етикетки за стандартом Rozetka. На четвертий день — повноцінна робота.</p>' },
+  { q: 'Чим відрізняється підготовка товару до Rozetka від стандартного фулфілменту?', a: '<p>Rozetka має детальні специфікації: штрихкод EAN-13 на кожному SKU (друкуємо самі за 1.20 грн/од, якщо у тебе немає), додаткова Rozetka-етикетка з артикулом маркетплейсу на видимому місці, посилене пакування для категорій "крихке" (повітряні подушки + двостінна коробка), окрема упаковка кожного юніту якщо це не комплект, заборона рекламних вкладишів конкурентів. Ми ведемо чек-лист для кожного твого SKU у WMS — оператор не може закрити завдання, поки не пройде всі пункти.</p>' },
+  { q: 'Чи можна забрати товар з вашого складу і перейти у Rozetka FBO або до іншого партнера?', a: '<p>Так, без штрафів і обмежень. У договорі немає lock-in: повідомляєш за 14 днів, формуємо інвентаризаційний акт, готуємо вантаж до видачі (палетизація, етикетки), узгоджуємо логістику. Якщо переходиш у Rozetka FBO — ми безкоштовно проводимо приготування за їхніми стандартами і доставляємо у Бровари або Чубинське. Якщо переходиш до іншого 3PL — формуємо палети за їхніми вимогами. Гнучкість — частина нашої цінності.</p>' },
+];
+
+const faqSchema = { "@context":"https://schema.org","@type":"FAQPage","mainEntity": faq.map(({q, a}) => ({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text": a.replace(/<[^>]+>/g,'').trim()}}))};
+
+const breadcrumbSchema = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},
+  {"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"},
+  {"@type":"ListItem","position":3,"name":"Фулфілмент для Rozetka","item":"https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/"}
+]};
+
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Фулфілмент для селерів Rozetka","description":"Альтернатива Rozetka FBO для категорій що не приймає маркетплейс. Multi-marketplace через Rozetka, Prom, Kasta, Allo. Без комісії з продажу.","serviceType":"Fulfillment","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"audience":{"@type":"BusinessAudience","name":"Продавці Rozetka, Prom.ua, Kasta, Allo"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (200+ замовлень/день)"},"dateModified":"2026-04-26"};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+<Base
+  title="Фулфілмент для селерів Rozetka 2026 | MTP Group"
+  description="Альтернатива Rozetka FBO для категорій що не приймає маркетплейс. Меблі, габарит, скло, БАДи. Multi-marketplace через Rozetka+Prom+Kasta. Без комісії з продажу."
+  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-rozetka-ua-hero.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="rzh-bc" aria-label="Breadcrumbs">
+  <div class="rzh-bc__inner">
+    <a href="/">Головна</a><span aria-hidden="true">›</span>
+    <a href="/ua/3pl-logistyka/">Послуги</a><span aria-hidden="true">›</span>
+    <span class="rzh-bc__current">Фулфілмент для Rozetka</span>
+  </div>
+</nav>
+
+<!-- HERO — BASE LAYOUT (split 60/40) -->
+<section class="rzh">
+  <div class="rzh__inner">
+    <div class="rzh__main">
+      <LabelChip text="ФУЛФІЛМЕНТ ДЛЯ ROZETKA · СЕЛЕРАМ МАРКЕТПЛЕЙСУ" variant="red" />
+      <h1 class="rzh__h1"><span class="rzh__accent">Альтернатива</span> Rozetka FBO для категорій, які вона не приймає</h1>
+      <p class="rzh__lead">Меблі, габарит, побутова техніка, крихке скло, БАДи з температурним режимом — ми приймаємо те, що Rozetka FF відкидає. Multi-marketplace через Rozetka + Prom + Kasta з одного складу. Контроль над брендом і пакуванням. Без % комісії з продажу.</p>
+      <div class="rzh__form">
+        <HeroCTA lang="uk" theme="light" button="Отримати розрахунок →" microCopy="✓ Передзвонимо за 15 хвилин · Без зобов'язань" sourceTag="hero /fulfilment-rozetka/" />
+        <div class="rzh__links">
+          <a href="/ua/calculator/">Калькулятор вартості →</a>
+          <span aria-hidden="true">·</span>
+          <a href="/ua/tsiny/">Прайс 2026 →</a>
+        </div>
+      </div>
+    </div>
+    <aside class="rzh__stats" aria-label="Ключові показники">
+      <StatsBar tone="dark" items={[
+        { num: '24 ГОД', label: 'Обробка замовлення' },
+        { num: '2-3 ДНІ', label: 'До підключення' },
+        { num: '0%', label: 'Комісії з продажу' },
+        { num: '4 СКЛАДИ', label: 'Київ + область, 4 100 м²' },
+      ]} />
+    </aside>
+  </div>
+  <div class="rzh__logos" aria-label="Підключені маркетплейси">
+    <span class="rzh__logos-label">МАРКЕТПЛЕЙСИ З API-ІНТЕГРАЦІЄЮ</span>
+    <div class="rzh__logos-row">
+      <span>ROZETKA</span><span aria-hidden="true">·</span>
+      <span>PROM.UA</span><span aria-hidden="true">·</span>
+      <span>KASTA</span><span aria-hidden="true">·</span>
+      <span>ALLO</span><span aria-hidden="true">·</span>
+      <span>BIGL</span><span aria-hidden="true">·</span>
+      <span>EPICENTR</span><span aria-hidden="true">·</span>
+      <span>OLX</span><span aria-hidden="true">·</span>
+      <span>HOROSHOP</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR + DATES -->
+<div class="rzh-byline">
+  <AuthorByline lang="uk" datePublished="2026-04-26" dateModified="2026-04-26" readingTime="9" />
+</div>
+
+<!-- INTRO: WHAT ROZETKA FBO IS AND WHAT IT DOESN'T ACCEPT -->
+<section class="rzh-intro">
+  <div class="rzh-intro__inner">
+    <LabelChip text="01 · КОНТЕКСТ" variant="muted" />
+    <h2 class="rzh-h2">Rozetka FBO — що це і чому деяких селерів вона не пускає</h2>
+    <p>Rozetka Fulfillment by Operator (Rozetka FBO) — це сервіс, у межах якого продавець завантажує товар на склади Rozetka в Броварах, Чубинському (Бориспільський район Київської області) і Львові. Маркетплейс зберігає, пакує і відправляє замовлення від свого імені. У 2021 році Rozetka запустила цю послугу для тисяч селерів марктплейсу, і з 2024 року FBO вже обслуговує понад 60% активних SKU.</p>
+    <p>Але FBO — не для всіх. Маркетплейс має жорсткий список <strong>категорій, які він не приймає на свої склади</strong>: велика побутова техніка (холодильники, пральні машини, плити, кондиціонери), меблі (диван, шафа, стіл, ліжко), габаритні SKU (понад 30 кг або 1.5 м у будь-якому вимірі), крихке скло і дзеркала без посиленого пакування виробника, БАДи і косметика, що потребують контрольованої температури +2…+8°C, харчові добавки з обмеженим терміном зберігання, спецтовари (зброя, ліки рецептурні, живі квіти, заморожені продукти).</p>
+    <p>Якщо ти продаєш у одній з цих категорій, у тебе три шляхи: тримати власний склад (дорого і неефективно при обсязі менше 200 замовлень/день), приймати "тільки невелика частина асортименту в FBO" (фрагментована логістика і подвійна комісія), або обрати <strong>фулфілмент-партнера що працює саме з виключеними категоріями</strong>. Це і є MTP Group.</p>
+  </div>
+</section>
+
+<!-- 7 REASONS -->
+<section class="rzh-reasons">
+  <div class="rzh-reasons__inner">
+    <LabelChip text="02 · ЧОМУ MTP" variant="muted" />
+    <h2 class="rzh-h2">7 причин обрати MTP як альтернативу або доповнення Rozetka FBO</h2>
+    <div class="rzh-reasons__grid">
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">1</span><h3>Категорії що Rozetka не бере</h3><p>Меблі до 80 кг, побутова техніка, крихке скло і дзеркала, БАДи з холодним зберіганням +2…+8°C, косметика, харчові добавки. У нас обладнання, страхування і операційні процедури під ці SKU.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">2</span><h3>Multi-marketplace без lock-in</h3><p>Один склад, один залишок — продаєш одночасно на Rozetka, Prom.ua, Kasta, Allo, Bigl, Epicentr, OLX і власному сайті. Жодних дублікатів запасів, жодного ризику подвійного продажу.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">3</span><h3>Без % комісії з продажу</h3><p>Ми беремо тільки за фактичні операції: приймання, зберігання, комплектація, відправка. Економія 5-32% від обороту порівняно з FBO для категорій з високою комісією Rozetka.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">4</span><h3>Контроль над брендом</h3><p>Твоя коробка, твій скотч, твої вкладиші, твої картки лояльності. Клієнт відкриває посилку і бачить твій бренд, а не Rozetka. Фотофіксація кожного замовлення перед запечатуванням — у кабінеті 7 днів.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">5</span><h3>SLA на рівні Rozetka "ідеально"</h3><p>Час обробки замовлення в робочі години — 24 хвилини, ескалація на оператора — 8 хвилин. Це менше за порогове значення Rozetka "ідеально" (30 хв), що тримає рейтинг твого аккаунту в зеленій зоні.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">6</span><h3>Префулфілмент для FBO</h3><p>Якщо ти все-таки хочеш використати FBO для частини асортименту — ми приймаємо вантаж від постачальника, маркуємо штрихкодом Rozetka, формуємо палети за їх стандартами і доставляємо у Бровари/Чубинське.</p></article>
+      <article class="rzh-reasons__card"><span class="rzh-reasons__num">7</span><h3>Blackout-стійкість</h3><p>3 генератори з 36-годинною автономією, запас палива на 5 діб, 2 Starlink-термінали, 2 оптоволоконних провайдери. З лютого 2022 — нуль днів простою. API Rozetka і Prom продовжує синхронізуватись.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: COMPARISON TABLE -->
+<section class="rz-compare">
+  <div class="rz-compare__inner">
+    <LabelChip text="03 · ПОРІВНЯННЯ" variant="red" />
+    <h2 class="rzh-h2">Rozetka FBO vs MTP Group vs Власний склад</h2>
+    <p class="rz-compare__lead">Чесна таблиця для селерів які зараз вирішують: куди завозити вантаж. 12 параметрів, без зірочок.</p>
+    <div class="rz-compare__scroll">
+      <table class="rz-compare__t">
+        <thead>
+          <tr><th class="rz-compare__th-row">Параметр</th><th>Rozetka FBO</th><th class="rz-compare__th-mtp">MTP Group</th><th>Власний склад</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Категорії товарів</td><td><span class="rz-x">×</span> Виключає габарит, меблі, скло, БАДи</td><td><span class="rz-v">✓</span> Усі категорії крім спецтоварів</td><td><span class="rz-v">✓</span> Усі категорії</td></tr>
+          <tr><td>Комісія з продажу</td><td><span class="rz-x">×</span> 4-35% + 100 грн/міс</td><td><span class="rz-v">✓</span> 0% (тільки за операції)</td><td><span class="rz-v">✓</span> 0% (твої витрати)</td></tr>
+          <tr><td>Multi-marketplace</td><td><span class="rz-x">×</span> Тільки Rozetka</td><td><span class="rz-v">✓</span> Rozetka + Prom + Kasta + Allo + ...</td><td><span class="rz-v">✓</span> Усі (твоя робота)</td></tr>
+          <tr><td>Контроль бренду</td><td><span class="rz-x">×</span> Коробка Rozetka</td><td><span class="rz-v">✓</span> Твоя коробка, твої вкладиші</td><td><span class="rz-v">✓</span> Повний контроль</td></tr>
+          <tr><td>Час підключення</td><td>5-7 робочих днів</td><td><span class="rz-v">✓</span> 2-3 робочих дні</td><td>30-90 днів (оренда + найм)</td></tr>
+          <tr><td>Мінімальний обсяг</td><td>50 SKU, 200 замовлень/міс</td><td><span class="rz-v">✓</span> Без мінімуму на старті</td><td>Економічно з 200 замов./день</td></tr>
+          <tr><td>SLA обробки</td><td>24 год (норма)</td><td><span class="rz-v">✓</span> 24 хв (ідеально за Rozetka)</td><td>Залежить від твоєї команди</td></tr>
+          <tr><td>Страхування</td><td>До 50 000 грн на партію</td><td><span class="rz-v">✓</span> До 5 млн грн на склад</td><td>Окремий поліс (від 1.5%/рік)</td></tr>
+          <tr><td>Інтеграції CRM</td><td>Тільки Rozetka API</td><td><span class="rz-v">✓</span> KeyCRM, SalesDrive, Bitrix24, REST API</td><td>Твоя розробка</td></tr>
+          <tr><td>Blackout-стійкість</td><td>Залежить від складу Rozetka</td><td><span class="rz-v">✓</span> 3 генератори, Starlink, 0 днів простою</td><td>Твої генератори/інвестиції</td></tr>
+          <tr><td>Прайс</td><td>4-35% + 100 грн/міс + комплектація</td><td><span class="rz-v">✓</span> 18-35 грн/відправлення</td><td>Оренда + ФОП + комуналка</td></tr>
+          <tr><td>Повернення</td><td>Сортування на складі Rozetka</td><td><span class="rz-v">✓</span> Прийом за 24 год + фотофіксація</td><td>Твоя процедура</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rz-compare__note">Розрахунок під твої обсяги і категорії — за 60 секунд у <a href="/ua/calculator/">калькуляторі</a>.</p>
+  </div>
+</section>
+
+<!-- CATEGORIES WE ACCEPT -->
+<section class="rzh-cats">
+  <div class="rzh-cats__inner">
+    <LabelChip text="04 · ВИКЛЮЧЕНІ КАТЕГОРІЇ" variant="muted" />
+    <h2 class="rzh-h2">Що приймаємо ми, а Rozetka FBO відмовляє</h2>
+    <div class="rzh-cats__grid">
+      <article class="rzh-cats__card"><h3>Меблі і декор</h3><p>Дивани до 80 кг, шафи у розібраному вигляді, столи, ліжка, крісла, дитячі меблі, декоративні елементи. Окрема зона зберігання, підлогові стелажі для габариту, завантаження ричажними візками.</p><a href="/ua/fulfilment-vazhkykh-tovariv/">Деталі →</a></article>
+      <article class="rzh-cats__card"><h3>Велика побутова техніка</h3><p>Холодильники, пральні і посудомийні машини, плити, кондиціонери, духові шафи. Підготовка до доставки з кріпленням транспортних болтів, упаковка у пінопласт + двостінна коробка.</p><a href="/ua/fulfilment-vazhkykh-tovariv/">Деталі →</a></article>
+      <article class="rzh-cats__card"><h3>Крихке скло і дзеркала</h3><p>Вази, посуд, декоративні скляні вироби, дзеркала, скляні кухонні поверхні. Багатошарове пакування: повітряні подушки + пухирчаста плівка + кутові протектори + двостінна коробка.</p></article>
+      <article class="rzh-cats__card"><h3>Косметика і БАДи</h3><p>Декоративна косметика, доглядові креми, шампуні, БАДи стандартного зберігання при +18…+24°C. Окрема зона +2…+8°C для термочутливих SKU з 24/7 моніторингом температури.</p><a href="/ua/fulfilment-dlya-kosmetyky/">Деталі →</a></article>
+      <article class="rzh-cats__card"><h3>Електроніка і гаджети</h3><p>Смартфони, ноутбуки, планшети, аксесуари, побутова дрібна техніка, дрони. Антистатичне пакування, фіксація у транспортній упаковці, фотофіксація серійних номерів.</p></article>
+      <article class="rzh-cats__card"><h3>Дитячі товари</h3><p>Іграшки, коляски, автокрісла, одяг, харчування. Перевірка цілісності упаковки, дотримання вимог BSI/EN-71 для іграшок, зона +18…+24°C для дитячого харчування.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- MULTI-MARKETPLACE STRATEGY -->
+<section class="rzh-multi">
+  <div class="rzh-multi__inner">
+    <LabelChip text="05 · MULTI-MARKETPLACE" variant="muted" />
+    <h2 class="rzh-h2">Один склад → 8 маркетплейсів + власний сайт</h2>
+    <p>Найдорожча помилка українського e-commerce 2024-2025 — фокус на одній платформі. Селер що продає тільки на Rozetka FBO, у разі підвищення комісії, бану аккаунту або зміни алгоритму ранжування втрачає 100% обороту за тиждень. Multi-marketplace стратегія через MTP — це страховка плюс +18-32% до обороту з тих самих SKU.</p>
+    <p>Як це працює: твоя WMS бачить єдиний залишок на кожен SKU. Замовлення з Rozetka, Prom.ua, Kasta, Allo, Bigl, Epicentr, OLX, твого сайту на Horoshop або WooCommerce потрапляє в єдину чергу. Система автоматично резервує штуку, друкує етикетку у форматі того маркетплейсу (Rozetka має свої специфікації, Prom.ua свої, Kasta свої), пакує у твою брендовану коробку і передає Новій Пошті, Укрпошті або Делівері — залежно від уподобань клієнта на маркетплейсі. Час від отримання замовлення до передачі кур'єру — 24 хвилини в робочі години.</p>
+    <p>Реальні цифри від наших клієнтів за 2025 рік: бренд декоративної косметики додав 3 маркетплейси до Rozetka і виріс з 250 замовлень/день до 410 за 4 місяці без зміни виробництва. Магазин дитячих іграшок переніс 80% обсягу з Rozetka FBO у MTP + multi-marketplace і зекономив 270 000 грн комісії за квартал. Селер аксесуарів для смартфонів додав власний сайт на Horoshop поверх Rozetka і Prom — частка прямих продажів виросла з 0% до 22% за півроку.</p>
+    <p>Більше про модель — на сторінці <a href="/ua/fulfilment-dlya-marketpleysiv/">Фулфілмент для маркетплейсів</a>.</p>
+  </div>
+</section>
+
+<!-- PREP FOR FBO -->
+<section class="rzh-prep">
+  <div class="rzh-prep__inner">
+    <LabelChip text="06 · ПРЕФУЛФІЛМЕНТ" variant="muted" />
+    <h2 class="rzh-h2">Готуємо вантаж до здачі у Rozetka FBO — якщо ти все ж обираєш FBO</h2>
+    <p>Не кожен селер хоче повного відходу від FBO. У деяких сегментах (бестселер з обсягом 1000+ замовлень/місяць у одній категорії) Rozetka FBO усе ще вигідна — вищі позиції в пошуку, приоритет у "доставці на наступний день". MTP працює і у такій моделі: ми приймаємо великий вантаж від твого постачальника, проводимо QC, маркуємо штрихкодами Rozetka, формуємо палети за їхніми стандартами і доставляємо у сортувальний центр Rozetka в Броварах або Чубинському.</p>
+    <p>Що ми робимо у режимі префулфілменту: приймаємо контейнер або фуру з товаром, перевіряємо за товарною накладною, проводимо вибірковий QC (3-5% партії), наносимо EAN-13 штрихкод (якщо немає — друкуємо за 1.20 грн/од), додаткову Rozetka-етикетку з артикулом маркетплейсу на видимому боці упаковки, формуємо палети 1.2×0.8 м висотою до 1.5 м, з відповідним розташуванням етикеток, оформлюємо ТТН до Бровари/Чубинського і обираємо вікно прийому у системі Rozetka. Ти економиш 7-10 робочих днів і не платиш за помилки відмови вантажу.</p>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="rzh-int">
+  <div class="rzh-int__inner">
+    <LabelChip text="07 · ІНТЕГРАЦІЇ" variant="muted" />
+    <h2 class="rzh-h2">CRM, маркетплейси, перевізники — нативно</h2>
+    <div class="rzh-int__cols">
+      <div><h3>Маркетплейси</h3><ul><li>Rozetka Marketplace API</li><li>Prom.ua API + EVO ecosystem</li><li>Kasta (FBK + 3PL)</li><li>Allo, Bigl, Epicentr</li><li>OLX Доставка</li></ul></div>
+      <div><h3>CRM і ERP</h3><ul><li>KeyCRM (нативно, 1-2 дні)</li><li>SalesDrive (нативно)</li><li>RetailCRM, Bitrix24, Odoo</li><li>AmoCRM, OneBox (через API)</li><li>Кастомні — REST API + webhooks</li></ul></div>
+      <div><h3>Перевізники</h3><ul><li>Нова Пошта (ТТН + забір)</li><li>Укрпошта (стандарт + експрес)</li><li>Делівері (паллетна логістика)</li><li>Meest (міжнародна)</li><li>Кур'єрська доставка по Києву</li></ul></div>
+      <div><h3>Платформи сайту</h3><ul><li>Horoshop (повна синхронізація)</li><li>WooCommerce (плагін)</li><li>Shopify (Shopify API)</li><li>OpenCart, PrestaShop</li><li>Кастомні — webhooks</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="rzh-faq">
+  <div class="rzh-faq__inner">
+    <LabelChip text="08 · ЧАСТІ ПИТАННЯ" variant="muted" />
+    <h2 class="rzh-h2">12 питань, які ставлять селери Rozetka перед переходом</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<!-- BOTTOM DARK CTA -->
+<DarkCTA
+  title="Розрахуй вартість фулфілменту для свого Rozetka-аккаунта"
+  sub="Безкоштовний розрахунок під твої SKU, обсяги і категорії — за 15 хвилин. Ми не боїмося порівняння з Rozetka FBO."
+  primary={{ label: 'Отримати розрахунок →', href: '#heroLeadForm' }}
+  secondary={{ label: 'Калькулятор вартості', href: '/ua/calculator/' }}
+/>
+
+</Base>
+
+<style is:global>
+:root { --mtp-red:#e63329; }
+.rzh-bc { background:#f6f6f4; padding:14px 0; font-size:13px; }
+.rzh-bc__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.rzh-bc a { color:#666; text-decoration:none; } .rzh-bc a:hover { color:#000; }
+.rzh-bc__current { color:#000; font-weight:600; }
+.rzh-bc span[aria-hidden] { color:#bbb; }
+
+/* HERO */
+.rzh { background:#fff; border-bottom:1px solid #ededed; padding:56px 0 0; }
+.rzh__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:60% 40%; gap:48px; align-items:start; }
+.rzh__main { padding-right:24px; }
+.rzh__h1 { font-size:clamp(2rem, 4.6vw, 3.6rem); line-height:1.05; letter-spacing:-0.015em; margin:18px 0 22px; font-weight:800; color:#000; }
+.rzh__accent { color:var(--mtp-red); }
+.rzh__lead { font-size:clamp(1.05rem, 1.4vw, 1.18rem); line-height:1.6; color:#333; margin:0 0 30px; max-width:620px; }
+.rzh__form { max-width:560px; }
+.rzh__links { margin-top:18px; font-size:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:#666; }
+.rzh__links a { color:#000; text-decoration:none; border-bottom:1.5px solid #000; padding-bottom:1px; transition:color .15s, border-color .15s; }
+.rzh__links a:hover { color:var(--mtp-red); border-color:var(--mtp-red); }
+.rzh__stats { padding-top:32px; }
+.rzh__stats .s-stats__grid { grid-template-columns:1fr; gap:0; border-top:1px solid #1a1a1a; }
+.rzh__stats .s-stats__item { padding:22px 0; border-bottom:1px solid #1a1a1a; }
+.rzh__logos { max-width:1180px; margin:48px auto 0; padding:24px 1.5rem 36px; border-top:1px solid #ededed; }
+.rzh__logos-label { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; color:#999; margin-bottom:14px; }
+.rzh__logos-row { display:flex; gap:18px 24px; flex-wrap:wrap; align-items:center; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#1a1a1a; }
+.rzh__logos-row span[aria-hidden] { color:#ddd; font-weight:400; }
+.rzh-byline { max-width:1180px; margin:32px auto 0; padding:0 1.5rem; }
+@media(max-width:880px) {
+  .rzh__inner { grid-template-columns:1fr; gap:36px; }
+  .rzh__main { padding-right:0; }
+  .rzh__stats { padding-top:0; }
+}
+
+/* SECTIONS */
+.rzh-intro, .rzh-reasons, .rzh-cats, .rzh-multi, .rzh-prep, .rzh-int, .rzh-faq { padding:72px 0; border-top:1px solid #ededed; }
+.rzh-intro__inner, .rzh-reasons__inner, .rzh-cats__inner, .rzh-multi__inner, .rzh-prep__inner, .rzh-int__inner, .rzh-faq__inner, .rz-compare__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+.rzh-h2 { font-size:clamp(1.6rem, 2.6vw, 2.2rem); line-height:1.15; letter-spacing:-0.01em; margin:14px 0 24px; font-weight:800; color:#000; }
+.rzh-intro p, .rzh-multi p, .rzh-prep p { font-size:1.05rem; line-height:1.75; color:#222; margin:0 0 18px; max-width:880px; }
+.rzh-intro p:last-child { margin-bottom:0; }
+.rzh-intro a, .rzh-multi a, .rzh-prep a, .rz-compare a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rzh-intro a:hover, .rzh-multi a:hover, .rzh-prep a:hover, .rz-compare a:hover { color:var(--mtp-red); }
+
+/* 7 REASONS */
+.rzh-reasons__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+.rzh-reasons__card { padding:28px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rzh-reasons__num { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.04em; color:var(--mtp-red); margin-bottom:8px; }
+.rzh-reasons__card h3 { font-size:1.18rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rzh-reasons__card p { font-size:0.96rem; line-height:1.65; color:#333; margin:0; }
+
+/* COMPARISON TABLE */
+.rz-compare { padding:72px 0; border-top:1px solid #1a1a1a; background:#0a0a0a; color:#fff; }
+.rz-compare .rzh-h2 { color:#fff; }
+.rz-compare__lead { font-size:1.05rem; line-height:1.7; color:#aaa; max-width:760px; margin:0 0 32px; }
+.rz-compare__scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.rz-compare__t { width:100%; border-collapse:collapse; font-size:0.95rem; min-width:760px; }
+.rz-compare__t th, .rz-compare__t td { text-align:left; padding:14px 16px; border-bottom:1px solid #222; vertical-align:top; }
+.rz-compare__t thead th { font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#999; border-bottom:1px solid #fff; padding-bottom:12px; }
+.rz-compare__t .rz-compare__th-mtp { color:var(--mtp-red); }
+.rz-compare__t .rz-compare__th-row { color:#fff; }
+.rz-compare__t tbody td:first-child { color:#fff; font-weight:600; }
+.rz-compare__t tbody td { color:#ccc; }
+.rz-v { color:var(--mtp-red); font-weight:700; margin-right:6px; }
+.rz-x { color:#666; font-weight:700; margin-right:6px; }
+.rz-compare__note { color:#999; margin:24px 0 0; font-size:0.95rem; }
+.rz-compare__note a { color:#fff; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rz-compare__note a:hover { color:var(--mtp-red); }
+
+/* CATEGORIES */
+.rzh-cats__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+.rzh-cats__card { padding:28px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rzh-cats__card h3 { font-size:1.16rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rzh-cats__card p { font-size:0.96rem; line-height:1.65; color:#333; margin:0 0 12px; }
+.rzh-cats__card a { color:var(--mtp-red); font-size:0.92rem; font-weight:700; text-decoration:none; letter-spacing:0.02em; }
+.rzh-cats__card a:hover { text-decoration:underline; }
+
+/* INTEGRATIONS */
+.rzh-int__cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:32px; border-top:1px solid #1a1a1a; padding-top:36px; }
+.rzh-int__cols h3 { font-size:0.95rem; font-weight:800; letter-spacing:0.04em; color:#000; margin:0 0 14px; }
+.rzh-int__cols ul { list-style:none; padding:0; margin:0; }
+.rzh-int__cols li { font-size:0.95rem; line-height:1.7; color:#333; padding:6px 0; border-bottom:1px solid #ededed; }
+.rzh-int__cols li:last-child { border-bottom:0; }
+
+/* FAQ — leverage default s-acc styles, override only padding */
+.rzh-faq .s-acc { border-top:1px solid #1a1a1a; margin-top:24px; }
+</style>

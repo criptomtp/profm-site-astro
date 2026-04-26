@@ -1,0 +1,315 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import DarkCTA from '../../components/stitch/DarkCTA.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'Why use a fulfillment partner in Ukraine instead of Rozetka FBO directly?', a: '<p>Rozetka FBO locks you into a single channel, charges 4-35% commission on each sale, and excludes a long list of categories: oversized furniture, large appliances, fragile glass and mirrors without manufacturer-grade reinforced packaging, supplements requiring +2…+8°C, cosmetics with controlled temperature. MTP Group accepts all those categories, charges only for actual operations (no percentage of sales), and lets you sell simultaneously on Rozetka, Prom.ua, Kasta, Allo, Bigl, Epicentr, OLX, plus your own Horoshop or Shopify store from a single inventory pool. For a brand entering Ukraine, multi-channel from day one is critical — you do not want to discover after six months that 35% of your gross margin disappeared into Rozetka commission while your category was banned from Prom and Kasta.</p>' },
+  { q: 'What product categories do you accept that Rozetka FBO refuses?', a: '<p>Oversized furniture (sofas up to 80 kg, wardrobes, beds, tables), large appliances (refrigerators, washing machines, dishwashers, stoves, air conditioners), fragile glass and mirrors without OEM packaging, supplements and pharmaceuticals requiring +2…+8°C cold chain, cosmetics with controlled temperature, electronics requiring antistatic handling, baby products under EN-71 / BSI standards, gourmet food with limited shelf life. We have 4 warehouses totaling 4 100 m² with separate +2…+8°C and +18…+24°C zones, mobile equipment for oversized handling, multi-layer packing for fragile, antistatic packaging for electronics, and serve over 80 brands across these categories.</p>' },
+  { q: 'How does multi-marketplace inventory pooling work technically?', a: '<p>One unified WMS holds a single stock count per SKU. When an order arrives from Rozetka, Prom.ua, Kasta, Allo, Bigl, OLX, your Horoshop store, or Shopify — the system reserves the unit, prints the marketplace-specific label format (each platform has its own), packs into your branded box with your inserts, and dispatches via Nova Poshta, Ukrposhta, Delivery, or Meest based on the customer\'s preference. The dispatch window is 24 minutes from order receipt to handover during business hours. No risk of double-selling because the inventory is single-pool, not duplicated per channel.</p>' },
+  { q: 'How war-resilient is your operation in Ukraine?', a: '<p>Zero days of downtime since February 2022. Infrastructure: 3 industrial generators (2× 60 kW + 1× 100 kW) with 36-hour autonomy each, 5-day diesel reserve, 2 Starlink terminals for marketplace API connectivity, 2 fiber optic providers with redundant routing. Warehouses are located in Boryspil district, outside mandatory evacuation zones — operations continue during air raid alerts per Ukrainian district protocol. During peak attack periods on Ukrainian energy infrastructure (winter 2022-2024), our throughput dropped by 8% on the worst day; competitors without generator redundancy lost 60-100% of throughput. For brands that need reliable supply chain continuity, Ukraine via MTP is more resilient than Poland or Turkey hubs that rely on single-grid power.</p>' },
+  { q: 'What is your SLA compared to Rozetka\'s seller rating thresholds?', a: '<p>Rozetka ranks sellers by response speed: ideal — under 30 minutes, normal — up to 2 hours, poor — up to 24 hours, unacceptable — over 24 hours. Our average dispatch time during business hours is 24 minutes from order receipt to label, and 8 minutes for operator escalation. This sits below Rozetka\'s "ideal" threshold, which keeps your seller rating in the green zone consistently — including during your team\'s holidays, conferences, or time-zone differences (we cover 09:00-19:00 Kyiv = 14:00-23:00 GMT-5, which means your US team can hand off and our Ukraine team picks up).</p>' },
+  { q: 'How does Ukrainian tax and fiscal compliance work for foreign sellers?', a: '<p>Two main paths: (1) you register a Ukrainian legal entity (LLC) which takes 5-7 business days, opens a UAH bank account, and operates as a Ukrainian seller on Rozetka — eligible for full marketplace participation but pays Ukrainian VAT (20%) and corporate tax. Or (2) you remain a non-resident, work with us under a B2B service agreement (your goods, our fulfillment), and we handle import customs declaration on your behalf — your Ukraine sales are reported in your home country. We work with 6 customs brokers in Odesa, Lviv, and Kyiv, and 3 accounting firms specializing in non-resident e-commerce. The optimal model depends on your annual Ukraine GMV — under €100k the non-resident path is usually cheaper, above €500k an LLC starts to make sense.</p>' },
+  { q: 'Which European carriers do you integrate with for cross-border orders?', a: '<p>Nova Poshta International (90+ countries), Meest (EU + North America focus, multi-day to UK/DE/PL/FR), DHL Express (premium, 2-4 days to EU), UPS, FedEx International. For EU bulk orders we also work with consolidators (DPD via partner network, GLS via partner). We dispatch directly from our Kyiv-area warehouse without secondary handling in Poland or Romania, which removes a typical 2-3 day delay and €0.30-0.80 per parcel of consolidator markup. For brands selling on EU marketplaces (Allegro, Cdiscount, eBay DE) via dropship from Ukraine, this is operationally significant.</p>' },
+  { q: 'How do you handle CE marking, certification, and EU import compliance?', a: '<p>For products entering Ukraine that are destined for re-export to EU markets, we maintain documentation on CE-marked categories (electronics, toys, cosmetics) and verify mandatory labeling before dispatch. We do not act as an authorized representative under EU MDR or CPR — that remains your responsibility — but we ensure every parcel ships with the documentation you provide (declarations of conformity, CE marks, Material Safety Data Sheets where applicable). For supplements and cosmetics we maintain temperature-controlled chain of custody logs that satisfy EU traceability requirements.</p>' },
+  { q: 'What is your pricing structure in EUR or USD?', a: '<p>Per-shipment fulfillment fee 18-35 UAH (≈ €0.40-0.80 / $0.45-0.85 at April 2026 rates) depending on volume and packaging complexity. Storage 240-300 UAH per pallet per month (≈ €5.50-7 / $6-7.50). Receiving 600-800 UAH per truck (≈ €14-18 / $15-20). No setup fees, no monthly minimums, no commission on sales. Quoted in UAH but invoiced in EUR/USD on request with monthly FX averaging from NBU rates. Run your numbers in our <a href="/en/calculator/">calculator</a> for a per-SKU breakdown — typical EU brands save 22-38% versus a Poland or Czechia hub for the same Ukraine GMV.</p>' },
+  { q: 'How fast can we onboard if our products are already in transit to Ukraine?', a: '<p>2-3 business days from contract signature to first parcel dispatched. Day 1: NDA + service agreement, tariff confirmation, WMS and dashboard credentials. Day 2: receive first batch (we accept directly from container at Odesa or Lviv, or from your supplier via Nova Poshta — free pickup within Kyiv region from 1 pallet). Day 3: API integration with Rozetka seller account (we already have native auth flow), test order, label format verification per Rozetka spec. Day 4 — full operations. For brands shipping container-load from Asia, we can synchronize warehouse readiness with your ETA — typical 12-day lead time from booking confirmation.</p>' },
+  { q: 'What happens to my goods and operations if I want to exit?', a: '<p>No lock-in clauses in the contract. 14-day notice period, joint inventory audit, palletization to your specifications (Rozetka FBO standards, EU Euro pallet, US GMA pallet — your choice), pickup or dispatch logistics arranged by either party. We do not charge exit fees, do not hold goods hostage, do not impose minimum-buyout clauses. If you migrate to Rozetka FBO directly we provide free preparation to their FBO standard (EAN-13 marking, Rozetka labels, palletization 1.2×0.8 m, ≤1.5 m height) and deliver to their Brovary or Chubynske sortation center. Flexibility is part of our value — we earn renewals, we do not capture them.</p>' },
+  { q: 'Who is liable for stock loss or damage on your premises?', a: '<p>MTP Group is fully liable per contract for the purchase value of lost or damaged goods. For stock balances above 500,000 UAH (≈ €11k / $12k), insurance is included in the standard tariff (Universalna Insurance, up to 5 million UAH per warehouse / ≈ €110k / $120k). Quarterly inventory with your representative present (in person or via livestream); discrepancies within 0.3% are compensated without dispute. A transparent movement log is available in your dashboard 24/7 with photo verification of receiving, packing, and dispatch operations. For higher-value inventory we can arrange supplemental insurance via our broker partners.</p>' },
+];
+
+const faqSchema = { "@context":"https://schema.org","@type":"FAQPage","mainEntity": faq.map(({q, a}) => ({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text": a.replace(/<[^>]+>/g,'').trim()}}))};
+
+const breadcrumbSchema = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},
+  {"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/3pl-logistics/"},
+  {"@type":"ListItem","position":3,"name":"Rozetka Fulfillment","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/"}
+]};
+
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Multi-marketplace fulfillment for Rozetka and Ukraine e-commerce","description":"Multi-marketplace fulfillment in Ukraine: Rozetka + Prom.ua + Kasta + your own store from a single inventory. Without commission lock-in, with categories Rozetka FBO refuses.","serviceType":"Fulfillment","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"audience":{"@type":"BusinessAudience","name":"International brands and e-commerce operators entering Ukraine"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"0.45","description":"From €0.40-0.80 per shipment"},"dateModified":"2026-04-26"};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+<Base
+  title="Rozetka Fulfillment Ukraine 2026 — Multi-Marketplace | MTP Group"
+  description="Multi-marketplace fulfillment in Ukraine for Rozetka, Prom, Kasta + your store from one inventory. War-resilient, 24-min SLA, EU carriers, no lock-in."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-rozetka-en-hero.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="rze-bc" aria-label="Breadcrumbs">
+  <div class="rze-bc__inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="rze-bc__current">Rozetka Fulfillment</span>
+  </div>
+</nav>
+
+<!-- HERO — VARIANT B (split 60/40, form left, 4 stat cards stack right) -->
+<section class="rze">
+  <div class="rze__inner">
+    <div class="rze__main">
+      <LabelChip text="ROZETKA FULFILLMENT · MULTI-MARKETPLACE GATEWAY" variant="red" />
+      <h1 class="rze__h1">A <span class="rze__accent">multi-marketplace</span> gateway to Ukraine — without Rozetka FBO lock-in</h1>
+      <p class="rze__lead">Sell on Rozetka, Prom.ua, Kasta, Allo and your own Shopify or Horoshop store from a single inventory pool. War-resilient infrastructure, 24-minute SLA, EU carriers, categories Rozetka FBO refuses to accept. Pricing in EUR / USD. No commission on sales.</p>
+      <div class="rze__form">
+        <HeroCTA lang="en" theme="light" button="Request a quote →" microCopy="✓ We respond within 15 minutes · No obligations" sourceTag="hero /en/fulfillment-for-rozetka-sellers/" />
+        <div class="rze__links">
+          <a href="/en/calculator/">Cost calculator →</a>
+          <span aria-hidden="true">·</span>
+          <a href="/en/prices/">2026 price list →</a>
+        </div>
+      </div>
+    </div>
+    <aside class="rze__cards" aria-label="Key metrics">
+      <div class="rze__card"><span class="rze__card-num">24 MIN</span><span class="rze__card-label">Order processing — below Rozetka "ideal" threshold of 30 min</span></div>
+      <div class="rze__card"><span class="rze__card-num">€0.40+</span><span class="rze__card-label">Per-shipment fee — 22-38% cheaper than EU hubs (PL, CZ)</span></div>
+      <div class="rze__card"><span class="rze__card-num">8+ APIs</span><span class="rze__card-label">Native: Rozetka, Prom, Kasta, Allo, Shopify, Horoshop, OLX, Bigl</span></div>
+      <div class="rze__card"><span class="rze__card-num">0 DAYS</span><span class="rze__card-label">Downtime since Feb 2022 — 3 generators, Starlink, fiber redundancy</span></div>
+    </aside>
+  </div>
+  <div class="rze__logos" aria-label="Marketplaces with native API integration">
+    <span class="rze__logos-label">MARKETPLACES WITH NATIVE API</span>
+    <div class="rze__logos-row">
+      <span>ROZETKA</span><span aria-hidden="true">·</span>
+      <span>PROM.UA</span><span aria-hidden="true">·</span>
+      <span>KASTA</span><span aria-hidden="true">·</span>
+      <span>ALLO</span><span aria-hidden="true">·</span>
+      <span>SHOPIFY</span><span aria-hidden="true">·</span>
+      <span>HOROSHOP</span><span aria-hidden="true">·</span>
+      <span>OLX</span><span aria-hidden="true">·</span>
+      <span>BIGL</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<div class="rze-byline">
+  <AuthorByline lang="en" datePublished="2026-04-26" dateModified="2026-04-26" readingTime="11" />
+</div>
+
+<!-- INTRO: WHY UKRAINE IS UNDERESTIMATED MARKET -->
+<section class="rze-intro">
+  <div class="rze-intro__inner">
+    <LabelChip text="01 · CONTEXT" variant="muted" />
+    <h2 class="rze-h2">Ukraine is the most under-served large e-commerce market in Eastern Europe</h2>
+    <p>Ukraine has 30 million online shoppers, the second-largest e-commerce GMV in Eastern Europe after Poland (≈ €11.2B in 2024 per Gemius), and the strongest year-over-year growth across the region (+18% in 2024 versus +9% Poland average). Despite the war, Ukrainian consumers spent €420 monthly per active online shopper in 2024 — higher than Romania and Bulgaria. The ratio of mobile-first commerce reached 67%, ahead of most EU markets. For international brands, this is a high-intent, under-supplied market that Western competitors have largely abandoned.</p>
+    <p>Rozetka, the largest marketplace in Ukraine, runs an FBO (Fulfillment by Operator) program but excludes a long category list — oversized goods, large appliances, fragile glass without OEM packaging, supplements requiring cold chain, cosmetics with controlled temperature. Rozetka also charges 4-35% commission per sale plus ~3 EUR monthly platform fee — and locks the seller into a single channel. For brands building presence across Rozetka + Prom.ua + Kasta + their own DTC store, the FBO model is not viable.</p>
+    <p>MTP Group offers an alternative: a single Ukraine-based fulfillment partner serving all those marketplaces from a unified inventory, with categories Rozetka FBO refuses, war-resilient infrastructure (zero downtime since 2022), 24-minute SLA, and direct EU dispatch via Nova Poshta International, Meest, DHL, and UPS. We are the operational backbone for 80+ brands entering Ukraine.</p>
+  </div>
+</section>
+
+<!-- 4 PILLARS -->
+<section class="rze-pillars">
+  <div class="rze-pillars__inner">
+    <LabelChip text="02 · 4 PILLARS" variant="muted" />
+    <h2 class="rze-h2">4 pillars of multi-marketplace fulfillment in Ukraine</h2>
+    <div class="rze-pillars__grid">
+      <article class="rze-pillars__card">
+        <span class="rze-pillars__num">01</span>
+        <h3>Single inventory across 8+ channels</h3>
+        <p>One stock count per SKU, distributed automatically to Rozetka, Prom.ua, Kasta, Allo, Bigl, Epicentr, OLX, your Shopify or Horoshop store. Marketplace-specific label formats printed on demand. No double-selling risk because the inventory is pooled, not duplicated.</p>
+      </article>
+      <article class="rze-pillars__card">
+        <span class="rze-pillars__num">02</span>
+        <h3>Categories Rozetka FBO refuses</h3>
+        <p>Oversized furniture, large appliances, fragile glass, supplements +2…+8°C, cold-chain cosmetics. We have 4 100 m² across 4 warehouses with separate climate zones, mobile equipment for oversized handling, multi-layer packaging for fragile, and 80+ brands in these categories.</p>
+      </article>
+      <article class="rze-pillars__card">
+        <span class="rze-pillars__num">03</span>
+        <h3>EU dispatch without secondary handling</h3>
+        <p>Nova Poshta International, Meest, DHL Express, UPS, FedEx — direct from our Kyiv-area warehouse. No 2-3 day delay through a Polish or Romanian consolidator hub, no €0.30-0.80 per parcel markup. For Allegro / Cdiscount / eBay DE dropship via Ukraine, this is operationally significant.</p>
+      </article>
+      <article class="rze-pillars__card">
+        <span class="rze-pillars__num">04</span>
+        <h3>War-resilient infrastructure</h3>
+        <p>3 industrial generators (36-hour autonomy each), 5-day diesel reserve, 2 Starlink terminals, redundant fiber. Zero days of downtime since February 2022. During peak attacks on energy grid (winter 2022-2024), worst-day throughput drop was 8% — competitors lost 60-100%.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: COMPARISON TABLE -->
+<section class="rz-compare">
+  <div class="rz-compare__inner">
+    <LabelChip text="03 · COMPARISON" variant="red" />
+    <h2 class="rze-h2">Rozetka FBO vs MTP Group vs EU hub (Poland / Czechia)</h2>
+    <p class="rz-compare__lead">Honest comparison for international brands entering Ukraine. 12 parameters, no asterisks.</p>
+    <div class="rz-compare__scroll">
+      <table class="rz-compare__t">
+        <thead>
+          <tr><th class="rz-compare__th-row">Parameter</th><th>Rozetka FBO</th><th class="rz-compare__th-mtp">MTP Group (UA)</th><th>EU Hub (PL/CZ)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Categories accepted</td><td><span class="rz-x">×</span> Excludes oversized, glass, cold chain</td><td><span class="rz-v">✓</span> All categories except special</td><td><span class="rz-v">✓</span> Most categories</td></tr>
+          <tr><td>Commission on sales</td><td><span class="rz-x">×</span> 4-35% + monthly fee</td><td><span class="rz-v">✓</span> 0% (operations only)</td><td><span class="rz-v">✓</span> 0% (operations only)</td></tr>
+          <tr><td>Multi-marketplace</td><td><span class="rz-x">×</span> Rozetka only</td><td><span class="rz-v">✓</span> Rozetka + Prom + Kasta + EU + DTC</td><td>Limited Ukraine reach</td></tr>
+          <tr><td>Per-shipment cost</td><td>4-35% (variable)</td><td><span class="rz-v">✓</span> €0.40-0.80</td><td>€1.20-2.50</td></tr>
+          <tr><td>Pricing currency</td><td>UAH only</td><td><span class="rz-v">✓</span> EUR / USD on request</td><td><span class="rz-v">✓</span> EUR</td></tr>
+          <tr><td>Onboarding time</td><td>5-7 business days</td><td><span class="rz-v">✓</span> 2-3 business days</td><td>10-14 business days</td></tr>
+          <tr><td>Order SLA</td><td>24 h (norm)</td><td><span class="rz-v">✓</span> 24 min (Rozetka "ideal")</td><td>4-8 h typical</td></tr>
+          <tr><td>EU carriers (direct)</td><td><span class="rz-x">×</span> No</td><td><span class="rz-v">✓</span> Nova Post Intl, Meest, DHL, UPS</td><td><span class="rz-v">✓</span> Native</td></tr>
+          <tr><td>Insurance coverage</td><td>Up to 50,000 UAH per batch</td><td><span class="rz-v">✓</span> Up to 5M UAH per warehouse</td><td>Standard EU policies</td></tr>
+          <tr><td>Brand control</td><td><span class="rz-x">×</span> Rozetka box</td><td><span class="rz-v">✓</span> Your box, inserts, branding</td><td><span class="rz-v">✓</span> Full control</td></tr>
+          <tr><td>War resilience (UA market)</td><td>Depends on Rozetka warehouse</td><td><span class="rz-v">✓</span> 3 gens + Starlink + 0 downtime</td><td>Not applicable to UA delivery</td></tr>
+          <tr><td>Exit / migration</td><td>Account closure friction</td><td><span class="rz-v">✓</span> 14-day notice, no fees</td><td>Standard 30-day notice</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rz-compare__note">Run your numbers in our <a href="/en/calculator/">calculator</a> — typical EU brand saves 22-38% vs PL/CZ hub for Ukraine GMV.</p>
+  </div>
+</section>
+
+<!-- CATEGORIES WE ACCEPT -->
+<section class="rze-cats">
+  <div class="rze-cats__inner">
+    <LabelChip text="04 · EXCLUDED CATEGORIES" variant="muted" />
+    <h2 class="rze-h2">Categories Rozetka FBO refuses, that we accept</h2>
+    <div class="rze-cats__grid">
+      <article class="rze-cats__card"><h3>Furniture and decor</h3><p>Sofas up to 80 kg, flat-pack wardrobes, tables, beds, chairs, kids furniture, decorative items. Floor-level shelving for oversized goods, lever-pallet handling, separate storage zones. Large-volume pickup from Polish or Hungarian distribution centers.</p></article>
+      <article class="rze-cats__card"><h3>Major appliances</h3><p>Refrigerators, washing and dishwashing machines, ovens, air conditioners, freezers. Pre-shipment securing of transport bolts, foam protection, double-walled corrugated boxes. White-glove last-mile delivery via Delivery or partner carriers.</p></article>
+      <article class="rze-cats__card"><h3>Fragile glass and mirrors</h3><p>Vases, glassware, decorative pieces, mirrors, glass kitchen surfaces. Multi-layer packaging: air pillows + bubble wrap + corner protectors + double-walled box. Photo verification on dispatch — claims rate under 0.4% across 35,000 shipments in 2024.</p></article>
+      <article class="rze-cats__card"><h3>Cosmetics and supplements</h3><p>Decorative cosmetics, skincare, shampoos, supplements at +18…+24°C standard. Separate +2…+8°C cold zone for thermosensitive SKUs with 24/7 temperature monitoring. Cold-chain logs available in dashboard for EU regulatory compliance.</p></article>
+      <article class="rze-cats__card"><h3>Electronics and gadgets</h3><p>Smartphones, laptops, tablets, accessories, small appliances, drones. Antistatic packaging, in-box transit fixation, photo capture of serial numbers on each dispatch for brand-protection workflows.</p></article>
+      <article class="rze-cats__card"><h3>Children\'s products</h3><p>Toys, strollers, car seats, clothing, baby food. Packaging integrity verification, EN-71 / BSI compliance, +18…+24°C zone for baby food. Documentation handover for Ukrainian retail certification when required.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="rze-int">
+  <div class="rze-int__inner">
+    <LabelChip text="05 · INTEGRATIONS" variant="muted" />
+    <h2 class="rze-h2">Marketplaces, CRMs, carriers — natively wired</h2>
+    <div class="rze-int__cols">
+      <div><h3>Marketplaces (UA)</h3><ul><li>Rozetka Marketplace API</li><li>Prom.ua + EVO ecosystem</li><li>Kasta (FBK + 3PL)</li><li>Allo, Bigl, Epicentr</li><li>OLX Доставка</li></ul></div>
+      <div><h3>Storefronts</h3><ul><li>Shopify (native app)</li><li>Horoshop (native sync)</li><li>WooCommerce (plugin)</li><li>OpenCart, PrestaShop</li><li>Custom — webhooks</li></ul></div>
+      <div><h3>CRM and ERP</h3><ul><li>KeyCRM, SalesDrive (native)</li><li>RetailCRM, Bitrix24</li><li>HubSpot (via Zapier)</li><li>Odoo, AmoCRM</li><li>Custom — REST API</li></ul></div>
+      <div><h3>Carriers</h3><ul><li>Nova Poshta International</li><li>Meest (EU + NA)</li><li>DHL Express, UPS, FedEx</li><li>Ukrposhta (UA domestic)</li><li>Delivery (UA pallet)</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="rze-faq">
+  <div class="rze-faq__inner">
+    <LabelChip text="06 · FREQUENTLY ASKED" variant="muted" />
+    <h2 class="rze-h2">12 questions international brands ask before entering Ukraine</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<!-- BOTTOM DARK CTA -->
+<DarkCTA
+  title="Get a quote for entering Ukraine through MTP"
+  sub="Free quote tailored to your SKUs, volumes, and target marketplaces. Includes a savings comparison versus Rozetka FBO and EU hubs (Poland, Czechia)."
+  primary={{ label: 'Request a quote →', href: '#heroLeadForm' }}
+  secondary={{ label: 'Cost calculator', href: '/en/calculator/' }}
+/>
+
+</Base>
+
+<style is:global>
+:root { --mtp-red:#e63329; }
+.rze-bc { background:#f6f6f4; padding:14px 0; font-size:13px; }
+.rze-bc__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.rze-bc a { color:#666; text-decoration:none; } .rze-bc a:hover { color:#000; }
+.rze-bc__current { color:#000; font-weight:600; }
+.rze-bc span[aria-hidden] { color:#bbb; }
+
+/* HERO — VARIANT B: split + 4 stat cards stack */
+.rze { background:#fff; border-bottom:1px solid #ededed; padding:56px 0 0; }
+.rze__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:60% 40%; gap:48px; align-items:start; }
+.rze__main { padding-right:24px; }
+.rze__h1 { font-size:clamp(2rem, 4.4vw, 3.4rem); line-height:1.05; letter-spacing:-0.015em; margin:18px 0 22px; font-weight:800; color:#000; }
+.rze__accent { color:var(--mtp-red); }
+.rze__lead { font-size:clamp(1.05rem, 1.4vw, 1.18rem); line-height:1.6; color:#333; margin:0 0 30px; max-width:640px; }
+.rze__form { max-width:560px; }
+.rze__links { margin-top:18px; font-size:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:#666; }
+.rze__links a { color:#000; text-decoration:none; border-bottom:1.5px solid #000; padding-bottom:1px; transition:color .15s, border-color .15s; }
+.rze__links a:hover { color:var(--mtp-red); border-color:var(--mtp-red); }
+
+/* 4 stat cards stack right */
+.rze__cards { display:grid; grid-template-columns:1fr; gap:0; padding-top:32px; }
+.rze__card { padding:22px 22px 24px; background:#fff; border:1.5px solid #1a1a1a; border-bottom-width:0; }
+.rze__card:last-child { border-bottom-width:1.5px; }
+.rze__card-num { display:block; font-size:clamp(1.6rem, 2.4vw, 2rem); font-weight:800; line-height:1.05; color:#000; letter-spacing:-0.01em; }
+.rze__card-label { display:block; font-size:0.86rem; line-height:1.45; color:#444; margin-top:8px; letter-spacing:0.01em; }
+
+.rze__logos { max-width:1180px; margin:48px auto 0; padding:24px 1.5rem 36px; border-top:1px solid #ededed; }
+.rze__logos-label { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; color:#999; margin-bottom:14px; }
+.rze__logos-row { display:flex; gap:18px 24px; flex-wrap:wrap; align-items:center; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#1a1a1a; }
+.rze__logos-row span[aria-hidden] { color:#ddd; font-weight:400; }
+.rze-byline { max-width:1180px; margin:32px auto 0; padding:0 1.5rem; }
+@media(max-width:880px) {
+  .rze__inner { grid-template-columns:1fr; gap:36px; }
+  .rze__main { padding-right:0; }
+  .rze__cards { padding-top:0; }
+}
+
+/* SECTIONS */
+.rze-intro, .rze-pillars, .rze-cats, .rze-int, .rze-faq { padding:72px 0; border-top:1px solid #ededed; }
+.rze-intro__inner, .rze-pillars__inner, .rze-cats__inner, .rze-int__inner, .rze-faq__inner, .rz-compare__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+.rze-h2 { font-size:clamp(1.6rem, 2.6vw, 2.2rem); line-height:1.15; letter-spacing:-0.01em; margin:14px 0 24px; font-weight:800; color:#000; }
+.rze-intro p { font-size:1.05rem; line-height:1.75; color:#222; margin:0 0 18px; max-width:880px; }
+.rze-intro p:last-child { margin-bottom:0; }
+.rze-intro a, .rz-compare a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rze-intro a:hover, .rz-compare a:hover { color:var(--mtp-red); }
+
+/* 4 PILLARS GRID */
+.rze-pillars__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+.rze-pillars__card { padding:32px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rze-pillars__num { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.08em; color:var(--mtp-red); margin-bottom:8px; }
+.rze-pillars__card h3 { font-size:1.18rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rze-pillars__card p { font-size:0.96rem; line-height:1.65; color:#333; margin:0; }
+
+/* COMPARISON TABLE */
+.rz-compare { padding:72px 0; border-top:1px solid #1a1a1a; background:#0a0a0a; color:#fff; }
+.rz-compare .rze-h2 { color:#fff; }
+.rz-compare__lead { font-size:1.05rem; line-height:1.7; color:#aaa; max-width:760px; margin:0 0 32px; }
+.rz-compare__scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.rz-compare__t { width:100%; border-collapse:collapse; font-size:0.95rem; min-width:760px; }
+.rz-compare__t th, .rz-compare__t td { text-align:left; padding:14px 16px; border-bottom:1px solid #222; vertical-align:top; }
+.rz-compare__t thead th { font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#999; border-bottom:1px solid #fff; padding-bottom:12px; }
+.rz-compare__t .rz-compare__th-mtp { color:var(--mtp-red); }
+.rz-compare__t .rz-compare__th-row { color:#fff; }
+.rz-compare__t tbody td:first-child { color:#fff; font-weight:600; }
+.rz-compare__t tbody td { color:#ccc; }
+.rz-v { color:var(--mtp-red); font-weight:700; margin-right:6px; }
+.rz-x { color:#666; font-weight:700; margin-right:6px; }
+.rz-compare__note { color:#999; margin:24px 0 0; font-size:0.95rem; }
+.rz-compare__note a { color:#fff; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rz-compare__note a:hover { color:var(--mtp-red); }
+
+/* CATEGORIES */
+.rze-cats__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+.rze-cats__card { padding:28px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rze-cats__card h3 { font-size:1.16rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rze-cats__card p { font-size:0.96rem; line-height:1.65; color:#333; margin:0; }
+
+/* INTEGRATIONS */
+.rze-int__cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:32px; border-top:1px solid #1a1a1a; padding-top:36px; }
+.rze-int__cols h3 { font-size:0.95rem; font-weight:800; letter-spacing:0.04em; color:#000; margin:0 0 14px; }
+.rze-int__cols ul { list-style:none; padding:0; margin:0; }
+.rze-int__cols li { font-size:0.95rem; line-height:1.7; color:#333; padding:6px 0; border-bottom:1px solid #ededed; }
+.rze-int__cols li:last-child { border-bottom:0; }
+
+/* FAQ */
+.rze-faq .s-acc { border-top:1px solid #1a1a1a; margin-top:24px; }
+</style>
+</content>
+</invoke>

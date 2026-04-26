@@ -1,0 +1,331 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import StatsBar from '../../components/stitch/StatsBar.astro';
+import DarkCTA from '../../components/stitch/DarkCTA.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'Можно ли использовать ваши склады в Украине как хаб для выхода на рынок СНГ?', a: '<p>Да, это одна из основных моделей работы для импортёров. Сценарий: контейнер из Турции, Китая или ОАЭ приходит в порт Одессы или сухопутный терминал Львов/Ягодин, мы принимаем груз, проводим QC, маркируем штрихкодами Rozetka, Kaspi и Wildberries Kazakhstan, формируем партии под каждый маркетплейс. Часть остаётся в Украине для Rozetka FBO или multi-marketplace модели, часть отправляется в Казахстан (Almaty/Astana) через автотранспорт или ЖД, в Молдову через Кишинёв, в Грузию через Поти. Среднее транзитное время до Алматы — 18-22 дня, до Кишинёва — 2 дня, до Тбилиси — 7-9 дней.</p>' },
+  { q: 'Как выглядит таможенное оформление при ввозе в Украину для последующего распределения?', a: '<p>Мы работаем с 6 проверенными таможенными брокерами в Одессе, Львове и Киеве. Стандартные режимы: ИМ-40 (полный импорт с уплатой НДС и пошлины), ИМ-71 (таможенный склад — товар хранится без уплаты налогов до 1 095 дней, налог платится только при выпуске в свободное обращение или реэкспорте), Транзит (для груза, который сразу уезжает в Молдову/Грузию). Для электронной коммерции наиболее выгоден ИМ-71: вы платите налоги только за тот объём, который реально продали в Украине, а реэкспорт в СНГ идёт без двойного налогообложения.</p>' },
+  { q: 'Какие категории товаров Rozetka FBO не принимает, а вы принимаете?', a: '<p>Rozetka Fulfillment отказывается от габаритной мебели (свыше 30 кг или 1.5 м), крупной бытовой техники, хрупкого стекла и зеркал без усиленной упаковки производителя, БАДов с температурным режимом +2…+8°C, косметики с контролируемой температурой. MTP Group принимает все эти SKU. У нас 4 склада суммарно 4 100 м² с зонами +2…+8°C и +18…+24°C, мобильным оборудованием для габарита, многослойной упаковкой для хрупкого. Среди клиентов более 80 брендов в этих категориях.</p>' },
+  { q: 'Можете ли вы переупаковать товар под требования Rozetka FBO для конкретных SKU?', a: '<p>Да, это услуга префулфилмента. Принимаем большой ввоз от поставщика, проводим QC (3-5% выборка), наносим EAN-13 (если нет — печатаем 1.20 грн/ед.), дополнительную этикетку Rozetka с артикулом маркетплейса, формируем паллеты 1.2×0.8 м высотой до 1.5 м под спецификации Rozetka FBO, оформляем ТТН до сортировочного центра в Броварах или Чубинском (Бориспольский район Киевской области). Это экономит 7-10 рабочих дней по сравнению с самостоятельной подготовкой и убирает риск отказа от приёма груза.</p>' },
+  { q: 'Какие SLA вы даёте для заказов Rozetka и как сравнить с требованиями маркетплейса?', a: '<p>Rozetka ранжирует продавцов по скорости обработки: идеально — менее 30 минут, нормально — до 2 часов, плохо — до 24 часов, недопустимо — свыше 24 часов. Наш средний показатель в рабочие часы — 24 минуты от поступления заказа до этикетки на коробке, эскалация на оператора — 8 минут. Это ниже порога Rozetka "идеально", что держит рейтинг продавца в зелёной зоне даже при отсутствии собственника бизнеса (отпуск, командировка, перелёт между странами).</p>' },
+  { q: 'Что происходит со складами и операциями при блекауте или воздушной тревоге?', a: '<p>С февраля 2022 года — ноль дней простоя. Инфраструктура: 3 промышленных генератора (2× 60 кВт + 1× 100 кВт) с автономией 36 часов каждый, запас дизельного топлива на 5 суток, 2 терминала Starlink для связи с API маркетплейсов, 2 оптоволоконных канала от разных провайдеров. Во время воздушной тревоги операции не останавливаются согласно протоколу Бориспольского района (склады расположены вне зоны обязательной эвакуации). Заказы с Rozetka, Prom и других платформ продолжают поступать и отправляться.</p>' },
+  { q: 'Какая модель оплаты — комиссия с продаж или фиксированная стоимость операций?', a: '<p>Только за фактические операции: приёмка, хранение, комплектация, отправка. Никаких процентов от продаж, никаких "минимальных оборотов". Типичный тариф 18-35 грн (около $0.45-0.85) за отправление. Для сравнения: Rozetka FBO берёт 4-35% комиссии от продажи плюс 100 грн/мес за outlet — на заказе 1000 грн вы отдаёте от 40 до 350 грн. Точный расчёт под ваши SKU и обороты — в <a href="/ru/calculator/">калькуляторе</a> за 60 секунд.</p>' },
+  { q: 'Какие интеграции и API вы поддерживаете для CIS-операторов?', a: '<p>Маркетплейсы Украины: Rozetka, Prom.ua, Kasta, Allo, Bigl, Epicentr, OLX. Маркетплейсы СНГ: Kaspi.kz, Wildberries Kazakhstan (через локальные хабы), Halyk Market, OLX Kazakhstan, Carrefour Online (Грузия). CRM: KeyCRM, SalesDrive, RetailCRM, Bitrix24, AmoCRM, OneBox, Odoo. Платформы сайтов: Horoshop, WooCommerce, Shopify, OpenCart, PrestaShop. Перевозчики: Новая Почта (Украина), Укрпочта, Деливери, Meest International, ZIM, Глобус (СНГ направления). Кастомные интеграции — за 2-3 дня через REST API + webhooks.</p>' },
+  { q: 'Кто несёт материальную ответственность за груз на ваших складах?', a: '<p>MTP Group по договору полностью компенсирует стоимость утраченного или повреждённого товара по закупочной цене. При остатках свыше 500 000 грн страхование включено в тариф (Универсальная страховая, до 5 млн грн на склад). Инвентаризация — раз в квартал с присутствием клиента или его представителя; расхождения в пределах 0.3% компенсируем без обсуждения. Прозрачный журнал перемещений доступен в кабинете 24/7 с фотофиксацией ключевых операций (приёмка, упаковка, отправка).</p>' },
+  { q: 'Сколько занимает подключение и старт операций?', a: '<p>2-3 рабочих дня при подготовленном товаре. День 1: подписание договора и NDA, согласование тарифа, выдача доступов в WMS и кабинет. День 2: приёмка первой партии (бесплатно по Киеву и области от 1 паллеты, из регионов и СНГ — Новая Почта, Деливери, контейнер). День 3: API-подключение к вашему Rozetka-кабинету и другим платформам, тестовый заказ, верификация печати этикетки по стандартам Rozetka. День 4 — полноценная работа.</p>' },
+  { q: 'Какая поддержка на русском языке для клиентов из Казахстана, Молдовы, Грузии?', a: '<p>Аккаунт-менеджер на русском языке, рабочее время 09:00-19:00 по Киеву (08:00-18:00 Кишинёв, 12:00-22:00 Алматы, 11:00-21:00 Тбилиси). Telegram, WhatsApp, Viber, e-mail. Документооборот на русском или английском по вашему выбору. Договор заключается в украинской юрисдикции, но услугу оказывает украинская компания нерезиденту — обороты вашего бизнеса в Казахстане/Молдове/Грузии не попадают в украинскую налоговую базу.</p>' },
+  { q: 'Как организовать обратный поток (возвраты с Rozetka и других платформ)?', a: '<p>Возвраты с Rozetka приходят на наш склад в течение 24 часов после заявки клиента. Принимаем по чек-листу: фотофиксация состояния товара и упаковки, проверка комплектности, оценка пригодности к повторной продаже. Если товар целый — возвращаем в активный остаток, фото в кабинете 7 дней. Если повреждён — отдельная зона "брак" с возможностью возврата поставщику или утилизации. Для CIS-операторов: возвраты из Казахстана и Грузии можем принимать в обратной логистике через наших партнёров каждые 14 дней.</p>' },
+];
+
+const faqSchema = { "@context":"https://schema.org","@type":"FAQPage","mainEntity": faq.map(({q, a}) => ({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text": a.replace(/<[^>]+>/g,'').trim()}}))};
+
+const breadcrumbSchema = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},
+  {"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/"},
+  {"@type":"ListItem","position":3,"name":"Фулфилмент для Rozetka","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/"}
+]};
+
+const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Фулфилмент для селлеров Rozetka и хаб для рынка СНГ","description":"Украина как логистический хаб для выхода на Rozetka и распределения товара в Казахстан, Молдову, Грузию. Таможенный склад ИМ-71, 4 100 м², blackout-устойчивость.","serviceType":"Fulfillment","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"GE"}],"audience":{"@type":"BusinessAudience","name":"Импортёры и e-commerce операторы СНГ"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн (≈ $0.45) за отправление"},"dateModified":"2026-04-26"};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+<Base
+  title="Фулфилмент Rozetka + хаб СНГ из Украины 2026 | MTP Group"
+  description="Украина как логистический хаб для выхода на Rozetka и распределения в Казахстан, Молдову, Грузию. Таможенный склад ИМ-71, 4 100 м², blackout-устойчивость."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-rozetka-ru-hero.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="rzr-bc" aria-label="Breadcrumbs">
+  <div class="rzr-bc__inner">
+    <a href="/ru/">Главная</a><span aria-hidden="true">›</span>
+    <a href="/ru/3pl-logistika/">Услуги</a><span aria-hidden="true">›</span>
+    <span class="rzr-bc__current">Фулфилмент для Rozetka</span>
+  </div>
+</nav>
+
+<!-- HERO — VARIANT A (full-width centered, stats strip below H1) -->
+<section class="rzr">
+  <div class="rzr__inner">
+    <div class="rzr__center">
+      <LabelChip text="ФУЛФИЛМЕНТ ROZETKA · ХАБ ДЛЯ СНГ" variant="red" />
+      <h1 class="rzr__h1">Украина как <span class="rzr__accent">логистический хаб</span> для Rozetka и рынка СНГ</h1>
+      <p class="rzr__lead">Контейнер из Турции, Китая или ОАЭ → таможенный склад ИМ-71 в Украине → распределение на Rozetka, Prom, Kasta + экспорт в Казахстан, Молдову, Грузию. Один партнёр, один WMS, четыре рынка. Без двойного налогообложения, без потерь на стыке логистических операторов.</p>
+    </div>
+    <div class="rzr__stats-strip" aria-label="Ключевые показатели">
+      <StatsBar tone="dark" items={[
+        { num: '4 СТРАНЫ', label: 'UA · KZ · MD · GE' },
+        { num: 'ИМ-71', label: 'Таможенный склад до 1 095 дней' },
+        { num: '4 100 м²', label: '4 склада, +2…+8°C и +18…+24°C' },
+        { num: '0 ДНЕЙ', label: 'Простоя с февраля 2022' },
+      ]} />
+    </div>
+    <div class="rzr__form-wrap">
+      <HeroCTA lang="ru" theme="light" button="Получить расчёт →" microCopy="✓ Перезвоним в течение 15 минут · Без обязательств" sourceTag="hero /ru/fulfilment-rozetka/" />
+      <div class="rzr__links">
+        <a href="/ru/calculator/">Калькулятор стоимости →</a>
+        <span aria-hidden="true">·</span>
+        <a href="/ru/tsenu/">Прайс 2026 →</a>
+      </div>
+    </div>
+  </div>
+  <div class="rzr__logos" aria-label="Подключённые платформы">
+    <span class="rzr__logos-label">МАРКЕТПЛЕЙСЫ С ПРЯМЫМ API</span>
+    <div class="rzr__logos-row">
+      <span>ROZETKA</span><span aria-hidden="true">·</span>
+      <span>PROM.UA</span><span aria-hidden="true">·</span>
+      <span>KASTA</span><span aria-hidden="true">·</span>
+      <span>KASPI.KZ</span><span aria-hidden="true">·</span>
+      <span>WILDBERRIES KZ</span><span aria-hidden="true">·</span>
+      <span>OLX</span><span aria-hidden="true">·</span>
+      <span>HOROSHOP</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<div class="rzr-byline">
+  <AuthorByline lang="ru" datePublished="2026-04-26" dateModified="2026-04-26" readingTime="10" />
+</div>
+
+<!-- INTRO: WHY UKRAINE AS HUB -->
+<section class="rzr-intro">
+  <div class="rzr-intro__inner">
+    <LabelChip text="01 · ПОЧЕМУ УКРАИНА" variant="muted" />
+    <h2 class="rzr-h2">Почему e-commerce импортёры из Турции, Китая и ОАЭ выбирают Украину как хаб</h2>
+    <p>В 2024-2025 годах украинский логистический сектор для электронной коммерции стал одним из наиболее быстрых и регуляторно прозрачных в регионе. Три фактора изменили расклад: режим временного ввоза ИМ-71 (хранение товара на таможенном складе до 1 095 дней без уплаты НДС и пошлин до момента выпуска в свободное обращение), портовая инфраструктура Одессы и сухопутные терминалы Львов/Ягодин для контейнерного импорта из Турции и Китая, а также прямые автомобильные коридоры в Молдову (Паланка-Кишинёв, 8 часов) и Грузию (через Румынию-Болгарию-Турцию).</p>
+    <p>Выгода для импортёра, ориентированного одновременно на украинский рынок (Rozetka, Prom.ua, Kasta) и СНГ (Kaspi.kz, Wildberries Kazakhstan, Halyk Market, локальные платформы Молдовы и Грузии): один контейнер из Шанхая или Стамбула приходит в Одессу или Львов, разделяется на украинский и СНГ-потоки на нашем складе, налоги в Украине платятся только за то, что реально продано украинскому потребителю, остальное идёт реэкспортом без двойного налогообложения. Это экономит 18-22% от логистической стоимости по сравнению со схемой "склад в каждой стране" и убирает 30-40 дней транзитного времени по сравнению со схемой "Турция → Польша → Казахстан".</p>
+    <p>Дополнительный аргумент — стоимость операций. Украинский фулфилмент обходится в 18-35 грн (≈ $0.45-0.85) за отправление. Для сравнения: Польша — $1.2-2.5, Турция — $0.7-1.5, Казахстан — $0.8-1.8. При обороте 200 заказов в день экономия 80-150 тыс. грн в месяц по операционным затратам.</p>
+  </div>
+</section>
+
+<!-- 4 ANGLES OF UKRAINIAN HUB -->
+<section class="rzr-pillars">
+  <div class="rzr-pillars__inner">
+    <LabelChip text="02 · 4 ОПОРЫ" variant="muted" />
+    <h2 class="rzr-h2">4 опоры украинского хаба MTP Group</h2>
+    <div class="rzr-pillars__grid">
+      <article class="rzr-pillars__card">
+        <span class="rzr-pillars__num">01</span>
+        <h3>Таможенный склад ИМ-71</h3>
+        <p>Хранение импортного товара до 1 095 дней без уплаты НДС и пошлины. Налог платится только при выпуске партии в свободное обращение в Украине или при реэкспорте отсутствует. Для импортёров с длинным циклом продаж — ключевая экономия на cash flow.</p>
+      </article>
+      <article class="rzr-pillars__card">
+        <span class="rzr-pillars__num">02</span>
+        <h3>Multi-marketplace доступ</h3>
+        <p>Один остаток на SKU — продажи одновременно на Rozetka, Prom.ua, Kasta, Allo, Bigl, OLX, Epicentr, плюс Kaspi.kz и Wildberries Kazakhstan через зеркальные SKU. WMS автоматически распределяет резерв и печатает этикетки под формат каждого маркетплейса.</p>
+      </article>
+      <article class="rzr-pillars__card">
+        <span class="rzr-pillars__num">03</span>
+        <h3>Категории-исключения Rozetka FBO</h3>
+        <p>Габаритная мебель, крупная бытовая техника, хрупкое стекло, БАДы +2…+8°C, косметика с температурным контролем — категории, которые Rozetka FBO не принимает. У нас оборудование, страхование и операционные процедуры под эти SKU.</p>
+      </article>
+      <article class="rzr-pillars__card">
+        <span class="rzr-pillars__num">04</span>
+        <h3>Blackout и war-resilience</h3>
+        <p>3 генератора, 36 часов автономии, запас топлива 5 суток, 2 Starlink-терминала, дублирующие оптоволоконные каналы. С февраля 2022 — ноль дней простоя. API Rozetka, Prom, Kaspi продолжают синхронизироваться даже в дни массированных атак на инфраструктуру.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: COMPARISON TABLE -->
+<section class="rz-compare">
+  <div class="rz-compare__inner">
+    <LabelChip text="03 · СРАВНЕНИЕ" variant="red" />
+    <h2 class="rzr-h2">Rozetka FBO vs MTP Group vs Свой склад в Украине</h2>
+    <p class="rz-compare__lead">Честная таблица для импортёров и e-commerce операторов СНГ. 12 параметров, без звёздочек.</p>
+    <div class="rz-compare__scroll">
+      <table class="rz-compare__t">
+        <thead>
+          <tr><th class="rz-compare__th-row">Параметр</th><th>Rozetka FBO</th><th class="rz-compare__th-mtp">MTP Group</th><th>Свой склад в Украине</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Категории товаров</td><td><span class="rz-x">×</span> Без габарита, мебели, стекла, БАДов</td><td><span class="rz-v">✓</span> Все категории кроме спецтоваров</td><td><span class="rz-v">✓</span> Все категории</td></tr>
+          <tr><td>Комиссия с продаж</td><td><span class="rz-x">×</span> 4-35% + 100 грн/мес</td><td><span class="rz-v">✓</span> 0% (только за операции)</td><td><span class="rz-v">✓</span> 0% (свои затраты)</td></tr>
+          <tr><td>Multi-marketplace</td><td><span class="rz-x">×</span> Только Rozetka</td><td><span class="rz-v">✓</span> Rozetka + Prom + Kasta + Kaspi.kz + ...</td><td><span class="rz-v">✓</span> Все (своя работа)</td></tr>
+          <tr><td>Таможенный склад ИМ-71</td><td><span class="rz-x">×</span> Только под выпуск</td><td><span class="rz-v">✓</span> До 1 095 дней без налога</td><td>Зависит от лицензии</td></tr>
+          <tr><td>Реэкспорт в СНГ</td><td><span class="rz-x">×</span> Не предусмотрен</td><td><span class="rz-v">✓</span> KZ, MD, GE без двойного налогообложения</td><td>Зависит от вас</td></tr>
+          <tr><td>Контроль бренда</td><td><span class="rz-x">×</span> Коробка Rozetka</td><td><span class="rz-v">✓</span> Ваша коробка, ваши вкладыши</td><td><span class="rz-v">✓</span> Полный контроль</td></tr>
+          <tr><td>Время подключения</td><td>5-7 рабочих дней</td><td><span class="rz-v">✓</span> 2-3 рабочих дня</td><td>30-90 дней (аренда + найм)</td></tr>
+          <tr><td>SLA обработки</td><td>24 ч (норма)</td><td><span class="rz-v">✓</span> 24 мин (идеально по Rozetka)</td><td>Зависит от вашей команды</td></tr>
+          <tr><td>Страхование</td><td>До 50 000 грн на партию</td><td><span class="rz-v">✓</span> До 5 млн грн на склад</td><td>Отдельный полис (от 1.5%/год)</td></tr>
+          <tr><td>Blackout-устойчивость</td><td>Зависит от склада Rozetka</td><td><span class="rz-v">✓</span> 3 генератора, Starlink, 0 дней простоя</td><td>Ваши инвестиции</td></tr>
+          <tr><td>Прайс</td><td>4-35% + комплектация</td><td><span class="rz-v">✓</span> 18-35 грн / отправление</td><td>Аренда + ФОТ + коммуналка</td></tr>
+          <tr><td>Поддержка на русском</td><td>Через тикеты Rozetka</td><td><span class="rz-v">✓</span> Аккаунт-менеджер 09:00-19:00 Киев</td><td>Ваш персонал</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="rz-compare__note">Расчёт под ваши SKU и обороты — за 60 секунд в <a href="/ru/calculator/">калькуляторе</a>.</p>
+  </div>
+</section>
+
+<!-- CIS DISTRIBUTION -->
+<section class="rzr-cis">
+  <div class="rzr-cis__inner">
+    <LabelChip text="04 · РАСПРЕДЕЛЕНИЕ В СНГ" variant="muted" />
+    <h2 class="rzr-h2">Из Украины — в Казахстан, Молдову и Грузию одним потоком</h2>
+    <p>Контейнер с электроникой, косметикой, мелкой бытовой техникой или одеждой пришёл в Одессу. На нашем складе он разделяется по WMS-меткам на 4 потока: Украина (Rozetka + Prom + Kasta + сайт клиента), Казахстан (Kaspi.kz + Wildberries Kazakhstan через локального оператора), Молдова (прямая доставка через Паланку), Грузия (через Поти контейнером или Румынию-Болгарию автотранспортом). Каждый поток получает свою маркировку, штрихкоды и таможенные документы.</p>
+
+    <div class="rzr-cis__routes">
+      <div class="rzr-cis__route">
+        <span class="rzr-cis__route-tag">UA</span>
+        <h3>Украина → Rozetka, Prom.ua, Kasta</h3>
+        <p>Multi-marketplace модель из одного остатка. Срок обработки 24 минуты. Доставка Новой Почтой, Укрпочтой или Деливери в день получения заказа.</p>
+      </div>
+      <div class="rzr-cis__route">
+        <span class="rzr-cis__route-tag">KZ</span>
+        <h3>Казахстан → Kaspi.kz, Wildberries Kazakhstan</h3>
+        <p>Контейнерная отправка из Одессы или автотранспорт через Россию (с 2024 — через Каспий). Транзитное время до Алматы — 18-22 дня. Локальный 3PL партнёр для last-mile в Алматы и Астане.</p>
+      </div>
+      <div class="rzr-cis__route">
+        <span class="rzr-cis__route-tag">MD</span>
+        <h3>Молдова → Кишинёв, региональные центры</h3>
+        <p>Прямая автомобильная доставка через Паланку, 8 часов от Киева до Кишинёва. Партнёр для последней мили: Nova Post Moldova и местные курьеры. Для интернет-магазинов оптимально работать без таможенного оформления при отправке партиями до €10 000.</p>
+      </div>
+      <div class="rzr-cis__route">
+        <span class="rzr-cis__route-tag">GE</span>
+        <h3>Грузия → Тбилиси, Батуми, Кутаиси</h3>
+        <p>Контейнером через порт Поти (с Чёрного моря через Турцию-Грузию) или автотранспортом через Румынию-Болгарию-Турцию. Транзитное время 7-9 дней. Local fulfillment partner в Тбилиси.</p>
+      </div>
+    </div>
+
+    <p>Реальные цифры от клиентов в 2025 году: бренд декоративной косметики из Стамбула вывел линейку в Украину, Казахстан и Молдову через единый ввоз — экономия 31% от логистической стоимости по сравнению со схемой "три отдельных импорта". Дистрибьютор электроники из Шенжэня перешёл с польского хаба на украинский — сокращение цикла "контейнер→продажа" с 67 дней до 41. Производитель текстиля из ОАЭ открыл отдельную SKU-линию для рынка СНГ через украинский ИМ-71 — без авансовых налоговых платежей и с реэкспортом по фактическому распределению.</p>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="rzr-int">
+  <div class="rzr-int__inner">
+    <LabelChip text="05 · ИНТЕГРАЦИИ" variant="muted" />
+    <h2 class="rzr-h2">CRM, маркетплейсы, перевозчики — нативно</h2>
+    <div class="rzr-int__cols">
+      <div><h3>Маркетплейсы UA</h3><ul><li>Rozetka Marketplace API</li><li>Prom.ua + EVO ecosystem</li><li>Kasta (FBK + 3PL)</li><li>Allo, Bigl, Epicentr</li><li>OLX Доставка</li></ul></div>
+      <div><h3>Маркетплейсы СНГ</h3><ul><li>Kaspi.kz Marketplace</li><li>Wildberries Kazakhstan</li><li>Halyk Market</li><li>OLX Kazakhstan</li><li>Carrefour Online (GE)</li></ul></div>
+      <div><h3>CRM и ERP</h3><ul><li>KeyCRM, SalesDrive (нативно)</li><li>RetailCRM, Bitrix24</li><li>Odoo, AmoCRM, OneBox</li><li>1С (через коннектор)</li><li>Кастомные — REST API</li></ul></div>
+      <div><h3>Перевозчики</h3><ul><li>Новая Почта (UA)</li><li>Укрпочта, Деливери</li><li>Meest International</li><li>ZIM, Глобус (СНГ)</li><li>Контейнерные операторы</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="rzr-faq">
+  <div class="rzr-faq__inner">
+    <LabelChip text="06 · ЧАСТЫЕ ВОПРОСЫ" variant="muted" />
+    <h2 class="rzr-h2">12 вопросов, которые задают импортёры и селлеры СНГ</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<!-- BOTTOM DARK CTA -->
+<DarkCTA
+  title="Рассчитайте стоимость украинского хаба для вашего бизнеса"
+  sub="Бесплатный расчёт под ваши SKU, обороты и направления распределения. Включаем оценку экономии vs Rozetka FBO + альтернативные хабы (Польша, Турция)."
+  primary={{ label: 'Получить расчёт →', href: '#heroLeadForm' }}
+  secondary={{ label: 'Калькулятор стоимости', href: '/ru/calculator/' }}
+/>
+
+</Base>
+
+<style is:global>
+:root { --mtp-red:#e63329; }
+.rzr-bc { background:#f6f6f4; padding:14px 0; font-size:13px; }
+.rzr-bc__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.rzr-bc a { color:#666; text-decoration:none; } .rzr-bc a:hover { color:#000; }
+.rzr-bc__current { color:#000; font-weight:600; }
+.rzr-bc span[aria-hidden] { color:#bbb; }
+
+/* HERO — VARIANT A: full-width centered */
+.rzr { background:#fff; border-bottom:1px solid #ededed; padding:64px 0 0; }
+.rzr__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+.rzr__center { max-width:920px; margin:0 auto; text-align:center; }
+.rzr__h1 { font-size:clamp(2.2rem, 5vw, 4.2rem); line-height:1.05; letter-spacing:-0.018em; margin:18px 0 24px; font-weight:800; color:#000; }
+.rzr__accent { color:var(--mtp-red); }
+.rzr__lead { font-size:clamp(1.05rem, 1.4vw, 1.2rem); line-height:1.65; color:#333; margin:0 auto 36px; max-width:780px; }
+.rzr__stats-strip { max-width:1180px; margin:32px 0; padding:0; }
+.rzr__stats-strip .s-stats__grid { grid-template-columns:repeat(4, 1fr); gap:0; border-top:1px solid #1a1a1a; border-bottom:1px solid #1a1a1a; }
+.rzr__stats-strip .s-stats__item { padding:24px 18px; border-right:1px solid #ededed; text-align:center; }
+.rzr__stats-strip .s-stats__item:last-child { border-right:0; }
+.rzr__form-wrap { max-width:560px; margin:36px auto 0; }
+.rzr__links { margin-top:18px; font-size:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:center; color:#666; }
+.rzr__links a { color:#000; text-decoration:none; border-bottom:1.5px solid #000; padding-bottom:1px; transition:color .15s, border-color .15s; }
+.rzr__links a:hover { color:var(--mtp-red); border-color:var(--mtp-red); }
+.rzr__logos { max-width:1180px; margin:48px auto 0; padding:24px 1.5rem 36px; border-top:1px solid #ededed; text-align:center; }
+.rzr__logos-label { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; color:#999; margin-bottom:14px; }
+.rzr__logos-row { display:flex; gap:18px 24px; flex-wrap:wrap; align-items:center; justify-content:center; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#1a1a1a; }
+.rzr__logos-row span[aria-hidden] { color:#ddd; font-weight:400; }
+.rzr-byline { max-width:1180px; margin:32px auto 0; padding:0 1.5rem; }
+@media(max-width:880px) {
+  .rzr__stats-strip .s-stats__grid { grid-template-columns:repeat(2, 1fr); }
+  .rzr__stats-strip .s-stats__item:nth-child(2) { border-right:0; }
+}
+
+/* SECTIONS */
+.rzr-intro, .rzr-pillars, .rzr-cis, .rzr-int, .rzr-faq { padding:72px 0; border-top:1px solid #ededed; }
+.rzr-intro__inner, .rzr-pillars__inner, .rzr-cis__inner, .rzr-int__inner, .rzr-faq__inner, .rz-compare__inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+.rzr-h2 { font-size:clamp(1.6rem, 2.6vw, 2.2rem); line-height:1.15; letter-spacing:-0.01em; margin:14px 0 24px; font-weight:800; color:#000; }
+.rzr-intro p, .rzr-cis > .rzr-cis__inner > p { font-size:1.05rem; line-height:1.75; color:#222; margin:0 0 18px; max-width:880px; }
+.rzr-intro p:last-child, .rzr-cis > .rzr-cis__inner > p:last-child { margin-bottom:0; }
+.rzr-intro a, .rzr-cis a, .rz-compare a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rzr-intro a:hover, .rzr-cis a:hover, .rz-compare a:hover { color:var(--mtp-red); }
+
+/* 4 PILLARS GRID */
+.rzr-pillars__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+.rzr-pillars__card { padding:32px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rzr-pillars__num { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.08em; color:var(--mtp-red); margin-bottom:8px; }
+.rzr-pillars__card h3 { font-size:1.18rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rzr-pillars__card p { font-size:0.96rem; line-height:1.65; color:#333; margin:0; }
+
+/* COMPARISON TABLE */
+.rz-compare { padding:72px 0; border-top:1px solid #1a1a1a; background:#0a0a0a; color:#fff; }
+.rz-compare .rzr-h2 { color:#fff; }
+.rz-compare__lead { font-size:1.05rem; line-height:1.7; color:#aaa; max-width:760px; margin:0 0 32px; }
+.rz-compare__scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.rz-compare__t { width:100%; border-collapse:collapse; font-size:0.95rem; min-width:760px; }
+.rz-compare__t th, .rz-compare__t td { text-align:left; padding:14px 16px; border-bottom:1px solid #222; vertical-align:top; }
+.rz-compare__t thead th { font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#999; border-bottom:1px solid #fff; padding-bottom:12px; }
+.rz-compare__t .rz-compare__th-mtp { color:var(--mtp-red); }
+.rz-compare__t .rz-compare__th-row { color:#fff; }
+.rz-compare__t tbody td:first-child { color:#fff; font-weight:600; }
+.rz-compare__t tbody td { color:#ccc; }
+.rz-v { color:var(--mtp-red); font-weight:700; margin-right:6px; }
+.rz-x { color:#666; font-weight:700; margin-right:6px; }
+.rz-compare__note { color:#999; margin:24px 0 0; font-size:0.95rem; }
+.rz-compare__note a { color:#fff; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.rz-compare__note a:hover { color:var(--mtp-red); }
+
+/* CIS ROUTES */
+.rzr-cis__routes { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0; border-top:1px solid #1a1a1a; margin:32px 0; }
+.rzr-cis__route { padding:28px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+.rzr-cis__route-tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:0.12em; color:#fff; background:var(--mtp-red); padding:4px 8px; margin-bottom:12px; }
+.rzr-cis__route h3 { font-size:1.12rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+.rzr-cis__route p { font-size:0.96rem; line-height:1.65; color:#333; margin:0; }
+
+/* INTEGRATIONS */
+.rzr-int__cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:32px; border-top:1px solid #1a1a1a; padding-top:36px; }
+.rzr-int__cols h3 { font-size:0.95rem; font-weight:800; letter-spacing:0.04em; color:#000; margin:0 0 14px; }
+.rzr-int__cols ul { list-style:none; padding:0; margin:0; }
+.rzr-int__cols li { font-size:0.95rem; line-height:1.7; color:#333; padding:6px 0; border-bottom:1px solid #ededed; }
+.rzr-int__cols li:last-child { border-bottom:0; }
+
+/* FAQ */
+.rzr-faq .s-acc { border-top:1px solid #1a1a1a; margin-top:24px; }
+</style>
+</content>
+</invoke>

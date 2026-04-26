@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e63329",
+                        secondary: "#5e5e5e",
+                        background: "#ffffff",
+                        surface: "#fcf9f8",
+                        "surface-container": "#f0eded"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0px",
+                        lg: "0px",
+                        xl: "0px",
+                        full: "0px"
+                    },
+                    fontFamily: {
+                        headline: ["Work Sans"],
+                        display: ["Work Sans"],
+                        body: ["Work Sans"],
+                        label: ["Work Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            * { border-radius: 0 !important; }
+            body { font-family: 'Work Sans', sans-serif; }
+        }
+        .variant-divider {
+            height: 1px;
+            background: #000;
+            margin: 4rem 0;
+            position: relative;
+        }
+        .variant-label {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 2px 16px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="bg-white text-black selection:bg-primary selection:text-white overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-black/5 flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-black tracking-tighter text-black">MTP GROUP</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="uppercase tracking-widest font-bold text-[0.7rem] text-black hover:text-primary transition-colors" href="#">Послуги</a>
+<a class="uppercase tracking-widest font-bold text-[0.7rem] text-black hover:text-primary transition-colors" href="#">Про нас</a>
+<a class="uppercase tracking-widest font-bold text-[0.7rem] text-black hover:text-primary transition-colors" href="#">Відгуки</a>
+<a class="uppercase tracking-widest font-bold text-[0.7rem] text-black hover:text-primary transition-colors" href="#">Ціни</a>
+</div>
+<button class="uppercase tracking-widest font-bold text-[0.7rem] bg-primary text-white px-6 py-3 hover:bg-black transition-colors">ЗВ’ЯЗАТИСЬ</button>
+</nav>
+<main class="pt-20">
+<section class="max-w-[1280px] mx-auto px-8 py-16 md:py-24">
+<div class="flex flex-col lg:flex-row gap-16 lg:items-start">
+<div class="lg:w-[60%]">
+<p class="text-primary font-bold text-[0.75rem] uppercase tracking-[0.15em] mb-6">
+                        ФУЛФІЛМЕНТ ДЛЯ ROZETKA · СЕЛЕРАМ МАРКЕТПЛЕЙСУ
+                    </p>
+<h1 class="text-[3rem] md:text-[4rem] leading-[1] font-black tracking-[-0.03em] text-black mb-8">
+<span class="text-primary">Альтернатива</span> Rozetka FBO для категорій, які вона не приймає
+                    </h1>
+<p class="text-secondary text-[1.125rem] leading-[1.6] max-w-xl mb-12">
+                        Меблі, габарит, побутова техніка, крихке скло — ми приймаємо те, що Rozetka FF відкидає. Multi-marketplace, контроль над брендом, без комісії з продажу.
+                    </p>
+<div class="flex flex-col gap-4">
+<form class="flex flex-col sm:flex-row gap-0 max-w-lg border-2 border-black">
+<input class="bg-white border-none h-16 px-6 focus:ring-0 w-full text-black placeholder-secondary font-bold" placeholder="+38 (0__) ___ __ __" type="tel"/>
+<button class="bg-primary text-white px-8 h-16 font-black uppercase tracking-[0.1em] hover:bg-black transition-colors whitespace-nowrap" type="submit">
+                                Отримати розрахунок →
+                            </button>
+</form>
+<p class="text-[0.75rem] uppercase tracking-widest text-secondary font-bold flex items-center gap-2">
+<span class="text-primary">✓</span> Передзвонимо за 15 хвилин · Без зобов'язань
+                        </p>
+</div>
+</div>
+<div class="lg:w-[40%] flex flex-col gap-4">
+<div class="bg-white border-2 border-black p-8 flex flex-col justify-center">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-widest mb-2">Швидкість обробки</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase leading-none">24 ГОД</div>
+<div class="text-[0.75rem] font-bold uppercase tracking-widest text-secondary mt-1">обробка замовлень</div>
+</div>
+<div class="bg-white border-2 border-black p-8 flex flex-col justify-center">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-widest mb-2">Старт роботи</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase leading-none">2-3 ДНІ</div>
+<div class="text-[0.75rem] font-bold uppercase tracking-widest text-secondary mt-1">до підключення</div>
+</div>
+<div class="bg-white border-2 border-black p-8 flex flex-col justify-center">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-widest mb-2">Фінансова вигода</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase leading-none">0%</div>
+<div class="text-[0.75rem] font-bold uppercase tracking-widest text-secondary mt-1">комісії з продажу</div>
+</div>
+<div class="bg-white border-2 border-black p-8 flex flex-col justify-center">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-widest mb-2">Масштаб мережі</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase leading-none">4 СКЛАДИ</div>
+<div class="text-[0.75rem] font-bold uppercase tracking-widest text-secondary mt-1">Київ + область</div>
+</div>
+</div>
+</div>
+</section>
+<div class="variant-divider"><span class="variant-label">Variant A: Full-width Centered</span></div>
+<section class="w-full bg-white pt-16 pb-0">
+<div class="max-w-[1280px] mx-auto px-8 text-center">
+<p class="text-primary font-bold text-[0.75rem] uppercase tracking-[0.2em] mb-8">
+                    ФУЛФІЛМЕНТ ДЛЯ ROZETKA · СЕЛЕРАМ МАРКЕТПЛЕЙСУ
+                </p>
+<h1 class="text-[3.5rem] md:text-[5rem] lg:text-[6rem] leading-[0.95] font-black tracking-[-0.04em] text-black mb-10 max-w-5xl mx-auto">
+<span class="text-primary">Альтернатива</span> Rozetka FBO для категорій, які вона не приймає
+                </h1>
+<p class="text-secondary text-[1.25rem] leading-[1.6] max-w-2xl mx-auto mb-16">
+                    Меблі, габарит, побутова техніка, крихке скло — ми приймаємо те, що Rozetka FF відкидає. Multi-marketplace, контроль над брендом.
+                </p>
+</div>
+<div class="w-full border-y-2 border-black bg-white">
+<div class="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x-0 md:divide-x-2 divide-black">
+<div class="p-8 text-center md:text-left">
+<div class="text-[2.5rem] font-black tracking-tighter text-black leading-none">24 ГОД</div>
+<div class="text-[0.7rem] font-bold uppercase tracking-widest text-primary mt-1">обробка замовлень</div>
+</div>
+<div class="p-8 text-center md:text-left">
+<div class="text-[2.5rem] font-black tracking-tighter text-black leading-none">2-3 ДНІ</div>
+<div class="text-[0.7rem] font-bold uppercase tracking-widest text-primary mt-1">до підключення</div>
+</div>
+<div class="p-8 text-center md:text-left">
+<div class="text-[2.5rem] font-black tracking-tighter text-black leading-none">0%</div>
+<div class="text-[0.7rem] font-bold uppercase tracking-widest text-primary mt-1">комісії з продажу</div>
+</div>
+<div class="p-8 text-center md:text-left">
+<div class="text-[2.5rem] font-black tracking-tighter text-black leading-none">4 СКЛАДИ</div>
+<div class="text-[0.7rem] font-bold uppercase tracking-widest text-primary mt-1">Київ + область</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 py-20 flex flex-col items-center gap-6">
+<form class="flex flex-col sm:flex-row gap-0 w-full max-w-2xl border-2 border-black">
+<input class="bg-white border-none h-16 px-6 focus:ring-0 w-full text-black placeholder-secondary font-bold text-lg" placeholder="+38 (0__) ___ __ __" type="tel"/>
+<button class="bg-primary text-white px-12 h-16 font-black uppercase tracking-[0.1em] hover:bg-black transition-colors whitespace-nowrap" type="submit">
+                        Отримати розрахунок →
+                    </button>
+</form>
+<p class="text-[0.75rem] uppercase tracking-widest text-secondary font-bold">
+                    ✓ Передзвонимо за 15 хвилин · Без зобов'язань
+                </p>
+</div>
+</section>
+<section class="w-full bg-black py-16">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-12 grayscale invert opacity-60">
+<div class="text-[1.5rem] font-black tracking-tighter">ROZETKA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">PROM.UA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">KASTA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">ALLO</div>
+<div class="text-[1.5rem] font-black tracking-tighter">HOROSHOP</div>
+</div>
+</div>
+</section>
+<section class="max-w-[1280px] mx-auto px-8 py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1 border-t-2 border-black">
+<div class="bg-black p-12 text-white flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<p class="text-primary font-bold text-[0.75rem] uppercase tracking-widest mb-6">Capabilities</p>
+<h2 class="text-[2.5rem] font-black leading-tight uppercase tracking-tighter">ПРОФЕСІЙНИЙ ФУЛФІЛМЕНТ ДЛЯ КРИХКИХ ТА ГАБАРИТНИХ ТОВАРІВ</h2>
+</div>
+<div class="h-1 w-32 bg-primary"></div>
+</div>
+<div class="relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Warehouse logistics" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrgoPfgKzlgiRc9HEStglZ1oPmPya9tA1KnDr6vmVz8Qx8LrWAeSrgEvEanr3dZY1iMc3vEBsRfELJkM2H_UL8E44Ph-RlZ0XG9bodjv8BL-Q0MDc_MBScPhEEw8aY2zGxbwixRu51VcxEQd_imhOZhdfaVuQYRpOXQhDETT_Ji8-k7ht1qP-bmhRzPa92o9iLht8kNchIs88prJ0OAV8t1n5HVavrvSzrKEiK5AYuVhJZ-7grGLaAhwCR6h9CEWoGms-6oWiqWRIu"/>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-black text-white w-full">
+<div class="flex flex-col md:flex-row justify-between items-start max-w-[1280px] mx-auto px-12 py-20 gap-12">
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="text-2xl font-black text-white tracking-tighter">MTP GROUP</div>
+<p class="text-[0.875rem] leading-[1.6] text-zinc-400">
+                    Надійний партнер у світі логістики. Ми забезпечуємо точність кожного відправлення та контроль над вашим ланцюгом поставок.
+                </p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-6">
+<a class="text-[0.75rem] font-bold uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Контакти</a>
+<a class="text-[0.75rem] font-bold uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Партнерам</a>
+<a class="text-[0.75rem] font-bold uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Політика</a>
+<a class="text-[0.75rem] font-bold uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Integration</a>
+<a class="text-[0.75rem] font-bold uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Умови</a>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-12 pb-12">
+<div class="border-t border-zinc-800 pt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[0.7rem] text-zinc-500 uppercase tracking-widest">© 2024 MTP GROUP. FULFILLMENT PRECISION.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-zinc-500">factory</span>
+<span class="material-symbols-outlined text-zinc-500">inventory</span>
+<span class="material-symbols-outlined text-zinc-500">local_shipping</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

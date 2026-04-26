@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#e63329",
+              "secondary": "#5e5e5e",
+              "background": "#ffffff",
+              "surface-container-highest": "#e5e2e1",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-high": "#eae7e7"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px",
+              "lg": "0px",
+              "xl": "0px",
+              "full": "0px"
+            },
+            "fontFamily": {
+              "headline": ["Work Sans"],
+              "display": ["Work Sans"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            * { border-radius: 0px !important; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-black selection:bg-primary selection:text-white">
+<nav class="fixed top-0 w-full z-50 bg-white border-b border-black/5 flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-black tracking-tighter text-black">MTP GROUP</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">Послуги</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">Про нас</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">Відгуки</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">Блог</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">FAQ</a>
+<a class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] text-black hover:text-primary transition-colors" href="#">Ціни</a>
+</div>
+<button class="font-['Work_Sans'] uppercase tracking-[0.1rem] font-bold text-[0.75rem] bg-primary text-white px-6 py-3 hover:bg-black transition-colors">ЗВ’ЯЗАТИСЬ</button>
+</nav>
+<main class="pt-24 min-h-screen">
+<section class="max-w-[1280px] mx-auto px-8 py-16 md:py-28 text-center">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<p class="text-primary font-bold text-[0.75rem] uppercase tracking-[0.2rem] mb-6">
+                ФУЛФІЛМЕНТ ДЛЯ ROZETKA · СЕЛЕРАМ МАРКЕТПЛЕЙСУ
+            </p>
+<h1 class="text-[3rem] md:text-[5rem] leading-[1] font-black tracking-[-0.03em] text-black mb-8 uppercase">
+<span class="text-primary">Альтернатива</span> Rozetka FBO для категорій, які вона не приймає
+            </h1>
+<p class="text-secondary text-[1.125rem] leading-[1.6] max-w-2xl mb-16">
+                Меблі, габарит, побутова техніка, крихке скло — ми приймаємо те, що Rozetka FF відкидає. Multi-marketplace, контроль над брендом, без комісії з продажу.
+            </p>
+</div>
+<div class="w-full grid grid-cols-1 md:grid-cols-4 border-y-2 border-black mb-16">
+<div class="p-8 border-b md:border-b-0 md:border-r border-black last:border-0 hover:bg-black group transition-colors">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-[0.1rem] block mb-2 group-hover:text-white">Швидкість</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase group-hover:text-white">24 ГОД</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary group-hover:text-zinc-400">обробка замовлень</div>
+</div>
+<div class="p-8 border-b md:border-b-0 md:border-r border-black last:border-0 hover:bg-black group transition-colors">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-[0.1rem] block mb-2 group-hover:text-white">Старт</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase group-hover:text-white">2-3 ДНІ</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary group-hover:text-zinc-400">до підключення</div>
+</div>
+<div class="p-8 border-b md:border-b-0 md:border-r border-black last:border-0 hover:bg-black group transition-colors">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-[0.1rem] block mb-2 group-hover:text-white">Вигода</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase group-hover:text-white">0%</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary group-hover:text-zinc-400">комісії з продажу</div>
+</div>
+<div class="p-8 last:border-0 hover:bg-black group transition-colors">
+<span class="text-primary font-bold text-[0.7rem] uppercase tracking-[0.1rem] block mb-2 group-hover:text-white">Мережа</span>
+<div class="text-[2.5rem] font-black tracking-tighter text-black uppercase group-hover:text-white">4 СКЛАДИ</div>
+<div class="text-[0.875rem] font-bold uppercase tracking-wider text-secondary group-hover:text-zinc-400">Київ + область</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<form class="flex flex-col sm:flex-row gap-0 w-full max-w-xl border-2 border-black">
+<input class="bg-white border-none h-16 px-6 focus:ring-0 w-full text-black placeholder-secondary font-bold text-lg" placeholder="+38 (0__) ___ __ __" type="tel"/>
+<button class="bg-primary text-white px-10 py-4 font-black uppercase tracking-[0.1rem] hover:bg-black transition-colors whitespace-nowrap" type="submit">
+                    Отримати розрахунок →
+                </button>
+</form>
+<p class="text-[0.75rem] uppercase tracking-[0.1rem] text-black font-black">
+                ✓ Передзвонимо за 15 хвилин · Без зобов'язань
+            </p>
+</div>
+</section>
+<section class="w-full bg-surface-container-high py-12">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-8 grayscale opacity-50 contrast-125">
+<div class="text-[1.5rem] font-black tracking-tighter">ROZETKA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">PROM.UA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">KASTA</div>
+<div class="text-[1.5rem] font-black tracking-tighter">ALLO</div>
+<div class="text-[1.5rem] font-black tracking-tighter">HOROSHOP</div>
+</div>
+</div>
+</section>
+<section class="max-w-[1280px] mx-auto px-8 py-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-black">
+<div class="bg-black p-12 text-white flex flex-col justify-between aspect-video">
+<h2 class="text-[2.5rem] font-black leading-tight uppercase tracking-tight">Професійний фулфілмент для крихких та габаритних товарів</h2>
+<div class="h-1 w-32 bg-primary"></div>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Warehouse logistics" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrgoPfgKzlgiRc9HEStglZ1oPmPya9tA1KnDr6vmVz8Qx8LrWAeSrgEvEanr3dZY1iMc3vEBsRfELJkM2H_UL8E44Ph-RlZ0XG9bodjv8BL-Q0MDc_MBScPhEEw8aY2zGxbwixRu51VcxEQd_imhOZhdfaVuQYRpOXQhDETT_Ji8-k7ht1qP-bmhRzPa92o9iLht8kNchIs88prJ0OAV8t1n5HVavrvSzrKEiK5AYuVhJZ-7grGLaAhwCR6h9CEWoGms-6oWiqWRIu"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-black text-white w-full border-t-8 border-primary">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-8 md:px-12 py-16 gap-12">
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="text-2xl font-black text-white uppercase tracking-[0.2rem]">MTP GROUP</div>
+<p class="font-['Work_Sans'] text-[0.875rem] leading-[1.6] text-zinc-400">
+                Надійний партнер у світі логістики. Ми забезпечуємо точність кожного відправлення та контроль над вашим ланцюгом поставок.
+            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
+<a class="font-bold text-[0.75rem] uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Контакти</a>
+<a class="font-bold text-[0.75rem] uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Партнерам</a>
+<a class="font-bold text-[0.75rem] uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Конфіденційність</a>
+<a class="font-bold text-[0.75rem] uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Rozetka Integration</a>
+<a class="font-bold text-[0.75rem] uppercase tracking-widest text-zinc-400 hover:text-primary transition-colors" href="#">Умови сервісу</a>
+</div>
+</div>
+<div class="px-8 md:px-12 pb-12">
+<div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-bold text-[0.7rem] text-zinc-500 uppercase tracking-widest">© 2024 MTP GROUP. FULFILLMENT PRECISION.</p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">factory</span>
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">inventory</span>
+<span class="material-symbols-outlined text-zinc-500 cursor-pointer hover:text-white transition-colors">local_shipping</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
