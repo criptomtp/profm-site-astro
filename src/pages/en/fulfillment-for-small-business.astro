@@ -1,0 +1,592 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Fulfillment for Small Business in Ukraine","description":"Outsourced warehouse logistics for small e-commerce businesses entering Ukraine: storage, packing, shipping from $0.45/order. War-resilient infrastructure, WMS, 3-day onboarding.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645","address":{"@type":"PostalAddress","addressLocality":"Kyiv Oblast","addressCountry":"UA"}},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"DE"}],"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.45","description":"From $0.45 per shipment (200+ orders/day)"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Fulfillment for Small Business","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Ukraine a viable market for small businesses despite the ongoing conflict?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ukraine's e-commerce sector has grown 25% year-over-year despite the conflict. The Kyiv Oblast, where MTP warehouses are located, has been operationally stable since mid-2022. All goods are insured, triple-generator backup ensures zero downtime, and Nova Poshta delivers nationwide without interruption."}},{"@type":"Question","name":"What currencies and payment methods do you accept from international clients?","acceptedAnswer":{"@type":"Answer","text":"We invoice in USD or EUR for international clients. Payment via SWIFT bank transfer, Wise, or PayPal for smaller volumes. Invoicing is monthly with net-15 terms for established clients. UAH pricing available for domestic businesses."}},{"@type":"Question","name":"Is there a long-term contract requirement for small businesses?","acceptedAnswer":{"@type":"Answer","text":"No. The Starter tier (5-49 orders/day) has no long-term contract requirement. You can start with a month-to-month arrangement and scale up when ready. The minimum monthly fee is $125, covering WMS access, storage, and basic fulfillment."}},{"@type":"Question","name":"How does the cost compare to running my own warehouse operation?","acceptedAnswer":{"@type":"Answer","text":"At 100 orders/day, in-house fulfillment costs $2,400-$4,150/month (rent, staff, materials, software, utilities). MTP Group fulfillment for the same volume costs approximately $1,580/month — savings of $820-$2,570 that you can reinvest into marketing and product development."}},{"@type":"Question","name":"Can I test the Ukrainian market with a small batch before committing?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Many international small businesses start with a test batch of 100-500 units. Ship to our warehouse, list on a marketplace or your own store, and evaluate demand for 30-60 days. If it works, scale up. If not, we ship remaining inventory back or dispose of it per your instructions."}},{"@type":"Question","name":"What platforms do you integrate with for small e-commerce businesses?","acceptedAnswer":{"@type":"Answer","text":"Shopify, WooCommerce, OpenCart, Magento, Prom.ua, Rozetka, and any platform with a REST API. Integration setup takes 2-4 hours. You get real-time inventory sync, automated order pulling, and status updates pushed back to your store. Our tech team handles the entire process."}},{"@type":"Question","name":"How do you handle returns for international small business clients?","acceptedAnswer":{"@type":"Answer","text":"Domestic returns via Nova Poshta are processed at no extra charge with 17 days of carrier storage. International returns arrive at our warehouse, are inspected for condition, and either re-shelved or flagged for write-off. Every return is photo-documented in the WMS for full transparency."}},{"@type":"Question","name":"What is the delivery speed advantage of fulfilling from Ukraine vs cross-border shipping?","acceptedAnswer":{"@type":"Answer","text":"Cross-border shipping from EU warehouses to Ukrainian buyers takes 7-14 days and incurs customs delays. Fulfilling from our Kyiv-area warehouse means next-day delivery to all major Ukrainian cities and 2-3 days to rural areas. This dramatically improves conversion rates and customer satisfaction."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Shchaslive, Boryspil district","addressRegion":"Kyiv Oblast","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","addressCountry":"UA","description":"Warehouse 1,100 m\u00b2"}],"openingHours":"Mo-Su 08:00-20:00","priceRange":"$$"}</script>`;
+---
+<Base
+  title="Fulfillment for Small Business in Ukraine | MTP Group"
+  description="Outsourced fulfillment for small businesses entering Ukraine. Storage, packing, shipping from $0.45/order. 3-day onboarding, WMS, war-resilient logistics."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+</Fragment>
+
+<!-- HERO: SPLIT-SCREEN COMPARISON -->
+<section class="hero-split">
+<div class="hero-split-inner">
+  <div class="hero-left">
+    <div class="hero-col-label">Without fulfillment</div>
+    <h2 class="hero-col-h">Your garage.<br>Hours packing.<br>Spreadsheet chaos.</h2>
+    <ul class="hero-pain-list">
+      <li>6+ hours/day on manual packing</li>
+      <li>Missed carrier pickups</li>
+      <li>Inventory errors, lost stock</li>
+      <li>No time for marketing or growth</li>
+    </ul>
+  </div>
+  <div class="hero-divider"><span class="hero-vs">VS</span></div>
+  <div class="hero-right">
+    <div class="hero-col-label hero-col-label--red">With MTP fulfillment</div>
+    <h2 class="hero-col-h">MTP warehouse.<br>30-second orders.<br>Full WMS control.</h2>
+    <ul class="hero-win-list">
+      <li>30-second automated picking</li>
+      <li>Same-day dispatch guarantee</li>
+      <li>Real-time inventory dashboard</li>
+      <li>You focus on sales and growth</li>
+    </ul>
+  </div>
+</div>
+<div class="hero-split-bottom">
+  <h1 class="hero-main-h1">Fulfillment for Small Business in Ukraine</h1>
+  <p class="hero-main-sub">Outsource your logistics to a war-resilient, ISO-standard warehouse near Kyiv. From $0.45 per shipment. Start in 3&nbsp;days.</p>
+  <form class="hero-form" id="heroForm">
+    <input type="tel" name="phone" placeholder="+380 or international number" maxlength="25" required autocomplete="tel" aria-label="Phone number">
+    <button type="submit">Get a free quote &#8594;</button>
+  </form>
+  <div class="hero-note">No commitment &middot; Custom quote in 15 minutes</div>
+</div>
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-val">150+</span><span class="stat-lbl">active clients</span></div>
+  <div class="stat-item"><span class="stat-val">10 yrs</span><span class="stat-lbl">in fulfillment</span></div>
+  <div class="stat-item"><span class="stat-val">60,000+</span><span class="stat-lbl">shipments/month</span></div>
+  <div class="stat-item"><span class="stat-val">99.5%</span><span class="stat-lbl">order accuracy</span></div>
+</div>
+</div>
+</section>
+
+<!-- WHY UKRAINE -->
+<section class="why-ukraine">
+<div class="ctr">
+  <div class="badge badge-dark">MARKET OPPORTUNITY</div>
+  <h2 class="sec-h2">Why Ukraine for e-commerce fulfillment</h2>
+  <p class="section-intro">Ukraine is one of Europe's fastest-growing e-commerce markets with significantly lower operating costs than Western EU. For international sellers, it offers a gateway to 44 million consumers and proximity to EU supply chains.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">$</div>
+      <h3>60-70% lower labor costs</h3>
+      <p>Warehouse operations in Ukraine cost a fraction of comparable services in Poland, Germany, or the UK. Your fulfillment budget goes 3x further without sacrificing quality.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">EU</div>
+      <h3>EU market access</h3>
+      <p>Ukraine's DCFTA with the EU means simplified trade. Cross-border shipping to Poland in 24-48 hours. Direct access to 450M EU consumers via established logistics corridors.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">44M</div>
+      <h3>44 million consumers</h3>
+      <p>Ukraine's domestic e-commerce market grew 25% year-over-year. Online penetration is accelerating rapidly, creating first-mover advantages for international brands.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">IT</div>
+      <h3>Tech-savvy workforce</h3>
+      <p>Ukraine has 300,000+ IT professionals. Our WMS, API integrations, and automation stack reflect the country's deep tech talent pool.</p>
+    </div>
+</section></div>
+</section>
+
+<!-- ROI COMPARISON TABLE -->
+<section class="roi-section">
+<div class="ctr">
+  <div class="badge">THE ECONOMICS</div>
+  <h2 class="sec-h2">The economics of outsourcing</h2>
+  <p class="section-intro-light">Compare the true cost of in-house fulfillment versus MTP Group. Numbers based on 100 orders/day for a small business with 500 SKUs.</p>
+  <div class="roi-table-wrap">
+    <table class="roi-table">
+      <thead>
+        <tr><th>Cost category</th><th>In-house (monthly)</th><th>MTP Fulfillment (monthly)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Warehouse rent</td><td>$800 &ndash; $1,500</td><td>$0 (included)</td></tr>
+        <tr><td>Staff (2 packers + manager)</td><td>$1,200 &ndash; $1,800</td><td>$0 (included)</td></tr>
+        <tr><td>Packing materials</td><td>$200 &ndash; $400</td><td>$0 (included)</td></tr>
+        <tr><td>WMS software</td><td>$50 &ndash; $150</td><td>$0 (included)</td></tr>
+        <tr><td>Utilities &amp; insurance</td><td>$150 &ndash; $300</td><td>$0 (included)</td></tr>
+        <tr><td>Fulfillment per order</td><td>$0 (labor above)</td><td>$0.50 &times; 3,000 = $1,500</td></tr>
+        <tr><td>Storage (5 m&sup3;)</td><td>$0 (rent above)</td><td>$80</td></tr>
+        <tr class="roi-total"><td>Total estimated</td><td>$2,400 &ndash; $4,150</td><td>$1,580</td></tr>
+        <tr class="roi-savings"><td>Your savings</td><td colspan="2">$820 &ndash; $2,570 per month &mdash; reinvested into growth</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="roi-note">* Prices in USD at average exchange rate. Exact quote depends on SKU count, order complexity, and volume. EUR invoicing available.</p>
+</div>
+</section>
+
+<!-- WAR-RESILIENT INFRASTRUCTURE -->
+<section class="resilient">
+<div class="ctr">
+  <div class="badge badge-dark">INFRASTRUCTURE</div>
+  <h2 class="sec-h2">War-resilient infrastructure</h2>
+  <p class="section-intro">MTP Group has maintained uninterrupted operations since February 2022. Our redundancy systems were built for worst-case scenarios and have been battle-tested for over four years.</p>
+  <div class="resilient-grid">
+    <div class="res-card">
+      <div class="res-icon-wrap"><div class="res-icon">3x</div></div>
+      <h3>Triple generator backup</h3>
+      <p>Three independent diesel generators at each warehouse location. Automatic switchover in under 4 seconds. Fuel reserves for 72+ hours of autonomous operation.</p>
+    </div>
+    <div class="res-card">
+      <div class="res-icon-wrap"><div class="res-icon">SAT</div></div>
+      <h3>Starlink satellite internet</h3>
+      <p>Primary connectivity via Starlink, ensuring warehouse management systems operate independently of terrestrial infrastructure. Orders process regardless of grid status.</p>
+    </div>
+    <div class="res-card">
+      <div class="res-icon-wrap"><div class="res-icon">2x</div></div>
+      <h3>Dual fiber-optic providers</h3>
+      <p>Two independent ISPs provide redundant high-speed connectivity. If one fails, the other takes over automatically with zero interruption to WMS or API integrations.</p>
+    </div>
+    <div class="res-card">
+      <div class="res-icon-wrap"><div class="res-icon">0</div></div>
+      <h3>Zero operational downtime</h3>
+      <p>Since February 2022: zero missed shipping days, zero data losses, zero SLA breaches. Orders ship on schedule every single day, regardless of external conditions.</p>
+    </div>
+  </div>
+  <div class="res-proof">
+    <img src="/images/mtp-generator-backup.webp" alt="MTP Group warehouse with diesel generator backup power system" width="600" height="400" loading="lazy">
+    <div class="res-proof-text">
+      <blockquote>&ldquo;We shipped 6,000 orders on the day of the largest blackout in Ukrainian history. Our clients did not notice a thing.&rdquo;</blockquote>
+      <p class="res-proof-author">&mdash; Operations Manager, MTP Group</p>
+    </div>
+</section></div>
+</section>
+
+<section class="warehouse-tour">
+<div class="tour-inner">
+<div class="tour-text">
+<div class="badge">WAREHOUSE</div>
+<h2>Big warehouse —<br>even for small sellers</h2>
+<p>Small businesses don't need their own warehouse. Store your products across 3,900 m² alongside major brands — no minimum volumes.</p>
+<button class="tour-btn" onclick="openVideoModal('bHY3cFF9SlI')">&#9654; Explore the facility</button>
+</div>
+<div class="tour-video">
+<div class="video-thumb" onclick="openVideoModal('bHY3cFF9SlI')" style="cursor:pointer">
+<img src="https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/bHY3cFF9SlI/hqdefault.jpg'" alt="MTP Group warehouse for small business — no minimum orders" width="640" height="360" loading="lazy">
+<div class="play-overlay"><div class="play-btn-large">&#9654;</div><span>Facility tour</span></div>
+</div>
+</div>
+</div>
+</section></div>
+</section>
+
+<!-- 3-DAY ONBOARDING -->
+<section class="onboarding">
+<div class="ctr">
+  <div class="badge badge-dark">GETTING STARTED</div>
+  <h2 class="sec-h2">How to get started: 3-day onboarding</h2>
+  <p class="section-intro">No lengthy negotiations. No complex contracts. From first call to first shipment in 72 hours.</p>
+  <div class="onb-timeline">
+    <div class="onb-step">
+      <div class="onb-day">Day 1</div>
+      <div class="onb-content">
+        <h3>Discovery &amp; setup</h3>
+        <ul>
+          <li>15-minute consultation call (English-speaking manager)</li>
+          <li>SKU list review and storage plan</li>
+          <li>Contract signing (digital, international-friendly)</li>
+          <li>API/platform integration begins (Shopify, WooCommerce, etc.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="onb-step">
+      <div class="onb-day">Day 2</div>
+      <div class="onb-content">
+        <h3>Goods transfer &amp; configuration</h3>
+        <ul>
+          <li>Goods received at warehouse, barcode-scanned into WMS</li>
+          <li>Storage locations assigned per SKU</li>
+          <li>Packing instructions configured (branded inserts, tape, etc.)</li>
+          <li>Test orders processed and verified</li>
+        </ul>
+      </div>
+    </div>
+    <div class="onb-step">
+      <div class="onb-day">Day 3</div>
+      <div class="onb-content">
+        <h3>Live launch</h3>
+        <ul>
+          <li>Full production mode activated</li>
+          <li>WMS dashboard access granted</li>
+          <li>First real orders picked, packed, and shipped</li>
+          <li>Dedicated account manager assigned</li>
+        </ul>
+      </div>
+    </div>
+</section></div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="pricing-tiers">
+<div class="ctr">
+  <div class="badge">PRICING 2026</div>
+  <h2 class="sec-h2">Pricing that scales with you</h2>
+  <p class="section-intro-light">No hidden fees. Volume discounts apply automatically as you grow. All tiers include WMS access, API integration, and dedicated support.</p>
+  <div class="tiers-grid">
+    <div class="tier-card">
+      <div class="tier-name">Starter</div>
+      <div class="tier-vol">5 &ndash; 49 orders/day</div>
+      <div class="tier-price">from <strong>$0.65</strong>/order</div>
+      <ul class="tier-features">
+        <li>Full WMS dashboard</li>
+        <li>API integration (1 platform)</li>
+        <li>Standard packing</li>
+        <li>Storage from $16/m&sup3;/mo</li>
+        <li>Email support</li>
+        <li>Minimum fee: $125/mo</li>
+      </ul>
+    </div>
+    <div class="tier-card tier-card--popular">
+      <div class="tier-pop-badge">Most popular</div>
+      <div class="tier-name">Growth</div>
+      <div class="tier-vol">50 &ndash; 199 orders/day</div>
+      <div class="tier-price">from <strong>$0.50</strong>/order</div>
+      <ul class="tier-features">
+        <li>Full WMS dashboard</li>
+        <li>API integration (unlimited)</li>
+        <li>Branded packing available</li>
+        <li>Storage from $14/m&sup3;/mo</li>
+        <li>Dedicated account manager</li>
+        <li>Priority support (chat + phone)</li>
+      </ul>
+    </div>
+    <div class="tier-card">
+      <div class="tier-name">Scale</div>
+      <div class="tier-vol">200+ orders/day</div>
+      <div class="tier-price">from <strong>$0.45</strong>/order</div>
+      <ul class="tier-features">
+        <li>Full WMS dashboard</li>
+        <li>API integration (unlimited)</li>
+        <li>Custom branded packing</li>
+        <li>Storage from $12/m&sup3;/mo</li>
+        <li>Dedicated account manager</li>
+        <li>SLA with uptime guarantees</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pricing-note">Prices in USD. EUR invoicing available. Goods receiving from $0.07/unit. International shipping (UPS, DHL) quoted separately.</p>
+</div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="faq">
+<div class="ctr">
+  <div class="badge">FAQ</div>
+  <h2 class="sec-h2">Frequently asked questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Is Ukraine a viable market for small businesses despite the ongoing conflict?</button>
+      <div class="faq-a"><p>Yes. Ukraine's e-commerce sector has grown 25% year-over-year despite the conflict. The Kyiv Oblast, where MTP warehouses are located, has been operationally stable since mid-2022. All goods are insured, triple-generator backup ensures zero downtime, and Nova Poshta delivers nationwide without interruption.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What currencies and payment methods do you accept from international clients?</button>
+      <div class="faq-a"><p>We invoice in USD or EUR for international clients. Payment via SWIFT bank transfer, Wise, or PayPal for smaller volumes. Invoicing is monthly with net-15 terms for established clients. UAH pricing available for domestic businesses.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is there a long-term contract requirement for small businesses?</button>
+      <div class="faq-a"><p>No. The Starter tier (5-49 orders/day) has no long-term contract requirement. You can start with a month-to-month arrangement and scale up when ready. The minimum monthly fee is $125, covering WMS access, storage, and basic fulfillment.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How does the cost compare to running my own warehouse operation?</button>
+      <div class="faq-a"><p>At 100 orders/day, in-house fulfillment costs $2,400-$4,150/month (rent, staff, materials, software, utilities). MTP Group fulfillment for the same volume costs approximately $1,580/month &mdash; savings of $820-$2,570 that you can reinvest into marketing and product development.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I test the Ukrainian market with a small batch before committing?</button>
+      <div class="faq-a"><p>Absolutely. Many international small businesses start with a test batch of 100-500 units. Ship to our warehouse, list on a marketplace or your own store, and evaluate demand for 30-60 days. If it works, scale up. If not, we ship remaining inventory back or dispose of it per your instructions.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What platforms do you integrate with for small e-commerce businesses?</button>
+      <div class="faq-a"><p>Shopify, WooCommerce, OpenCart, Magento, Prom.ua, Rozetka, and any platform with a REST API. Integration setup takes 2-4 hours. You get real-time inventory sync, automated order pulling, and status updates pushed back to your store. Our tech team handles the entire process.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do you handle returns for international small business clients?</button>
+      <div class="faq-a"><p>Domestic returns via Nova Poshta are processed at no extra charge with 17 days of carrier storage. International returns arrive at our warehouse, are inspected for condition, and either re-shelved or flagged for write-off. Every return is photo-documented in the WMS for full transparency.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What is the delivery speed advantage of fulfilling from Ukraine vs cross-border shipping?</button>
+      <div class="faq-a"><p>Cross-border shipping from EU warehouses to Ukrainian buyers takes 7-14 days and incurs customs delays. Fulfilling from our Kyiv-area warehouse means next-day delivery to all major Ukrainian cities and 2-3 days to rural areas. This dramatically improves conversion rates and customer satisfaction.</p></div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- SEO ARTICLE -->
+<article class="article-section">
+<div class="ctr">
+  <div class="badge badge-dark">INDUSTRY INSIGHTS</div>
+  <h2>Fulfillment for small business: why Ukraine is the smart choice in 2026</h2>
+  <div class="article-content">
+
+    <h3>The hidden cost of doing it yourself</h3>
+    <p>Most small e-commerce businesses start the same way: a spare room, a stack of boxes, and a spreadsheet. It works at 10 orders a day. At 30, cracks appear. At 50, logistics becomes a full-time job that consumes the founder's most valuable resource &mdash; time that should go toward product development, marketing, and customer acquisition.</p>
+    <p>The math is straightforward. A small business owner spending 5 hours daily on packing, labeling, and carrier drop-offs is effectively paying themselves below minimum wage for warehouse labor. Add the cost of rented space, packing materials, shipping software, and inventory management tools, and in-house fulfillment quickly becomes the most expensive option on the table. Use our <a href="/en/calculator/" style="color:var(--red);font-weight:500">fulfillment calculator</a> to see the real numbers for your business.</p>
+
+    <h3>Why outsourced fulfillment changes the game</h3>
+    <p>Third-party fulfillment (3PL) transforms logistics from a fixed cost into a variable one. You pay per order shipped, per cubic meter stored, and per unit received. When orders spike during holiday seasons, you scale up without hiring temporary staff. When volume dips, you scale down without paying idle workers. This elasticity is precisely what small businesses need to survive unpredictable market conditions.</p>
+    <p>At MTP Group, this model has been refined over a decade of operations. Our conveyor-based packing stations process each order in approximately 30 seconds &mdash; a task that takes the average small business owner 8-12 minutes. At 100 orders per day, that difference alone saves 10+ hours of labor daily. See what our clients say in their <a href="/en/recalls/" style="color:var(--red);font-weight:500">real customer reviews</a>.</p>
+
+    <h3>Ukraine's competitive advantage for international sellers</h3>
+    <p>Ukraine offers a compelling combination that few markets can match: low operational costs, a highly educated workforce, and improving trade access to the European Union. Warehouse labor costs in Ukraine are 60-70% lower than in Poland and 80% lower than in Germany, while service quality meets Western European standards.</p>
+    <p>For international e-commerce sellers targeting the Ukrainian market (44 million potential consumers), local fulfillment eliminates the delays and customs friction of cross-border shipping. Orders reach customers in 24-48 hours instead of 7-14 days, dramatically improving conversion rates and customer satisfaction.</p>
+
+    <h3>Building for resilience: lessons from four years of conflict</h3>
+    <p>The war has forced Ukrainian businesses to build infrastructure that Western companies rarely consider. MTP Group's triple-generator backup, Starlink connectivity, and dual ISP redundancy were not theoretical precautions &mdash; they were tested under real conditions and proved their worth. Since February 2022, our warehouses have maintained zero days of operational downtime. Every order shipped on schedule, every day.</p>
+    <p>This level of operational resilience is now a competitive advantage. When European fulfillment centers experience disruptions from energy crises or extreme weather events, MTP Group's battle-tested infrastructure continues to operate without interruption.</p>
+
+    <h3>How to evaluate a fulfillment partner</h3>
+    <p>When choosing a 3PL provider for your small business, focus on five factors: technology (WMS quality, API integrations, real-time dashboards), scalability (can they grow with you from 10 to 1,000 orders/day?), transparency (per-order pricing, no hidden fees), track record (years in business, client references), and infrastructure resilience (backup power, connectivity redundancy). MTP Group scores highly on all five: 10 years of operations, 150+ active clients, 99.5% order accuracy, and zero downtime since 2022. Explore our full <a href="/en/services/" style="color:var(--red);font-weight:500">fulfillment services</a> to see what we offer.</p>
+    <p>The best time to outsource fulfillment is before logistics becomes a bottleneck. If you are spending more than 2 hours daily on packing and shipping, the ROI of switching to a 3PL is virtually guaranteed within the first month.</p>
+
+  </div>
+</div>
+</article>
+
+
+</Base>
+
+<style is:global>
+
+/* HERO SPLIT */
+.hero-split{background:var(--black);color:var(--white);padding:120px 0 0;overflow:hidden}
+.hero-split-inner{display:grid;grid-template-columns:1fr auto 1fr;gap:0;max-width:1200px;margin:0 auto;padding:0 24px;align-items:start}
+.hero-left,.hero-right{padding:48px 32px}
+.hero-col-label{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.35);margin-bottom:20px;font-weight:500}
+.hero-col-label--red{color:var(--red)}
+.hero-col-h{font-family:var(--fd);font-size:clamp(24px,3vw,38px);font-weight:400;line-height:1.15;margin-bottom:24px}
+.hero-left .hero-col-h{color:rgba(255,255,255,.45)}
+.hero-right .hero-col-h{color:#fff}
+.hero-pain-list,.hero-win-list{list-style:none;padding:0;margin:0}
+.hero-pain-list li,.hero-win-list li{padding:8px 0 8px 24px;position:relative;font-size:15px;line-height:1.6}
+.hero-pain-list li{color:rgba(255,255,255,.35)}
+.hero-pain-list li::before{content:'\2715';position:absolute;left:0;color:rgba(255,255,255,.2);font-size:13px}
+.hero-win-list li{color:rgba(255,255,255,.8)}
+.hero-win-list li::before{content:'\2713';position:absolute;left:0;color:var(--red);font-weight:700;font-size:14px}
+.hero-divider{display:flex;align-items:center;justify-content:center;padding:48px 0}
+.hero-vs{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border:2px solid rgba(255,255,255,.15);border-radius:50%;font-size:14px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.4)}
+
+.hero-split-bottom{text-align:center;padding:60px 24px 48px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-main-h1{font-family:var(--fd);font-size:clamp(32px,5vw,64px);font-weight:400;line-height:1;margin-bottom:20px}
+.hero-main-sub{font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.55);line-height:1.7;max-width:600px;margin:0 auto 36px}
+.hero-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
+.hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.hero-form input::placeholder{color:rgba(255,255,255,.25)}
+.hero-form input:focus{border-color:rgba(255,255,255,.5)}
+.hero-form button{padding:16px 24px;background:#e63329;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .3s}
+.hero-form button:hover{background:#c42b22}
+.hero-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:12px}
+
+.stats-bar{display:flex;justify-content:center;gap:0;border-top:1px solid rgba(255,255,255,.08);margin-top:48px}
+.stat-item{flex:1;text-align:center;padding:28px 16px;border-right:1px solid rgba(255,255,255,.06)}
+.stat-item:last-child{border-right:none}
+.stat-val{display:block;font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;color:#fff}
+.stat-lbl{display:block;font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+
+/* WHY UKRAINE */
+.why-ukraine{padding:100px 0;background:var(--white)}
+.section-intro{font-size:17px;color:var(--muted);line-height:1.7;max-width:700px;margin-bottom:48px}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.why-card{background:#fff;padding:40px 32px;transition:background .3s}
+.why-card:hover{background:var(--gray)}
+.why-icon{font-family:var(--fd);font-size:36px;color:var(--red);line-height:1;margin-bottom:16px}
+.why-card h3{font-size:18px;font-weight:600;margin-bottom:8px;font-family:var(--fb)}
+.why-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* ROI TABLE */
+.roi-section{padding:100px 0;background:#0a0a0a;color:#fff}
+.section-intro-light{font-size:17px;color:rgba(255,255,255,.55);line-height:1.7;max-width:700px;margin-bottom:48px}
+.roi-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.roi-table{width:100%;max-width:800px;border-collapse:collapse;font-size:15px}
+.roi-table th{background:var(--red);color:#fff;padding:16px 20px;text-align:left;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+.roi-table td{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.roi-table tr:hover td{background:rgba(255,255,255,.03)}
+.roi-table td:first-child{font-weight:500;color:rgba(255,255,255,.9)}
+.roi-table td:nth-child(2){color:rgba(255,255,255,.45)}
+.roi-table td:nth-child(3){color:#fff;font-weight:500}
+.roi-total td{font-weight:700!important;color:#fff!important;border-top:2px solid var(--red);font-size:16px}
+.roi-savings td{background:rgba(230,51,41,.12)!important;color:var(--white)!important;font-weight:600;text-align:center;padding:20px}
+.roi-note{font-size:13px;color:rgba(255,255,255,.3);margin-top:24px;max-width:800px}
+
+/* WAR-RESILIENT */
+.resilient{padding:100px 0;background:var(--white)}
+.resilient-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px}
+.res-card{text-align:center;padding:32px 20px}
+.res-icon-wrap{margin-bottom:20px}
+.res-icon{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border:2px solid var(--red);border-radius:50%;font-family:var(--fd);font-size:24px;color:var(--red);font-weight:400}
+.res-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.res-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.res-proof{display:flex;gap:40px;align-items:center;background:var(--gray);border-radius:8px;overflow:hidden}
+.res-proof img{width:50%;height:auto;object-fit:cover;display:block}
+.res-proof-text{padding:40px;flex:1}
+.res-proof-text blockquote{font-family:var(--fd);font-size:20px;line-height:1.5;color:#000;border-left:3px solid var(--red);padding-left:20px;margin:0 0 16px}
+.res-proof-author{font-size:14px;color:var(--muted)}
+
+/* VIDEO */
+.video-section{padding:80px 0;background:#0a0a0a}
+.video-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.video-h2{font-family:var(--fd);font-size:clamp(24px,3vw,36px);font-weight:400;color:#fff;margin-bottom:16px}
+.video-desc{color:rgba(255,255,255,.6);line-height:1.7}
+.yt-facade{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;cursor:pointer;background:#000}
+.yt-facade img{width:100%;height:100%;object-fit:cover;opacity:.75;transition:opacity .3s}
+.yt-facade:hover img{opacity:.5}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer}
+
+/* ONBOARDING */
+.onboarding{padding:100px 0;background:var(--white)}
+.onb-timeline{max-width:800px;position:relative;padding-left:80px}
+.onb-timeline::before{content:'';position:absolute;left:35px;top:0;bottom:0;width:2px;background:#e0e0e0}
+.onb-step{position:relative;margin-bottom:48px}
+.onb-step:last-child{margin-bottom:0}
+.onb-day{position:absolute;left:-80px;top:0;width:70px;height:70px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;z-index:1}
+.onb-content{padding:8px 0 0 20px}
+.onb-content h3{font-size:20px;font-weight:600;margin-bottom:12px}
+.onb-content ul{list-style:none;padding:0;margin:0}
+.onb-content li{padding:6px 0 6px 20px;position:relative;font-size:15px;color:var(--muted);line-height:1.6}
+.onb-content li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;background:var(--red);border-radius:50%}
+
+/* PRICING TIERS */
+.pricing-tiers{padding:100px 0;background:#0a0a0a;color:#fff}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:32px}
+.tier-card{background:rgba(255,255,255,.04);padding:40px 32px;border-radius:0;position:relative;transition:background .3s}
+.tier-card:first-child{border-radius:8px 0 0 8px}
+.tier-card:last-child{border-radius:0 8px 8px 0}
+.tier-card:hover{background:rgba(255,255,255,.07)}
+.tier-card--popular{background:rgba(230,51,41,.1);border:2px solid var(--red)}
+.tier-card--popular:hover{background:rgba(230,51,41,.15)}
+.tier-pop-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:0 0 4px 4px}
+.tier-name{font-family:var(--fd);font-size:28px;color:#fff;margin-bottom:4px}
+.tier-vol{font-size:14px;color:rgba(255,255,255,.4);margin-bottom:20px}
+.tier-price{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1)}
+.tier-price strong{font-size:36px;color:#fff;font-family:var(--fd);font-weight:400}
+.tier-features{list-style:none;padding:0;margin:0}
+.tier-features li{padding:8px 0 8px 20px;position:relative;font-size:14px;color:rgba(255,255,255,.6);line-height:1.5}
+.tier-features li::before{content:'\2713';position:absolute;left:0;color:var(--red);font-weight:700}
+.pricing-note{text-align:center;font-size:14px;color:rgba(255,255,255,.35);max-width:600px;margin:0 auto}
+
+/* FAQ */
+.faq{padding:100px 0;background:var(--white)}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-q{width:100%;padding:20px 0;font-size:16px;font-weight:500;background:none;border:none;color:#000;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);text-align:left}
+.faq-q::after{content:'+';font-size:24px;color:var(--red);transition:transform .3s;flex-shrink:0;margin-left:16px}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a p{padding:0 0 20px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* SEO ARTICLE */
+.article-section{background:var(--gray);padding:80px 8vw}
+.article-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:20px 0 40px;color:#000}
+.article-content{max-width:800px}
+.article-content h3{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:8px}
+
+/* CTA */
+.final-cta{padding:100px 0;background:var(--red);color:#fff;text-align:center}
+.final-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
+.final-cta .sub{font-size:17px;opacity:.85;max-width:480px;margin:0 auto 36px}
+.final-form{display:flex;gap:12px;justify-content:center;max-width:460px;margin:0 auto}
+.final-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.35);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
+.final-form input::placeholder{color:rgba(255,255,255,.45)}
+.final-form input:focus{border-color:#fff}
+.final-form button{padding:16px 24px;background:#000;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .3s}
+.final-form button:hover{background:#222}
+.final-checks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13px;opacity:.7}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:24px}
+.badge-dark{border-color:rgba(0,0,0,.15);color:var(--muted)}
+
+/* MOBILE */
+@media(max-width:968px){
+  .hero-split-inner{grid-template-columns:1fr;gap:0}
+  .hero-divider{padding:16px 0}
+  .hero-vs{width:40px;height:40px;font-size:12px}
+  .hero-left,.hero-right{padding:32px 24px}
+  .resilient-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .tiers-grid{grid-template-columns:1fr}
+  .tier-card,.tier-card:first-child,.tier-card:last-child{border-radius:8px}
+  .tier-card--popular{margin:0}
+  .why-grid{grid-template-columns:1fr}
+  .video-layout{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:768px){
+  .hero-form{flex-direction:column}
+  .hero-form button{width:100%}
+  .stats-bar{flex-wrap:wrap}
+  .stat-item{flex:1 1 45%;border-bottom:1px solid rgba(255,255,255,.06)}
+  .resilient-grid{grid-template-columns:1fr}
+  .res-proof{flex-direction:column}
+  .res-proof img{width:100%}
+  .onb-timeline{padding-left:60px}
+  .onb-day{left:-60px;width:50px;height:50px;font-size:11px}
+  .final-form{flex-direction:column}
+  .roi-table{font-size:13px}
+  .roi-table th,.roi-table td{padding:10px 12px}
+}
+
+/* Force visibility (no JS animation dependencies) */
+.svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step,.why-card,.res-card,.tier-card,.onb-step{opacity:1!important;transform:none!important}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  /* YouTube facade */
+  document.querySelectorAll('.yt-facade').forEach(function(el){
+    el.addEventListener('click',function(){
+      var id=el.getAttribute('data-id');
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.allow='autoplay;encrypted-media';
+      iframe.allowFullscreen=true;
+      iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none';
+      el.innerHTML='';
+      el.style.position='relative';
+      el.appendChild(iframe);
+    });
+  });
+
+  /* Form handling */
+  document.querySelectorAll('#heroForm').forEach(function(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var inp=form.querySelector('input[name="phone"]');
+      var ph=inp.value.trim();
+      if(ph.length<8)return;
+
+      var leads=JSON.parse(localStorage.getItem('mtp_crm_leads')||'[]');
+      leads.push({
+        id:Date.now(),
+        company:'Fulfillment for Small Business',
+        contact:'',
+        phone:ph,
+        email:'',
+        shipments:0,
+        type:'small-business',
+        source:'SEO landing en/fulfillment-for-small-business',
+        status:'new',
+        date:new Date().toISOString().split('T')[0],
+        comments:[{text:'Form: fulfillment for small business (EN)',date:new Date().toLocaleString('en-GB')}],
+        onboarding:[false,false,false,false,false,false,false]
+      });
+      localStorage.setItem('mtp_crm_leads',JSON.stringify(leads));
+
+      fetch('/api/telegram',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({phone:ph,page:location.pathname})
+      }).catch(function(){});
+
+      if(window.mtpSubmitLead)window.mtpSubmitLead(ph);
+
+      form.innerHTML='<div style="text-align:center"><p style="color:#fff;font-size:18px;font-weight:500">Thank you!</p><p style="color:rgba(255,255,255,.5);font-size:14px;margin-top:8px">We will contact you within 15 minutes</p></div>';
+    });
+  });
+});
+</script>
