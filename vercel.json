@@ -76,6 +76,56 @@
       "statusCode": 301
     },
     {
+      "source": "/ru/fulfillment-for-art-and-crafts/",
+      "destination": "/ru/fulfilment-ukraina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/fulfillment-for-home-decor/",
+      "destination": "/ru/fulfilment-ukraina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/fulfillment-for-collectibles/",
+      "destination": "/ru/fulfilment-ukraina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/fulfillment-for-small-business/",
+      "destination": "/ru/fulfilment-dlya-malogo-biznesa/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/fulfillment-for-supplements-vitamins/",
+      "destination": "/ru/fulfilment-ukraina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/fulfillment-for-medical-supplies/",
+      "destination": "/ru/fulfilment-ukraina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/guide/common-fulfillment-mistakes/",
+      "destination": "/ru/3pl-logistika/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/guide/fulfillment-small-business/",
+      "destination": "/ru/fulfilment-dlya-malogo-biznesa/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/guide/how-to-integrate-prom/",
+      "destination": "/ru/3pl-logistika/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fulfillment-for-small-business/",
+      "destination": "/ua/fulfilment-dlya-maloho-biznesu/",
+      "statusCode": 301
+    },
+    {
       "source": "/ua/guide/scho-take-3pl/",
       "destination": "/ua/3pl-logistyka/",
       "statusCode": 301

@@ -4,6 +4,16 @@
 # --- static rules (exact path match) ---
 /ua/services/ /ua/3pl-logistyka/ 301
 /en/guide/customer-service/ /en/services/ 301
+/ru/fulfillment-for-art-and-crafts/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-home-decor/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-collectibles/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-small-business/ /ru/fulfilment-dlya-malogo-biznesa/ 301
+/ru/fulfillment-for-supplements-vitamins/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-medical-supplies/ /ru/fulfilment-ukraina/ 301
+/ru/guide/common-fulfillment-mistakes/ /ru/3pl-logistika/ 301
+/ru/guide/fulfillment-small-business/ /ru/fulfilment-dlya-malogo-biznesa/ 301
+/ru/guide/how-to-integrate-prom/ /ru/3pl-logistika/ 301
+/fulfillment-for-small-business/ /ua/fulfilment-dlya-maloho-biznesu/ 301
 /ua/guide/scho-take-3pl/ /ua/3pl-logistyka/ 301
 /ua/guide/sistema-upravlinnya-skladom/ /ua/3pl-logistyka/ 301
 /ua / 301
