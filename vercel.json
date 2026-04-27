@@ -71,6 +71,21 @@
       "statusCode": 301
     },
     {
+      "source": "/en/guide/customer-service/",
+      "destination": "/en/services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/guide/scho-take-3pl/",
+      "destination": "/ua/3pl-logistyka/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/guide/sistema-upravlinnya-skladom/",
+      "destination": "/ua/3pl-logistyka/",
+      "statusCode": 301
+    },
+    {
       "source": "/ru/ua/guide/:slug/",
       "destination": "/ua/guide/:slug/",
       "statusCode": 301

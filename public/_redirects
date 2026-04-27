@@ -3,6 +3,9 @@
 
 # --- static rules (exact path match) ---
 /ua/services/ /ua/3pl-logistyka/ 301
+/en/guide/customer-service/ /en/services/ 301
+/ua/guide/scho-take-3pl/ /ua/3pl-logistyka/ 301
+/ua/guide/sistema-upravlinnya-skladom/ /ua/3pl-logistyka/ 301
 /ua / 301
 /fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
 /ua/ / 301
