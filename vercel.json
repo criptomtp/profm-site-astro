@@ -412,12 +412,12 @@
     },
     {
       "source": "/services/",
-      "destination": "/ru/services/",
+      "destination": "/ua/3pl-logistyka/",
       "statusCode": 301
     },
     {
       "source": "/services",
-      "destination": "/ru/services/",
+      "destination": "/ua/3pl-logistyka/",
       "statusCode": 301
     },
     {
