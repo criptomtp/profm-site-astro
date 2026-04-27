@@ -109,21 +109,14 @@
 /scho-take-3pl/ /ua/shcho-take-fulfilment/ 301
 /css/fonts-tildasans / 301
 /css/fonts-tildasans/ / 301
-/ua/blog/case-ecodrive/ /ua/recalls/ 301
-/ua/blog/chomu-fulfilment-deshevshyy/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/fulfilment-vs-vlasnyy-sklad/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/rinok-fulfilmentu-ukraina/ /ua/blog/top-fulfilment-operatoriv-2026/ 301
-/ua/blog/vartist-fulfilmentu-2026/ /ua/tsiny/ 301
-/ua/blog/yak-perejty-na-fulfilment/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/yak-vybrati-fulfilment/ /ua/blog/top-fulfilment-operatoriv-2026/ 301
 
 # --- dynamic rules (wildcards / named params, max 100) ---
 /blog/tpost/yzhv774pa1*/ /ru/services/ 301
 /ua/blog/tpost/2lpu5l5sa1*/ /ua/about/ 301
-/ua/blog/tpost/s7non1f0y1*/ /ua/blog/scho-take-fulfilment/ 301
-/ua/blog/tpost/2fz7njsgn1*/ /ua/3pl-logistyka/ 301
+/ua/blog/tpost/s7non1f0y1*/ /ua/blog/scho-take-sla/ 301
+/ua/blog/tpost/2fz7njsgn1*/ /ua/blog/scho-take-artikul/ 301
 /ua/blog/tpost/xz8vfk1jg1*/ /ua/ 301
+/blog/tpost/pdjm77ogc1*/ /blog/chto-takoe-sla/ 301
 /blog/tpost/8emi42xu61*/ /ru/ 301
 /tpost/:slug/ /ua/blog/ 301
 /ru/blog/tpost/:slug/ /ua/blog/ 301
@@ -132,21 +125,21 @@
 /en/blog/tpost/:slug/ /en/blog/ 301
 /xz8vfk1jg1*/ /ua/blog/ 301
 /3tdig7x6z1*/ /ua/blog/ 301
-/2fz7njsgn1*/ /ua/blog/ 301
+/2fz7njsgn1*/ /ua/blog/scho-take-artikul/ 301
 /ldos1bvrh1*/ /ua/blog/ 301
 /gdf6pzul31*/ /ua/blog/ 301
 /lgl2mu2gb1*/ /ua/blog/ 301
 /bl9h476gp1*/ /ua/blog/ 301
 /ua/xz8vfk1jg1*/ /ua/blog/ 301
 /ua/3tdig7x6z1*/ /ua/blog/ 301
-/ua/2fz7njsgn1*/ /ua/blog/ 301
+/ua/2fz7njsgn1*/ /ua/blog/scho-take-artikul/ 301
 /ua/ldos1bvrh1*/ /ua/blog/ 301
 /ua/gdf6pzul31*/ /ua/blog/ 301
 /ua/lgl2mu2gb1*/ /ua/blog/ 301
 /ua/bl9h476gp1*/ /ua/blog/ 301
 /en/xz8vfk1jg1*/ /ua/blog/ 301
 /en/3tdig7x6z1*/ /ua/blog/ 301
-/en/2fz7njsgn1*/ /ua/blog/ 301
+/en/2fz7njsgn1*/ /en/blog/post/what-is-sku-article-number/ 301
 /en/ldos1bvrh1*/ /ua/blog/ 301
 /en/gdf6pzul31*/ /ua/blog/ 301
 /en/lgl2mu2gb1*/ /ua/blog/ 301
@@ -158,7 +151,7 @@
 /ka4rkudet1*/ /ua/blog/ 301
 /keantd63p1*/ /ua/blog/ 301
 /o5x60a9nk1*/ /ua/blog/ 301
-/pdjm77ogc1*/ /ua/blog/ 301
+/pdjm77ogc1*/ /blog/chto-takoe-sla/ 301
 /xh1rdimut1*/ /ua/blog/ 301
 /yzhv774pa1*/ /ua/blog/ 301
 /ua/25m6cs3xd1*/ /ua/blog/ 301
@@ -168,7 +161,7 @@
 /ua/ka4rkudet1*/ /ua/blog/ 301
 /ua/keantd63p1*/ /ua/blog/ 301
 /ua/o5x60a9nk1*/ /ua/blog/ 301
-/ua/pdjm77ogc1*/ /ua/blog/ 301
+/ua/pdjm77ogc1*/ /ua/blog/scho-take-sla/ 301
 /ua/xh1rdimut1*/ /ua/blog/ 301
 /ua/yzhv774pa1*/ /ua/blog/ 301
 /en/25m6cs3xd1*/ /ua/blog/ 301
@@ -178,7 +171,7 @@
 /en/ka4rkudet1*/ /ua/blog/ 301
 /en/keantd63p1*/ /ua/blog/ 301
 /en/o5x60a9nk1*/ /ua/blog/ 301
-/en/pdjm77ogc1*/ /ua/blog/ 301
+/en/pdjm77ogc1*/ /en/blog/post/what-is-sla-in-logistics/ 301
 /en/xh1rdimut1*/ /ua/blog/ 301
 /en/yzhv774pa1*/ /ua/blog/ 301
 /en/guide/:slug/ /en/guide/ 301

@@ -1,0 +1,468 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const title = 'Чому Фулфілмент Дешевший за Власну Логістику: Розрахунок ROI';
+const description = 'Детальний аналіз витрат: власний склад + персонал vs. MTP фулфілмент. Економія 30-40% на логістиці без втрати якості. Розрахунки для малих, середніх і великих бізнесів.';
+const ogImage = 'https://profm.ua/images/blog-fulfillment-cheaper.jpg';
+
+const publishDate = new Date('2024-12-16').toISOString();
+const author = 'MTP Analytics';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description,
+  datePublished: publishDate,
+  author: {
+    '@type': 'Organization',
+    name: author,
+    url: 'https://profm.ua'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'MTP Group',
+    url: 'https://profm.ua'
+  },
+  mainEntity: {
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'На скільки фулфілмент дешевший?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'На 30-40% дешевший за 100-1000 замовлень. На 50%+ дешевший для малих бізнесів до 300 замовлень.'
+        }
+      }
+    ]
+  }
+};
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Статтья</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Чому Фулфілмент Дешевший<br />за Власну Логістику
+      </h1>
+      <p class="text-xl mb-8 opacity-95 leading-relaxed">
+        Математика проста: 30-40% економія для малих і середніх бізнесів. Деталь розрахункові, дані та кейси з реальних чисел.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center text-sm">
+        <span>Автор: MTP Analytics</span>
+        <span>•</span>
+        <span>Оновлено: 16 грудня 2024</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="bg-gray-100 py-8 sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="font-bold mb-4">Зміст</p>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+        <li><a href="#cost-breakdown" class="text-red-600 hover:underline">1. Розбір витрат</a></li>
+        <li><a href="#small-business" class="text-red-600 hover:underline">2. ФОП-200 замовлень</a></li>
+        <li><a href="#medium-business" class="text-red-600 hover:underline">3. Бізнес-500 замовлень</a></li>
+        <li><a href="#large-business" class="text-red-600 hover:underline">4. Великий-2000 замовлень</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 id="cost-breakdown" class="text-3xl font-bold mb-6">1. Розбір витрат: власна логістика vs. MTP</h2>
+
+      <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+        Визначимо, що входить у вартість логістики для еcommerce бізнесу. Потім розрахуємо две сценарії: власна логістика і MTP.
+      </p>
+
+      <div class="bg-blue-50 p-8 rounded border-l-4 border-blue-500 mb-8">
+        <h3 class="text-lg font-bold mb-4">Що входить у логістику</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li><strong>1. Персонал:</strong> комплектувальник, водій, менеджер логістики</li>
+          <li><strong>2. Інфраструктура:</strong> оренда складу, коммунальні послуги, страхування</li>
+          <li><strong>3. Обладнання:</strong> стелажі, дрифт, сканери, касса TTN</li>
+          <li><strong>4. Доставка:</strong> поточна ставка перевізника на кожне замовлення</li>
+          <li><strong>5. WMS:</strong> система управління складом (зовнішня або своя розробка)</li>
+          <li><strong>6. Управління запасами:</strong> контроль якості, переоцінка, списання браку</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-6">Розрахунок для власної логістики</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-3 text-left">Статтья витрат</th>
+              <th class="border p-3 text-right">Помісячне</th>
+              <th class="border p-3 text-right">На замовлення *</th>
+              <th class="border p-3 text-left">Примітка</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3"><strong>Комплектувальник</strong></td>
+              <td class="border p-3 text-right">12,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">Зарплата + бонус</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>Водій (розносу)</strong></td>
+              <td class="border p-3 text-right">15,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">Або перевізник паушальний</td>
+            </tr>
+            <tr>
+              <td class="border p-3"><strong>Менеджер логістики</strong></td>
+              <td class="border p-3 text-right">8,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">На 500+ замовлень, потрібен</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>Оренда складу 200 м²</strong></td>
+              <td class="border p-3 text-right">3,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">В Київі, периферія</td>
+            </tr>
+            <tr>
+              <td class="border p-3"><strong>Комунальні послуги (світло, вода)</strong></td>
+              <td class="border p-3 text-right">500 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">За місяць</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>Страхування товару</strong></td>
+              <td class="border p-3 text-right">1,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">Залежить від обсягу</td>
+            </tr>
+            <tr>
+              <td class="border p-3"><strong>WMS система (вендор)</strong></td>
+              <td class="border p-3 text-right">2,000 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">1C, Logistics.Net, etc.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>Доставка перевізником</strong></td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3 text-right">50-100 грн</td>
+              <td class="border p-3">За замовлення, оптові ставки</td>
+            </tr>
+            <tr class="bg-red-50">
+              <td class="border p-3 font-bold"><strong>ВСЬОГО на місяц</strong></td>
+              <td class="border p-3 text-right font-bold">41,500 грн</td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3">Без доставки</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-gray-600 mb-8">* Розраховане на 500 замовлень/місяц. Для 200 замовлень персонал все ще потрібен, витрати не змінюються. Для 1000+ потрібен другий комплектувальник.</p>
+
+      <h3 class="text-2xl font-bold mb-6">Розрахунок для MTP</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-3 text-left">Послуга MTP</th>
+              <th class="border p-3 text-right">Базова</th>
+              <th class="border p-3 text-right">На замовлення</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3"><strong>Комплектація</strong></td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3 text-right">18-30 грн</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>Доставка по Україні</strong></td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3 text-right">50-150 грн</td>
+            </tr>
+            <tr>
+              <td class="border p-3"><strong>Складування (опціонально)</strong></td>
+              <td class="border p-3 text-right">400 грн/паль</td>
+              <td class="border p-3 text-right">—</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3"><strong>WMS API (синхронізація)</strong></td>
+              <td class="border p-3 text-right">Безкоштовно</td>
+              <td class="border p-3 text-right">—</td>
+            </tr>
+            <tr class="bg-red-50">
+              <td class="border p-3 font-bold"><strong>Середня вартість на замовлення</strong></td>
+              <td class="border p-3 text-right">—</td>
+              <td class="border p-3 text-right font-bold">68-180 грн</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="small-business" class="text-3xl font-bold mb-6 mt-12">2. Кейс: ФОП з 200 замовленнями на місяць</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+          <h3 class="font-bold mb-4">Власна логістика</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">Персонал:</span> 12000 (комплектувальник в 0.5)</li>
+            <li><span class="font-bold">Склад:</span> 3000</li>
+            <li><span class="font-bold">Комунальні:</span> 500</li>
+            <li><span class="font-bold">Доставка:</span> 200 × 75 = 15,000 грн</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 30,500 грн/місяц</li>
+            <li class="text-red-600 font-bold">На замовлення: 152.50 грн</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
+          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">Комплектація:</span> 200 × 24 = 4,800</li>
+            <li><span class="font-bold">Доставка:</span> 200 × 100 = 20,000</li>
+            <li><span class="font-bold">Складування:</span> 1 паль × 400 = 400</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 25,200 грн/місяц</li>
+            <li class="text-green-600 font-bold">На замовлення: 126 грн</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
+        <p class="text-center text-lg font-bold">
+          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 30,500 грн</span>
+          <br />
+          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 25,200 грн</span>
+          <br />
+          <span class="text-green-700 text-xl">✓ Економія: 5,300 грн (17%)</span>
+        </p>
+      </div>
+
+      <p class="text-gray-700 mb-6">
+        <strong>Висновок для ФОП:</strong> На малих обсягах (200 замовлень) MTP економить 17% на логістиці. Крім того, ФОП отримує:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 mb-8">
+        <li>Можливість розширення без наймання персоналу</li>
+        <li>API синхронізація зі своїм магазином</li>
+        <li>Доступ до сертифікованої логістики для Rozetka FBO</li>
+        <li>Гарантія якості 99.8% без штрафів себе</li>
+      </ul>
+
+      <h2 id="medium-business" class="text-3xl font-bold mb-6 mt-12">3. Кейс: Бізнес з 500 замовленнями на місяць</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+          <h3 class="font-bold mb-4">Власна логістика</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">Комплектувальник:</span> 12,000</li>
+            <li><span class="font-bold">Водій:</span> 15,000</li>
+            <li><span class="font-bold">Менеджер логістики:</span> 8,000 (0.5)</li>
+            <li><span class="font-bold">Склад 300 м²:</span> 4,000</li>
+            <li><span class="font-bold">Комунальні:</span> 800</li>
+            <li><span class="font-bold">Страхування:</span> 1,500</li>
+            <li><span class="font-bold">WMS:</span> 2,000</li>
+            <li><span class="font-bold">Доставка:</span> 500 × 75 = 37,500</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 80,800 грн/місяц</li>
+            <li class="text-red-600 font-bold">На замовлення: 161.60 грн</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
+          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">Комплектація:</span> 500 × 25 = 12,500</li>
+            <li><span class="font-bold">Доставка:</span> 500 × 100 = 50,000</li>
+            <li><span class="font-bold">Складування:</span> 2 палі × 400 = 800</li>
+            <li><span class="font-bold">API синхронізація:</span> 0</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 63,300 грн/місяц</li>
+            <li class="text-green-600 font-bold">На замовлення: 126.60 грн</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
+        <p class="text-center text-lg font-bold">
+          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 80,800 грн</span>
+          <br />
+          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 63,300 грн</span>
+          <br />
+          <span class="text-green-700 text-xl">✓ Економія: 17,500 грн (22%)</span>
+        </p>
+      </div>
+
+      <h2 id="large-business" class="text-3xl font-bold mb-6 mt-12">4. Кейс: Великий бізнес з 2000 замовленнями на місяць</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
+          <h3 class="font-bold mb-4">Власна логістика</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">2х комплектувальники:</span> 24,000</li>
+            <li><span class="font-bold">2х водії:</span> 30,000</li>
+            <li><span class="font-bold">Менеджер:</span> 10,000</li>
+            <li><span class="font-bold">Складський труд:</span> 8,000</li>
+            <li><span class="font-bold">Склад 800 м²:</span> 8,000</li>
+            <li><span class="font-bold">Комунальні:</span> 1,500</li>
+            <li><span class="font-bold">Страхування:</span> 3,000</li>
+            <li><span class="font-bold">WMS:</span> 3,000</li>
+            <li><span class="font-bold">Доставка:</span> 2000 × 65 = 130,000</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 217,500 грн/місяц</li>
+            <li class="text-red-600 font-bold">На замовлення: 108.75 грн</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
+          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><span class="font-bold">Комплектація:</span> 2000 × 20 = 40,000</li>
+            <li><span class="font-bold">Доставка (оптова):</span> 2000 × 80 = 160,000</li>
+            <li><span class="font-bold">Складування:</span> 5 палів × 350 = 1,750</li>
+            <li><span class="font-bold">Dedicted менеджер:</span> 2,000</li>
+            <li class="border-t pt-2 font-bold">ВСЬОГО: 203,750 грн/місяц</li>
+            <li class="text-green-600 font-bold">На замовлення: 101.87 грн</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
+        <p class="text-center text-lg font-bold">
+          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 217,500 грн</span>
+          <br />
+          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 203,750 грн</span>
+          <br />
+          <span class="text-green-700 text-xl">✓ Економія: 13,750 грн (6%)</span>
+        </p>
+      </div>
+
+      <p class="text-gray-700 mb-6 bg-blue-50 p-6 rounded">
+        <strong>Інсайт:</strong> На великих обсягах (2000+) економія знижується до 6%, але з'являються нові переваги: масштабованість, гнучкість, відсутність управління персоналом. Крім того, MTP може запропонувати спеціальні ставки за 2000+ замовлень (25% знижка), що додатково економить 50-80K грн.
+      </p>
+
+      <h2 class="text-3xl font-bold mb-6 mt-12">5. Чому фулфілмент дешевший: Ключові факти</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">💰 Масштаб</h3>
+          <p class="text-gray-700">MTP синхронізує логістику 1000+ клієнтів. Доставка перевізнику обійдеться дешевше за 1 замовлення, ніж за 1000. Ми передаємо цю економію тобі.</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">🤖 Автоматизація</h3>
+          <p class="text-gray-700">WMS система автоматизує 80% операцій. Для ФОП це обходиться в 2000 грн/місяц, для MTP — це розподіляється на 1000+ клієнтів.</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">🏪 Немає простою</h3>
+          <p class="text-gray-700">Якщо у ФОП немає замовлень на день — персонал все ще платить. У MTP персонал платить лише за виконані операції.</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">📊 Оптимізація маршрутів</h3>
+          <p class="text-gray-700">MTP групує замовлення в рейси на один маршрут. 50 замовлень в одну коробку = одна доставка замість 50-ти.</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">🤝 Переговори з перевізниками</h3>
+          <p class="text-gray-700">MTP договорилась про оптові ставки з 10+ перевізниками. ФОП не має такого впливу на ринок.</p>
+        </div>
+        <div class="bg-white p-6 rounded border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">🎯 Без витрат на управління</h3>
+          <p class="text-gray-700">MTP приймає на себе весь управлінський тягар. ФОП платить 8000+ за менеджера, який не потрібен.</p>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-6 mt-12">6. Коли фулфілмент вже не дешевший: Порогові обсяги</h2>
+
+      <div class="bg-yellow-50 p-6 rounded border-l-4 border-yellow-500 mb-8">
+        <h3 class="text-lg font-bold mb-4">При якому обсязі вперше варто задуматися про власну логістику?</h3>
+        <p class="text-gray-700 mb-4">
+          При <strong>&gt;5000 замовлень на місяц</strong>. На цьому рівні:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          <li>Власна логістика почне економити 10-15%</li>
+          <li>Витрати на персонал розподіляються на велику кількість операцій</li>
+          <li>Ви можете дозволити собі спеціалізовану команду</li>
+          <li>Масштаб дозволяє наймати найкращих спеціалістів</li>
+        </ul>
+        <p class="text-gray-700 mt-4">
+          Але навіть при 5000+ замовлень гібридна модель (свій склад + MTP доставка) часто вигідніша.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-6 mt-12">7. Вартість помилок у логістиці</h2>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-3 text-left">Помилка</th>
+              <th class="border p-3 text-center">Вартість (середня)</th>
+              <th class="border p-3 text-left">Як MTP запобігає</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3">Невірна адреса розіслання</td>
+              <td class="border p-3 text-center">500-2000 грн</td>
+              <td class="border p-3">WMS перевіряє адресу перед друком TTN</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3">Товар не відправлений (забув у складі)</td>
+              <td class="border p-3 text-center">200-5000 грн + репутація</td>
+              <td class="border p-3">Двійна перевірка (оператор + сканування)</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Пошкодження в дороги</td>
+              <td class="border p-3 text-center">1000-10000 грн</td>
+              <td class="border p-3">Професійна упаковка, страхування</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-3">Втрата запасів на складі</td>
+              <td class="border p-3 text-center">500-2000 грн</td>
+              <td class="border p-3">Щомісячна інвентаризація, відеоспостереження</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Недостатня ємність в піковий період</td>
+              <td class="border p-3 text-center">10000+ грн + втрачені продажи</td>
+              <td class="border p-3">Гнучка мережа, можемість розширення за дні</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-8 bg-red-50 p-6 rounded">
+        <strong>Приховані витрати власної логістики:</strong> Помилки на складі стають витратами для клієнтів. MTP несе відповідальність, тому інвестує у якість. За рік помилки можуть обійтися у 10-50K грн — це не врахувало у розрахунках вище.
+      </p>
+
+      <h2 class="text-3xl font-bold mb-6 mt-12">Висновок: Чому дешевший</h2>
+
+      <ul class="space-y-4 text-gray-700 text-lg">
+        <li class="flex gap-3 items-start">
+          <span class="text-red-600 font-bold text-2xl">✓</span>
+          <span><strong>Для ФОП 100-500 замовлень:</strong> 17-25% економія. Потім лише зростає до 30% при 1000+ замовлень.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="text-red-600 font-bold text-2xl">✓</span>
+          <span><strong>Для малих бізнесів 500-2000:</strong> 20-35% економія від витрат логістики.</span>
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="text-red-600 font-bold text-2xl">✓</span>
+          <span><strong>Для великих 2000+:</strong> 10-20% економія + дополнительні переваги (масштабованість, якість, надійність).</span>
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="text-red-600 font-bold text-2xl">✓</span>
+          <span><strong>Ключові Драйвери:</strong> Масштаб, автоматизація, оптимізація маршрутів, відсутність простоїв персоналу.</span>
+        </li>
+      </ul>
+
+      <div class="mt-12 p-8 bg-gradient-to-r from-red-100 to-blue-100 rounded">
+        <h3 class="text-2xl font-bold mb-4">Готові перейти на фулфілмент?</h3>
+        <p class="text-gray-700 mb-6">
+          Розрахуємо персональну вартість для вашого бізнесу — напишіть вам обсяги замовлень, категорії товарів та регіони доставки.
+        </p>
+        <a href="/#contact" class="inline-block bg-red-600 text-white px-8 py-3 rounded font-bold hover:bg-red-700 transition">
+          Розрахувати вартість
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Base>

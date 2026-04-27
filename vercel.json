@@ -764,15 +764,7 @@
       "source": "/css/fonts-tildasans/",
       "destination": "/",
       "statusCode": 301
-    },
-    { "source": "/ua/blog/case-ecodrive/", "destination": "/ua/recalls/", "statusCode": 301 },
-    { "source": "/ua/blog/chomu-fulfilment-deshevshyy/", "destination": "/ua/blog/scho-take-fulfilment/", "statusCode": 301 },
-    { "source": "/ua/blog/fulfilment-vs-vlasnyy-sklad/", "destination": "/ua/blog/scho-take-fulfilment/", "statusCode": 301 },
-    { "source": "/ua/blog/rinok-fulfilmentu-ukraina/", "destination": "/ua/blog/top-fulfilment-operatoriv-2026/", "statusCode": 301 },
-    { "source": "/ua/blog/vartist-fulfilmentu-2026/", "destination": "/ua/tsiny/", "statusCode": 301 },
-    { "source": "/ua/blog/yak-perejty-na-fulfilment/", "destination": "/ua/blog/scho-take-fulfilment/", "statusCode": 301 },
-    { "source": "/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/", "destination": "/ua/blog/scho-take-fulfilment/", "statusCode": 301 },
-    { "source": "/ua/blog/yak-vybrati-fulfilment/", "destination": "/ua/blog/top-fulfilment-operatoriv-2026/", "statusCode": 301 }
+    }
   ],
   "trailingSlash": true
 }
