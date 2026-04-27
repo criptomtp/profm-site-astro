@@ -1,0 +1,151 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const title = 'Що таке SLA в логістиці — KPI, приклад угоди для e-commerce';
+const description = 'SLA в логістиці — це угода про рівень сервісу з конкретними KPI: час комплектації, точність, % same-day відправок. Реальний приклад SLA для e-commerce.';
+const canonical = 'https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/';
+const ogImage = 'https://www.fulfillmentmtp.com.ua/images/blog/fulfillment-vs-warehouse-2025.webp';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: '2024-08-15T10:00:00+03:00',
+  dateModified: '2026-04-26T10:00:00+03:00',
+  image: ogImage,
+  author: { '@type': 'Organization', name: 'MTP Group', url: 'https://www.fulfillmentmtp.com.ua/' },
+  publisher: { '@type': 'Organization', name: 'MTP Group', url: 'https://www.fulfillmentmtp.com.ua/', logo: { '@type': 'ImageObject', url: 'https://www.fulfillmentmtp.com.ua/images/mtp-group-logo.webp' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.fulfillmentmtp.com.ua/' },
+    { '@type': 'ListItem', position: 2, name: 'Блог', item: 'https://www.fulfillmentmtp.com.ua/ua/blog/' },
+    { '@type': 'ListItem', position: 3, name: 'Що таке SLA в логістиці', item: canonical }
+  ]
+};
+---
+<Base title={title} description={description} canonical={canonical} lang="uk" ogType="article" ogImage={ogImage}>
+<Fragment slot="head">
+<link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/">
+<link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/blog/chto-takoe-sla/">
+<link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/">
+<link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/">
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+</Fragment>
+
+<main>
+<article class="post">
+<nav class="breadcrumb"><a href="/ua/">Головна</a> / <a href="/ua/blog/">Блог</a> / Що таке SLA в логістиці</nav>
+
+<h1>Що таке SLA в логістиці: гарантії, KPI та приклад для e-commerce</h1>
+
+<img src="/images/blog/fulfillment-vs-warehouse-2025.webp" alt="SLA в логістиці — KPI та приклад угоди" width="1200" height="630" loading="eager" fetchpriority="high" class="hero-img">
+
+<p class="lead">Уявіть: клієнт оформив замовлення, чекає посилку, але дні минають, а статус не змінюється. Розчарування, негативний відгук, втрачений клієнт. Причина часто не в товарі, а в логістиці без чітких стандартів. Тут на сцену виходить <strong>SLA</strong> — формальна угода, що перетворює обіцянки на конкретні зобовʼязання з цифрами.</p>
+
+<h2>Що таке SLA</h2>
+<p><strong>SLA (Service Level Agreement)</strong>, або угода про рівень сервісу — це частина договору, де чітко прописані стандарти якості послуг. У логістиці для e-commerce SLA — це ваша обіцянка покупцю, виражена в конкретних показниках: час комплектації, точність збірки, % same-day відправок, швидкість обробки повернень.</p>
+
+<p>Замість розмитого «швидка доставка», SLA оперує цифрами:</p>
+<ul>
+<li>Час на комплектацію замовлення — до 4 годин з моменту отримання</li>
+<li>Точність збірки — не менше 99.8%</li>
+<li>Відправка замовлень, оформлених до 15:00 — у той самий день</li>
+<li>Прийом товару на склад — до 24 годин після поставки</li>
+<li>Обробка повернень — до 48 годин з моменту надходження</li>
+</ul>
+
+<h2>Чому SLA критичний для e-commerce</h2>
+<p>Працювати без SLA — як вести корабель у шторм без приладів. У пікові сезони (Чорна пʼятниця, Новий рік) навантаження на склад зростає в рази. Без стандартизованих процесів це призводить до помилок, затримок і вигорання співробітників.</p>
+
+<p>Кожна помилка = фінансові збитки + удар по репутації. Сучасний покупець не пробачає поганий сервіс: один невдалий досвід — десяток негативних відгуків, втрата десятків потенційних клієнтів. Без чітких стандартів масштабування неможливе: якщо ви не гарантуєте якість для 100 замовлень на день, що буде з 1000?</p>
+
+<h2>Приклад робочого SLA для фулфілмент-партнерства</h2>
+<p>Ось як виглядає сильний SLA, на який варто орієнтуватись при виборі фулфілмент-оператора:</p>
+
+<table>
+<thead>
+<tr><th>KPI</th><th>Норматив</th><th>Період вимірювання</th></tr>
+</thead>
+<tbody>
+<tr><td>Same-day відправка (cut-off 16:00)</td><td>≥ 99%</td><td>Місяць</td></tr>
+<tr><td>Точність комплектації</td><td>≥ 99.7%</td><td>Місяць</td></tr>
+<tr><td>Прийом поставки на склад</td><td>≤ 24 години</td><td>Поставка</td></tr>
+<tr><td>Обробка повернень</td><td>≤ 48 годин</td><td>Замовлення</td></tr>
+<tr><td>Час відповіді менеджера</td><td>≤ 2 години у робочий час</td><td>Звернення</td></tr>
+<tr><td>Точність WMS-обліку</td><td>≥ 99.5% при інвентаризації</td><td>Квартал</td></tr>
+</tbody>
+</table>
+
+<h2>Як побудувати SLA самостійно vs. аутсорс</h2>
+<p>Самостійно вибудувати бездоганну логістику з нуля — дорого і довго. Потрібні інвестиції у склад, обладнання, WMS-систему та персонал. Альтернатива — <a href="/ua/services/">аутсорс логістики через фулфілмент-оператора</a>, у якого вся інфраструктура вже працює за SLA.</p>
+
+<p>При аутсорсі ви отримуєте:</p>
+<ul>
+<li>Готову систему з відпрацьованими KPI замість 6+ місяців побудови</li>
+<li>Економію 30-40% порівняно з власним складом — деталі в матеріалі <a href="/ua/blog/chomu-fulfilment-deshevshyy/">«Чому фулфілмент дешевший»</a></li>
+<li>Гарантовану швидкість обробки під підпис у договорі</li>
+<li>Час і ресурси на маркетинг і розвиток замість керування складом</li>
+</ul>
+
+<h2>SLA і Нова Пошта / Укрпошта</h2>
+<p>Окремо варто розрізняти два рівні SLA: внутрішній (між вами і фулфілмент-партнером) та зовнішній (з перевізником — Нова Пошта, Укрпошта). Перший контролюєте ви, другий — публічна оферта перевізника. Сильний фулфілмент-партнер бере на себе передачу посилки в перевізник у той самий день, після цього зона відповідальності переходить до НП/УП.</p>
+
+<h2>Висновок</h2>
+<p>SLA — це не папір для юристів, а інструмент управління очікуваннями клієнтів. Без нього ви не можете вимірювати свого партнера, тримати його у відповідальності і масштабуватись. Чим конкретніші цифри в SLA — тим менше сюрпризів у звітах і відгуках.</p>
+
+<p>Працюємо з 150+ інтернет-магазинами під чіткий SLA. Хочете подивитись наш стандартний пакет KPI — <a href="/ua/calculator/">залиште заявку</a>, надішлемо приклад договору з показниками за вашою категорією товарів.</p>
+
+<aside class="cta-box">
+<p class="cta-title">Готові передати логістику під SLA?</p>
+<p>MTP Group працює за чітким SLA: same-day, точність 99.7%, повний WMS-контроль на кожному етапі. 150+ інтернет-магазинів вже делегували логістику нам.</p>
+<a href="/ua/services/" class="cta-btn">Дізнатись про послуги →</a>
+</aside>
+
+<nav class="related">
+<h3>Що читати далі</h3>
+<ul>
+<li><a href="/ua/blog/yak-vybrati-fulfilment/">Як вибрати фулфілмент-оператора: 7 критеріїв</a></li>
+<li><a href="/ua/blog/fulfilment-vs-vlasnyy-sklad/">Фулфілмент vs власний склад: коли що обирати</a></li>
+<li><a href="/ua/blog/scho-take-fulfilment/">Що таке фулфілмент: повний гід</a></li>
+</ul>
+</nav>
+
+</article>
+</main>
+
+</Base>
+
+<style is:global>
+.post{max-width:760px;margin:0 auto;padding:120px 24px 80px;font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.75;color:#222}
+.post .breadcrumb{font-size:13px;color:#666;margin-bottom:24px}
+.post .breadcrumb a{color:#666;text-decoration:none}
+.post .breadcrumb a:hover{color:#e63329}
+.post h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0 0 28px;font-weight:700}
+.post h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,30px);margin:48px 0 16px;line-height:1.3}
+.post h3{font-family:'DM Serif Display',serif;font-size:22px;margin:32px 0 12px}
+.post p{margin:0 0 18px}
+.post .lead{font-size:19px;line-height:1.7;color:#333;margin-bottom:32px}
+.post .hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin:0 0 36px;display:block}
+.post ul,.post ol{margin:0 0 20px;padding-left:24px}
+.post li{margin-bottom:8px}
+.post a{color:#e63329;text-decoration:underline;text-underline-offset:3px}
+.post a:hover{color:#000}
+.post table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+.post th,.post td{border:1px solid #e5e5e5;padding:12px 14px;text-align:left;vertical-align:top}
+.post th{background:#fafafa;font-weight:700}
+.post .cta-box{background:#fff;border:2px solid #000;border-radius:12px;padding:32px;margin:48px 0;text-align:center}
+.post .cta-box .cta-title{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:8px}
+.post .cta-btn{display:inline-block;background:#e63329;color:#fff !important;padding:14px 28px;border-radius:6px;font-weight:600;text-decoration:none !important;margin-top:8px}
+.post .cta-btn:hover{background:#000;color:#fff !important}
+.post .related{margin-top:64px;padding-top:32px;border-top:2px solid #000}
+.post .related h3{margin-top:0}
+.post .related ul{list-style:none;padding:0}
+.post .related li{margin-bottom:10px}
+</style>

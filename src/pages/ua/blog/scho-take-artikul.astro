@@ -1,0 +1,165 @@
+---
+import Base from '../../../layouts/Base.astro';
+
+const title = 'Що таке артикул товару — як створити, приклади SKU | MTP';
+const description = 'Артикул — це унікальний код товару для обліку, інвентаризації та замовлень. Правила створення артикулів, приклади SKU + як уникнути плутанини на складі.';
+const canonical = 'https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/';
+const ogImage = 'https://www.fulfillmentmtp.com.ua/images/blog/ecommerce-fiscal-register.webp';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: '2024-08-15T10:00:00+03:00',
+  dateModified: '2026-04-26T10:00:00+03:00',
+  image: ogImage,
+  author: { '@type': 'Organization', name: 'MTP Group', url: 'https://www.fulfillmentmtp.com.ua/' },
+  publisher: { '@type': 'Organization', name: 'MTP Group', url: 'https://www.fulfillmentmtp.com.ua/', logo: { '@type': 'ImageObject', url: 'https://www.fulfillmentmtp.com.ua/images/mtp-group-logo.webp' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.fulfillmentmtp.com.ua/' },
+    { '@type': 'ListItem', position: 2, name: 'Блог', item: 'https://www.fulfillmentmtp.com.ua/ua/blog/' },
+    { '@type': 'ListItem', position: 3, name: 'Що таке артикул', item: canonical }
+  ]
+};
+---
+<Base title={title} description={description} canonical={canonical} lang="uk" ogType="article" ogImage={ogImage}>
+<Fragment slot="head">
+<link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/">
+<link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/blog/chto-takoe-artikul/">
+<link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/">
+<link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/">
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+</Fragment>
+
+<main>
+<article class="post">
+<nav class="breadcrumb"><a href="/ua/">Головна</a> / <a href="/ua/blog/">Блог</a> / Що таке артикул</nav>
+
+<h1>Що таке артикул товару: правила створення, приклади SKU</h1>
+
+<img src="/images/blog/ecommerce-fiscal-register.webp" alt="Що таке артикул товару — як створити SKU" width="1200" height="630" loading="eager" fetchpriority="high" class="hero-img">
+
+<p class="lead">Артикул (SKU — Stock Keeping Unit) — унікальний ідентифікатор товару, що дозволяє відрізнити одну позицію від іншої в обліку, на складі і в замовленнях. Без артикулів інтернет-магазин з 100+ позицій ризикує помилками комплектації, плутаниною при поверненнях і неточностями в інвентаризації.</p>
+
+<h2>Що таке артикул і навіщо він потрібен</h2>
+<p>Артикул — це короткий буквено-цифровий код, що однозначно ідентифікує конкретну SKU (товар з конкретними характеристиками — розміром, кольором, конфігурацією). Один і той самий товар у двох розмірах = два різних артикули.</p>
+
+<p>Що дає правильна система артикулів:</p>
+<ul>
+<li><strong>Точна інвентаризація.</strong> WMS-система розпізнає товар сканером, а не «на око».</li>
+<li><strong>Безпомилкова комплектація.</strong> Складський працівник збирає замовлення за артикулом, не плутаючи розміри і кольори.</li>
+<li><strong>Швидкі дозамовлення.</strong> Постачальник розуміє, що саме замовляєте — без перепитувань.</li>
+<li><strong>Прозора звітність.</strong> Можна аналізувати продажі і залишки за конкретними SKU, а не за «літніми сукнями взагалі».</li>
+<li><strong>Робота з повернутими товарами.</strong> Артикул дозволяє швидко віднести повернений товар до правильної позиції.</li>
+</ul>
+
+<p>Саме тому <a href="/ua/3pl-logistyka/">3PL-оператори</a> використовують штрих-кодування артикулів на кожному етапі складської обробки — від приймання до передачі в перевізник.</p>
+
+<h2>Структура артикулу: як він виглядає</h2>
+<p>Універсального стандарту немає, але добра практика — структурований артикул, у якому кожен сегмент щось означає. Приклад для магазину одягу:</p>
+
+<table>
+<thead>
+<tr><th>Сегмент</th><th>Значення</th><th>Приклад</th></tr>
+</thead>
+<tbody>
+<tr><td>Категорія</td><td>2-3 літери</td><td>DR (dress / сукня)</td></tr>
+<tr><td>Колекція / постачальник</td><td>2-3 символи</td><td>SS24 (Spring/Summer 2024)</td></tr>
+<tr><td>Колір</td><td>2-3 символи</td><td>BLK (black)</td></tr>
+<tr><td>Розмір</td><td>1-3 символи</td><td>M, XL, 38</td></tr>
+<tr><td>Послідовний номер</td><td>3-4 цифри</td><td>0123</td></tr>
+</tbody>
+</table>
+
+<p>Підсумковий артикул: <code>DR-SS24-BLK-M-0123</code>. На сканер відомо все: категорія, сезон, колір, розмір, унікальний ID.</p>
+
+<h2>Правила створення артикулів</h2>
+
+<h3>1. Залишайте артикули постачальника, де можливо</h3>
+<p>Якщо постачальник присвоїв артикул <code>1011-56</code> — старайтесь зберегти його. Це спрощує дозамовлення, звірки і розмови з постачальником. Не вигадуйте свій код там, де є чужий стандарт.</p>
+
+<h3>2. Унікалізуйте через приставки, якщо потрібно</h3>
+<p>Якщо ви працюєте з кількома постачальниками і артикули можуть збігатися, додавайте приставку. Постачальник Лящук Микола → ініціали LM → результат: <code>LM-1011-56</code>. Так ви зберігаєте оригінал постачальника і отримуєте власний унікальний ідентифікатор.</p>
+
+<h3>3. Без пробілів і спецсимволів</h3>
+<p>Використовуйте дефіс <code>-</code> або підкреслення <code>_</code> як роздільники. Уникайте пробілів, &amp;, /, \, # — вони ламають CSV-експорти, штрих-коди і API-запити.</p>
+
+<h3>4. Один товар = один артикул</h3>
+<p>Якщо у вас футболка в червоному XL і червоному L — це два різних SKU, два різних артикули. Не намагайтесь «зекономити» на артикулах: це збільшить помилки комплектації мінімум удвічі.</p>
+
+<h3>5. Документуйте логіку</h3>
+<p>Запишіть систему: «перші 2 літери — категорія, наступні 3 — сезон» і т.д. Інакше через рік ви самі не зрозумієте, чому товар має такий код.</p>
+
+<h2>Артикул vs штрих-код vs GTIN</h2>
+<table>
+<thead>
+<tr><th>Тип</th><th>Призначення</th><th>Хто видає</th></tr>
+</thead>
+<tbody>
+<tr><td>Артикул (SKU)</td><td>Внутрішній облік магазина</td><td>Магазин або постачальник</td></tr>
+<tr><td>Штрих-код (EAN/UPC)</td><td>Сканування на касі і складі</td><td>GS1 (міжнародний стандарт)</td></tr>
+<tr><td>GTIN</td><td>Глобальна торгівельна ідентифікація</td><td>GS1</td></tr>
+</tbody>
+</table>
+
+<p>Вони не замінюють одне одного. Артикул — для вашого WMS, штрих-код — для сканування. У більшості випадків артикул може йти у штрих-код (Code 128), але для роздрібу через касу потрібен EAN-13.</p>
+
+<h2>Як автоматизувати облік артикулів</h2>
+<p>Ручне ведення артикулів у Excel працює до 100-200 SKU. Далі потрібна WMS-система. У <a href="/ua/skladski-poslugy/">фулфілмент-операторів</a> WMS уже інтегрована: ви передаєте товар з артикулами, система зчитує штрих-коди і автоматично оновлює залишки в реальному часі. Це усуває до 99% помилок ручного обліку.</p>
+
+<aside class="cta-box">
+<p class="cta-title">Автоматизуйте облік артикулів</p>
+<p>MTP Group використовує WMS-систему зі скануванням штрих-кодів на кожному етапі — від приймання до відправки. 150+ інтернет-магазинів вже делегували логістику нам.</p>
+<a href="/ua/fulfilment-dlya-internet-magazynu/" class="cta-btn">Дізнатись більше →</a>
+</aside>
+
+<nav class="related">
+<h3>Що читати далі</h3>
+<ul>
+<li><a href="/ua/blog/scho-take-sla/">Що таке SLA в логістиці: KPI та приклад</a></li>
+<li><a href="/ua/blog/scho-take-fulfilment/">Що таке фулфілмент: повний гід</a></li>
+<li><a href="/ua/skladski-poslugy/">Складські послуги MTP Group</a></li>
+</ul>
+</nav>
+
+</article>
+</main>
+
+</Base>
+
+<style is:global>
+.post{max-width:760px;margin:0 auto;padding:120px 24px 80px;font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.75;color:#222}
+.post .breadcrumb{font-size:13px;color:#666;margin-bottom:24px}
+.post .breadcrumb a{color:#666;text-decoration:none}
+.post .breadcrumb a:hover{color:#e63329}
+.post h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0 0 28px;font-weight:700}
+.post h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,30px);margin:48px 0 16px;line-height:1.3}
+.post h3{font-family:'DM Serif Display',serif;font-size:22px;margin:32px 0 12px}
+.post p{margin:0 0 18px}
+.post .lead{font-size:19px;line-height:1.7;color:#333;margin-bottom:32px}
+.post .hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin:0 0 36px;display:block}
+.post ul,.post ol{margin:0 0 20px;padding-left:24px}
+.post li{margin-bottom:8px}
+.post a{color:#e63329;text-decoration:underline;text-underline-offset:3px}
+.post a:hover{color:#000}
+.post code{background:#fafafa;padding:2px 8px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:14px;color:#000}
+.post table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+.post th,.post td{border:1px solid #e5e5e5;padding:12px 14px;text-align:left;vertical-align:top}
+.post th{background:#fafafa;font-weight:700}
+.post .cta-box{background:#fff;border:2px solid #000;border-radius:12px;padding:32px;margin:48px 0;text-align:center}
+.post .cta-box .cta-title{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:8px}
+.post .cta-btn{display:inline-block;background:#e63329;color:#fff !important;padding:14px 28px;border-radius:6px;font-weight:600;text-decoration:none !important;margin-top:8px}
+.post .cta-btn:hover{background:#000;color:#fff !important}
+.post .related{margin-top:64px;padding-top:32px;border-top:2px solid #000}
+.post .related h3{margin-top:0}
+.post .related ul{list-style:none;padding:0}
+.post .related li{margin-bottom:10px}
+</style>

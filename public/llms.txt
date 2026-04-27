@@ -82,7 +82,14 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 ## Blog
 
 - [Блог (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/): UA e-commerce insights, logistics, fulfillment strategy
+- [Блог (RU)](https://www.fulfillmentmtp.com.ua/blog/): RU e-commerce content for CIS audience
 - [Blog (EN)](https://www.fulfillmentmtp.com.ua/en/blog/): English posts on Ukraine e-commerce and fulfillment trends
+- [SLA в логістиці (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/): KPIs, sample agreement, e-commerce benchmarks
+- [SLA в логистике (RU)](https://www.fulfillmentmtp.com.ua/blog/chto-takoe-sla/): Service Level Agreement explained for fulfillment
+- [What is SLA in Logistics (EN)](https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/): English SLA guide for e-commerce founders
+- [Артикул товару SKU (UA)](https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/): How to create SKU codes, structure, examples
+- [Артикул товара SKU (RU)](https://www.fulfillmentmtp.com.ua/blog/chto-takoe-artikul/): SKU naming rules and inventory examples
+- [What is SKU / Article Number (EN)](https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/): English SKU guide for online stores
 
 ## Localized llms.txt variants
 
