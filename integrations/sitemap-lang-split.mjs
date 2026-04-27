@@ -29,7 +29,9 @@ function pickLang(absUrl) {
   const rel = absUrl.replace(SITE, '').replace(/^\//, '');
   if (rel.startsWith('ru/') || rel === 'ru/') return 'ru';
   if (rel.startsWith('en/') || rel === 'en/') return 'en';
-  // Everything else (root /, /ua/* legacy, /blog/*, /api-docs/*) → uk
+  // Legacy RU blog lives at /blog/* (no /ru/ prefix). The /blog/ index itself stays as RU too.
+  if (rel === 'blog/' || rel.startsWith('blog/')) return 'ru';
+  // Everything else (root /, /ua/* legacy, /api-docs/*) → uk
   return 'uk';
 }
 
