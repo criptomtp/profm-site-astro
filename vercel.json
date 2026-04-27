@@ -436,7 +436,22 @@
       "statusCode": 301
     },
     {
+      "source": "/en/fulfillment-for-online-stores/",
+      "destination": "/en/fulfillment-ukraine/",
+      "statusCode": 301
+    },
+    {
       "source": "/en/fulfillment-for-marketplaces/",
+      "destination": "/en/fulfillment-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/fulfillment-for-small-business/",
+      "destination": "/en/fulfillment-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/fulfillment-for-cosmetics/",
       "destination": "/en/fulfillment-ukraine/",
       "statusCode": 301
     },
