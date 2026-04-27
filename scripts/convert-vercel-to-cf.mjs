@@ -67,6 +67,14 @@ for (const r of (vercel.redirects || [])) {
     const rule = `${src} ${dst} ${expanded.statusCode || 308}`;
     if (isDynamic(src)) dynamicRules.push(rule);
     else staticRules.push(rule);
+
+    // CF Pages exact-match: `/foo/` won't match `/foo`. For tpost rules where
+    // GSC has both variants in its index, emit a no-trailing-slash sibling.
+    if (src.includes('/tpost/') && src.endsWith('/')) {
+      const sibling = `${src.replace(/\/$/, '')} ${dst} ${expanded.statusCode || 308}`;
+      if (isDynamic(src)) dynamicRules.push(sibling);
+      else staticRules.push(sibling);
+    }
   }
 }
 
