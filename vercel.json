@@ -66,6 +66,26 @@
       "statusCode": 301
     },
     {
+      "source": "/en/ua/guide/:slug/",
+      "destination": "/ua/guide/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/ua/guide/:slug/",
+      "destination": "/ua/guide/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/ua/:slug/",
+      "destination": "/ua/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/ua/:slug/",
+      "destination": "/ua/:slug/",
+      "statusCode": 301
+    },
+    {
       "source": "/ua",
       "destination": "/",
       "statusCode": 301

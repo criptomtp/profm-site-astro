@@ -1,0 +1,178 @@
+---
+// RelatedArticles — auto-resolves 4 thematically-related restored blog posts.
+// Props:
+//   slug: current article en_slug (e.g. 'protect-store-from-fraud')
+//   lang: 'uk' | 'ru' | 'en'
+const { slug, lang } = Astro.props;
+
+// Topical clusters (seo: hub-and-spoke linking)
+const CLUSTERS = {
+  basics: ['what-is-fulfillment-7-services', 'fulfillment-cost-guide', 'what-is-sla-in-logistics', 'what-is-sku-article-number', 'mtp-group-best-fulfillment-operators'],
+  seasonal: ['prepare-store-valentines-day', 'prepare-online-store-march-8', 'prepare-store-for-holidays', 'peak-season-logistics-mistakes'],
+  mistakes: ['top-5-logistics-mistakes-ecommerce', 'peak-season-logistics-mistakes', 'where-online-store-loses-money', 'reduce-product-returns-ecommerce', 'why-audit-warehouse-in-summer'],
+  wartime: ['business-in-ukraine-during-war', 'ecommerce-logistics-during-war', 'online-store-during-wartime', 'replace-russian-services-ukraine-checklist', 'expand-to-european-marketplaces'],
+  starting: ['how-to-start-online-store-ukraine', '5-mistakes-starting-online-store', 'best-business-ideas-ukraine', 'product-business-ukraine-guide', '10-ways-increase-profit-ecommerce'],
+  vs_warehouse: ['fulfillment-vs-own-warehouse', 'fulfillment-vs-own-warehouse-2025', 'fulfillment-cost-guide', 'how-fulfillment-works-ukraine-2025', 'how-to-choose-fulfillment-operator'],
+  fiscal: ['fiscal-register-prro-business', 'fiscal-register-requirements-ukraine'],
+  operators: ['how-to-choose-fulfillment-operator', 'mtp-group-best-fulfillment-operators', 'mtp-group-fast-product-liquidation'],
+  customer_ops: ['how-to-handle-customer-reviews', 'protect-store-from-fraud', 'online-buyer-behavior-insights'],
+  industry: ['fulfillment-for-clothing-shoes', 'what-is-fulfillment-7-services', 'how-to-choose-fulfillment-operator'],
+  trends: ['ecommerce-trends-2022', 'online-buyer-behavior-insights', '10-ways-increase-profit-ecommerce'],
+};
+
+const PRIMARY = {
+  '10-ways-increase-profit-ecommerce': 'starting',
+  '5-mistakes-starting-online-store': 'starting',
+  'best-business-ideas-ukraine': 'starting',
+  'business-in-ukraine-during-war': 'wartime',
+  'ecommerce-logistics-during-war': 'wartime',
+  'ecommerce-trends-2022': 'trends',
+  'expand-to-european-marketplaces': 'wartime',
+  'fiscal-register-prro-business': 'fiscal',
+  'fiscal-register-requirements-ukraine': 'fiscal',
+  'fulfillment-cost-guide': 'vs_warehouse',
+  'fulfillment-for-clothing-shoes': 'industry',
+  'fulfillment-vs-own-warehouse': 'vs_warehouse',
+  'fulfillment-vs-own-warehouse-2025': 'vs_warehouse',
+  'how-fulfillment-works-ukraine-2025': 'vs_warehouse',
+  'how-to-choose-fulfillment-operator': 'operators',
+  'how-to-handle-customer-reviews': 'customer_ops',
+  'how-to-start-online-store-ukraine': 'starting',
+  'mtp-group-best-fulfillment-operators': 'operators',
+  'mtp-group-fast-product-liquidation': 'operators',
+  'online-buyer-behavior-insights': 'customer_ops',
+  'online-store-during-wartime': 'wartime',
+  'peak-season-logistics-mistakes': 'seasonal',
+  'prepare-online-store-march-8': 'seasonal',
+  'prepare-store-for-holidays': 'seasonal',
+  'prepare-store-valentines-day': 'seasonal',
+  'product-business-ukraine-guide': 'starting',
+  'protect-store-from-fraud': 'customer_ops',
+  'reduce-product-returns-ecommerce': 'mistakes',
+  'replace-russian-services-ukraine-checklist': 'wartime',
+  'top-5-logistics-mistakes-ecommerce': 'mistakes',
+  'what-is-fulfillment-7-services': 'basics',
+  'what-is-sku-article-number': 'basics',
+  'what-is-sla-in-logistics': 'basics',
+  'where-online-store-loses-money': 'mistakes',
+  'why-audit-warehouse-in-summer': 'mistakes',
+};
+
+// Per-language metadata (title + image). Image lives at /images/blog/{img}.
+// UA/RU/EN titles taken from existing blog index pages.
+const META = {
+  '10-ways-increase-profit-ecommerce':            { img: 'fulfillment-warehouse-shipping.webp', uk: '10 робочих способів збільшити прибуток інтернет-магазину', ru: '10 рабочих способов увеличить прибыль интернет-магазина', en: '10 ways to increase ecommerce profit in Ukraine' },
+  '5-mistakes-starting-online-store':             { img: 'fulfillment-warehouse-operations.webp', uk: '5 головних помилок під час відкриття інтернет-магазину', ru: '5 главных ошибок при открытии интернет-магазина', en: '5 mistakes when starting an online store' },
+  'best-business-ideas-ukraine':                  { img: 'business-ideas-ukraine.webp', uk: 'Який бізнес відкрити в Україні: ідеї для початківця', ru: 'Какой бизнес открыть в Украине: идеи для новичка', en: 'Best business ideas in Ukraine for beginners' },
+  'business-in-ukraine-during-war':               { img: 'business-ukraine-wartime.webp', uk: 'Бізнес в Україні під час війни: виклики та можливості', ru: 'Бизнес в Украине во время войны: вызовы и возможности', en: 'Doing business in Ukraine during the war' },
+  'ecommerce-logistics-during-war':               { img: 'fulfillment-warehouse-operations.webp', uk: 'Як інтернет-магазину працювати в умовах війни', ru: 'Как интернет-магазину работать в условиях войны', en: 'Ecommerce logistics during the war' },
+  'ecommerce-trends-2022':                        { img: 'fulfillment-ecommerce-trends.webp', uk: '7 трендів інтернет-торгівлі: що потрібно знати', ru: '7 трендов интернет-торговли: что нужно знать', en: 'Ecommerce trends to watch in 2022 and beyond' },
+  'expand-to-european-marketplaces':              { img: 'fulfillment-warehouse-operations.webp', uk: 'Як вийти на європейські маркетплейси під час війни', ru: 'Как выйти на европейские маркетплейсы во время войны', en: 'How to expand to European marketplaces during war' },
+  'fiscal-register-prro-business':                { img: 'fiscal-register-prro-business.webp', uk: 'РРО і пРРО для бізнесу: особливості та вимоги', ru: 'РРО и пРРО для бизнеса: особенности и требования', en: 'Fiscal register and pRRO for business in Ukraine' },
+  'fiscal-register-requirements-ukraine':         { img: 'ecommerce-fiscal-register.webp', uk: 'РРО для інтернет-магазину: як вести бізнес законно', ru: 'РРО для интернет-магазина: как вести бизнес законно', en: 'Fiscal register requirements for online stores' },
+  'fulfillment-cost-guide':                       { img: 'fulfillment-ukraine-services.webp', uk: 'Скільки коштує фулфілмент: тарифи та порівняння', ru: 'Сколько стоит фулфилмент: тарифы и сравнение', en: 'Fulfillment cost guide: pricing and comparisons' },
+  'fulfillment-for-clothing-shoes':               { img: 'fulfillment-clothing-storage.webp', uk: 'Фулфілмент для магазину одягу та взуття', ru: 'Фулфилмент для магазина одежды и обуви', en: 'Fulfillment for clothing and shoe stores' },
+  'fulfillment-vs-own-warehouse':                 { img: 'own-warehouse-vs-fulfillment-choice.webp', uk: 'Свій склад VS фулфілмент: що обрати', ru: 'Свой склад VS фулфилмент: что выбрать', en: 'Fulfillment vs own warehouse: full comparison' },
+  'fulfillment-vs-own-warehouse-2025':            { img: 'fulfillment-vs-own-warehouse-2025.webp', uk: 'Fulfillment vs власний склад 2025', ru: 'Фулфилмент vs свой склад 2025', en: 'Fulfillment vs own warehouse 2025' },
+  'how-fulfillment-works-ukraine-2025':           { img: 'fulfillment-ukraine-guide.webp', uk: 'Як працює фулфілмент в Україні у 2025', ru: 'Как работает фулфилмент в Украине в 2025', en: 'How fulfillment works in Ukraine in 2025' },
+  'how-to-choose-fulfillment-operator':           { img: 'fulfillment-operator-selection.webp', uk: 'Як вибрати фулфілмент-оператора: чек-лист', ru: 'Как выбрать фулфилмент-оператора: чек-лист', en: 'How to choose a fulfillment operator: 25 criteria' },
+  'how-to-handle-customer-reviews':               { img: 'fulfillment-warehouse-shipping.webp', uk: 'Як працювати з відгуками: покроковий алгоритм', ru: 'Как работать с отзывами: пошаговый алгоритм', en: 'How to handle customer reviews step-by-step' },
+  'how-to-start-online-store-ukraine':            { img: 'otkryt-biznes-onlajn.webp', uk: 'Як відкрити інтернет-магазин в Україні', ru: 'Как открыть интернет-магазин в Украине', en: 'How to start an online store in Ukraine' },
+  'mtp-group-best-fulfillment-operators':         { img: 'mtp-fast-liquidation-service.webp', uk: 'MTP Group — найкращі фулфілмент-оператори', ru: 'MTP Group — лучшие фулфилмент-операторы', en: 'MTP Group — best fulfillment operators in Ukraine' },
+  'mtp-group-fast-product-liquidation':           { img: 'fulfillment-how-it-works-2025.webp', uk: 'MTP Group — швидка реалізація товарних залишків', ru: 'MTP Group — быстрая реализация товарных остатков', en: 'MTP Group — fast product liquidation service' },
+  'online-buyer-behavior-insights':               { img: 'customer-behavior-insights.webp', uk: 'Поведінка покупців в інтернеті: як збільшити продажі', ru: 'Поведение покупателей в интернете: как увеличить продажи', en: 'Online buyer behavior insights' },
+  'online-store-during-wartime':                  { img: 'online-store-wartime-2022.webp', uk: 'Як відкрити інтернет-магазин під час війни', ru: 'Как открыть интернет-магазин во время войны', en: 'Starting an online store during wartime' },
+  'peak-season-logistics-mistakes':               { img: 'logistics-seasonal-mistakes.webp', uk: 'Топ-5 помилок у логістиці на сезонні розпродажі', ru: 'Топ-5 ошибок логистики в сезон распродаж', en: 'Top peak-season logistics mistakes' },
+  'prepare-online-store-march-8':                 { img: 'fulfillment-order-processing.webp', uk: 'Як підготувати магазин до 8 березня', ru: 'Как подготовить магазин к 8 марта', en: 'Prepare your online store for March 8' },
+  'prepare-store-for-holidays':                   { img: 'fulfillment-warehouse-operations.webp', uk: 'Як підготувати магазин до новорічних свят', ru: 'Как подготовить магазин к новогодним праздникам', en: 'Prepare your online store for the holidays' },
+  'prepare-store-valentines-day':                 { img: 'valentines-day-ecommerce.webp', uk: 'Підготовка магазину до Дня Валентина', ru: 'Подготовка магазина ко Дню Валентина', en: 'Prepare your store for Valentine\'s Day' },
+  'product-business-ukraine-guide':               { img: 'product-business-ukraine.webp', uk: 'Товарний бізнес в Україні: з чого почати', ru: 'Товарный бизнес в Украине: с чего начать', en: 'Starting a product business in Ukraine' },
+  'protect-store-from-fraud':                     { img: 'ecommerce-fraud-protection.webp', uk: 'Як захиститися від шахрайства покупців', ru: 'Как защититься от мошенничества покупателей', en: 'How to protect your store from buyer fraud' },
+  'reduce-product-returns-ecommerce':             { img: 'fulfillment-product-returns.webp', uk: 'Як скоротити кількість повернень: 8 порад', ru: 'Как сократить количество возвратов: 8 советов', en: 'How to reduce product returns in ecommerce' },
+  'replace-russian-services-ukraine-checklist':   { img: 'replace-russian-services-ukraine.webp', uk: 'Чим замінити російські сервіси: чек-лист', ru: 'Чем заменить российские сервисы: чек-лист', en: 'Replacing Russian services in Ukraine: checklist' },
+  'top-5-logistics-mistakes-ecommerce':           { img: 'ecommerce-logistics-guide.webp', uk: 'ТОП-5 помилок логістики інтернет-магазину', ru: 'Топ-5 ошибок логистики интернет-магазина', en: 'Top-5 ecommerce logistics mistakes' },
+  'what-is-fulfillment-7-services':               { img: 'fulfillment-warehouse-packing.webp', uk: 'Що таке фулфілмент: 7 основних послуг', ru: 'Что такое фулфилмент: 7 основных услуг', en: 'What is fulfillment: 7 core services' },
+  'what-is-sku-article-number':                   { img: 'ecommerce-fiscal-register.webp', uk: 'Що таке артикул товару (SKU)', ru: 'Что такое артикул товара (SKU)', en: 'What is SKU and article number' },
+  'what-is-sla-in-logistics':                     { img: 'sla-logistics-fulfillment.webp', uk: 'Що таке SLA в логістиці: KPI та приклад', ru: 'Что такое SLA в логистике: KPI и пример', en: 'What is SLA in logistics: KPI and example' },
+  'where-online-store-loses-money':               { img: 'ecommerce-profit-optimization.webp', uk: 'Де втрачає гроші інтернет-магазин', ru: 'Где теряет деньги интернет-магазин', en: 'Where online stores lose money' },
+  'why-audit-warehouse-in-summer':                { img: 'warehouse-audit-summer.webp', uk: 'Липень — найкращий час для аудиту складу', ru: 'Июль — лучшее время для аудита склада', en: 'Why summer is the best time for a warehouse audit' },
+};
+
+// UA modern overrides: 7 topics where modern UA exists at a different slug.
+const UA_OVERRIDE = {
+  'how-to-choose-fulfillment-operator': 'yak-vybrati-fulfilment',
+  'what-is-sla-in-logistics': 'scho-take-sla',
+  'what-is-sku-article-number': 'scho-take-artikul',
+  'fulfillment-vs-own-warehouse': 'fulfilment-vs-vlasnyy-sklad',
+  'fulfillment-vs-own-warehouse-2025': 'chomu-fulfilment-deshevshyy',
+  'fulfillment-cost-guide': 'vartist-fulfilmentu-2026',
+  'how-fulfillment-works-ukraine-2025': 'rinok-fulfilmentu-ukraina',
+};
+
+// RU has no version of these (skip for ru)
+const RU_MISSING = new Set(['mtp-group-best-fulfillment-operators', 'mtp-group-fast-product-liquidation', 'what-is-sku-article-number']);
+
+function buildUrl(targetSlug, targetLang) {
+  if (targetLang === 'uk') {
+    const useSlug = UA_OVERRIDE[targetSlug] || targetSlug;
+    return `/ua/blog/${useSlug}/`;
+  }
+  if (targetLang === 'ru') {
+    if (RU_MISSING.has(targetSlug)) return null;
+    return `/blog/${targetSlug}/`;
+  }
+  if (targetLang === 'en') {
+    return `/en/blog/post/${targetSlug}/`;
+  }
+  return null;
+}
+
+const cluster = PRIMARY[slug];
+const peers = (CLUSTERS[cluster] || []).filter(s => s !== slug);
+
+const heading = lang === 'uk' ? 'Читайте також' : lang === 'ru' ? 'Читайте также' : 'Related articles';
+const cta = lang === 'uk' ? 'Читати →' : lang === 'ru' ? 'Читать →' : 'Read →';
+
+const cards = peers.slice(0, 4).map(s => {
+  const url = buildUrl(s, lang);
+  const meta = META[s];
+  if (!url || !meta) return null;
+  return { url, title: meta[lang] || meta.en, img: meta.img };
+}).filter(Boolean);
+---
+
+{cards.length > 0 && (
+  <section class="related-articles" aria-label={heading}>
+    <div class="related-articles__inner">
+      <h2 class="related-articles__title">{heading}</h2>
+      <div class="related-articles__grid">
+        {cards.map(card => (
+          <a href={card.url} class="related-card">
+            <div class="related-card__img" style={`background-image:url('/images/blog/${card.img}')`}></div>
+            <div class="related-card__body">
+              <h3>{card.title}</h3>
+              <span class="related-card__cta">{cta}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.related-articles { padding: 60px 24px; background: #f7f7f7; border-top: 1px solid #ececec; }
+.related-articles__inner { max-width: 1100px; margin: 0 auto; }
+.related-articles__title { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; margin: 0 0 28px; color: #000; }
+.related-articles__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.related-card { display: flex; flex-direction: column; background: #fff; border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 1px 6px rgba(0,0,0,.04); transition: box-shadow .25s, transform .25s; border: 1px solid #ececec; }
+.related-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-3px); border-color: #e63329; }
+.related-card__img { aspect-ratio: 16/10; background-size: cover; background-position: center; background-color: #ddd; }
+.related-card__body { padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.related-card__body h3 { font-family: 'DM Serif Display', serif; font-size: 17px; font-weight: 400; margin: 0; color: #111; line-height: 1.35; }
+.related-card__cta { font-size: 13px; color: #e63329; font-weight: 600; letter-spacing: .3px; margin-top: auto; }
+@media (max-width: 600px) {
+  .related-articles { padding: 40px 20px; }
+  .related-articles__grid { grid-template-columns: 1fr; }
+}
+</style>

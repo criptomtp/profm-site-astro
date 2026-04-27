@@ -247,6 +247,10 @@
 /blog/tpost /blog/ 301
 
 # --- dynamic rules (wildcards / named params, max 100) ---
+/en/ua/guide/:slug/ /ua/guide/:slug/ 301
+/ru/ua/guide/:slug/ /ua/guide/:slug/ 301
+/en/ua/:slug/ /ua/:slug/ 301
+/ru/ua/:slug/ /ua/:slug/ 301
 /xz8vfk1jg1*/ /ua/blog/ 301
 /3tdig7x6z1*/ /ua/blog/ 301
 /2fz7njsgn1*/ /ua/blog/ 301
