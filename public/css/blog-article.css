@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Blog Article — shared styles for all restored & native blog posts.
+   Loaded globally from Base.astro. Selectors scoped under .blog-article
+   so non-blog pages are unaffected.
+   Tokens: red #e63329, black #000, white #fff (no greens / blues).
+   ========================================================================== */
+
+/* --- Article shell --------------------------------------------------------- */
+.blog-article{max-width:760px;margin:0 auto;padding:80px 24px 60px;font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.85;color:#333}
+.blog-article *{box-sizing:border-box}
+
+/* --- Hero image / meta line ------------------------------------------------ */
+.blog-hero-img,.blog-hero,.article-hero{margin:-80px -24px 32px;overflow:hidden;background:#f5f5f5}
+.blog-hero-img img,.blog-hero img,.article-hero img,.hero-img img,img.hero-img{width:100%;max-height:480px;object-fit:cover;display:block}
+.blog-hero-line,.article-hero-line{height:4px;background:#e63329;width:64px;margin:24px 0}
+.blog-meta,.article-hero-meta,.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:#999;margin-bottom:24px}
+.blog-meta a,.meta a{color:#e63329;text-decoration:none}
+.blog-meta a:hover,.meta a:hover{text-decoration:underline}
+
+/* --- Typography ------------------------------------------------------------ */
+.blog-article h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;line-height:1.15;margin:0 0 24px;color:#000}
+.blog-article h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,32px);font-weight:400;margin:48px 0 16px;color:#000;padding-top:16px;border-top:1px solid #eee}
+.blog-article h2:first-of-type{border-top:none;padding-top:0}
+.blog-article h3{font-size:18px;font-weight:600;margin:32px 0 8px;color:#000}
+.blog-article h4{font-size:16px;font-weight:600;margin:24px 0 6px;color:#000}
+.blog-article p{margin:0 0 16px}
+.blog-article ul,.blog-article ol{margin:0 0 16px;padding-left:24px}
+.blog-article li{margin-bottom:8px}
+.blog-article blockquote{margin:24px 0;padding:16px 24px;border-left:4px solid #e63329;background:#fafafa;color:#555;font-style:italic}
+.blog-article a{color:#e63329;text-decoration:underline}
+.blog-article a:hover{text-decoration:none}
+.blog-article strong{color:#000;font-weight:600}
+.blog-article hr{border:0;border-top:1px solid #eee;margin:32px 0}
+.blog-article code{background:#f5f5f5;padding:2px 6px;border-radius:3px;font-size:14px;font-family:'JetBrains Mono',monospace}
+
+.blog-lead,.lead,.intro-section{font-size:19px;color:#555;line-height:1.7;margin-bottom:32px;padding-left:20px;border-left:3px solid #e63329}
+
+/* --- Table of contents ----------------------------------------------------- */
+.blog-toc{background:#f9f9f9;border:1px solid #e0e0e0;border-radius:10px;padding:20px 24px;margin-bottom:40px}
+.blog-toc strong{display:block;margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#999}
+.blog-toc ol,.blog-toc ul{padding-left:20px;margin:0}
+.blog-toc li{font-size:15px;padding:4px 0}
+.blog-toc a{color:#e63329;text-decoration:none}
+.blog-toc a:hover{text-decoration:underline}
+
+/* --- Tables ---------------------------------------------------------------- */
+.blog-table,.comparison-table-wrap{margin:24px 0;overflow-x:auto}
+.blog-table table,.comparison-table,table.data-table{width:100%;border-collapse:collapse;font-size:15px}
+.blog-table th,.blog-table td,.comparison-table th,.comparison-table td,table.data-table th,table.data-table td{padding:12px 16px;border:1px solid #e0e0e0;text-align:left}
+.blog-table th,.comparison-table th,table.data-table th{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.blog-table tr:hover,.comparison-table tr:hover,table.data-table tr:hover{background:#fafafa}
+.blog-article table{width:100%;border-collapse:collapse;font-size:15px;margin:24px 0}
+.blog-article table th,.blog-article table td{padding:12px 16px;border:1px solid #e0e0e0;text-align:left}
+.blog-article table th{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase}
+
+/* --- Accent text ----------------------------------------------------------- */
+.blog-article .blog-green,.blog-article .blog-red{color:#e63329;font-weight:600}
+.blog-article .blog-orange{color:#e63329;font-weight:600}
+.blog-article .blog-neutral{color:#666}
+
+/* --- CTA blocks ------------------------------------------------------------ */
+.blog-article .blog-cta,.blog-article .cta-section{background:#e63329;color:#fff;padding:40px 32px;border-radius:12px;text-align:center;margin:48px 0}
+.blog-article .blog-cta h3,.blog-article .cta-section h3{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin:0 0 8px;color:#fff}
+.blog-article .blog-cta p,.blog-article .cta-section p{opacity:.9;margin-bottom:20px;font-size:15px;color:#fff}
+.blog-article .blog-cta a,.blog-article .cta-section a,.blog-article .cta-buttons a{display:inline-block;padding:14px 28px;background:#000;color:#fff !important;border-radius:6px;text-decoration:none;font-weight:600;transition:background .3s;margin:6px}
+.blog-article .blog-cta a:hover,.blog-article .cta-section a:hover,.blog-article .cta-buttons a:hover{background:#333;text-decoration:none}
+.blog-article .cta-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:24px 0}
+.blog-article .cta-note{font-size:13px;color:#999;margin-top:8px;text-align:center}
+
+/* --- Infographic / image card --------------------------------------------- */
+.blog-article .blog-infographic{margin:24px 0;background:#f5f5f5;padding:24px;border-radius:12px;text-align:center}
+.blog-article .blog-infographic img{max-width:100%;height:auto;border-radius:8px}
+
+/* --- FAQ accordion --------------------------------------------------------- */
+.blog-article .blog-faq,.blog-article .faq-section{margin:24px 0}
+.blog-article .blog-faq details,.blog-article .faq-item{border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;overflow:hidden;background:#fff}
+.blog-article .blog-faq summary,.blog-article .faq-q{padding:16px 20px;font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#000}
+.blog-article .blog-faq summary::after{content:'+';font-size:20px;color:#e63329;transition:transform .3s}
+.blog-article .blog-faq details[open] summary::after{transform:rotate(45deg)}
+.blog-article .blog-faq summary::-webkit-details-marker{display:none}
+.blog-article .blog-faq details p,.blog-article .faq-a{padding:0 20px 16px;color:#666;font-size:15px;line-height:1.7;margin:0}
+.blog-article .faq-q{border-bottom:1px solid #f0f0f0;background:#fafafa}
+.blog-article .faq-a{padding:16px 20px}
+
+/* --- Metrics grid (case studies, comparisons) ----------------------------- */
+.blog-article .case-hero-metrics,.blog-article .methodology-grid,.blog-article .issues-grid,.blog-article .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0}
+.blog-article .metric,.blog-article .method-card,.blog-article .issue,.blog-article .criteria-item,.blog-article .operator-body,.blog-article .method-content{background:#fafafa;border:1px solid #e0e0e0;border-radius:10px;padding:20px;text-align:center}
+.blog-article .metric-value{font-family:'DM Serif Display',serif;font-size:32px;color:#e63329;line-height:1.1;margin-bottom:6px;font-weight:400;display:block}
+.blog-article .metric-label{font-size:13px;color:#666;text-transform:uppercase;letter-spacing:.5px}
+.blog-article .method-icon{font-size:28px;margin-bottom:8px;color:#e63329}
+.blog-article .blog-grid-section{margin:32px 0}
+
+/* --- Stage / criteria / flow lists ---------------------------------------- */
+.blog-article .stage-guide{display:grid;gap:16px;margin:24px 0}
+.blog-article .stage{background:#fafafa;border-left:4px solid #e63329;border-radius:0 10px 10px 0;padding:20px 24px}
+.blog-article .stage h3{margin-top:0}
+.blog-article .stage-advice{font-size:14px;color:#555;margin:8px 0 0}
+.blog-article .criteria-section,.blog-article .calc-section,.blog-article .content-section,.blog-article .intro-section{margin:32px 0}
+.blog-article .criteria-list,.blog-article .criteria-group{display:grid;gap:12px;margin:16px 0}
+.blog-article .criteria-num{display:inline-block;width:32px;height:32px;line-height:32px;border-radius:50%;background:#e63329;color:#fff;font-weight:700;text-align:center;margin-right:12px;flex-shrink:0}
+.blog-article .flow-step{background:#fafafa;border:1px solid #e0e0e0;border-left:4px solid #e63329;border-radius:0 10px 10px 0;padding:16px 20px;margin:12px 0}
+.blog-article .integration-flow{display:grid;gap:12px;margin:24px 0}
+.blog-article .first-shipment,.blog-article .contract-terms,.blog-article .hidden-costs,.blog-article .international-note,.blog-article .blackout-comparison,.blog-article .case-results-timeline{background:#fafafa;border:1px solid #e0e0e0;border-radius:10px;padding:20px 24px;margin:24px 0}
+
+/* --- Testimonial / disclosure --------------------------------------------- */
+.blog-article .blog-testimonial{background:#000;color:#fff;padding:32px;border-radius:12px;margin:32px 0;font-size:18px;line-height:1.6;font-style:italic}
+.blog-article .blog-testimonial::before{content:'\201C';font-size:64px;line-height:0;color:#e63329;display:block;margin-bottom:16px;font-family:'DM Serif Display',serif}
+.blog-article .blog-disclosure{background:#fafafa;border:1px dashed #ccc;border-radius:8px;padding:16px;font-size:13px;color:#888;margin:24px 0}
+.blog-article .blog-restored{font-size:12px;color:#999;margin:16px 0;font-style:italic}
+
+/* --- Pros/Cons / detail rows ---------------------------------------------- */
+.blog-article .cons,.blog-article .cost{background:#fafafa;border:1px solid #e0e0e0;border-radius:10px;padding:20px;margin:16px 0}
+.blog-article .detail-row{display:flex;flex-wrap:wrap;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0}
+.blog-article .detail-label{font-weight:600;color:#000}
+
+/* --- Breadcrumb (in-article) ---------------------------------------------- */
+.blog-article .breadcrumb{font-size:13px;color:#999;margin-bottom:16px}
+.blog-article .breadcrumb a{color:#e63329;text-decoration:none}
+
+/* --- Date / cost utility -------------------------------------------------- */
+.blog-article .date{font-size:13px;color:#999}
+
+/* --- Buttons reset -------------------------------------------------------- */
+.blog-article .btn{display:inline-block;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:600;transition:background .3s;margin:6px 0}
+.blog-article .btn-primary{background:#e63329;color:#fff !important}
+.blog-article .btn-primary:hover{background:#c92a25}
+.blog-article .btn-secondary{background:#fff;color:#000 !important;border:2px solid #000}
+.blog-article .btn-secondary:hover{background:#000;color:#fff !important}
+
+/* --- Tailwind compatibility shims (only what restored Tilda articles use) - */
+.blog-article .container{max-width:760px;margin:0 auto}
+.blog-article .font-bold{font-weight:700}
+.blog-article .text-center{text-align:center}
+.blog-article .mb-4{margin-bottom:16px}
+.blog-article .mb-8{margin-bottom:32px}
+.blog-article .py-16{padding-top:64px;padding-bottom:64px}
+.blog-article .py-8{padding-top:32px;padding-bottom:32px}
+.blog-article .p-3{padding:12px}
+.blog-article .p-6{padding:24px}
+.blog-article .p-8{padding:32px}
+.blog-article .gap-3{gap:12px}
+.blog-article .gap-6{gap:24px}
+.blog-article .gap-8{gap:32px}
+.blog-article .grid{display:grid}
+.blog-article .grid-cols-1{grid-template-columns:1fr}
+.blog-article .flex{display:flex}
+.blog-article .flex-col{flex-direction:column}
+.blog-article .items-start{align-items:flex-start}
+.blog-article .items-center{align-items:center}
+.blog-article .justify-center{justify-content:center}
+.blog-article .rounded{border-radius:8px}
+.blog-article .border{border:1px solid #e0e0e0}
+.blog-article .border-2{border:2px solid #e0e0e0}
+.blog-article .border-l-4{border-left:4px solid #e63329}
+.blog-article .border-t{border-top:1px solid #e0e0e0}
+.blog-article .pt-2{padding-top:8px}
+.blog-article .text-left{text-align:left}
+.blog-article .text-right{text-align:right}
+.blog-article .text-sm{font-size:14px}
+.blog-article .text-white{color:#fff}
+.blog-article .sticky{position:sticky}
+.blog-article .top-0{top:0}
+.blog-article .z-10{z-index:10}
+.blog-article .hidden{display:none}
+.blog-article .bg-gray-50,.blog-article .bg-gray-100{background:#fafafa}
+.blog-article .bg-white{background:#fff}
+.blog-article .bg-blue-50,.blog-article .bg-green-50,.blog-article .bg-red-50,.blog-article .bg-yellow-50{background:#fafafa}
+.blog-article .bg-gradient-to-r{background:#e63329}
+.blog-article .border-blue-500,.blog-article .border-green-600,.blog-article .border-red-600,.blog-article .border-yellow-500{border-color:#e63329}
+.blog-article .border-gray-200{border-color:#e0e0e0}
+@media(min-width:768px){
+  .blog-article .md\:grid-cols-2{grid-template-columns:1fr 1fr}
+  .blog-article .md\:grid-cols-3{grid-template-columns:repeat(3,1fr)}
+  .blog-article .sm\:flex-row{flex-direction:row}
+  .blog-article .sm\:py-24{padding-top:96px;padding-bottom:96px}
+}
+
+/* --- Mobile ---------------------------------------------------------------- */
+@media(max-width:768px){
+  .blog-article{padding:60px 16px 40px}
+  .blog-hero-img,.blog-hero,.article-hero{margin:-60px -16px 24px}
+  .blog-article .blog-cta,.blog-article .cta-section{padding:28px 20px}
+  .blog-article .blog-testimonial{padding:24px;font-size:16px}
+  .blog-article .case-hero-metrics{grid-template-columns:repeat(2,1fr)}
+}
