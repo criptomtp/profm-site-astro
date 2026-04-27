@@ -1134,6 +1134,291 @@
       "source": "/blog/tpost/",
       "destination": "/blog/",
       "statusCode": 301
+    },
+    {
+      "source": "/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
+      "destination": "/blog/fulfillment-vs-own-warehouse/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
+      "destination": "/ua/blog/fulfilment-vs-vlasnyy-sklad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v/",
+      "destination": "/blog/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v/",
+      "destination": "/ua/blog/fulfilment-vs-vlasnyy-sklad/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v/",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
+      "destination": "/blog/how-to-choose-fulfillment-operator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
+      "destination": "/ua/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
+      "destination": "/en/blog/post/how-to-choose-fulfillment-operator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/",
+      "destination": "/blog/how-to-choose-fulfillment-operator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/",
+      "destination": "/ua/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/",
+      "destination": "/en/blog/post/how-to-choose-fulfillment-operator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "destination": "/blog/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "destination": "/ua/blog/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "destination": "/en/blog/post/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "destination": "/blog/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "destination": "/ua/blog/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "destination": "/en/blog/post/product-business-ukraine-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/",
+      "destination": "/ua/blog/fiscal-register-requirements-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/",
+      "destination": "/en/blog/post/fiscal-register-requirements-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni/",
+      "destination": "/ua/blog/peak-season-logistics-mistakes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni/",
+      "destination": "/en/blog/post/peak-season-logistics-mistakes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/",
+      "destination": "/ua/blog/top-5-logistics-mistakes-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/",
+      "destination": "/en/blog/post/top-5-logistics-mistakes-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m/",
+      "destination": "/blog/top-5-logistics-mistakes-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m/",
+      "destination": "/ua/blog/top-5-logistics-mistakes-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m/",
+      "destination": "/en/blog/post/top-5-logistics-mistakes-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi/",
+      "destination": "/blog/business-in-ukraine-during-war/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi/",
+      "destination": "/ua/blog/business-in-ukraine-during-war/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi/",
+      "destination": "/en/blog/post/business-in-ukraine-during-war/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/",
+      "destination": "/blog/prepare-online-store-march-8/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/",
+      "destination": "/ua/blog/prepare-online-store-march-8/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/",
+      "destination": "/en/blog/post/prepare-online-store-march-8/",
+      "statusCode": 301
+    },
+    {
+      "source": "/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
+      "destination": "/blog/how-fulfillment-works-ukraine-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
+      "destination": "/ua/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
+      "destination": "/en/blog/post/how-fulfillment-works-ukraine-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/",
+      "destination": "/ua/blog/prepare-store-for-holidays/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/",
+      "destination": "/en/blog/post/prepare-store-for-holidays/",
+      "statusCode": 301
+    },
+    {
+      "source": "/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar/",
+      "destination": "/blog/reduce-product-returns-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar/",
+      "destination": "/ua/blog/reduce-product-returns-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar/",
+      "destination": "/en/blog/post/reduce-product-returns-ecommerce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "destination": "/blog/what-is-sla-in-logistics/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "destination": "/ua/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "destination": "/en/blog/post/what-is-sla-in-logistics/",
+      "statusCode": 301
+    },
+    {
+      "source": "/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
+      "destination": "/blog/how-to-start-online-store-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
+      "destination": "/ua/blog/how-to-start-online-store-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
+      "destination": "/en/blog/post/how-to-start-online-store-ukraine/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "destination": "/blog/chto-takoe-artikul/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "destination": "/ua/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "destination": "/en/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "destination": "/ua/blog/mtp-group-fast-product-liquidation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "destination": "/en/blog/post/mtp-group-fast-product-liquidation/",
+      "statusCode": 301
     }
   ],
   "trailingSlash": true
