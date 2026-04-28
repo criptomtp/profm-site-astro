@@ -1,10 +1,82 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-04-25","name":"Фулфілмент для інтернет-магазину","description":"Повний цикл логістики для e-commerce: прийом товару, зберігання, комплектація, пакування та відправка замовлень по Україні","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (200+ замовлень/день)"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"},{"@type":"ListItem","position":3,"name":"Фулфілмент для інтернет-магазину","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Яка собівартість однієї відправки для інтернет-магазину?","acceptedAnswer":{"@type":"Answer","text":"Собівартість залежить від кількості замовлень: при 200+/день — від 18 грн за відправку, при 50-99 — від 22 грн. У ціну входить збір, пакування, маркування ТТН і передача Новій Пошті. Пакувальні матеріали включені."}},{"@type":"Question","name":"Що відбувається з моїми замовленнями після інтеграції CRM?","acceptedAnswer":{"@type":"Answer","text":"Замовлення з вашого магазину автоматично потрапляють у WMS через API. Система формує маршрут збору, комплектує замовлення за 30 секунд, друкує ТТН і передає на пакування. Ви тільки переглядаєте статуси в кабінеті."}},{"@type":"Question","name":"Скільки часу на місяць я витрачатиму на логістику після переходу?","acceptedAnswer":{"@type":"Answer","text":"У середньому 8 годин на місяць — перегляд звітів, аналіз повернень і планування поставок. Для порівняння: при самостійній обробці — 4-6 годин щодня."}},{"@type":"Question","name":"Як організоване брендоване пакування для мого магазину?","acceptedAnswer":{"@type":"Answer","text":"Ви привозите або замовляєте через нас: брендовані коробки, наклейки, тішью, листівки. Все зберігається на складі і вкладається в кожну посилку за вашою інструкцією. Покупець отримує посилку з вашим брендом."}},{"@type":"Question","name":"Як обробляються повернення інтернет-магазину?","acceptedAnswer":{"@type":"Answer","text":"Повернення надходить на склад → ми розпаковуємо, фото-фіксуємо стан → товар у нормі повертається на полицю автоматично. Всі дані про повернення доступні у WMS-кабінеті."}},{"@type":"Question","name":"Чи можна масштабуватися під Чорну п'ятницю без попереднього узгодження?","acceptedAnswer":{"@type":"Answer","text":"Так. Склад обробляє до 6 000 замовлень на день у піковому режимі. Масштабування автоматичне — жодних доплат чи домовленостей. Клієнти збільшують обсяг у 5-10 разів на сезонних піках."}},{"@type":"Question","name":"Яка точність збору замовлень і як контролюються помилки?","acceptedAnswer":{"@type":"Answer","text":"Точність — 99.5%. Кожен етап контролюється скануванням штрих-кодів: від прийому товару до передачі перевізнику. Фото-фіксація вмісту — доказ для вирішення спорів з покупцями."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Щасливе, Бориспільський район","addressRegion":"Київська область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Білогородка","addressRegion":"Київська область","addressCountry":"UA","description":"Склад 1 100 м²"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "dateModified": "2026-04-28",
+  "name": "Фулфілмент для інтернет-магазину",
+  "description": "Повний цикл e-commerce логістики: прийом товару, зберігання на 2 складах під Києвом, комплектація за 30 сек, пакування і відправка Новою Поштою. Інтеграція з Prom.ua, Rozetka, Horoshop, KeyCRM, SalesDrive, Shopify, WooCommerce, OpenCart.",
+  "serviceType": "E-commerce Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": { "@type": "Country", "name": "UA" },
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "Українські e-commerce підприємці, власники інтернет-магазинів на Prom.ua, Rozetka, Horoshop, ChervonyiHorse, продавці на Instagram і власних сайтах"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "price": "18",
+    "description": "Від 18 грн за відправку (200+ замовлень/день). У ціну входить збір з полиці, пакування, маркування ТТН Новою Поштою. Без прихованих доплат за позиції чи коробки."
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Головна", "item": "https://www.fulfillmentmtp.com.ua/" },
+    { "@type": "ListItem", "position": 2, "name": "Послуги", "item": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/" },
+    { "@type": "ListItem", "position": 3, "name": "Фулфілмент для інтернет-магазину", "item": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Яка собівартість однієї відправки для інтернет-магазину?", "acceptedAnswer": { "@type": "Answer", "text": "Собівартість залежить від кількості замовлень: при 200+/день — від 18 грн за відправку, при 50-99 — від 22 грн. У ціну входить збір, пакування, маркування ТТН і передача Новій Пошті. Пакувальні матеріали включені." } },
+    { "@type": "Question", "name": "Що відбувається з моїми замовленнями після інтеграції CRM?", "acceptedAnswer": { "@type": "Answer", "text": "Замовлення з вашого магазину (Horoshop, KeyCRM, SalesDrive, Prom.ua, Rozetka) автоматично потрапляють у WMS через API. Система формує маршрут збору, комплектує замовлення за 30 секунд, друкує ТТН і передає на пакування. Ви тільки переглядаєте статуси в кабінеті." } },
+    { "@type": "Question", "name": "Скільки часу на місяць я витрачатиму на логістику після переходу?", "acceptedAnswer": { "@type": "Answer", "text": "У середньому 8 годин на місяць — перегляд звітів, аналіз повернень і планування поставок. Для порівняння: при самостійній обробці — 4-6 годин щодня." } },
+    { "@type": "Question", "name": "Як організоване брендоване пакування для мого магазину?", "acceptedAnswer": { "@type": "Answer", "text": "Ви привозите або замовляєте через нас: брендовані коробки, наклейки, тішью, листівки. Все зберігається на складі і вкладається в кожну посилку за вашою інструкцією. Покупець отримує посилку з вашим брендом." } },
+    { "@type": "Question", "name": "Як обробляються повернення інтернет-магазину?", "acceptedAnswer": { "@type": "Answer", "text": "Повернення надходить на склад → ми розпаковуємо, фото-фіксуємо стан → товар у нормі повертається на полицю автоматично. Пошкоджений — відкладається для списання. Всі дані про повернення доступні у WMS-кабінеті." } },
+    { "@type": "Question", "name": "Чи можна масштабуватися під Чорну п'ятницю без попереднього узгодження?", "acceptedAnswer": { "@type": "Answer", "text": "Так. Склад обробляє до 6 000 замовлень на день у піковому режимі. Масштабування автоматичне — жодних доплат чи домовленостей. Клієнти збільшують обсяг у 5-10 разів на сезонних піках." } },
+    { "@type": "Question", "name": "Яка точність збору замовлень і як контролюються помилки?", "acceptedAnswer": { "@type": "Answer", "text": "Точність — 99.5%. Кожен етап контролюється скануванням штрих-кодів: від прийому товару до передачі перевізнику. Фото-фіксація вмісту — доказ для вирішення спорів з покупцями." } },
+    { "@type": "Question", "name": "Чи інтегруєтеся ви з Horoshop, Prom.ua і Rozetka?", "acceptedAnswer": { "@type": "Answer", "text": "Так, нативно. Horoshop і Prom.ua — це найпопулярніші конструктори інтернет-магазинів в Україні. У нас є відлагоджена API-інтеграція: замовлення синхронізуються автоматично, статус доставки повертається в адмін-панель магазину. Підключення Rozetka — через офіційний кабінет продавця." } },
+    { "@type": "Question", "name": "Чи можна продавати з одного складу на 3-5 каналах одночасно?", "acceptedAnswer": { "@type": "Answer", "text": "Так. WMS синхронізує залишки в реальному часі між Prom.ua, Rozetka, Horoshop, Instagram-магазином і вашим власним сайтом. Товар закінчився на складі — автоматично знімається з продажу на всіх майданчиках. Це виключає пересорт і штрафи від маркетплейсів." } },
+    { "@type": "Question", "name": "Як швидко Нова Пошта забирає посилки і скільки заборів на день?", "acceptedAnswer": { "@type": "Answer", "text": "4 забори щодня: 10:00, 12:00, 15:00 і 17:00. Замовлення, оформлене до 14:00, гарантовано виходить тим самим днем. Ми працюємо як корпоративний клієнт НП — посилки потрапляють у пріоритетний канал сортування." } }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
+  "telephone": ["+380501444645", "+380938277767"],
+  "email": "mtpgrouppromo@gmail.com",
+  "priceRange": "$$",
+  "address": [
+    { "@type": "PostalAddress", "addressLocality": "Щасливе, Бориспільський район", "addressRegion": "Київська область", "addressCountry": "UA" },
+    { "@type": "PostalAddress", "addressLocality": "Білогородка", "addressRegion": "Київська область", "addressCountry": "UA", "description": "Склад 1 100 м²" }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  },
+  "openingHours": "Mo-Su 08:00-20:00",
+  "areaServed": { "@type": "Country", "name": "UA" }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
 ---
 <Base
   title="Фулфілмент для інтернет-магазину від 18 грн | MTP"
@@ -25,9 +97,10 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <section class="hero">
 <div class="hero-bg"></div>
 <div class="hero-content">
-<div class="badge">ФУЛФІЛМЕНТ</div>
-<h1>Фулфілмент для<br>інтернет-магазину</h1>
-<p class="hero-sub">Ти продаєш &mdash; ми відправляємо. Прийом товару, зберігання, пакування і доставка замовлень по всій Україні. Від 18&nbsp;грн за відправлення.</p>
+<div class="badge">ФУЛФІЛМЕНТ &middot; УКРАЇНА 2026</div>
+<h1>Фулфілмент для інтернет-магазину</h1>
+<p class="hero-tagline">Перестань керувати складом. <em>Почни вирощувати бренд.</em></p>
+<p class="hero-sub">Ти продаєш &mdash; ми відправляємо. Прийом, зберігання, пакування і доставка замовлень Новою Поштою по всій Україні. Нативна інтеграція з Prom.ua, Rozetka, Horoshop, KeyCRM, SalesDrive, Shopify, WooCommerce, OpenCart. Від 18&nbsp;грн за відправлення &mdash; без прихованих доплат за позиції чи коробки.</p>
 <form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
 <div class="hero-note">Безкоштовна консультація &#183; Індивідуальний розрахунок за 15 хв</div>
 </div>
@@ -49,7 +122,45 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="ben-card"><div class="ben-num">API</div><h3>Інтеграція за 2 години</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; підключення в день звернення</p></div>
 <div class="ben-card"><div class="ben-num">3x</div><h3>3 генератори + Starlink</h3><p>Безперервна робота навіть під час блекаутів. 2 оптоволоконних провайдери &mdash; жодного дня простою з 2022 року</p></div>
 <div class="ben-card"><div class="ben-num">99.5%</div><h3>Точність замовлень</h3><p>Сканування штрих-кодів на кожному етапі, фото-фіксація &mdash; мінімум помилок, мінімум рекламацій</p></div>
-</section></div></section>
+</div></div></section>
+
+<!-- INTEGRATIONS -->
+<section class="integrations">
+<div class="ctr">
+<div class="badge badge-dark">ІНТЕГРАЦІЇ</div>
+<h2 class="sec-h2">12 платформ, з яких замовлення<br>заходять до нас автоматично</h2>
+<p class="sec-lede">Працюєте на Horoshop і Prom.ua? Продаєте через Rozetka і власний сайт на WordPress? Один склад обробляє всі канали одночасно. Залишки синхронізуються в реальному часі &mdash; товар закінчився на полиці, моментально знімається з продажу скрізь.</p>
+<div class="int-grid">
+<div class="int-card"><a href="/ua/fulfilment-rozetka/"><div class="int-name">Rozetka</div><div class="int-tag">Кабінет продавця API</div></a></div>
+<div class="int-card"><a href="/ua/fulfilment-prom/"><div class="int-name">Prom.ua</div><div class="int-tag">ProSale API</div></a></div>
+<div class="int-card"><div class="int-name">Horoshop</div><div class="int-tag">Нативна інтеграція</div></div>
+<div class="int-card"><div class="int-name">KeyCRM</div><div class="int-tag">Webhook + REST</div></div>
+<div class="int-card"><div class="int-name">SalesDrive</div><div class="int-tag">Нативна інтеграція</div></div>
+<div class="int-card"><div class="int-name">Shopify</div><div class="int-tag">App + webhook</div></div>
+<div class="int-card"><div class="int-name">WooCommerce</div><div class="int-tag">Plugin</div></div>
+<div class="int-card"><div class="int-name">OpenCart</div><div class="int-tag">Module</div></div>
+<div class="int-card"><div class="int-name">Magento</div><div class="int-tag">REST API</div></div>
+<div class="int-card"><div class="int-name">Hubber</div><div class="int-tag">Маркетплейс-агрегатор</div></div>
+<div class="int-card"><div class="int-name">Allo / Епіцентр</div><div class="int-tag">FBS-схема</div></div>
+<div class="int-card"><div class="int-name">Власна CRM</div><div class="int-tag">REST / SFTP / Excel</div></div>
+</div>
+<p class="int-note">Стандартне підключення &mdash; від 2 годин до 2 робочих днів залежно від платформи. Усі інтеграції налаштовуємо ми &mdash; вашим розробникам не потрібно писати код.</p>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+<div class="ctr">
+<div class="badge">ПРОЦЕС</div>
+<h2 class="sec-h2">Шлях замовлення<br>від покупця до отримувача</h2>
+<div class="hiw-grid">
+<div class="hiw-step"><div class="hiw-num">01</div><h3>Покупець оформив замовлення</h3><p>Замовлення з Prom.ua, Horoshop або вашого сайту автоматично потрапляє у WMS через API за 5&ndash;10 секунд. Не треба експортувати Excel-файли або переносити вручну.</p></div>
+<div class="hiw-step"><div class="hiw-num">02</div><h3>WMS формує маршрут збору</h3><p>Система автоматично оптимізує маршрут пакувальника по складу: спочатку легкі позиції, потім крихкі, наприкінці &mdash; великогабаритні. Час збору одного замовлення &mdash; 30 секунд.</p></div>
+<div class="hiw-step"><div class="hiw-num">03</div><h3>Пакування і маркування ТТН</h3><p>Пакувальник збирає товар у вашу брендовану коробку, додає тішью і листівку, друкує ТТН Нової Пошти. Кожен крок &mdash; сканування штрих-коду для контролю.</p></div>
+<div class="hiw-step"><div class="hiw-num">04</div><h3>Забір Новою Поштою &times;4 на день</h3><p>10:00, 12:00, 15:00, 17:00 &mdash; чотири забори щодня. Замовлення оформлене до 14:00 виходить тим самим днем. Пріоритетний канал як корпоративного клієнта НП.</p></div>
+</div>
+</div>
+</section>
 
 <section class="warehouse-tour">
 <div class="tour-inner">
@@ -116,7 +227,10 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="faq-item"><button class="faq-q">Як обробляються повернення інтернет-магазину?</button><div class="faq-a"><p>Повернення надходить на склад &rarr; ми розпаковуємо, фото-фіксуємо стан &rarr; товар у нормі автоматично повертається на полицю. Пошкоджений &mdash; відкладається для списання. Всі дані про повернення доступні в WMS-кабінеті з фото-доказами.</p></div></div>
 <div class="faq-item"><button class="faq-q">Чи можна масштабуватися під Чорну п'ятницю без попереднього узгодження?</button><div class="faq-a"><p>Так. Склад обробляє до 6 000 замовлень на день у піковому режимі. Масштабування автоматичне &mdash; жодних додаткових домовленостей чи доплат. Наші клієнти збільшують обсяг у 5-10 разів на сезонних піках без затримок.</p></div></div>
 <div class="faq-item"><button class="faq-q">Яка точність збору замовлень і як контролюються помилки?</button><div class="faq-a"><p>Точність збору &mdash; 99.5%. Кожен етап контролюється скануванням штрих-кодів: від прийому товару до передачі перевізнику. Фото-фіксація вмісту &mdash; доказ для вирішення спорів з покупцями і мінімізації рекламацій.</p></div></div>
-</section></div></section>
+<div class="faq-item"><button class="faq-q">Чи інтегруєтеся ви з Horoshop, Prom.ua і Rozetka?</button><div class="faq-a"><p>Так, нативно. Horoshop і Prom.ua &mdash; це найпопулярніші конструктори інтернет-магазинів в Україні. У нас є відлагоджена API-інтеграція: замовлення синхронізуються автоматично, статус доставки повертається в адмін-панель магазину. Підключення Rozetka здійснюється через офіційний кабінет продавця за схемою FBS &mdash; ми отримуємо замовлення, пакуємо у вашу брендовану коробку і передаємо НП.</p></div></div>
+<div class="faq-item"><button class="faq-q">Чи можна продавати з одного складу на 3-5 каналах одночасно?</button><div class="faq-a"><p>Так. WMS синхронізує залишки в реальному часі між Prom.ua, Rozetka, Horoshop, Instagram-магазином і вашим власним сайтом. Товар закінчився на складі &mdash; автоматично знімається з продажу на всіх майданчиках. Це виключає пересорт і штрафи від маркетплейсів. Особливо актуально для сезонних піків, коли один SKU може продаватися паралельно на 5 платформах.</p></div></div>
+<div class="faq-item"><button class="faq-q">Як швидко Нова Пошта забирає посилки і скільки заборів на день?</button><div class="faq-a"><p>4 забори щодня: 10:00, 12:00, 15:00 і 17:00. Замовлення, оформлене до 14:00, гарантовано виходить тим самим днем. Ми працюємо як корпоративний клієнт НП &mdash; посилки потрапляють у пріоритетний канал сортування. Для е-commerce кожен зекономлений день доставки означає вищий відсоток повторних покупок і нижчий обсяг скасувань.</p></div></div>
+</div></div></section>
 
 <!-- SEO ARTICLE -->
 <section class="article-section">
@@ -143,6 +257,26 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <h3>Критерій 5: прозорість ціноутворення</h3>
 <p>Якщо оператор ховає тарифи за формою &laquo;залиште заявку&raquo; &mdash; високий ризик прихованих доплат. Прозорий фулфілмент-оператор публікує базові ціни відкрито і пояснює, з чого складається вартість: відправка, зберігання, прийом, пакувальні матеріали. Запитайте про приховані збори: чи є плата за інвентаризацію, за повернення на полицю, за нестандартне пакування?</p>
 <p>Порахуйте юніт-економіку до підключення. Візьміть середній чек, середню кількість позицій у замовленні, відсоток повернень &mdash; і порахуйте, скільки з кожного замовлення забере логістика. Якщо результат вас не влаштовує &mdash; скористайтеся <a href="/ua/tsiny/" style="color:var(--red);font-weight:500">таблицею тарифів</a> для точного порівняння.</p>
+
+<h3>Свій склад чи фулфілмент: реальна юніт-економіка для українського е-commerce</h3>
+<p>Власники інтернет-магазинів часто кажуть: &laquo;Самим виходить дешевше&raquo;. Це міф, який тримається на одному непорахованому числі. Спробуємо порахувати чесно. Інтернет-магазин косметики на Horoshop, 100 замовлень на день, середній чек 700 грн. Свій склад: оренда 25 м&sup2; в Києві &mdash; 12 000 грн, два пакувальники з ЄСВ &mdash; 38 000 грн, комунальні і Wi-Fi &mdash; 4 000 грн, пакувальні матеріали &mdash; 8 000 грн, генератор і амортизація &mdash; 3 000 грн. Сума &mdash; 65 000 грн на місяць. Плюс 4-6 годин вашого часу щодня.</p>
+<p>Фулфілмент при тих же 100 замовленнях/день: 100 &times; 30 робочих днів &times; 22 грн = 66 000 грн. Здається паритет. Але є ключова різниця: фулфілмент вже включає пакувальні матеріали, ТТН, видачу до Нової Пошти і WMS-кабінет. На своєму складі ці витрати ви платите окремо. А головне &mdash; при падінні замовлень до 30/день фіксована частина свого складу (50 000 грн) залишається. Фулфілмент же масштабується пропорційно: мало замовлень &mdash; мало платите. Юніт-економіка стає еластичною.</p>
+
+<h3>Чому Нова Пошта &times; фулфілмент &mdash; це окрема перевага в Україні</h3>
+<p>Українська логістика тримається на Новій Пошті. На відміну від європейського ринку, де DHL, DPD, UPS і місцеві оператори діляться часткою порівну, у нас 70% B2C відправок ідуть через одну компанію. Це означає, що фулфілмент-оператор, який працює з НП як корпоративний клієнт, має конкретні переваги: пріоритетна обробка посилок у сортувальному центрі, автоматичне формування ТТН з його кабінету, безкоштовний забір зі складу &times;4 на день і прямий канал для вирішення проблемних відправлень.</p>
+<p>Якщо ви відправляєте 30 посилок на день з домашньої адреси, ви потрапляєте у звичайний канал НП &mdash; ваша посилка лежить на сортуванні нарівні з тисячами інших. Якщо посилки забирають з фулфілмент-складу пакетом по 200&ndash;500 на забір, кур'єр НП обслуговує вас першим. Це різниця в один день доставки &mdash; критична метрика для повторних покупок у е-commerce.</p>
+
+<h3>Сезонні піки в Україні: 8 березня, Black Friday, Новий рік</h3>
+<p>Український е-commerce живе у трьох піках: 8 березня (косметика, квіти, подарунки), Black Friday (універсальний), Новий рік (іграшки, побутова техніка, деко). У ці тижні обсяг замовлень зростає у 3&ndash;7 разів. Магазин, який обробляє 50 замовлень/день, раптово отримує 300. На своєму складі це означає авральний найм тимчасових пакувальників (важко знайти за 3 дні), переробка нічних змін і неминучі помилки, які повертаються рекламаціями у січні.</p>
+<p>Фулфілмент-оператор з пропускною здатністю 6 000 замовлень/день переживає такі піки структурно. Конвеєрні пакувальні станції не обмежують швидкість &mdash; обмежує кількість одночасно зайнятих операторів, яка масштабується додатковими змінами. Ваш тариф не змінюється, ваші процеси не порушуються. Ви ставите рекламу впевнено, бо знаєте, що склад витримає. Дізнайтеся більше про <a href="/ua/fulfilment-dlya-marketpleysiv/" style="color:var(--red);font-weight:500">фулфілмент для маркетплейсів</a> або <a href="/ua/fulfilment-dlya-kosmetyky/" style="color:var(--red);font-weight:500">фулфілмент для косметики</a>, якщо хочете подивитися конкретні кейси у вашій ніші.</p>
+
+<h3>Повернення та обмін: прихована стаття витрат українського е-commerce</h3>
+<p>У категоріях одягу та взуття повернення сягають 30% від усіх замовлень, у косметиці &mdash; 5&ndash;8%, в електроніці &mdash; 10&ndash;12%. Якщо у вас немає окремого процесу обробки повернень, кожна посилка назад &mdash; це ручна робота: відкрити, перевірити стан, переупакувати, повернути на полицю або списати. У нас цей процес автоматизований: кур'єр НП доставляє повернення на склад, оператор сканує ШК, система відкриває чек-лист (фото, перевірка серії, перевірка комплектації), товар повертається на полицю з позначкою &laquo;refurb&raquo; або списується у брак.</p>
+<p>Вартість обробки повернення &mdash; 25 грн (включно з фотофіксацією стану, для суперечок з клієнтом). Брак списується окремим рядком у звіті. Головна перевага: ви бачите фото кожного повернення в особистому кабінеті й можете швидко прийняти рішення &mdash; приймати на склад, відправляти клієнту повторно з заміною чи повертати кошти. Це та невидима частина фулфілменту, яка відрізняє хороший сервіс від посереднього і безпосередньо впливає на маржу: магазин з налагодженим процесом повернень економить 8&ndash;12 тис. грн на місяць на кожних 1000 замовлень.</p>
+
+<h3>Аналітика та особистий кабінет: що ви бачите в реальному часі</h3>
+<p>Єдиний спосіб масштабувати е-commerce без втрати контролю &mdash; це бачити дані в реальному часі. Наш особистий кабінет показує: залишки по кожному SKU з попередженням про критичний запас, середній термін відвантаження за останні 7 днів проти попереднього тижня, відсоток проблемних відправлень (пошкодження, втрати, запізнення), фотозвіти по кожному поверненню, ABC-аналіз &mdash; які SKU дають 80% обороту, а які &laquo;мертві&raquo; й заморожують гроші на полиці.</p>
+<p>Додатково для клієнтів з оборотом від 1000 замовлень на місяць ми робимо щомісячний огляд: середня вартість обробки одного замовлення, темп зростання, тенденції по каналах продажу, рекомендації щодо оптимізації пакування й логістики. Це та частина роботи, де фулфілмент перестає бути просто складом і стає бізнес-партнером &mdash; з цифрами, метриками та осмисленими рішеннями замість &laquo;ну, мабуть, добре працюємо&raquo;. Перегляньте детальні <a href="/ua/tsiny/" style="color:var(--red);font-weight:500">тарифи фулфілменту</a>, щоб побачити структуру вартості повністю.</p>
 </div>
 </div>
 </section>
@@ -168,8 +302,26 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:16px}
+.hero-tagline{font-family:var(--fd);font-size:clamp(20px,2.4vw,30px);line-height:1.2;color:rgba(255,255,255,.85);margin-bottom:28px;font-weight:400}
+.hero-tagline em{color:var(--red);font-style:italic}
 .hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.integrations{padding:100px 0;background:#fff}
+.sec-h2{font-family:var(--fd);font-size:clamp(30px,4vw,52px);font-weight:400;line-height:1.05;margin-bottom:24px}
+.sec-lede{max-width:720px;font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:40px}
+.int-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden;max-width:1100px}
+.int-card{background:#fff;padding:24px 22px;transition:background .3s;display:block}
+.int-card a{display:block;color:inherit;text-decoration:none}
+.int-card:hover{background:var(--gray)}
+.int-name{font-family:var(--fd);font-size:20px;color:#000;line-height:1.1;margin-bottom:6px}
+.int-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:500}
+.int-note{font-size:13px;color:var(--muted);margin-top:24px;max-width:680px;line-height:1.6}
+.how-it-works{padding:100px 0;background:var(--gray);border-top:1px solid #eaeaea}
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#000;border:1px solid #000;margin-top:24px}
+.hiw-step{background:#fff;padding:36px 28px;position:relative}
+.hiw-num{font-family:var(--fd);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px}
+.hiw-step h3{font-size:17px;font-weight:600;margin-bottom:10px;line-height:1.25}
+.hiw-step p{font-size:14px;color:var(--muted);line-height:1.65}
 .hero-form{display:flex;gap:12px;max-width:460px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
 .hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
@@ -231,6 +383,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
 .hero-stats{flex-wrap:wrap;gap:24px;padding:32px 24px 0}
 .ben-grid{grid-template-columns:1fr}
+.int-grid{grid-template-columns:repeat(2,1fr)}
+.hiw-grid{grid-template-columns:1fr}
 .case-inner{flex-direction:column;gap:40px}
 .final-form{flex-direction:column}
 }

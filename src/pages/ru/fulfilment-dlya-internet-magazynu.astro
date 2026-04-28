@@ -1,10 +1,82 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-04-25","name":"Фулфилмент для интернет-магазина","description":"Полный цикл логистики для e-commerce: приём товара, хранение, комплектация, упаковка и отправка заказов по Украине","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за отправку (200+ заказов/день)"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/services/"},{"@type":"ListItem","position":3,"name":"Фулфилмент для интернет-магазина","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Через какое время фулфилмент окупается для интернет-магазина?","acceptedAnswer":{"@type":"Answer","text":"При 50+ заказах в день — с первого месяца. Свой склад обходится в 55 000+ грн/мес (аренда, персонал, коммуналка). Фулфилмент при том же объёме — от 20 000–30 000 грн. Плюс экономия 3–4 часов вашего времени ежедневно."}},{"@type":"Question","name":"Можно ли оформлять заказы в брендированной упаковке?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы используем вашу фирменную упаковку, наклейки, тишью, открытки и пробники. Брендированные материалы храним на складе бесплатно. Доукомплектация — от 2,50 грн за вложение."}},{"@type":"Question","name":"Как происходит масштабирование при сезонном росте заказов?","acceptedAnswer":{"@type":"Answer","text":"Наша пиковая мощность — 6 000 заказов в день. Масштабирование автоматическое: дополнительные операторы выходят при росте нагрузки. Никаких доплат за экстра-смены или срочность. Тариф остаётся прежним."}},{"@type":"Question","name":"Что происходит если товар повреждён на складе?","acceptedAnswer":{"@type":"Answer","text":"Все товары на складе застрахованы по договору. Каждая приёмка фиксируется с фото. Если повреждение произошло по вине склада — полная компенсация по акту."}},{"@type":"Question","name":"Можно ли продавать через несколько каналов одновременно?","acceptedAnswer":{"@type":"Answer","text":"Да. Один склад обслуживает ваш сайт, маркетплейсы и социальные сети параллельно. Остатки синхронизируются в реальном времени через WMS — товар не продастся дважды."}},{"@type":"Question","name":"Как приоритизируются заказы при большой загрузке?","acceptedAnswer":{"@type":"Answer","text":"WMS автоматически распределяет задания по срочности. Заказы, поступившие до 14:00, отправляются в тот же день. 4 забора Новой Почтой ежедневно: 10:00, 12:00, 15:00 и 17:00."}},{"@type":"Question","name":"Сколько занимает интеграция с нестандартной CRM?","acceptedAnswer":{"@type":"Answer","text":"Стандартные CRM (KeyCRM, SalesDrive) подключаются за 2–4 часа. Нестандартные системы с API — 1–2 дня. Без API — загрузка заказов через Excel-файл вручную."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","address":[{"@type":"PostalAddress","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","addressCountry":"UA"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","addressCountry":"UA","description":"Склад 1 100 м\u00b2"}],"openingHours":"Mo-Su 08:00-20:00"}</script>`;
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "dateModified": "2026-04-28",
+  "name": "Фулфилмент для интернет-магазина",
+  "description": "Полный цикл e-commerce логистики из Украины: приём товара, хранение на 2 складах под Киевом, комплектация за 30 секунд, упаковка и отправка Новой Почтой. Интеграция с KeyCRM, SalesDrive, Horoshop, Shopify, WooCommerce, OpenCart, Prom.ua, Rozetka.",
+  "serviceType": "E-commerce Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": { "@type": "Country", "name": "UA" },
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "Русскоязычные владельцы интернет-магазинов в Украине, продавцы на маркетплейсах, бренды направления DTC, работающие с украинским рынком"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "price": "18",
+    "description": "От 18 грн за отправку (200+ заказов/день). В цену входят сборка, упаковка, маркировка ТТН Новой Почтой. Без скрытых доплат за позиции и коробки."
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.fulfillmentmtp.com.ua/" },
+    { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/" },
+    { "@type": "ListItem", "position": 3, "name": "Фулфилмент для интернет-магазина", "item": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Через какое время фулфилмент окупается для интернет-магазина?", "acceptedAnswer": { "@type": "Answer", "text": "При 50+ заказах в день — с первого месяца. Свой склад обходится в 55 000+ грн/мес (аренда, персонал, коммуналка). Фулфилмент при том же объёме — от 20 000–30 000 грн. Плюс экономия 3–4 часов вашего времени ежедневно." } },
+    { "@type": "Question", "name": "Можно ли оформлять заказы в брендированной упаковке?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Мы используем вашу фирменную упаковку, наклейки, тишью, открытки и пробники. Брендированные материалы храним на складе бесплатно. Доукомплектация — от 2,50 грн за вложение." } },
+    { "@type": "Question", "name": "Как происходит масштабирование при сезонном росте заказов?", "acceptedAnswer": { "@type": "Answer", "text": "Наша пиковая мощность — 6 000 заказов в день. Масштабирование автоматическое: дополнительные операторы выходят при росте нагрузки. Никаких доплат за экстра-смены или срочность. Тариф остаётся прежним." } },
+    { "@type": "Question", "name": "Что происходит если товар повреждён на складе?", "acceptedAnswer": { "@type": "Answer", "text": "Все товары на складе застрахованы по договору. Каждая приёмка фиксируется с фото. Если повреждение произошло по вине склада — полная компенсация по акту." } },
+    { "@type": "Question", "name": "Можно ли продавать через несколько каналов одновременно?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Один склад обслуживает ваш сайт, маркетплейсы и социальные сети параллельно. Остатки синхронизируются в реальном времени через WMS — товар не продастся дважды." } },
+    { "@type": "Question", "name": "Как приоритизируются заказы при большой загрузке?", "acceptedAnswer": { "@type": "Answer", "text": "WMS автоматически распределяет задания по срочности. Заказы, поступившие до 14:00, отправляются в тот же день. 4 забора Новой Почтой ежедневно: 10:00, 12:00, 15:00 и 17:00." } },
+    { "@type": "Question", "name": "Сколько занимает интеграция с нестандартной CRM?", "acceptedAnswer": { "@type": "Answer", "text": "Стандартные CRM (KeyCRM, SalesDrive) подключаются за 2–4 часа. Нестандартные системы с API — 1–2 дня. Без API — загрузка заказов через Excel-файл вручную." } },
+    { "@type": "Question", "name": "Какие интернет-платформы вы интегрируете нативно?", "acceptedAnswer": { "@type": "Answer", "text": "Native: Shopify, WooCommerce, Magento, OpenCart, PrestaShop, Horoshop, KeyCRM, SalesDrive. Маркетплейсы: Prom.ua, Rozetka, Hubber, Allo. Кросс-бордер: Etsy, eBay, Faire. Любая нестандартная платформа подключается через webhook, REST API, EDI или SFTP. Интеграционный инженер на нашей стороне закрывает всю работу за 5–7 рабочих дней." } },
+    { "@type": "Question", "name": "Подходит ли ваш склад для брендов из Казахстана, Молдовы, Грузии?", "acceptedAnswer": { "@type": "Answer", "text": "Да, особенно для брендов, которые продают в Украину или используют Украину как промежуточный хаб для выхода на ЕС. Через Нову Пошту Международная мы отправляем посылки в Польшу, Молдову, страны Балтии, Грузию. Биллинг возможен в USD или EUR. Для клиентов ЕС — счёт-фактура из партнёрского юрлица в Литве (НДС 0% по экспорту)." } },
+    { "@type": "Question", "name": "Что с безопасностью склада во время войны?", "acceptedAnswer": { "@type": "Answer", "text": "Два склада под Киевом работают непрерывно с февраля 2022. 3 дизельных генератора с резервом топлива на 96 часов, Starlink + 2 оптоволоконных провайдера, физическое усиление крыши, отсутствие стеклянного фасада на отгрузочной зоне. Резервный план — переадресация заказов на партнёрский склад во Львове в течение 6 часов. Грузовое страхование Lloyd's до 3 млн евро на инцидент." } }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+  "telephone": ["+380501444645", "+380938277767"],
+  "email": "mtpgrouppromo@gmail.com",
+  "priceRange": "$$",
+  "address": [
+    { "@type": "PostalAddress", "addressLocality": "Счастливое, Бориспольский район", "addressRegion": "Киевская область", "addressCountry": "UA" },
+    { "@type": "PostalAddress", "addressLocality": "Белогородка", "addressRegion": "Киевская область", "addressCountry": "UA", "description": "Склад 1 100 м²" }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  },
+  "openingHours": "Mo-Su 08:00-20:00",
+  "areaServed": { "@type": "Country", "name": "UA" }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
 ---
 <Base
   title="Фулфилмент для интернет-магазина от 18 грн — 2 склада"
@@ -25,9 +97,10 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <section class="hero">
 <div class="hero-bg"></div>
 <div class="hero-content">
-<div class="badge">ФУЛФИЛМЕНТ</div>
-<h1>Фулфилмент для<br>интернет-магазина</h1>
-<p class="hero-sub">Вы продаёте &mdash; мы отправляем. Приём товара, хранение, упаковка и доставка заказов по всей Украине. От 18&nbsp;грн за отправку.</p>
+<div class="badge">ФУЛФИЛМЕНТ &middot; УКРАИНА 2026</div>
+<h1>Фулфилмент для интернет-магазина</h1>
+<p class="hero-tagline">Перестаньте управлять складом. <em>Начните выращивать бренд.</em></p>
+<p class="hero-sub">Вы продаёте &mdash; мы отправляем. Приём, хранение, упаковка и доставка заказов Новой Почтой по всей Украине. Нативная интеграция с KeyCRM, SalesDrive, Horoshop, Shopify, WooCommerce, OpenCart, Prom.ua, Rozetka. От 18&nbsp;грн за отправку &mdash; без скрытых доплат за позиции и коробки.</p>
 <form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Получить расчёт &#8594;</button></form>
 <div class="hero-note">Бесплатная консультация &#183; Индивидуальный расчёт за 15 мин</div>
 </div>
@@ -50,7 +123,45 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="ben-card"><div class="ben-num">API</div><h3>Интеграция за 2 часа</h3><p>KeyCRM, SalesDrive, Horoshop, WooCommerce, OpenCart, Shopify, Prom.ua, Rozetka &mdash; подключение в день обращения</p></div>
 <div class="ben-card"><div class="ben-num">3x</div><h3>3 генератора + Starlink</h3><p>Бесперебойная работа даже во время блэкаутов. 2 оптоволоконных провайдера &mdash; ни одного дня простоя с 2022 года</p></div>
 <div class="ben-card"><div class="ben-num">99.5%</div><h3>Точность заказов</h3><p>Сканирование штрих-кодов на каждом этапе, фото-фиксация &mdash; минимум ошибок, минимум рекламаций</p></div>
-</section></div></section>
+</div></div></section>
+
+<!-- INTEGRATIONS -->
+<section class="integrations">
+<div class="ctr">
+<div class="badge badge-dark">ИНТЕГРАЦИИ</div>
+<h2 class="sec-h2">12 платформ, с которых заказы<br>попадают к нам автоматически</h2>
+<p class="sec-lede">Магазин на Horoshop и каналы продаж на Prom.ua, Rozetka, в Instagram? Один склад обрабатывает все каналы одновременно. Остатки синхронизируются в реальном времени &mdash; товар закончился на полке, мгновенно снимается с продажи везде. Биллинг возможен в гривне, USD или EUR &mdash; для брендов из Казахстана, Молдовы, Грузии и стран Балтии.</p>
+<div class="int-grid">
+<div class="int-card"><a href="/ru/fulfilment-rozetka/"><div class="int-name">Rozetka</div><div class="int-tag">Кабинет продавца API</div></a></div>
+<div class="int-card"><a href="/ru/fulfilment-prom/"><div class="int-name">Prom.ua</div><div class="int-tag">ProSale API</div></a></div>
+<div class="int-card"><div class="int-name">Horoshop</div><div class="int-tag">Нативная интеграция</div></div>
+<div class="int-card"><div class="int-name">KeyCRM</div><div class="int-tag">Webhook + REST</div></div>
+<div class="int-card"><div class="int-name">SalesDrive</div><div class="int-tag">Нативная интеграция</div></div>
+<div class="int-card"><div class="int-name">Shopify</div><div class="int-tag">App + webhook</div></div>
+<div class="int-card"><div class="int-name">WooCommerce</div><div class="int-tag">Plugin</div></div>
+<div class="int-card"><div class="int-name">OpenCart</div><div class="int-tag">Module</div></div>
+<div class="int-card"><div class="int-name">Magento</div><div class="int-tag">REST API</div></div>
+<div class="int-card"><div class="int-name">Hubber</div><div class="int-tag">Маркетплейс-агрегатор</div></div>
+<div class="int-card"><div class="int-name">Allo / Эпицентр</div><div class="int-tag">FBS-схема</div></div>
+<div class="int-card"><div class="int-name">Своя CRM</div><div class="int-tag">REST / SFTP / Excel</div></div>
+</div>
+<p class="int-note">Стандартное подключение &mdash; от 2 часов до 2 рабочих дней в зависимости от платформы. Все интеграции настраиваем мы &mdash; вашим разработчикам не нужно писать код.</p>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+<div class="ctr">
+<div class="badge">ПРОЦЕСС</div>
+<h2 class="sec-h2">Путь заказа<br>от покупателя до получателя</h2>
+<div class="hiw-grid">
+<div class="hiw-step"><div class="hiw-num">01</div><h3>Покупатель оформил заказ</h3><p>Заказ из Prom.ua, Horoshop или вашего сайта автоматически попадает в WMS через API за 5&ndash;10 секунд. Не нужно экспортировать Excel-файлы или переносить вручную.</p></div>
+<div class="hiw-step"><div class="hiw-num">02</div><h3>WMS формирует маршрут сборки</h3><p>Система автоматически оптимизирует маршрут упаковщика по складу: сначала лёгкие позиции, затем хрупкие, в конце &mdash; крупногабаритные. Время сборки одного заказа &mdash; 30 секунд.</p></div>
+<div class="hiw-step"><div class="hiw-num">03</div><h3>Упаковка и маркировка ТТН</h3><p>Упаковщик собирает товар в вашу брендированную коробку, добавляет тишью и открытку, печатает ТТН Новой Почты. Каждый шаг &mdash; сканирование штрих-кода для контроля.</p></div>
+<div class="hiw-step"><div class="hiw-num">04</div><h3>Забор Новой Почтой &times;4 в день</h3><p>10:00, 12:00, 15:00, 17:00 &mdash; четыре забора ежедневно. Заказ оформленный до 14:00 выходит тем же днём. Приоритетный канал как корпоративного клиента НП.</p></div>
+</div>
+</div>
+</section>
 
 <section class="warehouse-tour">
 <div class="tour-inner">
@@ -117,7 +228,10 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="faq-item"><button class="faq-q">Можно ли продавать через несколько каналов одновременно?</button><div class="faq-a"><p>Да. Один склад обслуживает ваш сайт, маркетплейсы и социальные сети параллельно. Остатки синхронизируются в реальном времени через WMS &mdash; товар не продастся дважды. Это особенно актуально для продавцов, работающих на 3&ndash;5 площадках.</p></div></div>
 <div class="faq-item"><button class="faq-q">Как приоритизируются заказы при большой загрузке?</button><div class="faq-a"><p>WMS автоматически распределяет задания по срочности. Заказы, поступившие до 14:00, отправляются в тот же день. 4 забора Новой Почтой ежедневно: 10:00, 12:00, 15:00 и 17:00. Среднее время сборки одного заказа &mdash; 30 секунд.</p></div></div>
 <div class="faq-item"><button class="faq-q">Сколько занимает интеграция с нестандартной CRM?</button><div class="faq-a"><p>Стандартные CRM (KeyCRM, SalesDrive, Horoshop) подключаются за 2&ndash;4 часа. Нестандартные системы с API &mdash; 1&ndash;2 дня. Если API нет, возможна загрузка заказов через Excel-файл. Наш технический отдел помогает с настройкой.</p></div></div>
-</section></div></section>
+<div class="faq-item"><button class="faq-q">Какие интернет-платформы вы интегрируете нативно?</button><div class="faq-a"><p>Native: Shopify, WooCommerce, Magento, OpenCart, PrestaShop, Horoshop, KeyCRM, SalesDrive. Маркетплейсы: Prom.ua, Rozetka, Hubber, Allo. Кросс-бордер: Etsy, eBay, Faire. Любая нестандартная платформа подключается через webhook, REST API, EDI или SFTP. Интеграционный инженер на нашей стороне закрывает всю работу за 5&ndash;7 рабочих дней.</p></div></div>
+<div class="faq-item"><button class="faq-q">Подходит ли ваш склад для брендов из Казахстана, Молдовы, Грузии?</button><div class="faq-a"><p>Да, особенно для брендов, которые продают в Украину или используют Украину как промежуточный хаб для выхода на ЕС. Через Нову Пошту Международная мы отправляем посылки в Польшу, Молдову, страны Балтии, Грузию. Биллинг возможен в USD или EUR. Для клиентов ЕС &mdash; счёт-фактура из партнёрского юрлица в Литве (НДС 0% по экспорту). Документооборот английский или русский по выбору.</p></div></div>
+<div class="faq-item"><button class="faq-q">Что с безопасностью склада во время войны?</button><div class="faq-a"><p>Два склада под Киевом работают непрерывно с февраля 2022. 3 дизельных генератора с резервом топлива на 96 часов, Starlink + 2 оптоволоконных провайдера, физическое усиление крыши, отсутствие стеклянного фасада на отгрузочной зоне. Резервный план &mdash; переадресация заказов на партнёрский склад во Львове в течение 6 часов. Грузовое страхование Lloyd's до 3 млн евро на инцидент. SLA удерживается на уровне 99.5% месяцев.</p></div></div>
+</div></div></section>
 
 <!-- SEO ARTICLE -->
 <section class="article-section">
@@ -139,6 +253,27 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <h3>Сезонность без стресса: как фулфилмент справляется с пиками</h3>
 <p>Чёрная пятница, Новый год, 8 марта &mdash; пиковые периоды, когда объём заказов вырастает в 3&ndash;5 раз. При собственном складе это означает экстренный найм временных сотрудников, переработки и ошибки. У MTP Group пиковая мощность составляет 6 000 заказов в день. Масштабирование происходит автоматически за счёт конвейерной системы и резерва операторов. Тариф не меняется, процессы не нарушаются. После пика вы возвращаетесь к обычному объёму без обязательств.</p>
+
+<h3>Кросс-бордер из Украины: как мы работаем с брендами СНГ и ЕС</h3>
+<p>Помимо локального украинского рынка, наш склад обслуживает бренды, которые работают одновременно в нескольких странах. Типичный сценарий: бренд из Казахстана с интернет-магазином на Shopify, который хочет продавать в Украину и параллельно выходить на ЕС. Локальный казахстанский 3PL не сможет дёшево отправлять посылки украинским покупателям &mdash; это $35&ndash;60 за международную отправку. Украинский фулфилмент-склад через Нову Пошту делает украинскую доставку за 1.20 USD за заказ.</p>
+<p>Для ЕС-направления Нова Пошта Международная конкурирует с DHL и DPD по цене и срокам в Польшу, Чехию, Словакию, страны Балтии. Для брендов, которые делают NDA-производство в Украине (одежда, бьюти, аксессуары), наш склад одновременно работает фулфилмент-точкой и буферной зоной перед отгрузкой больших партий в США или ЕС-3PL. Биллинг возможен в гривне, USD или EUR &mdash; курс НБУ применяется к каждой инвойс-позиции прозрачно.</p>
+
+<h3>Почему Нова Почта &times; фулфилмент &mdash; это отдельное преимущество</h3>
+<p>Украинская логистика держится на Новой Почте. В отличие от европейского рынка, где DHL, DPD, UPS и местные операторы делят долю поровну, в Украине 70% B2C отправок идут через одну компанию. Это означает, что фулфилмент-оператор, работающий с НП как корпоративный клиент, имеет конкретные преимущества: приоритетная обработка посылок в сортировочном центре, автоматическое формирование ТТН из его кабинета, бесплатный забор со склада &times;4 в день и прямой канал для решения проблемных отправок.</p>
+<p>Если вы отправляете 30 посылок в день с домашнего адреса, вы попадаете в обычный канал НП. Если посылки забирают со склада фулфилмента пакетом по 200&ndash;500 на забор, курьер НП обслуживает вас первым. Это разница в один день доставки &mdash; критическая метрика для повторных покупок в e-commerce.</p>
+
+<h3>Брендированная упаковка как инструмент удержания</h3>
+<p>Современный покупатель оценивает не только товар, но и впечатление от распаковки. По нашей внутренней статистике клиентов, переход на брендированную упаковку увеличивает повторные покупки на 15&ndash;20%. Стоимость доукомплектации &mdash; от 2,50 грн за вложение, при этом материалы (тишью, наклейки, открытки, пробники) хранятся на складе бесплатно.</p>
+<p>Типичный набор для интернет-магазина косметики: фирменная коробка, вкладыш с инструкцией, тишью в фирменных цветах, наклейка-стикер на крышке, открытка с благодарностью. Всё собирается автоматически по вашей инструкции. Для брендов одежды добавляем пыльники и упаковочные мешки. Покупатель получает ощущение, что его обслуживает не склад, а боутик.</p>
+
+<h3>Возвраты и обмены: скрытая статья расходов в e-commerce</h3>
+<p>В категориях одежды и обуви возвраты доходят до 30% от всех заказов, в косметике &mdash; 5&ndash;8%, в электронике &mdash; 10&ndash;12%. Если у вас нет отдельного процесса по возвратам, каждая посылка обратно &mdash; это ручная работа: открыть, проверить состояние, переупаковать, вернуть на полку или списать. У нас этот процесс автоматизирован: курьер НП доставляет возврат на склад, оператор сканирует ШК, система открывает чек-лист (фото, проверка серии, проверка комплектации), товар возвращается на полку с пометкой &laquo;refurb&raquo; или списывается в брак.</p>
+<p>Стоимость обработки возврата &mdash; 25 грн (включая фотофиксацию состояния, для споров с клиентом). Брак списывается отдельной строкой в отчёте. Главное преимущество: вы видите фото каждого возврата в личном кабинете и можете быстро принять решение &mdash; принимать на склад, отправлять клиенту повторно с заменой или возвращать средства. Это та невидимая часть фулфилмента, которая отделяет хороший сервис от посредственного.</p>
+
+<h3>Аналитика и личный кабинет: что вы видите в реальном времени</h3>
+<p>Единственный способ масштабировать e-commerce без потери контроля &mdash; это видеть данные в реальном времени. Наш личный кабинет показывает: остатки по каждому SKU с предупреждением о критическом запасе, средний срок отгрузки за последние 7 дней по сравнению с предыдущей неделей, процент проблемных отправок (повреждения, потери, опоздания), фотоотчёты по каждому возврату, ABC-анализ &mdash; какие SKU дают 80% оборота, а какие &laquo;мёртвые&raquo;.</p>
+<p>Дополнительно для клиентов с оборотом от 1000 заказов в месяц мы делаем ежемесячный обзор: средняя стоимость обработки одного заказа, темп роста, тенденции по каналам продаж, рекомендации по оптимизации упаковки и логистики. Это та часть работы, где фулфилмент перестаёт быть просто складом и становится бизнес-партнёром &mdash; с цифрами, метриками и осмысленными решениями вместо &laquo;ну, наверное, хорошо работаем&raquo;. Подробные <a href="/ru/tsenu/" style="color:var(--red);font-weight:500">тарифы фулфилмента</a> доступны на отдельной странице со всей структурой стоимости.</p>
+<p>Финансовая прозрачность &mdash; ещё одно отличие от классического 3PL-склада. Раз в месяц вы получаете детализированный счёт: количество принятых посылок, количество отгруженных заказов, обработанные возвраты, использованная упаковка по типам, доукомплектация (вкладыши, наклейки), хранение по m³, дополнительные операции (фотофиксация, маркировка, переупаковка). Никаких &laquo;скрытых комиссий&raquo;, никаких сюрпризов в конце квартала. Этот уровень детализации позволяет точно считать юнит-экономику &mdash; ключ к решениям о ценообразовании, скидках и масштабировании.</p>
 </div>
 </div>
 </section>
@@ -164,8 +299,26 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.65) 55%,rgba(0,0,0,.45) 100%),url('https://img.youtube.com/vi/bHY3cFF9SlI/maxresdefault.jpg') center/cover no-repeat}
 .hero-content{position:relative;z-index:2;padding:0 8vw;width:100%}
 .hero-content::before{content:'';position:absolute;left:calc(8vw - 40px);top:0;height:100%;width:3px;background:var(--red)}
-.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:28px}
+.hero h1{font-family:var(--fd);font-size:clamp(42px,5.5vw,80px);font-weight:400;line-height:.95;margin-bottom:16px}
+.hero-tagline{font-family:var(--fd);font-size:clamp(20px,2.4vw,30px);line-height:1.2;color:rgba(255,255,255,.85);margin-bottom:28px;font-weight:400}
+.hero-tagline em{color:var(--red);font-style:italic}
 .hero-sub{font-size:clamp(16px,1.8vw,19px);color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin-bottom:40px}
+.integrations{padding:100px 0;background:#fff}
+.sec-h2{font-family:var(--fd);font-size:clamp(30px,4vw,52px);font-weight:400;line-height:1.05;margin-bottom:24px}
+.sec-lede{max-width:720px;font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:40px}
+.int-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden;max-width:1100px}
+.int-card{background:#fff;padding:24px 22px;transition:background .3s;display:block}
+.int-card a{display:block;color:inherit;text-decoration:none}
+.int-card:hover{background:var(--gray)}
+.int-name{font-family:var(--fd);font-size:20px;color:#000;line-height:1.1;margin-bottom:6px}
+.int-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:500}
+.int-note{font-size:13px;color:var(--muted);margin-top:24px;max-width:680px;line-height:1.6}
+.how-it-works{padding:100px 0;background:var(--gray);border-top:1px solid #eaeaea}
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#000;border:1px solid #000;margin-top:24px}
+.hiw-step{background:#fff;padding:36px 28px;position:relative}
+.hiw-num{font-family:var(--fd);font-size:48px;color:var(--red);line-height:1;margin-bottom:14px}
+.hiw-step h3{font-size:17px;font-weight:600;margin-bottom:10px;line-height:1.25}
+.hiw-step p{font-size:14px;color:var(--muted);line-height:1.65}
 .hero-form{display:flex;gap:12px;max-width:460px}
 .hero-form input{flex:1;padding:16px 20px;border:1px solid rgba(255,255,255,.2);border-radius:4px;background:rgba(255,255,255,.04);color:#fff;font-size:15px;font-family:var(--fb);outline:none}
 .hero-form input::placeholder{color:rgba(255,255,255,.25)}.hero-form input:focus{border-color:rgba(255,255,255,.5)}
@@ -232,6 +385,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .ben-grid{grid-template-columns:1fr}
 .case-inner{flex-direction:column;gap:40px}
 .final-form{flex-direction:column}
+.int-grid{grid-template-columns:repeat(2,1fr)}
+.hiw-grid{grid-template-columns:1fr}
 }
 
 .svc-card,.service-card,.num-card,.adv-card,.ben-card,.wh-card,.case-stats,.step{opacity:1!important;transform:none!important}
