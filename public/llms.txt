@@ -34,6 +34,9 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 - [Фулфілмент для Rozetka (UA)](https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/): Rozetka FBO alternative for excluded categories (furniture, large appliances, fragile glass, cold-chain), multi-marketplace from one inventory, 0% commission
 - [Фулфилмент Rozetka + хаб СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/): Ukraine as logistics hub for Rozetka and CIS distribution (Kazakhstan, Moldova, Georgia), customs warehouse IM-71, 4 100 m²
 - [Rozetka Multi-Marketplace Fulfillment (EN)](https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/): Multi-marketplace gateway to Ukraine without Rozetka FBO lock-in, EUR/USD pricing, EU carriers, war-resilient
+- [Фулфілмент для Prom.ua (UA)](https://www.fulfillmentmtp.com.ua/fulfilment-prom/): FBO alternative for Prom.ua sellers — Prom has 700K sellers and zero native FBO, MTP fills the gap with 18-22 ₴/order, NP/Укрпошта/Meest integration, live calculator
+- [Фулфилмент для Prom.ua (RU)](https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/): Tool-first calculator-led page for CIS sellers entering Ukraine via Prom.ua — ROI tables, WMS API specs, Prom vs Rozetka FBBY vs Amazon FBA comparison
+- [Prom.ua FBO Fulfillment (EN)](https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/): Editorial / op-ed positioning — Prom has 700K sellers and zero native FBO, EUR/USD pricing, GDPR-compliant, EU dispatch via cross-border
 - [Fulfillment for Cosmetics (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Cosmetics vertical — fragile, expiry-date handling
 - [Fulfillment for Small Business (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry tier (from 100 orders/month)
 - [Fulfillment for Heavy Goods (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized/heavy-item handling

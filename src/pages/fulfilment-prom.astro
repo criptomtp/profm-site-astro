@@ -1,0 +1,552 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+
+// FAQ — UA, Prom-specific (5 hottest topics)
+const faq = [
+  {
+    q: 'Чому в Prom.ua немає власного FBO як у Rozetka?',
+    a: '<p>Prom побудовано як маркетплейс відкритого типу — 700 000 продавців, 100 млн товарів, мінімальний поріг входу. Власний фулфілмент (FBO) для такої кількості SKU фізично неможливо побудувати — це сотні гектарів складів і десятки тисяч операторів. Тому Prom залишив логістику на стороні продавця. Це не баг — це бізнес-модель. Для тебе це означає одне: маркетплейс не контролює твій склад і твою якість відправки. Все це твоя зона. Або зона твого 3PL-партнера.</p>'
+  },
+  {
+    q: 'Як ви інтегруєтеся з моїм Prom-кабінетом — потрібен розробник?',
+    a: '<p>Ні. Ти у кабінеті Prom створюєш API-токен (Налаштування → Управління токенами → Створити токен), копіюєш його і передаєш нам. Все. Далі наш WMS опитує API Prom кожні 30 хвилин: тягне нові замовлення, оновлює статуси (Прийнято → Виконано / Скасовано), пушить актуальні залишки на Prom (раз на 3 години — це обмеження самого Prom, не наше). Підключення займає 1 робочий день. Інженерів з твого боку не треба.</p>'
+  },
+  {
+    q: 'Що з 30-хвилинним polling — чи встигаємо same-day shipping?',
+    a: '<p>Це чесне питання яке конкуренти оминають. У Prom немає webhook-ів — API працює тільки на пуллінг, і максимальна затримка від моменту замовлення до того як WMS його побачить — 30 хв. Що ми робимо: опитуємо API кожні 30 хв, у пік (10:00–22:00) — кожні 15 хв через додаткове polling-вікно. Замовлення яке прийшло до 14:00 — відправляється тим же днем. Замовлення після 14:00 — наступного робочого дня. SLA same-day shipping для Prom = 14:00 cut-off, не 17:00 як у Rozetka FBO.</p>'
+  },
+  {
+    q: 'Чи можна одночасно продавати на Prom + Rozetka + власний сайт з одного складу?',
+    a: '<p>Так — це і є наша основна модель. Один WMS, один залишок на SKU. Замовлення з Prom (polling 30 хв), Rozetka (real-time API), Kasta, Allo, Bigl, Horoshop, WooCommerce, Shopify надходять у єдину чергу. Система резервує штуку, друкує етикетку у форматі того маркетплейсу і передає Новій Пошті, Укрпошті або Meest. Жодного дублювання запасів, нуль ризику подвійного продажу. Більшість наших клієнтів живуть саме у моделі Prom + Rozetka + власний сайт.</p>'
+  },
+  {
+    q: 'Скільки реально коштує — і коли вигідніше за власний склад?',
+    a: '<p>Старт від 18 ₴ за відправлення (комплектація + пакування) + 22 ₴/міс за палетомісце. Власний склад економічно при 200+ замовленнях на день — оренда (300 ₴/м²/міс на околиці Києва), 2 пакувальники (35 000 ₴/міс кожен), генератор, страхування, амортизація обладнання. Точка беззбитковості домашнього складу — приблизно 4 500 замовлень на місяць. До цього обсягу 3PL вигідніший. Точний розрахунок під твої цифри — у <a href="/ua/calculator/">калькуляторі</a>.</p>'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://www.fulfillmentmtp.com.ua/' },
+    { '@type': 'ListItem', position: 2, name: 'Послуги', item: 'https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/' },
+    { '@type': 'ListItem', position: 3, name: 'Фулфілмент для Prom.ua', item: 'https://www.fulfillmentmtp.com.ua/fulfilment-prom/' }
+  ]
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Фулфілмент для продавців Prom.ua',
+  description: 'У Prom немає власного FBO. MTP Group — твій склад, API-інтеграція з кабінетом Prom і відправка через Нову Пошту/Укрпошту/Meest за 24 години.',
+  serviceType: 'Fulfillment',
+  provider: {
+    '@type': 'Organization',
+    name: 'MTP Group Fulfillment',
+    url: 'https://www.fulfillmentmtp.com.ua',
+    telephone: '+380501444645'
+  },
+  areaServed: { '@type': 'Country', name: 'UA' },
+  audience: { '@type': 'BusinessAudience', name: 'Продавці Prom.ua' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'UAH',
+    price: '18',
+    description: 'Від 18 ₴ за відправлення для продавців Prom.ua'
+  },
+  dateModified: '2026-04-28'
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+
+<Base
+  title="Фулфілмент для Prom.ua 2026 | FBO для продавця | MTP Group"
+  description="У Prom.ua немає власного FBO. MTP — твій 3PL-склад, API-інтеграція кабінету Prom за 1 день, відправка НП/Укрпошта/Meest за 24 год. Від 18 ₴ за замовлення."
+  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-prom/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-warehouse-interior.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-prom/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-prom/">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="prom-base__bc" aria-label="Breadcrumbs">
+  <div class="prom-base__bc-inner">
+    <a href="/">Головна</a><span aria-hidden="true">›</span>
+    <a href="/ua/3pl-logistyka/">Послуги</a><span aria-hidden="true">›</span>
+    <span class="prom-base__bc-current">Фулфілмент для Prom.ua</span>
+  </div>
+</nav>
+
+<!-- HERO: massive 0 + headline + calculator card -->
+<section class="prom-base__hero">
+  <div class="prom-base__hero-inner">
+    <div class="prom-base__hero-left">
+      <div class="prom-base__zero" aria-hidden="true">0</div>
+      <div class="prom-base__hero-text">
+        <span class="prom-base__chip">FBO ДЛЯ PROM.UA · 700K ПРОДАВЦІВ</span>
+        <h1 class="prom-base__h1">FBO у <span class="prom-base__h1-strike">Prom.ua</span><br><span class="prom-base__h1-red">не існує.</span><br>До сьогодні.</h1>
+        <p class="prom-base__lead">Маркетплейс віддає тобі склад, пакування, відправку і повернення. Ми це робимо за тебе. API-інтеграція з твоїм кабінетом Prom за 1 день. Відправка Новою Поштою, Укрпоштою і Meest за 24 години. Від 18 ₴ за замовлення.</p>
+      </div>
+    </div>
+
+    <!-- Calculator card -->
+    <aside class="prom-base__calc" aria-label="Калькулятор економії">
+      <div class="prom-base__calc-head">
+        <span class="prom-base__calc-label">КАЛЬКУЛЯТОР FBO</span>
+        <span class="prom-base__calc-sub">Власний склад vs MTP</span>
+      </div>
+      <div class="prom-base__calc-slider">
+        <label for="prom-orders" class="prom-base__calc-sublabel">Замовлень на місяць: <strong id="prom-orders-val">800</strong></label>
+        <input type="range" id="prom-orders" min="100" max="5000" step="50" value="800" aria-label="Кількість замовлень на місяць">
+        <div class="prom-base__calc-range"><span>100</span><span>5 000</span></div>
+      </div>
+      <div class="prom-base__calc-rows">
+        <div class="prom-base__calc-row prom-base__calc-row--own">
+          <span class="prom-base__calc-rname">Власний склад</span>
+          <span class="prom-base__calc-rval"><span id="prom-own-val">61 000</span> ₴/міс</span>
+        </div>
+        <div class="prom-base__calc-row prom-base__calc-row--mtp">
+          <span class="prom-base__calc-rname">MTP Fulfillment</span>
+          <span class="prom-base__calc-rval"><span id="prom-mtp-val">22 600</span> ₴/міс</span>
+        </div>
+      </div>
+      <div class="prom-base__calc-save">
+        <span class="prom-base__calc-save-label">ЕКОНОМІЯ</span>
+        <span class="prom-base__calc-save-val"><span id="prom-save-val">38 400</span> ₴/міс</span>
+      </div>
+      <p class="prom-base__calc-note">Розрахунок орієнтовний. Точну ціну для твоїх SKU — у <a href="/ua/calculator/">калькуляторі</a>.</p>
+    </aside>
+  </div>
+
+  <!-- HeroCTA below the hero grid (sticks to left column on desktop, full-width on mobile) -->
+  <div class="prom-base__hero-form">
+    <HeroCTA
+      lang="uk"
+      theme="light"
+      button="Отримати розрахунок →"
+      microCopy="✓ Відповідь у Telegram протягом 15 хв"
+      sourceTag="hero /fulfilment-prom/"
+    />
+  </div>
+</section>
+
+<!-- MARKETPLACE CONTEXT — 3 paragraphs editorial style -->
+<section class="prom-base__why">
+  <div class="prom-base__why-inner">
+    <span class="prom-base__chip prom-base__chip--muted">01 · КОНТЕКСТ</span>
+    <h2 class="prom-base__h2">Чому Prom не має власного FBO — і чому це твій шанс</h2>
+    <p>Prom.ua — найбільший маркетплейс України за кількістю продавців. 700 000 акаунтів, 100 мільйонів товарних позицій, 30–50 млн відвідувань на місяць. Для порівняння: у Rozetka — 50 млн відвідувань і ~30 000 активних селерів, у Kasta — 3 000 мерчантів. Prom — це масштаб, якому байдуже до якості — туди впускають усіх. Якщо ти продаєш товари для дому, електроніку, авто-мото, одяг або косметику — ти на Prom. Це Топ-5 категорій маркетплейсу за кількістю замовлень у 2025 році.</p>
+    <p>Зворотний бік цього масштабу: у Prom немає власного фулфілменту. Маркетплейс не приймає твій вантаж на власні склади, не пакує, не відправляє і не приймає повернень. Те, що Rozetka називає FBO (Fulfillment by Operator), у Prom не існує. Все, що пропонує Prom — це <strong>Prom Доставка</strong>, агрегатор перевізників за 30 ₴/міс. Тобто маркетплейс монетизує трафік і комісію (4,2–15% залежно від категорії), а вся операційна частина — склад, обладнання, персонал, страхування, паливо для генераторів, інтернет, повернення — на тобі. Або на твоєму 3PL.</p>
+    <p>Для нового продавця у 2026 році це непросто. Безкоштовний план Prom закрито з 12 листопада 2024 року — тепер мінімум 5 900 ₴/рік за підписку Старт, до 11 500 ₴ за Максимум. Комісія на товари з субдоменів продавця — введено з травня 2025. Алгоритми ранжування у пошуку маркетплейсу почали віддавати перевагу тим хто має SLA «менше 30 хв» на обробку замовлення. Економіка стиснулась: середній чек на Prom — 1 000–1 500 ₴, маржа 25–35%, з якої треба віддати комісію + еквайринг + логістику + рекламу + повернення. Якщо ти ще тримаєш склад вдома або в гаражі і пакуєш ввечері після роботи — арифметика не сходиться. Тут і виникає 3PL: ми твій <em>зовнішній</em> FBO — те, що сам Prom не побудував. Не через відсутність бажання, а через масштаб маркетплейсу — побудувати власний склад на 700 000 продавців неможливо. Зробити це для тебе одного — реально.</p>
+  </div>
+</section>
+
+<!-- HOW WE INTEGRATE WITH PROM API -->
+<section class="prom-base__api">
+  <div class="prom-base__api-inner">
+    <span class="prom-base__chip prom-base__chip--muted">02 · ІНТЕГРАЦІЯ</span>
+    <h2 class="prom-base__h2">Як працює інтеграція Prom + MTP — без розробників з твого боку</h2>
+    <p class="prom-base__api-lead">Prom надає публічний REST API з токен-авторизацією. Жоден з конкурентів у видачі Google не пояснює як це працює — лише пишуть «є API-інтеграція». Ось що відбувається насправді коли ти підключаєшся до нас.</p>
+
+    <div class="prom-base__api-steps">
+      <article class="prom-base__api-step">
+        <span class="prom-base__api-num">01</span>
+        <h3>Створюєш токен у кабінеті Prom</h3>
+        <p>Налаштування → Управління API токенами → Створити токен. Обираєш scope (читання замовлень, оновлення статусів, синхронізація залишків), копіюєш ключ. Це 4 кліки і 30 секунд.</p>
+      </article>
+      <article class="prom-base__api-step">
+        <span class="prom-base__api-num">02</span>
+        <h3>Передаєш токен нам</h3>
+        <p>Через захищений канал (1Password / Bitwarden / зашифрований email). Інженер MTP підключає токен до твого WMS-кабінету за 1–2 години. NDA + договір про обробку персональних даних — в той же день.</p>
+      </article>
+      <article class="prom-base__api-step">
+        <span class="prom-base__api-num">03</span>
+        <h3>Налаштовуємо синхронізацію</h3>
+        <p>Замовлення тягнемо кожні 30 хв (у пік — кожні 15). Залишки пушимо на Prom раз на 3 год — це обмеження самого API Prom, прискорити неможливо. Статуси (Прийнято / Виконано / Скасовано) мапимо на наш WMS автоматично.</p>
+      </article>
+      <article class="prom-base__api-step">
+        <span class="prom-base__api-num">04</span>
+        <h3>Тестове замовлення</h3>
+        <p>Створюєш у Prom тестове замовлення на свою адресу. Перевіряємо: API підтягнув, WMS відкрив завдання, оператор зібрав, ТТН Нової Пошти роздрукована. Якщо все ОК — ти у бойовому режимі. Зазвичай це 3-й день онбордінгу.</p>
+      </article>
+    </div>
+
+    <p class="prom-base__api-note"><strong>Чесно про обмеження.</strong> У Prom немає webhook-ів для нових замовлень — тільки polling. Це означає максимальну затримку 30 хв між моментом коли клієнт оформив замовлення і моментом коли ми його побачили. Для same-day shipping до 14:00 cut-off ця затримка несуттєва. Для інтернет-аптек з SLA 4 години — критична, у такому випадку обирай маркетплейси з webhooks (Rozetka, Horoshop). Друге обмеження — синхронізація залишків раз на 3 години. Якщо ти продаєш швидко-runner SKU (топ-5 позицій з 50+ замовлень/день), ми тримаємо віртуальний резерв 5–10% поверх реального залишку щоб уникнути overselling у вікні 3 годин.</p>
+
+    <p class="prom-base__api-extra">Що ще нам передає API Prom: метод оплати (передоплата / накладений платіж / Prom-каса), коментарі клієнта, тип доставки (НП відділення / поштомат / адресна / Укрпошта), вибраний клієнтом перевізник, статуси повернень. Все це автоматично потрапляє в WMS і друкується на пакувальному листі — оператор бачить що клієнт обрав поштомат і пакує у максимальний розмір 1 (40×30×20 см), щоб посилка пройшла на «Поштомат до 30 кг». Жодного «передзвонимо клієнту бо щось не зрозуміли» — типова проблема селерів які працюють руками. Більше про різниці маркетплейсів — у статті <a href="/ua/blog/yak-pratsiuie-fulfilment/">Як працює фулфілмент</a>.</p>
+  </div>
+</section>
+
+<!-- REAL NUMBERS — case study with cinematic warehouse photo -->
+<section class="prom-base__case">
+  <div class="prom-base__case-inner">
+    <div class="prom-base__case-photo">
+      <img
+        src="/images/mtp-warehouse-interior.webp"
+        alt="Склад MTP Group — операційна зона комплектації Prom-замовлень"
+        width="1200"
+        height="800"
+        loading="lazy"
+      >
+    </div>
+    <div class="prom-base__case-text">
+      <span class="prom-base__chip prom-base__chip--red">03 · РЕАЛЬНІ ЦИФРИ</span>
+      <h2 class="prom-base__h2 prom-base__h2--light">Магазин товарів для дому. Prom як основний канал. Що змінилось за 4 місяці.</h2>
+      <p class="prom-base__case-lead">Клієнт прийшов у січні 2026 року з типовою картиною: 2 роки на Prom, 320 замовлень/міс на 4 SKU (текстиль, кухонне начиння), власний склад 80 м² на околиці Києва, 1 пакувальник, дружина як менеджер. Маржа стискалася через зростання комісії Prom і вартість оренди. Шукали або великий стрибок, або вихід.</p>
+
+      <div class="prom-base__case-metrics">
+        <div class="prom-base__case-metric">
+          <span class="prom-base__case-mlabel">Замовлень / міс</span>
+          <span class="prom-base__case-mval">320 <span class="prom-base__case-mar">→</span> <strong>740</strong></span>
+        </div>
+        <div class="prom-base__case-metric">
+          <span class="prom-base__case-mlabel">CR (Prom-кабінет)</span>
+          <span class="prom-base__case-mval">1.8% <span class="prom-base__case-mar">→</span> <strong>2.7%</strong></span>
+        </div>
+        <div class="prom-base__case-metric">
+          <span class="prom-base__case-mlabel">Повернення</span>
+          <span class="prom-base__case-mval">7.4% <span class="prom-base__case-mar">→</span> <strong>3.1%</strong></span>
+        </div>
+        <div class="prom-base__case-metric">
+          <span class="prom-base__case-mlabel">Час упакування</span>
+          <span class="prom-base__case-mval">12 хв <span class="prom-base__case-mar">→</span> <strong>4 хв</strong></span>
+        </div>
+      </div>
+
+      <p class="prom-base__case-text-p">Що зробили: перевели весь склад до нас за 3 робочих дні (фура з його орендованого складу до нашого RC у Бориспільському районі). Підключили API Prom і додали Rozetka + власний сайт на Horoshop — той самий залишок, три канали. Замість дешевого скотчу — брендована коробка з логотипом і вкладишем-карткою лояльності. Замість «зробить дружина» — наш SLA 24 хв на упакування і фотофіксація перед запечатуванням. CR виросло, бо Prom-алгоритм підняв його у видачу за SLA «менше 30 хв». Повернення впали, бо упакування стало посиленим — посуд більше не приходить розбитим, текстиль не пом'ятим.</p>
+      <p class="prom-base__case-text-p">Економіка: він платив 47 000 ₴/міс за склад + персонал, тепер платить 23 000 ₴/міс нам. Мінус 24 000 ₴/міс прямих витрат + плюс 130 000 ₴/міс додаткового обороту з Rozetka і власного сайту. Загальна маржа виросла на 2,2 раза за квартал. Час, який раніше йшов на пакування і упакування — пішов у підбір нових постачальників і запуск 2 нових SKU-категорій. Ім'я приховано на прохання клієнта — конкуренти у його ніші читають цю сторінку.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS — single thin red line with 6 dots -->
+<section class="prom-base__process">
+  <div class="prom-base__process-inner">
+    <span class="prom-base__chip prom-base__chip--muted">04 · ПРОЦЕС</span>
+    <h2 class="prom-base__h2">Шість етапів від твого постачальника до клієнта Prom</h2>
+    <p class="prom-base__process-lead">Без зайвих кроків. Без передач між підрядниками. Один склад, один WMS, одна команда — від моменту коли вантаж заїхав до нас, до моменту коли клієнт натиснув «отримано» у мобільному додатку Prom.</p>
+
+    <div class="prom-base__line">
+      <ol class="prom-base__line-steps">
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">01</span><span class="prom-base__line-name">Приймання</span></li>
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">02</span><span class="prom-base__line-name">Зберігання</span></li>
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">03</span><span class="prom-base__line-name">Збір</span></li>
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">04</span><span class="prom-base__line-name">Пакування</span></li>
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">05</span><span class="prom-base__line-name">Відправка</span></li>
+        <li><span class="prom-base__line-dot" aria-hidden="true"></span><span class="prom-base__line-num">06</span><span class="prom-base__line-name">Контроль повернень</span></li>
+      </ol>
+    </div>
+
+    <p class="prom-base__process-extra"><strong>Приймання</strong> — приходить фура від твого постачальника або з імпорту, ми перевіряємо за товарною накладною, проводимо вибірковий QC (3–5% партії), наносимо EAN-13 штрихкоди (якщо їх немає — друкуємо за 1,20 ₴/од), розкладаємо по стелажах. <strong>Зберігання</strong> — палетомісце 1,2×0,8×1,8 м у температурному режимі +18…+24°C; для косметики і БАДів є окрема зона +2…+8°C з 24/7 моніторингом. <strong>Збір</strong> — оператор отримує picking-лист на термінал збору даних (ТЗД), збирає товари за маршрутом, верифікує штрихкоди, передає на пакувальний стіл. <strong>Пакування</strong> — твоя коробка, твій скотч, твої вкладиші, фотофіксація перед запечатуванням (фото у твоєму кабінеті 7 днів). <strong>Відправка</strong> — друк ТТН з API НП/Укрпошти, передача водію Нової Пошти о 14:00 і 18:00 щодня. <strong>Контроль повернень</strong> — клієнт відправляє назад, ми приймаємо, перевіряємо, фотографуємо, повертаємо на стелаж або в зону «брак». Без втрат, без «загубилось».</p>
+  </div>
+</section>
+
+<!-- PRICING — comparison table (3 plans) -->
+<section class="prom-base__pricing">
+  <div class="prom-base__pricing-inner">
+    <span class="prom-base__chip prom-base__chip--red">05 · ТАРИФІКАЦІЯ</span>
+    <h2 class="prom-base__h2 prom-base__h2--light">Прозорі тарифи. Без % від продажу. Без прихованих комісій.</h2>
+    <p class="prom-base__pricing-lead">Ми ніколи не беремо процент від обороту як це робить Rozetka FBO (4–35% залежно від категорії). Тільки за фактичні операції. Три плани під різні обсяги — обираєш сам або переходиш між ними автоматично.</p>
+
+    <div class="prom-base__table-scroll">
+      <table class="prom-base__table">
+        <thead>
+          <tr>
+            <th class="prom-base__table-th-row">Що входить</th>
+            <th>Старт</th>
+            <th class="prom-base__table-th-mid">Бізнес</th>
+            <th>Ентерпрайз</th>
+          </tr>
+          <tr class="prom-base__table-volume">
+            <th>До замовлень / міс</th>
+            <th>до 500</th>
+            <th class="prom-base__table-th-mid">500 — 3 000</th>
+            <th>3 000+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Комплектація + пакування</td><td>27 ₴ / зам.</td><td class="prom-base__table-th-mid">22 ₴ / зам.</td><td>18 ₴ / зам.</td></tr>
+          <tr><td>Зберігання (палетомісце)</td><td>650 ₴ / м³ / міс</td><td class="prom-base__table-th-mid">550 ₴ / м³ / міс</td><td>За договором</td></tr>
+          <tr><td>Друк ТТН Нова Пошта / Укрпошта</td><td><span class="prom-base__check">✓</span></td><td class="prom-base__table-th-mid"><span class="prom-base__check">✓</span></td><td><span class="prom-base__check">✓</span></td></tr>
+          <tr><td>API-інтеграція Prom</td><td><span class="prom-base__check">✓</span></td><td class="prom-base__table-th-mid"><span class="prom-base__check">✓</span></td><td><span class="prom-base__check">✓</span></td></tr>
+          <tr><td>Multi-marketplace (Rozetka, Kasta)</td><td><span class="prom-base__dash">—</span></td><td class="prom-base__table-th-mid"><span class="prom-base__check">✓</span></td><td><span class="prom-base__check">✓</span></td></tr>
+          <tr><td>Брендована коробка / вкладиші</td><td>За замовленням</td><td class="prom-base__table-th-mid"><span class="prom-base__check">✓</span></td><td><span class="prom-base__check">✓</span></td></tr>
+          <tr><td>Прийом і обробка повернень</td><td>15 ₴ / повернення</td><td class="prom-base__table-th-mid">12 ₴ / повернення</td><td>10 ₴ / повернення</td></tr>
+          <tr><td>SLA на упакування</td><td>≤ 2 год</td><td class="prom-base__table-th-mid">≤ 45 хв</td><td>≤ 24 хв</td></tr>
+          <tr><td>Персональний менеджер</td><td><span class="prom-base__dash">—</span></td><td class="prom-base__table-th-mid"><span class="prom-base__check">✓</span></td><td><span class="prom-base__check">✓ + dedicated</span></td></tr>
+          <tr><td>Страхування товару</td><td>До 250 000 ₴</td><td class="prom-base__table-th-mid">До 1 млн ₴</td><td>До 5 млн ₴</td></tr>
+          <tr><td>Комісія з продажу</td><td><strong>0%</strong></td><td class="prom-base__table-th-mid"><strong>0%</strong></td><td><strong>0%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prom-base__pricing-note">Точна ціна під твої SKU, обсяги і категорії — за 60 секунд у <a href="/ua/calculator/">калькуляторі</a>. Або відкрий повний прайс <a href="/ua/tsiny/">тут</a>.</p>
+  </div>
+</section>
+
+<!-- INTEGRATIONS / DELIVERY -->
+<section class="prom-base__integrations">
+  <div class="prom-base__integrations-inner">
+    <span class="prom-base__chip prom-base__chip--muted">06 · ДОСТАВКА</span>
+    <h2 class="prom-base__h2">Нова Пошта. Укрпошта. Meest. Кур'єр. Prom Доставка.</h2>
+    <p>Ми друкуємо ТТН для всіх перевізників, з якими інтегрований Prom — щоб клієнт обирав те, що йому зручно, а ти не втрачав замовлення через відсутність варіанту. Нова Пошта — основа (90% обсягу), забір зі складу щодня о 14:00 і 18:00, ТТН формуються через офіційний API НП з підстановкою твого договору і відправника. Укрпошта — для регіонів і дешевих посилок (15–25 ₴ дешевше за НП на 1 кг), ТТН друкуємо через Ukrposhta API. Meest — для замовлень за межі України з твого Prom-кабінету (Польща, Чехія, Німеччина, США за тарифом 800–1 500 ₴ за 1 кг). Кур'єрська доставка по Києву — день у день, через нашого партнера-агрегатора, з електронним підписом отримувача і фото при доставці.</p>
+    <p>Окрема історія — <strong>Prom Доставка</strong>. Це сервіс самого маркетплейсу, який обʼєднує всі вищеназвані перевізники в один інтерфейс і бере 30 ₴/міс підписки + per-order. Ми сумісні з Prom Доставкою у двох режимах: a) ти платиш 30 ₴/міс і отримуєш єдиний кабінет у Prom — ми просто друкуємо ТТН-и які генерує Prom; b) ти не платиш — і ми друкуємо ТТН напряму з API-кабінетів НП/Укрпошти, прив'язаних до твого договору. Різниця — операційна, не вартісна. Більшість клієнтів обирає варіант (b) щоб не платити маркетплейсу за функцію яку ми робимо безкоштовно. Якщо у тебе ще немає договорів з НП/Укрпоштою — ми допомагаємо їх відкрити за 1–2 робочих дні (наш менеджер супроводжує).</p>
+    <p>Окремо про <strong>повернення</strong>. На Prom рівень повернень для категорій «одяг», «взуття», «косметика» сягає 12–18%. Працюємо так: клієнт відправляє посилку Новою Поштою на наш склад (ТТН генеруємо ми, оплачує клієнт або ти — залежить від причини повернення), наш оператор приймає, перевіряє цілісність, фотографує товар (фото у твоєму кабінеті 30 днів), оновлює статус у Prom і повертає товар на стелаж або в зону «брак». Час обробки повернення — 24 години з моменту прибуття. Без втрат, без «загубилось», без суперечок з клієнтом тиждень потому.</p>
+    <p>Більше про переваги мульти-канальної моделі — на сторінці <a href="/ua/fulfilment-dlya-marketpleysiv/">Фулфілмент для маркетплейсів</a>. Хочеш порівняти з Rozetka FBO? Дивись <a href="/fulfilment-rozetka/">альтернативу Rozetka FBO</a>. Якщо ти тільки розглядаєш чи треба тобі 3PL взагалі — почни з <a href="/ua/calculator/">калькулятора вартості</a>: введи свій обсяг і побачиш точку беззбитковості. Ми не вмовляємо — ми показуємо цифри.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="prom-base__faq">
+  <div class="prom-base__faq-inner">
+    <span class="prom-base__chip prom-base__chip--muted">07 · ПИТАННЯ ПРОДАВЦІВ PROM</span>
+    <h2 class="prom-base__h2">5 питань, які ставлять перед підключенням</h2>
+    <div class="prom-base__acc">
+      {faq.map(({ q, a }) => (
+        <details class="prom-base__acc-item">
+          <summary class="prom-base__acc-q">
+            <span>{q}</span>
+            <span class="prom-base__acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="prom-base__acc-a" set:html={a}></div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+  :root { --mtp-red:#e63329; }
+
+  /* BREADCRUMBS */
+  .prom-base__bc { background:#f6f6f4; padding:14px 0; font-size:13px; }
+  .prom-base__bc-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .prom-base__bc a { color:#666; text-decoration:none; }
+  .prom-base__bc a:hover { color:#000; }
+  .prom-base__bc-current { color:#000; font-weight:600; }
+  .prom-base__bc span[aria-hidden] { color:#bbb; }
+
+  /* CHIP */
+  .prom-base__chip { display:inline-block; font-size:11px; font-weight:800; letter-spacing:0.18em; color:var(--mtp-red); text-transform:uppercase; margin-bottom:18px; }
+  .prom-base__chip--muted { color:#999; }
+  .prom-base__chip--red { color:var(--mtp-red); }
+
+  /* H2 */
+  .prom-base__h2 { font-size:clamp(1.7rem, 2.8vw, 2.4rem); line-height:1.12; letter-spacing:-0.012em; margin:0 0 26px; font-weight:800; color:#000; }
+  .prom-base__h2--light { color:#fff; }
+
+  /* HERO */
+  .prom-base__hero { background:#fff; padding:48px 0 40px; border-bottom:1px solid #ededed; position:relative; overflow:hidden; }
+  .prom-base__hero-inner { max-width:1280px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start; }
+  .prom-base__hero-left { position:relative; }
+  .prom-base__zero { position:absolute; left:-2vw; top:-3vw; font-size:30vw; line-height:0.78; font-weight:900; color:var(--mtp-red); pointer-events:none; user-select:none; z-index:0; letter-spacing:-0.05em; font-family:'DM Sans',-apple-system,sans-serif; }
+  .prom-base__hero-text { position:relative; z-index:2; padding-top:6vw; padding-left:14vw; }
+  .prom-base__h1 { font-size:clamp(2rem, 4.5vw, 3.6rem); line-height:1.02; letter-spacing:-0.02em; margin:14px 0 22px; font-weight:900; color:#000; }
+  .prom-base__h1-strike { text-decoration:line-through; text-decoration-color:#000; text-decoration-thickness:4px; }
+  .prom-base__h1-red { color:var(--mtp-red); }
+  .prom-base__lead { font-size:clamp(1rem, 1.35vw, 1.18rem); line-height:1.6; color:#222; margin:0 0 0; max-width:540px; }
+
+  /* CALCULATOR CARD */
+  .prom-base__calc { background:#fff; border:2px solid #000; padding:28px 28px 24px; box-shadow:8px 8px 0 #000; max-width:440px; margin-left:auto; }
+  .prom-base__calc-head { border-bottom:1.5px solid #000; padding-bottom:14px; margin-bottom:18px; }
+  .prom-base__calc-label { display:block; font-size:11px; font-weight:800; letter-spacing:0.18em; color:var(--mtp-red); }
+  .prom-base__calc-sub { display:block; font-size:14px; color:#333; margin-top:4px; font-weight:600; }
+  .prom-base__calc-slider { margin-bottom:22px; }
+  .prom-base__calc-sublabel { display:block; font-size:13px; color:#444; margin-bottom:8px; }
+  .prom-base__calc-sublabel strong { color:#000; font-size:16px; font-weight:800; }
+  .prom-base__calc-slider input[type="range"] { width:100%; height:4px; -webkit-appearance:none; appearance:none; background:#eee; outline:none; cursor:pointer; }
+  .prom-base__calc-slider input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:20px; height:20px; background:var(--mtp-red); border:2px solid #000; cursor:pointer; }
+  .prom-base__calc-slider input[type="range"]::-moz-range-thumb { width:20px; height:20px; background:var(--mtp-red); border:2px solid #000; cursor:pointer; }
+  .prom-base__calc-range { display:flex; justify-content:space-between; font-size:11px; color:#999; margin-top:6px; }
+  .prom-base__calc-rows { border-top:1px solid #eee; }
+  .prom-base__calc-row { display:flex; justify-content:space-between; align-items:baseline; padding:14px 0; border-bottom:1px solid #eee; }
+  .prom-base__calc-row--own .prom-base__calc-rval { color:#999; text-decoration:line-through; font-size:1rem; }
+  .prom-base__calc-row--mtp .prom-base__calc-rval { color:#000; font-weight:800; font-size:1.4rem; }
+  .prom-base__calc-rname { font-size:13px; color:#444; }
+  .prom-base__calc-row--mtp .prom-base__calc-rname { color:#000; font-weight:700; }
+  .prom-base__calc-save { background:var(--mtp-red); color:#fff; padding:14px 18px; margin-top:14px; display:flex; justify-content:space-between; align-items:baseline; }
+  .prom-base__calc-save-label { font-size:11px; font-weight:800; letter-spacing:0.18em; }
+  .prom-base__calc-save-val { font-size:1.5rem; font-weight:900; }
+  .prom-base__calc-note { font-size:11px; color:#888; line-height:1.5; margin:14px 0 0; }
+  .prom-base__calc-note a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+
+  /* HERO FORM (HeroCTA wrapper) */
+  .prom-base__hero-form { max-width:1280px; margin:36px auto 0; padding:0 1.5rem; }
+  .prom-base__hero-form .hero-cta { max-width:540px; }
+
+  @media(max-width:880px) {
+    .prom-base__hero-inner { grid-template-columns:1fr; gap:36px; }
+    .prom-base__hero-text { padding-top:30vw; padding-left:0; }
+    .prom-base__zero { font-size:55vw; left:-8vw; top:-4vw; }
+    .prom-base__calc { margin:0 auto; box-shadow:6px 6px 0 #000; }
+  }
+
+  /* WHY (3 paragraphs editorial) */
+  .prom-base__why { padding:80px 0; border-top:1px solid #ededed; }
+  .prom-base__why-inner { max-width:880px; margin:0 auto; padding:0 1.5rem; }
+  .prom-base__why p { font-size:1.08rem; line-height:1.8; color:#222; margin:0 0 22px; }
+  .prom-base__why p:last-child { margin-bottom:0; }
+  .prom-base__why strong { color:#000; }
+  .prom-base__why em { font-style:italic; color:var(--mtp-red); font-weight:600; }
+
+  /* API */
+  .prom-base__api { padding:80px 0; border-top:1px solid #ededed; background:#fafaf8; }
+  .prom-base__api-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+  .prom-base__api-lead { font-size:1.05rem; line-height:1.7; color:#333; max-width:780px; margin:0 0 36px; }
+  .prom-base__api-steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0; border-top:1px solid #1a1a1a; }
+  .prom-base__api-step { padding:28px 24px; border-right:1px solid #ededed; border-bottom:1px solid #ededed; background:#fff; }
+  .prom-base__api-step:last-child { border-right:0; }
+  .prom-base__api-num { display:inline-block; font-size:13px; font-weight:800; letter-spacing:0.04em; color:var(--mtp-red); margin-bottom:10px; }
+  .prom-base__api-step h3 { font-size:1.12rem; font-weight:800; color:#000; margin:0 0 10px; line-height:1.25; }
+  .prom-base__api-step p { font-size:0.95rem; line-height:1.65; color:#333; margin:0; }
+  .prom-base__api-note { font-size:0.98rem; line-height:1.7; color:#444; max-width:880px; margin:30px 0 0; padding:18px 22px; background:#fff; border-left:3px solid var(--mtp-red); }
+  .prom-base__api-note strong { color:#000; }
+  .prom-base__api-note a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+  .prom-base__api-note a:hover { color:var(--mtp-red); }
+  .prom-base__api-extra { font-size:1rem; line-height:1.75; color:#222; max-width:880px; margin:24px 0 0; }
+  .prom-base__api-extra a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+  .prom-base__api-extra a:hover { color:var(--mtp-red); }
+
+  /* CASE STUDY */
+  .prom-base__case { background:#0a0a0a; color:#fff; padding:0; border-top:1px solid #1a1a1a; }
+  .prom-base__case-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch; }
+  .prom-base__case-photo { position:relative; min-height:540px; overflow:hidden; }
+  .prom-base__case-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(20%) contrast(1.05); }
+  .prom-base__case-text { padding:80px 4vw; max-width:680px; }
+  .prom-base__case-lead { font-size:1.05rem; line-height:1.7; color:#bbb; margin:0 0 32px; }
+  .prom-base__case-text-p { font-size:1rem; line-height:1.7; color:#ccc; margin:18px 0 0; }
+  .prom-base__case-metrics { display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid #2a2a2a; }
+  .prom-base__case-metric { padding:20px 0; border-bottom:1px solid #2a2a2a; padding-right:18px; }
+  .prom-base__case-metric:nth-child(odd) { border-right:1px solid #2a2a2a; padding-left:0; padding-right:18px; }
+  .prom-base__case-metric:nth-child(even) { padding-left:18px; }
+  .prom-base__case-mlabel { display:block; font-size:11px; font-weight:700; letter-spacing:0.16em; color:#888; text-transform:uppercase; margin-bottom:8px; }
+  .prom-base__case-mval { display:block; font-size:1.3rem; color:#fff; font-weight:600; }
+  .prom-base__case-mval strong { color:var(--mtp-red); font-weight:900; }
+  .prom-base__case-mar { color:#555; margin:0 6px; }
+
+  @media(max-width:880px) {
+    .prom-base__case-inner { grid-template-columns:1fr; }
+    .prom-base__case-photo { min-height:280px; }
+    .prom-base__case-text { padding:50px 1.5rem; }
+  }
+
+  /* PROCESS — single thin red line */
+  .prom-base__process { padding:80px 0; border-top:1px solid #ededed; background:#fff; }
+  .prom-base__process-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+  .prom-base__process-lead { font-size:1.05rem; line-height:1.7; color:#333; max-width:780px; margin:0 0 50px; }
+  .prom-base__line { position:relative; padding:30px 0 10px; }
+  .prom-base__line-steps { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(6, 1fr); gap:0; position:relative; }
+  .prom-base__line-steps::before { content:""; position:absolute; left:0; right:0; top:6px; height:3px; background:var(--mtp-red); }
+  .prom-base__line-steps li { position:relative; text-align:center; padding-top:30px; }
+  .prom-base__line-dot { position:absolute; top:0; left:50%; transform:translateX(-50%); width:14px; height:14px; background:var(--mtp-red); border:3px solid #fff; box-shadow:0 0 0 1.5px #000; border-radius:50%; }
+  .prom-base__line-num { display:block; font-size:11px; font-weight:800; letter-spacing:0.16em; color:#999; margin-bottom:6px; }
+  .prom-base__line-name { display:block; font-size:0.95rem; font-weight:700; color:#000; }
+  .prom-base__process-extra { font-size:1rem; line-height:1.75; color:#222; max-width:880px; margin:50px 0 0; }
+  .prom-base__process-extra strong { color:var(--mtp-red); font-weight:800; }
+
+  @media(max-width:760px) {
+    .prom-base__line-steps { grid-template-columns:1fr; gap:14px; }
+    .prom-base__line-steps::before { left:6px; right:auto; top:0; bottom:0; width:3px; height:auto; }
+    .prom-base__line-steps li { text-align:left; padding-top:0; padding-left:30px; }
+    .prom-base__line-dot { top:50%; left:0; transform:translateY(-50%); }
+  }
+
+  /* PRICING — dark table */
+  .prom-base__pricing { background:#0a0a0a; padding:80px 0; border-top:1px solid #1a1a1a; }
+  .prom-base__pricing-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; color:#fff; }
+  .prom-base__pricing-lead { font-size:1.05rem; line-height:1.7; color:#aaa; max-width:780px; margin:0 0 36px; }
+  .prom-base__table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .prom-base__table { width:100%; border-collapse:collapse; font-size:0.95rem; min-width:780px; color:#fff; }
+  .prom-base__table th, .prom-base__table td { text-align:left; padding:14px 18px; border-bottom:1px solid #222; vertical-align:top; }
+  .prom-base__table thead th { font-size:0.78rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#999; padding-bottom:10px; }
+  .prom-base__table thead tr:first-child th { border-bottom:1px solid #fff; padding-bottom:14px; }
+  .prom-base__table thead tr:first-child .prom-base__table-th-mid { color:var(--mtp-red); font-size:1rem; }
+  .prom-base__table-volume th { font-size:0.72rem; color:#777; padding-top:8px; padding-bottom:18px; border-bottom:1px solid #333; letter-spacing:0.1em; }
+  .prom-base__table tbody td:first-child { color:#fff; font-weight:600; }
+  .prom-base__table tbody td { color:#ccc; }
+  .prom-base__table-th-row { color:#fff; }
+  .prom-base__table-th-mid { background:rgba(230,51,41,0.06); color:#fff; }
+  .prom-base__table tbody td.prom-base__table-th-mid { background:rgba(230,51,41,0.06); color:#fff; font-weight:600; }
+  .prom-base__check { color:var(--mtp-red); font-weight:800; }
+  .prom-base__dash { color:#555; }
+  .prom-base__pricing-note { color:#999; margin:24px 0 0; font-size:0.95rem; }
+  .prom-base__pricing-note a { color:#fff; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+  .prom-base__pricing-note a:hover { color:var(--mtp-red); }
+
+  /* INTEGRATIONS */
+  .prom-base__integrations { padding:80px 0; border-top:1px solid #ededed; background:#fff; }
+  .prom-base__integrations-inner { max-width:880px; margin:0 auto; padding:0 1.5rem; }
+  .prom-base__integrations p { font-size:1.05rem; line-height:1.75; color:#222; margin:0 0 22px; }
+  .prom-base__integrations p:last-child { margin-bottom:0; }
+  .prom-base__integrations strong { color:#000; }
+  .prom-base__integrations a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+  .prom-base__integrations a:hover { color:var(--mtp-red); }
+
+  /* FAQ ACCORDION */
+  .prom-base__faq { padding:80px 0; border-top:1px solid #ededed; background:#fff; }
+  .prom-base__faq-inner { max-width:880px; margin:0 auto; padding:0 1.5rem; }
+  .prom-base__acc { border-top:1px solid #1a1a1a; margin-top:24px; }
+  .prom-base__acc-item { border-bottom:1px solid #ededed; }
+  .prom-base__acc-q { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; padding:20px 0; cursor:pointer; list-style:none; font-size:1.06rem; font-weight:700; color:#000; line-height:1.4; }
+  .prom-base__acc-q::-webkit-details-marker { display:none; }
+  .prom-base__acc-icon { color:var(--mtp-red); font-size:1.5rem; line-height:1; flex-shrink:0; transition:transform .2s; font-weight:300; }
+  .prom-base__acc-item[open] .prom-base__acc-icon { transform:rotate(45deg); }
+  .prom-base__acc-a { font-size:0.98rem; line-height:1.75; color:#333; padding:0 0 24px; max-width:780px; }
+  .prom-base__acc-a p { margin:0; }
+  .prom-base__acc-a a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+  .prom-base__acc-a a:hover { color:var(--mtp-red); }
+</style>
+
+<script is:inline>
+  // Hero calculator: cost_own = orders * 45 + 25000; cost_mtp = orders * 22 + 5000
+  (function () {
+    var slider = document.getElementById('prom-orders');
+    var ordersOut = document.getElementById('prom-orders-val');
+    var ownOut = document.getElementById('prom-own-val');
+    var mtpOut = document.getElementById('prom-mtp-val');
+    var saveOut = document.getElementById('prom-save-val');
+    if (!slider || !ordersOut || !ownOut || !mtpOut || !saveOut) return;
+
+    var fmt = function (n) {
+      return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    };
+
+    var update = function () {
+      var orders = parseInt(slider.value, 10) || 0;
+      var costOwn = orders * 45 + 25000;
+      var costMtp = orders * 22 + 5000;
+      var save = costOwn - costMtp;
+      ordersOut.textContent = fmt(orders);
+      ownOut.textContent = fmt(costOwn);
+      mtpOut.textContent = fmt(costMtp);
+      saveOut.textContent = fmt(save);
+    };
+
+    slider.addEventListener('input', update);
+    slider.addEventListener('change', update);
+    update();
+  })();
+</script>

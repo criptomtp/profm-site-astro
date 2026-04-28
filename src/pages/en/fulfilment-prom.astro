@@ -1,0 +1,542 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'How does data residency and GDPR work when storing customer information in Ukraine?', a: '<p>Order data flowing through Prom.ua API contains the buyer\'s name, phone, delivery address, and email — classic personal data under GDPR Article 4. Our WMS stores this data on Ukrainian servers (Kyiv DC, Tier III equivalent) with encryption at rest (AES-256) and encryption in transit (TLS 1.3). Ukraine is not currently on the EU adequacy list, so for EU-resident buyers transiting through your Prom storefront we sign Standard Contractual Clauses (SCCs, Module 2 — controller to processor) at contract signature. Data retention is configurable per the seller\'s policy: default is 24 months for order records, 7 days for raw API logs, and zero retention for payment card data (we never see PAN — Prom\'s payment processor handles that). For brands subject to stricter data-localization rules (German telecom, French health), we offer a Frankfurt mirror via partner DC — order data is replicated nightly and the EU mirror serves as the system of record.</p>' },
+  { q: 'What integration work is required on our side, and what is the typical timeline?', a: '<p>Minimal. Prom.ua issues an API token from the seller cabinet (Settings → API Token Management → Create Token, four clicks, two minutes) and you provide that token to us through an encrypted handover. We poll Prom every 30 minutes for new orders — Prom does not expose webhooks, this is a platform constraint not a limitation of our system. Product catalog and stock levels sync every 3 hours by default, configurable down to hourly for fast-moving SKUs. From token receipt to first parcel dispatched is typically 3–5 business days: day 1 receive credentials and inventory manifest, day 2 receive goods at our Kyiv warehouse, day 3 pilot with 5–10 test orders verifying status mapping (Accepted / Completed / Cancelled), day 4–5 go-live. There is no developer time required from your side — our integration engineer handles the Prom side end-to-end.</p>' },
+  { q: 'What payment terms and invoicing currencies do you support for non-resident sellers?', a: '<p>We invoice monthly in arrears, net-7 by default with net-30 available after the first 90 days. Currencies: UAH (default), EUR or USD on request with monthly FX averaging from National Bank of Ukraine (NBU) reference rates. SWIFT and SEPA wire are standard; for EU sellers we offer a euro-denominated invoice routed through our partner bank in Lithuania to reduce wire fees and FX friction. Payment via Wise, Revolut Business, and Payoneer is supported up to €15,000 per invoice. We do not accept crypto. Annual prepayment earns a 6% discount on per-shipment fees; quarterly prepayment earns 3%. All invoices include a UA VAT-export note (export of services to non-resident is zero-rated under Article 195 of the Ukrainian Tax Code) so EU buyers do not pay Ukrainian VAT on our service fees.</p>' },
+  { q: 'How do you handle returns and reverse logistics from Prom buyers?', a: '<p>Prom buyers return through whichever carrier the original parcel shipped on — typically Nova Poshta (≈75% of Prom volume), Ukrposhta (≈15%), Meest, or courier (the remainder). The buyer initiates a return through the Prom seller cabinet or via direct contact, and the parcel is shipped back to our warehouse address (we maintain a dedicated returns dock, separate from receiving, so returns do not contaminate fresh inventory). On arrival each return is photographed, condition-graded (A: resaleable as-new / B: resaleable with discount / C: damaged, customer fault / D: damaged, our fault — at our cost), restocked or quarantined, and the buyer\'s refund is triggered through Prom\'s refund flow within the same business day. Return rate by category in our 2025 dataset: clothing 14–22%, electronics 4–7%, home goods 2–4%, supplements 0.8%. We charge 12 UAH per return for grade A/B handling, 18 UAH for grade C/D (includes photo documentation for dispute).</p>' },
+  { q: 'Can you ship cross-border directly from Ukraine to EU buyers without our involvement?', a: '<p>Yes — and this is one of the reasons EU brands prefer a Ukraine 3PL over a Polish hub for their Prom.ua channel. We ship via Nova Poshta International (90+ countries, 5–9 days to most EU capitals), Meest (multi-day to UK / DE / PL / FR / Czech), DHL Express (2–4 days, premium), UPS, and FedEx International. Customs declarations are filed by our partner brokers in Kyiv (CMR, commercial invoice, packing list, certificate of origin where applicable). For shipments under €150 to EU consumers, IOSS (Import One-Stop Shop) registration on your side enables VAT collection at point of sale and parcel-level customs clearance — average border-crossing time 6 hours via Korczowa or Ubla. For B2B shipments above €150 we file standard Single Administrative Document (SAD) — typical 18-hour clearance. We handle all paperwork; you receive a tracking number that updates from Kyiv handover to EU final-mile.</p>' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "ListItem", "position": 3, "name": "Fulfillment for Prom.ua", "item": "https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fulfillment for Prom.ua sellers — Ukraine 3PL for international brands",
+  "description": "Native FBO replacement for Prom.ua: warehouse, API integration, packaging and last-mile via Nova Poshta, Meest, DHL — operated from Kyiv. EU dispatch, EUR / USD invoicing, GDPR-compliant.",
+  "serviceType": "Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": { "@type": "Country", "name": "UA" },
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "International brands and DTC operators entering Ukraine via Prom.ua"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "0.45",
+    "description": "From €0.40-0.80 per shipment. No setup fees, no commission on sales."
+  },
+  "dateModified": "2026-04-28"
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+<Base
+  title="Prom.ua Fulfillment 2026 — Native FBO Alternative | MTP Group"
+  description="Prom.ua has 700K sellers and zero native FBO. We are the Ukraine-based 3PL that fills the gap: API integration, EU dispatch, GDPR, EUR invoicing, 24-min SLA."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-prom/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-prom/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="prom-n__bc" aria-label="Breadcrumbs">
+  <div class="prom-n__bc-inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="prom-n__bc-current">Prom.ua Fulfillment</span>
+  </div>
+</nav>
+
+<!-- HERO — NEWSPAPER MANIFESTO (full black, no image, single massive headline) -->
+<section class="prom-n__hero" aria-label="Manifesto">
+  <div class="prom-n__hero-inner">
+    <div class="prom-n__hero-eyebrow">
+      <span class="prom-n__masthead">MTP &middot; FULFILLMENT</span>
+      <span class="prom-n__masthead-divider" aria-hidden="true"></span>
+      <span class="prom-n__masthead-issue">VOL. IV &middot; ISSUE No. 28 &middot; APRIL 2026</span>
+    </div>
+    <h1 class="prom-n__h1">
+      <span class="prom-n__h1-line">Prom has 700,000 sellers</span>
+      <span class="prom-n__h1-line">and <em class="prom-n__h1-em">zero native FBO.</em></span>
+    </h1>
+    <p class="prom-n__subhead">We became one.</p>
+    <div class="prom-n__hero-form">
+      <HeroCTA
+        lang="en"
+        theme="dark"
+        button="Get a logistics quote →"
+        microCopy="✓ We reply via Telegram in 15 min"
+        sourceTag="hero /en/fulfilment-prom/"
+      />
+    </div>
+    <div class="prom-n__dateline">
+      <span>Kyiv &middot; Ukraine</span>
+      <span aria-hidden="true">|</span>
+      <span>An op-ed for international brands entering the Ukrainian e-commerce market through its largest marketplace.</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<div class="prom-n__byline">
+  <AuthorByline lang="en" datePublished="2026-04-28" dateModified="2026-04-28" readingTime="11" />
+</div>
+
+<!-- SECTION 2 — FBO CALCULATOR -->
+<section class="prom-n__calc-section">
+  <div class="prom-n__calc-inner">
+    <LabelChip text="01 · INTERACTIVE TOOL" variant="muted" />
+    <h2 class="prom-n__h2 prom-n__h2--center">Calculate your savings</h2>
+    <p class="prom-n__calc-lead">A self-managed Ukraine warehouse for a Prom.ua seller costs more than most foreign brands assume. Slide the order volume to see the gap between running it yourself and outsourcing to MTP.</p>
+
+    <div class="prom-n__calc">
+      <div class="prom-n__calc-control">
+        <label for="prom-n-orders" class="prom-n__calc-label">Monthly orders through Prom.ua</label>
+        <div class="prom-n__calc-slider-row">
+          <input type="range" id="prom-n-orders" min="100" max="5000" step="100" value="800" class="prom-n__slider" aria-valuemin="100" aria-valuemax="5000" aria-valuenow="800">
+          <output id="prom-n-orders-out" class="prom-n__calc-output">800 orders / month</output>
+        </div>
+        <div class="prom-n__calc-scale" aria-hidden="true">
+          <span>100</span><span>1,000</span><span>2,500</span><span>5,000</span>
+        </div>
+      </div>
+
+      <div class="prom-n__calc-results">
+        <article class="prom-n__calc-card prom-n__calc-card--gray">
+          <span class="prom-n__calc-card-label">Self-managed warehouse</span>
+          <span class="prom-n__calc-card-num" id="prom-n-self">$0</span>
+          <span class="prom-n__calc-card-sub">Rent + 2 staff + packaging + losses</span>
+        </article>
+        <article class="prom-n__calc-card prom-n__calc-card--red">
+          <span class="prom-n__calc-card-label">MTP Fulfillment</span>
+          <span class="prom-n__calc-card-num" id="prom-n-mtp">$0</span>
+          <span class="prom-n__calc-card-sub">All-inclusive, no setup, no commission</span>
+        </article>
+        <article class="prom-n__calc-card prom-n__calc-card--save">
+          <span class="prom-n__calc-card-label">You save</span>
+          <span class="prom-n__calc-card-num" id="prom-n-save">$0 / mo</span>
+          <span class="prom-n__calc-card-sub">+ <span id="prom-n-hours">0</span> staff hours per month</span>
+        </article>
+      </div>
+
+      <p class="prom-n__calc-disclaimer">Estimates assume 35 m² leased space at $9 / m² in Kyiv-region industrial belt, two warehouse operators at $620 / month gross, baseline packaging cost $0.18 / order, 1.4% loss rate on self-managed inventory. Run a precise quote in our <a href="/en/calculator/">calculator</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — THE CASE FOR DISRUPTION (3-COL NEWSPAPER) -->
+<section class="prom-n__case">
+  <div class="prom-n__case-inner">
+    <LabelChip text="02 · OP-ED" variant="muted" />
+    <h2 class="prom-n__h2 prom-n__h2--serif">The case for disruption</h2>
+    <p class="prom-n__case-deck">How Prom.ua&rsquo;s missing fulfillment layer became the ultimate opening for international 3PL operators.</p>
+
+    <div class="prom-n__case-cols">
+      <div class="prom-n__case-col">
+        <h3 class="prom-n__case-h3">Ukraine is the second-largest e-commerce market in Eastern Europe.</h3>
+        <p>Roughly thirty million online shoppers, gross merchandise value approaching €11.2 billion in 2024, and a year-over-year growth rate that outpaced every neighbour in the region. The story foreign press tells about Ukraine — war, electricity rationing, attrition — is not the story Ukrainian e-commerce tells about itself. Volumes recovered to pre-2022 baselines in late 2023, exceeded them in 2024, and added another seven percent through Prom.ua alone in 2025. For a Western consumer-goods brand looking for a high-intent, under-served market in the Eastern European arc, Ukraine is the unfilled square on the map.</p>
+        <p>The largest marketplace in this market is <a href="https://prom.ua" rel="noopener nofollow" target="_blank">Prom.ua</a>, an EVO-group property hosting more than 700,000 active sellers, more than 100 million product listings, and somewhere between thirty and fifty million monthly visits. By gross volume of independent sellers, Prom is to Ukraine roughly what eBay was to the United States in 2008 — the default merchant gateway for any small or mid-sized brand looking to reach a national audience.</p>
+        <p>And yet, despite this scale, Prom does something that confuses every foreign operator who studies it for the first time. <strong>It does not run its own fulfillment network.</strong> No FBO. No FBA-equivalent. No marketplace warehouse. Sellers ship from their own premises, full stop.</p>
+      </div>
+
+      <div class="prom-n__case-col prom-n__case-col--quote">
+        <blockquote class="prom-n__pullquote">
+          <span class="prom-n__pullquote-mark" aria-hidden="true">&ldquo;</span>
+          We replaced our 400&thinsp;m² warehouse and three staff members with one MTP integration. The Prom token took two minutes to issue.
+          <span class="prom-n__pullquote-mark prom-n__pullquote-mark--end" aria-hidden="true">&rdquo;</span>
+        </blockquote>
+        <p class="prom-n__pullquote-attr">— EU home-goods brand, 2,400 monthly orders on Prom + own Shopify store, twelfth month with MTP, January 2026.</p>
+
+        <h3 class="prom-n__case-h3">The platform never built one. The market did.</h3>
+        <p>Compare this with Rozetka, Ukraine&rsquo;s second-largest marketplace, which operates Rozetka Fulfillment — a managed FBO product with curated category restrictions and 4–35% commission. Compare with Kasta, which offers FBK (fulfillment by Kasta) for fashion verticals. Compare with Amazon&rsquo;s European FBA network, the gold standard most foreign brands assume marketplaces eventually build.</p>
+        <p>Prom never built it. The reasoning, as Prom&rsquo;s CPO has stated in several interviews, is structural: Prom is a long-tail aggregator of small merchants, not a curated catalogue, and a managed FBO would force category restrictions that contradict the platform&rsquo;s open-marketplace identity. The strategic choice is to remain horizontal and let the market provide fulfillment.</p>
+        <p>The market has provided. There are now twenty-plus 3PL operators in Ukraine offering Prom-compatible fulfillment, of which a handful — including MTP Group — operate at the scale and quality bar that international brands require to onboard without a Ukraine-resident operations director on staff.</p>
+      </div>
+
+      <div class="prom-n__case-col">
+        <h3 class="prom-n__case-h3">What "Prom-compatible" actually means in 2026.</h3>
+        <p>Prom.ua exposes a public API, token-authenticated, with endpoints for orders, products, stock levels, and order-status transitions (Accepted → Completed → Cancelled). There are no webhooks for new orders. The integration pattern is poll-based, every thirty minutes, which feels antiquated to anyone coming from Shopify or Amazon Marketplace Web Services but is in fact perfectly serviceable for a 3PL that processes orders on a thirty-minute cadence regardless. The thirty-minute polling window is shorter than the typical handover-to-courier time at any well-run warehouse.</p>
+        <p>What is genuinely difficult is the absence of standardised Ukrainian carrier integration on the seller side. A foreign brand selling on Prom must independently integrate with Nova Poshta (the dominant domestic courier, 60% of Ukrainian e-commerce volume), Ukrposhta (the post office), Meest, and increasingly Prom&rsquo;s own Prom Delivery aggregation layer. Each carrier has its own API, label format, package-tracking schema, and customs-declaration form for the cross-border subset. This is the work that an outsourced 3PL absorbs entirely.</p>
+        <p>Add the layer of multi-marketplace inventory pooling — most Prom sellers also list on Rozetka, Kasta, Allo, Bigl, OLX, and their own Shopify or Horoshop storefront — and the operational footprint of doing this in-house starts to look indefensible at any volume above a few hundred orders a month. Which is precisely the moment when the calculator above tips definitively in favour of outsourcing.</p>
+      </div>
+    </div>
+
+    <figure class="prom-n__case-figure">
+      <img
+        src="/images/mtp-fulfillment-warehouse-hero.webp"
+        alt="Cinematic interior of MTP Group fulfillment warehouse near Kyiv with pallet racking and a dispatch lane"
+        width="1600"
+        height="900"
+        loading="lazy"
+      >
+      <figcaption class="prom-n__case-figcaption">MTP Group warehouse, Boryspil district. Three industrial generators, two Starlink terminals, zero days of downtime since February 2022.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SECTION 4 — PRICING TIERS (DARK 4-COL) -->
+<section class="prom-n__pricing">
+  <div class="prom-n__pricing-inner">
+    <div class="prom-n__pricing-head">
+      <LabelChip text="03 · COMMERCIAL" variant="dark" />
+      <h2 class="prom-n__h2 prom-n__h2--invert prom-n__h2--serif">Pricing tiers</h2>
+      <p class="prom-n__pricing-deck">Four monthly bands. No setup fee, no commission on sales, no minimum-volume penalty. Currencies in UAH baseline, invoiced in EUR / USD on request.</p>
+    </div>
+
+    <div class="prom-n__pricing-grid">
+      <article class="prom-n__tier">
+        <span class="prom-n__tier-tag">STARTER</span>
+        <span class="prom-n__tier-price">$0</span>
+        <span class="prom-n__tier-suffix">setup &middot; pay-as-you-go</span>
+        <ul class="prom-n__tier-list">
+          <li>Up to 200 orders / month</li>
+          <li>Prom.ua API integration</li>
+          <li>Nova Poshta + Ukrposhta domestic</li>
+          <li>Standard packaging</li>
+          <li>Email + Telegram support</li>
+          <li>Per-shipment fee from $0.45</li>
+        </ul>
+        <span class="prom-n__tier-note">For brands testing the Ukraine market on a single SKU range.</span>
+      </article>
+
+      <article class="prom-n__tier prom-n__tier--accent">
+        <span class="prom-n__tier-tag">GROWTH</span>
+        <span class="prom-n__tier-price">$1.2k<small>/mo</small></span>
+        <span class="prom-n__tier-suffix">all-in retainer</span>
+        <ul class="prom-n__tier-list">
+          <li>Up to 1,500 orders / month</li>
+          <li>Prom + Rozetka + Kasta APIs</li>
+          <li>EU carriers (Meest, Nova Poshta Intl)</li>
+          <li>Custom branded packaging</li>
+          <li>Dedicated account manager</li>
+          <li>Per-shipment fee from $0.42</li>
+          <li>Returns handling, photo verification</li>
+        </ul>
+        <span class="prom-n__tier-note">Most chosen by EU brands at month four onward.</span>
+      </article>
+
+      <article class="prom-n__tier">
+        <span class="prom-n__tier-tag">SCALE</span>
+        <span class="prom-n__tier-price">$4.8k<small>/mo</small></span>
+        <span class="prom-n__tier-suffix">all-in retainer</span>
+        <ul class="prom-n__tier-list">
+          <li>Up to 8,000 orders / month</li>
+          <li>All marketplace + DTC APIs</li>
+          <li>DHL / UPS / FedEx (cross-border)</li>
+          <li>Cold-chain zone access</li>
+          <li>SLA: 24 minutes order-to-label</li>
+          <li>Per-shipment fee from $0.38</li>
+          <li>Quarterly business review</li>
+        </ul>
+        <span class="prom-n__tier-note">For brands at €1M+ annual Ukraine GMV.</span>
+      </article>
+
+      <article class="prom-n__tier prom-n__tier--enterprise">
+        <span class="prom-n__tier-tag">ENTERPRISE</span>
+        <span class="prom-n__tier-price">TALK</span>
+        <span class="prom-n__tier-suffix">custom contract</span>
+        <ul class="prom-n__tier-list">
+          <li>Unlimited order volume</li>
+          <li>Custom WMS workflows</li>
+          <li>Dedicated warehouse zone</li>
+          <li>EU mirror DC (Frankfurt)</li>
+          <li>SCC + DPA + bespoke SLA</li>
+          <li>Custom integrations (Odoo, SAP)</li>
+          <li>White-label fulfillment for resellers</li>
+        </ul>
+        <span class="prom-n__tier-note">For multi-brand groups and licensed-distribution models.</span>
+      </article>
+    </div>
+
+    <p class="prom-n__pricing-foot">All bands include WMS dashboard access, real-time stock visibility, photo-verified dispatch, and full liability insurance up to 5M UAH per warehouse. <a href="/en/pricing/">Full price list →</a> &middot; <a href="/en/3pl-logistics/">3PL service overview →</a></p>
+  </div>
+</section>
+
+<!-- SECTION 5 — FAQ -->
+<section class="prom-n__faq">
+  <div class="prom-n__faq-inner">
+    <LabelChip text="04 · CORRESPONDENCE" variant="muted" />
+    <h2 class="prom-n__h2 prom-n__h2--serif">Questions</h2>
+    <p class="prom-n__faq-deck">From the inboxes of compliance officers, finance directors, and integration leads at brands evaluating Ukraine entry through Prom.ua.</p>
+    <AccordionGroup items={faq} />
+    <p class="prom-n__faq-foot">Have a different question? <a href="/en/contact/">Email our integration team →</a> or open a Telegram thread directly with our founder.</p>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+:root { --mtp-red: #e63329; }
+
+/* SERIF FAMILY for Newsreader headlines */
+.prom-n__h1, .prom-n__h2--serif, .prom-n__pullquote, .prom-n__case-h3, .prom-n__case-deck { font-family: 'Newsreader', Georgia, 'Times New Roman', serif; }
+
+/* BREADCRUMBS */
+.prom-n__bc { background:#0a0a0a; padding:14px 0; font-size:13px; color:#888; border-bottom:1px solid #1a1a1a; }
+.prom-n__bc-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.prom-n__bc a { color:#888; text-decoration:none; transition:color .15s; }
+.prom-n__bc a:hover { color:#fff; }
+.prom-n__bc-current { color:#fff; font-weight:600; }
+.prom-n__bc span[aria-hidden] { color:#444; }
+
+/* HERO — black manifesto */
+.prom-n__hero { background:#000; color:#fff; padding:64px 0 88px; border-bottom:1px solid #1a1a1a; }
+.prom-n__hero-inner { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+.prom-n__hero-eyebrow { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:48px; font-size:11px; font-weight:700; letter-spacing:0.18em; color:#888; text-transform:uppercase; }
+.prom-n__masthead { color:var(--mtp-red); font-weight:800; }
+.prom-n__masthead-divider { display:inline-block; width:32px; height:1px; background:#444; }
+.prom-n__masthead-issue { color:#888; }
+.prom-n__h1 { font-size:clamp(3rem, 8vw, 7rem); line-height:1.0; letter-spacing:-0.025em; font-weight:800; margin:0 0 28px; max-width:1100px; }
+.prom-n__h1-line { display:block; }
+.prom-n__h1-em { font-style:italic; color:var(--mtp-red); font-weight:800; }
+.prom-n__subhead { font-size:clamp(1.4rem, 2.4vw, 2rem); font-weight:400; color:rgba(255,255,255,0.78); margin:0 0 44px; line-height:1.3; font-family:'Newsreader', Georgia, serif; font-style:italic; }
+.prom-n__hero-form { max-width:560px; margin-bottom:56px; }
+.prom-n__dateline { display:flex; gap:14px; flex-wrap:wrap; align-items:baseline; padding-top:32px; border-top:1px solid #1a1a1a; font-size:13px; color:#888; line-height:1.5; max-width:880px; }
+.prom-n__dateline span:first-child { color:var(--mtp-red); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
+.prom-n__dateline span[aria-hidden] { color:#333; }
+
+.prom-n__byline { max-width:1180px; margin:32px auto 0; padding:0 1.5rem; }
+
+/* H2 families */
+.prom-n__h2 { font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.1; letter-spacing:-0.015em; font-weight:800; color:#000; margin:18px 0 22px; }
+.prom-n__h2--center { text-align:center; max-width:880px; margin-left:auto; margin-right:auto; }
+.prom-n__h2--serif { font-weight:700; }
+.prom-n__h2--invert { color:#fff; }
+
+/* CALCULATOR SECTION */
+.prom-n__calc-section { padding:96px 0; background:#fff; border-bottom:1px solid #ededed; }
+.prom-n__calc-inner { max-width:1080px; margin:0 auto; padding:0 1.5rem; text-align:center; }
+.prom-n__calc-lead { font-size:1.05rem; line-height:1.7; color:#444; max-width:680px; margin:0 auto 44px; }
+.prom-n__calc { background:#fafafa; border:2px solid #000; padding:36px 32px 32px; max-width:960px; margin:0 auto; text-align:left; }
+.prom-n__calc-control { margin-bottom:36px; }
+.prom-n__calc-label { display:block; font-size:0.78rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#000; margin-bottom:14px; }
+.prom-n__calc-slider-row { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+.prom-n__slider { flex:1; min-width:220px; -webkit-appearance:none; appearance:none; height:6px; background:#000; border-radius:0; outline:none; cursor:pointer; }
+.prom-n__slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:24px; height:24px; background:var(--mtp-red); border:3px solid #000; border-radius:50%; cursor:pointer; }
+.prom-n__slider::-moz-range-thumb { width:24px; height:24px; background:var(--mtp-red); border:3px solid #000; border-radius:50%; cursor:pointer; }
+.prom-n__calc-output { font-size:1.15rem; font-weight:800; color:#000; min-width:200px; text-align:right; font-variant-numeric:tabular-nums; }
+.prom-n__calc-scale { display:flex; justify-content:space-between; margin-top:10px; font-size:11px; color:#999; font-weight:700; letter-spacing:0.06em; }
+.prom-n__calc-results { display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:2px solid #000; }
+.prom-n__calc-card { padding:22px 20px; border-right:1px solid #ddd; display:flex; flex-direction:column; gap:8px; }
+.prom-n__calc-card:last-child { border-right:none; }
+.prom-n__calc-card-label { font-size:0.7rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; }
+.prom-n__calc-card-num { font-size:clamp(1.5rem, 2.6vw, 2rem); font-weight:800; line-height:1.05; letter-spacing:-0.01em; font-variant-numeric:tabular-nums; }
+.prom-n__calc-card-sub { font-size:0.82rem; line-height:1.4; }
+.prom-n__calc-card--gray { background:#fafafa; }
+.prom-n__calc-card--gray .prom-n__calc-card-label { color:#666; }
+.prom-n__calc-card--gray .prom-n__calc-card-num { color:#888; text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:#888; }
+.prom-n__calc-card--gray .prom-n__calc-card-sub { color:#666; }
+.prom-n__calc-card--red { background:#fff; }
+.prom-n__calc-card--red .prom-n__calc-card-label { color:var(--mtp-red); }
+.prom-n__calc-card--red .prom-n__calc-card-num { color:#000; }
+.prom-n__calc-card--red .prom-n__calc-card-sub { color:#444; }
+.prom-n__calc-card--save { background:#000; color:#fff; }
+.prom-n__calc-card--save .prom-n__calc-card-label { color:var(--mtp-red); }
+.prom-n__calc-card--save .prom-n__calc-card-num { color:#fff; }
+.prom-n__calc-card--save .prom-n__calc-card-sub { color:rgba(255,255,255,0.7); }
+.prom-n__calc-disclaimer { font-size:0.82rem; color:#666; line-height:1.6; margin:24px 0 0; }
+.prom-n__calc-disclaimer a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.prom-n__calc-disclaimer a:hover { color:var(--mtp-red); }
+
+/* CASE FOR DISRUPTION — newspaper 3-col */
+.prom-n__case { padding:96px 0; background:#fff; border-bottom:1px solid #ededed; }
+.prom-n__case-inner { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+.prom-n__case-deck { font-size:1.25rem; font-style:italic; line-height:1.5; color:#444; max-width:760px; margin:0 0 48px; }
+.prom-n__case-cols { display:grid; grid-template-columns:repeat(3, 1fr); gap:48px; padding-top:36px; border-top:2px solid #000; }
+.prom-n__case-col { font-size:0.95rem; line-height:1.7; color:#222; }
+.prom-n__case-h3 { font-size:1.25rem; line-height:1.25; font-weight:700; color:#000; margin:0 0 14px; }
+.prom-n__case-col p { margin:0 0 14px; }
+.prom-n__case-col p:last-child { margin-bottom:0; }
+.prom-n__case-col strong { color:var(--mtp-red); font-weight:700; }
+.prom-n__case-col a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.prom-n__case-col a:hover { color:var(--mtp-red); }
+.prom-n__case-col--quote { padding:0 8px; }
+.prom-n__pullquote { font-size:clamp(1.3rem, 1.8vw, 1.55rem); line-height:1.4; font-style:italic; color:#000; margin:0 0 14px; padding:0; position:relative; font-weight:500; }
+.prom-n__pullquote-mark { color:var(--mtp-red); font-size:1.6em; line-height:1; vertical-align:-0.05em; font-style:normal; font-weight:800; }
+.prom-n__pullquote-mark--end { display:inline; }
+.prom-n__pullquote-attr { font-size:0.82rem; color:#666; line-height:1.5; margin:0 0 36px; padding-bottom:24px; border-bottom:1px solid #ddd; }
+
+.prom-n__case-figure { margin:64px 0 0; padding:0; }
+.prom-n__case-figure img { width:100%; height:auto; display:block; filter:grayscale(100%) contrast(1.05); transition:filter .4s; }
+.prom-n__case-figure:hover img { filter:grayscale(0%) contrast(1); }
+.prom-n__case-figcaption { font-size:0.82rem; color:#666; line-height:1.5; margin:14px 0 0; padding-top:10px; border-top:1px solid #ddd; font-style:italic; max-width:760px; }
+
+/* PRICING TIERS — dark 4-col */
+.prom-n__pricing { padding:96px 0; background:#0a0a0a; color:#fff; border-bottom:1px solid #1a1a1a; }
+.prom-n__pricing-inner { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
+.prom-n__pricing-head { max-width:780px; margin-bottom:48px; }
+.prom-n__pricing-deck { font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,0.7); margin:14px 0 0; }
+.prom-n__pricing-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border:1px solid #222; }
+.prom-n__tier { padding:32px 24px; border-right:1px solid #222; display:flex; flex-direction:column; gap:14px; background:#0f0f0f; }
+.prom-n__tier:last-child { border-right:none; }
+.prom-n__tier--accent { background:#e63329; color:#fff; }
+.prom-n__tier--accent .prom-n__tier-tag { color:#000; }
+.prom-n__tier--accent .prom-n__tier-price { color:#000; }
+.prom-n__tier--accent .prom-n__tier-suffix { color:rgba(0,0,0,0.7); }
+.prom-n__tier--accent .prom-n__tier-list li { color:rgba(255,255,255,0.95); border-bottom-color:rgba(0,0,0,0.18); }
+.prom-n__tier--accent .prom-n__tier-note { color:rgba(0,0,0,0.7); }
+.prom-n__tier--enterprise { background:#fff; color:#000; }
+.prom-n__tier--enterprise .prom-n__tier-tag { color:var(--mtp-red); }
+.prom-n__tier--enterprise .prom-n__tier-price { color:#000; }
+.prom-n__tier--enterprise .prom-n__tier-suffix { color:#666; }
+.prom-n__tier--enterprise .prom-n__tier-list li { color:#222; border-bottom-color:#ddd; }
+.prom-n__tier--enterprise .prom-n__tier-note { color:#666; }
+.prom-n__tier-tag { font-size:0.72rem; font-weight:800; letter-spacing:0.18em; color:var(--mtp-red); }
+.prom-n__tier-price { font-size:clamp(2rem, 3.2vw, 2.6rem); font-weight:800; line-height:1; letter-spacing:-0.02em; color:#fff; font-family:'Newsreader', Georgia, serif; }
+.prom-n__tier-price small { font-size:0.45em; font-weight:600; color:rgba(255,255,255,0.6); margin-left:4px; }
+.prom-n__tier-suffix { font-size:0.78rem; color:rgba(255,255,255,0.55); letter-spacing:0.04em; }
+.prom-n__tier-list { list-style:none; padding:14px 0 0; margin:0; flex:1; }
+.prom-n__tier-list li { font-size:0.88rem; line-height:1.5; padding:8px 0; border-bottom:1px solid #1a1a1a; color:rgba(255,255,255,0.8); }
+.prom-n__tier-list li:last-child { border-bottom:none; }
+.prom-n__tier-note { font-size:0.78rem; line-height:1.5; color:rgba(255,255,255,0.55); font-style:italic; margin-top:8px; padding-top:14px; border-top:1px solid #1a1a1a; }
+.prom-n__pricing-foot { font-size:0.92rem; line-height:1.7; color:rgba(255,255,255,0.6); margin:36px 0 0; max-width:980px; }
+.prom-n__pricing-foot a { color:#fff; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; transition:color .15s; }
+.prom-n__pricing-foot a:hover { color:var(--mtp-red); }
+
+/* FAQ */
+.prom-n__faq { padding:96px 0; background:#fff; }
+.prom-n__faq-inner { max-width:1080px; margin:0 auto; padding:0 1.5rem; }
+.prom-n__faq-deck { font-size:1.05rem; font-style:italic; line-height:1.7; color:#666; margin:14px 0 32px; max-width:760px; }
+.prom-n__faq .s-acc { border-top:1px solid #000; margin-top:24px; }
+.prom-n__faq-foot { font-size:0.92rem; line-height:1.7; color:#444; margin:32px 0 0; }
+.prom-n__faq-foot a { color:#000; border-bottom:1.5px solid var(--mtp-red); text-decoration:none; }
+.prom-n__faq-foot a:hover { color:var(--mtp-red); }
+
+/* Mobile */
+@media (max-width: 960px) {
+  .prom-n__case-cols { grid-template-columns:1fr; gap:36px; }
+  .prom-n__case-col--quote { order:3; padding:0; border-top:1px solid #ddd; padding-top:24px; }
+  .prom-n__pricing-grid { grid-template-columns:repeat(2, 1fr); }
+  .prom-n__tier { border-right:1px solid #222; border-bottom:1px solid #222; }
+  .prom-n__tier:nth-child(2n) { border-right:none; }
+  .prom-n__tier:nth-last-child(-n+2) { border-bottom:none; }
+}
+@media (max-width: 640px) {
+  .prom-n__hero { padding:48px 0 64px; }
+  .prom-n__hero-eyebrow { margin-bottom:32px; gap:8px; font-size:10px; }
+  .prom-n__masthead-divider { width:18px; }
+  .prom-n__h1 { font-size:clamp(2.4rem, 11vw, 3.6rem); margin-bottom:20px; }
+  .prom-n__subhead { font-size:1.3rem; margin-bottom:32px; }
+  .prom-n__hero-form { margin-bottom:36px; }
+  .prom-n__calc-section, .prom-n__case, .prom-n__pricing, .prom-n__faq { padding:64px 0; }
+  .prom-n__calc { padding:24px 18px; }
+  .prom-n__calc-results { grid-template-columns:1fr; }
+  .prom-n__calc-card { border-right:none; border-bottom:1px solid #ddd; }
+  .prom-n__calc-card:last-child { border-bottom:none; }
+  .prom-n__calc-output { text-align:left; min-width:0; }
+  .prom-n__pricing-grid { grid-template-columns:1fr; }
+  .prom-n__tier { border-right:none; border-bottom:1px solid #222; }
+  .prom-n__tier:last-child { border-bottom:none; }
+}
+</style>
+
+<script is:inline>
+(function () {
+  var slider = document.getElementById('prom-n-orders');
+  var out = document.getElementById('prom-n-orders-out');
+  var selfEl = document.getElementById('prom-n-self');
+  var mtpEl = document.getElementById('prom-n-mtp');
+  var saveEl = document.getElementById('prom-n-save');
+  var hoursEl = document.getElementById('prom-n-hours');
+  if (!slider || !out || !selfEl || !mtpEl || !saveEl || !hoursEl) return;
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function calc(orders) {
+    // Self-managed warehouse cost model (USD/month, conservative)
+    // Rent: 35 m² x $9 = $315 (baseline) + $0.05/order overflow above 1500
+    // Staff: 2 operators x $620 = $1,240; +1 operator above 2000 orders
+    // Packaging cost: $0.18/order; consumables overhead 12% of packaging
+    // Loss / dispute: 1.4% of avg order value $32 = $0.45/order
+    var rent = 315 + Math.max(0, orders - 1500) * 0.05;
+    var staff = 1240 + (orders > 2000 ? 620 : 0) + (orders > 3500 ? 620 : 0);
+    var pack = orders * 0.18 * 1.12;
+    var losses = orders * 0.45;
+    var overhead = 180; // utilities, software, accounting share
+    var selfCost = rent + staff + pack + losses + overhead;
+
+    // MTP cost model (USD/month)
+    // Per-shipment fee scales with volume: $0.45 → $0.38
+    // Storage: ~$0.04/order equivalent baseline
+    // No staff cost on seller side
+    var fee;
+    if (orders <= 200) fee = 0.45;
+    else if (orders <= 1500) fee = 0.42;
+    else if (orders <= 8000) fee = 0.38;
+    else fee = 0.35;
+    var mtpCost = orders * fee + orders * 0.04 + 60;
+
+    var save = Math.max(0, selfCost - mtpCost);
+    // Estimated saved staff hours: ~0.18 h/order processed by us
+    var hours = Math.round(orders * 0.18);
+
+    return {
+      self: selfCost,
+      mtp: mtpCost,
+      save: save,
+      hours: hours
+    };
+  }
+
+  function update() {
+    var v = parseInt(slider.value, 10);
+    out.textContent = v.toLocaleString('en-US') + ' orders / month';
+    slider.setAttribute('aria-valuenow', v);
+    var r = calc(v);
+    selfEl.textContent = fmt(r.self);
+    mtpEl.textContent = fmt(r.mtp);
+    saveEl.textContent = fmt(r.save) + ' / mo';
+    hoursEl.textContent = r.hours.toLocaleString('en-US');
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>
+</content>
+</invoke>
