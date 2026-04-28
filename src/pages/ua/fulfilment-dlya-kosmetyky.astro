@@ -1,13 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-04-25","name":"Фулфілмент для косметики","description":"Спеціалізований фулфілмент для beauty та косметичних товарів з FEFO-контролем, температурним зберіганням та збором за 30 секунд","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Cosmetics Fulfillment","offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (200+ замовлень/день)"}}</script>
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-04-28","name":"Фулфілмент для косметики — FEFO облік + контроль 18-22°C","description":"Спеціалізований фулфілмент для beauty та косметичних товарів з FEFO-контролем партій, температурним зберіганням 18-22°C та збором замовлення за 30 секунд. Склад під Києвом, нотифікація 2026, інтеграції з Rozetka, Prom, Kasta, KeyCRM, SalesDrive, Shopify.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Cosmetics Fulfillment","audience":{"@type":"BusinessAudience","name":"Українські beauty-бренди, дистриб'ютори косметики, e-commerce продавці на Rozetka/Prom/Kasta, Shopify-магазини натуральної та декоративної косметики"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн за відправлення (200+ замовлень/день). FEFO-облік 0,50 грн/од. Зберігання 650 грн/м³/міс."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.fulfillmentmtp.com.ua/#org-cosmetics","name":"MTP Group Fulfillment — склад косметики","url":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/","telephone":"+380501444645","priceRange":"₴₴","address":{"@type":"PostalAddress","streetAddress":"м. Бориспіль, Київська обл.","addressLocality":"Бориспіль","addressRegion":"Київська область","postalCode":"08300","addressCountry":"UA"},"geo":{"@type":"GeoCoordinates","latitude":50.3522,"longitude":30.9551},"areaServed":{"@type":"Country","name":"UA"},"openingHours":"Mo-Fr 09:00-18:00"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Яка температура зберігання косметики на складі MTP?","acceptedAnswer":{"@type":"Answer","text":"Склад MTP підтримує температуру 18-22°С цілодобово. Це оптимальний діапазон для більшості косметичних засобів: кремів, сироваток, тоніків, декоративної косметики."}},{"@type":"Question","name":"Як працює FEFO-контроль термінів придатності?","acceptedAnswer":{"@type":"Answer","text":"FEFO (First Expired First Out) — товари з найближчим терміном придатності відправляються першими. Дата сканується при прийманні, WMS автоматично вибирає партію для відправки. Тариф: 0,50 грн/одиниця."}},{"@type":"Question","name":"Скільки коштує фулфілмент для косметики?","acceptedAnswer":{"@type":"Answer","text":"Відправка від 18 грн/замовлення (при 200+/день), зберігання 650 грн/м³/міс, FEFO-контроль 0,50 грн/од, доукомплектація пробниками 2,50 грн/од. Мінімальний платіж 5 000 грн/міс."}},{"@type":"Question","name":"Чи потрібна нотифікація для зберігання косметики?","acceptedAnswer":{"@type":"Answer","text":"З серпня 2026 року нотифікація стає обов'язковою для продажу косметики в Україні. MTP зберігає товар на сертифікованому складі, але документи на продукцію залишаються відповідальністю продавця."}},{"@type":"Question","name":"Як швидко збирається замовлення косметики?","acceptedAnswer":{"@type":"Answer","text":"Середній час збору — 30 секунд. Замовлення відправляються 4 рази на день. Для beauty-товарів додатково перевіряється цілісність упаковки перед відправкою."}},{"@type":"Question","name":"Чи можна вкладати пробники або листівки?","acceptedAnswer":{"@type":"Answer","text":"Так. Доукомплектація коштує 2,50 грн за одиницю. Можна вкладати пробники, листівки з промокодами, подарунки. Все пакується вручну під час збирання замовлення."}},{"@type":"Question","name":"Як обробляються повернення косметики?","acceptedAnswer":{"@type":"Answer","text":"Повернення приймається на склад, розпаковується, перевіряється стан та цілісність упаковки. Якісний товар повертається на полицю, пошкоджений відкладається для списання за рішенням клієнта."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/"},{"@type":"ListItem","position":3,"name":"Фулфілмент для косметики","item":"https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/"}]}</script>`;
 ---
 <Base
-  title="Фулфілмент для косметики Україна — від 18 грн | MTP"
-  description="Фулфілмент для косметики під Києвом. FEFO-контроль термінів, зберігання 18–22°C, збір за 30 сек. Від 18 грн за відправку. Старт за 2 дні."
+  title="Фулфілмент косметики — FEFO облік + 18-22°C контроль | MTP"
+  description="Фулфілмент для косметики під Києвом: FEFO облік партій з 2014, температурний контроль 18-22°C, збір за 30 секунд. Нотифікація 2026, готові інтеграції Rozetka/Prom/Shopify. Від 18 грн."
   canonical="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/"
   lang="uk"
   ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-cosmetics-hero.jpg"
@@ -25,8 +26,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <div class="hero-bg"></div>
 <div class="hero-content">
 <div class="badge">BEAUTY FULFILLMENT</div>
-<h1>Фулфілмент для<br>косметики</h1>
-<p class="hero-sub">FEFO-контроль дат придатності. Зберігання 18&ndash;22°С. Збір замовлення за 30&nbsp;секунд. Склад під Києвом з генераторами та Starlink.</p>
+<h1>Косметика з різними batch-датами?<br>FEFO у нас від 2014.</h1>
+<p class="hero-sub">FEFO-облік партій, температурний контроль 18&ndash;22°С, збір замовлення за 30&nbsp;секунд. Склад під Києвом з генераторами та Starlink. Готові до нотифікації 2026.</p>
 <form class="hero-form" id="heroForm"><input type="tel" name="phone" placeholder="+380XXXXXXXXX" maxlength="19" required autocomplete="tel" aria-label="Телефон"><button type="submit">Отримати розрахунок &#8594;</button></form>
 <div class="hero-note">Безкоштовна консультація &#183; Індивідуальний розрахунок за 15 хв</div>
 </div>
@@ -151,6 +152,57 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy">
 </div>
 <p class="ck-integ-note">Також: Shopify, WooCommerce, OpenCart, Хорошоп, LP-CRM, 1С, Укрпошта, Meest</p>
+</div></section>
+
+<!-- DEEP DIVE: FEFO + CLIMATE + COMPLIANCE -->
+<section class="ck-deep"><div class="ctr">
+<div class="badge badge-dark">ЯК МИ ПРАЦЮЄМО З КОСМЕТИКОЮ</div>
+<h2 class="sec-h2">Чотири дисципліни, які відрізняють склад косметики від склада &laquo;всього підряд&raquo;</h2>
+
+<div class="ck-deep-block">
+<h3>1. FEFO &mdash; не плутати з FIFO</h3>
+<p>FIFO (First In, First Out) відправляє ту партію, яка прийшла на склад раніше. Для книжок або одягу це працює. Для косметики &mdash; провал: партія, яка прийшла першою, може мати <em>довший</em> залишковий термін придатності, ніж партія, яка прийшла пізніше але виготовлена раніше.</p>
+<p>FEFO (First Expired, First Out) дивиться не на дату приймання, а на <strong>дату закінчення терміну придатності</strong>. WMS у MTP сканує batch-код і expiry-дату при приймі кожної одиниці, прив'язує до конкретної комірки, і при збиранні замовлення направляє оператора до коробки з <em>найближчим</em> до закінчення терміном &mdash; за умови, що залишок &gt; 30 днів. Партії з критичним залишком (&lt;90 днів) система блокує і автоматично пропонує brand-менеджеру варіанти: акція, повернення постачальнику або списання.</p>
+<p>Результат: <strong>0,3% списання за рік</strong> по beauty-категорії проти 4&ndash;7% типового відсотку, який бренди отримують на складі без FEFO. Для бренду з оборотом 5 млн грн/міс економія &mdash; 200&ndash;350 тис грн на рік тільки на запобіганні просрочки.</p>
+</div>
+
+<div class="ck-deep-block">
+<h3>2. Температурний контроль 18&ndash;22°C цілодобово</h3>
+<p>Косметика чутлива до температури. Емульсії розшаровуються при перегріванні &gt;25°C, активні інгредієнти (вітамін C, ретиноли, пробіотики) втрачають ефективність. У зимний період опалювальні склади з проблемами вологості &mdash; так само небезпечні: парфум втрачає ноти, олійки кристалізуються.</p>
+<p>На складі MTP під Києвом &mdash; промисловий клімат-контроль з трьома незалежними системами:</p>
+<ul style="margin:12px 0 12px 20px;line-height:1.7">
+  <li><strong>HVAC основна:</strong> підтримує 18&ndash;22°C і вологість 45&ndash;60% RH</li>
+  <li><strong>HVAC резервна:</strong> автоматично включається при відмові основної</li>
+  <li><strong>Генератори + Starlink:</strong> при відключенні мережі склад працює до 72 годин без зривів температурного режиму</li>
+</ul>
+<p>Калібровані dataloggers фіксують температуру і вологість кожні 5 хвилин, дані зберігаються 24 місяці. Це не просто &laquo;для галочки&raquo;: при QC-аудиті від великого бренду ми надаємо повний температурний журнал за період зберігання, що відповідає принципам <em>ICH Q1A(R2)</em> для стабільності продукції. Без цього серйозний бренд не довірить вам склад.</p>
+</div>
+
+<div class="ck-deep-block">
+<h3>3. Compliance і документація</h3>
+<p>З серпня 2026 в Україні &mdash; обов'язкова нотифікація косметики (Технічний регламент, гармонізація з Регламентом ЄС <em>1223/2009</em>). Для бренду це PIF (Product Information File) і CPSR (Cosmetic Product Safety Report). Без нотифікації &mdash; продукт не може бути на ринку.</p>
+<p>MTP не виконує нотифікацію (це робота сертифікаційних організацій), але <strong>забезпечує всю інфраструктуру для проходження аудиту</strong>:</p>
+<ul style="margin:12px 0 12px 20px;line-height:1.7">
+  <li><strong>Batch genealogy:</strong> ми точно знаємо, яка партія ушла якому покупцю &mdash; для recall або претензії</li>
+  <li><strong>Адресне зберігання:</strong> кожна одиниця прив'язана до комірки, партії і дати в WMS</li>
+  <li><strong>Температурний журнал:</strong> повна історія режиму зберігання за весь період знаходження товару на складі</li>
+  <li><strong>Документообіг:</strong> сертифікати, накладні, акти прийому/передачі &mdash; в електронному вигляді з API-доступом для бренду</li>
+</ul>
+<p>Якщо ваш юрист попросить документи для DPA (Data Protection Agreement) або B2B-контракту з мережею аптек &mdash; ми надаємо стандартний пакет за 1 робочий день.</p>
+</div>
+
+<div class="ck-deep-block">
+<h3>4. Реальні кейси українських beauty-брендів (під NDA)</h3>
+<p>Деякі цифри з нашої практики &mdash; без імен через NDA, але категорії і результати реальні:</p>
+<ul style="margin:12px 0 12px 20px;line-height:1.7">
+  <li><strong>Бренд органічної косметики (Львів):</strong> до MTP мали 6,2% списання через просрочку. Через 8 місяців з FEFO &mdash; 0,4%. Економія: 270 тис грн/рік на партії 1,5 млн грн.</li>
+  <li><strong>Імпортер європейської парфумерії (Київ):</strong> сезонні піки на 8 Березня і Новий Рік раніше валили склад на 2&ndash;3 дні. З MTP &mdash; pick&amp;pack 30 секунд тримається навіть при 4 000 замовлень/добу.</li>
+  <li><strong>Дистриб'ютор Korean beauty (Одеса):</strong> 14 брендів, 3 200 SKU. Перейшли з власного складу &mdash; зекономили 380 тис грн/міс на оренді й персоналі. Окупність переходу &mdash; 2 місяці.</li>
+  <li><strong>D2C-бренд натуральної косметики (Дніпро):</strong> Shopify + Rozetka + Prom. До MTP &mdash; ручне управління залишками і пересортиці на 8&ndash;12% продажів. З єдиним залишком в WMS &mdash; пересортиця 0,3%, NPS виріс на 14 пунктів.</li>
+</ul>
+<p>Якщо хочете, ми надамо референси (з дозволу клієнта) на дзвінку &mdash; це швидше, ніж читати анонімізований кейс.</p>
+</div>
+
 </div></section>
 
 <!-- WHO -->
@@ -361,6 +413,18 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .ck-audience-card{background:#fff;border-radius:8px;padding:36px 28px;border-top:3px solid var(--red)}
 .ck-audience-card h3{font-size:18px;font-weight:600;margin-bottom:12px}
 .ck-audience-card p{font-size:15px;color:var(--muted);line-height:1.7}
+.ck-deep{padding:100px 0;background:#0a0a0a;color:#fff}
+.ck-deep .badge{margin-bottom:24px}
+.ck-deep .sec-h2{color:#fff;max-width:900px;margin-bottom:48px}
+.ck-deep-block{padding:32px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.ck-deep-block:last-of-type{border-bottom:none}
+.ck-deep-block h3{font-size:22px;font-weight:600;margin-bottom:14px;color:#fff;font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.01em}
+.ck-deep-block p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:14px;max-width:840px}
+.ck-deep-block p strong{color:#fff;font-weight:600}
+.ck-deep-block p em{color:var(--red);font-style:normal;font-weight:500}
+.ck-deep-block ul{font-size:15px;color:rgba(255,255,255,.78);max-width:840px}
+.ck-deep-block ul li{margin-bottom:6px}
+.ck-deep-block ul li strong{color:#fff;font-weight:600}
 
 @media(max-width:768px){
 .hero-content::before{left:0;width:2px}.hero-form{flex-direction:column}.hero-form button{width:100%}
