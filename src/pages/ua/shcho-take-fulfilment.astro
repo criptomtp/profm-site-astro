@@ -49,7 +49,26 @@ const articleSchema = {
   "image": "https://www.fulfillmentmtp.com.ua/images/shcho-take-fulfilment-ua-hero.jpg"
 };
 
-const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Екскурсія по складу MTP Group — 2800 м² у Щасливому",
+  "description": "Відео-екскурсія по складу MTP Group: WMS-учёт, стелажі, зона комплектації, відправка через Нову Пошту й Укрпошту.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/bHY3cFF9SlI/maxresdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=bHY3cFF9SlI",
+  "embedUrl": "https://www.youtube.com/embed/bHY3cFF9SlI",
+  "uploadDate": "2026-04-21",
+  "publisher": {"@type":"Organization","name":"MTP Group Fulfillment","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"}}
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
+  "speakable": {"@type":"SpeakableSpecification","cssSelector":[".pillar-hero__lead",".pillar-blackout__sub"]}
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(videoSchema)}</script><script type="application/ld+json">${JSON.stringify(speakableSchema)}</script>`;
 ---
 <Base
   title="Що таке фулфілмент — повний гід 2026 | MTP Group"

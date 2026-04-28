@@ -49,7 +49,26 @@ const articleSchema = {
   "image": "https://www.fulfillmentmtp.com.ua/images/what-is-fulfillment-en-hero.jpg"
 };
 
-const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "MTP Group warehouse tour — 2,800 m² near Kyiv",
+  "description": "Inside an MTP Group warehouse near Kyiv: WMS-driven racking, picking lanes, packing zones, and the dispatch flow used by 150+ Ukrainian and EU brands.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/bHY3cFF9SlI/maxresdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=bHY3cFF9SlI",
+  "embedUrl": "https://www.youtube.com/embed/bHY3cFF9SlI",
+  "uploadDate": "2026-04-21",
+  "publisher": {"@type":"Organization","name":"MTP Group Fulfillment","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/mtp-logo.webp"}}
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+  "speakable": {"@type":"SpeakableSpecification","cssSelector":[".en-pil-hero__lede",".en-pil-sec__lede"]}
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(videoSchema)}</script><script type="application/ld+json">${JSON.stringify(speakableSchema)}</script>`;
 ---
 <Base
   title="What Is Fulfillment? The Operator's Guide 2026 | MTP Group"
