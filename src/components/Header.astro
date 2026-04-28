@@ -63,6 +63,7 @@ const mega = {
       { href: '/en/fulfillment-ukraine/', label: 'Fulfillment Ukraine' },
       { href: '/en/fulfillment-kyiv/', label: 'Fulfillment Kyiv' },
       { href: '/en/3pl-logistics/', label: '3PL Logistics' },
+      { href: '/en/fulfilment-for-online-store/', label: 'Online stores · $0.41/order', badge: 'NEW' },
       { href: '/en/fulfillment-for-rozetka-sellers/', label: 'Rozetka Multi-Marketplace', badge: 'NEW' },
       { href: '/en/fulfilment-prom/', label: 'Prom.ua FBO', badge: 'NEW' },
       { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
@@ -180,7 +181,8 @@ const mega = {
   var path = location.pathname;
   var map = {
     'tsiny':{ru:'/ru/tsenu/',en:'prices'},'tsenu':{ua:'tsiny',en:'prices'},'prices':{ua:'tsiny',ru:'/ru/tsenu/'},
-    'fulfilment-dlya-internet-magazynu':{ru:'/ru/fulfilment-dlya-internet-magazynu/',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-internet-magazynu':{ru:'/ru/fulfilment-dlya-internet-magazynu/',en:'/en/fulfilment-for-online-store/'},
+    'fulfilment-for-online-store':{ua:'/ua/fulfilment-dlya-internet-magazynu/',ru:'/ru/fulfilment-dlya-internet-magazynu/'},
     'fulfilment-vazhkykh-tovariv':{ru:'/ru/fulfilment-vazhkykh-tovariv/',en:'heavy-goods'},
     'heavy-goods':{ua:'fulfilment-vazhkykh-tovariv',ru:'/ru/fulfilment-vazhkykh-tovariv/'},
     'skladski-poslugy':{ru:'/ru/skladskie-uslugi/',en:'warehouse-services'},

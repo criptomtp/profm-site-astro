@@ -1,0 +1,624 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import StatsBar from '../../components/stitch/StatsBar.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'How is $0.41 per order even possible? Where is the catch?', a: '<p>There is no catch — the number reflects a different operating model, not a worse one. Three structural reasons make it work in Ukraine where it does not in the US or Western Europe. First, labour: a trained warehouse picker in Kyiv earns roughly $850 per month all-in (gross plus payroll taxes plus benefits) versus $4,200 for the same role in a US Tier-2 metro. Second, real estate: Class B logistics space inside the Kyiv ring road runs €4.50 per square metre per month versus $14 in a comparable US suburban park. Third, our pricing model is single-line and bundled — pick, pack, box, label, and Nova Poshta dropoff are one fee, not seven. We do not charge per-pick, per-additional-line-item, per-box, or per-label separately. So the $0.41 is the all-in number for a typical 1–3 SKU consumer order; what you see in our quote is what you pay on the invoice.</p>' },
+  { q: 'Which platforms and store builders do you integrate with?', a: '<p>Native turnkey: Shopify, WooCommerce, OpenCart, Magento, PrestaShop, and Horoshop (the dominant Ukrainian SaaS storefront for the local market). Native API: KeyCRM and SalesDrive (the two leading Ukrainian DTC order-management systems). Marketplace channels: Prom.ua, Rozetka, Hubber, and Allo via their respective seller APIs. Cross-border: we have shipped Etsy, eBay, and Faire orders out of Ukraine for European DTC brands. Custom: if you are on a bespoke platform we accept orders via webhook, REST API, EDI, CSV-over-SFTP, or in extreme cases email-parsed-to-order. The integration engineer on our side handles the connector work — your developers receive a webhook spec and can ignore the rest. Standard go-live is 5–7 business days from contract signature to first dispatched parcel.</p>' },
+  { q: 'I run a Shopify store outside Ukraine — why would I fulfill from Kyiv instead of a US or EU 3PL?', a: '<p>You would not, for orders shipping to your home market. The economics flip in three specific cases. First, you sell into Ukraine and the CIS — running this channel from a US 3PL means every parcel pays $35–60 in international shipping plus 5–14 days transit, both of which destroy unit economics. We dispatch to Ukrainian buyers next-day for $1.20 per parcel via Nova Poshta. Second, you sell cross-border into Eastern Europe (Poland, Romania, Czechia, Slovakia, Baltics) and Ukrainian-origin shipping via Nova Poshta International beats DHL out of a US warehouse on both speed and cost. Third, you have a bonded inventory strategy where Ukraine is your low-cost holding location for SKUs you reposition to Western fulfillment as demand spikes — we run that for two German DTC brands today. Outside these cases, stay with your domestic 3PL.</p>' },
+  { q: 'How do you handle returns from Ukrainian buyers, and what is the policy for damaged inventory?', a: '<p>Returns ship back to a dedicated returns dock at our Kyiv warehouse, separate from inbound receiving so fresh stock and returns never mix. Each parcel is opened, photographed, condition-graded on a four-point scale (A: new, B: open-box resaleable, C: damaged buyer fault, D: damaged our fault), and reflected in your inventory dashboard within 4 business hours of arrival. Your refund or replacement decision flows back through the same API channel that delivered the order. Storage of grade-D returns is free for 14 days while you decide on disposition (restock after rework, liquidate, donate, or destroy). Industry-baseline return rates we see in our 2025 dataset: clothing 14–22%, footwear 18–26%, electronics 4–7%, home goods 2–4%, supplements under 1%. Returns handling is invoiced at $0.18 per parcel for grades A/B and $0.27 for C/D (the latter includes photo documentation usable in chargeback disputes).</p>' },
+  { q: 'What payment terms do you offer for international clients, and what currencies?', a: '<p>Monthly invoicing in arrears, net-7 by default with net-30 unlocked after the first 90 days of clean payment history. Currencies: USD or EUR on request, with NBU monthly average reference rates applied to convert UAH operating costs (transparent on every invoice). SEPA and SWIFT wires are standard. For sub-€15,000 invoices we accept Wise, Revolut Business, and Payoneer to bypass wire fees. Annual prepayment earns a 6% discount on per-shipment fees; quarterly prepayment earns 3%. We do not accept crypto. All invoices include a Ukrainian VAT-export note (zero-rated for non-resident clients under Article 195 of the Tax Code), so EU and US clients do not pay Ukrainian VAT on fulfillment service fees. We can also invoice from a partner entity in Lithuania for euro-zone clients who require an EU-issued VAT invoice for their bookkeeping.</p>' },
+  { q: 'What happens if Russia escalates the war or strikes Kyiv warehouses again?', a: '<p>This is the question every international client asks in the first call, and the honest answer matters. Our Kyiv warehouse has operated continuously since February 2022 through every wave of strikes, with two recorded business-day pauses — both fewer than 8 hours, both during city-wide air-raid alerts, both with zero inventory loss. Three reasons: physical hardening (reinforced roof, ground-floor location, no glass-frontage exposure on the dispatch dock); redundant power (diesel genset with 96-hour fuel reserve plus solar backup for WMS servers); and a written disaster-recovery plan that triggers parcel rerouting to a partner warehouse in Lviv (Western Ukraine, ~530 km from Kyiv) within 6 hours of a major incident. Cargo insurance covers up to €3M per incident through Lloyds and a Ukrainian war-risk syndicate. Our SLA holds at 24-minute pick window and 48-hour dispatch in 99.5% of months including the worst three months of 2024.</p>' },
+  { q: 'Do you offer pick-and-pack only, or full ecommerce operations including customer service?', a: '<p>Both. The default contract is operational fulfillment — receiving, putaway, storage, pick, pack, dispatch, returns. Beyond that, we offer four optional layers that brands typically activate after the first 90 days. Customer-service tier 1: Ukrainian, Russian, and English-language phone and email response on order status questions, dispatched from our Kyiv office. Quality control: per-SKU inbound inspection with photo log, useful for brands shipping inventory from Asia and unable to inspect before container release. Kitting and bundling: assembly of multi-SKU promo bundles, gift sets, and influencer PR boxes. Subscription operations: recurring monthly box assembly with personalisation slips. Each layer is invoiced separately, transparent line items. We do not bundle these into the per-order rate.</p>' },
+  { q: 'Where is the warehouse, and can I visit before signing?', a: '<p>Kyiv, Ukraine — specific address shared after NDA. The site is one continuous 4,200 m² facility with separate zones for high-velocity DTC, slow-moving long-tail, hazmat-rated, and returns. Yes, in-person visits are welcomed and organised within 5 business days of request — we cover ground transport from Boryspil airport. For clients who prefer not to travel during the war, we run a live video walk-through (60–90 minutes) showing the receiving dock, putaway, the WMS, the pick zone, the pack stations, the dispatch lanes, and the dedicated returns area. We can also share a recent fire-marshal certificate, the warehouse insurance policy summary, and references from three current international clients who have agreed to take a reference call.</p>' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "ListItem", "position": 3, "name": "Fulfillment for Online Stores", "item": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fulfillment for Online Stores — Ukraine 3PL for Shopify, WooCommerce, Magento, OpenCart",
+  "description": "Per-order fulfillment from $0.41 all-in. Native integration with Shopify, WooCommerce, Magento, OpenCart, KeyCRM, SalesDrive, Horoshop, Prom.ua. EU and US dispatch from Kyiv. GDPR-compliant. EUR/USD invoicing.",
+  "serviceType": "Ecommerce Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "UA" },
+    { "@type": "Country", "name": "EU" },
+    { "@type": "Country", "name": "US" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "International DTC ecommerce founders, Shopify and WooCommerce store owners, EU and US brands selling into Ukraine"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.41",
+    "description": "From $0.41 per order, all-in. Pick, pack, box, label and dropoff included. No setup fees. No commission on sales. Single-line pricing — no per-pick, per-line-item or per-box add-ons."
+  },
+  "dateModified": "2026-04-28"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/",
+  "telephone": "+380501444645",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kyiv",
+    "addressCountry": "UA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
+
+const stats = [
+  { num: '$0.41', label: 'PER ORDER · ALL-IN' },
+  { num: '60K+', label: 'ORDERS PER MONTH' },
+  { num: '24 MIN', label: 'PICK WINDOW SLA' },
+  { num: '99.5%', label: 'INVENTORY ACCURACY' },
+];
+
+const competitors = [
+  { name: 'ShipBob', country: 'United States', perOrder: '$0.99 – $1.50', addons: '+ pick fee + line-item + box + storage tier', allIn: '~$5.40' },
+  { name: 'Red Stag', country: 'United States', perOrder: '$2.00 – $3.00', addons: '+ heavy surcharges + each-additional-item', allIn: '~$6.20' },
+  { name: 'ShipMonk', country: 'United States', perOrder: '$3.00 – $4.50', addons: '+ pick fee + line-item + tier upgrades', allIn: '~$7.10' },
+  { name: 'Bezos.ai', country: 'United Kingdom', perOrder: '£1.45 – £2.20', addons: '+ pick + each-add-item + returns', allIn: '~£4.80' },
+  { name: 'MTP Group', country: 'Ukraine', perOrder: '$0.41', addons: 'all-in: pick + pack + box + label + dropoff', allIn: '$0.41', highlight: true },
+];
+
+const integrations = [
+  { name: 'Shopify', tag: 'Native app' },
+  { name: 'WooCommerce', tag: 'Plugin' },
+  { name: 'Magento', tag: 'API' },
+  { name: 'OpenCart', tag: 'Module' },
+  { name: 'PrestaShop', tag: 'Module' },
+  { name: 'Horoshop', tag: 'Native API' },
+  { name: 'KeyCRM', tag: 'Native API' },
+  { name: 'SalesDrive', tag: 'Native API' },
+  { name: 'Prom.ua', tag: 'Seller API' },
+  { name: 'Rozetka', tag: 'Seller API' },
+  { name: 'Etsy', tag: 'Cross-border' },
+  { name: 'eBay', tag: 'Cross-border' },
+];
+
+const tiers = [
+  { range: '0 – 49', label: 'Starter', price: '$0.55', detail: 'Per order, all-in. Storage $18 / m³ / month. Best fit: brands testing Ukrainian channel before scaling.' },
+  { range: '50 – 99', label: 'Growth', price: '$0.48', detail: 'Per order, all-in. Storage $16 / m³ / month. Free returns handling for first 30 parcels per month.' },
+  { range: '100 – 199', label: 'Scale', price: '$0.44', detail: 'Per order, all-in. Storage $15 / m³ / month. Dedicated WMS account-manager. Quarterly business review.' },
+  { range: '200+', label: 'Enterprise', price: '$0.41', detail: 'Per order, all-in. Storage $13 / m³ / month. SLA 24-min pick. Custom kitting line. Priority dock for inbound containers.' },
+];
+---
+<Base
+  title="Fulfillment for Online Stores 2026 — $0.41 / order, all-in | MTP"
+  description="Ecommerce fulfillment from $0.41 per order, all-in. Native Shopify, WooCommerce, OpenCart, Magento integration. Kyiv-based 3PL for international DTC brands. EU + US dispatch. GDPR. EUR / USD invoicing."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-online-store-en-hero.webp"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="os__bc" aria-label="Breadcrumbs">
+  <div class="os__bc-inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="os__bc-current">Fulfillment for online stores</span>
+  </div>
+</nav>
+
+<!-- HERO — MASSIVE $0.41 (INDUSTRIAL ARCHETYPE) -->
+<section class="os__hero" aria-label="Hero">
+  <div class="os__hero-inner">
+    <div class="os__hero-left">
+      <LabelChip text="ECOMMERCE FULFILLMENT · UKRAINE 2026" variant="red" />
+      <div class="os__price">
+        <span class="os__price-currency" aria-hidden="true">$</span>
+        <span class="os__price-amount">0.41</span>
+      </div>
+      <p class="os__price-cap">PER ORDER · ALL-IN · NO ADD-ONS</p>
+      <p class="os__price-cmp">vs ShipBob $1.50 · Red Stag $2.50 · US average $5+</p>
+    </div>
+    <div class="os__hero-right">
+      <h1 class="os__h1">
+        Stop running a warehouse.
+        <em>Start running a brand.</em>
+      </h1>
+      <p class="os__lede">
+        We are the Kyiv-based 3PL for international DTC brands and store-builders who want US-quality fulfillment without US prices. Native integration with Shopify, WooCommerce, Magento, OpenCart, Horoshop, KeyCRM, SalesDrive, Prom.ua, and Rozetka — one warehouse, one invoice, one team.
+      </p>
+      <div class="os__hero-cta">
+        <HeroCTA
+          lang="en"
+          theme="light"
+          button="Get Custom Quote →"
+          microCopy="✓ Reply within 24 hours · English-speaking team · NDA on request"
+          sourceTag="hero /en/fulfilment-for-online-store/"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<StatsBar items={stats} tone="muted" />
+
+<!-- COST ANATOMY — what is NOT in your $0.41 -->
+<section class="os__anatomy" aria-labelledby="anatomy-h2">
+  <div class="os__container">
+    <LabelChip text="COST ANATOMY · WHY $0.41 BEATS $5+" variant="red" />
+    <h2 class="os__h2" id="anatomy-h2">
+      Most US 3PLs publish a <em>headline</em> per-order rate.
+      Your invoice is the <em>real</em> rate.
+    </h2>
+    <p class="os__h2-sub">
+      We benchmarked five DTC fulfillment providers on a representative 1,500-order month for a single-SKU consumer brand. Below is what actually appears on the invoice — line by line — versus the all-in price quoted on the homepage.
+    </p>
+
+    <div class="os__anatomy-grid">
+      <article class="os__anatomy-col os__anatomy-col--bad">
+        <header class="os__anatomy-h">
+          <span class="os__anatomy-tag">TYPICAL US OR EU 3PL</span>
+          <h3 class="os__anatomy-name">A real ShipBob-style invoice line</h3>
+        </header>
+        <ul class="os__anatomy-list">
+          <li><span>Pick fee — first item</span><span>$0.30</span></li>
+          <li><span>Each additional pick (avg 1.4 SKUs/order)</span><span>$0.20</span></li>
+          <li><span>Pack fee</span><span>$0.55</span></li>
+          <li><span>Box / packaging materials</span><span>$0.65</span></li>
+          <li><span>Shipping label printing</span><span>$0.10</span></li>
+          <li><span>Storage tier upgrade (peak)</span><span>$0.40</span></li>
+          <li><span>Returns processing per parcel</span><span>$2.00</span></li>
+          <li><span>Account / WMS access fee (allocated)</span><span>$0.85</span></li>
+        </ul>
+        <footer class="os__anatomy-total">
+          <span>Effective per-order all-in</span>
+          <span class="os__anatomy-bad-total">$5.05+</span>
+        </footer>
+      </article>
+
+      <article class="os__anatomy-col os__anatomy-col--good">
+        <header class="os__anatomy-h">
+          <span class="os__anatomy-tag os__anatomy-tag--good">MTP GROUP · KYIV</span>
+          <h3 class="os__anatomy-name">One line. One number.</h3>
+        </header>
+        <ul class="os__anatomy-list">
+          <li><span>Pick + pack + box + label + Nova Poshta dropoff</span><span class="os__anatomy-line-good">$0.41</span></li>
+          <li><span>Storage</span><span>$15 / m³ / month</span></li>
+          <li><span>Returns (grade A/B)</span><span>$0.18 / parcel</span></li>
+          <li><span>Setup, onboarding, integration build</span><span>$0</span></li>
+          <li><span>Per-pick add-on</span><span class="os__zero">$0</span></li>
+          <li><span>Per-line-item add-on</span><span class="os__zero">$0</span></li>
+          <li><span>Per-box add-on</span><span class="os__zero">$0</span></li>
+          <li><span>Account / WMS access fee</span><span class="os__zero">$0</span></li>
+        </ul>
+        <footer class="os__anatomy-total">
+          <span>Effective per-order all-in</span>
+          <span class="os__anatomy-good-total">$0.41</span>
+        </footer>
+      </article>
+    </div>
+
+    <p class="os__anatomy-foot">
+      Net annualised difference at 1,500 orders / month: <strong>$83,520</strong> kept inside your P&amp;L instead of an outsourced fee stack.
+    </p>
+  </div>
+</section>
+
+<!-- COMPETITOR TABLE -->
+<section class="os__cmp" aria-labelledby="cmp-h2">
+  <div class="os__container">
+    <LabelChip text="MARKET BENCHMARK · APRIL 2026" variant="muted" />
+    <h2 class="os__h2" id="cmp-h2">Where we sit on the global fulfillment price curve.</h2>
+    <p class="os__h2-sub">Public per-order rates from each provider's homepage or sales deck, normalised to a 1.4-SKU consumer order with average packaging.</p>
+
+    <div class="os__cmp-tablewrap">
+      <table class="os__cmp-table">
+        <thead>
+          <tr>
+            <th scope="col">Provider</th>
+            <th scope="col">Country</th>
+            <th scope="col">Per-order rate</th>
+            <th scope="col">Add-ons typical</th>
+            <th scope="col">All-in</th>
+          </tr>
+        </thead>
+        <tbody>
+          {competitors.map((c) => (
+            <tr class={c.highlight ? 'os__cmp-row os__cmp-row--us' : 'os__cmp-row'}>
+              <td><strong>{c.name}</strong></td>
+              <td>{c.country}</td>
+              <td>{c.perOrder}</td>
+              <td>{c.addons}</td>
+              <td><strong>{c.allIn}</strong></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="os__cmp-source">Sources: ShipBob pricing page · Red Stag Fulfillment direct quote 2026-Q1 · ShipMonk public pricing · Bezos.ai sales materials · MTP Group Tier-Enterprise published rate.</p>
+  </div>
+</section>
+
+<!-- INTEGRATIONS GRID -->
+<section class="os__int" aria-labelledby="int-h2">
+  <div class="os__container">
+    <LabelChip text="PLATFORMS · NATIVE INTEGRATIONS" variant="red" />
+    <h2 class="os__h2" id="int-h2">
+      Whatever you built your store on,
+      <em>we already speak to it.</em>
+    </h2>
+    <p class="os__h2-sub">12 native connectors. 5–7 business days from contract to first dispatched parcel. Your developers receive a webhook spec — our integration engineer handles the rest.</p>
+
+    <ul class="os__int-grid" role="list">
+      {integrations.map((i) => (
+        <li class="os__int-item">
+          <span class="os__int-name">{i.name}</span>
+          <span class="os__int-tag">{i.tag}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="os__int-foot">Custom platform? We accept orders via REST API, webhooks, EDI, CSV-over-SFTP, or email-parsed-to-order. <a href="/en/calculator/">Run our calculator →</a></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="os__how" aria-labelledby="how-h2">
+  <div class="os__container">
+    <LabelChip text="OPERATING MODEL · 4 STEPS" variant="muted" />
+    <h2 class="os__h2" id="how-h2">From your inventory truck to the buyer's doorstep.</h2>
+
+    <ol class="os__steps" role="list">
+      <li class="os__step">
+        <span class="os__step-num">01</span>
+        <h3 class="os__step-h">Inbound &amp; receiving</h3>
+        <p>Inventory arrives at our Kyiv dock by container, pallet, or parcel. Each unit is photographed, counted, condition-graded, and putaway-located within 24 hours of arrival. You see live receiving status in the WMS dashboard.</p>
+      </li>
+      <li class="os__step">
+        <span class="os__step-num">02</span>
+        <h3 class="os__step-h">Order capture &amp; sync</h3>
+        <p>The order lands in your store on Shopify, WooCommerce, Magento, OpenCart, Horoshop, KeyCRM, or SalesDrive. Our connector polls or webhook-receives within 60 seconds. The pick ticket prints in the warehouse before the buyer's confirmation email lands.</p>
+      </li>
+      <li class="os__step">
+        <span class="os__step-num">03</span>
+        <h3 class="os__step-h">Pick · pack · label · dispatch</h3>
+        <p>SLA: 24-minute pick window from order receipt to packed parcel for cut-off-time orders. Packed in your branded box if you ship inserts or branded materials, otherwise our neutral mailer. Label printed, dispatched same day via Nova Poshta, Ukrposhta, Meest, DHL, UPS, or FedEx.</p>
+      </li>
+      <li class="os__step">
+        <span class="os__step-num">04</span>
+        <h3 class="os__step-h">Returns &amp; reconciliation</h3>
+        <p>Returns route to a dedicated dock. Each parcel is opened, photographed, condition-graded (A/B/C/D), and reflected in your dashboard within 4 business hours. Refund or replacement decisions flow back via the same API channel that delivered the original order.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="os__tiers" aria-labelledby="tiers-h2">
+  <div class="os__container">
+    <LabelChip text="PRICING · BY VOLUME" variant="red" />
+    <h2 class="os__h2" id="tiers-h2">Four published tiers. No hidden math.</h2>
+    <p class="os__h2-sub">Volume bands measured on a rolling 30-day basis. Crossing a threshold drops your per-order rate automatically — we never re-negotiate up.</p>
+
+    <div class="os__tiers-grid">
+      {tiers.map((t) => (
+        <article class="os__tier">
+          <header class="os__tier-h">
+            <span class="os__tier-band">{t.range} orders / day</span>
+            <span class="os__tier-name">{t.label}</span>
+          </header>
+          <div class="os__tier-price">
+            <span class="os__tier-cur">$</span>
+            <span class="os__tier-num">{t.price.replace('$', '')}</span>
+            <span class="os__tier-unit">/ order</span>
+          </div>
+          <p class="os__tier-detail">{t.detail}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="os__tiers-foot">Need a per-SKU custom quote? <a href="/en/calculator/">Calculator →</a> · <a href="/en/prices/">All prices →</a></p>
+  </div>
+</section>
+
+<!-- TRUST / WAR-RESILIENCE -->
+<section class="os__trust" aria-labelledby="trust-h2">
+  <div class="os__container">
+    <LabelChip text="OPERATIONAL CONTINUITY · 2022 – 2026" variant="dark" />
+    <h2 class="os__h2 os__h2--inverse" id="trust-h2">
+      We have shipped through every wave of the war.
+      <em>Without losing a parcel.</em>
+    </h2>
+    <div class="os__trust-grid">
+      <article class="os__trust-card">
+        <h3>Physical hardening</h3>
+        <p>Reinforced roof, ground-floor location, no glass-frontage exposure on the dispatch dock. The site has operated continuously since February 2022 with two recorded business-day pauses, both under 8 hours.</p>
+      </article>
+      <article class="os__trust-card">
+        <h3>Power redundancy</h3>
+        <p>Diesel genset with 96-hour fuel reserve and solar backup for WMS servers. Order capture, picking, and dispatch keep running through grid outages and air-raid alerts.</p>
+      </article>
+      <article class="os__trust-card">
+        <h3>Disaster-recovery plan</h3>
+        <p>Written DR plan triggers parcel rerouting to a partner warehouse in Lviv (Western Ukraine, 530 km from Kyiv) within 6 hours of a major incident. SLA holds at 24-minute pick and 48-hour dispatch in 99.5% of months.</p>
+      </article>
+      <article class="os__trust-card">
+        <h3>Cargo insurance</h3>
+        <p>Up to €3M per incident through Lloyds and a Ukrainian war-risk syndicate. Inventory damage from war-related events is covered — most US 3PL policies explicitly exclude this; ours does not.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT IS FOR / WHO IT IS NOT FOR -->
+<section class="os__fit" aria-labelledby="fit-h2">
+  <div class="os__container">
+    <LabelChip text="HONEST FIT CHECK" variant="muted" />
+    <h2 class="os__h2" id="fit-h2">When Ukraine fulfillment is the right choice — and when it is not.</h2>
+
+    <div class="os__fit-grid">
+      <div class="os__fit-col os__fit-col--yes">
+        <h3>Right for you if:</h3>
+        <ul>
+          <li>You sell into Ukraine or the CIS and need next-day Nova Poshta dispatch at $1.20 per parcel.</li>
+          <li>You are a European DTC brand expanding cross-border into Eastern Europe and want a low-cost Kyiv hub.</li>
+          <li>You operate on Shopify, WooCommerce, Magento, OpenCart, Horoshop, KeyCRM, or SalesDrive and want a single 3PL that already speaks to your stack.</li>
+          <li>Your unit margin is under $20 and US 3PL fees are eating 25%+ of your per-order economics.</li>
+          <li>You need bonded storage for inventory you reposition to Western fulfillment as demand spikes.</li>
+        </ul>
+      </div>
+      <div class="os__fit-col os__fit-col--no">
+        <h3>Wrong for you if:</h3>
+        <ul>
+          <li>You sell exclusively into the US and your average ship-time tolerance is under 48 hours coast-to-coast — stay with a domestic 3PL.</li>
+          <li>You require FDA-bonded cold-chain storage for biologics — we do not run a 2–8°C cold room.</li>
+          <li>Your products are firearms, ammunition, restricted dual-use technology, or live animals — we do not handle these categories.</li>
+          <li>Your buyers expect Amazon Prime same-day delivery as the baseline — Ukrainian last-mile is not yet at that tier internationally.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS GRID -->
+<section class="os__links" aria-labelledby="links-h2">
+  <div class="os__container">
+    <LabelChip text="EXPLORE FURTHER" variant="red" />
+    <h2 class="os__h2" id="links-h2">More on how we operate.</h2>
+    <ul class="os__links-grid" role="list">
+      <li><a href="/en/calculator/"><strong>Pricing calculator →</strong><span>Model your monthly invoice in 30 seconds.</span></a></li>
+      <li><a href="/en/prices/"><strong>Prices →</strong><span>Full per-service rate card.</span></a></li>
+      <li><a href="/en/fulfilment-prom/"><strong>Prom.ua FBO →</strong><span>Native fulfillment for the second-largest UA marketplace.</span></a></li>
+      <li><a href="/en/fulfillment-for-rozetka-sellers/"><strong>Rozetka multi-marketplace →</strong><span>For sellers operating on Ukraine's #1 marketplace.</span></a></li>
+      <li><a href="/en/fulfillment-ukraine/"><strong>Why Ukraine →</strong><span>Geographic and cost advantages of a Kyiv hub.</span></a></li>
+      <li><a href="/en/3pl-logistics/"><strong>3PL logistics overview →</strong><span>Full service catalogue and capabilities.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="os__faq" aria-labelledby="faq-h2">
+  <div class="os__container">
+    <LabelChip text="FREQUENTLY ASKED · LONG ANSWERS" variant="muted" />
+    <h2 class="os__h2" id="faq-h2">Eight questions every founder asks before signing.</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<AuthorByline lang="en" />
+
+<style is:global>
+  /* ===== ONLINE-STORE EN — INDUSTRIAL ARCHETYPE ===== */
+  .os__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* BREADCRUMBS */
+  .os__bc { background: #fff; border-bottom: 1px solid #eaeaea; }
+  .os__bc-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: #6b6b6b; display: flex; gap: 8px; align-items: center; }
+  .os__bc-inner a { color: #6b6b6b; text-decoration: none; }
+  .os__bc-inner a:hover { color: #e63329; }
+  .os__bc-current { color: #000; font-weight: 500; }
+
+  /* HERO — MASSIVE $0.41 */
+  .os__hero { background: #fff; padding: 80px 24px 48px; border-bottom: 1px solid #eaeaea; }
+  .os__hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .os__hero-left { display: flex; flex-direction: column; gap: 14px; }
+  .os__price { font-family: 'DM Serif Display', serif; line-height: 0.85; color: #000; display: flex; align-items: flex-start; gap: 8px; margin: 12px 0 4px; }
+  .os__price-currency { font-size: 4rem; line-height: 1; padding-top: 14px; color: #e63329; font-weight: 400; }
+  .os__price-amount { font-size: 14vw; letter-spacing: -0.05em; font-weight: 400; }
+  .os__price-cap { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.18em; color: #000; text-transform: uppercase; font-weight: 600; margin: 0; }
+  .os__price-cmp { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #6b6b6b; margin: 0; }
+
+  .os__hero-right { display: flex; flex-direction: column; gap: 24px; }
+  .os__h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1.05; color: #000; margin: 0; font-weight: 400; }
+  .os__h1 em { font-style: italic; color: #e63329; }
+  .os__lede { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.6; color: #2a2a2a; margin: 0; }
+  .os__hero-cta { margin-top: 8px; }
+
+  @media (max-width: 900px) {
+    .os__hero { padding: 56px 24px 32px; }
+    .os__hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .os__price-amount { font-size: 24vw; }
+    .os__price-currency { font-size: 6rem; padding-top: 26px; }
+    .os__h1 { font-size: 2rem; }
+  }
+
+  /* H2 SHARED */
+  .os__h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.1; color: #000; margin: 16px 0 12px; font-weight: 400; }
+  .os__h2 em { font-style: italic; color: #e63329; }
+  .os__h2--inverse { color: #fff; }
+  .os__h2-sub { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #4a4a4a; max-width: 760px; margin: 0 0 32px; }
+
+  /* COST ANATOMY */
+  .os__anatomy { background: #f3f3f3; padding: 80px 24px; }
+  .os__anatomy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0 24px; }
+  .os__anatomy-col { background: #fff; padding: 32px; border: 1px solid #e6e6e6; }
+  .os__anatomy-col--good { background: #000; color: #fff; border-color: #000; }
+  .os__anatomy-h { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #e6e6e6; }
+  .os__anatomy-col--good .os__anatomy-h { border-bottom-color: #2a2a2a; }
+  .os__anatomy-tag { font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6b6b6b; font-weight: 600; }
+  .os__anatomy-tag--good { color: #e63329; }
+  .os__anatomy-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: inherit; margin: 8px 0 0; font-weight: 400; }
+  .os__anatomy-list { list-style: none; padding: 0; margin: 0; font-family: 'DM Sans', sans-serif; }
+  .os__anatomy-list li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; }
+  .os__anatomy-col--good .os__anatomy-list li { border-bottom-color: #1f1f1f; color: #d6d6d6; }
+  .os__anatomy-line-good { color: #e63329; font-weight: 600; }
+  .os__zero { color: #6b6b6b; }
+  .os__anatomy-col--good .os__zero { color: #6b6b6b; }
+  .os__anatomy-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 16px; margin-top: 12px; border-top: 2px solid #000; font-family: 'DM Sans', sans-serif; }
+  .os__anatomy-col--good .os__anatomy-total { border-top-color: #e63329; }
+  .os__anatomy-bad-total { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #000; font-weight: 400; }
+  .os__anatomy-good-total { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #e63329; font-weight: 400; }
+  .os__anatomy-foot { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 1rem; margin-top: 16px; }
+  .os__anatomy-foot strong { color: #e63329; }
+
+  @media (max-width: 900px) {
+    .os__anatomy-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* COMPETITOR TABLE */
+  .os__cmp { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .os__cmp-tablewrap { overflow-x: auto; }
+  .os__cmp-table { width: 100%; border-collapse: collapse; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; min-width: 760px; }
+  .os__cmp-table th { text-align: left; padding: 16px; background: #f3f3f3; font-weight: 600; letter-spacing: 0.06em; font-size: 0.78rem; text-transform: uppercase; color: #2a2a2a; border-bottom: 2px solid #000; }
+  .os__cmp-table td { padding: 18px 16px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  .os__cmp-row--us { background: #fff5f4; }
+  .os__cmp-row--us td:first-child::before { content: '★ '; color: #e63329; }
+  .os__cmp-source { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: #6b6b6b; margin-top: 12px; }
+
+  /* INTEGRATIONS */
+  .os__int { background: #f3f3f3; padding: 80px 24px; }
+  .os__int-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .os__int-item { background: #fff; padding: 24px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; display: flex; flex-direction: column; gap: 8px; min-height: 110px; justify-content: center; }
+  .os__int-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #000; }
+  .os__int-tag { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6b6b; font-weight: 500; }
+  .os__int-foot { font-family: 'DM Sans', sans-serif; margin-top: 24px; color: #2a2a2a; }
+  .os__int-foot a { color: #e63329; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .os__int-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* HOW IT WORKS */
+  .os__how { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .os__steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; }
+  .os__step { padding: 32px; border-right: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; background: #fff; }
+  .os__step-num { font-family: 'DM Serif Display', serif; font-size: 4.5rem; line-height: 0.9; color: #e63329; display: block; margin-bottom: 12px; font-weight: 400; }
+  .os__step-h { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; margin: 0 0 10px; font-weight: 400; }
+  .os__step p { font-family: 'DM Sans', sans-serif; color: #2a2a2a; line-height: 1.65; margin: 0; }
+
+  @media (max-width: 900px) {
+    .os__steps { grid-template-columns: 1fr; }
+  }
+
+  /* TIERS */
+  .os__tiers { background: #f3f3f3; padding: 80px 24px; }
+  .os__tiers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 32px 0 24px; border: 1px solid #e0e0e0; border-right: 0; }
+  .os__tier { background: #fff; padding: 28px; border-right: 1px solid #e0e0e0; }
+  .os__tier-h { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+  .os__tier-band { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6b6b; font-weight: 600; }
+  .os__tier-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #000; font-weight: 400; }
+  .os__tier-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 12px; }
+  .os__tier-cur { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #e63329; }
+  .os__tier-num { font-family: 'DM Serif Display', serif; font-size: 3rem; line-height: 1; color: #000; }
+  .os__tier-unit { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: #6b6b6b; margin-left: 4px; }
+  .os__tier-detail { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 0.92rem; line-height: 1.55; margin: 0; }
+  .os__tiers-foot { font-family: 'DM Sans', sans-serif; color: #2a2a2a; }
+  .os__tiers-foot a { color: #e63329; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .os__tiers-grid { grid-template-columns: repeat(2, 1fr); }
+    .os__tier:nth-child(2n) { border-right: 0; }
+    .os__tier:nth-child(-n+2) { border-bottom: 1px solid #e0e0e0; }
+  }
+
+  /* TRUST */
+  .os__trust { background: #000; color: #fff; padding: 80px 24px; }
+  .os__trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+  .os__trust-card { background: #0e0e0e; border: 1px solid #1f1f1f; padding: 28px; }
+  .os__trust-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #fff; margin: 0 0 10px; font-weight: 400; }
+  .os__trust-card p { font-family: 'DM Sans', sans-serif; color: #c8c8c8; line-height: 1.65; margin: 0; }
+
+  @media (max-width: 900px) {
+    .os__trust-grid { grid-template-columns: 1fr; }
+  }
+
+  /* FIT */
+  .os__fit { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .os__fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 24px; }
+  .os__fit-col { padding: 28px; border: 1px solid #e0e0e0; }
+  .os__fit-col--yes { border-left: 4px solid #e63329; }
+  .os__fit-col--no { background: #f7f7f7; }
+  .os__fit-col h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #000; margin: 0 0 12px; font-weight: 400; }
+  .os__fit-col ul { font-family: 'DM Sans', sans-serif; padding-left: 20px; margin: 0; color: #2a2a2a; line-height: 1.6; }
+  .os__fit-col li { margin-bottom: 10px; }
+
+  @media (max-width: 900px) {
+    .os__fit-grid { grid-template-columns: 1fr; }
+  }
+
+  /* INTERNAL LINKS */
+  .os__links { background: #f3f3f3; padding: 80px 24px; }
+  .os__links-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .os__links-grid li { background: #fff; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+  .os__links-grid a { display: flex; flex-direction: column; gap: 8px; padding: 28px; color: #000; text-decoration: none; height: 100%; }
+  .os__links-grid a:hover { background: #fff5f4; }
+  .os__links-grid a strong { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #e63329; font-weight: 400; }
+  .os__links-grid a span { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 0.92rem; line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .os__links-grid { grid-template-columns: 1fr; }
+  }
+
+  /* FAQ */
+  .os__faq { background: #fff; padding: 80px 24px 100px; }
+</style>
+</Base>
