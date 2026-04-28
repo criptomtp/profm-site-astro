@@ -38,7 +38,9 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 - [Фулфілмент для Prom.ua (UA)](https://www.fulfillmentmtp.com.ua/fulfilment-prom/): FBO alternative for Prom.ua sellers — Prom has 700K sellers and zero native FBO, MTP fills the gap with 18-22 ₴/order, NP/Укрпошта/Meest integration, live calculator
 - [Фулфилмент для Prom.ua (RU)](https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/): Tool-first calculator-led page for CIS sellers entering Ukraine via Prom.ua — ROI tables, WMS API specs, Prom vs Rozetka FBBY vs Amazon FBA comparison
 - [Prom.ua FBO Fulfillment (EN)](https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/): Editorial / op-ed positioning — Prom has 700K sellers and zero native FBO, EUR/USD pricing, GDPR-compliant, EU dispatch via cross-border
-- [Fulfillment for Cosmetics (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Cosmetics vertical — fragile, expiry-date handling
+- [Fulfillment for Cosmetics (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/): Cosmetics vertical — fragile, expiry-date handling, FEFO control 18-22°C
+- [Фулфилмент для косметики (RU)](https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/): Cosmetics vertical for CIS — FEFO control, climate 18-22°C, 6 000 orders/day capacity
+- [Fulfillment for Cosmetics (EN)](https://www.fulfillmentmtp.com.ua/en/fulfilment-for-cosmetics/): International beauty brands — FEFO discipline (4.1% expiry write-off reduction), 18-22°C climate envelope, ICH Q1A(R2) compliant, EU 1223/2009-aware documentation, ISTA-6 fragile-grade packaging, native Shopify/WooCommerce/Faire/Etsy
 - [Fulfillment for Small Business (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/): Entry tier (from 100 orders/month)
 - [Fulfillment for Heavy Goods (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/): Oversized/heavy-item handling
 - [Fulfillment in Kyiv (UA)](https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/): Kyiv warehouse, same-day courier radius

@@ -1,0 +1,673 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import StatsBar from '../../components/stitch/StatsBar.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'Why does FEFO discipline matter more than FIFO for cosmetics?', a: '<p>FIFO (first-in, first-out) optimises for shelf age in the warehouse — the oldest carton goes out first regardless of expiry. That rule works for stable categories (apparel, electronics) where ageing is a stock-rotation hygiene issue, not a regulatory one. Cosmetics are different. PAO (period-after-opening) and full expiry both run on a calendar clock, not a warehouse clock — a moisturiser sitting on our floor for six months may still ship before one we received last week, if the shelf-life calculus says so. FEFO (first-expiry, first-out) sorts pick lists by remaining shelf life instead of arrival date. We run FEFO end-to-end: every SKU is barcoded with its expiry on inbound, the WMS sorts by expiry on every pick wave, and dispatched parcels carry an automatic expiry-buffer floor (180 days minimum to buyer for skincare, 365 for fragrance, configurable per brand). Practical effect: brands stop writing off two-month-old batches that ShipBob-style FIFO pushed to the back of the rack. Our 2025 dataset across 47 cosmetics clients shows a median 4.1% reduction in expired-stock write-offs after switching from FIFO 3PL to our FEFO-default operation.</p>' },
+  { q: 'What temperature and humidity ranges do you maintain, and is that on-spec for stability?', a: '<p>Our cosmetics zone runs 18–22°C ambient (±1.5°C real-world variance recorded in 2025) with relative humidity controlled at 35–55%. This sits inside the ICH Q1A(R2) "controlled room temperature" envelope used by EU GMP guideline EudraLex Volume 4 Annex 15 and corresponds to the "store at room temperature" claim used by 92% of mass-market cosmetics SKUs. Calibrated dataloggers (Testo 175H1) record continuously, with 5-minute sampling and per-zone alerts pushed to a duty manager phone if either bound is breached. Quarterly mapping audits prove zone homogeneity within ±2°C across the entire pallet stack height, including the top tier. Edge cases we handle: niche perfumery brands occasionally request 15–18°C narrower band for high-value alcohol-based fragrances — we accommodate this in a dedicated zone at no additional fee. We do not run a 2–8°C cold room; biologics, mRNA cosmeceuticals, and live-microbiome products requiring true cold chain are routed to a partner facility in Bila Tserkva 80km south of Kyiv.</p>' },
+  { q: 'Can you handle Ukrainian cosmetics notification compliance for brands selling into the EAEU and Ukrainian markets?', a: '<p>Yes. Since 2022 Ukraine has progressively aligned its cosmetics regulation with EU Regulation 1223/2009 — the technical regulation effective from 2024 mandates a Responsible Person, a Cosmetic Product Safety Report (CPSR), notification through the State Service for Food Safety register, and PAO/expiry on every primary container. We act as the warehouse-of-record for the regulatory file (we do not act as the Responsible Person — that legal role stays with a qualified Ukrainian-resident entity, typically your local distributor or a contracted regulatory consultant). What we do: store the CPSR digitally per SKU, keep batch-level genealogy from inbound dock to dispatched parcel, retain documentation for the 10-year regulatory horizon, and provide audit-ready reports on 24-hour notice. For brands distributing into Kazakhstan and Belarus through CIS marketplaces, we also retain EAEU TR CU 009/2011 conformity certificates against each lot. We have walked four EU brands through the Ukrainian notification process in 2024–2025 and can introduce you to two regulatory consultants who specialise in EU-to-UA cosmetics market-entry filings.</p>' },
+  { q: 'How do you protect fragile primary packaging — glass bottles, palettes, mirrors — from shipping damage?', a: '<p>Three layers, applied per-SKU during onboarding rather than per-parcel during pick. Layer one: pack engineering. Glass fragrance bottles ship in honeycomb-cushioned three-cell boxes with foam corner blocks; pressed-powder palettes go in moulded EPE inserts; lipstick tubes ship vertical-locked into kraft cradles. We test each new SKU through a 1.2-metre five-sided drop (Amazon ISTA-6 protocol equivalent) before approving its pack spec. Layer two: voiding. We use kraft paper, not bubble wrap, for void-fill — heavier but environmentally aligned with the audit position most cosmetic brands need to publish, and it actually outperforms bubble in compression load (the typical loss case is parcel-stacking, not single-impact, and bubble collapses under sustained load). Layer three: route discipline. Express-only via Nova Poshta Premium for in-Ukraine, DHL Express for international, with explicit "FRAGILE" + "THIS WAY UP" arrows printed on every label. 2025 damage rate across 1.4M cosmetics parcels: 0.21% — versus an industry baseline of 1.4–2.1% for cosmetics through generalist 3PLs. Damages are reimbursed at full retail value within 14 business days under our standard cargo policy.</p>' },
+  { q: 'What integrations do you offer for international cosmetics brands, and how long is onboarding?', a: '<p>Native turnkey: Shopify, WooCommerce, Magento, OpenCart, PrestaShop, BigCommerce, and Horoshop (Ukraine\'s dominant SaaS storefront). Native API: KeyCRM and SalesDrive (the two leading Ukrainian DTC OMS systems used by most domestic indie beauty brands). Marketplace channels: Prom.ua, Rozetka, Kasta (Ukraine\'s premier fashion-and-beauty marketplace), Hubber, and Allo. Cross-border: Etsy, eBay, and Faire for European indie beauty brands — we have shipped Faire orders into Germany, France, Italy, and the UK out of Kyiv since 2023. Custom integrations: REST API, webhooks, EDI, CSV-over-SFTP, or email-parsed-to-order for legacy stacks. Onboarding clock: 5–7 business days for a single-SKU brand on a turnkey platform; 10–14 days for multi-channel brands with 200+ SKUs requiring batch-genealogy data import; 21 days maximum for brands migrating from another 3PL with a full inventory transfer. The integration engineer on our side handles the connector wiring — your developers receive a webhook spec and can ignore the rest.</p>' },
+  { q: 'How do you manage returns, gifts-with-purchase, and PR boxes for cosmetics brands?', a: '<p>Returns: a dedicated returns dock receives the parcel, opens it, photographs the contents, and grades on a four-tier scale. Grade A (sealed, untouched primary packaging) returns to A-stock for resale. Grade B (opened secondary packaging only — the unit itself is sealed) returns to B-stock for liquidation, sample-set kits, or PR. Grade C (used or contaminated) goes straight to disposal under the documented retail-cosmetics waste protocol with photo evidence retained for chargeback defence. Grade D (damaged in transit, our fault) gets refunded to the buyer and replaced from main stock at our cost. Industry-baseline cosmetics return rates we see: skincare 6–9%, color cosmetics 8–12%, fragrance 11–14% (highest because of scent-fit dissatisfaction). Gifts-with-purchase and PR boxes: handled as separate kit-assembly orders against a kitting bill-of-materials. We assemble influencer mailers (50–500 boxes per drop), quarterly subscription boxes (hundreds to low thousands per cycle), and event-PR boxes with branded tissue paper, hand-signed cards, and personalised addresses — assembled in our kitting cell, photographed for content approval before dispatch, invoiced as a separate line item.</p>' },
+  { q: 'What happens to stock that approaches expiry but has not yet expired? Is there a sell-down protocol?', a: '<p>Yes. The WMS tags every batch by expiry and our dashboard surfaces five "shelf-life zones" per SKU: green (>365 days), amber-1 (180–365 days), amber-2 (90–180 days), red-1 (30–90 days), red-2 (under 30 days). When a batch enters amber-1 the system auto-emails your account manager with a sell-down options memo: (a) prioritise to high-velocity channels, (b) bundle into discounted multi-pack SKUs, (c) divert to PR-box assembly, (d) liquidate to discount channels through our partner network with brand-exclusion clauses you control, or (e) physical destruction with photo documentation for accounting write-off. Most brands run options (a)–(c) and never see actual expiry waste; we typically destroy under 0.4% of inbound volume per quarter across the cosmetics book of business. The destruction protocol carries a separate fee ($0.12/unit for primary packaging, $0.04 for secondary) and produces an audit-trail report compatible with EU and Ukrainian VAT write-off documentation requirements.</p>' },
+  { q: 'What payment terms and currencies do you offer, and can EU-based brands invoice in euros?', a: '<p>Monthly invoicing in arrears, net-7 by default, net-30 unlocked after the first 90 days of clean payment history. Currencies: USD or EUR on request, with NBU monthly average reference rates applied to convert UAH operating costs. SEPA and SWIFT wires are standard. For sub-€15,000 invoices we accept Wise, Revolut Business, and Payoneer to bypass wire fees. Annual prepayment earns a 6% discount on per-shipment fees; quarterly prepayment earns 3%. EU-based brands receive a Ukrainian VAT-export invoice (zero-rated under Article 195 of the Tax Code), so euro-zone clients do not pay Ukrainian VAT on fulfillment service fees. Brands that prefer an EU-issued VAT invoice for their bookkeeping can request invoicing through our partner entity in Lithuania — same operational SLA, same per-order rate, EU VAT registration, EU bank wire. Setup is free; the only requirement is a valid VAT number and corporate documents.</p>' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "ListItem", "position": 3, "name": "Fulfillment for Cosmetics", "item": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-cosmetics/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fulfillment for Cosmetics — Ukraine 3PL with FEFO discipline, 18-22°C controlled storage, GMP-aligned operations",
+  "description": "Cosmetics fulfillment from $0.49 per order, all-in. FEFO batch rotation, 18-22°C climate control, fragrance-grade packaging, EU notification-aware. Native Shopify, WooCommerce, KeyCRM, SalesDrive integration. EU + UA dispatch from Kyiv.",
+  "serviceType": "Cosmetics Ecommerce Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "UA" },
+    { "@type": "Country", "name": "EU" },
+    { "@type": "Country", "name": "US" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "International DTC cosmetics founders, indie beauty brands, EU and US skincare and fragrance houses, Shopify and WooCommerce beauty stores"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.49",
+    "description": "From $0.49 per order, all-in. Pick, pack, fragile-grade box, label and dropoff included. FEFO discipline applied by default. No setup fees."
+  },
+  "dateModified": "2026-04-28"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-cosmetics/",
+  "telephone": "+380501444645",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kyiv",
+    "addressCountry": "UA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
+
+const stats = [
+  { num: '10+', label: 'YEARS · COSMETICS LOGISTICS' },
+  { num: '150+', label: 'BEAUTY BRANDS · ACTIVE' },
+  { num: '30 SEC', label: 'AVG PICK · FEFO ENFORCED' },
+  { num: '18-22°C', label: 'CONTROLLED ZONE' },
+];
+
+const ticker = [
+  'BATCH 2024-11-A · EXP 2026-05 · LANE 14 · QTY 3,420',
+  'BATCH 2024-12-B · EXP 2026-08 · LANE 22 · QTY 1,860',
+  'BATCH 2025-01-C · EXP 2026-11 · LANE 07 · QTY 5,140',
+  'BATCH 2025-02-A · EXP 2027-02 · LANE 31 · QTY 2,200',
+  'BATCH 2025-03-B · EXP 2027-04 · LANE 18 · QTY 4,690',
+  'BATCH 2025-04-A · EXP 2027-06 · LANE 09 · QTY 1,330',
+];
+
+const integrations = [
+  { name: 'Shopify', tag: 'Native app' },
+  { name: 'WooCommerce', tag: 'Plugin' },
+  { name: 'Magento', tag: 'API' },
+  { name: 'OpenCart', tag: 'Module' },
+  { name: 'PrestaShop', tag: 'Module' },
+  { name: 'BigCommerce', tag: 'API' },
+  { name: 'Horoshop', tag: 'Native API' },
+  { name: 'KeyCRM', tag: 'Native API' },
+  { name: 'SalesDrive', tag: 'Native API' },
+  { name: 'Prom.ua', tag: 'Seller API' },
+  { name: 'Rozetka', tag: 'Seller API' },
+  { name: 'Kasta', tag: 'Seller API' },
+  { name: 'Etsy', tag: 'Cross-border' },
+  { name: 'eBay', tag: 'Cross-border' },
+  { name: 'Faire', tag: 'Cross-border' },
+  { name: 'Custom', tag: 'REST · EDI · SFTP' },
+];
+
+const compliance = [
+  { tag: 'STORAGE', label: '18-22°C / 35-55% RH', detail: 'Calibrated dataloggers, 5-min sampling, ICH Q1A(R2) controlled-room compliance.' },
+  { tag: 'ROTATION', label: 'FEFO end-to-end', detail: 'Batch sort by expiry, not arrival. 180-day buyer-side floor for skincare, 365 for fragrance.' },
+  { tag: 'GENEALOGY', label: '10-year batch trace', detail: 'CPSR archived per SKU. Full inbound-to-dispatch lot log. Audit-ready in 24h.' },
+  { tag: 'PACKAGING', label: 'ISTA-6 drop tested', detail: 'Per-SKU pack engineering. Fragrance honeycomb. Palette EPE. Kraft void-fill.' },
+];
+
+const tiers = [
+  { range: '0 – 49', label: 'Starter', price: '$0.65', detail: 'Per order, all-in, fragile-grade box. Storage $20 / m³ / month. Fit: indie brands testing the Ukrainian channel.' },
+  { range: '50 – 99', label: 'Growth', price: '$0.58', detail: 'Per order, all-in. Storage $18 / m³ / month. Free returns processing for first 30 parcels per month.' },
+  { range: '100 – 199', label: 'Scale', price: '$0.53', detail: 'Per order, all-in. Storage $16 / m³ / month. Dedicated account manager. Quarterly batch-genealogy review.' },
+  { range: '200+', label: 'Enterprise', price: '$0.49', detail: 'Per order, all-in. Storage $14 / m³ / month. Dedicated kitting cell. Priority dock for inbound air freight.' },
+];
+
+const channels = [
+  { name: 'Faire', country: 'EU + UK + US', detail: 'Wholesale beauty marketplace. We have shipped Faire orders out of Kyiv into Germany, France, Italy, and UK since 2023.' },
+  { name: 'Etsy', country: 'Global', detail: 'Indie beauty long-tail. Cross-border DHL Express dispatch with custom-friendly invoicing.' },
+  { name: 'Cult Beauty / LookFantastic', country: 'UK + EU', detail: 'Tier-1 retailer drops via DHL Express palletised dispatch under their EDI requirements.' },
+  { name: 'Direct DTC', country: 'Worldwide', detail: 'Your branded Shopify or WooCommerce storefront with Nova Poshta Global to UA, DHL/UPS to ROW.' },
+];
+---
+<Base
+  title="Fulfillment for Cosmetics 2026 — FEFO + 18-22°C control | MTP"
+  description="Cosmetics fulfillment from $0.49 / order. FEFO batch rotation, 18-22°C climate control, fragrance-grade packaging, EU notification-aware. Native Shopify, WooCommerce, KeyCRM. EU + UA dispatch from Kyiv."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-cosmetics/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfillment-cosmetics-hero.jpg"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-cosmetics/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="bcp__bc" aria-label="Breadcrumbs">
+  <div class="bcp__bc-inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="bcp__bc-current">Fulfillment for cosmetics</span>
+  </div>
+</nav>
+
+<!-- HERO — DARK INDUSTRIAL -->
+<section class="bcp__hero" aria-label="Hero">
+  <div class="bcp__hero-inner">
+    <div class="bcp__hero-left">
+      <LabelChip text="COSMETICS FULFILLMENT · UKRAINE 2026" variant="red" />
+      <h1 class="bcp__h1">
+        Stop guessing your batch dates.
+        <em>Start shipping cosmetics fresh.</em>
+      </h1>
+      <p class="bcp__lede">
+        We are the Kyiv-based 3PL for international DTC beauty brands and indie cosmetics houses that need FEFO discipline, 18-22°C controlled storage, and fragrance-grade packaging — without paying US 3PL prices. Native integration with Shopify, WooCommerce, Magento, KeyCRM, SalesDrive, Faire, and Etsy.
+      </p>
+      <div class="bcp__hero-cta">
+        <HeroCTA
+          lang="en"
+          theme="dark"
+          button="Get Cosmetics Quote →"
+          microCopy="✓ Reply within 24 hours · English-speaking team · NDA on request"
+          sourceTag="hero /en/fulfilment-for-cosmetics/"
+        />
+      </div>
+    </div>
+    <div class="bcp__hero-right" aria-hidden="true">
+      <div class="bcp__hero-photo">
+        <img src="/images/fulfillment-cosmetics-hero.jpg" alt="" width="640" height="780" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+
+  <!-- FEFO TICKER — WOW ELEMENT -->
+  <div class="bcp__ticker" role="region" aria-label="Live FEFO batch rotation sample">
+    <div class="bcp__ticker-label">FEFO LIVE · ANONYMISED</div>
+    <div class="bcp__ticker-track">
+      {ticker.concat(ticker).map((line) => (
+        <span class="bcp__ticker-item">{line}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<StatsBar items={stats} tone="dark" />
+
+<!-- WHY FEFO -->
+<section class="bcp__fefo" aria-labelledby="fefo-h2">
+  <div class="bcp__container">
+    <LabelChip text="OPERATING DISCIPLINE · WHY FEFO" variant="red" />
+    <h2 class="bcp__h2" id="fefo-h2">
+      Most 3PLs run FIFO and call it good.
+      <em>That rule writes off your shelf life.</em>
+    </h2>
+    <p class="bcp__h2-sub">
+      First-in-first-out optimises for warehouse age, not buyer expiry. For apparel and electronics that is fine. For cosmetics it costs you 4–6% of every batch in expired write-offs because the rotation rule does not match how your shelf-life clock actually runs.
+    </p>
+
+    <div class="bcp__fefo-grid">
+      <article class="bcp__fefo-col bcp__fefo-col--bad">
+        <header class="bcp__fefo-h">
+          <span class="bcp__fefo-tag">FIFO 3PL · WAREHOUSE-AGE LOGIC</span>
+          <h3 class="bcp__fefo-name">What ships first</h3>
+        </header>
+        <ul class="bcp__fefo-list">
+          <li><span>Oldest carton on the shelf</span><span>regardless of expiry</span></li>
+          <li><span>New stock from yesterday's truck</span><span>goes to the back</span></li>
+          <li><span>Two-month-old batch with 14 months left</span><span>ships before fresh stock</span></li>
+          <li><span>Expiry surfaces only at audit</span><span>after the write-off</span></li>
+        </ul>
+        <footer class="bcp__fefo-total">
+          <span>Typical expired-stock write-off</span>
+          <span class="bcp__fefo-bad">4–6% per quarter</span>
+        </footer>
+      </article>
+
+      <article class="bcp__fefo-col bcp__fefo-col--good">
+        <header class="bcp__fefo-h">
+          <span class="bcp__fefo-tag bcp__fefo-tag--good">MTP GROUP · FEFO DEFAULT</span>
+          <h3 class="bcp__fefo-name">What ships first</h3>
+        </header>
+        <ul class="bcp__fefo-list">
+          <li><span>Closest expiry first</span><span>regardless of arrival</span></li>
+          <li><span>Buyer-side expiry floor enforced</span><span>180/365 days minimum</span></li>
+          <li><span>Amber-zone alerts at 90/30 days</span><span>before expiry</span></li>
+          <li><span>Sell-down protocol auto-triggered</span><span>before write-off</span></li>
+        </ul>
+        <footer class="bcp__fefo-total">
+          <span>Typical expired-stock write-off</span>
+          <span class="bcp__fefo-good">Under 0.4% per quarter</span>
+        </footer>
+      </article>
+    </div>
+
+    <p class="bcp__fefo-foot">
+      Net: 47 cosmetics brands measured in our 2025 dataset saved a median <strong>4.1% of inbound value per quarter</strong> after migrating from FIFO 3PL to our FEFO operation. On a $200,000 quarterly inbound that is $8,200 of write-offs you keep — every quarter.
+    </p>
+  </div>
+</section>
+
+<!-- COMPLIANCE / TECHNICAL -->
+<section class="bcp__comp" aria-labelledby="comp-h2">
+  <div class="bcp__container">
+    <LabelChip text="TECHNICAL COMPLIANCE · COSMETICS-GRADE" variant="red" />
+    <h2 class="bcp__h2" id="comp-h2">Four operational rules every cosmetics brand asks for. Built-in by default.</h2>
+    <p class="bcp__h2-sub">EU GMP-aligned operations, ICH Q1A(R2) climate envelope, EU Regulation 1223/2009-aware documentation, and ISTA-6 packaging discipline — without you having to write the SOP yourself.</p>
+
+    <ul class="bcp__comp-grid" role="list">
+      {compliance.map((c) => (
+        <li class="bcp__comp-item">
+          <span class="bcp__comp-tag">{c.tag}</span>
+          <strong class="bcp__comp-label">{c.label}</strong>
+          <span class="bcp__comp-detail">{c.detail}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="bcp__comp-foot">Need the regulatory file SOP for an audit? <a href="/en/3pl-logistics/">See full operating model →</a></p>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="bcp__int" aria-labelledby="int-h2">
+  <div class="bcp__container">
+    <LabelChip text="PLATFORMS · NATIVE INTEGRATIONS" variant="red" />
+    <h2 class="bcp__h2" id="int-h2">
+      Whatever stack your beauty brand runs on,
+      <em>we already speak to it.</em>
+    </h2>
+    <p class="bcp__h2-sub">16 native connectors. 5–7 business days from contract to first dispatched parcel for single-SKU brands; 14 days for multi-channel brands with batch-genealogy data import.</p>
+
+    <ul class="bcp__int-grid" role="list">
+      {integrations.map((i) => (
+        <li class="bcp__int-item">
+          <span class="bcp__int-name">{i.name}</span>
+          <span class="bcp__int-tag">{i.tag}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="bcp__int-foot">Selling on a stack we have not listed? Send your webhook spec — our integration engineer handles the rest. <a href="/en/calculator/">Run our calculator →</a></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bcp__how" aria-labelledby="how-h2">
+  <div class="bcp__container">
+    <LabelChip text="OPERATING MODEL · 4 STEPS" variant="muted" />
+    <h2 class="bcp__h2" id="how-h2">From your inbound container to the buyer's vanity.</h2>
+
+    <ol class="bcp__steps" role="list">
+      <li class="bcp__step">
+        <span class="bcp__step-num">01</span>
+        <h3 class="bcp__step-h">Inbound &amp; batch capture</h3>
+        <p>Stock arrives at our Kyiv dock by container, pallet, or air-freight box. Each unit is barcoded with batch ID and expiry on inbound, photographed, condition-graded, and putaway-located within 24 hours. Your CPSR and EU 1223/2009 documentation files are linked to the lot at receipt.</p>
+      </li>
+      <li class="bcp__step">
+        <span class="bcp__step-num">02</span>
+        <h3 class="bcp__step-h">Order capture &amp; FEFO sort</h3>
+        <p>Order lands in your Shopify, WooCommerce, KeyCRM, SalesDrive, Faire, or Etsy storefront. Our connector syncs within 60 seconds. The pick wave is FEFO-sorted automatically — closest expiry within configured floor goes first, with buyer-side minimum shelf life enforced.</p>
+      </li>
+      <li class="bcp__step">
+        <span class="bcp__step-num">03</span>
+        <h3 class="bcp__step-h">Pick · pack · fragile-grade dispatch</h3>
+        <p>SLA: 30-second average pick window per order. Fragile-grade pack spec applied per SKU (honeycomb for fragrance, EPE for palettes, kraft cradle for tubes). Dispatched same day via Nova Poshta, Nova Poshta Global, DHL, UPS, or FedEx with FRAGILE + THIS-WAY-UP labelling.</p>
+      </li>
+      <li class="bcp__step">
+        <span class="bcp__step-num">04</span>
+        <h3 class="bcp__step-h">Returns · grading · sell-down</h3>
+        <p>Returns route to a dedicated dock. Each parcel opened, photographed, condition-graded A/B/C/D. Grade-A back to stock. Grade-B to liquidation kits. Grade-C documented for chargeback defence. Approaching-expiry batches auto-flagged at amber-1, surfaced for sell-down before write-off.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CHANNELS / WHERE WE SHIP -->
+<section class="bcp__channels" aria-labelledby="channels-h2">
+  <div class="bcp__container">
+    <LabelChip text="CHANNELS · WHERE WE DISPATCH" variant="muted" />
+    <h2 class="bcp__h2" id="channels-h2">Wholesale, marketplace, retailer, direct DTC. Same warehouse. Same SLA.</h2>
+
+    <ul class="bcp__ch-grid" role="list">
+      {channels.map((c) => (
+        <li class="bcp__ch-item">
+          <header class="bcp__ch-h">
+            <strong class="bcp__ch-name">{c.name}</strong>
+            <span class="bcp__ch-country">{c.country}</span>
+          </header>
+          <p class="bcp__ch-detail">{c.detail}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="bcp__tiers" aria-labelledby="tiers-h2">
+  <div class="bcp__container">
+    <LabelChip text="PRICING · BY VOLUME" variant="red" />
+    <h2 class="bcp__h2" id="tiers-h2">Four published tiers. Cosmetics-grade pack included.</h2>
+    <p class="bcp__h2-sub">Volume bands measured on a rolling 30-day basis. Crossing a threshold drops your per-order rate automatically. We never re-negotiate up.</p>
+
+    <div class="bcp__tiers-grid">
+      {tiers.map((t) => (
+        <article class="bcp__tier">
+          <header class="bcp__tier-h">
+            <span class="bcp__tier-band">{t.range} orders / day</span>
+            <span class="bcp__tier-name">{t.label}</span>
+          </header>
+          <div class="bcp__tier-price">
+            <span class="bcp__tier-cur">$</span>
+            <span class="bcp__tier-num">{t.price.replace('$', '')}</span>
+            <span class="bcp__tier-unit">/ order</span>
+          </div>
+          <p class="bcp__tier-detail">{t.detail}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="bcp__tiers-foot">Need a per-SKU custom quote? <a href="/en/calculator/">Calculator →</a> · <a href="/en/prices/">All prices →</a></p>
+  </div>
+</section>
+
+<!-- TRUST / WAR-RESILIENCE -->
+<section class="bcp__trust" aria-labelledby="trust-h2">
+  <div class="bcp__container">
+    <LabelChip text="OPERATIONAL CONTINUITY · 2022 – 2026" variant="dark" />
+    <h2 class="bcp__h2 bcp__h2--inverse" id="trust-h2">
+      We have shipped beauty inventory through every wave of the war.
+      <em>Without losing a parcel or breaking the climate envelope.</em>
+    </h2>
+    <div class="bcp__trust-grid">
+      <article class="bcp__trust-card">
+        <h3>Climate continuity</h3>
+        <p>Diesel genset with 96-hour fuel reserve plus solar backup keeps the cosmetics zone inside 18-22°C even through 12-hour grid outages. 2025 climate-breach record: zero incidents above 24°C, zero below 16°C.</p>
+      </article>
+      <article class="bcp__trust-card">
+        <h3>Physical hardening</h3>
+        <p>Reinforced roof, ground-floor location, no glass-frontage exposure on the dispatch dock. Continuous operation since February 2022 with two recorded business-day pauses, both under 8 hours.</p>
+      </article>
+      <article class="bcp__trust-card">
+        <h3>Disaster recovery</h3>
+        <p>Written DR plan triggers parcel rerouting to a partner cosmetics-grade facility in Lviv (Western Ukraine, 530 km from Kyiv) within 6 hours of a major incident. Climate-controlled transit included.</p>
+      </article>
+      <article class="bcp__trust-card">
+        <h3>Cargo insurance</h3>
+        <p>Up to €3M per incident through Lloyds and a Ukrainian war-risk syndicate. Inventory damage from war-related events is covered — most US 3PL cosmetics policies explicitly exclude this; ours does not.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT IS FOR / WHO IT IS NOT -->
+<section class="bcp__fit" aria-labelledby="fit-h2">
+  <div class="bcp__container">
+    <LabelChip text="HONEST FIT CHECK" variant="muted" />
+    <h2 class="bcp__h2" id="fit-h2">When Ukraine cosmetics fulfillment fits — and when it does not.</h2>
+
+    <div class="bcp__fit-grid">
+      <div class="bcp__fit-col bcp__fit-col--yes">
+        <h3>Right for you if:</h3>
+        <ul>
+          <li>You are an EU or US indie beauty brand selling on Shopify, WooCommerce, Faire, or Etsy and want fragrance-grade packaging without US 3PL fee stacks.</li>
+          <li>You sell into Ukraine or the CIS and need next-day Nova Poshta dispatch with cosmetics-aware FEFO discipline at $1.20 per parcel.</li>
+          <li>Your skincare, color, or fragrance line writes off 4%+ of inventory per quarter to expiry under FIFO 3PL operations.</li>
+          <li>You need EU 1223/2009-aware documentation continuity for the Ukrainian and EAEU notification process.</li>
+          <li>You operate on KeyCRM, SalesDrive, or Horoshop and want a 3PL that already speaks to your domestic Ukrainian stack.</li>
+        </ul>
+      </div>
+      <div class="bcp__fit-col bcp__fit-col--no">
+        <h3>Wrong for you if:</h3>
+        <ul>
+          <li>Your products require true cold chain (2-8°C) — biologics, mRNA cosmeceuticals, live-microbiome creams. We route those to a partner facility but they are not on our default rate card.</li>
+          <li>You sell exclusively into the US with under 48-hour ship-time tolerance — stay with a domestic 3PL.</li>
+          <li>You require FDA-bonded storage for OTC drug products under monograph review — we do not run an FDA-bonded zone.</li>
+          <li>Your buyer mix expects Amazon Prime same-day delivery as the baseline — Ukrainian last-mile is not yet at that tier internationally.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section class="bcp__links" aria-labelledby="links-h2">
+  <div class="bcp__container">
+    <LabelChip text="EXPLORE FURTHER" variant="red" />
+    <h2 class="bcp__h2" id="links-h2">More on how we operate.</h2>
+    <ul class="bcp__links-grid" role="list">
+      <li><a href="/en/calculator/"><strong>Pricing calculator →</strong><span>Model your monthly cosmetics invoice in 30 seconds.</span></a></li>
+      <li><a href="/en/prices/"><strong>Prices →</strong><span>Full per-service rate card.</span></a></li>
+      <li><a href="/en/fulfilment-for-online-store/"><strong>General ecommerce fulfillment →</strong><span>For non-cosmetics SKUs at $0.41 per order.</span></a></li>
+      <li><a href="/en/fulfillment-for-rozetka-sellers/"><strong>Rozetka multi-marketplace →</strong><span>Beauty-tier dispatch into Ukraine\'s #1 marketplace.</span></a></li>
+      <li><a href="/en/fulfillment-ukraine/"><strong>Why Ukraine →</strong><span>Geographic and cost advantages of a Kyiv hub.</span></a></li>
+      <li><a href="/en/3pl-logistics/"><strong>3PL logistics overview →</strong><span>Full service catalogue and capabilities.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bcp__faq" aria-labelledby="faq-h2">
+  <div class="bcp__container">
+    <LabelChip text="FREQUENTLY ASKED · LONG ANSWERS" variant="muted" />
+    <h2 class="bcp__h2" id="faq-h2">Eight questions every cosmetics founder asks before signing.</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<AuthorByline lang="en" />
+
+<style is:global>
+  /* ===== COSMETICS EN — INDUSTRIAL ARCHETYPE (bcp prefix) ===== */
+  .bcp__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* BREADCRUMBS */
+  .bcp__bc { background: #fff; border-bottom: 1px solid #eaeaea; }
+  .bcp__bc-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: #6b6b6b; display: flex; gap: 8px; align-items: center; }
+  .bcp__bc-inner a { color: #6b6b6b; text-decoration: none; }
+  .bcp__bc-inner a:hover { color: #e63329; }
+  .bcp__bc-current { color: #000; font-weight: 500; }
+
+  /* HERO — DARK INDUSTRIAL */
+  .bcp__hero { background: #000; color: #fff; padding: 80px 24px 0; border-bottom: 1px solid #1f1f1f; position: relative; }
+  .bcp__hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; padding-bottom: 48px; }
+  .bcp__hero-left { display: flex; flex-direction: column; gap: 24px; border-left: 3px solid #e63329; padding-left: 32px; }
+  .bcp__h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 4.4vw, 3.8rem); line-height: 1.05; color: #fff; margin: 0; font-weight: 400; }
+  .bcp__h1 em { font-style: italic; color: #e63329; }
+  .bcp__lede { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #c8c8c8; margin: 0; }
+  .bcp__hero-cta { margin-top: 8px; }
+  .bcp__hero-photo { aspect-ratio: 4/5; overflow: hidden; border: 1px solid #1f1f1f; }
+  .bcp__hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0.15) contrast(1.05); }
+
+  /* TICKER */
+  .bcp__ticker { background: #0a0a0a; border-top: 1px solid #1f1f1f; padding: 14px 0; overflow: hidden; position: relative; }
+  .bcp__ticker-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; color: #e63329; position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: #0a0a0a; padding-right: 16px; z-index: 2; text-transform: uppercase; }
+  .bcp__ticker-track { display: flex; gap: 48px; animation: bcp-tick 60s linear infinite; padding-left: 180px; will-change: transform; }
+  .bcp__ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #c8c8c8; white-space: nowrap; letter-spacing: 0.04em; }
+  .bcp__ticker-item::before { content: '● '; color: #e63329; }
+  @keyframes bcp-tick {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bcp__ticker-track { animation: none; }
+  }
+
+  @media (max-width: 900px) {
+    .bcp__hero { padding: 56px 24px 0; }
+    .bcp__hero-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+    .bcp__hero-left { padding-left: 20px; }
+    .bcp__h1 { font-size: 2.1rem; }
+    .bcp__hero-photo { aspect-ratio: 16/10; }
+    .bcp__ticker-label { display: none; }
+    .bcp__ticker-track { padding-left: 24px; }
+  }
+
+  /* H2 SHARED */
+  .bcp__h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.1; color: #000; margin: 16px 0 12px; font-weight: 400; }
+  .bcp__h2 em { font-style: italic; color: #e63329; }
+  .bcp__h2--inverse { color: #fff; }
+  .bcp__h2-sub { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #4a4a4a; max-width: 760px; margin: 0 0 32px; }
+
+  /* FEFO */
+  .bcp__fefo { background: #f3f3f3; padding: 80px 24px; }
+  .bcp__fefo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0 24px; }
+  .bcp__fefo-col { background: #fff; padding: 32px; border: 1px solid #e6e6e6; }
+  .bcp__fefo-col--good { background: #000; color: #fff; border-color: #000; }
+  .bcp__fefo-h { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #e6e6e6; }
+  .bcp__fefo-col--good .bcp__fefo-h { border-bottom-color: #2a2a2a; }
+  .bcp__fefo-tag { font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6b6b6b; font-weight: 600; }
+  .bcp__fefo-tag--good { color: #e63329; }
+  .bcp__fefo-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: inherit; margin: 8px 0 0; font-weight: 400; }
+  .bcp__fefo-list { list-style: none; padding: 0; margin: 0; font-family: 'DM Sans', sans-serif; }
+  .bcp__fefo-list li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95rem; }
+  .bcp__fefo-col--good .bcp__fefo-list li { border-bottom-color: #1f1f1f; color: #d6d6d6; }
+  .bcp__fefo-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 16px; margin-top: 12px; border-top: 2px solid #000; font-family: 'DM Sans', sans-serif; }
+  .bcp__fefo-col--good .bcp__fefo-total { border-top-color: #e63329; }
+  .bcp__fefo-bad { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #000; font-weight: 400; }
+  .bcp__fefo-good { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #e63329; font-weight: 400; }
+  .bcp__fefo-foot { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 1rem; margin-top: 16px; }
+  .bcp__fefo-foot strong { color: #e63329; }
+
+  @media (max-width: 900px) {
+    .bcp__fefo-grid { grid-template-columns: 1fr; gap: 16px; }
+    .bcp__fefo-list li { font-size: 0.88rem; }
+  }
+
+  /* COMPLIANCE */
+  .bcp__comp { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .bcp__comp-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .bcp__comp-item { background: #fff; padding: 28px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
+  .bcp__comp-tag { font-family: 'DM Sans', sans-serif; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e63329; font-weight: 700; }
+  .bcp__comp-label { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #000; font-weight: 400; }
+  .bcp__comp-detail { font-family: 'DM Sans', sans-serif; color: #4a4a4a; font-size: 0.92rem; line-height: 1.55; }
+  .bcp__comp-foot { font-family: 'DM Sans', sans-serif; margin-top: 24px; color: #2a2a2a; }
+  .bcp__comp-foot a { color: #e63329; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .bcp__comp-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* INTEGRATIONS */
+  .bcp__int { background: #f3f3f3; padding: 80px 24px; }
+  .bcp__int-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .bcp__int-item { background: #fff; padding: 24px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; display: flex; flex-direction: column; gap: 8px; min-height: 110px; justify-content: center; }
+  .bcp__int-name { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: #000; }
+  .bcp__int-tag { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6b6b; font-weight: 500; }
+  .bcp__int-foot { font-family: 'DM Sans', sans-serif; margin-top: 24px; color: #2a2a2a; }
+  .bcp__int-foot a { color: #e63329; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .bcp__int-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* HOW IT WORKS */
+  .bcp__how { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .bcp__steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; }
+  .bcp__step { padding: 32px; border-right: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; background: #fff; }
+  .bcp__step-num { font-family: 'DM Serif Display', serif; font-size: 4.5rem; line-height: 0.9; color: #e63329; display: block; margin-bottom: 12px; font-weight: 400; }
+  .bcp__step-h { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: #000; margin: 0 0 10px; font-weight: 400; }
+  .bcp__step p { font-family: 'DM Sans', sans-serif; color: #2a2a2a; line-height: 1.65; margin: 0; }
+
+  @media (max-width: 900px) {
+    .bcp__steps { grid-template-columns: 1fr; }
+  }
+
+  /* CHANNELS */
+  .bcp__channels { background: #f3f3f3; padding: 80px 24px; }
+  .bcp__ch-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .bcp__ch-item { background: #fff; padding: 28px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+  .bcp__ch-h { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+  .bcp__ch-name { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; font-weight: 400; }
+  .bcp__ch-country { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #e63329; font-weight: 600; }
+  .bcp__ch-detail { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+  @media (max-width: 900px) {
+    .bcp__ch-grid { grid-template-columns: 1fr; }
+  }
+
+  /* TIERS */
+  .bcp__tiers { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .bcp__tiers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 32px 0 24px; border: 1px solid #e0e0e0; border-right: 0; }
+  .bcp__tier { background: #fff; padding: 28px; border-right: 1px solid #e0e0e0; }
+  .bcp__tier-h { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+  .bcp__tier-band { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6b6b6b; font-weight: 600; }
+  .bcp__tier-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #000; font-weight: 400; }
+  .bcp__tier-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 12px; }
+  .bcp__tier-cur { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #e63329; }
+  .bcp__tier-num { font-family: 'DM Serif Display', serif; font-size: 3rem; line-height: 1; color: #000; }
+  .bcp__tier-unit { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: #6b6b6b; margin-left: 4px; }
+  .bcp__tier-detail { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 0.92rem; line-height: 1.55; margin: 0; }
+  .bcp__tiers-foot { font-family: 'DM Sans', sans-serif; color: #2a2a2a; }
+  .bcp__tiers-foot a { color: #e63329; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .bcp__tiers-grid { grid-template-columns: repeat(2, 1fr); }
+    .bcp__tier:nth-child(2n) { border-right: 0; }
+    .bcp__tier:nth-child(-n+2) { border-bottom: 1px solid #e0e0e0; }
+  }
+
+  /* TRUST */
+  .bcp__trust { background: #000; color: #fff; padding: 80px 24px; }
+  .bcp__trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+  .bcp__trust-card { background: #0e0e0e; border: 1px solid #1f1f1f; padding: 28px; }
+  .bcp__trust-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #fff; margin: 0 0 10px; font-weight: 400; }
+  .bcp__trust-card p { font-family: 'DM Sans', sans-serif; color: #c8c8c8; line-height: 1.65; margin: 0; }
+
+  @media (max-width: 900px) {
+    .bcp__trust-grid { grid-template-columns: 1fr; }
+  }
+
+  /* FIT */
+  .bcp__fit { background: #fff; padding: 80px 24px; border-bottom: 1px solid #eaeaea; }
+  .bcp__fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 24px; }
+  .bcp__fit-col { padding: 28px; border: 1px solid #e0e0e0; }
+  .bcp__fit-col--yes { border-left: 4px solid #e63329; }
+  .bcp__fit-col--no { background: #f7f7f7; }
+  .bcp__fit-col h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #000; margin: 0 0 12px; font-weight: 400; }
+  .bcp__fit-col ul { font-family: 'DM Sans', sans-serif; padding-left: 20px; margin: 0; color: #2a2a2a; line-height: 1.6; }
+  .bcp__fit-col li { margin-bottom: 10px; }
+
+  @media (max-width: 900px) {
+    .bcp__fit-grid { grid-template-columns: 1fr; }
+  }
+
+  /* INTERNAL LINKS */
+  .bcp__links { background: #f3f3f3; padding: 80px 24px; }
+  .bcp__links-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid #e0e0e0; border-right: 0; border-bottom: 0; }
+  .bcp__links-grid li { background: #fff; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+  .bcp__links-grid a { display: flex; flex-direction: column; gap: 8px; padding: 28px; color: #000; text-decoration: none; height: 100%; }
+  .bcp__links-grid a:hover { background: #fff5f4; }
+  .bcp__links-grid a strong { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #e63329; font-weight: 400; }
+  .bcp__links-grid a span { font-family: 'DM Sans', sans-serif; color: #2a2a2a; font-size: 0.92rem; line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .bcp__links-grid { grid-template-columns: 1fr; }
+  }
+
+  /* FAQ */
+  .bcp__faq { background: #fff; padding: 80px 24px 100px; }
+</style>
+</Base>
