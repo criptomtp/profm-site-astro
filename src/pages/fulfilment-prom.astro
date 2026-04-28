@@ -362,12 +362,11 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceS
   .prom-base__hero { background:#fff; padding:48px 0 40px; border-bottom:1px solid #ededed; position:relative; overflow:hidden; }
   .prom-base__hero-inner { max-width:1280px; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start; }
   .prom-base__hero-left { position:relative; }
-  .prom-base__zero { position:absolute; left:-14vw; top:-4vw; font-size:26vw; line-height:0.78; font-weight:900; color:var(--mtp-red); pointer-events:none; user-select:none; z-index:0; letter-spacing:-0.05em; font-family:'DM Sans',-apple-system,sans-serif; }
-  .prom-base__hero-text { position:relative; z-index:2; padding-top:2vw; padding-left:9vw; }
-  .prom-base__h1 { font-size:clamp(2rem, 4.5vw, 3.6rem); line-height:1.05; letter-spacing:-0.02em; margin:14px 0 22px; font-weight:900; color:#000; }
-  .prom-base__h1 > span, .prom-base__h1 { box-decoration-break:clone; -webkit-box-decoration-break:clone; }
-  .prom-base__h1-strike { text-decoration:line-through; text-decoration-color:#000; text-decoration-thickness:4px; background:#fff; padding:0 6px; box-shadow:0 0 0 6px #fff; }
-  .prom-base__h1-red { color:var(--mtp-red); background:#fff; padding:0 6px; box-shadow:0 0 0 6px #fff; }
+  .prom-base__zero { position:absolute; left:0; top:0; font-size:18vw; line-height:0.95; font-weight:900; color:var(--mtp-red); pointer-events:none; user-select:none; z-index:0; letter-spacing:-0.05em; font-family:'DM Sans',-apple-system,sans-serif; }
+  .prom-base__hero-text { position:relative; z-index:2; padding-top:1.5vw; padding-left:14vw; }
+  .prom-base__h1 { font-size:clamp(2rem, 4.5vw, 3.6rem); line-height:1.18; letter-spacing:-0.02em; margin:14px 0 22px; font-weight:900; color:#000; }
+  .prom-base__h1-strike { text-decoration:line-through; text-decoration-color:#000; text-decoration-thickness:4px; }
+  .prom-base__h1-red { color:var(--mtp-red); }
   .prom-base__lead { font-size:clamp(1rem, 1.35vw, 1.18rem); line-height:1.6; color:#222; margin:0 0 0; max-width:540px; }
 
   /* CALCULATOR CARD */
@@ -400,8 +399,8 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceS
 
   @media(max-width:880px) {
     .prom-base__hero-inner { grid-template-columns:1fr; gap:36px; }
-    .prom-base__hero-text { padding-top:46vw; padding-left:0; }
-    .prom-base__zero { font-size:50vw; left:-6vw; top:-3vw; }
+    .prom-base__hero-text { padding-top:38vw; padding-left:0; }
+    .prom-base__zero { font-size:38vw; left:0; top:0; line-height:0.95; }
     .prom-base__calc { margin:0 auto; box-shadow:6px 6px 0 #000; }
   }
 
