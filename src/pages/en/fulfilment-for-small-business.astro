@@ -1,0 +1,688 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import StatsBar from '../../components/stitch/StatsBar.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'What does "small business" actually mean for your pricing model — is there a minimum order count?', a: '<p>Our entry tier accepts brands shipping from approximately 50 orders per month upward, with a $125 minimum monthly invoice. The minimum exists because the warehouse holds physical floor-space for your SKUs whether or not you ship; below 50 orders the per-unit math no longer works for either side. Above 200 orders/month the minimum is effectively absorbed into per-order fees and stops applying. We do not run a "Kickstarter-only" tier or a "side-hustle" tier — every brand on our floor uses the same WMS, the same SLA, the same returns process. The distinction between brand-maturity stages is procedural (different connector configurations, different reporting cadences, different account-management touch) but operationally they sit in the same building, on the same shelf grid, packed by the same crew. This avoids the structural problem most US 3PLs solve with sub-platforms — ShipBob splits between Self-Service and Plus, ShipMonk segments between Standard and Premium, ShipHero ships entirely different software for sub-1,000-order brands. We do not.</p>' },
+  { q: 'I ship 80 orders a month from a Brooklyn apartment. Why would a Ukrainian warehouse make sense for me?', a: '<p>Three structural reasons, in priority order. First, cost: the Ukrainian warehouse operating cost base — labour, real estate, energy, packaging materials — runs 50-65% lower than US East Coast 3PL rates and 70-80% lower than EU contract fulfillment. At 80 orders/month with average 1.2 lb parcels, your monthly invoice with us comes to roughly $135-165 all-in compared with $310-420 at ShipBob, ShipMonk, or Red Stag — the difference scales linearly as you grow. Second, EU dispatch parity: from our Kyiv warehouse to Berlin is 1,200 km, to Warsaw is 750 km, to Vienna is 1,050 km. EU buyers receive parcels in 3-5 business days through Nova Poshta International, DHL, UPS — competitive with intra-EU rates. If your Brooklyn customer base is half US and half international, we may not be cheaper for the US half, but for the EU half we are dramatically cheaper. Third, optionality on Eastern European marketplaces: as you grow you may want to add Rozetka, Prom.ua, or Amazon EU as channels — those require a Ukrainian merchant of record that we already operate. The honest answer for a US-only brand below 500 orders/month is to keep your domestic 3PL until the cost differential makes the cross-border friction worth it. We are not the right answer for a US-only sub-500-order operation. We are the right answer once your EU mix exceeds 25% or once you start eyeing CIS marketplaces.</p>' },
+  { q: 'How do you compare against ShipBob, ShipMonk, ShipHero on actual line items?', a: '<p>We are roughly 5-10x cheaper at the entry tier on a per-order basis. Indicative monthly invoice at 100 orders/month, 1.5 lb average parcel, 2 SKUs per order, 0.3 m³ storage: MTP Kyiv approximately $58 (per-order $0.55 plus storage $5 plus dispatch labels averaging $2 per parcel zoned out). ShipBob equivalent runs roughly $480/month — $1.65 per pick + $1.20 per pack + $2.85 average dispatch + $2.50/month per cubic foot storage, with a $295 platform minimum. ShipMonk runs roughly $495/month at this volume after their $150 platform fee plus $2.65 pick-and-pack plus $2.85 dispatch plus storage. ShipHero is closer to $2,290/month because their software-led model carries a $1,995 platform fee whether you ship 100 orders or 10,000. Red Stag is roughly $345/month — they are the closest US comparable because they explicitly market to small-volume premium brands and their per-order is $3.45 with no platform fee. Where they beat us: zero-error guarantee, US-domestic 1-2 day dispatch, no cross-border friction. Where we beat them: cost (10x lower), EU dispatch parity, and same-partner coverage as you scale into Eastern European marketplaces. The honest read: Red Stag is excellent for premium US-only brands at sub-500 orders. We are the right answer if cost is the binding constraint or if your EU mix is meaningful.</p>' },
+  { q: 'What is the operational cost difference that makes Ukraine 5-10x cheaper than US 3PLs?', a: '<p>It decomposes into four inputs. Labour: a trained Ukrainian fulfillment associate costs $4.80-6.20 per hour fully loaded versus $19-26 in US East Coast facilities and $24-31 in California. Real estate: warehouse space in Kyiv runs $2.80-4.10 per square metre per month versus $14-22 in New Jersey and $18-28 in Los Angeles. Energy: industrial electricity in Ukraine is $0.082/kWh versus $0.14-0.21 in the US, and our facilities run on a hybrid grid-plus-diesel-plus-Starlink configuration with capped peak draw. Packaging: corrugated cardboard sourced from Ukrainian and Polish mills costs 35-45% less than equivalent US-domestic supply. The compound effect: a 1,000 sq ft warehouse with 4 associates running 12,000 orders/month operates on a $9,800-12,400 cost base in Ukraine versus $42,000-58,000 in the US — and we pass that delta through to our brand customers as a per-order rate that no US 3PL can structurally match without subsidising the unit economics. The cost advantage is not a discount, it is a different operating-cost equation.</p>' },
+  { q: 'How long does it take to onboard a Shopify or Etsy brand from contract to first dispatched parcel?', a: '<p>For a Shopify brand under 50 SKUs with stock already in transit: 6-9 business days end-to-end. For Etsy brands the path is similar — we connect through the Etsy seller API or a SalesDrive bridge depending on volume. The breakdown: contract and KYC (1 business day), inventory inbound at our Kyiv dock (2-4 days for sea/air freight from origin if not already in transit, 1 day for road from EU), SKU master setup with batch barcoding (1-2 days for under 50 SKUs), Shopify or Etsy API connector wiring on our side (1 day), test orders dispatched (1 day), production cutover (rolling, no downtime). For Kickstarter creators dispatching their first delivery wave: we coordinate with the campaign timeline. The earliest "first parcel out" we have hit was 4 business days for a German pet-food brand with 8 SKUs and 1,200 backers ready to receive. We do not charge for onboarding labour. The only one-time cost is the Ukrainian VAT registration ($120-180 if you do not already have it), which is required before we can dispatch within Ukraine — for EU-only or US-only dispatch you can skip this step.</p>' },
+  { q: 'What carriers do you use for international dispatch out of Kyiv, and what is the typical EU and US delivery window?', a: '<p>EU lanes: Nova Poshta International, Meest, DHL Express, UPS Worldwide, FedEx International Priority, GLS, DPD. Selection is automated per-order through a rate-shopping algorithm that compares published rates against parcel weight, dimensions, declared value, destination postcode. For consumer-goods parcels under 5 kg the cheapest viable carrier is Nova Poshta International — 3-5 business days to Germany, Poland, Czech Republic; 4-7 days to France, Italy, Netherlands; 5-9 days to Spain, Portugal. For premium SLA brands we route via DHL Express — next-day to Poland, 2-day to Germany, 2-3 day to most of Western Europe. UK shipments go through DHL Express or Royal Mail Tracked under the post-Brexit IOSS regime — we collect VAT at checkout and remit through our IOSS intermediary so end-buyers receive parcels duty-paid. North America: DHL Express to US/Canada in 5-7 business days, optional UPS Worldwide for higher-value shipments, FedEx for time-critical lanes. We do not currently dispatch into Russia, Belarus, or Iran under our policy.</p>' },
+  { q: 'I am a Kickstarter creator with a delivery wave coming up. Can you handle a one-time inbound surge?</p>', a: '<p>Yes — Kickstarter and Indiegogo deliveries are one of our highest-velocity onboarding lanes. The pattern is unusual because almost all volume hits in a 2-3 week window then collapses to a long-tail dribble. We staff up capacity for the inbound dock and the pick wave during your delivery month, then return to baseline. There is no peak-season surcharge for this. We have done six successful Kickstarter waves in 2024-2025 ranging from 380 backers (a Ukrainian-American board game) to 12,400 backers (a UK-Korean tech accessory). The largest required us to reserve floor-space 60 days ahead of campaign close, run 14-day inbound-receiving capacity with 3 docks, and dispatch the entire wave over 22 calendar days. Pricing: standard per-order tier rates apply. The only difference for a Kickstarter wave is dispatch booking — we negotiate batch shipping rates with carriers when total wave volume exceeds 1,000 parcels, and pass the savings through to you. Onboarding for Kickstarter creators averages 5-8 business days from contract; we recommend starting the conversation at least 30 days before campaign close.</p>' },
+  { q: 'Do you support white-label, private-label, or unbranded fulfillment so my customers do not see "MTP Group"?', a: '<p>Yes — that is our default. Our standard agreement is a fulfillment-only relationship: your brand stays on the parcel, the seller account on each marketplace stays in your name, and we remain invisible to your end-buyers. We do not appear on the order packing slip, the dispatch label, or the carrier tracking. The address shown on the customer-facing dispatch label is your registered Ukrainian merchant address, which can be a virtual office we rent on your behalf for $35/month if you do not have a physical Ukrainian presence. Returns ship back to a returns-receiving address that is also yours on paper — physically the parcel arrives at our Kyiv returns dock but the customer-facing return label carries your branding. Branded packaging — custom-printed boxes, branded tissue, branded tape, marketing inserts, gift cards, hand-written notes — is a per-SKU pack-spec configuration applied at pick. We also support fully unbranded "plain brown box" dispatches for marketplaces that prohibit third-party seller branding. The white-label model carries no premium over our standard rate card.</p>' },
+  { q: 'What is your cancellation policy if it does not work out — am I locked into a 12-month contract?', a: '<p>No. Our standard agreement is month-to-month with a 14-day notice period. If you decide we are not the right fit you give us 14 calendar days notice and pay the final invoice; we ship out your remaining inventory at our standard outbound rate or arrange a return-to-origin freight booking — your choice. We do not charge an exit fee, a contract-break fee, or a "kitting deposit" recovery as some 3PLs do. We have had three brands offboard in the last 24 months — two because they consolidated to a US-only operation after we helped them through a difficult Q4, one because they were acquired by a larger brand that already had a 3PL relationship in place. All three exited cleanly within the 14-day notice window. The reason we offer this is straightforward: if a brand wants to leave, holding them hostage damages the relationship and the reputation. We would rather lose a brand cleanly than win a contract dispute. We invest in the onboarding so we have an interest in the relationship being a good fit for both sides.</p>' },
+  { q: 'How do you handle returns and refunds for cross-border ecommerce?', a: '<p>Returns route to a dedicated dock at our Kyiv warehouse regardless of channel of origin. Inbound graded against a four-tier scale — A (resaleable, returned to master pool within 24 hours), B (lightly used, routed to liquidation pallet or PR-box assembly), C (damaged, documented with photographs for chargeback defence), D (counterfeit or wrong-item, escalated to a fraud queue). Grade A goods become available across every connected channel within 24 hours of the receiving scan. The returns processing fee runs 35-50% of the original outbound handling fee depending on grade — Grade A is the cheapest because the path is fastest. For cross-border returns the rate-limiting step is usually the carrier label and customs documentation, not the warehouse — we generate the IOSS/duty-paid return label automatically when the customer initiates the return through your storefront. Average end-to-end return cycle (customer initiates → goods arrive at our dock → graded → refund signal sent to your storefront): 11-18 days for EU, 18-28 days for North America, 9-14 days for Ukrainian buyers.</p>' },
+  { q: 'My brand is regulated — cosmetics, supplements, food, electronics. Can you handle the compliance paperwork?', a: '<p>Selectively, yes. Cosmetics: we hold the Ukrainian technical regulation paperwork plus EU Regulation 1223/2009 conformity files for cross-border dispatch. We store the Cosmetic Product Safety Report digitally per SKU and produce audit-ready exports on 24-hour notice. Climate-controlled storage at 18-22°C with 40-60% humidity. Food supplements: yes, we hold Ukrainian sanitary permits and EAEU TR CU 027/2012 conformity assessment paperwork; FEFO discipline is enforced with batch-genealogy retention. Food (non-supplement): selectively — we accept ambient-stable packaged food but do not run a true cold chain. Electronics: standard handling plus optional anti-static packaging materials, plus Ukrainian conformity certification (often a translated copy of EU CE certification). Apparel: standard handling plus optional steaming, label-relabelling, and pre-pack quality grading. Hazmat: limited categories with prior IATA certification (most aerosols, alcohol-based perfumes over 20%). What we cannot handle: pharmaceuticals (no pharmaceutical-distribution licence — we route those clients to a partner facility in Bila Tserkva), live biologics, mRNA refrigerated products, ammunition, alcohol over 40% ABV. If your category is borderline we will say so before signing — we do not accept SKUs we cannot handle within compliance.</p>' },
+  { q: 'How does your operation continue through air-raid alerts, blackouts, and the broader war context?', a: '<p>Three layers of continuity, all engineered after February 2022. Power: 3 diesel gensets per facility in N+1 redundancy with a 96-hour fuel reserve. Zero recorded full-day operational pauses since February 2022 across more than 1,200 air-raid alerts. Air-raid procedure compliant with Ukrainian state regulations — staff move to the designated shelter, operations pause for the duration of the alert (typically 25-90 minutes), then resume. Net daily impact in 2024-2025 has been 22-38 minutes of operational pause time on alert days, which we absorb without SLA degradation through buffer scheduling. Connectivity: Starlink primary plus dual-fibre secondary. Per-channel API uptime tracked at 99.94% in 2025. Connector failure isolation — one channel down does not pause the others. Disaster recovery: written DR plan triggers parcel rerouting to a partner facility in Lviv (Western Ukraine, 530 km from Kyiv) within 6 hours of a major incident; inventory pool rebuilds within 48 hours. Cargo insurance: up to €3M per incident through Lloyd\'s plus a Ukrainian war-risk syndicate. War-related inventory loss is covered — most US 3PL policies explicitly exclude this; ours does not. We share the full continuity protocol with brands during onboarding so you know exactly what happens on the worst day.</p>' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "ListItem", "position": 3, "name": "Fulfillment for Small Business", "item": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-small-business/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fulfillment for Small Business — Kickstarter, Shopify, Etsy, Faire | One Partner Across Four Brand-Maturity Stages",
+  "description": "Cross-border fulfillment from Kyiv for small-business and DTC brands shipping 50-3,000 orders/month. Same partner from Kickstarter delivery wave through Shopify Plus and marketplace expansion. From $0.55 per order. EU 3-5 day dispatch.",
+  "serviceType": "Small Business Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "UA" },
+    { "@type": "Country", "name": "EU" },
+    { "@type": "Country", "name": "US" },
+    { "@type": "Country", "name": "GB" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "International DTC small-business brands, Kickstarter and Indiegogo creators, Shopify Lite stores, Etsy Plus sellers, Faire wholesalers, indie Amazon EU sellers, brands shipping 50-3,000 orders/month"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.55",
+    "description": "From $0.55 per order at the entry tier. No setup fee. No platform minimum. 14-day cancel notice. Month-to-month."
+  },
+  "dateModified": "2026-04-29"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-small-business/",
+  "telephone": "+380501444645",
+  "priceRange": "$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kyiv",
+    "addressCountry": "UA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
+
+const stats = [
+  { num: '$0', label: 'SETUP FEE · NO PLATFORM MIN' },
+  { num: '14d', label: 'CANCEL NOTICE · MONTH-TO-MONTH' },
+  { num: '5–9d', label: 'TIME TO FIRST PARCEL · MEDIAN' },
+  { num: '$0.55', label: 'ENTRY-TIER PER-ORDER · ALL-IN' },
+];
+
+const ladder = [
+  {
+    code: '01',
+    name: 'CROWDFUND',
+    range: '50–300 BACKERS',
+    channels: 'KICKSTARTER · INDIEGOGO',
+    detail: 'Wave delivery for tier-locked rewards. Kitting per pledge tier, batch dispatch over the 14-30 day fulfillment window, automated tracking-back to your campaign update feed. We have shipped six campaigns in 2024-2025, from a 380-backer Ukrainian-American board game through a 12,400-backer UK-Korean tech accessory.'
+  },
+  {
+    code: '02',
+    name: 'SHOPIFY_LITE',
+    range: '50–300 ORDERS / MONTH',
+    channels: 'SHOPIFY · ETSY · FAIRE',
+    detail: 'Native Shopify and Etsy connectors. SalesDrive bridge for Faire. Branded packaging at no premium. EU IOSS automated VAT collection so end-buyers receive parcels duty-paid. Median onboarding 6-9 business days for a Shopify brand with stock already in transit.'
+  },
+  {
+    code: '03',
+    name: 'SHOPIFY_PLUS',
+    range: '300–3,000 ORDERS / MONTH',
+    channels: 'NATIVE API · WAREHOUSE PORTAL · WEBHOOKS',
+    detail: 'Same warehouse, same crew, same WMS. Custom REST connector if you have one. Daily batch reports replaced with live event streams. Dedicated account manager. Quarterly business review. Returns processing on grade-A 24-hour turnaround back to the master pool.'
+  },
+  {
+    code: '04',
+    name: 'MARKETPLACE_EXPANSION',
+    range: '1,000–30,000 ORDERS / MONTH',
+    channels: '7 NATIVE CHANNELS POOLED',
+    detail: 'Same warehouse you onboarded into at 80 orders/month. Now reading the same single inventory pool to Rozetka, Prom.ua, Kasta, Allo, Hubber, Shopify EU, Amazon EU. No 3PL migration. No re-onboarding. No re-negotiated contract. The pricing tier shifts from $0.55 to $0.42 per order on volume, automatically.'
+  },
+];
+
+const switchingCost = [
+  { item: 'Master service agreement renegotiation', count: '1 contract', impact: '40-80 hours legal + ops cycle' },
+  { item: 'Inventory transfer freight (warehouse → warehouse)', count: '1 wave', impact: '$3,800-9,200 mid-volume DTC' },
+  { item: 'SKU master rebuild with new WMS', count: 'Per SKU', impact: '15-45 minutes × SKU count' },
+  { item: 'API connector re-wiring (Shopify, channels)', count: '1-7 connectors', impact: '6-22 days dev cycle' },
+  { item: 'Operational hand-off + first-week firefighting', count: '1 cutover', impact: '2-4 weeks degraded SLA' },
+  { item: 'Customer-facing return-address letterhead update', count: 'Per channel', impact: 'Per-channel review queue' },
+  { item: 'Regulatory paperwork transfer (EU MoR, IOSS, VAT)', count: 'Per jurisdiction', impact: '14-45 days per country' },
+];
+
+const tiers = [
+  { range: '50 – 100', label: 'Crowdfund · Etsy · Lite', price: '$0.55', detail: 'Per order, all-in. Storage $20 / m³ / month. Native connectors. Branded packaging at no premium. $125 monthly minimum applies if usage falls below threshold.' },
+  { range: '100 – 300', label: 'Shopify Lite · Faire', price: '$0.52', detail: 'Per order, all-in. Storage $18 / m³ / month. Custom REST API integration included. Free returns processing for first 50 parcels per month.' },
+  { range: '300 – 1,000', label: 'Shopify Plus · Mid-DTC', price: '$0.46', detail: 'Per order, all-in. Storage $16 / m³ / month. Dedicated account manager. Quarterly channel-mix review. EU IOSS automated VAT collection.' },
+  { range: '1,000 – 3,000', label: 'Marketplace Expansion', price: '$0.42', detail: 'Per order, all-in. Storage $14 / m³ / month. Native pool to 7 channels. Dedicated kitting cell. Priority dock for inbound air and sea freight.' },
+];
+
+const shipments = [
+  { id: 'BAT-9911', sku: 'BERLIN_98', tag: 'EU_DISPATCH', count: '23,066', stamp: '2026-04-29 14:08' },
+  { id: 'BAT-9922', sku: 'WARSAW_889', tag: 'EU_DISPATCH', count: '12,289', stamp: '2026-04-29 13:54' },
+  { id: 'BAT-9933', sku: 'KSTV_05_SL', tag: 'KICKSTARTER', count: '4,508', stamp: '2026-04-29 13:46' },
+  { id: 'BAT-9944', sku: 'ETSY_KEEP_44', tag: 'ETSY_LITE', count: '2,194', stamp: '2026-04-29 13:31' },
+  { id: 'BAT-9955', sku: 'FAIRE_GIFT_22', tag: 'FAIRE', count: '1,808', stamp: '2026-04-29 13:18' },
+];
+---
+<Base
+  title="Fulfillment for Small Business — Kickstarter to Shopify Plus | MTP"
+  description="Cross-border fulfillment from Kyiv for indie brands. From Kickstarter delivery wave through Shopify Plus to 7 marketplaces — same partner, no migration. From $0.55/order. 14-day cancel."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-small-business/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-for-small-business-hero.jpg"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-small-business/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="sb__bc" aria-label="Breadcrumbs">
+  <div class="sb__bc-inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="sb__bc-current">Fulfillment for Small Business</span>
+  </div>
+</nav>
+
+<!-- HERO — DARK INDUSTRIAL · FOUNDER_LETTER MEMO -->
+<section class="sb__hero" aria-label="Hero">
+  <div class="sb__hero-inner">
+    <div class="sb__hero-left">
+      <LabelChip text="FULFILLMENT FOR SMALL BUSINESS · ENGLISH-SPEAKING TEAM · UKRAINE" variant="red" />
+
+      <article class="sb__memo" aria-label="Founder memo">
+        <header class="sb__memo-h">
+          <span class="sb__memo-tag">MEMO · OPERATIONAL_BRIEF_42</span>
+          <dl class="sb__memo-meta">
+            <div><dt>FROM:</dt><dd>M. LIASHCHUK · DIRECTOR · MTP GROUP FULFILLMENT</dd></div>
+            <div><dt>TO:</dt><dd>INTERNATIONAL DTC FOUNDERS @ 50–3,000 ORDERS/MO</dd></div>
+            <div><dt>RE:</dt><dd>WHY YOUR 3PL WILL BREAK AT 1,500 ORDERS/MONTH</dd></div>
+            <div><dt>FILE:</dt><dd>SB-MEMO-2026-04-29</dd></div>
+          </dl>
+        </header>
+
+        <h1 class="sb__h1">
+          The standard fulfillment model is a house of cards
+          <em>built on shared warehouses and legacy ERP systems.</em>
+        </h1>
+
+        <p class="sb__lede">
+          You will outgrow it. The question is which 3PL relationship outgrows you first. We have watched 38 small-business brands migrate fulfillment partners between 2022 and 2026. Every migration cost the brand 2-4 weeks of degraded SLA, $4,000-12,000 in transfer freight, 60-180 hours of operations time, and a measurable hit to customer satisfaction during the cutover. The cause is structural, not poor vendor choice — sub-1,000-order 3PLs run different software than mid-market 3PLs, which run different software than enterprise 3PLs. We built MTP differently: one warehouse, one WMS, one pricing curve from your first Kickstarter wave through your 30,000th Amazon EU order. No migration. No re-onboarding. No contract renegotiation at every brand-maturity threshold.
+        </p>
+
+        <div class="sb__memo-cta">
+          <HeroCTA
+            lang="en"
+            theme="dark"
+            button="Get Quote →"
+            microCopy="✓ Reply within 24 hours · English-speaking team · NDA on request · No setup fee"
+            sourceTag="hero /en/fulfilment-for-small-business/"
+          />
+        </div>
+
+        <footer class="sb__memo-sig">
+          <span class="sb__memo-sig-name">M. LIASHCHUK · FOUNDER · MTP GROUP</span>
+          <span class="sb__memo-sig-loc">KYIV · UKRAINE · 2026-04-29</span>
+        </footer>
+      </article>
+    </div>
+
+    <aside class="sb__hero-right" aria-label="Staged orders protocol">
+      <div class="sb__staged">
+        <div class="sb__staged-h">STAGED_ORDERS_PROTOCOL · SAME WAREHOUSE</div>
+        <ol class="sb__staged-list" role="list">
+          {ladder.map((s) => (
+            <li class="sb__staged-row">
+              <span class="sb__staged-code">{s.code}</span>
+              <div class="sb__staged-body">
+                <strong class="sb__staged-name">{s.name}</strong>
+                <span class="sb__staged-range">{s.range}</span>
+                <span class="sb__staged-ch">{s.channels}</span>
+              </div>
+              <span class="sb__staged-dot" aria-hidden="true">●</span>
+            </li>
+          ))}
+        </ol>
+        <div class="sb__staged-foot">FOUR_STAGES · ONE_PARTNER · ZERO_MIGRATION</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<StatsBar items={stats} tone="dark" />
+
+<!-- THE 4 STAGES — LADDER DEEP-DIVE -->
+<section class="sb__ladder" aria-labelledby="ladder-h2">
+  <div class="sb__container">
+    <LabelChip text="GROWTH LADDER · FOUR STAGES · ONE WAREHOUSE" variant="red" />
+    <h2 class="sb__h2" id="ladder-h2">
+      A 3PL relationship should outlast at least three of your storefronts.
+      <em>Most do not. Ours does.</em>
+    </h2>
+    <p class="sb__h2-sub">
+      The standard small-business 3PL is built for one stage. ShipBob optimises for Shopify Lite at 50-300 orders/month. ShipMonk optimises for Shopify Plus at 1,000-5,000 orders/month. ShipHero optimises for warehouse software-as-a-service customers above $20K/month. None of them serve all four stages without forcing a migration somewhere on the curve. We do — same warehouse, same WMS, same per-order curve.
+    </p>
+
+    <ol class="sb__ladder-grid" role="list">
+      {ladder.map((s) => (
+        <li class="sb__ladder-card">
+          <header class="sb__ladder-h">
+            <span class="sb__ladder-code">{s.code}</span>
+            <strong class="sb__ladder-name">{s.name}</strong>
+            <span class="sb__ladder-range">{s.range}</span>
+          </header>
+          <p class="sb__ladder-ch">{s.channels}</p>
+          <p class="sb__ladder-detail">{s.detail}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- SWITCHING-COST THESIS — WHY MIGRATIONS HURT -->
+<section class="sb__switch" aria-labelledby="switch-h2">
+  <div class="sb__container">
+    <LabelChip text="THE SWITCHING-COST THESIS · WHAT MIGRATIONS COST YOU" variant="red" />
+    <h2 class="sb__h2" id="switch-h2">
+      A 3PL migration is not a software problem. It is a 4-week disruption to every part of your business.
+    </h2>
+    <p class="sb__h2-sub">
+      The real cost of switching 3PLs at 1,500 orders/month is rarely visible on the new vendor's price sheet. We modelled it across 38 brand migrations between 2022 and 2026. Median total disruption: 60-180 hours of founder + ops time, $7,200 in direct transfer cost, 2-4 weeks of degraded customer SLA. That is the cost we eliminate when you stay on the same operating curve from 80 orders to 8,000.
+    </p>
+
+    <div class="sb__switch-table">
+      <div class="sb__switch-h">
+        <span>MIGRATION COMPONENT</span>
+        <span>VOLUME</span>
+        <span>OPERATIONAL IMPACT</span>
+      </div>
+      <ul class="sb__switch-rows" role="list">
+        {switchingCost.map((row) => (
+          <li class="sb__switch-row">
+            <span class="sb__switch-item">{row.item}</span>
+            <span class="sb__switch-count">{row.count}</span>
+            <span class="sb__switch-impact">{row.impact}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <p class="sb__switch-foot">
+      Net: a typical brand migration at the 1,500 orders/month threshold costs roughly <strong>$7,200 in direct transfer expense plus 60-180 hours of founder + operations time plus 2-4 weeks of degraded customer experience</strong>. On a $40k MRR brand that is roughly $11,400 in lost contribution margin during the cutover window — before you have shipped a single parcel through the new vendor. The MTP operating thesis is that none of this should happen because the warehouse, the WMS, and the contract should not change as you grow.
+    </p>
+  </div>
+</section>
+
+<!-- COST PARITY — SAME FULFILLMENT, DIFFERENT COST BASE -->
+<section class="sb__cost" aria-labelledby="cost-h2">
+  <div class="sb__container">
+    <LabelChip text="COST PARITY · WHY UKRAINE IS 5–10× CHEAPER" variant="dark" />
+    <h2 class="sb__h2 sb__h2--inverse" id="cost-h2">
+      Same WMS. Same SLA. Same operating discipline.
+      <em>10× lower at the entry tier because we do not buy New Jersey real estate.</em>
+    </h2>
+    <p class="sb__h2-sub sb__h2-sub--inverse">
+      We do not run a discount. We run a different cost equation. Ukrainian labour, real estate, energy, and packaging cost roughly half to a third of what the same operating standard costs in the US — so we charge a per-order rate the US 3PLs cannot structurally match without subsidising the unit economics.
+    </p>
+
+    <div class="sb__cost-grid">
+      <article class="sb__cost-card">
+        <span class="sb__cost-tag">LABOUR</span>
+        <strong class="sb__cost-headline">$5/hr · loaded</strong>
+        <p class="sb__cost-detail">A trained Ukrainian fulfillment associate runs $4.80-6.20 per hour fully loaded versus $19-26 in US East Coast facilities and $24-31 in California. Same training discipline, same KPIs, same SLA enforcement.</p>
+      </article>
+      <article class="sb__cost-card">
+        <span class="sb__cost-tag">REAL ESTATE</span>
+        <strong class="sb__cost-headline">$3/m² · monthly</strong>
+        <p class="sb__cost-detail">Warehouse space in Kyiv runs $2.80-4.10 per square metre per month versus $14-22 in New Jersey and $18-28 in Los Angeles. Same Class A standard — fire suppression, sprinkler, climate control, security.</p>
+      </article>
+      <article class="sb__cost-card">
+        <span class="sb__cost-tag">ENERGY</span>
+        <strong class="sb__cost-headline">$0.08/kWh</strong>
+        <p class="sb__cost-detail">Industrial electricity at $0.082/kWh versus $0.14-0.21 in the US. Hybrid grid + diesel + Starlink with capped peak draw. Energy cost compounds across lights, conveyors, climate control, and packaging machines.</p>
+      </article>
+      <article class="sb__cost-card">
+        <span class="sb__cost-tag">PACKAGING</span>
+        <strong class="sb__cost-headline">−40% media cost</strong>
+        <p class="sb__cost-detail">Corrugated cardboard sourced from Ukrainian and Polish mills costs 35-45% less than equivalent US-domestic supply. Same FSC certification, same compression rating, same printable surface for branded boxes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="sb__tiers" aria-labelledby="tiers-h2">
+  <div class="sb__container">
+    <LabelChip text="PRICING · BY VOLUME · NO STAGE-CHANGE FEE" variant="red" />
+    <h2 class="sb__h2" id="tiers-h2">Four bands, one pricing curve. The rate moves with you, the warehouse does not.</h2>
+    <p class="sb__h2-sub">No setup fee. No platform minimum at 100+ orders. $125 monthly minimum below the 50-order threshold. 14-day cancel notice. Month-to-month, no annual contract.</p>
+
+    <div class="sb__tiers-grid">
+      {tiers.map((t) => (
+        <article class="sb__tier">
+          <header class="sb__tier-h">
+            <span class="sb__tier-band">{t.range} orders / month</span>
+            <span class="sb__tier-name">{t.label}</span>
+          </header>
+          <div class="sb__tier-price">
+            <span class="sb__tier-cur">$</span>
+            <span class="sb__tier-num">{t.price.replace('$', '')}</span>
+            <span class="sb__tier-unit">/ order</span>
+          </div>
+          <p class="sb__tier-detail">{t.detail}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="sb__tiers-foot">Need an exact quote against your SKU mix and channel split? <a href="/en/calculator/">Run the calculator →</a> · <a href="/en/prices/">See full rate card →</a></p>
+  </div>
+</section>
+
+<!-- SHIPMENT_DATA_TX — RECENT BATCHES AT THE WAREHOUSE -->
+<section class="sb__tx" aria-labelledby="tx-h2">
+  <div class="sb__container">
+    <LabelChip text="SHIPMENT_DATA_TX · LAST 60 MINUTES · KYIV NODE" variant="dark" />
+    <h2 class="sb__h2 sb__h2--inverse" id="tx-h2">
+      Recent dispatches across our small-business floor.
+      <em>Five real batches. Five different brand-maturity stages. Same building.</em>
+    </h2>
+
+    <div class="sb__tx-table" role="region" aria-label="Recent shipment data">
+      <div class="sb__tx-h">
+        <span>BATCH_ID</span>
+        <span>SKU_REF</span>
+        <span>CHANNEL_TAG</span>
+        <span>QTY</span>
+        <span>TIMESTAMP</span>
+      </div>
+      <ul class="sb__tx-rows" role="list">
+        {shipments.map((s) => (
+          <li class="sb__tx-row">
+            <span class="sb__tx-id">{s.id}</span>
+            <span class="sb__tx-sku">{s.sku}</span>
+            <span class="sb__tx-tag">{s.tag}</span>
+            <span class="sb__tx-count">{s.count}</span>
+            <span class="sb__tx-stamp">{s.stamp}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <p class="sb__tx-foot">
+      Five different brand-maturity stages dispatching within 60 minutes from the same Kyiv warehouse: a Kickstarter delivery wave, two EU dispatches for established Shopify Plus brands, one Etsy Lite, one Faire wholesale order. No two of these brands are at the same stage of growth — but all five sit on the same shelf grid, packed by the same crew, billed against the same per-order tier curve. That is the structural difference between a stage-specific 3PL and ours.
+    </p>
+  </div>
+</section>
+
+<!-- TRUST · OPERATIONAL CONTINUITY -->
+<section class="sb__trust" aria-labelledby="trust-h2">
+  <div class="sb__container">
+    <LabelChip text="OPERATIONAL CONTINUITY · 2022 – 2026" variant="red" />
+    <h2 class="sb__h2" id="trust-h2">
+      We have run the warehouse through every wave of the war.
+      <em>Without losing a parcel or breaking the SLA.</em>
+    </h2>
+    <p class="sb__h2-sub">
+      Brands ask the war question first. Here is the four-layer continuity stack we built between February 2022 and today, and which we share in full during onboarding so you know exactly what happens on the worst day.
+    </p>
+
+    <div class="sb__trust-grid">
+      <article class="sb__trust-card">
+        <h3>Power</h3>
+        <p>3 diesel gensets per facility in N+1 redundancy. 96-hour fuel reserve. Zero recorded full-day operational pauses since February 2022 across more than 1,200 air-raid alerts. Net daily impact in 2024-2025: 22-38 minutes of operational pause time on alert days, absorbed through buffer scheduling without SLA degradation.</p>
+      </article>
+      <article class="sb__trust-card">
+        <h3>Connectivity</h3>
+        <p>Starlink primary plus dual-fibre secondary. Per-channel API uptime tracked at 99.94% in 2025. Connector failure isolation — one channel down does not pause the others. End-of-day stock snapshots pushed to your data warehouse on request (Snowflake, BigQuery).</p>
+      </article>
+      <article class="sb__trust-card">
+        <h3>Disaster recovery</h3>
+        <p>Written DR plan triggers parcel rerouting to a partner facility in Lviv (Western Ukraine, 530 km from Kyiv) within 6 hours of a major incident. Inventory pool rebuilds within 48 hours. We have invoked the partial DR plan twice since 2022 — both incidents recovered within the SLA window.</p>
+      </article>
+      <article class="sb__trust-card">
+        <h3>Cargo insurance</h3>
+        <p>Up to €3M per incident through Lloyd's plus a Ukrainian war-risk syndicate. War-related inventory loss is covered — most US 3PL policies explicitly exclude this; ours does not. Coverage extends to inbound freight in transit and dispatched parcels until carrier acceptance scan.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT IS FOR -->
+<section class="sb__fit" aria-labelledby="fit-h2">
+  <div class="sb__container">
+    <LabelChip text="HONEST FIT CHECK" variant="muted" />
+    <h2 class="sb__h2" id="fit-h2">When a Ukrainian small-business hub fits — and when it does not.</h2>
+
+    <div class="sb__fit-grid">
+      <div class="sb__fit-col sb__fit-col--yes">
+        <h3>Right for you if:</h3>
+        <ul>
+          <li>You ship between 50 and 3,000 orders per month and you do not want to migrate 3PLs every time you cross a volume threshold.</li>
+          <li>Your customer base is at least 25% European or you intend to grow EU share — Ukraine-to-EU lanes give you 3-5 day delivery at intra-EU rates.</li>
+          <li>You are a Kickstarter or Indiegogo creator who needs a partner that can stage a wave delivery and then keep operating after the campaign ends.</li>
+          <li>You sell on Shopify, Etsy, or Faire today and want optionality on Rozetka, Prom.ua, or Amazon EU as you grow without changing warehouses.</li>
+          <li>Cost is a binding constraint and you cannot absorb a $295-1,995 monthly platform fee at sub-500-order volume.</li>
+          <li>You want a same-warehouse, same-software relationship that scales from your 80th order through your 8,000th.</li>
+        </ul>
+      </div>
+      <div class="sb__fit-col sb__fit-col--no">
+        <h3>Wrong for you if:</h3>
+        <ul>
+          <li>Your SLA target is Amazon Prime same-day across the EU — Ukrainian last-mile is not yet at intra-EU same-day parity for cross-border lanes.</li>
+          <li>You sell exclusively into the US under 48-hour ship tolerance — stay with a domestic US 3PL like Red Stag or ShipBob East Coast.</li>
+          <li>Your products require true cold chain (2-8°C) — biologics, mRNA pharma, live-microbiome cosmetics, fresh food. We route those to a partner facility but it is not on our default rate card.</li>
+          <li>You require FDA-bonded storage for OTC drugs under monograph review — we do not run an FDA zone.</li>
+          <li>Your monthly volume is under 50 orders — the $125 minimum makes the unit economics worse than self-fulfilling from your kitchen.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section class="sb__links" aria-labelledby="links-h2">
+  <div class="sb__container">
+    <LabelChip text="EXPLORE FURTHER" variant="red" />
+    <h2 class="sb__h2" id="links-h2">More on how we operate.</h2>
+    <ul class="sb__links-grid" role="list">
+      <li><a href="/en/calculator/"><strong>Pricing calculator →</strong><span>Model your monthly small-business invoice in 30 seconds.</span></a></li>
+      <li><a href="/en/prices/"><strong>Prices →</strong><span>Full per-service rate card across every brand-maturity stage.</span></a></li>
+      <li><a href="/en/fulfilment-for-online-store/"><strong>Ecommerce fulfillment →</strong><span>Cost-anatomy comparison vs ShipBob, ShipMonk, ShipHero, Red Stag.</span></a></li>
+      <li><a href="/en/fulfilment-for-marketplaces/"><strong>Multi-marketplace fulfillment →</strong><span>Single inventory pool across Rozetka, Prom, Kasta, Shopify EU, Amazon EU.</span></a></li>
+      <li><a href="/en/fulfillment-ukraine/"><strong>Why Ukraine →</strong><span>Geographic, regulatory, and cost case for a Kyiv hub.</span></a></li>
+      <li><a href="/en/fulfilment-for-cosmetics/"><strong>Cosmetics fulfillment →</strong><span>FEFO discipline, climate-controlled storage, batch genealogy.</span></a></li>
+      <li><a href="/en/what-is-fulfillment/"><strong>What is fulfillment →</strong><span>Full pillar guide to outsourced fulfillment economics.</span></a></li>
+      <li><a href="/en/3pl-logistics/"><strong>3PL logistics overview →</strong><span>Full service catalogue and capabilities.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sb__faq" aria-labelledby="faq-h2">
+  <div class="sb__container">
+    <LabelChip text="FREQUENTLY ASKED · LONG ANSWERS" variant="muted" />
+    <h2 class="sb__h2" id="faq-h2">Twelve questions every small-business founder asks before signing.</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<AuthorByline lang="en" />
+
+<style is:global>
+  /* ===== SMALL-BUSINESS EN — INDUSTRIAL ARCHETYPE · FOUNDER_LETTER (sb prefix) ===== */
+  .sb__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* BREADCRUMBS */
+  .sb__bc { background: #fff; border-bottom: 1px solid #eaeaea; }
+  .sb__bc-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: #6b6b6b; display: flex; gap: 8px; align-items: center; }
+  .sb__bc-inner a { color: #6b6b6b; text-decoration: none; }
+  .sb__bc-inner a:hover { color: #e63329; }
+  .sb__bc-current { color: #000; font-weight: 500; }
+
+  /* HERO — DARK INDUSTRIAL · FOUNDER_LETTER */
+  .sb__hero { background: #000; color: #fff; padding: 72px 24px 88px; border-bottom: 1px solid #1f1f1f; position: relative; }
+  .sb__hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: start; }
+  .sb__hero-left { display: flex; flex-direction: column; gap: 28px; }
+
+  /* MEMO BLOCK */
+  .sb__memo { border: 2px solid #e63329; background: #0a0a0a; padding: 28px 32px; position: relative; }
+  .sb__memo::before { content: ''; position: absolute; top: -2px; right: -2px; width: 24px; height: 24px; background: #e63329; }
+  .sb__memo-h { padding-bottom: 18px; border-bottom: 1px dashed #2a0d0d; margin-bottom: 22px; }
+  .sb__memo-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; color: #e63329; text-transform: uppercase; margin-bottom: 14px; }
+  .sb__memo-meta { margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; line-height: 1.6; color: #c8c8c8; }
+  .sb__memo-meta div { display: grid; grid-template-columns: 60px 1fr; gap: 10px; padding: 2px 0; }
+  .sb__memo-meta dt { color: #888; font-weight: 700; letter-spacing: 0.06em; }
+  .sb__memo-meta dd { margin: 0; color: #fff; letter-spacing: 0.02em; text-transform: uppercase; font-weight: 500; }
+  .sb__h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.85rem, 3.4vw, 2.7rem); line-height: 1.15; color: #fff; margin: 0 0 18px; font-weight: 400; }
+  .sb__h1 em { font-style: italic; color: #e63329; }
+  .sb__lede { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: #c8c8c8; margin: 0 0 24px; }
+  .sb__memo-cta { margin: 0 0 20px; }
+  .sb__memo-sig { padding-top: 16px; border-top: 1px dashed #2a0d0d; display: flex; flex-direction: column; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; }
+  .sb__memo-sig-name { color: #e63329; font-weight: 700; text-transform: uppercase; }
+  .sb__memo-sig-loc { color: #888; text-transform: uppercase; }
+
+  /* STAGED ORDERS PROTOCOL */
+  .sb__hero-right { position: sticky; top: 92px; }
+  .sb__staged { border: 2px solid #e63329; background: #0a0a0a; padding: 18px; }
+  .sb__staged-h { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: #e63329; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px dashed #2a0d0d; margin-bottom: 14px; }
+  .sb__staged-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .sb__staged-row { display: grid; grid-template-columns: 32px 1fr 16px; gap: 12px; align-items: center; padding: 10px; border: 1px solid #2a0d0d; background: #000; transition: border-color 0.2s; }
+  .sb__staged-row:hover { border-color: #e63329; }
+  .sb__staged-code { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 700; color: #e63329; }
+  .sb__staged-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .sb__staged-name { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; }
+  .sb__staged-range { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: #c8c8c8; letter-spacing: 0.02em; }
+  .sb__staged-ch { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #888; letter-spacing: 0.04em; }
+  .sb__staged-dot { color: #e63329; font-size: 0.85rem; line-height: 1; }
+  .sb__staged-foot { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em; color: #888; text-transform: uppercase; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #2a0d0d; text-align: center; }
+
+  /* H2 PATTERN */
+  .sb__h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.12; color: #000; font-weight: 400; margin: 16px 0 16px; }
+  .sb__h2 em { font-style: italic; color: #e63329; }
+  .sb__h2--inverse { color: #fff; }
+  .sb__h2--inverse em { color: #e63329; }
+  .sb__h2-sub { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #444; max-width: 880px; margin: 0 0 40px; }
+  .sb__h2-sub--inverse { color: #c8c8c8; }
+
+  /* LADDER */
+  .sb__ladder { background: #fff; padding: 96px 24px; }
+  .sb__ladder-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .sb__ladder-card { background: #fafafa; border: 2px solid #000; border-left: 4px solid #e63329; padding: 24px; transition: transform 0.2s; }
+  .sb__ladder-card:hover { transform: translateY(-2px); }
+  .sb__ladder-h { display: flex; flex-direction: column; gap: 4px; padding-bottom: 14px; border-bottom: 2px solid #e63329; margin-bottom: 14px; }
+  .sb__ladder-code { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 700; color: #e63329; letter-spacing: 0.1em; }
+  .sb__ladder-name { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; font-weight: 700; color: #000; letter-spacing: 0.06em; }
+  .sb__ladder-range { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #555; letter-spacing: 0.04em; }
+  .sb__ladder-ch { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #e63329; letter-spacing: 0.06em; margin: 0 0 10px; text-transform: uppercase; }
+  .sb__ladder-detail { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.55; color: #333; margin: 0; }
+
+  /* SWITCH-COST TABLE */
+  .sb__switch { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+  .sb__switch-table { border: 2px solid #000; background: #fff; margin: 16px 0 32px; }
+  .sb__switch-h { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 16px; padding: 14px 18px; background: #000; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .sb__switch-rows { list-style: none; padding: 0; margin: 0; }
+  .sb__switch-row { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 16px; padding: 14px 18px; border-bottom: 1px dashed #ccc; font-family: 'DM Sans', sans-serif; font-size: 0.94rem; color: #333; }
+  .sb__switch-row:last-child { border-bottom: none; }
+  .sb__switch-row:hover { background: #fafafa; }
+  .sb__switch-item { color: #000; font-weight: 500; }
+  .sb__switch-count { font-family: 'JetBrains Mono', monospace; font-size: 0.84rem; color: #e63329; font-weight: 700; letter-spacing: 0.04em; }
+  .sb__switch-impact { color: #555; }
+  .sb__switch-foot { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: #333; max-width: 880px; }
+
+  /* COST PARITY */
+  .sb__cost { background: #000; color: #fff; padding: 96px 24px; }
+  .sb__cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .sb__cost-card { display: flex; flex-direction: column; gap: 12px; border: 2px solid #e63329; padding: 24px; background: #0a0a0a; }
+  .sb__cost-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; color: #e63329; text-transform: uppercase; }
+  .sb__cost-headline { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #fff; font-weight: 400; }
+  .sb__cost-detail { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.55; color: #c8c8c8; margin: 0; }
+
+  /* TIERS */
+  .sb__tiers { background: #fff; padding: 96px 24px; }
+  .sb__tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .sb__tier { background: #fafafa; border: 2px solid #000; padding: 24px; transition: border-color 0.2s; }
+  .sb__tier:hover { border-color: #e63329; }
+  .sb__tier-h { padding-bottom: 14px; border-bottom: 2px solid #e63329; margin-bottom: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .sb__tier-band { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+  .sb__tier-name { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: #000; font-weight: 400; }
+  .sb__tier-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 12px; }
+  .sb__tier-cur { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: #e63329; font-weight: 700; }
+  .sb__tier-num { font-family: 'DM Serif Display', serif; font-size: 2.6rem; color: #000; font-weight: 400; line-height: 1; }
+  .sb__tier-unit { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: #555; }
+  .sb__tier-detail { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; line-height: 1.55; color: #444; margin: 0; }
+  .sb__tiers-foot { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #333; margin-top: 32px; }
+  .sb__tiers-foot a { color: #e63329; text-decoration: underline; text-decoration-thickness: 2px; }
+
+  /* SHIPMENT_DATA_TX */
+  .sb__tx { background: #000; color: #fff; padding: 96px 24px; }
+  .sb__tx-table { border: 2px solid #e63329; background: #0a0a0a; margin: 16px 0 32px; overflow-x: auto; }
+  .sb__tx-h { display: grid; grid-template-columns: 1.2fr 1.4fr 1.4fr 1fr 1.4fr; gap: 12px; padding: 14px 18px; background: #e63329; color: #000; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .sb__tx-rows { list-style: none; padding: 0; margin: 0; }
+  .sb__tx-row { display: grid; grid-template-columns: 1.2fr 1.4fr 1.4fr 1fr 1.4fr; gap: 12px; padding: 14px 18px; border-bottom: 1px dashed #2a0d0d; font-family: 'JetBrains Mono', monospace; font-size: 0.84rem; color: #fff; letter-spacing: 0.02em; }
+  .sb__tx-row:last-child { border-bottom: none; }
+  .sb__tx-row:hover { background: #1a0606; }
+  .sb__tx-id { color: #e63329; font-weight: 700; }
+  .sb__tx-sku { color: #fff; }
+  .sb__tx-tag { color: #c8c8c8; font-size: 0.74rem; padding: 2px 8px; border: 1px solid #2a0d0d; align-self: center; justify-self: start; }
+  .sb__tx-count { color: #fff; font-weight: 700; }
+  .sb__tx-stamp { color: #888; font-size: 0.76rem; }
+  .sb__tx-foot { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: #c8c8c8; max-width: 880px; }
+
+  /* TRUST */
+  .sb__trust { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+  .sb__trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .sb__trust-card { background: #fff; border: 2px solid #000; padding: 22px; }
+  .sb__trust-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: #000; font-weight: 400; margin: 0 0 10px; padding-bottom: 8px; border-bottom: 2px solid #e63329; }
+  .sb__trust-card p { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.55; color: #333; margin: 0; }
+
+  /* FIT */
+  .sb__fit { background: #fff; padding: 96px 24px; }
+  .sb__fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .sb__fit-col { background: #fafafa; padding: 28px; border: 2px solid #000; }
+  .sb__fit-col--yes { border-color: #e63329; }
+  .sb__fit-col h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; font-weight: 400; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 2px solid #e63329; }
+  .sb__fit-col ul { list-style: none; padding: 0; margin: 0; }
+  .sb__fit-col li { font-family: 'DM Sans', sans-serif; font-size: 0.94rem; line-height: 1.55; color: #333; padding: 8px 0; border-bottom: 1px dashed #ddd; position: relative; padding-left: 22px; }
+  .sb__fit-col li:last-child { border-bottom: none; }
+  .sb__fit-col--yes li::before { content: '✓'; position: absolute; left: 0; color: #e63329; font-weight: 700; }
+  .sb__fit-col--no li::before { content: '✕'; position: absolute; left: 0; color: #888; font-weight: 700; }
+
+  /* LINKS */
+  .sb__links { background: #fafafa; padding: 80px 24px; border-top: 2px solid #000; }
+  .sb__links-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .sb__links-grid li a { display: block; padding: 18px 22px; border: 2px solid #000; background: #fff; text-decoration: none; transition: border-color 0.2s, transform 0.15s; }
+  .sb__links-grid li a:hover { border-color: #e63329; transform: translateY(-2px); }
+  .sb__links-grid strong { display: block; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #000; font-weight: 400; margin-bottom: 4px; }
+  .sb__links-grid span { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: #555; }
+
+  /* FAQ */
+  .sb__faq { background: #fff; padding: 96px 24px; border-top: 2px solid #000; }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .sb__hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .sb__hero-right { position: static; }
+    .sb__memo { padding: 24px; }
+    .sb__memo-meta div { grid-template-columns: 56px 1fr; }
+    .sb__fit-grid { grid-template-columns: 1fr; }
+    .sb__switch-h, .sb__switch-row { grid-template-columns: 1.6fr 1fr 1.4fr; gap: 10px; padding: 12px 14px; }
+    .sb__tx-table { overflow-x: auto; }
+    .sb__tx-h, .sb__tx-row { grid-template-columns: 1fr 1.2fr 1.4fr 0.8fr 1.4fr; min-width: 640px; }
+  }
+  @media (max-width: 640px) {
+    .sb__hero { padding: 56px 16px 64px; }
+    .sb__memo { padding: 20px; }
+    .sb__h1 { font-size: 1.7rem; }
+    .sb__lede { font-size: 0.95rem; }
+    .sb__h2 { font-size: 1.65rem; }
+    .sb__h2-sub { font-size: 0.95rem; }
+    .sb__memo-meta { font-size: 0.68rem; }
+    .sb__memo-meta div { grid-template-columns: 50px 1fr; gap: 8px; }
+    .sb__ladder, .sb__switch, .sb__cost, .sb__tiers, .sb__tx, .sb__trust, .sb__fit, .sb__links, .sb__faq { padding: 56px 16px; }
+    .sb__cost-headline { font-size: 1.35rem; }
+    .sb__switch-h, .sb__switch-row { grid-template-columns: 1.6fr 0.9fr 1.2fr; font-size: 0.84rem; gap: 8px; padding: 10px 12px; }
+  }
+</style>
+</Base>

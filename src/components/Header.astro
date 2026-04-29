@@ -68,6 +68,7 @@ const mega = {
       { href: '/en/fulfillment-for-rozetka-sellers/', label: 'Rozetka Multi-Marketplace', badge: 'NEW' },
       { href: '/en/fulfilment-prom/', label: 'Prom.ua FBO', badge: 'NEW' },
       { href: '/en/fulfilment-for-cosmetics/', label: 'Cosmetics · FEFO + 18-22°C', badge: 'NEW' },
+      { href: '/en/fulfilment-for-small-business/', label: 'Small business · Kickstarter→Plus', badge: 'NEW' },
       { href: '/en/heavy-goods/', label: 'Heavy goods 50+ kg' },
     ]},
     col2: { title: 'Specialization', items: [
@@ -204,8 +205,9 @@ const mega = {
     'fulfillment-kyiv':{ua:'fulfilment-kyiv',ru:'/ru/fulfilment-kiev/'},
     'fulfilment-ukraina':{ru:'/ru/fulfilment-ukraina/',en:'fulfillment-ukraine'},
     'fulfillment-ukraine':{ua:'fulfilment-ukraina',ru:'/ru/fulfilment-ukraina/'},
-    'fulfilment-dlya-maloho-biznesu':{ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-ukraine'},
-    'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'},
+    'fulfilment-dlya-maloho-biznesu':{ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'/en/fulfilment-for-small-business/'},
+    'fulfilment-dlya-malogo-biznesa':{ua:'fulfilment-dlya-maloho-biznesu',en:'/en/fulfilment-for-small-business/'},
+    'fulfilment-for-small-business':{ua:'/ua/fulfilment-dlya-maloho-biznesu/',ru:'/ru/fulfilment-dlya-malogo-biznesa/'},
     'fulfilment-dlya-kosmetyky':{ru:'/ru/fulfilment-dlya-kosmetiki/',en:'/en/fulfilment-for-cosmetics/'},
     'fulfilment-dlya-kosmetiki':{ua:'fulfilment-dlya-kosmetyky',en:'/en/fulfilment-for-cosmetics/'},
     'fulfilment-for-cosmetics':{ua:'fulfilment-dlya-kosmetyky',ru:'/ru/fulfilment-dlya-kosmetiki/'},
@@ -283,8 +285,9 @@ const mega = {
     m['top-fulfilment-operatorov-2026']={ua:'/ua/blog/top-fulfilment-operatoriv-2026/',ru:'/blog/top-fulfilment-operatorov-2026/',en:'/en/blog/post/top-fulfillment-operators-ukraine-2026/'};
     m['top-fulfillment-operators-ukraine-2026']={ua:'/ua/blog/top-fulfilment-operatoriv-2026/',ru:'/blog/top-fulfilment-operatorov-2026/',en:'/en/blog/post/top-fulfillment-operators-ukraine-2026/'};
     // Small business page
-    m['fulfilment-dlya-maloho-biznesu']={ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'fulfillment-ukraine'};
-    m['fulfilment-dlya-malogo-biznesa']={ua:'fulfilment-dlya-maloho-biznesu',en:'fulfillment-ukraine'};
+    m['fulfilment-dlya-maloho-biznesu']={ru:'/ru/fulfilment-dlya-malogo-biznesa/',en:'/en/fulfilment-for-small-business/'};
+    m['fulfilment-dlya-malogo-biznesa']={ua:'fulfilment-dlya-maloho-biznesu',en:'/en/fulfilment-for-small-business/'};
+    m['fulfilment-for-small-business']={ua:'/ua/fulfilment-dlya-maloho-biznesu/',ru:'/ru/fulfilment-dlya-malogo-biznesa/'};
     return m;})();
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;
