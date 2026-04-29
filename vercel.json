@@ -90,6 +90,36 @@
       "statusCode": 301
     },
     {
+      "source": "/blog/fulfillment-vs-own-warehouse/",
+      "destination": "/blog/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/fulfillment-vs-own-warehouse",
+      "destination": "/blog/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/fulfillment-vs-own-warehouse/",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/fulfillment-vs-own-warehouse",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/what-is-sla-in-logistics/",
+      "destination": "/blog/chto-takoe-sla/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/what-is-sla-in-logistics",
+      "destination": "/blog/chto-takoe-sla/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -347,7 +377,7 @@
     },
     {
       "source": "/en/blog/fulfillment-vs-own-warehouse/",
-      "destination": "/en/blog/post/fulfillment-vs-own-warehouse/",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
       "statusCode": 301
     },
     {
@@ -937,7 +967,7 @@
     },
     {
       "source": "/blog/tpost/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
-      "destination": "/blog/fulfillment-vs-own-warehouse/",
+      "destination": "/blog/fulfillment-vs-own-warehouse-2025/",
       "statusCode": 301
     },
     {
@@ -1132,7 +1162,7 @@
     },
     {
       "source": "/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
-      "destination": "/blog/what-is-sla-in-logistics/",
+      "destination": "/blog/chto-takoe-sla/",
       "statusCode": 301
     },
     {
@@ -1182,7 +1212,7 @@
     },
     {
       "source": "/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
-      "destination": "/blog/fulfillment-vs-own-warehouse/",
+      "destination": "/blog/fulfillment-vs-own-warehouse-2025/",
       "statusCode": 301
     },
     {
@@ -1192,7 +1222,7 @@
     },
     {
       "source": "/en/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/",
-      "destination": "/en/blog/post/fulfillment-vs-own-warehouse/",
+      "destination": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
       "statusCode": 301
     },
     {
@@ -1407,7 +1437,7 @@
     },
     {
       "source": "/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
-      "destination": "/blog/what-is-sla-in-logistics/",
+      "destination": "/blog/chto-takoe-sla/",
       "statusCode": 301
     },
     {
