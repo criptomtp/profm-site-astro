@@ -1,0 +1,268 @@
+---
+import Base from '../../../../layouts/Base.astro';
+---
+<Base
+  title="Connecting to Ukraine Fulfillment as a Western Brand | MTP"
+  description="Step-by-step guide for EU/UK brands connecting to a Ukrainian 3PL: VAT, GDPR, sanctions screening, integrations, and first-shipment timeline."
+  canonical="https://www.fulfillmentmtp.com.ua/en/blog/post/connect-to-ukraine-fulfillment/"
+  lang="en"
+  ogType="article"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/blog/connect-fulfillment-eu-hero.webp"
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/blog/podklyuchenie-k-fulfilmentu/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/blog/post/connect-to-ukraine-fulfillment/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Connecting to Ukrainian Fulfillment as a Western Brand: Onboarding Playbook","description":"Onboarding guide for EU and UK e-commerce brands integrating with a Ukraine-based 3PL operator","image":"https://www.fulfillmentmtp.com.ua/images/blog/connect-fulfillment-eu-hero.webp","author":{"@type":"Person","name":"Nikolay Liaschuk","url":"https://www.fulfillmentmtp.com.ua/en/about/"},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/logo.png"}},"datePublished":"2026-04-29","dateModified":"2026-04-29"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.fulfillmentmtp.com.ua/en/blog/"},{"@type":"ListItem","position":3,"name":"Connect to Ukraine Fulfillment"}]}</script>
+</Fragment>
+
+<article class="blog-article">
+
+<div class="blog-hero-img">
+<img src="/images/blog/connect-fulfillment-eu-hero.webp" alt="Western brand connecting to Ukrainian fulfillment: API integration, EU compliance, first shipment" width="1024" height="576" loading="eager" fetchpriority="high">
+</div>
+
+<div class="blog-meta">
+<span>April 29, 2026</span>
+<span>&middot;</span>
+<span>12 min read</span>
+<span>&middot;</span>
+<a href="/en/blog/">MTP Group Blog</a>
+</div>
+
+<h1>Connecting to Ukrainian Fulfillment as a Western Brand</h1>
+
+<p class="blog-lead">If you operate an EU or UK consumer brand and want to enter the Ukrainian market — or use Ukraine as a cost-arbitraged hub for parts of your EU shipping mix — this is the operational playbook. Realistic timeline: 18-25 working days from first contact to your first automated order ship. The bottleneck is rarely the 3PL onboarding itself; it is sanctions screening, VAT registration, and shipping the inventory to Kyiv.</p>
+
+<p><strong>Why even consider Ukraine in 2026:</strong> the cost arbitrage is real and growing. Storage at €16/m³ versus €30-45 in Poland and Germany. Pick-pack at €0.45 versus €0.90-1.20. Combined with native COD handling (an Eastern European staple absent in most Western 3PLs) and direct integrations with regional marketplaces, the ROI for a brand with €50k+/month revenue routed through Ukraine is typically 6-9 months from contract to net positive.</p>
+
+<nav class="blog-toc">
+<strong>Contents:</strong>
+<ol>
+<li><a href="#why-ukraine">Why Ukraine: cost arbitrage and operational reality</a></li>
+<li><a href="#preflight">Pre-flight checks: is your category eligible?</a></li>
+<li><a href="#kyc">Phase 1: KYC and sanctions screening (5-7 days)</a></li>
+<li><a href="#legal">Phase 2: Contract, VAT, and GDPR alignment (3-5 days)</a></li>
+<li><a href="#integration">Phase 3: Technical integration (1-2 days)</a></li>
+<li><a href="#shipping">Phase 4: First inbound shipment from EU (10-14 days transit)</a></li>
+<li><a href="#go-live">Phase 5: Pilot batch and go-live</a></li>
+<li><a href="#risk">Risk framework: war, sanctions, currency, continuity</a></li>
+<li><a href="#faq">FAQ for international merchants</a></li>
+</ol>
+</nav>
+
+<h2 id="why-ukraine">Why Ukraine: The Honest Cost-and-Risk Trade-off</h2>
+
+<p>Most Western brand operators we onboard arrive with the same default mental model: Ukraine = war zone = unworkable. The reality after three years of war operations is more nuanced. Western Ukraine and the Kyiv region (specifically the Boryspil airport-adjacent industrial belt where our warehouse sits) have run continuous fulfillment operations since February 2022, with the only material disruption being the energy infrastructure attacks of winter 2022-2023 — which we now mitigate with redundant generators, a contracted backup site near Lviv, and explicit business-continuity clauses in contracts.</p>
+
+<p>The cost picture is what makes the trade-off interesting. From our latest <a href="/en/blog/post/fulfillment-cost-2026/">2026 cost benchmark</a>:</p>
+
+<ul>
+<li><strong>Storage:</strong> €16-26/m³/month vs. €30-45 in Poland/Germany. A brand storing 200m³ saves €2,800-4,000/month before any fulfillment volume.</li>
+<li><strong>Pick-pack:</strong> €0.45-0.65 vs. €0.90-1.20. At 5,000 orders/month that is a €2,250-2,750 monthly differential.</li>
+<li><strong>Returns processing:</strong> €0.90-1.20 vs. €2-3 — the gap widens as your category's return rate climbs.</li>
+<li><strong>COD reconciliation:</strong> 1-2% of payment value, fully bundled. Most Western 3PLs do not offer this at all, forcing you to build it yourself or skip COD entirely (and lose 30-40% of Ukrainian conversion in the process).</li>
+</ul>
+
+<p>For brands targeting only EU customers (no Ukraine consumer exposure), the math is different — you are paying inbound freight from EU to Kyiv and outbound back to EU customers, which usually breaks the arbitrage. Ukraine fulfillment makes sense when at least 60% of orders ship within Ukraine or to immediate neighbours (Moldova, Romania, Slovakia) where Ukrainian Nova Poshta or local courier networks offer competitive cross-border rates.</p>
+
+<h2 id="preflight">Pre-flight: Categories That Work and Categories That Do Not</h2>
+
+<p>Before you spend 4 weeks on KYC and contracting, validate your category fits the Ukrainian operational reality:</p>
+
+<p><strong>Categories that work well:</strong></p>
+<ul>
+<li>Apparel, footwear, accessories — high COD acceptance, strong marketplace presence, good return economics.</li>
+<li>Cosmetics and personal care — Ukraine has mature beauty market, regulatory framework similar to EU (limited list of restricted ingredients).</li>
+<li>Consumer electronics under €500 unit value — works through Rozetka and Allo, customs treatment straightforward.</li>
+<li>Home goods, kitchenware, small furniture — Nova Poshta delivers up to 1500x500x500mm without surcharge.</li>
+<li>Pet products, hobby and DIY — under-served categories, strong margins for international brands.</li>
+</ul>
+
+<p><strong>Categories that require additional setup:</strong></p>
+<ul>
+<li>Food and beverages — requires food safety certification (HACCP equivalent), separate temperature-controlled storage, additional 2-3 weeks of regulatory work.</li>
+<li>Pharmaceuticals — licensed pharmacies only, not eligible for standard 3PL.</li>
+<li>Alcohol and tobacco — excise tax regime, special licensing.</li>
+<li>Cross-border B2B with EU customs implications — possible but requires customs broker integration.</li>
+</ul>
+
+<p><strong>Categories we do not handle:</strong> firearms, explosives, controlled substances, dual-use items under EU/UK export control regimes, items prohibited under Ukrainian wartime trade restrictions.</p>
+
+<h2 id="kyc">Phase 1: KYC and Sanctions Screening (5-7 working days)</h2>
+
+<p>For non-Ukrainian entities, we run an enhanced KYC procedure that satisfies Ukrainian National Bank (NBU) currency control rules, EU sanctions regime, and our own AML policy. The friction is real but the screening is one-time.</p>
+
+<p><strong>Documents required:</strong></p>
+<ol>
+<li><strong>Certificate of Incorporation</strong> (or equivalent) — for UK Companies House extract, for Germany Handelsregisterauszug, for France Kbis. Issued within last 3 months.</li>
+<li><strong>Articles of Association</strong> with current shareholding structure.</li>
+<li><strong>Beneficial Owner disclosure</strong> — passport copy and proof of address (utility bill or bank statement) for any UBO holding 25%+ stake. Multi-layer structures must be disclosed to natural-person level.</li>
+<li><strong>VAT registration certificate</strong> from your home jurisdiction.</li>
+<li><strong>Bank reference letter</strong> confirming account in good standing (not older than 60 days).</li>
+<li><strong>Business description</strong> — one-page summary of your products, sourcing, target markets, expected monthly volume in Ukraine.</li>
+</ol>
+
+<p><strong>Sanctions screening:</strong> we run automated checks against OFAC SDN, EU consolidated list, UK HMT list, NBU sanctions registry. Beneficial owners are screened against PEP databases. Adverse media check via WorldCheck. This is automated and adds zero days to onboarding for clean profiles; positive hits trigger manual review (3-5 additional days).</p>
+
+<p><strong>Cost:</strong> €180 one-time, credited against your first invoice. This covers certified Ukrainian translations of your incorporation documents, notary fees, and our compliance team's review hours.</p>
+
+<h2 id="legal">Phase 2: Contract, VAT, and GDPR Alignment (3-5 days)</h2>
+
+<p>Three legal threads run in parallel during this phase:</p>
+
+<p><strong>2.1 Contract structure.</strong> The master service agreement is bilingual (Ukrainian and English, both equally binding). Key clauses we negotiate:</p>
+<ul>
+<li>SLA: 4-hour pick-pack window, 99.5% accuracy target. Compensation for breaches paid in EUR at NBU rate at incident date.</li>
+<li>Liability cap: typically 12 months of fulfillment fees, or per-incident cap of €50,000 for inventory loss/damage.</li>
+<li>Insurance: client owns goods at all times, our liability is for negligent handling. Recommend third-party warehouse insurance for inventory above €100k value.</li>
+<li>Termination: 30-day written notice, inventory return within 30 days at client's freight cost (or repurpose to local resale by mutual agreement).</li>
+<li>Force majeure: war-specific clauses are spelled out — direct kinetic damage to facility triggers contracted backup site activation, not termination.</li>
+</ul>
+
+<p><strong>2.2 VAT path.</strong> Three scenarios depending on your model:</p>
+<ul>
+<li><em>Selling to Ukrainian end-customers in UAH</em> — you can either register for Ukrainian VAT (mandatory above ~€37,500 annual turnover) and reclaim import VAT, or operate via a local invoicing partner. We connect clients to a vetted Ukrainian accounting firm at no commission.</li>
+<li><em>Using Ukraine as transit hub for EU shipments</em> — temporary import regime, no VAT charged at import, but bank guarantee required and stock must move within 12 months.</li>
+<li><em>Selling Ukrainian-sourced product to EU/CIS</em> — export regime, 20% VAT refund applies but reclaim cycle is 90-180 days.</li>
+</ul>
+
+<p><strong>2.3 GDPR data flow.</strong> If you process EU customer data and use our system, the controller-processor relationship is documented in a Data Processing Agreement (DPA) appended to the master contract. Our data hosting is in Frankfurt (Hetzner), not Ukraine — this is a deliberate choice to keep EU client data within EU borders. Our Ukrainian operations team accesses pseudonymized order data only (no EU PII flows to Ukraine staff in cleartext).</p>
+
+<h2 id="integration">Phase 3: Technical Integration (1-2 days)</h2>
+
+<p>The technical onboarding is where the process feels most familiar to a Western e-commerce operator. We support the standard stack:</p>
+
+<ul>
+<li><strong>Shopify</strong> — first-class app in Shopify App Store, OAuth flow, automatic order push to fulfillment.</li>
+<li><strong>WooCommerce</strong> — official plugin on WordPress.org repository, free.</li>
+<li><strong>BigCommerce, Magento (Adobe Commerce), PrestaShop</strong> — pre-built connectors.</li>
+<li><strong>Direct REST API</strong> — JSON, webhook events, OpenAPI 3.1 spec available. Documentation in English. Most engineering teams complete integration in 4-8 hours.</li>
+<li><strong>Marketplace integrations</strong> — Rozetka, Prom.ua, Allo, Kasta. If you do not already have marketplace accounts, we can introduce a partner agency that handles seller-account setup (separate engagement, ~€800 per marketplace).</li>
+<li><strong>EDI / sFTP / CSV exchange</strong> — for clients with legacy ERP (Microsoft Dynamics, SAP), we accept structured file drops.</li>
+</ul>
+
+<p>The integration usually runs in parallel with KYC and contracting, so by the time legal is signed, your engineering team has already tested the API in our staging environment.</p>
+
+<h2 id="shipping">Phase 4: First Inbound Shipment from EU (10-14 days transit)</h2>
+
+<p>Three working routes from EU origin to our Boryspil warehouse:</p>
+
+<ol>
+<li><strong>Road freight via Poland (PL→UA Korczowa border)</strong> — 7-10 days, €1.20-1.80/kg for full-truck loads, €2.50-3.50/kg for groupage. The most common route. Customs clearance at Korczowa adds 1-2 days. We can recommend pre-cleared customs brokers.</li>
+<li><strong>Road freight via Romania (RO→UA Siret border)</strong> — 8-12 days, useful if origin is Italy, Spain, or southern Germany. Less truck congestion than Polish border.</li>
+<li><strong>Air freight (Frankfurt/Munich/Vienna → Kyiv KBP)</strong> — 3-5 days, €4-7/kg. Worth it for high-value low-weight categories (cosmetics, electronics, supplements).</li>
+</ol>
+
+<p><strong>Sea freight</strong> is technically possible via Constanța (Romania) with road final-mile to Kyiv, but the time saving over road-only does not usually justify the additional handling for typical e-commerce inventory volumes.</p>
+
+<p><strong>Inbound receiving SOP at our warehouse:</strong></p>
+<ul>
+<li>Reconciliation against your packing list and commercial invoice.</li>
+<li>Photo documentation of any damaged outer packaging (insurance event trigger).</li>
+<li>SKU labeling with WMS barcodes — critical for imported product without manufacturer barcodes or with non-Ukrainian-readable codes.</li>
+<li>Putaway to addressable storage locations within 48 hours of receipt.</li>
+<li>Stock visibility in your dashboard within 4 hours of putaway completion.</li>
+</ul>
+
+<h2 id="go-live">Phase 5: Pilot Batch and Go-Live</h2>
+
+<p>We strongly recommend a 50-100 order pilot batch before flipping the full traffic. The pilot validates four things: catalog data quality (do SKUs match? are weights and dimensions correct?), label generation (carrier integration), customer-side delivery experience (Nova Poshta tracking, COD return flow if applicable), and our team's familiarity with your specific packaging requirements.</p>
+
+<p>Pilot batches typically run 3-5 working days and surface 5-10 minor issues that get fixed before main inventory transfers. Skipping the pilot is the single most common reason brands have a poor first month — the patterns we documented in <a href="/en/blog/post/switch-to-fulfillment-guide/">our migration guide</a> apply equally to first-time fulfillment customers.</p>
+
+<h2 id="risk">Risk Framework: War, Sanctions, Currency, Continuity</h2>
+
+<p>The risks are real and we will not pretend otherwise. The honest framing:</p>
+
+<ul>
+<li><strong>Kinetic risk to facility:</strong> Boryspil region has been a target during energy infrastructure campaigns but has not seen direct industrial-warehouse strikes. Probability is non-zero. Mitigation: contracted backup facility near Lviv (90 minutes from Polish border), inventory insurance up to €50k/client included, expandable.</li>
+<li><strong>Energy disruption:</strong> winter 2022-2023 saw rolling blackouts. We now run on grid + 250kW generator + 80kWh battery buffer. Operations have continued during all blackout periods.</li>
+<li><strong>Currency volatility:</strong> UAH has moved 15-25% in some quarters. We invoice in EUR or USD at NBU rate to your election, fixing your cost in your reporting currency.</li>
+<li><strong>Sanctions risk:</strong> screening is run continuously against your beneficial owners. If a beneficial owner appears on a sanctions list mid-engagement, we are required to suspend operations and return inventory. This is a legal requirement, not commercial leverage.</li>
+<li><strong>Supplier concentration:</strong> we are one of three or four large independent 3PLs in Ukraine; the market is competitive enough that you have alternatives if you ever need to migrate. Our migration playbook covers reverse migration too.</li>
+</ul>
+
+<h2 id="faq">FAQ for International Merchants</h2>
+
+<div class="faq-section">
+<div class="faq-item">
+<h4>❓ Do we need a Ukrainian legal entity?</h4>
+<p>No. The MSA is signed between your home-country entity and MTP Group Fulfillment LLC directly. A Ukrainian entity becomes useful only if you exceed VAT registration thresholds and want to optimize tax handling — at which point we can introduce a partner law firm.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ How is data privacy handled for EU customers?</h4>
+<p>Data hosting is in Frankfurt (EU). Our Ukrainian operations staff sees pseudonymized order data — names, full addresses, and phone numbers are visible only to the WMS shipping module, which generates labels and is not exported. The DPA we sign with you spells this out.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ What happens to our inventory if the war escalates?</h4>
+<p>The contract has explicit force majeure clauses. Direct kinetic damage to the primary facility triggers backup site activation (Lviv region) within 96 hours. If both sites are compromised, we coordinate emergency export of remaining inventory via Polish or Romanian land borders to a 3PL partner of your choice in those countries. This has not been tested in production — but the playbook is written.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Can we visit the warehouse before signing?</h4>
+<p>Yes, and we encourage it for contracts above €5,000/month. Boryspil is 30 minutes from Kyiv airport. Most brand operators visit for 1-2 days, see receiving and pick-pack live, and meet the operations lead in person. We cover hotel and meals during the visit.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ How long is the typical commitment?</h4>
+<p>12-month initial term, 30-day rolling renewal thereafter. No penalty clauses for termination after the initial term. We have no incentive to lock anyone in — clients who stay are clients we deliver for.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Can you handle customs clearance for us?</h4>
+<p>We do not act as customs broker directly, but we have three vetted broker partners in the Korczowa, Siret, and Boryspil corridors. They quote independently; we do not earn commission on their work. Typical clearance fee is €120-250 per shipment depending on complexity.</p>
+</div>
+
+<div class="faq-item">
+<h4>❓ Do you have Western brand references?</h4>
+<p>Yes — primarily UK, German, and Italian brands in apparel, cosmetics, and home goods categories. By NDA we do not name them publicly, but we arrange reference calls during the contracting phase for clients evaluating contracts above €3,000/month.</p>
+</div>
+</div>
+
+<h2 style="margin-top: 40px;">Next Steps</h2>
+
+<p>If your category fits and the cost arbitrage looks worth pursuing, the lowest-friction first step is a 30-minute discovery call with our international onboarding lead. We will confirm category eligibility, walk through VAT options for your specific model, and quote a realistic timeline for your situation.</p>
+
+<ol style="font-size: 17px; line-height: 1.9;">
+<li><strong>Email:</strong> mtpgrouppromo@gmail.com (subject line: "EU/UK onboarding + your country")</li>
+<li><strong>Telegram:</strong> @MTPGroupFulfillment_bot — English support during 9:00-19:00 Kyiv time</li>
+<li><strong>Phone/WhatsApp:</strong> +38 (050) 144-46-45</li>
+</ol>
+
+<p style="margin-top: 30px; padding: 20px; background: #fdf6f5; border-left: 4px solid #e63329; border-radius: 4px;"><strong>Realistic timeline summary:</strong> 18-25 working days from first contact to first automated order ship, contingent on inventory transit time from your origin country. The 3PL onboarding itself takes 8-10 days; the rest is freight, customs, and pilot batch. Brands with EU-warehoused inventory ready to ship can reach go-live in 14 days.</p>
+
+<style>
+.contract-terms, .integration-flow, .first-shipment {
+  display: grid;
+  gap: 15px;
+  margin: 20px 0;
+}
+.term, .flow-step, .ship-step {
+  padding: 15px;
+  background: #f5f5f5;
+  border-left: 4px solid #e63329;
+  border-radius: 4px;
+}
+.term h4, .flow-step strong, .ship-step strong {
+  color: #e63329;
+}
+.faq-section { margin: 30px 0; }
+.faq-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+.faq-item h4 {
+  margin-top: 0;
+  color: #e63329;
+}
+</style>
+
+</article>
+</Base>

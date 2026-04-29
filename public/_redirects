@@ -2,6 +2,14 @@
 # DO NOT EDIT MANUALLY — edit vercel.json and re-run the script.
 
 # --- static rules (exact path match) ---
+/blog/fulfillment-cost-guide/ /blog/stoimost-fulfilmenta-2026/ 301
+/blog/fulfillment-cost-guide /blog/stoimost-fulfilmenta-2026/ 301
+/en/blog/post/fulfillment-cost-guide/ /en/blog/post/fulfillment-cost-2026/ 301
+/en/blog/post/fulfillment-cost-guide /en/blog/post/fulfillment-cost-2026/ 301
+/blog/how-fulfillment-works-ukraine-2025/ /blog/rynok-fulfilmenta-ukrainy/ 301
+/blog/how-fulfillment-works-ukraine-2025 /blog/rynok-fulfilmenta-ukrainy/ 301
+/en/blog/post/how-fulfillment-works-ukraine-2025/ /en/blog/post/ukraine-fulfillment-market-2026/ 301
+/en/blog/post/how-fulfillment-works-ukraine-2025 /en/blog/post/ukraine-fulfillment-market-2026/ 301
 /ua/services/ /ua/3pl-logistyka/ 301
 /en/guide/customer-service/ /en/services/ 301
 /ru/fulfillment-for-art-and-crafts/ /ru/fulfilment-ukraina/ 301
@@ -159,8 +167,8 @@
 /blog/tpost/n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz /blog/fiscal-register-requirements-ukraine/ 301
 /ua/blog/tpost/rjmgtrmvb1-fulflment-scho-tse-sklki-koshtu-ta-nsh-v/ /ua/blog/vartist-fulfilmentu-2026/ 301
 /ua/blog/tpost/rjmgtrmvb1-fulflment-scho-tse-sklki-koshtu-ta-nsh-v /ua/blog/vartist-fulfilmentu-2026/ 301
-/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/ /blog/fulfillment-cost-guide/ 301
-/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi /blog/fulfillment-cost-guide/ 301
+/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/ /blog/stoimost-fulfilmenta-2026/ 301
+/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi /blog/stoimost-fulfilmenta-2026/ 301
 /ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t/ /ua/blog/fulfillment-for-clothing-shoes/ 301
 /ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t /ua/blog/fulfillment-for-clothing-shoes/ 301
 /blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd/ /blog/fulfillment-for-clothing-shoes/ 301
@@ -175,8 +183,8 @@
 /blog/tpost/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v /blog/fulfillment-vs-own-warehouse-2025/ 301
 /ua/blog/tpost/699f3hz0v1-yak-pratsyu-fulflment-v-ukran-2025-ekspe/ /ua/blog/fulfilment-vs-vlasnyy-sklad/ 301
 /ua/blog/tpost/699f3hz0v1-yak-pratsyu-fulflment-v-ukran-2025-ekspe /ua/blog/fulfilment-vs-vlasnyy-sklad/ 301
-/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/how-fulfillment-works-ukraine-2025/ 301
-/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o /blog/how-fulfillment-works-ukraine-2025/ 301
+/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/rynok-fulfilmenta-ukrainy/ 301
+/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o /blog/rynok-fulfilmenta-ukrainy/ 301
 /ua/blog/tpost/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/ /ua/blog/yak-vybrati-fulfilment/ 301
 /ua/blog/tpost/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran /ua/blog/yak-vybrati-fulfilment/ 301
 /blog/tpost/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/ /blog/how-to-choose-fulfillment-operator/ 301
@@ -295,9 +303,9 @@
 /ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/ /blog/prepare-online-store-march-8/ 301
 /ua/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/ /ua/blog/prepare-online-store-march-8/ 301
 /en/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/ /en/blog/post/prepare-online-store-march-8/ 301
-/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/how-fulfillment-works-ukraine-2025/ 301
+/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/rynok-fulfilmenta-ukrainy/ 301
 /ua/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /ua/blog/ 301
-/en/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /en/blog/post/how-fulfillment-works-ukraine-2025/ 301
+/en/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /en/blog/post/ukraine-fulfillment-market-2026/ 301
 /ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/ /blog/ 301
 /ua/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/ /ua/blog/prepare-store-for-holidays/ 301
 /en/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/ /en/blog/post/prepare-store-for-holidays/ 301

@@ -50,6 +50,46 @@
   ],
   "redirects": [
     {
+      "source": "/blog/fulfillment-cost-guide/",
+      "destination": "/blog/stoimost-fulfilmenta-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/fulfillment-cost-guide",
+      "destination": "/blog/stoimost-fulfilmenta-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/fulfillment-cost-guide/",
+      "destination": "/en/blog/post/fulfillment-cost-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/fulfillment-cost-guide",
+      "destination": "/en/blog/post/fulfillment-cost-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/how-fulfillment-works-ukraine-2025/",
+      "destination": "/blog/rynok-fulfilmenta-ukrainy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/how-fulfillment-works-ukraine-2025",
+      "destination": "/blog/rynok-fulfilmenta-ukrainy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/how-fulfillment-works-ukraine-2025/",
+      "destination": "/en/blog/post/ukraine-fulfillment-market-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/post/how-fulfillment-works-ukraine-2025",
+      "destination": "/en/blog/post/ukraine-fulfillment-market-2026/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -877,7 +917,7 @@
     },
     {
       "source": "/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
-      "destination": "/blog/fulfillment-cost-guide/",
+      "destination": "/blog/stoimost-fulfilmenta-2026/",
       "statusCode": 301
     },
     {
@@ -917,7 +957,7 @@
     },
     {
       "source": "/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
-      "destination": "/blog/how-fulfillment-works-ukraine-2025/",
+      "destination": "/blog/rynok-fulfilmenta-ukrainy/",
       "statusCode": 301
     },
     {
@@ -1322,7 +1362,7 @@
     },
     {
       "source": "/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
-      "destination": "/blog/how-fulfillment-works-ukraine-2025/",
+      "destination": "/blog/rynok-fulfilmenta-ukrainy/",
       "statusCode": 301
     },
     {
@@ -1332,7 +1372,7 @@
     },
     {
       "source": "/en/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
-      "destination": "/en/blog/post/how-fulfillment-works-ukraine-2025/",
+      "destination": "/en/blog/post/ukraine-fulfillment-market-2026/",
       "statusCode": 301
     },
     {
