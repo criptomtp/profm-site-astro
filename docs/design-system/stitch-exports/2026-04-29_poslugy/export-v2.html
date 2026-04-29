@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#bd0f10",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-error": "#ffffff",
+                        "primary": "#ba0a0d",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-container": "#646464",
+                        "on-primary-container": "#fffbff",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#fcfcfc",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#737575",
+                        "on-primary-fixed": "#410001",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-primary": "#ffb4a9",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#916f6a",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-background": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5c403c",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "secondary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-surface": "#2f3131",
+                        "tertiary": "#5a5c5c",
+                        "outline-variant": "#e5bdb8",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface": "#f9f9f9",
+                        "primary-container": "#de2d24",
+                        "surface-dim": "#dadada",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f4f3f3",
+                        "surface-container": "#eeeeee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "element-gap": "16px",
+                        "unit": "8px",
+                        "section-padding": "80px",
+                        "gutter": "24px",
+                        "margin-page": "64px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Newsreader", "serif"],
+                        "body-md": ["Work Sans", "sans-serif"],
+                        "body-lg": ["Work Sans", "sans-serif"],
+                        "h3": ["Newsreader", "serif"],
+                        "h2": ["Newsreader", "serif"],
+                        "ui-button": ["Work Sans", "sans-serif"],
+                        "label-caps": ["Work Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "ui-button": ["14px", {"lineHeight": "1", "letterSpacing": "1px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "2px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        .digital-broadsheet-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .editorial-rule {
+            border-top: 1px solid #eaeaea;
+        }
+    </style>
+</head>
+<body class="bg-white text-on-background m-0 p-0 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-black border-b border-black dark:border-white fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-16 h-20 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white">LOGISTICS HUB</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#e63329] border-b-2 border-[#e63329] pb-1 uppercase font-bold tracking-widest text-xs" href="#">Послуги</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-200 uppercase font-bold tracking-widest text-xs" href="#">Калькулятор</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-200 uppercase font-bold tracking-widest text-xs" href="#">Блог</a>
+<a class="text-black dark:text-white hover:text-[#e63329] transition-colors duration-200 uppercase font-bold tracking-widest text-xs" href="#">Контакти</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-black">search</button>
+<button class="bg-black text-white px-6 py-3 font-ui-button text-ui-button uppercase hover:bg-[#e63329] transition-colors duration-200">Розрахувати</button>
+</div>
+</div>
+</header>
+<main class="mt-20">
+<!-- Section 1: Hero Centered Massive Numerals -->
+<section class="relative min-h-[819px] flex flex-col items-center justify-center text-center px-margin-page bg-white overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-h1 text-[24vw] leading-none text-[#eaeaea] select-none opacity-50 mix-blend-multiply">01–17</span>
+</div>
+<div class="relative z-10 max-w-4xl">
+<p class="font-label-caps text-label-caps uppercase text-primary mb-6 tracking-[0.3em]">Operational Excellence</p>
+<h1 class="font-h1 text-[80px] leading-tight mb-8">Логістичний хаб майбутнього</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10">Прецизійне управління глобальними ланцюгами поставок через інноваційну екосистему та передові технології обробки даних.</p>
+<div class="flex justify-center gap-6">
+<button class="bg-black text-white px-10 py-5 font-ui-button text-ui-button uppercase">Наші Рішення</button>
+<button class="border border-black text-black px-10 py-5 font-ui-button text-ui-button uppercase hover:bg-surface-container-low">Аналітика</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Services Index (Category Nav) -->
+<section class="w-full bg-surface-container-lowest editorial-rule py-section-padding px-margin-page">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-h2 uppercase">Service Index</h2>
+<span class="font-label-caps text-label-caps text-secondary">VOLUME 24 / Q3</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 border-l border-t border-[#eaeaea]">
+<div class="p-8 border-r border-b border-[#eaeaea] hover:bg-black group transition-colors cursor-pointer">
+<span class="font-h3 text-h3 text-primary mb-4 block group-hover:text-white">01</span>
+<h4 class="font-label-caps text-label-caps mb-2 group-hover:text-white">AIR FREIGHT</h4>
+<p class="font-body-md text-secondary group-hover:text-gray-400">Швидка глобальна доставка критичних вантажів.</p>
+</div>
+<div class="p-8 border-r border-b border-[#eaeaea] hover:bg-black group transition-colors cursor-pointer">
+<span class="font-h3 text-h3 text-primary mb-4 block group-hover:text-white">02</span>
+<h4 class="font-label-caps text-label-caps mb-2 group-hover:text-white">OCEAN CARGO</h4>
+<p class="font-body-md text-secondary group-hover:text-gray-400">Надійні морські перевезення по всьому світу.</p>
+</div>
+<div class="p-8 border-r border-b border-[#eaeaea] hover:bg-black group transition-colors cursor-pointer">
+<span class="font-h3 text-h3 text-primary mb-4 block group-hover:text-white">03</span>
+<h4 class="font-label-caps text-label-caps mb-2 group-hover:text-white">ROAD LOGISTICS</h4>
+<p class="font-body-md text-secondary group-hover:text-gray-400">Магістральні та локальні мережі доставки.</p>
+</div>
+<div class="p-8 border-r border-b border-[#eaeaea] hover:bg-black group transition-colors cursor-pointer">
+<span class="font-h3 text-h3 text-primary mb-4 block group-hover:text-white">04</span>
+<h4 class="font-label-caps text-label-caps mb-2 group-hover:text-white">WAREHOUSING</h4>
+<p class="font-body-md text-secondary group-hover:text-gray-400">Розумне зберігання та фулфілмент.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Detailed Metrics -->
+<section class="py-section-padding px-margin-page bg-white">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="editorial-rule pt-8">
+<span class="font-label-caps text-label-caps text-primary">GLOBAL SCALE</span>
+<h3 class="font-h1 text-[64px] my-4">120+</h3>
+<p class="font-body-md text-secondary uppercase tracking-widest">Локальних хабів по всьому світу для забезпечення безперебійної роботи.</p>
+</div>
+<div class="editorial-rule pt-8">
+<span class="font-label-caps text-label-caps text-primary">PRECISION RATE</span>
+<h3 class="font-h1 text-[64px] my-4">99.8%</h3>
+<p class="font-body-md text-secondary uppercase tracking-widest">Точність термінів доставки та збереження вантажів клієнтів.</p>
+</div>
+<div class="editorial-rule pt-8">
+<span class="font-label-caps text-label-caps text-primary">CLIENT TRUST</span>
+<h3 class="font-h1 text-[64px] my-4">15K</h3>
+<p class="font-body-md text-secondary uppercase tracking-widest">Активних корпоративних клієнтів у понад 45 країнах світу.</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Operational Strategy (Editorial Card) -->
+<section class="py-section-padding px-margin-page bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2">
+<img class="w-full aspect-square object-cover grayscale border border-black p-4 bg-white shadow-none" data-alt="A high-angle cinematic photograph of a massive, technologically advanced logistics warehouse. The space is filled with high-contrast shadows and clean white artificial lighting, emphasizing the geometric precision of the shelving units. Automated robotic loaders move through the aisles, rendered with motion blur to convey speed and efficiency. The overall atmosphere is professional, industrial, and hyper-modern, reflecting a minimalist editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXDeDKheb9sMZt4AuIfFxragfmPveYm1wyFQFhaUy5vnha7iOUtPJtgp2_rro0cnQnNjwC8N5JH68MDwMjd6Td71kEUBe5ABDMVJS9QDMFp75EtuTy6dAvpxFr6w9o3PURldEORhFiK7YPxRasMFaUGZmkWeLHBFgOZXBZ2FOY_dfq2M01vr9_MfSytDvkd40pBC0eUnlemZeGkbAYIFjnDm7gJeiyh1NY8OWeKtTg0n2QFSTll4D0Cb3BSm4N04gt120n2NUdITNG"/>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="font-h1 text-h1 mb-6">Цифрова трансформація терміналів</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">Ми інтегруємо системи штучного інтелекту для оптимізації маршрутів у реальному часі, що дозволяє скорочувати витрати на паливо на 15% та прискорювати обробку замовлень на 40%.</p>
+<ul class="space-y-4 border-t border-black pt-8">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Розумне сортування</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Blockchain моніторинг</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Екологічний флот</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 5: Services Grid (Packed Editorial) -->
+<section class="py-section-padding px-margin-page bg-white">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-center mb-16 border-b-2 border-black pb-4">
+<h2 class="font-h2 text-h2 uppercase">Service Portfolio</h2>
+<span class="font-label-caps text-label-caps">PAGE 04 OF 12</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-black">
+<!-- Service 01 -->
+<div class="border-r border-b border-black p-10 flex flex-col justify-between hover:bg-primary group transition-all duration-300">
+<div>
+<span class="font-h3 text-h3 mb-6 block group-hover:text-white">05.</span>
+<h3 class="font-h2 text-h2 mb-4 group-hover:text-white">Express Delivery</h3>
+<p class="font-body-md text-secondary group-hover:text-white mb-10">Доставка протягом 24 годин для термінових вантажів між ключовими вузлами.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:text-white">trending_flat</span>
+</div>
+<!-- Service 02 -->
+<div class="border-r border-b border-black p-10 flex flex-col justify-between hover:bg-primary group transition-all duration-300">
+<div>
+<span class="font-h3 text-h3 mb-6 block group-hover:text-white">06.</span>
+<h3 class="font-h2 text-h2 mb-4 group-hover:text-white">Customs Broker</h3>
+<p class="font-body-md text-secondary group-hover:text-white mb-10">Повний юридичний супровід та швидке митне оформлення товарів.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:text-white">trending_flat</span>
+</div>
+<!-- Service 03 -->
+<div class="border-b border-black p-10 flex flex-col justify-between hover:bg-primary group transition-all duration-300">
+<div>
+<span class="font-h3 text-h3 mb-6 block group-hover:text-white">07.</span>
+<h3 class="font-h2 text-h2 mb-4 group-hover:text-white">Cold Chain</h3>
+<p class="font-body-md text-secondary group-hover:text-white mb-10">Перевезення з дотриманням температурного режиму для фармацевтики та їжі.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:text-white">trending_flat</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Network Map -->
+<section class="py-section-padding px-margin-page bg-black text-white">
+<div class="max-w-[1440px] mx-auto text-center">
+<h2 class="font-h1 text-h1 mb-16">Глобальна мережа сполучення</h2>
+<div class="relative w-full aspect-[21/9] overflow-hidden grayscale invert brightness-125 border border-white p-2">
+<img class="w-full h-full object-cover" data-alt="A highly stylized, minimalist digital world map rendered in high-contrast black and white. Glowing red lines trace the primary global shipping routes between major logistics hubs in Europe, Asia, and the Americas. The aesthetic is clean, brutalist, and data-driven, with subtle geometric overlays and professional-grade typography indicating port coordinates. The mood is authoritative and futuristic." data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQUPtN5d7JC2LCoj4Epn8l0Oy1Uq16r3JxPuJP0kCF3zVMXddPKOlEOuk2gjrd7v_cYpdy5ExtyUPBgGrELLtR0jW92hbmwW-V05nTm6Ppjp9tuv2x4c_O2JbqyQqbWvzZ5a_xB4aRoe_f4WR0RwNdVI-hm8h6G-jxGbCwffkZMoeM196Pw17uHy_-2PXOy59FqJ4iXWNYc8YNTXHtod5R9QjRbDhjdUUNcjw3ur0q_Gnfz4oDHrrgHkEqOXhSsgFPKUOUyG70sKc3"/>
+</div>
+<div class="mt-12 flex justify-center gap-24">
+<div class="text-left">
+<span class="font-label-caps text-label-caps text-primary">ASIA PACIFIC</span>
+<p class="font-body-md mt-2">Hong Kong, Shanghai, Singapore</p>
+</div>
+<div class="text-left">
+<span class="font-label-caps text-label-caps text-primary">EUROPEAN HUB</span>
+<p class="font-body-md mt-2">Rotterdam, Frankfurt, Warsaw</p>
+</div>
+<div class="text-left">
+<span class="font-label-caps text-label-caps text-primary">AMERICAS</span>
+<p class="font-body-md mt-2">New York, Los Angeles, Panama</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Process Timeline -->
+<section class="py-section-padding px-margin-page bg-white">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 border-t border-black">
+<div class="p-8 border-r border-black relative">
+<span class="font-h3 text-h3 text-primary mb-4 block">01</span>
+<h4 class="font-label-caps text-label-caps mb-4">REQUEST</h4>
+<p class="font-body-md text-secondary">Миттєве отримання котирування через цифрову платформу.</p>
+</div>
+<div class="p-8 border-r border-black relative">
+<span class="font-h3 text-h3 text-primary mb-4 block">02</span>
+<h4 class="font-label-caps text-label-caps mb-4">PICKUP</h4>
+<p class="font-body-md text-secondary">Автоматизований збір вантажу та присвоєння трек-номеру.</p>
+</div>
+<div class="p-8 border-r border-black relative">
+<span class="font-h3 text-h3 text-primary mb-4 block">03</span>
+<h4 class="font-label-caps text-label-caps mb-4">TRANSIT</h4>
+<p class="font-body-md text-secondary">Моніторинг пересування в реальному часі через супутник.</p>
+</div>
+<div class="p-8 relative">
+<span class="font-h3 text-h3 text-primary mb-4 block">04</span>
+<h4 class="font-label-caps text-label-caps mb-4">HANDOVER</h4>
+<p class="font-body-md text-secondary">Фінальна доставка "останньої милі" до дверей отримувача.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Calculator CTA -->
+<section class="py-section-padding px-margin-page bg-[#eaeaea]">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between border-2 border-black p-16 bg-white">
+<div class="max-w-xl">
+<h2 class="font-h2 text-h2 mb-4">Готові до відправки?</h2>
+<p class="font-body-lg text-body-lg text-secondary">Отримайте точний розрахунок вартості за 30 секунд. Ніяких прихованих платежів, лише прозора тарифікація.</p>
+</div>
+<div class="mt-8 md:mt-0 flex gap-4">
+<input class="border border-[#eaeaea] p-4 font-label-caps text-label-caps focus:border-black outline-none w-48" placeholder="МАСА ВАНТАЖУ (КГ)" type="text"/>
+<button class="bg-black text-white px-10 py-4 font-ui-button text-ui-button uppercase hover:bg-primary transition-colors">Обчислити</button>
+</div>
+</div>
+</section>
+<!-- Section 9: Testimonials / Partners -->
+<section class="py-section-padding px-margin-page bg-white">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 opacity-40 grayscale items-center mb-20">
+<img class="h-12 object-contain" data-alt="Corporate logo 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpnEnzOJ0bpAANYTlg_HNfZ6wdgsq_sJp229zJeDNEv-kH6kRLFxJGv97H-qQCOZF_zCgQppnnFwHi-oJmFL9dTA_3bW6T47b4z-wbsFNhcGEGFxecSddTQtA2xRPDm0wMA9sBTX6swr9zJrjWtZH_Qew1_YfLOKND9eawYnDO0L-L88J4pat2yurZDbTdFZikTWPvok2ckFviAoaSH9p1VJehNBjA4FKg72dgIrW_GxFeQ14-FfTBCQzLy5gxJZnBe46cuniqOgYE"/>
+<img class="h-12 object-contain" data-alt="Corporate logo 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdBKJ36juXq8degOhjcmewmeVQYUkPLh67ncCB2uXrxXHZ1t5yhraPn_OPWQiGmxpzR9xyI2bzQBehCC58hcjwO1zxjHznMH7bpgF6CCCMheVk9N8GSkYAxuCXe-PW8aFa9Y4Ogz6mWQLt2Q45kLwOatclYpJvTTpYeAtMUTZXeto1koMQbhL8SWFRnzqIiA_p3HC27phqccv1luS_UVCl0AMiXI0LtD4TOO1wvfpfOa8juT7MWZR1PMZSvnLreozHbH7BgZnTChZl"/>
+<img class="h-12 object-contain" data-alt="Corporate logo 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEovhtcvIWtPPHvNDH-K1aQdfydwbVf4I6q7JdRUv5FEbnsNDfy3Ki_e7l7IObnR82QxJCNzdjV1E2VP4jrUQlN_lLRRxeQgZnzrvWpKK8IEg3ehMbH3dW5dphThonDqtCOafS3ZxQkbhxGfwMnw2CIxKRWCtHEVodj9KD8klm1x3WsvN6J9TurPUNTN7PzRzK1v9qGUqqbEtXuuHE8K9SbgELo-GwgAgXpdjbCRtFdm3cYLxszPanDRADgX26Q-LJKxps_ktJPi3z"/>
+<img class="h-12 object-contain" data-alt="Corporate logo 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBitnn7SYKa53O3mwYaaD_PsOHXyjMMnO3QCT9WLukMMuS4Qtkuqv92yIo1Mu1qkgbMe67vzgE4f79XZ1NYlh_WvV0myfAQO_ZQEJ8RyvHU5p19TeGBmhY4nyBabrBEqZgDdW4otkiMwt8wC_PGOj8VJSdLxvfQkYMVJJcZkXxMIWQgSVzDL3ZH9y0RjkK9Dap-xUt-rYkw3ZHXZcg47dy2p0CzRi4BlVe4sFQNkJVnEUdpL-EKr6Anh1rLhw5u2kAlsM-dhCjhsqB-"/>
+<img class="h-12 object-contain" data-alt="Corporate logo 5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVm5ZZjNRP-TQoXi8yx_vyhMRCUVEb1I4PoCB3pplMm1EP5uMOJ_08B6TQ3KUMYzy4Ci7CL_ikfbG6slWO4YP13kx8pYOQmiEQeYKY8Mp9W0KLu-Swk-7y6zB6EYJy3RDyrpAfEMHLSo81Hz7sJc8Vx0JxNIWfkCB2W4LYOw06NVRc4hVrNj5vEe4o9DYCoymlov-GArGidz5gddHCng5wVLJM63rWHcnPpluf3oiRNku-_mx93F_vURh350gR0LoUmRXc6W2fM2rI"/>
+</div>
+<div class="max-w-3xl mx-auto text-center">
+<span class="material-symbols-outlined text-primary text-6xl mb-6">format_quote</span>
+<h3 class="font-h3 text-[32px] italic leading-relaxed mb-8">"LOGISTICS HUB перетворив наш ланцюг поставок на конкурентну перевагу. Їхня точність та швидкість реакції не мають рівних на ринку."</h3>
+<p class="font-label-caps text-label-caps uppercase tracking-widest">— Артем Ковальчук, CEO Global Trade Inc.</p>
+</div>
+</div>
+</section>
+<!-- Section 10: News Feed (Editorial) -->
+<section class="py-section-padding px-margin-page bg-surface-container-lowest editorial-rule">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-h2 uppercase">Insights &amp; Reports</h2>
+<a class="font-label-caps text-label-caps border-b border-black pb-1 hover:text-primary transition-colors" href="#">VIEW ALL NEWS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<article class="group cursor-pointer">
+<div class="overflow-hidden border border-black mb-6">
+<img class="w-full aspect-[4/3] object-cover grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist workspace with architectural blueprints and a modern tablet displaying logistical data. The lighting is bright and professional, emphasizing a white and light grey palette with subtle black accents. The visual style is that of a premium business magazine, focused on strategy and design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAKbMCzalQIXLt5fhkQAVzYhhgPSeJ1OCE9aq4KI1tzseKSVCE2vxmt6zgW8ZR6XpjOmIxyqF73Ms_z5DDByBIuJkhza0LmINFyQ6seHKieZg1-XPMrRLp_EYhAALnZK8lICK2lHpe4WnDuljPqnG6tq24akGDBjaHtcxRs2AjdXlHKrdwEzmoIs1CimO8y8DuP3yUrPXoBV8eeVp0XyjcNuXRO-Cdg17WAonGCJru9E4Lm2jGowg4UxwkE-9jaCkZcD0vHRYqq9YK"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary">INDUSTRY REPORT • SEPT 2024</span>
+<h3 class="font-h3 text-h3 mt-4 group-hover:underline">Прогнози логістичного ринку на 2025 рік</h3>
+</article>
+<article class="group cursor-pointer">
+<div class="overflow-hidden border border-black mb-6">
+<img class="w-full aspect-[4/3] object-cover grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic forest landscape with wind turbines integrated seamlessly into the environment. The lighting is soft morning sun, creating a high-contrast but peaceful atmosphere. The aesthetic is clean and corporate, focused on green technology and sustainability within a high-end publication context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxKOdiWR0gGRCh8CTnkWVRzV0ctk514gmr422HJGTFl2HNUXsPuebasGDU24_b_mqn7_z8tRmC0jdbltV9lAxd2K2Ov8pMHjyEAAV28UmgufUDJA7YG_MwVoROsthVphCVpWw8xf5nZR1qFnmjGTYQiDgLnIUJGOxOqXvaTNHAAFB72s1El7e6u6Hf9GnRR7-UKyout3psukMZhfUfKBrHNeVT7FTlGLgVxkyhuge7diUKHD6Fj6Mup_32WJFmWcMkplCGL8oGWq8c"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary">SUSTAINABILITY • AUG 2024</span>
+<h3 class="font-h3 text-h3 mt-4 group-hover:underline">Як ми зменшуємо вуглецевий слід на 30%</h3>
+</article>
+<article class="group cursor-pointer">
+<div class="overflow-hidden border border-black mb-6">
+<img class="w-full aspect-[4/3] object-cover grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a high-tech server room with glowing blue and red indicators on black hardware. The focus is sharp on the data cables and metallic surfaces, reflecting an atmosphere of cybersecurity and industrial precision. The overall mood is high-tech, reliable, and corporate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH03tbFPG-rpAQ7kXKhkHVkePs3Cy287hTqqhuvVLkVwvQSVP3vumRX-SwZ_kdHb0GeXQMbYu1kiSHWoCy9ogfFqtqLv85cIwW0NptRjqLU_ghAMPMWvQZf0bXXuhtoM6GFIr3qowfZ_f1Do3TC5Dxnvp3rtV94kHP9XCUfhj6yVqXuFG9_dkwsExDJyNXW_93oGvy-9umOITqIH7MFjS_KZeuhjZrhpmzhbf6N0MX1A9HuxzMwjceD_WyF41CLVJV-hbnhpC4MJER"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary">TECHNOLOGY • JULY 2024</span>
+<h3 class="font-h3 text-h3 mt-4 group-hover:underline">Нова ера кібербезпеки в ланцюгах поставок</h3>
+</article>
+</div>
+</div>
+</section>
+<!-- Section 11: Contact / Footer Shell -->
+<footer class="bg-white dark:bg-black border-t-2 border-black dark:border-white">
+<div class="w-full px-16 py-20 flex flex-col md:flex-row justify-between items-start max-w-[1440px] mx-auto">
+<div class="mb-12 md:mb-0">
+<div class="text-xl font-black text-black dark:text-white mb-6 uppercase">LOGISTICS HUB</div>
+<p class="font-body-md text-secondary max-w-xs mb-8">Провідний оператор інтелектуальних логістичних рішень для глобального бізнесу.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+<a class="w-10 h-10 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">phone</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h5 class="font-label-caps text-label-caps uppercase mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">About Us</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Careers</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps uppercase mb-6">Resources</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Carrier Portal</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps uppercase mb-6">Network</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Global Network</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Hub Locations</a></li>
+<li><a class="font-body-md text-gray-500 hover:text-[#e63329]" href="#">Track Shipment</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="w-full px-16 py-8 border-t border-[#eaeaea] max-w-[1440px] mx-auto flex justify-between items-center">
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase">© 2024 LOGISTICS HUB. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase">EST. 1998</span>
+<span class="font-label-caps text-[10px] tracking-widest text-secondary uppercase">ISO 9001 CERTIFIED</span>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

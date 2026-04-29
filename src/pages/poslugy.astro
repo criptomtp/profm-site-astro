@@ -1,0 +1,530 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Головна", "item": "https://www.fulfillmentmtp.com.ua/" },
+    { "@type": "ListItem", "position": 2, "name": "Послуги", "item": "https://www.fulfillmentmtp.com.ua/poslugy/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Фулфілмент-послуги в Україні",
+  "serviceType": "Fulfillment services hub",
+  "description": "Повний spectrum фулфілмент-послуг для українського e-commerce: зберігання, комплектація, доставка, повернення, інтеграції з маркетплейсами та CRM, копакінг, маркування, кросдокінг.",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Щасливе, Бориспільський район",
+      "addressRegion": "Київська область",
+      "addressCountry": "UA"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "UA" },
+  "dateModified": "2026-04-29",
+  "offers": [
+    { "@type": "Offer", "name": "Палетне зберігання", "priceCurrency": "UAH", "price": "450", "description": "від 450 грн/палета/міс" },
+    { "@type": "Offer", "name": "Комплектація замовлень", "priceCurrency": "UAH", "price": "18", "description": "від 18 грн/відправлення" },
+    { "@type": "Offer", "name": "Складські послуги", "priceCurrency": "UAH", "price": "650", "description": "від 650 грн/м³/міс" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Які послуги входять у фулфілмент MTP?",
+      "acceptedAnswer": { "@type": "Answer", "text": "17 операцій повного циклу: приймання поставки, зберігання (палетне/поличне/холодне), комплектація замовлень, упаковка, маркування, доставка по Україні та міжнародна, обробка повернень, копакінг, кросдокінг, інвентаризація, фотофіксація браку, автодзвінок підтвердження замовлень, контроль грошей через Шериф Платежів, інтеграції з 12+ CRM, експорт у маркетплейси (Rozetka, Prom, Allo)." } },
+    { "@type": "Question", "name": "Скільки коштують послуги фулфілменту?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Базова комплектація — від 18 грн за відправлення при обсязі 200+ замовлень/день. Зберігання — 450 грн/палета/міс або 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс. Точну вартість для вашого SKU-набору рахуємо у калькуляторі." } },
+    { "@type": "Question", "name": "Як швидко можна підключитися?",
+      "acceptedAnswer": { "@type": "Answer", "text": "3-5 робочих днів від першого контакту до старту операцій: день 1 — заявка та воркшоп, день 2 — підпис договору, день 3 — приймання поставки, день 4 — налаштування інтеграції з CRM, день 5 — перші тестові відправлення." } },
+    { "@type": "Question", "name": "З якими CRM та маркетплейсами інтегруєтесь?",
+      "acceptedAnswer": { "@type": "Answer", "text": "KeyCRM, SalesDrive, LP-CRM, Sitniks, Horoshop, OpenCart, WooCommerce, Shopify, 1С, BAS. Маркетплейси: Rozetka, Prom.ua, Allo, Kasta, Епіцентр. Інтеграція з будь-якою системою через REST API за 2-4 години." } },
+    { "@type": "Question", "name": "Чи приймаєте товари з браком та повернення?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Так. Обробка повернень — 24-48 годин від отримання посилки до повернення товару у продаж або фотофіксації браку. SLA точність: 99.5% правильно ідентифікованих повернень." } },
+    { "@type": "Question", "name": "Скільки SKU можете обслуговувати?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Поточна потужність — 50 000+ активних SKU на наших 5 500 м². Працюємо з мікро-брендами (200 SKU) і з великими каталогами (15 000+ SKU). Мінімального обсягу немає." } },
+    { "@type": "Question", "name": "Як контролюються гроші клієнтів?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Шериф Платежів — наша внутрішня система, що надсилає Telegram-сповіщення власнику бізнесу при кожному отриманні коштів від перевізника. Прозорість 100%, без затримок." } },
+    { "@type": "Question", "name": "Працюєте з холодним ланцюгом і небезпечними товарами?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Холодне зберігання (+2…+8°C) — так, окрема зона на 200 палет. Небезпечні вантажі (ADR) — наразі не приймаємо. Великогабаритні (меблі, побутова техніка) — приймаємо до 500 кг/одиниця." } }
+  ]
+};
+---
+<Base
+  title="Послуги фулфілменту в Україні — повний spectrum для e-commerce"
+  description="17 фулфілмент-операцій під одним SLA: зберігання, комплектація, доставка, повернення, інтеграції. 5 500 м², 99.8% точність, 150+ клієнтів. Розрахунок ціни."
+  canonical="https://www.fulfillmentmtp.com.ua/poslugy/"
+  lang="uk"
+  ogType="website"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/poslugy-hero.webp"
+  schema={`<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/poslugy/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/services/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/services/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/poslugy/">
+</Fragment>
+
+<!-- ====== HERO ====== -->
+<section class="poslugy__hero">
+  <div class="poslugy__container">
+    <nav class="poslugy__crumbs" aria-label="Хлібні крихти">
+      <a href="/">Головна</a> <span>/</span> <span aria-current="page">Послуги</span>
+    </nav>
+    <div class="poslugy__label">Хаб послуг</div>
+    <h1 class="poslugy__h1">Повний spectrum фулфілмент-послуг в&nbsp;Україні</h1>
+    <p class="poslugy__sub">Від приймання поставки до доставки покупцю — 17 операцій під одним SLA. Зберігання, комплектація, доставка, повернення, інтеграції з маркетплейсами та CRM. Без сезонних провалів і без зайвих перепідписів.</p>
+    <div class="poslugy__hero-bottom">
+      <HeroCTA lang="uk" theme="light" button="Розрахувати вартість →" microCopy="✓ Відповідь протягом 15 хв · Безкоштовна консультація" sourceTag="hero /poslugy/" />
+    </div>
+  </div>
+</section>
+<AuthorByline lang="uk" />
+
+<!-- ====== STATS BAR ====== -->
+<section class="poslugy__stats">
+  <div class="poslugy__container">
+    <div class="poslugy__stats-grid">
+      <div class="poslugy__stat"><strong>5&thinsp;500&nbsp;м²</strong><span>складська площа</span></div>
+      <div class="poslugy__stat"><strong>17 операцій</strong><span>повний цикл</span></div>
+      <div class="poslugy__stat"><strong>99,8%</strong><span>точність комплектації</span></div>
+      <div class="poslugy__stat"><strong>24 години</strong><span>приймання поставки</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TL;DR ====== -->
+<section class="poslugy__tldr">
+  <div class="poslugy__container poslugy__container--narrow">
+    <div class="poslugy__label poslugy__label--inline">30 секунд</div>
+    <h2>Що таке фулфілмент-хаб MTP коротко</h2>
+    <p><strong>Фулфілмент</strong> — це аутсорсинг операційної логістики інтернет-магазину. Ми приймаємо вашу поставку на склад, зберігаємо товар, збираємо замовлення, упаковуємо, передаємо у Нову Пошту чи Укрпошту і обробляємо повернення. Ви займаєтесь продуктом, маркетингом і клієнтським досвідом — операційка на нас.</p>
+    <p>На сторінці нижче — <strong>7 категорій послуг</strong>: зберігання, комплектація, доставка, повернення, інтеграції, маркетплейси, спецпослуги. Кожна категорія — окрема LP з цінами, SLA і кейсами. Якщо вам потрібен лише один блок (наприклад, тільки палетне зберігання) — ми робимо. Якщо потрібен повний цикл під ключ — теж робимо.</p>
+    <p><strong>Ціни</strong> починаються від 18 грн за відправлення при 200+ замовлень/день і від 450 грн за палету на місяць. Мінімального обсягу немає, мінімальний платіж — 5 000 грн/міс. <a href="/ua/calculator/">Розрахуйте у калькуляторі</a> або <a href="/ua/tsiny/">подивіться повний прайс</a>.</p>
+  </div>
+</section>
+
+<!-- ====== STICKY CHIPS ====== -->
+<nav class="poslugy__chips" aria-label="Категорії послуг">
+  <div class="poslugy__container">
+    <div class="poslugy__chips-row" role="tablist">
+      <a href="#zberihannya" class="poslugy__chip" data-chip="zberihannya">Зберігання</a>
+      <a href="#komplektatsiya" class="poslugy__chip" data-chip="komplektatsiya">Комплектація</a>
+      <a href="#dostavka" class="poslugy__chip" data-chip="dostavka">Доставка</a>
+      <a href="#povernennya" class="poslugy__chip" data-chip="povernennya">Повернення</a>
+      <a href="#intehratsii" class="poslugy__chip" data-chip="intehratsii">Інтеграції</a>
+      <a href="#marketpleysy" class="poslugy__chip" data-chip="marketpleysy">Маркетплейси</a>
+      <a href="#spetsposlugy" class="poslugy__chip" data-chip="spetsposlugy">Спецпослуги</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== 1. ЗБЕРІГАННЯ ====== -->
+<section class="poslugy__cat" id="zberihannya">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">01 / Зберігання та інвентаризація</div>
+    <h2 class="poslugy__cat-h">Палетне, поличне, холодне, великогабаритне</h2>
+    <p>Склад MTP у Щасливому (Бориспільський район) — 5 500 м² зі стелажним зберіганням до 11 м висоти, окремою холодною зоною (+2…+8°C) на 200 палет, зоною для великогабаритних товарів і кліматичним контролем для косметики й бадів. Вас не цікавить те, що відбувається всередині складу — вас цікавить, що ваш товар у наявності, не пошкоджений і доступний для збору замовлень за 30 хвилин після оплати клієнтом. Саме це ми гарантуємо SLA.</p>
+    <p>Кожна одиниця товару отримує внутрішній SKU-код у нашій WMS, фіксується фото при прийомі (для візуального контролю стану), розміщується у конкретну адресу комірки. При інвентаризації (раз на квартал) розбіжність між WMS і фактом не перевищує 0,2% — це виміряний показник за 12 місяців роботи з нашими ТОП-20 клієнтами.</p>
+    <ul class="poslugy__tags">
+      <li>Палетне зберігання — від 450 грн/палета/міс</li>
+      <li>Поличне зберігання — від 35 грн/SKU/міс</li>
+      <li>Холодне зберігання +2…+8°C — від 680 грн/палета/міс</li>
+      <li>Великогабаритне (до 500 кг) — індивідуальний прайс</li>
+      <li>Інвентаризація щоквартальна — входить у тариф</li>
+      <li>Фотофіксація браку та невідповідностей</li>
+    </ul>
+    <p class="poslugy__cat-links">Деталі: <a href="/ua/skladski-poslugy/">Складські послуги</a> · <a href="/ua/paletne-zberigannya/">Палетне зберігання</a> · <a href="/ua/fulfilment-kyiv/">Склад у Київській області</a></p>
+  </div>
+</section>
+
+<!-- ====== 2. КОМПЛЕКТАЦІЯ ====== -->
+<section class="poslugy__cat poslugy__cat--alt" id="komplektatsiya">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">02 / Комплектація замовлень</div>
+    <h2 class="poslugy__cat-h">Pick &amp; Pack з точністю 99,8%</h2>
+    <p>Збирання замовлення — те, що бачить ваш клієнт у посилці. Помилковий товар, забутий аксесуар, пом'ятий бренд-конверт — це не "невелика операційна неприємність". Це -1 покупець назавжди й мінус 12-15 нових покупців через відгук на Rozetka. Тому SLA на точність комплектації у нас 99,8% — це означає <strong>2 помилки на 1 000 зібраних замовлень</strong>, не більше. За попередній квартал фактичний показник — 99,87%.</p>
+    <p>Як ми це робимо: подвійна верифікація сканером штрих-коду (на стадії пікінгу і на стадії пакування), фотофіксація запакованого замовлення перед закриттям коробки для замовлень понад 3 000 грн, окрема стрічка для замовлень з крихкими товарами (косметика, кераміка, скло). Скоро запускаємо AI-перевірку фото перед запечатанням — пілот на 4 клієнтах, точність у тестах 99,95%.</p>
+    <ul class="poslugy__tags">
+      <li>Pick &amp; Pack стандарт — від 18 грн/відправлення</li>
+      <li>Брендоване пакування — +2,50 грн/коробка</li>
+      <li>Кастомні вкладки (флаєр, подяка) — +1,50 грн</li>
+      <li>Подарункова упаковка — +25 грн</li>
+      <li>Cut-off передачі у перевізника — 18:00 щоденно</li>
+      <li>Same-day відправка для замовлень до 15:00</li>
+    </ul>
+    <p class="poslugy__cat-links">Кейси: <a href="/ua/blog/case-ecodrive/">Case EcoDrive (12k SKU)</a> · <a href="/ua/3pl-logistyka/">3PL для брендів</a> · <a href="/ua/blog/chomu-fulfilment-deshevshyy/">Чому фулфілмент дешевший за свій склад</a></p>
+  </div>
+</section>
+
+<!-- ====== 3. ДОСТАВКА ====== -->
+<section class="poslugy__cat" id="dostavka">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">03 / Доставка по Україні та міжнародна</div>
+    <h2 class="poslugy__cat-h">Нова Пошта, Укрпошта, Justin, Meest, DHL</h2>
+    <p>У нас немає власного автопарку — це свідома стратегія. Замість того щоб конкурувати з Новою Поштою на її ж полі, ми інтегруємось з усіма основними перевізниками і вибираємо найкращий маршрут для конкретного замовлення. Якщо клієнт вибрав Нову Пошту — посилка йде Новою Поштою. Якщо це переказ післяплатою у глибинку Закарпаття — оптимальніше може бути Укрпошта. Якщо це B2B-доставка пацієнтам у Польщу — DHL Express.</p>
+    <p>Що ми контролюємо: cut-off (фінальна годинна передачі у відділення/кур'єру), статус посилки в реальному часі через API перевізника, грошові надходження від післяплати (через нашу систему Шериф Платежів — Telegram-сповіщення в момент отримання коштів від НП). Що не контролюємо: швидкість самої доставки після передачі — це публічна оферта перевізника. Але ми передаємо посилку в день оформлення замовлення (для замовлень до 15:00), тому статистика "замовлено сьогодні — у клієнта завтра або післязавтра" виконується у 94% випадків.</p>
+    <ul class="poslugy__tags">
+      <li>Нова Пошта — у відділення, поштомат, кур'єр</li>
+      <li>Укрпошта — пакомат, відділення, на адресу</li>
+      <li>Justin, Meest — повна підтримка</li>
+      <li>Міжнародна: DHL Express, UPS, Meest International</li>
+      <li>Шериф Платежів — Telegram-контроль грошей</li>
+      <li>Same-day для Києва — кур'єром від 8:00 до 22:00</li>
+    </ul>
+    <p class="poslugy__cat-links">Деталі: <a href="/ua/fulfilment-ukraina/">Фулфілмент в Україні</a> · <a href="/ua/blog/peak-season-logistics-mistakes/">Помилки у пік-сезон</a></p>
+  </div>
+</section>
+
+<!-- ====== 4. ПОВЕРНЕННЯ ====== -->
+<section class="poslugy__cat poslugy__cat--alt" id="povernennya">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">04 / Повернення та обробка браку</div>
+    <h2 class="poslugy__cat-h">Reverse logistics за 24-48 годин</h2>
+    <p>Повернення — найдорожча і найбільш недооцінена частина e-commerce операцій. Середній рівень повернень у одязі і взутті — 18-22%, у косметиці — 4-6%, у техніці — 8-10%. Якщо обробляти повернення повільно (більше 5-7 днів від отримання посилки до повернення товару у продаж), у вас на складі лежить заморожений капітал. Якщо обробляти неточно (товар з пошкодженою упаковкою повертається у продаж замість дисконт-каналу) — отримуєте друге повернення від наступного покупця.</p>
+    <p>Наш SLA: повернення обробляється у 24-48 годин від моменту отримання посилки. Що це означає: ваш товар або повертається у продаж (якщо не пошкоджений), або переходить у статус "брак" з фотофіксацією (якщо пошкоджений), або у статус "повторний продаж зі знижкою" (якщо упаковка пошкоджена, але товар цілий). Точність ідентифікації стану — 99,5%. Окремо ведемо звітність по причинах повернень — це дає вам аналітику для покращення продукту.</p>
+    <ul class="poslugy__tags">
+      <li>Повернення стандарт — 25 грн/одиниця</li>
+      <li>Фотофіксація браку — входить у тариф</li>
+      <li>Категоризація причин (звіт раз на тиждень)</li>
+      <li>Утилізація неремонтопридатного браку</li>
+      <li>Повторне пакування для дисконт-продажу</li>
+      <li>Refund-контроль через Шериф Платежів</li>
+    </ul>
+    <p class="poslugy__cat-links">Глибше: <a href="/ua/blog/reduce-product-returns-ecommerce/">Як зменшити повернення</a></p>
+  </div>
+</section>
+
+<!-- ====== 5. ІНТЕГРАЦІЇ ====== -->
+<section class="poslugy__cat" id="intehratsii">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">05 / Інтеграції з CRM та CMS</div>
+    <h2 class="poslugy__cat-h">12+ систем за 2-4 години через API</h2>
+    <p>Інтеграція — це момент, коли вирішується, чи буде вам зручно з нами працювати, чи кожне замовлення доведеться вручну вбивати у спільну Google-таблицю. У нас є нативні конектори для 12+ найпопулярніших систем у Україні: KeyCRM, SalesDrive, LP-CRM, Sitniks, Horoshop, OpenCart, WooCommerce, Shopify, 1С, BAS, ПРРО Checkbox, Fakturowanik. Налаштування — 2-4 години з нашого боку, від вас потрібен лише API-ключ.</p>
+    <p>Як працює потік: ваша CRM створює замовлення → дані летять у нашу WMS через API → склад збирає → статус "зібрано" повертається у CRM → клієнт отримує SMS з номером ТТН від перевізника → статус "відправлено" знов летить у CRM. Ви бачите всі етапи у звичному для вас інтерфейсі. Якщо вашої системи у списку немає — інтегруємось через REST API за 4-8 годин розробки.</p>
+    <ul class="poslugy__tags">
+      <li>KeyCRM, SalesDrive, LP-CRM, Sitniks</li>
+      <li>Horoshop, OpenCart, WooCommerce, Shopify</li>
+      <li>1С, BAS, ПРРО Checkbox</li>
+      <li>Custom API — 4-8 годин розробки</li>
+      <li>Webhook на статуси замовлень</li>
+      <li>Експорт залишків раз на 15 хвилин</li>
+    </ul>
+    <p class="poslugy__cat-links">Технічно: <a href="/ru/api-docs/">API Reference</a></p>
+  </div>
+</section>
+
+<!-- ====== 6. МАРКЕТПЛЕЙСИ ====== -->
+<section class="poslugy__cat poslugy__cat--alt" id="marketpleysy">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">06 / Маркетплейси</div>
+    <h2 class="poslugy__cat-h">Rozetka, Prom.ua, Allo, Kasta — окремий стек</h2>
+    <p>Робота з українськими маркетплейсами — це окремий вид спорту. У кожного свої правила пакування, свої терміни обробки замовлень, свої штрафи за невчасну відправку, свої вимоги до маркування коробок. Rozetka хоче маркування "А4-етикетка з QR" і cut-off о 16:00. Prom.ua приймає до 18:00, але штрафує за упаковку без захисту крихких товарів. Allo має власний WMS, з яким треба інтегруватись через AlloAPI. Якщо ви тільки виходите на маркетплейси — ви це все вивчите за 6 місяців на власних помилках. Або ми зробимо за вас.</p>
+    <p>Що ми робимо для маркетплейсів окремо: окрема ділянка пакування з нативними матеріалами кожного майданчика, інтеграція з кабінетами продавця для автоматичного передавання залишків (раз на 15 хв), окрема SLA-метрика "% вчасних відправлень" — у нас 99,3%. У Rozetka категорія "Топ-продавець" вимагає 95%, тому наш SLA дає вам запас.</p>
+    <ul class="poslugy__tags">
+      <li>Rozetka — категорія, листинги, експорт залишків</li>
+      <li>Prom.ua — Pro-кабінет, акції, листинги</li>
+      <li>Allo, Kasta, Епіцентр</li>
+      <li>Окремий пакувальний стек на кожен майданчик</li>
+      <li>Контроль штрафів і повернень окремо</li>
+      <li>SLA "% вчасних відправлень" — 99,3%</li>
+    </ul>
+    <p class="poslugy__cat-links">Спеціалізовано: <a href="/ua/fulfilment-rozetka/">Фулфілмент Rozetka</a> · <a href="/ua/fulfilment-prom/">Фулфілмент Prom.ua</a> · <a href="/ua/fulfilment-dlya-marketpleysiv/">Усі маркетплейси</a></p>
+  </div>
+</section>
+
+<!-- ====== 7. СПЕЦПОСЛУГИ ====== -->
+<section class="poslugy__cat" id="spetsposlugy">
+  <div class="poslugy__container">
+    <div class="poslugy__cat-label">07 / Спецпослуги</div>
+    <h2 class="poslugy__cat-h">Копакінг, маркування, кросдокінг, автодзвінок</h2>
+    <p>Це блок послуг, які потрібні не всім, але якщо потрібні — потрібні дуже. <strong>Копакінг</strong> — це збирання комплектів з кількох SKU під одну розпродажну акцію (наприклад, "набір на 8 березня": помада + туш + крем у одній коробці). <strong>Маркування</strong> — нанесення стікерів зі штрих-кодами, серійними номерами, інструкціями для маркетплейсів. <strong>Кросдокінг</strong> — приймання поставки і миттєва передача без зберігання (для FMCG-категорій з високою оборотністю). <strong>Автодзвінок</strong> — автоматичне підтвердження замовлення дзвінком перед відправкою (зменшує % недоставок на 15-25%).</p>
+    <p>Ми робимо ці операції тому що клієнти просили. Жоден з цих сервісів не є нашим основним продуктом — це додаткові інструменти, які ви додаєте у свій pipeline тоді, коли вони реально потрібні. Прайс на спецпослуги — індивідуальний, бо обсяги та складність дуже різні. Калькулятор на сторінці <a href="/ua/calculator/">/calculator/</a> рахує базові послуги, для спецпослуг — зв'язок з менеджером.</p>
+    <ul class="poslugy__tags">
+      <li>Копакінг — від 8 грн/комплект</li>
+      <li>Маркування стікерами — від 1,20 грн/стікер</li>
+      <li>Кросдокінг — від 35 грн/палета</li>
+      <li>Автодзвінок підтвердження — від 5 грн/контакт</li>
+      <li>Інвентаризація позачергова — за домовленістю</li>
+      <li>Знищення зайвого/застарілого — від 100 грн/палета</li>
+    </ul>
+    <p class="poslugy__cat-links">Більше: <a href="/ua/fulfilment-vazhkykh-tovariv/">Важкі товари</a></p>
+  </div>
+</section>
+
+<!-- ====== HOW IT WORKS TIMELINE ====== -->
+<section class="poslugy__how">
+  <div class="poslugy__container">
+    <div class="poslugy__label">Як це працює</div>
+    <h2 class="poslugy__cat-h">6 кроків від поставки до клієнта</h2>
+    <ol class="poslugy__steps">
+      <li><span class="poslugy__step-num">01</span><strong>Поставка</strong>Привозите товар на склад. Ми приймаємо за товаротранспортною накладною, фотографуємо стан, фіксуємо у WMS.</li>
+      <li><span class="poslugy__step-num">02</span><strong>Приймання</strong>За 24 години SKU розміщені у комірках, доступні для замовлень. Інтеграція з вашою CRM активна.</li>
+      <li><span class="poslugy__step-num">03</span><strong>Зберігання</strong>Кліматичний контроль, відеоспостереження, охорона 24/7. Інвентаризація — щоквартально.</li>
+      <li><span class="poslugy__step-num">04</span><strong>Комплектація</strong>Замовлення зібрано за 30 хв після оплати. Подвійна верифікація. SLA точність 99,8%.</li>
+      <li><span class="poslugy__step-num">05</span><strong>Упаковка</strong>Брендована або нейтральна. Фотофіксація для замовлень &gt; 3 000 грн.</li>
+      <li><span class="poslugy__step-num">06</span><strong>Відправка</strong>Передача у перевізника до 18:00. Шериф Платежів контролює надходження коштів.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ====== PRICING SNAPSHOT ====== -->
+<section class="poslugy__pricing">
+  <div class="poslugy__container">
+    <div class="poslugy__label">Прайс знімок</div>
+    <h2 class="poslugy__cat-h">Базові ціни — від яких рахуємо</h2>
+    <table class="poslugy__table">
+      <thead>
+        <tr><th>Послуга</th><th>Одиниця</th><th>Ціна від</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Палетне зберігання</td><td>палета · міс</td><td>450 грн</td></tr>
+        <tr><td>Поличне зберігання</td><td>SKU · міс</td><td>35 грн</td></tr>
+        <tr><td>Холодне зберігання (+2…+8°C)</td><td>палета · міс</td><td>680 грн</td></tr>
+        <tr><td>Pick &amp; Pack стандарт</td><td>відправлення</td><td>18 грн</td></tr>
+        <tr><td>Брендоване пакування</td><td>коробка</td><td>+2,50 грн</td></tr>
+        <tr><td>Обробка повернення</td><td>одиниця</td><td>25 грн</td></tr>
+        <tr><td>Копакінг (комплекти)</td><td>комплект</td><td>8 грн</td></tr>
+        <tr><td>Кросдокінг</td><td>палета</td><td>35 грн</td></tr>
+      </tbody>
+    </table>
+    <p class="poslugy__cat-links">Точна вартість для вашого SKU-набору — у <a href="/ua/calculator/">калькуляторі</a>. Повний прайс — на <a href="/ua/tsiny/">сторінці тарифів</a>.</p>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="poslugy__faq">
+  <div class="poslugy__container poslugy__container--narrow">
+    <div class="poslugy__label">Запитання</div>
+    <h2 class="poslugy__cat-h">8 запитань і відповідей</h2>
+    <details class="poslugy__faq-item">
+      <summary>Які послуги входять у фулфілмент MTP?</summary>
+      <div>17 операцій повного циклу: приймання поставки, зберігання (палетне/поличне/холодне), комплектація, упаковка, маркування, доставка по Україні та міжнародна, обробка повернень, копакінг, кросдокінг, інвентаризація, фотофіксація браку, автодзвінок підтвердження, контроль грошей через Шериф Платежів, інтеграції з 12+ CRM, експорт у маркетплейси.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Скільки коштують послуги фулфілменту?</summary>
+      <div>Базова комплектація — від 18 грн за відправлення при обсязі 200+ замовлень/день. Зберігання — 450 грн/палета/міс або 650 грн/м³/міс. Мінімальний платіж — 5 000 грн/міс. Точну вартість для вашого SKU-набору рахуємо у <a href="/ua/calculator/">калькуляторі</a>.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Як швидко можна підключитися?</summary>
+      <div>3-5 робочих днів від першого контакту до старту операцій: день 1 — заявка та воркшоп, день 2 — підпис договору, день 3 — приймання поставки, день 4 — налаштування інтеграції з CRM, день 5 — перші тестові відправлення.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>З якими CRM та маркетплейсами інтегруєтесь?</summary>
+      <div>KeyCRM, SalesDrive, LP-CRM, Sitniks, Horoshop, OpenCart, WooCommerce, Shopify, 1С, BAS. Маркетплейси: Rozetka, Prom.ua, Allo, Kasta, Епіцентр. Інтеграція з будь-якою системою через REST API за 2-4 години.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Чи приймаєте товари з браком та повернення?</summary>
+      <div>Так. Обробка повернень — 24-48 годин від отримання посилки. SLA точність ідентифікації: 99,5%. Категоризація причин повернень — звіт раз на тиждень.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Скільки SKU можете обслуговувати?</summary>
+      <div>Поточна потужність — 50 000+ активних SKU на наших 5 500 м². Працюємо з мікро-брендами (200 SKU) і з великими каталогами (15 000+ SKU). Мінімального обсягу немає.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Як контролюються гроші клієнтів?</summary>
+      <div>Шериф Платежів — наша внутрішня система, що надсилає Telegram-сповіщення власнику бізнесу при кожному отриманні коштів від перевізника. Прозорість 100%, без затримок.</div>
+    </details>
+    <details class="poslugy__faq-item">
+      <summary>Працюєте з холодним ланцюгом і небезпечними товарами?</summary>
+      <div>Холодне зберігання (+2…+8°C) — так, окрема зона на 200 палет. Небезпечні вантажі (ADR) — наразі не приймаємо. Великогабаритні (меблі, побутова техніка) — приймаємо до 500 кг/одиниця.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ====== RELATED LINKS HUB ====== -->
+<section class="poslugy__related">
+  <div class="poslugy__container">
+    <div class="poslugy__label">Що читати далі</div>
+    <div class="poslugy__related-grid">
+      <div>
+        <h3>Знання</h3>
+        <ul>
+          <li><a href="/ua/shcho-take-fulfilment/">Що таке фулфілмент — повний гід</a></li>
+          <li><a href="/ua/blog/chomu-fulfilment-deshevshyy/">Чому фулфілмент дешевший за свій склад</a></li>
+          <li><a href="/ua/blog/fulfilment-vs-vlasnyy-sklad/">Фулфілмент vs власний склад</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>За індустрією</h3>
+        <ul>
+          <li><a href="/ua/fulfilment-dlya-internet-magazynu/">Інтернет-магазин</a></li>
+          <li><a href="/ua/fulfilment-dlya-kosmetyky/">Косметика</a></li>
+          <li><a href="/ua/fulfilment-dlya-maloho-biznesu/">Малий бізнес</a></li>
+          <li><a href="/ua/fulfilment-vazhkykh-tovariv/">Важкі товари</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>За локацією</h3>
+        <ul>
+          <li><a href="/ua/fulfilment-kyiv/">Київ і область</a></li>
+          <li><a href="/ua/fulfilment-ukraina/">Україна — повний охват</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Розрахунок</h3>
+        <ul>
+          <li><a href="/ua/calculator/">Калькулятор вартості</a></li>
+          <li><a href="/ua/tsiny/">Повний прайс-лист</a></li>
+          <li><a href="/ua/3pl-logistyka/">3PL логістика для брендів</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+.poslugy__container{max-width:1200px;margin:0 auto;padding:0 24px}
+.poslugy__container--narrow{max-width:780px}
+
+/* HERO */
+.poslugy__hero{background:#fff;padding:140px 0 80px;border-bottom:1px solid #eaeaea}
+.poslugy__crumbs{font-size:13px;color:#666;margin-bottom:32px;letter-spacing:0.02em}
+.poslugy__crumbs a{color:#666;text-decoration:none}
+.poslugy__crumbs a:hover{color:#e63329}
+.poslugy__crumbs span{margin:0 6px}
+.poslugy__label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e63329;margin-bottom:24px}
+.poslugy__label--inline{display:inline-block;margin-bottom:16px}
+.poslugy__h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(38px,6vw,68px);line-height:1.05;letter-spacing:-0.02em;font-weight:700;color:#000;margin:0 0 28px;max-width:1000px}
+.poslugy__sub{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#222;margin:0 0 40px;max-width:780px;font-weight:400}
+.poslugy__hero-bottom{margin-top:32px;max-width:560px}
+
+/* STATS */
+.poslugy__stats{background:#fafafa;padding:48px 0;border-bottom:1px solid #eaeaea}
+.poslugy__stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.poslugy__stat{display:flex;flex-direction:column}
+.poslugy__stat strong{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,3.5vw,40px);line-height:1;color:#000;font-weight:700;margin-bottom:8px}
+.poslugy__stat span{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#666}
+
+/* TLDR */
+.poslugy__tldr{background:#fff;padding:80px 0;border-bottom:1px solid #eaeaea}
+.poslugy__tldr h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,3.5vw,38px);margin:0 0 24px;line-height:1.2;color:#000}
+.poslugy__tldr p{font-size:17px;line-height:1.7;color:#222;margin:0 0 18px}
+.poslugy__tldr a{color:#e63329;text-decoration:underline;text-underline-offset:3px}
+
+/* CHIPS */
+.poslugy__chips{position:sticky;top:64px;z-index:50;background:#fff;border-bottom:1px solid #eaeaea;padding:16px 0;backdrop-filter:saturate(1.2)}
+.poslugy__chips-row{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.poslugy__chip{flex-shrink:0;display:inline-block;padding:10px 18px;font-size:13px;font-weight:600;letter-spacing:0.02em;color:#666;border:1px solid #eaeaea;background:#fff;text-decoration:none;transition:all 0.2s}
+.poslugy__chip:hover,.poslugy__chip.is-active{border-color:#e63329;color:#000;background:#fff}
+
+/* CATEGORY SECTIONS */
+.poslugy__cat{background:#fff;padding:96px 0;border-bottom:1px solid #eaeaea;scroll-margin-top:140px}
+.poslugy__cat--alt{background:#fafafa}
+.poslugy__cat-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e63329;margin-bottom:16px}
+.poslugy__cat-h{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(28px,3.5vw,42px);line-height:1.15;color:#000;font-weight:700;margin:0 0 28px;max-width:900px;letter-spacing:-0.01em}
+.poslugy__cat p{font-size:17px;line-height:1.7;color:#222;margin:0 0 20px;max-width:840px}
+.poslugy__cat strong{color:#000;font-weight:700}
+.poslugy__tags{list-style:none;padding:0;margin:24px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0;border-top:1px solid #eaeaea}
+.poslugy__tags li{padding:14px 0;border-bottom:1px solid #eaeaea;font-size:14px;color:#222;font-weight:500;padding-right:16px}
+.poslugy__tags li::before{content:"→ ";color:#e63329;font-weight:700;margin-right:6px}
+.poslugy__cat-links{font-size:14px;color:#666;margin-top:16px}
+.poslugy__cat-links a{color:#e63329;text-decoration:underline;text-underline-offset:3px;font-weight:500}
+.poslugy__cat-links a:hover{color:#000}
+
+/* HOW IT WORKS */
+.poslugy__how{background:#000;color:#fff;padding:96px 0}
+.poslugy__how .poslugy__label{color:#e63329}
+.poslugy__how .poslugy__cat-h{color:#fff}
+.poslugy__steps{list-style:none;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #333}
+.poslugy__steps li{padding:32px 24px 32px 0;border-bottom:1px solid #333;border-right:1px solid #333;display:flex;flex-direction:column;gap:12px}
+.poslugy__steps li:nth-child(3n){border-right:none}
+.poslugy__step-num{font-family:'DM Serif Display',Georgia,serif;color:#e63329;font-size:28px;font-weight:700}
+.poslugy__steps strong{font-family:'DM Serif Display',Georgia,serif;font-size:22px;font-weight:700;color:#fff;display:block;margin-bottom:6px}
+.poslugy__steps li{font-size:15px;line-height:1.6;color:#bbb}
+
+/* PRICING TABLE */
+.poslugy__pricing{background:#fff;padding:96px 0;border-bottom:1px solid #eaeaea}
+.poslugy__table{width:100%;border-collapse:collapse;margin-top:24px}
+.poslugy__table thead th{background:#fafafa;padding:16px 20px;text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#000;border-bottom:1px solid #eaeaea}
+.poslugy__table thead th:last-child{text-align:right}
+.poslugy__table tbody td{padding:18px 20px;border-bottom:1px solid #eaeaea;font-size:15px;color:#222;font-weight:500}
+.poslugy__table tbody td:last-child{text-align:right;color:#000;font-weight:700}
+
+/* FAQ */
+.poslugy__faq{background:#fafafa;padding:96px 0;border-bottom:1px solid #eaeaea}
+.poslugy__faq-item{border-bottom:1px solid #eaeaea;background:#fff}
+.poslugy__faq-item:first-of-type{border-top:1px solid #eaeaea}
+.poslugy__faq-item summary{font-family:'DM Serif Display',Georgia,serif;font-size:20px;font-weight:700;color:#000;padding:24px 48px 24px 24px;cursor:pointer;list-style:none;position:relative;line-height:1.3}
+.poslugy__faq-item summary::-webkit-details-marker{display:none}
+.poslugy__faq-item summary::after{content:"+";position:absolute;right:24px;top:24px;font-size:24px;color:#e63329;font-weight:300;transition:transform 0.2s}
+.poslugy__faq-item[open] summary::after{transform:rotate(45deg)}
+.poslugy__faq-item div{padding:0 24px 24px;font-size:16px;line-height:1.7;color:#444}
+.poslugy__faq-item div a{color:#e63329;text-decoration:underline}
+
+/* RELATED */
+.poslugy__related{background:#fff;padding:96px 0}
+.poslugy__related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:32px;border-top:2px solid #000;padding-top:32px}
+.poslugy__related h3{font-family:'DM Serif Display',Georgia,serif;font-size:18px;font-weight:700;color:#000;margin:0 0 16px;letter-spacing:-0.01em}
+.poslugy__related ul{list-style:none;padding:0;margin:0}
+.poslugy__related li{margin-bottom:10px;font-size:14px;line-height:1.5}
+.poslugy__related a{color:#222;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s}
+.poslugy__related a:hover{color:#e63329;border-bottom-color:#e63329}
+
+/* MOBILE */
+@media (max-width:768px){
+  .poslugy__hero{padding:100px 0 56px}
+  .poslugy__stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+  .poslugy__cat,.poslugy__tldr,.poslugy__pricing,.poslugy__faq,.poslugy__how,.poslugy__related{padding:64px 0}
+  .poslugy__tags{grid-template-columns:1fr}
+  .poslugy__steps{grid-template-columns:1fr}
+  .poslugy__steps li{border-right:none}
+  .poslugy__related-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .poslugy__chips{top:56px}
+  .poslugy__table{font-size:14px}
+  .poslugy__table thead th,.poslugy__table tbody td{padding:12px 10px}
+}
+@media (max-width:480px){
+  .poslugy__related-grid{grid-template-columns:1fr}
+}
+</style>
+
+<script>
+// Sticky chip scroll-spy
+(function(){
+  if (typeof window === 'undefined') return;
+  const chips = document.querySelectorAll('.poslugy__chip');
+  const sections = document.querySelectorAll('.poslugy__cat[id]');
+  if (!chips.length || !sections.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        chips.forEach(c => c.classList.toggle('is-active', c.getAttribute('data-chip') === id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth-scroll respecting reduced motion
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  chips.forEach(c => {
+    c.addEventListener('click', (e) => {
+      const href = c.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    });
+  });
+})();
+</script>

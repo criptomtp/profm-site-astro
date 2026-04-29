@@ -24,6 +24,7 @@ For any individual page as clean Markdown, append `.md` to the URL (e.g. `https:
 
 ## Services
 
+- [Послуги фулфілменту в Україні (UA hub)](https://www.fulfillmentmtp.com.ua/poslugy/): Editorial-archetype services hub — повний spectrum фулфілмент-послуг (зберігання, комплектація, доставка, повернення, інтеграції, маркетплейси, спецпослуги), 7-chip sticky nav, ціни-snapshot, FAQ
 - [3PL логістика (UA)](https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/): Third-party logistics for Ukrainian e-commerce — receiving, storage, packing, shipping, integrations
 - [Услуги фулфилмента для брендов из СНГ (RU)](https://www.fulfillmentmtp.com.ua/ru/services/): Ukraine-market entry for sellers from Kazakhstan, Moldova, Georgia, Armenia, Uzbekistan — customs, UkrSEPRO, Rozetka/Prom, 21-day onboarding, USD/EUR billing
 - [Fulfillment Services (EN)](https://www.fulfillmentmtp.com.ua/en/services/): End-to-end fulfillment for cross-border e-commerce
