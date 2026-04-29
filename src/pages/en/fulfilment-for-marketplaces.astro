@@ -1,0 +1,706 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import LabelChip from '../../components/stitch/LabelChip.astro';
+import StatsBar from '../../components/stitch/StatsBar.astro';
+import AccordionGroup from '../../components/stitch/AccordionGroup.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const faq = [
+  { q: 'How does a single inventory pool actually work across Rozetka, Prom.ua, Kasta, Shopify and Amazon EU at the same time?', a: '<p>One physical pallet rack, one logical SKU record, and one stock counter per SKU shared by every connected channel. When a brand commits 5,000 units of a SKU into our Kyiv warehouse, the WMS (warehouse management system) exposes that single pool to every connected storefront simultaneously through native sales-channel adapters. Rozetka sees 5,000 available, Prom.ua sees 5,000, Kasta sees 5,000, Shopify EU sees 5,000, Amazon EU sees 5,000 — not because we duplicate the count, but because they all read from the same authoritative ledger. The moment an order is captured anywhere — say Rozetka pulls one unit — the WMS atomically decrements the master pool and pushes the new available count (4,999) to every other channel within 800 milliseconds. There is no per-channel allocation, no manual rebalancing, no risk of selling the same unit twice. This is the structural difference between a multi-channel 3PL and a single-channel 3PL: in single-channel models you split inventory upfront and live with stranded stock; in our multi-channel pool model you hold one stock and let demand decide where it sells.</p>' },
+  { q: 'Why is Ukraine a better hub for Eastern European marketplace fulfillment than Poland or Germany?', a: '<p>Three structural reasons. First, cost: a Ukrainian 3PL operating cost base — labour, energy, real estate, packaging — is 50-65% lower than Poland and 70-80% lower than Germany at like-for-like service levels, which translates to a $0.42-0.58 per-order fulfillment fee versus $0.95-1.40 in EU-domestic 3PLs. Second, channel access: Ukrainian marketplaces (Rozetka, Prom.ua, Kasta, Allo, Hubber) require a Ukrainian-resident merchant of record or a Ukrainian fulfillment partner to accept the seller agreement — Polish or German 3PLs cannot directly serve these listings. Third, EU dispatch parity: from our Kyiv warehouse to Berlin is 1,200 km via Nova Poshta International or DHL ground; to Warsaw is 750 km. EU buyers receive 3-5 business day delivery — competitive with intra-EU lanes — and Ukrainian inventory clears EU customs under the EU-Ukraine Association Agreement free-trade framework with zero duty on most consumer goods. Net effect: brands that route their entire Eastern European demand through a single Kyiv pool save 35-45% on fulfillment cost versus running parallel inventories in Warsaw plus Frankfurt, while gaining direct access to seven sales channels they cannot reach from EU-domestic warehouses.</p>' },
+  { q: 'What happens to my stock-reconciliation if a marketplace API goes down? Do I lose orders?', a: '<p>No. Our connector architecture isolates failure per channel. If the Rozetka seller API throws an error, Rozetka stops receiving stock updates until the API recovers, but every other channel — Prom, Kasta, Shopify, Amazon EU — continues to read the live pool. We retry the failed Rozetka push every 30 seconds with an exponential backoff capped at 15 minutes, and we log a per-incident report you can audit. During a Rozetka outage, Rozetka may briefly sell stock we have already committed to another channel — but our oversell-protection layer holds these orders in a "pending allocation" state until the WMS confirms physical availability. If the pool is genuinely depleted, the order rolls into a customer-service escalation queue rather than shipping a cancellation; in practice we see this trigger on under 0.08% of orders per quarter (mostly during scheduled maintenance windows announced by marketplace platforms). The architectural rule: no single channel failure can take down the inventory pool; the pool can only be modified through our authoritative WMS, never directly by any channel adapter. This is why we run a custom integration layer instead of using off-the-shelf channel-listing services like ChannelEngine or Sellbrite — those tools assume a per-channel allocation model that is structurally incompatible with multi-marketplace pool fulfillment.</p>' },
+  { q: 'How fast is onboarding for an international brand new to Ukrainian marketplaces?', a: '<p>For brands that already operate on Shopify or WooCommerce and want to add Rozetka, Prom and Kasta as sales channels: 7-14 business days end-to-end. The breakdown: contract and KYC (1 day), inventory inbound at our Kyiv dock (2-4 days for sea/air freight, 1 day for road from EU), SKU master setup with batch barcoding (1-2 days), marketplace seller-account registration in your name (3-5 days — handled by our regulatory team end-to-end including Ukrainian VAT registration), API integration to your existing storefront (1-2 days for native connectors, 4-7 days for custom). For brands starting from zero — no Ukrainian or EU presence — add 14-21 days for company registration through our local partner. We have onboarded 23 international brands into Ukrainian marketplaces since January 2024; the median time from contract signature to first dispatched parcel was 11 days. The longest case (a US skincare brand with 540 SKUs and a custom NetSuite ERP) took 32 days, mostly waiting on freight. The shortest (a German pet-food brand on Shopify with 18 SKUs) took 6 days. We do not charge for onboarding labour; the only one-time cost is Ukrainian VAT registration ($120-180) if you do not already have it.</p>' },
+  { q: 'What carriers do you use for international dispatch out of Kyiv, and what is the typical EU delivery window?', a: '<p>EU lanes: Nova Poshta International, Meest, DHL Express, UPS Worldwide, FedEx International Priority, GLS, and DPD. Selection is automated per-order through a rate-shopping algorithm in the WMS that compares published rates against parcel weight, dimensions, declared value, and destination postcode. For most consumer-goods parcels under 5 kg the cheapest viable carrier is Nova Poshta International (3-5 business days to Germany, Poland, Czech Republic; 4-7 days to France, Italy, Netherlands; 5-9 days to Spain, Portugal). For premium SLA brands we route via DHL Express (next-day to Poland, 2-day to Germany, 2-3 day to most of Western Europe). UK shipments go through DHL Express or Royal Mail Tracked under the post-Brexit IOSS regime — we collect VAT at checkout and remit through our IOSS intermediary so end-buyers receive parcels duty-paid. North America: DHL Express to US/Canada in 5-7 days, with optional UPS Worldwide for higher-value shipments. We do not currently dispatch into Russia, Belarus, or Iran under our policy.</p>' },
+  { q: 'Can I run a private label, white label, or unbranded operation through your warehouse?', a: '<p>Yes. Our standard agreement is a fulfillment-only relationship — your brand stays on the parcel, the seller account on each marketplace stays in your name, and we remain invisible to your end-buyers. We do not appear on the order packing slip, the dispatch label, or the carrier tracking. The address shown on the customer-facing dispatch label is your registered Ukrainian merchant address (which can be a virtual office we rent on your behalf for $35/month if you do not have a physical Ukrainian presence). Returns ship back to a returns-receiving address that is also yours on paper — physically the parcel arrives at our Kyiv returns dock but the customer-facing return label carries your branding. Branded packaging — custom-printed boxes, branded tissue, branded tape, marketing inserts, gift cards, hand-written notes — is a per-SKU pack-spec configuration applied at pick. We also support fully unbranded "plain brown box" dispatches for Amazon FBM and other marketplaces that prohibit third-party seller branding. The white-label model carries no premium over our standard fees.</p>' },
+  { q: 'How do you handle the regulatory side of running a multi-marketplace operation as a non-Ukrainian brand?', a: '<p>The regulatory stack splits into three layers, each handled separately. Layer one — corporate structure: most international brands engage a Ukrainian merchant-of-record (MOR) entity to hold the marketplace seller agreements. We partner with two MOR providers (one in Kyiv, one in Lviv) that handle Ukrainian VAT registration, marketplace seller-account onboarding, and monthly tax filings on your behalf for $180-280/month flat fee depending on volume. Layer two — product compliance: cosmetics fall under EU Regulation 1223/2009 plus the Ukrainian technical regulation effective 2024; food supplements under EAEU TR CU 027/2012; electronics under Ukrainian conformity certification (often a copy-paste of EU CE certification with a translated declaration); apparel under standard EU labelling rules. We store the regulatory file digitally per SKU and produce audit-ready reports on 24-hour notice. Layer three — operational compliance: the warehouse holds a fire-safety certificate, sanitary permit, customs-broker accreditation for export, and IATA dangerous-goods certification for air freight. None of this is a buyer-facing concern, but EU brands often request copies for their internal vendor onboarding — we provide the full pack on request under NDA.</p>' },
+  { q: 'What is the typical fee structure and how does it compare to running parallel 3PLs in Poland and Germany?', a: '<p>Per-order fees scale by monthly volume on a four-tier band: 0-49 orders/day at $0.58 per order, 50-99 at $0.52, 100-199 at $0.46, 200+ at $0.42. Storage is volumetric at $14-20 per cubic metre per month depending on tier — versus $34-48 in Polish 3PLs and $52-78 in German 3PLs. Inbound receiving is $0.04 per unit (free above 1,000 units per inbound). Returns processing is 35-50% of the outbound handling fee, depending on grade. The minimum monthly invoice is $125, applied if your usage is below the threshold; in practice this kicks in for brands shipping under 200 orders per month. There are no setup fees, no integration fees, no per-channel surcharges. Compare against the parallel-3PL alternative: a typical brand running 8,000 orders/month split across Polish 3PL (4,000), German 3PL (3,000), and Ukrainian channel (1,000) pays roughly $5,500 in combined Polish+German handling fees plus $1,400 in Polish/German storage. Routing the same 8,000 orders through our Kyiv pool costs roughly $2,400 in handling plus $480 in storage — a 58% saving while consolidating into a single inventory pool, single AP relationship, and single operations point of contact.</p>' },
+  { q: 'Do you support FBA prep, Amazon SFP, or other Amazon-specific fulfillment programs?', a: '<p>Partial. We do FBA prep — receiving inbound from your suppliers, performing FNSKU labelling, polybagging, suffocation-warning sticker application, bundling, and palletising to Amazon EU FC standards (Wroclaw, Frankfurt, or Madrid depending on routing) before forwarding via DHL Freight or Maersk LCL ocean. Typical FBA prep fee is $0.55 per unit including all materials. We do not currently run Amazon SFP (Seller Fulfilled Prime) for the EU because the SLA requires same-day pick before 14:00 local time five days a week with weekend dispatch, which our standard 3PL operating model does not support — though we can do this for individual brands as a custom service at premium pricing. We do support Amazon FBM (Fulfilled by Merchant) at our standard rate card, which works well for slower-moving SKUs that do not justify FBA fees, and for high-value SKUs where the brand wants direct control over packaging and customer experience.</p>' },
+  { q: 'How does pricing scale during peak season — Black Friday, Christmas, Singles Day?', a: '<p>It does not. Per-order fees stay flat through peak; we do not run surge pricing. What we do run is a 30-day capacity-reservation system: starting October 1 we publish a peak-season capacity plan and ask brands to reserve their expected November-December volume by October 15. Brands that hit their reservation get guaranteed dock priority, FEFO pick lanes reserved, and same-day dispatch SLA maintained. Brands that exceed their reservation by more than 40% in any single day may experience same-day-becomes-next-day SLA degradation — but pricing remains flat. We have run six peak seasons since 2019; the worst recorded SLA breach was Christmas 2023 when one brand ran 6.2x their reserved volume in a single day after a viral TikTok and we had to delay 12% of their orders by 24 hours. We do not penalise the brand for this, we recover capacity within 48-72 hours, and we offer a one-time goodwill credit if the breach materially affected their conversion. Storage rates also stay flat through peak — no winter premium, no Q4 surcharge, no Black Friday handling fee.</p>' },
+  { q: 'What does inventory visibility look like for a brand running on five marketplaces simultaneously?', a: '<p>One unified dashboard. The MTP Operator portal shows a master SKU view with the live pool count, the per-channel allocation (always equal to the master pool — there is no per-channel split), the velocity by channel for the last 7/30/90 days, days-of-cover at current sales rate, inbound shipments in transit with ETA, returns in receiving, and an alerting engine that fires on six conditions: stockout-imminent (under 7 days of cover), reorder-recommended (under 21 days at current velocity), velocity-spike (>2σ above baseline), velocity-collapse (<0.5σ below baseline), batch-aging (FEFO floor approaching for cosmetics/food), and channel-mismatch (a channel adapter has been disconnected for over 60 minutes). Every event is also pushed via webhook to your own systems if you prefer to centralise alerting in your own observability stack. Inventory data exports are available as CSV, Excel, or live REST API; we also push end-of-day stock snapshots into a Snowflake or BigQuery destination on request for brands running their own data warehouse. There is no fee for the portal, the alerting engine, or the data exports — they are part of the standard service.</p>' },
+  { q: 'Can you handle restricted categories — alcohol, supplements, health products?', a: '<p>Selectively. Alcohol: we hold a Ukrainian alcohol-trade licence for wines and spirits up to 40% ABV and can dispatch within Ukraine via Nova Poshta — most international brands shipping alcohol into Ukraine route through us because they cannot operate the licence themselves. Cross-border alcohol dispatch out of Ukraine into the EU is technically possible but commercially impractical due to per-country excise registration; we recommend EU-domestic warehouses for that lane. Food supplements: yes, we hold the Ukrainian sanitary permits for storage and the EAEU TR CU 027/2012 conformity assessment paperwork for cross-border CIS shipments; FEFO discipline is enforced with batch-genealogy retention. CBD: we ship CBD products under Ukrainian law (THC under 0.3%) but cannot dispatch into countries with stricter regulations — Poland, Germany, and France require active per-country case review before we accept the SKU. Hazmat: limited categories with prior IATA certification. Cosmetics with hazmat-regulated ingredients (most aerosols, alcohol-based perfumes over 20%): yes, with proper UN packaging. Pharmaceuticals: no — we do not hold a pharmaceutical-distribution licence, and we route those clients to a partner facility in Bila Tserkva that does.</p>' },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a.replace(/<[^>]+>/g, '').trim() }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fulfillmentmtp.com.ua/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/" },
+    { "@type": "ListItem", "position": 3, "name": "Marketplace Fulfillment", "item": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-marketplaces/" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Marketplace Fulfillment Ukraine — One Inventory Pool, Five Channels: Rozetka, Prom.ua, Kasta, Shopify EU, Amazon EU",
+  "description": "Multi-marketplace fulfillment from Kyiv. One inventory pool, five sales channels. Native API to Rozetka, Prom.ua, Kasta, Allo, Hubber, Shopify EU, Amazon EU. From $0.42 per order. EU dispatch via Nova Poshta International, DHL, UPS, FedEx.",
+  "serviceType": "Multi-Channel Marketplace Fulfillment",
+  "provider": {
+    "@type": "Organization",
+    "name": "MTP Group Fulfillment",
+    "url": "https://www.fulfillmentmtp.com.ua",
+    "telephone": "+380501444645"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "UA" },
+    { "@type": "Country", "name": "EU" },
+    { "@type": "Country", "name": "US" },
+    { "@type": "Country", "name": "GB" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "International DTC brands, EU and US ecommerce sellers, Shopify and WooCommerce stores entering Eastern European marketplaces, multi-channel B2B operators routing inventory through a Ukrainian hub"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.42",
+    "description": "From $0.42 per order at 200+ orders/day. All-in pick, pack, label, dropoff. No setup fees, no per-channel surcharges, no peak-season pricing."
+  },
+  "dateModified": "2026-04-29"
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.fulfillmentmtp.com.ua/#org",
+  "name": "MTP Group Fulfillment",
+  "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-marketplaces/",
+  "telephone": "+380501444645",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kyiv",
+    "addressCountry": "UA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.4501,
+    "longitude": 30.5234
+  }
+};
+
+const schemaJson = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script><script type="application/ld+json">${JSON.stringify(faqSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script><script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>`;
+
+const stats = [
+  { num: '7', label: 'NATIVE CHANNELS · POOLED' },
+  { num: '800ms', label: 'CROSS-CHANNEL SYNC' },
+  { num: '$0.42', label: 'PER ORDER · ENTERPRISE TIER' },
+  { num: '23+', label: 'INTERNATIONAL BRANDS · 2024–2026' },
+];
+
+const inventoryPool = [
+  { ch: 'ROZETKA.UA', sku: '14,822', stat: 'LIVE' },
+  { ch: 'PROM.UA', sku: '14,822', stat: 'LIVE' },
+  { ch: 'KASTA', sku: '14,822', stat: 'LIVE' },
+  { ch: 'ALLO', sku: '14,822', stat: 'LIVE' },
+  { ch: 'HUBBER', sku: '14,822', stat: 'LIVE' },
+  { ch: 'SHOPIFY EU', sku: '14,822', stat: 'LIVE' },
+  { ch: 'AMAZON EU', sku: '14,822', stat: 'LIVE · FBM' },
+];
+
+const channels = [
+  { name: 'Rozetka', region: 'UA · #1 marketplace · 30M visits/mo', detail: 'Native seller API. Order capture under 60s. Standardised Rozetka FBO labelling, packaging spec, and dispatch SOP enforced at pick. Same-day dispatch into Rozetka sortation centres or direct-to-buyer via Nova Poshta. Critical to seller rating: same-day-ship rate >95%.', tier: 'main' },
+  { name: 'Prom.ua', region: 'UA · 40M visits/mo · EVO group', detail: 'Native API plus KeyCRM and SalesDrive bridges. Multi-price catalogue support (different prices for different categories). EVO ecosystem coverage: Bigl, Zakupka, Crafta. Direct buyer dispatch via Nova Poshta and Ukrposhta with marketplace-formatted ТТН.', tier: 'main' },
+  { name: 'Kasta', region: 'UA · 400K daily users · fashion + beauty', detail: 'Speed-driven seller rating. Same-day-dispatch is the metric — fall behind by 24 hours and search ranking drops. We dispatch within the day-of-order cutoff window. FBK and 3PL models both supported.', tier: 'main' },
+  { name: 'Allo', region: 'UA · electronics-led · 7M visits/mo', detail: 'Multi-vendor marketplace under the Allo electronics retail brand. Strong in consumer electronics, household appliances, and tools. Credit-program integration (purchase-on-instalment) supported through marketplace.', tier: 'secondary' },
+  { name: 'Hubber', region: 'UA · cross-marketplace listing tool', detail: 'Aggregator that pushes one product feed to Rozetka, Prom, Kasta, Allo, OLX, and Epicentr simultaneously. We integrate at the Hubber level for brands that want one upload point and let Hubber distribute to all UA marketplaces with our pool reading consolidated.', tier: 'secondary' },
+  { name: 'Shopify EU', region: 'EU · branded DTC storefront', detail: 'Native Shopify app. Order capture, fulfillment status sync, EU IOSS support, automated VAT collection at checkout. Direct dispatch via Nova Poshta International, DHL, UPS — rate-shopped per parcel.', tier: 'cross-border' },
+  { name: 'Amazon EU', region: 'EU · FBM + FBA prep', detail: 'FBM (Fulfilled by Merchant) at our standard rate card. FBA prep — FNSKU labelling, polybagging, palletising — for inbound to Amazon EU FCs in Wroclaw, Frankfurt, Madrid. SFP available as custom service.', tier: 'cross-border' },
+];
+
+const tiers = [
+  { range: '0 – 49', label: 'Starter', price: '$0.58', detail: 'Per order, all-in. Storage $20 / m³ / month. Fit: international brands testing Ukrainian channels with small SKU count. Native connectors only.' },
+  { range: '50 – 99', label: 'Growth', price: '$0.52', detail: 'Per order, all-in. Storage $18 / m³ / month. Custom REST API integration included. Free returns processing for first 50 parcels per month.' },
+  { range: '100 – 199', label: 'Scale', price: '$0.46', detail: 'Per order, all-in. Storage $16 / m³ / month. Dedicated account manager. Quarterly channel-mix review and inventory rebalancing recommendations.' },
+  { range: '200+', label: 'Enterprise', price: '$0.42', detail: 'Per order, all-in. Storage $14 / m³ / month. Dedicated kitting cell. Priority dock for inbound air and sea freight. Custom SLA possible.' },
+];
+
+const reasonsHub = [
+  { tag: 'COST', label: '50–65% cheaper labour base', detail: 'Ukrainian operating cost vs Poland. Translates to $0.42 per order vs $0.95 EU 3PL baseline.' },
+  { tag: 'ACCESS', label: 'Ukrainian-only channels', detail: 'Rozetka, Prom, Kasta, Allo, Hubber require Ukrainian merchant of record — Polish or German 3PLs cannot serve these listings.' },
+  { tag: 'DISPATCH', label: 'EU 3-5 day delivery', detail: 'From Kyiv: 1,200km to Berlin, 750km to Warsaw. Nova Poshta International, DHL, UPS at intra-EU lane parity.' },
+  { tag: 'CUSTOMS', label: 'EU-Ukraine FTA', detail: 'Zero duty on most consumer goods under Association Agreement. IOSS supported for VAT collection at EU buyer checkout.' },
+];
+---
+<Base
+  title="Marketplace Fulfillment Ukraine 2026 — One Inventory, 5 Channels | MTP"
+  description="Multi-marketplace fulfillment from Kyiv. One inventory pool across Rozetka, Prom.ua, Kasta, Shopify EU, Amazon EU. From $0.42/order. EU 3-5 day dispatch. 23+ international brands."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-marketplaces/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-for-marketplaces-hero.jpg"
+  ogType="article"
+  autoArticle={false}
+  schema={schemaJson}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-marketpleysov/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-marketplaces/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+</Fragment>
+
+<!-- BREADCRUMBS -->
+<nav class="mp__bc" aria-label="Breadcrumbs">
+  <div class="mp__bc-inner">
+    <a href="/en/">Home</a><span aria-hidden="true">›</span>
+    <a href="/en/3pl-logistics/">Services</a><span aria-hidden="true">›</span>
+    <span class="mp__bc-current">Marketplace fulfillment</span>
+  </div>
+</nav>
+
+<!-- HERO — DARK INDUSTRIAL · LOGISTICS MAP VARIANT -->
+<section class="mp__hero" aria-label="Hero">
+  <div class="mp__hero-inner">
+    <div class="mp__hero-left">
+      <LabelChip text="MARKETPLACE FULFILLMENT · UKRAINE 2026" variant="red" />
+      <h1 class="mp__h1">
+        One inventory pool.
+        <em>Five marketplaces.</em>
+        Zero duplicate stock.
+      </h1>
+      <p class="mp__lede">
+        Single-warehouse multi-channel fulfillment from Kyiv. We operate the inventory pool that lets international brands sell on Rozetka, Prom.ua, Kasta, Allo, Hubber, Shopify EU, and Amazon EU simultaneously — without splitting stock, without ChannelEngine licence fees, and without reconciling per-channel allocations every Monday morning.
+      </p>
+      <div class="mp__hero-cta">
+        <HeroCTA
+          lang="en"
+          theme="dark"
+          button="Get Marketplace Quote →"
+          microCopy="✓ Reply within 24 hours · English-speaking team · NDA on request"
+          sourceTag="hero /en/fulfilment-for-marketplaces/"
+        />
+      </div>
+    </div>
+    <div class="mp__hero-right" aria-hidden="true">
+      <!-- Logistics Map: central Kyiv hub -> 7 marketplace nodes -->
+      <div class="mp__map">
+        <div class="mp__map-frame">
+          <div class="mp__map-label">CONTROL_ROOM · LIVE_TOPOLOGY</div>
+          <div class="mp__map-grid">
+            <div class="mp__map-node mp__map-node--rozetka"><span>ROZETKA</span><em>SKU 14,822</em></div>
+            <div class="mp__map-node mp__map-node--prom"><span>PROM.UA</span><em>SKU 14,822</em></div>
+            <div class="mp__map-node mp__map-node--shopify"><span>SHOPIFY EU</span><em>SKU 14,822</em></div>
+            <div class="mp__map-hub"><span>KYIV</span><em>WAREHOUSE</em><i>14,822 UNITS</i></div>
+            <div class="mp__map-node mp__map-node--amazon"><span>AMAZON EU</span><em>SKU 14,822</em></div>
+            <div class="mp__map-node mp__map-node--kasta"><span>KASTA</span><em>SKU 14,822</em></div>
+            <div class="mp__map-node mp__map-node--allo"><span>ALLO</span><em>SKU 14,822</em></div>
+          </div>
+          <div class="mp__map-foot">NODE_KYIV · LATENCY 800MS · CONSENSUS LIVE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVENTORY POOL TICKER — WOW ELEMENT -->
+  <div class="mp__ticker" role="region" aria-label="Live single-pool inventory across all channels">
+    <div class="mp__ticker-label">LIVE_INVENTORY_POOL · 7 CHANNELS · ONE LEDGER</div>
+    <div class="mp__ticker-track">
+      {[...inventoryPool, ...inventoryPool].map((row) => (
+        <span class="mp__ticker-item">
+          <span class="mp__ticker-ch">{row.ch}</span>
+          <span class="mp__ticker-sku">SKU {row.sku}</span>
+          <span class="mp__ticker-stat">{row.stat}</span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<StatsBar items={stats} tone="dark" />
+
+<!-- THESIS · ONE INVENTORY POOL -->
+<section class="mp__thesis" aria-labelledby="thesis-h2">
+  <div class="mp__container">
+    <LabelChip text="OPERATING THESIS · WHY ONE POOL" variant="red" />
+    <h2 class="mp__h2" id="thesis-h2">
+      Most multi-channel sellers split their stock across channels.
+      <em>That math costs you a third of your inventory turn.</em>
+    </h2>
+    <p class="mp__h2-sub">
+      Per-channel allocation looks safe on a spreadsheet — 4,000 units to Rozetka, 3,000 to Shopify, 1,000 to Amazon — until the Rozetka stock sells out on Wednesday and the Shopify pile is still sitting on Sunday. Now you are out of stock where buyers are converting and overstocked where they are not. The structural fix is a single pool that any channel can read from. We operate that pool.
+    </p>
+
+    <div class="mp__thesis-grid">
+      <article class="mp__thesis-col mp__thesis-col--bad">
+        <header class="mp__thesis-h">
+          <span class="mp__thesis-tag">SPLIT-INVENTORY 3PL · PER-CHANNEL ALLOCATION</span>
+          <h3 class="mp__thesis-name">What happens on Wednesday</h3>
+        </header>
+        <ul class="mp__thesis-list">
+          <li><span>Rozetka allocation depleted</span><span>buyers see "out of stock"</span></li>
+          <li><span>Shopify allocation 80% full</span><span>no inbound trigger</span></li>
+          <li><span>Amazon allocation 60% full</span><span>no rebalance</span></li>
+          <li><span>Manual rebalance needed</span><span>physical move 2-4 days</span></li>
+          <li><span>Stranded stock</span><span>across 3 channels simultaneously</span></li>
+        </ul>
+        <footer class="mp__thesis-total">
+          <span>Effective inventory turn impact</span>
+          <span class="mp__thesis-bad">−28 to −42% vs single pool</span>
+        </footer>
+      </article>
+
+      <article class="mp__thesis-col mp__thesis-col--good">
+        <header class="mp__thesis-h">
+          <span class="mp__thesis-tag mp__thesis-tag--good">MTP GROUP · SINGLE POOL DEFAULT</span>
+          <h3 class="mp__thesis-name">What happens on Wednesday</h3>
+        </header>
+        <ul class="mp__thesis-list">
+          <li><span>Master pool reads 4,322 units</span><span>across all 7 channels</span></li>
+          <li><span>Order anywhere → master pool decrement</span><span>800ms cross-channel push</span></li>
+          <li><span>No per-channel allocation logic</span><span>no rebalance ever</span></li>
+          <li><span>Stockout fires at master pool 0</span><span>not per channel</span></li>
+          <li><span>One reorder trigger</span><span>across the entire book</span></li>
+        </ul>
+        <footer class="mp__thesis-total">
+          <span>Effective inventory turn impact</span>
+          <span class="mp__thesis-good">Single-warehouse maximum</span>
+        </footer>
+      </article>
+    </div>
+
+    <p class="mp__thesis-foot">
+      Net: 23 international brands measured in our 2024–2026 dataset converted from per-channel-allocation 3PLs to our single-pool operation. Median impact: <strong>33% reduction in stranded stock</strong>, 18% improvement in inventory turn velocity, and elimination of the weekly per-channel rebalance ritual that ate 4-7 hours of operations time across their team. On an $800k inventory book, the freed working capital pays for the entire fulfillment relationship within four months.
+    </p>
+  </div>
+</section>
+
+<!-- THE CHANNELS — UKRAINIAN + EU + AMAZON -->
+<section class="mp__ch" aria-labelledby="ch-h2">
+  <div class="mp__container">
+    <LabelChip text="THE SEVEN CHANNELS · NATIVE INTEGRATIONS" variant="red" />
+    <h2 class="mp__h2" id="ch-h2">
+      Ukrainian marketplaces, EU storefronts, Amazon FBM.
+      <em>Same warehouse. Same pool. Same SLA.</em>
+    </h2>
+    <p class="mp__h2-sub">
+      Five Ukrainian channels (Rozetka, Prom.ua, Kasta, Allo, Hubber) plus two cross-border lanes (Shopify EU, Amazon EU). Each runs on a native API connector with isolated failure domains — a Rozetka API outage cannot stop your Shopify orders.
+    </p>
+
+    <ul class="mp__ch-grid" role="list">
+      {channels.map((c) => (
+        <li class={`mp__ch-card mp__ch-card--${c.tier}`}>
+          <header class="mp__ch-header">
+            <strong class="mp__ch-name">{c.name}</strong>
+            <span class="mp__ch-region">{c.region}</span>
+          </header>
+          <p class="mp__ch-detail">{c.detail}</p>
+        </li>
+      ))}
+    </ul>
+
+    <p class="mp__ch-foot">Selling on a marketplace not on this list — Etsy, eBay, Faire, OZON Global, Hepsiburada, Trendyol? We ship those too via custom REST connectors. <a href="/en/calculator/">Run the calculator →</a></p>
+  </div>
+</section>
+
+<!-- WHY UKRAINE AS HUB -->
+<section class="mp__hub" aria-labelledby="hub-h2">
+  <div class="mp__container">
+    <LabelChip text="WHY KYIV · GEOGRAPHIC + COST CASE" variant="red" />
+    <h2 class="mp__h2" id="hub-h2">Four reasons international brands route their Eastern European demand through a Ukrainian hub.</h2>
+    <p class="mp__h2-sub">Cheaper than Poland by half. Closer to Berlin than Madrid is. Direct access to seven channels Polish 3PLs cannot serve. Customs cleared under the EU-Ukraine Association Agreement.</p>
+
+    <ul class="mp__hub-grid" role="list">
+      {reasonsHub.map((r) => (
+        <li class="mp__hub-item">
+          <span class="mp__hub-tag">{r.tag}</span>
+          <strong class="mp__hub-label">{r.label}</strong>
+          <span class="mp__hub-detail">{r.detail}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="mp__hub-foot">Want the full Ukraine-as-hub thesis? <a href="/en/fulfillment-ukraine/">Read the long-form case →</a></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="mp__how" aria-labelledby="how-h2">
+  <div class="mp__container">
+    <LabelChip text="OPERATING MODEL · 4 STEPS" variant="muted" />
+    <h2 class="mp__h2" id="how-h2">From your inbound container to seven simultaneous storefronts.</h2>
+
+    <ol class="mp__steps" role="list">
+      <li class="mp__step">
+        <span class="mp__step-num">01</span>
+        <h3 class="mp__step-h">Inbound &amp; SKU master</h3>
+        <p>Stock arrives at our Kyiv dock by container, pallet, or air-freight box. Each unit barcoded with the master SKU on inbound, photographed, condition-graded, putaway-located within 24 hours. The master SKU record is created once and exposed simultaneously to every connected channel — there is no per-channel allocation step.</p>
+      </li>
+      <li class="mp__step">
+        <span class="mp__step-num">02</span>
+        <h3 class="mp__step-h">Channel sync · 800ms cross-push</h3>
+        <p>Order lands on Rozetka, Prom, Kasta, Shopify, Amazon, Allo, or Hubber. Native connector captures it within 60 seconds, posts to the master WMS, decrements the pool atomically, and pushes the new available count to every other channel within 800 milliseconds. No oversell. No reconcile job. No Monday-morning rebalance.</p>
+      </li>
+      <li class="mp__step">
+        <span class="mp__step-num">03</span>
+        <h3 class="mp__step-h">Pick · pack · marketplace-correct dispatch</h3>
+        <p>Pick wave triggers within 30 seconds. Pack-spec applied per-SKU including marketplace-specific labelling rules (Rozetka format, Prom format, Kasta format, Amazon FNSKU). Dispatch via Nova Poshta same day for Ukrainian channels, Nova Poshta International or DHL Express for EU, FedEx or UPS for international. Marketplace-correct ТТН automated.</p>
+      </li>
+      <li class="mp__step">
+        <span class="mp__step-num">04</span>
+        <h3 class="mp__step-h">Returns · grading · pool replenishment</h3>
+        <p>Returns route to a dedicated dock regardless of original channel. Grade-A returns to the master pool within 24 hours and instantly become available across all 7 channels. Grade-B routes to liquidation kits or PR-box assembly. Damaged goods documented for chargeback defence. Returns reuse the inbound photography pipeline so no additional handling fee.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TIME TO LIVE -->
+<section class="mp__ttl" aria-labelledby="ttl-h2">
+  <div class="mp__container">
+    <LabelChip text="TIME TO LIVE · ONBOARDING" variant="red" />
+    <h2 class="mp__h2" id="ttl-h2">
+      From contract signature to first dispatched parcel.
+      <em>Median 11 days for international brands.</em>
+    </h2>
+    <p class="mp__h2-sub">23 international brands onboarded since January 2024. Range: 6 to 32 days, depending on how much regulatory scaffolding you already have in place.</p>
+
+    <div class="mp__ttl-grid">
+      <article class="mp__ttl-block">
+        <header class="mp__ttl-h">
+          <span class="mp__ttl-tag">DAYS 1–2 · CONTRACT &amp; KYC</span>
+          <h3 class="mp__ttl-name">Paper layer</h3>
+        </header>
+        <p>Master service agreement, NDA, KYC documentation, Ukrainian merchant-of-record assignment if required. Most brands complete this in one business day; only legal cycles in larger US/EU corporates take longer.</p>
+      </article>
+      <article class="mp__ttl-block">
+        <header class="mp__ttl-h">
+          <span class="mp__ttl-tag">DAYS 2–6 · INBOUND &amp; SKU MASTER</span>
+          <h3 class="mp__ttl-name">Stock layer</h3>
+        </header>
+        <p>Sea/air freight from origin (typically 14-30 days outside this window if not already in transit). Once inbound at our dock: receiving, barcoding, putaway, SKU master record creation. 1-2 days for under 200 SKUs; 3-4 days for 500+ SKUs.</p>
+      </article>
+      <article class="mp__ttl-block">
+        <header class="mp__ttl-h">
+          <span class="mp__ttl-tag">DAYS 4–9 · CHANNEL CONNECTORS</span>
+          <h3 class="mp__ttl-name">Integration layer</h3>
+        </header>
+        <p>Marketplace seller-account registrations (Rozetka, Prom, Kasta — handled by our team end-to-end). Native API connector wiring on our side. Test orders dispatched. Production cutover with rollback plan for the first 72 hours.</p>
+      </article>
+      <article class="mp__ttl-block">
+        <header class="mp__ttl-h">
+          <span class="mp__ttl-tag">DAYS 7–14 · LIVE &amp; TUNED</span>
+          <h3 class="mp__ttl-name">Operations layer</h3>
+        </header>
+        <p>First live orders dispatched. Pack-spec adjustments based on first-week return data. Velocity tuning. Account manager weekly review until day 30. After day 30 you operate at steady state with a monthly business review.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="mp__tiers" aria-labelledby="tiers-h2">
+  <div class="mp__container">
+    <LabelChip text="PRICING · BY VOLUME · NO CHANNEL SURCHARGES" variant="red" />
+    <h2 class="mp__h2" id="tiers-h2">Four tiers. Same rate whether the order ships through Rozetka or Amazon EU.</h2>
+    <p class="mp__h2-sub">Per-order fee covers pick, pack, marketplace-correct labelling, dispatch booking. No setup fee, no per-channel surcharge, no peak-season pricing. Storage volumetric per cubic metre, indexed quarterly to the published USD-UAH NBU reference rate.</p>
+
+    <div class="mp__tiers-grid">
+      {tiers.map((t) => (
+        <article class="mp__tier">
+          <header class="mp__tier-h">
+            <span class="mp__tier-band">{t.range} orders / day</span>
+            <span class="mp__tier-name">{t.label}</span>
+          </header>
+          <div class="mp__tier-price">
+            <span class="mp__tier-cur">$</span>
+            <span class="mp__tier-num">{t.price.replace('$', '')}</span>
+            <span class="mp__tier-unit">/ order</span>
+          </div>
+          <p class="mp__tier-detail">{t.detail}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="mp__tiers-foot">Need a custom quote against an SKU mix and channel split? <a href="/en/calculator/">Calculator →</a> · <a href="/en/prices/">All prices →</a></p>
+  </div>
+</section>
+
+<!-- TRUST · OPERATIONAL CONTINUITY -->
+<section class="mp__trust" aria-labelledby="trust-h2">
+  <div class="mp__container">
+    <LabelChip text="OPERATIONAL CONTINUITY · 2022 – 2026" variant="dark" />
+    <h2 class="mp__h2 mp__h2--inverse" id="trust-h2">
+      We have run the multi-channel pool through every wave of the war.
+      <em>Without losing a parcel or breaking the SLA.</em>
+    </h2>
+    <div class="mp__trust-grid">
+      <article class="mp__trust-card">
+        <h3>Power continuity</h3>
+        <p>3 diesel gensets per facility in N+1 redundancy. 96-hour fuel reserve. Zero recorded full-day operational pauses since February 2022 across more than 1,200 air-raid alerts.</p>
+      </article>
+      <article class="mp__trust-card">
+        <h3>Connectivity</h3>
+        <p>Starlink primary plus dual fibre secondary. Per-channel API uptime tracked at 99.94% in 2025. Connector failure isolation — one channel down does not pause the others.</p>
+      </article>
+      <article class="mp__trust-card">
+        <h3>Disaster recovery</h3>
+        <p>Written DR plan triggers parcel rerouting to a partner facility in Lviv (Western Ukraine, 530 km from Kyiv) within 6 hours of a major incident. Inventory pool rebuilds within 48 hours.</p>
+      </article>
+      <article class="mp__trust-card">
+        <h3>Cargo insurance</h3>
+        <p>Up to €3M per incident through Lloyds plus a Ukrainian war-risk syndicate. War-related inventory loss covered — most US 3PL policies explicitly exclude this; ours does not.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT IS FOR -->
+<section class="mp__fit" aria-labelledby="fit-h2">
+  <div class="mp__container">
+    <LabelChip text="HONEST FIT CHECK" variant="muted" />
+    <h2 class="mp__h2" id="fit-h2">When a Ukrainian multi-channel pool fits — and when it does not.</h2>
+
+    <div class="mp__fit-grid">
+      <div class="mp__fit-col mp__fit-col--yes">
+        <h3>Right for you if:</h3>
+        <ul>
+          <li>You are an EU or US DTC brand that wants to sell on Rozetka, Prom, Kasta and your own Shopify EU storefront simultaneously without splitting inventory three ways.</li>
+          <li>You currently run parallel 3PLs in Poland and Germany and want to consolidate into a single Eastern European hub at 50–65% of the cost.</li>
+          <li>You are entering Ukraine and the CIS for the first time and need a partner that holds the seller agreements, the merchant-of-record paperwork, and the warehouse — all under one contract.</li>
+          <li>You sell on five or more channels and the per-channel allocation rebalance is eating 4-7 hours of operations time every week.</li>
+          <li>Your SKU velocity is uneven across channels and you have stranded stock on the slow side and stockouts on the fast side every month.</li>
+        </ul>
+      </div>
+      <div class="mp__fit-col mp__fit-col--no">
+        <h3>Wrong for you if:</h3>
+        <ul>
+          <li>Your SLA target is Amazon Prime same-day across the EU — Ukrainian last-mile is not yet at intra-EU same-day parity for the cross-border lanes.</li>
+          <li>You sell exclusively into the US under 48-hour ship tolerance — stay with a domestic US 3PL.</li>
+          <li>Your products require true cold chain (2-8°C) — biologics, mRNA pharma, live-microbiome cosmetics. We route those to a partner facility but it is not on our default rate card.</li>
+          <li>You require FDA-bonded storage for OTC drugs under monograph review — we do not run an FDA zone.</li>
+          <li>Your monthly volume is under 200 orders — the $125 minimum makes the unit economics worse than a small US or EU 3PL.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section class="mp__links" aria-labelledby="links-h2">
+  <div class="mp__container">
+    <LabelChip text="EXPLORE FURTHER" variant="red" />
+    <h2 class="mp__h2" id="links-h2">More on how we operate.</h2>
+    <ul class="mp__links-grid" role="list">
+      <li><a href="/en/calculator/"><strong>Pricing calculator →</strong><span>Model your monthly multi-channel invoice in 30 seconds.</span></a></li>
+      <li><a href="/en/prices/"><strong>Prices →</strong><span>Full per-service rate card, all channels.</span></a></li>
+      <li><a href="/en/fulfilment-for-online-store/"><strong>General ecommerce fulfillment →</strong><span>For single-channel branded DTC operations.</span></a></li>
+      <li><a href="/en/fulfillment-for-rozetka-sellers/"><strong>Rozetka deep-dive →</strong><span>Rozetka-specific operating model and seller economics.</span></a></li>
+      <li><a href="/en/fulfilment-prom/"><strong>Prom.ua deep-dive →</strong><span>Prom.ua API, EVO ecosystem, KeyCRM bridge.</span></a></li>
+      <li><a href="/en/fulfillment-ukraine/"><strong>Why Ukraine →</strong><span>Geographic, regulatory, and cost case for a Kyiv hub.</span></a></li>
+      <li><a href="/en/fulfilment-for-cosmetics/"><strong>Cosmetics fulfillment →</strong><span>FEFO discipline, 18-22°C controlled storage.</span></a></li>
+      <li><a href="/en/3pl-logistics/"><strong>3PL logistics overview →</strong><span>Full service catalogue and capabilities.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="mp__faq" aria-labelledby="faq-h2">
+  <div class="mp__container">
+    <LabelChip text="FREQUENTLY ASKED · LONG ANSWERS" variant="muted" />
+    <h2 class="mp__h2" id="faq-h2">Twelve questions every multi-channel operator asks before signing.</h2>
+    <AccordionGroup items={faq} />
+  </div>
+</section>
+
+<AuthorByline lang="en" />
+
+<style is:global>
+  /* ===== MARKETPLACES EN — INDUSTRIAL ARCHETYPE · LOGISTICS MAP (mp prefix) ===== */
+  .mp__container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* BREADCRUMBS */
+  .mp__bc { background: #fff; border-bottom: 1px solid #eaeaea; }
+  .mp__bc-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: #6b6b6b; display: flex; gap: 8px; align-items: center; }
+  .mp__bc-inner a { color: #6b6b6b; text-decoration: none; }
+  .mp__bc-inner a:hover { color: #e63329; }
+  .mp__bc-current { color: #000; font-weight: 500; }
+
+  /* HERO — DARK INDUSTRIAL · LOGISTICS MAP */
+  .mp__hero { background: #000; color: #fff; padding: 80px 24px 0; border-bottom: 1px solid #1f1f1f; position: relative; }
+  .mp__hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; padding-bottom: 48px; }
+  .mp__hero-left { display: flex; flex-direction: column; gap: 24px; border-left: 3px solid #e63329; padding-left: 32px; }
+  .mp__h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 4.4vw, 3.8rem); line-height: 1.05; color: #fff; margin: 0; font-weight: 400; }
+  .mp__h1 em { font-style: italic; color: #e63329; }
+  .mp__lede { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #c8c8c8; margin: 0; }
+  .mp__hero-cta { margin-top: 8px; }
+
+  /* LOGISTICS MAP */
+  .mp__map { display: flex; align-items: center; justify-content: center; }
+  .mp__map-frame { width: 100%; max-width: 480px; border: 2px solid #e63329; padding: 16px; background: #0a0a0a; position: relative; }
+  .mp__map-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: #e63329; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #2a0d0d; }
+  .mp__map-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1.1fr 1fr; gap: 14px; min-height: 320px; align-items: center; justify-items: center; position: relative; }
+  .mp__map-node { border: 1.5px solid #e63329; padding: 8px 10px; background: #000; min-width: 100%; text-align: center; font-family: 'JetBrains Mono', monospace; position: relative; transition: background 0.2s; }
+  .mp__map-node span { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; text-transform: uppercase; }
+  .mp__map-node em { display: block; font-style: normal; font-size: 0.62rem; color: #e63329; margin-top: 3px; letter-spacing: 0.04em; }
+  .mp__map-hub { grid-column: 2; grid-row: 2; border: 2px solid #e63329; background: #e63329; padding: 12px 8px; text-align: center; font-family: 'JetBrains Mono', monospace; min-width: 100%; }
+  .mp__map-hub span { display: block; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; color: #000; text-transform: uppercase; }
+  .mp__map-hub em { display: block; font-style: normal; font-size: 0.62rem; color: #000; margin-top: 2px; letter-spacing: 0.06em; opacity: 0.8; }
+  .mp__map-hub i { display: block; font-style: normal; font-size: 0.62rem; color: #000; margin-top: 4px; padding-top: 4px; border-top: 1px solid rgba(0,0,0,0.4); font-weight: 700; }
+  .mp__map-foot { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; color: #888; text-transform: uppercase; margin-top: 14px; padding-top: 10px; border-top: 1px solid #2a0d0d; text-align: center; }
+
+  /* TICKER */
+  .mp__ticker { background: #0a0a0a; border-top: 2px solid #e63329; border-bottom: 2px solid #e63329; padding: 16px 0; overflow: hidden; position: relative; }
+  .mp__ticker-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; color: #e63329; text-transform: uppercase; padding: 0 24px 10px; max-width: 1200px; margin: 0 auto; }
+  .mp__ticker-track { display: flex; gap: 36px; white-space: nowrap; animation: mp-scroll 50s linear infinite; padding-left: 24px; }
+  .mp__ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #fff; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 16px; flex-shrink: 0; }
+  .mp__ticker-ch { color: #e63329; font-weight: 700; }
+  .mp__ticker-sku { color: #fff; }
+  .mp__ticker-stat { color: #888; font-size: 0.66rem; padding: 2px 6px; border: 1px solid #2a0d0d; }
+  @keyframes mp-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* H2 PATTERN */
+  .mp__h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.4vw, 2.9rem); line-height: 1.1; color: #000; font-weight: 400; margin: 16px 0 16px; }
+  .mp__h2 em { font-style: italic; color: #e63329; }
+  .mp__h2--inverse { color: #fff; }
+  .mp__h2--inverse em { color: #e63329; }
+  .mp__h2-sub { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.65; color: #444; max-width: 880px; margin: 0 0 40px; }
+
+  /* THESIS */
+  .mp__thesis { background: #fff; padding: 96px 24px; }
+  .mp__thesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0; }
+  .mp__thesis-col { border: 2px solid #000; padding: 24px; background: #fafafa; }
+  .mp__thesis-col--good { border-color: #e63329; background: #fff; }
+  .mp__thesis-h { padding-bottom: 16px; border-bottom: 2px solid #000; margin-bottom: 16px; }
+  .mp__thesis-col--good .mp__thesis-h { border-bottom-color: #e63329; }
+  .mp__thesis-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #555; }
+  .mp__thesis-tag--good { color: #e63329; }
+  .mp__thesis-name { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; font-weight: 400; margin: 6px 0 0; }
+  .mp__thesis-list { list-style: none; padding: 0; margin: 0 0 18px; }
+  .mp__thesis-list li { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px dashed #ddd; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #333; }
+  .mp__thesis-list li:last-child { border-bottom: none; }
+  .mp__thesis-list li > span:last-child { color: #777; font-size: 0.85rem; text-align: right; }
+  .mp__thesis-total { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 2px solid #000; }
+  .mp__thesis-col--good .mp__thesis-total { border-top-color: #e63329; }
+  .mp__thesis-total span:first-child { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #000; font-weight: 600; }
+  .mp__thesis-bad { font-family: 'JetBrains Mono', monospace; font-size: 0.96rem; font-weight: 700; color: #000; }
+  .mp__thesis-good { font-family: 'JetBrains Mono', monospace; font-size: 0.96rem; font-weight: 700; color: #e63329; }
+  .mp__thesis-foot { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: #333; max-width: 880px; }
+
+  /* CHANNELS */
+  .mp__ch { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+  .mp__ch-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .mp__ch-card { background: #fff; border: 2px solid #000; padding: 22px; transition: transform 0.2s; }
+  .mp__ch-card--main { border-color: #e63329; }
+  .mp__ch-card--cross-border { border-style: dashed; }
+  .mp__ch-card:hover { transform: translateY(-2px); }
+  .mp__ch-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #aaa; gap: 12px; }
+  .mp__ch-name { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; font-weight: 400; }
+  .mp__ch-region { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; color: #e63329; text-transform: uppercase; text-align: right; }
+  .mp__ch-detail { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; line-height: 1.55; color: #444; margin: 0; }
+  .mp__ch-foot { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #333; margin-top: 32px; }
+  .mp__ch-foot a { color: #e63329; text-decoration: underline; text-decoration-thickness: 2px; }
+
+  /* HUB */
+  .mp__hub { background: #000; color: #fff; padding: 96px 24px; }
+  .mp__hub .mp__h2 { color: #fff; }
+  .mp__hub .mp__h2-sub { color: #c8c8c8; }
+  .mp__hub-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .mp__hub-item { display: flex; flex-direction: column; gap: 8px; border: 2px solid #e63329; padding: 22px; background: #0a0a0a; }
+  .mp__hub-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: #e63329; text-transform: uppercase; }
+  .mp__hub-label { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: #fff; font-weight: 400; }
+  .mp__hub-detail { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.55; color: #c8c8c8; }
+  .mp__hub-foot { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #c8c8c8; margin-top: 32px; }
+  .mp__hub-foot a { color: #e63329; text-decoration: underline; text-decoration-thickness: 2px; }
+
+  /* HOW · STEPS */
+  .mp__how { background: #fff; padding: 96px 24px; }
+  .mp__steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .mp__step { background: #fafafa; border-left: 3px solid #e63329; padding: 24px; }
+  .mp__step-num { font-family: 'JetBrains Mono', monospace; font-size: 1.6rem; font-weight: 700; color: #e63329; display: block; margin-bottom: 8px; }
+  .mp__step-h { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: #000; font-weight: 400; margin: 0 0 10px; }
+  .mp__step p { font-family: 'DM Sans', sans-serif; font-size: 0.96rem; line-height: 1.6; color: #333; margin: 0; }
+
+  /* TTL */
+  .mp__ttl { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+  .mp__ttl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .mp__ttl-block { background: #fff; border: 2px solid #000; padding: 22px; }
+  .mp__ttl-h { padding-bottom: 12px; border-bottom: 2px solid #e63329; margin-bottom: 14px; }
+  .mp__ttl-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; color: #e63329; text-transform: uppercase; }
+  .mp__ttl-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #000; font-weight: 400; margin: 6px 0 0; }
+  .mp__ttl-block p { font-family: 'DM Sans', sans-serif; font-size: 0.94rem; line-height: 1.55; color: #333; margin: 0; }
+
+  /* TIERS */
+  .mp__tiers { background: #fff; padding: 96px 24px; }
+  .mp__tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .mp__tier { background: #fafafa; border: 2px solid #000; padding: 24px; transition: border-color 0.2s; }
+  .mp__tier:hover { border-color: #e63329; }
+  .mp__tier-h { padding-bottom: 14px; border-bottom: 2px solid #e63329; margin-bottom: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .mp__tier-band { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+  .mp__tier-name { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: #000; font-weight: 400; }
+  .mp__tier-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 12px; }
+  .mp__tier-cur { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: #e63329; font-weight: 700; }
+  .mp__tier-num { font-family: 'DM Serif Display', serif; font-size: 2.6rem; color: #000; font-weight: 400; line-height: 1; }
+  .mp__tier-unit { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: #555; }
+  .mp__tier-detail { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; line-height: 1.55; color: #444; margin: 0; }
+  .mp__tiers-foot { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #333; margin-top: 32px; }
+  .mp__tiers-foot a { color: #e63329; text-decoration: underline; text-decoration-thickness: 2px; }
+
+  /* TRUST */
+  .mp__trust { background: #000; color: #fff; padding: 96px 24px; }
+  .mp__trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .mp__trust-card { background: #0a0a0a; border: 2px solid #e63329; padding: 22px; }
+  .mp__trust-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: #fff; font-weight: 400; margin: 0 0 10px; padding-bottom: 8px; border-bottom: 1px dashed #2a0d0d; }
+  .mp__trust-card p { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.55; color: #c8c8c8; margin: 0; }
+
+  /* FIT */
+  .mp__fit { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+  .mp__fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .mp__fit-col { background: #fff; padding: 28px; border: 2px solid #000; }
+  .mp__fit-col--yes { border-color: #e63329; }
+  .mp__fit-col h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #000; font-weight: 400; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 2px solid #e63329; }
+  .mp__fit-col ul { list-style: none; padding: 0; margin: 0; }
+  .mp__fit-col li { font-family: 'DM Sans', sans-serif; font-size: 0.94rem; line-height: 1.55; color: #333; padding: 8px 0; border-bottom: 1px dashed #ddd; position: relative; padding-left: 22px; }
+  .mp__fit-col li:last-child { border-bottom: none; }
+  .mp__fit-col--yes li::before { content: '✓'; position: absolute; left: 0; color: #e63329; font-weight: 700; }
+  .mp__fit-col--no li::before { content: '✕'; position: absolute; left: 0; color: #888; font-weight: 700; }
+
+  /* LINKS */
+  .mp__links { background: #fff; padding: 80px 24px; }
+  .mp__links-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .mp__links-grid li a { display: block; padding: 18px 22px; border: 2px solid #000; background: #fafafa; text-decoration: none; transition: border-color 0.2s, transform 0.15s; }
+  .mp__links-grid li a:hover { border-color: #e63329; transform: translateY(-2px); }
+  .mp__links-grid strong { display: block; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #000; font-weight: 400; margin-bottom: 4px; }
+  .mp__links-grid span { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: #555; }
+
+  /* FAQ */
+  .mp__faq { background: #fafafa; padding: 96px 24px; border-top: 2px solid #000; }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .mp__hero-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 36px; }
+    .mp__hero-left { padding-left: 20px; }
+    .mp__map-frame { max-width: 100%; }
+    .mp__thesis-grid, .mp__fit-grid { grid-template-columns: 1fr; }
+    .mp__steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .mp__hero { padding: 56px 16px 0; }
+    .mp__h1 { font-size: 2.1rem; }
+    .mp__lede { font-size: 0.98rem; }
+    .mp__h2 { font-size: 1.7rem; }
+    .mp__h2-sub { font-size: 0.96rem; }
+    .mp__thesis, .mp__ch, .mp__hub, .mp__how, .mp__ttl, .mp__tiers, .mp__trust, .mp__fit, .mp__faq { padding: 56px 16px; }
+    .mp__map-grid { grid-template-rows: auto auto auto; gap: 8px; min-height: 0; }
+    .mp__map-node, .mp__map-hub { padding: 6px 8px; }
+    .mp__map-node span, .mp__map-hub span { font-size: 0.62rem; }
+    .mp__map-node em, .mp__map-hub em, .mp__map-hub i { font-size: 0.56rem; }
+  }
+</style>
+
+</Base>
