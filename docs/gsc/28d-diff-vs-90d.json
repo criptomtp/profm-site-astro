@@ -1,0 +1,589 @@
+{
+  "new_queries": [
+    {
+      "query": "rozetka com ua доставка в молдову",
+      "clicks_28d": 0,
+      "impressions_28d": 30,
+      "ctr_pct": 0,
+      "avg_position": 11.6
+    },
+    {
+      "query": "kasta.ua international shipping",
+      "clicks_28d": 0,
+      "impressions_28d": 20,
+      "ctr_pct": 0,
+      "avg_position": 9.8
+    },
+    {
+      "query": "логістика для інтернет-магазину",
+      "clicks_28d": 0,
+      "impressions_28d": 16,
+      "ctr_pct": 0,
+      "avg_position": 32.4
+    },
+    {
+      "query": "fulfillment cost per order",
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "ctr_pct": 0,
+      "avg_position": 43
+    },
+    {
+      "query": "b2b фулфілмент в україні",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "ctr_pct": 0,
+      "avg_position": 42.5
+    },
+    {
+      "query": "fulfillment pricing",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "ctr_pct": 0,
+      "avg_position": 65.2
+    },
+    {
+      "query": "b2b fulfillment in ukraine",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "ctr_pct": 0,
+      "avg_position": 44.8
+    },
+    {
+      "query": "fulfillment in ukraine",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "ctr_pct": 0,
+      "avg_position": 45.1
+    }
+  ],
+  "striking_distance_new": [
+    {
+      "query": "rozetka com ua доставка в молдову",
+      "clicks_28d": 0,
+      "impressions_28d": 30,
+      "ctr_pct": 0,
+      "avg_position": 11.6
+    },
+    {
+      "query": "kasta.ua international shipping",
+      "clicks_28d": 0,
+      "impressions_28d": 20,
+      "ctr_pct": 0,
+      "avg_position": 9.8
+    }
+  ],
+  "winners_pos_change": [
+    {
+      "query": "3pl услуги",
+      "pos_90d": 56.5,
+      "pos_28d": 33.3,
+      "delta": 23.2,
+      "imp_90d": 2,
+      "imp_28d": 10,
+      "clicks_28d": 0
+    },
+    {
+      "query": "fulfillment costs",
+      "pos_90d": 90.6,
+      "pos_28d": 69.3,
+      "delta": 21.3,
+      "imp_90d": 5,
+      "imp_28d": 21,
+      "clicks_28d": 0
+    },
+    {
+      "query": "послуги складу",
+      "pos_90d": 37.1,
+      "pos_28d": 20.4,
+      "delta": 16.7,
+      "imp_90d": 9,
+      "imp_28d": 37,
+      "clicks_28d": 0
+    },
+    {
+      "query": "как открыть свой магазин в украине",
+      "pos_90d": 51.3,
+      "pos_28d": 38.7,
+      "delta": 12.6,
+      "imp_90d": 3,
+      "imp_28d": 10,
+      "clicks_28d": 0
+    },
+    {
+      "query": "фулфилмент киев",
+      "pos_90d": 29.8,
+      "pos_28d": 17.3,
+      "delta": 12.5,
+      "imp_90d": 9,
+      "imp_28d": 33,
+      "clicks_28d": 1
+    },
+    {
+      "query": "запуск интернет магазина с нуля",
+      "pos_90d": 59.3,
+      "pos_28d": 47.1,
+      "delta": 12.2,
+      "imp_90d": 3,
+      "imp_28d": 11,
+      "clicks_28d": 0
+    },
+    {
+      "query": "открыть интернет магазин с нуля пошаговая инструкция",
+      "pos_90d": 72.3,
+      "pos_28d": 63.2,
+      "delta": 9.1,
+      "imp_90d": 3,
+      "imp_28d": 12,
+      "clicks_28d": 0
+    },
+    {
+      "query": "рро касовий апарат",
+      "pos_90d": 47,
+      "pos_28d": 38,
+      "delta": 9,
+      "imp_90d": 1,
+      "imp_28d": 12,
+      "clicks_28d": 0
+    },
+    {
+      "query": "склад фулфилмент",
+      "pos_90d": 16.5,
+      "pos_28d": 10.1,
+      "delta": 6.4,
+      "imp_90d": 31,
+      "imp_28d": 82,
+      "clicks_28d": 0
+    },
+    {
+      "query": "как создать свой интернет магазин",
+      "pos_90d": 27.4,
+      "pos_28d": 21.7,
+      "delta": 5.7,
+      "imp_90d": 5,
+      "imp_28d": 16,
+      "clicks_28d": 0
+    },
+    {
+      "query": "рро",
+      "pos_90d": 44.1,
+      "pos_28d": 39.5,
+      "delta": 4.6,
+      "imp_90d": 7,
+      "imp_28d": 20,
+      "clicks_28d": 0
+    },
+    {
+      "query": "как запустить свой интернет магазин",
+      "pos_90d": 15.4,
+      "pos_28d": 11.5,
+      "delta": 3.9,
+      "imp_90d": 5,
+      "imp_28d": 16,
+      "clicks_28d": 0
+    },
+    {
+      "query": "аутсорсинг приема заказов",
+      "pos_90d": 10.7,
+      "pos_28d": 7.1,
+      "delta": 3.6,
+      "imp_90d": 3,
+      "imp_28d": 18,
+      "clicks_28d": 0
+    },
+    {
+      "query": "fulfillment beauty-cosmetics",
+      "pos_90d": 83.5,
+      "pos_28d": 80.3,
+      "delta": 3.2,
+      "imp_90d": 2,
+      "imp_28d": 22,
+      "clicks_28d": 0
+    },
+    {
+      "query": "склад фулфілмент дніпро",
+      "pos_90d": 51.1,
+      "pos_28d": 48.1,
+      "delta": 3.0,
+      "imp_90d": 14,
+      "imp_28d": 24,
+      "clicks_28d": 0
+    }
+  ],
+  "losers_pos_change": [
+    {
+      "query": "cosmetics fulfillment services",
+      "pos_90d": 95,
+      "pos_28d": 98.1,
+      "delta": -3.1,
+      "imp_90d": 2,
+      "imp_28d": 14,
+      "clicks_28d": 0
+    },
+    {
+      "query": "fulfillment cost calculator",
+      "pos_90d": 5.8,
+      "pos_28d": 8.9,
+      "delta": -3.1,
+      "imp_90d": 4,
+      "imp_28d": 13,
+      "clicks_28d": 0
+    },
+    {
+      "query": "fiscal representation ukraine",
+      "pos_90d": 73.9,
+      "pos_28d": 77.3,
+      "delta": -3.4,
+      "imp_90d": 8,
+      "imp_28d": 27,
+      "clicks_28d": 0
+    },
+    {
+      "query": "как запустить интернет магазин с нуля",
+      "pos_90d": 36.4,
+      "pos_28d": 40,
+      "delta": -3.6,
+      "imp_90d": 5,
+      "imp_28d": 13,
+      "clicks_28d": 0
+    },
+    {
+      "query": "логистика складские услуги",
+      "pos_90d": 65,
+      "pos_28d": 69,
+      "delta": -4,
+      "imp_90d": 1,
+      "imp_28d": 13,
+      "clicks_28d": 0
+    },
+    {
+      "query": "cosmetics fulfilment",
+      "pos_90d": 83.8,
+      "pos_28d": 89.3,
+      "delta": -5.5,
+      "imp_90d": 6,
+      "imp_28d": 43,
+      "clicks_28d": 0
+    },
+    {
+      "query": "fulfilment логистика запорожье",
+      "pos_90d": 25.8,
+      "pos_28d": 31.7,
+      "delta": -5.9,
+      "imp_90d": 4,
+      "imp_28d": 10,
+      "clicks_28d": 0
+    },
+    {
+      "query": "order fulfilment costs",
+      "pos_90d": 33.2,
+      "pos_28d": 44.3,
+      "delta": -11.1,
+      "imp_90d": 5,
+      "imp_28d": 14,
+      "clicks_28d": 0
+    }
+  ],
+  "page_changes": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/",
+      "pos_90d": 23.5,
+      "pos_28d": 36.4,
+      "delta": -12.9,
+      "imp_90d": 8,
+      "imp_28d": 35,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "pos_90d": 4,
+      "pos_28d": 14.6,
+      "delta": -10.6,
+      "imp_90d": 1,
+      "imp_28d": 140,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd",
+      "pos_90d": 35.9,
+      "pos_28d": 46.1,
+      "delta": -10.2,
+      "imp_90d": 12,
+      "imp_28d": 48,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/",
+      "pos_90d": 7,
+      "pos_28d": 16.4,
+      "delta": -9.4,
+      "imp_90d": 1,
+      "imp_28d": 68,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/about/",
+      "pos_90d": 3.2,
+      "pos_28d": 11.7,
+      "delta": -8.5,
+      "imp_90d": 21,
+      "imp_28d": 62,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/",
+      "pos_90d": 4.8,
+      "pos_28d": 13.1,
+      "delta": -8.3,
+      "imp_90d": 32,
+      "imp_28d": 97,
+      "clicks_28d": 1,
+      "ctr_28d": 1.03
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-cosmetics/",
+      "pos_90d": 63.9,
+      "pos_28d": 69.7,
+      "delta": -5.8,
+      "imp_90d": 36,
+      "imp_28d": 221,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/online-store-during-wartime/",
+      "pos_90d": 4.5,
+      "pos_28d": 10.0,
+      "delta": -5.5,
+      "imp_90d": 4,
+      "imp_28d": 32,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/services/",
+      "pos_90d": 11.2,
+      "pos_28d": 16.5,
+      "delta": -5.3,
+      "imp_90d": 22,
+      "imp_28d": 79,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
+      "pos_90d": 26.9,
+      "pos_28d": 32.0,
+      "delta": -5.1,
+      "imp_90d": 72,
+      "imp_28d": 219,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/guide/",
+      "pos_90d": 7,
+      "pos_28d": 11.4,
+      "delta": -4.4,
+      "imp_90d": 18,
+      "imp_28d": 53,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/33bmy57t51-kakoi-biznes-otkrit-v-ukraine-vozmozhnos",
+      "pos_90d": 38,
+      "pos_28d": 41.9,
+      "delta": -3.9,
+      "imp_90d": 14,
+      "imp_28d": 41,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-prom/",
+      "pos_90d": 4,
+      "pos_28d": 7.6,
+      "delta": -3.6,
+      "imp_90d": 2,
+      "imp_28d": 14246,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/",
+      "pos_90d": 12.4,
+      "pos_28d": 15.8,
+      "delta": -3.4,
+      "imp_90d": 356,
+      "imp_28d": 824,
+      "clicks_28d": 12,
+      "ctr_28d": 1.46
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/",
+      "pos_90d": 6.1,
+      "pos_28d": 9.2,
+      "delta": -3.1,
+      "imp_90d": 7,
+      "imp_28d": 47,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-fulfilment/",
+      "pos_90d": 40.6,
+      "pos_28d": 37.6,
+      "delta": 3.0,
+      "imp_90d": 24,
+      "imp_28d": 66,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
+      "pos_90d": 44.5,
+      "pos_28d": 41.2,
+      "delta": 3.3,
+      "imp_90d": 25,
+      "imp_28d": 73,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-kiev/",
+      "pos_90d": 35.3,
+      "pos_28d": 32.0,
+      "delta": 3.3,
+      "imp_90d": 18,
+      "imp_28d": 47,
+      "clicks_28d": 2,
+      "ctr_28d": 4.26
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
+      "pos_90d": 35.2,
+      "pos_28d": 31.5,
+      "delta": 3.7,
+      "imp_90d": 39,
+      "imp_28d": 86,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-cost-guide/",
+      "pos_90d": 21.7,
+      "pos_28d": 17.9,
+      "delta": 3.8,
+      "imp_90d": 45,
+      "imp_28d": 173,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "pos_90d": 13.8,
+      "pos_28d": 9.4,
+      "delta": 4.4,
+      "imp_90d": 6,
+      "imp_28d": 50,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-marketpleysov/",
+      "pos_90d": 25.2,
+      "pos_28d": 18.8,
+      "delta": 6.4,
+      "imp_90d": 34,
+      "imp_28d": 111,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/",
+      "pos_90d": 24.1,
+      "pos_28d": 17.7,
+      "delta": 6.4,
+      "imp_90d": 25,
+      "imp_28d": 81,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/about/",
+      "pos_90d": 23.4,
+      "pos_28d": 17.0,
+      "delta": 6.4,
+      "imp_90d": 23,
+      "imp_28d": 66,
+      "clicks_28d": 1,
+      "ctr_28d": 1.52
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/",
+      "pos_90d": 32.3,
+      "pos_28d": 24.5,
+      "delta": 7.8,
+      "imp_90d": 6,
+      "imp_28d": 44,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "pos_90d": 28.9,
+      "pos_28d": 20.9,
+      "delta": 8.0,
+      "imp_90d": 44,
+      "imp_28d": 330,
+      "clicks_28d": 2,
+      "ctr_28d": 0.61
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/expand-to-european-marketplaces/",
+      "pos_90d": 36,
+      "pos_28d": 27.7,
+      "delta": 8.3,
+      "imp_90d": 19,
+      "imp_28d": 104,
+      "clicks_28d": 2,
+      "ctr_28d": 1.92
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t",
+      "pos_90d": 78.6,
+      "pos_28d": 70.1,
+      "delta": 8.5,
+      "imp_90d": 12,
+      "imp_28d": 34,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/",
+      "pos_90d": 57.6,
+      "pos_28d": 48.3,
+      "delta": 9.3,
+      "imp_90d": 81,
+      "imp_28d": 224,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "pos_90d": 40.8,
+      "pos_28d": 31.4,
+      "delta": 9.4,
+      "imp_90d": 56,
+      "imp_28d": 223,
+      "clicks_28d": 0,
+      "ctr_28d": 0
+    }
+  ]
+}

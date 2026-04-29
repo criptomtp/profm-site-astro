@@ -1,0 +1,551 @@
+{
+  "generated_at": "2026-04-29T14:53:00.037885",
+  "property_id": "286651314",
+  "period_days": 28,
+  "sessions_by_source": [
+    {
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 183,
+      "users": 154,
+      "engaged": 46,
+      "engagement_rate": 25.1,
+      "conversions": 113.0
+    },
+    {
+      "source": "google",
+      "medium": "organic",
+      "sessions": 112,
+      "users": 83,
+      "engaged": 52,
+      "engagement_rate": 46.4,
+      "conversions": 8.0
+    },
+    {
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 95,
+      "users": 77,
+      "engaged": 21,
+      "engagement_rate": 22.1,
+      "conversions": 2.0
+    },
+    {
+      "source": "search.google.com",
+      "medium": "referral",
+      "sessions": 25,
+      "users": 1,
+      "engaged": 20,
+      "engagement_rate": 80.0,
+      "conversions": 4.0
+    },
+    {
+      "source": "mtp-agent-production.up.railway.app",
+      "medium": "referral",
+      "sessions": 23,
+      "users": 1,
+      "engaged": 19,
+      "engagement_rate": 82.6,
+      "conversions": 32.0
+    },
+    {
+      "source": "(not set)",
+      "medium": "(not set)",
+      "sessions": 18,
+      "users": 17,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 4.0
+    },
+    {
+      "source": "goodfirms.co",
+      "medium": "referral",
+      "sessions": 10,
+      "users": 3,
+      "engaged": 8,
+      "engagement_rate": 80.0,
+      "conversions": 12.0
+    },
+    {
+      "source": "bing",
+      "medium": "organic",
+      "sessions": 4,
+      "users": 4,
+      "engaged": 3,
+      "engagement_rate": 75.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "l.instagram.com",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 3,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "taplink.cc",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 3,
+      "engaged": 1,
+      "engagement_rate": 33.3,
+      "conversions": 0.0
+    },
+    {
+      "source": "work.ua",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 3,
+      "engaged": 2,
+      "engagement_rate": 66.7,
+      "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "medium": "(not set)",
+      "sessions": 2,
+      "users": 2,
+      "engaged": 1,
+      "engagement_rate": 50.0,
+      "conversions": 2.0
+    },
+    {
+      "source": "vercel.com",
+      "medium": "referral",
+      "sessions": 2,
+      "users": 1,
+      "engaged": 2,
+      "engagement_rate": 100.0,
+      "conversions": 16.0
+    },
+    {
+      "source": "(data not available)",
+      "medium": "(data not available)",
+      "sessions": 1,
+      "users": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "es.salesdrive.me",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "facebook.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "ig",
+      "medium": "social",
+      "sessions": 1,
+      "users": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "source": "youtube.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    }
+  ],
+  "events_by_name": [
+    {
+      "event": "page_view",
+      "count": 1073,
+      "users": 343
+    },
+    {
+      "event": "user_engagement",
+      "count": 722,
+      "users": 149
+    },
+    {
+      "event": "session_start",
+      "count": 473,
+      "users": 335
+    },
+    {
+      "event": "first_visit",
+      "count": 313,
+      "users": 311
+    },
+    {
+      "event": "scroll",
+      "count": 265,
+      "users": 73
+    },
+    {
+      "event": "form_start",
+      "count": 64,
+      "users": 22
+    },
+    {
+      "event": "ads_conversion__fulfillmentmtp_com_ua__1",
+      "count": 39,
+      "users": 17
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_4",
+      "count": 39,
+      "users": 17
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_5",
+      "count": 39,
+      "users": 17
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_6",
+      "count": 39,
+      "users": 17
+    },
+    {
+      "event": "click",
+      "count": 25,
+      "users": 10
+    },
+    {
+      "event": "ads_conversion___1",
+      "count": 11,
+      "users": 6
+    },
+    {
+      "event": "form_submit",
+      "count": 11,
+      "users": 6
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_2",
+      "count": 8,
+      "users": 4
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_3",
+      "count": 8,
+      "users": 4
+    },
+    {
+      "event": "generate_lead",
+      "count": 5,
+      "users": 4
+    },
+    {
+      "event": "telegram_click",
+      "count": 2,
+      "users": 2
+    }
+  ],
+  "conversions_28d": {
+    "form_submit": {
+      "events": 11,
+      "users": 6
+    },
+    "generate_lead": {
+      "events": 5,
+      "users": 4
+    },
+    "phone_click": {
+      "events": 0,
+      "users": 0
+    },
+    "telegram_click": {
+      "events": 2,
+      "users": 2
+    },
+    "whatsapp_click": {
+      "events": 0,
+      "users": 0
+    }
+  },
+  "organic_landing_pages": [
+    {
+      "landing": "/",
+      "sessions": 28,
+      "engaged": 17,
+      "engagement_rate": 60.7,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/about/",
+      "sessions": 11,
+      "engaged": 4,
+      "engagement_rate": 36.4,
+      "conversions": 0.0
+    },
+    {
+      "landing": "(not set)",
+      "sessions": 9,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ru/",
+      "sessions": 8,
+      "engaged": 4,
+      "engagement_rate": 50.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/",
+      "sessions": 5,
+      "engaged": 4,
+      "engagement_rate": 80.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "sessions": 4,
+      "engaged": 4,
+      "engagement_rate": 100.0,
+      "conversions": 8.0
+    },
+    {
+      "landing": "/ua/services/",
+      "sessions": 4,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/services/",
+      "sessions": 3,
+      "engaged": 2,
+      "engagement_rate": 66.7,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/top-fulfilment-operatorov-2026/",
+      "sessions": 2,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/fulfilment-kiev/",
+      "sessions": 2,
+      "engaged": 1,
+      "engagement_rate": 50.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "sessions": 2,
+      "engaged": 1,
+      "engagement_rate": 50.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko?amp=true",
+      "sessions": 2,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
+      "sessions": 2,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/calculator/",
+      "sessions": 2,
+      "engaged": 1,
+      "engagement_rate": 50.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/fulfilment-vazhkykh-tovariv/",
+      "sessions": 2,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/guide/",
+      "sessions": 2,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/ua/skladski-poslugy/",
+      "sessions": 2,
+      "engaged": 1,
+      "engagement_rate": 50.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/how-to-handle-customer-reviews/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/tpost/1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i/",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/?amp=true",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/blog/post/fulfillment-vs-own-warehouse-2025/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/blog/post/top-fulfillment-operators-ukraine-2026/",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/blog/post/what-is-fulfillment-complete-guide/",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/fulfillment-kyiv/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/en/services/",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/fulfilment-dlya-marketpleysov/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    },
+    {
+      "landing": "/fulfilment-rozetka/",
+      "sessions": 1,
+      "engaged": 1,
+      "engagement_rate": 100.0,
+      "conversions": 0.0
+    }
+  ],
+  "form_submit_by_page": [
+    {
+      "page": "/",
+      "events": 7,
+      "users": 5
+    },
+    {
+      "page": "/en/",
+      "events": 2,
+      "users": 1
+    },
+    {
+      "page": "/en/fulfilment-prom/",
+      "events": 1,
+      "users": 1
+    },
+    {
+      "page": "/ru/fulfilment-prom/",
+      "events": 1,
+      "users": 1
+    }
+  ],
+  "ai_referrers": [
+    {
+      "source": "chatgpt.com",
+      "landing": "/fulfilment-kiev/",
+      "sessions": 2,
+      "users": 1,
+      "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "landing": "(not set)",
+      "sessions": 1,
+      "users": 1,
+      "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "landing": "/ru/",
+      "sessions": 1,
+      "users": 1,
+      "conversions": 2.0
+    },
+    {
+      "source": "chatgpt.com",
+      "landing": "/ru/fulfilment-kiev/",
+      "sessions": 1,
+      "users": 1,
+      "conversions": 0.0
+    }
+  ]
+}
