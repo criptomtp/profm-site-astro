@@ -134,6 +134,10 @@ Comprehensive UA/RU library on fulfillment, e-commerce logistics, and Ukrainian-
 - SLA в логістиці — що це, приклад, як працює | 2026 — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/) · [RU](https://www.fulfillmentmtp.com.ua/blog/what-is-sla-in-logistics/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/)
 - Дохід є, а прибутку немає — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/where-online-store-loses-money/) · [RU](https://www.fulfillmentmtp.com.ua/blog/where-online-store-loses-money/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/where-online-store-loses-money/)
 - Липень — ідеальний час для аудиту фулфілменту — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/why-audit-warehouse-in-summer/) · [RU](https://www.fulfillmentmtp.com.ua/blog/why-audit-warehouse-in-summer/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/why-audit-warehouse-in-summer/)
+- Кейс EcoDrive: масштабування з 50 до 800 замовлень/день через MTP Group — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/case-ecodrive/) · [RU](https://www.fulfillmentmtp.com.ua/blog/case-ecodrive/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/case-ecodrive/)
+- Ринок фулфілменту України 2026: гравці, тренди, прогноз до 2030 — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/rinok-fulfilmentu-ukraina/) · [RU](https://www.fulfillmentmtp.com.ua/blog/rynok-fulfilmenta-ukrainy/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/ukraine-fulfillment-market-2026/)
+- Вартість фулфілменту 2026: тарифи, приховані витрати, ROI — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/vartist-fulfilmentu-2026/) · [RU](https://www.fulfillmentmtp.com.ua/blog/stoimost-fulfilmenta-2026/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-cost-2026/)
+- Як перейти на фулфілмент: 46-денний план міграції без втрати продажів — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/yak-perejty-na-fulfilment/) · [RU](https://www.fulfillmentmtp.com.ua/blog/perehod-na-fulfilment/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/switch-to-fulfillment-guide/)
 
 ## Localized llms.txt variants
 
