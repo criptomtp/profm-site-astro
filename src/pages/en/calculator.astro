@@ -49,17 +49,13 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <div class="calc-form">
 <h3>Business Parameters</h3>
 <div class="calc-field"><label>Shipments per day</label><input type="number" id="calcOrders" value="50" min="1" max="10000" step="1" aria-label="Orders per day"><div class="field-hint">Average number of orders you ship daily</div></div>
-<div class="calc-field"><label>Average item weight</label><select id="calcWeight" aria-label="Weight category"><option value="2" selected>up to 2 kg</option><option value="5">2-5 kg</option><option value="10">5-10 kg</option><option value="30">10-30 kg</option><option value="50">30+ kg</option></select><div class="field-hint">Weight of one item for receiving calculation</div></div>
 <div class="calc-field"><label>Storage volume, m&sup3;</label><input type="number" id="calcVolume" value="5" min="0" max="1000" step="0.5" aria-label="Storage volume"><div class="field-hint">How many cubic meters your products occupy in the warehouse</div></div>
-<div class="calc-field"><label>Average items per order</label><input type="number" id="calcItems" value="1.5" min="1" max="50" step="0.1" aria-label="Items per order"><div class="field-hint">If more than 1 &mdash; co-packing fee applies</div></div>
 </div>
 <div class="calc-results">
 <h3>Calculation Results</h3>
 <div class="res-row"><span class="res-label">Shipping</span><span><span class="res-value" id="resShipping">28 600</span> UAH/mo <span class="res-sub" id="resShippingRate">(26 UAH/order)</span></span></div>
 <div class="res-row"><span class="res-label">Storage</span><span><span class="res-value" id="resStorage">3 250</span> UAH/mo</span></div>
-<div class="res-row"><span class="res-label">Receiving</span><span><span class="res-value" id="resReceiving">3 300</span> UAH/mo</span></div>
-<div class="res-row"><span class="res-label">Co-packing</span><span><span class="res-value" id="resCopacking">1 375</span> UAH/mo</span></div>
-<div class="res-total"><div class="res-row"><span class="res-label">TOTAL</span><span class="res-value" id="resTotal">36 525</span> <span style="font-size:14px;opacity:.8">UAH/mo</span></div></div>
+<div class="res-total"><div class="res-row"><span class="res-label">TOTAL</span><span class="res-value" id="resTotal">31 850</span> <span style="font-size:14px;opacity:.8">UAH/mo</span></div></div>
 <div class="res-cost-per"><div class="val" id="resCostPer">33.2</div><div class="lbl">Cost per shipment, UAH</div></div>
 <div class="res-compare" id="resCompare">
 <div class="compare-title">Own warehouse (estimate)</div>
@@ -97,7 +93,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <tr><td>200+</td><td class="rate">18 UAH</td></tr>
 </tbody>
 </table></div>
-<p style="font-size:13px;color:var(--muted);margin-top:16px">* Storage: 650 UAH/m&sup3;/mo. Receiving: 3 UAH/item (up to 2 kg) + 0.5 UAH per each kg over 2. Minimum payment: 5,000 UAH/mo.</p>
+<p style="font-size:13px;color:var(--muted);margin-top:16px">* Storage: 650 UAH/m&sup3;/mo. Minimum payment: 5,000 UAH/mo. Receiving, co-packing and other add-on services &mdash; per separate rates.</p>
 </div>
 </section>
 
@@ -124,9 +120,9 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <h2>How to Calculate Fulfillment Costs: A Complete Guide</h2>
 <p>Calculating fulfillment costs is the first step to optimizing your online store's logistics expenses. In this guide, we break down all fulfillment cost components and show how to properly evaluate the economics of outsourcing logistics.</p>
 <h3>Components of Fulfillment Costs</h3>
-<p>Fulfillment costs consist of several components: shipping, storage, receiving, and additional services. At MTP Group, the main rate is dynamic: from 26 UAH at low volumes down to 18 UAH at 200+ shipments per day.</p>
+<p>The base fulfillment quote rests on two drivers: shipping (the per-order processing rate) and storage (rent for the volume your stock occupies). At MTP Group the main rate is dynamic: from 26 UAH at low volumes down to 18 UAH at 200+ shipments per day. Receiving of new inventory, co-packing, marketplace delivery, SMS, sales receipts and other add-ons are billed separately based on actual usage.</p>
 <h3>MTP Group Pricing Formula</h3>
-<p>Total fulfillment cost = (shipments per day x 22 working days x rate by tier) + (storage volume x 650 UAH/m&sup3;) + (shipments x 22 x receiving cost) + kitting. The minimum monthly payment is 5,000 UAH.</p>
+<p>Base formula: (shipments per day x 22 working days x tier rate) + (storage volume x 650 UAH/m&sup3;). Minimum monthly payment &mdash; 5,000 UAH. Receiving, co-packing, marketplace shipping, SMS and receipts are quoted separately by actual volume.</p>
 </div>
 </section>
 
@@ -201,19 +197,15 @@ function getRate(n){if(n>200)return 18;if(n>150)return 19;if(n>100)return 20;if(
 function fmt(n){return Math.round(n).toLocaleString('en-US');}
 function calculate(){
 var ordersPerDay=parseFloat(document.getElementById('calcOrders').value)||0;
-var weight=parseFloat(document.getElementById('calcWeight').value)||2;
 var volumeM3=parseFloat(document.getElementById('calcVolume').value)||0;
-var avgItems=parseFloat(document.getElementById('calcItems').value)||1;
 var rate=getRate(ordersPerDay);var totalOrders=ordersPerDay*22;var shipping=totalOrders*rate;var storage=volumeM3*650;
-var receiveCost=3;if(weight>2)receiveCost+=((weight-2)*0.5);var receiving=totalOrders*receiveCost;
-var copacking=0;if(avgItems>1){copacking=totalOrders*(avgItems-1)*2.5;}
-var total=shipping+storage+receiving+copacking;if(total<5000)total=5000;
+var total=shipping+storage;if(total<5000)total=5000;
 var ownRent=Math.max(Math.ceil(ordersPerDay/50),1)*15000;var ownStaff=Math.max(Math.ceil(ordersPerDay/30),2)*15000;var ownWms=5000;var ownUtils=2000;var ownMaterials=Math.round(ordersPerDay*22*1.5);var ownTotal=ownRent+ownStaff+ownWms+ownUtils+ownMaterials;
 var timeOwnHours=Math.round(ordersPerDay*0.15*22);var timeFreed=Math.min(timeOwnHours,160);var timeMarketing=Math.round(timeFreed*0.6);var timePersonal=Math.round(timeFreed*0.3);
 var costPerOrder=totalOrders>0?(total/totalOrders):0;
 document.getElementById('resShipping').textContent=fmt(shipping);document.getElementById('resShippingRate').textContent='('+rate+' UAH/order)';
-document.getElementById('resStorage').textContent=fmt(storage);document.getElementById('resReceiving').textContent=fmt(receiving);
-document.getElementById('resCopacking').textContent=fmt(copacking);document.getElementById('resTotal').textContent=fmt(total);
+document.getElementById('resStorage').textContent=fmt(storage);
+document.getElementById('resTotal').textContent=fmt(total);
 document.getElementById('resCostPer').textContent=costPerOrder.toFixed(1);
 document.getElementById('ownRent').textContent=fmt(ownRent);document.getElementById('ownStaff').textContent=fmt(ownStaff);
 document.getElementById('ownWms').textContent=fmt(ownWms);document.getElementById('ownUtils').textContent=fmt(ownUtils);
@@ -221,7 +213,7 @@ document.getElementById('ownMaterials').textContent=fmt(ownMaterials);document.g
 var saving=ownTotal>0?Math.max(0,Math.round((1-total/ownTotal)*100)):0;document.getElementById('resSaving').textContent=saving+'%';
 document.getElementById('timeFreed').textContent=timeFreed;document.getElementById('timeMarketing').textContent=timeMarketing;document.getElementById('timePersonal').textContent=timePersonal;
 }
-['calcOrders','calcWeight','calcVolume','calcItems'].forEach(function(id){document.getElementById(id).addEventListener('input',calculate);document.getElementById(id).addEventListener('change',calculate);});
+['calcOrders','calcVolume'].forEach(function(id){document.getElementById(id).addEventListener('input',calculate);document.getElementById(id).addEventListener('change',calculate);});
 calculate();
 
 });

@@ -61,25 +61,9 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <div class="field-hint">Среднее количество заказов, которые вы отправляете ежедневно</div>
 </div>
 <div class="calc-field">
-<label>Средний вес товара</label>
-<select id="calcWeight" aria-label="Weight category">
-<option value="2" selected>до 2 кг</option>
-<option value="5">2-5 кг</option>
-<option value="10">5-10 кг</option>
-<option value="30">10-30 кг</option>
-<option value="50">30+ кг</option>
-</select>
-<div class="field-hint">Вес одного товара для расчёта приёма</div>
-</div>
-<div class="calc-field">
 <label>Объём хранения, м&sup3;</label>
 <input type="number" id="calcVolume" value="5" min="0" max="1000" step="0.5" aria-label="Storage volume">
 <div class="field-hint">Сколько кубических метров занимает ваш товар на складе</div>
-</div>
-<div class="calc-field">
-<label>Среднее количество товаров в заказе</label>
-<input type="number" id="calcItems" value="1.5" min="1" max="50" step="0.1" aria-label="Items per order">
-<div class="field-hint">Если больше 1 &mdash; добавляется доукомплектация</div>
 </div>
 </div>
 <div class="calc-results">
@@ -91,14 +75,6 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <div class="res-row">
 <span class="res-label">Хранение</span>
 <span><span class="res-value" id="resStorage">3 250</span> грн/мес</span>
-</div>
-<div class="res-row">
-<span class="res-label">Приём товара</span>
-<span><span class="res-value" id="resReceiving">3 300</span> грн/мес</span>
-</div>
-<div class="res-row">
-<span class="res-label">Доукомплектация</span>
-<span><span class="res-value" id="resCopacking">1 375</span> грн/мес</span>
 </div>
 <div class="res-total">
 <div class="res-row">
@@ -152,7 +128,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 <tr><td>200+</td><td class="rate">18 грн</td></tr>
 </tbody>
 </table></div>
-<p style="font-size:13px;color:var(--muted);margin-top:16px">* Хранение: 650 грн/м&sup3;/мес. Приём: 3 грн/ед (до 2 кг) + 0.5 грн за каждый кг свыше 2. Минимальная оплата: 5 000 грн/мес.</p>
+<p style="font-size:13px;color:var(--muted);margin-top:16px">* Хранение: 650 грн/м&sup3;/мес. Минимальная оплата: 5 000 грн/мес. Приём, доукомплектация и другие дополнительные услуги &mdash; по отдельным тарифам.</p>
 </div>
 </section>
 
@@ -184,7 +160,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 
 <h3>Составляющие стоимости фулфилмента</h3>
 
-<p>Стоимость фулфилмента складывается из нескольких компонентов: отправка (основной тариф за обработку и отправку заказа), хранение (оплата за объём товара на складе), приём (приёмка нового товара на склад) и дополнительные услуги (доукомплектация, SMS, товарный чек). В MTP Group основной тариф &mdash; динамический: от 26 грн при малых объёмах до 18 грн при 200+ отправлениях в день. Это означает, что с ростом вашего бизнеса себестоимость каждого заказа снижается автоматически.</p>
+<p>Базовый расчёт фулфилмента строится на двух ключевых показателях: отправка (основной тариф за обработку и отправку заказа) и хранение (оплата за объём товара на складе). В MTP Group основной тариф &mdash; динамический: от 26 грн при малых объёмах до 18 грн при 200+ отправлениях в день. Это означает, что с ростом вашего бизнеса себестоимость каждого заказа снижается автоматически. Приём нового товара, доукомплектация, доставка на маркетплейсы, SMS, товарные чеки и другие опции тарифицируются отдельно по фактическому объёму.</p>
 
 <h3>Скрытые затраты собственного склада</h3>
 
@@ -192,7 +168,7 @@ import AuthorByline from '../../components/AuthorByline.astro';
 
 <h3>Формула расчёта для MTP Group</h3>
 
-<p>Общая стоимость фулфилмента = (Отправлений в день * 22 рабочих дня * тариф по уровню) + (объём хранения * 650 грн/м&sup3;) + (отправления * 22 * стоимость приёма) + доукомплектация. Минимальная месячная оплата &mdash; 5 000 грн, что гарантирует доступность даже для начинающих. Например, при 50 заказах в день, 5 м&sup3; хранения и 1.5 товарах в заказе ваша месячная стоимость составит примерно 36 000 грн &mdash; на 35% меньше, чем собственный склад.</p>
+<p>Базовая формула: (Отправлений в день * 22 рабочих дня * тариф по уровню) + (объём хранения * 650 грн/м&sup3;). Минимальная месячная оплата &mdash; 5 000 грн, что гарантирует доступность даже для начинающих. Например, при 50 заказах в день и 5 м&sup3; хранения базовая месячная стоимость составит примерно 28 500 грн. Приём нового товара, доукомплектация, маркетплейс-доставка, SMS, чеки и другие опции тарифицируются отдельно по фактическому объёму.</p>
 
 <h3>Как выбрать оптимальный тариф</h3>
 
@@ -336,25 +312,14 @@ function fmt(n){return Math.round(n).toLocaleString('ru-RU');}
 
 function calculate(){
 var ordersPerDay=parseFloat(document.getElementById('calcOrders').value)||0;
-var weight=parseFloat(document.getElementById('calcWeight').value)||2;
 var volumeM3=parseFloat(document.getElementById('calcVolume').value)||0;
-var avgItems=parseFloat(document.getElementById('calcItems').value)||1;
 
 var rate=getRate(ordersPerDay);
 var totalOrders=ordersPerDay*22;
 var shipping=totalOrders*rate;
 var storage=volumeM3*650;
 
-// Receiving: 3 грн/ед base (до 2 кг), +0.5 грн/кг за каждый кг свыше 2
-var receiveCost=3;
-if(weight>2)receiveCost+=((weight-2)*0.5);
-var receiving=totalOrders*receiveCost;
-
-// Copacking: 2.5 грн за каждый дополнительный товар
-var copacking=0;
-if(avgItems>1){copacking=totalOrders*(avgItems-1)*2.5;}
-
-var total=shipping+storage+receiving+copacking;
+var total=shipping+storage;
 if(total<5000)total=5000;
 
 // Dynamic own warehouse comparison
@@ -376,8 +341,6 @@ var costPerOrder=totalOrders>0?(total/totalOrders):0;
 document.getElementById('resShipping').textContent=fmt(shipping);
 document.getElementById('resShippingRate').textContent='('+rate+' грн/заказ)';
 document.getElementById('resStorage').textContent=fmt(storage);
-document.getElementById('resReceiving').textContent=fmt(receiving);
-document.getElementById('resCopacking').textContent=fmt(copacking);
 document.getElementById('resTotal').textContent=fmt(total);
 document.getElementById('resCostPer').textContent=costPerOrder.toFixed(1);
 
@@ -398,7 +361,7 @@ document.getElementById('timeMarketing').textContent=timeMarketing;
 document.getElementById('timePersonal').textContent=timePersonal;
 }
 
-['calcOrders','calcWeight','calcVolume','calcItems'].forEach(function(id){
+['calcOrders','calcVolume'].forEach(function(id){
 document.getElementById(id).addEventListener('input',calculate);
 document.getElementById(id).addEventListener('change',calculate);
 });
