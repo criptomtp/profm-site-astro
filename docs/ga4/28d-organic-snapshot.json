@@ -1,58 +1,58 @@
 {
-  "generated_at": "2026-04-29T14:53:00.037885",
+  "generated_at": "2026-04-30T13:35:13.136544",
   "property_id": "286651314",
   "period_days": 28,
   "sessions_by_source": [
     {
       "source": "(direct)",
       "medium": "(none)",
-      "sessions": 183,
-      "users": 154,
-      "engaged": 46,
-      "engagement_rate": 25.1,
-      "conversions": 113.0
+      "sessions": 180,
+      "users": 156,
+      "engaged": 45,
+      "engagement_rate": 25.0,
+      "conversions": 61.0
     },
     {
       "source": "google",
       "medium": "organic",
-      "sessions": 112,
-      "users": 83,
-      "engaged": 52,
-      "engagement_rate": 46.4,
+      "sessions": 107,
+      "users": 80,
+      "engaged": 51,
+      "engagement_rate": 47.7,
       "conversions": 8.0
     },
     {
       "source": "google",
       "medium": "cpc",
-      "sessions": 95,
-      "users": 77,
-      "engaged": 21,
-      "engagement_rate": 22.1,
+      "sessions": 90,
+      "users": 73,
+      "engaged": 20,
+      "engagement_rate": 22.2,
       "conversions": 2.0
     },
     {
       "source": "search.google.com",
       "medium": "referral",
-      "sessions": 25,
+      "sessions": 28,
       "users": 1,
-      "engaged": 20,
-      "engagement_rate": 80.0,
+      "engaged": 23,
+      "engagement_rate": 82.1,
       "conversions": 4.0
     },
     {
       "source": "mtp-agent-production.up.railway.app",
       "medium": "referral",
-      "sessions": 23,
+      "sessions": 20,
       "users": 1,
-      "engaged": 19,
-      "engagement_rate": 82.6,
-      "conversions": 32.0
+      "engaged": 16,
+      "engagement_rate": 80.0,
+      "conversions": 16.0
     },
     {
       "source": "(not set)",
       "medium": "(not set)",
-      "sessions": 18,
-      "users": 17,
+      "sessions": 19,
+      "users": 18,
       "engaged": 0,
       "engagement_rate": 0.0,
       "conversions": 4.0
@@ -74,6 +74,15 @@
       "engaged": 3,
       "engagement_rate": 75.0,
       "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "medium": "(not set)",
+      "sessions": 3,
+      "users": 3,
+      "engaged": 1,
+      "engagement_rate": 33.3,
+      "conversions": 2.0
     },
     {
       "source": "chatgpt.com",
@@ -110,24 +119,6 @@
       "engaged": 2,
       "engagement_rate": 66.7,
       "conversions": 0.0
-    },
-    {
-      "source": "chatgpt.com",
-      "medium": "(not set)",
-      "sessions": 2,
-      "users": 2,
-      "engaged": 1,
-      "engagement_rate": 50.0,
-      "conversions": 2.0
-    },
-    {
-      "source": "vercel.com",
-      "medium": "referral",
-      "sessions": 2,
-      "users": 1,
-      "engaged": 2,
-      "engagement_rate": 100.0,
-      "conversions": 16.0
     },
     {
       "source": "(data not available)",
@@ -178,77 +169,67 @@
   "events_by_name": [
     {
       "event": "page_view",
-      "count": 1073,
-      "users": 343
+      "count": 1005,
+      "users": 339
     },
     {
       "event": "user_engagement",
-      "count": 722,
-      "users": 149
+      "count": 674,
+      "users": 152
     },
     {
       "event": "session_start",
-      "count": 473,
-      "users": 335
+      "count": 460,
+      "users": 331
     },
     {
       "event": "first_visit",
-      "count": 313,
-      "users": 311
+      "count": 310,
+      "users": 308
     },
     {
       "event": "scroll",
-      "count": 265,
-      "users": 73
-    },
-    {
-      "event": "form_start",
-      "count": 64,
-      "users": 22
-    },
-    {
-      "event": "ads_conversion__fulfillmentmtp_com_ua__1",
-      "count": 39,
-      "users": 17
-    },
-    {
-      "event": "ads_conversion__https_fulfillmentmtp_c_4",
-      "count": 39,
-      "users": 17
-    },
-    {
-      "event": "ads_conversion__https_fulfillmentmtp_c_5",
-      "count": 39,
-      "users": 17
-    },
-    {
-      "event": "ads_conversion__https_fulfillmentmtp_c_6",
-      "count": 39,
-      "users": 17
+      "count": 234,
+      "users": 72
     },
     {
       "event": "click",
-      "count": 25,
-      "users": 10
+      "count": 24,
+      "users": 9
+    },
+    {
+      "event": "form_start",
+      "count": 24,
+      "users": 20
+    },
+    {
+      "event": "ads_conversion__fulfillmentmtp_com_ua__1",
+      "count": 22,
+      "users": 16
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_4",
+      "count": 22,
+      "users": 16
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_5",
+      "count": 22,
+      "users": 16
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_6",
+      "count": 22,
+      "users": 16
     },
     {
       "event": "ads_conversion___1",
-      "count": 11,
-      "users": 6
-    },
-    {
-      "event": "form_submit",
-      "count": 11,
-      "users": 6
-    },
-    {
-      "event": "ads_conversion__https_fulfillmentmtp_c_2",
-      "count": 8,
+      "count": 5,
       "users": 4
     },
     {
-      "event": "ads_conversion__https_fulfillmentmtp_c_3",
-      "count": 8,
+      "event": "form_submit",
+      "count": 5,
       "users": 4
     },
     {
@@ -257,23 +238,38 @@
       "users": 4
     },
     {
+      "event": "ads_conversion__https_fulfillmentmtp_c_2",
+      "count": 3,
+      "users": 3
+    },
+    {
+      "event": "ads_conversion__https_fulfillmentmtp_c_3",
+      "count": 3,
+      "users": 3
+    },
+    {
       "event": "telegram_click",
       "count": 2,
       "users": 2
+    },
+    {
+      "event": "phone_click",
+      "count": 1,
+      "users": 1
     }
   ],
   "conversions_28d": {
     "form_submit": {
-      "events": 11,
-      "users": 6
+      "events": 5,
+      "users": 4
     },
     "generate_lead": {
       "events": 5,
       "users": 4
     },
     "phone_click": {
-      "events": 0,
-      "users": 0
+      "events": 1,
+      "users": 1
     },
     "telegram_click": {
       "events": 2,
@@ -315,9 +311,9 @@
     },
     {
       "landing": "/en/",
-      "sessions": 5,
+      "sessions": 4,
       "engaged": 4,
-      "engagement_rate": 80.0,
+      "engagement_rate": 100.0,
       "conversions": 0.0
     },
     {
@@ -335,13 +331,6 @@
       "conversions": 0.0
     },
     {
-      "landing": "/services/",
-      "sessions": 3,
-      "engaged": 2,
-      "engagement_rate": 66.7,
-      "conversions": 0.0
-    },
-    {
       "landing": "/blog/top-fulfilment-operatorov-2026/",
       "sessions": 2,
       "engaged": 0,
@@ -356,17 +345,17 @@
       "conversions": 0.0
     },
     {
-      "landing": "/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
+      "landing": "/ua/blog/scho-take-sla/",
       "sessions": 2,
       "engaged": 1,
       "engagement_rate": 50.0,
       "conversions": 0.0
     },
     {
-      "landing": "/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko?amp=true",
+      "landing": "/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
       "sessions": 2,
-      "engaged": 0,
-      "engagement_rate": 0.0,
+      "engaged": 1,
+      "engagement_rate": 50.0,
       "conversions": 0.0
     },
     {
@@ -405,7 +394,7 @@
       "conversions": 0.0
     },
     {
-      "landing": "",
+      "landing": "/blog/best-business-ideas-ukraine/",
       "sessions": 1,
       "engaged": 0,
       "engagement_rate": 0.0,
@@ -494,18 +483,20 @@
       "engaged": 1,
       "engagement_rate": 100.0,
       "conversions": 0.0
+    },
+    {
+      "landing": "/recalls/",
+      "sessions": 1,
+      "engaged": 0,
+      "engagement_rate": 0.0,
+      "conversions": 0.0
     }
   ],
   "form_submit_by_page": [
     {
       "page": "/",
-      "events": 7,
-      "users": 5
-    },
-    {
-      "page": "/en/",
-      "events": 2,
-      "users": 1
+      "events": 3,
+      "users": 3
     },
     {
       "page": "/en/fulfilment-prom/",
@@ -529,6 +520,13 @@
     {
       "source": "chatgpt.com",
       "landing": "(not set)",
+      "sessions": 1,
+      "users": 1,
+      "conversions": 0.0
+    },
+    {
+      "source": "chatgpt.com",
+      "landing": "/en/blog/post/top-marketplaces-ukraine/",
       "sessions": 1,
       "users": 1,
       "conversions": 0.0

@@ -1,27 +1,34 @@
 {
-  "generated_at": "2026-04-29T14:52:56.074188",
-  "period": "2026-04-01 to 2026-04-29",
+  "generated_at": "2026-04-30T13:35:12.505598",
+  "period": "2026-04-02 to 2026-04-30",
   "period_days": 28,
   "totals": {
-    "clicks": 101,
-    "impressions": 29379,
-    "pages_with_impr": 297,
+    "clicks": 115,
+    "impressions": 30823,
+    "pages_with_impr": 336,
     "unique_queries": 500
   },
   "pages": [
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-prom/",
       "clicks_28d": 0,
-      "impressions_28d": 14246,
+      "impressions_28d": 14247,
       "ctr_pct": 0,
       "avg_position": 7.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/",
-      "clicks_28d": 25,
-      "impressions_28d": 1108,
-      "ctr_pct": 2.26,
-      "avg_position": 9.3
+      "clicks_28d": 30,
+      "impressions_28d": 1193,
+      "ctr_pct": 2.51,
+      "avg_position": 9.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_28d": 4,
+      "impressions_28d": 1070,
+      "ctr_pct": 0.37,
+      "avg_position": 7.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
@@ -31,18 +38,11 @@
       "avg_position": 22.4
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
-      "clicks_28d": 4,
-      "impressions_28d": 976,
-      "ctr_pct": 0.41,
-      "avg_position": 7.1
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/ru/",
-      "clicks_28d": 12,
-      "impressions_28d": 824,
-      "ctr_pct": 1.46,
-      "avg_position": 15.8
+      "clicks_28d": 14,
+      "impressions_28d": 867,
+      "ctr_pct": 1.61,
+      "avg_position": 16.0
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
@@ -59,6 +59,13 @@
       "avg_position": 8.2
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/top-fulfillment-operators-ukraine-2026/",
+      "clicks_28d": 1,
+      "impressions_28d": 455,
+      "ctr_pct": 0.22,
+      "avg_position": 6.2
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-marketplaces/",
       "clicks_28d": 0,
       "impressions_28d": 389,
@@ -66,74 +73,81 @@
       "avg_position": 4.9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/top-fulfillment-operators-ukraine-2026/",
-      "clicks_28d": 1,
-      "impressions_28d": 352,
-      "ctr_pct": 0.28,
-      "avg_position": 6.5
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/",
-      "clicks_28d": 2,
-      "impressions_28d": 330,
-      "ctr_pct": 0.61,
+      "clicks_28d": 4,
+      "impressions_28d": 359,
+      "ctr_pct": 1.11,
       "avg_position": 6.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
       "clicks_28d": 2,
-      "impressions_28d": 330,
-      "ctr_pct": 0.61,
-      "avg_position": 20.9
+      "impressions_28d": 358,
+      "ctr_pct": 0.56,
+      "avg_position": 20.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
       "clicks_28d": 0,
-      "impressions_28d": 253,
+      "impressions_28d": 309,
       "ctr_pct": 0,
-      "avg_position": 13.0
+      "avg_position": 12.9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "clicks_28d": 0,
+      "impressions_28d": 247,
+      "ctr_pct": 0,
+      "avg_position": 29.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
       "clicks_28d": 0,
-      "impressions_28d": 240,
+      "impressions_28d": 244,
       "ctr_pct": 0,
       "avg_position": 11.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/",
       "clicks_28d": 0,
-      "impressions_28d": 224,
+      "impressions_28d": 239,
       "ctr_pct": 0,
-      "avg_position": 48.3
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
-      "clicks_28d": 0,
-      "impressions_28d": 223,
-      "ctr_pct": 0,
-      "avg_position": 31.4
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-cosmetics/",
-      "clicks_28d": 0,
-      "impressions_28d": 221,
-      "ctr_pct": 0,
-      "avg_position": 69.7
+      "avg_position": 47.0
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
       "clicks_28d": 0,
-      "impressions_28d": 219,
+      "impressions_28d": 236,
       "ctr_pct": 0,
-      "avg_position": 32.0
+      "avg_position": 32.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/services/",
       "clicks_28d": 1,
-      "impressions_28d": 215,
-      "ctr_pct": 0.47,
-      "avg_position": 30.7
+      "impressions_28d": 230,
+      "ctr_pct": 0.43,
+      "avg_position": 30.1
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-cosmetics/",
+      "clicks_28d": 0,
+      "impressions_28d": 230,
+      "ctr_pct": 0,
+      "avg_position": 68.9
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/iyjgnyrmx1-rro-prro-dlya-bznesu-osoblivost-ta-vimog",
+      "clicks_28d": 0,
+      "impressions_28d": 199,
+      "ctr_pct": 0,
+      "avg_position": 37.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/",
+      "clicks_28d": 0,
+      "impressions_28d": 196,
+      "ctr_pct": 0,
+      "avg_position": 10.2
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i",
@@ -143,32 +157,18 @@
       "avg_position": 9.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/",
-      "clicks_28d": 0,
-      "impressions_28d": 187,
-      "ctr_pct": 0,
-      "avg_position": 10.3
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/iyjgnyrmx1-rro-prro-dlya-bznesu-osoblivost-ta-vimog",
-      "clicks_28d": 0,
-      "impressions_28d": 186,
-      "ctr_pct": 0,
-      "avg_position": 37.2
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-cost-guide/",
       "clicks_28d": 0,
-      "impressions_28d": 173,
+      "impressions_28d": 178,
       "ctr_pct": 0,
-      "avg_position": 17.9
+      "avg_position": 18.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/calculator/",
       "clicks_28d": 0,
-      "impressions_28d": 160,
+      "impressions_28d": 171,
       "ctr_pct": 0,
-      "avg_position": 38.0
+      "avg_position": 37.8
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/services/",
@@ -178,95 +178,116 @@
       "avg_position": 19.2
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
-      "clicks_28d": 12,
-      "impressions_28d": 141,
-      "ctr_pct": 8.51,
-      "avg_position": 8.3
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-dlya-internet-magazynu/",
-      "clicks_28d": 0,
-      "impressions_28d": 141,
-      "ctr_pct": 0,
-      "avg_position": 50.1
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
-      "clicks_28d": 0,
-      "impressions_28d": 140,
-      "ctr_pct": 0,
-      "avg_position": 14.6
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/",
-      "clicks_28d": 1,
-      "impressions_28d": 124,
-      "ctr_pct": 0.81,
-      "avg_position": 25.8
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/best-business-ideas-ukraine/",
       "clicks_28d": 0,
-      "impressions_28d": 124,
+      "impressions_28d": 159,
       "ctr_pct": 0,
-      "avg_position": 6.5
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/",
-      "clicks_28d": 4,
-      "impressions_28d": 123,
-      "ctr_pct": 3.25,
-      "avg_position": 6.3
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/services/",
-      "clicks_28d": 0,
-      "impressions_28d": 123,
-      "ctr_pct": 0,
-      "avg_position": 23.9
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
-      "clicks_28d": 0,
-      "impressions_28d": 120,
-      "ctr_pct": 0,
-      "avg_position": 18.2
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/about/",
-      "clicks_28d": 3,
-      "impressions_28d": 116,
-      "ctr_pct": 2.59,
-      "avg_position": 12.9
+      "avg_position": 6.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/services/",
       "clicks_28d": 0,
-      "impressions_28d": 112,
+      "impressions_28d": 153,
       "ctr_pct": 0,
-      "avg_position": 25.0
+      "avg_position": 23.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "clicks_28d": 0,
+      "impressions_28d": 150,
+      "ctr_pct": 0,
+      "avg_position": 14.9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/",
+      "clicks_28d": 12,
+      "impressions_28d": 142,
+      "ctr_pct": 8.45,
+      "avg_position": 8.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-dlya-internet-magazynu/",
+      "clicks_28d": 0,
+      "impressions_28d": 142,
+      "ctr_pct": 0,
+      "avg_position": 50.3
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+      "clicks_28d": 0,
+      "impressions_28d": 135,
+      "ctr_pct": 0,
+      "avg_position": 19.7
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/services/",
+      "clicks_28d": 0,
+      "impressions_28d": 131,
+      "ctr_pct": 0,
+      "avg_position": 22.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/",
+      "clicks_28d": 1,
+      "impressions_28d": 129,
+      "ctr_pct": 0.78,
+      "avg_position": 26.0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/top-fulfilment-operatorov-2026/",
+      "clicks_28d": 4,
+      "impressions_28d": 126,
+      "ctr_pct": 3.17,
+      "avg_position": 6.4
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/about/",
+      "clicks_28d": 4,
+      "impressions_28d": 126,
+      "ctr_pct": 3.17,
+      "avg_position": 12.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-marketpleysov/",
       "clicks_28d": 0,
-      "impressions_28d": 111,
+      "impressions_28d": 117,
       "ctr_pct": 0,
-      "avg_position": 18.8
+      "avg_position": 18.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/",
+      "clicks_28d": 0,
+      "impressions_28d": 116,
+      "ctr_pct": 0,
+      "avg_position": 7.9
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/expand-to-european-marketplaces/",
       "clicks_28d": 2,
-      "impressions_28d": 104,
-      "ctr_pct": 1.92,
-      "avg_position": 27.7
+      "impressions_28d": 107,
+      "ctr_pct": 1.87,
+      "avg_position": 28.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/",
       "clicks_28d": 1,
-      "impressions_28d": 97,
-      "ctr_pct": 1.03,
-      "avg_position": 13.1
+      "impressions_28d": 102,
+      "ctr_pct": 0.98,
+      "avg_position": 13.3
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha",
+      "clicks_28d": 0,
+      "impressions_28d": 96,
+      "ctr_pct": 0,
+      "avg_position": 9.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/",
+      "clicks_28d": 0,
+      "impressions_28d": 95,
+      "ctr_pct": 0,
+      "avg_position": 16.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/",
@@ -283,11 +304,18 @@
       "avg_position": 45.4
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-small-business/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
       "clicks_28d": 0,
-      "impressions_28d": 87,
+      "impressions_28d": 89,
       "ctr_pct": 0,
-      "avg_position": 16.9
+      "avg_position": 38.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/services/",
+      "clicks_28d": 1,
+      "impressions_28d": 87,
+      "ctr_pct": 1.15,
+      "avg_position": 16.4
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
@@ -304,11 +332,25 @@
       "avg_position": 12.6
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha",
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/replace-russian-services-ukraine-checklist/",
       "clicks_28d": 0,
       "impressions_28d": 84,
       "ctr_pct": 0,
-      "avg_position": 9.9
+      "avg_position": 8.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/how-to-start-online-store-ukraine/",
+      "clicks_28d": 0,
+      "impressions_28d": 84,
+      "ctr_pct": 0,
+      "avg_position": 62.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/",
+      "clicks_28d": 0,
+      "impressions_28d": 84,
+      "ctr_pct": 0,
+      "avg_position": 17.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/fulfillment-pricing-calculator/",
@@ -318,67 +360,46 @@
       "avg_position": 57.2
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/",
-      "clicks_28d": 0,
-      "impressions_28d": 81,
-      "ctr_pct": 0,
-      "avg_position": 17.7
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/services/",
-      "clicks_28d": 0,
-      "impressions_28d": 79,
-      "ctr_pct": 0,
-      "avg_position": 16.5
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/replace-russian-services-ukraine-checklist/",
-      "clicks_28d": 0,
-      "impressions_28d": 78,
-      "ctr_pct": 0,
-      "avg_position": 8.7
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 78,
-      "ctr_pct": 0,
-      "avg_position": 38.8
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/ua/tsiny/",
       "clicks_28d": 3,
-      "impressions_28d": 75,
-      "ctr_pct": 4.0,
-      "avg_position": 15.6
+      "impressions_28d": 79,
+      "ctr_pct": 3.8,
+      "avg_position": 15.4
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
       "clicks_28d": 0,
-      "impressions_28d": 73,
+      "impressions_28d": 78,
       "ctr_pct": 0,
-      "avg_position": 41.2
+      "avg_position": 41.1
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i",
       "clicks_28d": 1,
-      "impressions_28d": 72,
-      "ctr_pct": 1.39,
-      "avg_position": 7.3
+      "impressions_28d": 76,
+      "ctr_pct": 1.32,
+      "avg_position": 7.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/calculator/",
       "clicks_28d": 0,
+      "impressions_28d": 75,
+      "ctr_pct": 0,
+      "avg_position": 10.9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
       "impressions_28d": 72,
       "ctr_pct": 0,
-      "avg_position": 11.2
+      "avg_position": 37.5
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/",
       "clicks_28d": 0,
-      "impressions_28d": 68,
+      "impressions_28d": 70,
       "ctr_pct": 0,
-      "avg_position": 16.4
+      "avg_position": 16.8
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/about/",
@@ -388,18 +409,18 @@
       "avg_position": 17.0
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 66,
-      "ctr_pct": 0,
-      "avg_position": 37.6
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/en/about/",
       "clicks_28d": 0,
-      "impressions_28d": 62,
+      "impressions_28d": 64,
       "ctr_pct": 0,
       "avg_position": 11.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "clicks_28d": 0,
+      "impressions_28d": 63,
+      "ctr_pct": 0,
+      "avg_position": 9.7
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/calculator/",
@@ -407,6 +428,13 @@
       "impressions_28d": 61,
       "ctr_pct": 0,
       "avg_position": 19.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/prices/",
+      "clicks_28d": 0,
+      "impressions_28d": 58,
+      "ctr_pct": 0,
+      "avg_position": 3.8
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/uslugi/",
@@ -418,9 +446,16 @@
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/",
       "clicks_28d": 0,
+      "impressions_28d": 56,
+      "ctr_pct": 0,
+      "avg_position": 11.0
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd",
+      "clicks_28d": 0,
       "impressions_28d": 53,
       "ctr_pct": 0,
-      "avg_position": 11.4
+      "avg_position": 47.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/heavy-goods/",
@@ -430,6 +465,13 @@
       "avg_position": 11.8
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
+      "clicks_28d": 6,
+      "impressions_28d": 51,
+      "ctr_pct": 11.76,
+      "avg_position": 7.3
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os",
       "clicks_28d": 0,
       "impressions_28d": 51,
@@ -437,39 +479,18 @@
       "avg_position": 26.5
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
-      "clicks_28d": 6,
-      "impressions_28d": 50,
-      "ctr_pct": 12.0,
-      "avg_position": 7.3
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
-      "clicks_28d": 0,
-      "impressions_28d": 50,
-      "ctr_pct": 0,
-      "avg_position": 9.4
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/prices/",
-      "clicks_28d": 0,
-      "impressions_28d": 50,
-      "ctr_pct": 0,
-      "avg_position": 4.0
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/blog/tpost/ak35ism111-fulfilment-dlya-internet-magazina-odezhd",
-      "clicks_28d": 0,
-      "impressions_28d": 48,
-      "ctr_pct": 0,
-      "avg_position": 46.1
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/fulfilment-kiev/",
       "clicks_28d": 2,
-      "impressions_28d": 47,
-      "ctr_pct": 4.26,
-      "avg_position": 32.0
+      "impressions_28d": 50,
+      "ctr_pct": 4.0,
+      "avg_position": 33.6
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/top-fulfilment-operatoriv-2026/",
+      "clicks_28d": 1,
+      "impressions_28d": 50,
+      "ctr_pct": 2.0,
+      "avg_position": 8.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/skladski-poslugy/",
@@ -479,25 +500,60 @@
       "avg_position": 9.2
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/",
+      "clicks_28d": 1,
+      "impressions_28d": 46,
+      "ctr_pct": 2.17,
+      "avg_position": 23.5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/fulfilment-dlya-marketpleysov/",
+      "clicks_28d": 0,
+      "impressions_28d": 46,
+      "ctr_pct": 0,
+      "avg_position": 19.5
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn",
       "clicks_28d": 0,
       "impressions_28d": 45,
       "ctr_pct": 0,
-      "avg_position": 19.8
+      "avg_position": 34.4
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/product-business-ukraine-guide/",
       "clicks_28d": 0,
-      "impressions_28d": 44,
+      "impressions_28d": 45,
       "ctr_pct": 0,
-      "avg_position": 24.5
+      "avg_position": 11.9
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/how-to-start-online-store-ukraine/",
       "clicks_28d": 0,
-      "impressions_28d": 42,
+      "impressions_28d": 44,
       "ctr_pct": 0,
-      "avg_position": 7
+      "avg_position": 6.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/guide/",
+      "clicks_28d": 1,
+      "impressions_28d": 43,
+      "ctr_pct": 2.33,
+      "avg_position": 8.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/",
+      "clicks_28d": 0,
+      "impressions_28d": 43,
+      "ctr_pct": 0,
+      "avg_position": 8.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar",
+      "clicks_28d": 1,
+      "impressions_28d": 41,
+      "ctr_pct": 2.44,
+      "avg_position": 8.0
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/33bmy57t51-kakoi-biznes-otkrit-v-ukraine-vozmozhnos",
@@ -507,32 +563,18 @@
       "avg_position": 41.9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar",
-      "clicks_28d": 1,
-      "impressions_28d": 39,
-      "ctr_pct": 2.56,
-      "avg_position": 7.8
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/",
       "clicks_28d": 0,
-      "impressions_28d": 38,
+      "impressions_28d": 41,
       "ctr_pct": 0,
-      "avg_position": 34.5
+      "avg_position": 10.5
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/top-fulfilment-operatoriv-2026/",
+      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t",
       "clicks_28d": 0,
-      "impressions_28d": 38,
+      "impressions_28d": 36,
       "ctr_pct": 0,
-      "avg_position": 7.7
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/guide/",
-      "clicks_28d": 1,
-      "impressions_28d": 37,
-      "ctr_pct": 2.7,
-      "avg_position": 6.5
+      "avg_position": 70.7
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/",
@@ -542,18 +584,18 @@
       "avg_position": 36.4
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t",
-      "clicks_28d": 0,
-      "impressions_28d": 34,
-      "ctr_pct": 0,
-      "avg_position": 70.1
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/rjmgtrmvb1-fulflment-scho-tse-sklki-koshtu-ta-nsh-v",
       "clicks_28d": 0,
       "impressions_28d": 33,
       "ctr_pct": 0,
       "avg_position": 75.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/warehouse-services/",
+      "clicks_28d": 0,
+      "impressions_28d": 33,
+      "ctr_pct": 0,
+      "avg_position": 11.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/tsenu/",
@@ -563,11 +605,25 @@
       "avg_position": 11.1
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/",
+      "clicks_28d": 0,
+      "impressions_28d": 33,
+      "ctr_pct": 0,
+      "avg_position": 13.6
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/online-store-during-wartime/",
       "clicks_28d": 0,
       "impressions_28d": 32,
       "ctr_pct": 0,
       "avg_position": 10.0
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/calculator/",
+      "clicks_28d": 2,
+      "impressions_28d": 31,
+      "ctr_pct": 6.45,
+      "avg_position": 46.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/fefo-lifo-fifo/",
@@ -577,88 +633,109 @@
       "avg_position": 26.7
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
       "clicks_28d": 0,
       "impressions_28d": 29,
       "ctr_pct": 0,
-      "avg_position": 10.2
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/warehouse-services/",
-      "clicks_28d": 0,
-      "impressions_28d": 29,
-      "ctr_pct": 0,
-      "avg_position": 9.2
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/calculator/",
-      "clicks_28d": 2,
-      "impressions_28d": 28,
-      "ctr_pct": 7.14,
-      "avg_position": 50.4
+      "avg_position": 45.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/mjrp3rx3z1-kak-internet-magazinu-rabotat-s-otzivami/",
       "clicks_28d": 0,
-      "impressions_28d": 28,
+      "impressions_28d": 29,
       "ctr_pct": 0,
-      "avg_position": 8
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
-      "clicks_28d": 0,
-      "impressions_28d": 27,
-      "ctr_pct": 0,
-      "avg_position": 70.7
+      "avg_position": 8.0
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/pp8gsej3c1-fulfilment-protiv-sobstvennogo-sklada-v/",
       "clicks_28d": 0,
-      "impressions_28d": 27,
+      "impressions_28d": 29,
       "ctr_pct": 0,
-      "avg_position": 30.0
+      "avg_position": 28.2
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/business-in-ukraine-during-war/",
+      "clicks_28d": 0,
+      "impressions_28d": 28,
+      "ctr_pct": 0,
+      "avg_position": 10.3
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr",
+      "clicks_28d": 0,
+      "impressions_28d": 28,
+      "ctr_pct": 0,
+      "avg_position": 70.9
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/",
       "clicks_28d": 0,
-      "impressions_28d": 27,
+      "impressions_28d": 28,
       "ctr_pct": 0,
-      "avg_position": 16.8
+      "avg_position": 16.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/",
       "clicks_28d": 0,
-      "impressions_28d": 27,
+      "impressions_28d": 28,
       "ctr_pct": 0,
-      "avg_position": 17.2
+      "avg_position": 17.0
     },
     {
       "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/d0kknsayu1-fulfillment-chi-vlasnii-sklad-u-2025-str",
       "clicks_28d": 0,
-      "impressions_28d": 25,
+      "impressions_28d": 27,
       "ctr_pct": 0,
-      "avg_position": 26.1
+      "avg_position": 24.7
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/",
       "clicks_28d": 0,
-      "impressions_28d": 25,
+      "impressions_28d": 27,
       "ctr_pct": 0,
-      "avg_position": 41.2
+      "avg_position": 8.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/recalls/",
+      "clicks_28d": 0,
+      "impressions_28d": 27,
+      "ctr_pct": 0,
+      "avg_position": 7.0
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/how-fulfillment-works-ukraine-2025/",
       "clicks_28d": 0,
-      "impressions_28d": 25,
+      "impressions_28d": 26,
       "ctr_pct": 0,
-      "avg_position": 6.7
+      "avg_position": 8.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/product-business-ukraine-guide/",
       "clicks_28d": 0,
+      "impressions_28d": 26,
+      "ctr_pct": 0,
+      "avg_position": 14.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/",
+      "clicks_28d": 0,
+      "impressions_28d": 26,
+      "ctr_pct": 0,
+      "avg_position": 4.6
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/guide/yak-pidklyuchyty-prom/",
+      "clicks_28d": 0,
+      "impressions_28d": 26,
+      "ctr_pct": 0,
+      "avg_position": 9.4
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/",
+      "clicks_28d": 0,
       "impressions_28d": 25,
       "ctr_pct": 0,
-      "avg_position": 13.3
+      "avg_position": 3.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/pallet-storage/",
@@ -666,6 +743,13 @@
       "impressions_28d": 25,
       "ctr_pct": 0,
       "avg_position": 15.9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/paletnoe-khranenie/",
+      "clicks_28d": 0,
+      "impressions_28d": 25,
+      "ctr_pct": 0,
+      "avg_position": 6.2
     },
     {
       "url": "https://fulfillmentmtp.com.ua/about",
@@ -682,39 +766,11 @@
       "avg_position": 11.9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/paletnoe-khranenie/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/rinok-fulfilmentu-ukraina/",
       "clicks_28d": 0,
       "impressions_28d": 24,
       "ctr_pct": 0,
-      "avg_position": 6.4
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/",
-      "clicks_28d": 0,
-      "impressions_28d": 24,
-      "ctr_pct": 0,
-      "avg_position": 14.9
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/guide/yak-pidklyuchyty-prom/",
-      "clicks_28d": 0,
-      "impressions_28d": 24,
-      "ctr_pct": 0,
-      "avg_position": 9.6
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/recalls/",
-      "clicks_28d": 0,
-      "impressions_28d": 24,
-      "ctr_pct": 0,
-      "avg_position": 7.5
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-kosmetiki/",
-      "clicks_28d": 0,
-      "impressions_28d": 23,
-      "ctr_pct": 0,
-      "avg_position": 8.7
+      "avg_position": 44.9
     },
     {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/fiscal-register-requirements-ukraine/",
@@ -724,18 +780,25 @@
       "avg_position": 6.0
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/rinok-fulfilmentu-ukraina/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/how-to-start-online-store-ukraine/",
       "clicks_28d": 0,
       "impressions_28d": 22,
       "ctr_pct": 0,
-      "avg_position": 48.1
+      "avg_position": 35.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fiscal-register-requirements-ukraine/",
       "clicks_28d": 0,
-      "impressions_28d": 20,
+      "impressions_28d": 22,
       "ctr_pct": 0,
-      "avg_position": 3.9
+      "avg_position": 4.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/recalls/",
+      "clicks_28d": 0,
+      "impressions_28d": 21,
+      "ctr_pct": 0,
+      "avg_position": 5.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/how-to-integrate-rozetka/",
@@ -745,32 +808,25 @@
       "avg_position": 4.8
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/recalls/",
+      "url": "https://www.fulfillmentmtp.com.ua/skladski-poslugy/",
       "clicks_28d": 0,
       "impressions_28d": 20,
       "ctr_pct": 0,
-      "avg_position": 5.8
+      "avg_position": 31.2
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/skladski-poslugy/",
+      "url": "https://www.fulfillmentmtp.com.ua/ru/tsenu/",
       "clicks_28d": 0,
       "impressions_28d": 19,
       "ctr_pct": 0,
-      "avg_position": 32.3
+      "avg_position": 4.8
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/business-in-ukraine-during-war/",
+      "url": "https://www.fulfillmentmtp.com.ua/ru/faq/",
       "clicks_28d": 0,
       "impressions_28d": 18,
       "ctr_pct": 0,
-      "avg_position": 7.6
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fiscal-register-requirements-ukraine/",
-      "clicks_28d": 0,
-      "impressions_28d": 18,
-      "ctr_pct": 0,
-      "avg_position": 4.9
+      "avg_position": 6.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-po-vsiy-ukraini/",
@@ -787,6 +843,34 @@
       "avg_position": 4.6
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-fulfillment-complete-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 17,
+      "ctr_pct": 0,
+      "avg_position": 17.6
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-sports-equipment/",
+      "clicks_28d": 0,
+      "impressions_28d": 17,
+      "ctr_pct": 0,
+      "avg_position": 53.3
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 17,
+      "ctr_pct": 0,
+      "avg_position": 8.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/about/",
+      "clicks_28d": 1,
+      "impressions_28d": 16,
+      "ctr_pct": 6.25,
+      "avg_position": 9.5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng/",
       "clicks_28d": 0,
       "impressions_28d": 16,
@@ -794,11 +878,11 @@
       "avg_position": 6.6
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-sports-equipment/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/5-mistakes-starting-online-store/",
       "clicks_28d": 0,
       "impressions_28d": 16,
       "ctr_pct": 0,
-      "avg_position": 52.7
+      "avg_position": 8.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/b2b-fulfilment/",
@@ -822,11 +906,11 @@
       "avg_position": 19.5
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/5-mistakes-starting-online-store/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/what-is-fulfillment-7-services/",
       "clicks_28d": 0,
       "impressions_28d": 15,
       "ctr_pct": 0,
-      "avg_position": 5.7
+      "avg_position": 48.1
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fiscal-register-prro-business/",
@@ -836,18 +920,32 @@
       "avg_position": 8
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/faq/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/mtp-group-fast-product-liquidation/",
       "clicks_28d": 0,
       "impressions_28d": 15,
       "ctr_pct": 0,
-      "avg_position": 6.6
+      "avg_position": 20.8
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/tsenu/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/guide/common-fulfillment-mistakes/",
       "clicks_28d": 0,
       "impressions_28d": 15,
       "ctr_pct": 0,
-      "avg_position": 4.7
+      "avg_position": 27.3
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-vazhkykh-tovariv/",
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "ctr_pct": 0,
+      "avg_position": 12.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/",
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "ctr_pct": 0,
+      "avg_position": 21.3
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/guide/fefo-lifo-fifo/",
@@ -871,39 +969,32 @@
       "avg_position": 34.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/mtp-group-fast-product-liquidation/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-sla/",
       "clicks_28d": 0,
       "impressions_28d": 14,
       "ctr_pct": 0,
-      "avg_position": 22.1
+      "avg_position": 6.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-fulfillment-complete-guide/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/ecommerce-trends-2022/",
       "clicks_28d": 0,
       "impressions_28d": 14,
       "ctr_pct": 0,
-      "avg_position": 18.6
+      "avg_position": 7.4
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/guide/common-fulfillment-mistakes/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/how-to-handle-customer-reviews/",
       "clicks_28d": 0,
       "impressions_28d": 14,
       "ctr_pct": 0,
-      "avg_position": 28.9
+      "avg_position": 18.4
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-kosmetyky/",
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz",
       "clicks_28d": 0,
-      "impressions_28d": 14,
-      "ctr_pct": 0,
-      "avg_position": 22.7
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/about/",
-      "clicks_28d": 1,
       "impressions_28d": 13,
-      "ctr_pct": 7.69,
-      "avg_position": 10
+      "ctr_pct": 0,
+      "avg_position": 43.7
     },
     {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/how-to-start-online-store-ukraine/",
@@ -920,6 +1011,20 @@
       "avg_position": 9.2
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse-2025/",
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "ctr_pct": 0,
+      "avg_position": 6.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse/",
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "ctr_pct": 0,
+      "avg_position": 9.5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/returns-management/",
       "clicks_28d": 0,
       "impressions_28d": 13,
@@ -927,11 +1032,11 @@
       "avg_position": 67.8
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-vazhkykh-tovariv/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/recalls/",
       "clicks_28d": 0,
       "impressions_28d": 13,
       "ctr_pct": 0,
-      "avg_position": 13.1
+      "avg_position": 5.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-distributoriv/",
@@ -948,6 +1053,13 @@
       "avg_position": 15.1
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/zberigannya-palet/",
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "ctr_pct": 0,
+      "avg_position": 13.2
+    },
+    {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/mtp-group-best-fulfillment-operators/",
       "clicks_28d": 0,
       "impressions_28d": 12,
@@ -955,53 +1067,32 @@
       "avg_position": 21.1
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/recalls/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-artikul/",
       "clicks_28d": 0,
       "impressions_28d": 12,
       "ctr_pct": 0,
-      "avg_position": 4.9
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/guide/",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "ctr_pct": 0,
-      "avg_position": 9.8
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/zberigannya-palet/",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "ctr_pct": 0,
-      "avg_position": 13.8
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/blog/tpost/n2a9117991-rro-dlya-internet-magazina-kak-vesti-biz",
-      "clicks_28d": 0,
-      "impressions_28d": 11,
-      "ctr_pct": 0,
-      "avg_position": 46.2
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse-2025/",
-      "clicks_28d": 0,
-      "impressions_28d": 11,
-      "ctr_pct": 0,
-      "avg_position": 7.3
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse/",
-      "clicks_28d": 0,
-      "impressions_28d": 11,
-      "ctr_pct": 0,
-      "avg_position": 10.7
+      "avg_position": 8.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/faq/",
       "clicks_28d": 0,
+      "impressions_28d": 12,
+      "ctr_pct": 0,
+      "avg_position": 6.2
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng/",
+      "clicks_28d": 0,
       "impressions_28d": 11,
       "ctr_pct": 0,
-      "avg_position": 6
+      "avg_position": 8.9
+    },
+    {
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/top-5-logistics-mistakes-ecommerce/",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "ctr_pct": 0,
+      "avg_position": 9.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-subscription-boxes/",
@@ -1011,18 +1102,11 @@
       "avg_position": 81.4
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/blog/tpost/6bcn9jn3b1-dohod-est-a-pribili-net-gde-teryaet-deng/",
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse-2025/",
       "clicks_28d": 0,
       "impressions_28d": 10,
       "ctr_pct": 0,
-      "avg_position": 9.7
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/top-5-logistics-mistakes-ecommerce/",
-      "clicks_28d": 0,
-      "impressions_28d": 10,
-      "ctr_pct": 0,
-      "avg_position": 9.9
+      "avg_position": 8
     },
     {
       "url": "https://fulfillmentmtp.com.ua/ua/services",
@@ -1053,11 +1137,39 @@
       "avg_position": 8.2
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-online-stores/",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "ctr_pct": 0,
+      "avg_position": 5.1
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/fiscal-register-prro-business/",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "ctr_pct": 0,
+      "avg_position": 50.9
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-fop/",
       "clicks_28d": 1,
       "impressions_28d": 9,
       "ctr_pct": 11.11,
       "avg_position": 66.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi",
+      "clicks_28d": 0,
+      "impressions_28d": 9,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/prepare-store-valentines-day/",
+      "clicks_28d": 0,
+      "impressions_28d": 9,
+      "ctr_pct": 0,
+      "avg_position": 16.9
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/how-to-choose-fulfillment-provider/",
@@ -1088,13 +1200,6 @@
       "avg_position": 26.6
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-vs-own-warehouse-2025/",
-      "clicks_28d": 0,
-      "impressions_28d": 8,
-      "ctr_pct": 0,
-      "avg_position": 8.2
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/recalls",
       "clicks_28d": 0,
       "impressions_28d": 8,
@@ -1102,25 +1207,11 @@
       "avg_position": 7.2
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
       "clicks_28d": 0,
       "impressions_28d": 8,
       "ctr_pct": 0,
-      "avg_position": 5.1
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/ecommerce-trends-2022/",
-      "clicks_28d": 0,
-      "impressions_28d": 8,
-      "ctr_pct": 0,
-      "avg_position": 6.8
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/prepare-store-valentines-day/",
-      "clicks_28d": 0,
-      "impressions_28d": 8,
-      "ctr_pct": 0,
-      "avg_position": 15.1
+      "avg_position": 14.2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics/",
@@ -1130,11 +1221,11 @@
       "avg_position": 58.2
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-online-stores/",
+      "url": "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/",
       "clicks_28d": 0,
       "impressions_28d": 8,
       "ctr_pct": 0,
-      "avg_position": 5.5
+      "avg_position": 20
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/guide/sistema-upravlinnya-skladom/",
@@ -1158,11 +1249,11 @@
       "avg_position": 5.9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/",
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/",
       "clicks_28d": 0,
       "impressions_28d": 7,
       "ctr_pct": 0,
-      "avg_position": 15.1
+      "avg_position": 7.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/xh1rdimut1-5-glavnih-oshibok-v-logistike-internet-m",
@@ -1186,18 +1277,11 @@
       "avg_position": 52.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/k6e9sg89y1-yak-vdkriti-nternet-magazin-v-ukran-osno/",
       "clicks_28d": 0,
       "impressions_28d": 7,
       "ctr_pct": 0,
-      "avg_position": 22.4
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/",
-      "clicks_28d": 0,
-      "impressions_28d": 7,
-      "ctr_pct": 0,
-      "avg_position": 9
+      "avg_position": 39.6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/faq/",
@@ -1228,11 +1312,11 @@
       "avg_position": 26.3
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/what-is-sku-article-number/",
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
       "clicks_28d": 0,
       "impressions_28d": 6,
       "ctr_pct": 0,
-      "avg_position": 8.2
+      "avg_position": 8.8
     },
     {
       "url": "https://fulfillmentmtp.com.ua/ua/blog/tpost/jghdgatid1-yak-vdkriti-nternet-magazin-pd-chas-vini",
@@ -1240,6 +1324,13 @@
       "impressions_28d": 6,
       "ctr_pct": 0,
       "avg_position": 4.8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/fulfillment-cost-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "ctr_pct": 0,
+      "avg_position": 16.7
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o",
@@ -1256,11 +1347,25 @@
       "avg_position": 9.7
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/how-to-handle-customer-reviews/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/10-ways-increase-profit-ecommerce/",
       "clicks_28d": 0,
       "impressions_28d": 6,
       "ctr_pct": 0,
-      "avg_position": 19.2
+      "avg_position": 10.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-furniture/",
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "ctr_pct": 0,
+      "avg_position": 26.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/guide/what-is-3pl/",
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "ctr_pct": 0,
+      "avg_position": 60.5
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/guide/",
@@ -1270,11 +1375,18 @@
       "avg_position": 13.5
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/k6e9sg89y1-yak-vdkriti-nternet-magazin-v-ukran-osno/",
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/",
       "clicks_28d": 0,
       "impressions_28d": 6,
       "ctr_pct": 0,
-      "avg_position": 44.5
+      "avg_position": 30.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/recalls/",
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "ctr_pct": 0,
+      "avg_position": 25
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/vartist-fulfilmentu-2026/",
@@ -1319,18 +1431,18 @@
       "avg_position": 8
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-for-clothing-shoes/",
       "clicks_28d": 0,
       "impressions_28d": 5,
       "ctr_pct": 0,
-      "avg_position": 9.6
+      "avg_position": 44.6
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/10-ways-increase-profit-ecommerce/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/fulfillment-vs-own-warehouse-2025/",
       "clicks_28d": 0,
       "impressions_28d": 5,
       "ctr_pct": 0,
-      "avg_position": 8.6
+      "avg_position": 33.4
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/reduce-product-returns-ecommerce/",
@@ -1338,6 +1450,13 @@
       "impressions_28d": 5,
       "ctr_pct": 0,
       "avg_position": 16.2
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-fulfillment-7-services/",
+      "clicks_28d": 0,
+      "impressions_28d": 5,
+      "ctr_pct": 0,
+      "avg_position": 60.8
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-fashion/",
@@ -1361,18 +1480,11 @@
       "avg_position": 15.6
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/guide/what-is-3pl/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/l69lld8l41-scho-take-fulflment-dlya-nternet-magazin/",
       "clicks_28d": 0,
       "impressions_28d": 5,
       "ctr_pct": 0,
-      "avg_position": 72.2
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/product-business-ukraine-guide/",
-      "clicks_28d": 0,
-      "impressions_28d": 5,
-      "ctr_pct": 0,
-      "avg_position": 9.6
+      "avg_position": 27
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-prom/",
@@ -1403,13 +1515,6 @@
       "avg_position": 3.5
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/fulfillment-for-clothing-shoes/",
-      "clicks_28d": 0,
-      "impressions_28d": 4,
-      "ctr_pct": 0,
-      "avg_position": 33.5
-    },
-    {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/protect-store-from-fraud/",
       "clicks_28d": 0,
       "impressions_28d": 4,
@@ -1424,6 +1529,13 @@
       "avg_position": 10.8
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/how-fulfillment-works-ukraine-2025/",
+      "clicks_28d": 0,
+      "impressions_28d": 4,
+      "ctr_pct": 0,
+      "avg_position": 11.5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/a5zlsrmfs1-chem-zamenit-rossiiskie-servisi-chek-lis",
       "clicks_28d": 0,
       "impressions_28d": 4,
@@ -1431,11 +1543,11 @@
       "avg_position": 4.8
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-furniture/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/protect-store-from-fraud/",
       "clicks_28d": 0,
       "impressions_28d": 4,
       "ctr_pct": 0,
-      "avg_position": 36.8
+      "avg_position": 8.8
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-medical-supplies/",
@@ -1536,6 +1648,27 @@
       "avg_position": 6.7
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/fulfillment-vs-own-warehouse/",
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "ctr_pct": 0,
+      "avg_position": 40.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/how-to-handle-customer-reviews/",
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "ctr_pct": 0,
+      "avg_position": 14.7
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/product-business-ukraine-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "ctr_pct": 0,
+      "avg_position": 7.3
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/e3uzpiaja1-5-glavnih-oshibok-pri-otkritii-internet/",
       "clicks_28d": 0,
       "impressions_28d": 3,
@@ -1543,11 +1676,11 @@
       "avg_position": 9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/what-is-fulfillment-7-services/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/ecommerce-logistics-during-war/",
       "clicks_28d": 0,
       "impressions_28d": 3,
       "ctr_pct": 0,
-      "avg_position": 43
+      "avg_position": 6
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/how-to-choose-fulfillment-operator/",
@@ -1557,13 +1690,6 @@
       "avg_position": 15.7
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/protect-store-from-fraud/",
-      "clicks_28d": 0,
-      "impressions_28d": 3,
-      "ctr_pct": 0,
-      "avg_position": 9.7
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-baby-products/",
       "clicks_28d": 0,
       "impressions_28d": 3,
@@ -1571,11 +1697,11 @@
       "avg_position": 20
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/",
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-prom/",
       "clicks_28d": 0,
       "impressions_28d": 3,
       "ctr_pct": 0,
-      "avg_position": 33
+      "avg_position": 4.7
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-fulfilment/",
@@ -1585,11 +1711,25 @@
       "avg_position": 26.3
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/l69lld8l41-scho-take-fulflment-dlya-nternet-magazin/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-sla/",
       "clicks_28d": 0,
       "impressions_28d": 3,
       "ctr_pct": 0,
-      "avg_position": 5.7
+      "avg_position": 20
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/top-5-logistics-mistakes-ecommerce/",
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "ctr_pct": 0,
+      "avg_position": 38
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn/",
+      "clicks_28d": 0,
+      "impressions_28d": 3,
+      "ctr_pct": 0,
+      "avg_position": 8.7
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc",
@@ -1641,6 +1781,13 @@
       "avg_position": 8
     },
     {
+      "url": "https://fulfillmentmtp.com.ua/blog/tpost/1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 1.5
+    },
+    {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -1662,6 +1809,13 @@
       "avg_position": 8.5
     },
     {
+      "url": "https://fulfillmentmtp.com.ua/en/blog/post/how-to-choose-fulfillment-operator/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 37.5
+    },
+    {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/prepare-store-valentines-day/",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -1681,6 +1835,20 @@
       "impressions_28d": 2,
       "ctr_pct": 0,
       "avg_position": 7.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/business-in-ukraine-during-war/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/fulfillment-for-clothing-shoes/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 31.5
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/2b5uuyxzx1-chto-nuzhno-znat-o-povedenii-pokupatelei/",
@@ -1718,6 +1886,27 @@
       "avg_position": 6.5
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/what-is-sla-in-logistics/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 8.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/online-buyer-behavior-insights/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 10.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/why-audit-warehouse-in-summer/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 6.5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-art-and-crafts/",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -1746,6 +1935,13 @@
       "avg_position": 12.5
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-wholesale-bulk/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/guide/quality-control-accuracy/",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -1754,6 +1950,27 @@
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/fulfilment-vazhkykh-tovariv/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 5.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/5-mistakes-starting-online-store/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 61
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/ecommerce-logistics-during-war/",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 57.5
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/mtp-group-best-fulfillment-operators/",
       "clicks_28d": 0,
       "impressions_28d": 2,
       "ctr_pct": 0,
@@ -1844,11 +2061,11 @@
       "avg_position": 73.5
     },
     {
-      "url": "https://fulfillmentmtp.com.ua/blog/tpost/1sn3nscy81-moshennichestvo-klientov-pri-pokupke-v-i/",
-      "clicks_28d": 0,
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/where-online-store-loses-money/",
+      "clicks_28d": 1,
       "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 2
+      "ctr_pct": 100,
+      "avg_position": 6
     },
     {
       "url": "https://fulfillmentmtp.com.ua/blog/tpost/kahfgm2161-7-trendov-internet-torgovli-v-2022-godu",
@@ -1863,13 +2080,6 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 1
-    },
-    {
-      "url": "https://fulfillmentmtp.com.ua/en/blog/post/how-to-choose-fulfillment-operator/",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 22
     },
     {
       "url": "https://fulfillmentmtp.com.ua/en/blog/post/peak-season-logistics-mistakes/",
@@ -1928,18 +2138,46 @@
       "avg_position": 10
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/chto-takoe-sla/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/best-business-ideas-ukraine/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/ecommerce-logistics-during-war/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/fiscal-register-requirements-ukraine/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 12
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/online-store-during-wartime/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 3
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/blog/replace-russian-services-ukraine-checklist/",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 1
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/blog/fulfillment-cost-guide/",
+      "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/60er8zh601-rro-i-prro-dlya-biznesa-osobennosti-i-tr?amp=true",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 9
+      "avg_position": 65
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/blog/tpost/l7otgimlh1-kak-internet-magazinu-podgotovitsya-k-dn/",
@@ -1949,11 +2187,18 @@
       "avg_position": 9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/why-audit-warehouse-in-summer/",
+      "url": "https://www.fulfillmentmtp.com.ua/en",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 11
+      "avg_position": 8
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/blog/post/where-online-store-loses-money/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 43
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-beauty-cosmetics/",
@@ -1998,11 +2243,11 @@
       "avg_position": 9
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-wholesale-bulk/",
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 2
+      "avg_position": 12
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/images/blog/otkryt-biznes-onlajn.jpg",
@@ -2012,18 +2257,25 @@
       "avg_position": 17
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/recalls/",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 20
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/ua/",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 4
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/10-ways-increase-profit-ecommerce/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 11
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/case-ecodrive/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 2
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/",
@@ -2033,11 +2285,18 @@
       "avg_position": 20
     },
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/bgt5cmsix1-svi-sklad-vs-fulflment-scho-obrati-vlasn/",
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/expand-to-european-marketplaces/",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 6
+      "avg_position": 4
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/reduce-product-returns-ecommerce/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 79
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran",
@@ -2047,11 +2306,25 @@
       "avg_position": 5
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/blog/what-is-fulfillment-7-services/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 50
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/ua/blog/yak-perejty-na-fulfilment/",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 9
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfillment-dlya-gurtovyh-zakupivel/",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfillment-dlya-knyg-ta-mediyi/",
@@ -2100,37 +2373,51 @@
     {
       "query": "мтп",
       "clicks_28d": 0,
-      "impressions_28d": 369,
+      "impressions_28d": 379,
       "ctr_pct": 0,
       "avg_position": 7.3
     },
     {
       "query": "sla це",
       "clicks_28d": 0,
-      "impressions_28d": 326,
+      "impressions_28d": 358,
       "ctr_pct": 0,
       "avg_position": 7.4
     },
     {
+      "query": "sla",
+      "clicks_28d": 1,
+      "impressions_28d": 292,
+      "ctr_pct": 0.34,
+      "avg_position": 10.8
+    },
+    {
       "query": "артикул",
       "clicks_28d": 0,
-      "impressions_28d": 265,
+      "impressions_28d": 267,
       "ctr_pct": 0,
       "avg_position": 5.8
     },
     {
-      "query": "sla",
-      "clicks_28d": 1,
-      "impressions_28d": 264,
-      "ctr_pct": 0.38,
-      "avg_position": 10.9
-    },
-    {
       "query": "товарний бізнес",
       "clicks_28d": 1,
-      "impressions_28d": 183,
-      "ctr_pct": 0.55,
-      "avg_position": 9.1
+      "impressions_28d": 197,
+      "ctr_pct": 0.51,
+      "avg_position": 9.2
+    },
+    {
+      "query": "mtp",
+      "clicks_28d": 0,
+      "impressions_28d": 196,
+      "ctr_pct": 0,
+      "avg_position": 4.5
+    },
+    {
+      "query": "товарный бизнес",
+      "clicks_28d": 2,
+      "impressions_28d": 187,
+      "ctr_pct": 1.07,
+      "avg_position": 9.3
     },
     {
       "query": "prom.ua",
@@ -2140,81 +2427,74 @@
       "avg_position": 2.9
     },
     {
-      "query": "mtp",
-      "clicks_28d": 0,
-      "impressions_28d": 181,
-      "ctr_pct": 0,
-      "avg_position": 4.6
-    },
-    {
-      "query": "товарный бизнес",
-      "clicks_28d": 2,
-      "impressions_28d": 174,
-      "ctr_pct": 1.15,
-      "avg_position": 9.2
-    },
-    {
       "query": "артикул це",
       "clicks_28d": 0,
-      "impressions_28d": 134,
+      "impressions_28d": 147,
       "ctr_pct": 0,
-      "avg_position": 3.0
+      "avg_position": 3.6
+    },
+    {
+      "query": "prom ua доставка в молдову",
+      "clicks_28d": 0,
+      "impressions_28d": 104,
+      "ctr_pct": 0,
+      "avg_position": 7.8
     },
     {
       "query": "how to calculate fulfillment cost per order",
       "clicks_28d": 0,
-      "impressions_28d": 90,
+      "impressions_28d": 95,
       "ctr_pct": 0,
-      "avg_position": 39.0
-    },
-    {
-      "query": "склад фулфилмент",
-      "clicks_28d": 0,
-      "impressions_28d": 82,
-      "ctr_pct": 0,
-      "avg_position": 10.1
+      "avg_position": 39.4
     },
     {
       "query": "fulfilment service",
       "clicks_28d": 0,
-      "impressions_28d": 56,
+      "impressions_28d": 60,
       "ctr_pct": 0,
-      "avg_position": 18.1
+      "avg_position": 18.5
     },
     {
       "query": "fulfilment services",
       "clicks_28d": 0,
-      "impressions_28d": 56,
+      "impressions_28d": 60,
       "ctr_pct": 0,
-      "avg_position": 13.3
-    },
-    {
-      "query": "fulfilment",
-      "clicks_28d": 0,
-      "impressions_28d": 54,
-      "ctr_pct": 0,
-      "avg_position": 21.1
-    },
-    {
-      "query": "как открыть интернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 54,
-      "ctr_pct": 0,
-      "avg_position": 9.5
-    },
-    {
-      "query": "открыть интернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 52,
-      "ctr_pct": 0,
-      "avg_position": 10.5
+      "avg_position": 13.0
     },
     {
       "query": "kasta.ua international delivery",
       "clicks_28d": 0,
-      "impressions_28d": 51,
+      "impressions_28d": 57,
       "ctr_pct": 0,
-      "avg_position": 9.6
+      "avg_position": 9.8
+    },
+    {
+      "query": "как открыть интернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 56,
+      "ctr_pct": 0,
+      "avg_position": 11.5
+    },
+    {
+      "query": "fulfilment",
+      "clicks_28d": 0,
+      "impressions_28d": 55,
+      "ctr_pct": 0,
+      "avg_position": 21.3
+    },
+    {
+      "query": "открыть интернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 54,
+      "ctr_pct": 0,
+      "avg_position": 12.5
+    },
+    {
+      "query": "packaging fulfillment",
+      "clicks_28d": 0,
+      "impressions_28d": 52,
+      "ctr_pct": 0,
+      "avg_position": 4.6
     },
     {
       "query": "как создать интернет магазин",
@@ -2224,25 +2504,25 @@
       "avg_position": 34.1
     },
     {
-      "query": "packaging fulfillment",
-      "clicks_28d": 0,
-      "impressions_28d": 49,
-      "ctr_pct": 0,
-      "avg_position": 4.7
-    },
-    {
       "query": "открыть свой интернет магазин",
       "clicks_28d": 0,
-      "impressions_28d": 46,
+      "impressions_28d": 47,
       "ctr_pct": 0,
-      "avg_position": 14.3
+      "avg_position": 15.6
     },
     {
       "query": "що таке артикул",
       "clicks_28d": 1,
-      "impressions_28d": 43,
-      "ctr_pct": 2.33,
-      "avg_position": 3
+      "impressions_28d": 45,
+      "ctr_pct": 2.22,
+      "avg_position": 3.2
+    },
+    {
+      "query": "послуги складу",
+      "clicks_28d": 0,
+      "impressions_28d": 44,
+      "ctr_pct": 0,
+      "avg_position": 19
     },
     {
       "query": "cosmetics fulfilment",
@@ -2252,6 +2532,13 @@
       "avg_position": 89.3
     },
     {
+      "query": "fulfillment of cosmetics",
+      "clicks_28d": 0,
+      "impressions_28d": 40,
+      "ctr_pct": 0,
+      "avg_position": 80.9
+    },
+    {
       "query": "плюсы фулфилмента",
       "clicks_28d": 0,
       "impressions_28d": 40,
@@ -2259,67 +2546,74 @@
       "avg_position": 10.7
     },
     {
-      "query": "fulfillment of cosmetics",
-      "clicks_28d": 0,
-      "impressions_28d": 38,
-      "ctr_pct": 0,
-      "avg_position": 80.8
-    },
-    {
       "query": "прро це",
       "clicks_28d": 0,
-      "impressions_28d": 38,
+      "impressions_28d": 40,
       "ctr_pct": 0,
-      "avg_position": 32.6
+      "avg_position": 32.7
     },
     {
-      "query": "послуги складу",
+      "query": "rozetka com ua доставка в молдову",
       "clicks_28d": 0,
-      "impressions_28d": 37,
+      "impressions_28d": 39,
       "ctr_pct": 0,
-      "avg_position": 20.4
+      "avg_position": 11.5
     },
     {
       "query": "фулфилмент украина",
       "clicks_28d": 1,
-      "impressions_28d": 35,
-      "ctr_pct": 2.86,
-      "avg_position": 5.1
+      "impressions_28d": 37,
+      "ctr_pct": 2.7,
+      "avg_position": 5.3
     },
     {
       "query": "фулфилмент киев",
       "clicks_28d": 1,
-      "impressions_28d": 33,
-      "ctr_pct": 3.03,
-      "avg_position": 17.3
+      "impressions_28d": 34,
+      "ctr_pct": 2.94,
+      "avg_position": 16.9
     },
     {
       "query": "sla що це",
       "clicks_28d": 0,
-      "impressions_28d": 31,
+      "impressions_28d": 33,
       "ctr_pct": 0,
       "avg_position": 7.9
     },
     {
       "query": "как открыть интернет магазин в украине",
       "clicks_28d": 0,
-      "impressions_28d": 31,
+      "impressions_28d": 33,
       "ctr_pct": 0,
-      "avg_position": 11.8
+      "avg_position": 15
     },
     {
       "query": "открыть интернет магазин украина",
       "clicks_28d": 0,
-      "impressions_28d": 31,
+      "impressions_28d": 32,
       "ctr_pct": 0,
-      "avg_position": 12.9
+      "avg_position": 13.8
     },
     {
-      "query": "rozetka com ua доставка в молдову",
+      "query": "как открыть свой интернет магазин",
       "clicks_28d": 0,
       "impressions_28d": 30,
       "ctr_pct": 0,
-      "avg_position": 11.6
+      "avg_position": 17.4
+    },
+    {
+      "query": "mtp group",
+      "clicks_28d": 13,
+      "impressions_28d": 29,
+      "ctr_pct": 44.83,
+      "avg_position": 1.3
+    },
+    {
+      "query": "fiscal representation ukraine",
+      "clicks_28d": 0,
+      "impressions_28d": 29,
+      "ctr_pct": 0,
+      "avg_position": 77.2
     },
     {
       "query": "fulfillment cosmetics",
@@ -2329,25 +2623,18 @@
       "avg_position": 82
     },
     {
-      "query": "как открыть свой интернет магазин",
+      "query": "артикул товару",
       "clicks_28d": 0,
       "impressions_28d": 28,
       "ctr_pct": 0,
-      "avg_position": 14.5
+      "avg_position": 8.0
     },
     {
-      "query": "fiscal representation ukraine",
+      "query": "sla в логистике",
       "clicks_28d": 0,
       "impressions_28d": 27,
       "ctr_pct": 0,
-      "avg_position": 77.3
-    },
-    {
-      "query": "артикул товару",
-      "clicks_28d": 0,
-      "impressions_28d": 27,
-      "ctr_pct": 0,
-      "avg_position": 7.8
+      "avg_position": 8.1
     },
     {
       "query": "минусы фулфилмента",
@@ -2357,39 +2644,46 @@
       "avg_position": 6.1
     },
     {
-      "query": "sla в логистике",
-      "clicks_28d": 0,
-      "impressions_28d": 25,
-      "ctr_pct": 0,
-      "avg_position": 8.6
-    },
-    {
-      "query": "mtp group",
-      "clicks_28d": 8,
-      "impressions_28d": 24,
-      "ctr_pct": 33.33,
-      "avg_position": 1.4
-    },
-    {
-      "query": "склад фулфілмент дніпро",
-      "clicks_28d": 0,
-      "impressions_28d": 24,
-      "ctr_pct": 0,
-      "avg_position": 48.1
-    },
-    {
       "query": "fulfillment beauty-cosmetics",
       "clicks_28d": 0,
-      "impressions_28d": 22,
+      "impressions_28d": 23,
       "ctr_pct": 0,
       "avg_position": 80.3
     },
     {
       "query": "fulfillment costs",
       "clicks_28d": 0,
+      "impressions_28d": 22,
+      "ctr_pct": 0,
+      "avg_position": 70.0
+    },
+    {
+      "query": "рро",
+      "clicks_28d": 0,
+      "impressions_28d": 22,
+      "ctr_pct": 0,
+      "avg_position": 39.7
+    },
+    {
+      "query": "kasta.ua international shipping",
+      "clicks_28d": 0,
       "impressions_28d": 21,
       "ctr_pct": 0,
-      "avg_position": 69.3
+      "avg_position": 9.8
+    },
+    {
+      "query": "аутсорсинг приема заказов",
+      "clicks_28d": 0,
+      "impressions_28d": 21,
+      "ctr_pct": 0,
+      "avg_position": 6.9
+    },
+    {
+      "query": "логістика для інтернет-магазину",
+      "clicks_28d": 0,
+      "impressions_28d": 21,
+      "ctr_pct": 0,
+      "avg_position": 32.1
     },
     {
       "query": "фулфілмент україна",
@@ -2399,11 +2693,11 @@
       "avg_position": 2.5
     },
     {
-      "query": "kasta.ua international shipping",
+      "query": "fulfillment provider cost",
       "clicks_28d": 0,
       "impressions_28d": 20,
       "ctr_pct": 0,
-      "avg_position": 9.8
+      "avg_position": 27.7
     },
     {
       "query": "открыть интернет магазин в украине",
@@ -2413,39 +2707,25 @@
       "avg_position": 10.9
     },
     {
-      "query": "рро",
+      "query": "мтп вход",
       "clicks_28d": 0,
-      "impressions_28d": 20,
+      "impressions_28d": 19,
       "ctr_pct": 0,
-      "avg_position": 39.5
+      "avg_position": 6.7
     },
     {
-      "query": "склад фулфілмент",
+      "query": "как создать свой интернет магазин",
       "clicks_28d": 0,
-      "impressions_28d": 20,
+      "impressions_28d": 17,
       "ctr_pct": 0,
-      "avg_position": 50.5
+      "avg_position": 23.1
     },
     {
-      "query": "fulfillment provider cost",
+      "query": "интернет магазин открыть",
       "clicks_28d": 0,
-      "impressions_28d": 18,
+      "impressions_28d": 16,
       "ctr_pct": 0,
-      "avg_position": 27.6
-    },
-    {
-      "query": "аутсорсинг приема заказов",
-      "clicks_28d": 0,
-      "impressions_28d": 18,
-      "ctr_pct": 0,
-      "avg_position": 7.1
-    },
-    {
-      "query": "склад фулфилмент киев",
-      "clicks_28d": 0,
-      "impressions_28d": 18,
-      "ctr_pct": 0,
-      "avg_position": 51.9
+      "avg_position": 14.5
     },
     {
       "query": "как запустить свой интернет магазин",
@@ -2455,46 +2735,11 @@
       "avg_position": 11.5
     },
     {
-      "query": "как создать свой интернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 16,
-      "ctr_pct": 0,
-      "avg_position": 21.7
-    },
-    {
-      "query": "логістика для інтернет-магазину",
-      "clicks_28d": 0,
-      "impressions_28d": 16,
-      "ctr_pct": 0,
-      "avg_position": 32.4
-    },
-    {
-      "query": "рро для фоп что это",
-      "clicks_28d": 0,
-      "impressions_28d": 16,
-      "ctr_pct": 0,
-      "avg_position": 41.4
-    },
-    {
-      "query": "склад фулфілмент київ",
-      "clicks_28d": 0,
-      "impressions_28d": 16,
-      "ctr_pct": 0,
-      "avg_position": 48.1
-    },
-    {
-      "query": "рро это",
+      "query": "sla shipping",
       "clicks_28d": 0,
       "impressions_28d": 15,
       "ctr_pct": 0,
-      "avg_position": 42.4
-    },
-    {
-      "query": "склад фулфилмент днепр",
-      "clicks_28d": 0,
-      "impressions_28d": 15,
-      "ctr_pct": 0,
-      "avg_position": 36
+      "avg_position": 3.2
     },
     {
       "query": "cosmetics fulfillment services",
@@ -2511,25 +2756,18 @@
       "avg_position": 44.3
     },
     {
+      "query": "артикул товару це",
+      "clicks_28d": 0,
+      "impressions_28d": 14,
+      "ctr_pct": 0,
+      "avg_position": 7
+    },
+    {
       "query": "артикуль",
       "clicks_28d": 0,
       "impressions_28d": 14,
       "ctr_pct": 0,
       "avg_position": 6.4
-    },
-    {
-      "query": "интернет магазин открыть",
-      "clicks_28d": 0,
-      "impressions_28d": 14,
-      "ctr_pct": 0,
-      "avg_position": 10
-    },
-    {
-      "query": "рро для фоп это",
-      "clicks_28d": 0,
-      "impressions_28d": 14,
-      "ctr_pct": 0,
-      "avg_position": 39.8
     },
     {
       "query": "fulfillment cost calculator",
@@ -2560,18 +2798,11 @@
       "avg_position": 40.7
     },
     {
-      "query": "sla shipping",
+      "query": "интернет магазин как открыть",
       "clicks_28d": 0,
       "impressions_28d": 13,
       "ctr_pct": 0,
-      "avg_position": 3.1
-    },
-    {
-      "query": "артикул товару це",
-      "clicks_28d": 0,
-      "impressions_28d": 13,
-      "ctr_pct": 0,
-      "avg_position": 6.8
+      "avg_position": 17.2
     },
     {
       "query": "как запустить интернет магазин с нуля",
@@ -2588,13 +2819,6 @@
       "avg_position": 69
     },
     {
-      "query": "склад для інтернет-магазину",
-      "clicks_28d": 0,
-      "impressions_28d": 13,
-      "ctr_pct": 0,
-      "avg_position": 25.5
-    },
-    {
       "query": "b2b фулфілмент в україні",
       "clicks_28d": 0,
       "impressions_28d": 12,
@@ -2602,11 +2826,25 @@
       "avg_position": 42.5
     },
     {
+      "query": "cosmetica fulfilment",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "ctr_pct": 0,
+      "avg_position": 83
+    },
+    {
       "query": "fulfillment pricing",
       "clicks_28d": 0,
       "impressions_28d": 12,
       "ctr_pct": 0,
       "avg_position": 65.2
+    },
+    {
+      "query": "fulfilment center",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "ctr_pct": 0,
+      "avg_position": 1.9
     },
     {
       "query": "fulfilment логистика днепр",
@@ -2637,20 +2875,6 @@
       "avg_position": 63.2
     },
     {
-      "query": "рро касовий апарат",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "ctr_pct": 0,
-      "avg_position": 38
-    },
-    {
-      "query": "рро прро це",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "ctr_pct": 0,
-      "avg_position": 33.6
-    },
-    {
       "query": "b2b fulfillment in ukraine",
       "clicks_28d": 0,
       "impressions_28d": 11,
@@ -2658,11 +2882,11 @@
       "avg_position": 44.8
     },
     {
-      "query": "cosmetica fulfilment",
+      "query": "e-commerce delivery slas",
       "clicks_28d": 0,
       "impressions_28d": 11,
       "ctr_pct": 0,
-      "avg_position": 82.8
+      "avg_position": 16.6
     },
     {
       "query": "fulfillment in ukraine",
@@ -2670,13 +2894,6 @@
       "impressions_28d": 11,
       "ctr_pct": 0,
       "avg_position": 45.1
-    },
-    {
-      "query": "fulfilment center",
-      "clicks_28d": 0,
-      "impressions_28d": 11,
-      "ctr_pct": 0,
-      "avg_position": 1.9
     },
     {
       "query": "sla підтримки платформ продажу надлишків",
@@ -2707,11 +2924,32 @@
       "avg_position": 27.3
     },
     {
+      "query": "как открыть свой магазин в украине",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "ctr_pct": 0,
+      "avg_position": 39.5
+    },
+    {
       "query": "настройка рро для фоп",
       "clicks_28d": 0,
       "impressions_28d": 11,
       "ctr_pct": 0,
       "avg_position": 61.9
+    },
+    {
+      "query": "фулфилмент в украине",
+      "clicks_28d": 1,
+      "impressions_28d": 10,
+      "ctr_pct": 10.0,
+      "avg_position": 6.7
+    },
+    {
+      "query": "3 pl",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "ctr_pct": 0,
+      "avg_position": 47.9
     },
     {
       "query": "3pl услуги",
@@ -2721,18 +2959,18 @@
       "avg_position": 33.3
     },
     {
+      "query": "business fulfillment pricing",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "ctr_pct": 0,
+      "avg_position": 28
+    },
+    {
       "query": "fulfilment логистика запорожье",
       "clicks_28d": 0,
       "impressions_28d": 10,
       "ctr_pct": 0,
       "avg_position": 31.7
-    },
-    {
-      "query": "интернет магазин как открыть",
-      "clicks_28d": 0,
-      "impressions_28d": 10,
-      "ctr_pct": 0,
-      "avg_position": 9.5
     },
     {
       "query": "как открыть интернет-магазин в украине",
@@ -2749,13 +2987,6 @@
       "avg_position": 17.9
     },
     {
-      "query": "как открыть свой магазин в украине",
-      "clicks_28d": 0,
-      "impressions_28d": 10,
-      "ctr_pct": 0,
-      "avg_position": 38.7
-    },
-    {
       "query": "пошаговый план открытия интернет магазина",
       "clicks_28d": 0,
       "impressions_28d": 10,
@@ -2763,32 +2994,11 @@
       "avg_position": 80.2
     },
     {
-      "query": "склад фулфилмент запорожье",
-      "clicks_28d": 0,
-      "impressions_28d": 10,
-      "ctr_pct": 0,
-      "avg_position": 39.2
-    },
-    {
-      "query": "3 pl",
-      "clicks_28d": 0,
-      "impressions_28d": 9,
-      "ctr_pct": 0,
-      "avg_position": 48.6
-    },
-    {
       "query": "b2c фулфілмент в україні",
       "clicks_28d": 0,
       "impressions_28d": 9,
       "ctr_pct": 0,
       "avg_position": 47.3
-    },
-    {
-      "query": "business fulfillment pricing",
-      "clicks_28d": 0,
-      "impressions_28d": 9,
-      "ctr_pct": 0,
-      "avg_position": 27.8
     },
     {
       "query": "demand ware fulfillment pricing",
@@ -2840,39 +3050,11 @@
       "avg_position": 71.3
     },
     {
-      "query": "мтп вход",
+      "query": "как сделать интернет магазин",
       "clicks_28d": 0,
       "impressions_28d": 9,
       "ctr_pct": 0,
-      "avg_position": 7.3
-    },
-    {
-      "query": "рро для фоп це",
-      "clicks_28d": 0,
-      "impressions_28d": 9,
-      "ctr_pct": 0,
-      "avg_position": 77.2
-    },
-    {
-      "query": "сервіс викупу товарів",
-      "clicks_28d": 0,
-      "impressions_28d": 9,
-      "ctr_pct": 0,
-      "avg_position": 19.3
-    },
-    {
-      "query": "фулфилмент в украине",
-      "clicks_28d": 1,
-      "impressions_28d": 8,
-      "ctr_pct": 12.5,
-      "avg_position": 7.4
-    },
-    {
-      "query": "e-commerce delivery slas",
-      "clicks_28d": 0,
-      "impressions_28d": 8,
-      "ctr_pct": 0,
-      "avg_position": 16.5
+      "avg_position": 36.6
     },
     {
       "query": "fulfilment логістика",
@@ -2889,18 +3071,18 @@
       "avg_position": 7.5
     },
     {
+      "query": "как открыть свой онлайн магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 8,
+      "ctr_pct": 0,
+      "avg_position": 22
+    },
+    {
       "query": "открыть бизнес в украине",
       "clicks_28d": 0,
       "impressions_28d": 8,
       "ctr_pct": 0,
       "avg_position": 37
-    },
-    {
-      "query": "рро для інтернет магазинів",
-      "clicks_28d": 0,
-      "impressions_28d": 8,
-      "ctr_pct": 0,
-      "avg_position": 16.6
     },
     {
       "query": "3pl провайдер",
@@ -2931,25 +3113,25 @@
       "avg_position": 5.4
     },
     {
-      "query": "как открыть свой онлайн магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 7,
-      "ctr_pct": 0,
-      "avg_position": 14.3
-    },
-    {
-      "query": "как сделать интернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 7,
-      "ctr_pct": 0,
-      "avg_position": 27.7
-    },
-    {
       "query": "логистические услуги 3pl",
       "clicks_28d": 0,
       "impressions_28d": 7,
       "ctr_pct": 0,
       "avg_position": 26.4
+    },
+    {
+      "query": "мтп это",
+      "clicks_28d": 0,
+      "impressions_28d": 7,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "підберіть короткий список 3pl-провайдерів в україні, які надають складське зберігання в києві, обробку 500–2 000 посилок/день, інтеграцію через api (wms/erp), обробку повернень і можливість маркування під бренд. вкажіть орієнтовні терміни підключення, рівень sla і приклади клієнтів у сегменті e‑commerce.",
+      "clicks_28d": 0,
+      "impressions_28d": 7,
+      "ctr_pct": 0,
+      "avg_position": 2
     },
     {
       "query": "раскрутка интернет магазина в украине",
@@ -2964,13 +3146,6 @@
       "impressions_28d": 7,
       "ctr_pct": 0,
       "avg_position": 58.9
-    },
-    {
-      "query": "рро це",
-      "clicks_28d": 0,
-      "impressions_28d": 7,
-      "ctr_pct": 0,
-      "avg_position": 35.4
     },
     {
       "query": "3pl оператор київ",
@@ -3022,6 +3197,13 @@
       "avg_position": 13.7
     },
     {
+      "query": "warehouse services pricing calculator",
+      "clicks_28d": 0,
+      "impressions_28d": 6,
+      "ctr_pct": 0,
+      "avg_position": 61.8
+    },
+    {
       "query": "аутсорсинг пакувальників",
       "clicks_28d": 0,
       "impressions_28d": 6,
@@ -3036,13 +3218,6 @@
       "avg_position": 81.3
     },
     {
-      "query": "мтп это",
-      "clicks_28d": 0,
-      "impressions_28d": 6,
-      "ctr_pct": 0,
-      "avg_position": 9.8
-    },
-    {
       "query": "3pl операторы украины",
       "clicks_28d": 0,
       "impressions_28d": 5,
@@ -3055,6 +3230,13 @@
       "impressions_28d": 5,
       "ctr_pct": 0,
       "avg_position": 65.2
+    },
+    {
+      "query": "fulfillment",
+      "clicks_28d": 0,
+      "impressions_28d": 5,
+      "ctr_pct": 0,
+      "avg_position": 17
     },
     {
       "query": "fulfillment centre 45",
@@ -3085,11 +3267,11 @@
       "avg_position": 9.6
     },
     {
-      "query": "warehouse services pricing calculator",
+      "query": "sports fulfilment warehouse",
       "clicks_28d": 0,
       "impressions_28d": 5,
       "ctr_pct": 0,
-      "avg_position": 64.6
+      "avg_position": 56.6
     },
     {
       "query": "артикул товару приклад",
@@ -3097,6 +3279,13 @@
       "impressions_28d": 5,
       "ctr_pct": 0,
       "avg_position": 4.8
+    },
+    {
+      "query": "зробити інтернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 5,
+      "ctr_pct": 0,
+      "avg_position": 71.2
     },
     {
       "query": "интернет магазин как открыть пошагово с нуля",
@@ -3127,46 +3316,18 @@
       "avg_position": 8.6
     },
     {
+      "query": "програмний реєстратор розрахункових операцій",
+      "clicks_28d": 0,
+      "impressions_28d": 5,
+      "ctr_pct": 0,
+      "avg_position": 46.6
+    },
+    {
       "query": "програмний рро для юридичних осіб",
       "clicks_28d": 0,
       "impressions_28d": 5,
       "ctr_pct": 0,
       "avg_position": 51.4
-    },
-    {
-      "query": "підберіть короткий список 3pl-провайдерів в україні, які надають складське зберігання в києві, обробку 500–2 000 посилок/день, інтеграцію через api (wms/erp), обробку повернень і можливість маркування під бренд. вкажіть орієнтовні терміни підключення, рівень sla і приклади клієнтів у сегменті e‑commerce.",
-      "clicks_28d": 0,
-      "impressions_28d": 5,
-      "ctr_pct": 0,
-      "avg_position": 2.4
-    },
-    {
-      "query": "рро прро",
-      "clicks_28d": 0,
-      "impressions_28d": 5,
-      "ctr_pct": 0,
-      "avg_position": 40.2
-    },
-    {
-      "query": "склад 3pl",
-      "clicks_28d": 0,
-      "impressions_28d": 5,
-      "ctr_pct": 0,
-      "avg_position": 29.2
-    },
-    {
-      "query": "склад фулфілмент запоріжжя",
-      "clicks_28d": 0,
-      "impressions_28d": 5,
-      "ctr_pct": 0,
-      "avg_position": 28.2
-    },
-    {
-      "query": "fulfillment",
-      "clicks_28d": 0,
-      "impressions_28d": 4,
-      "ctr_pct": 0,
-      "avg_position": 11.2
     },
     {
       "query": "fulfillment cost",
@@ -3183,6 +3344,13 @@
       "avg_position": 29
     },
     {
+      "query": "prom api",
+      "clicks_28d": 0,
+      "impressions_28d": 4,
+      "ctr_pct": 0,
+      "avg_position": 13
+    },
+    {
       "query": "returns fulfilment",
       "clicks_28d": 0,
       "impressions_28d": 4,
@@ -3195,13 +3363,6 @@
       "impressions_28d": 4,
       "ctr_pct": 0,
       "avg_position": 23
-    },
-    {
-      "query": "sports fulfilment warehouse",
-      "clicks_28d": 0,
-      "impressions_28d": 4,
-      "ctr_pct": 0,
-      "avg_position": 55
     },
     {
       "query": "warehousing services in kyiv",
@@ -3218,6 +3379,13 @@
       "avg_position": 4
     },
     {
+      "query": "відкрити інтернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 4,
+      "ctr_pct": 0,
+      "avg_position": 53.8
+    },
+    {
       "query": "где открыть интернет компанию",
       "clicks_28d": 0,
       "impressions_28d": 4,
@@ -3230,6 +3398,13 @@
       "impressions_28d": 4,
       "ctr_pct": 0,
       "avg_position": 13
+    },
+    {
+      "query": "как сделать свой интернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 4,
+      "ctr_pct": 0,
+      "avg_position": 66.2
     },
     {
       "query": "как создать онлайн магазин",
@@ -3253,18 +3428,11 @@
       "avg_position": 24.2
     },
     {
-      "query": "програмний реєстратор розрахункових операцій",
-      "clicks_28d": 0,
-      "impressions_28d": 4,
-      "ctr_pct": 0,
-      "avg_position": 43.2
-    },
-    {
-      "query": "складские услуги",
-      "clicks_28d": 0,
-      "impressions_28d": 4,
-      "ctr_pct": 0,
-      "avg_position": 13.8
+      "query": "3pl логистика",
+      "clicks_28d": 1,
+      "impressions_28d": 3,
+      "ctr_pct": 33.33,
+      "avg_position": 22.7
     },
     {
       "query": "\"24-48 hours\" customs clearance ukraine",
@@ -3547,20 +3715,6 @@
       "avg_position": 25.3
     },
     {
-      "query": "рро що це",
-      "clicks_28d": 0,
-      "impressions_28d": 3,
-      "ctr_pct": 0,
-      "avg_position": 20.7
-    },
-    {
-      "query": "склад під 3pl логістику",
-      "clicks_28d": 0,
-      "impressions_28d": 3,
-      "ctr_pct": 0,
-      "avg_position": 21.7
-    },
-    {
       "query": "\"логистический оператор для импортёров\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -3608,13 +3762,6 @@
       "impressions_28d": 2,
       "ctr_pct": 0,
       "avg_position": 9
-    },
-    {
-      "query": "3pl логистика",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 33.5
     },
     {
       "query": "3pl логистика киев",
@@ -3687,6 +3834,13 @@
       "avg_position": 5.5
     },
     {
+      "query": "fashion order fulfilment",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 77.5
+    },
+    {
       "query": "fefo meaning",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -3757,6 +3911,20 @@
       "avg_position": 73
     },
     {
+      "query": "handling online customer reviews",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 52
+    },
+    {
+      "query": "how to make online ordering more profitable for businesses",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 19
+    },
+    {
       "query": "https://rozetka.com.ua/page/340",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -3769,6 +3937,13 @@
       "impressions_28d": 2,
       "ctr_pct": 0,
       "avg_position": 13
+    },
+    {
+      "query": "mtp shop",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 20
     },
     {
       "query": "pick and pack fulfillment services rates",
@@ -3904,6 +4079,13 @@
       "avg_position": 5.5
     },
     {
+      "query": "залишків",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 1
+    },
+    {
       "query": "интернет магазин за 5 минут",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -3960,13 +4142,6 @@
       "avg_position": 11.5
     },
     {
-      "query": "как сделать свой интернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 44.5
-    },
-    {
       "query": "компания ппф",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -4007,6 +4182,13 @@
       "impressions_28d": 2,
       "ctr_pct": 0,
       "avg_position": 45.5
+    },
+    {
+      "query": "написание отзывов о товарах",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 19
     },
     {
       "query": "обязательное рро для фоп",
@@ -4100,6 +4282,20 @@
       "avg_position": 69
     },
     {
+      "query": "програмне рро для фоп",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 42
+    },
+    {
+      "query": "програмний рро для фоп",
+      "clicks_28d": 0,
+      "impressions_28d": 2,
+      "ctr_pct": 0,
+      "avg_position": 35.5
+    },
+    {
       "query": "програмный рро",
       "clicks_28d": 0,
       "impressions_28d": 2,
@@ -4163,32 +4359,11 @@
       "avg_position": 14
     },
     {
-      "query": "рро расшифровка",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 72
-    },
-    {
-      "query": "с чего начать открытие интернет магазина",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 11
-    },
-    {
-      "query": "свой интернет магазин с чего начать",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 18.5
-    },
-    {
-      "query": "склади для зберігання з температурним контролем",
-      "clicks_28d": 0,
-      "impressions_28d": 2,
-      "ctr_pct": 0,
-      "avg_position": 39.5
+      "query": "shipping warehouse",
+      "clicks_28d": 1,
+      "impressions_28d": 1,
+      "ctr_pct": 100,
+      "avg_position": 1
     },
     {
       "query": "шкіряні сумки",
@@ -4203,6 +4378,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 1
+    },
+    {
+      "query": "3pl",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 45
     },
     {
       "query": "3pl fulfilment",
@@ -4366,13 +4548,6 @@
       "avg_position": 74
     },
     {
-      "query": "fashion order fulfilment",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 66
-    },
-    {
       "query": "fefo",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4427,6 +4602,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 79
+    },
+    {
+      "query": "fulfillment as a service",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 85
     },
     {
       "query": "fulfillment center pricing",
@@ -4499,6 +4681,13 @@
       "avg_position": 73
     },
     {
+      "query": "fulfillment services meaning",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 83
+    },
+    {
       "query": "fulfillment services pricing",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4511,6 +4700,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 84
+    },
+    {
+      "query": "fulfilment это",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
     },
     {
       "query": "fulfiment",
@@ -4569,13 +4765,6 @@
       "avg_position": 11
     },
     {
-      "query": "how to make online ordering more profitable for businesses",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 18
-    },
-    {
       "query": "https://rozetka.com.ua/page/366",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4602,6 +4791,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 9
+    },
+    {
+      "query": "kpi в логістиці",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 12
     },
     {
       "query": "lifo fifo",
@@ -4637,13 +4833,6 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 3
-    },
-    {
-      "query": "mtp shop",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 10
     },
     {
       "query": "mtp wholesale solutions",
@@ -4716,11 +4905,18 @@
       "avg_position": 55
     },
     {
-      "query": "prom ua доставка в молдову",
+      "query": "product fulfillment services",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 12
+      "avg_position": 80
+    },
+    {
+      "query": "prom ua api",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
     },
     {
       "query": "prom.ua international delivery",
@@ -4728,6 +4924,20 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 12
+    },
+    {
+      "query": "prom.ua international delivery abroad",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
+    },
+    {
+      "query": "prom.ua international shipping",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
     },
     {
       "query": "prom.ua marketplace",
@@ -4772,6 +4982,13 @@
       "avg_position": 6
     },
     {
+      "query": "rozetka warehouse logistics ukraine",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 3
+    },
+    {
       "query": "rro",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4791,6 +5008,34 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 1
+    },
+    {
+      "query": "sku системы это",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 10
+    },
+    {
+      "query": "sku что это",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 18
+    },
+    {
+      "query": "sku это",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
+      "query": "sla / kpi",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
     },
     {
       "query": "sla logistics ltd",
@@ -4905,6 +5150,13 @@
       "avg_position": 10
     },
     {
+      "query": "warehouse",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 77
+    },
+    {
       "query": "warehouse and fulfillment services",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4947,6 +5199,13 @@
       "avg_position": 72
     },
     {
+      "query": "what is fulfillment service",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 44
+    },
+    {
       "query": "what is prom.ua",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4968,6 +5227,13 @@
       "avg_position": 7
     },
     {
+      "query": "yes",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 5
+    },
+    {
       "query": "артикл",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -4982,11 +5248,25 @@
       "avg_position": 5
     },
     {
+      "query": "артикул как выглядит",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
+    },
+    {
       "query": "артикул это",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 49
+    },
+    {
+      "query": "артикул это код товара",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 4
     },
     {
       "query": "артикул:",
@@ -5031,6 +5311,13 @@
       "avg_position": 11
     },
     {
+      "query": "встановлення рро для фоп",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 95
+    },
+    {
       "query": "выкуп брендовых вещей киев",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -5045,11 +5332,11 @@
       "avg_position": 30
     },
     {
-      "query": "відкрити інтернет магазин",
+      "query": "відкрити інтернет магазин в україні",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 63
+      "avg_position": 38
     },
     {
       "query": "готовый бизнес фулфилмент",
@@ -5101,11 +5388,18 @@
       "avg_position": 90
     },
     {
-      "query": "залишків",
+      "query": "замовити інтернет магазин",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 1
+      "avg_position": 77
+    },
+    {
+      "query": "замовити інтернет-магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 79
     },
     {
       "query": "интеграция с prom.ua",
@@ -5190,6 +5484,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 50
+    },
+    {
+      "query": "какой бизнес можно открыть в украине",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 9
     },
     {
       "query": "какой бизнес открыть",
@@ -5311,6 +5612,13 @@
       "avg_position": 71
     },
     {
+      "query": "оренда складу для інтернет-магазину",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 53
+    },
+    {
       "query": "открыть",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -5353,6 +5661,13 @@
       "avg_position": 52
     },
     {
+      "query": "повернення товару в інтернет магазин",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 79
+    },
+    {
       "query": "покупателей",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -5381,11 +5696,25 @@
       "avg_position": 71
     },
     {
+      "query": "послуги фулфілменту",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 6
+    },
+    {
       "query": "пошаговая инструкция открытия интернет магазина",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 27
+    },
+    {
+      "query": "программный регистратор расчетных операций",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 65
     },
     {
       "query": "програмний рро просто",
@@ -5409,6 +5738,13 @@
       "avg_position": 50
     },
     {
+      "query": "пром тарифы",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 15
+    },
+    {
       "query": "прро для фоп",
       "clicks_28d": 0,
       "impressions_28d": 1,
@@ -5421,6 +5757,13 @@
       "impressions_28d": 1,
       "ctr_pct": 0,
       "avg_position": 47
+    },
+    {
+      "query": "прро що це",
+      "clicks_28d": 0,
+      "impressions_28d": 1,
+      "ctr_pct": 0,
+      "avg_position": 33
     },
     {
       "query": "прро інтернет торгівля",
@@ -5514,81 +5857,11 @@
       "avg_position": 49
     },
     {
-      "query": "рро програмний",
+      "query": "рро для фоп 2 група",
       "clicks_28d": 0,
       "impressions_28d": 1,
       "ctr_pct": 0,
-      "avg_position": 52
-    },
-    {
-      "query": "рро прро що це",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 37
-    },
-    {
-      "query": "рро це простими словами",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 30
-    },
-    {
-      "query": "рро інтернет магазин",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 24
-    },
-    {
-      "query": "рро/прро",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 37
-    },
-    {
-      "query": "рро/прро це",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 24
-    },
-    {
-      "query": "свой интернет магазин с нуля",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 28
-    },
-    {
-      "query": "сервисы товарного бизнеса",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 47
-    },
-    {
-      "query": "склад відповідального зберігання київ",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 58
-    },
-    {
-      "query": "склад сервис",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 43
-    },
-    {
-      "query": "склад фулфилмента",
-      "clicks_28d": 0,
-      "impressions_28d": 1,
-      "ctr_pct": 0,
-      "avg_position": 1
+      "avg_position": 59
     }
   ],
   "opportunities": [
@@ -5602,6 +5875,15 @@
       "opportunity_score": 1849.3
     },
     {
+      "query": "sla це",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_28d": 0,
+      "impressions_28d": 358,
+      "avg_position": 7.4,
+      "ctr_pct": 0,
+      "opportunity_score": 48.2
+    },
+    {
       "query": "артикул",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
       "clicks_28d": 0,
@@ -5611,22 +5893,13 @@
       "opportunity_score": 45.4
     },
     {
-      "query": "sla це",
-      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
-      "clicks_28d": 0,
-      "impressions_28d": 326,
-      "avg_position": 7.4,
-      "ctr_pct": 0,
-      "opportunity_score": 44.1
-    },
-    {
       "query": "mtp",
       "page": "https://www.fulfillmentmtp.com.ua/",
       "clicks_28d": 0,
-      "impressions_28d": 181,
-      "avg_position": 4.6,
+      "impressions_28d": 196,
+      "avg_position": 4.5,
       "ctr_pct": 0,
-      "opportunity_score": 39.5
+      "opportunity_score": 43.3
     },
     {
       "query": "мтп",
@@ -5641,10 +5914,28 @@
       "query": "sla",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
       "clicks_28d": 1,
-      "impressions_28d": 208,
-      "avg_position": 8.9,
-      "ctr_pct": 0.48,
-      "opportunity_score": 23.4
+      "impressions_28d": 236,
+      "avg_position": 9.1,
+      "ctr_pct": 0.42,
+      "opportunity_score": 26.1
+    },
+    {
+      "query": "мтп",
+      "page": "https://www.fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 178,
+      "avg_position": 8.4,
+      "ctr_pct": 0,
+      "opportunity_score": 21.2
+    },
+    {
+      "query": "фулфілмент",
+      "page": "https://www.fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 169,
+      "avg_position": 8.3,
+      "ctr_pct": 0,
+      "opportunity_score": 20.4
     },
     {
       "query": "товарний бізнес",
@@ -5656,22 +5947,13 @@
       "opportunity_score": 20.1
     },
     {
-      "query": "мтп",
+      "query": "склад фулфилмент",
       "page": "https://www.fulfillmentmtp.com.ua/",
       "clicks_28d": 0,
-      "impressions_28d": 168,
-      "avg_position": 8.4,
+      "impressions_28d": 79,
+      "avg_position": 4.3,
       "ctr_pct": 0,
-      "opportunity_score": 20.0
-    },
-    {
-      "query": "фулфілмент",
-      "page": "https://www.fulfillmentmtp.com.ua/",
-      "clicks_28d": 0,
-      "impressions_28d": 160,
-      "avg_position": 8.0,
-      "ctr_pct": 0,
-      "opportunity_score": 20.0
+      "opportunity_score": 18.6
     },
     {
       "query": "товарный бизнес",
@@ -5683,15 +5965,6 @@
       "opportunity_score": 16.5
     },
     {
-      "query": "склад фулфилмент",
-      "page": "https://www.fulfillmentmtp.com.ua/",
-      "clicks_28d": 0,
-      "impressions_28d": 68,
-      "avg_position": 4.2,
-      "ctr_pct": 0,
-      "opportunity_score": 16.1
-    },
-    {
       "query": "товарний бізнес в україні",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
       "clicks_28d": 0,
@@ -5699,6 +5972,15 @@
       "avg_position": 6.3,
       "ctr_pct": 0,
       "opportunity_score": 15.0
+    },
+    {
+      "query": "prom ua доставка в молдову",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/",
+      "clicks_28d": 0,
+      "impressions_28d": 102,
+      "avg_position": 7.7,
+      "ctr_pct": 0,
+      "opportunity_score": 13.2
     },
     {
       "query": "товарний бізнес україна",
@@ -5713,10 +5995,10 @@
       "query": "що таке sla",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
       "clicks_28d": 0,
-      "impressions_28d": 61,
-      "avg_position": 6,
+      "impressions_28d": 67,
+      "avg_position": 6.0,
       "ctr_pct": 0,
-      "opportunity_score": 10.2
+      "opportunity_score": 11.1
     },
     {
       "query": "товарний бізнес це",
@@ -5737,6 +6019,15 @@
       "opportunity_score": 7.2
     },
     {
+      "query": "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу?",
+      "page": "https://fulfillmentmtp.com.ua/ua/blog/tpost/53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha",
+      "clicks_28d": 0,
+      "impressions_28d": 54,
+      "avg_position": 8.8,
+      "ctr_pct": 0,
+      "opportunity_score": 6.1
+    },
+    {
       "query": "как открыть интернет магазин",
       "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/yzhv774pa1-kak-otkrit-internet-magazin-v-ukraine-os/",
       "clicks_28d": 0,
@@ -5744,6 +6035,15 @@
       "avg_position": 9.4,
       "ctr_pct": 0,
       "opportunity_score": 5.6
+    },
+    {
+      "query": "fulfilment services",
+      "page": "https://fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 23,
+      "avg_position": 4.2,
+      "ctr_pct": 0,
+      "opportunity_score": 5.5
     },
     {
       "query": "услуги фулфилмента",
@@ -5755,22 +6055,13 @@
       "opportunity_score": 5.5
     },
     {
-      "query": "яка інформація на сайті інтернет-магазину може має бути присутньою для того, щоб користувач міг упевнитися в надійності сервісу?",
-      "page": "https://fulfillmentmtp.com.ua/ua/blog/tpost/53yjx8x051-yak-nternet-magazinu-zahistitisya-vd-sha",
+      "query": "фулфилмент для интернет магазина",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
       "clicks_28d": 0,
-      "impressions_28d": 46,
-      "avg_position": 8.7,
+      "impressions_28d": 68,
+      "avg_position": 12.7,
       "ctr_pct": 0,
-      "opportunity_score": 5.3
-    },
-    {
-      "query": "fulfilment services",
-      "page": "https://fulfillmentmtp.com.ua/",
-      "clicks_28d": 0,
-      "impressions_28d": 21,
-      "avg_position": 4,
-      "ctr_pct": 0,
-      "opportunity_score": 5.2
+      "opportunity_score": 5.4
     },
     {
       "query": "минусы фулфилмента",
@@ -5791,22 +6082,13 @@
       "opportunity_score": 5.2
     },
     {
-      "query": "фулфилмент для магазинов",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/",
-      "clicks_28d": 0,
-      "impressions_28d": 51,
-      "avg_position": 10.0,
-      "ctr_pct": 0,
-      "opportunity_score": 5.1
-    },
-    {
       "query": "фулфилмент украина",
       "page": "https://www.fulfillmentmtp.com.ua/",
       "clicks_28d": 0,
-      "impressions_28d": 26,
+      "impressions_28d": 27,
       "avg_position": 5.2,
       "ctr_pct": 0,
-      "opportunity_score": 5.0
+      "opportunity_score": 5.2
     },
     {
       "query": "открыть интернет магазин",
@@ -5818,31 +6100,31 @@
       "opportunity_score": 4.9
     },
     {
-      "query": "фулфилмент",
-      "page": "https://fulfillmentmtp.com.ua/",
+      "query": "фулфилмент для магазинов",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/",
       "clicks_28d": 0,
-      "impressions_28d": 46,
-      "avg_position": 9.9,
+      "impressions_28d": 55,
+      "avg_position": 11.2,
       "ctr_pct": 0,
-      "opportunity_score": 4.7
-    },
-    {
-      "query": "фулфилмент для интернет магазина",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
-      "clicks_28d": 0,
-      "impressions_28d": 62,
-      "avg_position": 13.3,
-      "ctr_pct": 0,
-      "opportunity_score": 4.7
+      "opportunity_score": 4.9
     },
     {
       "query": "фулфилмент цены",
       "page": "https://www.fulfillmentmtp.com.ua/ru/calculator/",
       "clicks_28d": 0,
-      "impressions_28d": 37,
-      "avg_position": 8.4,
+      "impressions_28d": 40,
+      "avg_position": 8.1,
       "ctr_pct": 0,
-      "opportunity_score": 4.4
+      "opportunity_score": 4.9
+    },
+    {
+      "query": "фулфилмент",
+      "page": "https://fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 47,
+      "avg_position": 9.8,
+      "ctr_pct": 0,
+      "opportunity_score": 4.8
     },
     {
       "query": "фулфилмент в товарном бизнесе",
@@ -5854,20 +6136,47 @@
       "opportunity_score": 4.3
     },
     {
-      "query": "sla що це",
-      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
-      "clicks_28d": 0,
-      "impressions_28d": 31,
-      "avg_position": 7.9,
-      "ctr_pct": 0,
-      "opportunity_score": 3.9
-    },
-    {
       "query": "packaging fulfillment",
       "page": "https://www.fulfillmentmtp.com.ua/en/guide/",
       "clicks_28d": 0,
-      "impressions_28d": 46,
-      "avg_position": 12.1,
+      "impressions_28d": 49,
+      "avg_position": 11.6,
+      "ctr_pct": 0,
+      "opportunity_score": 4.2
+    },
+    {
+      "query": "sla що це",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
+      "clicks_28d": 0,
+      "impressions_28d": 33,
+      "avg_position": 7.9,
+      "ctr_pct": 0,
+      "opportunity_score": 4.2
+    },
+    {
+      "query": "складські послуги",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "clicks_28d": 0,
+      "impressions_28d": 78,
+      "avg_position": 19.1,
+      "ctr_pct": 0,
+      "opportunity_score": 4.1
+    },
+    {
+      "query": "фулфилмент",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
+      "impressions_28d": 45,
+      "avg_position": 11.1,
+      "ctr_pct": 0,
+      "opportunity_score": 4.1
+    },
+    {
+      "query": "фулфилмент это",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
+      "impressions_28d": 36,
+      "avg_position": 9.4,
       "ctr_pct": 0,
       "opportunity_score": 3.8
     },
@@ -5877,15 +6186,6 @@
       "clicks_28d": 0,
       "impressions_28d": 51,
       "avg_position": 14.3,
-      "ctr_pct": 0,
-      "opportunity_score": 3.6
-    },
-    {
-      "query": "фулфилмент",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 40,
-      "avg_position": 11.1,
       "ctr_pct": 0,
       "opportunity_score": 3.6
     },
@@ -5917,6 +6217,42 @@
       "opportunity_score": 3.5
     },
     {
+      "query": "товарный бизнес",
+      "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
+      "clicks_28d": 0,
+      "impressions_28d": 35,
+      "avg_position": 10.1,
+      "ctr_pct": 0,
+      "opportunity_score": 3.5
+    },
+    {
+      "query": "mtp group",
+      "page": "https://fulfillmentmtp.com.ua/",
+      "clicks_28d": 1,
+      "impressions_28d": 19,
+      "avg_position": 5.6,
+      "ctr_pct": 5.26,
+      "opportunity_score": 3.4
+    },
+    {
+      "query": "kasta.ua international delivery",
+      "page": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "clicks_28d": 0,
+      "impressions_28d": 34,
+      "avg_position": 9.9,
+      "ctr_pct": 0,
+      "opportunity_score": 3.4
+    },
+    {
+      "query": "rozetka com ua доставка в молдову",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
+      "impressions_28d": 39,
+      "avg_position": 11.5,
+      "ctr_pct": 0,
+      "opportunity_score": 3.4
+    },
+    {
       "query": "фулфилмент для интернет магазина",
       "page": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
       "clicks_28d": 0,
@@ -5935,11 +6271,11 @@
       "opportunity_score": 3.3
     },
     {
-      "query": "kasta.ua international delivery",
-      "page": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "query": "sla shipping",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
       "clicks_28d": 0,
-      "impressions_28d": 31,
-      "avg_position": 9.7,
+      "impressions_28d": 14,
+      "avg_position": 4.4,
       "ctr_pct": 0,
       "opportunity_score": 3.2
     },
@@ -5951,6 +6287,15 @@
       "avg_position": 14.3,
       "ctr_pct": 0,
       "opportunity_score": 3.2
+    },
+    {
+      "query": "sla shipping",
+      "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "avg_position": 4.9,
+      "ctr_pct": 0,
+      "opportunity_score": 3.1
     },
     {
       "query": "sla",
@@ -5971,56 +6316,47 @@
       "opportunity_score": 2.9
     },
     {
-      "query": "mtp group",
-      "page": "https://fulfillmentmtp.com.ua/",
+      "query": "фулфилмент интернет магазина",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/",
       "clicks_28d": 0,
-      "impressions_28d": 15,
-      "avg_position": 5.3,
+      "impressions_28d": 41,
+      "avg_position": 14.0,
       "ctr_pct": 0,
-      "opportunity_score": 2.8
+      "opportunity_score": 2.9
     },
     {
-      "query": "sla shipping",
-      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "avg_position": 4.2,
-      "ctr_pct": 0,
-      "opportunity_score": 2.8
-    },
-    {
-      "query": "sla shipping",
-      "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/",
-      "clicks_28d": 0,
-      "impressions_28d": 13,
-      "avg_position": 4.8,
-      "ctr_pct": 0,
-      "opportunity_score": 2.7
-    },
-    {
-      "query": "rozetka com ua доставка в молдову",
+      "query": "что такое фулфилмент",
       "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
       "clicks_28d": 0,
-      "impressions_28d": 30,
-      "avg_position": 11.6,
+      "impressions_28d": 33,
+      "avg_position": 12.3,
       "ctr_pct": 0,
-      "opportunity_score": 2.6
+      "opportunity_score": 2.7
     },
     {
       "query": "фулфилмент в товарке",
       "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-marketpleysov/",
       "clicks_28d": 0,
-      "impressions_28d": 46,
-      "avg_position": 17.6,
+      "impressions_28d": 47,
+      "avg_position": 18.3,
+      "ctr_pct": 0,
+      "opportunity_score": 2.6
+    },
+    {
+      "query": "фулфилмент для маркетплейсов",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-marketpleysov/",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "avg_position": 4.6,
       "ctr_pct": 0,
       "opportunity_score": 2.6
     },
     {
       "query": "фулфилмент интернет магазина",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
       "clicks_28d": 0,
-      "impressions_28d": 35,
-      "avg_position": 13.7,
+      "impressions_28d": 30,
+      "avg_position": 11.6,
       "ctr_pct": 0,
       "opportunity_score": 2.6
     },
@@ -6052,15 +6388,6 @@
       "opportunity_score": 2.4
     },
     {
-      "query": "товарный бизнес",
-      "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/",
-      "clicks_28d": 0,
-      "impressions_28d": 23,
-      "avg_position": 9.6,
-      "ctr_pct": 0,
-      "opportunity_score": 2.4
-    },
-    {
       "query": "фулфилмент для маркетплейсов",
       "page": "https://www.fulfillmentmtp.com.ua/ru/",
       "clicks_28d": 0,
@@ -6070,11 +6397,11 @@
       "opportunity_score": 2.4
     },
     {
-      "query": "что такое фулфилмент",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "query": "послуги складу",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
       "clicks_28d": 0,
-      "impressions_28d": 29,
-      "avg_position": 12.4,
+      "impressions_28d": 44,
+      "avg_position": 19,
       "ctr_pct": 0,
       "opportunity_score": 2.3
     },
@@ -6088,15 +6415,6 @@
       "opportunity_score": 2.2
     },
     {
-      "query": "фулфилмент это",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 20,
-      "avg_position": 8.9,
-      "ctr_pct": 0,
-      "opportunity_score": 2.2
-    },
-    {
       "query": "снизить возвраты товара",
       "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar",
       "clicks_28d": 0,
@@ -6106,11 +6424,11 @@
       "opportunity_score": 2.0
     },
     {
-      "query": "фулфилмент интернет магазина",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "query": "фулфилмент для интернет магазина",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/",
       "clicks_28d": 0,
-      "impressions_28d": 24,
-      "avg_position": 12.3,
+      "impressions_28d": 35,
+      "avg_position": 17.6,
       "ctr_pct": 0,
       "opportunity_score": 2.0
     },
@@ -6133,6 +6451,15 @@
       "opportunity_score": 1.9
     },
     {
+      "query": "фулфилмент для магазинов",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "avg_position": 8,
+      "ctr_pct": 0,
+      "opportunity_score": 1.9
+    },
+    {
       "query": "фулфилмент заказать",
       "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-malogo-biznesa/",
       "clicks_28d": 0,
@@ -6151,11 +6478,29 @@
       "opportunity_score": 1.9
     },
     {
+      "query": "kasta.ua international delivery",
+      "page": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+      "clicks_28d": 0,
+      "impressions_28d": 17,
+      "avg_position": 9.3,
+      "ctr_pct": 0,
+      "opportunity_score": 1.8
+    },
+    {
       "query": "sla підтримки платформ продажу надлишків",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/",
       "clicks_28d": 0,
       "impressions_28d": 11,
       "avg_position": 6.1,
+      "ctr_pct": 0,
+      "opportunity_score": 1.8
+    },
+    {
+      "query": "артикул це",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/scho-take-artikul/",
+      "clicks_28d": 0,
+      "impressions_28d": 18,
+      "avg_position": 9.8,
       "ctr_pct": 0,
       "opportunity_score": 1.8
     },
@@ -6169,13 +6514,31 @@
       "opportunity_score": 1.8
     },
     {
-      "query": "фулфилмент для интернет магазина",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/",
+      "query": "фул филмент",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
       "clicks_28d": 0,
-      "impressions_28d": 31,
-      "avg_position": 17.1,
+      "impressions_28d": 18,
+      "avg_position": 10.1,
       "ctr_pct": 0,
       "opportunity_score": 1.8
+    },
+    {
+      "query": "фулфілмент",
+      "page": "https://fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 13,
+      "avg_position": 7.1,
+      "ctr_pct": 0,
+      "opportunity_score": 1.8
+    },
+    {
+      "query": "мтп вход",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/services/",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "avg_position": 6.4,
+      "ctr_pct": 0,
+      "opportunity_score": 1.7
     },
     {
       "query": "открыть интернет магазин в украине",
@@ -6196,20 +6559,20 @@
       "opportunity_score": 1.7
     },
     {
-      "query": "фулфілмент",
-      "page": "https://fulfillmentmtp.com.ua/",
+      "query": "фул филмент",
+      "page": "https://www.fulfillmentmtp.com.ua/",
       "clicks_28d": 0,
-      "impressions_28d": 12,
-      "avg_position": 7.1,
+      "impressions_28d": 15,
+      "avg_position": 8.7,
       "ctr_pct": 0,
       "opportunity_score": 1.7
     },
     {
-      "query": "фул филмент",
-      "page": "https://www.fulfillmentmtp.com.ua/",
+      "query": "складські послуги та обробку товарів",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
       "clicks_28d": 0,
-      "impressions_28d": 14,
-      "avg_position": 8.6,
+      "impressions_28d": 18,
+      "avg_position": 11.4,
       "ctr_pct": 0,
       "opportunity_score": 1.6
     },
@@ -6241,20 +6604,20 @@
       "opportunity_score": 1.5
     },
     {
-      "query": "kasta.ua international delivery",
-      "page": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+      "query": "kasta.ua international shipping",
+      "page": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
       "clicks_28d": 0,
-      "impressions_28d": 14,
-      "avg_position": 9.2,
+      "impressions_28d": 15,
+      "avg_position": 9.8,
       "ctr_pct": 0,
       "opportunity_score": 1.5
     },
     {
-      "query": "складські послуги та обробку товарів",
-      "page": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "query": "аутсорсинг приема заказов",
+      "page": "https://fulfillmentmtp.com.ua/services/",
       "clicks_28d": 0,
-      "impressions_28d": 17,
-      "avg_position": 11.7,
+      "impressions_28d": 12,
+      "avg_position": 7.8,
       "ctr_pct": 0,
       "opportunity_score": 1.5
     },
@@ -6266,15 +6629,6 @@
       "avg_position": 7.8,
       "ctr_pct": 0,
       "opportunity_score": 1.5
-    },
-    {
-      "query": "kasta.ua international shipping",
-      "page": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
-      "clicks_28d": 0,
-      "impressions_28d": 14,
-      "avg_position": 9.9,
-      "ctr_pct": 0,
-      "opportunity_score": 1.4
     },
     {
       "query": "интернет магазин открыть",
@@ -6295,15 +6649,6 @@
       "opportunity_score": 1.4
     },
     {
-      "query": "фул филмент",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 14,
-      "avg_position": 10.1,
-      "ctr_pct": 0,
-      "opportunity_score": 1.4
-    },
-    {
       "query": "фулфилмент для интернет магазинов",
       "page": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
       "clicks_28d": 0,
@@ -6311,6 +6656,15 @@
       "avg_position": 8.8,
       "ctr_pct": 0,
       "opportunity_score": 1.4
+    },
+    {
+      "query": "товарний бізнес",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/product-business-ukraine-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 15,
+      "avg_position": 11.1,
+      "ctr_pct": 0,
+      "opportunity_score": 1.3
     },
     {
       "query": "управление интернет торговлей",
@@ -6322,11 +6676,29 @@
       "opportunity_score": 1.3
     },
     {
+      "query": "fulfilment service",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
+      "impressions_28d": 14,
+      "avg_position": 11.4,
+      "ctr_pct": 0,
+      "opportunity_score": 1.2
+    },
+    {
       "query": "товарний",
       "page": "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/",
       "clicks_28d": 0,
       "impressions_28d": 10,
       "avg_position": 8.3,
+      "ctr_pct": 0,
+      "opportunity_score": 1.2
+    },
+    {
+      "query": "товарний бізнес в україні",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/product-business-ukraine-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 12,
+      "avg_position": 10.2,
       "ctr_pct": 0,
       "opportunity_score": 1.2
     },
@@ -6367,20 +6739,20 @@
       "opportunity_score": 1.1
     },
     {
+      "query": "товарний бізнес україна",
+      "page": "https://www.fulfillmentmtp.com.ua/ua/blog/product-business-ukraine-guide/",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "avg_position": 9.7,
+      "ctr_pct": 0,
+      "opportunity_score": 1.0
+    },
+    {
       "query": "фулфилмент в товарном бизнесе",
       "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
       "clicks_28d": 0,
-      "impressions_28d": 14,
-      "avg_position": 13.3,
-      "ctr_pct": 0,
-      "opportunity_score": 1.1
-    },
-    {
-      "query": "fulfilment service",
-      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
-      "clicks_28d": 0,
-      "impressions_28d": 12,
-      "avg_position": 11.5,
+      "impressions_28d": 15,
+      "avg_position": 15.6,
       "ctr_pct": 0,
       "opportunity_score": 1.0
     },
@@ -6412,6 +6784,15 @@
       "opportunity_score": 0.8
     },
     {
+      "query": "fulfilment services",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "clicks_28d": 0,
+      "impressions_28d": 10,
+      "avg_position": 12.7,
+      "ctr_pct": 0,
+      "opportunity_score": 0.8
+    },
+    {
       "query": "фулфилмент в товарном бизнесе",
       "page": "https://www.fulfillmentmtp.com.ua/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
       "clicks_28d": 0,
@@ -6419,6 +6800,24 @@
       "avg_position": 16.6,
       "ctr_pct": 0,
       "opportunity_score": 0.8
+    },
+    {
+      "query": "фулфилмент для интернет магазинов",
+      "page": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "clicks_28d": 0,
+      "impressions_28d": 16,
+      "avg_position": 19.9,
+      "ctr_pct": 0,
+      "opportunity_score": 0.8
+    },
+    {
+      "query": "e-commerce delivery slas",
+      "page": "https://www.fulfillmentmtp.com.ua/en/blog/post/what-is-sla-in-logistics/",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "avg_position": 16.6,
+      "ctr_pct": 0,
+      "opportunity_score": 0.7
     },
     {
       "query": "советы по открытию интернет магазина",
@@ -6433,8 +6832,8 @@
       "query": "фулфилмент для интернет магазинов",
       "page": "https://www.fulfillmentmtp.com.ua/ru/",
       "clicks_28d": 0,
-      "impressions_28d": 12,
-      "avg_position": 17.2,
+      "impressions_28d": 13,
+      "avg_position": 17.7,
       "ctr_pct": 0,
       "opportunity_score": 0.7
     },
@@ -6455,6 +6854,15 @@
       "avg_position": 17.9,
       "ctr_pct": 0,
       "opportunity_score": 0.6
+    },
+    {
+      "query": "фулфилмент",
+      "page": "https://www.fulfillmentmtp.com.ua/",
+      "clicks_28d": 0,
+      "impressions_28d": 11,
+      "avg_position": 17.8,
+      "ctr_pct": 0,
+      "opportunity_score": 0.6
     }
   ],
   "sla_redirect_tracking": {
@@ -6469,15 +6877,15 @@
       "queries": []
     },
     "https://www.fulfillmentmtp.com.ua/ua/blog/tpost/s7non1f0y1-scho-take-sla-v-logstits-chomu-tse-klyuc/": {
-      "total_imp_28d": 675,
+      "total_imp_28d": 745,
       "total_clk_28d": 1,
       "queries": [
         {
           "query": "sla",
           "clicks": 1,
-          "impressions": 208,
-          "ctr": 0.48,
-          "position": 8.9
+          "impressions": 236,
+          "ctr": 0.42,
+          "position": 9.1
         },
         {
           "query": "s l a",
@@ -6503,9 +6911,9 @@
         {
           "query": "sla shipping",
           "clicks": 0,
-          "impressions": 12,
+          "impressions": 14,
           "ctr": 0,
-          "position": 4.2
+          "position": 4.4
         },
         {
           "query": "sla transport",
@@ -6531,14 +6939,14 @@
         {
           "query": "sla це",
           "clicks": 0,
-          "impressions": 326,
+          "impressions": 358,
           "ctr": 0,
           "position": 7.4
         },
         {
           "query": "sla що це",
           "clicks": 0,
-          "impressions": 31,
+          "impressions": 33,
           "ctr": 0,
           "position": 7.9
         },
@@ -6573,9 +6981,9 @@
         {
           "query": "що таке sla",
           "clicks": 0,
-          "impressions": 61,
+          "impressions": 67,
           "ctr": 0,
-          "position": 6
+          "position": 6.0
         },
         {
           "query": "що таке sla?",
@@ -6594,7 +7002,7 @@
       ]
     },
     "https://www.fulfillmentmtp.com.ua/blog/tpost/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/": {
-      "total_imp_28d": 126,
+      "total_imp_28d": 129,
       "total_clk_28d": 0,
       "queries": [
         {
@@ -6628,9 +7036,9 @@
         {
           "query": "sla shipping",
           "clicks": 0,
-          "impressions": 13,
+          "impressions": 15,
           "ctr": 0,
-          "position": 4.8
+          "position": 4.9
         },
         {
           "query": "sla в логистике",
@@ -6698,12 +7106,12 @@
         {
           "query": "что такое sla в логистике",
           "clicks": 0,
-          "impressions": 8,
+          "impressions": 9,
           "ctr": 0,
-          "position": 6
+          "position": 6.8
         }
       ]
     }
   },
-  "all_combos_count": 1415
+  "all_combos_count": 1568
 }
