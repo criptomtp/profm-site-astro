@@ -19,7 +19,7 @@ const faqSchema = {
     {"@type":"Question","name":"What carriers do you use for EU/US shipments?","acceptedAnswer":{"@type":"Answer","text":"EU: Nova Poshta International, Meest, DHL, UPS, FedEx, GLS, DPD. US: DHL Express, UPS Worldwide, FedEx International Priority. Carrier selection is rate-shopped per order by the WMS."}},
     {"@type":"Question","name":"Who is liable for lost or damaged goods?","acceptedAnswer":{"@type":"Answer","text":"MTP Group carries warehouse liability insurance on inventory at replacement cost while goods are in our custody. Carrier-caused loss or damage is claimed against the carrier's insurance, with full claim-management support from our ops team."}},
     {"@type":"Question","name":"How are returns processed?","acceptedAnswer":{"@type":"Answer","text":"Returns are received, photographed, inspected, and graded (resellable / refurbish / dispose). Resellable items are restocked within 24 hours. Returns pricing: 30-50 percent of the outbound handling fee depending on SKU category."}},
-    {"@type":"Question","name":"Can I visit the warehouse?","acceptedAnswer":{"@type":"Answer","text":"Yes. Prearranged visits to both Shchaslyve (2,800 m²) and Bilohorodka (1,100 m²) facilities are welcomed for existing and prospective clients. We also provide live video walkthroughs on request."}},
+    {"@type":"Question","name":"Can I visit the warehouse?","acceptedAnswer":{"@type":"Answer","text":"Yes. Prearranged visits to both Shchaslyve (2,700 m²) and Bilohorodka (1,000 m²) facilities are welcomed for existing and prospective clients. We also provide live video walkthroughs on request."}},
     {"@type":"Question","name":"What is the contract length and termination terms?","acceptedAnswer":{"@type":"Answer","text":"Standard contract is month-to-month with 30-day notice for termination. Annual contracts with discounted rates are available for brands above 5,000 orders per month. Inventory withdrawal is supported in all termination scenarios."}},
     {"@type":"Question","name":"Do you handle specialty goods — fragile, hazmat, cold chain?","acceptedAnswer":{"@type":"Answer","text":"Fragile goods: yes, with documented packing specifications and insurance uplift. Hazmat: limited categories with prior certification. Cold chain (2-8°C pharma, frozen food): not currently supported — we refer clients to specialized partners."}},
     {"@type":"Question","name":"How do I track inventory levels in real time?","acceptedAnswer":{"@type":"Answer","text":"Through the MTP client portal — stock counts update after every operation (receiving, picking, shipping, returns). Native integrations with Prom.ua, Rozetka, Horoshop, Shopify, and WooCommerce push live stock to your storefront every 5 minutes. Custom CRMs use REST API with webhook events."}},
@@ -52,7 +52,7 @@ const articleSchema = {
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "MTP Group warehouse tour — 2,800 m² near Kyiv",
+  "name": "MTP Group warehouse tour — 2,700 m² near Kyiv",
   "description": "Inside an MTP Group warehouse near Kyiv: WMS-driven racking, picking lanes, packing zones, and the dispatch flow used by 150+ Ukrainian and EU brands.",
   "thumbnailUrl": "https://i.ytimg.com/vi/bHY3cFF9SlI/maxresdefault.jpg",
   "contentUrl": "https://www.youtube.com/watch?v=bHY3cFF9SlI",
@@ -255,7 +255,7 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
       <span class="en-pil-stages__num">1</span>
       <div>
         <h3>Receiving</h3>
-        <p>Inbound trucks arrive with your SKUs. The 3PL counts, inspects for damage, and reconciles against your advance shipping notice (ASN). At MTP Group's Shchaslyve warehouse (2,800 m²), receiving is scheduled in one-hour dock windows; discrepancies are photographed and logged to your dashboard within two hours of unload.</p>
+        <p>Inbound trucks arrive with your SKUs. The 3PL counts, inspects for damage, and reconciles against your advance shipping notice (ASN). At MTP Group's Shchaslyve warehouse (2,700 m²), receiving is scheduled in one-hour dock windows; discrepancies are photographed and logged to your dashboard within two hours of unload.</p>
       </div>
     </li>
     <li>
@@ -303,7 +303,7 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
   </ol>
 
   <figure class="en-pil-video">
-    <YouTubeEmbed id="bHY3cFF9SlI" title="MTP Group warehouse tour — 2,800 m² near Kyiv" />
+    <YouTubeEmbed id="bHY3cFF9SlI" title="MTP Group warehouse tour — 2,700 m² near Kyiv" />
     <figcaption>Inside an MTP Group warehouse near Kyiv: WMS-driven racking, picking lanes, packing zones, and the dispatch flow used by 150+ Ukrainian and EU brands.</figcaption>
   </figure>
 </section>
@@ -563,7 +563,7 @@ const schemaJson = `<script type="application/ld+json">${JSON.stringify(articleS
     <details><summary>What carriers do you use for EU/US shipments?</summary><p>EU: Nova Poshta International, Meest, DHL, UPS, FedEx, GLS, DPD. US: DHL Express, UPS Worldwide, FedEx International Priority. Carrier selection is rate-shopped per order by the WMS.</p></details>
     <details><summary>Who is liable for lost or damaged goods?</summary><p>MTP Group carries warehouse liability insurance on inventory at replacement cost while goods are in our custody. Carrier-caused loss or damage is claimed against the carrier's insurance, with full claim-management support from our ops team.</p></details>
     <details><summary>How are returns processed?</summary><p>Returns are received, photographed, inspected, and graded (resellable / refurbish / dispose). Resellable items are restocked within 24 hours. Damaged items are documented with photo evidence and either returned to you or disposed of per your preference. Returns pricing: 30–50% of the outbound handling fee depending on SKU category.</p></details>
-    <details><summary>Can I visit the warehouse?</summary><p>Yes. Prearranged visits to both Shchaslyve (2,800 m²) and Bilohorodka (1,100 m²) facilities are welcomed for existing and prospective clients. We also provide live video walkthroughs on request.</p></details>
+    <details><summary>Can I visit the warehouse?</summary><p>Yes. Prearranged visits to both Shchaslyve (2,700 m²) and Bilohorodka (1,000 m²) facilities are welcomed for existing and prospective clients. We also provide live video walkthroughs on request.</p></details>
     <details><summary>What's the contract length and termination terms?</summary><p>Standard contract is <strong>month-to-month</strong> with 30-day notice for termination. Annual contracts with discounted rates are available for brands above 5,000 orders per month. Inventory withdrawal is supported in all termination scenarios.</p></details>
     <details><summary>Do you handle specialty goods — fragile, hazmat, cold chain?</summary><p>Fragile goods: yes, with documented packing specifications and insurance uplift. Hazmat: limited categories with prior certification; ask for specifics. Cold chain (2–8°C pharma, frozen food): not currently supported — we refer clients to specialized partners.</p></details>
     <details><summary>How do I track inventory levels in real time?</summary><p>Through the MTP client portal — stock counts update after every operation (receiving, picking, shipping, returns). Native integrations with Prom.ua, Rozetka, Horoshop, Shopify, and WooCommerce push live stock to your storefront every 5 minutes. Custom CRMs use the REST API with webhook events.</p></details>
