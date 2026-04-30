@@ -409,6 +409,51 @@
 /en/blog/tpost/:slug/ /en/blog/ 301
 /en/blog/tpost/:slug /en/blog/ 301
 
+# --- GSC Coverage Validation 2026-04-30: 23 failed URLs from old tpost schema ---
+# Group A — UA blog slugs surfaced at root or wrong locale → /ua/blog/[slug]/
+/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/scho-take-sla /ua/blog/scho-take-sla/ 301
+/ua/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/ua/scho-take-sla /ua/blog/scho-take-sla/ 301
+/en/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/en/scho-take-sla /ua/blog/scho-take-sla/ 301
+/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+/scho-take-artikul /ua/blog/scho-take-artikul/ 301
+/ua/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+/ua/scho-take-artikul /ua/blog/scho-take-artikul/ 301
+/en/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+/en/scho-take-artikul /ua/blog/scho-take-artikul/ 301
+
+# Group B — RU blog slugs surfaced at root or wrong locale → /blog/[slug]/
+/chto-takoe-sla/ /blog/chto-takoe-sla/ 301
+/chto-takoe-sla /blog/chto-takoe-sla/ 301
+/ua/chto-takoe-sla/ /blog/chto-takoe-sla/ 301
+/ua/chto-takoe-sla /blog/chto-takoe-sla/ 301
+/en/chto-takoe-sla/ /blog/chto-takoe-sla/ 301
+/en/chto-takoe-sla /blog/chto-takoe-sla/ 301
+/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/chto-takoe-artikul /blog/chto-takoe-artikul/ 301
+/ua/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/ua/chto-takoe-artikul /blog/chto-takoe-artikul/ 301
+/en/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/en/chto-takoe-artikul /blog/chto-takoe-artikul/ 301
+
+# Group C — UA blog with EN slugs (cross-locale leftovers)
+/ua/blog/how-fulfillment-works-ukraine-2025/ /ua/blog/ 301
+/ua/blog/how-fulfillment-works-ukraine-2025 /ua/blog/ 301
+/ua/blog/what-is-sla-in-logistics/ /en/blog/post/what-is-sla-in-logistics/ 301
+/ua/blog/what-is-sla-in-logistics /en/blog/post/what-is-sla-in-logistics/ 301
+/ua/blog/fulfillment-vs-own-warehouse/ /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
+/ua/blog/fulfillment-vs-own-warehouse /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
+/ua/blog/fulfillment-vs-own-warehouse-2025/ /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
+/ua/blog/fulfillment-vs-own-warehouse-2025 /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
+/ua/blog/fulfillment-cost-guide/ /en/blog/post/fulfillment-cost-2026/ 301
+/ua/blog/fulfillment-cost-guide /en/blog/post/fulfillment-cost-2026/ 301
+/ua/blog/how-to-choose-fulfillment-operator/ /en/blog/post/how-to-choose-fulfillment-operator/ 301
+/ua/blog/how-to-choose-fulfillment-operator /en/blog/post/how-to-choose-fulfillment-operator/ 301
+/ua/case-ecodrive/ /ua/blog/case-ecodrive/ 301
+/ua/case-ecodrive /ua/blog/case-ecodrive/ 301
+
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301
 /404  /  301
