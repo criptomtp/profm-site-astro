@@ -35,6 +35,7 @@ def parse_args():
     ap.add_argument('--from-file', help='read post text from file (first line = ignored if starts with #)')
     ap.add_argument('--dry-run', action='store_true', help='open composer but do not click Post')
     ap.add_argument('--headless', action='store_true', help='run without UI')
+    ap.add_argument('--keep-open', type=int, default=0, help='keep browser open N seconds after first Post click (lets user complete visibility dialog manually)')
     return ap.parse_args()
 
 
@@ -161,7 +162,10 @@ def main():
             browser.close()
             return
 
-        # click Post — locale variants
+        # click Post — locale variants. LinkedIn has up to 3 stages:
+        #   stage 1: composer "Далі/Next" (only if photo/poll attached)
+        #   stage 2: composer "Опублікувати/Post"
+        #   stage 3: visibility confirm modal — sometimes appears with second "Опублікувати"
         post_selectors = [
             'button:has-text("Опублікувати")',  # uk
             'button:has-text("Post")',            # en
@@ -169,25 +173,94 @@ def main():
             'button[aria-label*="Опублікувати" i]',
             'button[aria-label*="Post" i]',
         ]
-        posted = False
-        for sel in post_selectors:
-            try:
-                btn = page.locator(sel).first
-                if btn.is_visible(timeout=2000) and btn.is_enabled():
-                    btn.click()
-                    posted = True
-                    break
-            except Exception:
-                continue
 
-        if not posted:
+        def screenshot(tag):
+            try:
+                page.screenshot(path=str(ROOT / 'scripts' / 'linkedin-session' / f'debug-{tag}.png'))
+            except Exception:
+                pass
+
+        def click_first_visible(selectors, label, timeout_ms=2500):
+            for sel in selectors:
+                try:
+                    btn = page.locator(sel).first
+                    if btn.is_visible(timeout=timeout_ms) and btn.is_enabled():
+                        btn.click()
+                        print(f'  → clicked {label}: {sel}', file=sys.stderr)
+                        return True
+                except Exception:
+                    continue
+            return False
+
+        # stage 2: main publish button
+        screenshot('pre-post')
+        if not click_first_visible(post_selectors, 'Post (stage 2)'):
             print('ERROR: could not find enabled Post button', file=sys.stderr)
-            page.screenshot(path=str(ROOT / 'scripts' / 'linkedin-session' / 'debug-no-post.png'))
+            screenshot('no-post')
+            if args.keep_open:
+                print(f'KEEP-OPEN: leaving browser open {args.keep_open}s for manual completion', file=sys.stderr)
+                time.sleep(args.keep_open)
             browser.close()
             sys.exit(5)
 
-        time.sleep(4)
+        # stage 3: "Налаштування дописів" (Post Settings) dialog appears.
+        #   "Хто може побачити ваш допис?" → click "Будь-хто" radio → click "Готово"
+        time.sleep(3)
+        screenshot('after-post-1')
+
+        settings_dialog = False
+        try:
+            heading = page.locator('h2:has-text("Налаштування дописів"), h2:has-text("Post settings")').first
+            settings_dialog = heading.is_visible(timeout=1500)
+        except Exception:
+            pass
+
+        if settings_dialog:
+            print('  → "Налаштування дописів" dialog detected — selecting visibility', file=sys.stderr)
+            # click "Будь-хто" / "Anyone" row to ensure radio is active and Done becomes enabled
+            visibility_selectors = [
+                'div[role="dialog"] button:has-text("Будь-хто")',
+                'div[role="dialog"] button:has-text("Anyone")',
+                'div[role="dialog"] label:has-text("Будь-хто")',
+                'div[role="dialog"] label:has-text("Anyone")',
+                'div[role="dialog"] [role="radio"]:has-text("Будь-хто")',
+                'div[role="dialog"] [role="radio"]:has-text("Anyone")',
+                # fallback: click the row containing "Будь-хто в LinkedIn чи поза ним"
+                'div[role="dialog"] :has-text("Будь-хто в LinkedIn")',
+            ]
+            click_first_visible(visibility_selectors, 'visibility=Anyone', timeout_ms=2500)
+            time.sleep(1)
+
+            # now click "Готово"/"Done"
+            done_selectors = [
+                'div[role="dialog"] button:has-text("Готово"):not([disabled])',
+                'div[role="dialog"] button:has-text("Done"):not([disabled])',
+                'div[role="dialog"] button:has-text("Готово")',
+                'div[role="dialog"] button:has-text("Done")',
+            ]
+            done_clicked = False
+            # poll up to 8s for Done to enable
+            for attempt in range(8):
+                if click_first_visible(done_selectors, f'Done (attempt {attempt+1})', timeout_ms=1500):
+                    done_clicked = True
+                    break
+                time.sleep(1)
+
+            time.sleep(3)
+            screenshot('after-post-2')
+
+            if not done_clicked and args.keep_open:
+                print(f'KEEP-OPEN: "Готово" stayed disabled. Browser open {args.keep_open}s — click manually.', file=sys.stderr)
+                time.sleep(args.keep_open)
+                browser.close()
+                sys.exit(6)
+            # NOTE: clicking "Готово" finalises the post — no further click needed.
+            # An additional click would open a NEW composer and risk a duplicate post.
+
         print('OK: post submitted')
+        if args.keep_open:
+            print(f'KEEP-OPEN: leaving browser open {args.keep_open}s for verification', file=sys.stderr)
+            time.sleep(args.keep_open)
         # save refreshed session (cookies may have rotated)
         context.storage_state(path=str(STATE_FILE))
         browser.close()
