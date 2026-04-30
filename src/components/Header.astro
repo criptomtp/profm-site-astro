@@ -309,6 +309,11 @@ const mega = {
     m['yak-pidklyuchytysia-do-fulfilmentu']=t3_connect;
     m['podklyuchenie-k-fulfilmentu']=t3_connect;
     m['connect-to-ukraine-fulfillment']=t3_connect;
+    // Why fulfillment cheaper than own warehouse (UA upgrade + new RU + new EN)
+    var t_cheaper={ua:'/ua/blog/chomu-fulfilment-deshevshyy/',ru:'/blog/pochemu-fulfilment-deshevle/',en:'/en/blog/post/why-fulfillment-cheaper-than-own-warehouse/'};
+    m['chomu-fulfilment-deshevshyy']=t_cheaper;
+    m['pochemu-fulfilment-deshevle']=t_cheaper;
+    m['why-fulfillment-cheaper-than-own-warehouse']=t_cheaper;
     return m;})();
   document.querySelectorAll('[data-lang]').forEach(function(a){
     var tl=a.dataset.lang;

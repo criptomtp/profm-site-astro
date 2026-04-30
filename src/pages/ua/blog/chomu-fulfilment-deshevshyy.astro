@@ -1,468 +1,287 @@
 ---
 import Base from '../../../layouts/Base.astro';
-
-const title = 'Чому Фулфілмент Дешевший за Власну Логістику: Розрахунок ROI';
-const description = 'Детальний аналіз витрат: власний склад + персонал vs. MTP фулфілмент. Економія 30-40% на логістиці без втрати якості. Розрахунки для малих, середніх і великих бізнесів.';
-const ogImage = 'https://profm.ua/images/blog-fulfillment-cheaper.jpg';
-
-const publishDate = new Date('2024-12-16').toISOString();
-const author = 'MTP Analytics';
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  description: description,
-  datePublished: publishDate,
-  author: {
-    '@type': 'Organization',
-    name: author,
-    url: 'https://profm.ua'
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'MTP Group',
-    url: 'https://profm.ua'
-  },
-  mainEntity: {
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'На скільки фулфілмент дешевший?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'На 30-40% дешевший за 100-1000 замовлень. На 50%+ дешевший для малих бізнесів до 300 замовлень.'
-        }
-      }
-    ]
-  }
-};
+import AuthorByline from '../../../components/AuthorByline.astro';
 ---
+<Base
+  title="Чому фулфілмент дешевший за власний склад: ROI 2026 | MTP"
+  description="Реальні цифри: власний склад від 80 000 грн/міс vs фулфілмент від 25 000 грн. Розрахунки для 200/500/2000 замовлень, прихований CAPEX, валютний хедж і воєнні ризики."
+  canonical="https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/"
+  lang="uk"
+  ogType="article"
+  autoArticle={false}
+  ogImage="https://www.fulfillmentmtp.com.ua/images/blog/fulfillment-cheaper-hero.webp"
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/blog/pochemu-fulfilment-deshevle/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/blog/post/why-fulfillment-cheaper-than-own-warehouse/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Чому фулфілмент дешевший за власний склад: ROI 2026","description":"Реальні розрахунки: власний склад проти фулфілмент-оператора. Прихований CAPEX, валютний хедж і воєнні ризики в Україні 2026.","image":"https://www.fulfillmentmtp.com.ua/images/blog/fulfillment-cheaper-hero.webp","author":{"@type":"Person","name":"Микола Лящук","jobTitle":"Засновник MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua/ua/about/","image":"https://www.fulfillmentmtp.com.ua/images/mykola-liashchuk.jpg","worksFor":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua"},"knowsAbout":["Фулфілмент","3PL","E-commerce логістика","Складські послуги","Логістика України"],"sameAs":["https://t.me/nikolay_mtp","https://www.linkedin.com/in/mtp-group-258b69334","https://www.linkedin.com/company/mtpgroupfulfillment","https://www.youtube.com/@mtpgroup","https://www.facebook.com/mtpgroupua"]},"publisher":{"@type":"Organization","name":"MTP Group Fulfillment","logo":{"@type":"ImageObject","url":"https://www.fulfillmentmtp.com.ua/images/logo.webp"},"sameAs":["https://www.facebook.com/mtpgroupua","https://www.linkedin.com/company/mtpgroupfulfillment","https://www.youtube.com/@mtpgroup","https://t.me/nikolay_mtp"]},"datePublished":"2024-12-16","dateModified":"2026-04-30","mainEntityOfPage":"https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://www.fulfillmentmtp.com.ua/ua/blog/"},{"@type":"ListItem","position":3,"name":"Чому фулфілмент дешевший за власний склад","item":"https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"На скільки фулфілмент дешевший за власний склад?","acceptedAnswer":{"@type":"Answer","text":"При 200-500 замовленнях на місяць економія складає 17-25%. При 1000+ замовленнях — до 35%. Це без урахування прихованого CAPEX (270 000 — 820 000 грн на запуск власного складу), якого у фулфілменту просто немає."}},{"@type":"Question","name":"З якого обсягу вже вигідніший власний склад?","acceptedAnswer":{"@type":"Answer","text":"Точка перелому — 5 000+ замовлень на місяць. До цього фулфілмент дешевший і швидший у запуску. Гібридна модель (власний склад на топ-SKU + фулфілмент на решту) часто вигідніша за чистий власний склад навіть на 5 000-10 000 замовлень."}},{"@type":"Question","name":"Скільки коштує запустити власний склад в Україні?","acceptedAnswer":{"@type":"Answer","text":"CAPEX на старт: депозит за оренду 30 000-90 000 грн, стелажі 80 000-200 000 грн, WMS-система 50 000-300 000 грн, генератор 80 000-150 000 грн, сканери та обладнання 30 000-80 000 грн. Разом 270 000 — 820 000 грн до першої відправки."}},{"@type":"Question","name":"Що з воєнними ризиками власного складу?","acceptedAnswer":{"@type":"Answer","text":"Власний склад — єдина точка відмови. Приліт, пошкодження електромереж, тривалий блекаут — все паралізує бізнес на тижні. MTP розподіляє товар між двома складами (Щасливе 2 700 м² + Білогородка 1 000 м²), у кожного власні генератори і Starlink. З 2022 року жодного дня простою у клієнтів."}}]}</script>
+</Fragment>
 
-<Base title={title} description={description} ogImage={ogImage}>
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16 sm:py-24">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="text-sm font-bold uppercase tracking-wider mb-4 opacity-90">Стаття</div>
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-        Чому Фулфілмент Дешевший<br />за Власну Логістику
-      </h1>
-      <p class="text-xl mb-8 opacity-95 leading-relaxed">
-        Математика проста: 30-40% економія для малих і середніх бізнесів. Деталь розрахункові, дані та кейси з реальних чисел.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center text-sm">
-        <span>Автор: MTP Analytics</span>
-        <span>•</span>
-        <span>Оновлено: 16 грудня 2024</span>
-      </div>
-    </div>
-  </section>
+<article class="blog-article">
 
-  <!-- Table of Contents -->
-  <section class="bg-gray-100 py-8 sticky top-0 z-10">
-    <div class="max-w-4xl mx-auto px-6">
-      <p class="font-bold mb-4">Зміст</p>
-      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-        <li><a href="#cost-breakdown" class="text-red-600 hover:underline">1. Розбір витрат</a></li>
-        <li><a href="#small-business" class="text-red-600 hover:underline">2. ФОП-200 замовлень</a></li>
-        <li><a href="#medium-business" class="text-red-600 hover:underline">3. Бізнес-500 замовлень</a></li>
-        <li><a href="#large-business" class="text-red-600 hover:underline">4. Великий-2000 замовлень</a></li>
-      </ul>
-    </div>
-  </section>
+<div class="blog-hero-img">
+<img src="/images/blog/fulfillment-cheaper-hero.webp" alt="Порівняння власного складу та фулфілмент-оператора: розрахунок ROI" width="1200" height="630" loading="eager">
+</div>
 
-  <!-- Main Content -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 id="cost-breakdown" class="text-3xl font-bold mb-6">1. Розбір витрат: власна логістика vs. MTP</h2>
+<div class="blog-meta">
+<span>Оновлено 30 квітня 2026</span>
+<span>&middot;</span>
+<span>14 хв читання</span>
+<span>&middot;</span>
+<a href="/ua/blog/">Блог MTP Group</a>
+</div>
 
-      <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-        Визначимо, що входить у вартість логістики для еcommerce бізнесу. Потім розрахуємо две сценарії: власна логістика і MTP.
-      </p>
+<h1>Чому фулфілмент дешевший за власний склад: реальні розрахунки 2026</h1>
 
-      <div class="bg-blue-50 p-8 rounded border-l-4 border-blue-500 mb-8">
-        <h3 class="text-lg font-bold mb-4">Що входить у логістику</h3>
-        <ul class="space-y-2 text-gray-700">
-          <li><strong>1. Персонал:</strong> комплектувальник, водій, менеджер логістики</li>
-          <li><strong>2. Інфраструктура:</strong> оренда складу, комунальні послуги, страхування</li>
-          <li><strong>3. Обладнання:</strong> стелажі, дрифт, сканери, каса TTN</li>
-          <li><strong>4. Доставка:</strong> поточна ставка перевізника на кожне замовлення</li>
-          <li><strong>5. WMS:</strong> система управління складом (зовнішня або своя розробка)</li>
-          <li><strong>6. Управління запасами:</strong> контроль якості, переоцінка, списання браку</li>
-        </ul>
-      </div>
+<AuthorByline lang="uk" datePublished="2024-12-16" dateModified="2026-04-30" readingTime="14" />
 
-      <h3 class="text-2xl font-bold mb-6">Розрахунок для власної логістики</h3>
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-100">
-              <th class="border p-3 text-left">Стаття витрат</th>
-              <th class="border p-3 text-right">Помісячне</th>
-              <th class="border p-3 text-right">На замовлення *</th>
-              <th class="border p-3 text-left">Примітка</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border p-3"><strong>Комплектувальник</strong></td>
-              <td class="border p-3 text-right">12,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">Зарплата + бонус</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>Водій (розносу)</strong></td>
-              <td class="border p-3 text-right">15,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">Або перевізник паушальний</td>
-            </tr>
-            <tr>
-              <td class="border p-3"><strong>Менеджер логістики</strong></td>
-              <td class="border p-3 text-right">8,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">На 500+ замовлень, потрібен</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>Оренда складу 200 м²</strong></td>
-              <td class="border p-3 text-right">3,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">У Києві, периферія</td>
-            </tr>
-            <tr>
-              <td class="border p-3"><strong>Комунальні послуги (світло, вода)</strong></td>
-              <td class="border p-3 text-right">500 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">За місяць</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>Страхування товару</strong></td>
-              <td class="border p-3 text-right">1,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">Залежить від обсягу</td>
-            </tr>
-            <tr>
-              <td class="border p-3"><strong>WMS система (вендор)</strong></td>
-              <td class="border p-3 text-right">2,000 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">1C, Logistics.Net, etc.</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>Доставка перевізником</strong></td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3 text-right">50-100 грн</td>
-              <td class="border p-3">За замовлення, оптові ставки</td>
-            </tr>
-            <tr class="bg-red-50">
-              <td class="border p-3 font-bold"><strong>ВСЬОГО на місяць</strong></td>
-              <td class="border p-3 text-right font-bold">41,500 грн</td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3">Без доставки</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<p class="blog-lead">&laquo;У мене власний склад &mdash; навіщо мені фулфілмент?&raquo; &mdash; найчастіше заперечення, яке я чую за вісім років у логістиці. Відповідь завжди одна: порахуйте по-справжньому. Не &laquo;оренда плюс зарплати&raquo;, а повний CAPEX, простої персоналу, валютні ризики та вартість замороженого капіталу. Після цього фулфілмент перестає здаватися дорожчим &mdash; він виявляється дешевшим у середньому на 30%, а в перший рік &mdash; у рази.</p>
 
-      <p class="text-sm text-gray-600 mb-8">* Розраховане на 500 замовлень/місяць. Для 200 замовлень персонал все ще потрібен, витрати не змінюються. Для 1000+ потрібен другий комплектувальник.</p>
+<div style="margin:20px 0 32px;padding:16px 20px;border-left:3px solid #e63329;background:#fff8f8;font-size:15px;line-height:1.6"><strong>📊 Хочете свою цифру?</strong> У <a href="/ua/calculator/" style="color:#e63329;font-weight:600">калькуляторі MTP</a> можна розрахувати вартість під ваш обсяг за 30 секунд. Далі у статті &mdash; чому навіть грубий розрахунок показує економію.</div>
 
-      <h3 class="text-2xl font-bold mb-6">Розрахунок для MTP</h3>
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-100">
-              <th class="border p-3 text-left">Послуга MTP</th>
-              <th class="border p-3 text-right">Базова</th>
-              <th class="border p-3 text-right">На замовлення</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border p-3"><strong>Комплектація</strong></td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3 text-right">18-30 грн</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>Доставка по Україні</strong></td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3 text-right">50-150 грн</td>
-            </tr>
-            <tr>
-              <td class="border p-3"><strong>Складування (опціонально)</strong></td>
-              <td class="border p-3 text-right">400 грн/паль</td>
-              <td class="border p-3 text-right">—</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3"><strong>WMS API (синхронізація)</strong></td>
-              <td class="border p-3 text-right">Безкоштовно</td>
-              <td class="border p-3 text-right">—</td>
-            </tr>
-            <tr class="bg-red-50">
-              <td class="border p-3 font-bold"><strong>Середня вартість на замовлення</strong></td>
-              <td class="border p-3 text-right">—</td>
-              <td class="border p-3 text-right font-bold">68-180 грн</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<nav class="blog-toc">
+<strong>Зміст:</strong>
+<ol>
+<li><a href="#capex">Прихований CAPEX: за що ви насправді платите при запуску складу</a></li>
+<li><a href="#opex">OPEX-модель фулфілменту: що входить у тариф</a></li>
+<li><a href="#cases">Три кейси: 200, 500, 2000 замовлень на місяць</a></li>
+<li><a href="#why">Сім причин, чому фулфілмент дешевший</a></li>
+<li><a href="#war">Воєнні ризики та валютний хедж</a></li>
+<li><a href="#breakeven">Точка перелому: коли власний склад виграє</a></li>
+<li><a href="#mistakes">Дві найдорожчі помилки в цьому рішенні</a></li>
+<li><a href="#faq">Відповіді на часті запитання</a></li>
+</ol>
+</nav>
 
-      <h2 id="small-business" class="text-3xl font-bold mb-6 mt-12">2. Кейс: ФОП з 200 замовленнями на місяць</h2>
+<h2 id="capex">Прихований CAPEX: за що ви насправді платите при запуску складу</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
-          <h3 class="font-bold mb-4">Власна логістика</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">Персонал:</span> 12000 (комплектувальник в 0.5)</li>
-            <li><span class="font-bold">Склад:</span> 3000</li>
-            <li><span class="font-bold">Комунальні:</span> 500</li>
-            <li><span class="font-bold">Доставка:</span> 200 × 75 = 15,000 грн</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 30,500 грн/місяць</li>
-            <li class="text-red-600 font-bold">На замовлення: 152.50 грн</li>
-          </ul>
-        </div>
-        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
-          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">Комплектація:</span> 200 × 24 = 4,800</li>
-            <li><span class="font-bold">Доставка:</span> 200 × 100 = 20,000</li>
-            <li><span class="font-bold">Складування:</span> 1 паль × 400 = 400</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 25,200 грн/місяць</li>
-            <li class="text-green-600 font-bold">На замовлення: 126 грн</li>
-          </ul>
-        </div>
-      </div>
+<p>Більшість підприємців у плануванні власного складу враховують тільки оренду. Це помилка. Реальний CAPEX, який ви закриваєте до першого замовлення, виглядає так у цінах початку 2026 року:</p>
 
-      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
-        <p class="text-center text-lg font-bold">
-          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 30,500 грн</span>
-          <br />
-          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 25,200 грн</span>
-          <br />
-          <span class="text-green-700 text-xl">✓ Економія: 5,300 грн (17%)</span>
-        </p>
-      </div>
+<div class="overflow-x-auto">
+<table style="width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:15px">
+<thead>
+<tr style="background:#f5f5f5">
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:left">Стаття витрат</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">Діапазон, грн</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:12px;border:1px solid #e5e5e5">Депозит за оренду (1-3 місяці)</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">30 000 — 90 000</td></tr>
+<tr><td style="padding:12px;border:1px solid #e5e5e5">Стелажі, палети, пакувальні станції</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">80 000 — 200 000</td></tr>
+<tr><td style="padding:12px;border:1px solid #e5e5e5">WMS-система (ліцензія + впровадження)</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">50 000 — 300 000</td></tr>
+<tr><td style="padding:12px;border:1px solid #e5e5e5">Генератор + UPS + Starlink</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">80 000 — 150 000</td></tr>
+<tr><td style="padding:12px;border:1px solid #e5e5e5">Сканери, принтери етикеток, стрейч-машини</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">30 000 — 80 000</td></tr>
+<tr style="background:#fff8f8;font-weight:700"><td style="padding:12px;border:1px solid #e5e5e5">Сумарний CAPEX до першої відправки</td><td style="padding:12px;border:1px solid #e5e5e5;text-align:right">270 000 — 820 000</td></tr>
+</tbody>
+</table>
+</div>
 
-      <p class="text-gray-700 mb-6">
-        <strong>Висновок для ФОП:</strong> На малих обсягах (200 замовлень) MTP економить 17% на логістиці. Крім того, ФОП отримує:
-      </p>
-      <ul class="list-disc list-inside space-y-2 text-gray-700 mb-8">
-        <li>Можливість розширення без наймання персоналу</li>
-        <li>API синхронізація зі своїм магазином</li>
-        <li>Доступ до сертифікованої логістики для Rozetka FBO</li>
-        <li>Гарантія якості 99.8% без штрафів себе</li>
-      </ul>
+<p>До цієї цифри не входять страхування, депозити перед перевізниками (Нова Пошта і Укрпошта вимагають гарантійні рахунки), витрати на оформлення ФОП/ТОВ та чотири-вісім тижнів вашого часу на пошук приміщення, наймання 2-3 працівників і налаштування WMS. Для стартапа або середнього бренда це 800 000 грн мертвого капіталу плюс два місяці керівницького часу до першого виконаного замовлення.</p>
 
-      <h2 id="medium-business" class="text-3xl font-bold mb-6 mt-12">3. Кейс: Бізнес з 500 замовленнями на місяць</h2>
+<p>З фулфілментом цей CAPEX дорівнює нулю. Підписали договір, привезли товар, перше замовлення йде у клієнта за кілька днів.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
-          <h3 class="font-bold mb-4">Власна логістика</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">Комплектувальник:</span> 12,000</li>
-            <li><span class="font-bold">Водій:</span> 15,000</li>
-            <li><span class="font-bold">Менеджер логістики:</span> 8,000 (0.5)</li>
-            <li><span class="font-bold">Склад 300 м²:</span> 4,000</li>
-            <li><span class="font-bold">Комунальні:</span> 800</li>
-            <li><span class="font-bold">Страхування:</span> 1,500</li>
-            <li><span class="font-bold">WMS:</span> 2,000</li>
-            <li><span class="font-bold">Доставка:</span> 500 × 75 = 37,500</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 80,800 грн/місяць</li>
-            <li class="text-red-600 font-bold">На замовлення: 161.60 грн</li>
-          </ul>
-        </div>
-        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
-          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">Комплектація:</span> 500 × 25 = 12,500</li>
-            <li><span class="font-bold">Доставка:</span> 500 × 100 = 50,000</li>
-            <li><span class="font-bold">Складування:</span> 2 палі × 400 = 800</li>
-            <li><span class="font-bold">API синхронізація:</span> 0</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 63,300 грн/місяць</li>
-            <li class="text-green-600 font-bold">На замовлення: 126.60 грн</li>
-          </ul>
-        </div>
-      </div>
+<h2 id="opex">OPEX-модель фулфілменту: що входить у тариф</h2>
 
-      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
-        <p class="text-center text-lg font-bold">
-          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 80,800 грн</span>
-          <br />
-          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 63,300 грн</span>
-          <br />
-          <span class="text-green-700 text-xl">✓ Економія: 17,500 грн (22%)</span>
-        </p>
-      </div>
+<p>Український фулфілмент-оператор рівня MTP Group тарифікує по трьох передбачуваних осях:</p>
 
-      <h2 id="large-business" class="text-3xl font-bold mb-6 mt-12">4. Кейс: Великий бізнес з 2000 замовленнями на місяць</h2>
+<ul>
+<li><strong>Зберігання</strong> &mdash; за палету або кубометр на місяць. Для 200 SKU очікуйте 80-150 грн за палету/місяць.</li>
+<li><strong>Збір та упаковка</strong> &mdash; за відправлене замовлення, з пакувальними матеріалами в стандарті. Діапазон: 18-40 грн за замовлення залежно від складності SKU.</li>
+<li><strong>Обробка повернень</strong> &mdash; за повернений пакет, який оглянули, перепакували і поставили на полицю. Зазвичай 20-35 грн.</li>
+</ul>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div class="bg-red-50 p-6 rounded border-l-4 border-red-600">
-          <h3 class="font-bold mb-4">Власна логістика</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">2х комплектувальники:</span> 24,000</li>
-            <li><span class="font-bold">2х водії:</span> 30,000</li>
-            <li><span class="font-bold">Менеджер:</span> 10,000</li>
-            <li><span class="font-bold">Складський труд:</span> 8,000</li>
-            <li><span class="font-bold">Склад 800 м²:</span> 8,000</li>
-            <li><span class="font-bold">Комунальні:</span> 1,500</li>
-            <li><span class="font-bold">Страхування:</span> 3,000</li>
-            <li><span class="font-bold">WMS:</span> 3,000</li>
-            <li><span class="font-bold">Доставка:</span> 2000 × 65 = 130,000</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 217,500 грн/місяць</li>
-            <li class="text-red-600 font-bold">На замовлення: 108.75 грн</li>
-          </ul>
-        </div>
-        <div class="bg-green-50 p-6 rounded border-l-4 border-green-600">
-          <h3 class="font-bold mb-4">MTP Фулфілмент</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><span class="font-bold">Комплектація:</span> 2000 × 20 = 40,000</li>
-            <li><span class="font-bold">Доставка (оптова):</span> 2000 × 80 = 160,000</li>
-            <li><span class="font-bold">Складування:</span> 5 палет × 350 = 1,750</li>
-            <li><span class="font-bold">Виділений менеджер:</span> 2,000</li>
-            <li class="border-t pt-2 font-bold">ВСЬОГО: 203,750 грн/місяць</li>
-            <li class="text-green-600 font-bold">На замовлення: 101.87 грн</li>
-          </ul>
-        </div>
-      </div>
+<p>Все. Жодних зарплат, оренди, амортизації обладнання, ліцензії WMS, рахунка за електрику. Якщо обсяг падає на 50% наступного місяця &mdash; рахунок падає майже на 50%. Якщо подвоюється &mdash; оператор бере на себе масштабування. Це класичне перетворення фіксованих витрат на змінні &mdash; той самий принцип, на якому Захід у 2010-х будував модель AWS для серверів і 3PL для логістики.</p>
 
-      <div class="bg-gradient-to-r from-red-100 to-green-100 p-6 rounded border-2 border-green-600 mb-8">
-        <p class="text-center text-lg font-bold">
-          <span class="text-red-600">ВЛАСНА ЛОГІСТИКА: 217,500 грн</span>
-          <br />
-          <span class="text-green-600">MTP ФУЛФІЛМЕНТ: 203,750 грн</span>
-          <br />
-          <span class="text-green-700 text-xl">✓ Економія: 13,750 грн (6%)</span>
-        </p>
-      </div>
+<h2 id="cases">Три кейси: 200, 500, 2000 замовлень на місяць</h2>
 
-      <p class="text-gray-700 mb-6 bg-blue-50 p-6 rounded">
-        <strong>Інсайт:</strong> На великих обсягах (2000+) економія знижується до 6%, але з'являються нові переваги: масштабованість, гнучкість, відсутність управління персоналом. Крім того, MTP може запропонувати спеціальні ставки за 2000+ замовлень (25% знижка), що додатково економить 50-80K грн.
-      </p>
+<p>Цифри нижче &mdash; реальні середні значення клієнтів MTP за 2025-2026 роки.</p>
 
-      <h2 class="text-3xl font-bold mb-6 mt-12">5. Чому фулфілмент дешевший: Ключові факти</h2>
+<h3>Кейс 1: D2C косметика &mdash; 200 замовлень/місяць</h3>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">💰 Масштаб</h3>
-          <p class="text-gray-700">MTP синхронізує логістику 1000+ клієнтів. Доставка перевізнику обійдеться дешевше за 1 замовлення, ніж за 1000. Ми передаємо цю економію тобі.</p>
-        </div>
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">🤖 Автоматизація</h3>
-          <p class="text-gray-700">WMS система автоматизує 80% операцій. Для ФОП це обходиться в 2000 грн/місяць, для MTP — це розподіляється на 1000+ клієнтів.</p>
-        </div>
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">🏪 Немає простою</h3>
-          <p class="text-gray-700">Якщо у ФОП немає замовлень на день — персонал все ще платить. У MTP персонал платить лише за виконані операції.</p>
-        </div>
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">📊 Оптимізація маршрутів</h3>
-          <p class="text-gray-700">MTP групує замовлення в рейси на один маршрут. 50 замовлень в одну коробку = одна доставка замість 50-ти.</p>
-        </div>
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">🤝 Переговори з перевізниками</h3>
-          <p class="text-gray-700">MTP договорилась про оптові ставки з 10+ перевізниками. ФОП не має такого впливу на ринок.</p>
-        </div>
-        <div class="bg-white p-6 rounded border border-gray-200">
-          <h3 class="text-lg font-bold mb-3">🎯 Без витрат на управління</h3>
-          <p class="text-gray-700">MTP приймає на себе весь управлінський тягар. ФОП платить 8000+ за менеджера, який не потрібен.</p>
-        </div>
-      </div>
+<div class="overflow-x-auto">
+<table style="width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:15px">
+<thead>
+<tr style="background:#f5f5f5">
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:left">Стаття витрат</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">Власний склад</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">MTP фулфілмент</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Оренда + комуналка</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">19 700 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Персонал (1 пакувальник на пів ставки)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">14 800 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">WMS / облік</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">4 100 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Зберігання (3 палети)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">450 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Збір і упаковка (200 замовлень)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">6 800 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Пакувальні матеріали</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">2 900 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">включено</td></tr>
+<tr style="background:#fff8f8;font-weight:700"><td style="padding:10px;border:1px solid #e5e5e5">Разом на місяць</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">41 500 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">7 250 грн</td></tr>
+</tbody>
+</table>
+</div>
 
-      <h2 class="text-3xl font-bold mb-6 mt-12">6. Коли фулфілмент вже не дешевший: Порогові обсяги</h2>
+<p><strong>Економія: 83% від місячного OPEX.</strong> Власний склад має сенс тільки якщо у вас на тому ж приміщенні є шоурум або B2B-видача &mdash; тоді витрати розподіляються на кілька напрямків бізнесу.</p>
 
-      <div class="bg-yellow-50 p-6 rounded border-l-4 border-yellow-500 mb-8">
-        <h3 class="text-lg font-bold mb-4">При якому обсязі вперше варто задуматися про власну логістику?</h3>
-        <p class="text-gray-700 mb-4">
-          При <strong>&gt;5000 замовлень на місяць</strong>. На цьому рівні:
-        </p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-          <li>Власна логістика почне економити 10-15%</li>
-          <li>Витрати на персонал розподіляються на велику кількість операцій</li>
-          <li>Ви можете дозволити собі спеціалізовану команду</li>
-          <li>Масштаб дозволяє наймати найкращих спеціалістів</li>
-        </ul>
-        <p class="text-gray-700 mt-4">
-          Але навіть при 5000+ замовлень гібридна модель (свій склад + MTP доставка) часто вигідніша.
-        </p>
-      </div>
+<h3>Кейс 2: Середній бренд одягу &mdash; 500 замовлень/місяць</h3>
 
-      <h2 class="text-3xl font-bold mb-6 mt-12">7. Вартість помилок у логістиці</h2>
+<div class="overflow-x-auto">
+<table style="width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:15px">
+<thead>
+<tr style="background:#f5f5f5">
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:left">Стаття витрат</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">Власний склад</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">MTP фулфілмент</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Оренда + комуналка</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">29 900 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Персонал (2 пакувальники + логіст на 0.5)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">55 800 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">WMS / 1С</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">4 900 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Зберігання (8 палет)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">1 150 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Збір і упаковка (500 замовлень)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">16 800 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Пакувальні матеріали</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">8 200 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">включено</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Обробка повернень</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">4 500 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">2 800 грн</td></tr>
+<tr style="background:#fff8f8;font-weight:700"><td style="padding:10px;border:1px solid #e5e5e5">Разом на місяць</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">103 300 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">20 750 грн</td></tr>
+</tbody>
+</table>
+</div>
 
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-100">
-              <th class="border p-3 text-left">Помилка</th>
-              <th class="border p-3 text-center">Вартість (середня)</th>
-              <th class="border p-3 text-left">Як MTP запобігає</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border p-3">Невірна адреса розіслання</td>
-              <td class="border p-3 text-center">500-2000 грн</td>
-              <td class="border p-3">WMS перевіряє адресу перед друком TTN</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3">Товар не відправлений (забув у складі)</td>
-              <td class="border p-3 text-center">200-5000 грн + репутація</td>
-              <td class="border p-3">Подвійна перевірка (оператор + сканування)</td>
-            </tr>
-            <tr>
-              <td class="border p-3">Пошкодження в дорозі</td>
-              <td class="border p-3 text-center">1000-10000 грн</td>
-              <td class="border p-3">Професійна упаковка, страхування</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="border p-3">Втрата запасів на складі</td>
-              <td class="border p-3 text-center">500-2000 грн</td>
-              <td class="border p-3">Щомісячна інвентаризація, відеоспостереження</td>
-            </tr>
-            <tr>
-              <td class="border p-3">Недостатня ємність в піковий період</td>
-              <td class="border p-3 text-center">10000+ грн + втрачені продажи</td>
-              <td class="border p-3">Гнучка мережа, можемість розширення за дні</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<p><strong>Економія: 80% від місячного OPEX.</strong> На рік це &mdash; 990 600 грн вільних коштів. Майже мільйон гривень, які ви можете направити на маркетинг, розширення SKU або просто залишити в прибутку.</p>
 
-      <p class="text-gray-700 mb-8 bg-red-50 p-6 rounded">
-        <strong>Приховані витрати власної логістики:</strong> Помилки на складі стають витратами для клієнтів. MTP несе відповідальність, тому інвестує у якість. За рік помилки можуть обійтися у 10-50K грн — це не врахувало у розрахунках вище.
-      </p>
+<h3>Кейс 3: Мульти-канальний продавець &mdash; 2000 замовлень/місяць</h3>
 
-      <h2 class="text-3xl font-bold mb-6 mt-12">Висновок: Чому дешевший</h2>
+<div class="overflow-x-auto">
+<table style="width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:15px">
+<thead>
+<tr style="background:#f5f5f5">
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:left">Стаття витрат</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">Власний склад</th>
+<th style="padding:12px;border:1px solid #e5e5e5;text-align:right">MTP фулфілмент</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Оренда + комуналка (250 м²)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">59 900 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Персонал (4 пакувальники + старший)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">130 000 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">WMS / 1С / інтеграції</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">9 800 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">0 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Зберігання (25 палет)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">3 600 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Збір і упаковка (2000 замовлень)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">&mdash;</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">61 500 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Пакувальні матеріали</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">32 800 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">включено</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Повернення (8% від обсягу)</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">18 000 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">11 500 грн</td></tr>
+<tr><td style="padding:10px;border:1px solid #e5e5e5">Паливо для генератора + Starlink</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">9 000 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">включено</td></tr>
+<tr style="background:#fff8f8;font-weight:700"><td style="padding:10px;border:1px solid #e5e5e5">Разом на місяць</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">259 500 грн</td><td style="padding:10px;border:1px solid #e5e5e5;text-align:right">76 600 грн</td></tr>
+</tbody>
+</table>
+</div>
 
-      <ul class="space-y-4 text-gray-700 text-lg">
-        <li class="flex gap-3 items-start">
-          <span class="text-red-600 font-bold text-2xl">✓</span>
-          <span><strong>Для ФОП 100-500 замовлень:</strong> 17-25% економія. Потім лише зростає до 30% при 1000+ замовлень.</span>
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-red-600 font-bold text-2xl">✓</span>
-          <span><strong>Для малих бізнесів 500-2000:</strong> 20-35% економія від витрат логістики.</span>
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-red-600 font-bold text-2xl">✓</span>
-          <span><strong>Для великих 2000+:</strong> 10-20% економія + додаткові переваги (масштабованість, якість, надійність).</span>
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-red-600 font-bold text-2xl">✓</span>
-          <span><strong>Ключові Драйвери:</strong> Масштаб, автоматизація, оптимізація маршрутів, відсутність простоїв персоналу.</span>
-        </li>
-      </ul>
+<p><strong>Економія: 70% від місячного OPEX.</strong> Розрив зменшується на великих обсягах, бо юніт-економіка власного складу нарешті починає працювати &mdash; але він все одно програє в абсолютних грошах: 182 900 грн на місяць, 2,2 млн грн на рік. На цьому обсязі вже має сенс <a href="/ua/blog/fulfilment-vs-vlasnyy-sklad/">розглянути гібридну модель</a>: власний склад на топ-SKU плюс фулфілмент на &laquo;довгий хвіст&raquo;.</p>
 
-      <div class="mt-12 p-8 bg-gradient-to-r from-red-100 to-blue-100 rounded">
-        <h3 class="text-2xl font-bold mb-4">Готові перейти на фулфілмент?</h3>
-        <p class="text-gray-700 mb-6">
-          Розрахуємо персональну вартість для вашого бізнесу — напишіть вам обсяги замовлень, категорії товарів та регіони доставки.
-        </p>
-        <a href="/#contact" class="inline-block bg-red-600 text-white px-8 py-3 rounded font-bold hover:bg-red-700 transition">
-          Розрахувати вартість
-        </a>
-      </div>
-    </div>
-  </section>
+<h2 id="why">Сім причин, чому фулфілмент дешевший</h2>
 
-  <!-- Schema Markup -->
-  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+<p>Розрив у цінах &mdash; не випадковий і не тимчасовий. Сім структурних механізмів, які роблять його стійким:</p>
+
+<ol>
+<li><strong>Розподілений overhead.</strong> Пакувальник MTP, який обслуговує ваш бренд, паралельно обслуговує 60+ інших. Його зарплата фракціонується між усіма. Ви платите частку. Власний пакувальник належить тільки вам і завантажений у середньому на 60%.</li>
+<li><strong>Оптові закупівлі пакування.</strong> MTP купує коробки контейнерами; ви &mdash; палетами. Різниця в собівартості 30-45%.</li>
+<li><strong>Тарифи перевізників.</strong> Знижки Нової Пошти та Укрпошти, узгоджені на 50 000+ відправлень на місяць, не доступні бренду з 500 замовленнями. Економія тільки на доставці часто покриває весь тариф фулфілменту.</li>
+<li><strong>Нуль CAPEX.</strong> 270 000 — 820 000 грн стартового CAPEX мають альтернативну вартість &mdash; ці гроші могли б крутитися в обігових коштах або в платному трафіку з ROAS 3-5x.</li>
+<li><strong>Ноль HR-навантаження.</strong> Наймання, онбординг, оцінка, лікарняні, періодичне болюче звільнення &mdash; це все не ваша проблема з фулфілментом.</li>
+<li><strong>WMS амортизована між клієнтами.</strong> Сучасна WMS &mdash; 50-300 тис грн на впровадження плюс 4-8 тис грн/міс підтримки. MTP тримає одну на всіх.</li>
+<li><strong>Згладжування попиту.</strong> Ваш сезонний пік (Чорна п&apos;ятниця, Новий рік) збігається з піком багатьох. Але частина клієнтів MTP має зміщені піки (B2B-літо, школа-вересень). Простоїв потужностей майже не буває.</li>
+</ol>
+
+<h2 id="war">Воєнні ризики та валютний хедж</h2>
+
+<p>Це частина, яку власники малого бізнесу зазвичай ігнорують у плануванні &mdash; і саме вона найболючіше б&apos;є по бізнес-моделі &laquo;власний склад&raquo; у поточних умовах.</p>
+
+<h3>Власний склад &mdash; єдина точка відмови</h3>
+
+<p>Ваш склад &mdash; це одна фізична локація. Прильот, пошкодження електромережі, тривалий блекаут, проблема з комунікаціями &mdash; будь-яке з цього зупиняє відправлення на дні чи тижні. У 2022-2023 роках кілька брендів так втратили новорічний сезон.</p>
+
+<p>MTP працює розподілено: <strong>2 700 м² у Щасливому (Бориспільський р-н)</strong> і <strong>1 000 м² у Білогородці (захід від Києва)</strong>. На обох &mdash; резервне живлення, обидва підключені до Starlink, критичний топ-SKU дублюється між ними. З 2022 року жоден клієнт не втратив дня відправлень.</p>
+
+<h3>Валютний хедж</h3>
+
+<p>CAPEX 800 000 грн, інвестований у власний склад &mdash; це капітал, заморожений у гривневих активах (стелажі, обладнання, депозит за оренду). Гривня з 2022 року девальвувала до долара приблизно на 38%. Капітал, який ви вклали при курсі 27 грн/USD, тепер коштує помітно менше в доларах, навіть якщо самі активи фізично цілі.</p>
+
+<p>Фулфілмент-OPEX має протилежну властивість: гривневий і короткоциклічний. Якщо гривня впаде ще &mdash; ваш рахунок у доларовому еквіваленті теж зменшиться. Якщо вам потрібно вийти з ринку &mdash; нема чого ліквідувати, нема втрат на продажу б/в обладнання.</p>
+
+<h2 id="breakeven">Точка перелому: коли власний склад виграє</h2>
+
+<p>Фулфілмент &mdash; не завжди відповідь. Три сценарії, коли власний склад економічно виправданий:</p>
+
+<ul>
+<li><strong>Стабільний обсяг від 5 000 замовлень/міс.</strong> На такому масштабі ваша частка фіксованих витрат у фулфілмент-центрі починає бути порівнянною з власною інфраструктурою.</li>
+<li><strong>Спеціалізовані SKU.</strong> Небезпечні матеріали, температурні фарма-товари, мистецтво, ювелірні прикраси &mdash; категорії, де вам реально потрібні нестандартні процедури, які оператор економічно не може підтримувати тільки для вас.</li>
+<li><strong>Вертикальна інтеграція.</strong> Якщо склад одночасно є виробничим цехом фінішингу або B2B-видачею &mdash; фіксовані витрати розподіляються між кількома напрямками виторгу, а не лише D2C-фулфілментом.</li>
+</ul>
+
+<h2 id="mistakes">Дві найдорожчі помилки в цьому рішенні</h2>
+
+<p><strong>Помилка перша: рахувати тільки оренду.</strong> Прихований CAPEX, розрив у закупівлі пакування, HR-витрати, ліцензія WMS, паливо для генератора, керівницький час &mdash; разом вони легко подвоюють очевидну вартість. Підприємці системно недооцінюють повну вартість власного складу на 40-60% у початковому планувальному файлі.</p>
+
+<p><strong>Помилка друга: припускати, що фулфілмент не інтегрується з вашим стеком.</strong> Сучасні оператори (MTP включно) інтегруються з Хорошоп, Prom.ua, Rozetka, Shopify, WooCommerce та довільними REST API. Цикл &laquo;замовлення-відправка&raquo; &mdash; 24-48 годин по Україні. Залишки оновлюються в ERP кожні 15 хвилин. Аргумент &laquo;втрата контролю&raquo;, актуальний у 2015 році, у 2026-му переважно міф.</p>
+
+<h2 id="faq">Відповіді на часті запитання</h2>
+
+<details style="border:1px solid #e8e8e8;border-radius:6px;margin:12px 0;padding:14px 18px">
+<summary style="font-weight:600;cursor:pointer">На скільки фулфілмент дешевший за власний склад?</summary>
+<p style="margin-top:12px">При 200-500 замовленнях/місяць &mdash; на 17-25%. При 1000+ &mdash; до 35%. Це без урахування CAPEX 270 000-820 000 грн, який власний склад вимагає до першого замовлення.</p>
+</details>
+
+<details style="border:1px solid #e8e8e8;border-radius:6px;margin:12px 0;padding:14px 18px">
+<summary style="font-weight:600;cursor:pointer">З якого обсягу вже вигідніший власний склад?</summary>
+<p style="margin-top:12px">Точка перелому &mdash; 5 000+ замовлень на місяць при стабільному обсязі. До цього фулфілмент дешевший і швидший у запуску. Гібридна модель часто перемагає чистий власний склад навіть на 5 000-10 000 замовлень.</p>
+</details>
+
+<details style="border:1px solid #e8e8e8;border-radius:6px;margin:12px 0;padding:14px 18px">
+<summary style="font-weight:600;cursor:pointer">Скільки коштує запустити власний склад в Україні?</summary>
+<p style="margin-top:12px">Депозит 30-90 тис грн, стелажі 80-200 тис грн, WMS 50-300 тис грн, генератор 80-150 тис грн, сканери 30-80 тис грн. Разом 270 000 — 820 000 грн до першої відправки.</p>
+</details>
+
+<details style="border:1px solid #e8e8e8;border-radius:6px;margin:12px 0;padding:14px 18px">
+<summary style="font-weight:600;cursor:pointer">Що з воєнними ризиками власного складу?</summary>
+<p style="margin-top:12px">Власний склад &mdash; єдина точка відмови. MTP розподіляє товар між Щасливим (2 700 м²) та Білогородкою (1 000 м²), у кожного резервне живлення і Starlink. З 2022 року жодного дня простою.</p>
+</details>
+
+<h2>Наступний крок: як перевірити цифри для себе</h2>
+
+<ol>
+<li>Відкрийте <a href="/ua/calculator/" style="color:#e63329;font-weight:600">калькулятор MTP</a> і забийте свій реальний обсяг &mdash; отримаєте точну цифру за 30 секунд.</li>
+<li>Порівняйте з вашим поточним бюджетом на склад (з усім CAPEX і амортизацією). Якщо різниця більше 15% &mdash; перехід обґрунтований економічно.</li>
+<li>Прочитайте <a href="/ua/blog/fulfilment-vs-vlasnyy-sklad/" style="color:#e63329;font-weight:600">детальне порівняння фулфілмент vs власний склад</a> &mdash; там розібрана операційна сторона, не тільки фінансова.</li>
+<li>Якщо хочете порадитися &mdash; <a href="/ua/recalls/" style="color:#e63329;font-weight:600">подивіться відгуки клієнтів</a> і залиште заявку. Відповімо протягом 15 хвилин з розрахунком за вашими SKU.</li>
+</ol>
+
+<p>Головний підсумок: фулфілмент дешевший за власний склад не тому, що &laquo;ціни такі&raquo;, а тому, що в його модель вшиті ефект масштабу, відсутність CAPEX, валютна гнучкість і розподіл воєнних ризиків. На стадії 0-5 000 замовлень на місяць це математично вигідніше у 90% випадків.</p>
+
+</article>
+
+<style is:global>
+.blog-hero-img{max-width:1200px;margin:24px auto 0;padding:0 16px}
+.blog-hero-img img{width:100%;height:auto;border-radius:8px;display:block}
+.blog-meta{max-width:760px;margin:24px auto 8px;padding:0 16px;color:#666;font-size:14px;display:flex;gap:8px;flex-wrap:wrap}
+.blog-meta a{color:#e63329;text-decoration:none}
+.blog-article{max-width:760px;margin:0 auto;padding:24px 16px 80px;font-size:17px;line-height:1.7;color:#222}
+.blog-article h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);font-weight:400;line-height:1.2;margin:16px 0 24px}
+.blog-article h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,32px);font-weight:400;margin:48px 0 16px;line-height:1.3}
+.blog-article h3{font-size:20px;font-weight:600;margin:24px 0 12px}
+.blog-article p{margin:0 0 18px}
+.blog-article ul,.blog-article ol{margin:0 0 18px;padding-left:24px}
+.blog-article li{margin-bottom:6px}
+.blog-article a{color:#e63329}
+.blog-lead{font-size:19px;color:#444;line-height:1.6;border-left:3px solid #e63329;padding-left:18px;margin-bottom:32px}
+.blog-toc{background:#fafafa;border:1px solid #e8e8e8;border-radius:8px;padding:18px 24px;margin:24px 0 32px;font-size:15px}
+.blog-toc strong{display:block;margin-bottom:8px}
+.blog-toc ol{margin:0;padding-left:20px}
+.blog-toc li{margin-bottom:4px}
+.blog-toc a{color:#222;text-decoration:none}
+.blog-toc a:hover{color:#e63329;text-decoration:underline}
+.blog-article details{transition:background .2s}
+.blog-article details[open]{background:#fafafa}
+.blog-article summary{padding-right:16px}
+.overflow-x-auto{overflow-x:auto}
+</style>
 </Base>

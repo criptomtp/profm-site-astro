@@ -139,6 +139,7 @@ Comprehensive UA/RU library on fulfillment, e-commerce logistics, and Ukrainian-
 - Вартість фулфілменту 2026: тарифи, приховані витрати, ROI — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/vartist-fulfilmentu-2026/) · [RU](https://www.fulfillmentmtp.com.ua/blog/stoimost-fulfilmenta-2026/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/fulfillment-cost-2026/)
 - Як перейти на фулфілмент: 46-денний план міграції без втрати продажів — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/yak-perejty-na-fulfilment/) · [RU](https://www.fulfillmentmtp.com.ua/blog/perehod-na-fulfilment/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/switch-to-fulfillment-guide/)
 - Підключення до фулфілменту: онбординг для СНГ та EU/UK брендів — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/yak-pidklyuchytysia-do-fulfilmentu/) · [RU](https://www.fulfillmentmtp.com.ua/blog/podklyuchenie-k-fulfilmentu/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/connect-to-ukraine-fulfillment/)
+- Чому фулфілмент дешевший за власний склад: ROI 2026 з прихованим CAPEX, валютним хеджем і воєнними ризиками — [UA](https://www.fulfillmentmtp.com.ua/ua/blog/chomu-fulfilment-deshevshyy/) · [RU](https://www.fulfillmentmtp.com.ua/blog/pochemu-fulfilment-deshevle/) · [EN](https://www.fulfillmentmtp.com.ua/en/blog/post/why-fulfillment-cheaper-than-own-warehouse/)
 
 ## Localized llms.txt variants
 
