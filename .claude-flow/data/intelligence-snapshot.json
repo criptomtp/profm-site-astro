@@ -7142,5 +7142,157 @@
         "accessCount": 0
       }
     ]
+  },
+  {
+    "timestamp": 1777667754140,
+    "nodes": 35,
+    "edges": 20,
+    "pageRankSum": 0.9999999999999991,
+    "confidences": [
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.53,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.355,
+      0.36
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "mem-profm-vercel-migration-remaining-setup--user-must-do-",
+        "summary": "Remaining Setup (user must do)",
+        "confidence": 0.53,
+        "pageRank": 0.04466623682569725,
+        "accessCount": 1
+      },
+      {
+        "id": "mem-profm-google-ads-how-to-apply-",
+        "summary": "How to apply:",
+        "confidence": 0.355,
+        "pageRank": 0.06798249986631208,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-google-ads-why-",
+        "summary": "Why:",
+        "confidence": 0.355,
+        "pageRank": 0.06348886440907654,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-google-ads-phase-1-actions--user-must-do-",
+        "summary": "Phase 1 Actions (user must do manually in UI)",
+        "confidence": 0.355,
+        "pageRank": 0.05820238143925238,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-vercel-migration-how-to-apply-",
+        "summary": "How to apply:",
+        "confidence": 0.355,
+        "pageRank": 0.05820238143925238,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-google-ads-critical-issues-found--phase-1",
+        "summary": "Critical Issues Found (Phase 1 — pending manual fix by user)",
+        "confidence": 0.355,
+        "pageRank": 0.05198306537175864,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-vercel-migration-why-",
+        "summary": "Why:",
+        "confidence": 0.355,
+        "pageRank": 0.05198306537175864,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-google-ads-client-budget",
+        "summary": "Client/Budget",
+        "confidence": 0.355,
+        "pageRank": 0.04466623682569725,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-feedback-memories",
+        "summary": "Feedback Memories",
+        "confidence": 0.355,
+        "pageRank": 0.036058196896026726,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-profm-google-ads-company-profile",
+        "summary": "Company Profile",
+        "confidence": 0.355,
+        "pageRank": 0.036058196896026726,
+        "accessCount": 0
+      }
+    ]
   }
 ]
