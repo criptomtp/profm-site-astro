@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 12/16 done — pallet-storage. All 3 schemas 9/9. Trivial batch — only GeoCoords + BusinessAudience needed. Words 1046/1227/1391 thin. H1 generic on all 3 (short noun construction). Cumulative session: 12 triplets, -35 schema fails (38→3). P2: 4/5.
+**Last session note:** Phase 2 batch 13/16 done — warehouse-services. **🎊 P2 batch (5/5) COMPLETE.** All 3 schemas 9/9. UA words 2445 (just 55 from PASS!). RU 780, EN 908. Cumulative session: 13 triplets, -38 schema fails (38→0 for already-batched pillars). P3 (4 quick-wins) all that remains in Phase 2.
 
 ---
 
@@ -78,7 +78,7 @@
 - [x] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/` **DONE 2026-05-01**: had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU; EN had no Offer). Missing LocalBusiness/Geo/PostalAddress/BusinessAudience. Added BusinessAudience to Service.audience (UA/RU/EN), full LocalBusiness append per language, EN got Offer added too. All 3 now 9/9 schemas ✅. Words 1437/1030/1255 thin. H1s have `&mdash;` but heuristic doesn't decode HTML entity — Phase 3 fix.
 - [x] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/` **DONE 2026-05-01**: UA + RU had Service+LB+PostalAddress+Country+FAQ+Breadcrumb+Org but no offers/audience/geo. EN had bare Service (just name+provider) + no Breadcrumb. Added: Service.audience + offers (heavy-goods specific), LB.geo+location[]; for EN — full Service rewrite + new BreadcrumbList script. RU has duplicate inline LB block (pre-existing) — replaced both. UA Bilohorodka had description that confused initial pattern, fixed with second pass. All 3 now 9/9 schemas ✅. RU + EN H1 brand-hooks; UA H1 "Фулфілмент важких товарів. Великий габарит. Без компромісів." generic per heuristic (3 periods as twist not recognized).
 - [x] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/` **DONE 2026-05-01**: cleanest batch — only missing GeoCoordinates + BusinessAudience. 2 surgical replacements per file (Service add audience after areaServed; LB add geo+location[] after Bilohorodka description). All 3 now 9/9 schemas ✅. Words 1046/1227/1391 thin (Phase 4). H1s short noun-construction generic on all 3.
-- [ ] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/`
+- [x] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/` **DONE 2026-05-01**: same shape as pallet-storage — only missing GeoCoordinates + BusinessAudience. 2 surgical replacements per file. All 3 now 9/9 schemas ✅. UA words 2445 (just 55 from PASS!). RU 780, EN 908. H1 generic on all 3.
 
 #### P3 batch (already mostly-passing — quick wins)
 - [ ] **cosmetics** — UA mostly OK, RU 1 fail, EN passing (only quick top-up needed)
@@ -145,6 +145,16 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 13: warehouse-services triplet 🎊 (P2 complete)
+- Same shape as pallet-storage. Missing only GeoCoordinates + BusinessAudience.
+- 2 surgical replacements per file (Service.audience after areaServed; LB.geo+location after Bilohorodka description)
+- All 3 schemas 9/9 ✅
+- UA words 2445 — just 55 short of PASS threshold (Phase 4 will close this trivially with one extra section)
+- RU 780, EN 908 — bigger gaps; Phase 4
+- 🎊 **P2 batch (5/5) COMPLETE** (fulfilment-kyiv, fulfilment-ukraina, vazhki-tovary, pallet-storage, warehouse-services)
+- Net progress: -3 schema fails. Cumulative session: -38 (38 → 0 schema fails for batched pillars; site-wide 3 remain in P3 not yet touched)
+- Next session: P3 batch (4 quick-wins) — cosmetics, small-biz, marketplaces, online-store. These are already mostly passing per prior scorecard, just need small touch-ups.
 
 ### 2026-05-01 — Phase 2 batch 12: pallet-storage triplet
 - Cleanest batch yet. Pages had 7 of 9 must-haves: Service+LB+PostalAddress+Country+Offer+FAQ+Breadcrumb+Org. Only GeoCoordinates and BusinessAudience missing.
