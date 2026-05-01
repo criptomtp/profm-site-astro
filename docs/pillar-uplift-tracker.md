@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 11/16 done — vazhki-tovary. All 3 schemas 9/9. RU + EN H1 brand-hooks ✅. UA H1 generic (period not accepted). Words 1195/1130/1502 thin. Cumulative session: 11 triplets, -32 schema fails (38→6). P2: 3/5.
+**Last session note:** Phase 2 batch 12/16 done — pallet-storage. All 3 schemas 9/9. Trivial batch — only GeoCoords + BusinessAudience needed. Words 1046/1227/1391 thin. H1 generic on all 3 (short noun construction). Cumulative session: 12 triplets, -35 schema fails (38→3). P2: 4/5.
 
 ---
 
@@ -77,7 +77,7 @@
 - [x] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/` **DONE 2026-05-01**: had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing GeoCoordinates in LocalBusiness (was inside City schema only) + BusinessAudience + standalone Country @type. Surgical: replaced `areaServed:{City}` with `areaServed:[City, Country]`, added BusinessAudience, added geo+location[] to LocalBusiness. All 3 now 9/9 schemas ✅. RU H1 brand-hook ("Ваш склад без аренды. Ваша логистика без логистов." — paradox + period). UA+EN H1 generic. Words 1183/1087/1398 thin (Phase 4).
 - [x] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/` **DONE 2026-05-01**: had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU; EN had no Offer). Missing LocalBusiness/Geo/PostalAddress/BusinessAudience. Added BusinessAudience to Service.audience (UA/RU/EN), full LocalBusiness append per language, EN got Offer added too. All 3 now 9/9 schemas ✅. Words 1437/1030/1255 thin. H1s have `&mdash;` but heuristic doesn't decode HTML entity — Phase 3 fix.
 - [x] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/` **DONE 2026-05-01**: UA + RU had Service+LB+PostalAddress+Country+FAQ+Breadcrumb+Org but no offers/audience/geo. EN had bare Service (just name+provider) + no Breadcrumb. Added: Service.audience + offers (heavy-goods specific), LB.geo+location[]; for EN — full Service rewrite + new BreadcrumbList script. RU has duplicate inline LB block (pre-existing) — replaced both. UA Bilohorodka had description that confused initial pattern, fixed with second pass. All 3 now 9/9 schemas ✅. RU + EN H1 brand-hooks; UA H1 "Фулфілмент важких товарів. Великий габарит. Без компромісів." generic per heuristic (3 periods as twist not recognized).
-- [ ] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/`
+- [x] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/` **DONE 2026-05-01**: cleanest batch — only missing GeoCoordinates + BusinessAudience. 2 surgical replacements per file (Service add audience after areaServed; LB add geo+location[] after Bilohorodka description). All 3 now 9/9 schemas ✅. Words 1046/1227/1391 thin (Phase 4). H1s short noun-construction generic on all 3.
 - [ ] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/`
 
 #### P3 batch (already mostly-passing — quick wins)
@@ -145,6 +145,20 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 12: pallet-storage triplet
+- Cleanest batch yet. Pages had 7 of 9 must-haves: Service+LB+PostalAddress+Country+Offer+FAQ+Breadcrumb+Org. Only GeoCoordinates and BusinessAudience missing.
+- 2 surgical replacements per file:
+  1. Service: add audience after areaServed (pallet-storage audience: wholesale, large-catalog, seasonal)
+  2. LB: add geo+location[] after Bilohorodka description
+- All 3 now 9/9 schemas ✅
+- H1 status — short generic on all 3:
+  - UA "Палетне зберігання товарів у&nbsp;Київській області" (5 words, no twist)
+  - RU "Палетное хранение товаров в&nbsp;Киевской области" (5 words, no twist)
+  - EN "Pallet Storage in Kyiv Region" (5 words, no twist)
+- Words 1046/1227/1391 thin
+- Net progress: -3 schema fails. Cumulative session: -35 (38 → 3)
+- Next session: continue P2 with `warehouse-services` triplet (last P2)
 
 ### 2026-05-01 — Phase 2 batch 11: vazhki-tovary triplet
 - UA + RU had Service+LB+PostalAddress+Country+FAQ+Breadcrumb+Org but Service was missing offers/audience and LB was missing geo/location
