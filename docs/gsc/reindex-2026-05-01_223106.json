@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-05-01_223106",
+  "ok": 5,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/services/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/poslugy/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/services/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/tsenu/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}
