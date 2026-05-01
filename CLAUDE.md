@@ -4,6 +4,10 @@
 ## ЧИТАЙ ЗАВЖДИ на початку кожної сесії:
 Read ~/.claude/skills/mtp-knowledge/SKILL.md
 
+## Pillar uplift work (long-running multi-session task):
+Якщо задача стосується схем/H1/слів на існуючих pillar-сторінках (НЕ нова сторінка з нуля):
+**ПЕРШИМ читати** `docs/pillar-uplift-tracker.md` — там покроковий план, статуси по кожному triplet, методологія per Phase. Знайти найвищий IN PROGRESS / TODO, виконати ОДИН батч, оновити tracker, commit, зупинитись і повідомити user. Не робити кілька Phase в одній сесії.
+
 ---
 
 ## Skill routing:
@@ -305,6 +309,8 @@ curl -o "public/images/[slug]-hero.jpg" \
 - `docs/pillar-page-checklist.md` — 8-пунктний quality gate для нових pillar-сторінок: 9 schemas, 2500+ слів, brand-hook H1, hreflang quartet, language purity, internal linking. Запуск: `npm run validate:pillar -- --triplet UA RU EN`.
 - `scripts/pillar-page-validate.sh` — bash-скрипт для перевірки. Single mode або triplet (з reciprocal hreflang). Exit 0/1.
 - `scripts/humanizer-scan.py` — read-only діагностичний скан AI-tells по всьому сайту. Запуск: `npm run humanizer:scan`. Виводить ранжовану таблицю + CSV у `docs/humanizer-scan-results.csv`.
+- `scripts/pillar-scorecard.py` — runs validate:pillar on all real pillars (excludes faq/glossary/about/api-docs/guide). Запуск: `npm run pillar:scorecard`. Виводить ранжовану таблицю + CSV у `docs/pillar-scorecard.csv`.
+- `docs/pillar-uplift-tracker.md` — **MULTI-SESSION TRACKER** для покрокового апліфту 48 failing pillars до passing. Phases 2-7. Читати ПЕРШИМ при будь-якій pillar-uplift роботі.
 
 ---
 

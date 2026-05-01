@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "validate:pillar": "bash scripts/pillar-page-validate.sh",
-    "humanizer:scan": "python3 scripts/humanizer-scan.py"
+    "humanizer:scan": "python3 scripts/humanizer-scan.py",
+    "pillar:scorecard": "python3 scripts/pillar-scorecard.py"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

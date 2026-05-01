@@ -1,0 +1,163 @@
+# Pillar Uplift Tracker
+
+**Mission.** Поетапно довести всі pillar-сторінки сайту до passing на `npm run validate:pillar`. Не one-shot push, а **многосесійний systematic процес** з checkpoints і чіткими задокументованими кроками.
+
+**Started:** 2026-05-01
+**Last update:** 2026-05-01
+**Last session note:** initial tracker + Phase 1 discovery refinement done
+
+---
+
+## ⚠️ ОБОВ'ЯЗКОВО ЧИТАТИ цей файл першим у будь-якій pillar-uplift сесії
+
+**Workflow per session:**
+
+1. **Прочитати цей файл повністю.**
+2. Знайти найвищий пріоритет з статусом `IN PROGRESS` (продовжити) або найвищий `TODO` (почати).
+3. Виконати **один батч** (не весь Phase, не одразу 10 — один логічний шматок, мін. 1, макс. 3 triplets або одна global-batch операція).
+4. Після кожного batch:
+   - `npm run build`
+   - `npm run validate:pillar -- --triplet UA RU EN` для зачеплених триплетів
+   - Оновити чек-бокси нижче
+   - Оновити "Session log"
+   - Commit з message типу `chore(pillar-uplift): Phase 2 batch — added LocalBusiness to UA/RU/EN of <triplet>`
+5. **Зупинитись і повідомити користувача** про прогрес. Не йти далі без явного "продовжуй".
+6. Якщо session ends mid-batch: лишити статус `IN PROGRESS` з нотатками що зроблено.
+
+---
+
+## Baseline (2026-05-01 — після Phase 1)
+
+- 54 real pillars (skipped 15 non-pillar utility: faq, glossary, about, api-docs, guide, contact)
+- ✅ PASS: **6**
+- ❌ FAIL: **48**
+- Сумарно fails: 38 schemas + 36 words + 39 H1 generic = **113 issues**
+
+Цільовий стан (Phase 7 complete): **48+ pages PASS, ≤6 FAIL** (ті 6 — складні edge cases).
+
+---
+
+## Phase 1: Discovery refinement
+**Goal:** виключити non-pillar utility сторінки з scorecard.
+
+- [x] **DONE 2026-05-01** Update `scripts/pillar-scorecard.py` з `NON_PILLAR` regex (faq|glossary|about|api-docs|guide|contact)
+- [x] **DONE 2026-05-01** Re-run scorecard, baseline записано (54 pillars)
+
+---
+
+## Phase 2: Schema uplift (global batch — найвищий impact / найменші зусилля)
+**Goal:** додати missing JSON-LD schemas (LocalBusiness, GeoCoordinates, PostalAddress + maybe BusinessAudience) до всіх failing pillars. Без зачіпання тексту, лише technical SEO uplift. Очікуваний результат: -38 fails.
+
+**Method per triplet:**
+1. Прочитати existing schemaJson блок у файлі
+2. Якщо missing LocalBusiness — додати окремий `<script>` з MTP pattern (Щасливе + Білогородка координати, як на `maloho-biznesu`)
+3. Якщо missing BusinessAudience — додати у Service.audience
+4. Якщо missing Country — додати в Service.areaServed
+5. Build + validate single page (`npm run validate:pillar -- dist/<slug>/index.html`)
+6. ✅ schemas check має пройти
+
+### TODO list (15 triplets):
+
+#### Already-passing triplets (skip — done)
+- [x] **clothing** — odyahu (DONE 2026-05-01 via prior session)
+
+#### P0 batch (high-impact, conversion)
+- [ ] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/`
+- [ ] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/`
+- [ ] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/`
+- [ ] **home** — `/index.html` + `/ru/index.html` + `/en/index.html`
+
+#### P1 batch (top-of-funnel + flagship)
+- [ ] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/`
+- [ ] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/`
+- [ ] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/`
+- [ ] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/`
+
+#### P2 batch (geo + specific)
+- [ ] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/`
+- [ ] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/`
+- [ ] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/`
+- [ ] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/`
+- [ ] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/`
+
+#### P3 batch (already mostly-passing — quick wins)
+- [ ] **cosmetics** — UA mostly OK, RU 1 fail, EN passing (only quick top-up needed)
+- [ ] **small-biz** — UA needs words, RU passing, EN 1 fail
+- [ ] **marketplaces** — UA 2 fails, RU 1, EN 1
+- [ ] **online-store** — UA 2 fails, RU 2, EN passing
+
+---
+
+## Phase 3: H1 brand-hooks (global batch)
+**Goal:** переписати ~39 generic H1 у brand-hook формат (>5 words + comma/dash twist OR imperative). Не зачіпає body, чисто заголовок. Очікуваний результат: -39 ⚠️.
+
+**Method:** для кожної H1 з `⚠️ generic`, придумати brand-hook (sample patterns у `docs/pillar-page-checklist.md` секція C). Користувач **обов'язково апрувить кожен H1 перед застосуванням** (важливо для SEO — H1 це ranking signal).
+
+### TODO (per triplet — апрувити список перед merge):
+
+- [ ] Compile current H1s + propose brand-hook variants (table format) → user approve → apply
+- [ ] Per-triplet apply (same triplet groups як у Phase 2)
+
+---
+
+## Phase 4: Words uplift — P0 conversion pages
+**Goal:** підняти топ-conversion pages до 2500+ слів. Не just word-stuffing — додати реально корисний контент: case studies, FAQ, technical depth, comparison tables, MTP anchor numbers.
+
+**Per page method:** прочитати існуючий контент → виявити gaps (що бракує? competitor analysis за CLAUDE.md MULTI-AGENT PIPELINE) → додати 2-3 нові секції → humanizer pass → validate.
+
+### TODO (4 triplets, ~12 pages, ~12-20 годин роботи):
+
+- [ ] **prices** triplet — `tsiny` / `tsenu` / `prices`
+- [ ] **calculator** triplet
+- [ ] **service-hub** triplet — `poslugy` / `services` / `services`
+- [ ] **home** triplet — `/` / `/ru/` / `/en/`
+
+---
+
+## Phase 5: Words uplift — P1 top-of-funnel + flagship
+
+- [ ] **what-is-fulfillment** triplet
+- [ ] **3pl-logistics** triplet
+- [ ] **fulfilment-rozetka** triplet
+- [ ] **fulfilment-prom** triplet
+
+---
+
+## Phase 6: Words uplift — P2 geo/specific
+
+- [ ] **fulfilment-kyiv** triplet
+- [ ] **fulfilment-ukraina** triplet
+- [ ] **vazhki-tovary** triplet
+- [ ] **pallet-storage** triplet
+- [ ] **warehouse-services** triplet
+
+---
+
+## Phase 7: Final cleanup + edge cases
+
+- [ ] Re-run full `pillar-scorecard.py`
+- [ ] Identify residual edge cases (probably 3-6 pages)
+- [ ] Document why вони лишаються FAIL (e.g. tool pages, redirect-heavy etc) у цьому файлі
+- [ ] Update `pillar-scorecard.py` to flag known-exempt cases as `EXEMPT` not `FAIL`
+- [ ] Final deploy + reindex via Indexing API
+- [ ] Mark Mission accomplished, archive tracker as `docs/pillar-uplift-tracker-2026-completed.md`
+
+---
+
+## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — initial setup
+- Created tracker
+- Phase 1 done — refined scorecard discovery (excluded 15 non-pillar utility pages)
+- Baseline locked: 54 pillars, 6 PASS, 48 FAIL
+- Built complete TODO list across Phases 2-7
+- Next session: start Phase 2 batch with single triplet (recommend P0 → `prices`) to validate the schema-uplift method, then continue rest of Phase 2
+
+---
+
+## Snapshot reference (CSV)
+
+Latest scorecard snapshot: `docs/pillar-scorecard.csv`
+Re-generate with: `npm run pillar:scorecard` (after build)
+
+If counts shift dramatically between sessions — investigate before proceeding.
