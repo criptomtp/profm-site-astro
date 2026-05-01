@@ -179,12 +179,12 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <h2 class="sec-h2">Підключення до маркетплейсів і CRM за 2 години</h2>
   <p class="oh-integ-text">Готові інтеграції з усіма основними платформами для fashion-бізнесу. Єдиний залишок синхронізується за 800 мс — без ризику продати останню одиницю двічі.</p>
   <div class="oh-integ-logos">
-    <img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy">
-    <img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy">
-    <img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy">
-    <img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy">
-    <img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy">
-    <img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy">
+    <a href="https://rozetka.com.ua" target="_blank" rel="noopener" aria-label="Rozetka"><img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy"></a>
+    <a href="https://prom.ua" target="_blank" rel="noopener" aria-label="Prom.ua"><img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy"></a>
+    <a href="https://kasta.ua" target="_blank" rel="noopener" aria-label="Kasta"><img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy"></a>
+    <a href="https://keycrm.app" target="_blank" rel="noopener" aria-label="KeyCRM"><img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy"></a>
+    <a href="https://salesdrive.ua" target="_blank" rel="noopener" aria-label="SalesDrive"><img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy"></a>
+    <a href="https://novaposhta.ua" target="_blank" rel="noopener" aria-label="Нова Пошта"><img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy"></a>
   </div>
   <p class="oh-integ-note">Також: Shopify, WooCommerce, OpenCart, Хорошоп, LP-CRM, 1С, Укрпошта, Meest, Modnakasta</p>
 </div></section>
@@ -385,4 +385,68 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   .oh-audience-grid{grid-template-columns:1fr}
 }
 .oh-prob-card,.oh-step,.oh-stat,.oh-audience-card{opacity:1!important;transform:none!important}
+
+/* PRICING TABLE (was missing — was inheriting nothing, displayed as plain text) */
+.pricing{padding:100px 0;background:var(--gray)}
+.price-table{max-width:760px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;background:#fff}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}
+.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-row>span:nth-child(2),.price-row>span:nth-child(3){text-align:right}
+.price-row.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row.price-header>span{text-align:left}
+.price-row.price-header>span:nth-child(2),.price-row.price-header>span:nth-child(3){text-align:right}
+.price-row:not(.price-header):hover{background:#fafafa}
+.price-row.price-highlight{background:#e63329;color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* CLICKABLE LOGOS */
+.oh-integ-logos a{display:inline-flex;align-items:center;transition:transform .2s}
+.oh-integ-logos a:hover{transform:translateY(-2px)}
+.oh-integ-logos a:hover img{opacity:1}
+
+/* FAQ ACCORDION (was missing CSS + JS) */
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq .badge{color:rgba(255,255,255,.7)}
+.faq .sec-h2{color:#fff}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:22px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;text-align:left;gap:24px}
+.faq-q::after{content:'+';font-size:28px;color:#e63329;transition:transform .3s;flex-shrink:0;line-height:1}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:600px}
+.faq-a p{padding:0 0 22px;font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin:0}
+.faq-a p a{color:#e63329}
+
+/* ARTICLE SECTION */
+.article-section{background:#fff;padding:100px 8vw}
+.article-section .badge{margin-bottom:24px}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:8px 0 40px;line-height:1.15}
+.article-content{max-width:820px}
+.article-content h3{font-family:var(--fd);font-size:clamp(20px,2.2vw,28px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:14px}
+.article-content ul,.article-content ol{padding-left:24px;margin-bottom:18px}
+.article-content li{font-size:16px;line-height:1.85;color:#444;margin-bottom:6px}
+
+@media(max-width:640px){
+  .price-row{font-size:13px}
+  .price-row>span{padding:12px 14px}
+}
 </style>
+
+<!-- FAQ accordion JS (was missing — items rendered open-stuck) -->
+<script is:inline>
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    if(!btn) return;
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+})();
+</script>

@@ -2,13 +2,14 @@
 import Base from '../../layouts/Base.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Фулфилмент для одежды и fashion-брендов — экономика входа на украинский рынок","description":"Фулфилмент для брендов одежды и обуви: стеллажи, штрихкодирование по размеру, обработка возвратов с фото-проверкой, интеграции с Rozetka/Prom/Kasta. От 20 грн/отправка для брендов из СНГ.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"GE"}],"serviceType":"Apparel & Fashion Fulfillment","audience":{"@type":"BusinessAudience","name":"Бренды одежды из СНГ (Казахстан, Молдова, Грузия, Армения), русскоязычные украинские fashion-селлеры на Rozetka/Prom/Kasta"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"20","description":"От 20 грн (~$0.50) за отправку при 200+ заказов/день. Хранение 650 грн/м³/мес. Биллинг в гривнах, USD или EUR."}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какая экономика фулфилмента одежды для бренда из Казахстана/Молдовы/Грузии?","acceptedAnswer":{"@type":"Answer","text":"При обороте 50 заказов/день полная стоимость — около 28 800 грн/мес (~$720). Это в 2-3 раза дешевле собственного склада в Алматы или Тбилиси. Бренд получает доступ к рынку Украины (40 млн населения), Rozetka/Prom/Kasta, без необходимости арендовать офис и нанимать персонал. Биллинг — гривны, USD, EUR."}},{"@type":"Question","name":"Можно ли оплачивать в долларах или евро?","acceptedAnswer":{"@type":"Answer","text":"Да. Для брендов из СНГ и международных клиентов биллинг в USD или EUR. Курсовая разница не перекладывается на клиента — фиксируем тариф на 12 месяцев в выбранной валюте."}},{"@type":"Question","name":"Сколько занимает onboarding для бренда из Казахстана?","acceptedAnswer":{"@type":"Answer","text":"21 рабочий день: 1-3 — договор и API-ключи, 4-10 — таможенное оформление и получение товара, 11-15 — приёмка и штрихкодирование, 16-21 — настройка интеграций с Rozetka/Prom/Kasta и тестовые отправки. Полная инструкция и менеджер на каждом этапе."}},{"@type":"Question","name":"Как обрабатываются возвраты — с фото?","acceptedAnswer":{"@type":"Answer","text":"Каждый возврат разбирается, фотографируется (4 ракурса для одежды, 6 для обуви), проверяется на следы носки, пятна, отсутствие бирок. Товар в норме — возвращается на полку. Бракованный — отдельная зона, бренд решает: списать, продавать со скидкой как «вторая категория», вернуть поставщику. Все фото — в WMS-кабинете для доказательной базы."}},{"@type":"Question","name":"Какая экономия по сравнению с собственным складом?","acceptedAnswer":{"@type":"Answer","text":"Для бренда на 50 заказов/день экономия 30 000-40 000 грн/мес (45-55%). Не нужно арендовать склад (17 000 грн), нанимать 2 пакувальников (30 000 грн), покупать WMS (5 000 грн), пакувальные материалы (3 500 грн), коммуналка с генератором (4 000 грн). Итого ~60 000 грн/мес собственный склад vs ~29 000 грн/мес MTP."}},{"@type":"Question","name":"Можно ли работать только с одним каналом продаж?","acceptedAnswer":{"@type":"Answer","text":"Да. Если у вас только Shopify или только Rozetka — это нормально. Но советуем подключить минимум 2-3 канала, потому что единый остаток на нашем WMS работает на любое количество площадок без доплат. Каждый дополнительный канал = +15-30% к продажам без увеличения операционных расходов."}}]}</script>
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Фулфилмент одежды в Украине для брендов из СНГ — вход на рынок $4.5 млрд","description":"Украинский фулфилмент одежды для брендов из Казахстана, Молдовы, Грузии, Армении и Узбекистана. Доступ к рынку 40 млн человек, Rozetka/Prom/Kasta, биллинг USD/EUR, 21-день onboarding. От $0.50 за отправку.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"GE"},{"@type":"Country","name":"AM"},{"@type":"Country","name":"UZ"}],"serviceType":"Cross-Border Apparel Fulfillment","audience":{"@type":"BusinessAudience","name":"Бренды одежды и обуви из стран СНГ, желающие выйти на украинский e-commerce рынок ($4.5 млрд)"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.50","description":"От $0.50 (~20 грн) за отправку при 200+ заказов/день. Хранение от $16/м³. Биллинг USD/EUR/UAH. Onboarding 21 рабочий день."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Зачем бренду из Казахстана/Молдовы/Грузии выходить на украинский рынок?","acceptedAnswer":{"@type":"Answer","text":"Украина — крупнейший e-commerce рынок Восточной Европы среди постсоветских стран после России. $4.5 млрд оборота, 40 млн населения, 30 млн активных интернет-покупателей, 8 крупных маркетплейсов (Rozetka, Prom, Kasta, OLX, Modnakasta, Allo, Hubber, Epicentr). Для бренда из Казахстана это в 3-5 раз больше домашнего рынка, для Молдовы или Грузии — в 10-15 раз."}},{"@type":"Question","name":"Как юридически работать в Украине, если я не резидент?","acceptedAnswer":{"@type":"Answer","text":"Две модели. Модель 1: открыть украинскую компанию (ТОВ, регистрация 5-7 дней, директор может быть нерезидентом, упрощённая система налогообложения 5% от оборота при доходе до 7 млн грн/год). Модель 2: контракт с украинским агентом — товар на нашем складе, продажи через нашу украинскую компанию, маржа возвращается в USD/EUR на ваш счёт. Большинство брендов начинают с модели 2, через 6-12 месяцев переходят на модель 1."}},{"@type":"Question","name":"Сколько занимает onboarding с момента подписания контракта?","acceptedAnswer":{"@type":"Answer","text":"21 рабочий день. Дни 1-3: договор, API, выбор валюты биллинга. Дни 4-10: таможня и доставка товара (помогаем с документами). Дни 11-15: приёмка и штрихкодирование под украинские маркетплейсы. Дни 16-21: настройка интеграций с Rozetka/Prom/Kasta и тестовые отправки. На день 22 — первый реальный заказ от украинского клиента."}},{"@type":"Question","name":"В какой валюте можно вести расчёты?","acceptedAnswer":{"@type":"Answer","text":"USD, EUR или UAH на ваш выбор. Курс фиксируется на 12 месяцев в договоре. Для международных переводов — SWIFT, SEPA или Wise. Внутри Украины — гривны через украинскую компанию. Курсовая разница не перекладывается на клиента."}},{"@type":"Question","name":"Сколько стоит фулфилмент для бренда на 50 заказов/день?","acceptedAnswer":{"@type":"Answer","text":"~$720/мес (~28 800 грн) полная стоимость: отправка, хранение 2 м³, упаковка, обработка возвратов, WMS, интеграции. Это в 2-2.5 раза дешевле собственного склада в Алматы или Тбилиси (~$1 500-1 800/мес) и не требует CAPEX, аренды офиса, найма украинского персонала."}},{"@type":"Question","name":"Безопасно ли открывать склад в Украине во время войны?",
+"acceptedAnswer":{"@type":"Answer","text":"MTP работает 0 дней простоя с 2022 года. 3 промышленных генератора, Starlink, двойная HVAC, страховка Lloyd's of London. Наши склады в 30+ км от Киева, в индустриальных зонах с низкой стратегической ценностью. Мы отгрузили 2.6 миллиона посылок через все блекауты. Контракт на 14 дней расторжения — можно выйти быстро если что-то изменится."}},{"@type":"Question","name":"Какие маркетплейсы доступны для иностранного бренда?","acceptedAnswer":{"@type":"Answer","text":"Rozetka (FBS-модель), Prom.ua, Kasta, Modnakasta, OLX, Hubber, Allo. Также: собственный Shopify магазин с украинской локализацией, WooCommerce, OpenCart, Хорошоп. Все интеграции включены в базовый тариф. Подключение каждого канала — 2 часа на нашей стороне."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"Фулфилмент для одежды","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-odezhdy/"}]}</script>`;
 ---
 <Base
-  title="Фулфилмент одежды Украина — экономика входа для брендов СНГ | MTP"
-  description="Фулфилмент одежды и обуви для брендов из Казахстана, Молдовы, Грузии и украинских fashion-селлеров. Экономия 45-55% vs собственный склад. От ~$0.50/отправка. Биллинг USD/EUR/UAH."
+  title="Фулфилмент одежды в Украине — вход на рынок $4.5 млрд для брендов СНГ | MTP"
+  description="Украинский фулфилмент одежды для брендов Казахстана, Молдовы, Грузии. Доступ к 40 млн населения, Rozetka/Prom/Kasta, биллинг USD/EUR, onboarding 21 день. От $0.50 за отправку."
   canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-odezhdy/"
   lang="ru"
   ogImage="https://www.fulfillmentmtp.com.ua/images/odyahu-hero.jpg"
@@ -22,223 +23,283 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/">
 </Fragment>
 
-<!-- HERO -->
-<section class="oh-hero">
-  <div class="oh-hero-bg" data-md-skip></div>
-  <div class="oh-hero-content">
-    <div class="oh-hero-grid">
-      <div class="oh-hero-left">
-        <div class="oh-badge">FASHION · CIS HUB</div>
-        <h1>Фулфилмент одежды<br>с экономикой ×2 от собственного склада</h1>
-        <p class="oh-hero-sub">Бренды из Казахстана, Молдовы, Грузии и Украины: единый склад под Киевом, доступ к Rozetka/Prom/Kasta/Modnakasta, биллинг в USD/EUR/UAH. Экономия 45-55% от собственного склада на 50+ заказов/день.</p>
-      </div>
-      <div class="oh-hero-right">
-        <div class="oh-form-card">
-          <div class="oh-form-title">Расчёт для вашего бренда</div>
-          <HeroCTA lang="ru" theme="light" button="Получить расчёт →" microCopy="✓ Ответ за 15 минут · билинг в гривнах, USD или EUR" sourceTag="hero /ru/fulfilment-dlya-odezhdy/" />
+<!-- TRUST & SCALE: LIGHT HERO -->
+<section class="ts-hero">
+  <div class="ctr">
+    <div class="ts-hero-inner">
+      <div class="ts-hero-left">
+        <div class="ts-pill">CIS · UKRAINE GATEWAY</div>
+        <h1>Украинский e-commerce рынок —<br><span class="ts-accent">$4.5 млрд</span> ждёт ваш бренд</h1>
+        <p class="ts-hero-sub">Полный фулфилмент для брендов одежды из Казахстана, Молдовы, Грузии, Армении и Узбекистана. Доступ к Rozetka, Prom, Kasta. Биллинг в USD или EUR. Onboarding под ключ за 21 рабочий день.</p>
+        <div class="ts-form">
+          <HeroCTA lang="ru" theme="light" button="Рассчитать вход на рынок →" microCopy="✓ Ответ за 15 минут · биллинг USD/EUR/UAH · 14-дневное расторжение" sourceTag="hero /ru/fulfilment-dlya-odezhdy/" />
         </div>
       </div>
-    </div>
-    <div class="oh-stats">
-      <div class="oh-stat"><div class="oh-stat-val">×2</div><div class="oh-stat-label">экономия vs собственный склад</div></div>
-      <div class="oh-stat"><div class="oh-stat-val">21</div><div class="oh-stat-label">рабочий день onboarding</div></div>
-      <div class="oh-stat"><div class="oh-stat-val">$0.50</div><div class="oh-stat-label">от отправки в эквиваленте</div></div>
-      <div class="oh-stat"><div class="oh-stat-val">7</div><div class="oh-stat-label">каналов продаж в одном складе</div></div>
+      <div class="ts-hero-right">
+        <div class="ts-frame">
+          <img src="/images/odyahu-rails.jpg" alt="Склад одежды MTP в Киевской области" loading="eager" width="600" height="500">
+          <div class="ts-frame-tag">SHCHASLYVE · 2 700 m²</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ECONOMY -->
-<section class="oh-problems"><div class="ctr">
-  <div class="badge badge-dark">ЭКОНОМИКА ВХОДА НА УКРАИНСКИЙ РЫНОК</div>
-  <h2 class="sec-h2">Почему бренду из СНГ дешевле работать через украинский фулфилмент</h2>
-  <div class="oh-prob-grid">
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">$720</div>
-      <h3>Полная стоимость в месяц</h3>
-      <p>Для бренда на 50 заказов/день полный фулфилмент в Украине обходится ~28 800 грн/мес (~$720). Это включает: хранение, отправку, упаковку, обработку возвратов, WMS, интеграции. Эквивалент собственного склада в Алматы/Тбилиси/Кишинёве — $1 500-2 000.</p>
+<!-- TRUST: BRAND PROOF -->
+<section class="ts-trust">
+  <div class="ctr">
+    <p class="ts-trust-label">МАРКЕТПЛЕЙСЫ И CRM, КОТОРЫЕ ВКЛЮЧЕНЫ С ПЕРВОГО ДНЯ</p>
+    <div class="ts-logos-grid">
+      <a href="https://rozetka.com.ua" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy"></a>
+      <a href="https://prom.ua" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy"></a>
+      <a href="https://kasta.ua" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy"></a>
+      <a href="https://keycrm.app" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy"></a>
+      <a href="https://salesdrive.ua" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy"></a>
+      <a href="https://novaposhta.ua" target="_blank" rel="noopener" class="ts-logo"><img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy"></a>
     </div>
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">21 д</div>
-      <h3>Onboarding под ключ</h3>
-      <p>Дни 1-3: договор, API. Дни 4-10: таможня, доставка товара. Дни 11-15: приёмка и штрихкодирование. Дни 16-21: интеграции и тестовые отправки. Через 21 рабочий день первый заказ от украинского клиента приходит к нему домой.</p>
-    </div>
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">USD</div>
-      <h3>Биллинг в трёх валютах</h3>
-      <p>Для брендов из СНГ — USD или EUR (фиксируем курс на 12 месяцев). Для украинских селлеров — гривны. Курсовая разница не перекладывается на клиента. Прозрачные счета каждого 5 числа за предыдущий месяц.</p>
-    </div>
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">7×</div>
-      <h3>7 каналов в одном складе</h3>
-      <p>Rozetka, Prom.ua, Kasta, Modnakasta, OLX, Shopify, WooCommerce — все интеграции включены без доплат. Каждый дополнительный канал = +15-30% к продажам без роста операционных расходов. Единый остаток синхронизируется за 800 мс.</p>
-    </div>
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">0%</div>
-      <h3>Без комиссии Rozetka FBO</h3>
-      <p>Rozetka FBO берёт 18-32% комиссии. Через MTP по FBS-модели работаем напрямую — комиссия маркетплейса остаётся 8-15%, минус 10-15% от каждого заказа в кармане бренда. На обороте 1 млн грн/мес — это 100-150 тыс грн/мес чистой экономии.</p>
-    </div>
-    <div class="oh-prob-card">
-      <div class="oh-prob-num">25%</div>
-      <h3>Возвраты с фото-проверкой</h3>
-      <p>В fashion 20-30% возвратов — норма. Каждый возврат фотографируется (4 ракурса для одежды, 6 для обуви), проверяется на следы носки. Товар в норме — на полку. Бракованный — для решения бренда. Фото-доказательная база при спорах с клиентом.</p>
+    <p class="ts-trust-foot">+ Shopify, WooCommerce, OpenCart, Хорошоп, OLX, Modnakasta, LP-CRM, 1С, Укрпошта, Meest</p>
+  </div>
+</section>
+
+<!-- DARK STATS — TRUST & SCALE BIG NUMBERS -->
+<section class="ts-stats">
+  <div class="ctr">
+    <h2 class="ts-stats-title">Цифры украинского рынка для бренда из СНГ</h2>
+    <div class="ts-stats-grid">
+      <div class="ts-stat">
+        <div class="ts-stat-num">$4.5B</div>
+        <div class="ts-stat-text">оборот e-commerce 2026<br><span>×3 от рынка Казахстана</span></div>
+      </div>
+      <div class="ts-stat">
+        <div class="ts-stat-num">40 млн</div>
+        <div class="ts-stat-text">населения Украины<br><span>30 млн активных онлайн-покупателей</span></div>
+      </div>
+      <div class="ts-stat">
+        <div class="ts-stat-num">8</div>
+        <div class="ts-stat-text">крупных маркетплейсов<br><span>Rozetka, Prom, Kasta, OLX, Modnakasta, Allo, Hubber, Epicentr</span></div>
+      </div>
+      <div class="ts-stat">
+        <div class="ts-stat-num">21 д</div>
+        <div class="ts-stat-text">от контракта до первого заказа<br><span>при стандартном onboarding</span></div>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- HOW IT WORKS -->
-<section class="oh-how"><div class="ctr">
-  <div class="badge badge-dark">КАК ЭТО РАБОТАЕТ</div>
-  <h2 class="sec-h2">21-дневный onboarding для бренда из СНГ</h2>
-  <div class="oh-steps">
+<!-- WHITE BENEFITS — STRATEGIC -->
+<section class="ts-benefits">
+  <div class="ctr">
+    <div class="badge badge-dark">КАК БРЕНД ИЗ СНГ ВЫХОДИТ НА УКРАИНСКИЙ РЫНОК</div>
+    <h2 class="sec-h2">Шесть стратегических преимуществ украинского фулфилмента</h2>
+    <div class="ts-ben-grid">
 
-    <div class="oh-step">
-      <div class="oh-step-num">1</div>
-      <div class="oh-step-body">
-        <h3>Дни 1-3: договор и API</h3>
-        <p>Подписываем договор на украинскую компанию или нерезидента. Выдаём API-ключи к WMS. Ваш менеджер сообщает структуру SKU (модель + цвет + размер) — мы готовим штрихкоды и шаблоны импорта для интеграций с Rozetka, Prom, Kasta. Параллельно — счёт за onboarding и первый месяц.</p>
-        <div class="oh-step-price">Договор за 1-2 дня · API за 4 часа</div>
+      <div class="ts-ben">
+        <div class="ts-ben-icon">×3</div>
+        <h3>Рынок ×3 от Казахстана</h3>
+        <p>40 млн населения и $4.5 млрд e-commerce оборот делают Украину крупнейшим рынком одежды среди постсоветских стран. Для бренда из Алматы это утроение TAM без необходимости открывать новый юридический бизнес — вы используете нашу инфраструктуру.</p>
       </div>
-    </div>
 
-    <div class="oh-step">
-      <div class="oh-step-num">2</div>
-      <div class="oh-step-body">
-        <h3>Дни 4-10: таможня и доставка товара</h3>
-        <p>Если вы из Казахстана/Молдовы/Грузии — товар идёт через таможенное оформление. Помогаем с документами (инвойс, упаковочный лист, сертификаты). Транзит через Польшу или прямой ввоз — выбирается под ваш мікс товара. Товар прибывает на наш склад в Шасливом или Белогородке.</p>
-        <div class="oh-step-price">Логистика — рассчитываем индивидуально</div>
+      <div class="ts-ben">
+        <div class="ts-ben-icon">USD</div>
+        <h3>Биллинг в трёх валютах</h3>
+        <p>USD, EUR или UAH — на ваш выбор. Курс фиксируется на 12 месяцев в контракте. SWIFT, SEPA или Wise для международных переводов. Курсовая разница не перекладывается на украинского клиента — вы платите за стабильную услугу в нужной валюте.</p>
       </div>
-    </div>
 
-    <div class="oh-step">
-      <div class="oh-step-num">3</div>
-      <div class="oh-step-body">
-        <h3>Дни 11-15: приёмка и штрихкодирование</h3>
-        <p>Каждая единица сканируется: артикул + цвет + размер. Если штрихкоды бренда не подходят под Rozetka/Prom — стикеруем (1,25 грн/од.). Одежду на плечиках — на вертикальные стеллажи. Трикотаж — на полки. Обувь — в заводских коробках. Все остатки появляются в WMS в реальном времени.</p>
-        <div class="oh-step-price">Приёмка 3 грн/од. · Стикерование 1,25 грн</div>
+      <div class="ts-ben">
+        <div class="ts-ben-icon">21д</div>
+        <h3>Onboarding под ключ</h3>
+        <p>21 рабочий день: договор и API, таможня и доставка товара, приёмка и штрихкодирование, интеграции и тестовые отправки. На день 22 первый реальный заказ от украинского клиента. Полная инструкция и менеджер на каждом этапе.</p>
       </div>
-    </div>
 
-    <div class="oh-step">
-      <div class="oh-step-num">4</div>
-      <div class="oh-step-body">
-        <h3>Дни 16-21: интеграции и первые заказы</h3>
-        <p>Подключаем Rozetka, Prom.ua, Kasta, Modnakasta — все 4 канала за 2 часа на нашей стороне. Тестовые заказы. Корректировки шаблона упаковки и логотипа. На день 22 — первый реальный заказ от украинского клиента. Менеджер на связи в Telegram 24/7 первые 2 недели.</p>
-        <div class="oh-step-price">Интеграции бесплатно · Тестовые отправки за наш счёт</div>
+      <div class="ts-ben">
+        <div class="ts-ben-icon">×2</div>
+        <h3>×2 экономия vs свой склад</h3>
+        <p>~$720/мес полная стоимость для бренда на 50 заказов/день. Эквивалент собственного склада в Алматы или Тбилиси — $1 500-1 800. Без CAPEX, без аренды, без найма украинского персонала. Стартуете с протестировать рынок на $1 500-3 000 за 2 месяца.</p>
       </div>
-    </div>
 
+      <div class="ts-ben">
+        <div class="ts-ben-icon">8</div>
+        <h3>8 маркетплейсов из коробки</h3>
+        <p>Rozetka, Prom.ua, Kasta, Modnakasta, OLX, Hubber, Allo, Epicentr. Все интеграции включены без доплат. Каждый дополнительный канал — +15-30% к продажам без операционных расходов. Единый остаток синхронизируется за 800 мс.</p>
+      </div>
+
+      <div class="ts-ben">
+        <div class="ts-ben-icon">⚡</div>
+        <h3>Война не остановит склад</h3>
+        <p>0 дней простоя с 2022. 3 промышленных генератора, Starlink, двойная HVAC, страховка Lloyd's of London. Склады 30+ км от Киева в индустриальных зонах. 2.6 млн посылок отгружено через все блекауты. 14-дневное расторжение контракта если что-то изменится.</p>
+      </div>
+
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- COMPARISON -->
+<!-- DARK INFRASTRUCTURE BLOCK -->
+<section class="ts-infra">
+  <div class="ctr">
+    <div class="ts-infra-grid">
+      <div class="ts-infra-text">
+        <div class="badge">ИНФРАСТРУКТУРА</div>
+        <h2 class="ts-infra-h">Технологическая платформа для масштаба</h2>
+        <p>WMS-система с SKU-учётом по модели + цвету + размеру. Стеллажи на плечиках до 800 погонных метров. Интеграционная шина с 800мс sync на 8 каналов продаж. Фото-документация возвратов с 4 ракурсами.</p>
+        <p>Это не "фулфилмент-стартап с экселем" — это инфраструктура, которую построили под крупных fashion-клиентов. Малому бренду из Молдовы доступна та же платформа, что и сети из 200 магазинов. Цена масштабируется с объёмом, технология — нет.</p>
+      </div>
+      <div class="ts-infra-cards">
+        <div class="ts-infra-card">
+          <div class="ts-infra-num">800мс</div>
+          <div class="ts-infra-label">Channel sync latency</div>
+        </div>
+        <div class="ts-infra-card">
+          <div class="ts-infra-num">99.7%</div>
+          <div class="ts-infra-label">Pick accuracy</div>
+        </div>
+        <div class="ts-infra-card">
+          <div class="ts-infra-num">99.8%</div>
+          <div class="ts-infra-label">OTIF on-time</div>
+        </div>
+        <div class="ts-infra-card">
+          <div class="ts-infra-num">6 000</div>
+          <div class="ts-infra-label">orders/day capacity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMICS COMPARISON -->
 <section class="pricing"><div class="ctr">
-  <div class="badge badge-dark">СОБСТВЕННЫЙ СКЛАД vs MTP</div>
-  <h2 class="sec-h2">Расчёт для бренда одежды на 50 заказов/день</h2>
-  <p class="price-note">2 м³ хранения, 25% возвратов, 1 500 единиц активного ассортимента</p>
+  <div class="badge badge-dark">ЭКОНОМИКА ВХОДА</div>
+  <h2 class="sec-h2">Свой склад в Алматы vs MTP в Киеве</h2>
+  <p class="price-note">Расчёт для бренда одежды на 50 заказов/день украинским клиентам, 2 м³ хранения, 25% возвратов</p>
   <div class="price-table">
-    <div class="price-row price-header"><span>Статья расходов</span><span>Свой склад в РК/MD/GE</span><span>MTP Fulfillment</span></div>
-    <div class="price-row"><span>Аренда 50 м² + стеллажи</span><span>~$450</span><span>Включено</span></div>
+    <div class="price-row price-header"><span>Статья расходов</span><span>Свой склад в РК/MD/GE</span><span>MTP в Украине</span></div>
+    <div class="price-row"><span>Аренда + стеллажи</span><span>~$450</span><span>Включено</span></div>
     <div class="price-row"><span>Персонал (2 пакувальника)</span><span>~$700</span><span>Включено</span></div>
     <div class="price-row"><span>WMS-система</span><span>~$130</span><span>Включено</span></div>
     <div class="price-row"><span>Упаковка + расходники</span><span>~$90</span><span>Включено</span></div>
     <div class="price-row"><span>Коммуналка + генератор</span><span>~$100</span><span>Включено</span></div>
-    <div class="price-row"><span>Отправка по Украине</span><span>—</span><span>~$600</span></div>
+    <div class="price-row"><span>Доставка к укр. клиенту</span><span>$15-25 (международная)</span><span>$2-3 (внутри Украины)</span></div>
+    <div class="price-row"><span>Pick & pack 1 500 заказов</span><span>—</span><span>~$600</span></div>
     <div class="price-row"><span>Хранение 2 м³</span><span>—</span><span>~$32</span></div>
-    <div class="price-row"><span>Обработка возвратов 275/мес</span><span>~$140 (время персонала)</span><span>~$80</span></div>
-    <div class="price-row price-highlight"><span>Итого/месяц</span><span>~$1 610</span><span>~$720</span></div>
+    <div class="price-row"><span>Возвраты 375/мес</span><span>~$140</span><span>~$80</span></div>
+    <div class="price-row price-highlight"><span>Итого/месяц</span><span>~$1 610 + доставка</span><span>~$720 ВСЁ</span></div>
   </div>
-  <p class="price-note">Экономия с MTP: ~$890/мес (55%). Бренд получает доступ к рынку Украины без CAPEX, без аренды офиса, без поиска персонала.</p>
+  <p class="price-note">Экономия с MTP: ~$890+/мес (55%). Плюс — украинский клиент получает заказ за 1-2 дня вместо 7-10 дней международной доставкой. Это критично для конверсии в одежде.</p>
 </div></section>
 
 <!-- TARIFFS -->
 <section class="oh-tariffs"><div class="ctr">
   <div class="badge badge-dark">ТАРИФЫ 2026</div>
-  <h2 class="sec-h2">Сколько стоит фулфилмент одежды</h2>
+  <h2 class="sec-h2">Прозрачные цены для бренда из СНГ</h2>
   <div class="price-table">
-    <div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена UAH</span></div>
-    <div class="price-row"><span>Отправка заказа</span><span>200+ заказов/день</span><span>от 20 грн ($0.50)</span></div>
-    <div class="price-row"><span>Отправка заказа</span><span>100-199/день</span><span>от 22 грн ($0.55)</span></div>
-    <div class="price-row"><span>Отправка заказа</span><span>50-99/день</span><span>от 24 грн ($0.60)</span></div>
-    <div class="price-row"><span>Отправка заказа</span><span>0-49/день</span><span>от 28 грн ($0.70)</span></div>
-    <div class="price-row"><span>Хранение на полках</span><span>за м³/месяц</span><span>от 650 грн ($16)</span></div>
-    <div class="price-row"><span>Хранение на плечиках</span><span>за погонный метр</span><span>от 90 грн ($2.25)</span></div>
-    <div class="price-row"><span>Приёмка товара</span><span>за единицу</span><span>от 3 грн ($0.075)</span></div>
-    <div class="price-row"><span>Стикерование</span><span>за единицу</span><span>1,25 грн ($0.031)</span></div>
-    <div class="price-row"><span>Доукомплектация</span><span>за единицу</span><span>2,50 грн ($0.063)</span></div>
-    <div class="price-row"><span>Обработка возврата с фото</span><span>за возврат</span><span>50% от отправки</span></div>
-    <div class="price-row price-highlight"><span>Минимальный платёж</span><span>в месяц</span><span>5 000 грн ($125)</span></div>
+    <div class="price-row price-header"><span>Услуга</span><span>Условие</span><span>Цена USD / UAH</span></div>
+    <div class="price-row"><span>Pick &amp; pack</span><span>200+ заказов/день</span><span>$0.50 / 20 грн</span></div>
+    <div class="price-row"><span>Pick &amp; pack</span><span>100-199/день</span><span>$0.55 / 22 грн</span></div>
+    <div class="price-row"><span>Pick &amp; pack</span><span>50-99/день</span><span>$0.60 / 24 грн</span></div>
+    <div class="price-row"><span>Pick &amp; pack</span><span>0-49/день</span><span>$0.70 / 28 грн</span></div>
+    <div class="price-row"><span>Хранение на полках</span><span>за м³/месяц</span><span>$16 / 650 грн</span></div>
+    <div class="price-row"><span>Хранение на плечиках</span><span>за погонный метр</span><span>$2.25 / 90 грн</span></div>
+    <div class="price-row"><span>Приёмка</span><span>за единицу</span><span>$0.075 / 3 грн</span></div>
+    <div class="price-row"><span>Штрихкодирование</span><span>за единицу</span><span>$0.031 / 1.25 грн</span></div>
+    <div class="price-row"><span>Возврат с фото-QC</span><span>за возврат</span><span>50% от pick</span></div>
+    <div class="price-row price-highlight"><span>Минимум в месяц</span><span>billing floor</span><span>$125 / 5 000 грн</span></div>
   </div>
-  <p class="price-note">Курс UAH/USD фиксируем на 12 месяцев в договоре. Биллинг — гривны, USD или EUR на ваш выбор.</p>
+  <p class="price-note">Курс UAH/USD фиксируется на 12 месяцев. Биллинг — гривны, USD или EUR на ваш выбор. SWIFT/SEPA/Wise для международных переводов.</p>
 </div></section>
 
-<!-- INTEGRATIONS -->
-<section class="oh-integrations"><div class="ctr">
-  <div class="badge badge-dark">ИНТЕГРАЦИИ</div>
-  <h2 class="sec-h2">Подключение к 7 каналам продаж</h2>
-  <p class="oh-integ-text">Готовые интеграции с украинскими маркетплейсами и CRM. Единый остаток синхронизируется за 800 мс. Подключение каждого канала — 2 часа на нашей стороне.</p>
-  <div class="oh-integ-logos">
-    <img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy">
-    <img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy">
-    <img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy">
-    <img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy">
-    <img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy">
-    <img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy">
+<!-- HOW TO ENTER -->
+<section class="ts-how">
+  <div class="ctr">
+    <div class="badge badge-dark">КАК ВОЙТИ НА РЫНОК</div>
+    <h2 class="sec-h2">21-дневный путь от контракта до первого заказа</h2>
+    <div class="ts-how-grid">
+      <div class="ts-how-card">
+        <div class="ts-how-week">Неделя 1</div>
+        <div class="ts-how-days">Дни 1-7</div>
+        <h3>Юридическая структура</h3>
+        <p>Выбираем модель: украинская компания или агент. Подписываем договор (русский или английский язык). Получаете API-ключи и доступ к WMS. Высылаем шаблоны таможенных документов для отгрузки товара.</p>
+      </div>
+      <div class="ts-how-card">
+        <div class="ts-how-week">Неделя 2</div>
+        <div class="ts-how-days">Дни 8-14</div>
+        <h3>Логистика и таможня</h3>
+        <p>Товар идёт через таможенное оформление (помогаем с инвойсами, упаковочными листами, сертификатами). Транзит через Польшу или прямой ввоз. Приёмка на складе с штрихкодированием каждой единицы.</p>
+      </div>
+      <div class="ts-how-card">
+        <div class="ts-how-week">Неделя 3</div>
+        <div class="ts-how-days">Дни 15-21</div>
+        <h3>Запуск продаж</h3>
+        <p>Подключаем 4-8 маркетплейсов (Rozetka, Prom, Kasta, OLX, Modnakasta + ваш Shopify). Тестовые заказы. На день 22 — первый заказ от украинского клиента. Менеджер на связи 24/7 первые 4 недели.</p>
+      </div>
+    </div>
   </div>
-  <p class="oh-integ-note">Также: Shopify, WooCommerce, OpenCart, Хорошоп, LP-CRM, 1С, Укрпошта, Meest, Modnakasta, OLX</p>
-</div></section>
+</section>
 
 <!-- DEEP DIVE -->
 <section class="oh-deep"><div class="ctr">
-  <div class="badge badge-dark">ЭКОНОМИКА FASHION-БРЕНДА</div>
-  <h2 class="sec-h2">Четыре финансовые причины перенести склад в Украину</h2>
+  <div class="badge badge-dark">СТРАТЕГИЯ ВХОДА НА УКРАИНСКИЙ РЫНОК</div>
+  <h2 class="sec-h2">Четыре фактора, которые определяют успех бренда из СНГ в Украине</h2>
 
   <div class="oh-deep-block">
-    <h3>1. Стоимость отправки в эквиваленте — $0.50</h3>
-    <p>Базовая ставка фулфилмента в Украине при объёме 200+ заказов/день — 20 грн (~$0.50). Для сравнения: ShipBob в США — $3-5 за отправку, ShipMonk — $2.50-4, в Польше DHL Supply Chain берёт €1.20-1.80. Украина — самый дешёвый рынок фулфилмента в Европе при сопоставимом качестве сервиса.</p>
-    <p>На обороте 1 500 заказов/мес разница с европейским 3PL составляет ~$2 250-3 750 в месяц чистой экономии. За год это <strong>$27 000-45 000 сохранённого кэша</strong>, который бренд может вложить в маркетинг или закупку коллекции.</p>
-    <p>Важно: дешёвая отправка в Украине не означает плохое качество. У нас 99.7% точность комплектации, OTIF 99.8%, обработка возврата с фото-документацией. Дешевизна — следствие низкой стоимости персонала и аренды, а не урезанного процесса.</p>
+    <h3>1. Размер рынка: почему Украина важнее, чем кажется</h3>
+    <p>Украинский e-commerce в 2026 году — около $4.5 млрд оборота при населении 40 млн. Среди постсоветских стран это второй по размеру рынок после России (закрыта для большинства брендов из СНГ из-за санкций и платёжных проблем). Для бренда из Казахстана (рынок $1.2 млрд) выход на Украину — утроение TAM. Для Молдовы или Грузии — это рост в 10-15 раз.</p>
+    <p>Ключевая характеристика украинского fashion-рынка: <strong>30 млн активных онлайн-покупателей</strong>, средний чек €25-40, частота покупок 6-9 раз в год на покупателя. Это в 2 раза выше, чем в Казахстане, и в 3-4 раза выше, чем в большинстве других стран СНГ. Концентрация на 8 крупных маркетплейсах (Rozetka, Prom, Kasta, OLX, Modnakasta, Allo, Hubber, Epicentr) делает выход проще: достаточно подключить 3-4 канала, чтобы охватить 75% активной аудитории.</p>
+    <p>Для бренда одежды это означает: вы не просто увеличиваете оборот, вы получаете доступ к рынку с лучшими e-commerce метриками в регионе СНГ. Конверсия украинских fashion-категорий — 1.8-2.4% (для сравнения: в Казахстане 0.9-1.4%, в Молдове 0.7-1.1%).</p>
   </div>
 
   <div class="oh-deep-block">
-    <h3>2. Нет комиссии Rozetka FBO — экономия 18-32%</h3>
-    <p>Rozetka FBO (Fulfillment by Operator) берёт 18-32% комиссии за полный сервис: приёмка, хранение, упаковка, отправка, обработка возвратов. Это работает для брендов с маржинальностью 50%+, но убивает экономику для одежды среднего ценового сегмента (маржа 25-35%).</p>
-    <p>Через MTP работаем по FBS-модели: товар на нашем складе, заказы приходят через API напрямую от Rozetka. Маркетплейс берёт только базовую комиссию за продажу (8-15% в fashion), без FBO-надбавки. <strong>Дельта в 10-17% от каждого заказа остаётся у бренда</strong>. На обороте 1 млн грн/мес — это 100-170 тыс грн/мес.</p>
-    <p>Бонус: через MTP можем работать с категориями, которые Rozetka FBO не принимает (большая обувь, оверсайз, тяжёлая верхняя одежда). Это +15-25% к каталогу без потерь.</p>
+    <h3>2. Юридическая структура: украинская компания или агент</h3>
+    <p>Иностранный бренд не может напрямую продавать на Rozetka — нужна украинская юридическая структура. Две модели работают на практике.</p>
+    <p><strong>Модель А: открыть украинскую ТОВ.</strong> Регистрация — 5-7 рабочих дней. Директор может быть нерезидентом. Юридический адрес арендуется у юрфирмы за $50-80/мес. Налогообложение — упрощённая система 5% от оборота при доходе до ~7 млн грн/год (~$175 000). Для большинства fashion-брендов на старте это оптимально. Преимущества: полный контроль, прямые отношения с маркетплейсами, лучшая маржа.</p>
+    <p><strong>Модель Б: контракт с украинским агентом (MTP).</strong> Товар на нашем складе, продажи через нашу украинскую компанию, маржа возвращается в USD/EUR на ваш счёт. Преимущества: быстрый старт (нет регистрации), нет необходимости в украинском бухгалтере и налоговом учёте. Недостаток: чуть меньшая маржа (5-8% берёт агент). Большинство брендов начинают с модели Б, через 6-12 месяцев переходят на модель А когда обороты достигают $10 000+/мес.</p>
+    <p>Мы работаем по обеим моделям и помогаем с переходом между ними. Если у вас уже есть украинская ТОВ — отлично, подключаем напрямую. Если нет — стартуем с агентской модели, через 6 месяцев анализируем, имеет ли смысл регистрировать собственную компанию.</p>
   </div>
 
   <div class="oh-deep-block">
-    <h3>3. Нет CAPEX и фиксированных затрат</h3>
-    <p>Открыть собственный склад в Украине стоит ~$15 000-25 000 CAPEX (стеллажи, WMS, упаковочное оборудование, охранная сигнализация, генератор). Плюс фиксированные затраты ~$1 200-1 500/мес независимо от объёма продаж. Это означает: нужно делать минимум 2 000-3 000 заказов/мес, чтобы экономика складывалась. Меньше — убыток от первого дня.</p>
-    <p>С MTP <strong>0 CAPEX</strong>. Минимальный платёж — 5 000 грн/мес (~$125). Можно стартовать с 50 заказов/мес и постепенно расти. Платите только за фактические отправки и хранение. Когда обороты вырастут до 100-200 заказов/день — тариф автоматически снижается.</p>
-    <p>Это особенно критично для брендов из СНГ, которые тестируют украинский рынок: вы не хотите вкладывать $20 000 в склад, чтобы через 3 месяца понять, что аудитория не ваша. С MTP протестируете рынок за $1 500-3 000 и решите, оставаться или нет.</p>
+    <h3>3. Локализация: что бренду из Казахстана нужно изменить для Украины</h3>
+    <p>Украинский e-commerce — преимущественно украинский язык в продуктовых описаниях (особенно после 2022 года). Если ваш каталог на русском — Rozetka и Prom требуют украинский перевод. Это не дискриминация, это закон о государственном языке (Закон про забезпечення функціонування української мови як державної).</p>
+    <p>Что меняется для бренда из СНГ при выходе:</p>
+    <ul style="margin:12px 0 12px 20px;line-height:1.85;color:rgba(255,255,255,.78)">
+      <li><strong>Язык каталогов:</strong> украинский (основной), русский опционально как дублирующий</li>
+      <li><strong>Размерная сетка:</strong> RU не подходит, нужна UA/EU (часто совпадает с EU, но не всегда)</li>
+      <li><strong>Платёжные системы:</strong> WayForPay, LiqPay, Privat24 (украинские), плюс Stripe для международных</li>
+      <li><strong>Доставка:</strong> Нова Пошта (87% рынка), Укрпошта (12%), Meest (1-2%)</li>
+      <li><strong>Курс UAH:</strong> биллинг в гривнах для клиента, биллинг в USD/EUR для бренда</li>
+    </ul>
+    <p>MTP помогает с локализацией каталогов: подключаем переводчиков с EU/RU/EN на украинский за $0.05-0.10 за слово. Для небольшого каталога (200 SKU) полная локализация — $200-400 единоразово.</p>
   </div>
 
   <div class="oh-deep-block">
-    <h3>4. Возвраты с фото — защита маржи</h3>
-    <p>В fashion-сегменте 20-30% возвратов — это норма (одежду меряют). Из них 3-5% — недобросовестные: клиент носил, теперь хочет вернуть полную стоимость. Без фото-документации бренд обязан возвращать деньги — украинский Закон о защите прав потребителей на стороне покупателя.</p>
-    <p>На складе MTP каждый возврат фотографируется (4 ракурса для одежды, 6 для обуви) сразу при разборке посылки. Если есть следы носки, пятна, отсутствуют бирки — бренд имеет <strong>законное основание</strong> отказать в возврате денег с помощью фото-доказательств. Это сохраняет 1-2% от оборота как чистую маржу.</p>
-    <p>На обороте 1 млн грн/мес это 10-20 тыс грн/мес сохранённой маржи только от защиты от недобросовестных возвратов. За год — 120-240 тыс грн.</p>
+    <h3>4. Война и риски: что гарантирует непрерывность операций</h3>
+    <p>Главный вопрос международных брендов: "Безопасно ли держать товар в Украине во время войны?" Честный ответ: война влияет на каждый аспект логистики, но профессиональные 3PL адаптировались. MTP <strong>0 дней простоя с 24 февраля 2022 года</strong>. Мы отгрузили 2.6 миллиона посылок через все блекауты, воздушные тревоги, атаки на энергетическую инфраструктуру.</p>
+    <p>Инфраструктура, которая делает это возможным:</p>
+    <ul style="margin:12px 0 12px 20px;line-height:1.85;color:rgba(255,255,255,.78)">
+      <li><strong>3 промышленных генератора:</strong> 350 кВт суммарной мощности, рассчитанные на 72+ часа работы без сетевого электричества</li>
+      <li><strong>Starlink:</strong> независимый интернет-канал для WMS, не зависящий от украинской сетевой инфраструктуры</li>
+      <li><strong>Двойная HVAC:</strong> для климат-контроля складских зон</li>
+      <li><strong>Страховка:</strong> Lloyd's of London на стоимость инвентаря (до $5 млн)</li>
+      <li><strong>Локация:</strong> склады в 30+ км от Киева, в индустриальных зонах с низкой стратегической ценностью</li>
+    </ul>
+    <p>Контракт с MTP — на 14 дней расторжения. Если что-то изменится в военной ситуации, вы можете быстро вывести товар. Это не "лок-ин на 12 месяцев" типа западных 3PL — это гибкость для бренда из СНГ, который тестирует украинский рынок и хочет иметь exit option.</p>
   </div>
 
 </div></div></section>
 
 <!-- AUDIENCE -->
 <section class="oh-audience"><div class="ctr">
-  <div class="badge badge-dark">ДЛЯ КОГО ЭТОТ СЕРВИС</div>
-  <h2 class="sec-h2">Кому подходит украинский фулфилмент одежды</h2>
+  <div class="badge badge-dark">КОМУ ПОДХОДИТ</div>
+  <h2 class="sec-h2">Кто наши клиенты-бренды из СНГ</h2>
   <div class="oh-audience-grid">
     <div class="oh-audience-card">
-      <h3>Бренды из СНГ (KZ/MD/GE/AM/UZ)</h3>
-      <p>Хотите выйти на украинский рынок (40 млн населения, $4 млрд e-commerce) без открытия офиса. Получаете доступ к Rozetka/Prom/Kasta, биллинг в USD/EUR, менеджер на русском. Onboarding 21 день — товар уже продаётся через украинских клиентов.</p>
+      <h3>Бренды одежды из Казахстана</h3>
+      <p>Местный рынок Казахстана — $1.2 млрд e-commerce, оборот растёт 8-12% в год. Украина — следующий логичный шаг: ×3 размер рынка, схожий русско-говорящий клиент, развитая курьерская сеть Нова Пошта. Стартовый бюджет тестирования — $3 000-5 000.</p>
     </div>
     <div class="oh-audience-card">
-      <h3>Украинские fashion-селлеры</h3>
-      <p>Уже работаете на Rozetka/Prom/Kasta, но устали от собственного склада: персонал, аренда, ошибки комплектации. Переход на MTP экономит 30-40 тыс грн/мес и освобождает 20-30 часов в неделю руководителя — фокус на маркетинге и продукте.</p>
+      <h3>Бренды из Молдовы и Грузии</h3>
+      <p>Местные рынки маленькие ($150-300 млн e-commerce). Украина — единственный путь к серьёзным оборотам в регионе. Биллинг в EUR через нашу украинскую компанию — нет проблем с валютным контролем. Onboarding 21 день включает помощь с таможней и сертификатами.</p>
     </div>
     <div class="oh-audience-card">
-      <h3>Дистрибьюторы и оптовые импортёры</h3>
-      <p>Работаете с несколькими брендами одежды, нужен партиейный учёт, кросс-док, B2B-отправки крупными партиями. Можем комбинировать B2B-логистику (для розничных магазинов) с FBS (для онлайн-маркетплейсов) на одном складе.</p>
+      <h3>Дистрибьюторы из Узбекистана/Армении</h3>
+      <p>Импортируете европейские бренды одежды и распространяете в Центральной Азии. Украина — расширение в новый географический рынок без открытия офиса. Партиейный учёт, B2B-отправки, кросс-док — на одном складе с FBS-моделью для маркетплейсов.</p>
     </div>
   </div>
 </div></section>
@@ -246,60 +307,52 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <!-- FAQ -->
 <section class="faq"><div class="ctr">
   <div class="badge">FAQ</div>
-  <h2 class="sec-h2">Частые вопросы</h2>
+  <h2 class="sec-h2">Частые вопросы брендов из СНГ</h2>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">Какая экономика для бренда из Казахстана/Молдовы/Грузии?</button><div class="faq-a"><p>При 50 заказов/день — около $720/мес против $1 600+ за собственный склад в Алматы или Тбилиси. Экономия 55%. Плюс — доступ к рынку 40 млн населения, Rozetka/Prom/Kasta, без необходимости арендовать офис и нанимать персонал в Украине.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Можно ли оплачивать в долларах или евро?</button><div class="faq-a"><p>Да. Биллинг в USD или EUR с фиксированным курсом на 12 месяцев. Это удобно для брендов из СНГ — нет волатильности курса гривны. Договор оформляется на украинскую компанию или нерезидента, с легальным выводом валюты.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Сколько времени занимает onboarding из СНГ?</button><div class="faq-a"><p>21 рабочий день под ключ: дни 1-3 — договор и API, дни 4-10 — таможня и доставка товара, дни 11-15 — приёмка и штрихкодирование, дни 16-21 — настройка интеграций и тестовые отправки. На день 22 — первый реальный заказ от украинского клиента.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Как работает таможня для брендов из СНГ?</button><div class="faq-a"><p>Помогаем с документами (инвойс, упаковочный лист, сертификаты UkrSEPRO для отдельных категорий). Транзит через Польшу или прямой ввоз — выбирается индивидуально. Срок таможенного оформления — 3-5 рабочих дней при правильно оформленных документах.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Какая экономия по сравнению с собственным складом?</button><div class="faq-a"><p>Для бренда на 50 заказов/день — 30 000-40 000 грн/мес ($750-1 000/мес) экономии. Не нужно платить аренду, персонал, WMS, коммуналку, генератор. <a href="/ru/calculator/" style="color:var(--red)">Точный расчёт в калькуляторе</a> или за 15 минут по телефону.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Можно ли работать только с Rozetka или только с Shopify?</button><div class="faq-a"><p>Да, можно один канал. Но советуем подключить минимум 2-3 — каждый дополнительный канал даёт +15-30% к продажам без увеличения операционных расходов. Все интеграции включены в базовый тариф без доплат.</p></div></div>
-    <div class="faq-item"><button class="faq-q">Как обрабатываются возвраты — действительно с фото?</button><div class="faq-a"><p>Да, каждый возврат фотографируется при разборке. 4 ракурса для одежды, 6 для обуви. Если на товаре следы носки, пятна, отсутствуют бирки — бренд имеет законное основание отказать в возврате денег с фото-доказательствами. Это сохраняет 1-2% от оборота как чистую маржу.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Зачем бренду из Казахстана/Молдовы выходить на украинский рынок?</button><div class="faq-a"><p>Украина — крупнейший e-commerce рынок Восточной Европы среди постсоветских стран после России. $4.5 млрд оборота, 40 млн населения, 30 млн активных онлайн-покупателей. Для бренда из Казахстана это в 3-5 раз больше домашнего рынка. Ставки конверсии fashion-категорий: 1.8-2.4% (vs 0.9-1.4% в Казахстане).</p></div></div>
+    <div class="faq-item"><button class="faq-q">Как юридически работать в Украине, если я не резидент?</button><div class="faq-a"><p>Две модели. <strong>А:</strong> открыть украинскую ТОВ (5-7 дней регистрация, директор-нерезидент, упрощённая система 5% от оборота). <strong>Б:</strong> контракт с украинским агентом (MTP) — товар на нашем складе, продажи через нашу компанию, маржа в USD/EUR. Большинство брендов начинают с модели Б, через 6-12 месяцев переходят на А.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Сколько занимает onboarding с момента подписания контракта?</button><div class="faq-a"><p>21 рабочий день. Дни 1-7: договор и таможенные документы. Дни 8-14: доставка товара и приёмка на склад. Дни 15-21: интеграции с Rozetka/Prom/Kasta и тестовые отправки. На день 22 — первый реальный заказ от украинского клиента. Менеджер на связи 24/7 первые 4 недели.</p></div></div>
+    <div class="faq-item"><button class="faq-q">В какой валюте можно вести расчёты?</button><div class="faq-a"><p>USD, EUR или UAH на ваш выбор. Курс фиксируется на 12 месяцев в договоре. SWIFT, SEPA или Wise для международных переводов. Курсовая разница не перекладывается на украинского клиента — он платит в гривнах, вы получаете в выбранной валюте.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Сколько стоит фулфилмент для бренда на 50 заказов/день?</button><div class="faq-a"><p>~$720/мес полная стоимость: pick &amp; pack, хранение 2 м³, упаковка, обработка возвратов, WMS, интеграции. Это в 2-2.5 раза дешевле собственного склада в Алматы или Тбилиси (~$1 600+/мес). И главное: украинский клиент получает заказ за 1-2 дня вместо 7-10 дней международной доставкой — это критично для fashion-конверсии.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Безопасно ли работать с украинским складом во время войны?</button><div class="faq-a"><p>0 дней простоя с 2022. 3 промышленных генератора, Starlink, двойная HVAC, страховка Lloyd's of London на $5 млн. Склады 30+ км от Киева. 2.6 млн посылок отгружено через все блекауты. Контракт на 14 дней расторжения — гибкий exit option если ситуация изменится. Это меньше риск, чем многие другие операционные решения.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Какие маркетплейсы доступны для иностранного бренда?</button><div class="faq-a"><p>Rozetka (FBS), Prom.ua, Kasta, Modnakasta, OLX, Hubber, Allo, Epicentr. Также: собственный Shopify с украинской локализацией, WooCommerce, OpenCart, Хорошоп. Все интеграции включены в базовый тариф. Подключение каждого канала — 2 часа на нашей стороне.</p></div></div>
   </div>
 </div></section>
 
 <!-- SEO ARTICLE -->
 <section class="article-section">
 <div class="ctr">
-<div class="badge badge-dark">АНАЛИТИКА</div>
-<h2>Фулфилмент одежды в Украине: экономика и стратегия для бренда из СНГ</h2>
+<div class="badge badge-dark">СТРАТЕГИЧЕСКИЙ ГИД</div>
+<h2>Выход бренда одежды из СНГ на украинский e-commerce рынок: полный план 2026</h2>
 <div class="article-content">
 
-<h3>Почему Украина — лучший фулфилмент-хаб в Восточной Европе для одежды</h3>
-<p>Украинский рынок e-commerce в 2026 году — около $4-5 млрд оборота при населении 40 млн. Среди постсоветских стран это второй по размеру рынок после России (которая закрыта для большинства брендов из СНГ из-за санкций и платёжных проблем). Для бренда из Казахстана, Молдовы, Грузии или Армении выход на украинский рынок — естественный шаг расширения, особенно когда домашний рынок ограничен 5-15 млн населения.</p>
+<h3>Почему 2026 год — лучший момент для входа</h3>
+<p>Украинский e-commerce рынок в 2026 году достиг $4.5 млрд при населении 40 млн человек. Это второй по размеру e-commerce рынок среди постсоветских стран после России (которая закрыта для большинства брендов из СНГ из-за санкций, платёжных ограничений и репутационных рисков). Для бренда одежды из Казахстана, Молдовы, Грузии, Армении или Узбекистана выход на украинский рынок — это не просто географическое расширение, это переход в качественно другую лигу e-commerce операций.</p>
 
-<p>Стоимость фулфилмента в Украине — самая низкая в Европе при качественном сервисе. Базовая ставка $0.50 за отправку при объёме 200+/день — это в 4-7 раз дешевле, чем в Польше или Чехии, в 6-10 раз дешевле, чем в США. Это следствие низкой стоимости персонала ($300-500/мес для пакувальника против $2 500-3 500 в Польше) и аренды складов ($3-5 за м² против $8-12 в Европе).</p>
+<p>Ключевая характеристика украинского рынка: высокая концентрация продаж на 8 крупных маркетплейсах. Rozetka контролирует ~35% рынка, Prom.ua — ~22%, Kasta — ~12%, остальные 5 платформ делят оставшиеся 31%. Для бренда это означает: подключив 3-4 канала, вы охватываете 75% активной аудитории. Не нужно строить десятки мелких партнёрств — достаточно фокусной работы с топ-каналами.</p>
 
-<p>Но низкая цена не означает плохое качество. Лидеры рынка типа MTP Group работают с такими же стандартами, как ShipBob или ShipMonk: WMS-система, OTIF 99.8%, фото-документация возвратов, готовые интеграции с маркетплейсами. Просто персонал стоит дешевле, а конкуренция между фулфилмент-операторами в Украине высокая (40+ игроков), что не даёт ставкам расти.</p>
+<p>Дополнительный фактор: украинский потребитель имеет одну из самых высоких в регионе частот покупок одежды онлайн (6-9 раз в год на активного покупателя). Конверсия fashion-категорий — 1.8-2.4%, средний чек — €25-40. Это значительно выше, чем в Казахстане (1.0-1.4%, €15-25) или Молдове (0.7-1.1%, €12-20). Иначе говоря, каждый украинский посетитель сайта приносит больше выручки, чем эквивалентный посетитель из домашнего рынка.</p>
 
-<h3>Правовые особенности фулфилмента для нерезидентов</h3>
-<p>Бренд из Казахстана не может напрямую продавать товар на украинский Rozetka — нужна украинская компания (ФОП или ТОВ) или контракт с украинским агентом. Здесь есть две модели:</p>
+<h3>Как работает MTP-модель для брендов из СНГ</h3>
+<p>Мы видим себя как gateway между брендом из СНГ и украинским рынком. Наша задача — снять с бренда максимум операционной нагрузки, которая обычно требует открытия офиса, найма персонала и многомесячного onboarding. С MTP вы получаете готовую инфраструктуру: украинскую юридическую компанию (опционально), складские мощности, интеграции с маркетплейсами, локализацию каталогов, обработку возвратов с фото-документацией, биллинг в USD/EUR.</p>
 
-<p><strong>Модель 1: открыть украинскую компанию.</strong> Регистрация ТОВ — 5-7 дней, директор может быть нерезидентом, юридический адрес можно арендовать у юридической компании за $50-80/мес. Налогообложение: общая система (18% налог на прибыль) или упрощёнка (5% от оборота, если оборот &lt; ~7 млн грн/год). Для большинства fashion-брендов оптимальна упрощёнка.</p>
+<p>Стандартный цикл работы: вы отправляете товар на наш склад в Киевской области (помогаем с таможней). Мы принимаем его, штрихкодируем, размещаем на стеллажах. Подключаем ваш каталог к Rozetka, Prom, Kasta и другим выбранным маркетплейсам. Заказы автоматически попадают в наш WMS, мы собираем, упаковываем и отправляем через Нову Пошту. Возвраты обрабатываем с фото-документацией. Раз в месяц вы получаете отчёт и счёт в USD/EUR.</p>
 
-<p><strong>Модель 2: контракт с украинским агентом.</strong> MTP Group работает по такой модели — ваш товар приходит на наш склад, продаётся через нашу украинскую компанию, маржа возвращается вам в USD/EUR. Это быстрее (нет регистрации компании), но требует доверия к партнёру и более узкая маржа (агент берёт 5-8% от оборота).</p>
+<p>Критическая особенность: <strong>мы работаем как ваш партнёр, а не как абстрактный поставщик услуг</strong>. У вас есть выделенный менеджер, который знает специфику вашего бренда, особенности категории, сезонные пики. Если завтра вы хотите запустить новую коллекцию или провести промо-акцию — мы это делаем оперативно, без длительного согласования и дополнительных сборов. Особенно это критично для fashion-брендов, где скорость реакции на тренды определяет успех сезона.</p>
 
-<p>Большинство международных брендов начинают с модели 2 для тестирования рынка, а через 6-12 месяцев переходят на модель 1, когда обороты достигают $10 000+/мес.</p>
+<h3>Юридические и налоговые нюансы для брендов-нерезидентов</h3>
+<p>Украинское налоговое законодательство относительно дружелюбно к иностранным брендам, но есть нюансы. При работе через украинскую ТОВ (Модель А) основные налоги: единый налог 5% от оборота при упрощённой системе (до 7 млн грн/год = ~$175 000), либо 18% налог на прибыль при общей системе. ЕСВ (соцвзнос) фиксированный — около $40/мес. НДС не платится при упрощённой системе.</p>
 
-<h3>Как считать экономику фулфилмента: 5 ключевых метрик</h3>
-<p>При оценке фулфилмент-оператора смотрите не только на базовую ставку отправки, а на полную стоимость владения (TCO). Вот 5 метрик, которые определяют реальную экономику:</p>
+<p>При работе через агентскую модель (Модель Б, через MTP) налоговая нагрузка остаётся у нас. Вы получаете чистую маржу в USD/EUR без необходимости разбираться с украинскими налоговыми органами. Это особенно удобно для брендов на старте, которые не хотят инвестировать ресурсы в украинский бухгалтерский учёт. Юридически — это контракт ВЭД, который соответствует требованиям валютного контроля Казахстана, Молдовы, Грузии и других стран СНГ.</p>
 
-<ol style="padding-left:20px;line-height:1.85;color:#444">
-<li><strong>Cost per order (CPO).</strong> Полная стоимость одного заказа: отправка + доля хранения + доля упаковки + доля возвратов. У хорошего оператора одежды CPO составляет 28-35 грн при объёме 50 заказов/день. У плохого — 50-70 грн с дополнительными скрытыми платежами.</li>
-<li><strong>Storage utilization rate.</strong> Сколько процентов оплачиваемого объёма реально занято товаром. Если арендуете 5 м³, а реально используете 2 м³ — переплачиваете в 2.5 раза. С MTP платите только за фактически занятое место с округлением до 0.1 м³.</li>
-<li><strong>Returns processing cost.</strong> Сколько стоит обработать один возврат. У среднего оператора — 30-40 грн (без фото-проверки). У MTP — 50% от стоимости отправки (~10-14 грн), но С фото-документацией. Учитывая объём возвратов 25%, экономия — 15-20 тыс грн/мес.</li>
-<li><strong>Integration uptime.</strong> Процент времени, когда интеграция с маркетплейсом работает без сбоев. Должно быть 99.5%+. Меньше — постоянные скасування заказов из-за рассинхронизации остатков.</li>
-<li><strong>Onboarding time.</strong> Сколько дней от подписания договора до первой отправки. У хорошего оператора — 14-21 день. У плохого — 6-12 недель с постоянными задержками.</li>
-</ol>
+<p>Важный аспект: украинская ТОВ позволяет вашему бренду быть видимым на маркетплейсах с локальным юрлицом (повышает доверие клиентов). Агентская модель — товар продаётся под брендом MTP или вашим (по согласованию), что технически тоже работает, но требует дополнительной коммуникации с маркетплейсами. Для крупных брендов рекомендуем переход на собственную ТОВ через 6-12 месяцев работы.</p>
 
-<h3>Сезонность fashion и потребность в эластичной мощности</h3>
-<p>Fashion — самая сезонная категория в e-commerce. Типичный fashion-бренд делает 35-45% годовой выручки в четырёх окнах: 8 Марта, передшкольная підготовка (август), Чорна п'ятниця (последняя пятница ноября), Новий рік. В эти дни продажи стрибают в 5-7 разів від базового рівня.</p>
+<h3>Сезонность и потребность в эластичной мощности</h3>
+<p>Украинский fashion-рынок имеет ярко выраженную сезонность. 8 марта (~12% годовой выручки за 2 недели), передшкольная подготовка (август — ~10% годовой выручки), Чёрная пятница (последняя пятница ноября — ~8%), Новый год (~7%). В эти окна продажи стрибают в 4-7 раз от базового уровня. Для бренда из СНГ, который только заходит на рынок, это может стать сюрпризом: если ваш домашний рынок имеет более ровную сезонность, украинский ритм потребует адаптации логистики.</p>
 
-<p>Свой склад с фиксированной кількістю персонала просто не встигає. Начинаются задержки на 2-3 дня, скасування заказов, негативные відгуки, штрафы маркетплейса. Профессиональный фулфілмент-оператор з мощностью на 6 000 заказов/добу обробляет пік без додаткових витрат для бренду — це закладено в архітектуру складу.</p>
+<p>На складе MTP <strong>заложена потужность до 6 000 заказов/день</strong>. Это означает, что в пиковые дни мы обрабатываем заказы нашего среднего клиента в 5-7 раз быстрее без задержек. Бренд не платит за "готовность" — только за фактические отправки. Масштаб x5 в пик для нас — это просто x5 транзакций в WMS, не x5 риск.</p>
 
-<p>На складе MTP типовий fashion-бренд проходит чёрнопятничний пік без затримок. Приклад з нашої практики: D2C-бренд жіночого одягу (Київ) у 2025 році зробив 8 200 замовлень за 3 дні Чорної п'ятниці — це 4× от обычного объёма. Все відправки пішли в день оформлення без додаткових витрат для бренду.</p>
-
-<p>Для бренда з СНД це особливо актуально: ви не можете різко найняти 5 додаткових пакувальників в Україні на 4 дні. А наш склад вже має готову інфраструктуру для будь-якого піку.</p>
+<p>Мы рекомендуем планировать пиковые периоды за 4 недели: уведомить менеджера, передать дополнительный stock, согласовать промо-акции с маркетплейсами. Это позволяет нам подготовить зоны хранения, перераспределить персонал, настроить алгоритмы pick-приоритетов. В отличие от вашего домашнего склада с фиксированным персоналом, наш склад — это эластичная система, которая адаптируется под ваш ритм продаж.</p>
 
 </div>
 </div>
@@ -308,44 +361,85 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </Base>
 
 <style is:global>
-/* HERO */
-.oh-hero{position:relative;min-height:88vh;background:#000;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
-.oh-hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.5) 100%),url('/images/odyahu-hero.jpg') center/cover no-repeat;z-index:1}
-.oh-hero-content{position:relative;z-index:2;width:100%;padding:0 8vw}
-.oh-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
-.oh-hero-left{position:relative}
-.oh-hero-left::before{content:'';position:absolute;left:-40px;top:0;height:100%;width:3px;background:#e63329}
-.oh-badge{display:inline-block;background:#e63329;color:#fff;padding:8px 16px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
-.oh-hero h1{font-family:var(--fd);font-size:clamp(40px,5vw,72px);font-weight:400;line-height:.98;margin-bottom:28px;letter-spacing:-.01em}
-.oh-hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.65);line-height:1.7;max-width:560px}
-.oh-form-card{background:#fff;color:#000;padding:32px 28px;border-radius:8px;box-shadow:0 20px 60px rgba(230,51,41,.15)}
-.oh-form-title{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:18px;color:#000}
-.oh-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:64px 8vw 56px;position:relative;z-index:2;margin-top:auto}
-.oh-stat{border-top:3px solid #e63329;padding:18px 0}
-.oh-stat-val{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;color:#fff;line-height:1;white-space:nowrap}
-.oh-stat-label{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.15em;margin-top:6px}
-.oh-problems{padding:100px 0;background:#fff}
-.oh-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
-.oh-prob-card{background:#fff;padding:36px 28px;transition:background .25s}.oh-prob-card:hover{background:#fafafa}
-.oh-prob-num{font-family:var(--fd);font-size:38px;color:#e63329;line-height:1;margin-bottom:12px;font-weight:400}
-.oh-prob-card h3{font-size:17px;font-weight:600;margin-bottom:8px;color:#000}.oh-prob-card p{font-size:14px;color:var(--muted);line-height:1.65}
-.oh-how{padding:100px 0;background:var(--gray)}
-.oh-steps{max-width:760px;margin:0 auto}
-.oh-step{display:flex;gap:24px;margin-bottom:40px;position:relative}
-.oh-step::after{content:'';position:absolute;left:19px;top:48px;bottom:-40px;width:2px;background:#d8d8d8}
-.oh-step:last-child::after{display:none}
-.oh-step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:#e63329;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;position:relative;z-index:1}
-.oh-step-body{padding-top:6px}
-.oh-step-body h3{font-size:18px;font-weight:600;margin-bottom:8px}
-.oh-step-body p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
-.oh-step-price{font-size:13px;color:#e63329;font-weight:600}
-.oh-tariffs{padding:100px 0;background:#fff}
-.oh-integrations{padding:80px 0;text-align:center;background:var(--gray)}
-.oh-integ-text{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto 32px;line-height:1.65}
-.oh-integ-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-bottom:16px}
-.oh-integ-logos img{height:32px;width:auto;opacity:.6;transition:opacity .2s}
-.oh-integ-logos img:hover{opacity:1}
-.oh-integ-note{font-size:14px;color:var(--muted)}
+/* TRUST & SCALE — Light hero */
+.ts-hero{background:#fff;padding:140px 0 80px;border-bottom:1px solid #f0f0f0}
+.ts-hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.ts-hero-left{}
+.ts-pill{display:inline-block;border:1.5px solid #000;color:#000;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+.ts-hero h1{font-family:var(--fd);font-size:clamp(38px,5vw,68px);font-weight:400;line-height:1;margin-bottom:24px;color:#000;letter-spacing:-.02em}
+.ts-hero h1 .ts-accent{color:#e63329;font-weight:600}
+.ts-hero-sub{font-size:clamp(15px,1.5vw,18px);color:#444;line-height:1.7;max-width:560px;margin-bottom:32px}
+.ts-form{max-width:540px}
+.ts-frame{position:relative;border:8px solid #000;overflow:hidden;background:#000}
+.ts-frame img{width:100%;height:auto;display:block;opacity:.85}
+.ts-frame-tag{position:absolute;bottom:0;left:0;right:0;background:#000;color:#fff;padding:14px 18px;font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+
+/* Trust strip — brand logos */
+.ts-trust{padding:60px 0;background:#f7f7f7;border-bottom:1px solid #ececec}
+.ts-trust-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:32px}
+.ts-logos-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:32px;align-items:center;justify-items:center;max-width:1100px;margin:0 auto}
+.ts-logo{display:flex;align-items:center;justify-content:center;padding:14px;background:#fff;border-radius:6px;width:100%;height:64px;transition:transform .2s, box-shadow .2s}
+.ts-logo:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.ts-logo img{max-height:32px;width:auto;opacity:.7;transition:opacity .2s}
+.ts-logo:hover img{opacity:1}
+.ts-trust-foot{text-align:center;font-size:13px;color:#777;margin:32px 0 0}
+
+/* Dark stats — big red numbers */
+.ts-stats{padding:100px 0;background:#000;color:#fff}
+.ts-stats-title{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);font-weight:400;text-align:center;margin-bottom:64px;color:#fff;letter-spacing:-.01em}
+.ts-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px}
+.ts-stat{text-align:left;border-left:3px solid #e63329;padding-left:24px}
+.ts-stat-num{font-family:var(--fd);font-size:clamp(48px,6vw,84px);font-weight:600;color:#e63329;line-height:1;margin-bottom:12px;letter-spacing:-.02em}
+.ts-stat-text{font-size:15px;line-height:1.55;color:rgba(255,255,255,.85)}
+.ts-stat-text span{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-top:6px}
+
+/* White benefits */
+.ts-benefits{padding:100px 0;background:#fff}
+.ts-ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.ts-ben{background:#fff;padding:36px 28px;transition:background .25s}
+.ts-ben:hover{background:#fafafa}
+.ts-ben-icon{font-family:var(--fd);font-size:36px;color:#e63329;line-height:1;margin-bottom:14px;font-weight:600}
+.ts-ben h3{font-size:17px;font-weight:600;margin-bottom:10px;color:#000}
+.ts-ben p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* Dark infrastructure block */
+.ts-infra{padding:100px 0;background:#0a0a0a;color:#fff}
+.ts-infra-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.ts-infra-text .badge{margin-bottom:24px}
+.ts-infra-h{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;color:#fff;margin-bottom:24px;letter-spacing:-.01em}
+.ts-infra-text p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:14px;max-width:560px}
+.ts-infra-text p strong{color:#fff}
+.ts-infra-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ts-infra-card{padding:32px 24px;border:1px solid rgba(255,255,255,.12);border-radius:6px;background:rgba(255,255,255,.02)}
+.ts-infra-num{font-family:var(--fd);font-size:42px;color:#e63329;font-weight:600;line-height:1;margin-bottom:8px}
+.ts-infra-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.15em}
+
+/* How to enter — 3 cards */
+.ts-how{padding:100px 0;background:#fff}
+.ts-how .badge{margin-bottom:18px}
+.ts-how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.ts-how-card{background:#fff;border:1px solid #ececec;border-top:4px solid #e63329;padding:36px 28px;border-radius:6px}
+.ts-how-week{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#e63329;margin-bottom:6px}
+.ts-how-days{font-size:13px;color:#999;margin-bottom:16px}
+.ts-how-card h3{font-size:18px;font-weight:600;margin-bottom:12px;color:#000}
+.ts-how-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* PRICING TABLE (used in pricing & oh-tariffs sections) */
+.pricing,.oh-tariffs{padding:100px 0;background:var(--gray)}
+.oh-tariffs{background:#fff}
+.price-table{max-width:780px;margin:0 auto 32px;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;background:#fff}
+.price-row{display:flex;border-bottom:1px solid #eee;font-size:15px}
+.price-row:last-child{border:none}
+.price-row>span{flex:1;padding:14px 20px}
+.price-row>span:nth-child(2),.price-row>span:nth-child(3){text-align:right}
+.price-row.price-header{background:#000;color:#fff;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-row.price-header>span{text-align:left}
+.price-row.price-header>span:nth-child(2),.price-row.price-header>span:nth-child(3){text-align:right}
+.price-row:not(.price-header):hover{background:#fafafa}
+.price-row.price-highlight{background:#e63329;color:#fff;font-weight:600}
+.price-note{text-align:center;font-size:15px;color:var(--muted);margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* DEEP DIVE & AUDIENCE & FAQ & ARTICLE — same as UA */
 .oh-deep{padding:100px 0;background:#0a0a0a;color:#fff}
 .oh-deep .badge{margin-bottom:24px}
 .oh-deep .sec-h2{color:#fff;max-width:900px;margin-bottom:48px}
@@ -359,12 +453,51 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .oh-audience-card{background:var(--gray);border-radius:8px;padding:36px 28px;border-top:3px solid #e63329}
 .oh-audience-card h3{font-size:18px;font-weight:600;margin-bottom:12px}
 .oh-audience-card p{font-size:15px;color:var(--muted);line-height:1.7}
+
+.faq{padding:100px 0;background:#0a0a0a;color:#fff}
+.faq .sec-h2{color:#fff}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;padding:22px 0;font-size:16px;font-weight:500;background:none;border:none;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;text-align:left;gap:24px}
+.faq-q::after{content:'+';font-size:28px;color:#e63329;transition:transform .3s;flex-shrink:0;line-height:1}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:600px}
+.faq-a p{padding:0 0 22px;font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin:0}
+.faq-a p a,.faq-a p strong{color:#fff}
+
+.article-section{background:#fff;padding:100px 8vw}
+.article-section .badge{margin-bottom:24px}
+.article-section h2{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;margin:8px 0 40px;line-height:1.15}
+.article-content{max-width:820px}
+.article-content h3{font-family:var(--fd);font-size:clamp(20px,2.2vw,28px);font-weight:400;margin:36px 0 12px;color:#000}
+.article-content h3:first-child{margin-top:0}
+.article-content p{font-size:16px;line-height:1.85;color:#444;margin-bottom:14px}
+.article-content ul{padding-left:24px;margin-bottom:18px}
+.article-content li{font-size:16px;line-height:1.85;color:#444;margin-bottom:6px}
+
 @media(max-width:900px){
-  .oh-hero-grid{grid-template-columns:1fr;gap:40px}
-  .oh-hero-left::before{left:-20px}
-  .oh-stats{grid-template-columns:repeat(2,1fr);padding:32px 24px;gap:24px}
-  .oh-prob-grid{grid-template-columns:1fr}
+  .ts-hero-inner{grid-template-columns:1fr;gap:40px}
+  .ts-logos-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .ts-stats-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+  .ts-ben-grid{grid-template-columns:1fr}
+  .ts-infra-grid{grid-template-columns:1fr;gap:40px}
+  .ts-infra-cards{grid-template-columns:repeat(2,1fr)}
+  .ts-how-grid{grid-template-columns:1fr}
   .oh-audience-grid{grid-template-columns:1fr}
 }
-.oh-prob-card,.oh-step,.oh-stat,.oh-audience-card{opacity:1!important;transform:none!important}
 </style>
+
+<script is:inline>
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    if(!btn) return;
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+})();
+</script>
