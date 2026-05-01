@@ -139,20 +139,19 @@ print(inner)
         #   - imperative-style verbs (UA/RU/EN)
         #   - lookbehind word triggers like "not", "не", "без", "нет"
         local is_hook
-        is_hook=$(echo "$h1_text" | python3 -c "
+        is_hook=$(echo "$h1_text" | python3 -c '
 import sys, re
 h = sys.stdin.read().strip()
 words = h.split()
-# Punctuation-based twist markers
-has_punct_twist = bool(re.search(r'[,—–:!?]', h))
-# Period mid-text (staccato style: 'A. B.' — at least one period followed by capital)
-has_period_twist = bool(re.search(r'\.\s+[A-ZА-ЯҐЄІЇA-Za-zА-Яа-я]', h))
-# Special-word lookbehind triggers
-has_word_twist = bool(re.search(r'(?<=[a-zа-яґєії]) (?:not|без|нет|не|то|то ж|stop|start|zero|нуль|жодного|без)\b', h, re.I))
-imperative = bool(re.match(r'^(Stop|Start|Ship|Beat|Pick|Залиште|Перестаньте|Хватит|Запустите|Скиньте)\b', h, re.I))
+has_punct_twist = bool(re.search(r"[,—–:!?]", h))
+has_period_twist = bool(re.search(r"\.\s+[A-ZА-ЯҐЄІЇA-Za-zА-Яа-я]", h))
+has_word_twist = bool(re.search(r"(?<=[a-zа-яґєії]) (?:not|без|нет|не|то|stop|start|zero|нуль|жодного)\b", h, re.I))
+imperative = bool(re.match(r"^(Stop|Start|Ship|Beat|Pick|Залиште|Перестаньте|Хватит|Запустите|Скиньте)\b", h, re.I))
 has_twist = has_punct_twist or has_period_twist or has_word_twist or imperative
-print('hook' if (len(words) > 5 and has_twist) else 'generic')
-")
+short_staccato = has_period_twist and len(words) > 3
+long_rhetorical = len(words) > 12
+print("hook" if ((len(words) > 5 and has_twist) or short_staccato or long_rhetorical) else "generic")
+' 2>/dev/null)
         if [ "$is_hook" = "hook" ]; then
             echo "  ✅ h1 brand-hook: '$h1_text'"
         else

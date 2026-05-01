@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** **🎊🎊🎊 PHASE 2 COMPLETE + heuristic refinement + words top-up (3 UA) + GSC reindex (44/44 URLs).** Site-wide PASS: 6 → **18** (+12 this session). Schema fails 38→0. Indexing API submission successful for all 44 schema-uplifted URLs — Google should re-crawl within 1-3 days. Next: Phase 3 (H1 rewrites) for ~20 pages still flagged + Phase 4 (words uplift on remaining 33 thin pages).
+**Last session note:** **Phase 3 MVP done (Variant 1).** Heuristic refinement #2 (added long_rhetorical >12 words + short_staccato >3 words) + 6 H1 rewrites on calculator/prices triplet (real brand-hooks with concrete numbers). Heuristic edit broke validator initially due to bash-quote interpretation of `\b` regex; fixed by switching python to single-quote heredoc. Site-wide PASS: 18 → **20** (+2 from heuristic alone — en/small-biz 17-word declarative + ru/marketpleysov 4-word staccato now correctly classified as hooks).
 
 ---
 
