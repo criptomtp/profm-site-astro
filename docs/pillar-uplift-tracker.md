@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 9/16 done — fulfilment-kyiv (P2 start). Schemas 9/9 all 3. RU has brand-hook H1; UA+EN need rework. Words 1183/1087/1398 thin (Phase 4). Cumulative session: 9 triplets, -26 schema fails (38→12). Site-wide PASS still 9.
+**Last session note:** Phase 2 batch 10/16 done — fulfilment-ukraina. All 3 schemas 9/9. Words 1437/1030/1255 thin (Phase 4). H1s have em-dash but `&mdash;` HTML entity confuses heuristic (same issue as 3pl-logistics). Cumulative session: 10 triplets, -29 schema fails (38→9). PASS still 9. P2: 2/5.
 
 ---
 
@@ -75,7 +75,7 @@
 
 #### P2 batch (geo + specific)
 - [x] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/` **DONE 2026-05-01**: had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing GeoCoordinates in LocalBusiness (was inside City schema only) + BusinessAudience + standalone Country @type. Surgical: replaced `areaServed:{City}` with `areaServed:[City, Country]`, added BusinessAudience, added geo+location[] to LocalBusiness. All 3 now 9/9 schemas ✅. RU H1 brand-hook ("Ваш склад без аренды. Ваша логистика без логистов." — paradox + period). UA+EN H1 generic. Words 1183/1087/1398 thin (Phase 4).
-- [ ] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/`
+- [x] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/` **DONE 2026-05-01**: had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU; EN had no Offer). Missing LocalBusiness/Geo/PostalAddress/BusinessAudience. Added BusinessAudience to Service.audience (UA/RU/EN), full LocalBusiness append per language, EN got Offer added too. All 3 now 9/9 schemas ✅. Words 1437/1030/1255 thin. H1s have `&mdash;` but heuristic doesn't decode HTML entity — Phase 3 fix.
 - [ ] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/`
 - [ ] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/`
 - [ ] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/`
@@ -145,6 +145,18 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 10: fulfilment-ukraina triplet
+- Pre-uplift: pages had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU only; EN didn't have offers). Missing all geo signals (LocalBusiness/Geo/PostalAddress) + BusinessAudience.
+- Surgical: add BusinessAudience to Service.audience for all 3 (between areaServed and offers); for EN added missing Offer too; full LocalBusiness append per language to schemaJson template
+- All 3 schemas 9/9 ✅
+- H1 status — same recurring issue as 3pl-logistics:
+  - UA "Фулфілмент в Україні&mdash; економія до 49% vs власний склад" — has em-dash twist + concrete % but `&mdash;` HTML entity (no space before it) confuses heuristic word count
+  - RU same pattern with `&mdash;`
+  - EN "Ukrainian Fulfillment Services for Global Brands" — generic
+- Words 1437/1030/1255 — far below 2500 (Phase 4)
+- Net progress: -3 schema fails. Cumulative session: -29 (38 → 9)
+- Next session: continue P2 with `vazhki-tovary` triplet (heavy goods)
 
 ### 2026-05-01 — Phase 2 batch 9: fulfilment-kyiv triplet (P2 start)
 - Pages had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing standalone Country @type, BusinessAudience, geo in LocalBusiness (was only inside City schema)
