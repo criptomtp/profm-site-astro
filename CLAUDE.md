@@ -44,6 +44,7 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 4. IMAGE-GEN — генерація зображень через Pollinations.ai (безкоштовно)
 5. DESIGN — Astro код ВРУЧНУ за Stitch-референсом, використовуючи src/components/stitch/ (StatsBar, LabelChip, SplitHero, DarkCTA, AccordionGroup)
 6. QA — перевірка SEO + PageSpeed + mobile + build
+6.5. PILLAR VALIDATE — для pillar/topic-сторінок (не блог) **обов'язково** прогнати: `npm run validate:pillar -- --triplet UA_FILE RU_FILE EN_FILE` (на dist/) або `npm run validate:pillar -- --triplet UA_URL RU_URL EN_URL` (post-deploy). Перевіряє 9 schemas, ≥2 500 слів, H1 brand-hook + whitespace bug, hreflang quartet reciprocal, language purity. Exit ≠ 0 — НЕ деплоїмо. Деталі: `docs/pillar-page-checklist.md`.
 7. DEPLOY — vercel --prod + фінальний звіт
 
 Детальний опис pipeline: .claude/commands/create-page.md
@@ -94,6 +95,7 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - [ ] Створити RU: `src/pages/ru/[slug].astro` (інший кут, не переклад)
 - [ ] Створити EN: `src/pages/en/[slug].astro` (інший кут, не переклад)
 - [ ] **HUMANIZER ПРОХІД (обовʼязково, для всіх 3 мов):** прогнати через `docs/humanizer-ua-mtp.md` — заборонені звороти (UA/RU/EN), burstiness (мікс довжин речень 3→40 слів), ≥3 anchor-цифри MTP на сторінці, без AI-кліше і парадних bullet-списків. Окремо перевірити: hero subline, перший абзац кожної секції, FAQ-відповіді, meta description, h2/h3 заголовки.
+- [ ] **PILLAR VALIDATE (тільки для pillar/topic-сторінок, не блог):** після `npm run build` запустити `npm run validate:pillar -- --triplet dist/<UA>/index.html dist/ru/<RU>/index.html dist/en/<EN>/index.html`. Має вийти exit 0 (✅ ALL CHECKS PASSED). Перевіряє: 9 must-have JSON-LD `@type`, ≥2 500 слів кожна мова, H1 brand-hook (не «Фулфілмент для X»), H1 whitespace bug (не «слово.Слово»), hreflang quartet reciprocal між UA/RU/EN, language purity (без banned EN-слів у UA/RU). Деталі: `docs/pillar-page-checklist.md`.
 - [ ] **КРОС-МОВНА ПЕРЕЛІНКОВКА (обовʼязково, часто забуваю):**
   - [ ] Всі 3 версії створені в одній задачі — не деплоїмо одну без інших двох
   - [ ] Hreflang на всіх 3 сторінках (uk/ru/en/x-default) — повне взаємопосилання
@@ -300,6 +302,9 @@ curl -o "public/images/[slug]-hero.jpg" \
 - `docs/design-system/stitch-exports/` — Stitch артефакти (concept + screenshot) на approved концепцію.
 - `docs/design-system/pages/` — ADR + baseline на кожну створену/редизайнуту сторінку.
 - `docs/humanizer-ua-mtp.md` — humanizer rules: UA/RU/EN AI-tells, burstiness, MTP voice, anchor-цифри. ОБОВ'ЯЗКОВО після WRITER step, перед QA. Single source of truth для "як звучить MTP".
+- `docs/pillar-page-checklist.md` — 8-пунктний quality gate для нових pillar-сторінок: 9 schemas, 2500+ слів, brand-hook H1, hreflang quartet, language purity, internal linking. Запуск: `npm run validate:pillar -- --triplet UA RU EN`.
+- `scripts/pillar-page-validate.sh` — bash-скрипт для перевірки. Single mode або triplet (з reciprocal hreflang). Exit 0/1.
+- `scripts/humanizer-scan.py` — read-only діагностичний скан AI-tells по всьому сайту. Запуск: `npm run humanizer:scan`. Виводить ранжовану таблицю + CSV у `docs/humanizer-scan-results.csv`.
 
 ---
 

@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "validate:pillar": "bash scripts/pillar-page-validate.sh",
+    "humanizer:scan": "python3 scripts/humanizer-scan.py"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
