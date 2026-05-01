@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** initial tracker + Phase 1 discovery refinement done
+**Last session note:** Phase 2 batch 1/16 done — prices triplet (UA tsiny + RU tsenu + EN prices) schema uplift, all now 9/9 schemas. Words + H1 still failing (deferred to Phase 3/4).
 
 ---
 
@@ -62,7 +62,7 @@
 - [x] **clothing** — odyahu (DONE 2026-05-01 via prior session)
 
 #### P0 batch (high-impact, conversion)
-- [ ] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/`
+- [x] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/` **DONE 2026-05-01**: added BusinessAudience + nested Offer to Service, GeoCoordinates + location[] to LocalBusiness; for EN also added full Service description + areaServed Country + FAQPage + BreadcrumbList. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
 - [ ] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/`
 - [ ] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/`
 - [ ] **home** — `/index.html` + `/ru/index.html` + `/en/index.html`
@@ -146,12 +146,21 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-01 — Phase 2 batch 1: prices triplet
+- Discovered current schemas in 3 files (UA had 12 types, RU had 12, EN had only 6 — bare Service)
+- Surgical python replacements for UA/RU: added BusinessAudience to Service, nested Offer in offers, GeoCoordinates + 2-Place location[] in LocalBusiness
+- For EN: full Service rewrite (added description, areaServed Country, BusinessAudience, nested Offer), GeoCoords in LocalBusiness, plus injected FAQPage (translated 6 Q/A from UA) + BreadcrumbList scripts
+- Build: 202 pages, 0 errors
+- Validate triplet: ✅ schemas 9/9 all 3, ✅ hreflang reciprocal, ❌ words still <2500 (deferred Phase 4), ⚠️ H1 still generic (deferred Phase 3)
+- **Pre-existing observation** (NOT introduced by this work): RU tsenu and EN prices have DUPLICATE Service+LocalBusiness blocks (one in schemaJson prop, one inline). UA tsiny is clean (single set). Track as separate cleanup task — not Phase 2 scope.
+- Net progress: -3 schema fails (from 38 → 35 site-wide)
+- Next session: continue Phase 2 with another P0 triplet (recommend `calculator` next — same conversion class, similar shape)
+
 ### 2026-05-01 — initial setup
 - Created tracker
 - Phase 1 done — refined scorecard discovery (excluded 15 non-pillar utility pages)
 - Baseline locked: 54 pillars, 6 PASS, 48 FAIL
 - Built complete TODO list across Phases 2-7
-- Next session: start Phase 2 batch with single triplet (recommend P0 → `prices`) to validate the schema-uplift method, then continue rest of Phase 2
 
 ---
 
