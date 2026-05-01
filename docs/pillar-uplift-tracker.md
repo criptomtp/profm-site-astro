@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 10/16 done — fulfilment-ukraina. All 3 schemas 9/9. Words 1437/1030/1255 thin (Phase 4). H1s have em-dash but `&mdash;` HTML entity confuses heuristic (same issue as 3pl-logistics). Cumulative session: 10 triplets, -29 schema fails (38→9). PASS still 9. P2: 2/5.
+**Last session note:** Phase 2 batch 11/16 done — vazhki-tovary. All 3 schemas 9/9. RU + EN H1 brand-hooks ✅. UA H1 generic (period not accepted). Words 1195/1130/1502 thin. Cumulative session: 11 triplets, -32 schema fails (38→6). P2: 3/5.
 
 ---
 
@@ -76,7 +76,7 @@
 #### P2 batch (geo + specific)
 - [x] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/` **DONE 2026-05-01**: had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing GeoCoordinates in LocalBusiness (was inside City schema only) + BusinessAudience + standalone Country @type. Surgical: replaced `areaServed:{City}` with `areaServed:[City, Country]`, added BusinessAudience, added geo+location[] to LocalBusiness. All 3 now 9/9 schemas ✅. RU H1 brand-hook ("Ваш склад без аренды. Ваша логистика без логистов." — paradox + period). UA+EN H1 generic. Words 1183/1087/1398 thin (Phase 4).
 - [x] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/` **DONE 2026-05-01**: had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU; EN had no Offer). Missing LocalBusiness/Geo/PostalAddress/BusinessAudience. Added BusinessAudience to Service.audience (UA/RU/EN), full LocalBusiness append per language, EN got Offer added too. All 3 now 9/9 schemas ✅. Words 1437/1030/1255 thin. H1s have `&mdash;` but heuristic doesn't decode HTML entity — Phase 3 fix.
-- [ ] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/`
+- [x] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/` **DONE 2026-05-01**: UA + RU had Service+LB+PostalAddress+Country+FAQ+Breadcrumb+Org but no offers/audience/geo. EN had bare Service (just name+provider) + no Breadcrumb. Added: Service.audience + offers (heavy-goods specific), LB.geo+location[]; for EN — full Service rewrite + new BreadcrumbList script. RU has duplicate inline LB block (pre-existing) — replaced both. UA Bilohorodka had description that confused initial pattern, fixed with second pass. All 3 now 9/9 schemas ✅. RU + EN H1 brand-hooks; UA H1 "Фулфілмент важких товарів. Великий габарит. Без компромісів." generic per heuristic (3 periods as twist not recognized).
 - [ ] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/`
 - [ ] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/`
 
@@ -145,6 +145,23 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 11: vazhki-tovary triplet
+- UA + RU had Service+LB+PostalAddress+Country+FAQ+Breadcrumb+Org but Service was missing offers/audience and LB was missing geo/location
+- EN was much thinner: bare Service ("Heavy Goods Fulfillment", just name+provider), no BreadcrumbList at all
+- Per file:
+  - UA + RU: Service got audience + nested Offer (heavy-goods specific: 45 UAH from 30 kg / 80×80×80 cm); LB got geo+location[]
+  - EN: full Service rewrite (description, areaServed, audience, offer); LB got geo+location+description; new BreadcrumbList script appended
+- Pre-existing RU duplicate (inline LB block) — pattern matched and replaced both copies (consistent state, not a regression)
+- UA Bilohorodka pattern needed second pass — already had description field that initial regex missed
+- All 3 now 9/9 schemas ✅
+- H1 status:
+  - UA "Фулфілмент важких товарів. Великий габарит. Без компромісів." — 3 periods as twist + 7 words, heuristic doesn't accept period as twist marker (recurring blind spot)
+  - RU "Склад и доставка крупногабаритных товаров — Фулфилмент тяжёлых и крупногабаритных товаров в Украине" — em-dash + long, brand-hook ✅
+  - EN "Heavy & Oversized Goods Fulfillment in Ukraine — 3PL warehouse for heavy and oversized items" — em-dash + descriptive, brand-hook ✅
+- Words 1195/1130/1502 — Phase 4
+- Net progress: -3 schema fails. Cumulative session: -32 (38 → 6)
+- Next session: continue P2 with `pallet-storage` triplet
 
 ### 2026-05-01 — Phase 2 batch 10: fulfilment-ukraina triplet
 - Pre-uplift: pages had Service+Country+Org+FAQ+Breadcrumb+Offer (UA/RU only; EN didn't have offers). Missing all geo signals (LocalBusiness/Geo/PostalAddress) + BusinessAudience.
