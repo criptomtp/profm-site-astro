@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        body { background-color: #000000; color: #ffffff; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#ac8883",
+                      "surface-variant": "#333535",
+                      "on-secondary-fixed-variant": "#474747",
+                      "secondary": "#c6c6c6",
+                      "on-tertiary-container": "#282a2a",
+                      "on-error": "#690005",
+                      "surface-bright": "#37393a",
+                      "surface": "#121414",
+                      "surface-container-lowest": "#0c0f0f",
+                      "secondary-container": "#474747",
+                      "on-surface-variant": "#e5bdb8",
+                      "on-background": "#e2e2e2",
+                      "surface-container-high": "#282a2b",
+                      "inverse-primary": "#bd0f10",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e2e2e2",
+                      "background": "#121414",
+                      "on-secondary": "#303030",
+                      "on-primary-fixed-variant": "#930005",
+                      "outline-variant": "#5c403c",
+                      "surface-dim": "#121414",
+                      "primary-container": "#ff5545",
+                      "on-tertiary": "#2f3131",
+                      "on-primary": "#690002",
+                      "primary-fixed": "#ffdad5",
+                      "inverse-on-surface": "#2f3131",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-primary-container": "#5c0002",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container-low": "#1a1c1c",
+                      "on-primary-fixed": "#410001",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-tint": "#ffb4a9",
+                      "tertiary-container": "#909191",
+                      "surface-container-highest": "#333535",
+                      "on-secondary-container": "#b5b5b5",
+                      "error": "#ffb4ab",
+                      "tertiary": "#c6c6c7",
+                      "primary": "#ffb4a9",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "surface-container": "#1e2020",
+                      "primary-fixed-dim": "#ffb4a9",
+                      "error-container": "#93000a",
+                      "on-surface": "#e2e2e2",
+                      "brand-red": "#e63329"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "margin": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "h2": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h1": ["Inter"],
+                      "button": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-uppercase": ["Inter"],
+                      "h3": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-uppercase": ["14px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                      "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-black text-white selection:bg-brand-red selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-black border-b-2 border-white">
+<div class="text-2xl font-black text-white italic tracking-tighter uppercase">
+            MTP FULFILLMENT
+        </div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="font-bold uppercase tracking-tighter text-red-600 border-b-4 border-red-600 pb-1 h-full flex items-center" href="#">NETWORK</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none" href="#">OPERATIONS</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none" href="#">FLIGHTS</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none" href="#">FLEET</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none" href="#">SECURITY</a>
+</nav>
+<button class="bg-brand-red text-white font-bold uppercase py-3 px-6 hover:bg-white hover:text-black transition-none text-sm tracking-widest">
+            GET QUOTE
+        </button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex flex-col justify-center px-6 md:px-12 bg-black border-b-4 border-white">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover grayscale" data-alt="A high-contrast wide shot of a massive, modern industrial warehouse interior with automated sorting systems and vertical racking. The lighting is cold and cinematic, with sharp shadows and bright highlights on metallic surfaces. The atmosphere is professional, energetic, and highly technical, reflecting a war-room aesthetic with deep blacks and stark white lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMRvaS7BLFZLiExDsRfHZHybVPhc1jwuWgF2wdkmoGerM0S7ZbnC23WRG40zb3kWTnv77LJoVk5v3R7byA-Z2JurEl2F9vGk8fKoLZU2Z9RhXA2yvzv7fq9g1AeRfIKbyHSCwA-8GkKGoVvgeLkJUqLcktNsH2tNWlAQrh9bHRJWIKZSGxCDCdQl5_vpwabofn4lS9ZxlGjlppl9I8ZOX_epI38q2GERc77prD7mqljX0WIDyr-fSyX7tqHnIBApyWCgj4L1c0n2gZ"/>
+</div>
+<div class="relative z-10 max-w-5xl">
+<span class="inline-block bg-brand-red text-white font-black px-4 py-1 text-label-uppercase mb-6 tracking-widest">
+                    OPERATIONAL EXCELLENCE
+                </span>
+<h1 class="font-h1 text-h1 uppercase mb-8 leading-none tracking-tighter max-w-4xl">
+                    ФУЛФІЛМЕНТ ДЛЯ ОДЯГУ ТА FASHION-БРЕНДІВ
+                </h1>
+<div class="bg-black/80 border-2 border-white p-8 max-w-lg">
+<form class="space-y-6">
+<div>
+<label class="block text-label-uppercase font-bold mb-2 tracking-tighter">CONTACT PHONE NUMBER</label>
+<input class="w-full bg-white text-black font-bold text-lg p-4 focus:ring-0 focus:outline-none border-none" placeholder="+380 00 000 00 00" type="tel"/>
+</div>
+<button class="w-full bg-brand-red text-white font-h2 text-h3 py-5 hover:bg-white hover:text-black transition-none uppercase tracking-tighter flex justify-between items-center px-6">
+<span>ОТРИМАТИ ТАРИФ</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Live Ops Dashboard -->
+<section class="bg-black py-12 px-6 border-b-4 border-white">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4 mb-10">
+<span class="flex h-4 w-4 bg-brand-red rounded-full animate-pulse"></span>
+<h2 class="font-h3 text-h3 uppercase tracking-tighter">LIVE OPERATIONS FEED</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-white">
+<!-- Stat 1 -->
+<div class="p-8 border-b-2 md:border-b-0 md:border-r-2 border-white">
+<p class="text-label-uppercase text-white/60 mb-4 tracking-widest">SHIPMENTS PROCESSED (TODAY)</p>
+<div class="mono text-6xl font-bold text-brand-red tracking-tighter">14,892</div>
+<div class="flex items-center gap-2 mt-4 text-xs font-bold text-white/40">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.4% vs ESTIMATE</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="p-8 border-b-2 md:border-b-0 md:border-r-2 border-white">
+<p class="text-label-uppercase text-white/60 mb-4 tracking-widest">NEXT CARGO PICKUP</p>
+<div class="mono text-6xl font-bold text-white tracking-tighter">00:42:15</div>
+<div class="flex items-center gap-2 mt-4 text-xs font-bold text-brand-red">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>URGENT: PRE-LOADING PHASE</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="p-8">
+<p class="text-label-uppercase text-white/60 mb-4 tracking-widest">QUEUE DEPTH / LATENCY</p>
+<div class="mono text-6xl font-bold text-white tracking-tighter">0.04ms</div>
+<div class="flex items-center gap-2 mt-4 text-xs font-bold text-white/40">
+<span class="material-symbols-outlined text-sm">analytics</span>
+<span>SYSTEM LOAD: OPTIMAL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid (Stats and Features) -->
+<section class="py-24 px-6 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Feature -->
+<div class="lg:col-span-8 border-4 border-brand-red p-12 flex flex-col justify-between">
+<div>
+<h3 class="font-h1 text-h2 uppercase mb-8 leading-none tracking-tighter">SCALABLE ARCHITECTURE FOR RETAIL GIANTS</h3>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl">
+                            Our proprietary fulfillment engine is built to handle the aggressive volatility of fashion cycles. From lightning-fast SKU ingestion to complex returns management, we provide a mechanical backbone for your brand's growth.
+                        </p>
+</div>
+<div class="mt-16 grid grid-cols-2 gap-8">
+<div class="border-t-2 border-white pt-6">
+<span class="mono text-brand-red font-bold text-3xl">99.98%</span>
+<p class="text-label-uppercase font-bold mt-2">SORTING ACCURACY</p>
+</div>
+<div class="border-t-2 border-white pt-6">
+<span class="mono text-brand-red font-bold text-3xl">4h</span>
+<p class="text-label-uppercase font-bold mt-2">DOCK-TO-STOCK</p>
+</div>
+</div>
+</div>
+<!-- Side Features -->
+<div class="lg:col-span-4 space-y-6">
+<div class="border-2 border-white p-8 group hover:bg-brand-red transition-none cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">inventory_2</span>
+<span class="material-symbols-outlined text-2xl opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<h4 class="font-h3 text-h3 uppercase tracking-tighter mb-4">SKU MASTERY</h4>
+<p class="text-white/60 group-hover:text-white">Granular tracking for size/color variants with 100% visibility.</p>
+</div>
+<div class="border-2 border-white p-8 group hover:bg-brand-red transition-none cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">local_shipping</span>
+<span class="material-symbols-outlined text-2xl opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<h4 class="font-h3 text-h3 uppercase tracking-tighter mb-4">LAST MILE OPS</h4>
+<p class="text-white/60 group-hover:text-white">Direct injection into regional carrier networks for same-day delivery.</p>
+</div>
+<div class="border-2 border-white p-8 group hover:bg-brand-red transition-none cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">assignment_return</span>
+<span class="material-symbols-outlined text-2xl opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<h4 class="font-h3 text-h3 uppercase tracking-tighter mb-4">REVERSE LOGISTICS</h4>
+<p class="text-white/60 group-hover:text-white">Automated inspection and re-kitting of returned apparel items.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Detail Section -->
+<section class="bg-brand-red py-20 px-6">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-h1 text-h2 text-black uppercase leading-none tracking-tighter mb-8">GLOBAL NETWORK TOPOLOGY</h2>
+<p class="font-body-lg text-black font-bold mb-12">
+                        Strategic fulfillment nodes located at major transit intersections to minimize global shipping latency. Each facility operates under a unified "war room" management protocol.
+                    </p>
+<button class="bg-black text-white font-bold uppercase py-5 px-10 hover:bg-white hover:text-black transition-none tracking-widest text-sm">
+                        VIEW NETWORK MAP
+                    </button>
+</div>
+<div class="border-4 border-black p-4 bg-black relative overflow-hidden group">
+<img class="w-full grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="A stylized, technical map layout of global logistics routes and transport hubs. The map features glowing red lines connecting major cities against a dark, minimalist background. The aesthetic is inspired by tactical command screens and technical blueprints, using high-contrast black and red tones with sharp geometric elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHT3JN1kK62VtvAVgv-F5JKkbW1tFQmYy-js84y1uayIVnJYOuiAROYkIApoz8uiOOcV2l4Y62jRWa1WZTqR_H6G4pIADP50wVFvuf4ydzk3tRF-uGS94R3TvZnRSUB93uoWOLnO0PhrHIZXDpwyFoBDq_Ggk5haiZSSKaDF0C0n_2iQd4KDyDfP6T3EcMfy84_P9iV_rZrNVklSGmFnOIRBLGofIHnX_ao4cAfQLQxYxz5xzTdbpvRZ1wPbvdD_Z_ETtvxbJFS4Ck"/>
+<div class="absolute inset-0 border-[20px] border-black pointer-events-none"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-black border-t-4 border-white">
+<div class="text-lg font-black text-white uppercase tracking-widest">
+            MTP FULFILLMENT
+        </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-bold uppercase text-xs text-white/60 hover:text-red-600 hover:underline decoration-2 transition-none" href="#">TERMINALS</a>
+<a class="font-bold uppercase text-xs text-white/60 hover:text-red-600 hover:underline decoration-2 transition-none" href="#">COMPLIANCE</a>
+<a class="font-bold uppercase text-xs text-white/60 hover:text-red-600 hover:underline decoration-2 transition-none" href="#">PRIVACY</a>
+<a class="font-bold uppercase text-xs text-white/60 hover:text-red-600 hover:underline decoration-2 transition-none" href="#">CAREERS</a>
+</div>
+<div class="font-bold uppercase text-xs text-white/40 tracking-widest">
+            © 2024 MTP FULFILLMENT. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

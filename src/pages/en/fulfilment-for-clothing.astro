@@ -1,0 +1,372 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Fulfillment for Clothing & Fashion Brands — Ship from Ukraine to EU","description":"Cross-border fulfillment for international fashion brands. Ship from Kyiv hub to EU buyers via Poland in 3-5 days. Hanger storage, size-level SKU tracking, photo-documented returns, EUR/USD billing. From €0.45/order.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"FR"},{"@type":"Country","name":"IT"}],"serviceType":"Apparel & Fashion Cross-Border Fulfillment","audience":{"@type":"BusinessAudience","name":"International DTC fashion brands, Shopify Plus apparel sellers, EU marketplace sellers, fashion startups testing Eastern European market"},"offers":{"@type":"Offer","priceCurrency":"EUR","price":"0.45","description":"From €0.45/order at 200+ orders/day. Storage from €16/m³/month. EUR/USD/UAH billing. War-resilient operations: 3 industrial generators, Starlink, 0 days downtime since 2022."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Ukraine safe for fulfillment operations during the war?","acceptedAnswer":{"@type":"Answer","text":"MTP Group has operated 0 days of downtime since 2022. Our Kyiv-region warehouses (Shchaslyve 2,700 m² + Bilohorodka 1,000 m²) are equipped with 3 industrial generators, Starlink internet, dual HVAC, and 24/7 security. We process 60,000+ shipments per month for 150+ active clients including international brands. The war affects logistics, but professional 3PLs have adapted — fulfillment continues normally."}},{"@type":"Question","name":"How does shipping from Ukraine to EU work?","acceptedAnswer":{"@type":"Answer","text":"We dispatch via Meest, Nova Poshta International, or DHL through the Poland border. Transit time to most EU countries is 3-5 business days. Customs is handled at our side — your customer receives a parcel with no additional steps. Cost: €4-8 per shipment depending on weight and destination."}},{"@type":"Question","name":"Can I bill in EUR or USD?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billing in EUR, USD, or UAH at your choice. Exchange rate is fixed for 12 months in the contract. No hidden conversion fees. Invoices issued on the 5th of each month for the previous period via SEPA, SWIFT, or Wise."}},{"@type":"Question","name":"How are returns handled for international orders?","acceptedAnswer":{"@type":"Answer","text":"Returns are routed through our Polish forwarding address (€2 per return) to consolidate before shipping back to our Kyiv warehouse. Each return is photo-documented (4 angles for clothing, 6 for shoes) and QC-checked. Items in good condition return to inventory automatically. Damaged items go to brand's review zone."}},{"@type":"Question","name":"What integrations are available for international brands?","acceptedAnswer":{"@type":"Answer","text":"Native integrations with Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, OpenCart. Marketplace integrations: Etsy, Amazon EU (FBM), Allegro, Faire, Zalando Connected Retail. Custom API available for proprietary platforms. Setup time: 2 hours on our side."}},{"@type":"Question","name":"Is the data GDPR-compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. We process EU customer data under GDPR with EU-based subprocessors (AWS Frankfurt for WMS data). Standard DPA template available. Customer addresses are encrypted in transit and at rest. Right to erasure supported within 30 days of request."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Fulfillment for Clothing","item":"https://www.fulfillmentmtp.com.ua/en/fulfilment-for-clothing/"}]}</script>`;
+---
+<Base
+  title="Fulfillment for Clothing — Ship from Ukraine to EU | MTP"
+  description="Cross-border fulfillment for international fashion brands. Hanger storage, size-level SKU tracking, photo-documented returns, EUR/USD billing. From €0.45/order. War-resilient ops, 0 days downtime since 2022."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-clothing/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/odyahu-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-odezhdy/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-clothing/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/">
+</Fragment>
+
+<!-- HERO -->
+<section class="oh-hero">
+  <div class="oh-hero-bg" data-md-skip></div>
+  <div class="oh-hero-content">
+    <div class="oh-hero-grid">
+      <div class="oh-hero-left">
+        <div class="oh-badge">FASHION · CROSS-BORDER</div>
+        <h1>Fashion fulfillment from Ukraine.<br>Ship to EU in 3-5 days.</h1>
+        <p class="oh-hero-sub">Hanger storage for apparel, size-level SKU tracking, photo-documented returns, native Shopify/Etsy/Amazon EU integration. War-resilient Kyiv hub serves international DTC fashion brands at €0.45/order.</p>
+      </div>
+      <div class="oh-hero-right">
+        <div class="oh-form-card">
+          <div class="oh-form-title">Get your fashion fulfillment quote</div>
+          <HeroCTA lang="en" theme="light" button="Get my quote →" microCopy="✓ Reply within 15 minutes · pricing in EUR, USD, or UAH" sourceTag="hero /en/fulfilment-for-clothing/" />
+        </div>
+      </div>
+    </div>
+    <div class="oh-stats">
+      <div class="oh-stat"><div class="oh-stat-val">€0.45</div><div class="oh-stat-label">per order at 200+/day</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">3-5 d</div><div class="oh-stat-label">transit to EU</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">99.7%</div><div class="oh-stat-label">pick accuracy</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">0</div><div class="oh-stat-label">days downtime since 2022</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UKRAINE -->
+<section class="oh-problems"><div class="ctr">
+  <div class="badge badge-dark">WHY UKRAINE FOR FASHION FULFILLMENT</div>
+  <h2 class="sec-h2">Six reasons international fashion brands ship from Ukraine</h2>
+  <div class="oh-prob-grid">
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">€0.45</div>
+      <h3>Lowest fulfillment cost in Europe</h3>
+      <p>At 200+ orders/day, our base rate is €0.45 per shipment. Compare: ShipBob US $3-5, ShipMonk $2.50-4, DHL Supply Chain Poland €1.20-1.80, German 3PLs €1.50-2.50. Same WMS, same pick accuracy, same OTIF — just lower labor and warehouse costs.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">3-5d</div>
+      <h3>Fast EU transit via Poland</h3>
+      <p>Customers in Germany, France, Italy, Netherlands, Czechia receive orders in 3-5 business days via Meest, Nova Poshta International, or DHL. Customs handled at our side — buyer experience is identical to a domestic EU shipment.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">SKU</div>
+      <h3>Size-level inventory tracking</h3>
+      <p>Each unit scanned by SKU = model + color + size. WMS tracks every variant separately, syncs to all channels in 800ms. No more "Size M shows in stock but warehouse only has L" — physical and digital inventory are one entity.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">25%</div>
+      <h3>Returns with photo documentation</h3>
+      <p>Fashion has 20-30% return rate. Each return is unboxed, photographed (4 angles clothing, 6 shoes), QC-checked. Good condition → back to inventory. Defects → brand decision zone. Photo evidence protects against fraudulent returns under EU consumer protection law.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">⚡</div>
+      <h3>War-resilient operations</h3>
+      <p>3 industrial generators + Starlink + dual HVAC = 0 days downtime since 2022. We've shipped through every blackout, every air raid, every infrastructure attack. 60,000 monthly shipments don't stop. International brands trust us with their EU sales because uptime is our religion.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">EUR</div>
+      <h3>EUR/USD billing, GDPR-compliant</h3>
+      <p>Billing in EUR, USD, or UAH (your choice). Fixed exchange rate for 12 months in contract. Standard DPA template, EU-based subprocessor (AWS Frankfurt) for customer data, encrypted in transit and at rest. Right to erasure within 30 days.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="oh-how"><div class="ctr">
+  <div class="badge badge-dark">HOW IT WORKS</div>
+  <h2 class="sec-h2">From contract signing to first EU delivery in 21 days</h2>
+  <div class="oh-steps">
+
+    <div class="oh-step">
+      <div class="oh-step-num">1</div>
+      <div class="oh-step-body">
+        <h3>Days 1-3: Contract & API setup</h3>
+        <p>Sign contract (English-language, EU jurisdiction available). Get WMS API keys. Provide your SKU structure (model + color + size) — we prepare barcode templates and Shopify/WooCommerce/Etsy integration scaffolds. Choose billing currency: EUR, USD, or UAH.</p>
+        <div class="oh-step-price">Contract: 1-2 days · API: 4 hours</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">2</div>
+      <div class="oh-step-body">
+        <h3>Days 4-10: Inbound from your supplier</h3>
+        <p>Inventory ships from your supplier (Turkey, China, Italy, India, etc.) to our warehouse in Kyiv region. We accept ocean freight, air freight, road freight. Customs clearance handled by our broker — you provide commercial invoice and packing list, we handle the rest. Status updates daily.</p>
+        <div class="oh-step-price">Inbound logistics quoted separately</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">3</div>
+      <div class="oh-step-body">
+        <h3>Days 11-15: Receiving & barcoding</h3>
+        <p>Each unit scanned by SKU. Barcoding (€0.031/unit) if your supplier didn't pre-label. Hangered apparel goes to vertical racks. Folded apparel and knits go to shelves. Footwear in original boxes with SKU on the spine. Fragile accessories (jewelry, glasses, belts) in dedicated zone. Real-time inventory visible in WMS dashboard.</p>
+        <div class="oh-step-price">Receiving: €0.075/unit · Barcoding: €0.031/unit</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">4</div>
+      <div class="oh-step-body">
+        <h3>Days 16-21: Integrations & test orders</h3>
+        <p>Connect Shopify/WooCommerce/Magento/BigCommerce. Optional: Etsy, Amazon EU FBM, Allegro PL, Faire, Zalando Connected Retail. Test orders dispatched to our team in EU (Poland) to verify packaging, transit time, customer experience. Day 22: first real EU order.</p>
+        <div class="oh-step-price">Integrations free · Test shipments at our cost</div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- COMPARISON -->
+<section class="pricing"><div class="ctr">
+  <div class="badge badge-dark">UKRAINE vs WESTERN EUROPE 3PL</div>
+  <h2 class="sec-h2">Total cost of ownership: 1,500 orders/month</h2>
+  <p class="price-note">Comparison for fashion DTC brand: 50 orders/day, 2 m³ inventory, 25% returns, EU customers</p>
+  <div class="price-table">
+    <div class="price-row price-header"><span>Cost line</span><span>German/Polish 3PL</span><span>MTP Ukraine</span></div>
+    <div class="price-row"><span>Pick & pack (1,500 orders)</span><span>~€2,250</span><span>~€675</span></div>
+    <div class="price-row"><span>Storage (2 m³)</span><span>~€80</span><span>~€32</span></div>
+    <div class="price-row"><span>Returns (375)</span><span>~€450</span><span>~€80</span></div>
+    <div class="price-row"><span>Shipping to EU customer</span><span>~€7,500 (€5/order)</span><span>~€7,200 (~€4.80/order)</span></div>
+    <div class="price-row"><span>Setup & monthly fees</span><span>~€500</span><span>€0</span></div>
+    <div class="price-row price-highlight"><span>Total/month</span><span>~€10,780</span><span>~€7,987</span></div>
+  </div>
+  <p class="price-note">Savings with MTP: ~€2,800/month (26%) on equivalent service. At €33,600/year savings — that's another marketing campaign or new collection drop.</p>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="oh-tariffs"><div class="ctr">
+  <div class="badge badge-dark">PRICING 2026</div>
+  <h2 class="sec-h2">Transparent tariffs for fashion fulfillment</h2>
+  <div class="price-table">
+    <div class="price-row price-header"><span>Service</span><span>Tier</span><span>Price (EUR)</span></div>
+    <div class="price-row"><span>Pick & pack</span><span>200+ orders/day</span><span>from €0.45</span></div>
+    <div class="price-row"><span>Pick & pack</span><span>100-199/day</span><span>from €0.50</span></div>
+    <div class="price-row"><span>Pick & pack</span><span>50-99/day</span><span>from €0.55</span></div>
+    <div class="price-row"><span>Pick & pack</span><span>0-49/day</span><span>from €0.65</span></div>
+    <div class="price-row"><span>Shelf storage</span><span>per m³/month</span><span>from €16</span></div>
+    <div class="price-row"><span>Hanger storage</span><span>per linear meter</span><span>from €2.25</span></div>
+    <div class="price-row"><span>Receiving</span><span>per unit</span><span>from €0.075</span></div>
+    <div class="price-row"><span>Barcoding</span><span>per unit</span><span>€0.031</span></div>
+    <div class="price-row"><span>Insert (card, gift)</span><span>per unit</span><span>€0.063</span></div>
+    <div class="price-row"><span>Returns with photo QC</span><span>per return</span><span>50% of pick fee</span></div>
+    <div class="price-row"><span>EU consolidation point (Poland)</span><span>per parcel</span><span>€2.00</span></div>
+    <div class="price-row price-highlight"><span>Minimum monthly</span><span>billing floor</span><span>€125</span></div>
+  </div>
+  <p class="price-note">EUR/USD/UAH billing. Exchange rate fixed for 12 months. Volume discounts kick in automatically — no contract amendments needed.</p>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="oh-integrations"><div class="ctr">
+  <div class="badge badge-dark">INTEGRATIONS</div>
+  <h2 class="sec-h2">Native integration with international platforms</h2>
+  <p class="oh-integ-text">Connect your Shopify, Etsy, Amazon EU, or marketplace in 2 hours. Single inventory pool synced across all channels in 800ms. No double-selling, no oversells, no manual reconciliation.</p>
+  <div class="oh-integ-logos">
+    <img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy">
+    <img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy">
+    <img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy">
+    <img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy">
+    <img src="/images/logo-nova-poshta.svg" alt="Nova Poshta" width="120" height="40" loading="lazy">
+  </div>
+  <p class="oh-integ-note">Plus: Shopify · Shopify Plus · WooCommerce · Magento · BigCommerce · OpenCart · Etsy · Amazon EU FBM · Allegro · Faire · Zalando Connected Retail · Custom API</p>
+</div></section>
+
+<!-- DEEP DIVE -->
+<section class="oh-deep"><div class="ctr">
+  <div class="badge badge-dark">FOUR DISCIPLINES OF FASHION FULFILLMENT</div>
+  <h2 class="sec-h2">Why apparel deserves a different warehouse than electronics</h2>
+
+  <div class="oh-deep-block">
+    <h3>1. Size-level SKU tracking, not model-level aggregates</h3>
+    <p>The biggest mistake fashion startups make is treating "Basic White Tee" as one SKU. It's not — it's 20 SKUs (5 sizes × 4 colors). Aggregating at model level guarantees overselling: when M runs out but the dashboard says "50 in stock," your customer orders M, you cancel, marketplace fines you, your rating drops. Recovering from a marketplace strike takes weeks.</p>
+    <p>MTP's WMS tracks at SKU = model + color + size. Each physical unit has a unique barcode tied to a specific bin location. Channel sync runs at 800ms across Shopify, Etsy, Amazon EU, and any custom API. <strong>Result: 0 oversell incidents</strong> across our active fashion clients in the past 12 months. For a brand doing €50K/month, that's roughly €1,500-3,000/month in avoided fines and reputation damage.</p>
+    <p>Setup is straightforward: send us your SKU master file, we generate barcodes and physical labels (€0.031/unit), receive your inbound shipment, scan each unit, place it in a designated bin, and inventory becomes visible in your channels in real time.</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>2. Photo-documented returns protect margin and brand</h3>
+    <p>Fashion returns run at 20-30% of orders — normal, because customers try clothes at home. About 3-5% of returns are fraudulent: customer wore it, washed it, decorated for a photoshoot, then "returned for refund." Without photo documentation, EU consumer protection law sides with the buyer. You eat the loss.</p>
+    <p>Every return entering MTP's returns processing zone is photographed at 4 angles (clothing) or 6 angles (shoes) within 30 minutes of arrival. Operators check for: missing tags, wear traces (deodorant on collar, sweat stains, perfume), pet hair on dark fabrics, smoke odor, broken zippers, missing accessories. Photos are timestamped, geotagged, and stored in your WMS dashboard for 24 months.</p>
+    <p>If a customer disputes the return, you have <strong>court-admissible evidence</strong> to deny the refund under EU consumer protection law (Directive 2011/83/EU Article 14 — significantly diminished value clause). Brands typically save 1-2% of revenue this way. For €50K/month, that's €500-1,000 in protected margin per month.</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>3. War-resilient operations: the boring discipline of uptime</h3>
+    <p>International brands ask the same question first: "Is Ukraine safe for fulfillment during the war?" The honest answer: war affects every aspect of logistics, but professional 3PLs have adapted. MTP has operated <strong>0 days of downtime since the full-scale invasion in February 2022</strong>. We've shipped 2.6 million parcels through every blackout, every air raid, every infrastructure attack on the energy grid.</p>
+    <p>The infrastructure that makes this possible: 3 industrial generators (combined 350 kVA) sized to run the full warehouse for 72+ hours without grid power. Starlink for warehouse internet (independent from terrestrial fiber). Dual HVAC for climate control. Bunker-grade staff facility. 24/7 security with armed guards. Insurance via Lloyd's of London for inventory.</p>
+    <p>Our Kyiv-region warehouses are 30+ km from the city center, in industrial zones with low strategic value. Statistically, the risk of physical damage to our facilities is lower than the risk of cyber-attack on a German 3PL — and we have insurance against both. International brands like our 14-day cancel notice (no long-term lock-in) — you can move out fast if anything changes. Most stay because the war hasn't disrupted shipping for two and a half years.</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>4. EU shipping via Poland — the hidden advantage</h3>
+    <p>Shipping from Ukraine directly to a German customer takes 8-12 days through Polish customs — too slow for fashion. Our solution: <strong>Polish forwarding hub</strong> in Rzeszów (200 km from our warehouse). Daily truck departures consolidate orders, cross the EU border at Korczowa, and dispatch through Polish postal/courier networks the same day. EU transit time: 3-5 business days, comparable to Amazon Prime EU.</p>
+    <p>Cost: €2 per parcel for the consolidation step + €4-6 EU shipping (depending on weight and destination). Total: €6-8 per international order vs €10-15 if shipping directly from a German 3PL. The customer experience is identical — they receive a parcel from a Polish post tracking number, no customs forms to fill, no surprises at the door.</p>
+    <p>For UK shipments, we add a UK consolidation step in London (post-Brexit customs handling). For DE/FR/IT/ES — direct from Poland. For PL — same-day local dispatch. For NL/BE — next-day from Polish hub. The whole network is invisible to your customer; they just see fast EU delivery.</p>
+  </div>
+
+</div></div></section>
+
+<!-- AUDIENCE -->
+<section class="oh-audience"><div class="ctr">
+  <div class="badge badge-dark">WHO THIS IS FOR</div>
+  <h2 class="sec-h2">International fashion brands we serve</h2>
+  <div class="oh-audience-grid">
+    <div class="oh-audience-card">
+      <h3>Shopify Plus DTC fashion</h3>
+      <p>Global apparel brands selling to EU. Need fast EU delivery without setting up a German warehouse. Want EUR billing, GDPR-compliant data handling, and predictable per-order pricing. Typical: €100K-1M annual EU revenue, 50-500 daily orders.</p>
+    </div>
+    <div class="oh-audience-card">
+      <h3>Marketplace sellers (Amazon EU, Etsy, Allegro)</h3>
+      <p>Selling on Etsy, Amazon EU FBM, Allegro PL, Faire. Tired of FBA fees and lock-in. Need flexible fulfillment that handles size-level inventory, photo-documented returns, and 3-5 day EU delivery. Multi-marketplace from one inventory pool.</p>
+    </div>
+    <div class="oh-audience-card">
+      <h3>Fashion startups testing EU market</h3>
+      <p>Brand from Turkey, India, China, US, or Latin America entering Europe. Don't want to commit to a German 3PL with €5,000 setup and €500/month minimums. MTP's no-setup, €125/month floor lets you test EU demand for €1,500-3,000 before scaling.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+  <div class="badge">FAQ</div>
+  <h2 class="sec-h2">Frequently asked questions</h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">Is Ukraine safe for fulfillment during the war?</button><div class="faq-a"><p>MTP has operated 0 days of downtime since 2022. We have 3 industrial generators, Starlink, dual HVAC, 24/7 security, Lloyd's of London insurance. Our warehouses are in industrial zones 30+ km from Kyiv with low strategic value. We've shipped 2.6 million parcels through every blackout. International brands choose us specifically for our uptime track record.</p></div></div>
+    <div class="faq-item"><button class="faq-q">How does shipping from Ukraine to EU work?</button><div class="faq-a"><p>Daily trucks consolidate orders and cross the EU border at Korczowa (Poland). From our Polish hub, parcels dispatch through Polish postal/courier networks. EU transit: 3-5 business days. Customer sees a Polish tracking number, no customs forms, no surprises. Cost: €6-8 per international order including consolidation.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Can I bill in EUR or USD?</button><div class="faq-a"><p>Yes — EUR, USD, or UAH at your choice. Exchange rate fixed for 12 months in contract. Invoices on the 5th of each month for the previous period. Payment via SEPA, SWIFT, or Wise. No hidden conversion fees.</p></div></div>
+    <div class="faq-item"><button class="faq-q">How are returns handled for international orders?</button><div class="faq-a"><p>EU returns route through our Polish forwarding address (€2 per return) for consolidation. Then back to our Kyiv warehouse. Each return photo-documented (4 angles for clothing, 6 for shoes), QC-checked. Items in good condition return to inventory. Damaged items go to your review zone with photos.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What integrations are available for international platforms?</button><div class="faq-a"><p>Native: Shopify, Shopify Plus, WooCommerce, Magento, BigCommerce, OpenCart. Marketplace: Etsy, Amazon EU FBM, Allegro PL, Faire, Zalando Connected Retail. Custom API for proprietary platforms. Setup: 2 hours on our side, you provide API keys.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Is the data GDPR-compliant?</button><div class="faq-a"><p>Yes. EU customer data processed under GDPR with EU-based subprocessor (AWS Frankfurt). Standard DPA template available. Customer addresses encrypted in transit and at rest. Right to erasure within 30 days. We can sign your DPA template if you have one.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What's the minimum commitment?</button><div class="faq-a"><p>€125/month minimum billing floor (~5,000 UAH). 14-day cancel notice — no long-term lock-in. You can scale up or down month-to-month. Most brands stay 18+ months because switching back to a more expensive 3PL is hard to justify.</p></div></div>
+  </div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">DEEP DIVE</div>
+<h2>Cross-border fashion fulfillment from Ukraine: the 2026 playbook</h2>
+<div class="article-content">
+
+<h3>Why international fashion brands are routing EU orders through Ukraine</h3>
+<p>The math for cross-border fashion is simple: EU consumer demand is huge ($420B annual fashion e-commerce market), but the cost of operating a fulfillment center in Western Europe is brutal. German 3PLs charge €1.50-2.50 per pick-and-pack at scale. French and Dutch operators are similar. Polish 3PLs are cheaper (€0.80-1.30) but still 2x what Ukrainian operators charge.</p>
+
+<p>Ukraine's fulfillment economics work because of two structural factors: low labor costs (warehouse staff at $400-600/month vs $2,500-3,500 in Germany) and abundant Class B+ warehouse space at $3-5/m² vs $8-12 in Western Europe. These costs flow directly into the per-order rate. At MTP Group, our €0.45/order base rate at 200+ daily orders is achievable because our cost structure is fundamentally different from a German 3PL.</p>
+
+<p>The objection brands raise first: "What about transit time to EU customers?" The answer surprised us when we built it: transit from our Polish consolidation hub to most EU destinations is 3-5 business days, comparable to or faster than a German 3PL shipping cross-border within the EU. The Korczowa border crossing handles 4,000+ commercial trucks daily and is highly optimized for fashion logistics. Customers in Berlin, Paris, Milan, or Madrid receive parcels with Polish tracking numbers — they have no idea the inventory was in Ukraine 48 hours earlier.</p>
+
+<h3>The size-level inventory problem (and why it kills fashion startups)</h3>
+<p>Most fashion startups grow on Shopify with model-level inventory tracking. They have a "Basic White Tee" SKU that aggregates all sizes and colors. This works at 5-20 orders per day. It catastrophically fails at 50+. Here's why: a customer searches for size M, sees "in stock," orders. Meanwhile, the warehouse team has been picking M for two days and didn't update the dashboard. Order #347 gets allocated stock that doesn't physically exist. You cancel. The customer is angry. They post a 1-star review. Marketplaces (especially Amazon EU) issue a strike. Recovery takes 2-4 weeks of clean shipping history.</p>
+
+<p>The fix is size-level SKU tracking with real-time channel synchronization. Every physical unit gets a barcode tied to a specific bin. Pick events update inventory across all channels (Shopify, Etsy, Amazon EU, Faire, etc.) within 800 milliseconds. The probability of overselling drops to mathematical zero — not "low," but "physically impossible because the database state mirrors warehouse state."</p>
+
+<p>This is table stakes for any fulfillment operator, but you'd be surprised how many smaller 3PLs still operate with model-level tracking and end-of-day batch sync. When evaluating a 3PL for fashion, ask: "What's the SKU granularity in your WMS, and what's the channel sync latency?" If they can't answer in seconds, walk away.</p>
+
+<h3>Returns are not a cost — they're a margin defense problem</h3>
+<p>Conventional wisdom says fashion returns are a cost: 25% return rate × cost-to-process = X dollars per month, factor it into pricing, move on. This is wrong. Returns are a margin defense problem disguised as an operational cost.</p>
+
+<p>Here's the breakdown of a typical 25% return rate for a DTC fashion brand:</p>
+<ul>
+<li><strong>~70%:</strong> legitimate "doesn't fit" returns. Customer ordered M, needs L. Item is unworn, tags attached, repackaged for resale.</li>
+<li><strong>~20%:</strong> "changed my mind" returns. Customer received and decided not to keep. Usually unworn, sometimes with tag tampering.</li>
+<li><strong>~7%:</strong> "wardrobing" — customer wore it once (event, photoshoot, social media post), then returned. Has subtle wear traces.</li>
+<li><strong>~3%:</strong> outright fraud. Customer received, used heavily, attempts return for full refund using EU consumer protection.</li>
+</ul>
+
+<p>The legitimate 70% costs you nothing if the item returns to inventory in sellable condition. The "changed mind" 20% costs you only the shipping. The wardrobing 7% and fraud 3% — that's where margin dies. Without photo documentation, EU consumer protection law (Directive 2011/83/EU) sides with the customer. They get full refund, you eat the cost of the worn item, plus shipping both ways, plus the inventory hit.</p>
+
+<p>With photo documentation captured within 30 minutes of return arrival at our facility, you have court-admissible evidence to invoke Article 14's "significantly diminished value" clause. Most fraud attempts collapse the moment you respond with photos showing wear traces. The 7% wardrobing cases are recoverable in 60-70% of disputes. For a €50K/month brand, this is roughly €500-1,000/month in protected margin — money that doesn't show up on a P&L line but quietly compounds into your bottom line.</p>
+
+<h3>The 21-day onboarding for international brands: what to expect</h3>
+<p>From contract signing to first EU order delivered: 21 working days. Here's the realistic timeline for a brand with 1,500-3,000 daily SKUs.</p>
+
+<p><strong>Week 1 (days 1-5).</strong> Contract negotiation and signing. We use English-language contracts with EU jurisdiction options (Polish or Estonian). DPA signed for GDPR compliance. API keys issued. SKU master file imported. Barcode templates generated. If you're shipping inbound from Asia, customs documentation reviewed.</p>
+
+<p><strong>Week 2 (days 6-10).</strong> Inbound logistics. Your supplier ships inventory to our Kyiv warehouse. We accept ocean (via Gdansk-Constanta-Kyiv corridor), air (Boryspil airport, 15 km from our facility), or road (TIR/CMR through any EU border crossing). Our broker handles Ukrainian customs clearance — typically 3-5 business days for fashion goods with proper documentation.</p>
+
+<p><strong>Week 3 (days 11-15).</strong> Receiving and barcoding. Each unit scanned and placed in designated storage zones. Hangered apparel on vertical racks (we have 800+ linear meters available). Folded apparel on shelves. Footwear in original boxes. Fragile accessories in dedicated bins. Inventory becomes visible in WMS dashboard in real time.</p>
+
+<p><strong>Week 4 (days 16-21).</strong> Integration setup and test orders. Connect Shopify Plus or other primary channel. Optional: Etsy, Amazon EU FBM, Allegro, Faire. Test orders dispatched to our team in Poland and Germany — we verify packaging quality, transit time, customer experience. Day 22: first real EU order. Account manager available 24/7 in Telegram for the first 4 weeks of live operations.</p>
+
+<p>If your timeline is shorter (say 14 days), we can compress receiving + integration into parallel tracks, but inbound logistics from Asia is the rate-limiter — there's no way to speed up ocean freight.</p>
+
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+.oh-hero{position:relative;min-height:88vh;background:#000;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.oh-hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.5) 100%),url('/images/odyahu-hero.jpg') center/cover no-repeat;z-index:1}
+.oh-hero-content{position:relative;z-index:2;width:100%;padding:0 8vw}
+.oh-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
+.oh-hero-left{position:relative}
+.oh-hero-left::before{content:'';position:absolute;left:-40px;top:0;height:100%;width:3px;background:#e63329}
+.oh-badge{display:inline-block;background:#e63329;color:#fff;padding:8px 16px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+.oh-hero h1{font-family:var(--fd);font-size:clamp(40px,5vw,72px);font-weight:400;line-height:.98;margin-bottom:28px;letter-spacing:-.01em}
+.oh-hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.65);line-height:1.7;max-width:560px}
+.oh-form-card{background:#fff;color:#000;padding:32px 28px;border-radius:8px;box-shadow:0 20px 60px rgba(230,51,41,.15)}
+.oh-form-title{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:18px;color:#000}
+.oh-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:64px 8vw 56px;position:relative;z-index:2;margin-top:auto}
+.oh-stat{border-top:3px solid #e63329;padding:18px 0}
+.oh-stat-val{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;color:#fff;line-height:1;white-space:nowrap}
+.oh-stat-label{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.15em;margin-top:6px}
+.oh-problems{padding:100px 0;background:#fff}
+.oh-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.oh-prob-card{background:#fff;padding:36px 28px;transition:background .25s}.oh-prob-card:hover{background:#fafafa}
+.oh-prob-num{font-family:var(--fd);font-size:38px;color:#e63329;line-height:1;margin-bottom:12px;font-weight:400}
+.oh-prob-card h3{font-size:17px;font-weight:600;margin-bottom:8px;color:#000}.oh-prob-card p{font-size:14px;color:var(--muted);line-height:1.65}
+.oh-how{padding:100px 0;background:var(--gray)}
+.oh-steps{max-width:760px;margin:0 auto}
+.oh-step{display:flex;gap:24px;margin-bottom:40px;position:relative}
+.oh-step::after{content:'';position:absolute;left:19px;top:48px;bottom:-40px;width:2px;background:#d8d8d8}
+.oh-step:last-child::after{display:none}
+.oh-step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:#e63329;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;position:relative;z-index:1}
+.oh-step-body{padding-top:6px}
+.oh-step-body h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.oh-step-body p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.oh-step-price{font-size:13px;color:#e63329;font-weight:600}
+.oh-tariffs{padding:100px 0;background:#fff}
+.oh-integrations{padding:80px 0;text-align:center;background:var(--gray)}
+.oh-integ-text{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto 32px;line-height:1.65}
+.oh-integ-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-bottom:16px}
+.oh-integ-logos img{height:32px;width:auto;opacity:.6;transition:opacity .2s}
+.oh-integ-logos img:hover{opacity:1}
+.oh-integ-note{font-size:14px;color:var(--muted)}
+.oh-deep{padding:100px 0;background:#0a0a0a;color:#fff}
+.oh-deep .badge{margin-bottom:24px}
+.oh-deep .sec-h2{color:#fff;max-width:900px;margin-bottom:48px}
+.oh-deep-block{padding:32px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.oh-deep-block:last-of-type{border-bottom:none}
+.oh-deep-block h3{font-size:22px;font-weight:600;margin-bottom:14px;color:#fff;font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.01em}
+.oh-deep-block p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:14px;max-width:840px}
+.oh-deep-block p strong{color:#fff;font-weight:600}
+.oh-audience{padding:100px 0;background:#fff}
+.oh-audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.oh-audience-card{background:var(--gray);border-radius:8px;padding:36px 28px;border-top:3px solid #e63329}
+.oh-audience-card h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.oh-audience-card p{font-size:15px;color:var(--muted);line-height:1.7}
+@media(max-width:900px){
+  .oh-hero-grid{grid-template-columns:1fr;gap:40px}
+  .oh-hero-left::before{left:-20px}
+  .oh-stats{grid-template-columns:repeat(2,1fr);padding:32px 24px;gap:24px}
+  .oh-prob-grid{grid-template-columns:1fr}
+  .oh-audience-grid{grid-template-columns:1fr}
+}
+.oh-prob-card,.oh-step,.oh-stat,.oh-audience-card{opacity:1!important;transform:none!important}
+</style>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .industrial-border {
+            border: 1px solid #ffffff;
+        }
+        .industrial-border-thick {
+            border: 4px solid #ffffff;
+        }
+        .axis-intent {
+            border-left: 4px solid #e63329;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#ac8883",
+                      "surface-variant": "#333535",
+                      "on-secondary-fixed-variant": "#474747",
+                      "secondary": "#c6c6c6",
+                      "on-tertiary-container": "#282a2a",
+                      "on-error": "#690005",
+                      "surface-bright": "#37393a",
+                      "surface": "#121414",
+                      "surface-container-lowest": "#0c0f0f",
+                      "secondary-container": "#474747",
+                      "on-surface-variant": "#e5bdb8",
+                      "on-background": "#e2e2e2",
+                      "surface-container-high": "#282a2b",
+                      "inverse-primary": "#bd0f10",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e2e2e2",
+                      "background": "#121414",
+                      "on-secondary": "#303030",
+                      "on-primary-fixed-variant": "#930005",
+                      "outline-variant": "#5c403c",
+                      "surface-dim": "#121414",
+                      "primary-container": "#ff5545",
+                      "on-tertiary": "#2f3131",
+                      "on-primary": "#690002",
+                      "primary-fixed": "#ffdad5",
+                      "inverse-on-surface": "#2f3131",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-primary-container": "#5c0002",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container-low": "#1a1c1c",
+                      "on-primary-fixed": "#410001",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-tint": "#ffb4a9",
+                      "tertiary-container": "#909191",
+                      "surface-container-highest": "#333535",
+                      "on-secondary-container": "#b5b5b5",
+                      "error": "#ffb4ab",
+                      "tertiary": "#c6c6c7",
+                      "primary": "#ffb4a9",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "surface-container": "#1e2020",
+                      "primary-fixed-dim": "#ffb4a9",
+                      "error-container": "#93000a",
+                      "on-surface": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "margin": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "h2": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h1": ["Inter"],
+                      "button": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-uppercase": ["Inter"],
+                      "h3": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-uppercase": ["14px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                      "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-black">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-black border-b-2 border-white">
+<div class="text-2xl font-black text-white italic font-bold uppercase tracking-tighter">MTP FULFILLMENT</div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="font-bold uppercase tracking-tighter text-red-600 border-b-4 border-red-600 pb-1 h-full flex items-center" href="#">NETWORK</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none h-full flex items-center" href="#">OPERATIONS</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none h-full flex items-center" href="#">FLIGHTS</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none h-full flex items-center" href="#">FLEET</a>
+<a class="font-bold uppercase tracking-tighter text-white hover:text-red-600 transition-none h-full flex items-center" href="#">SECURITY</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="hidden lg:block font-bold text-white">+38 (0XX) XXX-XX-XX</span>
+<button class="bg-red-600 text-white px-6 py-3 font-bold uppercase tracking-tighter hover:bg-white hover:text-black transition-none">
+                GET QUOTE
+            </button>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Section with Form -->
+<section class="relative min-h-[819px] flex flex-col justify-center px-6 md:px-12 py-20 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A vast, high-tech industrial warehouse facility with organized rows of garment racks under cold, professional LED lighting. The style is brutalist and clean, emphasizing scale and mechanical precision. The atmosphere is quiet, powerful, and highly operational with a color palette of deep blacks and sharp whites, accented by hints of industrial red." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnRmk4Ukbicn0jPYbXbtV9l6R13O3_JyK0S85Sfvn2kS0U-8pNHtkuzF2qm4sYtpGRbgDogQP6f6FIRalzxgQ51p8eyoMelXf1B94G62Z1pmEqXCu4roPh5wMkID4hHW09vV4V2JO4-SeCA57KXqFDG_eYmpkOcjLXoJkM1sbQyJsu_2AxtB39ogf70y_I_ntudleTDc62SxDQb5puoqxMir5ZtmtFkjlw8FX8qq6bya4BktKo_iYd5QqWg4yb_2zPc3TITL6ljwns"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<div class="axis-intent pl-6">
+<h1 class="font-h1 text-h1 uppercase text-white leading-tight">
+                            ФУЛФІЛМЕНТ ДЛЯ ОДЯГУ ТА FASHION-БРЕНДІВ
+                        </h1>
+</div>
+<p class="font-body-lg text-body-lg text-white max-w-xl">
+                        Повний цикл логістики для вашого бізнесу: від прийому товару та маркування штрих-кодами до передпродажної підготовки та миттєвої відправки клієнту.
+                    </p>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-white p-8 industrial-border-thick">
+<h3 class="font-h3 text-h3 text-black mb-6 uppercase">ОТРИМАТИ ТАРИФ</h3>
+<form class="space-y-4">
+<div>
+<label class="block text-black font-bold uppercase text-xs mb-2">ВАШ НОМЕР ТЕЛЕФОНУ</label>
+<input class="w-full p-4 border-2 border-black bg-white text-black font-bold text-lg focus:outline-none focus:border-red-600 transition-none" placeholder="+380..." type="tel"/>
+</div>
+<button class="w-full bg-[#e63329] text-white p-5 font-black text-xl flex justify-between items-center hover:bg-black transition-none" type="submit">
+<span>ОТРИМАТИ ТАРИФ</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="flex items-center gap-2 text-black mt-4">
+<span class="material-symbols-outlined text-red-600" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-bold text-sm uppercase">Відповідь за 15 хвилин</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Logos -->
+<section class="bg-white py-12 border-y-4 border-white">
+<div class="max-w-container-max mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 items-center opacity-70 grayscale contrast-125">
+<img class="h-8 object-contain mx-auto" data-alt="Minimalist fashion brand logo in black and white silhouette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGT3Vl7-GghtrTICwkYFwEhyIY1I5tvMAY1jp7QiPFMHPoRbFTZdSVQeNeJhldMSW08-0AkSD4JpspNzJXi2EQW3wQ0Dyq47YKs7VPV2ZRNVa6AQA91jPu7etULtfmzJsz4-M4Cxq9TKly5AG08JdSYiy71K127P8SoUKon7Y-p4Eo81iC97s2KAyP4SLpyWdyyMtIac5Ox2YGOzGdj4i_r67F5KMpkAhl6_SgWPAefFn5F0xDpgoS3Jppx9U7zfpHEoc6tYGPR30u"/>
+<img class="h-10 object-contain mx-auto" data-alt="Sleek geometric apparel brand logo in stark black vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAmOZeX-Qbin5TLyUVae5jP0QK92SJPu0PA9S6RhnLeSAkxQ5v1cgcchseMrEIPU_CqZHl_ROl05Ns4Y_jkgqb0qSTNJZQFzk0s9gp_9mQ3hPWtO94L4sijGja_vv70enRnbmednI289QhJQg1U3uK8oOQHoczMCpVKj5gTMPMVZqPYTdvciSx2njltxQSb2WmfMAtN-W29fFqQzVzxu5P6Rwae5ReeDFaP5IT13AtxovFaVLBLKi1p2h7PCO3M9eYirT_zvBUFEsB"/>
+<img class="h-6 object-contain mx-auto" data-alt="Boutique high-end fashion house emblem, monochrome typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzAOqNxTzaUsWdcpWaJg4a3ZoQMTkCuuk53QFnX-wtc3ZRtwp1zQuu0qNaCD9qlW0M4h-TTX6ZfhpSpJaoWeGDd_cAlK2N5IHepIEkJAk4-YzHFajcCOIWtJS-kdgU5yCOb7IIo1As0K1UW3xc5dNXm_MQiVglaAIrU7aRl7SAlfudmofDm0H8cpCQpGmKYPVxQPw83Ew8q1NWxBezfCo-1VvuV0FCoP_G1K1If_3tG57bGR3jykCTNZxIVbLhCtvCApSOvUw80447"/>
+<img class="h-10 object-contain mx-auto" data-alt="Modern streetwear brand identifier, heavy black weight logo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOi6ejBswpkqNG-_PJl7rlBTUyWp78XzIBOBj0T3o2q8CNT052oyaqIkG25fEKw_qSUp0dO-alCsczgJVGrINURQJBqTDPZhKfwuUQwh1Va496af7AAy3dyTqZjP8xpUOFWZCO9KOxqoMAj3e7ocIMSd97TtqkK3LoaMajxQc2sUpWEiMtUJv2adBRGbbEehJ5Rv94T33oZhBwNsSwcClqbFyw-hTgi23kWYEdt2omjNxs4vZtFJ3I_eA-qH5U2-pfku-ZZ9Im8jTS"/>
+<img class="h-8 object-contain mx-auto" data-alt="Traditional textile manufacturer logo, sharp industrial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnBTdmCC_LUyMsu6FnITUEi8gpKb2dmKGzi5iAhehdFEOvHyki2pLUKtvyregZYtRpZJCTHt0dKzecEqFRXVEpcWba9SpS4-XCqc5eFlVad8NDaPn9vDGdkrLj-hYFuRn3lqZ1PRsbH-hZy_QVGkxvtXTUdY-bn9XY_sOtlwKjkERmkQHJbjHIvwoLfTPeqgVR4nPAmMUNdzDSEPKU_MKBwRnR9NUu0Ya2Kyl6bivOsby2Ae_O9MY0g_ywB1hG9StDLicEKEg5FQmb"/>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="py-24 px-6 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 industrial-border">
+<div class="p-12 border-b md:border-b-0 md:border-r border-white group hover:bg-[#e63329] transition-none">
+<div class="text-[#e63329] group-hover:text-white font-black text-6xl mb-4 tracking-tighter">60K</div>
+<div class="font-bold uppercase text-white group-hover:text-black leading-tight">відправлень<br/>/міс</div>
+</div>
+<div class="p-12 border-b md:border-b-0 lg:border-r border-white group hover:bg-[#e63329] transition-none">
+<div class="text-[#e63329] group-hover:text-white font-black text-6xl mb-4 tracking-tighter">99.7%</div>
+<div class="font-bold uppercase text-white group-hover:text-black leading-tight">точність<br/>комплектації</div>
+</div>
+<div class="p-12 border-b md:border-b-0 md:border-r border-white group hover:bg-[#e63329] transition-none">
+<div class="text-[#e63329] group-hover:text-white font-black text-6xl mb-4 tracking-tighter">24/7</div>
+<div class="font-bold uppercase text-white group-hover:text-black leading-tight">працюючий<br/>склад</div>
+</div>
+<div class="p-12 group hover:bg-[#e63329] transition-none">
+<div class="text-[#e63329] group-hover:text-white font-black text-6xl mb-4 tracking-tighter">4г</div>
+<div class="font-bold uppercase text-white group-hover:text-black leading-tight">від замовлення<br/>до відправки</div>
+</div>
+</div>
+</section>
+<!-- Features Bento -->
+<section class="py-24 px-6 max-w-container-max mx-auto">
+<h2 class="font-h2 text-h2 uppercase mb-16 max-w-2xl border-l-4 border-red-600 pl-8">ТЕХНОЛОГІЧНА ІНФРАСТРУКТУРА</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="industrial-border p-8 flex flex-col h-full bg-surface-container-low group hover:border-red-600 transition-none">
+<span class="material-symbols-outlined text-5xl mb-8 text-white group-hover:text-red-600">inventory_2</span>
+<h3 class="font-h3 text-2xl uppercase mb-4 leading-none">СПЕЦІАЛЬНІ СТЕЛАЖІ ДЛЯ ОДЯГУ</h3>
+<p class="font-body-md text-secondary mt-auto">Вертикальне зберігання та вішаки, що запобігають деформації тканин та забезпечують швидкий доступ.</p>
+</div>
+<!-- Feature 2 -->
+<div class="industrial-border p-8 flex flex-col h-full bg-surface-container-low group hover:border-red-600 transition-none">
+<span class="material-symbols-outlined text-5xl mb-8 text-white group-hover:text-red-600">fact_check</span>
+<h3 class="font-h3 text-2xl uppercase mb-4 leading-none">ПЕРЕВІРКА ЯКОСТІ ПЕРЕД ВІДПРАВКОЮ</h3>
+<p class="font-body-md text-secondary mt-auto">Детальний огляд кожного виробу на наявність дефектів, перевірка бірок та пакування за вашим гайдлайном.</p>
+</div>
+<!-- Feature 3 -->
+<div class="industrial-border p-8 flex flex-col h-full bg-surface-container-low group hover:border-red-600 transition-none">
+<span class="material-symbols-outlined text-5xl mb-8 text-white group-hover:text-red-600">hub</span>
+<h3 class="font-h3 text-2xl uppercase mb-4 leading-none">ІНТЕГРАЦІЯ З ROZETKA, PROM, SHOPIFY</h3>
+<p class="font-body-md text-secondary mt-auto">Автоматична синхронізація залишків та замовлень. Ніяких ручних перенесень даних — все в одній системі.</p>
+</div>
+</div>
+</section>
+<!-- Visual Anchor Section -->
+<section class="w-full h-[500px] relative mt-12">
+<img class="w-full h-full object-cover" data-alt="A clean, industrial-grade shipping area with rows of packaged apparel ready for delivery. The scene is brightly lit by cool white lights, casting sharp shadows on the polished concrete floor. Large red shipping labels contrast with the white cardboard boxes, creating a sense of organized chaos and high-volume throughput in a professional fashion fulfillment center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWHhUGYdwPU6aG292qZejL5bEsqepT81KRm2abQHw7xEBn6LBS5jJ6X4LdZV6fLO2P2fO3E-RhLb1WeQKCuDV4YGZJUdanJdJJu2rSnlE4oLpEcn3rGixewM5imibLaWaIqfioEKZnYIC1YC-j_jOBmNct06Etd_UqKfV4-Fayf0KhPCSW_zg-2_IigZF-PqFIQfYE8MZL0fZfw1GyopEe-o7dMAnpWSpPSzhflAL8lOSaVo62FsSxvoFvKa1qHcwur2Bh5NSQSZ15"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<div class="bg-black industrial-border-thick p-12 max-w-2xl text-center">
+<h2 class="font-h1 text-4xl uppercase mb-6">ГОТОВІ МАСШТАБУВАТИСЯ?</h2>
+<p class="mb-8 font-body-lg">Ми беремо на себе всю рутину, щоб ви могли зосередитися на дизайні та маркетингу.</p>
+<button class="bg-red-600 text-white px-10 py-5 font-black text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-none">
+                        ПОЧАТИ СПІВПРАЦЮ
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-black border-t-4 border-white">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-black text-white uppercase">MTP FULFILLMENT</div>
+<div class="font-bold uppercase text-xs text-white/60">© 2024 MTP FULFILLMENT. ALL RIGHTS RESERVED.</div>
+</div>
+<nav class="flex gap-8">
+<a class="font-bold uppercase text-xs text-white hover:text-red-600 hover:underline decoration-2 transition-none" href="#">TERMINALS</a>
+<a class="font-bold uppercase text-xs text-white hover:text-red-600 hover:underline decoration-2 transition-none" href="#">COMPLIANCE</a>
+<a class="font-bold uppercase text-xs text-white hover:text-red-600 hover:underline decoration-2 transition-none" href="#">PRIVACY</a>
+<a class="font-bold uppercase text-xs text-white hover:text-red-600 hover:underline decoration-2 transition-none" href="#">CAREERS</a>
+</nav>
+<div class="flex gap-4">
+<div class="w-10 h-10 border border-white flex items-center justify-center hover:bg-red-600 transition-none cursor-pointer">
+<span class="material-symbols-outlined text-white text-sm">public</span>
+</div>
+<div class="w-10 h-10 border border-white flex items-center justify-center hover:bg-red-600 transition-none cursor-pointer">
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</div>
+</div>
+</footer>
+</body></html>

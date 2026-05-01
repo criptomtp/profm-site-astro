@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MTP Fulfillment - Fashion &amp; Apparel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#ac8883",
+                    "on-tertiary": "#2f3131",
+                    "primary-fixed": "#ffdad5",
+                    "primary-container": "#ff5545",
+                    "secondary": "#c6c6c6",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-primary": "#690002",
+                    "on-secondary": "#303030",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary-container": "#282a2a",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-error": "#690005",
+                    "primary": "#ffb4a9",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "background": "#121414",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-primary-fixed-variant": "#930005",
+                    "on-surface-variant": "#e5bdb8",
+                    "surface-dim": "#121414",
+                    "surface-container": "#1e2020",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "inverse-primary": "#bd0f10",
+                    "on-secondary-fixed-variant": "#474747",
+                    "outline-variant": "#5c403c",
+                    "on-primary-container": "#5c0002",
+                    "surface": "#121414",
+                    "surface-variant": "#333535",
+                    "inverse-surface": "#e2e2e2",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-bright": "#37393a",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-container-highest": "#333535",
+                    "on-secondary-container": "#b5b5b5",
+                    "tertiary": "#c6c6c7",
+                    "on-primary-fixed": "#410001",
+                    "secondary-container": "#474747",
+                    "tertiary-container": "#909191",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-tint": "#ffb4a9",
+                    "surface-container-low": "#1a1c1c",
+                    "on-surface": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#282a2b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "8px",
+                    "margin": "48px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-uppercase": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "button": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-uppercase": ["14px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "700"}],
+                    "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-inverse-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 border-b-2 border-white bg-black w-full sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black text-white font-inter tracking-tighter uppercase">
+                MTP Fulfillment
+            </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-inverse-primary font-bold border-b-4 border-inverse-primary pb-1 font-inter uppercase tracking-tighter hover:text-inverse-primary transition-colors duration-100" href="#">Fulfillment</a>
+<a class="text-white font-bold hover:text-inverse-primary transition-colors duration-100 font-inter uppercase tracking-tighter pb-1" href="#">Pricing</a>
+<a class="text-white font-bold hover:text-inverse-primary transition-colors duration-100 font-inter uppercase tracking-tighter pb-1" href="#">Stats</a>
+<a class="text-white font-bold hover:text-inverse-primary transition-colors duration-100 font-inter uppercase tracking-tighter pb-1" href="#">Contact</a>
+</nav>
+<div class="hidden md:block">
+<a class="text-white font-button text-button hover:text-inverse-primary transition-colors duration-100" href="tel:+38000000000">+38 (0XX) XXX-XX-XX</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full bg-black border-b-4 border-white overflow-hidden min-h-[819px] flex items-center">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Warehouse interior" class="w-full h-full object-cover opacity-40 grayscale" data-alt="A dramatic, dark B2B logistics warehouse interior featuring endless rows of industrial clothing rails. The vast space is illuminated by moody, high-contrast red accent lighting cutting through the deep black shadows, establishing a heavy, brutalist industrial aesthetic. No people are present, emphasizing the cold, efficient scale of the operation. The scene strictly adheres to a high-contrast palette of pitch blacks, bright whites, and intense reds, conveying power, urgency, and operational perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY64T_J5-i-xzfSpEIAfp8lYOfNRnTJmi1be_zFBd_EyDPLGwk4an67YKbfghnKFPIPYb3Kiy_12gTCwoL4wP-i1fI5tDT_j6dQJXm30t1qr7WPne6VKffM-3GNekr_CLDgyJEolvYcfGjXzfo_GRIf1NcNQdxfekqzQ-F803BPdoCbxHxk2RK9H3wHhD80lbRtt4oE6vC8ANPG3Ip2WGcBHL0gKGbkidVC_ujK7A7W00Myf1SR0wfLirE-FBEc9KC4y3gW9b8qXxA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1440px] mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16 items-center">
+<!-- Left Content -->
+<div class="flex-1 text-left space-y-8">
+<div class="inline-block bg-inverse-primary text-white font-label-uppercase text-label-uppercase px-4 py-2 border border-white">
+                    FASHION &amp; APPAREL
+                </div>
+<h1 class="font-h1 text-h1 text-white max-w-3xl leading-tight uppercase">
+                    Фулфілмент для одягу та fashion-брендів
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    Склад зі стелажами для одягу, штрих-кодування, перевірка якості, упаковка та відправка по Україні і за кордон. Працюємо з 50+ fashion-брендами
+                </p>
+<!-- Stats Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-surface-variant">
+<div class="space-y-2">
+<div class="font-h3 text-h3 text-white">60K</div>
+<div class="font-label-uppercase text-label-uppercase text-secondary">відправлень/міс</div>
+</div>
+<div class="space-y-2">
+<div class="font-h3 text-h3 text-white">99.7%</div>
+<div class="font-label-uppercase text-label-uppercase text-secondary">точність комплектації</div>
+</div>
+<div class="space-y-2">
+<div class="font-h3 text-h3 text-white">24/7</div>
+<div class="font-label-uppercase text-label-uppercase text-secondary">склад</div>
+</div>
+<div class="space-y-2">
+<div class="font-h3 text-h3 text-white">4ч</div>
+<div class="font-label-uppercase text-label-uppercase text-secondary">від замовлення до відправки</div>
+</div>
+</div>
+</div>
+<!-- Right CTA Form -->
+<div class="w-full lg:w-[480px] bg-white border-2 border-white p-8 shadow-none shrink-0 relative">
+<!-- Inner black border for brutalist effect -->
+<div class="absolute inset-2 border-2 border-black pointer-events-none"></div>
+<div class="relative z-10 space-y-6">
+<h3 class="font-h3 text-h3 text-black uppercase mb-8">Почати роботу</h3>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block font-label-uppercase text-label-uppercase text-black">ТЕЛЕФОН</label>
+<input class="w-full bg-white border-2 border-black text-black px-4 py-4 font-body-lg text-body-lg focus:outline-none focus:border-inverse-primary focus:ring-0 transition-none placeholder-gray-400" placeholder="+380" type="tel"/>
+</div>
+<div class="flex items-center gap-2 text-black font-label-uppercase text-label-uppercase">
+<span class="material-symbols-outlined text-inverse-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            ✓ Відповідь за 15 хвилин
+                        </div>
+<button class="w-full bg-inverse-primary text-white font-button text-button uppercase py-5 px-8 hover:bg-black border-2 border-transparent hover:border-white transition-all duration-100 flex items-center justify-center gap-2" type="button">
+                            Отримати тариф
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section (White bg as requested in prompt, translating to our dark theme system by using inverse colors for contrast) -->
+<section class="w-full bg-white text-black py-24 border-b-4 border-black">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="border-2 border-black p-8 flex flex-col gap-6 group hover:border-inverse-primary transition-colors duration-100">
+<div class="w-16 h-16 bg-black flex items-center justify-center text-white border-2 border-black group-hover:bg-inverse-primary transition-colors duration-100">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<h3 class="font-h3 text-h3 text-black uppercase leading-tight">Спеціальні стелажі для одягу</h3>
+</div>
+<!-- Card 2 -->
+<div class="border-2 border-black p-8 flex flex-col gap-6 group hover:border-inverse-primary transition-colors duration-100">
+<div class="w-16 h-16 bg-black flex items-center justify-center text-white border-2 border-black group-hover:bg-inverse-primary transition-colors duration-100">
+<span class="material-symbols-outlined text-4xl">fact_check</span>
+</div>
+<h3 class="font-h3 text-h3 text-black uppercase leading-tight">Перевірка якості перед відправкою</h3>
+</div>
+<!-- Card 3 -->
+<div class="border-2 border-black p-8 flex flex-col gap-6 group hover:border-inverse-primary transition-colors duration-100">
+<div class="w-16 h-16 bg-black flex items-center justify-center text-white border-2 border-black group-hover:bg-inverse-primary transition-colors duration-100">
+<span class="material-symbols-outlined text-4xl">integration_instructions</span>
+</div>
+<h3 class="font-h3 text-h3 text-black uppercase leading-tight">Інтеграція з Rozetka, Prom, Shopify</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="docked full-width bottom border-t-4 border-white bg-black">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-[1440px] mx-auto">
+<div class="text-lg font-black text-white font-inter text-xs uppercase mb-4 md:mb-0">
+                © 2024 MTP FULFILLMENT. INDUSTRIAL SCALE LOGISTICS.
+            </div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-gray-500 font-inter text-xs uppercase hover:text-white transition-colors duration-0" href="#">Privacy Policy</a>
+<a class="text-gray-500 font-inter text-xs uppercase hover:text-white transition-colors duration-0" href="#">Terms of Service</a>
+<a class="text-gray-500 font-inter text-xs uppercase hover:text-white transition-colors duration-0" href="#">Carrier Portal</a>
+</div>
+</div>
+</footer>
+</body></html>

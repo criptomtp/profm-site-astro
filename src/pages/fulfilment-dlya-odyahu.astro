@@ -1,0 +1,388 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Фулфілмент для одягу та fashion-брендів — стелажі, повернення, маркетплейси","description":"Спеціалізований фулфілмент для одягу та взуття: окремі стелажі, штрих-кодування за розміром, обробка повернень з фото-перевіркою, інтеграції з Rozetka/Prom/Kasta. Склад під Києвом, від 20 грн/відправлення.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Apparel & Fashion Fulfillment","audience":{"@type":"BusinessAudience","name":"Українські fashion-бренди, селери одягу на Rozetka/Prom/Kasta, D2C-магазини, дистриб'ютори текстилю та взуття"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"20","description":"Від 20 грн/відправлення (200+ замовлень/день). Зберігання на стелажах від 650 грн/м³/міс. Обробка повернень з фото-перевіркою."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чи є на складі MTP стелажі для одягу на плечиках?","acceptedAnswer":{"@type":"Answer","text":"Так. На складі під Києвом виділена зона з вертикальними стелажами для одягу на плечиках (костюми, пальта, сукні) та горизонтальні полиці для складеного одягу і трикотажу. Окрема зона для взуття у заводських коробках."}},{"@type":"Question","name":"Як обробляються повернення одягу — з фото-перевіркою?","acceptedAnswer":{"@type":"Answer","text":"Кожне повернення розпаковується, фотографується (4 ракурси для одягу, 6 для взуття), перевіряється на сліди носіння, плями, відсутність бирок. Якщо товар у нормі — повертається на полицю автоматично. Дефектний — окрема зона для рішення бренду. Тариф: 50% від (відправка + доукомплектація)."}},{"@type":"Question","name":"Скільки коштує фулфілмент для fashion-бренду на 50 замовлень/день?","acceptedAnswer":{"@type":"Answer","text":"Орієнтовно 28 000-32 000 грн/міс (відправка ~22 грн × 1100 замовлень + зберігання 2 м³ × 650 = 24 700 + 1 300 + повернення 25-30% × 12 грн = 3 300). Конкретна цифра залежить від мікса розмірів і сезонності — даємо точний розрахунок за 15 хвилин."}},{"@type":"Question","name":"Як маркуються товари за розмірами?","acceptedAnswer":{"@type":"Answer","text":"При прийманні кожна одиниця сканується: модель + колір + розмір. Штрих-код прив'язується до конкретної комірки. WMS бачить залишок по кожному розміру окремо — ніяких 'нібито є М, насправді тільки L'. Стікерування 1,25 грн/од., якщо потрібно дотиснути етикетку маркетплейса."}},{"@type":"Question","name":"Чи можна підключитись до Rozetka FBO або працювати по FBS?","acceptedAnswer":{"@type":"Answer","text":"Працюємо по FBS-моделі: товар на нашому складі, замовлення через API від Rozetka/Prom/Kasta. Для FBO-обмежених категорій (велике взуття, оверсайз, важкі куртки) ми — основна альтернатива. Підключення інтеграції — 2 години."}},{"@type":"Question","name":"Як масштабуватись під Чорну п'ятницю та сезонні піки?",
+"acceptedAnswer":{"@type":"Answer","text":"Потужність складу — до 6 000 замовлень/добу. Масштабування автоматичне без доплат. Селери одягу на Чорну п'ятницю стандартно зростають у 4-7 разів — обробляємо без затримок. Рекомендуємо за 4 тижні до піку повідомити, щоб ми попередньо запланували зміну."}},{"@type":"Question","name":"Що робите з пошкодженим або зворотним товаром?","acceptedAnswer":{"@type":"Answer","text":"Дві окремі зони: (1) reverse — поверталось від клієнтів, потребує QC; (2) damaged — товар з дефектом, потребує рішення бренду. Кожна одиниця з фото та коментарем. Бренд вирішує: списати, повернути постачальнику, перепродавати зі знижкою або виставити в окрему категорію 'друга категорія'."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/poslugy/"},{"@type":"ListItem","position":3,"name":"Фулфілмент для одягу","item":"https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/"}]}</script>`;
+---
+<Base
+  title="Фулфілмент для одягу — стелажі, розміри, повернення | MTP"
+  description="Фулфілмент для fashion-брендів та селерів одягу: стелажі для одягу на плечиках, штрих-кодування за розміром, обробка повернень з фото, інтеграції з Rozetka/Prom/Kasta. Від 20 грн."
+  canonical="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/"
+  lang="uk"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/odyahu-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-odezhdy/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-clothing/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/">
+</Fragment>
+
+<!-- HERO -->
+<section class="oh-hero" data-md-skip-children="hero-bg">
+  <div class="oh-hero-bg" data-md-skip></div>
+  <div class="oh-hero-content">
+    <div class="oh-hero-grid">
+      <div class="oh-hero-left">
+        <div class="oh-badge">FASHION &amp; APPAREL</div>
+        <h1>Фулфілмент для одягу,<br>де розмір М завжди М</h1>
+        <p class="oh-hero-sub">Стелажі для одягу на плечиках, штрих-кодування за моделлю і розміром, обробка повернень з фото-перевіркою, інтеграції з Rozetka, Prom, Kasta. Склад під Києвом, 50+ fashion-брендів вже з нами.</p>
+      </div>
+      <div class="oh-hero-right">
+        <div class="oh-form-card">
+          <div class="oh-form-title">Отримати тариф для бренду одягу</div>
+          <HeroCTA lang="uk" theme="light" button="Отримати розрахунок →" microCopy="✓ Відповідь за 15 хвилин · індивідуальний тариф під ваш мікс розмірів" sourceTag="hero /fulfilment-dlya-odyahu/" />
+        </div>
+      </div>
+    </div>
+    <div class="oh-stats">
+      <div class="oh-stat"><div class="oh-stat-val">60K</div><div class="oh-stat-label">відправлень/міс</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">99.7%</div><div class="oh-stat-label">точність комплектації</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">24/7</div><div class="oh-stat-label">склад працює</div></div>
+      <div class="oh-stat"><div class="oh-stat-val">4 год</div><div class="oh-stat-label">від замовлення до відправки</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="oh-problems"><div class="ctr">
+  <div class="badge badge-dark">ЧОМУ ОДЯГУ ПОТРІБЕН СПЕЦІАЛІЗОВАНИЙ СКЛАД</div>
+  <h2 class="sec-h2">Шість проблем, які ламають fashion-бізнес на власному складі</h2>
+  <div class="oh-prob-grid">
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">XS-XXL</div>
+      <h3>Облік за розмірами та кольорами</h3>
+      <p>Одна модель футболки = 5 розмірів × 4 кольори = 20 SKU. На власному складі легко переплутати М і L, особливо коли замовлень більше 30/день. Результат: пересортиця, негативні відгуки, повернення. У MTP кожен розмір — окрема комірка з власним штрих-кодом, WMS блокує помилку фізично.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">25%</div>
+      <h3>Повернення з носінням</h3>
+      <p>У fashion-сегменті 20-30% замовлень повертаються — нормально для одягу, бо клієнт міряє вдома. Проблема: половина повернень — з невеликими слідами носіння або без бирки. На власному складі це часто пропускають назад на полицю. У MTP кожне повернення — фото 4 ракурсів і QC-перевірка перед поверненням у продаж.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">2-7×</div>
+      <h3>Сезонні піки в 5+ разів</h3>
+      <p>Чорна п'ятниця, Новий рік, 8 Березня, передшкільна підготовка — продажі стрибають у 5-7 разів. Власний склад з 2 пакувальниками просто не встигає. У MTP — потужність до 6 000 замовлень/добу, масштабування автоматичне без додаткового найму.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">FBS</div>
+      <h3>Інтеграції з маркетплейсами</h3>
+      <p>Rozetka, Prom.ua, Kasta — всі вимагають швидкої відправки і єдиного залишку. Якщо продали останню L на Rozetka, а Prom не оновив залишок за 30 секунд — другий клієнт замовить те, чого нема. Скасування. Штраф. Зниження рейтингу. WMS MTP синхронізує залишки за 800 мс на всіх платформах.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">QC</div>
+      <h3>Перевірка якості перед відправкою</h3>
+      <p>Гудзики на місці, нитки не стирчать, розмір на бірці = розмір замовлення, упаковка цілісна. На власному складі цей крок часто пропускають "бо нема часу" — і клієнт отримує товар з браком. У MTP перевірка перед пакуванням — обов'язковий етап, фіксується у WMS.</p>
+    </div>
+    <div class="oh-prob-card">
+      <div class="oh-prob-num">API</div>
+      <h3>Підключення за 2 години</h3>
+      <p>Rozetka, Prom.ua, Kasta, KeyCRM, SalesDrive, Shopify, WooCommerce, Хорошоп. Підключаємо за 2 години через готові інтеграції. Замовлення автоматично потрапляють у WMS, статуси оновлюються в обох системах.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="oh-how"><div class="ctr">
+  <div class="badge badge-dark">ПРОЦЕС</div>
+  <h2 class="sec-h2">Як працює фулфілмент для одягу</h2>
+  <div class="oh-steps">
+
+    <div class="oh-step">
+      <div class="oh-step-num">1</div>
+      <div class="oh-step-body">
+        <h3>Приймання за моделлю + кольором + розміром</h3>
+        <p>Привозите товар на склад у Шасливому (2 700 м²) або Білогородці (1 000 м²). Кожна одиниця сканується окремо: артикул + колір + розмір. Штрих-код прив'язується до конкретної комірки на стелажі. Для одягу на плечиках — окрема зона з вертикальними стелажами. Для трикотажу і складеного одягу — горизонтальні полиці. Взуття — окрема зона у заводських коробках.</p>
+        <div class="oh-step-price">Приймання: 3 грн/од. · Стікерування: 1,25 грн/од.</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">2</div>
+      <div class="oh-step-body">
+        <h3>Зберігання на спеціальних стелажах</h3>
+        <p>Костюми, пальта, сукні, сорочки — на плечиках, щоб не м'ялись. Трикотаж, джинси, спортивний одяг — на полицях у складеному вигляді. Взуття — у власних коробках з артикулом на торці. Окрема зона для крихкого товару (прикраси, аксесуари). Кліматизований склад, 3 промислові генератори — жодного дня простою з 2022 року.</p>
+        <div class="oh-step-price">Зберігання: від 650 грн/м³/міс</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">3</div>
+      <div class="oh-step-body">
+        <h3>Збір замовлення з QC-перевіркою</h3>
+        <p>Замовлення надходить через API (Rozetka, Prom, CRM, Shopify). Оператор іде до конкретної комірки за вказівкою WMS — людський фактор виключений. Перед пакуванням — QC: цілісність товару, наявність бирок, відсутність дефектів. Можна вкласти листівку, промокод, подарунок. 4 забори Нової Пошти на день — більшість замовлень доставляється наступного дня.</p>
+        <div class="oh-step-price">Відправка: від 20 грн · Доукомплектація: 2,50 грн/од.</div>
+      </div>
+    </div>
+
+    <div class="oh-step">
+      <div class="oh-step-num">4</div>
+      <div class="oh-step-body">
+        <h3>Обробка повернень з фото-перевіркою</h3>
+        <p>Повернення приймається на склад, розпаковується, фотографується (4 ракурси для одягу, 6 для взуття). Перевіряється: сліди носіння, плями, наявність бирок, цілісність упаковки. Якщо товар у нормі — повертається на полицю автоматично за вашою інструкцією. Дефектний — окрема зона для вашого рішення (списання, повернення постачальнику, продаж зі знижкою). Всі дані з фото — у WMS-кабінеті.</p>
+        <div class="oh-step-price">Повернення: 50% від (відправка + доукомплектація)</div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- COMPARISON -->
+<section class="pricing"><div class="ctr">
+  <div class="badge badge-dark">ПОРІВНЯННЯ</div>
+  <h2 class="sec-h2">Власний склад vs MTP для бренду одягу</h2>
+  <p class="price-note">Розрахунок для fashion-бренду: 50 замовлень/день, 2 м³ зберігання, 25% повернень</p>
+  <div class="price-table">
+    <div class="price-row price-header"><span>Стаття витрат</span><span>Власний склад</span><span>MTP Fulfillment</span></div>
+    <div class="price-row"><span>Оренда складу 50 м² + стелажі</span><span>~17 000 грн</span><span>Включено</span></div>
+    <div class="price-row"><span>Персонал (2 пакувальники)</span><span>~30 000 грн</span><span>Включено</span></div>
+    <div class="price-row"><span>WMS-система</span><span>~5 000 грн</span><span>Включено</span></div>
+    <div class="price-row"><span>Пакувальні матеріали</span><span>~3 500 грн</span><span>Включено</span></div>
+    <div class="price-row"><span>Комунальні + генератор</span><span>~4 000 грн</span><span>Включено</span></div>
+    <div class="price-row"><span>Відправка замовлень</span><span>—</span><span>~24 200 грн</span></div>
+    <div class="price-row"><span>Зберігання (2 м³)</span><span>—</span><span>1 300 грн</span></div>
+    <div class="price-row"><span>Обробка 275 повернень/міс</span><span>~5 500 грн (час персоналу)</span><span>~3 300 грн</span></div>
+    <div class="price-row price-highlight"><span>Разом/місяць</span><span>~65 000 грн</span><span>~28 800 грн</span></div>
+  </div>
+  <p class="price-note">Економія з MTP: ~36 000 грн/міс (55%). Платите тільки за фактичні відправки і повернення.</p>
+</div></section>
+
+<!-- TARIFFS -->
+<section class="oh-tariffs"><div class="ctr">
+  <div class="badge badge-dark">ТАРИФИ 2026</div>
+  <h2 class="sec-h2">Скільки коштує фулфілмент одягу</h2>
+  <div class="price-table">
+    <div class="price-row price-header"><span>Послуга</span><span>Умова</span><span>Ціна</span></div>
+    <div class="price-row"><span>Відправка замовлення</span><span>200+ замовлень/день</span><span>від 20 грн</span></div>
+    <div class="price-row"><span>Відправка замовлення</span><span>100-199/день</span><span>від 22 грн</span></div>
+    <div class="price-row"><span>Відправка замовлення</span><span>50-99/день</span><span>від 24 грн</span></div>
+    <div class="price-row"><span>Відправка замовлення</span><span>0-49/день</span><span>від 28 грн</span></div>
+    <div class="price-row"><span>Зберігання на полицях</span><span>за м³/місяць</span><span>від 650 грн</span></div>
+    <div class="price-row"><span>Зберігання на плечиках</span><span>за погонний метр</span><span>від 90 грн</span></div>
+    <div class="price-row"><span>Приймання товару</span><span>за одиницю</span><span>від 3 грн</span></div>
+    <div class="price-row"><span>Стікерування</span><span>за одиницю</span><span>1,25 грн</span></div>
+    <div class="price-row"><span>Доукомплектація (листівка, подарунок)</span><span>за одиницю</span><span>2,50 грн</span></div>
+    <div class="price-row"><span>Обробка повернення з фото</span><span>за повернення</span><span>50% від відправки</span></div>
+    <div class="price-row price-highlight"><span>Мінімальний платіж</span><span>на місяць</span><span>5 000 грн</span></div>
+  </div>
+  <p class="price-note">Ціна знижується зі зростанням обсягів. Точний розрахунок під ваш мікс розмірів — безкоштовно за 15 хвилин.</p>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="oh-integrations"><div class="ctr">
+  <div class="badge badge-dark">ІНТЕГРАЦІЇ</div>
+  <h2 class="sec-h2">Підключення до маркетплейсів і CRM за 2 години</h2>
+  <p class="oh-integ-text">Готові інтеграції з усіма основними платформами для fashion-бізнесу. Єдиний залишок синхронізується за 800 мс — без ризику продати останню одиницю двічі.</p>
+  <div class="oh-integ-logos">
+    <img src="/images/logo-rozetka.webp" alt="Rozetka" width="120" height="40" loading="lazy">
+    <img src="/images/logo-prom.svg" alt="Prom.ua" width="120" height="40" loading="lazy">
+    <img src="/images/logo-kasta.webp" alt="Kasta" width="120" height="40" loading="lazy">
+    <img src="/images/logo-keycrm.webp" alt="KeyCRM" width="120" height="40" loading="lazy">
+    <img src="/images/logo-salesdrive.webp" alt="SalesDrive" width="120" height="40" loading="lazy">
+    <img src="/images/logo-nova-poshta.svg" alt="Нова Пошта" width="120" height="40" loading="lazy">
+  </div>
+  <p class="oh-integ-note">Також: Shopify, WooCommerce, OpenCart, Хорошоп, LP-CRM, 1С, Укрпошта, Meest, Modnakasta</p>
+</div></section>
+
+<!-- DEEP DIVE -->
+<section class="oh-deep"><div class="ctr">
+  <div class="badge badge-dark">ЯК МИ ПРАЦЮЄМО З ОДЯГОМ</div>
+  <h2 class="sec-h2">Чотири дисципліни, які відрізняють склад одягу від склада &laquo;всього підряд&raquo;</h2>
+
+  <div class="oh-deep-block">
+    <h3>1. SKU-облік за моделлю + кольором + розміром</h3>
+    <p>Найбільша помилка fashion-стартапу — облік на рівні моделі. Скажімо, у вас футболка "Basic White" — і ви бачите в таблиці 50 одиниць. Але це не SKU, це <strong>агрегат</strong>. Реально у вас: 12×S, 18×M, 14×L, 6×XL. Якщо М закінчиться, а ви в листингу пишете "в наявності" — клієнт замовить, ви скасуєте, отримаєте штраф від маркетплейса і знизите рейтинг.</p>
+    <p>WMS у MTP працює на рівні <em>SKU = модель + колір + розмір</em>. Кожна одиниця має унікальний штрих-код, прив'язаний до конкретної комірки. При синхронізації з Rozetka/Prom/Kasta продається тільки те, що фізично є на полиці. У вас не може виникнути ситуації &laquo;у системі є, на складі нема&raquo; — фізична одиниця і запис у БД — одне ціле.</p>
+    <p>Результат для бренду на 200 SKU: <strong>0 скасувань через помилку залишку</strong> за останні 12 місяців проти середніх 2-4% у ринку. Для бренду з оборотом 2 млн грн/міс це ~50 тис грн/міс зекономлених штрафів і повернень.</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>2. Обробка повернень — не &laquo;знову на полицю&raquo;</h3>
+    <p>У fashion 20-30% замовлень повертаються — це нормально, бо одяг міряють. Ненормально — повертати на полицю товар без перевірки. Класичні проблеми: відсутня бирка, плями від парфуму, сліди дезодоранту на горловині, шерсть домашніх тварин на чорному пальті, пах сигарет.</p>
+    <p>На складі MTP кожне повернення проходить QC: розпаковка → фото 4 ракурси (для одягу) або 6 ракурсів (для взуття) → перевірка бирок → перевірка слідів носіння → перевірка цілісності упаковки. Якщо все ок — товар повертається на полицю з оновленням залишку. Якщо є проблеми — окрема зона <em>damaged</em>, бренд приймає рішення: списати, продати зі знижкою (друга категорія), повернути постачальнику, або забрати назад для самостійного розгляду.</p>
+    <p>Кожен крок логується у WMS з фото — якщо у вас є претензія до клієнта (товар повертається з пошкодженням), ви маєте доказову базу для відмови у поверненні коштів.</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>3. Сезонність і потужність на пікові обсяги</h3>
+    <p>Fashion — найсезонніша категорія в e-commerce. У типового бренду 35-45% річної виручки припадає на 4 події: 8 Березня, Чорна п'ятниця, Новий рік, передшкільна підготовка серпня. У ці дні обсяги стрибають у 5-7 разів від базового рівня. Власний склад на 2 пакувальниках фізично не встигає — починаються затримки на 2-3 дні, скасування, негатив.</p>
+    <p>На складі MTP <strong>потужність до 6 000 замовлень/добу</strong> закладена в архітектуру. Ми не наймаємо тимчасовий персонал на пік — це робиться через гнучкий графік основної команди + готову інфраструктуру (стелажі, упаковка, генератори). Бренд не платить за &laquo;готовність&raquo; — тільки за фактичні відправки. Масштаб x5 у пік для нас означає просто x5 транзакцій у WMS, не x5 ризик.</p>
+    <p>Ми рекомендуємо повідомляти про очікуваний пік за 4 тижні — щоб ми попередньо зробили реорганізацію зон зберігання (наприклад, виставили зимові колекції у швидкодоступну зону).</p>
+  </div>
+
+  <div class="oh-deep-block">
+    <h3>4. Інтеграції з маркетплейсами та FBO-обмеження</h3>
+    <p>Rozetka FBO має жорсткі обмеження: не приймають великі куртки, оверсайз-взуття, важкі вироби, певні категорії спортивного одягу. Якщо ваш товар не проходить FBO-фільтр — у вас два варіанти: або відмовитись від каналу, або відправляти самотужки за FBS-моделлю (ваш склад → продаж → відправка → доставка).</p>
+    <p>MTP — основна альтернатива FBO для таких категорій. Ми приймаємо <em>будь-які</em> розміри і ваги одягу та взуття. Інтеграція з Rozetka працює по FBS — товар на нашому складі, замовлення приходять через API, ми відправляємо за регламентом маркетплейса (зазвичай 1-2 дні). Те саме для Prom.ua, Kasta, Modnakasta. Бренд керує одним залишком на 5+ каналах одночасно.</p>
+    <p>Налаштування інтеграції — 2 години роботи на нашому боці. На вашому — потрібен лише API-ключ і збігаюча структура SKU. Якщо у вас Excel-облік — ми допоможемо з імпортом і розставимо штрих-коди на старті.</p>
+  </div>
+
+</div></div></section>
+
+<!-- AUDIENCE -->
+<section class="oh-audience"><div class="ctr">
+  <div class="badge badge-dark">КОМУ ПІДХОДИТЬ</div>
+  <h2 class="sec-h2">Для кого цей сервіс</h2>
+  <div class="oh-audience-grid">
+    <div class="oh-audience-card">
+      <h3>Власні fashion-бренди (D2C)</h3>
+      <p>Ви виробляєте або імпортуєте одяг, продаєте через свій Shopify/WooCommerce магазин і Instagram. Потрібна швидка відправка, обробка повернень з фото, інтеграція з месенджерами. MTP бере логістику на себе, ви фокусуєтесь на дизайні та продукті.</p>
+    </div>
+    <div class="oh-audience-card">
+      <h3>Селери на маркетплейсах</h3>
+      <p>Продаєте на Rozetka, Prom.ua, Kasta, Modnakasta. Потрібна швидка обробка по FBS-моделі, єдиний залишок на всіх площадках, обробка повернень за регламентом маркетплейса. Готові до сезонних піків ×5.</p>
+    </div>
+    <div class="oh-audience-card">
+      <h3>Дистриб'ютори та оптові імпортери</h3>
+      <p>Працюєте з кількома брендами одночасно або імпортуєте одяг для дрібних магазинів. Потрібен партійний облік, кросдок, B2B-відправки великими партіями. Можемо комбінувати B2B-логістику з роздрібною FBS-моделлю на одному складі.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq"><div class="ctr">
+  <div class="badge">FAQ</div>
+  <h2 class="sec-h2">Часті запитання про фулфілмент для одягу</h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">Чи є на складі MTP стелажі для одягу на плечиках?</button><div class="faq-a"><p>Так. Виділена зона з вертикальними стелажами для костюмів, пальт, суконь, сорочок — все на плечиках, щоб не м'ялось. Окремі горизонтальні полиці для трикотажу, джинсів, спортивного одягу. Окрема зона для взуття у заводських коробках і ще одна — для крихких аксесуарів (прикраси, окуляри, ремені).</p></div></div>
+    <div class="faq-item"><button class="faq-q">Як обробляються повернення — з фото-перевіркою?</button><div class="faq-a"><p>Кожне повернення розпаковується, фотографується з 4 ракурсів (для одягу) або 6 (для взуття), перевіряється на сліди носіння, плями, відсутність бирок, цілісність упаковки. Якщо товар у нормі — повертається на полицю автоматично. Дефектний — окрема зона для рішення бренду. Всі фото зберігаються у WMS-кабінеті — для доказової бази при суперечках з клієнтом.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Скільки коштує фулфілмент для бренду одягу на 50 замовлень/день?</button><div class="faq-a"><p>Орієнтовно 28 000-32 000 грн/міс при 2 м³ зберігання і 25% поверненнях. <a href="/ua/calculator/" style="color:var(--red)">Точний розрахунок у калькуляторі</a> або за 15 хвилин по телефону — даємо тариф під ваш конкретний мікс розмірів і середній чек.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Як маркуються товари за розмірами і кольорами?</button><div class="faq-a"><p>При прийманні кожна одиниця сканується: артикул + колір + розмір. Унікальний штрих-код прив'язується до конкретної комірки на стелажі. WMS бачить залишок по кожному SKU окремо — без агрегування на рівні моделі. Якщо потрібен інший формат маркування (наприклад, штрих-код Rozetka або Prom) — стікеруємо за 1,25 грн/од.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Чи можна підключитись до Rozetka FBO або працювати по FBS?</button><div class="faq-a"><p>Працюємо по FBS-моделі: товар на нашому складі, замовлення через API від Rozetka. Для категорій, які Rozetka FBO не приймає (велике взуття, оверсайз, важкі куртки, спорт-обладнання) — ми основна альтернатива. <a href="/fulfilment-rozetka/" style="color:var(--red)">Детальніше про фулфілмент для Rozetka</a>.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Як масштабуватись під Чорну п'ятницю та сезонні піки?</button><div class="faq-a"><p>Потужність складу — до 6 000 замовлень/добу. Масштабування автоматичне без доплат і додаткових домовленостей. Селери одягу на Чорну п'ятницю стандартно зростають у 4-7 разів — обробляємо без затримок. Рекомендуємо повідомити про очікуваний пік за 4 тижні, щоб ми попередньо запланували зміну.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Що відбувається з пошкодженим або дефектним товаром?</button><div class="faq-a"><p>Дві окремі зони: <em>reverse</em> — товар повертається від клієнтів, потребує QC; <em>damaged</em> — товар з дефектом виробництва, потребує рішення бренду. Кожна одиниця з фото та коментарем. Бренд вирішує: списати, повернути постачальнику, продавати зі знижкою як &laquo;другу категорію&raquo;, або забрати з нашого складу для самостійного розгляду.</p></div></div>
+  </div>
+</div></section>
+
+<!-- SEO ARTICLE -->
+<section class="article-section">
+<div class="ctr">
+<div class="badge badge-dark">КОРИСНО ЗНАТИ</div>
+<h2>Фулфілмент для fashion-бізнесу в Україні: повний гід на 2026 рік</h2>
+<div class="article-content">
+
+<h3>Чому одяг — найскладніша категорія для фулфілменту</h3>
+<p>На відміну від електроніки, косметики чи книг, одяг має дві характеристики, які роблять його надскладним для логістики: <strong>множинна розмірна сітка</strong> і <strong>висока частота повернень</strong>. Якщо в електроніці одна модель = 1 SKU, то в одязі одна модель футболки = 5 розмірів × 4 кольори = 20 SKU. У середнього fashion-стартапу швидко накопичується 200-500 активних SKU при асортименті в 30-50 моделей. Без правильного складського обліку це швидко перетворюється на хаос.</p>
+
+<p>Друга проблема — повернення. У fashion-сегменті стандартний рівень повернень становить 20-30% від кількості замовлень — це нормально, бо клієнт примірює одяг вдома. Для електроніки повернення — 2-5%, для косметики — близько 1%. Тобто ваш fashion-склад повинен мати чітку процедуру обробки повернень, інакше ви будете накопичувати товар без можливості його перепродати.</p>
+
+<p>Третя проблема — сезонність. Fashion-бренд за рік робить ~40% обороту в чотирьох вікнах: 8 Березня, передшкільна підготовка (серпень), Чорна п'ятниця і Новий рік. У ці дні продажі стрибають у 5-7 разів. Власний склад з фіксованою кількістю персоналу не встигає, починаються затримки і скасування. Фулфілмент-оператор з потужністю на 6 000 замовлень/добу обробляє пік без додаткових витрат для бренду.</p>
+
+<h3>Як працює зберігання одягу: плечики vs полиці</h3>
+<p>Не весь одяг можна зберігати однаково. Костюми, пальта, сукні, сорочки — на плечиках, інакше м'нуться і втрачають товарний вигляд. Трикотаж, джинси, спортивний одяг — на полицях у складеному вигляді (якщо повісити, форма поплине). Взуття — у власних коробках з артикулом на торці. Аксесуари (паски, шарфи, прикраси) — окрема зона для крихких товарів.</p>
+
+<p>На складі MTP виділені окремі зони під кожен тип зберігання. Вертикальні стелажі для одягу на плечиках мають довжину до 800 погонних метрів — достатньо для бренду на 1 500-2 000 одиниць верхнього одягу. Горизонтальні полиці — для трикотажу і складеного асортименту. Зона взуття — з можливістю зберігати у заводських коробках (важливо для маркетплейсів, які перевіряють упаковку при поверненні товару від клієнта).</p>
+
+<p>Вартість зберігання залежить від типу: на полицях — від 650 грн/м³ на місяць, на плечиках — від 90 грн/погонний метр. Для типового fashion-бренду з міксом форматів зберігання витрати становлять 1 200-2 500 грн/міс при асортименті 200-500 SKU. Власний склад з еквівалентним обладнанням — 17 000-22 000 грн/міс тільки на оренду і стелажі.</p>
+
+<h3>QC-перевірка: не &laquo;зекономити час&raquo;, а захистити репутацію</h3>
+<p>Перед відправкою кожного замовлення оператор проводить QC: цілісність товару, наявність всіх бирок (виробника, складу, складу матеріалу), відсутність ниток, плям, дефектів пошиття. Якщо щось не так — товар відкладається в окрему зону і не йде клієнту. Це додає 10-15 секунд до часу пакування, але кардинально знижує кількість негативних відгуків і повернень з претензіями.</p>
+
+<p>Те саме для повернень — кожне розпаковується, фотографується, перевіряється. Невелика сума (фотофіксація + QC) у тарифі повернень — це доказова база, якщо клієнт намагається повернути зношений або зіпсований товар і вимагає повного відшкодування. У fashion-сегменті це значна стаття витрат: близько 3-5% повернень — недобросовісні (клієнт носив, тепер хоче повернути). Маючи фото з усіма ракурсами, бренд може законно відмовити у поверненні коштів.</p>
+
+<h3>Інтеграції: один залишок, багато каналів продажу</h3>
+<p>Ключова перевага професійного фулфілменту — єдиний залишок на всіх каналах продажу. Якщо ви продаєте на Rozetka, Prom.ua, Kasta, Modnakasta і своєму Shopify одночасно — у вас має бути ОДНА база товарів, яка синхронізується між усіма платформами в реальному часі. Інакше виникне ситуація: останню L продано на Rozetka, але Prom не оновив залишок за 30 секунд, другий клієнт замовляє те, чого вже нема. Маркетплейс штрафує за скасування, рейтинг падає, виходити з-під санкцій можна тижнями.</p>
+
+<p>WMS у MTP синхронізує залишки за 800 мс. Готові інтеграції з Rozetka, Prom.ua, Kasta, Modnakasta, Shopify, WooCommerce, OpenCart, Хорошоп, KeyCRM, SalesDrive. Підключення — 2 години роботи на нашому боці, від вас потрібен API-ключ. Якщо у вас зараз Excel-облік або складова частина — ми допомагаємо мігрувати на WMS-логіку без втрат.</p>
+
+<h3>Як обрати фулфілмент для fashion-бренду: чек-лист</h3>
+<p>При виборі оператора для одягу перевіряйте не маркетингові обіцянки, а технічні можливості:</p>
+<ul>
+<li><strong>SKU-облік</strong> — чи на рівні &laquo;модель + колір + розмір&raquo;, чи лише на рівні моделі?</li>
+<li><strong>Стелажі для одягу на плечиках</strong> — чи є окрема зона з вертикальними стелажами достатньої довжини?</li>
+<li><strong>Обробка повернень</strong> — чи з фото-перевіркою, чи &laquo;на око&raquo;? Чи зберігається фото-доказова база?</li>
+<li><strong>Потужність на пік</strong> — скільки замовлень/добу витримує склад без затримок?</li>
+<li><strong>Інтеграції з маркетплейсами</strong> — Rozetka, Prom, Kasta, Modnakasta — все має бути готове, не &laquo;будемо робити під вас&raquo;.</li>
+<li><strong>Швидкість синхронізації залишків</strong> — секунди чи хвилини? Хвилини = ризик.</li>
+<li><strong>FBS для FBO-обмежених категорій</strong> — чи можуть вони обробляти товари, які Rozetka FBO не приймає?</li>
+</ul>
+<p>MTP Group відповідає всім цим критеріям. 10+ років досвіду, 2 склади загальною площею 3 700 м² у Київській області, 50+ fashion-брендів серед клієнтів, 0 днів простою з 2022 року. <a href="/ua/3pl-logistyka/" style="color:var(--red);font-weight:500">Детальніше про 3PL-логістику MTP</a> або одразу <a href="/ua/calculator/" style="color:var(--red);font-weight:500">розрахуйте вартість у калькуляторі</a>.</p>
+
+</div>
+</div>
+</section>
+
+</Base>
+
+<style is:global>
+/* HERO */
+.oh-hero{position:relative;min-height:88vh;background:#000;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:140px 0 0;overflow:hidden}
+.oh-hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.5) 100%),url('/images/odyahu-hero.jpg') center/cover no-repeat;z-index:1}
+.oh-hero-content{position:relative;z-index:2;width:100%;padding:0 8vw}
+.oh-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
+.oh-hero-left{position:relative}
+.oh-hero-left::before{content:'';position:absolute;left:-40px;top:0;height:100%;width:3px;background:#e63329}
+.oh-badge{display:inline-block;background:#e63329;color:#fff;padding:8px 16px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+.oh-hero h1{font-family:var(--fd);font-size:clamp(40px,5vw,72px);font-weight:400;line-height:.98;margin-bottom:28px;letter-spacing:-.01em}
+.oh-hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.65);line-height:1.7;max-width:560px}
+.oh-hero-right{}
+.oh-form-card{background:#fff;color:#000;padding:32px 28px;border-radius:8px;box-shadow:0 20px 60px rgba(230,51,41,.15)}
+.oh-form-title{font-family:var(--fd);font-size:22px;font-weight:400;margin-bottom:18px;color:#000}
+.oh-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:64px 8vw 56px;position:relative;z-index:2;margin-top:auto}
+.oh-stat{border-top:3px solid #e63329;padding:18px 0}
+.oh-stat-val{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:400;color:#fff;line-height:1;white-space:nowrap}
+.oh-stat-label{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.15em;margin-top:6px}
+
+/* PROBLEMS */
+.oh-problems{padding:100px 0;background:#fff}
+.oh-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:4px;overflow:hidden}
+.oh-prob-card{background:#fff;padding:36px 28px;transition:background .25s}.oh-prob-card:hover{background:#fafafa}
+.oh-prob-num{font-family:var(--fd);font-size:38px;color:#e63329;line-height:1;margin-bottom:12px;font-weight:400}
+.oh-prob-card h3{font-size:17px;font-weight:600;margin-bottom:8px;color:#000}.oh-prob-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* HOW */
+.oh-how{padding:100px 0;background:var(--gray)}
+.oh-steps{max-width:760px;margin:0 auto}
+.oh-step{display:flex;gap:24px;margin-bottom:40px;position:relative}
+.oh-step::after{content:'';position:absolute;left:19px;top:48px;bottom:-40px;width:2px;background:#d8d8d8}
+.oh-step:last-child::after{display:none}
+.oh-step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:#e63329;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;position:relative;z-index:1}
+.oh-step-body{padding-top:6px}
+.oh-step-body h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.oh-step-body p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.oh-step-price{font-size:13px;color:#e63329;font-weight:600}
+
+/* TARIFFS */
+.oh-tariffs{padding:100px 0;background:#fff}
+
+/* INTEGRATIONS */
+.oh-integrations{padding:80px 0;text-align:center;background:var(--gray)}
+.oh-integ-text{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto 32px;line-height:1.65}
+.oh-integ-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-bottom:16px}
+.oh-integ-logos img{height:32px;width:auto;opacity:.6;transition:opacity .2s}
+.oh-integ-logos img:hover{opacity:1}
+.oh-integ-note{font-size:14px;color:var(--muted)}
+
+/* DEEP DIVE */
+.oh-deep{padding:100px 0;background:#0a0a0a;color:#fff}
+.oh-deep .badge{margin-bottom:24px}
+.oh-deep .sec-h2{color:#fff;max-width:900px;margin-bottom:48px}
+.oh-deep-block{padding:32px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.oh-deep-block:last-of-type{border-bottom:none}
+.oh-deep-block h3{font-size:22px;font-weight:600;margin-bottom:14px;color:#fff;font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.01em}
+.oh-deep-block p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.78);margin-bottom:14px;max-width:840px}
+.oh-deep-block p strong{color:#fff;font-weight:600}
+.oh-deep-block p em{color:#e63329;font-style:normal;font-weight:500}
+
+/* AUDIENCE */
+.oh-audience{padding:100px 0;background:#fff}
+.oh-audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.oh-audience-card{background:var(--gray);border-radius:8px;padding:36px 28px;border-top:3px solid #e63329}
+.oh-audience-card h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.oh-audience-card p{font-size:15px;color:var(--muted);line-height:1.7}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .oh-hero-grid{grid-template-columns:1fr;gap:40px}
+  .oh-hero-left::before{left:-20px}
+  .oh-stats{grid-template-columns:repeat(2,1fr);padding:32px 24px;gap:24px}
+  .oh-prob-grid{grid-template-columns:1fr}
+  .oh-audience-grid{grid-template-columns:1fr}
+}
+.oh-prob-card,.oh-step,.oh-stat,.oh-audience-card{opacity:1!important;transform:none!important}
+</style>
