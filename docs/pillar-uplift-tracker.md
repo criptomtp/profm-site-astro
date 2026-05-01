@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 3/16 done — service-hub triplet schemas 9/9. Cumulative this session: 3 triplets, -8 schema fails site-wide (38→30). RU services now 1 fail away from PASS (only H1). 13 triplets remaining in Phase 2.
+**Last session note:** Phase 2 batch 4/16 done — home triplet schemas 9/9. **P0 batch (4/4) COMPLETE.** Cumulative this session: 4 triplets, -11 schema fails (38→27). Next: P1 batch (4 triplets — what-is-fulfillment, 3pl-logistics, fulfilment-rozetka, fulfilment-prom).
 
 ---
 
@@ -65,7 +65,7 @@
 - [x] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/` **DONE 2026-05-01**: added BusinessAudience + nested Offer to Service, GeoCoordinates + location[] to LocalBusiness; for EN also added full Service description + areaServed Country + FAQPage + BreadcrumbList. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
 - [x] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/` **DONE 2026-05-01**: changed Service.provider from @id reference to inline Organization (adds Organization @type), added BusinessAudience to Service.audience, added GeoCoordinates + 2-Place location[] to LocalBusiness, added new FAQPage script with 5 calculator-specific Q/A. RU had different shape (Bilohorodka without description, areaServed as array of 4 CIS Countries) — applied RU-specific patterns. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌.
 - [x] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/` **DONE 2026-05-01**: UA poslugy already had 9/9 schemas (no change). RU services + EN services were missing Offer — added nested `offers:[Offer]` to AggregateOffer (RU) and full Service block rewrite with description + offers (EN). All 3 now 9/9 schemas ✅. RU only 1 fail away (H1 generic). UA still words+H1. EN still words+H1.
-- [ ] **home** — `/index.html` + `/ru/index.html` + `/en/index.html`
+- [x] **home** — `/index.html` + `/ru/index.html` + `/en/index.html` **DONE 2026-05-01**: all 3 had thin schema-stack (only WebSite + LocalBusiness + FAQPage; EN missing FAQPage too). Added GeoCoordinates + 2-Place location[] to LocalBusiness; added new Service script with description, Organization provider, BusinessAudience, AggregateOffer with nested Offer; for EN also added new FAQPage script with 7 Q/A translated/adapted from UA. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
 
 #### P1 batch (top-of-funnel + flagship)
 - [ ] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/`
@@ -145,6 +145,16 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 4: home triplet (P0 complete!)
+- All 3 homepages had thinnest schema-stack of any pillars seen so far: WebSite + LocalBusiness + FAQPage (UA/RU only). EN homepage didn't even have FAQPage.
+- LocalBusiness uplift: added GeoCoordinates + 2-Place location[] (Schaslyve+Bilohorodka) + missing description on Bilohorodka address (UA, EN — RU already had it)
+- NEW Service script per language: full hub-Service description (e-commerce, fashion, marketplaces integrations), Organization provider, BusinessAudience (different angle per language: UA-focused / CIS-focused / international-focused), AggregateOffer with 2 nested Offers (per-shipment + storage)
+- EN-only: NEW FAQPage script with 7 Q/A — translated and slightly adapted from UA (added 21-day onboarding for international brands, marketplace count clarification)
+- Validate: ✅ schemas 9/9 all 3 langs, ✅ hreflang reciprocal, ❌ words still <2500, ⚠️ H1 generic
+- Net progress this batch: -3 schema fails. Cumulative session: -11 schema fails (38 → 27)
+- **P0 batch DONE** (4/4: prices, calculator, service-hub, home)
+- Next session: start P1 batch with `what-is-fulfillment` triplet (top-of-funnel pillar — already partial PASS for some langs)
 
 ### 2026-05-01 — Phase 2 batch 3: service-hub triplet
 - Surprise: UA poslugy already had 9/9 schemas (Organization, LocalBusiness, GeoCoordinates, BusinessAudience, FAQPage all present from prior work). No UA changes needed.
