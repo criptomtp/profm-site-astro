@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 8/16 done — fulfilment-prom. **🎊 RU prom now FULL PASS.** **P1 batch (4/4) COMPLETE.** UA + EN prom close (only words gap: 2380/2131). Cumulative this session: 8 triplets, -23 schema fails (38→15). Site-wide PASS: 6→9. Next: P2 batch starts (geo-specific pillars).
+**Last session note:** Phase 2 batch 9/16 done — fulfilment-kyiv (P2 start). Schemas 9/9 all 3. RU has brand-hook H1; UA+EN need rework. Words 1183/1087/1398 thin (Phase 4). Cumulative session: 9 triplets, -26 schema fails (38→12). Site-wide PASS still 9.
 
 ---
 
@@ -74,7 +74,7 @@
 - [x] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/` **DONE 2026-05-01**: same shape as rozetka — had everything except LocalBusiness. Single append per language. 🎊 RU now FULL PASS (words 2917, H1 "Фулфилмент для продавцов Prom.ua — от 22 ₴ за заказ" has em-dash + numeric). UA + EN H1s also brand-hooks ("FBO у Prom.ua не існує. До сьогодні.", "Prom has 700,000 sellers and zero native FBO.") — only words gap remains (2380/2131). All 3 schemas 9/9 ✅. UA prom note: pages had JS object literal with single quotes (not JSON double quotes) for serviceSchema — JSON.stringify converts at build time, no issue.
 
 #### P2 batch (geo + specific)
-- [ ] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/`
+- [x] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/` **DONE 2026-05-01**: had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing GeoCoordinates in LocalBusiness (was inside City schema only) + BusinessAudience + standalone Country @type. Surgical: replaced `areaServed:{City}` with `areaServed:[City, Country]`, added BusinessAudience, added geo+location[] to LocalBusiness. All 3 now 9/9 schemas ✅. RU H1 brand-hook ("Ваш склад без аренды. Ваша логистика без логистов." — paradox + period). UA+EN H1 generic. Words 1183/1087/1398 thin (Phase 4).
 - [ ] **fulfilment-ukraina** — `/ua/fulfilment-ukraina/` + `/ru/fulfilment-ukraina/` + `/en/fulfillment-ukraine/`
 - [ ] **vazhki-tovary** — `/ua/fulfilment-vazhkykh-tovariv/` + `/ru/fulfilment-vazhkykh-tovariv/` + `/en/heavy-goods/`
 - [ ] **pallet-storage** — `/ua/paletne-zberigannya/` + `/ru/paletnoe-khranenie/` + `/en/pallet-storage/`
@@ -145,6 +145,21 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 9: fulfilment-kyiv triplet (P2 start)
+- Pages had Service+LocalBusiness+City+PostalAddress+FAQ+Breadcrumb+Org+Offer. Missing standalone Country @type, BusinessAudience, geo in LocalBusiness (was only inside City schema)
+- Surgical replacements per file:
+  1. Service: `areaServed:{City}` → `areaServed:[City, Country]` (adds Country) + add BusinessAudience after
+  2. LocalBusiness: add `geo` + `location[]` to address tail
+- All 3 schemas 9/9 ✅
+- H1 status:
+  - UA "Фулфілмент у Києві. Склад під ключ від 18 грн." — generic per heuristic (period not accepted as twist; also "под ключ" listed as banned phrase in humanizer doc)
+  - RU "Ваш склад без аренды. Ваша логистика без логистов." — brand-hook ✅ (paradox + period; period works because heuristic also has 'не'/'без' lookbehind)
+  - EN "Your logistics base in Eastern Europe." — generic short
+- Words 1183/1087/1398 — well under 2500 (Phase 4)
+- Note: UA H1 has "під ключ" — already flagged in `docs/humanizer-ua-mtp.md` forbidden list. Phase 3 should fix this.
+- Net progress: -3 schema fails. Cumulative session: -26 (38 → 12)
+- Next session: continue P2 with `fulfilment-ukraina` triplet
 
 ### 2026-05-01 — Phase 2 batch 8: fulfilment-prom triplet 🎊 (P1 complete)
 - Same shape as rozetka — had Service+BusinessAudience+Offer+FAQ+Breadcrumb+Org+Country, missing only LocalBusiness/Geo/PostalAddress
