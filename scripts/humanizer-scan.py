@@ -106,7 +106,15 @@ def approximate_word_count(text):
     return len(cleaned.split())
 
 
-def detect_language(rel_path):
+def detect_language(rel_path, text=""):
+    # Primary: parse <Base ... lang="..."> from file content
+    m = re.search(r'<Base\b[^>]*\blang=["\']([^"\']+)["\']', text, re.DOTALL)
+    if m:
+        attr = m.group(1).lower()
+        if attr == "ru": return "RU"
+        if attr == "en": return "EN"
+        if attr in ("uk", "ua"): return "UA"
+    # Fallback: path-based
     if rel_path.startswith("ru/"): return "RU"
     if rel_path.startswith("en/"): return "EN"
     return "UA"
@@ -134,7 +142,7 @@ def main():
             continue
 
         text = astro_file.read_text(encoding="utf-8", errors="replace")
-        lang = detect_language(rel)
+        lang = detect_language(rel, text)
 
         ua = count_matches(text, UA_TELLS)
         ru = count_matches(text, RU_TELLS)
