@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 2/16 done — calculator triplet schemas 9/9. Cumulative progress this session: 2 triplets, -6 schema fails site-wide (38→32). Still 14 triplets in Phase 2.
+**Last session note:** Phase 2 batch 3/16 done — service-hub triplet schemas 9/9. Cumulative this session: 3 triplets, -8 schema fails site-wide (38→30). RU services now 1 fail away from PASS (only H1). 13 triplets remaining in Phase 2.
 
 ---
 
@@ -64,7 +64,7 @@
 #### P0 batch (high-impact, conversion)
 - [x] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/` **DONE 2026-05-01**: added BusinessAudience + nested Offer to Service, GeoCoordinates + location[] to LocalBusiness; for EN also added full Service description + areaServed Country + FAQPage + BreadcrumbList. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
 - [x] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/` **DONE 2026-05-01**: changed Service.provider from @id reference to inline Organization (adds Organization @type), added BusinessAudience to Service.audience, added GeoCoordinates + 2-Place location[] to LocalBusiness, added new FAQPage script with 5 calculator-specific Q/A. RU had different shape (Bilohorodka without description, areaServed as array of 4 CIS Countries) — applied RU-specific patterns. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌.
-- [ ] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/`
+- [x] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/` **DONE 2026-05-01**: UA poslugy already had 9/9 schemas (no change). RU services + EN services were missing Offer — added nested `offers:[Offer]` to AggregateOffer (RU) and full Service block rewrite with description + offers (EN). All 3 now 9/9 schemas ✅. RU only 1 fail away (H1 generic). UA still words+H1. EN still words+H1.
 - [ ] **home** — `/index.html` + `/ru/index.html` + `/en/index.html`
 
 #### P1 batch (top-of-funnel + flagship)
@@ -145,6 +145,15 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 3: service-hub triplet
+- Surprise: UA poslugy already had 9/9 schemas (Organization, LocalBusiness, GeoCoordinates, BusinessAudience, FAQPage all present from prior work). No UA changes needed.
+- RU services missing only Offer — added nested `offers:[Offer]` to existing AggregateOffer
+- EN services had bare Service block (just name+provider+areaServed) — replaced with full Service (description + AggregateOffer + nested Offer)
+- Validate: ✅ schemas 9/9 all 3 langs, ✅ hreflang reciprocal
+- RU services: only 1 fail left (H1 generic) — close to full PASS!
+- Net progress this session: -2 schema fails (this batch). Cumulative session: -8 schema fails (38→30)
+- Next session: continue Phase 2 with `home` triplet (last P0) — `/index.html` + `/ru/index.html` + `/en/index.html`. Heads-up: home pages can be sensitive (SEO impact, hero CTAs); be conservative.
 
 ### 2026-05-01 — Phase 2 batch 2: calculator triplet
 - 3 files had richer schema-stack than prices (12 types each: WebApplication, OfferCatalog, UnitPriceSpecification, QuantitativeValue, etc), but missing Organization (used @id reference instead), GeoCoordinates, BusinessAudience, FAQPage
