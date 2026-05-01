@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 6/16 done — 3pl-logistics triplet schemas 9/9. Tiniest batch yet — only needed GeoCoordinates + BusinessAudience (everything else already there). Cumulative this session: 6 triplets, -17 schema fails (38→21). Next P1: fulfilment-rozetka.
+**Last session note:** Phase 2 batch 7/16 done — fulfilment-rozetka. **🎊 UA + EN rozetka now FULL PASS** (first non-clothing pages to pass gate fully!). RU close (2 fails: words 2281, H1). Cumulative this session: 7 triplets, -20 schema fails (38→18). Site-wide PASS: 6→8.
 
 ---
 
@@ -70,7 +70,7 @@
 #### P1 batch (top-of-funnel + flagship)
 - [x] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/` **DONE 2026-05-01**: this is Article-type pillar (not Service-type) — had thick schema-stack already (Article, WebPage, VideoObject, ImageObject, Person, FAQPage, BreadcrumbList, Speakable, Organization) but was missing all "service signal" types (LocalBusiness/Geo/PostalAddress/BusinessAudience/Service/Offer/Country). Appended 2 new scripts to schemaJson template literal: full LocalBusiness (with geo + 2-Place location[]) and full Service (description + Organization provider + BusinessAudience + AggregateOffer with nested Offers). Words 3042/2815/3657 already ≥ 2500. **Result: only H1 generic ⚠️ remains — 1 warning from full PASS on all 3 langs.**
 - [x] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/` **DONE 2026-05-01**: smallest batch — already had Service+LocalBusiness+Organization+PostalAddress+Country+Offer+FAQPage+Breadcrumb. Just added GeoCoordinates + 2-Place location[] to LocalBusiness, BusinessAudience to Service. 2 surgical replacements per file. EN had `²` JSON.stringify-escaped sqm symbol — adapted pattern. All 3 now 9/9 schemas ✅. Words 1092/879/1014 still ❌ (Phase 4); H1 generic ⚠️ (already has &mdash; twist but `&nbsp;` HTML entities confuse heuristic — Phase 3 will refine).
-- [ ] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/`
+- [x] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/` **DONE 2026-05-01**: had 0 LocalBusiness across all 3 (only Service+FAQ+Breadcrumb+BusinessAudience+Offer+Organization+Country). Single append: full LocalBusiness script (with geo + 2-Place location[] + 2-PostalAddress) per language. **🎊 UA + EN now FULL PASS** (first non-clothing pages!). RU close: 2281 words and H1 generic.
 - [ ] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/`
 
 #### P2 batch (geo + specific)
@@ -145,6 +145,17 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 7: fulfilment-rozetka triplet 🎊
+- Pages had everything except LocalBusiness — service-style page already with BusinessAudience, Offer, FAQPage, BreadcrumbList, Organization
+- Single append: full LocalBusiness script (with geo + 2-Place location[] + 2 PostalAddress with localized streetAddress) per language
+- Words already ≥2500 on UA (3127→2603 in dist) and EN (3149→2650). RU 2862→2281 in dist (under threshold)
+- Both UA + EN H1 already brand-hooks: "Альтернатива Rozetka FBO для категорій, які вона не приймає" and "A multi-marketplace gateway to Ukraine — without Rozetka FBO lock-in"
+- **🎊 RESULT: UA /fulfilment-rozetka/ and EN /en/fulfillment-for-rozetka-sellers/ now FULL PASS — first non-clothing pillars to clear the gate fully**
+- RU /ru/fulfilment-rozetka/ close to PASS: words 2281 (need 219 more), H1 "Украина как логистический хаб для Rozetka и рынка СНГ" generic (need twist or imperative — Phase 3)
+- Net progress: -3 schema fails. Cumulative session: -20 (38 → 18)
+- Site-wide PASS count: 6 → 8
+- Next session: continue P1 with `fulfilment-prom` triplet (last P1 item)
 
 ### 2026-05-01 — Phase 2 batch 6: 3pl-logistics triplet
 - Tiniest batch in Phase 2 so far. Already had 8 of 9 must-have types. Just missing GeoCoordinates + BusinessAudience.
