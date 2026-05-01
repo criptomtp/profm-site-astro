@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 1/16 done — prices triplet (UA tsiny + RU tsenu + EN prices) schema uplift, all now 9/9 schemas. Words + H1 still failing (deferred to Phase 3/4).
+**Last session note:** Phase 2 batch 2/16 done — calculator triplet schemas 9/9. Cumulative progress this session: 2 triplets, -6 schema fails site-wide (38→32). Still 14 triplets in Phase 2.
 
 ---
 
@@ -63,7 +63,7 @@
 
 #### P0 batch (high-impact, conversion)
 - [x] **prices** — `/ua/tsiny/` + `/ru/tsenu/` + `/en/prices/` **DONE 2026-05-01**: added BusinessAudience + nested Offer to Service, GeoCoordinates + location[] to LocalBusiness; for EN also added full Service description + areaServed Country + FAQPage + BreadcrumbList. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
-- [ ] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/`
+- [x] **calculator** — `/ua/calculator/` + `/ru/calculator/` + `/en/calculator/` **DONE 2026-05-01**: changed Service.provider from @id reference to inline Organization (adds Organization @type), added BusinessAudience to Service.audience, added GeoCoordinates + 2-Place location[] to LocalBusiness, added new FAQPage script with 5 calculator-specific Q/A. RU had different shape (Bilohorodka without description, areaServed as array of 4 CIS Countries) — applied RU-specific patterns. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌.
 - [ ] **service-hub** — `/poslugy/` + `/ru/services/` + `/en/services/`
 - [ ] **home** — `/index.html` + `/ru/index.html` + `/en/index.html`
 
@@ -145,6 +145,14 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 2: calculator triplet
+- 3 files had richer schema-stack than prices (12 types each: WebApplication, OfferCatalog, UnitPriceSpecification, QuantitativeValue, etc), but missing Organization (used @id reference instead), GeoCoordinates, BusinessAudience, FAQPage
+- UA + EN: standard pattern + areaServed kept (Ukraine for UA, [Ukraine, EU] for EN)
+- RU: had 4-country areaServed [Ukraine, Kazakhstan, Moldova, Georgia] for CIS audience — preserved as-is, just appended audience after; also Bilohorodka address had no description field, added it
+- All 3 FAQs unique to calculator (free to use? accuracy? inputs? packaging? volume discount?)
+- Net progress this session: -6 schema fails (38 → 32)
+- Next session: continue Phase 2 with `service-hub` triplet (poslugy / ru/services / en/services) — recommended next P0 item
 
 ### 2026-05-01 — Phase 2 batch 1: prices triplet
 - Discovered current schemas in 3 files (UA had 12 types, RU had 12, EN had only 6 — bare Service)
