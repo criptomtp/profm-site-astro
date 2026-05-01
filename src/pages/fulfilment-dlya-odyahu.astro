@@ -2,14 +2,14 @@
 import Base from '../layouts/Base.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Фулфілмент для одягу та fashion-брендів — стелажі, повернення, маркетплейси","description":"Спеціалізований фулфілмент для одягу та взуття: окремі стелажі, штрих-кодування за розміром, обробка повернень з фото-перевіркою, інтеграції з Rozetka/Prom/Kasta. Склад під Києвом, від 20 грн/відправлення.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Apparel & Fashion Fulfillment","audience":{"@type":"BusinessAudience","name":"Українські fashion-бренди, селери одягу на Rozetka/Prom/Kasta, D2C-магазини, дистриб'ютори текстилю та взуття"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"20","description":"Від 20 грн/відправлення (200+ замовлень/день). Зберігання на стелажах від 650 грн/м³/міс. Обробка повернень з фото-перевіркою."}}</script>
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-01","name":"Фулфілмент для одягу та fashion-брендів — стелажі, повернення, маркетплейси","description":"Спеціалізований фулфілмент для одягу та взуття: окремі стелажі, штрих-кодування за розміром, обробка повернень з фото-перевіркою, інтеграції з Rozetka/Prom/Kasta. Склад під Києвом, від 18 грн/відправлення.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Apparel & Fashion Fulfillment","audience":{"@type":"BusinessAudience","name":"Українські fashion-бренди, селери одягу на Rozetka/Prom/Kasta, D2C-магазини, дистриб'ютори текстилю та взуття"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Від 18 грн/відправлення (200+ замовлень/день). Зберігання на стелажах від 650 грн/м³/міс. Обробка повернень з фото-перевіркою."}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чи є на складі MTP стелажі для одягу на плечиках?","acceptedAnswer":{"@type":"Answer","text":"Так. На складі під Києвом виділена зона з вертикальними стелажами для одягу на плечиках (костюми, пальта, сукні) та горизонтальні полиці для складеного одягу і трикотажу. Окрема зона для взуття у заводських коробках."}},{"@type":"Question","name":"Як обробляються повернення одягу — з фото-перевіркою?","acceptedAnswer":{"@type":"Answer","text":"Кожне повернення розпаковується, фотографується (4 ракурси для одягу, 6 для взуття), перевіряється на сліди носіння, плями, відсутність бирок. Якщо товар у нормі — повертається на полицю автоматично. Дефектний — окрема зона для рішення бренду. Тариф: 50% від (відправка + доукомплектація)."}},{"@type":"Question","name":"Скільки коштує фулфілмент для fashion-бренду на 50 замовлень/день?","acceptedAnswer":{"@type":"Answer","text":"Орієнтовно 28 000-32 000 грн/міс (відправка ~22 грн × 1100 замовлень + зберігання 2 м³ × 650 = 24 700 + 1 300 + повернення 25-30% × 12 грн = 3 300). Конкретна цифра залежить від мікса розмірів і сезонності — даємо точний розрахунок за 15 хвилин."}},{"@type":"Question","name":"Як маркуються товари за розмірами?","acceptedAnswer":{"@type":"Answer","text":"При прийманні кожна одиниця сканується: модель + колір + розмір. Штрих-код прив'язується до конкретної комірки. WMS бачить залишок по кожному розміру окремо — ніяких 'нібито є М, насправді тільки L'. Стікерування 1,25 грн/од., якщо потрібно дотиснути етикетку маркетплейса."}},{"@type":"Question","name":"Чи можна підключитись до Rozetka FBO або працювати по FBS?","acceptedAnswer":{"@type":"Answer","text":"Працюємо по FBS-моделі: товар на нашому складі, замовлення через API від Rozetka/Prom/Kasta. Для FBO-обмежених категорій (велике взуття, оверсайз, важкі куртки) ми — основна альтернатива. Підключення інтеграції — 2 години."}},{"@type":"Question","name":"Як масштабуватись під Чорну п'ятницю та сезонні піки?",
 "acceptedAnswer":{"@type":"Answer","text":"Потужність складу — до 6 000 замовлень/добу. Масштабування автоматичне без доплат. Селери одягу на Чорну п'ятницю стандартно зростають у 4-7 разів — обробляємо без затримок. Рекомендуємо за 4 тижні до піку повідомити, щоб ми попередньо запланували зміну."}},{"@type":"Question","name":"Що робите з пошкодженим або зворотним товаром?","acceptedAnswer":{"@type":"Answer","text":"Дві окремі зони: (1) reverse — поверталось від клієнтів, потребує QC; (2) damaged — товар з дефектом, потребує рішення бренду. Кожна одиниця з фото та коментарем. Бренд вирішує: списати, повернути постачальнику, перепродавати зі знижкою або виставити в окрему категорію 'друга категорія'."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Головна","item":"https://www.fulfillmentmtp.com.ua/"},{"@type":"ListItem","position":2,"name":"Послуги","item":"https://www.fulfillmentmtp.com.ua/poslugy/"},{"@type":"ListItem","position":3,"name":"Фулфілмент для одягу","item":"https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/"}]}</script>`;
 ---
 <Base
   title="Фулфілмент для одягу — стелажі, розміри, повернення | MTP"
-  description="Фулфілмент для fashion-брендів та селерів одягу: стелажі для одягу на плечиках, штрих-кодування за розміром, обробка повернень з фото, інтеграції з Rozetka/Prom/Kasta. Від 20 грн."
+  description="Фулфілмент для fashion-брендів та селерів одягу: стелажі для одягу на плечиках, штрих-кодування за розміром, обробка повернень з фото, інтеграції з Rozetka/Prom/Kasta. Від 18 грн."
   canonical="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/"
   lang="uk"
   ogImage="https://www.fulfillmentmtp.com.ua/images/odyahu-hero.jpg"
@@ -116,7 +116,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
       <div class="oh-step-body">
         <h3>Збір замовлення з QC-перевіркою</h3>
         <p>Замовлення надходить через API (Rozetka, Prom, CRM, Shopify). Оператор іде до конкретної комірки за вказівкою WMS — людський фактор виключений. Перед пакуванням — QC: цілісність товару, наявність бирок, відсутність дефектів. Можна вкласти листівку, промокод, подарунок. 4 забори Нової Пошти на день — більшість замовлень доставляється наступного дня.</p>
-        <div class="oh-step-price">Відправка: від 20 грн · Доукомплектація: 2,50 грн/од.</div>
+        <div class="oh-step-price">Відправка: від 18 грн · Доукомплектація: 2,50 грн/од.</div>
       </div>
     </div>
 
@@ -158,7 +158,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <h2 class="sec-h2">Скільки коштує фулфілмент одягу</h2>
   <div class="price-table">
     <div class="price-row price-header"><span>Послуга</span><span>Умова</span><span>Ціна</span></div>
-    <div class="price-row"><span>Відправка замовлення</span><span>200+ замовлень/день</span><span>від 20 грн</span></div>
+    <div class="price-row"><span>Відправка замовлення</span><span>200+ замовлень/день</span><span>від 18 грн</span></div>
     <div class="price-row"><span>Відправка замовлення</span><span>100-199/день</span><span>від 22 грн</span></div>
     <div class="price-row"><span>Відправка замовлення</span><span>50-99/день</span><span>від 24 грн</span></div>
     <div class="price-row"><span>Відправка замовлення</span><span>0-49/день</span><span>від 28 грн</span></div>
@@ -415,7 +415,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .faq-q::after{content:'+';font-size:28px;color:#e63329;transition:transform .3s;flex-shrink:0;line-height:1}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-a{max-height:600px}
+/* .faq-item.open max-height set inline by /js/faq.js */
 .faq-a p{padding:0 0 22px;font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin:0}
 .faq-a p a{color:#e63329}
 
@@ -436,17 +436,5 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 }
 </style>
 
-<!-- FAQ accordion JS (was missing — items rendered open-stuck) -->
-<script is:inline>
-(function(){
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    var btn = item.querySelector('.faq-q');
-    if(!btn) return;
-    btn.setAttribute('aria-expanded','false');
-    btn.addEventListener('click', function(){
-      var isOpen = item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-})();
-</script>
+<!-- FAQ accordion handled by global /js/faq.js (loaded in Base.astro) -->
+

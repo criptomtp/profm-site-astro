@@ -462,7 +462,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .faq-q::after{content:'+';font-size:28px;color:#e63329;transition:transform .3s;flex-shrink:0;line-height:1}
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-a{max-height:600px}
+/* .faq-item.open max-height set inline by /js/faq.js */
 .faq-a p{padding:0 0 22px;font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin:0}
 .faq-a p a,.faq-a p strong{color:#fff}
 
@@ -488,16 +488,4 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 }
 </style>
 
-<script is:inline>
-(function(){
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    var btn = item.querySelector('.faq-q');
-    if(!btn) return;
-    btn.setAttribute('aria-expanded','false');
-    btn.addEventListener('click', function(){
-      var isOpen = item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-})();
-</script>
+<!-- FAQ accordion handled by global /js/faq.js (loaded in Base.astro) -->
