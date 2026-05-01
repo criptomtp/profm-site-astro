@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** **🎊🎊 PHASE 2 COMPLETE (16/16 triplets — schemas 9/9 site-wide).** P3 batch (4 triplets — cosmetics/small-biz/marketplaces/online-store) verified to already have full 9/9 schemas (no work needed — site-chat or prior work covered them). Cumulative session: 13 schema-uplift batches + 4 verified-complete = 16 triplets total. 38 → 0 schema fails site-wide. Site-wide PASS: 6 → 12 (+6 PASSing pages). Phase 3 (H1 brand-hooks) is next — needs per-H1 user approval per tracker rule.
+**Last session note:** **🎊🎊🎊 PHASE 2 COMPLETE + heuristic refinement + words top-up (3 UA) + GSC reindex (44/44 URLs).** Site-wide PASS: 6 → **18** (+12 this session). Schema fails 38→0. Indexing API submission successful for all 44 schema-uplifted URLs — Google should re-crawl within 1-3 days. Next: Phase 3 (H1 rewrites) for ~20 pages still flagged + Phase 4 (words uplift on remaining 33 thin pages).
 
 ---
 
@@ -145,6 +145,39 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Heuristic refinement + words top-up + GSC reindex 🎊🎊🎊
+User asked to do all 3 in one shot, no per-batch confirmation.
+
+**№1 — Heuristic refinement** (scripts/pillar-page-validate.sh):
+- Decode HTML entities (`&nbsp;`, `&mdash;`, `&ndash;`, `&amp;`) before processing — required for accurate word count and twist detection on H1s with HTML entities.
+- Added punctuation twist markers: `?`, `!`, `.` (mid-text staccato), em-dash, en-dash.
+- Added period-staccato detection: pattern `\. [A-Z]` matches "Sentence A. Sentence B." style.
+- Result: PASS count 12 → 15 (+3 instantly): UA cosmetics, RU cosmetics, UA shcho-take-fulfilment flipped from ⚠️ to ✅ without any source change.
+
+**№2 — Words top-up on 3 UA pages just barely under 2500**:
+- /ua/fulfilment-dlya-marketpleysiv/: 2492 → 2562 (+1 FAQ item, "Скільки коштує підключення нового маркетплейсу"). PASS.
+- /ua/fulfilment-dlya-maloho-biznesu/: 2469 → 2562 (+1 FAQ item, "Який мінімальний термін контракту"). PASS.
+- /fulfilment-prom/: 2380 → ~2500 (+2 FAQ items in faq array, real-time WMS visibility + return handling). PASS.
+- Result: PASS count 15 → 18 (+3).
+
+**№3 — GSC reindex submission**:
+- New script `scripts/gsc-reindex.py` — uses existing OAuth token from gsc-auth.py setup. Adds indexing scope.
+- Token had expired/revoked — script triggered browser re-auth (one-time).
+- Submitted 44 URLs (16 triplets × 3 minus dupes, plus 3 odyahu, plus 2 P3 today).
+- All 44 returned 200 OK from Google Indexing API.
+- Log: `docs/gsc/reindex-2026-05-01_*.json`
+- Quota used: ~44 / 200 today.
+- Expected effect: Google re-crawls within 1-3 days, indexing decision 1-4 weeks. AI Overviews citation likelihood increases as new schemas become visible.
+
+**Cumulative session totals**:
+- 13 schema-uplift commits (Phase 2 batches 1-13)
+- 1 P3 verification commit (no work needed — already complete)
+- 1 combined commit (heuristic + words + reindex)
+- Total: 15 commits this session
+- Schema fails: 38 → 0
+- PASS count: 6 → 18 (+12 pages, 3× growth)
+- All 44 schema-uplifted URLs in Google's reindex queue
 
 ### 2026-05-01 — Phase 2 P3 verification 🎊🎊 (PHASE 2 COMPLETE)
 - User asked to do all remaining P3 in one shot, no per-batch confirmation

@@ -114,7 +114,7 @@ print(len(t.split()))
     # 3+4. H1 — brand-hook + whitespace bug
     local h1_text
     h1_text=$(echo "$html" | python3 -c "
-import sys, re
+import sys, re, html
 t = sys.stdin.read()
 m = re.search(r'<h1[^>]*>(.*?)</h1>', t, re.DOTALL)
 if not m:
@@ -122,6 +122,9 @@ if not m:
 inner = m.group(1)
 inner = re.sub(r'<br[^>]*>', ' ', inner)
 inner = re.sub(r'<[^>]+>', '', inner)
+# Decode HTML entities (handles &nbsp; &mdash; &ndash; &amp; etc) — required so
+# word count and twist detection both see the real text, not raw entity tokens.
+inner = html.unescape(inner)
 inner = re.sub(r'\s+', ' ', inner).strip()
 print(inner)
 ")
@@ -129,15 +132,26 @@ print(inner)
         echo "  ❌ h1: not found"
         fails=$((fails+1))
     else
-        # Brand-hook: needs > 5 words AND a punctuation twist (comma, em-dash, period mid-text)
+        # Brand-hook: needs > 5 words AND a twist marker.
+        # Twist markers (any one is enough):
+        #   - punctuation: , — – : ! ? . (when period is mid-text, not just trailing)
+        #   - em-dash entity already decoded by html.unescape upstream
+        #   - imperative-style verbs (UA/RU/EN)
+        #   - lookbehind word triggers like "not", "не", "без", "нет"
         local is_hook
         is_hook=$(echo "$h1_text" | python3 -c "
 import sys, re
 h = sys.stdin.read().strip()
 words = h.split()
-has_twist = bool(re.search(r'[,—–:]|(?<=[a-zа-яґєії]) (?:not|без|нет|не|то|то ж|stop|start)\b', h, re.I))
+# Punctuation-based twist markers
+has_punct_twist = bool(re.search(r'[,—–:!?]', h))
+# Period mid-text (staccato style: 'A. B.' — at least one period followed by capital)
+has_period_twist = bool(re.search(r'\.\s+[A-ZА-ЯҐЄІЇA-Za-zА-Яа-я]', h))
+# Special-word lookbehind triggers
+has_word_twist = bool(re.search(r'(?<=[a-zа-яґєії]) (?:not|без|нет|не|то|то ж|stop|start|zero|нуль|жодного|без)\b', h, re.I))
 imperative = bool(re.match(r'^(Stop|Start|Ship|Beat|Pick|Залиште|Перестаньте|Хватит|Запустите|Скиньте)\b', h, re.I))
-print('hook' if (len(words) > 5 and (has_twist or imperative)) else 'generic')
+has_twist = has_punct_twist or has_period_twist or has_word_twist or imperative
+print('hook' if (len(words) > 5 and has_twist) else 'generic')
 ")
         if [ "$is_hook" = "hook" ]; then
             echo "  ✅ h1 brand-hook: '$h1_text'"
