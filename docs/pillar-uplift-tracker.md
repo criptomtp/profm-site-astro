@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 7/16 done — fulfilment-rozetka. **🎊 UA + EN rozetka now FULL PASS** (first non-clothing pages to pass gate fully!). RU close (2 fails: words 2281, H1). Cumulative this session: 7 triplets, -20 schema fails (38→18). Site-wide PASS: 6→8.
+**Last session note:** Phase 2 batch 8/16 done — fulfilment-prom. **🎊 RU prom now FULL PASS.** **P1 batch (4/4) COMPLETE.** UA + EN prom close (only words gap: 2380/2131). Cumulative this session: 8 triplets, -23 schema fails (38→15). Site-wide PASS: 6→9. Next: P2 batch starts (geo-specific pillars).
 
 ---
 
@@ -71,7 +71,7 @@
 - [x] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/` **DONE 2026-05-01**: this is Article-type pillar (not Service-type) — had thick schema-stack already (Article, WebPage, VideoObject, ImageObject, Person, FAQPage, BreadcrumbList, Speakable, Organization) but was missing all "service signal" types (LocalBusiness/Geo/PostalAddress/BusinessAudience/Service/Offer/Country). Appended 2 new scripts to schemaJson template literal: full LocalBusiness (with geo + 2-Place location[]) and full Service (description + Organization provider + BusinessAudience + AggregateOffer with nested Offers). Words 3042/2815/3657 already ≥ 2500. **Result: only H1 generic ⚠️ remains — 1 warning from full PASS on all 3 langs.**
 - [x] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/` **DONE 2026-05-01**: smallest batch — already had Service+LocalBusiness+Organization+PostalAddress+Country+Offer+FAQPage+Breadcrumb. Just added GeoCoordinates + 2-Place location[] to LocalBusiness, BusinessAudience to Service. 2 surgical replacements per file. EN had `²` JSON.stringify-escaped sqm symbol — adapted pattern. All 3 now 9/9 schemas ✅. Words 1092/879/1014 still ❌ (Phase 4); H1 generic ⚠️ (already has &mdash; twist but `&nbsp;` HTML entities confuse heuristic — Phase 3 will refine).
 - [x] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/` **DONE 2026-05-01**: had 0 LocalBusiness across all 3 (only Service+FAQ+Breadcrumb+BusinessAudience+Offer+Organization+Country). Single append: full LocalBusiness script (with geo + 2-Place location[] + 2-PostalAddress) per language. **🎊 UA + EN now FULL PASS** (first non-clothing pages!). RU close: 2281 words and H1 generic.
-- [ ] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/`
+- [x] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/` **DONE 2026-05-01**: same shape as rozetka — had everything except LocalBusiness. Single append per language. 🎊 RU now FULL PASS (words 2917, H1 "Фулфилмент для продавцов Prom.ua — от 22 ₴ за заказ" has em-dash + numeric). UA + EN H1s also brand-hooks ("FBO у Prom.ua не існує. До сьогодні.", "Prom has 700,000 sellers and zero native FBO.") — only words gap remains (2380/2131). All 3 schemas 9/9 ✅. UA prom note: pages had JS object literal with single quotes (not JSON double quotes) for serviceSchema — JSON.stringify converts at build time, no issue.
 
 #### P2 batch (geo + specific)
 - [ ] **fulfilment-kyiv** — `/ua/fulfilment-kyiv/` + `/ru/fulfilment-kiev/` + `/en/fulfillment-kyiv/`
@@ -145,6 +145,21 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 8: fulfilment-prom triplet 🎊 (P1 complete)
+- Same shape as rozetka — had Service+BusinessAudience+Offer+FAQ+Breadcrumb+Org+Country, missing only LocalBusiness/Geo/PostalAddress
+- UA file uses JS object literal with single quotes (not JSON double quotes) — JSON.stringify converts to proper JSON at build time, so no issue
+- Single append per language: full LocalBusiness with geo + 2-Place location[] + 2 PostalAddress
+- Words: UA 2380, RU 2917, EN 2131. Only RU passed words threshold (≥2500). UA + EN need ~150-400 more words (Phase 4)
+- H1s all brand-hooks per heuristic:
+  - UA "FBO у Prom.ua не існує. До сьогодні." — declarative + paradox
+  - RU "Фулфилмент для продавцов Prom.ua — от 22 ₴ за заказ" — em-dash + numeric
+  - EN "Prom has 700,000 sellers and zero native FBO." — declarative + paradox + concrete
+- 🎊 RU /ru/fulfilment-prom/ now FULL PASS
+- Net progress: -3 schema fails. Cumulative session: -23 (38 → 15)
+- Site-wide PASS count: 8 → 9 (+1 from this batch)
+- **🎊 P1 batch (4/4) COMPLETE** (what-is-fulfillment, 3pl-logistics, fulfilment-rozetka, fulfilment-prom)
+- Next session: start P2 batch with `fulfilment-kyiv` triplet (geo-specific Kyiv-targeted pillar)
 
 ### 2026-05-01 — Phase 2 batch 7: fulfilment-rozetka triplet 🎊
 - Pages had everything except LocalBusiness — service-style page already with BusinessAudience, Offer, FAQPage, BreadcrumbList, Organization
