@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 5/16 done — what-is-fulfillment triplet now 1-warning-from-PASS on all 3 langs! Schemas 9/9, words 3042/2815/3657 ✅, hreflang ✅, lang purity ✅. Only H1 generic ⚠️ remains. Cumulative this session: 5 triplets, -14 schema fails (38→24). Next P1: 3pl-logistics.
+**Last session note:** Phase 2 batch 6/16 done — 3pl-logistics triplet schemas 9/9. Tiniest batch yet — only needed GeoCoordinates + BusinessAudience (everything else already there). Cumulative this session: 6 triplets, -17 schema fails (38→21). Next P1: fulfilment-rozetka.
 
 ---
 
@@ -69,7 +69,7 @@
 
 #### P1 batch (top-of-funnel + flagship)
 - [x] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/` **DONE 2026-05-01**: this is Article-type pillar (not Service-type) — had thick schema-stack already (Article, WebPage, VideoObject, ImageObject, Person, FAQPage, BreadcrumbList, Speakable, Organization) but was missing all "service signal" types (LocalBusiness/Geo/PostalAddress/BusinessAudience/Service/Offer/Country). Appended 2 new scripts to schemaJson template literal: full LocalBusiness (with geo + 2-Place location[]) and full Service (description + Organization provider + BusinessAudience + AggregateOffer with nested Offers). Words 3042/2815/3657 already ≥ 2500. **Result: only H1 generic ⚠️ remains — 1 warning from full PASS on all 3 langs.**
-- [ ] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/`
+- [x] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/` **DONE 2026-05-01**: smallest batch — already had Service+LocalBusiness+Organization+PostalAddress+Country+Offer+FAQPage+Breadcrumb. Just added GeoCoordinates + 2-Place location[] to LocalBusiness, BusinessAudience to Service. 2 surgical replacements per file. EN had `²` JSON.stringify-escaped sqm symbol — adapted pattern. All 3 now 9/9 schemas ✅. Words 1092/879/1014 still ❌ (Phase 4); H1 generic ⚠️ (already has &mdash; twist but `&nbsp;` HTML entities confuse heuristic — Phase 3 will refine).
 - [ ] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/`
 - [ ] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/`
 
@@ -145,6 +145,14 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 6: 3pl-logistics triplet
+- Tiniest batch in Phase 2 so far. Already had 8 of 9 must-have types. Just missing GeoCoordinates + BusinessAudience.
+- 2 surgical python replacements per file (LocalBusiness add geo+location[], Service add audience after areaServed)
+- EN had JSON.stringify-escaped `²` sqm symbol — used escape-aware pattern
+- Validate: ✅ schemas 9/9 all 3, ❌ words 1092/879/1014, ⚠️ H1 generic (H1 has &mdash; em-dash twist but `&nbsp;` HTML entity in H1 confuses brand-hook heuristic word count — same issue as RU what-is-fulfillment)
+- Net progress this batch: -3 schema fails. Cumulative session: -17 (38 → 21)
+- Next session: continue P1 with `fulfilment-rozetka` (UA root + RU /ru/ + EN /en/fulfillment-for-rozetka-sellers/)
 
 ### 2026-05-01 — Phase 2 batch 5: what-is-fulfillment triplet (P1 start)
 - Article-type pillar (not Service-type) — different schema profile from prior batches
