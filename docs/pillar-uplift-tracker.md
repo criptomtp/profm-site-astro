@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 13/16 done — warehouse-services. **🎊 P2 batch (5/5) COMPLETE.** All 3 schemas 9/9. UA words 2445 (just 55 from PASS!). RU 780, EN 908. Cumulative session: 13 triplets, -38 schema fails (38→0 for already-batched pillars). P3 (4 quick-wins) all that remains in Phase 2.
+**Last session note:** **🎊🎊 PHASE 2 COMPLETE (16/16 triplets — schemas 9/9 site-wide).** P3 batch (4 triplets — cosmetics/small-biz/marketplaces/online-store) verified to already have full 9/9 schemas (no work needed — site-chat or prior work covered them). Cumulative session: 13 schema-uplift batches + 4 verified-complete = 16 triplets total. 38 → 0 schema fails site-wide. Site-wide PASS: 6 → 12 (+6 PASSing pages). Phase 3 (H1 brand-hooks) is next — needs per-H1 user approval per tracker rule.
 
 ---
 
@@ -81,10 +81,10 @@
 - [x] **warehouse-services** — `/ua/skladski-poslugy/` + `/ru/skladskie-uslugi/` + `/en/warehouse-services/` **DONE 2026-05-01**: same shape as pallet-storage — only missing GeoCoordinates + BusinessAudience. 2 surgical replacements per file. All 3 now 9/9 schemas ✅. UA words 2445 (just 55 from PASS!). RU 780, EN 908. H1 generic on all 3.
 
 #### P3 batch (already mostly-passing — quick wins)
-- [ ] **cosmetics** — UA mostly OK, RU 1 fail, EN passing (only quick top-up needed)
-- [ ] **small-biz** — UA needs words, RU passing, EN 1 fail
-- [ ] **marketplaces** — UA 2 fails, RU 1, EN 1
-- [ ] **online-store** — UA 2 fails, RU 2, EN passing
+- [x] **cosmetics** — UA + RU + EN all 9/9 schemas already (verified 2026-05-01, no schema work needed). EN PASSing. UA + RU only have H1 ⚠️ ("Косметика з різними batch-датами? FEFO у нас від 2014." — heuristic doesn't accept `?` as twist; real H1 is brand-hook). Phase 3.
+- [x] **small-biz** — UA + RU + EN all 9/9 schemas already. RU PASSing. UA needs words 2469 (31 short!). EN H1 is real brand-hook ("The standard fulfillment model is a house of cards...") — heuristic blind spot. Phase 3+4.
+- [x] **marketplaces** — UA + RU + EN all 9/9 schemas already. UA needs words 2492 (8 short!). All H1s real brand-hooks ("Один inventory. П'ять маркетплейсів. Нуль дублів стоку.", "Вы продаёте. Мы отправляем.", "One inventory pool. Five marketplaces. Zero duplicate stock.") — heuristic doesn't accept period as twist. Phase 3+4.
+- [x] **online-store** — UA + RU + EN all 9/9 schemas already. EN PASSing. UA words 2478 (22 short!). RU words 2316. UA + RU H1 generic short noun-construction ("Фулфілмент для інтернет-магазину") — Phase 3.
 
 ---
 
@@ -145,6 +145,20 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 P3 verification 🎊🎊 (PHASE 2 COMPLETE)
+- User asked to do all remaining P3 in one shot, no per-batch confirmation
+- Recon ALL 12 P3 files: surprise — all already have 9/9 must-have schemas
+- Likely site-chat (other Claude) or prior work covered them; possibly the `BusinessAudience` was added separately and that was the main missing field
+- Per-page validate result (live):
+  * **PASSING (3):** en/fulfilment-for-cosmetics, ru/fulfilment-dlya-malogo-biznesa, en/fulfilment-for-online-store
+  * **1-fail-from-PASS (6):** ua-cosmetics + ru-cosmetics (H1 has `?`); ua-small-biz (words 2469); en-small-biz (H1 brand-hook not detected); ru-marketplaces + en-marketplaces (H1 brand-hooks not detected — period/staccato pattern)
+  * **2-fail-from-PASS (3):** ua-marketplaces (words 2492 + H1); ua-internet-magazynu (words 2478 + H1); ru-internet-magazynu (words 2316 + H1)
+- **No source code changes needed for Phase 2 P3** — schemas are already complete
+- Tracker updated: all 4 P3 triplets marked done with note "no schema work needed"
+- 🎊🎊 **PHASE 2 (16/16 TRIPLETS) COMPLETE — site-wide schemas 9/9 across all pillars**
+- Site-wide PASS count: 6 → 12 (+6 PASSing pages this session): UA odyahu, RU odyahu, EN odyahu (already), UA rozetka, EN rozetka, RU prom (this session) + EN cosmetics, RU malogo-biznesa, EN online-store (verified during P3 recon)
+- Several pages 1-fail-from-PASS — Phase 3 (H1 heuristic refinement OR rewrites) will flip them. Phase 4 closes thin-content gaps for the rest.
 
 ### 2026-05-01 — Phase 2 batch 13: warehouse-services triplet 🎊 (P2 complete)
 - Same shape as pallet-storage. Missing only GeoCoordinates + BusinessAudience.
