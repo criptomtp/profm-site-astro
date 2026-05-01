@@ -4,7 +4,7 @@
 
 **Started:** 2026-05-01
 **Last update:** 2026-05-01
-**Last session note:** Phase 2 batch 4/16 done — home triplet schemas 9/9. **P0 batch (4/4) COMPLETE.** Cumulative this session: 4 triplets, -11 schema fails (38→27). Next: P1 batch (4 triplets — what-is-fulfillment, 3pl-logistics, fulfilment-rozetka, fulfilment-prom).
+**Last session note:** Phase 2 batch 5/16 done — what-is-fulfillment triplet now 1-warning-from-PASS on all 3 langs! Schemas 9/9, words 3042/2815/3657 ✅, hreflang ✅, lang purity ✅. Only H1 generic ⚠️ remains. Cumulative this session: 5 triplets, -14 schema fails (38→24). Next P1: 3pl-logistics.
 
 ---
 
@@ -68,7 +68,7 @@
 - [x] **home** — `/index.html` + `/ru/index.html` + `/en/index.html` **DONE 2026-05-01**: all 3 had thin schema-stack (only WebSite + LocalBusiness + FAQPage; EN missing FAQPage too). Added GeoCoordinates + 2-Place location[] to LocalBusiness; added new Service script with description, Organization provider, BusinessAudience, AggregateOffer with nested Offer; for EN also added new FAQPage script with 7 Q/A translated/adapted from UA. All 3 now 9/9 schemas ✅. Words + H1 generic still ❌ (Phase 3/4).
 
 #### P1 batch (top-of-funnel + flagship)
-- [ ] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/`
+- [x] **what-is-fulfillment** — `/ua/shcho-take-fulfilment/` + `/ru/chto-takoe-fulfilment/` + `/en/what-is-fulfillment/` **DONE 2026-05-01**: this is Article-type pillar (not Service-type) — had thick schema-stack already (Article, WebPage, VideoObject, ImageObject, Person, FAQPage, BreadcrumbList, Speakable, Organization) but was missing all "service signal" types (LocalBusiness/Geo/PostalAddress/BusinessAudience/Service/Offer/Country). Appended 2 new scripts to schemaJson template literal: full LocalBusiness (with geo + 2-Place location[]) and full Service (description + Organization provider + BusinessAudience + AggregateOffer with nested Offers). Words 3042/2815/3657 already ≥ 2500. **Result: only H1 generic ⚠️ remains — 1 warning from full PASS on all 3 langs.**
 - [ ] **3pl-logistics** — `/ua/3pl-logistyka/` + `/ru/3pl-logistika/` + `/en/3pl-logistics/`
 - [ ] **fulfilment-rozetka** — `/fulfilment-rozetka/` + `/ru/fulfilment-rozetka/` + `/en/fulfillment-for-rozetka-sellers/`
 - [ ] **fulfilment-prom** — `/fulfilment-prom/` + `/ru/fulfilment-prom/` + `/en/fulfilment-prom/`
@@ -145,6 +145,16 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-01 — Phase 2 batch 5: what-is-fulfillment triplet (P1 start)
+- Article-type pillar (not Service-type) — different schema profile from prior batches
+- All 3 had rich Article+WebPage+Video+Person+FAQPage+Breadcrumb+Speakable+Organization, but were missing all 7 "service signal" types validate gate requires
+- Solution: append 2 new scripts to existing schemaJson template literal (LocalBusiness + Service) — non-invasive, doesn't touch existing Article schema
+- Words already ≥2500 on all 3 (3042/2815/3657) — biggest single-batch progress so far
+- **Only H1 generic ⚠️ remains** — these 3 are first triplet to be 1-warning-from-PASS. Phase 3 will flip them
+- Net progress: -3 schema fails. Cumulative session: -14 (38 → 24)
+- Note: H1 chek heuristic doesn't accept period as twist marker — RU H1 has em-dash but `&nbsp;` HTML entity confuses word count. Both fixable in Phase 3 (H1 rewrites + heuristic refinement).
+- Next session: continue P1 with `3pl-logistics` triplet
 
 ### 2026-05-01 — Phase 2 batch 4: home triplet (P0 complete!)
 - All 3 homepages had thinnest schema-stack of any pillars seen so far: WebSite + LocalBusiness + FAQPage (UA/RU only). EN homepage didn't even have FAQPage.
