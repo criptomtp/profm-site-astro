@@ -10,7 +10,7 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - Нова сторінка/стаття → Read frontend-design + seo-page + copywriting-ua + seo-hreflang
 - SEO аудит → Read seo + seo-technical + seo-audit + seo-universal
 - Google Ads → Read google-ads-analysis + google-ads-write
-- Контент → Read content-production + content-strategy + content-humanizer + copywriting-ua
+- Контент → Read content-production + content-strategy + content-humanizer + copywriting-ua + ОБОВ'ЯЗКОВО docs/humanizer-ua-mtp.md (UA/RU/EN AI-tells + MTP voice)
 - Дизайн компоненти → Read senior-frontend + frontend-design
 - CRO аналіз → Read cro + cro-advisor
 - SEO конкуренти → Read seo-competitor-pages + seo-competitor-ext
@@ -40,6 +40,7 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 2. ANALYZER — аналіз структури, довжини, ключових слів конкурентів + вибір архетипу (Industrial/Direct/Editorial)
 2.5. STITCH PREVIEW — generate_screen_from_text + 2-3 variants → експорт у docs/design-system/stitch-exports/[date]_[slug]/ → показати user → "approved"
 3. WRITER — написання UA + RU + EN (не переклади — різні кути атаки)
+3.5. HUMANIZER — другий прохід через `docs/humanizer-ua-mtp.md`. Перевіряємо: заборонені UA/RU/EN звороти ("у сучасному світі", "комплексне рішення", "in today's landscape", "delve" тощо), burstiness (мікс речень 3→40 слів), мін. 3 anchor-цифри MTP на сторінці (3 700 м², 800 мс sync, 47 хв до НП, 18 грн збірка, 0 днів простою з 2022, тощо), MTP voice (прямий, без пафосу, з обмеженнями). Без цього кроку сторінку НЕ позначати готовою.
 4. IMAGE-GEN — генерація зображень через Pollinations.ai (безкоштовно)
 5. DESIGN — Astro код ВРУЧНУ за Stitch-референсом, використовуючи src/components/stitch/ (StatsBar, LabelChip, SplitHero, DarkCTA, AccordionGroup)
 6. QA — перевірка SEO + PageSpeed + mobile + build
@@ -92,6 +93,7 @@ Read ~/.claude/skills/mtp-knowledge/SKILL.md
 - [ ] Створити UA: **`src/pages/[slug].astro`** (БЕЗ `/ua/` префіксу — нова URL policy) мін. 1200 слів
 - [ ] Створити RU: `src/pages/ru/[slug].astro` (інший кут, не переклад)
 - [ ] Створити EN: `src/pages/en/[slug].astro` (інший кут, не переклад)
+- [ ] **HUMANIZER ПРОХІД (обовʼязково, для всіх 3 мов):** прогнати через `docs/humanizer-ua-mtp.md` — заборонені звороти (UA/RU/EN), burstiness (мікс довжин речень 3→40 слів), ≥3 anchor-цифри MTP на сторінці, без AI-кліше і парадних bullet-списків. Окремо перевірити: hero subline, перший абзац кожної секції, FAQ-відповіді, meta description, h2/h3 заголовки.
 - [ ] **КРОС-МОВНА ПЕРЕЛІНКОВКА (обовʼязково, часто забуваю):**
   - [ ] Всі 3 версії створені в одній задачі — не деплоїмо одну без інших двох
   - [ ] Hreflang на всіх 3 сторінках (uk/ru/en/x-default) — повне взаємопосилання
@@ -297,6 +299,7 @@ curl -o "public/images/[slug]-hero.jpg" \
 - `docs/design-system/archetypes/` — industrial.md, direct.md, editorial.md.
 - `docs/design-system/stitch-exports/` — Stitch артефакти (concept + screenshot) на approved концепцію.
 - `docs/design-system/pages/` — ADR + baseline на кожну створену/редизайнуту сторінку.
+- `docs/humanizer-ua-mtp.md` — humanizer rules: UA/RU/EN AI-tells, burstiness, MTP voice, anchor-цифри. ОБОВ'ЯЗКОВО після WRITER step, перед QA. Single source of truth для "як звучить MTP".
 
 ---
 
