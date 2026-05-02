@@ -3,8 +3,14 @@
 **Mission.** Поетапно довести всі pillar-сторінки сайту до passing на `npm run validate:pillar`. Не one-shot push, а **многосесійний systematic процес** з checkpoints і чіткими задокументованими кроками.
 
 **Started:** 2026-05-01
-**Last update:** 2026-05-01
-**Last session note:** **Phase 3 MVP done (Variant 1).** Heuristic refinement #2 (added long_rhetorical >12 words + short_staccato >3 words) + 6 H1 rewrites on calculator/prices triplet (real brand-hooks with concrete numbers). Heuristic edit broke validator initially due to bash-quote interpretation of `\b` regex; fixed by switching python to single-quote heredoc. Site-wide PASS: 18 → **20** (+2 from heuristic alone — en/small-biz 17-word declarative + ru/marketpleysov 4-word staccato now correctly classified as hooks).
+**Last update:** 2026-05-02
+**Last session note:** Observation window started. Phase A done: strategy doc merged, 4 H1 rewrites (en/services, /poslugy/, ru/services, en/fulfillment-ukraine), phantom URL redirects added (US-spelling → UK-spelling), RU tsenu duplicate cleanup (-4062 bytes orphan JSON-LD inside JS callback), GSC baseline captured (3994 imp / 19 clk over 14d on 44 pillars). 60 URLs in GSC reindex queue cumulative.
+
+**⚠️ Outstanding issue for next session:** Phantom redirects (`/en/fulfillment-for-marketplaces/`, `/en/fulfillment-for-cosmetics/`) commit `945037a` returning 404 in production after CF Pages deploy. Possible causes: (a) CF cache lag; (b) CF Pages parsing issue with my appended block; (c) deploy hadn't completed at time of test. Verify with `curl -sI` next session OR check CF Pages dashboard for build status. Pre-existing fallback rules to `/en/fulfillment-ukraine/` were correctly removed.
+
+**Next checkpoint: 2026-05-09** — pull GSC delta with `python3 scripts/gsc-delta.py docs/gsc/baseline-2026-05-02.json` (script TBD — write when needed), compare against baseline, decide Phase B vs pivot per strategy doc.
+
+**Site-wide PASS at observation start:** 21 / 54 (3.5× growth from 6 starting baseline).
 
 ---
 
