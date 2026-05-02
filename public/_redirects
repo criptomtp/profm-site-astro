@@ -476,4 +476,8 @@
 /en/fulfillment-for-cosmetics/     /en/fulfilment-for-cosmetics/     301
 /en/fulfillment-for-cosmetics      /en/fulfilment-for-cosmetics/     301
 
+
+# --- Issue #1 final cleanup 2026-05-02: legacy /blog/chto-takoe-fulfilment/ → RU pillar ---
+/blog/chto-takoe-fulfilment/  /ru/chto-takoe-fulfilment/  301
+/blog/chto-takoe-fulfilment   /ru/chto-takoe-fulfilment/  301
 /*  /404.html  404
