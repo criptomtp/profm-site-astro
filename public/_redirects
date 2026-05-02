@@ -467,7 +467,6 @@
 /sitemap.xml  /sitemap-index.xml  301
 /404  /  301
 /404/  /  301
-/*  /404.html  404
 
 # --- Phantom EN URLs from Tilda legacy (2026-05-01, per pillar uplift strategy) ---
 # US-spelling "fulfillment" (LL) → UK-spelling "fulfilment" (L) Astro pages
@@ -476,3 +475,5 @@
 /en/fulfillment-for-marketplaces   /en/fulfilment-for-marketplaces/  301
 /en/fulfillment-for-cosmetics/     /en/fulfilment-for-cosmetics/     301
 /en/fulfillment-for-cosmetics      /en/fulfilment-for-cosmetics/     301
+
+/*  /404.html  404
