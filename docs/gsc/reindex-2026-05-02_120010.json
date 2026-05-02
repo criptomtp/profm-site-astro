@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-05-02_120010",
+  "ok": 2,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}
