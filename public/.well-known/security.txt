@@ -1,0 +1,10 @@
+# Security policy for fulfillmentmtp.com.ua
+# Per RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116
+# If you discover a security vulnerability, please report it via one of the contacts below.
+# We respond within 5 business days.
+
+Contact: mailto:mtpgrouppromo@gmail.com
+Contact: https://t.me/nikolay_mtp
+Expires: 2027-05-03T00:00:00.000Z
+Preferred-Languages: uk, en, ru
+Canonical: https://www.fulfillmentmtp.com.ua/.well-known/security.txt
