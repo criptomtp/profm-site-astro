@@ -11,8 +11,8 @@
     "baseline_clicks": 19,
     "current_clicks": 20,
     "clk_delta": 1,
-    "winners": 17,
-    "losers": 6,
+    "winners": 22,
+    "losers": 1,
     "unchanged": 21
   },
   "winners": [
@@ -61,6 +61,14 @@
       "reason": "imp +125 (+137%)"
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/",
+      "reason": "imp +4 (+57%), pos 31.6→40.3 (low-sample)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/",
+      "reason": "imp +3 (+38%), pos 21.5→26.4 (low-sample)"
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/",
       "reason": "imp +3 (+27%)"
     },
@@ -69,8 +77,16 @@
       "reason": "imp +19 (+20%)"
     },
     {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/",
+      "reason": "imp +5 (+83%), pos 23.2→42.4 (low-sample)"
+    },
+    {
       "url": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
       "reason": "imp +1 (+20%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/pallet-storage/",
+      "reason": "imp +1 (+33%), pos 7.0→18.5 (low-sample)"
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
@@ -78,7 +94,11 @@
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/",
-      "reason": "imp +7 (+140%), pos 29.2→19.8"
+      "reason": "imp +7 (+140%), pos 29.2→19.8 (low-sample)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/warehouse-services/",
+      "reason": "imp +3 (+43%), pos 25.4→28.5 (low-sample)"
     },
     {
       "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/",
@@ -87,28 +107,8 @@
   ],
   "losers": [
     {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/",
-      "reason": "imp +4 (+57%), pos 31.6→40.3"
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/",
-      "reason": "imp +3 (+38%), pos 21.5→26.4"
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/",
-      "reason": "imp +5 (+83%), pos 23.2→42.4"
-    },
-    {
       "url": "https://www.fulfillmentmtp.com.ua/en/heavy-goods/",
       "reason": "imp +3 (+30%), pos 18.4→22.2"
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/pallet-storage/",
-      "reason": "imp +1 (+33%), pos 7.0→18.5"
-    },
-    {
-      "url": "https://www.fulfillmentmtp.com.ua/en/warehouse-services/",
-      "reason": "imp +3 (+43%), pos 25.4→28.5"
     }
   ],
   "per_url": {
@@ -1648,8 +1648,8 @@
           }
         ]
       },
-      "verdict": "loser",
-      "reason": "imp +4 (+57%), pos 31.6→40.3"
+      "verdict": "winner",
+      "reason": "imp +4 (+57%), pos 31.6→40.3 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/": {
       "baseline": {
@@ -1704,8 +1704,8 @@
           }
         ]
       },
-      "verdict": "loser",
-      "reason": "imp +3 (+38%), pos 21.5→26.4"
+      "verdict": "winner",
+      "reason": "imp +3 (+38%), pos 21.5→26.4 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/": {
       "baseline": {
@@ -2036,8 +2036,8 @@
           }
         ]
       },
-      "verdict": "loser",
-      "reason": "imp +5 (+83%), pos 23.2→42.4"
+      "verdict": "winner",
+      "reason": "imp +5 (+83%), pos 23.2→42.4 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/ru/fulfilment-vazhkykh-tovariv/": {
       "baseline": {
@@ -2358,8 +2358,8 @@
           }
         ]
       },
-      "verdict": "loser",
-      "reason": "imp +1 (+33%), pos 7.0→18.5"
+      "verdict": "winner",
+      "reason": "imp +1 (+33%), pos 7.0→18.5 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/": {
       "baseline": {
@@ -2507,7 +2507,7 @@
         ]
       },
       "verdict": "winner",
-      "reason": "imp +7 (+140%), pos 29.2→19.8"
+      "reason": "imp +7 (+140%), pos 29.2→19.8 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/en/warehouse-services/": {
       "baseline": {
@@ -2586,8 +2586,8 @@
           }
         ]
       },
-      "verdict": "loser",
-      "reason": "imp +3 (+43%), pos 25.4→28.5"
+      "verdict": "winner",
+      "reason": "imp +3 (+43%), pos 25.4→28.5 (low-sample)"
     },
     "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/": {
       "baseline": {

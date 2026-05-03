@@ -152,6 +152,24 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-03 — Watchlist-loser investigation + gsc-delta classifier fix 🛠️
+Investigated 3 URLs flagged as losers in earlier delta run (`/ua/fulfilment-vazhkykh-tovariv`, `/ua/fulfilment-kyiv`, `/en/heavy-goods`).
+
+**Finding: 5 of 6 "losers" were FALSE POSITIVES from low-sample query-mix shift**, not regressions:
+- `vazhkykh-tovariv`: BEFORE 1 imp pos 2 (just brand query "mtp group"). AFTER 9 imp pos 48.9 (5 NEW B2B queries entered: "b2b фулфілмент в україні" pos 50, "b2b fulfillment in ukraine" pos 20, etc.). Page BROADENED coverage. Mathematical artifact, not regression.
+- `fulfilment-kyiv`: shared queries near-stable (фулфілмент київ pos 5→6; фулфилмент киев pos 29→33 with 1→3 imp). 5 new long-tail queries entered (нова пошта фулфілмент, b2b фулфілмент). Net WIN — query breadth gain.
+- `en/heavy-goods`: gained "specialized warehouses ukraine" pos 21.7, "24-48 hours customs clearance ukraine" pos 10.7, "bulky goods transport" pos 12. Better query alignment with actual service.
+
+**Root cause:** delta classifier was scoring weighted-avg position drops without minimum-sample threshold. When a page gains 4-5 new long-tail queries at pos 30-50, the weighted average moves heavily even if no existing query lost rank.
+
+**Fix (commit pending):** Added `MIN_IMP_FOR_POS_SIGNAL = 10` constant in `scripts/gsc-delta.py`. Position drops only count for verdict scoring when BOTH baseline AND current have ≥10 impressions on the URL. Sub-threshold position changes still get noted as `(low-sample)` but don't trigger loser verdict.
+
+**Re-run after fix:** 22 winners / 1 loser / 21 unchanged (was 17 / 6 / 21). Only `/en/heavy-goods` legitimately flags now.
+
+**Conclusion:** Phase B work can continue without pause. The 3 watchlist URLs do NOT need intervention. 2026-05-09 checkpoint should rely on QUERY BREADTH and CLICK CONVERSION metrics, not weighted average position on sub-10-imp samples.
+
+---
+
 ### 2026-05-03 — gsc-delta sanity test + Phase B query-driven on internet-magazynu 🎯
 
 **Part 1: gsc-delta.py sanity test** (15min, requested as combo step)

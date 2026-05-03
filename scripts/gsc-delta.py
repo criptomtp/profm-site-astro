@@ -30,6 +30,11 @@ SITE_URL = "sc-domain:fulfillmentmtp.com.ua"
 SIGNIFICANT_IMP_DELTA_PCT = 10   # ±10% impressions
 SIGNIFICANT_POS_DELTA = 3        # ±3 position points
 SIGNIFICANT_CLICK_DELTA = 1      # any click change is meaningful at our volume
+MIN_IMP_FOR_POS_SIGNAL = 10      # require ≥10 imp on BOTH sides before counting
+                                 # position drops — otherwise tiny samples
+                                 # produce false-positive 'losers' when the
+                                 # page broadens query coverage (new long-tail
+                                 # queries at pos 30-50 drag weighted avg down).
 
 
 def get_credentials():
@@ -115,10 +120,19 @@ def classify(baseline, current):
     if abs(clk_delta) >= SIGNIFICANT_CLICK_DELTA:
         reasons.append(f"clk {clk_delta:+d}")
         score += (2 if clk_delta > 0 else -2)
-    if base_pos > 0 and cur_pos > 0 and abs(pos_delta) >= SIGNIFICANT_POS_DELTA:
+    # Position-shift requires meaningful sample on both sides — otherwise a
+    # page that gains query breadth (1 brand query → 5 long-tail queries)
+    # gets falsely flagged as 'loser' when its weighted avg moves from pos 2
+    # to pos 40 purely from sample composition change. See investigation
+    # 2026-05-03 (vazhkykh-tovariv, fulfilment-kyiv, heavy-goods).
+    sample_ok = base_imp >= MIN_IMP_FOR_POS_SIGNAL and cur_imp >= MIN_IMP_FOR_POS_SIGNAL
+    if base_pos > 0 and cur_pos > 0 and abs(pos_delta) >= SIGNIFICANT_POS_DELTA and sample_ok:
         # Lower position = better, so flip sign for score
         reasons.append(f"pos {base_pos:.1f}→{cur_pos:.1f}")
         score += (-2 if pos_delta < 0 else 2) * (-1)  # better pos = positive score
+    elif base_pos > 0 and cur_pos > 0 and abs(pos_delta) >= SIGNIFICANT_POS_DELTA:
+        # Position moved but sample too small — note it but don't count for verdict
+        reasons.append(f"pos {base_pos:.1f}→{cur_pos:.1f} (low-sample)")
     elif base_pos == 0 and cur_pos > 0:
         reasons.append(f"NEW @ pos {cur_pos:.1f}")
         score += 3
