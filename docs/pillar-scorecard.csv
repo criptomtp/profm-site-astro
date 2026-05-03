@@ -3,13 +3,9 @@ en,EN,False,2,✅,❌,⚠️,✅,✅,-
 en/fulfillment-kyiv,EN,False,2,✅,❌,⚠️,✅,✅,-
 en/pallet-storage,EN,False,2,✅,❌,⚠️,✅,✅,-
 en/warehouse-services,EN,False,2,✅,❌,⚠️,✅,✅,-
-ru/fulfilment-dlya-internet-magazynu,RU,False,2,✅,❌,⚠️,✅,✅,✅
 ru/fulfilment-rozetka,RU,False,2,✅,❌,⚠️,✅,✅,✅
 ru/paletnoe-khranenie,RU,False,2,✅,❌,⚠️,✅,✅,✅
-ru/skladskie-uslugi,RU,False,2,✅,❌,⚠️,✅,✅,✅
-ua/fulfilment-dlya-internet-magazynu,UA,False,2,✅,❌,⚠️,✅,✅,✅
 ua/paletne-zberigannya,UA,False,2,✅,❌,⚠️,✅,✅,✅
-ua/skladski-poslugy,UA,False,2,✅,❌,⚠️,✅,✅,✅
 en/3pl-logistics,EN,False,1,✅,❌,✅,✅,✅,-
 en/calculator,EN,False,1,✅,❌,✅,✅,✅,-
 en/fulfillment-ukraine,EN,False,1,✅,❌,✅,✅,✅,-
@@ -22,12 +18,15 @@ poslugy,UA,False,1,✅,❌,✅,✅,✅,✅
 ru,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/3pl-logistika,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/calculator,RU,False,1,✅,❌,✅,✅,✅,✅
+ru/fulfilment-dlya-internet-magazynu,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/fulfilment-kiev,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/fulfilment-ukraina,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/fulfilment-vazhkykh-tovariv,RU,False,1,✅,❌,✅,✅,✅,✅
+ru/skladskie-uslugi,RU,False,1,✅,❌,✅,✅,✅,✅
 ru/tsenu,RU,False,1,✅,❌,✅,✅,✅,✅
 ua/3pl-logistyka,UA,False,1,✅,❌,✅,✅,✅,✅
 ua/calculator,UA,False,1,✅,❌,✅,✅,✅,✅
+ua/fulfilment-dlya-internet-magazynu,UA,False,1,✅,❌,✅,✅,✅,✅
 ua/fulfilment-kyiv,UA,False,1,✅,❌,✅,✅,✅,✅
 ua/fulfilment-ukraina,UA,False,1,✅,❌,✅,✅,✅,✅
 ua/fulfilment-vazhkykh-tovariv,UA,False,1,✅,❌,✅,✅,✅,✅
@@ -53,3 +52,4 @@ ua/fulfilment-dlya-kosmetyky,UA,True,0,✅,✅,✅,✅,✅,✅
 ua/fulfilment-dlya-maloho-biznesu,UA,True,0,✅,✅,✅,✅,✅,✅
 ua/fulfilment-dlya-marketpleysiv,UA,True,0,✅,✅,✅,✅,✅,✅
 ua/shcho-take-fulfilment,UA,True,0,✅,✅,✅,✅,✅,✅
+ua/skladski-poslugy,UA,True,0,✅,✅,✅,✅,✅,✅

@@ -132,7 +132,7 @@
 ## Phase 6: Words uplift — P2 geo/specific
 
 - [ ] **fulfilment-kyiv** triplet
-- [ ] **fulfilment-ukraina** triplet
+- [x] **fulfilment-ukraina** triplet — **DONE 2026-05-03 (Phase B start)**: UA 2754 / RU 2673 / EN 2881 words, all 9/9 schemas, brand-hook H1, hreflang quartet reciprocal, language purity, humanizer 0 must-fix.
 - [ ] **vazhki-tovary** triplet
 - [ ] **pallet-storage** triplet
 - [ ] **warehouse-services** triplet
@@ -151,6 +151,35 @@
 ---
 
 ## Session log (rolling — новіші зверху)
+
+### 2026-05-03 — Phase B start: fulfilment-ukraina cluster (rank #3 priority queue) 🎯
+First Phase B execution per `docs/pillar-uplift-strategy.md` — real content uplift, not just schema/heuristic.
+
+**Approach:** wrote 6 new H2 sections per language during the session:
+1. Geographic coverage (UA: всі регіони + Київ-Чернігів-Полтава перевага; RU: устойчивость в условиях войны; EN: why Ukraine is next CIS market entry)
+2. Product categories accepted (UA/RU: full list incl. alcohol per user correction; EN: legal-entity-free operating model)
+3. Tech / integration model (UA/RU: open API, не лімітовано 7 каналами; EN: 21-day onboarding timeline)
+4. War resilience (UA/RU: 0 days down since 2022, 3 generators, Starlink; EN: same in international framing)
+5. Common 3PL selection mistakes (UA/RU: 5 patterns; EN: cost comparison MTP vs own warehouse)
+6. **Pricing transparency** (newly added — three-line model: storage 650 UAH/m³, shipment from 18 UAH, min 5,000 UAH/month; explicit list of what's included vs charged separately; 30-day pilot guarantee in RU expansion)
+
+**Anchor numbers verified:** 3,700 m² (2,700 Schaslyve + 1,000 Bilohorodka), 18 UAH/order minimum, 650 UAH/m³ storage, 5,000 UAH min/month, 47min order-to-NP, 21-day onboarding, 0 days down since 2022, 800ms WMS sync.
+
+**Final state (dist HTML word counts):**
+- UA `/ua/fulfilment-ukraina/`: 2754 words ✅ (was ~1437 baseline)
+- RU `/ru/fulfilment-ukraina/`: 2673 words ✅ (was ~1030 baseline)
+- EN `/en/fulfillment-ukraine/`: 2881 words ✅ (was ~1255 baseline)
+- All 9/9 schemas, brand-hook H1, hreflang quartet reciprocal, language purity, 0 humanizer must-fix tells.
+
+**User corrections incorporated mid-session:**
+- Section 2: removed "інтернет-магазин загалом / малий бізнес" framing; replaced with broad product list (electronics, kids' clothing, toys, etc.)
+- Section 2: do NOT say alcohol is restricted — "алкоголь можемо брати, чому ні?"
+- Section 2 final restriction list: only Зброя/dual-use + Холодильні товари NOT taken
+- Section 3: do NOT box ourselves into 7 marketplaces — we integrate with anything that has an API
+
+**Next:** commit + push (CF Pages auto-deploy) + GSC Indexing API submit for 3 URLs + wait for 2026-05-09 GSC delta checkpoint.
+
+---
 
 ### 2026-05-01 — Heuristic refinement + words top-up + GSC reindex 🎊🎊🎊
 User asked to do all 3 in one shot, no per-batch confirmation.
