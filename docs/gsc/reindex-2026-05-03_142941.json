@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-03_142941",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-online-store/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

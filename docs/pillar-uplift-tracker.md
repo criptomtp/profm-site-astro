@@ -152,6 +152,51 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-03 — gsc-delta sanity test + Phase B query-driven on internet-magazynu 🎯
+
+**Part 1: gsc-delta.py sanity test** (15min, requested as combo step)
+- Ran `python3 scripts/gsc-delta.py docs/gsc/baseline-2026-05-02.json` against yesterday's baseline.
+- 1-day-out preview (will need full 7-day post-deploy window on 2026-05-09 for proper conclusion).
+- **Aggregate impressions: +14.8% (3994 → 4585), +591 imp, +1 click; 17 winners, 6 losers, 21 unchanged.**
+- Strategy gate auto-emitted: "✅ PROCEED Phase B as planned".
+- Notable winners: /ru/fulfilment-prom +67%, /en/fulfilment-prom +137%, /ru/services +12%, /en/services +47%, all 3 what-is-fulfilment +18-20%.
+- Notable losers (need watching at 2026-05-09): /ua/fulfilment-kyiv pos 31.6→40.3, /ua/fulfilment-vazhkykh-tovariv pos 23.2→42.4, /en/heavy-goods +30% imp but pos 18→22.
+- Script works correctly. Output: `docs/gsc/delta-2026-05-03.json`.
+
+**Part 2: Phase B on internet-magazynu cluster (rank #1 priority queue)**
+
+Plot twist: cluster ALREADY passes word-count gate (UA 3094 / RU 2958 / EN 2858 words from earlier Phase 1-3 work). Strategy doc Phase B guidance ("word-count uplift") doesn't apply. Pivoted to **query-level optimization** based on direct 90-day GSC query pull.
+
+**90-day GSC data findings (`/tmp/gsc-query-internet-magazynu.py`):**
+- UA: 219 imp, **0 clicks**. Top queries pos 8.8-15: "фулфилмент интернет магазина" pos 11 imp 58, "фулфилмент для интернет магазина" pos 8.8 imp 30, "склад для інтернет-магазину" pos 15.4 imp 10. RANKING #1 with 0 clicks for "скільки коштує складське зберігання для e-commerce магазину" (8 imp).
+- RU: 254 imp, **0 clicks**. Top queries pos 7.7-19: "фулфилмент для интернет магазина" pos 11 imp 89, "фулфилмент для магазинов" pos 7.7 imp 24, "услуги фулфилмента" pos 19.5 imp 2.
+- EN: 1 imp/90d (irrelevant Rozetka URL query). Page indexed, in sitemap, has 5 inbound links — invisible due to **wrong keyword target** (US-dominated SERP for "fulfillment for online stores").
+- Geographic long-tail: "фулфилмент для интернет магазинов днепр/киев" pos 26-49 — content gap (page only mentions Kyiv).
+
+**Changes (commit b49c205):**
+1. **Title rewrites for CTR:**
+   - UA: "Фулфілмент для інтернет-магазину — від 18 грн, без свого складу"
+   - RU: "Фулфилмент для интернет-магазина — от 18 грн, без своего склада"
+   - EN pivoted to Ukraine-specific angle: "Ecommerce Fulfillment in Ukraine — $0.41/order, Kyiv 3PL for DTC"
+2. **H2 exact-match for striking-distance pricing query:**
+   - UA: "Скільки коштує фулфілмент для інтернет-магазину" (was bare "Скільки коштує фулфілмент")
+   - RU: "Сколько стоит фулфилмент для интернет-магазина"
+3. **New geographic coverage H2 (UA + RU, ~530 words/lang):**
+   "Доставка інтернет-магазину з нашого складу — Київ, Дніпро, Харків, Одеса, Львів"
+   Targets geo-modifier queries currently pos 26-49.
+
+**Validate result:** UA 2872, RU 2722, EN 2637 words — all PASS. Reciprocal hreflang ✅. 9/9 schemas ✅.
+
+**Push + reindex:** commit b49c205, GSC API submit 3/3 URLs (`docs/gsc/reindex-2026-05-03_142941.json`).
+
+**Today's GSC quota usage: 14/200** (3 fulfilment-ukraina cluster + 8 authority pillars + 3 internet-magazynu cluster). Remaining: 186.
+
+**Next checkpoint:** 2026-05-09 — full 7-day post-deploy window, real GSC delta. Need to track BOTH:
+- fulfilment-ukraina cluster delta (Phase B word uplift effect)
+- internet-magazynu cluster delta (Phase B title/H2/geo effect — should see clicks > 0 if intervention worked)
+
+---
+
 ### 2026-05-03 — Phase B start: fulfilment-ukraina cluster (rank #3 priority queue) 🎯
 First Phase B execution per `docs/pillar-uplift-strategy.md` — real content uplift, not just schema/heuristic.
 
