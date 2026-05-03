@@ -464,20 +464,20 @@
 /en/blog/post/what-is-fulfillment-7-services /en/what-is-fulfillment/ 301
 
 # --- CF Pages specific (bottom of file — last match wins) ---
-/sitemap.xml  /sitemap-index.xml  301
-/404  /  301
-/404/  /  301
+/sitemap.xml /sitemap-index.xml 301
+/404 / 301
+/404/ / 301
 
 # --- Phantom EN URLs from Tilda legacy (2026-05-01, per pillar uplift strategy) ---
 # US-spelling "fulfillment" (LL) → UK-spelling "fulfilment" (L) Astro pages
 # GSC traffic: marketplaces 139 imp @ pos 4.8, cosmetics 36 imp @ pos 63.9
-/en/fulfillment-for-marketplaces/  /en/fulfilment-for-marketplaces/  301
-/en/fulfillment-for-marketplaces   /en/fulfilment-for-marketplaces/  301
-/en/fulfillment-for-cosmetics/     /en/fulfilment-for-cosmetics/     301
-/en/fulfillment-for-cosmetics      /en/fulfilment-for-cosmetics/     301
+/en/fulfillment-for-marketplaces/ /en/fulfilment-for-marketplaces/ 301
+/en/fulfillment-for-marketplaces /en/fulfilment-for-marketplaces/ 301
+/en/fulfillment-for-cosmetics/ /en/fulfilment-for-cosmetics/ 301
+/en/fulfillment-for-cosmetics /en/fulfilment-for-cosmetics/ 301
 
 
 # --- Issue #1 final cleanup 2026-05-02: legacy /blog/chto-takoe-fulfilment/ → RU pillar ---
-/blog/chto-takoe-fulfilment/  /ru/chto-takoe-fulfilment/  301
-/blog/chto-takoe-fulfilment   /ru/chto-takoe-fulfilment/  301
-/*  /404.html  404
+/blog/chto-takoe-fulfilment/ /ru/chto-takoe-fulfilment/ 301
+/blog/chto-takoe-fulfilment /ru/chto-takoe-fulfilment/ 301
+/* /404.html 404
