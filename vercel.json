@@ -954,8 +954,9 @@
     },
     {
       "source": "/blog/tpost/jveoso2gb1-fulfilment-chto-eto-skolko-stoit-i-drugi/",
-      "destination": "/blog/stoimost-fulfilmenta-2026/",
-      "statusCode": 301
+      "destination": "/ru/tsenu/",
+      "statusCode": 301,
+      "permanent": true
     },
     {
       "source": "/ua/blog/tpost/uec3upu741-fulflment-dlya-nternet-magazinu-odyagu-t/",
@@ -994,8 +995,9 @@
     },
     {
       "source": "/blog/tpost/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/",
-      "destination": "/blog/rynok-fulfilmenta-ukrainy/",
-      "statusCode": 301
+      "destination": "/ru/chto-takoe-fulfilment/",
+      "statusCode": 301,
+      "permanent": true
     },
     {
       "source": "/ua/blog/tpost/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/",
@@ -1154,8 +1156,9 @@
     },
     {
       "source": "/blog/tpost/m2l0va78z1-chto-takoe-fulfilment-dlya-internet-maga/",
-      "destination": "/blog/what-is-fulfillment-7-services/",
-      "statusCode": 301
+      "destination": "/ru/chto-takoe-fulfilment/",
+      "statusCode": 301,
+      "permanent": true
     },
     {
       "source": "/ua/blog/tpost/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/",
