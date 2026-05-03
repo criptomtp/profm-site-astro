@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-03_161714",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/poslugy/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

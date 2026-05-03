@@ -152,6 +152,36 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-03 — Pillar scorecard run + 3 smallest-gap quick-wins → 27→30 PASS 🎊
+**Scorecard state:** Total 54 pages | ✅ 27 PASS / ❌ 27 FAIL (was 20 PASS at strategy doc baseline). All 27 fails are word-count gate; 7 also have ⚠️ h1_hook borderline.
+
+**Note:** shcho-take-fulfilment cluster ALREADY passes (UA 3041, RU 3043, EN 3937) — strategy doc data was stale. Pivoted Phase A quick-win to actual smallest-gap fails.
+
+**3 smallest-gap fails identified (from `docs/pillar-scorecard.csv` + dist HTML cross-check):**
+- `/ru/fulfilment-rozetka/`: 2281 (gap 219, also H1 ⚠️)
+- `/poslugy/` UA: 2198 (gap 302)
+- `/en/fulfilment-prom/`: 2131 (gap 369)
+
+**Changes (commit de908c9 + 1-line patch):**
+
+`ru/fulfilment-rozetka` 2281→2539:
+- H1 rewrite: "Украина как логистический хаб для Rozetka — 21-дневный onboarding, 0 дней простоя" (em-dash + numbers, fixes h1_hook ⚠️)
+- New H2: "Black Friday и Новый год на Rozetka — как наш склад держит пиковую нагрузку" (~280 words). Anchor: 12,800 BF orders, 14-day pack reserve, SuperPRO retention.
+
+`poslugy` UA 2198→2530:
+- New H2: "Покриття Київщини і доставка в усі 24 області" (~370 words). Geographic transit times + full product category matrix (clothing, footwear, cosmetics, biodobav, oversized, electronics, alcohol up to 1.5L, frontline regions). Closes geo-modifier long-tail gap.
+
+`en/fulfilment-prom` 2131→2548:
+- New H2: "For brands entering Ukraine through Prom.ua — currency, language, payment terms" (~430 words). UAH/USD/EUR billing with NBU rates, UA/RU/EN customer service, EU VAT Article 195, payment options.
+
+**Validate after build:** all 3 PASS. 9/9 schemas, brand-hook H1, hreflang quartet, language purity.
+
+**Re-scorecard:** 30 PASS / 24 FAIL — **+3 pages**. h1_hook borderline dropped from 7 to 6 (the ru/rozetka H1 fixed). Still 24 word-count fails to chip away at.
+
+**GSC reindex 3/3** (`reindex-2026-05-03_161714.json`). Today's quota: 20/200, remaining 180.
+
+---
+
 ### 2026-05-03 — Phase B on marketpleysiv cluster (rank #2 priority queue) 🎯
 **State before:** UA 2428 (gap 72), RU 2398 (gap 102), EN 4788 (passes). Both UA + RU FAIL words gate.
 
