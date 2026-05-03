@@ -152,6 +152,25 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-03 — H1 hook batch — 6 borderline H1s rewritten 🎯
+After scorecard, 6 pages had `h1_hook ⚠️` (passes basic structure but missing twist marker per validate heuristic). Atomic 1-line edits each, no body content change → low attribution noise for 2026-05-09 GSC delta.
+
+**6 H1 rewrites with em-dash + anchor numbers:**
+- `/en/` — "3PL Fulfillment in Ukraine — 3,700 m² warehouse, 47-min peak picks, zero downtime since 2022"
+- `/en/fulfillment-kyiv/` — "Your logistics base in Eastern Europe. 3,700 m² bonded warehouse near Kyiv, 47-min peak picks, zero downtime since 2022."
+- `/en/pallet-storage/` — "Pallet Storage in Kyiv Region — 320 rack positions, 650 UAH/m³, no minimum lease term"
+- `/en/warehouse-services/` — "Warehouse Services for Online Stores in Kyiv — pick, pack, dispatch from 18 UAH per order, zero downtime since 2022"
+- `/ru/paletnoe-khranenie/` — "Палетное хранение товаров в Киевской области — 320 стеллажных мест, 650 грн/м³, без минимального срока аренды"
+- `/ua/paletne-zberigannya/` — "Палетне зберігання товарів у Київській області — 320 стелажних місць, 650 грн/м³, без мінімального терміну оренди"
+
+**Scorecard impact (commit f5f63bb):**
+- h1_hook ⚠️ count: 6 → **0** ✅
+- PASS count: 30 (unchanged — these pages still fail words gate, but H1 quality issue closed)
+
+**GSC reindex 6/6** (`reindex-2026-05-03_162223.json`). Today's quota: 26/200, remaining 174.
+
+---
+
 ### 2026-05-03 — Pillar scorecard run + 3 smallest-gap quick-wins → 27→30 PASS 🎊
 **Scorecard state:** Total 54 pages | ✅ 27 PASS / ❌ 27 FAIL (was 20 PASS at strategy doc baseline). All 27 fails are word-count gate; 7 also have ⚠️ h1_hook borderline.
 
