@@ -3,8 +3,8 @@
 **Mission.** Поетапно довести всі pillar-сторінки сайту до passing на `npm run validate:pillar`. Не one-shot push, а **многосесійний systematic процес** з checkpoints і чіткими задокументованими кроками.
 
 **Started:** 2026-05-01
-**Last update:** 2026-05-02
-**Last session note:** Observation window started. Phase A done: strategy doc merged, 4 H1 rewrites (en/services, /poslugy/, ru/services, en/fulfillment-ukraine), phantom URL redirects added (US-spelling → UK-spelling), RU tsenu duplicate cleanup (-4062 bytes orphan JSON-LD inside JS callback), GSC baseline captured (3994 imp / 19 clk over 14d on 44 pillars). 60 URLs in GSC reindex queue cumulative.
+**Last update:** 2026-05-03
+**Last session note:** Day 1 of observation window. Wrote `scripts/gsc-delta.py` (companion to gsc-baseline-capture). Smoke test against yesterday's baseline showed early positive signal (+14.8% aggregate impressions, 17 winners) — but interpret cautiously since 14-day window only shifted by 1 day; could be early Phase A signal OR weekend variance. EN trio (heavy-goods, pallet-storage, warehouse-services) showed position drops to watch. Real checkpoint still 2026-05-09. CF cache issue persists on phantom redirects + /blog/chto-takoe-fulfilment/ — user must manually Purge Everything in CF dashboard (cache TTL 7 days otherwise).
 
 **⚠️ Outstanding issue for next session:** Phantom redirects (`/en/fulfillment-for-marketplaces/`, `/en/fulfillment-for-cosmetics/`) commit `945037a` returning 404 in production after CF Pages deploy. Possible causes: (a) CF cache lag; (b) CF Pages parsing issue with my appended block; (c) deploy hadn't completed at time of test. Verify with `curl -sI` next session OR check CF Pages dashboard for build status. Pre-existing fallback rules to `/en/fulfillment-ukraine/` were correctly removed.
 

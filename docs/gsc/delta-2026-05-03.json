@@ -1,0 +1,2759 @@
+{
+  "baseline_file": "docs/gsc/baseline-2026-05-02.json",
+  "baseline_window": "2026-04-15 → 2026-04-29",
+  "current_window": "2026-04-16 → 2026-04-30",
+  "captured_at": "2026-05-03",
+  "totals": {
+    "baseline_impressions": 3994,
+    "current_impressions": 4585,
+    "imp_delta": 591,
+    "imp_delta_pct": 14.8,
+    "baseline_clicks": 19,
+    "current_clicks": 20,
+    "clk_delta": 1,
+    "winners": 17,
+    "losers": 6,
+    "unchanged": 21
+  },
+  "winners": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/calculator/",
+      "reason": "pos 58.7→50.9"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/poslugy/",
+      "reason": "imp +2 (+100%), clk +1, NEW @ pos 22.5"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/services/",
+      "reason": "imp +15 (+12%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/services/",
+      "reason": "imp +15 (+47%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/",
+      "reason": "imp +12 (+18%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/",
+      "reason": "imp +71 (+20%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/",
+      "reason": "imp +9 (+19%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/",
+      "reason": "imp +13 (+14%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-prom/",
+      "reason": "imp +5 (+100%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/",
+      "reason": "imp +233 (+67%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/",
+      "reason": "imp +125 (+137%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/",
+      "reason": "imp +3 (+27%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/",
+      "reason": "imp +19 (+20%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
+      "reason": "imp +1 (+20%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "reason": "imp +41 (+16%)"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/",
+      "reason": "imp +7 (+140%), pos 29.2→19.8"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/",
+      "reason": "imp +1 (+20%)"
+    }
+  ],
+  "losers": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/",
+      "reason": "imp +4 (+57%), pos 31.6→40.3"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/",
+      "reason": "imp +3 (+38%), pos 21.5→26.4"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/",
+      "reason": "imp +5 (+83%), pos 23.2→42.4"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/heavy-goods/",
+      "reason": "imp +3 (+30%), pos 18.4→22.2"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/pallet-storage/",
+      "reason": "imp +1 (+33%), pos 7.0→18.5"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/warehouse-services/",
+      "reason": "imp +3 (+43%), pos 25.4→28.5"
+    }
+  ],
+  "per_url": {
+    "https://www.fulfillmentmtp.com.ua/ua/tsiny/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0.0,
+        "avg_position": 23.75,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 29,
+            "clicks": 0,
+            "position": 25.3
+          },
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "скільки коштує складське зберігання для e-commerce магазину",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "бренд одягу",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 3
+          },
+          {
+            "query": "договор фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 89
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0.0,
+        "avg_position": 22.93,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 30,
+            "clicks": 0,
+            "position": 23.5
+          },
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "скільки коштує складське зберігання для e-commerce магазину",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "бренд одягу",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 3
+          },
+          {
+            "query": "договор фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 89
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/tsenu/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 7.8,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 7.7
+          },
+          {
+            "query": "fulfilment логистика запорожье",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "сколько стоит фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 7
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 7.8,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 7.7
+          },
+          {
+            "query": "fulfilment логистика запорожье",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "сколько стоит фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 7
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/prices/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/calculator/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0.0,
+        "avg_position": 58.73,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 21,
+            "clicks": 0,
+            "position": 57.1
+          },
+          {
+            "query": "тарифний калькулятор",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 92
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0.0,
+        "avg_position": 50.88,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 23,
+            "clicks": 0,
+            "position": 49.1
+          },
+          {
+            "query": "тарифний калькулятор",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 92
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "pos 58.7→50.9"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/calculator/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 70,
+        "ctr": 0.0,
+        "avg_position": 11.33,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 40,
+            "clicks": 0,
+            "position": 8.1
+          },
+          {
+            "query": "услуги фулфилмента",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "фулфилмента",
+            "impressions": 12,
+            "clicks": 0,
+            "position": 26.6
+          },
+          {
+            "query": "сколько стоит фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "стоимость услуг фулфилмента",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 68,
+        "ctr": 0.0,
+        "avg_position": 10.85,
+        "top_queries": [
+          {
+            "query": "фулфилмент цены",
+            "impressions": 40,
+            "clicks": 0,
+            "position": 8.1
+          },
+          {
+            "query": "услуги фулфилмента",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "фулфилмента",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 26.4
+          },
+          {
+            "query": "сколько стоит фулфилмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "стоимость услуг фулфилмента",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/calculator/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 143,
+        "ctr": 0.0,
+        "avg_position": 43.87,
+        "top_queries": [
+          {
+            "query": "how to calculate fulfillment cost per order",
+            "impressions": 95,
+            "clicks": 0,
+            "position": 36.8
+          },
+          {
+            "query": "fulfillment costs",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 76.5
+          },
+          {
+            "query": "fulfillment cost calculator",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 8.9
+          },
+          {
+            "query": "fulfilment costs",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 90.8
+          },
+          {
+            "query": "warehouse services pricing calculator",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 48.2
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 140,
+        "ctr": 0.0,
+        "avg_position": 43.89,
+        "top_queries": [
+          {
+            "query": "how to calculate fulfillment cost per order",
+            "impressions": 97,
+            "clicks": 0,
+            "position": 36.8
+          },
+          {
+            "query": "fulfillment costs",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 74.2
+          },
+          {
+            "query": "fulfillment cost calculator",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 10.4
+          },
+          {
+            "query": "fulfilment costs",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 90.8
+          },
+          {
+            "query": "warehouse services pricing calculator",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 48.2
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/poslugy/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "avg_position": 22.5,
+        "top_queries": [
+          {
+            "query": "фулфілмент україна",
+            "impressions": 1,
+            "clicks": 1,
+            "position": 42
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 3
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +2 (+100%), clk +1, NEW @ pos 22.5"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/services/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 124,
+        "ctr": 0.0,
+        "avg_position": 27.15,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 16,
+            "clicks": 0,
+            "position": 1.2
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 34.8
+          },
+          {
+            "query": "мтп вход",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 6.4
+          },
+          {
+            "query": "услуга фулфилмент",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 45.2
+          },
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 38.6
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 139,
+        "ctr": 0.0,
+        "avg_position": 28.63,
+        "top_queries": [
+          {
+            "query": "мтп вход",
+            "impressions": 18,
+            "clicks": 0,
+            "position": 6.3
+          },
+          {
+            "query": "mtp group",
+            "impressions": 16,
+            "clicks": 0,
+            "position": 1.2
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 34.8
+          },
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 11,
+            "clicks": 0,
+            "position": 40
+          },
+          {
+            "query": "услуга фулфилмент",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 45.2
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +15 (+12%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/services/": {
+      "baseline": {
+        "clicks": 1,
+        "impressions": 32,
+        "ctr": 0.0312,
+        "avg_position": 24.38,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 14,
+            "clicks": 0,
+            "position": 32.1
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 12.9
+          },
+          {
+            "query": "fulfilment services",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 4.3
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 76.5
+          },
+          {
+            "query": "shipping warehouse",
+            "impressions": 1,
+            "clicks": 1,
+            "position": 1
+          }
+        ]
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 47,
+        "ctr": 0.0213,
+        "avg_position": 21.49,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 18,
+            "clicks": 0,
+            "position": 26.6
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 12.1
+          },
+          {
+            "query": "fulfilment services",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 5.9
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 72
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 52
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +15 (+47%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/": {
+      "baseline": {
+        "clicks": 10,
+        "impressions": 988,
+        "ctr": 0.0101,
+        "avg_position": 9.41,
+        "top_queries": [
+          {
+            "query": "mtp",
+            "impressions": 207,
+            "clicks": 0,
+            "position": 4.7
+          },
+          {
+            "query": "мтп",
+            "impressions": 188,
+            "clicks": 0,
+            "position": 8.5
+          },
+          {
+            "query": "фулфілмент",
+            "impressions": 178,
+            "clicks": 0,
+            "position": 8.6
+          },
+          {
+            "query": "склад фулфилмент",
+            "impressions": 85,
+            "clicks": 0,
+            "position": 4.3
+          },
+          {
+            "query": "фулфилмент украина",
+            "impressions": 28,
+            "clicks": 0,
+            "position": 5.2
+          }
+        ]
+      },
+      "current": {
+        "clicks": 10,
+        "impressions": 989,
+        "ctr": 0.0101,
+        "avg_position": 9.57,
+        "top_queries": [
+          {
+            "query": "mtp",
+            "impressions": 202,
+            "clicks": 0,
+            "position": 5.0
+          },
+          {
+            "query": "мтп",
+            "impressions": 188,
+            "clicks": 0,
+            "position": 8.5
+          },
+          {
+            "query": "фулфілмент",
+            "impressions": 173,
+            "clicks": 0,
+            "position": 8.6
+          },
+          {
+            "query": "склад фулфилмент",
+            "impressions": 86,
+            "clicks": 0,
+            "position": 4.1
+          },
+          {
+            "query": "фулфилмент украина",
+            "impressions": 28,
+            "clicks": 0,
+            "position": 4.8
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/": {
+      "baseline": {
+        "clicks": 6,
+        "impressions": 793,
+        "ctr": 0.0076,
+        "avg_position": 17.28,
+        "top_queries": [
+          {
+            "query": "мтп",
+            "impressions": 200,
+            "clicks": 0,
+            "position": 6.4
+          },
+          {
+            "query": "фулфилмент для магазинов",
+            "impressions": 57,
+            "clicks": 0,
+            "position": 11.7
+          },
+          {
+            "query": "фулфилмент",
+            "impressions": 51,
+            "clicks": 0,
+            "position": 14.3
+          },
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 51,
+            "clicks": 0,
+            "position": 2.4
+          },
+          {
+            "query": "фулфилмент интернет магазина",
+            "impressions": 46,
+            "clicks": 0,
+            "position": 14.5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 6,
+        "impressions": 784,
+        "ctr": 0.0077,
+        "avg_position": 17.84,
+        "top_queries": [
+          {
+            "query": "мтп",
+            "impressions": 187,
+            "clicks": 0,
+            "position": 6.4
+          },
+          {
+            "query": "фулфилмент для магазинов",
+            "impressions": 59,
+            "clicks": 0,
+            "position": 13.0
+          },
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 50,
+            "clicks": 0,
+            "position": 2.5
+          },
+          {
+            "query": "фулфилмент для интернет магазина",
+            "impressions": 49,
+            "clicks": 0,
+            "position": 18.6
+          },
+          {
+            "query": "фулфилмент интернет магазина",
+            "impressions": 47,
+            "clicks": 0,
+            "position": 14.4
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 61,
+        "ctr": 0.0,
+        "avg_position": 14.59,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 42,
+            "clicks": 0,
+            "position": 11.9
+          },
+          {
+            "query": "3pl fulfillment",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 4.5
+          },
+          {
+            "query": "3pl warehouse near me",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 6
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 41
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 39.5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 61,
+        "ctr": 0.0,
+        "avg_position": 14.92,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 39,
+            "clicks": 0,
+            "position": 10.6
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 57
+          },
+          {
+            "query": "mtp logistics",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 13.3
+          },
+          {
+            "query": "3pl warehouse near me",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 6
+          },
+          {
+            "query": "fulfillment for marketplaces",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 4
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/shcho-take-fulfilment/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 65,
+        "ctr": 0.0,
+        "avg_position": 49.26,
+        "top_queries": [
+          {
+            "query": "фулфілмент",
+            "impressions": 14,
+            "clicks": 0,
+            "position": 81
+          },
+          {
+            "query": "фулфилмент",
+            "impressions": 11,
+            "clicks": 0,
+            "position": 24.5
+          },
+          {
+            "query": "фулфілмент що це",
+            "impressions": 8,
+            "clicks": 0,
+            "position": 28.9
+          },
+          {
+            "query": "fulfilment",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 16.8
+          },
+          {
+            "query": "фулфілмент -- це",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 33.4
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 77,
+        "ctr": 0.0,
+        "avg_position": 48.31,
+        "top_queries": [
+          {
+            "query": "фулфілмент",
+            "impressions": 15,
+            "clicks": 0,
+            "position": 81.9
+          },
+          {
+            "query": "фулфилмент",
+            "impressions": 12,
+            "clicks": 0,
+            "position": 23.4
+          },
+          {
+            "query": "фулфілмент що це",
+            "impressions": 11,
+            "clicks": 0,
+            "position": 27.7
+          },
+          {
+            "query": "fulfilment",
+            "impressions": 6,
+            "clicks": 0,
+            "position": 27.8
+          },
+          {
+            "query": "фулфілмент -- це",
+            "impressions": 6,
+            "clicks": 0,
+            "position": 31.8
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +12 (+18%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/chto-takoe-fulfilment/": {
+      "baseline": {
+        "clicks": 1,
+        "impressions": 359,
+        "ctr": 0.0028,
+        "avg_position": 13.13,
+        "top_queries": [
+          {
+            "query": "rozetka com ua доставка в молдову",
+            "impressions": 69,
+            "clicks": 0,
+            "position": 11.7
+          },
+          {
+            "query": "фулфилмент",
+            "impressions": 50,
+            "clicks": 1,
+            "position": 11.0
+          },
+          {
+            "query": "фулфилмент это",
+            "impressions": 50,
+            "clicks": 0,
+            "position": 9.7
+          },
+          {
+            "query": "что такое фулфилмент",
+            "impressions": 38,
+            "clicks": 0,
+            "position": 11.8
+          },
+          {
+            "query": "фул филмент",
+            "impressions": 21,
+            "clicks": 0,
+            "position": 11.7
+          }
+        ]
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 430,
+        "ctr": 0.0023,
+        "avg_position": 13.32,
+        "top_queries": [
+          {
+            "query": "rozetka com ua доставка в молдову",
+            "impressions": 98,
+            "clicks": 0,
+            "position": 11.7
+          },
+          {
+            "query": "фулфилмент это",
+            "impressions": 53,
+            "clicks": 0,
+            "position": 9.7
+          },
+          {
+            "query": "фулфилмент",
+            "impressions": 50,
+            "clicks": 1,
+            "position": 11.0
+          },
+          {
+            "query": "что такое фулфилмент",
+            "impressions": 38,
+            "clicks": 0,
+            "position": 11.8
+          },
+          {
+            "query": "фул филмент",
+            "impressions": 27,
+            "clicks": 0,
+            "position": 11.6
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +71 (+20%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/what-is-fulfillment/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 47,
+        "ctr": 0.0,
+        "avg_position": 34.81,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 21,
+            "clicks": 0,
+            "position": 55.8
+          },
+          {
+            "query": "kasta.ua international delivery",
+            "impressions": 20,
+            "clicks": 0,
+            "position": 9.4
+          },
+          {
+            "query": "fulfillment",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 40
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 75
+          },
+          {
+            "query": "fulfillment service",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 64
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 56,
+        "ctr": 0.0,
+        "avg_position": 36.27,
+        "top_queries": [
+          {
+            "query": "packaging fulfillment",
+            "impressions": 24,
+            "clicks": 0,
+            "position": 54.6
+          },
+          {
+            "query": "kasta.ua international delivery",
+            "impressions": 22,
+            "clicks": 0,
+            "position": 9.3
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 69
+          },
+          {
+            "query": "fulfillment service",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 68
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 65
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +9 (+19%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 93,
+        "ctr": 0.0,
+        "avg_position": 30.33,
+        "top_queries": [
+          {
+            "query": "3 pl",
+            "impressions": 11,
+            "clicks": 0,
+            "position": 47.5
+          },
+          {
+            "query": "3pl услуги",
+            "impressions": 11,
+            "clicks": 0,
+            "position": 32.4
+          },
+          {
+            "query": "логістика для інтернет-магазину",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 26.6
+          },
+          {
+            "query": "3pl провайдер",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 71
+          },
+          {
+            "query": "які 3pl-провайдери для інтернет-магазину?",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 6.8
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 106,
+        "ctr": 0.0,
+        "avg_position": 31.37,
+        "top_queries": [
+          {
+            "query": "3 pl",
+            "impressions": 12,
+            "clicks": 0,
+            "position": 47.4
+          },
+          {
+            "query": "3pl услуги",
+            "impressions": 12,
+            "clicks": 0,
+            "position": 31.7
+          },
+          {
+            "query": "3pl провайдер",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 71
+          },
+          {
+            "query": "логістика для інтернет-магазину",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 26.6
+          },
+          {
+            "query": "склад 3pl",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 32
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +13 (+14%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/3pl-logistika/": {
+      "baseline": {
+        "clicks": 1,
+        "impressions": 39,
+        "ctr": 0.0256,
+        "avg_position": 25.62,
+        "top_queries": [
+          {
+            "query": "логистические услуги 3pl",
+            "impressions": 9,
+            "clicks": 0,
+            "position": 25.7
+          },
+          {
+            "query": "3pl операторы украины",
+            "impressions": 6,
+            "clicks": 0,
+            "position": 38.8
+          },
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "логистика для интернет магазинов",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 10.2
+          },
+          {
+            "query": "3pl операторы украина",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 38.3
+          }
+        ]
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 42,
+        "ctr": 0.0238,
+        "avg_position": 26.57,
+        "top_queries": [
+          {
+            "query": "логистические услуги 3pl",
+            "impressions": 9,
+            "clicks": 0,
+            "position": 25.7
+          },
+          {
+            "query": "3pl операторы украины",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 39.3
+          },
+          {
+            "query": "3pl операторы украина",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 39.5
+          },
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "логистика для интернет магазинов",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 10.2
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/3pl-logistics/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/fulfilment-rozetka/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-rozetka/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-rozetka-sellers/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/fulfilment-prom/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 9.0,
+        "top_queries": [
+          {
+            "query": "api prom.ua",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 8
+          },
+          {
+            "query": "prom api",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 10
+          },
+          {
+            "query": "api prom",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 9
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "avg_position": 9.8,
+        "top_queries": [
+          {
+            "query": "api prom",
+            "impressions": 6,
+            "clicks": 0,
+            "position": 10.3
+          },
+          {
+            "query": "api prom.ua",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 8
+          },
+          {
+            "query": "prom api",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 10
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +5 (+100%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-prom/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 349,
+        "ctr": 0.0,
+        "avg_position": 7.75,
+        "top_queries": [
+          {
+            "query": "prom ua доставка в молдову",
+            "impressions": 332,
+            "clicks": 0,
+            "position": 7.6
+          },
+          {
+            "query": "prom api",
+            "impressions": 10,
+            "clicks": 0,
+            "position": 10.5
+          },
+          {
+            "query": "prom ua api",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 8.2
+          },
+          {
+            "query": "api prom",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 9
+          },
+          {
+            "query": "prom.ua api",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 6
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 582,
+        "ctr": 0.0,
+        "avg_position": 7.82,
+        "top_queries": [
+          {
+            "query": "prom ua доставка в молдову",
+            "impressions": 549,
+            "clicks": 0,
+            "position": 7.6
+          },
+          {
+            "query": "prom api",
+            "impressions": 20,
+            "clicks": 0,
+            "position": 9.8
+          },
+          {
+            "query": "prom ua api",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 8.2
+          },
+          {
+            "query": "prom.ua api",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 7.8
+          },
+          {
+            "query": "api prom",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 9
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +233 (+67%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/fulfilment-prom/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 91,
+        "ctr": 0.0,
+        "avg_position": 9.49,
+        "top_queries": [
+          {
+            "query": "prom.ua api",
+            "impressions": 83,
+            "clicks": 0,
+            "position": 10.0
+          },
+          {
+            "query": "prom.ua international shipping",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 3.8
+          },
+          {
+            "query": "prom.ua international delivery abroad",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "prom.ua international delivery",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 7
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 216,
+        "ctr": 0.0,
+        "avg_position": 9.8,
+        "top_queries": [
+          {
+            "query": "prom.ua api",
+            "impressions": 197,
+            "clicks": 0,
+            "position": 10.0
+          },
+          {
+            "query": "prom.ua international shipping",
+            "impressions": 8,
+            "clicks": 0,
+            "position": 3.8
+          },
+          {
+            "query": "prom.ua international delivery abroad",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 6.6
+          },
+          {
+            "query": "prom.ua marketplace international shipping",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 2.7
+          },
+          {
+            "query": "prom.ua international delivery",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 7
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +125 (+137%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/fulfilment-kyiv/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0.0,
+        "avg_position": 31.57,
+        "top_queries": [
+          {
+            "query": "фулфилмент киев",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 32
+          },
+          {
+            "query": "фулфілмент київ",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 5.5
+          },
+          {
+            "query": "фулфилмент цены",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 82
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0.0,
+        "avg_position": 40.27,
+        "top_queries": [
+          {
+            "query": "фулфилмент киев",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 33
+          },
+          {
+            "query": "фулфилмент цены",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 83.5
+          },
+          {
+            "query": "фулфілмент київ",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 5.5
+          },
+          {
+            "query": "b2b фулфілмент в україні",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 35
+          },
+          {
+            "query": "нова пошта фулфілмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 37
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +4 (+57%), pos 31.6→40.3"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-kiev/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0.0,
+        "avg_position": 21.5,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1.5
+          },
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 38.5
+          },
+          {
+            "query": "фулфилмент киев",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 44.5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0.0,
+        "avg_position": 26.45,
+        "top_queries": [
+          {
+            "query": "фулфилмент заказать",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 39.2
+          },
+          {
+            "query": "mtp group",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 1.5
+          },
+          {
+            "query": "фулфилмент киев",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 44.5
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +3 (+38%), pos 21.5→26.4"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/fulfillment-kyiv/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0.0,
+        "avg_position": 46.45,
+        "top_queries": [
+          {
+            "query": "warehousing services in kyiv",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 60
+          },
+          {
+            "query": "end to end warehousing in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 67.5
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 42.5
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 60
+          },
+          {
+            "query": "fulfillment centers near me",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 6
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0.0,
+        "avg_position": 46.43,
+        "top_queries": [
+          {
+            "query": "warehousing services in kyiv",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 55.2
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 45.7
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 53
+          },
+          {
+            "query": "end to end warehousing in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 67.5
+          },
+          {
+            "query": "fulfillment centers near me",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 6
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +3 (+27%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/fulfilment-ukraina/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 217,
+        "ctr": 0.0,
+        "avg_position": 49.66,
+        "top_queries": [
+          {
+            "query": "услуга фулфилмент",
+            "impressions": 19,
+            "clicks": 0,
+            "position": 33.2
+          },
+          {
+            "query": "packaging fulfillment",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 65.5
+          },
+          {
+            "query": "фулфилмент для магазинов",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 22.7
+          },
+          {
+            "query": "фулфилмент украина",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 47.3
+          },
+          {
+            "query": "фулфілмент для маркетплейсов дніпро",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 67.5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 224,
+        "ctr": 0.0,
+        "avg_position": 49.83,
+        "top_queries": [
+          {
+            "query": "услуга фулфилмент",
+            "impressions": 19,
+            "clicks": 0,
+            "position": 28.8
+          },
+          {
+            "query": "фулфилмент для магазинов",
+            "impressions": 14,
+            "clicks": 0,
+            "position": 22.8
+          },
+          {
+            "query": "фулфилмент украина",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 48.3
+          },
+          {
+            "query": "фулфілмент для маркетплейсов дніпро",
+            "impressions": 13,
+            "clicks": 0,
+            "position": 67.5
+          },
+          {
+            "query": "mtp group",
+            "impressions": 12,
+            "clicks": 0,
+            "position": 1.1
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 95,
+        "ctr": 0.0,
+        "avg_position": 21.51,
+        "top_queries": [
+          {
+            "query": "kasta.ua international delivery",
+            "impressions": 41,
+            "clicks": 0,
+            "position": 9.9
+          },
+          {
+            "query": "kasta.ua international shipping",
+            "impressions": 18,
+            "clicks": 0,
+            "position": 9.6
+          },
+          {
+            "query": "packaging fulfillment",
+            "impressions": 17,
+            "clicks": 0,
+            "position": 58.3
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 32.3
+          },
+          {
+            "query": "mtp shop",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 23
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 114,
+        "ctr": 0.0,
+        "avg_position": 23.04,
+        "top_queries": [
+          {
+            "query": "kasta.ua international delivery",
+            "impressions": 48,
+            "clicks": 0,
+            "position": 9.9
+          },
+          {
+            "query": "packaging fulfillment",
+            "impressions": 20,
+            "clicks": 0,
+            "position": 56.6
+          },
+          {
+            "query": "kasta.ua international shipping",
+            "impressions": 19,
+            "clicks": 0,
+            "position": 9.4
+          },
+          {
+            "query": "fulfilment service",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 42.2
+          },
+          {
+            "query": "fulfillment in ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 38.3
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +19 (+20%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/fulfilment-vazhkykh-tovariv/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "avg_position": 23.17,
+        "top_queries": [
+          {
+            "query": "b2b фулфілмент в україні",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 30.5
+          },
+          {
+            "query": "mtp group",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 1.5
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 20
+          },
+          {
+            "query": "b2b фулфілмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 55
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0.0,
+        "avg_position": 42.36,
+        "top_queries": [
+          {
+            "query": "b2b фулфілмент в україні",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 43.8
+          },
+          {
+            "query": "послуги фулфілменту для b2b",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 71
+          },
+          {
+            "query": "mtp group",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 1.5
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 20
+          },
+          {
+            "query": "b2b фулфілмент",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 55
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +5 (+83%), pos 23.2→42.4"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-vazhkykh-tovariv/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0.0,
+        "avg_position": 33.0,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "склад фулфилмент киев",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 97
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0.0,
+        "avg_position": 33.0,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "склад фулфилмент киев",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 97
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/heavy-goods/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "avg_position": 18.4,
+        "top_queries": [
+          {
+            "query": "\"24-48 hours\" customs clearance ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 10.7
+          },
+          {
+            "query": "specialized warehouses in ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 18.7
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 7
+          },
+          {
+            "query": "bulky goods transport",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 12
+          },
+          {
+            "query": "fulfillment centre 45",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 66
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0.0,
+        "avg_position": 22.23,
+        "top_queries": [
+          {
+            "query": "specialized warehouses in ukraine",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 20.8
+          },
+          {
+            "query": "\"24-48 hours\" customs clearance ukraine",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 10.7
+          },
+          {
+            "query": "b2b fulfillment in ukraine",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 19
+          },
+          {
+            "query": "bulky goods transport",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 12
+          },
+          {
+            "query": "fulfillment centre 45",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 66
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +3 (+30%), pos 18.4→22.2"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 30.4,
+        "top_queries": [
+          {
+            "query": "склади для зберігання з температурним контролем",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 39.5
+          },
+          {
+            "query": "fefo це",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 59
+          },
+          {
+            "query": "палетомісце",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 8
+          },
+          {
+            "query": "паллетное хранение",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 6
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "avg_position": 33.17,
+        "top_queries": [
+          {
+            "query": "склади для зберігання з температурним контролем",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 42
+          },
+          {
+            "query": "fefo це",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 59
+          },
+          {
+            "query": "палетомісце",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 8
+          },
+          {
+            "query": "паллетное хранение",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 6
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +1 (+20%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/paletnoe-khranenie/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "avg_position": 14.0,
+        "top_queries": [
+          {
+            "query": "палето место",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "палетоместо",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 10.5
+          },
+          {
+            "query": "паллетное хранение",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "паллетоместо",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 52
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "avg_position": 14.0,
+        "top_queries": [
+          {
+            "query": "палето место",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "палетоместо",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 10.5
+          },
+          {
+            "query": "паллетное хранение",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 1
+          },
+          {
+            "query": "паллетоместо",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 52
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/pallet-storage/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0.0,
+        "avg_position": 7.0,
+        "top_queries": [
+          {
+            "query": "pallet price",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 12
+          },
+          {
+            "query": "pallet spot",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 4
+          },
+          {
+            "query": "pallet warehouse",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0.0,
+        "avg_position": 18.5,
+        "top_queries": [
+          {
+            "query": "pallet price",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 12
+          },
+          {
+            "query": "pallet spot",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 4
+          },
+          {
+            "query": "pallet warehouse",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 5
+          },
+          {
+            "query": "warehousing services in kyiv",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 53
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +1 (+33%), pos 7.0→18.5"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 260,
+        "ctr": 0.0,
+        "avg_position": 21.39,
+        "top_queries": [
+          {
+            "query": "складські послуги",
+            "impressions": 86,
+            "clicks": 0,
+            "position": 18.3
+          },
+          {
+            "query": "послуги складу",
+            "impressions": 46,
+            "clicks": 0,
+            "position": 18.5
+          },
+          {
+            "query": "скільки коштує складське зберігання для e-commerce магазину",
+            "impressions": 26,
+            "clicks": 0,
+            "position": 1.8
+          },
+          {
+            "query": "складські послуги київ",
+            "impressions": 20,
+            "clicks": 0,
+            "position": 5.5
+          },
+          {
+            "query": "складські послуги та обробку товарів",
+            "impressions": 18,
+            "clicks": 0,
+            "position": 11.4
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 301,
+        "ctr": 0.0,
+        "avg_position": 20.0,
+        "top_queries": [
+          {
+            "query": "складські послуги",
+            "impressions": 109,
+            "clicks": 0,
+            "position": 16.0
+          },
+          {
+            "query": "послуги складу",
+            "impressions": 53,
+            "clicks": 0,
+            "position": 15.5
+          },
+          {
+            "query": "складські послуги київ",
+            "impressions": 27,
+            "clicks": 0,
+            "position": 5.6
+          },
+          {
+            "query": "скільки коштує складське зберігання для e-commerce магазину",
+            "impressions": 24,
+            "clicks": 0,
+            "position": 1.5
+          },
+          {
+            "query": "складські послуги та обробку товарів",
+            "impressions": 18,
+            "clicks": 0,
+            "position": 11.4
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +41 (+16%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/skladskie-uslugi/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 29.2,
+        "top_queries": [
+          {
+            "query": "складские услуги киев",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 35
+          },
+          {
+            "query": "складские услуги",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 20
+          },
+          {
+            "query": "складские услуги тарифы",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 13
+          },
+          {
+            "query": "услуги складской логистики киев",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 43
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0.0,
+        "avg_position": 19.75,
+        "top_queries": [
+          {
+            "query": "складские услуги киев",
+            "impressions": 7,
+            "clicks": 0,
+            "position": 17
+          },
+          {
+            "query": "складские услуги",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 20.7
+          },
+          {
+            "query": "складские услуги тарифы",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 13
+          },
+          {
+            "query": "услуги складской логистики киев",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 43
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +7 (+140%), pos 29.2→19.8"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/warehouse-services/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0.0,
+        "avg_position": 25.43,
+        "top_queries": [
+          {
+            "query": "warehouse services",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 10
+          },
+          {
+            "query": "fulfillment centre 45",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 51
+          },
+          {
+            "query": "warehouse",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 77
+          },
+          {
+            "query": "warehouse hours",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 7
+          },
+          {
+            "query": "warehouse services near me",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 15
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0.0,
+        "avg_position": 28.5,
+        "top_queries": [
+          {
+            "query": "warehouse services",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 10.7
+          },
+          {
+            "query": "warehousing services in kyiv",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 8
+          },
+          {
+            "query": "fulfillment centre 45",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 51
+          },
+          {
+            "query": "fulfillment service",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 87
+          },
+          {
+            "query": "warehouse",
+            "impressions": 1,
+            "clicks": 0,
+            "position": 77
+          }
+        ]
+      },
+      "verdict": "loser",
+      "reason": "imp +3 (+43%), pos 25.4→28.5"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-marketpleysiv/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 20,
+        "ctr": 0.0,
+        "avg_position": 35.2,
+        "top_queries": [
+          {
+            "query": "фулфілмент для маркетплейсов дніпро",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 34.5
+          },
+          {
+            "query": "фулфілмент для маркетплейсів",
+            "impressions": 3,
+            "clicks": 0,
+            "position": 12.7
+          },
+          {
+            "query": "розетка фулфилмент",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 34.5
+          },
+          {
+            "query": "склад фулфилмент днепр",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 50.5
+          },
+          {
+            "query": "фулфілмент для маркетплейсов запоріжжя",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 46
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0.0,
+        "avg_position": 33.62,
+        "top_queries": [
+          {
+            "query": "фулфілмент для маркетплейсов дніпро",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 34.5
+          },
+          {
+            "query": "фулфілмент для маркетплейсів",
+            "impressions": 4,
+            "clicks": 0,
+            "position": 10
+          },
+          {
+            "query": "розетка фулфилмент",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 34.5
+          },
+          {
+            "query": "склад фулфилмент днепр",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 50.5
+          },
+          {
+            "query": "фулфілмент для маркетплейсов запоріжжя",
+            "impressions": 2,
+            "clicks": 0,
+            "position": 46
+          }
+        ]
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-maloho-biznesu/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0.0,
+        "avg_position": 1.0,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 5,
+            "clicks": 0,
+            "position": 1
+          }
+        ]
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0.0,
+        "avg_position": 1.17,
+        "top_queries": [
+          {
+            "query": "mtp group",
+            "impressions": 6,
+            "clicks": 0,
+            "position": 1.2
+          }
+        ]
+      },
+      "verdict": "winner",
+      "reason": "imp +1 (+20%)"
+    },
+    "https://www.fulfillmentmtp.com.ua/fulfilment-dlya-odyahu/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-odezhdy/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    },
+    "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-clothing/": {
+      "baseline": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "avg_position": 0,
+        "top_queries": []
+      },
+      "verdict": "unchanged",
+      "reason": "stable"
+    }
+  }
+}
