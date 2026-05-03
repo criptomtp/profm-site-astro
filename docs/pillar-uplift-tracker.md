@@ -152,6 +152,29 @@
 
 ## Session log (rolling — новіші зверху)
 
+### 2026-05-03 — Phase B on marketpleysiv cluster (rank #2 priority queue) 🎯
+**State before:** UA 2428 (gap 72), RU 2398 (gap 102), EN 4788 (passes). Both UA + RU FAIL words gate.
+
+**90-day GSC pull findings:**
+- UA `/ua/fulfilment-dlya-marketpleysiv/`: 21 imp / 0 clicks, 11 queries
+- RU `/ru/fulfilment-dlya-marketpleysov/`: **95 imp / 0 clicks**, top query "фулфилмент в товарке" pos 18.3 imp 47 (Russian slang, must be in body)
+- EN `/en/fulfilment-for-marketplaces/`: 0 imp/90d (URL invisible)
+- **Phantom URL `/en/fulfillment-for-marketplaces/` (double-l): 202 imp**, ranks pos 2.9 for "prom.ua" 183 imp — but it's navigational query (users want prom.ua, not us). 301 redirect to single-l works correctly. Not intervention candidate.
+
+**Changes (commit cc9370c):**
+1 substantive H2 per language (~330 words UA / ~340 words RU), targeting:
+- Regional sellers (Dnipro, Kharkiv, Zaporizhia, Lviv) — geo-modifier queries
+- Rozetka 24-hour SLA + 7-day weekend warehouse coverage
+- Zaporizhia frontline-area independence via Kyiv hub
+- Multi-marketplace inventory sync (Rozetka + Prom + Kasta + own site)
+- RU section explicitly includes "фулфилмент в товарке" verbatim (47 imp slang query)
+
+**Validate:** UA 2907 ✅, RU 2892 ✅, EN 4542 ✅. 9/9 schemas, brand-hook H1, hreflang quartet reciprocal, language purity. All 3 PASS.
+
+**GSC reindex 3/3** submitted (`docs/gsc/reindex-2026-05-03_154419.json`). Today's quota: 17/200, remaining 183.
+
+---
+
 ### 2026-05-03 — Watchlist-loser investigation + gsc-delta classifier fix 🛠️
 Investigated 3 URLs flagged as losers in earlier delta run (`/ua/fulfilment-vazhkykh-tovariv`, `/ua/fulfilment-kyiv`, `/en/heavy-goods`).
 
