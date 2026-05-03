@@ -50,6 +50,11 @@
   ],
   "redirects": [
     {
+      "source": "/blog/chto-takoe-fulfilment/",
+      "destination": "/ru/chto-takoe-fulfilment/",
+      "permanent": true
+    },
+    {
       "source": "/blog/fulfillment-cost-guide/",
       "destination": "/blog/stoimost-fulfilmenta-2026/",
       "statusCode": 301
@@ -537,8 +542,9 @@
     },
     {
       "source": "/en/fulfillment-for-marketplaces/",
-      "destination": "/en/fulfillment-ukraine/",
-      "statusCode": 301
+      "destination": "/en/fulfilment-for-marketplaces/",
+      "statusCode": 301,
+      "permanent": true
     },
     {
       "source": "/en/fulfillment-for-small-business/",
@@ -547,8 +553,9 @@
     },
     {
       "source": "/en/fulfillment-for-cosmetics/",
-      "destination": "/en/fulfillment-ukraine/",
-      "statusCode": 301
+      "destination": "/en/fulfilment-for-cosmetics/",
+      "statusCode": 301,
+      "permanent": true
     },
     {
       "source": "/en/fulfillment-for-electronics/",
