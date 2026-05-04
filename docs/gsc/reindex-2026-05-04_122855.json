@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-05-04_122855",
+  "ok": 6,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-knyzhok/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-knig/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/fulfilment-dlya-internet-magazynu/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-internet-magazynu/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/skladski-poslugy/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

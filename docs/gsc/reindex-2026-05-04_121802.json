@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-04_121802",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-knyzhok/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-knig/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

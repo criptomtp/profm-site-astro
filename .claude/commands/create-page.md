@@ -1,17 +1,83 @@
 # Команда: /create-page
 
-Створює нову сторінку або статтю блогу повністю автономно.
-Запускає Multi-Agent Pipeline без зупинок.
+Створює нову сторінку або статтю блогу за повним 12-кроковим pipeline через `create-page-orchestrator` agent.
 
 ## Використання:
 ```
-/create-page "Топ-10 маркетплейсів України"
-/create-page "Фулфілмент для Rozetka" --type=blog
+/create-page "Фулфілмент для книжок"
+/create-page "Топ-10 маркетплейсів України" --type=blog
+/create-page "/fulfilment-knyzhok/" --slug-fixed --type=pillar
 ```
 
 ---
 
-## PIPELINE — виконувати повністю без зупинок:
+## ⚡ ПЕРША ДІЯ при отриманні цієї команди:
+
+**Ти НЕ виконуєш pipeline сам.** Ти **спавнишь `create-page-orchestrator` agent** через Task tool:
+
+```
+Task(
+  subagent_type="create-page-orchestrator",
+  description="Create new page",
+  prompt="""
+Create new pillar page for topic: [TOPIC FROM USER]
+
+Slug suggestion: [DERIVE FROM TOPIC OR USER-SPECIFIED]
+Type: [pillar / blog / landing — default pillar]
+
+Run the full 12-step pipeline per .claude/commands/create-page.md and
+.claude/commands/keyword-strategy-protocol.md. Hard stop at:
+- Step 3 STITCH for user approval (show 3 concepts inline)
+- Step 6.5 KEYWORD AUDIT for pass verification
+- Step 8 QA for validate:pillar + humanizer pass
+
+After deploy (step 11), output the full report per "DEPLOY + ФІНАЛЬНИЙ ЗВІТ"
+section of create-page.md.
+
+Do not skip steps. Do not write 3 translations. Do not commit without
+Humanizer pass + Keyword Audit pass + Validate:pillar pass.
+"""
+)
+```
+
+Після спавну ти просто чекаєш на результат від orchestrator. Він повертає звіт коли все завершено АБО затримується на hard-stop gates чекаючи твою відповідь.
+
+При hard stop — orchestrator поверне коротке повідомлення з конкретним питанням і ти переадресуй це user. Коли user відповість — передай відповідь назад в orchestrator через `SendMessage` (НЕ створюй новий agent).
+
+---
+
+## ⚠️ Якщо `create-page-orchestrator` agent недоступний:
+Виконай pipeline сам, читаючи цей файл повністю + `.claude/commands/keyword-strategy-protocol.md`. Дотримуйся всіх 12 кроків і 3 hard gates без shortcuts.
+
+---
+
+## PIPELINE — 12 кроків (для довідки orchestrator-у і для fallback):
+
+**Pipeline-діаграма:**
+```
+1. RESEARCHER          → competitors data .claude-flow/research/[slug].json
+1.5. KEYWORD-STRATEGIST → keyword strategy .claude-flow/research/[slug]-keywords.json [NEW STEP]
+2. ANALYZER + ARCHETYPE → ADR docs/design-system/pages/[slug].md
+3. STITCH PREVIEW      → 3 concepts saved → docs/design-system/stitch-exports/[date]_[slug]/
+   ⛔ HARD STOP — wait for user approval
+4. WRITER              → 3 .astro files (NOT translations)
+5. LANGUAGE AUDIT      → 0 русизмів, 0 українізмів, EN naturalness
+6. DESIGN              → manual Astro implementation per Stitch ref
+6.5. KEYWORD AUDIT     → primary/secondary/negative coverage in code [NEW STEP]
+   ⛔ HARD STOP — blocks commit if >2 primary keywords fail
+7. IMAGE-GEN           → Pollinations.ai → public/images/[slug]-hero.jpg
+8. QA                  → npm run build + validate:pillar + humanizer-scan
+   ⛔ HARD STOP — must PASS all 3
+9. WIRE-UP             → Header.astro mega-menu + lang-switcher map +
+                         llms.txt + MTP_SEMANTIC_CORE_FULL.md status update
+10. DEPLOY             → git commit + push (CF Pages auto-deploy)
+11. GSC REINDEX        → scripts/gsc-reindex.py 3 URLs
+12. POST-DEPLOY GSC TRACKING → schedule T+14, T+30, T+60 GSC checks [NEW STEP]
+```
+
+---
+
+## PIPELINE — детальна специфікація кроків (для fallback виконання):
 
 ### АГЕНТ 1 — RESEARCHER
 1. WebSearch топ-5 конкурентів Google UA + топ-3 RU + топ-3 EN
