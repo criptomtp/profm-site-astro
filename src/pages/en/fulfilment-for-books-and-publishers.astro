@@ -60,7 +60,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
       <tbody>
         <tr><td>Per-shipment fee (200+ orders/day)</td><td class="ek-col-ua-cell">$0.41</td><td>$1.20-1.80</td><td>$0.95-1.50</td></tr>
         <tr><td>Storage (per m³ per month)</td><td class="ek-col-ua-cell">$15</td><td>$35-50</td><td>$28-40</td></tr>
-        <tr><td>Returns processing per unit</td><td class="ek-col-ua-cell">$0.57</td><td>$1.50-2.20</td><td>$1.10-1.80</td></tr>
+        <tr><td>Returns processing per unit</td><td class="ek-col-ua-cell">1/2 of per-shipment rate</td><td>$1.50-2.20</td><td>$1.10-1.80</td></tr>
         <tr><td>Monthly minimum commitment</td><td class="ek-col-ua-cell">$114</td><td>$500-1,500</td><td>$400-1,000</td></tr>
         <tr><td>Onboarding time (contract to first dispatch)</td><td class="ek-col-ua-cell">21 business days</td><td>30-60 days</td><td>45-90 days</td></tr>
         <tr><td>Net per-order cost savings vs US baseline</td><td class="ek-col-ua-cell">60-65% cheaper</td><td>baseline</td><td>30-40% cheaper</td></tr>
@@ -190,7 +190,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
     <div class="ek-flow-step"><div class="ek-flow-num">04</div><div><h3>ISBN-verified order assembly</h3><p>WMS builds optimal pick path. Scanner guides picker to each shelf; operator verifies ISBN before pickup. 1-2 book order assembles in 30-45 seconds, 3-5 book in 60-90 seconds. Re-scan at pack station for 99.5% accuracy.</p></div></div>
     <div class="ek-flow-step"><div class="ek-flow-num">05</div><div><h3>Damage-resistant packaging</h3><p>Bubble wrap around cover, then rigid book-format cardboard mailer (B5 standard, A4 oversize). Spine in middle of mailer to absorb impact. Gift editions get additional kraft paper layer and branded ribbon. Multi-book orders in branded box with paper void-fill.</p></div></div>
     <div class="ek-flow-step"><div class="ek-flow-num">06</div><div><h3>Carrier handoff</h3><p>Four Nova Poshta pickups per day at 10:00, 12:00, 15:00, 17:00. Orders placed before 14:00 ship same-day; buyer in Kyiv receives SMS by evening. Cross-border via NP International with CN23 customs documentation. Ukrposhta for regional Ukrainian addresses outside NP network.</p></div></div>
-    <div class="ek-flow-step"><div class="ek-flow-num">07</div><div><h3>Returns processing</h3><p>Return arrives → unpacked → photographed → inspected for damage. Good-condition copies return to shelf inventory within 24 hours. Damaged copies go to publisher-decision zone. Fee $0.57 with photo documentation — critical for resolving customer disputes.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">07</div><div><h3>Returns processing</h3><p>Return arrives → unpacked → photographed → inspected for damage. Good-condition copies return to shelf inventory within 24 hours. Damaged copies go to publisher-decision zone. Return fee is half the per-shipment rate (e.g., at $0.50/shipment tier, return = $0.25), with photo documentation included — critical for resolving customer disputes.</p></div></div>
     <div class="ek-flow-step"><div class="ek-flow-num">08</div><div><h3>Reporting and analytics</h3><p>WMS dashboard shows real-time inventory by ISBN, movement history per copy, order volume by day/week/month, return rate per title, projected stock-out per print run. Month-end reconciliation auto-generates with all line items.</p></div></div>
   </div>
 </div></section>
@@ -245,7 +245,7 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
       <tr><td>Per-shipment fee</td><td>10-49 orders/day</td><td>from $0.59</td></tr>
       <tr><td>Storage</td><td>per m³ per month</td><td>$15</td></tr>
       <tr><td>Print run intake by ISBN</td><td>per unit</td><td>from $0.07</td></tr>
-      <tr><td>Returns processing with photo</td><td>per return</td><td>$0.57</td></tr>
+      <tr><td>Returns processing with photo</td><td>per return</td><td>1/2 of per-shipment rate</td></tr>
       <tr><td>Cross-border (NP International)</td><td>per parcel</td><td>by weight + destination</td></tr>
       <tr class="highlight"><td>Monthly minimum</td><td>any volume tier</td><td>$114</td></tr>
     </tbody>
