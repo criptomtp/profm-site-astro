@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800;900&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#474747",
+                        "primary": "#ffb4a9",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#5c0002",
+                        "inverse-primary": "#bd0f10",
+                        "tertiary-container": "#909191",
+                        "outline": "#ac8883",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#b5b5b5",
+                        "inverse-on-surface": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "on-secondary": "#303030",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#410001",
+                        "outline-variant": "#5c403c",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#c6c6c7",
+                        "secondary": "#c6c6c6",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-fixed": "#ffdad5",
+                        "surface-tint": "#ffb4a9",
+                        "surface-variant": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-primary-fixed-variant": "#930005",
+                        "primary-container": "#e63329",
+                        "on-tertiary-container": "#282a2a",
+                        "on-surface-variant": "#e5bdb8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "margin": "32px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "component-height": "56px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "h1": ["Unbounded"],
+                        "cta-label": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "h2": ["Unbounded"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["clamp(36px, 5vw, 64px)", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "cta-label": ["14px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h2": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'DM Sans', sans-serif; background-color: #131313; margin: 0; }
+        .sharp-corners { border-radius: 0 !important; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-8 h-[72px] sticky top-0 z-50 bg-neutral-950 border-b-2 border-red-600">
+<div class="text-2xl font-black tracking-tighter text-white uppercase font-['Unbounded']">КОМПЛЕКТАЦІЯ</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-red-600 font-bold border-b-2 border-red-600 pb-1 font-cta-label" href="#">Послуги</a>
+<a class="text-white hover:text-red-500 transition-colors font-cta-label" href="#">Тарифи</a>
+<a class="text-white hover:text-red-500 transition-colors font-cta-label" href="#">Склад</a>
+<a class="text-white hover:text-red-500 transition-colors font-cta-label" href="#">Контакти</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 uppercase font-cta-label hover:bg-red-700 transition-all duration-200 active:scale-95">Зв'язатися</button>
+</nav>
+<!-- Tagline Band -->
+<div class="w-full h-[50px] bg-[#e63329] flex items-center justify-center">
+<span class="text-white uppercase font-['Unbounded'] font-bold text-sm tracking-[0.18em]">PICK &amp; PACK / УКРАИНА 2026</span>
+</div>
+<!-- Hero Section -->
+<main class="grid grid-cols-1 md:grid-cols-10 min-h-[700px] w-full">
+<!-- Left Column (60%) -->
+<div class="md:col-span-6 bg-white p-12 md:p-24 flex flex-col justify-center items-start">
+<div class="bg-[#e63329] text-white text-[12px] px-3 py-1 mb-8 font-bold tracking-[0.12em] uppercase sharp-corners">
+                PICK &amp; PACK / УКРАИНА
+            </div>
+<h1 class="font-h1 text-h1 text-black mb-8 max-w-[900px]">
+                Сборка заказов из Украины — 47 секунд, 99,5% точность, $0.41 за заказ
+            </h1>
+<p class="font-body-md text-body-md text-[#333333] mb-12 max-w-[600px]">
+                WMS-маршрут picker, scan штрих-кода на pick И pack стадиях, QC перед опломбированием. Pick &amp; pack из украинского склада в Беларусь, Молдову, Казахстан.
+            </p>
+<button class="bg-[#e63329] text-white h-[56px] px-10 uppercase font-cta-label tracking-tight sharp-corners hover:bg-black transition-all flex items-center justify-center group">
+                Получить расчёт 
+                <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Right Column (40%) -->
+<div class="md:col-span-4 relative bg-[#0a0a0a] min-h-[400px]">
+<img alt="Warehouse Fulfillment Process" class="w-full h-full object-cover grayscale contrast-125 opacity-80" data-alt="A focused warehouse professional in industrial gear scanning a barcode on a heavy shipping container using a high-tech handheld device. The lighting is cinematic and high-contrast, featuring deep shadows and sharp highlights with subtle red industrial glares. The atmosphere is professional, urgent, and precise, mirroring a modern logistics fulfillment center with organized metal shelving in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc8VJdcU7XrNLDb1VYlRdhB5Nm51dtT4sFAAoN4n4tigQl4e1tYG5c6Gg3RnQ8pyf-29hKvVinbm19fvplTY2HaoyctjXUtHjsa9MwIjbpt3Uos--BuCzkMmSAezA2RMDIkau61ilzNcLCXIbjS6bB5O9gQ0U7Nk7Rl27RD6Wp50zj-KyapsHl4alCMG__jMX_S40V-Nge_DNE4yCaJRGD9gz6iw6UiEEp2Pgxjp1jWKUVF5o0dm3pJvVvti-blSk_cSehDynFqgnH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+</div>
+</main>
+<!-- Stats Bar -->
+<section class="w-full bg-[#0a0a0a] border-t border-neutral-800 py-16 px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col">
+<span class="font-h1 text-[48px] text-white leading-none mb-2">47</span>
+<div class="w-12 h-1 bg-[#e63329] mb-4"></div>
+<span class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase font-bold">СЕКУНД НА ЗАКАЗ</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h1 text-[48px] text-white leading-none mb-2">99,5%</span>
+<div class="w-12 h-1 bg-[#e63329] mb-4"></div>
+<span class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase font-bold">ТОЧНОСТЬ PICK &amp; PACK</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h1 text-[48px] text-white leading-none mb-2">$0.41</span>
+<div class="w-12 h-1 bg-[#e63329] mb-4"></div>
+<span class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase font-bold">СТОИМОСТЬ ОДНОГО PICK</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h1 text-[48px] text-white leading-none mb-2">60 000</span>
+<div class="w-12 h-1 bg-[#e63329] mb-4"></div>
+<span class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase font-bold">ОТПРАВОК В МЕСЯЦ</span>
+</div>
+</div>
+</section>
+<!-- Process Flow Diagram -->
+<section class="w-full bg-[#f3f3f3] py-24 px-8 border-y border-neutral-300">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap md:flex-nowrap justify-between items-start gap-y-12 relative">
+<!-- Progress Line Desktop -->
+<div class="hidden md:block absolute top-[18px] left-0 w-full h-[1px] bg-neutral-300 z-0"></div>
+<!-- Step 01 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">01</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">ПРИЁМ</span>
+</div>
+<!-- Step 02 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">02</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">WMS-МАРШРУТ</span>
+</div>
+<!-- Step 03 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">03</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">PICKER SCAN</span>
+</div>
+<!-- Step 04 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">04</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">VERIFY</span>
+</div>
+<!-- Step 05 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">05</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">УПАКОВКА</span>
+</div>
+<!-- Step 06 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">06</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">QC</span>
+</div>
+<!-- Step 07 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">07</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">ЯРЛЫК</span>
+</div>
+<!-- Step 08 -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left z-10 w-1/2 md:w-auto">
+<div class="w-9 h-9 bg-[#e63329] rounded-full flex items-center justify-center text-white text-xs font-bold mb-6 ring-4 ring-[#f3f3f3]">08</div>
+<span class="text-[11px] tracking-widest font-black text-black uppercase font-['DM Sans']">КУРЬЕР</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-neutral-950 border-t-2 border-neutral-800">
+<div class="text-xl font-black text-white font-['Unbounded']">КОМПЛЕКТАЦІЯ ЗАМОВЛЕНЬ</div>
+<div class="text-neutral-500 font-['DM Sans'] uppercase tracking-widest text-xs max-w-md text-center md:text-right">
+            © 2024 КОМПЛЕКТАЦІЯ ЗАМОВЛЕНЬ. INDUSTRIAL FULFILLMENT SOLUTIONS.
+        </div>
+<div class="flex gap-6">
+<a class="text-neutral-500 hover:text-red-600 transition-colors uppercase text-[10px] tracking-widest font-bold" href="#">Політика конфіденційності</a>
+<a class="text-neutral-500 hover:text-red-600 transition-colors uppercase text-[10px] tracking-widest font-bold" href="#">API Документація</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,420 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-04","name":"Комплектация заказов — pick and pack из Украины","description":"Сборка заказов на украинском складе для интернет-магазинов и маркетплейсов. WMS-маршрут picker, scan штрих-кода на двух стадиях (pick и pack), QC checkpoint перед опломбированием. 47 секунд на заказ из 3-4 позиций, 99,5% точность, $0.41 за один pick. Pick & pack из украинского склада в Беларусь, Молдову, Казахстан.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ООО \\"МТП Груп Фулфилмент\\"","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"BY"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"KZ"}],"serviceType":"Order Pick and Pack from Ukraine warehouse for CIS","audience":{"@type":"BusinessAudience","name":"Селлеры из СНГ (Беларусь, Молдова, Казахстан) с украинским рынком, русскоязычные интернет-магазины Украины, бренды с широким SKU-каталогом, B2B-дистрибьюторы"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"Комплектация заказа — от 18 грн (200+ заказов в день, типовой заказ из 3-4 позиций). Эквивалент $0.41 за один pick. Минимальный месячный платёж 5 000 грн (первые 3 месяца)."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит сборка одного заказа?","acceptedAnswer":{"@type":"Answer","text":"От 18 грн за заказ при объёме 200+ отправок в день — это $0.41 в долларовом эквиваленте. Тариф включает WMS-маршрутизацию picker, скан штрих-кода на двух стадиях (pick и pack), QC checkpoint перед опломбированием, ярлык доставки и передачу курьеру. Без скрытых handling fee, peak surcharge или доплат за каждую позицию в заказе. Для меньшего объёма (30-200 заказов в день) тариф 22-26 грн. Точная цифра — за 15 минут после короткого звонка о вашем SKU-каталоге и средней массе заказа."}},{"@type":"Question","name":"Сколько времени занимает сборка одного заказа?","acceptedAnswer":{"@type":"Answer","text":"47 секунд на типовой заказ из 3-4 позиций — фактический показатель который мы измеряем непрерывно. Раскладка времени: 8 секунд на получение pick-листа и выход на маршрут, 22 секунды на проход по маршруту и взятие товаров с полок (WMS ведёт picker по оптимальному пути), 12 секунд на скан штрих-кодов и верификацию, 5 секунд на упаковку и pack-stage scan. Для заказов с 1-2 позициями время падает до 30-35 секунд, для multi-SKU заказов с 8-12 позициями — до 90-120 секунд. На собственном складе без WMS-навигации типовое время — 5-10 минут на заказ."}},{"@type":"Question","name":"Что означает точность комплектации 99,5%?","acceptedAnswer":{"@type":"Answer","text":"99,5% точность означает 5 ошибок на 1 000 собранных заказов — не более. За прошлый квартал фактический показатель в MTP — 99,72%. Ошибка комплектации — это когда клиент получил не тот SKU, не то количество или не того цвета, что заказывал. Мы измеряем два типа ошибок раздельно: pick-error (взяли не тот товар с полки) и pack-error (положили не в ту коробку при multi-order упаковке). Скан штрих-кода на pick AND pack стадиях сводит вероятность обоих типов к математическому минимуму."}},{"@type":"Question","name":"Чем отличается комплектация от упаковки?","acceptedAnswer":{"@type":"Answer","text":"Комплектация (pick) — это сбор товаров по заказу с полок склада. Упаковка (pack) — упаковка этих товаров в коробку, конверт или пакет с прокладочным материалом для безопасной транспортировки. В 3PL комплектация и упаковка часто считаются раздельно как две услуги с отдельными тарифами. Мы объединяем обе операции в единый тариф за заказ (от 18 грн) — без разбиения на pick fee + pack fee + handling fee. Это делает ценообразование прозрачным и прогнозируемым для бюджета магазина."}},{"@type":"Question","name":"Можно ли отправлять собранные заказы из Украины в Беларусь, Молдову, Казахстан?","acceptedAnswer":{"@type":"Answer","text":"Да, это один из наших ключевых сценариев для СНГ-селлеров. Pick & pack происходит на украинском складе (3 700 м² в Счастливом и Белогородке), затем заказ передаётся в международный канал доставки: Новая Почта Международная для Беларуси и Молдовы, Meest или DHL для Казахстана. Сроки доставки: Беларусь 4-7 дней, Молдова 3-5 дней, Казахстан 10-15 дней. Таможенные документы оформляем автоматически по данным заказа. Для регулярного потока заказов в одну страну СНГ — отдельный тариф с предоформлением групповых таможенных деклараций."}},{"@type":"Question","name":"Кто платит за ошибку комплектации?","acceptedAnswer":{"@type":"Answer","text":"Ошибка комплектации — наша ответственность. При подтверждённой ошибке (фото от клиента + проверка по WMS-логу кто и когда собирал) мы за свой счёт отправляем правильный товар клиенту, забираем неправильный на склад и компенсируем магазину расходы на повторную доставку (60-80 грн для UA, эквивалент для CIS). SLA закрытия инцидента — 24 часа от обращения клиента до повторной отправки. Это прописано в договоре с материальной ответственностью — не маркетинговое обещание, а юридическое обязательство."}},{"@type":"Question","name":"Как обеспечивается 99,5% точность комплектации?","acceptedAnswer":{"@type":"Answer","text":"Четыре слоя защиты от ошибок. Первый — адресное хранение в WMS: каждый SKU привязан к конкретной ячейке на стеллаже, picker не ищет товар руками. Второй — обязательный скан штрих-кода при взятии товара с полки (pick-stage scan): если штрих-код не совпадает с заказом, WMS блокирует операцию и требует взять правильный SKU. Третий — повторный скан при упаковке (pack-stage scan): перед закрытием коробки ещё раз сканируем все позиции. Четвёртый — QC checkpoint для high-value или multi-SKU заказов: отдельный контролёр выборочно проверяет ~5% заказов визуально перед опломбированием. Четыре слоя + WMS-логи создают точность 99,5% как property системы, а не как надежду на внимательность работника."}},{"@type":"Question","name":"Как использовать украинский склад как outbound-базу для распределения по СНГ?","acceptedAnswer":{"@type":"Answer","text":"Сценарий: ваш бренд из Беларуси, Молдовы или Казахстана продаёт в Украину И в страны СНГ. Вы держите единый запас товара на нашем украинском складе. Заказы в Украину собираются и отправляются через Новую Почту/Укрпочту (24-48 часов до клиента). Заказы в страны СНГ собираются на том же складе и отправляются через международные каналы. Один SKU-каталог, один WMS, один тариф за pick + страновой тариф за международную доставку. Это экономит на дублировании склада в каждой стране и даёт прозрачный учёт остатков."}},{"@type":"Question","name":"Можно ли начать с малого объёма — 30 заказов в день?","acceptedAnswer":{"@type":"Answer","text":"Да. Минимальный месячный платёж — 5 000 грн (первые 3 месяца), что соответствует приблизительно 30-40 заказам в день. Это окупается когда владелец магазина считает себестоимость часа своей работы. На собственном складе при 30 заказах в день один человек (или сам владелец) тратит 4-6 часов ежедневно на комплектацию и упаковку. На фулфилменте — ноль часов."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"Комплектация заказов","item":"https://www.fulfillmentmtp.com.ua/ru/komplektaciya-zakazov/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — комплектация заказов","url":"https://www.fulfillmentmtp.com.ua/ru/komplektaciya-zakazov/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$0.41-$0.60 / pick","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"ул. Промышленная","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","postalCode":"08322","addressCountry":"UA","description":"Склад 2 700 м² — основная локация комплектации"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","postalCode":"08140","addressCountry":"UA","description":"Склад 1 000 м² — резервная площадка"}],"location":[{"@type":"Place","name":"MTP Fulfillment — Счастливое","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"}},{"@type":"Place","name":"MTP Fulfillment — Белогородка","geo":{"@type":"GeoCoordinates","latitude":"50.4138","longitude":"30.1928"}}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"BY"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"KZ"}]}</script>`;
+---
+<Base
+  title="Комплектация заказов — pick & pack 47 секунд, 99,5% точность"
+  description="Сборка заказов на украинском складе: WMS-маршрут picker, скан штрих-кода на 2 стадиях, 99,5% точность, $0.41 за pick. Pick & pack из Украины в Беларусь, Молдову, Казахстан."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/komplektaciya-zakazov/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/komplektatsiya-zamovlen-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/komplektatsiya-zamovlen/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/komplektaciya-zakazov/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/order-pick-and-pack-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/komplektatsiya-zamovlen/">
+</Fragment>
+
+<!-- TOP RED BAND -->
+<div class="kz-band">PICK &amp; PACK / УКРАИНА 2026 / 99,5% ТОЧНОСТЬ / $0.41 ЗА ЗАКАЗ</div>
+
+<!-- HERO — Industrial split mood, no form -->
+<section class="kz-hero">
+  <div class="ctr">
+    <div class="kz-hero-grid">
+      <div class="kz-hero-text">
+        <div class="kz-chip">PICK &amp; PACK / УКРАИНА</div>
+        <h1>Сборка заказов из Украины — 47 секунд, 99,5% точность, $0.41 за заказ</h1>
+        <p class="kz-hero-sub">WMS-маршрут picker, scan штрих-кода на pick И pack стадиях, QC checkpoint перед опломбированием. Pick &amp; pack из украинского склада в Беларусь, Молдову, Казахстан. Один SKU-каталог обслуживает Украину И страны СНГ без дублирования склада в каждой стране.</p>
+        <a href="#kz-cta" class="kz-cta-btn">Получить расчёт →</a>
+      </div>
+      <div class="kz-hero-img" data-md-skip></div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK STATS BAR -->
+<section class="kz-statsbar">
+  <div class="ctr">
+    <div class="kz-sb-grid">
+      <div class="kz-sb-cell"><div class="kz-sb-num">47</div><div class="kz-sb-lbl">СЕКУНД НА ЗАКАЗ</div></div>
+      <div class="kz-sb-cell"><div class="kz-sb-num">99,5%</div><div class="kz-sb-lbl">ТОЧНОСТЬ PICK &amp; PACK</div></div>
+      <div class="kz-sb-cell"><div class="kz-sb-num">$0.41</div><div class="kz-sb-lbl">СТОИМОСТЬ ОДНОГО PICK</div></div>
+      <div class="kz-sb-cell"><div class="kz-sb-num">60K</div><div class="kz-sb-lbl">ОТПРАВОК В МЕСЯЦ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: 8-step process flow -->
+<section class="kz-sec kz-sec-light"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ВОСЕМЬ ШАГОВ ПРОЦЕССА</div>
+  <h2 class="kz-h2">Как работает комплектация заказов на складе MTP — pick &amp; pack за 47 секунд</h2>
+  <p class="kz-lede">Восьмишаговый workflow от поступления заказа в WMS до передачи курьеру. Каждый шаг измеряется и логируется. Точность комплектации 99,5% — это property системы, а не надежда на внимательность отдельного работника.</p>
+  <div class="kz-flow">
+    <div class="kz-flow-step"><div class="kz-flow-num">01</div><div class="kz-flow-lbl">ПРИЁМ ЗАКАЗА</div><div class="kz-flow-desc">API-интеграция с CRM магазина. Заказ в WMS за 800 мс.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">02</div><div class="kz-flow-lbl">WMS-МАРШРУТ</div><div class="kz-flow-desc">Оптимальный путь picker через стеллажи. Один обход без возвратов.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">03</div><div class="kz-flow-lbl">PICKER SCAN</div><div class="kz-flow-desc">Picker сканирует штрих-код товара при взятии с полки.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">04</div><div class="kz-flow-lbl">VERIFY</div><div class="kz-flow-desc">WMS сверяет код. Несовпадение блокирует операцию.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">05</div><div class="kz-flow-lbl">УПАКОВКА</div><div class="kz-flow-desc">Pack-station с материалами под рукой: пузырчатая плёнка, коробки.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">06</div><div class="kz-flow-lbl">QC SCAN</div><div class="kz-flow-desc">Pack-stage scan каждой позиции. Второй слой защиты от ошибок.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">07</div><div class="kz-flow-lbl">ЯРЛЫК</div><div class="kz-flow-desc">Печать ярлыка доставки с трекинг-номером. Опломбирование.</div></div>
+    <div class="kz-flow-step"><div class="kz-flow-num">08</div><div class="kz-flow-lbl">КУРЬЕР</div><div class="kz-flow-desc">Передача курьеру. Статус "отправлено" возвращается в CRM.</div></div>
+  </div>
+</div></section>
+
+<!-- WHY OUTSOURCED PICK&PACK -->
+<section class="kz-sec"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ОПЕРАЦИОННАЯ ПРОБЛЕМА</div>
+  <h2 class="kz-h2">Шесть причин почему сборка заказов склад на собственных силах не масштабируется</h2>
+  <div class="kz-prob-grid">
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">5-10 МИН</div>
+      <h3>Время pick без WMS-навигации</h3>
+      <p>На собственном складе без адресного хранения упаковщик по 5-10 минут ищет редкий SKU среди стеллажей. При 100 заказах в день это 8-16 часов чистого времени — один человек полный рабочий день только на поиск товаров. WMS ведёт picker по оптимальному маршруту — типовое время для 3-4 позиций — 47 секунд. Разница в 6-12 раз — не оптимизация, а другая математика бизнеса.</p>
+    </div>
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">3-5%</div>
+      <h3>Ошибки без скана на 2 стадиях</h3>
+      <p>Типовая точность сборки заказов на собственном складе без WMS и обязательного скана — 95-97%. Это 30-50 ошибок на 1 000 заказов. Каждая ошибка стоит: повторная доставка ($1.50-2 для UA, эквивалент для CIS), -1 покупатель навсегда через отзыв, риск полного отказа от оплаты. Скан штрих-кода на pick AND pack стадиях сводит точность к 99,5%.</p>
+    </div>
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">PEAK</div>
+      <h3>Сезонные пики разрушают собственный склад</h3>
+      <p>Чёрная пятница, предновогодние недели — объём заказов вырастает в 3-7 раз. Собственный склад с двумя упаковщиками не успевает, заказы выходят с 3-5 дней задержки. Наша мощность — до 6 000 заказов в сутки и автоматическое масштабирование сменами без peak surcharge в тарифе.</p>
+    </div>
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">SKU</div>
+      <h3>Большой каталог + низкая velocity</h3>
+      <p>Магазин с 500-3 000 SKU имеет проблему: 80% позиций — long-tail с продажами 1-3 в месяц, но они должны физически быть на складе. Без WMS — либо огромный склад с поиском руками, либо отказ от части ассортимента. У нас slotting-алгоритм размещает горячие позиции у pack-station, long-tail — компактно в глубине склада.</p>
+    </div>
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">QC</div>
+      <h3>Отсутствие контроля качества</h3>
+      <p>На собственном складе типовая схема: упаковщик собрал, положил в коробку, заклеил. Ошибка не выявляется до момента когда клиент откроет посылку. У нас QC checkpoint — для high-value или multi-SKU заказов отдельный контролёр визуально проверяет содержимое перед опломбированием. ~5% заказов проходят выборочную проверку, для дорогих категорий — 100%.</p>
+    </div>
+    <div class="kz-prob-card">
+      <div class="kz-prob-num">МАСШТ</div>
+      <h3>Невозможность масштабирования собственными силами</h3>
+      <p>На 30 заказах в день один человек справляется. На 200 нужно трое упаковщиков, руководитель, дополнительные стеллажи. На 1 000 — полноценный отдел с 8-12 людьми, отдельный менеджер, ФОП-расходы, отпуска, текучка кадров. Каждый следующий уровень — не линейный рост, а скачок с арендой-зарплатами-управлением.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- CIS OUTBOUND USE CASE -->
+<section class="kz-sec kz-sec-dark"><div class="ctr">
+  <div class="kz-chip kz-chip-light">ИСПОЛЬЗОВАНИЕ ИЗ СНГ</div>
+  <h2 class="kz-h2">Сборка заказов из Украины в Беларусь, Молдову, Казахстан — outbound-сценарий для CIS-брендов</h2>
+  <p class="kz-lede">Pick &amp; pack из украинского склада не ограничен внутренним рынком Украины. Бренды из Беларуси, Молдовы, Казахстана используют наш склад 3 700 м² как единую outbound-базу для распределения по своему рынку И украинскому одновременно.</p>
+  <div class="kz-cis-grid">
+    <div class="kz-cis-cell">
+      <div class="kz-cis-flag">🇧🇾</div>
+      <h3>Беларусь</h3>
+      <p><strong>Срок:</strong> 4-7 дней через Новую Почту Международную или Meest</p>
+      <p><strong>Применение:</strong> бренды косметики, одежды, электроники с украинским рынком как основным каналом, белорусский рынок как вторичный. Один склад обслуживает оба направления.</p>
+      <p><strong>Таможня:</strong> групповые декларации для регулярного потока заказов в одну страну. Документы автоматически по данным заказа.</p>
+    </div>
+    <div class="kz-cis-cell">
+      <div class="kz-cis-flag">🇲🇩</div>
+      <h3>Молдова</h3>
+      <p><strong>Срок:</strong> 3-5 дней через Новую Почту Международную</p>
+      <p><strong>Применение:</strong> молдавские издательства, бренды натуральной косметики, рукодельные продукты с диаспорой в Украине и Европе. Pick &amp; pack из Украины выгоднее чем из Молдовы прямо.</p>
+      <p><strong>Таможня:</strong> молдавско-украинский торговый режим упрощает оформление. Книги — 0% импортного пошлин в большинстве направлений.</p>
+    </div>
+    <div class="kz-cis-cell">
+      <div class="kz-cis-flag">🇰🇿</div>
+      <h3>Казахстан</h3>
+      <p><strong>Срок:</strong> 10-15 дней через Meest или DHL</p>
+      <p><strong>Применение:</strong> казахстанские бренды с русскоязычной диаспорой в Украине. Также наоборот — казахстанский e-commerce с украинскими производителями товаров (косметика, текстиль) использует наш склад как оperational hub.</p>
+      <p><strong>Таможня:</strong> EAEU-документация в комплексе с украинским вывозом. Сервис для регулярного потока — групповые декларации.</p>
+    </div>
+  </div>
+  <div class="kz-cis-bottom">
+    <strong>Экономика модели:</strong> вместо дублирования склада в каждой стране СНГ, единый склад в Украине с pick &amp; pack под все направления. Один SKU-каталог, один WMS, один тариф за pick + страновой тариф за международную доставку. Учёт остатков прозрачный — видно сколько товара продано в Украину, в Беларусь, в Молдову, в Казахстан раздельно.
+  </div>
+</div></section>
+
+<!-- ACCURACY DEEP DIVE -->
+<section class="kz-sec"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ТОЧНОСТЬ КОМПЛЕКТАЦИИ</div>
+  <h2 class="kz-h2">Четыре слоя защиты от ошибок — как мы держим 99,5% точность комплектации</h2>
+  <p class="kz-lede">Точность комплектации не везение и не внимательность отдельного упаковщика. Это property системы с четырьмя независимыми слоями верификации. Если один слой пропускает ошибку — следующий её ловит.</p>
+  <div class="kz-acc-grid">
+    <div class="kz-acc-card">
+      <div class="kz-acc-num">01</div>
+      <h3>Адресное хранение в WMS</h3>
+      <p>Каждый SKU привязан к конкретной ячейке на стеллаже через ID-наклейку. Picker не ищет товар руками и не полагается на память. Это устраняет класс ошибок "взял с полки рядом", типичных для складов без WMS. Slotting-алгоритм периодически пересматривает размещение SKU по частоте продаж.</p>
+    </div>
+    <div class="kz-acc-card">
+      <div class="kz-acc-num">02</div>
+      <h3>Pick-stage scan штрих-кода</h3>
+      <p>Обязательный скан штрих-кода в момент взятия товара с полки. Сканер передаёт код в WMS, WMS сверяет с ожидаемым SKU. Совпадение — зелёный сигнал, несовпадение — блокировка операции. Этот слой ловит ~85% потенциальных ошибок: похожая упаковка другого SKU, перепутанные артикулы, ошибочное взятие с соседней ячейки.</p>
+    </div>
+    <div class="kz-acc-card">
+      <div class="kz-acc-num">03</div>
+      <h3>Pack-stage scan перед опломбированием</h3>
+      <p>На pack-station упаковщик повторно сканирует все позиции в заказе. Это второй независимый слой: даже если на pick-стадии штрих-код был неправильно считан (бракованная наклейка, похожий код), pack-stage scan это выловит. Скан также считает количество единиц.</p>
+    </div>
+    <div class="kz-acc-card">
+      <div class="kz-acc-num">04</div>
+      <h3>QC checkpoint для high-value заказов</h3>
+      <p>Для заказов от 5 000 грн или с 5+ позициями — выборочный QC от отдельного контролёра. Контролёр открывает коробку перед опломбированием, визуально проверяет содержимое, целостность упаковки, наличие вкладышей. Третий слой ловит ошибки за пределами штрих-кодов: повреждённая упаковка, забытый промо-вкладыш.</p>
+    </div>
+  </div>
+  <div class="kz-acc-note">
+    <strong>Стандарт отрасли:</strong> 99,5-99,8% для US/EU 3PL с WMS и скан-верификацией. <strong>Без WMS и скана:</strong> типично 95-97%. <strong>Наш факт за прошлый квартал:</strong> 99,72%. Разрыв между 99 и 99,5 кажется небольшим, но это разница в 5 раз по количеству ошибок (50 ошибок на 1 000 заказов vs 5).
+  </div>
+</div></section>
+
+<!-- PRICING -->
+<section class="kz-sec kz-sec-light"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">СТОИМОСТЬ КОМПЛЕКТАЦИИ ЗАКАЗА</div>
+  <h2 class="kz-h2">Сколько стоит pick &amp; pack — прозрачный тариф без скрытых fee</h2>
+  <p class="kz-lede">Один тариф за собранный заказ включает: WMS-маршрут picker, скан штрих-кода на двух стадиях, QC checkpoint перед опломбированием, ярлык доставки, передачу курьеру. Без отдельных pick fee, pack fee, handling fee, peak surcharge.</p>
+  <div class="kz-price-grid">
+    <div class="kz-price-card">
+      <div class="kz-price-tier">200+ ОТПРАВОК / ДЕНЬ</div>
+      <div class="kz-price-num">от 18 грн</div>
+      <div class="kz-price-label">≈ $0.41 за собранный заказ</div>
+      <ul class="kz-price-feat">
+        <li>Типовой заказ из 3-4 позиций</li>
+        <li>WMS-маршрут picker</li>
+        <li>Scan штрих-кода на 2 стадиях</li>
+        <li>QC для заказов от 5 000 грн</li>
+        <li>Ярлык доставки и передача курьеру</li>
+      </ul>
+    </div>
+    <div class="kz-price-card kz-price-card-mid">
+      <div class="kz-price-tier">30-200 ОТПРАВОК / ДЕНЬ</div>
+      <div class="kz-price-num">22-26 грн</div>
+      <div class="kz-price-label">≈ $0.50-0.59 за заказ</div>
+      <ul class="kz-price-feat">
+        <li>Тот же процесс качества</li>
+        <li>Адресное хранение в WMS</li>
+        <li>Scan штрих-кода на 2 стадиях</li>
+        <li>QC checkpoint выборочно</li>
+        <li>Минимальный платёж 5 000 грн/мес первые 3 мес</li>
+      </ul>
+    </div>
+    <div class="kz-price-card">
+      <div class="kz-price-tier">МУЛЬТИ-SKU или 8+ ПОЗИЦИЙ</div>
+      <div class="kz-price-num">+ 3-5 грн</div>
+      <div class="kz-price-label">доплата за сложность</div>
+      <ul class="kz-price-feat">
+        <li>Заказы с 8-12 позициями</li>
+        <li>Multi-line pick маршрут</li>
+        <li>Время сборки 90-120 секунд</li>
+        <li>Обязательный QC checkpoint</li>
+        <li>Подарочная упаковка опционально</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kz-price-note">
+    <strong>Без сюрпризов в счёте.</strong> Цифра в договоре = цифра в счёте в конце месяца. Нет peak surcharge на Чёрную пятницу, нет платы за смену SKU-каталога, нет отдельной линии "handling fee". Если у вас 5 312 заказов за месяц по 18 грн — это 95 616 грн ($2 175) за комплектацию. Хранение, возвраты и дополнительные услуги — отдельно по прозрачному прайсу.
+  </div>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="kz-sec"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ИНТЕГРАЦИИ</div>
+  <h2 class="kz-h2">Сборка заказов для маркетплейсов СНГ — Wildberries, Ozon, Rozetka, Prom</h2>
+  <p class="kz-lede">Pick and pack Украина начинается с API-интеграции. Заказ из CRM магазина автоматически попадает в WMS picker за 800 мс. Подключение новой системы — 1-2 дня через готовый коннектор или REST API.</p>
+  <div class="kz-int-grid">
+    <div class="kz-int-cell"><strong>Хорошоп</strong><span>SaaS-платформа №1 для UA e-com. Готовый коннектор, интеграция 2 часа.</span></div>
+    <div class="kz-int-cell"><strong>Rozetka Marketplace</strong><span>API для UA-рынка. Спецтребования к ярлыку — автоматизировано.</span></div>
+    <div class="kz-int-cell"><strong>Prom.ua</strong><span>API. Заказы из всех селлер-кабинетов в один WMS-поток.</span></div>
+    <div class="kz-int-cell"><strong>KeyCRM / SalesDrive</strong><span>Самые популярные CRM для UA-рынка с двусторонним синком.</span></div>
+    <div class="kz-int-cell"><strong>OpenCart / WooCommerce</strong><span>SaaS и open-source CMS. Готовые плагины и REST API.</span></div>
+    <div class="kz-int-cell"><strong>1C / BAS</strong><span>Бухгалтерские системы с учётом остатков. Двусторонний синк.</span></div>
+    <div class="kz-int-cell"><strong>Telegram-бот заказов</strong><span>Для D2C-брендов с продажами через мессенджеры. API-мост.</span></div>
+    <div class="kz-int-cell"><strong>Manual upload</strong><span>Excel/CSV загрузка для редких или тестовых партий.</span></div>
+    <div class="kz-int-cell"><strong>REST API</strong><span>Для нестандартных систем — полная документация + sandbox.</span></div>
+  </div>
+</div></section>
+
+<!-- USE CASES -->
+<section class="kz-sec kz-sec-light"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">КТО ИСПОЛЬЗУЕТ</div>
+  <h2 class="kz-h2">Категории бизнеса которые выносят сборку заказов на MTP</h2>
+  <div class="kz-uc-grid">
+    <div class="kz-uc-card">
+      <h3>Селлеры из СНГ с украинским рынком</h3>
+      <p>Бренды из Беларуси, Молдовы, Казахстана с активным украинским e-commerce. Используют наш склад 3 700 м² как единую базу для outbound по Украине И обратно в свою страну. Один SKU-каталог, прозрачный учёт по странам.</p>
+    </div>
+    <div class="kz-uc-card">
+      <h3>Русскоязычные интернет-магазины Украины</h3>
+      <p>Магазины с русскоязычным интерфейсом и аудиторией внутри Украины. Комплектация заказов интернет-магазина с API-интеграцией Хорошоп, KeyCRM, OpenCart. Налаживание 2 часа, первые заказы идут в тот же день.</p>
+    </div>
+    <div class="kz-uc-card">
+      <h3>Бренды с широким SKU-каталогом</h3>
+      <p>Бренды косметики, одежды, быта с 500-5 000 активных SKU где 80% — long-tail. Адресное хранение + slotting-алгоритм делает большой каталог управляемым без потери скорости.</p>
+    </div>
+    <div class="kz-uc-card">
+      <h3>B2B-дистрибьюторы для розничных точек</h3>
+      <p>Оптовые поставщики с регулярными заказами для розницы. Multi-SKU заказы на 8-15 позиций, обязательный QC checkpoint, интеграция с 1С/BAS. Отдельный процесс для B2B-упаковки в палеты.</p>
+    </div>
+    <div class="kz-uc-card">
+      <h3>Малый бизнес 30+ заказов в день</h3>
+      <p>Владелец магазина сам упаковывал в гараже — выходит на 30-50 заказов в день и тратит половину рабочего дня на pack. Передача комплектации освобождает 4-6 часов ежедневно для маркетинга и продаж.</p>
+    </div>
+    <div class="kz-uc-card">
+      <h3>D2C-бренды с подпиской</h3>
+      <p>Subscription boxes (косметика, food, hobby) с фиксированной номенклатурой в месячной упаковке. Multi-pack комплектация с QC на 100% (одинаковые коробки массово), брендированная упаковка, вкладыши для новых клиентов.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ACCOUNTABILITY -->
+<section class="kz-sec"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ОТВЕТСТВЕННОСТЬ ЗА ОШИБКУ</div>
+  <h2 class="kz-h2">Кто платит за ошибку комплектации — наша ответственность по договору</h2>
+  <p class="kz-lede">При подтверждённой ошибке (фото от клиента + WMS-лог кто и когда собирал) мы за свой счёт отправляем правильный товар клиенту, забираем неправильный и компенсируем магазину расходы на повторную доставку. SLA закрытия — 24 часа. Это в договоре с материальной ответственностью, не маркетинговое обещание.</p>
+  <div class="kz-acc-flow">
+    <div class="kz-acc-step"><strong>Шаг 1.</strong> Клиент сообщает об ошибке через ваш магазин или поддержку. Прилагает фото полученного товара.</div>
+    <div class="kz-acc-step"><strong>Шаг 2.</strong> Магазин передаёт инцидент нам через дашборд или Telegram. Мы открываем WMS-лог: кто собирал, когда, был ли scan штрих-кода.</div>
+    <div class="kz-acc-step"><strong>Шаг 3.</strong> Классификация. Если WMS-лог показывает что scan был и штрих-код совпал — ошибка не на нашей стороне. Если лог показывает блокировку и ручное обходние — наша.</div>
+    <div class="kz-acc-step"><strong>Шаг 4.</strong> Компенсация. При нашей ошибке: бесплатная повторная отправка правильного товара (за наш счёт), бесплатный забор неправильного на склад, компенсация магазину расходов на доставку. SLA — 24 часа.</div>
+    <div class="kz-acc-step"><strong>Шаг 5.</strong> Анализ root cause. Если ошибка повторяется — анализируем серию инцидентов, ищем паттерн (один упаковщик, одна категория SKU, ошибка штрих-кода). Исправление на уровне процесса.</div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="kz-sec kz-sec-light"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">ВОПРОСЫ И ОТВЕТЫ</div>
+  <h2 class="kz-h2">Что обычно спрашивают про комплектацию заказов перед стартом</h2>
+  <div class="kz-faq">
+    <details><summary>Сколько стоит сборка одного заказа?</summary><p>От 18 грн ($0.41) за заказ при объёме 200+ отправок в день. Тариф включает WMS-маршрутизацию picker, скан штрих-кода на двух стадиях (pick и pack), QC checkpoint перед опломбированием, ярлык доставки и передачу курьеру. Без скрытых handling fee, peak surcharge или доплат за каждую позицию.</p></details>
+    <details><summary>Сколько времени занимает сборка одного заказа?</summary><p>47 секунд на типовой заказ из 3-4 позиций. Раскладка: 8 секунд на pick-лист, 22 секунды на маршрут, 12 секунд на сканы и верификацию, 5 секунд на упаковку. Для 1-2 позиций — 30-35 секунд, для 8-12 позиций — 90-120 секунд. На собственном складе без WMS — 5-10 минут.</p></details>
+    <details><summary>Что означает точность комплектации 99,5%?</summary><p>5 ошибок на 1 000 собранных заказов — не более. Фактический показатель за прошлый квартал — 99,72%. Скан штрих-кода на pick AND pack стадиях сводит вероятность ошибки к математическому минимуму через четыре независимых слоя верификации.</p></details>
+    <details><summary>Чем отличается комплектация от упаковки?</summary><p>Комплектация (pick) — сбор товаров по заказу с полок. Упаковка (pack) — упаковка в коробку с прокладочным материалом. В 3PL обычно отдельные тарифы. Мы объединяем в единый тариф за заказ — без разбиения на pick fee + pack fee + handling fee.</p></details>
+    <details><summary>Можно ли отправлять заказы из Украины в Беларусь, Молдову, Казахстан?</summary><p>Да. Pick &amp; pack на украинском складе, потом международный канал доставки: Беларусь 4-7 дней, Молдова 3-5 дней, Казахстан 10-15 дней. Таможенные документы автоматически. Для регулярного потока — групповые декларации.</p></details>
+    <details><summary>Кто платит за ошибку комплектации?</summary><p>Наша ответственность. При подтверждённой ошибке — бесплатная повторная отправка правильного товара, забор неправильного, компенсация магазину доставки. SLA — 24 часа. По договору с материальной ответственностью.</p></details>
+    <details><summary>Как обеспечивается 99,5% точность?</summary><p>Четыре слоя: адресное хранение в WMS, pick-stage scan, pack-stage scan, QC checkpoint для high-value. Четыре слоя + WMS-логи создают точность как property системы.</p></details>
+    <details><summary>Как использовать украинский склад как outbound-базу для распределения по СНГ?</summary><p>Один SKU-каталог на нашем складе 3 700 м². Заказы в Украину собираются и отправляются Новой Почтой/Укрпочтой. Заказы в страны СНГ собираются на том же складе и отправляются международными каналами. Один тариф за pick + страновой тариф за доставку. Прозрачный учёт остатков по странам.</p></details>
+    <details><summary>Можно ли начать с малого объёма — 30 заказов в день?</summary><p>Да. Минимальный платёж 5 000 грн/мес (первые 3 месяца) — это ~30-40 заказов в день. Окупается когда владелец считает себестоимость часа своей работы (4-6 часов ежедневно на pack &mdash; на фулфилменте ноль).</p></details>
+    <details><summary>Как быстро мы сможем начать работать?</summary><p>3-5 рабочих дней от подписания договора до первого собранного заказа. Стандартный онбординг: договор и SKU-каталог, приёмка поставки и адресное размещение, настройка API-интеграции, тестовый заказ end-to-end. Для каталогов 1 000+ SKU — 7-10 дней.</p></details>
+  </div>
+</div></section>
+
+<!-- RELATED -->
+<section class="kz-sec" id="kz-cta"><div class="ctr">
+  <div class="kz-chip kz-chip-dark">СВЯЗАННЫЕ УСЛУГИ</div>
+  <h2 class="kz-h2">Что ещё делаем — другие операции полного цикла фулфилмента</h2>
+  <div class="kz-rel-grid">
+    <a class="kz-rel-card" href="/ru/services/"><strong>Все услуги фулфилмента</strong><span>Полный перечень 17 операций под одним SLA.</span></a>
+    <a class="kz-rel-card" href="/ru/calculator/"><strong>Калькулятор стоимости</strong><span>Рассчитайте тариф под ваш SKU-каталог за 2 минуты.</span></a>
+    <a class="kz-rel-card" href="/ru/fulfilment-dlya-internet-magazynu/"><strong>Фулфилмент для интернет-магазина</strong><span>Полный цикл от приёмки до доставки.</span></a>
+    <a class="kz-rel-card" href="/ru/fulfilment-knig/"><strong>Фулфилмент книг по ISBN</strong><span>Отдельный процесс для издательств и книжных магазинов.</span></a>
+    <a class="kz-rel-card" href="/ru/3pl/"><strong>3PL-логистика</strong><span>Полный outsourcing складских и доставочных операций.</span></a>
+    <a class="kz-rel-card" href="/ru/about/"><strong>О компании MTP</strong><span>Кто мы, как работаем, почему 0 дней простоя с 2022.</span></a>
+  </div>
+</div></section>
+
+<!-- SEO CLOSING -->
+<section class="kz-sec kz-sec-light"><div class="ctr">
+  <h2 class="kz-h2">Комплектация заказов из Украины — точность как property системы для CIS-брендов и UA e-commerce</h2>
+  <p>Сборка заказов на собственных силах перестаёт работать как только объём переваливает 30-50 заказов в день. Время pick на собственном складе без WMS — 5-10 минут на заказ против 47 секунд у нас. Точность 95-97% против 99,5%. Невозможность пиковых масштабирований без peak surcharge. Ручное оформление каждого заказа в маркетплейс-кабинете против API-автоматизации с 800 мс синхронизацией.</p>
+  <p>Pick and pack из украинского склада не ограничен внутренним рынком. Бренды из Беларуси, Молдовы, Казахстана используют наш склад 3 700 м² (Счастливое 2 700 м² + Белогородка 1 000 м²) как outbound-базу для одновременного обслуживания украинского рынка И своей страны. Один SKU-каталог, один WMS, прозрачный учёт остатков по направлениям. Таможенные документы оформляются автоматически по данным заказа.</p>
+  <p>Точность комплектации 99,5% (фактически 99,72%) достигается четырьмя независимыми слоями: адресное хранение в WMS, pick-stage scan штрих-кода с блокировкой при несовпадении, pack-stage scan перед опломбированием, QC checkpoint для high-value заказов. Это не везение и не внимательность отдельного работника — это property системы. Если один слой пропускает ошибку, следующий её ловит.</p>
+  <p>MTP как 3PL с фокусом на украинском e-commerce и CIS outbound — 60 000 отправок в месяц, 0 дней простоя с февраля 2022, 800 мс синхронизация WMS, 47 секунд на типовой заказ. Тариф от $0.41 за один pick (18 грн в локальной валюте), без скрытых fee. Заполните форму выше — за 15 минут получите расчёт под ваш SKU-каталог и объём заказов.</p>
+</div></section>
+
+</Base>
+
+<style is:global>
+.kz-band{background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-align:center;padding:14px 0;text-transform:uppercase}
+.kz-hero{background:#fff;color:#000;padding:60px 0 40px;border-bottom:1px solid #ddd}
+.kz-hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.kz-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4.2vw,56px);line-height:1.0;letter-spacing:-0.03em;margin:16px 0 24px;color:#000}
+.kz-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;margin:0 0 24px}
+.kz-hero-img{aspect-ratio:1/1.1;background:linear-gradient(135deg,#1a1a1a 0%,#3a1a1a 100%) center/cover no-repeat;border:2px solid #000}
+.kz-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
+.kz-chip-dark{background:#000}
+.kz-chip-light{background:#fff;color:#000}
+.kz-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s}
+.kz-cta-btn:hover{background:#c12a22}
+.kz-statsbar{background:#0a0a0a;color:#fff;padding:48px 0}
+.kz-sb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.kz-sb-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);color:#fff;line-height:1;letter-spacing:-0.03em;border-bottom:3px solid #e63329;padding-bottom:8px;display:inline-block}
+.kz-sb-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#999;margin-top:12px}
+.kz-sec{padding:80px 0;background:#fff}
+.kz-sec-light{background:#f3f3f3}
+.kz-sec-dark{background:#0a0a0a;color:#fff}
+.kz-sec-dark .kz-h2,.kz-sec-dark .kz-lede{color:#fff}
+.kz-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.kz-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+.kz-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kz-flow-step{background:#fff;border:1px solid #000;padding:20px 16px;text-align:center;position:relative}
+.kz-flow-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:32px;color:#e63329;line-height:1}
+.kz-flow-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#000;margin:8px 0}
+.kz-flow-desc{font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.4;color:#666}
+.kz-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kz-prob-card{background:#f3f3f3;padding:32px 24px;border-left:4px solid #e63329}
+.kz-prob-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:24px;color:#e63329;letter-spacing:-0.02em;margin-bottom:8px}
+.kz-prob-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;margin:8px 0 12px;color:#000;line-height:1.2}
+.kz-prob-card p{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55;color:#333;margin:0}
+.kz-cis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.kz-cis-cell{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.15);padding:32px 24px}
+.kz-cis-flag{font-size:48px;margin-bottom:8px}
+.kz-cis-cell h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:22px;margin:0 0 16px;color:#fff}
+.kz-cis-cell p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:rgba(255,255,255,.85);margin:0 0 12px}
+.kz-cis-cell strong{color:#e63329;font-weight:700}
+.kz-cis-bottom{background:#e63329;color:#fff;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6}
+.kz-cis-bottom strong{color:#fff;font-weight:700}
+.kz-acc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:32px}
+.kz-acc-card{background:#fff;border:2px solid #000;padding:32px}
+.kz-acc-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:36px;color:#e63329;line-height:1;margin-bottom:16px}
+.kz-acc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:20px;margin:0 0 12px;color:#000}
+.kz-acc-card p{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55;color:#333;margin:0}
+.kz-acc-note{background:#000;color:#fff;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55}
+.kz-acc-note strong{color:#e63329}
+.kz-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.kz-price-card{background:#fff;border:2px solid #000;padding:32px 24px;text-align:center}
+.kz-price-card-mid{border-color:#e63329}
+.kz-price-tier{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-bottom:16px}
+.kz-price-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:48px;color:#e63329;line-height:1}
+.kz-price-label{font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin:8px 0 24px}
+.kz-price-feat{list-style:none;padding:0;margin:0;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:#333}
+.kz-price-feat li{padding:6px 0;border-bottom:1px solid #eee}
+.kz-price-feat li:before{content:"✓ ";color:#e63329;font-weight:700;margin-right:6px}
+.kz-price-note{background:#fff;border-left:4px solid #e63329;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+.kz-int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kz-int-cell{background:#f3f3f3;padding:20px;border-left:3px solid #e63329;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.45;color:#333}
+.kz-int-cell strong{display:block;color:#000;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px}
+.kz-int-cell span{display:block;color:#666;font-size:13px}
+.kz-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.kz-uc-card{background:#fff;border:1px solid #ddd;padding:28px 24px}
+.kz-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000}
+.kz-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+.kz-acc-flow{display:flex;flex-direction:column;gap:16px}
+.kz-acc-step{background:#fff;border-left:3px solid #000;padding:20px 24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55;color:#333}
+.kz-acc-step strong{color:#e63329;font-weight:700}
+.kz-faq{display:flex;flex-direction:column;gap:8px}
+.kz-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.kz-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.kz-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.kz-faq details[open] summary::after{content:"−"}
+.kz-faq summary::-webkit-details-marker{display:none}
+.kz-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+.kz-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kz-rel-card{display:block;background:#f3f3f3;border:1px solid #ddd;padding:24px;text-decoration:none;color:#000;transition:border-color .15s}
+.kz-rel-card:hover{border-color:#e63329}
+.kz-rel-card strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:8px}
+.kz-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
+.kz-sec-light a,.kz-sec a{color:#e63329}
+.kz-sec-dark a{color:#fff;text-decoration:underline}
+
+@media (max-width:900px){
+  .kz-hero-grid{grid-template-columns:1fr;gap:32px}
+  .kz-sb-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .kz-flow{grid-template-columns:repeat(2,1fr)}
+  .kz-prob-grid,.kz-int-grid,.kz-uc-grid,.kz-rel-grid,.kz-price-grid,.kz-cis-grid{grid-template-columns:1fr;gap:16px}
+  .kz-acc-grid{grid-template-columns:1fr}
+}
+</style>

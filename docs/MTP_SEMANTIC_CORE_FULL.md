@@ -115,7 +115,7 @@
 | 56 | /ua/calculator/ | калькулятор фулфілменту | ✅ ВЖЕ Є | ✅ |
 | 57 | /ua/skladski-poslugy/ | складське зберігання Київ | оренда складу, відповідальне зберігання, зберігання палет (slug: skladski-poslugy) | ✅ |
 | 58 | /ua/paletne-zberigannya/ | зберігання палет Київ Бориспіль | палетне зберігання, тарифи на палети (slug: paletne-zberigannya) | ✅ |
-| 59 | /ua/komplektatsiya-zamovlen/ | комплектація замовлень | пікінг пакінг, збирання замовлень на складі | 🟠 |
+| 59 | /komplektatsiya-zamovlen/ | комплектація замовлень | UA + RU + EN deployed 2026-05-04, FIRST hub-and-spoke spoke from /poslugy/. Direct UA / Industrial RU+EN. 9/9 schemas, 3637/2674/3524 words. 47 sec / 99,5% / $0.41 anchor numbers. URL at root per new policy. | ✅ |
 | 60 | /ua/markuvannya-tovaru/ | маркування товару стікерування | етикетування, штрих-кодування, підготовка до маркетплейсу | 🟡 |
 | 61 | /ua/povernennya-tovariv/ | повернення товарів reverse logistics | зворотна логістика, обробка повернень | 🟡 |
 | 62 | /ua/avtodzvonok/ | автодзвінок підтвердження замовлень | кол-центр, підтвердження замовлень | 🟡 |
