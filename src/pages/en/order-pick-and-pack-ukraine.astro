@@ -25,17 +25,41 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 <!-- TOP RED BAND -->
 <div class="kz-band">ORDER PICK &amp; PACK · UKRAINE 3PL · 99.5% ACCURACY · $0.41/ORDER</div>
 
-<!-- HERO — Industrial split mood -->
+<!-- HERO — Industrial MIRRORED split (photo LEFT, text RIGHT) + inline cost preview -->
 <section class="kz-hero">
   <div class="ctr">
-    <div class="kz-hero-grid">
+    <div class="kz-hero-grid-mirror">
+      <figure class="kz-hero-photo">
+        <img src="/images/komplektatsiya-zamovlen-en-data.jpg" alt="MTP Ukraine fulfillment warehouse — 60,000 shipments per month, 99.5% pick accuracy" width="1200" height="800" loading="eager" fetchpriority="high">
+      </figure>
       <div class="kz-hero-text">
         <div class="kz-chip">PICK &amp; PACK · UKRAINE 3PL</div>
         <h1>Order Pick and Pack Ukraine — 99.5% Accuracy at $0.41 per Order</h1>
         <p class="kz-hero-sub">Scan-based picking at pick AND pack stages, WMS-routed pickers, QC checkpoint before package seal. 60,000 shipments per month from Kyiv warehouse. 0 days down since February 2022. Structural cost advantage vs US/EU 3PL with no quality compromise.</p>
+
+        <!-- Inline cost-preview chips — visual hook unique to EN (cost-comparison angle) -->
+        <div class="kz-cost-preview">
+          <div class="kz-cost-chip kz-cost-chip-mtp">
+            <div class="kz-cost-chip-flag">🇺🇦</div>
+            <div class="kz-cost-chip-num">$0.41</div>
+            <div class="kz-cost-chip-lbl">UKRAINE (MTP)</div>
+          </div>
+          <div class="kz-cost-vs">vs</div>
+          <div class="kz-cost-chip">
+            <div class="kz-cost-chip-flag">🇺🇸</div>
+            <div class="kz-cost-chip-num">$1.50</div>
+            <div class="kz-cost-chip-lbl">US 3PL avg</div>
+          </div>
+          <div class="kz-cost-vs">vs</div>
+          <div class="kz-cost-chip">
+            <div class="kz-cost-chip-flag">🇪🇺</div>
+            <div class="kz-cost-chip-num">$2.20</div>
+            <div class="kz-cost-chip-lbl">EU 3PL avg</div>
+          </div>
+        </div>
+
         <a href="#kz-cta" class="kz-cta-btn">Get pricing for Ukraine 3PL →</a>
       </div>
-      <div class="kz-hero-img" data-md-skip></div>
     </div>
   </div>
 </section>
@@ -332,11 +356,20 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <style is:global>
 .kz-band{background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-align:center;padding:14px 0;text-transform:uppercase}
-.kz-hero{background:#fff;color:#000;padding:60px 0 40px;border-bottom:1px solid #ddd}
-.kz-hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
-.kz-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4.2vw,56px);line-height:1.0;letter-spacing:-0.03em;margin:16px 0 24px;color:#000}
-.kz-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;margin:0 0 24px}
-.kz-hero-img{aspect-ratio:1/1.1;background:linear-gradient(135deg,#1a1a1a 0%,#3a1a1a 100%) center/cover no-repeat;border:2px solid #000}
+.kz-hero{background:#fff;color:#000;padding:60px 0 60px;border-bottom:4px solid #e63329}
+.kz-hero-grid-mirror{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.kz-hero-photo{margin:0;padding:0;line-height:0}
+.kz-hero-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:2px solid #000}
+.kz-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4vw,56px);line-height:1.0;letter-spacing:-0.03em;margin:16px 0 24px;color:#000}
+.kz-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;margin:0 0 28px}
+.kz-cost-preview{display:flex;align-items:center;gap:12px;margin:0 0 32px;padding:20px;background:#f3f3f3;border-left:4px solid #e63329;flex-wrap:wrap}
+.kz-cost-chip{flex:1;min-width:110px;text-align:center;padding:12px 8px;background:#fff;border:1px solid #ddd}
+.kz-cost-chip-mtp{border:2px solid #e63329;background:#fff5f4}
+.kz-cost-chip-flag{font-size:24px;line-height:1;margin-bottom:4px}
+.kz-cost-chip-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:24px;color:#000;line-height:1}
+.kz-cost-chip-mtp .kz-cost-chip-num{color:#e63329}
+.kz-cost-chip-lbl{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;color:#666;text-transform:uppercase;margin-top:6px}
+.kz-cost-vs{font-family:Unbounded,sans-serif;font-weight:800;font-size:14px;color:#999;text-transform:uppercase;letter-spacing:.1em}
 .kz-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
 .kz-chip-dark{background:#000}
 .kz-chip-light{background:#fff;color:#000}
@@ -417,7 +450,14 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .kz-sec-dark a{color:#fff;text-decoration:underline}
 
 @media (max-width:900px){
-  .kz-hero-grid{grid-template-columns:1fr;gap:32px}
+  .kz-hero-grid-mirror{grid-template-columns:1fr;gap:32px}
+  .kz-hero-photo{order:2}
+  .kz-hero-text{order:1}
+  .kz-hero-photo img{aspect-ratio:16/10;max-height:280px}
+  .kz-cost-preview{padding:14px;gap:8px}
+  .kz-cost-chip{padding:8px 4px;min-width:0}
+  .kz-cost-chip-num{font-size:18px}
+  .kz-cost-vs{display:none}
   .kz-sb-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .kz-prob-grid,.kz-int-grid,.kz-uc-grid,.kz-rel-grid,.kz-price-grid,.kz-cost-grid{grid-template-columns:1fr;gap:16px}
   .kz-acc-grid{grid-template-columns:1fr}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-04_132657",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/komplektatsiya-zamovlen/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/komplektaciya-zakazov/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/order-pick-and-pack-ukraine/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

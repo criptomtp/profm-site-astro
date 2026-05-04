@@ -23,9 +23,9 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/komplektatsiya-zamovlen/">
 </Fragment>
 
-<!-- HERO — Direct mood with overlay + HeroCTA form -->
+<!-- HERO — Direct mood with full-width photo overlay + HeroCTA form -->
 <section class="kz-hero">
-  <div class="kz-hero-bg" data-md-skip></div>
+  <img class="kz-hero-bg" src="/images/komplektatsiya-zamovlen-hero.jpg" alt="Picker сканує штрих-код товару на складі MTP — комплектація замовлень за 47 секунд" width="1200" height="630" loading="eager" fetchpriority="high" data-md-skip>
   <div class="kz-hero-overlay"></div>
   <div class="ctr">
     <div class="kz-hero-grid">
@@ -357,8 +357,8 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <style is:global>
 .kz-hero{position:relative;color:#fff;padding:80px 0 60px;overflow:hidden;background:#0a0a0a}
-.kz-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a1a1a 0%,#0a0a0a 100%);z-index:0}
-.kz-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.7) 60%,rgba(10,10,10,.4) 100%);z-index:1}
+.kz-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.kz-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.75) 55%,rgba(10,10,10,.45) 100%);z-index:1}
 .kz-hero .ctr{position:relative;z-index:2}
 .kz-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-bottom:48px}
 .kz-hero h1{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1.05;letter-spacing:-0.02em;margin:16px 0;color:#fff}
