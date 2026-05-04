@@ -44,7 +44,7 @@
 | 6 | /ua/fulfilment-dlya-domu/ | фулфілмент товари для дому | логістика домашнього декору, меблів, текстилю для дому | 🟡 |
 | 7 | /ua/fulfilment-zootovariv/ | фулфілмент зоотовари | логістика кормів для тварин, зберігання зоотоварів | 🟡 |
 | 8 | /ua/fulfilment-produktiv-kharchuvannya/ | фулфілмент продуктів харчування | логістика їжі, зберігання снеків, фулфілмент healthy food | 🔵 |
-| 9 | /ua/fulfilment-knyzhok/ | фулфілмент книги | логістика книг, зберігання видань, фулфілмент для видавництв | 🔵 |
+| 9 | /fulfilment-knyzhok/ | фулфілмент книги | UA + RU + EN deployed 2026-05-04, targeted positioning (self-published + малі видавництва + B2B корпоративні + cross-border діаспора). 9/9 schemas, 2626/2620/2949 words. Direct mood. URL at root per new policy. | ✅ |
 | 10 | /ua/fulfilment-avtozapchastyn/ | фулфілмент автозапчастини | логістика автодеталей, склад запчастин | 🔵 |
 | 11 | /ua/fulfilment-sonyachni-paneli/ | фулфілмент сонячні панелі | логістика важких товарів, кейс EcoDrive | 🟠 |
 | 12 | /ua/fulfilment-budmaterialiv/ | фулфілмент будівельних матеріалів | логістика будматеріалів, зберігання інструментів | 🔵 |
