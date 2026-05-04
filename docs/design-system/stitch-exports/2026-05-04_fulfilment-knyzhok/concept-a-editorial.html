@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MTP GROUP | Фулфілмент для книжкової галузі</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serid+Display&amp;family=Inter:wght@400;600;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#281715",
+                    "on-surface-variant": "#5c403c",
+                    "surface-tint": "#bd0f10",
+                    "on-primary-fixed": "#410001",
+                    "outline-variant": "#e5bdb8",
+                    "tertiary-fixed-dim": "#82cfff",
+                    "tertiary-fixed": "#c6e7ff",
+                    "primary-fixed": "#ffdad5",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "surface-container-low": "#fff0ee",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-dim": "#f2d3cf",
+                    "surface-bright": "#fff8f7",
+                    "on-tertiary-fixed": "#001e2d",
+                    "on-secondary-container": "#646464",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#007dad",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fff8f7",
+                    "surface-container-highest": "#fbdbd7",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "inverse-primary": "#ffb4a9",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#00638a",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#e2e2e2",
+                    "on-background": "#281715",
+                    "primary": "#ba0a0d",
+                    "inverse-surface": "#3f2c29",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#fffbff",
+                    "on-primary": "#ffffff",
+                    "surface": "#fff8f7",
+                    "primary-container": "#de2d24",
+                    "inverse-on-surface": "#ffedea",
+                    "outline": "#916f6a",
+                    "on-primary-fixed-variant": "#930005",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#004c6b",
+                    "surface-variant": "#fbdbd7",
+                    "on-tertiary-container": "#fcfcff",
+                    "secondary": "#5e5e5e",
+                    "surface-container-high": "#ffe2dd",
+                    "surface-container": "#ffe9e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "margin-page": "64px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "drop-cap": ["DM Serif Display"],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["DM Serif Display"],
+                    "display-lg": ["DM Serif Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["DM Serif Display"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "drop-cap": ["84px", {"lineHeight": "1", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "fontWeight": "400"}],
+                    "display-lg": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #faf8f5; color: #000; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hairline-b { border-bottom: 1px solid #000; }
+        .hairline-t { border-top: 1px solid #000; }
+        .hairline-r { border-right: 1px solid #000; }
+        .hairline-l { border-left: 1px solid #000; }
+        .editorial-grid { display: grid; grid-template-columns: repeat(12, 1minmax(0, 1fr)); gap: 24px; }
+        .bg-paper { background-color: #faf8f5; }
+    </style>
+</head>
+<body class="font-body-md text-on-background bg-paper">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#faf8f5] dark:bg-stone-950 docked full-width top-0 border-b border-black dark:border-stone-800 flex justify-between items-center w-full px-8 py-6 max-w-full sticky z-50">
+<div class="text-2xl font-serif font-bold text-black dark:text-white">MTP GROUP</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-serif uppercase tracking-widest text-sm text-[#e63329] font-bold border-b border-[#e63329] transition-colors duration-200" href="#">Solutions</a>
+<a class="font-serif uppercase tracking-widest text-sm text-black dark:text-stone-300 hover:text-[#e63329] transition-colors duration-200" href="#">The Index</a>
+<a class="font-serif uppercase tracking-widest text-sm text-black dark:text-stone-300 hover:text-[#e63329] transition-colors duration-200" href="#">Process</a>
+<a class="font-serif uppercase tracking-widest text-sm text-black dark:text-stone-300 hover:text-[#e63329] transition-colors duration-200" href="#">Pricing</a>
+</nav>
+<button class="bg-black text-white px-6 py-2 font-serif uppercase tracking-widest text-sm active:opacity-70 transition-all">GET STARTED</button>
+</header>
+<!-- HERO SECTION -->
+<section class="px-8 md:px-margin-page py-20 border-b border-black">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-8">
+<span class="w-2 h-2 bg-[#e63329] rounded-full"></span>
+<span class="font-label-sm text-label-sm uppercase">BOOKS &amp; PUBLISHING · UKRAINE 2026</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl mb-10 max-w-4xl">Фулфілмент для видавництв і книжкових магазинів — від складу під Києвом до читача за 24 години</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Спеціалізоване зберігання з урахуванням ISBN, автоматизована обробка замовлень на хабах у Happy та Білогородці. Ми розуміємо цінність паперового видання.</p>
+</div>
+<div class="md:col-span-4 bg-white p-8 border border-black h-fit">
+<p class="font-label-sm text-label-sm uppercase mb-6">Отримати комерційну пропозицію</p>
+<form class="space-y-6">
+<div class="relative">
+<label class="block font-label-sm text-label-sm uppercase mb-1">Номер телефону</label>
+<input class="w-full border-0 border-b border-black bg-transparent py-2 px-0 focus:ring-0 focus:border-primary text-body-lg font-body-lg" placeholder="+380 00 000 00 00" type="tel"/>
+</div>
+<button class="w-full bg-[#e63329] text-white py-4 font-serif uppercase tracking-widest text-sm flex justify-between items-center px-6 hover:bg-black transition-colors group">
+                        Отримати розрахунок
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 mt-24 pt-12 border-t border-black">
+<div class="py-4 border-r border-black md:border-r">
+<p class="font-headline-md text-headline-md">60,000+</p>
+<p class="font-label-sm text-label-sm uppercase opacity-60">Відправлень/міс</p>
+</div>
+<div class="py-4 md:border-r border-black pl-4">
+<p class="font-headline-md text-headline-md">99.5%</p>
+<p class="font-label-sm text-label-sm uppercase opacity-60">Точність комплектації</p>
+</div>
+<div class="py-4 border-r border-black pl-4">
+<p class="font-headline-md text-headline-md">24 год</p>
+<p class="font-label-sm text-label-sm uppercase opacity-60">Доставка до читача</p>
+</div>
+<div class="py-4 pl-4">
+<p class="font-headline-md text-headline-md">A+</p>
+<p class="font-label-sm text-label-sm uppercase opacity-60">Клас складських приміщень</p>
+</div>
+</div>
+</section>
+<!-- WHY SPECIALIZED LOGISTICS -->
+<section class="px-8 md:px-margin-page py-24 bg-white">
+<div class="mb-16">
+<span class="inline-block border border-black px-4 py-1 font-label-sm text-label-sm uppercase mb-4">Чому книги потребують окремої логістики</span>
+<h2 class="font-headline-md text-headline-md">Специфіка галузі вимагає точності</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 border-l border-t border-black">
+<!-- Card 1 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="menu_book">menu_book</span>
+<h3 class="font-headline-md text-2xl mb-4">Кількість SKU</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Управління тисячами найменувань з урахуванням різних видань та м'яких/твердих обкладинок.</p>
+</div>
+<!-- Card 2 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="shopping_basket">shopping_basket</span>
+<h3 class="font-headline-md text-2xl mb-4">Низький AOV</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Економіка логістики має бути виправданою при середньому чеку в 300-600 грн.</p>
+</div>
+<!-- Card 3 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="calendar_month">calendar_month</span>
+<h3 class="font-headline-md text-2xl mb-4">Сезонність</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Пікові навантаження під час Книжкового Арсеналу та святкових розпродажів.</p>
+</div>
+<!-- Card 4 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="warning">warning</span>
+<h3 class="font-headline-md text-2xl mb-4">Ризик пошкоджень</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Збиті кути — це 100% повернення. Спеціальна упаковка для захисту торців.</p>
+</div>
+<!-- Card 5 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="barcode">barcode</span>
+<h3 class="font-headline-md text-2xl mb-4">ISBN Помилки</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Тотальна звірка штрих-кодів при прийомі для уникнення пересортиці.</p>
+</div>
+<!-- Card 6 -->
+<div class="p-10 border-r border-b border-black">
+<span class="material-symbols-outlined text-[#e63329] mb-6 block" data-icon="public">public</span>
+<h3 class="font-headline-md text-2xl mb-4">Cross-border</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Експорт української книги на світові ринки через Amazon та Etsy.</p>
+</div>
+</div>
+</section>
+<!-- CLIENT PROFILES -->
+<section class="px-8 md:px-margin-page py-24 border-t border-black">
+<h2 class="font-headline-md text-headline-md mb-16 text-center">Профілі клієнтів</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 border-t border-l border-black">
+<div class="p-12 border-r border-b border-black bg-white">
+<p class="font-drop-cap text-drop-cap text-[#e63329] mb-6">S</p>
+<h3 class="font-headline-md text-2xl mb-4 uppercase">Self-published Автори</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Для авторів, що самостійно видають книги. Ми беремо на себе зберігання тиражу у квартирі та черги на пошті.</p>
+</div>
+<div class="p-12 border-r border-b border-black">
+<p class="font-drop-cap text-drop-cap text-[#e63329] mb-6">M</p>
+<h3 class="font-headline-md text-2xl mb-4 uppercase">SMB Видавництва</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Малі та середні видавництва, що хочуть масштабуватися без розширення власного штату логістів.</p>
+</div>
+<div class="p-12 border-r border-b border-black">
+<p class="font-drop-cap text-drop-cap text-[#e63329] mb-6">B</p>
+<h3 class="font-headline-md text-2xl mb-4 uppercase">B2B Corp</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Корпоративні замовлення, розсилка подарункових видань партнерам та дистрибуція в мережі магазинів.</p>
+</div>
+<div class="p-12 border-r border-b border-black bg-white">
+<p class="font-drop-cap text-drop-cap text-[#e63329] mb-6">X</p>
+<h3 class="font-headline-md text-2xl mb-4 uppercase">Cross-border Sellers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Масштабування продажів на ринки ЄС та США з консолідацією замовлень у Києві.</p>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS TIMELINE -->
+<section class="px-8 md:px-margin-page py-24 bg-white">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline-md text-headline-md mb-20">Процес обробки</h2>
+<div class="space-y-0">
+<!-- Step 01 -->
+<div class="grid grid-cols-1 md:grid-cols-12 border-t border-black py-10 group hover:bg-surface-container transition-colors">
+<div class="md:col-span-2 font-drop-cap text-5xl text-[#e63329]">01</div>
+<div class="md:col-span-4 font-headline-md text-2xl self-center">Receipt</div>
+<div class="md:col-span-6 font-body-md text-on-surface-variant self-center">Приймання палет або коробок, перевірка цілісності та кількості згідно з накладною.</div>
+</div>
+<!-- Step 02 -->
+<div class="grid grid-cols-1 md:grid-cols-12 border-t border-black py-10 group hover:bg-surface-container transition-colors">
+<div class="md:col-span-2 font-drop-cap text-5xl text-[#e63329]">02</div>
+<div class="md:col-span-4 font-headline-md text-2xl self-center">Placement</div>
+<div class="md:col-span-6 font-body-md text-on-surface-variant self-center">Адресне зберігання на стелажах або палетних місцях з урахуванням категорій.</div>
+</div>
+<!-- Step 03 -->
+<div class="grid grid-cols-1 md:grid-cols-12 border-t border-black py-10 group hover:bg-surface-container transition-colors">
+<div class="md:col-span-2 font-drop-cap text-5xl text-[#e63329]">03</div>
+<div class="md:col-span-4 font-headline-md text-2xl self-center">Integration</div>
+<div class="md:col-span-6 font-body-md text-on-surface-variant self-center">API інтеграція з вашим сайтом (KeyCRM, Shopify, Хорошоп) для миттєвої передачі замовлень.</div>
+</div>
+<!-- Step 04 -->
+<div class="grid grid-cols-1 md:grid-cols-12 border-t border-black py-10 group hover:bg-surface-container transition-colors">
+<div class="md:col-span-2 font-drop-cap text-5xl text-[#e63329]">04</div>
+<div class="md:col-span-4 font-headline-md text-2xl self-center">Picking</div>
+<div class="md:col-span-6 font-body-md text-on-surface-variant self-center">Збір замовлення за допомогою ТЗД, що виключає людський фактор та помилки.</div>
+</div>
+<div class="border-b border-black"></div>
+</div>
+</div>
+</section>
+<!-- PRICING TABLE -->
+<section class="px-8 md:px-margin-page py-24">
+<h2 class="font-headline-md text-headline-md mb-12">Вартість послуг</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-t border-b-2 border-black">
+<th class="py-6 text-left font-label-sm text-label-sm uppercase">Послуга</th>
+<th class="py-6 text-right font-label-sm text-label-sm uppercase">Одиниця</th>
+<th class="py-6 text-right font-label-sm text-label-sm uppercase">Ціна</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-black/10">
+<td class="py-6">Приймання товару (поштучно)</td>
+<td class="py-6 text-right">книга</td>
+<td class="py-6 text-right">2.50 грн</td>
+</tr>
+<tr class="border-b border-black/10">
+<td class="py-6">Зберігання (палетне місце)</td>
+<td class="py-6 text-right">добу</td>
+<td class="py-6 text-right">12.00 грн</td>
+</tr>
+<tr class="border-b border-black/10">
+<td class="py-6">Комплектація замовлення (1-ша позиція)</td>
+<td class="py-6 text-right">замовлення</td>
+<td class="py-6 text-right">15.00 грн</td>
+</tr>
+<tr class="border-b border-black/10">
+<td class="py-6">Упаковка в картонний конверт</td>
+<td class="py-6 text-right">шт</td>
+<td class="py-6 text-right">8.00 грн</td>
+</tr>
+<tr class="border-b border-black/10">
+<td class="py-6">Маркування та стикерування</td>
+<td class="py-6 text-right">шт</td>
+<td class="py-6 text-right">1.20 грн</td>
+</tr>
+<tr class="border-b border-black bg-[#e63329] text-white">
+<td class="py-8 font-bold">Мінімальний щомісячний платіж</td>
+<td class="py-8 text-right">—</td>
+<td class="py-8 text-right font-bold">5,000.00 грн</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- SEASONALITY & CROSS BORDER (Editorial Block) -->
+<section class="px-8 md:px-margin-page py-24 bg-white grid grid-cols-1 md:grid-cols-2 gap-24 border-y border-black">
+<article class="max-w-xl">
+<h3 class="font-headline-md text-headline-md mb-8">Управління піковими навантаженнями</h3>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
+<p>Книжкова галузь має яскраво виражену сезонність. Листопад та грудень можуть генерувати до 40% річного обороту видавництва. Власна логістика часто не витримує такого стрибка, що призводить до затримок та втрачених клієнтів.</p>
+<p>Наші потужності дозволяють масштабуватися в 10 разів за одну добу. Ми залучаємо резервні зміни персоналу та додаткові пакувальні станції, щоб кожна книга потрапила під ялинку вчасно.</p>
+<p>Автоматизація черг та пріоритетність відправлень дозволяють нам обробляти до 5000 замовлень на зміну без втрати якості пакування.</p>
+</div>
+</article>
+<article class="max-w-xl border-l border-black pl-12">
+<h3 class="font-headline-md text-headline-md mb-8">Міжнародна експансія: Cross-border</h3>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
+<p>Українська книга сьогодні — це глобальний продукт. Ми допомагаємо видавництвам вийти на ринки Amazon US, Amazon UK та Etsy, забезпечуючи надійний експортний фулфілмент.</p>
+<p>Ми готуємо всі необхідні митні документи, проводимо консолідацію та обираємо оптимальних перевізників (UPS, FedEx, DHL) для доставки в будь-яку точку світу.</p>
+<p>Ваші клієнти в Лондоні чи Нью-Йорку отримають замовлення так само швидко і зручно, як і в Києві, завдяки нашим налагодженим логістичним коридорам.</p>
+</div>
+</article>
+</section>
+<!-- FAQ SECTION -->
+<section class="px-8 md:px-margin-page py-24">
+<div class="max-w-3xl">
+<h2 class="font-headline-md text-headline-md mb-16">Питання та відповіді</h2>
+<div class="divide-y divide-black border-y border-black">
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-md text-xl">Як швидко ми можемо запуститися?</span>
+<span class="material-symbols-outlined group-open:rotate-45 transition-transform" data-icon="add">add</span>
+</summary>
+<p class="mt-6 font-body-md text-on-surface-variant">Стандартний процес інтеграції та завезення товару займає від 14 до 21 дня, залежно від складності вашої IT-системи та обсягу SKU.</p>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-md text-xl">Чи несете ви матеріальну відповідальність?</span>
+<span class="material-symbols-outlined group-open:rotate-45 transition-transform" data-icon="add">add</span>
+</summary>
+<p class="mt-6 font-body-md text-on-surface-variant">Так, згідно з договором ми несемо повну матеріальну відповідальність за товар, що знаходиться на нашому складі.</p>
+</details>
+<details class="group py-8">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-md text-xl">Які служби доставки ви використовуєте?</span>
+<span class="material-symbols-outlined group-open:rotate-45 transition-transform" data-icon="add">add</span>
+</summary>
+<p class="mt-6 font-body-md text-on-surface-variant">Ми інтегровані з Новою Поштою, Укрпоштою та Meest. Також можливий самовивіз зі складу в Білогородці.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- SEO CLOSING -->
+<section class="px-8 md:px-margin-page py-24 bg-surface-container">
+<div class="max-w-4xl font-body-lg space-y-8 text-on-surface-variant leading-relaxed">
+<p>Сучасний ринок книговидання в Україні проходить етап трансформації. Читач стає більш вимогливим не лише до змісту книги, а й до сервісу її отримання. Швидкість доставки, якість пакування та зручність повернення стають ключовими факторами при виборі книжкового магазину.</p>
+<p>MTP GROUP пропонує не просто складські послуги, а комплексне рішення для бізнесу. Ми розуміємо, що кожна книга — це інтелектуальна власність, яка потребує дбайливого ставлення. Наші склади обладнані системами контролю вологості та температури, що критично важливо для паперових виробів.</p>
+<p>Використання професійного фулфілменту дозволяє видавцям зосередитися на головному: пошуку нових авторів, перекладах та маркетингу. Логістику ми беремо на себе.</p>
+</div>
+</section>
+<!-- FOOTER CTA -->
+<section class="bg-[#e63329] text-white py-32 px-8 text-center border-t border-black">
+<h2 class="font-headline-xl text-5xl md:text-7xl mb-12 max-w-5xl mx-auto">Запустіть фулфілмент книг за 21 день</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<button class="bg-black text-white px-12 py-6 font-serif uppercase tracking-widest text-lg hover:bg-white hover:text-black transition-colors">Зв'язатися з менеджером</button>
+<button class="border border-white text-white px-12 py-6 font-serif uppercase tracking-widest text-lg hover:bg-white hover:text-[#e63329] transition-colors">Завантажити прайс-лист</button>
+</div>
+</section>
+<!-- Footer from JSON -->
+<footer class="bg-[#e63329] dark:bg-[#e63329] text-white full-width border-t border-black flex flex-col items-center justify-center w-full py-20 px-12 text-center">
+<div class="text-3xl font-serif font-black text-white mb-8">MTP GROUP</div>
+<div class="flex gap-8 mb-12">
+<a class="font-serif text-base text-white/90 underline decoration-1 hover:text-black transition-colors duration-300 active:scale-95" href="#">Privacy Policy</a>
+<a class="font-serif text-base text-white/90 hover:text-black transition-colors duration-300 active:scale-95" href="#">Terms of Service</a>
+<a class="font-serif text-base text-white/90 hover:text-black transition-colors duration-300 active:scale-95" href="#">Archive</a>
+<a class="font-serif text-base text-white/90 hover:text-black transition-colors duration-300 active:scale-95" href="#">Contact</a>
+</div>
+<p class="font-serif text-base opacity-80">© 2024 MTP Group. Scholarly Precision in Fulfillment.</p>
+</footer>
+</body></html>

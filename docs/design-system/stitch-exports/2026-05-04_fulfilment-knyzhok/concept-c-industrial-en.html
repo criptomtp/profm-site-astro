@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1b1b1b",
+                    "surface-variant": "#fbdbd7",
+                    "outline": "#916f6a",
+                    "surface-container-low": "#fff0ee",
+                    "on-primary-fixed": "#410001",
+                    "tertiary": "#5a5c5c",
+                    "inverse-primary": "#ffb4a9",
+                    "inverse-on-surface": "#ffedea",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb4a9",
+                    "on-primary-fixed-variant": "#930005",
+                    "on-error-container": "#93000a",
+                    "surface": "#fff8f7",
+                    "background": "#fff8f7",
+                    "surface-container-high": "#ffe2dd",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#f2d3cf",
+                    "on-secondary-container": "#646464",
+                    "surface-container-highest": "#fbdbd7",
+                    "on-primary-container": "#fffbff",
+                    "on-background": "#281715",
+                    "outline-variant": "#e5bdb8",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "primary-fixed": "#ffdad5",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "tertiary-container": "#737575",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#474747",
+                    "secondary-container": "#e2e2e2",
+                    "on-surface-variant": "#5c403c",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#fcfcfc",
+                    "surface-tint": "#bd0f10",
+                    "primary-container": "#de2d24",
+                    "secondary-fixed": "#e2e2e2",
+                    "secondary": "#5e5e5e",
+                    "primary": "#ba0a0d",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#ffe9e6",
+                    "surface-bright": "#fff8f7",
+                    "inverse-surface": "#3f2c29",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#281715"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "gutter": "1px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "container-padding": "32px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "stat-value": ["Inter"],
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "stat-value": ["56px", {"lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .industrial-border { border: 1px solid #000000; }
+        .hairline-b { border-bottom: 1px solid #000000; }
+        .hairline-r { border-right: 1px solid #000000; }
+        .hairline-l { border-left: 1px solid #000000; }
+        .hairline-t { border-top: 1px solid #000000; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TOP NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full bg-[#faf8f5] dark:bg-zinc-950 border-b border-black z-50 flex justify-between items-center px-10 py-4">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white uppercase">MTP Group</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-serif uppercase tracking-widest text-xs font-bold text-black border-b border-black pb-1 hover:text-[#e63329] transition-colors duration-200" href="#">Solutions</a>
+<a class="font-serif uppercase tracking-widest text-xs font-bold text-zinc-500 hover:text-[#e63329] transition-colors duration-200" href="#">Cost Comparison</a>
+<a class="font-serif uppercase tracking-widest text-xs font-bold text-zinc-500 hover:text-[#e63329] transition-colors duration-200" href="#">Logistics</a>
+<a class="font-serif uppercase tracking-widest text-xs font-bold text-zinc-500 hover:text-[#e63329] transition-colors duration-200" href="#">Pricing</a>
+</div>
+<button class="bg-black text-white px-6 py-2 font-serif uppercase tracking-widest text-xs font-bold hover:bg-[#e63329] transition-colors duration-200">GET STARTED</button>
+</nav>
+<main class="pt-[64px]">
+<!-- HERO SECTION -->
+<section class="flex flex-col md:flex-row min-h-[870px] border-b border-black">
+<div class="w-full md:w-[60%] p-10 flex flex-col justify-center space-y-8 bg-white">
+<span class="font-label-caps text-label-caps text-[#e63329] uppercase tracking-[0.2em]">BOOKS &amp; PUBLISHING / KYIV WAREHOUSE / UKRAINE 2026</span>
+<h1 class="font-h1 text-h1 max-w-2xl">Book Fulfillment Ukraine. Publisher 3PL with ISBN-Based Picking. From $0.41 per Order.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">Optimized for small-to-medium publishers. Full integration with Shopify, Amazon, and WooCommerce. Specialized FEFO picking and secure spine-up storage protocols.</p>
+<div class="bg-black text-white p-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="border-r border-zinc-800">
+<p class="font-label-caps text-[10px] text-zinc-500 mb-1 uppercase">Total Shipments</p>
+<p class="font-h3 text-h3">60,000+</p>
+</div>
+<div class="border-r border-zinc-800 md:pl-4">
+<p class="font-label-caps text-[10px] text-zinc-500 mb-1 uppercase">Accuracy Rate</p>
+<p class="font-h3 text-h3">99.5%</p>
+</div>
+<div class="border-r border-zinc-800 md:pl-4">
+<p class="font-label-caps text-[10px] text-zinc-500 mb-1 uppercase">Lead Time</p>
+<p class="font-h3 text-h3">&lt;24H</p>
+</div>
+<div class="md:pl-4">
+<p class="font-label-caps text-[10px] text-zinc-500 mb-1 uppercase">ISBN Match</p>
+<p class="font-h3 text-h3">100%</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+<button class="bg-black text-white px-10 py-5 font-label-caps text-sm hover:bg-[#e63329] transition-colors">GET BOOK FULFILLMENT QUOTE →</button>
+<span class="font-label-caps text-[10px] text-secondary">NO LONG-TERM CONTRACTS REQUIRED.<br/>MINIMUM STARTING VOLUME: 100/MO.</span>
+</div>
+</div>
+<div class="w-full md:w-[40%] bg-zinc-900 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-contrast industrial photograph of a massive, modern book fulfillment warehouse in Kyiv, Ukraine. The scene features towering rows of black industrial shelving filled with perfectly organized books in various colors. Stark, cool-toned white fluorescent lighting illuminates the concrete floors and metal structures, creating a sharp, professional B2B atmosphere. The composition emphasizes geometric precision and scale, with deep shadows and vibrant red safety accents throughout the facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7yMUb4iwZ36QJEYlHnPhnS4KzDN9U-uuFzBvHRjktosRnipdlpJgOHLxDHOT1fcO3B8Z2UkXgXrL4okD9EQkYfLa4wZ18LLlRA9Iu4AjBuukJ7gsY_fglgpOw1ZR0YITSv4RH7A_m8S9XZHhHn2stL1LWXFEuFrSiYsgnBX0UoPpw9Yls6YDdGzHDXBgZPbQF4X5neGOf8IpE6XVZtQv_66t923bpJbYHBPXwE2e9cPrZ5nX-B8oAptWlDzU2gNzEbHzZVq7ll1RZ"/>
+</div>
+</section>
+<!-- COST COMPARISON -->
+<section class="bg-black text-white py-24 px-10">
+<div class="max-w-6xl mx-auto">
+<span class="font-label-caps text-label-caps text-[#e63329] mb-4 block">ECONOMIC ADVANTAGE</span>
+<h2 class="font-h2 text-h2 mb-12">Per-order cost: Ukraine vs US vs EU 3PL</h2>
+<div class="grid grid-cols-4 border-t border-zinc-800 font-label-caps text-[10px] uppercase text-zinc-500 py-4">
+<div class="col-span-1">Service Metric</div>
+<div class="text-right px-4">Ukraine (MTP)</div>
+<div class="text-right px-4">United States</div>
+<div class="text-right px-4">European Union</div>
+</div>
+<div class="grid grid-cols-4 border-t border-zinc-800 py-6 items-center">
+<div class="font-label-caps text-sm">Pick &amp; Pack (Base)</div>
+<div class="text-right text-[#e63329] font-h3 text-h3 px-4">$0.41</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$1.50</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$2.20</div>
+</div>
+<div class="grid grid-cols-4 border-t border-zinc-800 py-6 items-center">
+<div class="font-label-caps text-sm">Storage (per pallet)</div>
+<div class="text-right text-[#e63329] font-h3 text-h3 px-4">$8.00</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$25.00</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$22.00</div>
+</div>
+<div class="grid grid-cols-4 border-t border-zinc-800 py-6 items-center">
+<div class="font-label-caps text-sm">ISBN Verification</div>
+<div class="text-right text-[#e63329] font-h3 text-h3 px-4">INCLUDED</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$0.25</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$0.30</div>
+</div>
+<div class="grid grid-cols-4 border-t border-zinc-800 py-6 items-center">
+<div class="font-label-caps text-sm">Packaging Materials</div>
+<div class="text-right text-[#e63329] font-h3 text-h3 px-4">$0.15</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$0.65</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$0.60</div>
+</div>
+<div class="grid grid-cols-4 border-t border-b border-zinc-800 py-6 items-center bg-zinc-950">
+<div class="font-label-caps text-sm text-white">TOTAL PER UNIT</div>
+<div class="text-right text-[#e63329] font-h3 text-h3 px-4">$0.56</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$2.40</div>
+<div class="text-right text-zinc-400 font-h3 text-h3 px-4">$3.10</div>
+</div>
+</div>
+</section>
+<!-- LOGISTICS GRID -->
+<section class="py-24 px-10 bg-white">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">OPERATIONAL DISCIPLINE</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter bg-black border border-black">
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-[#e63329] flex items-center justify-center text-white font-bold">ISBN</div>
+<h3 class="font-h3 text-h3 uppercase">ISBN VALIDATION</h3>
+<p class="font-body-md text-secondary">Every single unit is scanned against ISBN metadata to eliminate shipping errors. Zero manual entry during picking.</p>
+</div>
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-black flex items-center justify-center text-white font-bold">AOV</div>
+<h3 class="font-h3 text-h3 uppercase">BULK OPTIMIZATION</h3>
+<p class="font-body-md text-secondary">Algorithmically calculated box sizes to reduce dimensional weight for international courier services.</p>
+</div>
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-black flex items-center justify-center text-white font-bold">SEPT</div>
+<h3 class="font-h3 text-h3 uppercase">SECURE SORTING</h3>
+<p class="font-body-md text-secondary">Specialized vertical spine-up sorting to prevent cover curling and structural damage to softcovers.</p>
+</div>
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-black flex items-center justify-center text-white font-bold">PACK</div>
+<h3 class="font-h3 text-h3 uppercase">KRAFT ARMORED</h3>
+<p class="font-body-md text-secondary">Double-walled kraft cardboard and corner protection as standard. Reduced return rates by 85%.</p>
+</div>
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-black flex items-center justify-center text-white font-bold">FEFO</div>
+<h3 class="font-h3 text-h3 uppercase">EDITION CONTROL</h3>
+<p class="font-body-md text-secondary">Strict edition-based first-expiry, first-out management to ensure correct printing distribution.</p>
+</div>
+<div class="bg-white p-10 space-y-4 group">
+<div class="w-10 h-10 bg-black flex items-center justify-center text-white font-bold">EXPT</div>
+<h3 class="font-h3 text-h3 uppercase">GLOBAL EXPORT</h3>
+<p class="font-body-md text-secondary">Direct lane access to DHL, FedEx, and UPS with preferential Ukrainian export rates.</p>
+</div>
+</div>
+</section>
+<!-- CLIENT PROFILES -->
+<section class="bg-surface-container py-24 px-10 border-t border-black">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter bg-black border border-black">
+<div class="bg-white p-8">
+<span class="font-label-caps text-[10px] text-zinc-400 block mb-6">PROFILE 01</span>
+<h4 class="font-h3 text-xl mb-4">SELF-PUB</h4>
+<p class="text-sm text-secondary">Crowdfunded authors (Kickstarter/Indiegogo) requiring rapid bulk fulfillment within 7 days.</p>
+</div>
+<div class="bg-white p-8">
+<span class="font-label-caps text-[10px] text-zinc-400 block mb-6">PROFILE 02</span>
+<h4 class="font-h3 text-xl mb-4">SMB PRESS</h4>
+<p class="text-sm text-secondary">Small presses with 10–50 active titles and monthly shipments under 2,000 units.</p>
+</div>
+<div class="bg-white p-8">
+<span class="font-label-caps text-[10px] text-zinc-400 block mb-6">PROFILE 03</span>
+<h4 class="font-h3 text-xl mb-4">B2B CORP</h4>
+<p class="text-sm text-secondary">Tech companies and educational firms shipping internal manuals and training kits globally.</p>
+</div>
+<div class="bg-white p-8">
+<span class="font-label-caps text-[10px] text-zinc-400 block mb-6">PROFILE 04</span>
+<h4 class="font-h3 text-xl mb-4">CROSS-BORDER</h4>
+<p class="text-sm text-secondary">Global publishers using Ukraine as a high-margin production and shipping hub.</p>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="py-24 px-10 overflow-hidden">
+<h2 class="font-h2 text-h2 mb-16 text-center">Implementation Timeline</h2>
+<div class="flex space-x-4 overflow-x-auto pb-8 snap-x">
+<!-- Step 1 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-[#e63329] text-white flex items-center justify-center font-bold text-xl mb-4">01</div>
+<h5 class="font-label-caps text-sm mb-2">QUOTATION</h5>
+<p class="text-xs text-secondary">Submit volume requirements and SKU list for custom pricing.</p>
+</div>
+<!-- Step 2 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">02</div>
+<h5 class="font-label-caps text-sm mb-2">INTEGRATION</h5>
+<p class="text-xs text-secondary">API connection to your storefront (Shopify/Woo) within 48h.</p>
+</div>
+<!-- Step 3 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">03</div>
+<h5 class="font-label-caps text-sm mb-2">INBOUND</h5>
+<p class="text-xs text-secondary">Send stock to our Kyiv hub. Receipt and counting within 24h.</p>
+</div>
+<!-- Step 4 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">04</div>
+<h5 class="font-label-caps text-sm mb-2">ISBN MAP</h5>
+<p class="text-xs text-secondary">Physical stock mapped to digital barcodes in our WMS.</p>
+</div>
+<!-- Step 5 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">05</div>
+<h5 class="font-label-caps text-sm mb-2">PICK/PACK</h5>
+<p class="text-xs text-secondary">Real-time order synchronization and pick list generation.</p>
+</div>
+<!-- Step 6 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">06</div>
+<h5 class="font-label-caps text-sm mb-2">QUALITY CK</h5>
+<p class="text-xs text-secondary">Secondary manual scan of ISBN and weight check.</p>
+</div>
+<!-- Step 7 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">07</div>
+<h5 class="font-label-caps text-sm mb-2">DISPATCH</h5>
+<p class="text-xs text-secondary">International courier pickup (DHL/UPS/FedEx).</p>
+</div>
+<!-- Step 8 -->
+<div class="min-w-[280px] border border-black p-6 bg-white snap-start">
+<div class="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl mb-4">08</div>
+<h5 class="font-label-caps text-sm mb-2">REPORTING</h5>
+<p class="text-xs text-secondary">Automated tracking sent to customer and live inventory sync.</p>
+</div>
+</div>
+</section>
+<!-- PRICING TABLE -->
+<section class="bg-white py-24 px-10 border-t border-black">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-h2 text-h2 mb-12 text-center uppercase">Pricing Structure (USD)</h2>
+<div class="border border-black overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-black text-white font-label-caps text-[10px]">
+<tr>
+<th class="p-4 border-r border-zinc-700">SERVICE DESCRIPTION</th>
+<th class="p-4 border-r border-zinc-700">UNIT</th>
+<th class="p-4">COST (USD)</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Pick &amp; Pack (First Item)</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per order</td>
+<td class="p-4 font-bold">$0.41</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Additional Item (Same SKU)</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per unit</td>
+<td class="p-4 font-bold">$0.08</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Additional Item (Mixed SKU)</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per unit</td>
+<td class="p-4 font-bold">$0.12</td>
+</tr>
+<tr class="border-b border-black bg-[#e63329] text-white">
+<td class="p-4 border-r border-white">Minimum Monthly Management</td>
+<td class="p-4 border-r border-white font-label-caps text-[10px]">per account</td>
+<td class="p-4 font-bold">$150.00</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Returns Processing</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per unit</td>
+<td class="p-4 font-bold">$0.55</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Pallet Storage (Standard)</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per month</td>
+<td class="p-4 font-bold">$8.00</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-4 border-r border-black">Inbound Unloading</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per carton</td>
+<td class="p-4 font-bold">$0.20</td>
+</tr>
+<tr>
+<td class="p-4 border-r border-black">Address Correction</td>
+<td class="p-4 border-r border-black font-label-caps text-[10px]">per order</td>
+<td class="p-4 font-bold">$0.00 (FREE)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- EXPORT / SEASONALITY -->
+<section class="grid grid-cols-1 md:grid-cols-2 border-t border-black">
+<div class="p-16 border-r border-black space-y-6">
+<h3 class="font-h3 text-h3 uppercase">Export Logistics</h3>
+<p class="font-body-md text-secondary leading-relaxed">Ukraine represents a strategic geographic arbitrage opportunity for international publishing. Our proximity to the EU land borders and established air-freight corridors from Warsaw and Kyiv allow for 2-5 day global delivery at costs significantly lower than domestic 3PLs in the West.</p>
+<p class="font-body-md text-secondary leading-relaxed">We handle all customs declarations (CN22/CN23) and commercial invoices required for duty-free thresholds in major markets like the US (Section 321) and the EU (IOSS).</p>
+</div>
+<div class="p-16 space-y-6">
+<h3 class="font-h3 text-h3 uppercase">Seasonality Management</h3>
+<p class="font-body-md text-secondary leading-relaxed">The publishing industry experiences extreme volatility during Q4 and major book fairs (Frankfurt/London). Our facility is engineered for elasticity; we scale from 1,000 to 10,000 daily shipments without degrading accuracy metrics.</p>
+<p class="font-body-md text-secondary leading-relaxed">Our staffing model utilizes a highly trained industrial reserve team specifically dedicated to manual ISBN cross-referencing during peak surges, ensuring your pre-orders ship on time, every time.</p>
+</div>
+</section>
+<!-- FAQ ACCORDIONS -->
+<section class="py-24 px-10 bg-black text-white">
+<div class="max-w-3xl mx-auto space-y-4">
+<h2 class="font-h2 text-h2 mb-12 text-center">Technical FAQ</h2>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">How do you handle damaged book returns?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">What Shopify versions are supported?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">Is there a minimum monthly storage fee?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">Can you handle limited edition signed copies?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">Do you offer custom packaging or gift notes?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">What are the insurance limits per shipment?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">How is the ISBN scanning verified?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="border border-zinc-800 p-6 flex justify-between items-center cursor-pointer group hover:bg-zinc-900 transition-colors">
+<span class="font-label-caps text-sm">What is the onboarding lead time?</span>
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+</section>
+<!-- FOOTER CTA -->
+<section class="bg-black py-24 px-10 border-t border-zinc-800">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2 space-y-8">
+<h2 class="font-h1 text-h1 text-[#e63329]">DEPLOY BOOK FULFILLMENT IN 21 BUSINESS DAYS</h2>
+<p class="text-zinc-400 font-body-lg">Stop overpaying for inefficient logistics. Lock in the Ukraine advantage and scale your publishing house globally.</p>
+</div>
+<div class="w-full md:w-1/2 bg-zinc-900 p-10 border border-zinc-800">
+<form class="space-y-6">
+<div>
+<label class="font-label-caps text-[10px] text-zinc-500 mb-2 block">FULL NAME</label>
+<input class="w-full bg-transparent border-0 border-b border-zinc-700 text-white focus:ring-0 focus:border-[#e63329] transition-colors p-2" type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-zinc-500 mb-2 block">BUSINESS EMAIL</label>
+<input class="w-full bg-transparent border-0 border-b border-zinc-700 text-white focus:ring-0 focus:border-[#e63329] transition-colors p-2" type="email"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-zinc-500 mb-2 block">EXPECTED MONTHLY VOLUME</label>
+<select class="w-full bg-transparent border-0 border-b border-zinc-700 text-white focus:ring-0 focus:border-[#e63329] transition-colors p-2 appearance-none">
+<option>100 - 500 units</option>
+<option>500 - 2,500 units</option>
+<option>2,500 - 10,000 units</option>
+<option>10,000+ units</option>
+</select>
+</div>
+<button class="w-full bg-[#e63329] text-white py-5 font-label-caps hover:bg-red-700 transition-colors">INITIALIZE AUDIT</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-black dark:bg-black flex flex-col md:flex-row justify-between items-center px-10 py-12 w-full mt-auto border-t border-zinc-800">
+<div class="text-lg font-bold text-[#e63329] uppercase mb-8 md:mb-0">MTP Group</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-mono uppercase text-[10px] tracking-widest text-zinc-400 hover:text-white transition-opacity" href="#">Terms of Service</a>
+<a class="font-mono uppercase text-[10px] tracking-widest text-zinc-400 hover:text-white transition-opacity" href="#">Privacy Policy</a>
+<a class="font-mono uppercase text-[10px] tracking-widest text-zinc-400 hover:text-white transition-opacity" href="#">Industrial Standards</a>
+<a class="font-mono uppercase text-[10px] tracking-widest text-zinc-400 hover:text-white transition-opacity" href="#">Global Logistics</a>
+</div>
+<div class="font-mono uppercase text-[10px] tracking-widest text-zinc-500 text-center md:text-right">
+            © 2024 MTP Group Book Fulfillment Ukraine. All Rights Reserved.
+        </div>
+</footer>
+</body></html>

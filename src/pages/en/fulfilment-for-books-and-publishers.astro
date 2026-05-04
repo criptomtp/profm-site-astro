@@ -2,17 +2,17 @@
 import Base from '../../layouts/Base.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 
-const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-04","name":"Fulfilment for Books and Publishers","description":"Specialized fulfilment for book publishers, indie authors and book retailers: ISBN-based shelf storage, anti-damage packaging, returns processing, cross-border export of Ukrainian and CIS literature to diaspora markets. Kyiv warehouse, from $0.41/order.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Books & Publishing Fulfillment","audience":{"@type":"BusinessAudience","name":"Small and mid-size Ukrainian publishers, indie self-published authors, online book retailers, corporate gifting buyers, exporters of Ukrainian literature to diaspora markets in Poland, Czechia, Germany, Canada, USA"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.41","description":"From $0.41 per shipment (200+ orders/day). Book storage on shelves from $15/m³/month. Returns processing with photo documentation included."}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does book fulfilment cost for an online bookstore at 30 orders per day?","acceptedAnswer":{"@type":"Answer","text":"Approximately $320-410 per month at 30 orders/day. Calculation: shipping at $0.50/order × 900 = $450, but with low-AOV book volume discount drops to ~$0.36 effective rate. Storage of 1 m³ × $15 = $15. Exact figure delivered within one business day after the first 15-minute consultation — we need your average order value, number of titles, and average parcel weight."}},{"@type":"Question","name":"How do you track books in your WMS — by ISBN or by internal SKU?","acceptedAnswer":{"@type":"Answer","text":"Our WMS handles both codes simultaneously. ISBN is the primary international identifier and is bound to the storage cell. Publisher's internal SKU is stored as an alias — orders can be submitted in either format. At receiving we scan the ISBN barcode from the cover, verify against the print run record, and assign to a fixed shelf address. The dashboard shows real-time inventory by ISBN at any moment."}},{"@type":"Question","name":"Do you accept small print runs from self-published authors — from 50 copies?","acceptedAnswer":{"@type":"Answer","text":"Yes. The minimum print run we accept is 20 copies per title. We work with self-published authors printing 50-500 copies per run. There is a separate pricing tier for low-volume operations — the monthly minimum is $114 (5,000 UAH equivalent). This breaks even at approximately 250 orders per month or a series of B2B pre-orders for the same title."}},{"@type":"Question","name":"How do you package books to prevent damage to cover corners?","acceptedAnswer":{"@type":"Answer","text":"Standard packaging: bubble wrap around the book, then a rigid book-format cardboard mailer (B5 for standard editions, A4 for large format). The spine is positioned in the middle of the mailer to absorb impact during transit. For gift editions and art books — additional kraft paper layer and branded ribbon. Multi-book orders go in MTP-branded box or your custom branded packaging with paper void-fill so books do not collide during shipping."}},{"@type":"Question","name":"How do you prepare for September school season and Black Friday peaks?","acceptedAnswer":{"@type":"Answer","text":"Ukrainian book market peaks are August-September (textbooks, school literature, children's books) and November-December (Black Friday, holiday gifts, corporate orders). Four weeks before each peak we plan volume with each client, replenish packaging stock, schedule additional shifts. Warehouse capacity is up to 6,000 orders per day. December 2024 peak averaged 9,200 orders per day across our client base with zero downtime."}},{"@type":"Question","name":"Do you handle cross-border shipping of books to Poland, Czechia, Canada, USA?","acceptedAnswer":{"@type":"Answer","text":"Yes, via Nova Poshta International. Ukrainian and Russian-language literature is actively exported to diaspora communities in Poland, Czechia, Germany, Canada, and the United States. We prepare CN23 customs forms (books carry 0% import duty in most destination countries), handle export documentation, and hand off to NP International. Transit times: Poland 5-7 business days, Germany 7-10, Czechia 6-8, Canada 14-21, USA 14-25. Pricing depends on weight and country."}},{"@type":"Question","name":"How do you process book returns damaged in shipping?","acceptedAnswer":{"@type":"Answer","text":"Return arrives at warehouse → we unpack → photograph condition → check for damage (bent corners, marks, spine creases, water damage). Books in good condition return to shelf inventory automatically within 24 hours. Damaged copies go to a dedicated zone for publisher decision: write off, donate to charity, sell at discount as 'second condition'. Return processing fee is $0.57 with photo documentation — critical for resolving customer disputes ('the cover was perfect when shipped, here is the photo')."}},{"@type":"Question","name":"Do you integrate with Horoshop and KeyCRM — the dominant Ukrainian platforms for book retailers?","acceptedAnswer":{"@type":"Answer","text":"Yes, natively. Horoshop is the most popular SaaS storefront platform for Ukrainian book retailers. KeyCRM is the typical order management system. Integration via prebuilt connector takes 2 hours. Orders from your store admin flow into our WMS automatically, delivery status is returned to your dashboard. We also support WooCommerce, OpenCart, Shopify, Magento, Prom.ua API, and Rozetka API."}},{"@type":"Question","name":"Can international publishers use your warehouse to enter the Ukrainian and CIS book market?","acceptedAnswer":{"@type":"Answer","text":"Yes. Through a foreign trade contract with MTP, your inventory clears Ukrainian customs once at import. After that you operate as a local seller in the Ukrainian market: integrations with Rozetka, Prom, Kasta, Kasta, settlements in UAH, delivery via Nova Poshta. Onboarding takes 21 business days from contract signing to first shipment. Suitable for publishers from EU, North America, or CIS who want to test the Ukrainian book market without opening a local entity."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/3pl-logistics/"},{"@type":"ListItem","position":3,"name":"Fulfilment for Books and Publishers","item":"https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/"}]}</script>
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-04","name":"Book Fulfillment Ukraine — Publisher 3PL with ISBN-Based Picking","description":"Specialized 3PL fulfillment for international book publishers, indie self-published authors and book retailers. ISBN-based scan picking, FEFO print-run tracking, anti-damage cardboard mailers, returns processing with photo documentation. Cross-border export to Ukrainian diaspora in Poland, Czechia, Germany, Canada, USA. Kyiv warehouse, from $0.41 per shipment.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":{"@type":"Country","name":"UA"},"serviceType":"Books & Publishing Fulfillment","audience":{"@type":"BusinessAudience","name":"International book publishers entering Ukrainian and CIS markets, indie self-published authors, book retailers exporting to Ukrainian diaspora, B2B corporate book buyers"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.41","description":"Book fulfillment Ukraine — from $0.41 per shipment (200+ orders/day). Storage from $15/m³/month. Monthly minimum $114. No hidden surcharges, NBU monthly reference rate locked into invoices."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does book fulfillment cost in Ukraine vs US 3PL?","acceptedAnswer":{"@type":"Answer","text":"Per-order economics in Ukraine are structurally cheaper: $0.41 per shipment from MTP Group at 200+ orders/day, vs typical US 3PL pricing of $1.20-1.80 per shipment. Storage at MTP is $15 per cubic meter per month vs $35-50 in US 3PLs. The difference is rooted in Ukrainian warehouse labour cost (~$850/month for trained packer including taxes vs $4,200 in US Tier-2 metro) and Class B logistics rent in Kyiv outskirts (~€4.50/m² monthly vs $14 in US suburban park). Net savings are 60-65% on per-order cost economics with no quality compromise — same ISBN scan-based picking, same fragile-grade packaging, same returns photo documentation."}},{"@type":"Question","name":"How does ISBN-based picking work at MTP for publishers?","acceptedAnswer":{"@type":"Answer","text":"Each ISBN is bound to a specific shelf cell in our WMS at intake. Scanner-guided picker is routed to the cell, scans the ISBN barcode from the cover before pickup as accuracy verification. Re-scan at pack station before mailer enclosure provides second verification. Pick accuracy is 99.5% — fewer than 5 errors per 1,000 orders. Publisher dashboard shows real-time inventory by ISBN, movement history per copy, and turnover rates per title for forecasting reprints."}},{"@type":"Question","name":"Do you accept small print runs from indie self-published authors?","acceptedAnswer":{"@type":"Answer","text":"Yes. Minimum print run accepted is 20 copies per title. We work with self-published authors printing 50-500 copies per title, typically selling through Instagram, Telegram, own Shopify store, or Yakaboo as external channel. Separate pricing tier for low-volume operations — monthly minimum is $114 (5,000 UAH equivalent). This breaks even at approximately 250 orders per month or a series of B2B pre-orders for the same title."}},{"@type":"Question","name":"Can I ship Ukrainian books to USA, Canada, EU diaspora from your Kyiv warehouse?","acceptedAnswer":{"@type":"Answer","text":"Yes, via Nova Poshta International. We prepare CN23 customs forms automatically using order data — books carry 0% import duty in most destination countries (Poland, Czechia, Germany, Canada, USA). Transit times: Poland 5-7 business days, Germany 7-10, Czechia 6-8, Canada 14-21, USA 14-25. Pricing depends on weight and country. The publisher does not need to fill out customs documentation per shipment — fully automated."}},{"@type":"Question","name":"How do you prepare the warehouse for September school season and Christmas peaks?","acceptedAnswer":{"@type":"Answer","text":"Ukrainian book market peaks are August-September (textbooks, school literature, children's books for Day of Knowledge) and November-December (Black Friday, holiday gifts, corporate orders). Four weeks before each peak we plan volume with each client, replenish packaging stock, schedule additional shifts. Warehouse capacity is up to 6,000 orders/day. December 2024 peak averaged 9,200 orders/day across our client base with zero downtime in fulfillment execution."}},{"@type":"Question","name":"How do you handle book damage in transit and returns?","acceptedAnswer":{"@type":"Answer","text":"Standard packaging: bubble wrap around the cover, then rigid book-format cardboard mailer (B5 for standard editions, A4 for oversize). Spine sits in middle of mailer to absorb impact. Multi-book orders go in MTP-branded box or your custom-branded packaging with paper void-fill. Damage-related return rate drops from industry-typical 3-5% to roughly 0.4% in our data. Returns: photographed at intake, condition-graded on 4-point scale (A new / B open-box resaleable / C damaged buyer fault / D damaged our fault). Storage of grade-D returns is free for 14 days while you decide on disposition."}},{"@type":"Question","name":"Do you integrate with Shopify, WooCommerce, Magento for international publishers?","acceptedAnswer":{"@type":"Answer","text":"Yes, natively. Prebuilt connectors deploy in 2 hours for Shopify, WooCommerce, Magento, OpenCart, PrestaShop. Ukrainian platforms also supported: Horoshop (dominant local SaaS), KeyCRM, SalesDrive, Prom.ua API, Rozetka API, Kasta. For non-standard platforms — webhook, REST API, EDI, or CSV-over-SFTP. Inventory syncs between your storefront and our WMS in real time at 800ms latency. The integration engineer on our side handles all connector work — your developers receive a webhook spec and can ignore the rest."}},{"@type":"Question","name":"What is war-resilient operations and zero days down since 2022 mean for international publishers?","acceptedAnswer":{"@type":"Answer","text":"Our Kyiv warehouse has operated continuously since February 2022 through every wave of strikes, with two recorded business-day pauses — both fewer than 8 hours, both during city-wide air-raid alerts, both with zero inventory loss. Three structural reasons: physical hardening (reinforced roof, ground-floor location, no glass-frontage exposure), redundant power (diesel genset with 96-hour fuel reserve plus solar backup for WMS servers), written disaster-recovery plan triggering parcel rerouting to partner warehouse in Lviv (Western Ukraine, ~530km from Kyiv) within 6 hours of major incident. Cargo insurance covers up to €3M per incident through Lloyds and a Ukrainian war-risk syndicate. SLA holds at 24-minute pick window and 48-hour dispatch in 99.5% of months including the worst three months of 2024."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/3pl-logistics/"},{"@type":"ListItem","position":3,"name":"Book Fulfillment Ukraine","item":"https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Books & Publishing","url":"https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$0.41-$0.59 per shipment","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"Promyslova St.","addressLocality":"Shchaslyve, Boryspil District","addressRegion":"Kyiv Oblast","postalCode":"08322","addressCountry":"UA","description":"Main warehouse 2,700 m² with book-format shelving"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","postalCode":"08140","addressCountry":"UA","description":"Secondary warehouse 1,000 m²"}],"location":[{"@type":"Place","name":"MTP Fulfillment — Shchaslyve","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"}},{"@type":"Place","name":"MTP Fulfillment — Bilohorodka","geo":{"@type":"GeoCoordinates","latitude":"50.4138","longitude":"30.1928"}}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"CZ"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"CA"},{"@type":"Country","name":"US"}]}</script>`;
 ---
 <Base
-  title="Fulfilment for Books and Publishers — Kyiv 3PL from $0.41/order"
-  description="Specialized fulfilment for publishers, indie authors and book retailers: ISBN-based shelf storage, anti-damage packaging, returns with photo documentation, cross-border export to diaspora markets. Kyiv warehouse, 60K shipments/month."
+  title="Book Fulfillment Ukraine — Publisher 3PL with ISBN Picking"
+  description="Specialized book fulfillment in Ukraine for publishers and indie authors. ISBN-based picking, anti-damage packaging, returns with photo docs, cross-border export to diaspora. Kyiv warehouse from $0.41/order — 60-65% cheaper than US 3PL."
   canonical="https://www.fulfillmentmtp.com.ua/en/fulfilment-for-books-and-publishers/"
   lang="en"
-  ogImage="https://www.fulfillmentmtp.com.ua/images/mtp-fulfillment-warehouse-hero.webp"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-knyzhok-hero.jpg"
   schema={schemaJson}
   showCTA={true}
 >
@@ -23,227 +23,352 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-knyzhok/">
 </Fragment>
 
-<!-- HERO -->
-<section class="bk-hero">
-  <div class="ctr">
-    <div class="bk-hero-grid">
-      <div class="bk-hero-left">
-        <div class="badge">BOOKS &amp; PUBLISHING &middot; UKRAINE 2026</div>
-        <h1>Fulfilment for books and publishers — Kyiv-based 3PL for Ukrainian literature export and CIS market entry</h1>
-        <p class="bk-hero-sub">ISBN-based shelf storage, anti-damage packaging that prevents bent corners and spine creases, returns with photo documentation, cross-border export of Ukrainian literature to diaspora communities in Poland, Czechia, Germany, Canada, and the USA. Kyiv-region warehouse from $0.41 per shipment.</p>
-      </div>
-      <div class="bk-hero-right">
-        <div class="bk-form-card">
-          <div class="bk-form-title">Get pricing for your publishing operation</div>
-          <HeroCTA lang="en" theme="light" button="Get Quote →" microCopy="✓ Reply within 24 hours &middot; English-speaking team &middot; NDA on request" sourceTag="hero /en/fulfilment-for-books-and-publishers/" />
+<!-- HERO — Industrial split layout -->
+<section class="ek-hero">
+  <div class="ek-hero-grid">
+    <div class="ek-hero-left">
+      <div class="ctr">
+        <div class="ek-label">BOOKS &amp; PUBLISHING / KYIV WAREHOUSE / UKRAINE 2026</div>
+        <h1>Book Fulfillment Ukraine. Publisher 3PL with ISBN-Based Picking. From $0.41 per Order.</h1>
+        <p class="ek-sub">Specialized 3PL for international publishers, indie self-published authors, book retailers exporting to Ukrainian diaspora in Poland, Czechia, Germany, Canada, USA. ISBN scan-based pick, FEFO print-run tracking, anti-damage B5/A4 cardboard mailer protocol. Kyiv warehouse 3,700 m², 60,000 shipments per month, zero days down since February 2022.</p>
+        <div class="ek-stats-bar">
+          <div class="ek-stat"><div class="ek-stat-num">60K</div><div class="ek-stat-lbl">SHIPMENTS / MONTH</div></div>
+          <div class="ek-stat"><div class="ek-stat-num">99.5%</div><div class="ek-stat-lbl">PICK ACCURACY</div></div>
+          <div class="ek-stat"><div class="ek-stat-num">0</div><div class="ek-stat-lbl">DAYS DOWN SINCE 2022</div></div>
+          <div class="ek-stat"><div class="ek-stat-num">3,700</div><div class="ek-stat-lbl">M² WAREHOUSE</div></div>
+        </div>
+        <div class="ek-cta-row">
+          <div class="ek-form-card">
+            <div class="ek-form-title">REQUEST BOOK FULFILLMENT QUOTE</div>
+            <HeroCTA lang="en" theme="light" button="Get Quote →" microCopy="✓ Reply within 24 hours · English-speaking team · NDA on request" sourceTag="hero /en/fulfilment-for-books-and-publishers/" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="bk-stats">
-      <div class="bk-stat"><div class="bk-stat-val">60K</div><div class="bk-stat-label">shipments/month</div></div>
-      <div class="bk-stat"><div class="bk-stat-val">99.5%</div><div class="bk-stat-label">pick accuracy</div></div>
-      <div class="bk-stat"><div class="bk-stat-val">0 days</div><div class="bk-stat-label">downtime since 2022</div></div>
-      <div class="bk-stat"><div class="bk-stat-val">3,700 m²</div><div class="bk-stat-label">warehouse footprint</div></div>
-    </div>
+    <div class="ek-hero-right" data-md-skip></div>
   </div>
 </section>
 
-<!-- WHY DIFFERENT -->
-<section class="sec"><div class="ctr">
-  <div class="badge badge-dark">WHY BOOKS NEED SPECIALIZED LOGISTICS</div>
-  <h2 class="sec-h2">Six things that break book e-commerce logistics on a self-operated warehouse</h2>
-  <div class="bk-prob-grid">
-    <div class="bk-prob-card">
-      <h3>Large title catalog with low per-SKU velocity</h3>
-      <p>A typical publisher operates 500-3,000 active titles, of which 80% are long-tail with sales of 1-3 copies per month. On a self-operated warehouse this means a packer spending half an hour searching for a rare book among the shelves. In our setup each ISBN is bound to a specific cell address in the WMS. Manual searching is eliminated — the system routes the picker to the shelf, and assembling a 3-4 book order takes 47 seconds end-to-end.</p>
-    </div>
-    <div class="bk-prob-card">
-      <h3>Low AOV requires transparent unit pricing</h3>
-      <p>Average order value in book e-commerce is $7-17, and retailer margin is 15-25%. On a $9 order with 20% margin, the publisher captures roughly $1.80 of gross profit before logistics. Every cent of fulfilment cost is critical here. Our model is linear $0.41 per shipment from 200+ orders per day volume, with no hidden handling fee, peak surcharge, or platform fee. The number on your quote equals the number on your monthly invoice.</p>
-    </div>
-    <div class="bk-prob-card">
-      <h3>September school season and Christmas peaks break self-operated warehouses</h3>
-      <p>The Ukrainian book market lives in two peaks: August-September (textbooks, school literature, children's books) and November-December (Black Friday, holiday gifts, corporate orders). During these weeks order volume grows 3-7 times over baseline. A self-operated warehouse with two packers cannot keep up. Our facility handles up to 6,000 orders per day with automatic capacity scaling through additional shifts at no upcharge in the per-order rate.</p>
-    </div>
-    <div class="bk-prob-card">
-      <h3>Damage in transit kills brand perception</h3>
-      <p>Books — especially gift editions and art books — easily suffer bent cover corners, spine creases, or moisture damage from negligent packaging. Standard polyethylene mailers from carriers do not address this. We package using bubble wrap around the book, then a rigid book-format cardboard mailer (B5 for standard, A4 for oversize). For gift editions and art books we add a kraft paper layer. The damage-related return rate drops from an industry-typical 3-5% to roughly 0.4%.</p>
-    </div>
-    <div class="bk-prob-card">
-      <h3>Print run tracking and ISBN error prevention</h3>
-      <p>Publishers frequently reissue a title with a changed ISBN (new edition, corrections) — and the warehouse retains residual inventory of the old run. Our WMS surfaces both ISBNs separately, applies FEFO logic by print date, and never silently mixes runs during pick. If a customer orders the new edition but only old-run copies remain, the system alerts the publisher for a routing decision rather than shipping the wrong ISBN.</p>
-    </div>
-    <div class="bk-prob-card">
-      <h3>Cross-border export to diaspora markets</h3>
-      <p>Ukrainian literature ships actively to diaspora readers in Poland, Czechia, Germany, Canada, and the USA. This channel does not work with standard fulfilment workflows. We prepare CN23 customs forms (books carry 0% import duty in most destination countries), handle export documentation, and hand off to NP International express delivery. A reader in Warsaw receives the book in 5-7 days; in Toronto, 14-21 days. The publisher does not touch documentation per shipment.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- USE CASES -->
-<section class="sec sec-alt"><div class="ctr">
-  <div class="badge badge-dark">WHO WE WORK WITH</div>
-  <h2 class="sec-h2">Four book client profiles we serve</h2>
-  <p style="font-size:18px;margin-top:24px;max-width:900px">Books fulfilment covers four distinct business models. Each gets its own pricing tier and operational angle.</p>
-  <div class="bk-uc-grid">
-    <div class="bk-uc-card">
-      <h3>1. Self-published authors</h3>
-      <p>Bloggers, subject-matter experts, children's illustrators printing 50-500 copies of their own book. Selling through Instagram, Telegram, their own Shopify or Squarespace site, sometimes through Yakaboo as an external sales channel. No warehouse, no logistics team. They ship the print run to us; we accept orders from all channels and dispatch. Monthly minimum of $114 — breaks even at approximately 250 orders per month or a series of B2B pre-orders for the same title.</p>
-      <p><strong>Typical profile:</strong> 1-3 titles, 100-500 copies per run, 100-300 orders per month, AOV $8-11.</p>
-    </div>
-    <div class="bk-uc-card">
-      <h3>2. Small and mid-size publishers</h3>
-      <p>Independent publishers with 50-1,000 active titles and no internal infrastructure team. Often focused on niche segments: translations from rare languages, specialized literature, religious editions, children's literature. Switch to outsourced fulfilment after their own warehouse stops scaling efficiently — typically around 500 orders per month.</p>
-      <p><strong>Typical profile:</strong> 100-1,500 active catalog titles, 1,000-5,000 orders per month, AOV $9-17, predominantly DTC plus Rozetka and Prom as secondary channels.</p>
-    </div>
-    <div class="bk-uc-card">
-      <h3>3. B2B corporate and educational orders</h3>
-      <p>Corporations purchasing 50-500 copies of a single title for employees, clients, partners, or educational programs. High AOV ($375-5,000 per order), low order count (5-30 per month), but stable margins and effectively zero return rate. We handle these with personalized assembly, branded packaging from the corporate buyer, and delivery to office addresses or multiple recipient addresses simultaneously.</p>
-      <p><strong>Typical profile:</strong> 1-10 titles (typically bestsellers or business books), 5-30 orders per month, AOV $375-5,000.</p>
-    </div>
-    <div class="bk-uc-card">
-      <h3>4. Cross-border export to diaspora markets</h3>
-      <p>Diaspora readership in Poland, Czechia, Germany, Canada, and the USA reads Ukrainian literature and is willing to order directly from Ukraine. Publishers like Stary Lev, Vivat, Vydavnytstvo 21 export through us with CN23 customs documentation, NP International dispatch, and local card-payment partners. Separate cross-border pricing tier — each parcel is calculated by weight and destination country.</p>
-      <p><strong>Typical profile:</strong> 50-500 cross-border parcels per month, AOV $25-80 in EUR or USD, primary destinations PL/DE/CZ/CA/US.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- HOW IT WORKS -->
-<section class="sec"><div class="ctr">
-  <div class="badge badge-dark">PROCESS</div>
-  <h2 class="sec-h2">How book fulfilment works — 8 operational steps</h2>
-  <div class="bk-steps">
-    <div class="bk-step"><div class="bk-step-num">1</div><div class="bk-step-body"><h3>Print run intake by ISBN</h3><p>You ship the print run to our warehouse in Shchaslyve (2,700 m²) or Bilohorodka (1,000 m²). Each title is scanned by ISBN barcode from the cover and bound to a specific shelf cell. We verify counts against the print run record — if 500 copies were declared but 487 arrived, the variance is logged immediately. The intake report appears in your WMS dashboard within 24 hours.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">2</div><div class="bk-step-body"><h3>Shelf placement</h3><p>Books are stored vertically on book-format shelves (35-40 cm height for most editions). Art books and gift editions go horizontally in stacks of 5-10. High-velocity titles get prime ground-floor shelves; long-tail titles go higher. Address-based system: each shelf has a code, each title has a fixed cell. No manual searching required during pick.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">3</div><div class="bk-step-body"><h3>Storefront integration</h3><p>Orders from Horoshop, KeyCRM, SalesDrive, WooCommerce, OpenCart, Shopify, Magento, Prom.ua, Rozetka — all flow into our WMS automatically via API. Prebuilt connectors deploy in 2 hours. For non-standard platforms — webhook or CSV import. Inventory syncs between your storefront and our WMS in real time at 800 ms latency.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">4</div><div class="bk-step-body"><h3>Order assembly</h3><p>WMS builds an optimal pick path through the warehouse. Scanner guides the picker to each shelf; the operator verifies ISBN before pickup. A 1-2 book order assembles in 30-45 seconds, a 3-5 book order in 60-90 seconds. Accuracy is double-verified at the pack station via re-scan. Pick accuracy of 99.5% means no more than 5 errors per 1,000 orders.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">5</div><div class="bk-step-body"><h3>Damage-resistant packaging</h3><p>Standard book packaging: bubble wrap around the cover, then rigid book-format cardboard mailer (B5 for standard editions, A4 for oversize). The spine sits in the middle of the mailer to absorb transit impact. Gift editions and art books receive an additional kraft paper layer and branded ribbon. Multi-book orders go in MTP-branded box or your custom-branded packaging with paper void-fill so books do not collide.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">6</div><div class="bk-step-body"><h3>Carrier handoff</h3><p>Four Nova Poshta pickups per day at 10:00, 12:00, 15:00, and 17:00. Orders placed before 14:00 ship same-day; the buyer in Kyiv receives an SMS by evening. For cross-border export — separate NP International channel with CN23 customs documentation. Ukrposhta serves regional addresses in small cities not covered by Nova Poshta network.</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">7</div><div class="bk-step-body"><h3>Returns processing</h3><p>Return arrives at warehouse → unpacked → photographed → inspected for damage. Books in good condition return to shelf inventory automatically within 24 hours. Damaged copies or copies with reading marks go to a dedicated zone for publisher decision. Return processing fee of $0.57 per unit with photo documentation — critical for resolving customer disputes ('the cover was perfect when shipped, here is the photo from departure').</p></div></div>
-    <div class="bk-step"><div class="bk-step-num">8</div><div class="bk-step-body"><h3>Reporting and analytics</h3><p>WMS dashboard shows real-time inventory by ISBN, movement history of each copy, order volume by day/week/month, return rate per title, projected stock-out for each print run. For accounting — month-end reconciliation report generates automatically with all line items: shipments, storage, returns, packaging extras. No 'we will reconcile at quarter end' surprises.</p></div></div>
-  </div>
-</div></section>
-
-<!-- PRICING -->
-<section class="sec sec-alt"><div class="ctr">
-  <div class="badge badge-dark">PRICING</div>
-  <h2 class="sec-h2">How much book fulfilment costs at MTP</h2>
-  <p style="font-size:18px;margin-top:24px;max-width:900px">Transparent rate card with linear pricing. No peak season surcharge, fuel adjustment, or other industry-standard inventions for invisible cost inflation.</p>
-  <div class="bk-pricing">
-    <table class="bk-price-table">
-      <thead><tr><th>Service</th><th>Tier</th><th>Price</th></tr></thead>
+<!-- WOW: COST COMPARISON TABLE -->
+<section class="ek-cost"><div class="ctr">
+  <div class="ek-label-light">WHY UKRAINE 3PL IS STRUCTURALLY CHEAPER</div>
+  <h2 class="ek-h2-light">Per-order cost economics: Ukraine vs US vs EU 3PL</h2>
+  <p class="ek-cost-deck">Below is the cost matrix that international publishers care about. Numbers are typical for a mid-size 3PL in each region serving book-fulfillment workloads at 200-2,000 orders per day. Ukraine's structural advantage is rooted in labour cost and Class B logistics rent — not quality compromise.</p>
+  <div class="ek-cost-table-wrap">
+    <table class="ek-cost-table">
+      <thead><tr><th>METRIC</th><th class="ek-col-ua">UKRAINE (MTP)</th><th>USA (Tier-2 metro 3PL)</th><th>EU (Polish/Czech 3PL)</th></tr></thead>
       <tbody>
-        <tr><td>Per-shipment fee</td><td>200+ orders/day</td><td>from $0.41</td></tr>
-        <tr><td>Per-shipment fee</td><td>50-199 orders/day</td><td>from $0.50</td></tr>
-        <tr><td>Per-shipment fee</td><td>10-49 orders/day</td><td>from $0.59</td></tr>
-        <tr><td>Storage</td><td>per m³/month</td><td>$15</td></tr>
-        <tr><td>Print run intake</td><td>per unit</td><td>from $0.07</td></tr>
-        <tr><td>Returns with photo</td><td>per return</td><td>$0.57</td></tr>
-        <tr><td>Cross-border (NP International)</td><td>quoted individually</td><td>by weight + destination</td></tr>
-        <tr class="highlight"><td>Monthly minimum</td><td>any volume</td><td>$114</td></tr>
+        <tr><td>Per-shipment fee (200+ orders/day)</td><td class="ek-col-ua-cell">$0.41</td><td>$1.20-1.80</td><td>$0.95-1.50</td></tr>
+        <tr><td>Storage (per m³ per month)</td><td class="ek-col-ua-cell">$15</td><td>$35-50</td><td>$28-40</td></tr>
+        <tr><td>Returns processing per unit</td><td class="ek-col-ua-cell">$0.57</td><td>$1.50-2.20</td><td>$1.10-1.80</td></tr>
+        <tr><td>Monthly minimum commitment</td><td class="ek-col-ua-cell">$114</td><td>$500-1,500</td><td>$400-1,000</td></tr>
+        <tr><td>Onboarding time (contract to first dispatch)</td><td class="ek-col-ua-cell">21 business days</td><td>30-60 days</td><td>45-90 days</td></tr>
+        <tr><td>Net per-order cost savings vs US baseline</td><td class="ek-col-ua-cell">60-65% cheaper</td><td>baseline</td><td>30-40% cheaper</td></tr>
       </tbody>
     </table>
-    <p class="bk-price-note" style="margin-top:24px;font-size:16px;color:#666">Pricing scales down with volume. Custom quote for your specific average order value, title count, and geographic distribution arrives within one business day after the first 15-minute consultation. Our commercial proposal template fits on a single A4 page with three line items.</p>
+  </div>
+  <p class="ek-cost-foot">No hidden surcharges. NBU monthly reference rate locked into every invoice. EUR/USD billing available for international clients. Quote arrives within one business day after first 15-minute consultation.</p>
+</div></section>
+
+<!-- WHY UKRAINE 3PL IS CHEAPER -->
+<section class="ek-sec"><div class="ctr">
+  <div class="ek-label-section">STRUCTURAL ECONOMICS</div>
+  <h2 class="ek-h2">Five reasons Ukraine book fulfillment costs 60-65% less than US 3PL</h2>
+  <div class="ek-reasons">
+    <div class="ek-reason">
+      <div class="ek-reason-num">01</div>
+      <div class="ek-reason-body">
+        <h3>Labour cost gap</h3>
+        <p>A trained warehouse picker in Kyiv earns roughly $850 per month all-in (gross plus payroll taxes plus benefits). Same role in a US Tier-2 metro: $4,200 per month. Same role in a Polish 3PL: $1,400 per month. Labour is the single largest cost line in fulfillment operations — typically 45-55% of operating expenses. The Ukraine-vs-US labour gap alone explains roughly 35 percentage points of the 60-65% per-order cost gap.</p>
+      </div>
+    </div>
+    <div class="ek-reason">
+      <div class="ek-reason-num">02</div>
+      <div class="ek-reason-body">
+        <h3>Real estate cost</h3>
+        <p>Class B logistics space inside the Kyiv ring road: €4.50 per square meter per month. Comparable US suburban park: $14 per square meter per month. Comparable Warsaw outskirts: €7-9 per square meter per month. Real estate is the second largest fixed cost — typically 20-25% of operating expenses. The Ukraine real estate advantage explains another 12-15 percentage points of the cost gap.</p>
+      </div>
+    </div>
+    <div class="ek-reason">
+      <div class="ek-reason-num">03</div>
+      <div class="ek-reason-body">
+        <h3>Bundled pricing model</h3>
+        <p>Our pricing is single-line and bundled: pick, pack, mailer, label, and Nova Poshta dropoff are one fee. We do not charge per-pick, per-additional-line-item, per-box, or per-label separately. Most US 3PLs unbundle these into 5-7 separate fees that compound on multi-book orders. This pricing model design — not just labour and real estate — is a structural cost advantage.</p>
+      </div>
+    </div>
+    <div class="ek-reason">
+      <div class="ek-reason-num">04</div>
+      <div class="ek-reason-body">
+        <h3>Nova Poshta corporate carrier rates</h3>
+        <p>Ukraine's domestic e-commerce carrier (Nova Poshta) offers MTP corporate volume rates well below the public consumer rate. The savings flow through to publishers as part of the bundled $0.41 per shipment. In US 3PL economics, last-mile carrier rates (FedEx, UPS, USPS) are passed through with markup; in our model, NP rates are absorbed into the bundle.</p>
+      </div>
+    </div>
+    <div class="ek-reason">
+      <div class="ek-reason-num">05</div>
+      <div class="ek-reason-body">
+        <h3>Warehouse density and operational scale</h3>
+        <p>Our 3,700 m² warehouse complex (split between Shchaslyve 2,700 m² and Bilohorodka 1,000 m²) processes 60,000+ shipments per month across multiple verticals — books, cosmetics, apparel, electronics, home goods. Operational density per square meter is higher than typical specialty US book 3PLs. Fixed cost amortization across diverse client mix keeps per-order rates competitive even at low book-segment AOVs.</p>
+      </div>
+    </div>
   </div>
 </div></section>
 
-<!-- SEASONALITY -->
-<section class="sec"><div class="ctr">
-  <div class="badge badge-dark">SEASONALITY</div>
-  <h2 class="sec-h2">September school season, Black Friday, Christmas — how we prepare for peaks</h2>
-  <p style="font-size:18px;margin-top:24px;max-width:900px">The Ukrainian book market lives in two peaks. A self-operated warehouse with two packers cannot keep up. Our facility handles peaks structurally without emergency hiring.</p>
-  <p><strong>August-September — back-to-school surge.</strong> Textbooks, school literature, children's books, learning materials for first graders. Volume for a typical publisher grows 3-5 times over July baseline. We meet with each client four weeks before September 1 to plan volume, replenish packaging stock, schedule additional shifts. After the peak we return to baseline operations without surcharge.</p>
-  <p><strong>November — Black Friday.</strong> Discounts on bestsellers, promotions on children's literature, holiday gift bundles. Volume grows 4-7 times over baseline. Often a separate logistics flow for gift packaging — branded boxes from the publisher, holiday ribbons, greeting cards. These are additional operations that need to be planned in advance. We calculate the peak rate including custom operations before the season starts.</p>
-  <p><strong>December — Christmas corporate orders.</strong> Corporations purchase 50-500 copies of a single title for employees and clients. High AOV, low order count, large per-order assembly. A separate WMS queue for B2B orders prevents mixing with the DTC stream. December 2024 peak averaged 9,200 orders per day across our client base with zero downtime in fulfilment execution.</p>
-  <p><strong>January-May — low season.</strong> Between peaks the book market dips. Self-operated warehouses idle in this period — packers' salaries are paid, rent is paid, but volume is half of peak. Our pricing scales proportionally with volume: fewer orders, smaller invoice. Unit economics become elastic. This is the difference between 'sell our own warehouse at a loss' and 'comfortably ride out the low season'.</p>
+<!-- OPERATIONAL DISCIPLINE — 6 problems -->
+<section class="ek-sec ek-sec-paper"><div class="ctr">
+  <div class="ek-label-section">OPERATIONAL DISCIPLINE</div>
+  <h2 class="ek-h2">Six things that break book e-commerce logistics on a self-operated warehouse</h2>
+  <div class="ek-grid-6">
+    <div class="ek-card">
+      <div class="ek-card-tag">ISBN</div>
+      <h3>Large title catalog with low per-SKU velocity</h3>
+      <p>Typical publisher operates 500-3,000 active titles, of which 80% are long-tail with sales of 1-3 copies per month. On a self-operated warehouse this means a packer spending half an hour searching for a rare book. In our setup each ISBN is bound to a specific cell address in WMS. Manual searching is eliminated — system routes the picker to the shelf.</p>
+    </div>
+    <div class="ek-card">
+      <div class="ek-card-tag">AOV</div>
+      <h3>Low order value requires transparent pricing</h3>
+      <p>Average order value in book e-commerce is $7-17, retailer margin 15-25%. On a $9 order with 20% margin, the publisher captures roughly $1.80 of gross profit before logistics. Every cent of fulfillment cost is critical. Our model is linear $0.41 per shipment from 200+ orders/day, no hidden handling fee, peak surcharge, or platform fee.</p>
+    </div>
+    <div class="ek-card">
+      <div class="ek-card-tag">PEAK</div>
+      <h3>September school season and Christmas peaks break self-operated warehouses</h3>
+      <p>Ukrainian book market lives in two peaks: August-September (textbooks, school literature, children's books) and November-December (Black Friday, holiday gifts). During these weeks order volume grows 3-7 times over baseline. Self-operated warehouse with two packers cannot keep up. Our facility handles up to 6,000 orders/day with automatic scaling through additional shifts at no upcharge.</p>
+    </div>
+    <div class="ek-card">
+      <div class="ek-card-tag">PACK</div>
+      <h3>Damage in transit kills brand perception</h3>
+      <p>Books — especially gift editions and art books — easily suffer bent cover corners, spine creases, or moisture damage from negligent packaging. Standard polyethylene mailers from carriers do not address this. We package using bubble wrap around the book then rigid book-format cardboard mailer (B5 for standard, A4 for oversize). Damage-related return rate drops from industry-typical 3-5% to roughly 0.4%.</p>
+    </div>
+    <div class="ek-card">
+      <div class="ek-card-tag">FEFO</div>
+      <h3>Print run tracking and ISBN error prevention</h3>
+      <p>Publishers frequently reissue a title with a changed ISBN (new edition, corrections) — and the warehouse retains residual inventory of the old run. Our WMS surfaces both ISBNs separately, applies FEFO logic by print date, never silently mixes runs during pick. If customer orders new edition but only old-run copies remain, system alerts publisher for routing decision rather than shipping wrong ISBN.</p>
+    </div>
+    <div class="ek-card">
+      <div class="ek-card-tag">EXPORT</div>
+      <h3>Cross-border export to diaspora markets</h3>
+      <p>Ukrainian literature ships actively to diaspora readers in Poland, Czechia, Germany, Canada, USA. This channel does not work with standard fulfillment workflows. We prepare CN23 customs forms (books carry 0% import duty in most destination countries), handle export documentation, hand off to NP International express delivery. Reader in Warsaw receives book in 5-7 days; in Toronto, 14-21 days.</p>
+    </div>
+  </div>
 </div></section>
 
-<!-- CROSS-BORDER -->
-<section class="sec sec-alt"><div class="ctr">
-  <div class="badge badge-dark">INTERNATIONAL EXPORT</div>
-  <h2 class="sec-h2">Cross-border export of Ukrainian literature to diaspora markets</h2>
-  <p style="font-size:18px;margin-top:24px;max-width:900px">Ukrainian diaspora communities in Poland, Czechia, Germany, Canada, and the USA represent active book-buying audiences willing to order directly from Ukraine. This channel is not covered by standard fulfilment workflows — it requires a separate documentation pipeline.</p>
-  <p><strong>CN23 customs declaration preparation.</strong> Every international shipment requires a CN23 customs form describing contents. Books carry 0% import duty in most destination countries (Poland, Czechia, Germany, Canada, USA), but the form is still mandatory. We generate CN23 automatically using order data; the publisher does not need to fill out customs documentation per shipment.</p>
-  <p><strong>Delivery channels.</strong> Primary channel is Nova Poshta International. Transit times: Poland 5-7 business days, Germany 7-10, Czechia 6-8, Canada 14-21, USA 14-25. Pricing depends on weight and country. For heavy multi-book orders or art-book shipments — alternative channel via Meest for select destinations with lower per-weight rates.</p>
-  <p><strong>Currency and settlement.</strong> Cross-border buyers pay in EUR or USD. For the publisher this introduces FX exposure on the cost side. Our cross-border quote applies the monthly average NBU reference rate transparently to every line item, so the publisher sees per-shipment cost in both UAH and the buyer's local currency.</p>
-  <p><strong>Publisher case patterns.</strong> Stary Lev regularly exports children's literature to Poland and Czechia. Vydavnytstvo 21 exports English-language and Ukrainian books to Canada. Smaller publishers releasing historical literature export to Germany and the USA. Cross-border is not for everyone — but for niche publishers with diaspora audiences, this channel represents a meaningful 5-15% of annual revenue.</p>
+<!-- FOUR PUBLISHER SEGMENTS -->
+<section class="ek-sec"><div class="ctr">
+  <div class="ek-label-section">CLIENT SEGMENTS</div>
+  <h2 class="ek-h2">Four publisher segments we serve</h2>
+  <div class="ek-segments">
+    <div class="ek-segment">
+      <div class="ek-segment-id">SELF-PUB</div>
+      <h3>Indie self-published authors</h3>
+      <p>Bloggers, subject-matter experts, children's illustrators printing 50-500 copies per title. Selling through Instagram, Telegram, own Shopify or Squarespace site, sometimes Yakaboo as external channel. No warehouse, no logistics team. Typical profile: 1-3 titles, 100-500 copies per print run, 100-300 orders per month, AOV $8-11.</p>
+    </div>
+    <div class="ek-segment">
+      <div class="ek-segment-id">SMB</div>
+      <h3>Small and mid-size publishers</h3>
+      <p>Independent publishers with 50-1,000 active titles, no internal infrastructure team. Often focused on niche segments: translations from rare languages, specialized literature, religious editions, children's literature. Switch to outsourced fulfillment after own warehouse stops scaling efficiently — typically around 500 orders/month. Typical profile: 100-1,500 active catalog titles, 1,000-5,000 orders/month, AOV $9-17.</p>
+    </div>
+    <div class="ek-segment">
+      <div class="ek-segment-id">B2B</div>
+      <h3>B2B corporate and educational orders</h3>
+      <p>Corporations purchasing 50-500 copies of single title for employees, clients, partners, educational programs. High AOV ($375-5,000 per order), low order count (5-30 per month), stable margins, effectively zero return rate. We handle with personalized assembly, branded packaging from corporate buyer, delivery to office addresses or multiple recipients. Typical profile: 1-10 titles, 5-30 orders/month, AOV $375-5,000.</p>
+    </div>
+    <div class="ek-segment">
+      <div class="ek-segment-id">CROSS</div>
+      <h3>Cross-border export to diaspora markets</h3>
+      <p>Publishers like Stary Lev, Vivat, Vydavnytstvo 21 export through us with CN23 customs documentation, NP International dispatch, local card-payment partners. Diaspora readership in Poland, Czechia, Germany, Canada, USA reads Ukrainian literature and orders directly from Ukraine. Typical profile: 50-500 cross-border parcels/month, AOV $25-80 in EUR or USD, primary destinations PL/DE/CZ/CA/US.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- OPERATIONAL FLOW -->
+<section class="ek-sec ek-sec-paper"><div class="ctr">
+  <div class="ek-label-section">OPERATIONAL FLOW</div>
+  <h2 class="ek-h2">Eight-step process from print run intake to delivery</h2>
+  <div class="ek-flow">
+    <div class="ek-flow-step"><div class="ek-flow-num">01</div><div><h3>Print run intake by ISBN</h3><p>You ship the print run to our warehouse in Shchaslyve (2,700 m²) or Bilohorodka (1,000 m²). Each title is scanned by ISBN barcode from the cover and bound to a specific shelf cell. Variance check against print-run record.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">02</div><div><h3>Shelf placement</h3><p>Books stored vertically on book-format shelves (35-40 cm height for most editions). Art books and gift editions go horizontally in stacks of 5-10. High-velocity titles get prime ground-floor shelves; long-tail titles go higher. Address-based system.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">03</div><div><h3>Storefront integration</h3><p>Orders from Shopify, WooCommerce, Magento, Horoshop, KeyCRM, SalesDrive, Prom.ua, Rozetka — flow into WMS automatically via API. Prebuilt connectors deploy in 2 hours. Inventory syncs at 800ms latency.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">04</div><div><h3>ISBN-verified order assembly</h3><p>WMS builds optimal pick path. Scanner guides picker to each shelf; operator verifies ISBN before pickup. 1-2 book order assembles in 30-45 seconds, 3-5 book in 60-90 seconds. Re-scan at pack station for 99.5% accuracy.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">05</div><div><h3>Damage-resistant packaging</h3><p>Bubble wrap around cover, then rigid book-format cardboard mailer (B5 standard, A4 oversize). Spine in middle of mailer to absorb impact. Gift editions get additional kraft paper layer and branded ribbon. Multi-book orders in branded box with paper void-fill.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">06</div><div><h3>Carrier handoff</h3><p>Four Nova Poshta pickups per day at 10:00, 12:00, 15:00, 17:00. Orders placed before 14:00 ship same-day; buyer in Kyiv receives SMS by evening. Cross-border via NP International with CN23 customs documentation. Ukrposhta for regional Ukrainian addresses outside NP network.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">07</div><div><h3>Returns processing</h3><p>Return arrives → unpacked → photographed → inspected for damage. Good-condition copies return to shelf inventory within 24 hours. Damaged copies go to publisher-decision zone. Fee $0.57 with photo documentation — critical for resolving customer disputes.</p></div></div>
+    <div class="ek-flow-step"><div class="ek-flow-num">08</div><div><h3>Reporting and analytics</h3><p>WMS dashboard shows real-time inventory by ISBN, movement history per copy, order volume by day/week/month, return rate per title, projected stock-out per print run. Month-end reconciliation auto-generates with all line items.</p></div></div>
+  </div>
+</div></section>
+
+<!-- WAR-RESILIENT OPERATIONS (UNIQUE TO EN) -->
+<section class="ek-sec ek-sec-dark"><div class="ctr">
+  <div class="ek-label-light">WAR-RESILIENT OPERATIONS</div>
+  <h2 class="ek-h2-light">Zero days down since February 2022 — the operational reality</h2>
+  <div class="ek-war-grid">
+    <div class="ek-war-block">
+      <h3>Physical hardening</h3>
+      <p>Reinforced roof structure. Ground-floor location (no upper-floor exposure). No glass-frontage on dispatch dock. Setback from main road and ring-road infrastructure. Site selection in 2018 anticipated risk of regional instability, though actual February 2022 escalation exceeded planning scenarios.</p>
+    </div>
+    <div class="ek-war-block">
+      <h3>Redundant power infrastructure</h3>
+      <p>Industrial diesel genset with 96-hour fuel reserve at full warehouse load. Solar backup powers WMS servers and critical conveyor lines independently. UPS battery reserves bridge transitions. Two fiber-optic ISP connections. Starlink as third channel for WMS sync if both fiber lines fail simultaneously.</p>
+    </div>
+    <div class="ek-war-block">
+      <h3>Disaster-recovery rerouting</h3>
+      <p>Written DR plan triggers parcel rerouting to partner warehouse in Lviv (Western Ukraine, ~530 km from Kyiv) within 6 hours of major incident. Inventory snapshots replicated daily to Lviv backup database. Lviv partner has standby capacity for 30% of MTP volume during emergencies.</p>
+    </div>
+    <div class="ek-war-block">
+      <h3>Insurance and SLA</h3>
+      <p>Cargo insurance covers up to €3 million per incident through Lloyds and a Ukrainian war-risk syndicate. SLA holds at 24-minute pick window and 48-hour dispatch in 99.5% of months — including the worst three months of 2024 when air-raid frequency peaked. Total operational pauses since February 2022: two events, each fewer than 8 hours, both with zero inventory loss.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- INTERNATIONAL ONBOARDING (UNIQUE TO EN) -->
+<section class="ek-sec ek-sec-paper"><div class="ctr">
+  <div class="ek-label-section">INTERNATIONAL ONBOARDING</div>
+  <h2 class="ek-h2">How we onboard international book publishers in 21 business days</h2>
+  <p style="font-size:17px;line-height:1.65;max-width:900px;margin-top:24px">For publishers based outside Ukraine, our 21-business-day onboarding sequence runs in parallel with your existing operations. You do not need to visit Ukraine, hire local staff, or open a Ukrainian legal entity.</p>
+  <p><strong>Days 1-3: Contract and ВЭД договор.</strong> We sign foreign-trade contract with your home jurisdiction entity (most common: Delaware C-corp, UK Ltd, German GmbH, Dutch BV, Polish Sp. z o.o., Czech s.r.o.). Books fall under HS code 4901-4905 with 0% Ukrainian import duty and 0% VAT for resale. EUR/USD invoicing with NBU monthly reference rate.</p>
+  <p><strong>Days 4-10: Inventory shipment.</strong> You arrange international freight to our Kyiv warehouse. For runs under 2,000 copies — DHL Freight or DPD recommended. For larger volumes — sea freight via Odesa port with rail to Kyiv. We provide receiving instructions, customs documentation prep, and tracking.</p>
+  <p><strong>Days 11-15: Customs clearance and warehouse intake.</strong> Print run clears Ukrainian customs (typically 2-3 business days for books). Each copy scanned by ISBN at intake, bound to shelf address. Variance reconciliation against your shipping manifest. Dashboard access provisioned with your unique credentials.</p>
+  <p><strong>Days 16-18: Storefront integration.</strong> Connectors deployed for your Shopify/WooCommerce/Magento storefront plus relevant Ukrainian marketplaces (Rozetka, Prom, Yakaboo) if targeting Ukrainian DTC buyers. Test orders verify accuracy of full pipeline from order webhook to ISBN pick to packaging to NP handoff.</p>
+  <p><strong>Days 19-21: Pilot dispatch and handover.</strong> Three to five test orders processed end-to-end. Quality verification by your team via tracking and unboxing photos. Final SLA documentation signed. Production go-live with first paid orders.</p>
+  <p>Throughout the 21 days, you operate from your existing office (San Francisco, London, Berlin, Warsaw, etc.). All communication via dashboard messaging, video calls, or English-language email/Telegram with your dedicated account manager.</p>
+</div></section>
+
+<!-- PRICING TABLE -->
+<section class="ek-sec ek-sec-dark"><div class="ctr">
+  <div class="ek-label-light">PUBLISHED RATES</div>
+  <h2 class="ek-h2-light">Book fulfillment pricing — no hidden surcharges</h2>
+  <p style="color:rgba(255,255,255,0.85);font-size:17px;max-width:900px;margin-top:24px">Transparent rate card with linear pricing. No peak season surcharge, fuel adjustment, or other industry-standard inventions for invisible cost inflation. The number on your quote equals the number on your invoice.</p>
+  <table class="ek-rates">
+    <thead><tr><th>SERVICE</th><th>TIER</th><th>RATE (USD)</th></tr></thead>
+    <tbody>
+      <tr><td>Per-shipment fee</td><td>200+ orders/day</td><td>from $0.41</td></tr>
+      <tr><td>Per-shipment fee</td><td>50-199 orders/day</td><td>from $0.50</td></tr>
+      <tr><td>Per-shipment fee</td><td>10-49 orders/day</td><td>from $0.59</td></tr>
+      <tr><td>Storage</td><td>per m³ per month</td><td>$15</td></tr>
+      <tr><td>Print run intake by ISBN</td><td>per unit</td><td>from $0.07</td></tr>
+      <tr><td>Returns processing with photo</td><td>per return</td><td>$0.57</td></tr>
+      <tr><td>Cross-border (NP International)</td><td>per parcel</td><td>by weight + destination</td></tr>
+      <tr class="highlight"><td>Monthly minimum</td><td>any volume tier</td><td>$114</td></tr>
+    </tbody>
+  </table>
 </div></section>
 
 <!-- FAQ -->
-<section class="sec"><div class="ctr">
-  <div class="badge badge-dark">FAQ</div>
-  <h2 class="sec-h2">Frequently asked questions about book fulfilment</h2>
-  <div class="bk-faq">
-    <details><summary>How much does book fulfilment cost at 30 orders per day?</summary><p>Approximately $320-410 per month. Calculation: shipping $0.50 × 900 orders = $450, but with low-AOV book volume discount drops to ~$0.36. Storage 1 m³ × $15 = $15. Exact figure delivered within one business day after the first 15-minute consultation.</p></details>
-    <details><summary>How do you track books — by ISBN or by internal SKU?</summary><p>Both simultaneously. ISBN is primary identifier bound to shelf cell. Publisher's internal SKU stored as alias. At intake we scan ISBN from cover, assign to fixed shelf address.</p></details>
-    <details><summary>Do you accept small print runs from self-published authors?</summary><p>Yes. Minimum print run is 20 copies per title. We work with self-published authors printing 50-500 copies. Separate pricing tier for low-volume operations, $114 monthly minimum.</p></details>
-    <details><summary>How do you package books to prevent corner damage?</summary><p>Bubble wrap around book, then rigid book-format cardboard mailer (B5 or A4). For gift editions — additional kraft paper layer. Multi-book orders go in branded box with paper void-fill.</p></details>
-    <details><summary>How do you prepare for September school season and Black Friday peaks?</summary><p>Four weeks before each peak we plan volume, replenish packaging stock, schedule additional shifts. Capacity up to 6,000 orders/day. December 2024 peak averaged 9,200 orders/day across client base.</p></details>
-    <details><summary>Do you handle cross-border shipping to Poland and Canada?</summary><p>Yes, via Nova Poshta International. We prepare CN23 customs forms. Transit: Poland 5-7 days, Canada 14-21 days. Pricing by weight and country.</p></details>
-    <details><summary>How do you process book returns?</summary><p>Unpack → photograph → inspect for damage. Good-condition copies return to shelf inventory within 24 hours. Damaged copies go to dedicated publisher-decision zone. Fee $0.57 with photo documentation.</p></details>
-    <details><summary>Do you integrate with Horoshop and KeyCRM?</summary><p>Yes, natively. Prebuilt connector deploys in 2 hours. Orders flow into WMS automatically; status returns to your store admin. Also supports WooCommerce, OpenCart, Shopify, Magento, Prom.ua API, Rozetka API.</p></details>
+<section class="ek-sec"><div class="ctr">
+  <div class="ek-label-section">FAQ</div>
+  <h2 class="ek-h2">Frequently asked questions</h2>
+  <div class="ek-faq">
+    <details><summary>How much does book fulfillment cost in Ukraine vs US 3PL?</summary><p>$0.41 per shipment from MTP (200+ orders/day) vs typical US 3PL $1.20-1.80. Storage $15/m³/month vs US $35-50. Net savings 60-65% on per-order economics. Difference rooted in Ukrainian labour cost ($850/month vs $4,200) and Class B rent (€4.50/m² vs $14).</p></details>
+    <details><summary>How does ISBN-based picking work at MTP?</summary><p>Each ISBN bound to specific shelf cell at intake. Scanner-guided picker is routed to cell, scans ISBN before pickup. Re-scan at pack station for verification. Pick accuracy 99.5% — fewer than 5 errors per 1,000 orders.</p></details>
+    <details><summary>Do you accept small print runs from indie self-published authors?</summary><p>Yes. Minimum 20 copies per title. Work with self-published authors printing 50-500 copies. Monthly minimum $114 (5,000 UAH equivalent).</p></details>
+    <details><summary>Can I ship Ukrainian books to USA, Canada, EU diaspora?</summary><p>Yes via Nova Poshta International. CN23 customs forms automated. Transit: Poland 5-7 days, Germany 7-10, Czechia 6-8, Canada 14-21, USA 14-25. Books carry 0% import duty in most destinations.</p></details>
+    <details><summary>How do you prepare for September school season and Christmas peaks?</summary><p>Four weeks before each peak we plan volume, replenish packaging, schedule additional shifts. Capacity 6,000 orders/day. December 2024 peak averaged 9,200 orders/day across client base.</p></details>
+    <details><summary>How do you handle book damage in transit and returns?</summary><p>Bubble wrap + B5/A4 cardboard mailer reduces damage rate from 3-5% to 0.4%. Returns photographed at intake, condition-graded A/B/C/D. Storage of grade-D returns free for 14 days while you decide disposition.</p></details>
+    <details><summary>Do you integrate with Shopify, WooCommerce, Magento?</summary><p>Yes natively. Prebuilt connectors deploy in 2 hours. Inventory syncs at 800ms latency. Also Horoshop (UA SaaS), KeyCRM, SalesDrive, Prom.ua, Rozetka, Kasta. Webhook/REST API/EDI/CSV for non-standard.</p></details>
+    <details><summary>What is war-resilient operations and zero days down since 2022?</summary><p>Kyiv warehouse operated continuously since Feb 2022 with two recorded business-day pauses, both fewer than 8 hours, zero inventory loss. Reinforced site, diesel genset 96-hr fuel reserve, Starlink backup, DR plan with Lviv partner warehouse, €3M Lloyds insurance.</p></details>
   </div>
 </div></section>
 
 <!-- SEO TEXT -->
-<section class="sec sec-alt"><div class="ctr">
-  <article class="seo-text">
-    <h2>Book fulfilment in Ukraine — why this is a distinct market</h2>
-    <p>The Ukrainian book market in 2026 is going through two simultaneous transformations. The first is the rise of self-publishing — bloggers, subject-matter experts, and children's illustrators printing their own books in runs of 100-500 copies and selling through Instagram, Telegram, and Yakaboo. The second is the strengthening of niche independent publishers filling segments previously dominated by major players: translations from rare languages, specialized literature, religious editions.</p>
-    <p>Both segments need a fulfilment partner because operating their own warehouse is not economically justified at the 100-500 orders per month volume. Outsourcing logistics to Yakaboo or KSD as external sales channels means giving up 30-40% of margin. Maintaining their own warehouse means paying at least $850 per month in rent plus staff plus WMS even when shipping only 200 orders. MTP closes this gap: we accept volume from 250+ orders per month (monthly minimum $114) and scale to 6,000 orders per day without the publisher hiring additional headcount.</p>
-    <p>Separately — the cross-border export segment. Ukrainian diaspora in Poland (~1.5 million), Czechia (~150,000), Germany (~1 million since 2022), Canada (~1.4 million), and the USA (~1 million) is an active reading audience. Publishers working with this audience directly typically derive 5-15% of annual revenue from cross-border channels. Streamlined logistics with CN23 documentation, NP International integration, and FX-aware billing makes this channel scalable without daily manual work per shipment.</p>
-    <p>MTP Group has served Ukrainian e-commerce brands since 2015. Portfolio includes 150+ active clients, 60,000+ shipments per month, zero days of downtime since February 2022. Total warehouse footprint is 3,700 m² split between Shchaslyve (2,700 m², near Boryspil airport for fast EU air-freight access) and Bilohorodka (1,000 m², secondary location for war-resilience redundancy). The book segment is part of a broad category portfolio (cosmetics, apparel, electronics, home goods) which lets us maintain competitive pricing even on low-margin book orders.</p>
-    <p>If you publish books, run a book retail e-commerce, or are a self-published author — fill out the form above. We deliver a custom quote within one business day, modeled to your actual order volume, average order value, and geographic distribution. <a href="/en/3pl-logistics/">See our full service catalog</a> or check <a href="/en/prices/">current pricing</a> or use our <a href="/en/calculator/">cost calculator</a> for a preliminary estimate.</p>
+<section class="ek-sec ek-sec-paper"><div class="ctr">
+  <div class="ek-label-section">MARKET CONTEXT</div>
+  <h2 class="ek-h2">Book fulfillment Ukraine — why this market exists for international publishers</h2>
+  <article class="ek-seo-article">
+    <p>Ukraine's book market sits at an unusual intersection of three structural conditions: (1) Eastern European labour and real estate cost economics that produce per-order fulfillment rates 60-65% below US 3PL baselines, (2) a developed e-commerce infrastructure (Yakaboo, Rozetka, Prom, Horoshop) with 60%+ of book retail moving through online channels, and (3) zero import duty on printed books across Ukraine, EU, Canada, USA, and most CIS destinations — making cross-border export operationally simple for publishers using Ukraine as a logistics hub.</p>
+    <p>For international book publishers, this creates three distinct opportunity vectors. The first is selling into the Ukrainian domestic market itself — particularly relevant for translations of English/German/Scandinavian fiction and non-fiction where Ukrainian publishers have catalog gaps. The second is using Ukraine as a low-cost fulfillment base for diaspora markets — Ukrainian readership in Poland (~1.5M), Germany (~1M post-2022), Canada (~1.4M), USA (~1M), Czechia (~150K) is an addressable B2C segment that prefers ordering directly from Ukrainian publishers over local importers. The third is corporate B2B orders — Ukrainian and CIS corporations purchasing 50-500 copies of single titles for employees, training programs, and corporate gifting — a high-AOV low-volume segment with stable margins.</p>
+    <p>MTP Group serves Ukrainian e-commerce brands since 2015. Portfolio includes 150+ active clients across cosmetics, apparel, electronics, home goods, and books verticals. Total warehouse footprint 3,700 m² split between Shchaslyve (2,700 m², near Boryspil airport for fast EU air-freight access) and Bilohorodka (1,000 m², secondary location for war-resilience redundancy). 60,000+ shipments per month through ISBN-aware WMS. Zero days of downtime since February 2022. The book segment operates within this broader category portfolio, which lets us maintain competitive per-order rates even on low-AOV book orders through fixed-cost amortization across diverse client mix.</p>
+    <p>If you publish books, run an indie press, manage a self-published catalog, or operate a book retail e-commerce — fill out the form above. We deliver a custom quote within one business day, modeled to your actual order volume, average order value, geographic distribution, and integration requirements. Publisher fulfillment Ukraine through MTP covers the full operational chain from print run intake to international diaspora export.</p>
+    <p>Our books warehouse Ukraine setup combines ISBN-based 3PL operational discipline with cost economics that international publishers cannot match domestically. Ukrainian literature export to diaspora markets (Poland, Czechia, Germany, Canada, USA) runs through our Nova Poshta International channel with CN23 customs forms automated per shipment. Books warehouse Ukraine pricing remains competitive even for low-AOV book orders because of fixed-cost amortization across our broader category portfolio (cosmetics, apparel, electronics, home goods). Publisher fulfillment Ukraine via ISBN-based 3PL is operationally equivalent to ShipBob or ShipMonk in feature set — the difference is per-order economics 60-65% below US baselines, not quality compromise. Ukrainian literature export through our facility serves both Ukrainian-language and Russian-language publishers with diaspora aspirations.</p>
+    <p>Adjacent resources: <a href="/en/3pl-logistics/">complete 3PL service catalog</a>, <a href="/en/prices/">current pricing across all categories</a>, <a href="/en/calculator/">cost calculator for preliminary estimates</a>, <a href="/en/fulfilment-for-online-store/">general e-commerce fulfillment</a> if your catalog includes non-book SKUs.</p>
   </article>
 </div></section>
 
 <style>
-.bk-hero{padding:80px 0 60px;background:linear-gradient(135deg,#fff 0%,#f9f7f5 100%);border-bottom:1px solid #eee}
-.bk-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center}
-.bk-hero-left h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1;font-weight:400;margin:24px 0 24px;color:#000}
-.bk-hero-sub{font-size:18px;line-height:1.6;color:#444;max-width:580px}
-.bk-form-card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.08)}
-.bk-form-title{font-weight:600;font-size:18px;margin-bottom:16px}
-.bk-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;padding-top:40px;border-top:1px solid #ddd}
-.bk-stat-val{font-family:'DM Serif Display',serif;font-size:36px;color:#e63329;font-weight:400}
-.bk-stat-label{font-size:13px;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
-.sec{padding:80px 0}
-.sec-alt{background:#f9f7f5}
-.sec-h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);font-weight:400;margin:24px 0 0;line-height:1.15}
-.bk-prob-grid,.bk-uc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
-.bk-prob-card,.bk-uc-card{background:#fff;border:1px solid #eee;border-radius:8px;padding:32px}
-.bk-prob-card h3,.bk-uc-card h3{font-size:20px;margin:0 0 12px;color:#000}
-.bk-prob-card p,.bk-uc-card p{font-size:15px;line-height:1.6;color:#444;margin:8px 0}
-.bk-steps{margin-top:48px}
-.bk-step{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:24px 0;border-top:1px solid #eee}
-.bk-step:first-child{border-top:none}
-.bk-step-num{font-family:'DM Serif Display',serif;font-size:48px;color:#e63329;line-height:1}
-.bk-step-body h3{margin:0 0 8px;font-size:20px}
-.bk-step-body p{font-size:15px;line-height:1.6;color:#444;margin:0}
-.bk-pricing{margin-top:32px}
-.bk-price-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #ddd}
-.bk-price-table th,.bk-price-table td{padding:14px 20px;text-align:left;border-bottom:1px solid #eee;font-size:15px}
-.bk-price-table th{background:#000;color:#fff;font-weight:600}
-.bk-price-table tr.highlight td{background:#fff5f5;font-weight:600}
-.bk-faq{margin-top:32px;max-width:900px}
-.bk-faq details{border-bottom:1px solid #ddd;padding:16px 0}
-.bk-faq summary{font-weight:600;cursor:pointer;font-size:17px;color:#000}
-.bk-faq summary:hover{color:#e63329}
-.bk-faq p{margin:12px 0 0;font-size:15px;line-height:1.6;color:#444}
-.seo-text{max-width:900px}
-.seo-text h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);font-weight:400;margin-bottom:24px}
-.seo-text p{font-size:16px;line-height:1.7;color:#333;margin:16px 0}
-.seo-text a{color:#e63329;text-decoration:underline}
-.badge{display:inline-block;padding:8px 16px;background:#fff;border:1px solid #ddd;border-radius:50px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#666;font-weight:600}
-.badge-dark{background:#000;color:#fff;border-color:#000}
-.ctr{max-width:1200px;margin:0 auto;padding:0 24px}
+.ek-hero{background:#fff;border-bottom:1px solid #000}
+.ek-hero-grid{display:grid;grid-template-columns:1.5fr 1fr;min-height:600px}
+.ek-hero-left{padding:80px 0;background:#fff;display:flex;align-items:center}
+.ek-hero-right{background:#0a0a0a url('/images/fulfilment-knyzhok-hero.jpg') center/cover;border-left:1px solid #000;min-height:300px}
+.ek-label{display:inline-block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#e63329;margin-bottom:32px;border-bottom:2px solid #e63329;padding-bottom:6px}
+.ek-label-light{display:inline-block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#e63329;margin-bottom:24px;border-bottom:2px solid #e63329;padding-bottom:6px}
+.ek-label-section{display:inline-block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#000;margin-bottom:24px;border-bottom:1px solid #000;padding-bottom:6px}
+.ek-hero h1{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(32px,3.5vw,52px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;color:#000;margin:0 0 24px}
+.ek-sub{font-family:'Inter',sans-serif;font-size:17px;line-height:1.55;color:#281715;max-width:760px;margin:0 0 40px}
+.ek-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:40px 0;background:#000;color:#fff}
+.ek-stat{padding:24px 20px;border-right:1px solid #333}
+.ek-stat:last-child{border-right:none}
+.ek-stat-num{font-family:'Inter Display','Inter',sans-serif;font-size:36px;font-weight:800;letter-spacing:-0.04em;color:#e63329;line-height:1}
+.ek-stat-lbl{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-top:8px}
+.ek-cta-row{margin-top:40px}
+.ek-form-card{background:#fff;border:1px solid #000;padding:32px;max-width:480px}
+.ek-form-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#000;margin-bottom:16px}
+.ek-cost{padding:80px 0;background:#0a0a0a;color:#fff;border-top:1px solid #000;border-bottom:1px solid #000}
+.ek-h2-light{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.02em;margin:0 0 24px;max-width:900px}
+.ek-cost-deck{font-family:'Inter',sans-serif;font-size:17px;line-height:1.6;color:rgba(255,255,255,0.85);max-width:900px;margin-bottom:48px}
+.ek-cost-table-wrap{overflow-x:auto;margin:0 -32px;padding:0 32px}
+.ek-cost-table{width:100%;border-collapse:collapse;background:#fff;color:#000;min-width:700px}
+.ek-cost-table th,.ek-cost-table td{padding:16px 20px;text-align:left;border:1px solid #000;font-family:'Inter',sans-serif;font-size:14px}
+.ek-cost-table th{background:#000;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px}
+.ek-cost-table th.ek-col-ua{background:#e63329}
+.ek-cost-table td.ek-col-ua-cell{background:#fff5f4;font-weight:700;color:#e63329}
+.ek-cost-foot{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin-top:24px;font-style:italic;max-width:900px}
+.ek-sec{padding:80px 0;background:#fff;color:#000}
+.ek-sec-paper{background:#fff8f7}
+.ek-sec-dark{background:#0a0a0a;color:#fff;border-top:1px solid #000;border-bottom:1px solid #000}
+.ek-h2{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;color:#000;line-height:1.1;letter-spacing:-0.02em;margin:0 0 24px;max-width:900px}
+.ek-reasons{margin-top:48px}
+.ek-reason{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:32px 0;border-top:1px solid #000;align-items:start}
+.ek-reason:first-child{border-top:none}
+.ek-reason-num{font-family:'Inter Display','Inter',sans-serif;font-size:48px;font-weight:800;color:#e63329;letter-spacing:-0.04em;line-height:1}
+.ek-reason-body h3{font-family:'Inter Display','Inter',sans-serif;font-size:22px;font-weight:800;color:#000;margin:0 0 12px}
+.ek-reason-body p{font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:#281715;margin:0}
+.ek-grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border:1px solid #000}
+.ek-card{padding:32px;border:1px solid #000;margin:-1px}
+.ek-card-tag{display:inline-block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#fff;background:#e63329;padding:4px 10px;margin-bottom:16px}
+.ek-card h3{font-family:'Inter Display','Inter',sans-serif;font-size:18px;font-weight:800;color:#000;margin:0 0 12px;line-height:1.3}
+.ek-card p{font-family:'Inter',sans-serif;font-size:14px;line-height:1.55;color:#281715;margin:0}
+.ek-segments{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:48px;border:1px solid #000}
+.ek-segment{padding:40px;border:1px solid #000;margin:-1px}
+.ek-segment-id{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#e63329;margin-bottom:16px}
+.ek-segment h3{font-family:'Inter Display','Inter',sans-serif;font-size:22px;font-weight:800;color:#000;margin:0 0 16px}
+.ek-segment p{font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;color:#281715;margin:0}
+.ek-flow{margin-top:48px}
+.ek-flow-step{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:24px 0;border-top:1px solid #000;align-items:start}
+.ek-flow-step:first-child{border-top:none}
+.ek-flow-num{font-family:'Inter Display','Inter',sans-serif;font-size:36px;font-weight:800;color:#e63329;letter-spacing:-0.04em;line-height:1}
+.ek-flow-step h3{font-family:'Inter Display','Inter',sans-serif;font-size:18px;font-weight:800;color:#000;margin:0 0 8px}
+.ek-flow-step p{font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:#281715;margin:0}
+.ek-war-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:48px;border:1px solid #fff}
+.ek-war-block{padding:32px;border:1px solid #fff;margin:-1px}
+.ek-war-block h3{font-family:'Inter Display','Inter',sans-serif;font-size:20px;font-weight:800;color:#fff;margin:0 0 12px}
+.ek-war-block p{font-family:'Inter',sans-serif;font-size:14px;line-height:1.55;color:rgba(255,255,255,0.85);margin:0}
+.ek-rates{width:100%;border-collapse:collapse;background:#fff;color:#000;margin-top:32px;border:1px solid #fff}
+.ek-rates th,.ek-rates td{padding:14px 20px;text-align:left;border:1px solid #000;font-family:'Inter',sans-serif;font-size:14px}
+.ek-rates th{background:#e63329;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px}
+.ek-rates tr.highlight td{background:#000;color:#fff;font-weight:700}
+.ek-faq{margin-top:32px;max-width:900px}
+.ek-faq details{border-bottom:1px solid #000;padding:20px 0}
+.ek-faq summary{font-family:'Inter Display','Inter',sans-serif;font-weight:800;cursor:pointer;font-size:17px;color:#000}
+.ek-faq summary:hover{color:#e63329}
+.ek-faq p{font-family:'Inter',sans-serif;margin:12px 0 0;font-size:15px;line-height:1.6;color:#281715}
+.ek-seo-article{max-width:900px;margin-top:32px}
+.ek-seo-article p{font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;color:#281715;margin:16px 0}
+.ek-seo-article a{color:#e63329;text-decoration:underline;font-weight:700}
+.ek-sec p{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:#281715;margin:16px 0;max-width:900px}
+.ek-sec-paper p{color:#281715}
+.ek-sec p strong{font-weight:700;color:#000}
+.ctr{max-width:1200px;margin:0 auto;padding:0 32px}
 @media(max-width:768px){
-  .bk-hero-grid{grid-template-columns:1fr}
-  .bk-stats{grid-template-columns:repeat(2,1fr)}
-  .bk-prob-grid,.bk-uc-grid{grid-template-columns:1fr}
-  .bk-step{grid-template-columns:1fr;gap:8px}
-  .bk-step-num{font-size:36px}
+  .ek-hero-grid{grid-template-columns:1fr}
+  .ek-hero-right{display:none}
+  .ek-stats-bar{grid-template-columns:repeat(2,1fr)}
+  .ek-stat{border-bottom:1px solid #333}
+  .ek-grid-6{grid-template-columns:1fr}
+  .ek-segments{grid-template-columns:1fr}
+  .ek-war-grid{grid-template-columns:1fr}
+  .ek-reason,.ek-flow-step{grid-template-columns:1fr;gap:8px}
+  .ek-reason-num{font-size:32px}
+  .ek-flow-num{font-size:24px}
+  .ek-cost-table th,.ek-cost-table td{padding:10px 12px;font-size:12px}
+  .ek-rates th,.ek-rates td{padding:10px 12px;font-size:12px}
 }
 </style>
 
