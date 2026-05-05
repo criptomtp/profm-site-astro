@@ -413,6 +413,63 @@
 /en/blog/tpost/:slug/ /en/blog/ 301
 /en/blog/tpost/:slug /en/blog/ 301
 
+# --- Phantom-URL redirects (GSC 404 audit 2026-05-05) ---
+# Bare-root blog slugs (Tilda historic + Google-guessed variants)
+/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/scho-take-sla /ua/blog/scho-take-sla/ 301
+/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+/scho-take-artikul /ua/blog/scho-take-artikul/ 301
+/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/chto-takoe-artikul /blog/chto-takoe-artikul/ 301
+/yak-vybrati-fulfilment/ /ua/blog/yak-vybrati-fulfilment/ 301
+/yak-vybrati-fulfilment /ua/blog/yak-vybrati-fulfilment/ 301
+/yak-obroblaty-povernennya/ /ua/blog/ 301
+/povertannya-tovariv-u-fulfilmenti/ /ua/blog/ 301
+/quality-control-accuracy/ /ua/skladski-poslugy/ 301
+/inventory-management/ /ua/skladski-poslugy/ 301
+/common-fulfillment-mistakes/ /ua/blog/ 301
+/fefo-lifo-fifo/ /ua/skladski-poslugy/ 301
+# Bare-root vertical/service slugs (no /ua/ prefix)
+/scho-take-3pl/ /ua/3pl-logistyka/ 301
+/fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
+/fulfilment-dlya-kosmetiki/ /ua/fulfilment-dlya-kosmetyky/ 301
+/fulfilment-dlya-malogo-biznesa/ /ua/fulfilment-dlya-maloho-biznesu/ 301
+/fulfillment-dlya-gurtovyh-zakupivel/ /ua/fulfilment-ukraina/ 301
+/fulfillment-dlya-abonentskykh-korobiv/ /ua/fulfilment-ukraina/ 301
+/fulfillment-dlya-harchovyh-tovariv/ /ua/fulfilment-ukraina/ 301
+# Phantom vertical pages Google guessed (we don't have these — redirect to closest)
+/fulfillment-for-clothing-shoes/ /fulfilment-dlya-odyahu/ 301
+/fulfillment-for-musical-instruments/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-toys/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-furniture/ /ua/fulfilment-vazhkykh-tovariv/ 301
+/fulfillment-for-pet-products/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-automotive-parts/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-office-supplies/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-home-improvement/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-food-beverages/ /ua/fulfilment-ukraina/ 301
+# Mixed-prefix /en/ua/services and /ru/ua/services (Google constructed)
+/en/ua/services/ /en/services/ 301
+/ru/ua/services/ /ru/services/ 301
+/en/ua/about/ /en/about/ 301
+/ru/ua/about/ /ru/about/ 301
+/en/ua/faq/ /en/faq/ 301
+/ru/ua/faq/ /ru/about/ 301
+# Phantom RU /ru/fullfillment-for-* not yet captured
+/ru/fulfillment-for-musical-instruments/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-toys/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-electronics/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-subscription-boxes/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-food-beverages/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-home-improvement/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-wholesale-bulk/ /ru/fulfilment-ukraina/ 301
+/ru/fulfilment-dlya-internet-magazina/ /ru/fulfilment-dlya-internet-magazynu/ 301
+# Old Tilda token slugs at root that Google still finds
+/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/ /blog/fulfillment-vs-own-warehouse-2025/ 301
+/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/ /ua/blog/product-business-ukraine-guide/ 301
+/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/ 301
+/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/ /ua/blog/product-business-ukraine-guide/ 301
+/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/ /ua/blog/ 301
+
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301
 /404  /  301
