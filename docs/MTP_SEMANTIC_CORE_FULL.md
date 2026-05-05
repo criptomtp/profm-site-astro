@@ -137,6 +137,7 @@
 |---|------|---------------|-------------------|-----------|
 | 72 | /ua/fulfilment-kyiv/ | фулфілмент Київ | 3PL Київ, склад Київ, логістика Київ | ✅ |
 | 73 | /ua/3pl-boryspil/ | 3PL Бориспіль | фулфілмент Бориспіль, склад біля аеропорту | 🟠 |
+| 73a | /fulfilment-dnipro/ | фулфілмент Дніпро | UA + RU + EN deployed 2026-05-05. First GEO-modifier stealth landing. NOT in Header/Footer. Hub-spoke from /ua/fulfilment-ukraina/. Framing: "Kyiv hub for Dnipro businesses" not "we are in Dnipro". 9/9 schemas, 2500+ words. | ✅ |
 | 74 | /ua/fulfilment-bilohorodka/ | фулфілмент Білогородка | склад Білогородка, логістика Київська область | 🟡 |
 | 75 | /ua/fulfilment-kyivska-oblast/ | фулфілмент Київська область | склад під Києвом, логістика передмістя | 🟡 |
 | 76 | /ua/fulfilment-ukraina/ | фулфілмент Україна | 3PL оператор Україна, фулфілмент компанії України | ✅ |

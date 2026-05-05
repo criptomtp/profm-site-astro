@@ -1,0 +1,342 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-05","name":"Fulfillment for Dnipro Ukraine — Kyiv hub serving Eastern Ukraine","description":"International brands shipping to Eastern Ukraine use our Kyiv warehouse hub for Dnipropetrovsk Oblast coverage (3M population, 4th largest Ukrainian e-commerce market). 1-2 day transit Kyiv → Dnipro via Nova Poshta. We do NOT operate a Dnipro warehouse — Kyiv hub serves Dnipro better than a local Dnipro warehouse would for cross-Ukraine distribution.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"LLC \\"MTP Group Fulfillment\\"","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"City","name":"Dnipro"},{"@type":"AdministrativeArea","name":"Dnipropetrovsk Oblast"},{"@type":"City","name":"Kryvyi Rih"},{"@type":"City","name":"Kamianske"},{"@type":"City","name":"Nikopol"}],"serviceType":"Fulfillment Ukraine — Eastern Ukraine coverage from Kyiv hub","audience":{"@type":"BusinessAudience","name":"International e-commerce brands shipping to Eastern Ukraine, B2B distributors targeting Dnipropetrovsk industrial market, EU/US sellers using Ukraine as fulfillment base for CIS markets"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.41","description":"$0.41 per order at 200+ daily volume. Equivalent 18 UAH locally. Kyiv hub serves Dnipro region without need for local Dnipro warehouse."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why a Kyiv warehouse instead of a Dnipro warehouse for Eastern Ukraine?","acceptedAnswer":{"@type":"Answer","text":"For brands selling across all of Ukraine, Kyiv is the optimal hub even when targeting Eastern Ukraine. 70-80% of customers ordering through Dnipro-region merchants are located outside Dnipro — Kyiv warehouse is geographically closer to that majority via Nova Poshta logistics network. A local Dnipro warehouse would only be faster for the 20-30% of customers in Dnipro itself. Kyiv hub also offers war-resilience (0 days down since Feb 2022, 3 generators + Starlink), proximity to Rozetka/Prom/Kasta marketplace logistics centers, and direct access to Nova Poshta International exit points for cross-border parcels."}},{"@type":"Question","name":"How long does delivery take from Kyiv warehouse to Dnipro Ukraine?","acceptedAnswer":{"@type":"Answer","text":"1-2 business days standard via Nova Poshta. Full timeline: order placed by 14:00 → picked at our Kyiv warehouse in 47 seconds → final pickup 17:00 → overnight at Poltava sorting center → arrives Dnipro NP branch 8 AM next day → customer collects 10 AM. Total cycle from payment to delivery = 24 hours. Cost per parcel via NP: $1.50-2.50 USD depending on weight and tier."}},{"@type":"Question","name":"What is Eastern Ukraine market like for international e-commerce?","acceptedAnswer":{"@type":"Answer","text":"Dnipropetrovsk Oblast = 3.0M population, 4th largest Ukrainian e-commerce region by GMV. Major cities: Dnipro (1.0M), Kryvyi Rih (640K), Kamianske (240K). Median income $720/month — above national average. Strong B2B distribution market — automotive parts, industrial equipment, cosmetics distribution. 24% of online buyers prefer Nova Poshta express delivery (vs Ukrposhta or local couriers). Region serves as e-commerce gateway to other industrial Ukrainian cities."}},{"@type":"Question","name":"Do you have a physical warehouse in Dnipro?","acceptedAnswer":{"@type":"Answer","text":"No. We operate exclusively from our Kyiv-area facilities (Shchaslyve 2,700 m² + Bilohorodka 1,000 m²). We do not pretend to have a Dnipro warehouse. Our position: a single Kyiv hub serves Dnipro region merchants better than a local Dnipro warehouse would for cross-Ukraine distribution. Kyiv hub is closer to most Ukrainian customers, closer to marketplace logistics centers, and structurally war-resilient."}},{"@type":"Question","name":"How does war affect Kyiv vs Dnipro fulfillment reliability?","acceptedAnswer":{"@type":"Answer","text":"Kyiv has been operationally stable since February 2022 with 0 days of fulfillment downtime. Our Kyiv warehouses run on backup generators, dual fiber + Starlink internet, 7-day fuel reserves. Dnipro is geographically closer to risk lines and has experienced more frequent infrastructure disruptions. For international brands serving Ukrainian customers, a Kyiv-based hub offers materially lower operational risk than a Dnipro-based one. War-resilience is a structural differentiator — Western 3PL providers cannot offer this proven track record."}},{"@type":"Question","name":"Which marketplaces and platforms integrate with Kyiv hub for Dnipro region?","acceptedAnswer":{"@type":"Answer","text":"All major Ukrainian e-commerce platforms: Rozetka Marketplace, Prom.ua, Kasta, Allo, Horoshop. Plus international: Shopify, WooCommerce, Etsy, Amazon Seller Central via REST API. Geographic location of seller doesn't matter to marketplace — what matters is warehouse location for fulfillment SLA. Our Kyiv hub sits within Rozetka Logistics and Prom Delivery sorting routes — escalation and issue resolution is faster than from a peripheral Dnipro location."}},{"@type":"Question","name":"What is the pricing model for Eastern Ukraine fulfillment?","acceptedAnswer":{"@type":"Answer","text":"Same pricing as our standard Ukraine fulfillment: $0.41 per order at 200+ daily volume (18 UAH locally), $0.50-0.59 at 30-200 daily, plus storage and per-shipment Nova Poshta carrier rates. Minimum monthly fee $120 (5,000 UAH) for first 3 months. No premium for Eastern Ukraine destinations — standard NP rates apply. Returns from Dnipro processed at 50% of outbound rate."}},{"@type":"Question","name":"How fast can we onboard for Eastern Ukraine fulfillment?","acceptedAnswer":{"@type":"Answer","text":"3-5 business days from contract signature for catalogs under 1,000 SKU. Inbound inventory ships to our Kyiv warehouse via standard freight forwarders or Nova Poshta cargo. Once received and slotted in WMS, API integration with your platform takes 2 hours for major systems (Shopify, Rozetka, Horoshop). End-to-end test order before go-live."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Fulfillment Ukraine","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-ukraine/"},{"@type":"ListItem","position":3,"name":"Fulfillment Dnipro","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-dnipro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Kyiv hub serving Dnipro region","url":"https://www.fulfillmentmtp.com.ua/en/fulfillment-dnipro/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$0.41-$0.59 / order","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"Promyslova street","addressLocality":"Shchaslyve, Boryspil district","addressRegion":"Kyiv region","postalCode":"08322","addressCountry":"UA","description":"2,700 m² primary warehouse"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv region","postalCode":"08140","addressCountry":"UA","description":"1,000 m² secondary site"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"City","name":"Dnipro"},{"@type":"AdministrativeArea","name":"Dnipropetrovsk Oblast"}]}</script>`;
+---
+<Base
+  title="Fulfillment Dnipro Ukraine — Kyiv Hub for Eastern Ukraine 3PL"
+  description="International brands ship to Eastern Ukraine via our Kyiv warehouse hub. Dnipropetrovsk Oblast 3M population, 1-2 day transit, $0.41/order. No Dnipro warehouse — Kyiv hub serves the region better."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-dnipro/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-dnipro-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dnipro/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dnipro/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-dnipro/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dnipro/">
+</Fragment>
+
+<!-- TOP RED BAND -->
+<div class="dn-band">FULFILLMENT · DNIPRO REGION · UA · $0.41/ORDER · 1-2 DAY TRANSIT</div>
+
+<!-- HERO — Industrial split with regional map -->
+<section class="dn-hero">
+  <div class="ctr">
+    <div class="dn-hero-grid">
+      <div class="dn-hero-text">
+        <div class="dn-chip">FULFILLMENT · DNIPRO REGION · UA</div>
+        <h1>Eastern Ukraine fulfillment from Kyiv hub — Dnipro region 3PL coverage</h1>
+        <p class="dn-hero-sub">3 million people in Dnipropetrovsk Oblast — 4th largest Ukrainian e-commerce market by GMV. We serve Dnipro region from our Kyiv warehouses (we do NOT operate a local Dnipro facility). Kyiv hub is geographically closer to most Ukrainian customers via Nova Poshta network, war-resilient (0 days down since Feb 2022), and on the same logistics routes as Rozetka, Prom, Kasta sorting centers.</p>
+        <a href="#dn-cta" class="dn-cta-btn">Get pricing for Ukraine 3PL →</a>
+      </div>
+      <figure class="dn-hero-img">
+        <div class="dn-map-vis">
+          <div class="dn-map-pin dn-map-pin-kyiv"><span>KYIV<br>HUB</span></div>
+          <div class="dn-map-line"></div>
+          <div class="dn-map-pin dn-map-pin-dnipro"><span>DNIPRO<br>REGION</span></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- DARK STATS BAR -->
+<section class="dn-statsbar">
+  <div class="ctr">
+    <div class="dn-sb-grid">
+      <div class="dn-sb-cell"><div class="dn-sb-num">3M</div><div class="dn-sb-lbl">DNIPRO REGION POPULATION</div></div>
+      <div class="dn-sb-cell"><div class="dn-sb-num">1-2 days</div><div class="dn-sb-lbl">KYIV → DNIPRO TRANSIT</div></div>
+      <div class="dn-sb-cell"><div class="dn-sb-num">$0.41</div><div class="dn-sb-lbl">PER ORDER COST</div></div>
+      <div class="dn-sb-cell"><div class="dn-sb-num">0 days</div><div class="dn-sb-lbl">DOWN SINCE FEB 2022</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: Eastern Ukraine industrial profile -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">EASTERN UKRAINE INDUSTRIAL PROFILE</div>
+  <h2 class="dn-h2">Why Dnipro region matters for international e-commerce serving Ukraine</h2>
+  <p class="dn-lede">If you're an international brand evaluating Ukrainian market entry, Dnipropetrovsk Oblast is one of three regions you must serve well — alongside Kyiv and Lviv regions. It's industrial heartland with above-average median income and strong B2B distribution capacity. Below — concrete data points.</p>
+  <div class="dn-profile-grid">
+    <div class="dn-profile-card">
+      <h3>Demographics &amp; income</h3>
+      <ul>
+        <li><strong>Population:</strong> 3.0M (Dnipropetrovsk Oblast)</li>
+        <li><strong>Major cities:</strong> Dnipro 1.0M, Kryvyi Rih 640K, Kamianske 240K, Nikopol 110K, Pavlohrad 105K</li>
+        <li><strong>Median income:</strong> $720/month (above Ukrainian national average)</li>
+        <li><strong>Urbanization:</strong> 84% urban, 16% rural — high concentration around Dnipro and Kryvyi Rih</li>
+      </ul>
+    </div>
+    <div class="dn-profile-card">
+      <h3>E-commerce profile</h3>
+      <ul>
+        <li><strong>Market rank:</strong> 4th largest UA e-commerce region by GMV (after Kyiv, Lviv, Odesa)</li>
+        <li><strong>Carrier preference:</strong> 24% Nova Poshta express, 31% NP standard, 18% Ukrposhta, rest local courier</li>
+        <li><strong>B2B distribution hub:</strong> automotive parts, industrial equipment, cosmetics</li>
+        <li><strong>Marketplace usage:</strong> Rozetka 42%, Prom 38%, Kasta 12% (similar to national)</li>
+      </ul>
+    </div>
+    <div class="dn-profile-card">
+      <h3>Logistics coverage</h3>
+      <ul>
+        <li><strong>Nova Poshta:</strong> 120+ branches in Dnipro city, 250+ self-service lockers across region</li>
+        <li><strong>Same-day pickup:</strong> at our Kyiv warehouse → next-day Dnipro delivery (NP express)</li>
+        <li><strong>Direct courier:</strong> NP courier addresses in Dnipro city +1 day from branch delivery</li>
+        <li><strong>Returns:</strong> any NP branch in region → back to Kyiv warehouse 1-2 days</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- WHY KYIV BEATS LOCAL DNIPRO WAREHOUSE -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">KYIV HUB ARGUMENT</div>
+  <h2 class="dn-h2">Why a single Kyiv hub serves Dnipro region better than a local Dnipro warehouse</h2>
+  <div class="dn-prob-grid">
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">70-80%</div>
+      <h3>Most customers are not in Dnipro</h3>
+      <p>For brands selling across Ukraine, only 20-30% of buyers from Dnipro-region merchants live in Dnipro itself. The 70-80% majority is scattered across Kyiv, Lviv, Odesa, and smaller cities. Kyiv hub is geographically closer to that majority via Nova Poshta network. A local Dnipro warehouse would only be faster for the local 20-30% — the rest would slow down.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">MARKETS</div>
+      <h3>Marketplace logistics centers are in Kyiv</h3>
+      <p>Rozetka Marketplace, Prom.ua, Kasta head offices and main sorting centers are in Kyiv. Our Kyiv warehouse sits on the same logistics routes — escalations and issue resolution happen faster than from a peripheral Dnipro location. For international sellers using these marketplaces, Kyiv warehouse is the natural fulfillment node.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">RISK</div>
+      <h3>War-resilience favors Kyiv geographically</h3>
+      <p>Kyiv has been operationally stable since February 2022 with 0 days of MTP fulfillment downtime. We run 3 backup generators, dual fiber + Starlink internet, 7-day fuel reserves. Dnipro is closer to risk lines and has experienced more frequent infrastructure disruptions. For international brands, Kyiv hub offers structurally lower operational risk than a Dnipro hub would.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">COST</div>
+      <h3>Single hub eliminates fixed-cost duplication</h3>
+      <p>Operating two warehouses (Kyiv + Dnipro) for Ukrainian e-commerce means double rent, double staff, double WMS overhead. Single Kyiv hub serves all of Ukraine via Nova Poshta with 1-2 day transit to any region. Per-order cost stays at $0.41 instead of fragmenting inventory across regions.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">EXPORT</div>
+      <h3>Cross-border exits are in Kyiv area</h3>
+      <p>Nova Poshta International, Meest, and DHL hub locations cluster around Kyiv-Boryspil airport and Kyiv ground transport hubs. For brands selling to EU diaspora or international markets, Kyiv warehouse is closer to exit points than Dnipro. Cross-border parcels save 1-2 days transit when sent from Kyiv vs Dnipro.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">SCALE</div>
+      <h3>Single hub scales 30→6000 orders/day</h3>
+      <p>Our Kyiv facility handles 60,000 shipments per month with capacity to grow. Same per-order tariff applies whether you ship 30 or 6,000 daily — no fixed-cost step changes. Dnipro-region merchants joining MTP plug into the same operational scale as Kyiv-based merchants. No premium for non-Kyiv origin.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- COVERAGE -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">REGIONAL COVERAGE</div>
+  <h2 class="dn-h2">Dnipropetrovsk Oblast — every city on one Kyiv-hub delivery schedule</h2>
+  <p class="dn-lede">Standard transit times from our Kyiv warehouse to Nova Poshta branches across Dnipro region. Express tier shown — economy adds 1 day, courier-to-address adds 1 day from branch.</p>
+  <div class="dn-cov-grid">
+    <div class="dn-cov-cell"><strong>Dnipro (1M)</strong><span>1-2 days · 120+ branches · 250+ lockers</span></div>
+    <div class="dn-cov-cell"><strong>Kryvyi Rih (640K)</strong><span>2-3 days · 60+ branches · 80+ lockers</span></div>
+    <div class="dn-cov-cell"><strong>Kamianske (240K)</strong><span>1-2 days · 25+ branches · via Dnipro</span></div>
+    <div class="dn-cov-cell"><strong>Nikopol (110K)</strong><span>2-3 days · 18+ branches</span></div>
+    <div class="dn-cov-cell"><strong>Pavlohrad (105K)</strong><span>2 days · 15+ branches</span></div>
+    <div class="dn-cov-cell"><strong>Novomoskovsk (70K)</strong><span>1-2 days · 12+ branches</span></div>
+    <div class="dn-cov-cell"><strong>Rural settlements</strong><span>2-3 days · village NP branches</span></div>
+    <div class="dn-cov-cell"><strong>Door-to-door courier</strong><span>Dnipro city only · +1 day from branch</span></div>
+  </div>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">INTEGRATIONS</div>
+  <h2 class="dn-h2">Same API for international brands shipping to Dnipro as for any Ukraine destination</h2>
+  <div class="dn-int-grid">
+    <div class="dn-int-cell"><strong>Shopify</strong><span>Native fulfillment app, two-way sync, 2-hour activation.</span></div>
+    <div class="dn-int-cell"><strong>WooCommerce</strong><span>Plugin with order push and inventory sync.</span></div>
+    <div class="dn-int-cell"><strong>Etsy</strong><span>REST API integration. Seller dashboard sync.</span></div>
+    <div class="dn-int-cell"><strong>Amazon Seller Central</strong><span>SP-API for multi-channel sellers.</span></div>
+    <div class="dn-int-cell"><strong>BigCommerce / Magento</strong><span>Enterprise REST integration.</span></div>
+    <div class="dn-int-cell"><strong>Rozetka Marketplace</strong><span>Most popular UA marketplace API.</span></div>
+    <div class="dn-int-cell"><strong>Prom.ua / Kasta / Allo</strong><span>UA marketplace ecosystem.</span></div>
+    <div class="dn-int-cell"><strong>Custom REST API</strong><span>Full documentation, sandbox, webhook support.</span></div>
+    <div class="dn-int-cell"><strong>CSV / SFTP batch</strong><span>For periodic bulk processing.</span></div>
+  </div>
+  <div class="dn-cta-row">
+    <a href="/en/services/" class="dn-cta-btn dn-cta-btn-secondary">Full services portfolio →</a>
+  </div>
+</div></section>
+
+<!-- USE CASES -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">USE CASES</div>
+  <h2 class="dn-h2">International brand categories using Kyiv hub for Dnipro region</h2>
+  <div class="dn-uc-grid">
+    <div class="dn-uc-card">
+      <h3>EU D2C brands shipping into Ukraine</h3>
+      <p>European Shopify/WooCommerce stores shipping into Ukrainian market without local entity. Send inbound inventory to our Kyiv hub via standard freight. We pick, pack, and ship via Nova Poshta to any region including Dnipro. Customs paperwork handled at onboarding.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>US brands using Ukraine as CIS gateway</h3>
+      <p>US-based brands evaluating Eastern European e-commerce. Ukraine as cost-effective fulfillment base, Dnipro region as one of three target zones (with Kyiv and Lviv). $0.41/order vs $1.50 US baseline = 60-75% cost reduction.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Industrial B2B distribution</h3>
+      <p>Automotive parts, industrial equipment, electronics distributors targeting Dnipropetrovsk industrial customers. Multi-SKU orders, B2B documentation, integration with 1C/BAS Ukrainian accounting systems via REST API.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Ukrainian-export brands using Kyiv hub</h3>
+      <p>Ukrainian-made cosmetics, fashion, crafts brands selling internationally. Kyiv warehouse is closer to Nova Poshta International, Meest, DHL hub points than Dnipro would be. <a href="/en/order-pick-and-pack-ukraine/">Pick and pack details</a> for cross-border fulfillment.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Subscription box brands serving Ukraine</h3>
+      <p>Monthly subscription boxes (beauty, food, hobby) with Ukrainian subscriber base including Dnipro region. Multi-pack picking with QC checkpoint, branded packaging, welcome inserts. Single Kyiv hub fulfills all subscribers regardless of region.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Etsy / Amazon Handmade cross-border</h3>
+      <p>Craft sellers shipping handmade goods internationally with some Ukrainian buyers in Dnipro region. API integration with Etsy seller dashboard. Custom packaging, gift-wrap options.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="dn-sec dn-sec-light" id="dn-cta"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">FREQUENTLY ASKED</div>
+  <h2 class="dn-h2">Questions international brands ask about Dnipro region fulfillment</h2>
+  <div class="dn-faq">
+    <details><summary>Why a Kyiv warehouse instead of a Dnipro warehouse for Eastern Ukraine?</summary><p>For brands selling across all of Ukraine, Kyiv is the optimal hub. 70-80% of customers are not in Dnipro — they're scattered across the country. Kyiv warehouse is geographically closer to that majority via Nova Poshta network. Plus war-resilience (0 days down since Feb 2022), proximity to marketplace logistics centers, and direct access to international exit points.</p></details>
+    <details><summary>How long does delivery take from Kyiv warehouse to Dnipro Ukraine?</summary><p>1-2 business days standard via Nova Poshta. Order placed by 14:00 → picked at our Kyiv warehouse in 47 seconds → final pickup 17:00 → overnight Poltava sorting center → arrives Dnipro NP branch 8 AM next day → customer collects 10 AM. Total cycle 24 hours. NP carrier cost $1.50-2.50 per parcel depending on weight/tier.</p></details>
+    <details><summary>Do you have a physical warehouse in Dnipro?</summary><p>No. We operate exclusively from our Kyiv-area facilities (Shchaslyve 2,700 m² + Bilohorodka 1,000 m²). We don't pretend to have a Dnipro warehouse. Single Kyiv hub serves Dnipro region merchants better than a local Dnipro warehouse would for cross-Ukraine distribution.</p></details>
+    <details><summary>How does war affect Kyiv vs Dnipro fulfillment reliability?</summary><p>Kyiv has been operationally stable since February 2022 with 0 days of MTP fulfillment downtime. Backup generators, dual fiber + Starlink, 7-day fuel reserves. Dnipro is closer to risk lines with more frequent infrastructure disruptions. Kyiv hub offers materially lower operational risk for international brands.</p></details>
+    <details><summary>What is Eastern Ukraine market like for international e-commerce?</summary><p>Dnipropetrovsk Oblast = 3.0M population, 4th largest UA e-commerce region by GMV. Median income $720/month above national average. Strong B2B distribution market. 24% prefer Nova Poshta express delivery. Strong marketplace usage (Rozetka 42%, Prom 38%, Kasta 12%).</p></details>
+    <details><summary>Which marketplaces and platforms integrate with Kyiv hub for Dnipro region?</summary><p>All major UA platforms (Rozetka, Prom, Kasta, Allo, Horoshop) plus international (Shopify, WooCommerce, Etsy, Amazon Seller Central, BigCommerce, Magento) via REST API. Same integration regardless of customer destination region.</p></details>
+    <details><summary>What is the pricing model?</summary><p>$0.41 per order at 200+ daily volume, $0.50-0.59 at 30-200 daily, plus storage and per-shipment Nova Poshta carrier rates. Min monthly fee $120 (5,000 UAH) for first 3 months. No premium for Eastern Ukraine destinations.</p></details>
+    <details><summary>How fast can we onboard?</summary><p>3-5 business days for catalogs under 1,000 SKU. Inbound inventory ships to our Kyiv warehouse, gets slotted in WMS, API integration takes 2 hours, end-to-end test order before go-live.</p></details>
+  </div>
+</div></section>
+
+<!-- TYPICAL ONBOARDING SCENARIOS -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ONBOARDING SCENARIOS</div>
+  <h2 class="dn-h2">Three typical onboarding patterns for international brands serving Dnipro region from our Kyiv hub</h2>
+  <p class="dn-lede">No invented numbers. Three real scenarios we've seen with international brands using our Kyiv warehouse to serve Eastern Ukrainian customers including Dnipro. Anonymized patterns without revealing specific brands.</p>
+  <div class="dn-prob-grid">
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">CASE 1</div>
+      <h3>EU fashion brand 50-100 orders/day</h3>
+      <p>European Shopify-based fashion brand entering Ukrainian market via Rozetka Marketplace and own DTC site. Wanted Eastern Ukraine reach but no local entity. Onboarding: 7 days end-to-end. Inbound 2 SKU pallets via standard freight forwarder Berlin→Kyiv (8 days transit). API integration with Shopify took 3 hours. First orders to Dnipro and Kryvyi Rih within day 8. Cost savings vs running own Eastern Ukraine warehouse: prevented entirely (avoided $40K setup + $5K/month operational).</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">CASE 2</div>
+      <h3>US D2C cosmetics brand 200+ orders/day</h3>
+      <p>US-based clean beauty brand with growing Eastern European demand. Tested cross-border shipping from US warehouse — too slow (14-21 days), too expensive ($8-15/order). Onboarded MTP for Ukraine market specifically. Transit US→Kyiv warehouse via DHL 6 days. Then Kyiv→Dnipro 1-2 days. Per-order cost dropped from $14 to $0.41 + $1.80 NP = under $2.50 total. Volume tripled within 3 months as price-sensitive Eastern Ukrainian customers became reachable.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">CASE 3</div>
+      <h3>Etsy seller 30-80 orders/day</h3>
+      <p>Independent craft seller from Czech Republic with Ukrainian customer interest including Dnipro region buyers. Pre-MTP: each Ukraine order took 14-21 days transit and $12-18 shipping. With MTP: ships single inventory pool to Kyiv warehouse via Czech Post freight (12 days, batch monthly). From Kyiv to any Ukraine including Dnipro: 1-2 days, $1.80 NP cost. Customer satisfaction improved (faster delivery), seller margin improved (lower per-order cost), Etsy listing prominence improved (faster shipping rating).</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- OPERATIONS DEEP DIVE -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">OPERATIONS WORKFLOW</div>
+  <h2 class="dn-h2">How an international brand serves Dnipro region from our Kyiv hub — step by step</h2>
+  <p class="dn-lede">No black box: literal workflow showing how international brand's order to a Dnipro customer flows through our Kyiv warehouse. Each step measured, logged in WMS, auditable.</p>
+  <ol class="dn-flow">
+    <li><strong>Onboarding integration (days 1-2).</strong> We connect to your Shopify, WooCommerce, Etsy, Amazon Seller Central, or custom platform via REST API. Your store keeps running as-is — only change is order data now flows to our WMS instead of your previous fulfillment provider.</li>
+    <li><strong>Inbound inventory shipment (days 2-7).</strong> You ship product to our Kyiv warehouse (Shchaslyve facility, address provided at contract). EU brands typically use standard freight forwarders — transit 5-10 days. US brands ship via DHL or FedEx air freight 4-6 days. We receive, verify against packing list, photo-document condition.</li>
+    <li><strong>WMS slotting (days 7-9).</strong> Each SKU gets bin location on shelves via slotting algorithm. Hot-velocity items near pack station, long-tail items in deeper aisles. Bulky/heavy items in dedicated zones. Address-storage means pickers walk to specific bins, never search by memory.</li>
+    <li><strong>Dashboard access (day 9).</strong> You get 24/7 WMS dashboard from anywhere globally. Real-time stock levels, order status pipeline, returns log, financial reports. API webhooks for status changes (new → picked → shipped → delivered).</li>
+    <li><strong>End-to-end test order (days 9-10).</strong> We place test order to a Ukrainian address (often Dnipro for Eastern Ukraine validation). Verify full cycle: pick at Kyiv warehouse, barcode scan verification, packing with QC checkpoint, Nova Poshta label generation, dispatch, delivery confirmation at Dnipro NP branch. Pass = go-live.</li>
+    <li><strong>Production operations (day 11+).</strong> Orders flow automatically from your platform. We pick in 47 seconds (avg 3-4 SKU order), pack with two-stage scan verification, QC checkpoint for high-value or multi-SKU orders, label and ship via 4 daily Nova Poshta pickups. Shipped status syncs back to your platform via API.</li>
+    <li><strong>Inventory replenishment.</strong> When SKU stock drops below your defined threshold, dashboard alerts you and your operations team. You ship replenishment via standard freight to our Kyiv warehouse. Same receiving protocol — verify, photo-document, slot in WMS, available for orders within 24 hours of arrival.</li>
+    <li><strong>Returns processing.</strong> Customer drops off return at any Nova Poshta branch in Dnipro or anywhere in Ukraine. Parcel returns to our Kyiv warehouse in 1-2 days. We receive, photo-document condition, verify completeness, return to shelf (if OK) or quarantine zone (if damaged). Returns report in your dashboard same day.</li>
+  </ol>
+</div></section>
+
+<!-- SEO CLOSING -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <h2 class="dn-h2">Eastern Ukraine fulfillment without Dnipro warehouse — structural Kyiv hub advantage</h2>
+  <p>We're transparent about our setup: MTP operates exclusively from Kyiv-area facilities (Shchaslyve 2,700 m² + Bilohorodka 1,000 m²). We don't have a Dnipro warehouse and we don't pretend to. Our argument to international brands evaluating Ukrainian market: a single Kyiv hub serves Dnipro region better than a local Dnipro warehouse would for cross-Ukraine distribution.</p>
+  <p>Three reasons. First, geography: 70-80% of Ukrainian e-commerce customers are not in Dnipro — they're in Kyiv, Lviv, Odesa, smaller cities, rural areas. Kyiv warehouse is closer to that majority via Nova Poshta network. A local Dnipro warehouse would only be faster for the local 20-30%. Second, marketplace logistics: Rozetka, Prom, Kasta, Allo head offices and sorting centers cluster in Kyiv area. International brands using these platforms benefit from same-route operations. Third, war-resilience: Kyiv has been operationally stable since February 2022 with 0 days down, while Dnipro is closer to risk lines with more frequent disruptions.</p>
+  <p>Cost economics favor single Kyiv hub too. Operating two regional warehouses (Kyiv + Dnipro) doubles rent, staff, WMS overhead. Single hub serves all of Ukraine with 1-2 day transit via Nova Poshta. Per-order cost stays at $0.41 instead of fragmenting inventory across regions. International brands using MTP don't pay premium for Eastern Ukraine destinations — same rate as for any Ukrainian zone.</p>
+  <p>Dnipropetrovsk Oblast is concrete and worth serving: 3.0M population, 4th largest UA e-commerce GMV, $720/month median income (above national average), strong B2B distribution market for automotive parts and industrial equipment. International brands targeting Eastern Ukraine industrial/consumer markets get full coverage from our Kyiv hub via Nova Poshta network — without needing local Dnipro presence.</p>
+  <p>See also: <a href="/en/fulfillment-ukraine/">fulfillment across Ukraine</a>, <a href="/en/calculator/">pricing calculator</a>, <a href="/en/services/">full services portfolio</a>, <a href="/en/order-pick-and-pack-ukraine/">order pick and pack details</a>, <a href="/en/3pl/">3PL logistics overview</a>.</p>
+</div></section>
+
+</Base>
+
+<style is:global>
+.dn-band{background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;text-align:center;padding:14px 0;text-transform:uppercase}
+.dn-hero{background:#fff;color:#000;padding:60px 0 60px;border-bottom:4px solid #e63329}
+.dn-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.dn-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:1.05;letter-spacing:-0.03em;margin:16px 0 24px;color:#000}
+.dn-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;margin:0 0 28px}
+.dn-hero-img{margin:0;padding:0;background:#0a0a0a;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border:2px solid #000}
+.dn-map-vis{width:100%;height:100%;display:flex;align-items:center;justify-content:space-between;padding:40px;position:relative}
+.dn-map-pin{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:11px;text-align:center;letter-spacing:.05em;line-height:1.2;flex-shrink:0;z-index:2}
+.dn-map-pin-kyiv{background:#fff;color:#000;border:4px solid #e63329}
+.dn-map-pin-dnipro{background:#e63329;color:#fff;border:4px solid #fff}
+.dn-map-line{flex:1;height:3px;background:repeating-linear-gradient(90deg,#e63329 0,#e63329 8px,transparent 8px,transparent 16px);margin:0 -10px;z-index:1}
+.dn-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
+.dn-chip-dark{background:#000}
+.dn-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s}
+.dn-cta-btn:hover{background:#c12a22}
+.dn-cta-btn-secondary{background:#000}
+.dn-cta-btn-secondary:hover{background:#333}
+.dn-statsbar{background:#0a0a0a;color:#fff;padding:48px 0}
+.dn-sb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.dn-sb-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(40px,5vw,64px);color:#fff;line-height:1;letter-spacing:-0.03em;border-bottom:3px solid #e63329;padding-bottom:8px;display:inline-block}
+.dn-sb-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#999;margin-top:12px}
+.dn-sec{padding:80px 0;background:#fff}
+.dn-sec-light{background:#f3f3f3}
+.dn-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.dn-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+.dn-profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dn-profile-card{background:#fff;border:2px solid #000;padding:28px}
+.dn-profile-card h3{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;text-transform:uppercase;letter-spacing:.04em;margin:0 0 16px;border-bottom:2px solid #000;padding-bottom:10px}
+.dn-profile-card ul{list-style:none;padding:0;margin:0;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333}
+.dn-profile-card li{padding:8px 0;border-bottom:1px solid #eee}
+.dn-profile-card li strong{color:#000;font-weight:700}
+.dn-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dn-prob-card{background:#fff;padding:32px 24px;border-left:4px solid #e63329}
+.dn-prob-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:24px;color:#e63329;letter-spacing:-0.02em;margin-bottom:8px}
+.dn-prob-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;margin:8px 0 12px;color:#000;line-height:1.2}
+.dn-prob-card p{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55;color:#333;margin:0}
+.dn-cov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dn-cov-cell{background:#fff;border:1px solid #ddd;padding:20px;font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.45;color:#333}
+.dn-cov-cell strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:6px}
+.dn-cov-cell span{display:block;color:#666;font-size:12px}
+.dn-int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dn-int-cell{background:#fff;padding:20px;border-left:3px solid #e63329;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.45;color:#333}
+.dn-int-cell strong{display:block;color:#000;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px}
+.dn-int-cell span{display:block;color:#666;font-size:13px}
+.dn-cta-row{margin-top:32px;text-align:center}
+.dn-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dn-uc-card{background:#fff;border:1px solid #ddd;padding:28px 24px}
+.dn-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000}
+.dn-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+.dn-uc-card a{color:#e63329;text-decoration:underline}
+.dn-faq{display:flex;flex-direction:column;gap:8px}
+.dn-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.dn-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.dn-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.dn-faq details[open] summary::after{content:"−"}
+.dn-faq summary::-webkit-details-marker{display:none}
+.dn-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+.dn-flow{list-style:none;padding:0;margin:0;counter-reset:flow}
+.dn-flow li{padding:20px 0 20px 60px;border-bottom:1px solid #ddd;position:relative;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;counter-increment:flow}
+.dn-flow li:before{content:counter(flow);position:absolute;left:0;top:18px;width:40px;height:40px;background:#e63329;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:800;font-size:16px}
+.dn-flow li strong{color:#000;font-weight:700}
+.dn-sec a{color:#e63329}
+
+@media (max-width:900px){
+  .dn-hero-grid{grid-template-columns:1fr;gap:32px}
+  .dn-sb-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .dn-profile-grid,.dn-prob-grid,.dn-int-grid,.dn-uc-grid,.dn-cov-grid{grid-template-columns:1fr;gap:16px}
+}
+</style>

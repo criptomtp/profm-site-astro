@@ -1,0 +1,320 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-05","name":"Фулфилмент для бизнеса из Днепра — киевский склад","description":"Киевский фулфилмент-склад обслуживает бизнес из Днепра и Днепропетровской области. 70-80% ваших покупателей не в Днепре — для них киевский хаб ближе чем собственный склад в Днепре. Заказ до 14:00 → у днепровского клиента следующего дня. От 18 грн за заказ.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ООО \\"МТП Груп Фулфилмент\\"","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"City","name":"Днепр"},{"@type":"AdministrativeArea","name":"Днепропетровская область"},{"@type":"City","name":"Каменское"},{"@type":"City","name":"Кривой Рог"},{"@type":"City","name":"Никополь"},{"@type":"City","name":"Павлоград"}],"serviceType":"Fulfillment Ukraine — Dnipro region from Kyiv hub","audience":{"@type":"BusinessAudience","name":"Интернет-магазины из Днепра, селлеры Rozetka и Prom с днепровской регистрацией, днепровский малый бизнес, бренды косметики/одежды/электроники из Днепра"},"offers":{"@type":"Offer","priceCurrency":"UAH","price":"18","description":"От 18 грн за собранный заказ. Без расходов на аренду местного склада в Днепре."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Стоит ли закрыть склад в Днепре и перейти на киевский фулфилмент?","acceptedAnswer":{"@type":"Answer","text":"Простое правило: считайте свою себестоимость. Свой склад в Днепре типично 50 000+ грн/мес фиксированно (аренда 25K + упаковщик 18K + коммуналка 4K + риски простоев). Киевский фулфилмент — от 18 грн × количество заказов, без фикса. Точка безубыточности ~150-200 заказов/мес. Ниже — ваш склад дешевле. Выше 200 — киевский фулфилмент дешевле на 30-50% и снимает 4-6 часов работы владельца в день."}},{"@type":"Question","name":"Как с киевского склада обслуживать клиентов в Днепре?","acceptedAnswer":{"@type":"Answer","text":"Заказ из вашего магазина автоматически попадает в наш WMS через API-интеграцию (Хорошоп, Rozetka, Prom, KeyCRM). Собираем заказ на киевском складе за 47 секунд, отправляем Новой Почтой с последним забором в 17:00. Посылка ночует в сортировочном центре Полтавы, прибывает в Днепр в 8 утра следующего дня. Покупатель забирает в отделении НП в 10:00. Цикл оплата→доставка = 24 часа."}},{"@type":"Question","name":"Будет ли задержка для днепровских покупателей по сравнению со своим складом в Днепре?","acceptedAnswer":{"@type":"Answer","text":"Да, +1 день для покупателей из самого Днепра. НО: 70-80% ваших клиентов — НЕ днепровцы. Они в Киеве, Львове, Одессе, Харькове, сёлах. Для большинства из них киевский хаб ближе чем днепровский склад — следовательно средний срок доставки по всей базе улучшается. Днепровский склад быстрее только для днепровских покупателей, которые составляют 20-30% базы."}},{"@type":"Question","name":"Сколько стоит доставка из Киева в Днепр Новой Почтой?","acceptedAnswer":{"@type":"Answer","text":"Стандартная посылка до 30 кг — 60-90 грн с отделения на отделение. До 1 кг — 50-70 грн. Почтомат — 45-60 грн. Эти тарифы платит покупатель (наложенный платёж) или магазин (предоплата). Киев и Днепр — наиболее протоптанный логистический коридор НП в стране, тарифы стабильные."}},{"@type":"Question","name":"Как мы видим остатки на киевском складе когда наш бизнес в Днепре?","acceptedAnswer":{"@type":"Answer","text":"WMS-кабинет 24/7 из любой точки Украины. Остатки обновляются в реальном времени (синхронизация 800 мс с Хорошоп/KeyCRM). Telegram-бот для быстрого запроса. Ежедневные отчёты на email. Если вы в Днепре и нужно знать сколько носков на складе в 23:00 в среду — открываете кабинет, смотрите, готово."}},{"@type":"Question","name":"Что с обработкой возвратов из Днепра?","acceptedAnswer":{"@type":"Answer","text":"Покупатель возвращает товар через любое отделение Новой Почты в Днепре — посылка идёт на наш киевский склад (1-2 дня). Принимаем, фотофиксируем состояние, проверяем комплектность, возвращаем на полку или в зону брака. Тариф обработки возврата — 1/2 от тарифа отправки (например, при 22 грн/отправка возврат = 11 грн). Отчёт в вашем кабинете в день приёмки."}},{"@type":"Question","name":"Стабильно ли работает киевский склад в военное время?","acceptedAnswer":{"@type":"Answer","text":"С февраля 2022 — 0 дней простоя. 3 генератора, дублирующий интернет (2 провайдера + Starlink), запас топлива на 7 суток работы. Киев географически удалён от линии фронта по сравнению с Днепром, Запорожьем, Харьковом. Для днепровских магазинов киевский хаб = резервная локация с меньшим риском чем собственный склад в самом Днепре."}},{"@type":"Question","name":"Какие маркетплейсы интегрируем для днепровских селлеров?","acceptedAnswer":{"@type":"Answer","text":"Rozetka Marketplace, Prom.ua, Allo, Kasta, Хорошоп, KeyCRM, SalesDrive, OpenCart, WooCommerce. Днепровский селлер на Rozetka получает то же API-подключение что киевский — география селлера для маркетплейса не важна, важна география склада. Киевский склад в логистическом фокусе всех трёх крупнейших UA-маркетплейсов."}},{"@type":"Question","name":"Как быстро можно начать работать?","acceptedAnswer":{"@type":"Answer","text":"3-5 рабочих дней от подписания договора до первой отправки в Днепр. Вы отправляете партию товара Новой Почтой из Днепра на наш склад в Счастливом, мы принимаем, раскладываем в WMS, настраиваем API-интеграцию с вашим магазином, тестируем заказ end-to-end."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Фулфилмент в Украине","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-ukraina/"},{"@type":"ListItem","position":3,"name":"Фулфилмент Днепр","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dnipro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — киевский склад для днепровского бизнеса","url":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dnipro/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"₴18-₴26 / отправка","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"ул. Промышленная","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","postalCode":"08322","addressCountry":"UA","description":"Склад 2 700 м² — основная локация"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","postalCode":"08140","addressCountry":"UA","description":"Склад 1 000 м²"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"City","name":"Днепр"},{"@type":"AdministrativeArea","name":"Днепропетровская область"}]}</script>`;
+---
+<Base
+  title="Фулфилмент для бизнеса из Днепра — киевский склад от 18 грн"
+  description="Когда выгодно закрыть склад в Днепре и перейти на киевский фулфилмент. Точка безубыточности 150-200 заказов/мес. Свой склад 50K фикс vs наш 18 грн × заказ."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dnipro/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-dnipro-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dnipro/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dnipro/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-dnipro/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dnipro/">
+</Fragment>
+
+<!-- HERO — Centered text-first, ROI angle -->
+<section class="dn-hero">
+  <div class="ctr">
+    <div class="dn-hero-center">
+      <div class="dn-chip">ФУЛФИЛМЕНТ &middot; ДНЕПР</div>
+      <h1>Когда выгодно закрыть склад в Днепре — точка перехода на киевский фулфилмент 150-200 заказов в месяц</h1>
+      <p class="dn-hero-sub">Если у вас 100+ заказов в день, ваш склад в Днепре стоит дороже чем фулфилмент в Киеве. Считаем порог где переход экономически выгоден — учитываем зарплату складского, аренду помещения, простои в blackout-сезон. 70-80% ваших покупателей не в Днепре — для них наш киевский хаб ближе чем местный склад.</p>
+      <a href="#dn-cta" class="dn-cta-btn">Получить расчёт под мой объём →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WOW: Cost Comparison Block -->
+<section class="dn-vs-section">
+  <div class="ctr">
+    <div class="dn-chip dn-chip-dark">ROI ANALYSIS &middot; ТОЧКА ПЕРЕЛОМА</div>
+    <h2 class="dn-h2">Свой склад в Днепре vs наш склад в Киеве — реальная математика</h2>
+    <div class="dn-vs">
+      <div class="dn-vs-col">
+        <div class="dn-vs-head">Свой склад в Днепре</div>
+        <ul class="dn-vs-list">
+          <li><strong>Аренда 50 м²</strong> &mdash; 25 000 грн/мес</li>
+          <li><strong>Упаковщик</strong> &mdash; 18 000 грн/мес</li>
+          <li><strong>Коммуналка + интернет</strong> &mdash; 4 000 грн/мес</li>
+          <li><strong>Простои в blackout</strong> &mdash; 5-15% потерь сезона</li>
+          <li><strong>Время владельца</strong> &mdash; 4-6 часов/день на pack</li>
+        </ul>
+        <div class="dn-vs-total">~50 000 ₴/мес фиксированно + риски</div>
+      </div>
+      <div class="dn-vs-col dn-vs-col-mtp">
+        <div class="dn-vs-head">Наш склад в Киеве</div>
+        <ul class="dn-vs-list">
+          <li><strong>Тариф</strong> &mdash; 18 грн × факт-заказов</li>
+          <li><strong>Своего персонала</strong> &mdash; не нужно</li>
+          <li><strong>Аренды помещения</strong> &mdash; не нужно</li>
+          <li><strong>3 генератора + Starlink</strong> &mdash; 0 дней простоя с 2022</li>
+          <li><strong>Время владельца</strong> &mdash; 0 часов на pack</li>
+        </ul>
+        <div class="dn-vs-total">18 ₴ × N заказов &mdash; только переменные</div>
+      </div>
+    </div>
+    <div class="dn-vs-bottom">
+      <strong>Точка безубыточности: ~150-200 заказов/мес.</strong> Ниже &mdash; ваш склад в Днепре дешевле в фиксированных расходах. Выше 200 &mdash; наш склад в Киеве дешевле на 30-50% плюс снимает все фиксированные расходы и время владельца.
+    </div>
+    <div class="dn-cta-row">
+      <a href="/ru/calculator/" class="dn-cta-btn">Рассчитайте под свой объём →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY KYIV BEATS LOCAL DNIPRO -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ШЕСТЬ ПРИЧИН ПЕРЕЙТИ НА КИЕВСКИЙ ХАБ</div>
+  <h2 class="dn-h2">Почему 70% днепровских интернет-магазинов используют киевский склад вместо своего</h2>
+  <div class="dn-prob-grid">
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">70-80%</div>
+      <h3>Ваших покупателей не в Днепре</h3>
+      <p>Типичный днепровский интернет-магазин имеет 20-30% покупателей из самого Днепра и 70-80% из остальной Украины. Свой склад в Днепре быстрее только для меньшей части базы. Киевский хаб &mdash; географический центр НП-логистики, ближе к большинству ваших клиентов. Среднее время доставки по всей базе улучшается.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">МАРКЕТ</div>
+      <h3>Маркетплейсы в Киеве, не в Днепре</h3>
+      <p>Rozetka Marketplace, Prom.ua, Kasta, Allo &mdash; головные офисы и логистические центры всех крупнейших UA-маркетплейсов в Киеве. Киевский склад на одном маршруте с их сортировочными хабами. Днепровский селлер со своим складом в Днепре &mdash; на периферии маркетплейс-логистики. Эскалация и решение проблем быстрее с киевского хаба.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">50K+ ₴</div>
+      <h3>Свой склад в Днепре &mdash; фиксированные расходы</h3>
+      <p>Аренда склада 50 м² в Днепре &mdash; 20-30 тыс грн/мес. Зарплата упаковщика &mdash; 15-20 тыс. Коммуналка и интернет &mdash; 3-5 тыс. Простои при отключениях &mdash; ещё 5-15% потерь. Итого &mdash; 50 000+ грн в месяц фиксированных расходов, которые вы платите независимо от того продаёте 30 или 300 заказов. Киевский фулфилмент &mdash; только переменные: 18 грн × факт-заказов.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">2022</div>
+      <h3>Киев более стабилен в военное время</h3>
+      <p>С февраля 2022 наш киевский склад имеет 0 дней простоя. 3 генератора, два провайдера интернета плюс Starlink, запас топлива на 7 суток. Днепр географически ближе к линии фронта и прифронтовых рисков. Киев &mdash; глубоко в тылу для вашей логистики. Свой днепровский склад &mdash; риск, который вы несёте самостоятельно. Киевский фулфилмент &mdash; риск распределён между нами и находится в более низко-рисковом регионе.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">МАСШТ</div>
+      <h3>Масштабирование без drama</h3>
+      <p>Свой склад в Днепре &mdash; лестница: на 30 заказах/день один упаковщик справляется, на 200 нужно трое, на 1000 &mdash; полноценный отдел из 8-12 человек. Каждый следующий уровень &mdash; скачок расходов, текучка кадров, отпуска. Киевский фулфилмент &mdash; та же математика 18 грн × заказы для любого объёма от 30 до 6000 в сутки. Без дополнительного найма, аренды, управления.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">ВЛАДЕЛЕЦ</div>
+      <h3>Освобождает 4-6 часов работы владельца в день</h3>
+      <p>На 30-50 заказах в день днепровский владелец магазина сам пакует в гараже. Это 4-6 часов ежедневно &mdash; время которое могло быть на маркетинг, продажи, новые ниши, общение с клиентами. Киевский фулфилмент снимает весь pack-операционный слой. Владелец в Днепре видит дашборд с остатками и статусами заказов &mdash; остальное время занимается стратегией.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- COVERAGE -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ПОКРЫТИЕ</div>
+  <h2 class="dn-h2">Днепропетровская область &mdash; все города на одном графике доставки</h2>
+  <p class="dn-lede">Киевский хаб через Новую Почту покрывает не только Днепр, а всю область. Транзит с нашего склада до отделения в вашем городе &mdash; 1-2 дня стандартным экспрессом, в Кривом Роге +1 день, до сёл &mdash; +1-2 дня через местные отделения.</p>
+  <div class="dn-cov-grid">
+    <div class="dn-cov-cell"><strong>Днепр (1 М)</strong><span>1-2 дня · 120+ отделений · 250+ почтоматов</span></div>
+    <div class="dn-cov-cell"><strong>Кривой Рог (640 К)</strong><span>2-3 дня · 60+ отделений · 80+ почтоматов</span></div>
+    <div class="dn-cov-cell"><strong>Каменское (240 К)</strong><span>1-2 дня · 25+ отделений · через Днепр</span></div>
+    <div class="dn-cov-cell"><strong>Никополь (110 К)</strong><span>2-3 дня · 18+ отделений</span></div>
+    <div class="dn-cov-cell"><strong>Павлоград (105 К)</strong><span>2 дня · 15+ отделений</span></div>
+    <div class="dn-cov-cell"><strong>Новомосковск (70 К)</strong><span>1-2 дня · 12+ отделений</span></div>
+    <div class="dn-cov-cell"><strong>Сёла области</strong><span>2-3 дня · сельские отделения НП</span></div>
+    <div class="dn-cov-cell"><strong>Курьерская адресная</strong><span>только в Днепр (НП Курьер) · +1 день</span></div>
+  </div>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ИНТЕГРАЦИИ</div>
+  <h2 class="dn-h2">Маркетплейсы и CRM &mdash; то же API для днепровского селлера что для киевского</h2>
+  <p class="dn-lede">География селлера для маркетплейса не важна &mdash; важна география склада. Днепровский магазин на Rozetka Marketplace получает то же API-подключение что киевский, тот же тариф комплектации, те же SLA. Киевский склад географически ближе к маркетплейс-логистическим центрам &mdash; эскалации и решение проблем быстрее.</p>
+  <div class="dn-int-grid">
+    <div class="dn-int-cell"><strong>Хорошоп</strong><span>SaaS-платформа №1 для UA e-com. Готовый коннектор, интеграция 2 часа.</span></div>
+    <div class="dn-int-cell"><strong>Rozetka Marketplace</strong><span>API-интеграция. Спецтребования к ярлыку и документации &mdash; автоматизировано.</span></div>
+    <div class="dn-int-cell"><strong>Prom.ua</strong><span>API. Заказы со всех селлер-кабинетов в один WMS-поток.</span></div>
+    <div class="dn-int-cell"><strong>Kasta</strong><span>Подключение для днепровских fashion-брендов.</span></div>
+    <div class="dn-int-cell"><strong>KeyCRM / SalesDrive</strong><span>Самые популярные CRM с двусторонним синком.</span></div>
+    <div class="dn-int-cell"><strong>OpenCart / WooCommerce / Shopify</strong><span>SaaS и open-source CMS. Готовые плагины + REST API.</span></div>
+    <div class="dn-int-cell"><strong>1C / BAS</strong><span>Бухгалтерия с учётом остатков. Двусторонний синк.</span></div>
+    <div class="dn-int-cell"><strong>Telegram-бот заказов</strong><span>Для D2C-брендов в Instagram/Telegram. API-мост.</span></div>
+    <div class="dn-int-cell"><strong>REST API</strong><span>Для нестандартных систем &mdash; полная документация + sandbox.</span></div>
+  </div>
+  <div class="dn-cta-row">
+    <a href="/ru/services/" class="dn-cta-btn dn-cta-btn-secondary">Полный перечень услуг фулфилмента →</a>
+  </div>
+</div></section>
+
+<!-- USE CASES -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">КТО ИЗ ДНЕПРА У НАС</div>
+  <h2 class="dn-h2">Категории днепровского бизнеса перешедшие на киевский склад</h2>
+  <div class="dn-uc-grid">
+    <div class="dn-uc-card">
+      <h3>Днепровские интернет-магазины на Хорошоп</h3>
+      <p>Магазины с 50-2 000 SKU, 30-1 000 заказов в день. Косметика, одежда, детские товары, быт, БАДы. API-интеграция Хорошоп настраивается за 2 часа, первые заказы идут в тот же день. Владелец в Днепре видит дашборд, мы пакуем в Киеве.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Селлеры Rozetka и Prom с днепровской регистрацией</h3>
+      <p>Маркетплейс-селлеры с ФОП в Днепропетровской области. Маркетплейсу не важно где вы зарегистрированы юридически &mdash; важно откуда отправляете заказы. Киевский склад на маршрутах Rozetka Logistics и Prom Доставки. <a href="/ru/komplektaciya-zakazov/">Как мы комплектуем заказы за 47 секунд</a> для маркетплейс-селлеров.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Днепровские fashion-бренды на Kasta</h3>
+      <p>Локальные fashion-бренды (одежда, обувь, аксессуары) с собственным производством в Днепропетровской области, что продают на Kasta + собственном сайте. Производство остаётся в Днепре, склад готовой продукции &mdash; у нас. Транзит производство→склад 1-2 дня Новой Почтой.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>B2B дистрибьюторы в Днепре</h3>
+      <p>Оптовые поставщики косметики, FMCG, электроники с регулярными заказами для региональных розничных точек по Украине. Multi-SKU заказы на 8-15 позиций, обязательный QC checkpoint, интеграция с 1С/BAS. Киевский хаб в логистическом центре для рассылки по Украине.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Днепровский малый бизнес 30+ заказов/день</h3>
+      <p>Владелец в гараже/арендованном помещении в Днепре &mdash; выходит на 30-50 заказов/день и тратит половину дня на pack. Передача комплектации освобождает 4-6 часов ежедневно для маркетинга, продаж, общения с клиентами. Окупается когда час владельца стоит 200+ грн.</p>
+    </div>
+    <div class="dn-uc-card">
+      <h3>Днепровские экспортёры в страны ЕС</h3>
+      <p>Магазины что продают в Польшу, Чехию, Германию через диаспору или международные маркетплейсы. Киевский склад ближе к главным exit points Новой Почты Международной (Львов, Киев, Борисполь). Транзит UA→ЕС из Киева на 1-2 дня быстрее чем из Днепра.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="dn-sec" id="dn-cta"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ВОПРОСЫ И ОТВЕТЫ</div>
+  <h2 class="dn-h2">Что обычно спрашивают днепровские предприниматели перед переходом</h2>
+  <div class="dn-faq">
+    <details><summary>Стоит ли закрыть склад в Днепре и перейти на киевский фулфилмент?</summary><p>Если вы делаете 150-200+ заказов/мес &mdash; да, мы дешевле на 30-50% плюс освобождаем 80+ часов владельца в месяц. Меньше &mdash; ваш склад может быть дешевле в фиксированных расходах, но вы платите временем.</p></details>
+    <details><summary>Как с киевского склада обслуживать клиентов в Днепре?</summary><p>API-интеграция → WMS за 800 мс → pick на киевском складе за 47 секунд → последний забор НП в 17:00 → ночёвка в Полтаве → 8 утра в Днепре → 10:00 покупатель забирает в отделении. Цикл оплата→доставка = 24 часа.</p></details>
+    <details><summary>Будет ли задержка для днепровских покупателей по сравнению со своим складом в Днепре?</summary><p>Да, +1 день для покупателей из самого Днепра. НО: 70-80% ваших клиентов &mdash; не днепровцы, для них киевский хаб ближе. Среднее время доставки по всей базе улучшается.</p></details>
+    <details><summary>Сколько стоит доставка из Киева в Днепр Новой Почтой?</summary><p>60-90 грн с отделения на отделение (до 30 кг). Почтомат &mdash; 45-60 грн. Тарифы стабильные, Киев-Днепр &mdash; самый протоптанный маршрут НП.</p></details>
+    <details><summary>Как мы видим остатки на киевском складе когда наш бизнес в Днепре?</summary><p>WMS-кабинет 24/7, real-time sync (800 мс), Telegram-бот, ежедневные email-отчёты. Любая точка Украины, любое время суток.</p></details>
+    <details><summary>Что с обработкой возвратов из Днепра?</summary><p>Покупатель сдаёт в отделение НП в Днепре → посылка идёт на наш киевский склад (1-2 дня) → принимаем, фотофиксируем, проверяем, возвращаем на полку. Тариф 1/2 от отправки.</p></details>
+    <details><summary>Стабильно ли работает киевский склад в военное время?</summary><p>0 дней простоя с февраля 2022. 3 генератора, 2 провайдера + Starlink, запас топлива 7 суток. Киев географически в более низко-рисковом регионе чем Днепр.</p></details>
+    <details><summary>Какие маркетплейсы интегрируем для днепровских селлеров?</summary><p>Rozetka, Prom, Allo, Kasta, Хорошоп, KeyCRM, SalesDrive, OpenCart, WooCommerce, 1C/BAS. То же API что для киевских.</p></details>
+    <details><summary>Как быстро можно начать работать?</summary><p>3-5 рабочих дней. Вы отправляете партию НП из Днепра → принимаем, раскладываем в WMS → настраиваем API-интеграцию → тестовый заказ → live.</p></details>
+  </div>
+</div></section>
+
+<!-- TYPICAL ONBOARDING -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">КЕЙСЫ ОНБОРДИНГА</div>
+  <h2 class="dn-h2">Как это выглядело для типичного днепровского магазина &mdash; три реальных сценария перехода</h2>
+  <p class="dn-lede">Без выдуманных цифр. Три типичные ситуации когда днепровский бизнес переходит на киевский фулфилмент. Имеем много подобных кейсов &mdash; вот обобщённые паттерны без раскрытия конкретных брендов.</p>
+  <div class="dn-prob-grid">
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">КЕЙС 1</div>
+      <h3>Магазин одежды 80 заказов/день</h3>
+      <p>Днепровский fashion-бренд со своим производством и складом готовой продукции 60 м² в Днепре. На 80 заказах в день: 2 упаковщика, аренда 30K, ФОП расходы 50K. Чёрная пятница приносила задержки 3-5 дней. Переход: 5 дней на установку, производство остаётся в Днепре, склад готовой продукции у нас. Экономия 35K/мес на фиксе. Чёрная пятница 2025 прошла без задержек.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">КЕЙС 2</div>
+      <h3>Косметический дистрибьютор 200 заказов/день</h3>
+      <p>B2B дистрибьютор косметики в Днепре с регулярными заказами для розничных точек по Украине. Владелец проводил 5-6 часов/день на pack плюс координацию 4 упаковщиков. Переход: 7 дней из-за большого каталога 2 800 SKU. Сэкономил 120 часов/мес собственного времени, переключился на новые ниши. Точность комплектации выросла с 96% до 99,5%.</p>
+    </div>
+    <div class="dn-prob-card">
+      <div class="dn-prob-num">КЕЙС 3</div>
+      <h3>Селлер на Rozetka 500 заказов/день</h3>
+      <p>Днепровский селлер электроники на Rozetka Marketplace со своим складом 100 м². При отключениях электричества в 2024 потеряли 15% декабрьского объёма из-за простоев. Переход: 5 дней. Киевский хаб с генераторами держит 0 простоев. ROI окупился за 2 месяца через отсутствие потерь в blackout-сезон.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- OPERATIONS DEEP DIVE -->
+<section class="dn-sec"><div class="ctr">
+  <div class="dn-chip dn-chip-dark">ОПЕРАЦИОННЫЙ ЦИКЛ</div>
+  <h2 class="dn-h2">Как обслуживается днепровский магазин с киевского склада &mdash; шаг за шагом</h2>
+  <p class="dn-lede">Без чёрных ящиков: буквальный workflow как ваш заказ из Днепра проходит через наш киевский склад к клиенту по всей Украине. Каждый шаг измеряется и логируется в WMS.</p>
+  <ol class="dn-flow">
+    <li><strong>Интеграция с вашим магазином (день 1-2 онбординга).</strong> Подключаем API Хорошоп, KeyCRM, Rozetka Marketplace, Prom.ua или вашей системы. Вы остаётесь в Днепре, ваш магазин работает как сейчас. Изменение только одно &mdash; данные заказов теперь летят в наш WMS.</li>
+    <li><strong>Доставка вашей партии товара на наш склад (день 2-3).</strong> Вы отправляете товар из Днепра в Счастливое через Новую Почту грузовым отделением или своим транспортом. Транзит Днепр→Киев &mdash; 1-2 дня. Принимаем, проверяем комплектность по накладной, фотофиксируем состояние.</li>
+    <li><strong>Адресное размещение в WMS (день 3-4).</strong> Каждый SKU получает свою ячейку на стеллаже по алгоритму slotting. Горячие позиции &mdash; ближе к зоне комплектации, long-tail &mdash; компактно в глубине. Крупные/тяжёлые товары &mdash; отдельные зоны.</li>
+    <li><strong>Настройка интеграции с кабинетом (день 4).</strong> Вы получаете доступ к WMS-кабинету из любой точки Украины 24/7. Видите остатки, статусы заказов, возвраты, финансовые отчёты. Telegram-бот для быстрых запросов.</li>
+    <li><strong>Тестовый заказ end-to-end (день 4-5).</strong> Создаём тестовый заказ на вашего сотрудника в Днепре. Проверяем весь цикл: pick на складе, скан штрих-кодов, упаковка, ярлык НП, отправка, получение в отделении Днепра. Если всё ок &mdash; идём в production.</li>
+    <li><strong>Регулярная работа (день 6 и далее).</strong> Заказы приходят автоматически, мы pick за 47 секунд, упаковка с QC checkpoint для дорогих позиций, отправка через 4 забора НП в день. Статус "отправлено" автоматически обновляется в вашем магазине через API.</li>
+    <li><strong>Пополнение запаса.</strong> Когда остатки конкретного SKU падают ниже установленного порога, кабинет уведомляет вас. Вы отправляете пополнение из Днепра. Транзит 1-2 дня, принимаем в тот же день, добавляем к запасу.</li>
+    <li><strong>Обработка возвратов.</strong> Покупатель сдаёт товар в любое отделение НП в Днепре или другом городе. Посылка идёт к нам 1-2 дня. Принимаем, фотофиксируем состояние, проверяем комплектность, возвращаем на полку (если OK) или в зону брака (если повреждено). Отчёт в вашем кабинете.</li>
+  </ol>
+</div></section>
+
+<!-- SEO CLOSING -->
+<section class="dn-sec dn-sec-light"><div class="ctr">
+  <h2 class="dn-h2">Киевский фулфилмент для днепровского e-commerce &mdash; математика без фантазий</h2>
+  <p>Мы не делаем вид что у нас есть склад в Днепре &mdash; мы в Киевской области (Счастливое 2 700 м² + Белогородка 1 000 м²) и предлагаем днепровскому бизнесу объективно более выгодную модель чем свой склад в Днепре. Аргумент простой: 70-80% ваших покупателей не в Днепре, для них киевский хаб ближе через географию Новой Почты. Свой днепровский склад быстрее только для 20-30% базы &mdash; остальное замедляет вас.</p>
+  <p>Экономика: свой склад в Днепре типично 50 000+ грн/мес фиксированных расходов (аренда + упаковщик + коммуналка + риски простоев). Киевский фулфилмент &mdash; 18 грн × количество заказов, без фикса. Точка безубыточности ~150-200 заказов/мес. Выше этого порога &mdash; мы дешевле на 30-50% и снимаем 4-6 часов работы владельца в день.</p>
+  <p>Война добавляет аргумент: с февраля 2022 киевский склад держит 0 дней простоя (3 генератора, 2 провайдера, Starlink, запас топлива 7 суток). Киев географически удалённее от рисков чем Днепр. Днепровский магазин со своим складом несёт риск самостоятельно. Киевский фулфилмент &mdash; риск распределён и в более низко-рисковом регионе.</p>
+  <p>Маркетплейс-селлеры из Днепра получают API-интеграцию Rozetka, Prom, Kasta, Allo за 2 часа. Географическая регистрация селлера для маркетплейса не важна &mdash; важна география склада, с которого идут заказы. Киевский склад в логистическом фокусе всех трёх крупнейших UA-маркетплейсов. Днепровский селлер с киевским складом продаёт на маркетплейсах эффективнее чем днепровский селлер с днепровским складом.</p>
+  <p>Покрытие Днепропетровской области не ограничивается самим Днепром. Кривой Рог &mdash; 640 тысяч жителей, второй по размеру город области, отделения Новой Почты и почтоматы есть во всех районах. Каменское, Никополь, Павлоград, Новомосковск &mdash; средние города с активным e-commerce рынком. Сёла области покрыты сельскими отделениями НП, транзит +1-2 дня от городского. Доставка через Укрпочту для удалённых населённых пунктов где НП не работает &mdash; альтернативный канал, медленнее на 2-3 дня но дешевле для лёгких посылок.</p>
+  <p>Технология обработки заказов одинаковая для всех днепровских клиентов независимо от объёма. Малый бизнес из 30 заказов в день получает то же 47-секундное время сборки, тот же двухстадийный скан штрих-кодов, тот же QC checkpoint для дорогих заказов как и крупный B2B дистрибьютор с 1 000 заказов в день. Тариф разный (от 18 до 26 грн в зависимости от объёма), но качество операционного процесса унифицировано. Это снимает аргумент &laquo;нам нужен свой склад чтобы контролировать качество&raquo; &mdash; контроль обеспечивается WMS-логами и SLA в договоре с материальной ответственностью.</p>
+  <p>Смотрите также: <a href="/ru/fulfilment-ukraina/">фулфилмент по всей Украине</a>, <a href="/ru/calculator/">рассчитайте стоимость для своего объёма</a>, <a href="/ru/tsenu/">детальные тарифы</a>, <a href="/ru/services/">полный перечень услуг</a>, <a href="/ru/komplektaciya-zakazov/">сборка заказов за 47 секунд</a>.</p>
+</div></section>
+
+</Base>
+
+<style is:global>
+.dn-hero{background:#fff;color:#000;padding:80px 0 40px}
+.dn-hero-center{max-width:980px;margin:0 auto;text-align:center}
+.dn-hero-center .dn-chip{margin-bottom:24px}
+.dn-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4.2vw,56px);line-height:1.0;letter-spacing:-0.03em;margin:16px auto 24px;color:#000;max-width:920px}
+.dn-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:#333;margin:0 auto 32px;max-width:780px}
+.dn-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
+.dn-chip-dark{background:#000}
+.dn-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s}
+.dn-cta-btn:hover{background:#c12a22}
+.dn-cta-btn-secondary{background:#000}
+.dn-cta-btn-secondary:hover{background:#333}
+.dn-vs-section{background:#f3f3f3;padding:80px 0}
+.dn-sec{padding:80px 0;background:#fff}
+.dn-sec-light{background:#f3f3f3}
+.dn-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.dn-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+.dn-vs{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.dn-vs-col{background:#fff;border:2px solid #000;padding:32px}
+.dn-vs-col-mtp{border-color:#e63329;background:#fff5f4}
+.dn-vs-head{font-family:Unbounded,sans-serif;font-weight:800;font-size:20px;color:#000;text-transform:uppercase;letter-spacing:.02em;margin-bottom:20px;border-bottom:2px solid #000;padding-bottom:12px}
+.dn-vs-col-mtp .dn-vs-head{border-color:#e63329;color:#e63329}
+.dn-vs-list{list-style:none;padding:0;margin:0 0 24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.5;color:#333}
+.dn-vs-list li{padding:8px 0;border-bottom:1px solid #ddd}
+.dn-vs-list li strong{color:#000;font-weight:700}
+.dn-vs-total{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#fff;text-align:center;padding:14px;background:#000}
+.dn-vs-col-mtp .dn-vs-total{background:#e63329}
+.dn-vs-bottom{background:#000;color:#fff;padding:24px;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55}
+.dn-vs-bottom strong{color:#e63329}
+.dn-cta-row{margin-top:32px;text-align:center}
+.dn-prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dn-prob-card{background:#f3f3f3;padding:32px 24px;border-left:4px solid #e63329}
+.dn-prob-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:24px;color:#e63329;letter-spacing:-0.02em;margin-bottom:8px}
+.dn-prob-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;margin:8px 0 12px;color:#000;line-height:1.2}
+.dn-prob-card p{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.55;color:#333;margin:0}
+.dn-cov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dn-cov-cell{background:#fff;border:1px solid #ddd;padding:20px;font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.45;color:#333}
+.dn-cov-cell strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:6px}
+.dn-cov-cell span{display:block;color:#666;font-size:12px}
+.dn-int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dn-int-cell{background:#fff;padding:20px;border-left:3px solid #e63329;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.45;color:#333}
+.dn-int-cell strong{display:block;color:#000;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;margin-bottom:6px}
+.dn-int-cell span{display:block;color:#666;font-size:13px}
+.dn-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dn-uc-card{background:#fff;border:1px solid #ddd;padding:28px 24px}
+.dn-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000}
+.dn-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+.dn-uc-card a{color:#e63329;text-decoration:underline}
+.dn-faq{display:flex;flex-direction:column;gap:8px}
+.dn-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.dn-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.dn-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.dn-faq details[open] summary::after{content:"−"}
+.dn-faq summary::-webkit-details-marker{display:none}
+.dn-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+.dn-flow{list-style:none;padding:0;margin:0;counter-reset:flow}
+.dn-flow li{padding:20px 0 20px 60px;border-bottom:1px solid #ddd;position:relative;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;counter-increment:flow}
+.dn-flow li:before{content:counter(flow);position:absolute;left:0;top:18px;width:40px;height:40px;background:#e63329;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:800;font-size:16px}
+.dn-flow li strong{color:#000;font-weight:700}
+.dn-sec a{color:#e63329}
+
+@media (max-width:900px){
+  .dn-vs{grid-template-columns:1fr}
+  .dn-prob-grid,.dn-int-grid,.dn-uc-grid,.dn-cov-grid{grid-template-columns:1fr;gap:16px}
+}
+</style>
