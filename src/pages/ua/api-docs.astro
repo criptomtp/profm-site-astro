@@ -111,7 +111,17 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
     <div class="apidoc-code__head"><span>POST /GetToken — отримати ApiKey</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
     <pre><code>{`curl -X POST 'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/GetToken' \\
   -H 'Content-Type: application/json' \\
-  -d '{"Login":"your_login","Password":"your_password"}'`}</code></pre>
+  -d '{
+    "login": "your_login",
+    "password": "your_password"
+  }'
+
+# Відповідь:
+# {
+#   "result": "ok",
+#   "Data": { "ApiKey": "9a2c46ab-f629-46b4-88ce-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-callout">
@@ -190,11 +200,33 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   -H 'Content-Type: application/json' \\
   -d '{
     "ApiKey": "YOUR_API_KEY",
-    "OrderNumber": "WEB-10542",
-    "Recipient": {"Name": "Петренко О.", "Phone": "+380501234567"},
-    "Delivery": {"Carrier": "NovaPoshta", "City": "Київ", "Warehouse": "№12"},
-    "Items": [{"SKU": "TSHIRT-BLK-L", "Qty": 1, "Price": 550}]
-  }'`}</code></pre>
+    "order": {
+      "id_order": "WEB-10542",
+      "external_id": "WEB-10542",
+      "date_order": "21.06.2026",
+      "recipient": "Петренко Олег",
+      "rec_phone": "380501234567",
+      "comment": "коментар клієнта",
+      "Cost": 550,
+      "PayerType": "Recipient",
+      "payment_method": "Наличными",
+      "order_payment_sum": "550",
+      "delivery_method": "Новая Почта",
+      "delivery_address": {
+        "WarehouseRef": "d7108df0-8433-11e4-acce-0050568002cf"
+      },
+      "products": [
+        { "sku": "TSHIRT-BLK-L", "name": "Футболка чорна L", "count": "1", "price": "550" }
+      ]
+    }
+  }'
+
+# Відповідь:
+# {
+#   "result": "ok",
+#   "Data": { "id_order_FF": "AVS316017", "key_order": "uuid-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -204,13 +236,28 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     ApiKey: process.env.MTP_API_KEY,
-    OrderNumber: order.id,
-    Recipient: { Name: order.name, Phone: order.phone },
-    Delivery: { Carrier: 'NovaPoshta', City: order.city, Warehouse: order.branch },
-    Items: order.items.map(i => ({ SKU: i.sku, Qty: i.qty, Price: i.price }))
+    order: {
+      id_order: order.id,
+      external_id: order.id,
+      date_order: order.dateDDMMYYYY,
+      recipient: order.recipientFullName,
+      rec_phone: order.phone,           // формат 380XXXXXXXXX
+      comment: order.comment || '',
+      Cost: order.declaredValue,        // ціле число
+      PayerType: 'Recipient',           // або 'Sender'
+      payment_method: 'Наличными',      // або 'На карту' (якщо передоплачено)
+      order_payment_sum: String(order.codAmount || order.total),
+      delivery_method: 'Новая Почта',
+      delivery_address: { WarehouseRef: order.warehouseRef },
+      products: order.items.map(i => ({
+        sku: i.sku, name: i.name, count: String(i.qty), price: String(i.price)
+      }))
+    }
   })
 });
-const data = await res.json();`}</code></pre>
+const data = await res.json();
+if (data.result !== 'ok') throw new Error(JSON.stringify(data.errors));
+const ourOrderId = data.Data.id_order_FF;`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -221,13 +268,32 @@ r = requests.post(
     'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder',
     json={
         'ApiKey': os.environ['MTP_API_KEY'],
-        'OrderNumber': order['id'],
-        'Recipient': {'Name': order['name'], 'Phone': order['phone']},
-        'Delivery': {'Carrier': 'NovaPoshta', 'City': order['city'], 'Warehouse': order['branch']},
-        'Items': [{'SKU': i['sku'], 'Qty': i['qty'], 'Price': i['price']} for i in order['items']]
+        'order': {
+            'id_order': order['id'],
+            'external_id': order['id'],
+            'date_order': order['date_ddmmyyyy'],
+            'recipient': order['recipient_full_name'],
+            'rec_phone': order['phone'],            # 380XXXXXXXXX
+            'comment': order.get('comment', ''),
+            'Cost': order['declared_value'],        # int
+            'PayerType': 'Recipient',               # 'Sender' або 'Recipient'
+            'payment_method': 'Наличными',          # або 'На карту'
+            'order_payment_sum': str(order.get('cod_amount', order['total'])),
+            'delivery_method': 'Новая Почта',
+            'delivery_address': {'WarehouseRef': order['warehouse_ref']},
+            'products': [
+                {'sku': i['sku'], 'name': i['name'],
+                 'count': str(i['qty']), 'price': str(i['price'])}
+                for i in order['items']
+            ]
+        }
     }
 )
-r.raise_for_status()`}</code></pre>
+r.raise_for_status()
+data = r.json()
+if data['result'] != 'ok':
+    raise RuntimeError(data['errors'])
+our_order_id = data['Data']['id_order_FF']`}</code></pre>
   </div>
 </article>
 
@@ -246,20 +312,32 @@ r.raise_for_status()`}</code></pre>
     <span class="apidoc-section__num">06</span>
     <h2 class="apidoc-section__title">Помилки та обмеження</h2>
   </div>
-  <p>API повертає HTTP 200 навіть для бізнес-помилок — статус операції передається у полі <code>Result</code> тіла відповіді. Мережеві помилки (400/401/500) означають проблему з форматом запиту або авторизацією.</p>
+  <p>API повертає HTTP 200 для всіх валідних запитів — статус операції в тілі відповіді через рядкове поле <code>result</code>. Мережеві помилки (400/401/500) виникають тільки за неправильної URL або зламаного JSON.</p>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>Структура відповіді</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`{
+  "result": "ok",       // або "error"
+  "Data": { ... },      // корисне навантаження якщо result="ok"
+  "errors": [ ... ]     // масив помилок якщо result="error"
+}`}</code></pre>
+  </div>
+
   <div class="apidoc-table">
     <table>
-      <thead><tr><th>Код Result</th><th>Значення</th><th>Дія</th></tr></thead>
+      <thead><tr><th>Поле / код</th><th>Значення</th><th>Що робити</th></tr></thead>
       <tbody>
-        <tr><td><code>0</code></td><td>OK</td><td>Операція успішна</td></tr>
-        <tr><td><code>1</code></td><td>Auth failed</td><td>Перевірте ApiKey</td></tr>
-        <tr><td><code>2</code></td><td>Validation error</td><td>Подивіться поле <code>Message</code></td></tr>
-        <tr><td><code>3</code></td><td>Not found</td><td>Ресурс (замовлення, SKU) не існує</td></tr>
-        <tr><td><code>9</code></td><td>Internal</td><td>Напишіть у підтримку з ID запиту</td></tr>
+        <tr><td><code>result: "ok"</code></td><td>Операція успішна</td><td>Читайте <code>Data</code></td></tr>
+        <tr><td><code>result: "error"</code></td><td>Бізнес-помилка</td><td>Читайте масив <code>errors</code> — там опис проблеми</td></tr>
+        <tr><td>HTTP <code>401</code></td><td>Невірний ApiKey</td><td>Перевірте поле <code>ApiKey</code> у тілі (не у заголовку!)</td></tr>
+        <tr><td>HTTP <code>400</code></td><td>Неправильний JSON</td><td>Перевірте синтаксис тіла запиту</td></tr>
+        <tr><td>HTTP <code>404</code></td><td>Невідомий метод</td><td>Перевірте URL — чи правильний шлях <code>/api/{`{`}МЕТОД{`}`}</code></td></tr>
+        <tr><td>HTTP <code>429</code></td><td>Rate limit</td><td>Зменшіть частоту запитів (див. нижче)</td></tr>
+        <tr><td>HTTP <code>5xx</code></td><td>Помилка сервера</td><td>Повторіть пізніше або напишіть менеджеру</td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Rate limits:</strong> 60 запитів/хвилина на ApiKey. Для вивантажень звітів (ReportSklad, ReportMoveProduct) — не частіше ніж 1 раз на хвилину. Перевищення ліміту дає HTTP 429.</p>
+  <p><strong>Rate limits:</strong> 60 запитів/хвилина на ApiKey. Для звітних методів (<code>ReportSklad</code>, <code>ReportStatusOrder</code>, <code>ListOrder</code>, <code>ListReturnOrder</code>) — не частіше ніж 1 раз на хвилину. Перевищення дає HTTP 429.</p>
 </article>
 
 <article class="apidoc-section" id="faq">

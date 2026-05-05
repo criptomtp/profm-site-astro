@@ -111,7 +111,17 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
     <div class="apidoc-code__head"><span>POST /GetToken — получить ApiKey</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
     <pre><code>{`curl -X POST 'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/GetToken' \\
   -H 'Content-Type: application/json' \\
-  -d '{"Login":"your_login","Password":"your_password"}'`}</code></pre>
+  -d '{
+    "login": "your_login",
+    "password": "your_password"
+  }'
+
+# Ответ:
+# {
+#   "result": "ok",
+#   "Data": { "ApiKey": "9a2c46ab-f629-46b4-88ce-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-callout">
@@ -190,11 +200,33 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   -H 'Content-Type: application/json' \\
   -d '{
     "ApiKey": "YOUR_API_KEY",
-    "OrderNumber": "WEB-10542",
-    "Recipient": {"Name": "Петров А.", "Phone": "+380501234567"},
-    "Delivery": {"Carrier": "NovaPoshta", "City": "Киев", "Warehouse": "№12"},
-    "Items": [{"SKU": "TSHIRT-BLK-L", "Qty": 1, "Price": 550}]
-  }'`}</code></pre>
+    "order": {
+      "id_order": "WEB-10542",
+      "external_id": "WEB-10542",
+      "date_order": "21.06.2026",
+      "recipient": "Петров Алексей",
+      "rec_phone": "380501234567",
+      "comment": "комментарий клиента",
+      "Cost": 550,
+      "PayerType": "Recipient",
+      "payment_method": "Наличными",
+      "order_payment_sum": "550",
+      "delivery_method": "Новая Почта",
+      "delivery_address": {
+        "WarehouseRef": "d7108df0-8433-11e4-acce-0050568002cf"
+      },
+      "products": [
+        { "sku": "TSHIRT-BLK-L", "name": "Футболка чёрная L", "count": "1", "price": "550" }
+      ]
+    }
+  }'
+
+# Ответ:
+# {
+#   "result": "ok",
+#   "Data": { "id_order_FF": "AVS316017", "key_order": "uuid-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -204,13 +236,28 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     ApiKey: process.env.MTP_API_KEY,
-    OrderNumber: order.id,
-    Recipient: { Name: order.name, Phone: order.phone },
-    Delivery: { Carrier: 'NovaPoshta', City: order.city, Warehouse: order.branch },
-    Items: order.items.map(i => ({ SKU: i.sku, Qty: i.qty, Price: i.price }))
+    order: {
+      id_order: order.id,
+      external_id: order.id,
+      date_order: order.dateDDMMYYYY,
+      recipient: order.recipientFullName,
+      rec_phone: order.phone,           // формат 380XXXXXXXXX
+      comment: order.comment || '',
+      Cost: order.declaredValue,        // целое число
+      PayerType: 'Recipient',           // или 'Sender'
+      payment_method: 'Наличными',      // или 'На карту' (если предоплачено)
+      order_payment_sum: String(order.codAmount || order.total),
+      delivery_method: 'Новая Почта',
+      delivery_address: { WarehouseRef: order.warehouseRef },
+      products: order.items.map(i => ({
+        sku: i.sku, name: i.name, count: String(i.qty), price: String(i.price)
+      }))
+    }
   })
 });
-const data = await res.json();`}</code></pre>
+const data = await res.json();
+if (data.result !== 'ok') throw new Error(JSON.stringify(data.errors));
+const ourOrderId = data.Data.id_order_FF;`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -221,13 +268,32 @@ r = requests.post(
     'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder',
     json={
         'ApiKey': os.environ['MTP_API_KEY'],
-        'OrderNumber': order['id'],
-        'Recipient': {'Name': order['name'], 'Phone': order['phone']},
-        'Delivery': {'Carrier': 'NovaPoshta', 'City': order['city'], 'Warehouse': order['branch']},
-        'Items': [{'SKU': i['sku'], 'Qty': i['qty'], 'Price': i['price']} for i in order['items']]
+        'order': {
+            'id_order': order['id'],
+            'external_id': order['id'],
+            'date_order': order['date_ddmmyyyy'],
+            'recipient': order['recipient_full_name'],
+            'rec_phone': order['phone'],            # 380XXXXXXXXX
+            'comment': order.get('comment', ''),
+            'Cost': order['declared_value'],        # int
+            'PayerType': 'Recipient',               # 'Sender' или 'Recipient'
+            'payment_method': 'Наличными',          # или 'На карту'
+            'order_payment_sum': str(order.get('cod_amount', order['total'])),
+            'delivery_method': 'Новая Почта',
+            'delivery_address': {'WarehouseRef': order['warehouse_ref']},
+            'products': [
+                {'sku': i['sku'], 'name': i['name'],
+                 'count': str(i['qty']), 'price': str(i['price'])}
+                for i in order['items']
+            ]
+        }
     }
 )
-r.raise_for_status()`}</code></pre>
+r.raise_for_status()
+data = r.json()
+if data['result'] != 'ok':
+    raise RuntimeError(data['errors'])
+our_order_id = data['Data']['id_order_FF']`}</code></pre>
   </div>
 </article>
 
@@ -246,20 +312,32 @@ r.raise_for_status()`}</code></pre>
     <span class="apidoc-section__num">06</span>
     <h2 class="apidoc-section__title">Ошибки и лимиты</h2>
   </div>
-  <p>API возвращает HTTP 200 даже для бизнес-ошибок — статус операции в поле <code>Result</code> тела ответа. Сетевые ошибки (400/401/500) означают проблему с форматом запроса или авторизацией.</p>
+  <p>API возвращает HTTP 200 для всех валидных запросов — статус операции в теле ответа через строковое поле <code>result</code>. Сетевые ошибки (400/401/500) возникают только при неправильном URL или сломанном JSON.</p>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>Структура ответа</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`{
+  "result": "ok",       // или "error"
+  "Data": { ... },      // полезная нагрузка если result="ok"
+  "errors": [ ... ]     // массив ошибок если result="error"
+}`}</code></pre>
+  </div>
+
   <div class="apidoc-table">
     <table>
-      <thead><tr><th>Result</th><th>Значение</th><th>Действие</th></tr></thead>
+      <thead><tr><th>Поле / код</th><th>Значение</th><th>Что делать</th></tr></thead>
       <tbody>
-        <tr><td><code>0</code></td><td>OK</td><td>Операция успешна</td></tr>
-        <tr><td><code>1</code></td><td>Auth failed</td><td>Проверьте ApiKey</td></tr>
-        <tr><td><code>2</code></td><td>Validation error</td><td>Смотрите поле <code>Message</code></td></tr>
-        <tr><td><code>3</code></td><td>Not found</td><td>Ресурс (заказ, SKU) не существует</td></tr>
-        <tr><td><code>9</code></td><td>Internal</td><td>Напишите в поддержку с ID запроса</td></tr>
+        <tr><td><code>result: "ok"</code></td><td>Операция успешна</td><td>Читайте <code>Data</code></td></tr>
+        <tr><td><code>result: "error"</code></td><td>Бизнес-ошибка</td><td>Читайте массив <code>errors</code> — там описание проблемы</td></tr>
+        <tr><td>HTTP <code>401</code></td><td>Неверный ApiKey</td><td>Проверьте поле <code>ApiKey</code> в теле (не в заголовке!)</td></tr>
+        <tr><td>HTTP <code>400</code></td><td>Неправильный JSON</td><td>Проверьте синтаксис тела запроса</td></tr>
+        <tr><td>HTTP <code>404</code></td><td>Неизвестный метод</td><td>Проверьте URL — корректный путь <code>/api/{`{`}МЕТОД{`}`}</code></td></tr>
+        <tr><td>HTTP <code>429</code></td><td>Rate limit</td><td>Снизьте частоту запросов (см. ниже)</td></tr>
+        <tr><td>HTTP <code>5xx</code></td><td>Ошибка сервера</td><td>Повторите позже или напишите менеджеру</td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Rate limits:</strong> 60 запросов/минута на ApiKey. Для отчётов (ReportSklad, ReportMoveProduct) — не чаще раза в минуту. Превышение даёт HTTP 429.</p>
+  <p><strong>Rate limits:</strong> 60 запросов/минута на ApiKey. Для отчётных методов (<code>ReportSklad</code>, <code>ReportStatusOrder</code>, <code>ListOrder</code>, <code>ListReturnOrder</code>) — не чаще одного раза в минуту. Превышение даёт HTTP 429.</p>
 </article>
 
 <article class="apidoc-section" id="faq">

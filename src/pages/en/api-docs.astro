@@ -111,7 +111,17 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
     <div class="apidoc-code__head"><span>POST /GetToken — exchange credentials for ApiKey</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
     <pre><code>{`curl -X POST 'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/GetToken' \\
   -H 'Content-Type: application/json' \\
-  -d '{"Login":"your_login","Password":"your_password"}'`}</code></pre>
+  -d '{
+    "login": "your_login",
+    "password": "your_password"
+  }'
+
+# Response:
+# {
+#   "result": "ok",
+#   "Data": { "ApiKey": "9a2c46ab-f629-46b4-88ce-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-callout">
@@ -190,11 +200,33 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   -H 'Content-Type: application/json' \\
   -d '{
     "ApiKey": "YOUR_API_KEY",
-    "OrderNumber": "WEB-10542",
-    "Recipient": {"Name": "Petrenko O.", "Phone": "+380501234567"},
-    "Delivery": {"Carrier": "NovaPoshta", "City": "Kyiv", "Warehouse": "№12"},
-    "Items": [{"SKU": "TSHIRT-BLK-L", "Qty": 1, "Price": 550}]
-  }'`}</code></pre>
+    "order": {
+      "id_order": "WEB-10542",
+      "external_id": "WEB-10542",
+      "date_order": "21.06.2026",
+      "recipient": "Oleh Petrenko",
+      "rec_phone": "380501234567",
+      "comment": "customer note",
+      "Cost": 550,
+      "PayerType": "Recipient",
+      "payment_method": "Наличными",
+      "order_payment_sum": "550",
+      "delivery_method": "Новая Почта",
+      "delivery_address": {
+        "WarehouseRef": "d7108df0-8433-11e4-acce-0050568002cf"
+      },
+      "products": [
+        { "sku": "TSHIRT-BLK-L", "name": "T-Shirt Black L", "count": "1", "price": "550" }
+      ]
+    }
+  }'
+
+# Response:
+# {
+#   "result": "ok",
+#   "Data": { "id_order_FF": "AVS316017", "key_order": "uuid-..." },
+#   "errors": []
+# }`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -204,13 +236,28 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     ApiKey: process.env.MTP_API_KEY,
-    OrderNumber: order.id,
-    Recipient: { Name: order.name, Phone: order.phone },
-    Delivery: { Carrier: 'NovaPoshta', City: order.city, Warehouse: order.branch },
-    Items: order.items.map(i => ({ SKU: i.sku, Qty: i.qty, Price: i.price }))
+    order: {
+      id_order: order.id,
+      external_id: order.id,
+      date_order: order.dateDDMMYYYY,        // e.g. "21.06.2026"
+      recipient: order.recipientFullName,
+      rec_phone: order.phone,                // format 380XXXXXXXXX
+      comment: order.comment || '',
+      Cost: order.declaredValue,             // integer UAH
+      PayerType: 'Recipient',                // or 'Sender'
+      payment_method: 'Наличными',           // or 'На карту' if prepaid (Cyrillic literals required)
+      order_payment_sum: String(order.codAmount || order.total),
+      delivery_method: 'Новая Почта',        // also: 'Ukrposhta', 'Курьерская доставка Киев', 'Самовывоз'
+      delivery_address: { WarehouseRef: order.warehouseRef },
+      products: order.items.map(i => ({
+        sku: i.sku, name: i.name, count: String(i.qty), price: String(i.price)
+      }))
+    }
   })
 });
-const data = await res.json();`}</code></pre>
+const data = await res.json();
+if (data.result !== 'ok') throw new Error(JSON.stringify(data.errors));
+const ourOrderId = data.Data.id_order_FF;`}</code></pre>
   </div>
 
   <div class="apidoc-code">
@@ -221,13 +268,32 @@ r = requests.post(
     'https://fulfillment.in.ua:34443/MTPGroupFulfillment/hs/api/AddOrder',
     json={
         'ApiKey': os.environ['MTP_API_KEY'],
-        'OrderNumber': order['id'],
-        'Recipient': {'Name': order['name'], 'Phone': order['phone']},
-        'Delivery': {'Carrier': 'NovaPoshta', 'City': order['city'], 'Warehouse': order['branch']},
-        'Items': [{'SKU': i['sku'], 'Qty': i['qty'], 'Price': i['price']} for i in order['items']]
+        'order': {
+            'id_order': order['id'],
+            'external_id': order['id'],
+            'date_order': order['date_ddmmyyyy'],   # "21.06.2026"
+            'recipient': order['recipient_full_name'],
+            'rec_phone': order['phone'],            # 380XXXXXXXXX
+            'comment': order.get('comment', ''),
+            'Cost': order['declared_value'],        # int UAH
+            'PayerType': 'Recipient',               # 'Sender' or 'Recipient'
+            'payment_method': 'Наличными',          # or 'На карту' if prepaid (Cyrillic literal required)
+            'order_payment_sum': str(order.get('cod_amount', order['total'])),
+            'delivery_method': 'Новая Почта',       # also: 'Ukrposhta', 'Курьерская доставка Киев', 'Самовывоз'
+            'delivery_address': {'WarehouseRef': order['warehouse_ref']},
+            'products': [
+                {'sku': i['sku'], 'name': i['name'],
+                 'count': str(i['qty']), 'price': str(i['price'])}
+                for i in order['items']
+            ]
+        }
     }
 )
-r.raise_for_status()`}</code></pre>
+r.raise_for_status()
+data = r.json()
+if data['result'] != 'ok':
+    raise RuntimeError(data['errors'])
+our_order_id = data['Data']['id_order_FF']`}</code></pre>
   </div>
 </article>
 
@@ -246,20 +312,32 @@ r.raise_for_status()`}</code></pre>
     <span class="apidoc-section__num">06</span>
     <h2 class="apidoc-section__title">Errors and rate limits</h2>
   </div>
-  <p>The API returns HTTP 200 even for business-level errors — operation status lives in the <code>Result</code> field of the response body. Network errors (400/401/500) indicate a malformed request or auth problem.</p>
+  <p>The API returns HTTP 200 for all valid requests — operation status is delivered via the string <code>result</code> field in the response body. Network-level errors (400/401/500) indicate a wrong URL or malformed JSON, not a business outcome.</p>
+
+  <div class="apidoc-code">
+    <div class="apidoc-code__head"><span>Response envelope</span><button class="apidoc-code__copy" data-copy>Copy</button></div>
+    <pre><code>{`{
+  "result": "ok",       // or "error"
+  "Data": { ... },      // payload when result="ok"
+  "errors": [ ... ]     // array of error descriptions when result="error"
+}`}</code></pre>
+  </div>
+
   <div class="apidoc-table">
     <table>
-      <thead><tr><th>Result</th><th>Meaning</th><th>Action</th></tr></thead>
+      <thead><tr><th>Field / status</th><th>Meaning</th><th>Action</th></tr></thead>
       <tbody>
-        <tr><td><code>0</code></td><td>OK</td><td>Operation succeeded</td></tr>
-        <tr><td><code>1</code></td><td>Auth failed</td><td>Check the ApiKey</td></tr>
-        <tr><td><code>2</code></td><td>Validation error</td><td>Read the <code>Message</code> field</td></tr>
-        <tr><td><code>3</code></td><td>Not found</td><td>Resource (order, SKU) does not exist</td></tr>
-        <tr><td><code>9</code></td><td>Internal</td><td>Contact support with the request ID</td></tr>
+        <tr><td><code>result: "ok"</code></td><td>Operation succeeded</td><td>Read <code>Data</code> for the payload</td></tr>
+        <tr><td><code>result: "error"</code></td><td>Business error</td><td>Read the <code>errors</code> array for description</td></tr>
+        <tr><td>HTTP <code>401</code></td><td>Invalid ApiKey</td><td>Check the <code>ApiKey</code> field in body (not headers!)</td></tr>
+        <tr><td>HTTP <code>400</code></td><td>Malformed JSON</td><td>Validate request body syntax</td></tr>
+        <tr><td>HTTP <code>404</code></td><td>Unknown method</td><td>Verify the URL path <code>/api/{`{`}METHOD{`}`}</code></td></tr>
+        <tr><td>HTTP <code>429</code></td><td>Rate limit hit</td><td>Throttle on your side (see below)</td></tr>
+        <tr><td>HTTP <code>5xx</code></td><td>Server error</td><td>Retry with backoff or contact your manager</td></tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Rate limits:</strong> 60 requests/minute per ApiKey. Bulk report endpoints (ReportSklad, ReportMoveProduct) are capped at 1/min. Exceeding the limit returns HTTP 429.</p>
+  <p><strong>Rate limits:</strong> 60 requests/minute per ApiKey. Reporting endpoints (<code>ReportSklad</code>, <code>ReportStatusOrder</code>, <code>ListOrder</code>, <code>ListReturnOrder</code>) are capped at 1/min. Exceeding the limit returns HTTP 429.</p>
 </article>
 
 <article class="apidoc-section" id="faq">
