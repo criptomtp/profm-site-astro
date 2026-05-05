@@ -469,6 +469,15 @@
 /keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/ 301
 /xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/ /ua/blog/product-business-ukraine-guide/ 301
 /3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/ /ua/blog/ 301
+# Bare-root + mixed-prefix variants of blog slugs (GSC 2026-05-05 round 2)
+/chto-takoe-sla/ /blog/chto-takoe-sla/ 301
+/chto-takoe-sla /blog/chto-takoe-sla/ 301
+/ua/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/en/scho-take-sla/ /ua/blog/scho-take-sla/ 301
+/ua/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/en/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
+/ua/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+/en/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
 
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301
