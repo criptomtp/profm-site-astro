@@ -67,16 +67,20 @@
 /en/blog/case-ecodrive/ /en/blog/ 301
 /en/ua/calculator/ /en/calculator/ 301
 # Tilda technical artifacts — 410 Gone (consciously removed, signals Google to drop fast)
-/lib/tildaicon/* / 410
-/lib/tildaicon / 410
-/tilda/popup/* / 410
-/tilda/* / 410
-/css/fonts-tildasans / 410
-/css/fonts-tildasans/ / 410
-/static3.tildacdn.com/* / 410
-/static3.tildacdn.com / 410
-/-/empty/ / 410
-/-/empty / 410
+# Both with and without trailing slash; explicit /404.html destination for CF Pages spec
+/lib/tildaicon/ /404.html 410
+/lib/tildaicon /404.html 410
+/lib/tildaicon/* /404.html 410
+/tilda/popup/rec400471021/opened /404.html 410
+/tilda/popup/* /404.html 410
+/tilda/* /404.html 410
+/css/fonts-tildasans /404.html 410
+/css/fonts-tildasans/ /404.html 410
+/static3.tildacdn.com/ /404.html 410
+/static3.tildacdn.com /404.html 410
+/static3.tildacdn.com/* /404.html 410
+/-/empty/ /404.html 410
+/-/empty /404.html 410
 /ua/fulfilment-dlya-marketpleysov/ /ua/fulfilment-dlya-marketpleysiv/ 301
 /about/ /ru/about/ 301
 /about /ru/about/ 301
@@ -149,8 +153,6 @@
 /ua/case-studies/roztochna-moda/ /ua/recalls/ 301
 /ua/how-to-choose-fulfillment-provider/ /ua/blog/ 301
 /scho-take-3pl/ /ua/shcho-take-fulfilment/ 301
-/css/fonts-tildasans / 301
-/css/fonts-tildasans/ / 301
 /ua/blog/tpost/5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt/ /ua/blog/10-ways-increase-profit-ecommerce/ 301
 /ua/blog/tpost/5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt /ua/blog/10-ways-increase-profit-ecommerce/ 301
 /blog/tpost/iavfdk7371-10-rabochih-sposobov-uvelichit-pribil-in/ /blog/10-ways-increase-profit-ecommerce/ 301
