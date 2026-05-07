@@ -66,8 +66,17 @@
 /en/blog/fulfillment-vs-own-warehouse/ /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
 /en/blog/case-ecodrive/ /en/blog/ 301
 /en/ua/calculator/ /en/calculator/ 301
-/-/empty/ / 301
-/static3.tildacdn.com/ / 301
+# Tilda technical artifacts — 410 Gone (consciously removed, signals Google to drop fast)
+/lib/tildaicon/* / 410
+/lib/tildaicon / 410
+/tilda/popup/* / 410
+/tilda/* / 410
+/css/fonts-tildasans / 410
+/css/fonts-tildasans/ / 410
+/static3.tildacdn.com/* / 410
+/static3.tildacdn.com / 410
+/-/empty/ / 410
+/-/empty / 410
 /ua/fulfilment-dlya-marketpleysov/ /ua/fulfilment-dlya-marketpleysiv/ 301
 /about/ /ru/about/ 301
 /about /ru/about/ 301
