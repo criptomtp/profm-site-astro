@@ -492,6 +492,45 @@
 /en/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
 /ua/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
 /en/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
+# Phantom UA vertical pages (GSC drilldown 2026-05-11)
+/ua/fulfillment-for-garden-outdoor/ /ua/fulfilment-ukraina/ 301
+/fulfillment-for-garden-outdoor/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-dlya-tvarin/ /ua/fulfilment-ukraina/ 301
+/fulfillment-dlya-tvarin/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-toys/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-fashion/ /fulfilment-dlya-odyahu/ 301
+/ua/fulfillment-for-clothing/ /fulfilment-dlya-odyahu/ 301
+/ua/fulfillment-for-electronics/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-medical-supplies/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-office-supplies/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-sports-equipment/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-subscription-boxes/ /ua/fulfilment-ukraina/ 301
+/ua/fulfillment-for-medical/ /ua/fulfilment-ukraina/ 301
+# Phantom bare-root /guide/* paths Google constructed
+/guide/how-to-choose-fulfillment-provider/ /ua/blog/yak-vybrati-fulfilment/ 301
+/guide/how-to-choose-fulfillment-operator/ /ua/blog/yak-vybrati-fulfilment/ 301
+/guide/international-shipping/ /ua/blog/ 301
+/guide/customer-service/ /poslugy/ 301
+/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
+/guide/obslugovuvannya-kliyentiv/ /poslugy/ 301
+# Phantom /ua/guide/* paths
+/ua/guide/obslugovuvannya-kliyentiv/ /poslugy/ 301
+/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
+/ua/guide/upravlinnya-zapasamy/ /ua/skladski-poslugy/ 301
+/ua/guide/mizhnarodni-dostavky/ /ua/blog/ 301
+/ua/guide/pidbirannya-ta-pakovanya-tovariv/ /komplektatsiya-zamovlen/ 301
+/ua/guide/sistema-upravlinnya-skladom/ /ua/skladski-poslugy/ 301
+# Phantom RU verticals
+/ru/fulfillment-for-pet-products/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-used-and-vintage/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-garden-outdoor/ /ru/fulfilment-ukraina/ 301
+# Phantom EN/UA mixed
+/en/ua/guide/obslugovuvannya-kliyentiv/ /en/services/ 301
+/en/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /en/blog/ 301
+/en/ua/fulfillment-dlya-vykorystanyh-ta-antykvarnykh-tovariv/ /en/fulfillment-ukraine/ 301
+/ru/ua/guide/obslugovuvannya-kliyentiv/ /ru/services/ 301
+/ru/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ru/blog/ 301
+/ru/ua/fulfillment-dlya-vykorystanyh-ta-antykvarnykh-tovariv/ /ru/fulfilment-ukraina/ 301
 
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301
