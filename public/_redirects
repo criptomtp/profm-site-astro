@@ -349,9 +349,17 @@
 /ua/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /ua/blog/mtp-group-fast-product-liquidation/ 301
 /en/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /en/blog/post/mtp-group-fast-product-liquidation/ 301
 
+# GSC drilldown 2026-05-11: 5 broken lang-prefix concatenations 404-ing
+# Send them to guide/b2b hubs directly (existing wildcards led to non-existent slugs)
+/en/ua/guide/yak-obrate-fulfilment-operatora/ /en/guide/ 301
+/en/ua/guide/yak-obroblaty-povernennya/ /en/guide/ 301
+/en/ua/guide/povertannya-tovariv-u-fulfilmenti/ /en/guide/ 301
+/ru/ua/guide/masshtabuvannya-vid-10-do-1000-zamovlen/ /ru/guide/ 301
+/en/ua/fulfillment-dlya-gurtovyh-zakupivel/ /en/b2b-fulfillment-ukraine/ 301
+
 # --- dynamic rules (wildcards / named params, max 100) ---
-/en/ua/guide/:slug/ /ua/guide/:slug/ 301
-/ru/ua/guide/:slug/ /ua/guide/:slug/ 301
+/en/ua/guide/:slug/ /en/guide/ 301
+/ru/ua/guide/:slug/ /ru/guide/ 301
 /en/ua/:slug/ /ua/:slug/ 301
 /ru/ua/:slug/ /ua/:slug/ 301
 /xz8vfk1jg1*/ /ua/blog/ 301
