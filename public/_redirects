@@ -134,14 +134,14 @@
 /en/fulfillment-for-musical-instruments/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-office-supplies/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-used-and-vintage/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-for-wholesale-bulk/ /en/fulfillment-ukraine/ 301
+/en/fulfillment-for-wholesale-bulk/ /en/b2b-fulfillment-ukraine/ 301
 /ua/b2b-fulfilment/ /b2b-fulfilment/ 301
 /ua/enterprise-solutions/ /ua/3pl-logistyka/ 301
 /ua/komplektatsiya-zamovlen/ /ua/3pl-logistyka/ 301
 /ua/garantiya-yakosti/ /ua/3pl-logistyka/ 301
 /ua/mtp-vs-alternativy/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-dlya-fop/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/ua/fulfilment-dlya-distributoriv/ /ua/3pl-logistyka/ 301
+/ua/fulfilment-dlya-distributoriv/ /b2b-fulfilment/ 301
 /ua/fulfilment-boryspil/ /ua/fulfilment-kyiv/ 301
 /ua/fulfilment-po-vsiy-ukraini/ /ua/fulfilment-ukraina/ 301
 /ua/rozetka-fbo/ /ua/fulfilment-dlya-marketpleysiv/ 301
@@ -448,7 +448,7 @@
 /fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
 /fulfilment-dlya-kosmetiki/ /ua/fulfilment-dlya-kosmetyky/ 301
 /fulfilment-dlya-malogo-biznesa/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/fulfillment-dlya-gurtovyh-zakupivel/ /ua/fulfilment-ukraina/ 301
+/fulfillment-dlya-gurtovyh-zakupivel/ /b2b-fulfilment/ 301
 /fulfillment-dlya-abonentskykh-korobiv/ /ua/fulfilment-ukraina/ 301
 /fulfillment-dlya-harchovyh-tovariv/ /ua/fulfilment-ukraina/ 301
 # Phantom vertical pages Google guessed (we don't have these — redirect to closest)
@@ -475,7 +475,7 @@
 /ru/fulfillment-for-subscription-boxes/ /ru/fulfilment-ukraina/ 301
 /ru/fulfillment-for-food-beverages/ /ru/fulfilment-ukraina/ 301
 /ru/fulfillment-for-home-improvement/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-wholesale-bulk/ /ru/fulfilment-ukraina/ 301
+/ru/fulfillment-for-wholesale-bulk/ /ru/b2b-fulfilment/ 301
 /ru/fulfilment-dlya-internet-magazina/ /ru/fulfilment-dlya-internet-magazynu/ 301
 # Old Tilda token slugs at root that Google still finds
 /25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/ /blog/fulfillment-vs-own-warehouse-2025/ 301
@@ -595,7 +595,7 @@
 /en/fulfillment-pricing-calculator/ /en/calculator/ 301
 /en/fulfillment-small-business/ /en/fulfilment-for-small-business/ 301
 /en/fulfilment-boryspil/ /en/fulfillment-kyiv/ 301
-/en/fulfilment-dlya-distributoriv/ /en/services/ 301
+/en/fulfilment-dlya-distributoriv/ /en/b2b-fulfillment-ukraine/ 301
 /en/fulfilment-dlya-fop/ /en/fulfilment-for-small-business/ 301
 /en/fulfilment-dlya-malogo-biznesa/ /en/fulfilment-for-small-business/ 301
 /en/fulfilment-po-vsiy-ukraini/ /en/fulfillment-ukraine/ 301
@@ -629,7 +629,7 @@
 /en/3pl/ /en/3pl-logistics/ 301
 # Phantom EN /fulfillment-dlya-* (UA slug with EN prefix)
 /en/fulfillment-dlya-abonentskykh-korobiv/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-dlya-gurtovyh-zakupivel/ /en/fulfillment-ukraine/ 301
+/en/fulfillment-dlya-gurtovyh-zakupivel/ /en/b2b-fulfillment-ukraine/ 301
 /en/fulfillment-dlya-muzykalnykh-instrumentiv/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-dlya-remontnyh-materialiv/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-dlya-sportyvnogo-zhyvlennya/ /en/fulfillment-ukraine/ 301
