@@ -72,7 +72,7 @@
 | 27 | /ua/fulfilment-dlya-internet-magazynu/ | фулфілмент для інтернет-магазину | логістика для e-commerce, склад для онлайн магазину | ✅ |
 | 28 | /ua/fulfilment-dlya-marketpleysiv/ | фулфілмент для маркетплейсів | фулфілмент Rozetka, Prom, Kasta, OLX | ✅ |
 | 29 | /ua/fulfilment-dlya-startapiv/ | фулфілмент для стартапів | логістика для початківців, мінімальний обсяг | 🟡 |
-| 30 | /ua/b2b-fulfilment/ | B2B фулфілмент Україна | оптова логістика, фулфілмент для дистриб'юторів | 🟠 |
+| 30 | /b2b-fulfilment/ | B2B фулфілмент для дистриб'юторів | UA + RU + EN deployed 2026-05-11. Pillar triplet. 9/9 schemas, 2666/2660/2998 words. UA Bold Red Industrial + B2B vs B2C Dossier (anchor 450 грн/18 грн/1С/BAS). RU Flag Flow Diagram for CIS brands entering UA (KZ/MD/GE/UZ/AZ/PL, no BY). EN Full Cost Matrix vs US/EU 3PL ($6K vs $24K vs $30K annual). validate:pillar ✅ ALL PASSED. | ✅ |
 | 31 | /ua/fulfilment-dropshipping/ | фулфілмент для дропшипінгу | логістика без власного складу, дропшип Україна | 🟡 |
 | 32 | /ua/fulfilment-dlya-vyrobnykiv/ | фулфілмент для виробників | логістика від виробництва до клієнта, D2C фулфілмент | 🟡 |
 | 33 | /ua/fulfilment-dlya-brendiv/ | фулфілмент для брендів | преміум пакування, брендована логістика | 🟡 |
@@ -197,7 +197,7 @@
 | 116 | /en/fulfilment-for-cosmetics/ | cosmetics fulfillment Ukraine | ✅ |
 | 117 | /en/fulfillment-for-fashion/ | fashion fulfillment Ukraine | 🔵 |
 | 118 | /en/fulfillment-for-electronics/ | electronics fulfillment Ukraine | 🔵 |
-| 119 | /en/b2b-fulfillment-ukraine/ | B2B fulfillment Ukraine | 🔵 |
+| 119 | /en/b2b-fulfillment-ukraine/ | B2B fulfillment Ukraine | EN deployed 2026-05-11 as part of pillar triplet — Dark Savings + Full Cost Matrix vs US/EU 3PL. 2998 words. | ✅ |
 | 120 | /en/fulfillment-boryspil-airport/ | fulfillment near Boryspil airport Kyiv | 🔵 |
 | 121 | /en/blog/post/top-fulfillment-operators-ukraine-2026/ | top fulfillment companies Ukraine 2026 | ✅ |
 

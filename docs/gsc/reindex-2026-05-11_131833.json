@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-11_131833",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/b2b-fulfilment/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}
