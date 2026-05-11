@@ -23,48 +23,30 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
 </Fragment>
 
-<!-- HERO — Flag Flow Diagram (CIS brands → Ukraine via Kyiv warehouse) -->
+<!-- HERO — Flag Flow Diagram + CTA on first screen -->
 <section class="b2b-hero">
-  <div class="ctr">
-    <div class="b2b-chip">B2B · CIS → УКРАИНА · ОПТОВАЯ ДИСТРИБУЦИЯ</div>
-    <h1>Из Казахстана, Молдовы, Грузии в украинскую B2B-розницу через наш киевский склад</h1>
-    <p class="b2b-hero-sub">Бренды СНГ выходят напрямую в Сильпо, АТБ, Watsons, Eva, Modnakasta, INTERTOP без открытия украинской юр.лица. Палетное хранение от $10/мес, ЭДО Вчасно, расчёты в USD/EUR на ваш CIS-счёт ежемесячно. Cross-border B2B-модель через нашего украинского оператора.</p>
+  <div class="ctr b2b-hero-grid">
+    <div class="b2b-hero-text">
+      <div class="b2b-chip">B2B · CIS → УКРАИНА · ОПТОВАЯ ДИСТРИБУЦИЯ</div>
+      <h1>Из Казахстана, Молдовы, Грузии в украинскую B2B-розницу через наш киевский склад</h1>
+      <p class="b2b-hero-sub">Бренды СНГ выходят в Сильпо, АТБ, Watsons, Eva, Modnakasta без открытия украинской юр.лица. Палетное хранение от $10/мес, расчёты в USD/EUR на ваш CIS-счёт ежемесячно.</p>
 
-    <!-- Flag Flow Diagram — CSS-only -->
-    <div class="b2b-flow-diagram">
-      <div class="b2b-flow-sources">
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇰🇿</span><span class="b2b-flow-name">КАЗАХСТАН</span><span class="b2b-flow-cat">косметика, food, fashion</span></div>
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇲🇩</span><span class="b2b-flow-name">МОЛДОВА</span><span class="b2b-flow-cat">вино, агро, beauty</span></div>
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇬🇪</span><span class="b2b-flow-name">ГРУЗИЯ</span><span class="b2b-flow-cat">вино, fashion, food</span></div>
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇺🇿</span><span class="b2b-flow-name">УЗБЕКИСТАН</span><span class="b2b-flow-cat">текстиль, сухофрукты</span></div>
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇦🇿</span><span class="b2b-flow-name">АЗЕРБАЙДЖАН</span><span class="b2b-flow-cat">food, beauty</span></div>
-        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇵🇱</span><span class="b2b-flow-name">ПОЛЬША</span><span class="b2b-flow-cat">beauty, fashion, FMCG</span></div>
-      </div>
-      <div class="b2b-flow-arrows">→</div>
-      <div class="b2b-flow-hub">
-        <div class="b2b-flow-hub-icon">📦</div>
-        <div class="b2b-flow-hub-name">KYIV WAREHOUSE</div>
-        <div class="b2b-flow-hub-sub">MTP B2B-склад<br>3 700 м²</div>
-      </div>
-      <div class="b2b-flow-arrows">→</div>
-      <div class="b2b-flow-dest">
-        <div class="b2b-flow-flag b2b-flow-dest-flag"><span class="b2b-flow-icon">🇺🇦</span><span class="b2b-flow-name">УКРАИНА</span><span class="b2b-flow-cat">30+ розничных сетей</span></div>
+      <!-- Compact Flag Flow Diagram — 3 cols x 2 rows of source flags -->
+      <div class="b2b-flow-mini">
+        <div class="b2b-flow-mini-sources">
+          <span>🇰🇿 KZ</span><span>🇲🇩 MD</span><span>🇬🇪 GE</span><span>🇺🇿 UZ</span><span>🇦🇿 AZ</span><span>🇵🇱 PL</span>
+        </div>
+        <div class="b2b-flow-mini-arrow">→</div>
+        <div class="b2b-flow-mini-hub">📦 KYIV<br><small>MTP 3 700 м²</small></div>
+        <div class="b2b-flow-mini-arrow">→</div>
+        <div class="b2b-flow-mini-dest">🇺🇦 UA<br><small>30+ сетей</small></div>
       </div>
     </div>
-
-    <a href="#b2b-cta" class="b2b-cta-btn">Получить расчёт для CIS-бренда →</a>
-  </div>
-</section>
-
-<!-- HERO CTA strip -->
-<section class="b2b-cta-strip">
-  <div class="ctr">
-    <div class="b2b-cta-card">
-      <div class="b2b-cta-text">
-        <strong>Получите расчёт для вашего CIS-бренда</strong>
-        <span>Под ваш каталог SKU, объём палет, выбранные украинские сети. Ответ в течение 15 минут на казахстанский / молдавский / грузинский номер.</span>
+    <div class="b2b-hero-cta">
+      <div class="b2b-cta-card">
+        <div class="b2b-cta-title">Расчёт для вашего CIS-бренда</div>
+        <HeroCTA lang="ru" theme="light" button="Получить расчёт →" microCopy="✓ Ответ за 15 минут · KZ/MD/GE/UZ/AZ/PL → UA сети" sourceTag="hero /ru/b2b-fulfilment/" />
       </div>
-      <HeroCTA lang="ru" theme="light" button="Получить расчёт →" microCopy="✓ Ответ в течение 15 минут · ваш CIS-бренд + UA сети" sourceTag="hero /ru/b2b-fulfilment/" />
     </div>
   </div>
 </section>
@@ -336,34 +318,29 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 </Base>
 
 <style is:global>
-/* B2B RU CIS — Flag Flow Diagram hero */
-.b2b-hero{background:#fff;color:#000;padding:80px 0 60px}
+/* B2B RU CIS — 2-col hero with mini flag flow + CTA on first screen */
+.b2b-hero{background:#fff;color:#000;padding:40px 0 32px}
 .b2b-hero .ctr{max-width:1280px}
-.b2b-hero .b2b-chip{margin-bottom:24px}
-.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:1.05;letter-spacing:-0.03em;margin:0 auto 24px;color:#000;max-width:1020px;text-align:center}
-.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:#333;margin:0 auto 48px;max-width:840px;text-align:center}
-.b2b-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s;margin-top:32px}
-.b2b-cta-btn:hover{background:#c12a22}
-.b2b-hero{text-align:center}
-.b2b-hero .b2b-chip{display:inline-block}
+.b2b-hero-grid{display:grid;grid-template-columns:1.2fr 420px;gap:40px;align-items:start}
+.b2b-hero-text{min-width:0;text-align:left}
+.b2b-hero .b2b-chip{margin-bottom:16px;display:inline-block}
+.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(24px,2.8vw,38px);line-height:1.08;letter-spacing:-0.025em;margin:0 0 16px;color:#000;text-align:left}
+.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.5;color:#333;margin:0 0 24px;text-align:left}
 
-/* Flag Flow Diagram */
-.b2b-flow-diagram{display:grid;grid-template-columns:1fr auto 1.4fr auto 1fr;gap:24px;align-items:center;background:#f3f3f3;padding:32px;border:2px solid #000;margin:0 auto;max-width:1100px}
-.b2b-flow-sources{display:grid;grid-template-columns:1fr;gap:12px}
-.b2b-flow-flag{background:#fff;border:1px solid #ddd;border-left:4px solid #e63329;padding:12px 14px;display:flex;align-items:center;gap:12px;text-align:left}
-.b2b-flow-icon{font-size:28px;line-height:1;flex-shrink:0}
-.b2b-flow-name{font-family:Unbounded,sans-serif;font-weight:800;font-size:13px;color:#000;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;min-width:90px}
-.b2b-flow-cat{font-family:'DM Sans',sans-serif;font-size:11px;color:#666;text-align:left;line-height:1.3}
-.b2b-flow-arrows{font-family:Unbounded,sans-serif;font-weight:900;font-size:48px;color:#e63329;line-height:1;text-align:center}
-.b2b-flow-hub{background:#0a0a0a;color:#fff;padding:32px 24px;text-align:center;border:2px solid #000}
-.b2b-flow-hub-icon{font-size:48px;line-height:1;margin-bottom:12px}
-.b2b-flow-hub-name{font-family:Unbounded,sans-serif;font-weight:900;font-size:18px;color:#e63329;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
-.b2b-flow-hub-sub{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.85);line-height:1.4}
-.b2b-flow-dest{display:flex;align-items:center;justify-content:center}
-.b2b-flow-dest-flag{background:#e63329;border:1px solid #e63329;border-left:4px solid #fff;color:#fff;flex-direction:column;align-items:center;gap:6px;padding:24px;text-align:center}
-.b2b-flow-dest-flag .b2b-flow-icon{font-size:48px}
-.b2b-flow-dest-flag .b2b-flow-name{color:#fff;font-size:18px}
-.b2b-flow-dest-flag .b2b-flow-cat{color:rgba(255,255,255,.9);text-align:center}
+/* Mini Flag Flow Diagram — compact horizontal */
+.b2b-flow-mini{display:grid;grid-template-columns:1fr auto auto auto auto;gap:14px;align-items:center;background:#f3f3f3;padding:18px;border:2px solid #000}
+.b2b-flow-mini-sources{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.b2b-flow-mini-sources span{background:#fff;border:1px solid #ddd;border-left:3px solid #e63329;padding:6px 8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;color:#000;text-align:center}
+.b2b-flow-mini-arrow{font-family:Unbounded,sans-serif;font-weight:900;font-size:24px;color:#e63329;line-height:1}
+.b2b-flow-mini-hub{background:#0a0a0a;color:#fff;padding:14px 12px;text-align:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:13px;color:#e63329;letter-spacing:.04em;line-height:1.2}
+.b2b-flow-mini-hub small{display:block;font-weight:400;font-size:10px;color:rgba(255,255,255,.7);margin-top:4px;font-family:'DM Sans',sans-serif;letter-spacing:0}
+.b2b-flow-mini-dest{background:#e63329;color:#fff;padding:14px 12px;text-align:center;font-family:Unbounded,sans-serif;font-weight:900;font-size:13px;letter-spacing:.04em;line-height:1.2}
+.b2b-flow-mini-dest small{display:block;font-weight:400;font-size:10px;color:rgba(255,255,255,.9);margin-top:4px;font-family:'DM Sans',sans-serif;letter-spacing:0}
+
+/* CTA card inside hero */
+.b2b-hero-cta{position:sticky;top:24px}
+.b2b-cta-card{background:#fff;border:2px solid #000;padding:24px;max-width:420px}
+.b2b-cta-title{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#000;margin-bottom:16px;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
 
 /* Stats bar */
 .b2b-statsbar{background:#0a0a0a;color:#fff;padding:48px 0}
@@ -427,16 +404,15 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .b2b-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
 .b2b-sec a{color:#e63329}
 
-/* Hero CTA strip — between hero and stats */
-.b2b-cta-strip{background:#fff;padding:32px 0 0}
-.b2b-cta-card{background:#fafafa;border:2px solid #000;border-left:6px solid #e63329;padding:28px 32px;display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;max-width:1100px;margin:0 auto}
-.b2b-cta-text strong{display:block;font-family:Unbounded,sans-serif;font-weight:800;font-size:20px;color:#000;margin-bottom:8px;line-height:1.2}
-.b2b-cta-text span{display:block;font-family:'DM Sans',sans-serif;font-size:14px;color:#555;line-height:1.5}
-@media (max-width:900px){.b2b-cta-card{grid-template-columns:1fr;gap:20px;padding:24px}}
-
+@media (max-width:980px){
+  .b2b-hero-grid{grid-template-columns:1fr;gap:24px}
+  .b2b-hero-cta{position:static}
+  .b2b-cta-card{max-width:none}
+  .b2b-flow-mini{grid-template-columns:1fr;gap:10px}
+  .b2b-flow-mini-arrow{transform:rotate(90deg);font-size:20px;text-align:left}
+}
 @media (max-width:900px){
-  .b2b-flow-diagram{grid-template-columns:1fr;gap:16px}
-  .b2b-flow-arrows{transform:rotate(90deg);font-size:36px}
+  .b2b-hero{padding:24px 0 20px}
   .b2b-sb-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .b2b-uc-grid,.b2b-tech-grid,.b2b-price-grid,.b2b-rel-grid{grid-template-columns:1fr;gap:16px}
   .b2b-chain-grid{grid-template-columns:repeat(2,1fr);gap:12px}
