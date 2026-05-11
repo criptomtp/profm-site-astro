@@ -1,0 +1,449 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-11","name":"B2B Fulfillment Ukraine for International Wholesale Brands","description":"International wholesale brands enter Ukraine through our Kyiv-based B2B fulfillment hub. Pallet storage from $10/pallet/mo, B2B order pick & pack from $0.41/order, EDI integration with 30+ Ukrainian retail chains (Silpo, ATB, Watsons, Eva, Metro, Modnakasta), 24h SLA. Cost matrix vs US/EU 3PL: 3-4x cheaper. No Ukrainian legal entity required — agency model via our operational partner.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ТОВ МТП Груп Фулфілмент","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"US"},{"@type":"Country","name":"GB"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"FR"},{"@type":"Country","name":"IT"},{"@type":"Country","name":"ES"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"NL"}],"serviceType":"B2B Wholesale Fulfillment Ukraine — entry to 30+ Ukrainian retail chains for international brands via Kyiv hub","audience":{"@type":"BusinessAudience","name":"International wholesale brands (US, UK, Germany, France, Italy, Spain, Poland, Netherlands) entering the Ukrainian B2B retail market without local legal entity — beauty, FMCG, fashion, food premium, household chemistry, electronics"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"10","description":"Pallet storage from $10/pallet/mo (vs US $35-50, EU $40-65). B2B order pick & pack from $0.41/order (vs US $1.20-1.80, EU $1.80-2.50). EDI integration with Ukrainian retail chains, customs clearance, accounting — bundled $200-400/mo. Minimum monthly fee $500 first 3 months."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a US brand sell wholesale to Ukrainian retail chains without setting up a Ukrainian legal entity?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cross-border B2B model through our Ukrainian operational partner under an agency agreement. Your US brand remains a Delaware/Nevada LLC, we sell on your behalf to Ukrainian retail chains (Silpo, ATB, Watsons, Eva, Metro). All Ukrainian roles (legal entity for the chain contract, VAT registration, qualified electronic signature for EDI, settlement account, alcohol/pharma licenses where applicable) are on our side. You receive monthly revenue in USD/EUR to your US bank account. Currency risk of the Ukrainian hryvnia is on us."}},{"@type":"Question","name":"How does Ukrainian B2B fulfillment cost compare to US and EU 3PL?","acceptedAnswer":{"@type":"Answer","text":"Pallet storage: $10/mo Ukraine vs $35-50/mo US (Texas/Pennsylvania) vs $40-65/mo EU (Poland/Germany). B2B order pick & pack: $0.41/order Ukraine vs $1.20-1.80/order US (FBA wholesale) vs $1.80-2.50/order EU. Annual cost for 50 pallets + 200 B2B orders/month: $6,000-7,000 Ukraine vs $24,000-30,000 US vs $30,000-40,000 EU. 3-5x cost arbitrage, driven by lower Ukrainian labor cost ($600-800/mo warehouse worker vs $3,000-4,500 US, $2,200-2,800 EU) and lower warehouse real estate cost ($35-50/sqm/year vs $120-180 US, $100-150 EU)."}},{"@type":"Question","name":"Which Ukrainian retail chains can an international brand reach through your fulfillment?","acceptedAnswer":{"@type":"Answer","text":"30+ major Ukrainian retail chains with pre-existing supplier protocols: Silpo (premium food + beauty, Comarch EDI), ATB (mass food, strict SLA), Watsons (beauty + pharma certification), Eva (beauty, growing chain), Prostor (cosmetics + household), Cosmo (premium beauty), Brocard (selective perfumery), Metro (B2B channel, SAP Ariba), Novus (premium food), Modnakasta (fashion + home), INTERTOP (footwear), Allo (electronics), Foxtrot (appliances), Epicentr (DIY, home), Auchan, Fozzy Cash & Carry. Our operational partner already has supplier status with most major chains — your international brand plugs in through us, saving 2-4 months of traditional supplier registration."}},{"@type":"Question","name":"What is the onboarding timeline for an international wholesale brand entering Ukraine?","acceptedAnswer":{"@type":"Answer","text":"21-30 business days from contract signing to first shipment to a Ukrainian retail chain. Cycle: days 1-3 contract with our Ukrainian operational partner, days 3-7 documentation prep from your side (corporate registration, banking, commercial invoice, certificate of origin EUR.1 or equivalent, HS code classification), days 7-14 international transportation (US→UA 15-21 days air/30-45 days sea, UK/EU→UA 5-10 days truck/3-7 days air, China→UA 20-35 days sea), days 14-16 inbound + WMS slotting, days 16-21 supplier registration with retail chain through our partner, days 21-25 EDI protocol setup (Comarch for ATB, SAP Ariba for Metro, Vchasno for general), days 25-30 first test shipment end-to-end. For pharma/food certification or large initial volumes — up to 45 days."}},{"@type":"Question","name":"What are Ukrainian VAT and customs implications for inbound from US/EU?","acceptedAnswer":{"@type":"Answer","text":"20% Ukrainian VAT on imports from customs value at the border. Paid by your international brand (we facilitate via customs broker). When the retail chain buys from us, VAT is included in the sale price (for the chain, it's input VAT). Cash flow event: paid at import, recovered through sales in 1-3 months. EU brands benefit from EU-Ukraine DCFTA (Deep and Comprehensive Free Trade Area) — zero or reduced import duties for most categories. UK brands benefit from UK-Ukraine FTA (similar terms post-Brexit). US brands — standard MFN tariffs, typically 0-10% for most goods. China brands — standard MFN, similar range."}},{"@type":"Question","name":"How does your team handle Ukrainian EDI for international brands?","acceptedAnswer":{"@type":"Answer","text":"We operate within your supplier portal as the operational partner. Vchasno (most popular general EDI) — invoice, delivery note, acceptance act generated in our WMS, signed with qualified electronic signature (QES) from our operator side. Comarch EDI for ATB (mandatory protocol). SAP Ariba for Metro. Edin for pharma. For international brands without Ukrainian QES — our QES suffices since the agency model places us as the legal seller to the Ukrainian chain. Your brand sees order-to-cash flow in real-time through our partner dashboard."}},{"@type":"Question","name":"What is the cost of cross-border transportation US/EU/China to Ukraine?","acceptedAnswer":{"@type":"Answer","text":"US→UA: $2,500-4,000 per 40ft container sea (30-45 days) or $8-12/kg air (15-21 days). UK→UA: $1,800-2,800 per 40ft container road+sea or $5-8/kg air (7-12 days). EU→UA (Germany, Poland, Netherlands): $1,200-2,000 per 40ft truck (5-10 days). China→UA: $2,000-3,500 per 40ft container sea (35-50 days via Black Sea/Odesa) or $6-10/kg air. This is a one-time cost per inventory replenishment, not per B2B order. For 50-pallet inbound — averages out to $30-80/pallet for transportation. Within Ukraine — delivery to retail chains is paid by the chain (FOB warehouse) and costs $30-60/pallet via Nova Poshta Cargo."}},{"@type":"Question","name":"Why has the Ukrainian B2B retail market opened up for international brands since 2022?","acceptedAnswer":{"@type":"Answer","text":"Russian and Belarusian suppliers exited the Ukrainian retail market following the 2022 invasion. Categories remain open across cosmetics (Watsons/Eva actively recruiting international beauty), premium food (Silpo expanding international portfolio), fashion (Modnakasta, INTERTOP, Kasta seeking international labels), household chemistry, textile, niche products. Retail chains themselves are reaching out to international suppliers with offers. Margin in Ukrainian retail is typically 30-50% above the brand's domestic market for premium categories. Ukrainian middle class (Kyiv, Lviv, Odesa, Dnipro) has purchasing power comparable to Warsaw, Prague, Sofia — and willingness to pay for international branding."}},{"@type":"Question","name":"What about war risk for our inventory in Ukraine?","acceptedAnswer":{"@type":"Answer","text":"Real consideration. Our Kyiv-region facilities are 35-45km from the city center (Shchaslyve 2,700 sqm and Bilohorodka 1,000 sqm) — outside primary missile impact zones, but Kyiv region has experienced air raid alerts and occasional strikes. Risk mitigation: (1) Inventory insurance via Ukrainian insurers covering war risk for warehoused goods, $0.30-0.80 per $100 of inventory value monthly. (2) Standard practice of keeping ~30 days of inventory in Ukraine, not 90+ days. (3) Distributed retail-chain delivery means inventory moves out within 3-7 days of pick request, reducing static exposure. (4) Our facilities have generator backup, blast-protective measures, fire suppression. (5) Zero days of operational downtime since February 2022 across our customer base. (6) Government compensation scheme for war-damaged commercial property if needed."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"B2B Fulfillment Ukraine","item":"https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Kyiv hub for international wholesale brands","url":"https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$10/pallet/mo + $0.41/order","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"Promyslova St.","addressLocality":"Shchaslyve, Boryspil district","addressRegion":"Kyiv Oblast","postalCode":"08322","addressCountry":"UA","description":"Warehouse 2,700 sqm — primary B2B location"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","postalCode":"08140","addressCountry":"UA","description":"Warehouse 1,000 sqm — alcohol licensed, FEFO zone"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"US"},{"@type":"Country","name":"GB"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"FR"},{"@type":"Country","name":"IT"},{"@type":"Country","name":"ES"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"NL"}]}</script>`;
+---
+<Base
+  title="B2B Fulfillment Ukraine for International Brands — $10/Pallet/Mo"
+  description="International wholesale brands enter Ukrainian retail (Silpo, ATB, Watsons, Eva, Metro) via our Kyiv hub. $10/pallet/mo (3-5x cheaper than US/EU 3PL), 24h SLA, 30+ chain integrations."
+  canonical="https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/b2b-fulfilment-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
+</Fragment>
+
+<!-- HERO — Dark Cost Matrix focus (no green per brand palette) -->
+<section class="b2b-hero">
+  <div class="ctr">
+    <div class="b2b-chip">B2B · INTERNATIONAL → UKRAINE · WHOLESALE</div>
+    <h1>3-5x cheaper than US/EU 3PL — wholesale fulfillment into Ukrainian retail chains</h1>
+    <p class="b2b-hero-sub">International brands (US, UK, Germany, France, Italy, Spain, Poland) enter 30+ Ukrainian retail chains (Silpo, ATB, Watsons, Eva, Metro, Modnakasta) through our Kyiv-based B2B fulfillment hub. Pallet storage $10/mo (vs $35-50 US, $40-65 EU). No Ukrainian legal entity required — agency model. Monthly settlement in USD/EUR to your account.</p>
+    <a href="#b2b-cost-matrix" class="b2b-cta-btn">See full cost matrix →</a>
+  </div>
+</section>
+
+<!-- HUGE COST SAVINGS BAR -->
+<section class="b2b-savings-bar">
+  <div class="ctr">
+    <div class="b2b-savings-label">ANNUAL COST FOR 50 PALLETS + 200 B2B ORDERS/MO</div>
+    <div class="b2b-savings-grid">
+      <div class="b2b-savings-cell">
+        <div class="b2b-savings-amount">$6,000</div>
+        <div class="b2b-savings-loc">🇺🇦 UKRAINE (MTP)</div>
+      </div>
+      <div class="b2b-savings-cell b2b-savings-vs">
+        <div class="b2b-savings-amount b2b-savings-strike">$24,000</div>
+        <div class="b2b-savings-loc">🇺🇸 US 3PL (TX/PA)</div>
+        <div class="b2b-savings-diff">−$18,000/year</div>
+      </div>
+      <div class="b2b-savings-cell b2b-savings-vs">
+        <div class="b2b-savings-amount b2b-savings-strike">$30,000</div>
+        <div class="b2b-savings-loc">🇪🇺 EU 3PL (PL/DE)</div>
+        <div class="b2b-savings-diff">−$24,000/year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST MATRIX v2 — MTP column full red highlight -->
+<section class="b2b-sec" id="b2b-cost-matrix">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">COST MATRIX</div>
+    <h2 class="b2b-h2">Full unit-economics comparison — Ukraine vs US vs EU B2B 3PL</h2>
+    <p class="b2b-lede">Independently verifiable rates published by major 3PL providers (ShipBob, Red Stag, Flexport US; FIEGE, Rhenus, Kuehne+Nagel EU). MTP Kyiv pricing public on this page. Source of arbitrage: Ukrainian labor cost ($600-800/mo warehouse worker vs $3,000-4,500 US, $2,200-2,800 EU) and warehouse real estate cost ($35-50/sqm/year vs $120-180 US, $100-150 EU). Quality (99.98% pick accuracy, 24h SLA) is comparable to US/EU 3PL because we run the same WMS technology stack.</p>
+    <div class="b2b-cost-matrix">
+      <table class="b2b-matrix-table">
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th class="b2b-matrix-mtp">🇺🇦 MTP UKRAINE</th>
+            <th>🇺🇸 US 3PL</th>
+            <th>🇪🇺 EU 3PL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pallet storage</strong> (per month)</td>
+            <td class="b2b-matrix-mtp">$10</td>
+            <td>$35-50</td>
+            <td>$40-65</td>
+          </tr>
+          <tr>
+            <td><strong>B2B order pick & pack</strong> (multi-SKU)</td>
+            <td class="b2b-matrix-mtp">$0.41</td>
+            <td>$1.20-1.80</td>
+            <td>$1.80-2.50</td>
+          </tr>
+          <tr>
+            <td><strong>Cross-docking pallet</strong> (transit)</td>
+            <td class="b2b-matrix-mtp">$7</td>
+            <td>$25-40</td>
+            <td>$30-50</td>
+          </tr>
+          <tr>
+            <td><strong>Inbound receiving</strong> (per pallet)</td>
+            <td class="b2b-matrix-mtp">$3</td>
+            <td>$15-25</td>
+            <td>$15-30</td>
+          </tr>
+          <tr>
+            <td><strong>EDI / chain integration</strong> (monthly)</td>
+            <td class="b2b-matrix-mtp">Included</td>
+            <td>$300-800</td>
+            <td>$400-1,000</td>
+          </tr>
+          <tr>
+            <td><strong>Warehouse worker</strong> (loaded cost/mo)</td>
+            <td class="b2b-matrix-mtp">$600-800</td>
+            <td>$3,000-4,500</td>
+            <td>$2,200-2,800</td>
+          </tr>
+          <tr>
+            <td><strong>Warehouse real estate</strong> ($/sqm/year)</td>
+            <td class="b2b-matrix-mtp">$35-50</td>
+            <td>$120-180</td>
+            <td>$100-150</td>
+          </tr>
+          <tr class="b2b-matrix-total">
+            <td><strong>Annual cost — 50 pallets, 200 orders/mo</strong></td>
+            <td class="b2b-matrix-mtp"><strong>$6,000-7,000</strong></td>
+            <td><strong>$24,000-30,000</strong></td>
+            <td><strong>$30,000-40,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UKRAINE OPENED UP -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">MARKET OPPORTUNITY</div>
+    <h2 class="b2b-h2">Why the Ukrainian B2B retail market opened for international brands in 2026</h2>
+    <p class="b2b-lede">Russian and Belarusian suppliers exited the Ukrainian retail market following the 2022 invasion. Categories remain open across cosmetics, premium food, fashion, household chemistry, textile. Retail chains are actively reaching out to international suppliers with offers. Margin in Ukrainian retail is typically 30-50% above the brand's domestic market for premium categories.</p>
+    <div class="b2b-uc-grid">
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">36 MILLION</div>
+        <h3>Fourth-largest Eastern European retail market</h3>
+        <p>36 million people, median monthly income $580, growing middle class concentrated in Kyiv, Lviv, Odesa, Dnipro. Active retail infrastructure: 300+ Silpo premium food stores, 1,500+ ATB mass food, 800+ Watsons and Eva beauty chain locations, plus regional chains. Total annual B2B logistics flow $2-3 billion.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">2022 EXIT</div>
+        <h3>Open category niches after RF/BY supplier exit</h3>
+        <p>Cosmetics, premium food, fashion, household chemistry — categories where Ukrainian retail actively seeks international alternatives. Watsons and Eva have dedicated programs for international beauty brand entry. Silpo and Metro actively recruit European premium food. Modnakasta and INTERTOP openly source international fashion labels.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">30-50%</div>
+        <h3>Margin uplift vs brand's domestic market</h3>
+        <p>Premium beauty, premium food, fashion — Ukrainian retail prices typically 30-50% above brand's domestic equivalent. Watsons/Brocard premium beauty pricing comparable to Sephora EU. Silpo premium food pricing comparable to Waitrose mid-tier. Margin captured by international brand entering with cost-efficient Ukraine fulfillment vs running country direct.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">DCFTA</div>
+        <h3>EU-Ukraine and UK-Ukraine free trade areas</h3>
+        <p>EU brands benefit from EU-Ukraine DCFTA — zero or reduced import duties for most categories. UK brands benefit from UK-Ukraine FTA. US brands — standard MFN tariffs typically 0-10%. Customs clearance process well-established with multiple specialized brokers. Average customs clearance time 1-3 business days.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">AGENCY</div>
+        <h3>Agency model — no Ukrainian legal entity required</h3>
+        <p>Through our Ukrainian operational partner under agency agreement. Your brand remains a US LLC, UK Ltd, German GmbH, etc. We act as the Ukrainian legal counterparty to the retail chain. All Ukrainian compliance (VAT, accounting, EDI signature, alcohol/pharma licenses) on our side. You receive monthly settlement in USD/EUR to your home-country account.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">USD/EUR</div>
+        <h3>Currency risk on us, not on you</h3>
+        <p>Ukrainian hryvnia carries war-related currency risk. Our model: Ukrainian retail pays us in UAH, we convert at NBU daily rate and remit to you in USD or EUR to your bank account in the US, UK, Germany, Poland, or wherever. Conversion fee 0.5-1%. Settlement SLA 5 business days. Currency risk taken by us — you see only USD/EUR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS for international brand -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">OPERATIONAL FLOW</div>
+    <h2 class="b2b-h2">8 steps from contract to first shipment to Ukrainian retail chain</h2>
+    <ol class="b2b-flow-steps">
+      <li><strong>1. Contract with our Ukrainian operational partner (days 1-3).</strong> Agency agreement. Your international brand stays in its home jurisdiction. Our partner sells on your behalf to Ukrainian retail. Contract specifies SLA, rates, USD/EUR settlement terms, liability.</li>
+      <li><strong>2. Documentation prep from your side (days 3-7).</strong> Corporate registration documents, banking info, commercial invoice for first inbound, certificate of origin (EUR.1 for EU, US-Ukraine for US, UK-Ukraine for UK), HS code classification. For alcohol — excise documentation. For food/pharma — quality certificates.</li>
+      <li><strong>3. International transportation (days 7-14).</strong> US→UA: 30-45 days sea via Black Sea/Odesa or 15-21 days air. UK→UA: 7-12 days road+sea or 3-5 days air. EU→UA (DE/PL/NL): 5-10 days truck. China→UA: 35-50 days sea or 8-15 days air. Ukrainian import declaration at border, 20% VAT payment, customs clearance 1-3 business days.</li>
+      <li><strong>4. Inbound and WMS slotting (days 14-16).</strong> Receive shipment, photo-document condition, verify against commercial invoice. Each SKU gets WMS slot tied to your brand. Alcohol — separate licensed zone at Bilohorodka facility. Food/cosmetics — FEFO zone. Premium goods — separate secure area.</li>
+      <li><strong>5. Supplier registration with retail chain (days 16-21).</strong> Documentation package for Silpo, ATB, Watsons, Eva, Metro, Modnakasta, INTERTOP. Our operational partner already has supplier status with most major chains — your brand plugs in through us as a new supplier in our portfolio.</li>
+      <li><strong>6. EDI protocol setup (days 21-25).</strong> Vchasno EDI for general documentation. Comarch EDI for ATB. SAP Ariba for Metro. Edin for pharma. Invoices, delivery notes, acceptance acts generated in our WMS, signed with qualified electronic signature from our operator side.</li>
+      <li><strong>7. First test shipment end-to-end (days 25-30).</strong> Test order from the retail chain for 1-2 pallets to validate full cycle: pick → EDI documents → Nova Poshta Cargo → chain receiving → EDI check-in → status "delivered" → invoice to chain. If all works — go production.</li>
+      <li><strong>8. Production + monthly USD/EUR settlement.</strong> Chain orders flow into our WMS, we pick-pack-document-ship. Monthly settlement: Ukrainian revenue minus fulfillment fee minus customs costs minus commission = net USD/EUR remitted to your bank account. Settlement SLA 5 business days. NBU daily conversion rate.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- INTERNATIONAL BRAND USE CASES -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">USE CASES</div>
+    <h2 class="b2b-h2">Six international brand scenarios we operate in 2026</h2>
+    <div class="b2b-tech-grid">
+      <div class="b2b-tech-card">
+        <h3>🇺🇸 US beauty → Eva / Watsons</h3>
+        <p>US natural beauty brand (clean ingredients, indie premium) entering Ukrainian beauty retail. Eva and Watsons actively recruit US niche labels. Volume per typical brand: 8-25 pallets/month. Cross-border US→UA via sea container 30-45 days (cost-efficient for non-perishable). Margin in Ukrainian retail typically 35-45% above US DTC pricing.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇬🇧 UK premium food → Silpo / Novus</h3>
+        <p>UK premium food brand (gourmet, organic, niche) entering Ukrainian premium food retail. Silpo and Novus actively expanding international portfolios. Volume per typical brand: 5-15 pallets/month. Cross-border UK→UA via road+sea 7-12 days or air 3-5 days for perishables. UK-Ukraine FTA = zero import duties for most categories.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇩🇪 German FMCG → ATB / Auchan</h3>
+        <p>German FMCG brand (cleaning products, household chemistry, personal care) entering Ukrainian mass retail. ATB and Auchan actively recruit German FMCG to replace exited Russian/Belarusian suppliers. Volume per typical brand: 15-40 pallets/month. Cross-border DE→UA via truck 5-7 days. EU-Ukraine DCFTA = zero import duties for most categories.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇮🇹 Italian fashion → Modnakasta / INTERTOP</h3>
+        <p>Italian fashion brand (apparel, footwear, accessories — mid-premium tier) entering Ukrainian fashion retail. Modnakasta and INTERTOP openly source international labels. Volume per typical brand: 10-25 pallets/month seasonal. Cross-border IT→UA via truck 7-10 days. EU-Ukraine DCFTA = zero duties on most fashion categories.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇵🇱 Polish beauty → Eva / Prostor / Cosmo</h3>
+        <p>Polish beauty brand (Inglot, Bielenda, Eveline-style — mass-market premium) entering Ukrainian beauty retail. Eva, Prostor, Cosmo actively recruit Polish beauty given geographic proximity and supply chain stability. Volume per typical brand: 12-30 pallets/month. Cross-border PL→UA via truck 3-5 days. EU-Ukraine DCFTA.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇫🇷🇪🇸 Premium wine → Wine.ua / Silpo wine</h3>
+        <p>French and Spanish wine brands entering Ukrainian wine retail. Wine.ua, Silpo wine section, Novus wine, premium wine shops actively expanding international portfolios. Volume per typical brand: 3-12 pallets/month. Cross-border FR/ES→UA via truck 8-12 days. Alcohol licensed zone at our Bilohorodka facility. Excise documentation handled by our operator.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="b2b-sec" id="b2b-cta">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">PRICING MODEL</div>
+    <h2 class="b2b-h2">Transparent unit-economics for international wholesale brands</h2>
+    <p class="b2b-lede">Pallet storage $10/mo + B2B order pick & pack $0.41/order + Ukrainian delivery $30-60/pallet paid by retail chain + cross-border transportation $30-80/pallet one-time per inventory replenishment + legal/accounting bundle $200-400/mo flat. Minimum monthly fee $500 first 3 months, then covered by actual volume.</p>
+    <div class="b2b-price-grid">
+      <div class="b2b-price-card">
+        <div class="b2b-price-tier">STORAGE</div>
+        <div class="b2b-price-num">$10</div>
+        <div class="b2b-price-label">per pallet / month</div>
+        <ul class="b2b-price-feat">
+          <li>WMS-tracked slot</li>
+          <li>Racking up to 2 tons/level</li>
+          <li>Alcohol licensed zone</li>
+          <li>FEFO for food/cosmetics</li>
+          <li>24/7 dashboard access</li>
+        </ul>
+      </div>
+      <div class="b2b-price-card b2b-price-card-mid">
+        <div class="b2b-price-tier">B2B PICK & PACK</div>
+        <div class="b2b-price-num">$0.41</div>
+        <div class="b2b-price-label">per multi-SKU B2B order</div>
+        <ul class="b2b-price-feat">
+          <li>Multi-SKU box or pallet pick</li>
+          <li>2-stage barcode scan</li>
+          <li>QC checkpoint $120+</li>
+          <li>EDI invoice + delivery note</li>
+          <li>Carrier handover</li>
+        </ul>
+      </div>
+      <div class="b2b-price-card">
+        <div class="b2b-price-tier">LEGAL/ACCT BUNDLE</div>
+        <div class="b2b-price-num">$200-400</div>
+        <div class="b2b-price-label">flat per month</div>
+        <ul class="b2b-price-feat">
+          <li>Ukrainian customs + VAT</li>
+          <li>EDI signature from our operator</li>
+          <li>USD/EUR settlement processing</li>
+          <li>NBU rate conversion, 0.5-1% fee</li>
+          <li>5-business-day settlement SLA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="b2b-price-note">
+      <strong>Minimum monthly fee $500</strong> first 3 months, then covered by actual volume. <strong>Cross-border transportation</strong> $30-80/pallet one-time per inventory replenishment (not per order). <a href="/en/calculator/">Calculate cost for your brand</a> based on specific parameters.
+    </div>
+  </div>
+</section>
+
+<!-- WAR RISK -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">WAR RISK</div>
+    <h2 class="b2b-h2">Honest about war risk — and what we do about it</h2>
+    <p class="b2b-lede">Our Kyiv-region facilities are 35-45km from the city center, outside primary missile impact zones. Kyiv region has experienced air raid alerts and occasional strikes — we run risk mitigation at multiple layers.</p>
+    <div class="b2b-tech-grid">
+      <div class="b2b-tech-card">
+        <h3>Insurance coverage</h3>
+        <p>Inventory war-risk insurance via Ukrainian insurers covering warehoused goods. Cost $0.30-0.80 per $100 of inventory value monthly. Coverage for missile damage, fire, theft, mechanical damage. International brands typically include this as standard line item.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>30-day inventory cap</h3>
+        <p>Standard practice for international brands is keeping ~30 days of Ukrainian inventory, not 90+ days. Distributed retail-chain delivery means inventory moves out within 3-7 days of pick request. Static exposure to single-warehouse risk is reduced.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Physical hardening</h3>
+        <p>Both facilities have generator backup (Diesel + LPG), blast-protective measures on critical doors, fire suppression systems, security personnel. Shchaslyve facility built post-2022 with war-resilient specifications. Bilohorodka facility upgraded 2023.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Zero operational downtime</h3>
+        <p>Since February 2022 across our customer base — zero days of operational downtime. During missile attacks, operations pause briefly during air raid alerts (typical alert 1-3 hours) then resume. Customer SLAs honored throughout the full war period.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Government compensation</h3>
+        <p>Ukrainian government has compensation scheme for war-damaged commercial property and inventory. Process is bureaucratic but established. Combined with private insurance creates effective dual-layer protection.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Distributed customer base</h3>
+        <p>We operate 60,000+ shipments/month across 250+ customers. No single brand represents more than 5% of warehouse capacity. Risk spread across many SKUs and many delivery destinations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">FAQ</div>
+    <h2 class="b2b-h2">Common questions from international wholesale brands</h2>
+    <div class="b2b-faq">
+      <details><summary>Can a US brand sell wholesale to Ukrainian retail chains without setting up a Ukrainian legal entity?</summary><p>Yes. Cross-border B2B model through our Ukrainian operational partner under agency agreement. Your US LLC stays in its home jurisdiction, we sell on your behalf. All Ukrainian compliance on our side. Monthly USD/EUR settlement to your US bank account.</p></details>
+      <details><summary>How does Ukrainian B2B fulfillment cost compare to US and EU 3PL?</summary><p>$10/pallet/mo storage Ukraine vs $35-50 US vs $40-65 EU. $0.41/order pick & pack vs $1.20-1.80 US vs $1.80-2.50 EU. Annual cost for 50 pallets + 200 orders/month: $6,000-7,000 Ukraine vs $24,000-30,000 US vs $30,000-40,000 EU. 3-5x arbitrage driven by labor and real estate costs.</p></details>
+      <details><summary>Which Ukrainian retail chains can an international brand reach through your fulfillment?</summary><p>30+ chains with pre-existing supplier protocols: Silpo, ATB, Watsons, Eva, Prostor, Cosmo, Brocard, Metro, Novus, Modnakasta, INTERTOP, Allo, Foxtrot, Epicentr, Auchan, Fozzy. Our operational partner already has supplier status with most major chains — saves 2-4 months of traditional registration.</p></details>
+      <details><summary>What is the onboarding timeline for an international wholesale brand?</summary><p>21-30 business days contract to first shipment. Cycle: contract → documentation → international transport → WMS inbound → supplier registration with chain → EDI setup → test shipment → production. For pharma/food certification or large volumes — up to 45 days.</p></details>
+      <details><summary>What are Ukrainian VAT and customs implications for inbound?</summary><p>20% Ukrainian VAT on imports from customs value, paid at border. We facilitate via customs broker. Recovered through sales in 1-3 months. EU brands benefit from EU-Ukraine DCFTA (zero or reduced duties). UK brands benefit from UK-Ukraine FTA. US/China brands — standard MFN typically 0-10%.</p></details>
+      <details><summary>How does your team handle Ukrainian EDI for international brands?</summary><p>We operate within Ukrainian supplier portals as your operational partner. Vchasno (general), Comarch (ATB), SAP Ariba (Metro), Edin (pharma). Documents generated in our WMS, signed with qualified electronic signature from our operator side. Your brand doesn't need Ukrainian QES.</p></details>
+      <details><summary>What is the cost of cross-border transportation US/EU/China to Ukraine?</summary><p>US→UA: $2,500-4,000 per 40ft container sea (30-45 days) or $8-12/kg air (15-21 days). UK→UA: $1,800-2,800 road+sea or $5-8/kg air (7-12 days). EU→UA: $1,200-2,000 per 40ft truck (5-10 days). China→UA: $2,000-3,500 sea. One-time per inventory replenishment, averages out to $30-80/pallet.</p></details>
+      <details><summary>Why has the Ukrainian B2B retail market opened for international brands since 2022?</summary><p>Russian and Belarusian suppliers exited following 2022 invasion. Categories remain open: cosmetics, premium food, fashion, household chemistry, textile. Retail chains actively reach out to international suppliers. Margin 30-50% above brand's domestic market for premium categories.</p></details>
+      <details><summary>What about war risk for our inventory in Ukraine?</summary><p>Real consideration. Facilities 35-45km from Kyiv center, outside primary impact zones. Mitigation: war-risk insurance ($0.30-0.80 per $100 inventory/mo), 30-day inventory cap, generator backup + blast protection, zero days operational downtime since Feb 2022, government compensation scheme available.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">RELATED SERVICES</div>
+    <h2 class="b2b-h2">Other services for international brands entering Ukraine</h2>
+    <div class="b2b-rel-grid">
+      <a class="b2b-rel-card" href="/en/fulfillment-ukraine/"><strong>Fulfillment Ukraine for international brands</strong><span>B2C cross-border for e-commerce</span></a>
+      <a class="b2b-rel-card" href="/en/order-pick-and-pack-ukraine/"><strong>Order pick & pack 47 seconds</strong><span>Multi-SKU pick from Ukrainian warehouse</span></a>
+      <a class="b2b-rel-card" href="/en/fulfillment-dnipro/"><strong>Eastern Ukraine for wholesale</strong><span>Dnipropetrovsk region market entry</span></a>
+      <a class="b2b-rel-card" href="/en/calculator/"><strong>Cost calculator</strong><span>For your specific brand parameters</span></a>
+      <a class="b2b-rel-card" href="/en/services/"><strong>All fulfillment services</strong><span>17 operations under one SLA</span></a>
+      <a class="b2b-rel-card" href="/en/3pl-logistics/"><strong>3PL logistics</strong><span>Full outsourcing for international brands</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CLOSING -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <h2 class="b2b-h2">Cost arbitrage + open market window — Ukrainian B2B fulfillment for international wholesale brands</h2>
+    <p>The Ukrainian B2B retail market has opened up substantially since 2022 for international brands. Russian and Belarusian suppliers exited following the invasion, leaving categories open across cosmetics, premium food, fashion, household chemistry, textile, and niche segments. Retail chains (Silpo, ATB, Watsons, Eva, Metro, Modnakasta, INTERTOP) actively reach out to international suppliers — Watsons has a dedicated international beauty entry program, Silpo expanding premium food portfolios, Modnakasta openly sourcing international fashion labels.</p>
+    <p>Cost arbitrage is the second compelling factor. Pallet storage in Ukraine costs $10/month vs $35-50 US 3PL vs $40-65 EU 3PL. B2B order pick & pack costs $0.41/order vs $1.20-1.80 US vs $1.80-2.50 EU. Annual cost for a typical international wholesale brand running 50 pallets and 200 B2B orders/month: $6,000-7,000 in Ukraine vs $24,000-30,000 in the US vs $30,000-40,000 in the EU. The 3-5x cost differential is driven by Ukrainian labor cost ($600-800/mo warehouse worker vs $3,000-4,500 US, $2,200-2,800 EU) and warehouse real estate cost ($35-50/sqm/year vs $120-180 US, $100-150 EU). Quality (99.98% pick accuracy, 24h SLA, full EDI integration) is comparable to US/EU 3PL because we run the same WMS technology stack.</p>
+    <p>Our agency model eliminates the key barrier — no need to set up a Ukrainian legal entity. Your international brand remains a US LLC, UK Ltd, German GmbH, Italian SpA, French SAS, Polish Sp. z o.o., or whatever your home jurisdiction. Our Ukrainian operational partner acts as the legal counterparty to the Ukrainian retail chain under an agency agreement. All Ukrainian compliance (VAT registration, accounting, EDI qualified electronic signature, alcohol/pharma licenses where applicable) is on our side. You receive monthly revenue settlement in USD or EUR to your home-country bank account. Currency risk of the Ukrainian hryvnia is on us — Ukrainian retail pays us in UAH, we convert at NBU daily rate, you see only USD/EUR with a 0.5-1% conversion fee and 5-business-day settlement SLA.</p>
+    <p>Onboarding timeline is 21-30 business days from contract signing to first shipment to a Ukrainian retail chain. Cycle: contract with our Ukrainian operational partner, documentation prep from your side, international transportation (US 15-45 days, EU 5-10 days, UK 7-12 days, China 35-50 days), inbound and WMS slotting, supplier registration with the retail chain through our partner, EDI protocol setup (Comarch for ATB, SAP Ariba for Metro, Vchasno for general), test shipment, then production. Our operational partner already has supplier status with 30+ major Ukrainian retail chains — saving 2-4 months versus traditional supplier registration where each brand registers with each chain from scratch.</p>
+    <p>War risk is real but managed. Facilities are 35-45km from Kyiv center, outside primary missile impact zones. Mitigation: war-risk insurance ($0.30-0.80 per $100 of inventory value monthly), 30-day inventory cap practice, generator backup and blast protection, zero days of operational downtime across our customer base since February 2022, government compensation scheme for damaged commercial property. International brands typically include insurance as a standard line item and operate normally.</p>
+    <p>See also: <a href="/en/fulfillment-ukraine/">fulfillment Ukraine for international brands</a>, <a href="/en/order-pick-and-pack-ukraine/">order pick & pack 47 seconds</a>, <a href="/en/fulfillment-dnipro/">eastern Ukraine for wholesale</a>, <a href="/en/calculator/">cost calculator for your brand</a>, <a href="/en/services/">all fulfillment services</a>, <a href="/en/3pl-logistics/">3PL logistics for international brands</a>.</p>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+/* B2B EN International — Dark Cost Matrix focused */
+.b2b-hero{background:#fff;color:#000;padding:80px 0 60px;text-align:center}
+.b2b-hero .ctr{max-width:1100px}
+.b2b-hero .b2b-chip{display:inline-block;margin-bottom:24px}
+.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(30px,4.5vw,56px);line-height:1.05;letter-spacing:-0.03em;margin:0 auto 24px;color:#000;max-width:1020px}
+.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.6;color:#333;margin:0 auto 32px;max-width:880px}
+.b2b-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s}
+.b2b-cta-btn:hover{background:#c12a22}
+
+/* Big savings bar (no green per palette — red+white only) */
+.b2b-savings-bar{background:#0a0a0a;color:#fff;padding:56px 0;border-top:4px solid #e63329;border-bottom:4px solid #e63329}
+.b2b-savings-label{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:32px}
+.b2b-savings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:end}
+.b2b-savings-cell{text-align:center;padding:24px;border:2px solid #fff}
+.b2b-savings-cell:first-child{border-color:#e63329;background:#e63329;transform:scale(1.05)}
+.b2b-savings-amount{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(36px,5vw,64px);color:#fff;line-height:1;letter-spacing:-0.03em}
+.b2b-savings-strike{color:#999;text-decoration:line-through;text-decoration-thickness:3px}
+.b2b-savings-loc{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;color:rgba(255,255,255,.85);margin-top:12px;text-transform:uppercase}
+.b2b-savings-cell:first-child .b2b-savings-loc{color:#fff}
+.b2b-savings-diff{font-family:Unbounded,sans-serif;font-weight:800;font-size:15px;color:#e63329;background:#fff;padding:6px 12px;display:inline-block;margin-top:12px;letter-spacing:.05em}
+
+/* Section base */
+.b2b-sec{padding:80px 0;background:#fff}
+.b2b-sec-light{background:#f3f3f3}
+.b2b-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
+.b2b-chip-dark{background:#000}
+.b2b-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.b2b-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+
+/* Cost matrix table — MTP column full red */
+.b2b-cost-matrix{overflow-x:auto;border:2px solid #000}
+.b2b-matrix-table{width:100%;border-collapse:collapse;background:#fff;font-family:'DM Sans',sans-serif}
+.b2b-matrix-table th{background:#0a0a0a;color:#fff;font-weight:700;font-size:13px;padding:18px 16px;text-align:left;letter-spacing:.05em;text-transform:uppercase;border-bottom:2px solid #e63329}
+.b2b-matrix-table th.b2b-matrix-mtp{background:#e63329;color:#fff}
+.b2b-matrix-table td{padding:16px;font-size:15px;line-height:1.4;color:#333;border-bottom:1px solid #eee}
+.b2b-matrix-table td.b2b-matrix-mtp{background:#fff5f4;color:#000;font-weight:700;border-left:4px solid #e63329;border-right:4px solid #e63329}
+.b2b-matrix-table tr.b2b-matrix-total{border-top:2px solid #000;background:#fafafa}
+.b2b-matrix-table tr.b2b-matrix-total td{font-size:16px;padding:20px 16px}
+.b2b-matrix-table tr.b2b-matrix-total td.b2b-matrix-mtp{background:#e63329;color:#fff;border-color:#000}
+.b2b-matrix-table tr.b2b-matrix-total td.b2b-matrix-mtp strong{color:#fff}
+
+/* Use cases / tech / flow / steps / chains / pricing — shared from UA pattern */
+.b2b-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b2b-uc-card{background:#fff;border:1px solid #ddd;padding:28px 24px;border-left:4px solid #e63329}
+.b2b-sec-light .b2b-uc-card{background:#fff}
+.b2b-uc-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;letter-spacing:-0.02em;margin-bottom:12px}
+.b2b-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000;line-height:1.25}
+.b2b-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+.b2b-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b2b-tech-card{background:#fff;border:2px solid #000;padding:28px 24px}
+.b2b-tech-card h3{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;margin:0 0 12px;text-transform:uppercase;letter-spacing:.02em}
+.b2b-tech-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+.b2b-flow-steps{list-style:none;padding:0;margin:0;counter-reset:flow}
+.b2b-flow-steps li{padding:20px 0 20px 60px;border-bottom:1px solid #ddd;position:relative;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;counter-increment:flow}
+.b2b-flow-steps li:before{content:counter(flow);position:absolute;left:0;top:18px;width:40px;height:40px;background:#e63329;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:800;font-size:16px}
+.b2b-flow-steps li strong{color:#000;font-weight:700;display:block;margin-bottom:4px}
+
+.b2b-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.b2b-price-card{background:#fff;border:2px solid #000;padding:32px 24px;text-align:center}
+.b2b-price-card-mid{border-color:#e63329;background:#fff5f4}
+.b2b-price-tier{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-bottom:16px}
+.b2b-price-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:42px;color:#e63329;line-height:1}
+.b2b-price-label{font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin:8px 0 24px}
+.b2b-price-feat{list-style:none;padding:0;margin:0;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:#333}
+.b2b-price-feat li{padding:6px 0;border-bottom:1px solid #eee}
+.b2b-price-feat li:before{content:"✓ ";color:#e63329;font-weight:700;margin-right:6px}
+.b2b-price-note{background:#fff;border-left:4px solid #e63329;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.b2b-faq{display:flex;flex-direction:column;gap:8px}
+.b2b-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.b2b-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.b2b-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.b2b-faq details[open] summary::after{content:"−"}
+.b2b-faq summary::-webkit-details-marker{display:none}
+.b2b-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.b2b-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.b2b-rel-card{display:block;background:#fff;border:1px solid #ddd;padding:24px;text-decoration:none;color:#000;transition:border-color .15s}
+.b2b-rel-card:hover{border-color:#e63329}
+.b2b-rel-card strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:8px}
+.b2b-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
+.b2b-sec a{color:#e63329}
+
+@media (max-width:900px){
+  .b2b-savings-grid{grid-template-columns:1fr;gap:16px}
+  .b2b-savings-cell:first-child{transform:none}
+  .b2b-uc-grid,.b2b-tech-grid,.b2b-price-grid,.b2b-rel-grid{grid-template-columns:1fr;gap:16px}
+  .b2b-matrix-table th,.b2b-matrix-table td{padding:12px 8px;font-size:13px}
+}
+</style>

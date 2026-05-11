@@ -135,7 +135,7 @@
 /en/fulfillment-for-office-supplies/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-used-and-vintage/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-wholesale-bulk/ /en/fulfillment-ukraine/ 301
-/ua/b2b-fulfilment/ /ua/3pl-logistyka/ 301
+/ua/b2b-fulfilment/ /b2b-fulfilment/ 301
 /ua/enterprise-solutions/ /ua/3pl-logistyka/ 301
 /ua/komplektatsiya-zamovlen/ /ua/3pl-logistyka/ 301
 /ua/garantiya-yakosti/ /ua/3pl-logistyka/ 301
@@ -575,9 +575,6 @@
 /yak-pidklyuchyty-rozetku/ /fulfilment-rozetka/ 301
 /yak-pratsiuie-fulfilment/ /ua/shcho-take-fulfilment/ 301
 /yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
-# /b2b-fulfilment/ — planned page from semantic core (🟠), temp redirect until built
-/b2b-fulfilment/ /ua/fulfilment-ukraina/ 301
-/b2b-fulfilment /ua/fulfilment-ukraina/ 301
 # /ua/* + EN-slug phantom variants
 /ua/blog/yak-pratsiuie-fulfilment/ /ua/shcho-take-fulfilment/ 301
 /ua/common-fulfillment-mistakes/ /ua/blog/ 301
@@ -628,7 +625,7 @@
 /en/case-ecodrive/ /en/recalls/ 301
 /en/expand-to-european-marketplaces/ /en/blog/ 301
 /en/best-business-ideas-ukraine/ /en/blog/ 301
-/en/b2b-fulfilment/ /en/fulfillment-ukraine/ 301
+/en/b2b-fulfilment/ /en/b2b-fulfillment-ukraine/ 301
 /en/3pl/ /en/3pl-logistics/ 301
 # Phantom EN /fulfillment-dlya-* (UA slug with EN prefix)
 /en/fulfillment-dlya-abonentskykh-korobiv/ /en/fulfillment-ukraine/ 301

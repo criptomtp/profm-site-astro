@@ -170,11 +170,7 @@
     ],
     "deny": [
       "Read(./.env)",
-      "Read(./.env.*)",
-      "WebFetch(domain:fulfillmentmtp.com.ua)",
-      "WebFetch(domain:www.fulfillmentmtp.com.ua)",
-      "Bash(curl:*fulfillmentmtp.com.ua*)",
-      "Bash(wget:*fulfillmentmtp.com.ua*)"
+      "Read(./.env.*)"
     ]
   },
   "attribution": {

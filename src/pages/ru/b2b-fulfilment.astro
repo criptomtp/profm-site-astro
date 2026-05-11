@@ -1,0 +1,423 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-11","name":"B2B фулфилмент в Украине для CIS-брендов","description":"Бренды Казахстана, Молдовы, Грузии, Узбекистана, Азербайджана, Польши и Латвии выходят на украинский B2B-рынок через наш киевский склад. Поставка напрямую в украинскую розницу (Сильпо, АТБ, Watsons, Eva, Метро, Modnakasta, INTERTOP) от имени вашего CIS-юр.лица. Палетное хранение от $10/палет/мес, multi-SKU комплектация, 1С интеграция, ЕДО Вчасно/Edin, SLA 24 часа. Без украинского юр.лица, без CAPEX, без локального персонала.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ООО \\"МТП Груп Фулфилмент\\"","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"GE"},{"@type":"Country","name":"UZ"},{"@type":"Country","name":"AZ"},{"@type":"Country","name":"PL"},{"@type":"Country","name":"LV"}],"serviceType":"B2B Fulfillment Ukraine for CIS brands — wholesale entry to Ukrainian retail networks via Kyiv hub","audience":{"@type":"BusinessAudience","name":"Бренды из Казахстана (косметика, food, fashion), Молдовы (вино, агро, beauty), Грузии (вино, fashion), Узбекистана (текстиль, сухофрукты), Азербайджана (food, beauty), Польши (beauty, fashion, FMCG), Латвии (niche) — выходящие на украинский B2B-рынок без локальной юр.лица"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"10","description":"Палетное хранение от $10/палет/мес (450 грн). Multi-SKU комплектация от $0.41 за заказ. 1С интеграция, ЕДО, накладные — включено. Минимальный месячный платёж $500 первые 3 месяца."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Может ли бренд из Казахстана поставлять напрямую в украинскую розницу без юр.лица в Украине?","acceptedAnswer":{"@type":"Answer","text":"Да. Cross-border B2B-модель через нашего украинского операционного партнёра. Бренд из Казахстана отправляет товар на наш киевский склад через стандартного логистического оператора, мы оформляем украинскую импортную декларацию, акцизные/качественные сертификаты при необходимости. Дальше товар продаётся в украинскую розницу (Сильпо, АТБ, Watsons, Eva) от имени нашего оператора по агентскому договору с вашим казахстанским юр.лицом. ЭДО Вчасно/Edin/Comarch — мы у вас в кабинете. Расчёты в USD/EUR на казахстанский счёт ежемесячно."}},{"@type":"Question","name":"Зачем CIS-бренду украинский B2B-рынок а не Россия?","acceptedAnswer":{"@type":"Answer","text":"Украина — 36 млн человек, четвёртая по размеру e-commerce и FMCG-розница в Восточной Европе. Российский рынок недоступен из-за санкций, морального давления, сложностей с расчётами. Украинская розница активно ищет альтернативы российским и белорусским поставщикам — после 2022 многие категории остались без поставщиков. CIS-бренды (Казахстан косметика, Молдова вино, Грузия fashion, Узбекистан текстиль, Азербайджан food) занимают эти ниши с минимальной конкуренцией. Маржа в украинской рознице 30-50% выше чем в локальном рынке CIS-бренда."}},{"@type":"Question","name":"Какие украинские розничные сети мы обслуживаем для CIS-брендов?","acceptedAnswer":{"@type":"Answer","text":"30+ крупнейших украинских сетей с готовыми SLA-протоколами: Сильпо (food, Comarch EDI), АТБ (food, жёсткие сроки), Watsons (beauty, фарма-сертификаты), Eva (beauty), Prostor (косметика+быт), Cosmo (премиум beauty), Brocard (селективная парфюмерия), Метро (B2B-канал, SAP Ariba), Novus (food+premium), Modnakasta (fashion), INTERTOP (обувь), Allo (электроника), Foxtrot (техника), Эпицентр (DIY). Для CIS-бренда регистрация поставщика на этих сетях идёт через нашего оператора с пакетом документов."}},{"@type":"Question","name":"Сколько стоит вся модель для бренда из Молдовы?","acceptedAnswer":{"@type":"Answer","text":"Палетное хранение $10/палет/мес ($1.50 за м³) + комплектация $0.41 за собранный B2B-заказ + украинская доставка через НП Грузовое отделение $80-150 за палет (платит клиент-сеть). Cross-border транспортировка из Молдовы в Украину — $50-80 за палет через Meest International (5-7 дней transit). Юр./бух. услуги по cross-border схеме (украинская таможня, ЭДО, расчёты, КЕП) — $200-400/мес паушально через нашего партнёра. Минимальный месячный платёж $500 первые 3 месяца, потом покрывается объёмом."}},{"@type":"Question","name":"Как организован cross-border поток для грузинского fashion-бренда?","acceptedAnswer":{"@type":"Answer","text":"Тбилисский бренд отправляет сезонную коллекцию на наш киевский склад. Транспортировка GE→UA: контейнер 20ft через DHL/Meest 8-14 дней transit или Black Sea sea freight через Одессу 12-20 дней (дешевле). На границе Украины — украинская импортная декларация, сертификаты соответствия для одежды, маркировка УКТ ЗЕД. На нашем складе принимаем, проверяем комплектность по инвойсу, размещаем в стеллажах для одежды (плечики или коробки). Сеть Modnakasta/Argo/INTERTOP делает заказ через свой портал — мы собираем box-pick розфасован за магазинами сети, ЭДО Вчасно, отправка НП Грузовое или собственный транспорт MTP. Грузинский бренд получает выручку в EUR на тбилисский счёт каждый месяц."}},{"@type":"Question","name":"Какой украинский ЭДО используется для CIS-брендов?","acceptedAnswer":{"@type":"Answer","text":"ЭДО Вчасно — самый популярный в UA, поддерживается всеми крупными сетями. Edin — популярен в фарма-сегменте (для нутрицевтиков, БАДов из CIS). Medoc — универсальный. Для специфичных сетей: АТБ — Comarch EDI, Метро — SAP Ariba. Мы работаем в вашем Вчасно-кабинете как операционный партнёр. Накладная, рахунок-фактура, акт приёмки-передачи генерируются в нашем WMS автоматически, подписываются КЕП (электронной квалифицированной подписью) через нашего ЭДО-провайдера. CIS-бренду не нужен украинский КЕП — у нашего оператора уже есть."}},{"@type":"Question","name":"Что с украинским НДС 20% на импорт из CIS?","acceptedAnswer":{"@type":"Answer","text":"При импорте товара на украинский склад уплачивается 20% НДС от таможенной стоимости. CIS-бренд платит этот НДС (мы помогаем оформить через таможенного партнёра). При продаже украинской рознице НДС включён в цену продажи — сеть не доплачивает отдельно, для неё это входной НДС. Для бренда CIS это операционный кеш-флоу момент: НДС уплачен при импорте, возвращается через продажи в течение 1-3 месяцев. Для стран в EAEU (Казахстан, Беларусь, Армения, Кыргызстан) — облегчённый таможенный режим по форме CT-1. Для Молдовы, Грузии — через DCFTA с Украиной (зона свободной торговли) с пониженными или отменёнными ввозными пошлинами для отдельных категорий."}},{"@type":"Question","name":"Как быстро бренд из Узбекистана может начать поставки в украинскую розницу?","acceptedAnswer":{"@type":"Answer","text":"21-30 рабочих дней от подписания договора до первой поставки в сеть. Цикл: дни 1-3 договор с нашим украинским оператором, дни 3-7 подготовка пакета документов CIS-стороны (устав, банковские реквизиты, инвойс, сертификат происхождения, УКТ ЗЕД-классификация), дни 7-14 cross-border транспортировка из Узбекистана (~10-14 дней transit), дни 14-16 приёмка и адресное хранение в WMS, дни 16-21 регистрация поставщика в украинской сети (Modnakasta, Сильпо) с пакетом документов, дни 21-25 настройка ЭДО-протоколов, дни 25-30 первая тестовая поставка end-to-end. Для крупных партий или специфичных сертификатов (food, фарма) — до 45 дней."}},{"@type":"Question","name":"Можем ли работать с молдавским винодельческим брендом для поставки в Сильпо/Novus?","acceptedAnswer":{"@type":"Answer","text":"Да, это один из ключевых сценариев. Молдавское вино — растущий сегмент украинской HoReCa и розницы. Сложность — алкоголь требует лицензии на хранение и продажу, акцизных марок, специфической температурной зоны. У нас есть отдельная лицензированная зона для алкоголя в Белогородке. Cross-border поставка MD→UA через Meest International — 5-7 дней transit, отдельный таможенный режим для алкоголя с акцизом. На складе оклейка акцизными марками, хранение при контролируемой температуре. Поставка в Сильпо/Novus/Wine.ua/специализированные wine-магазины через нашего операционного партнёра с лицензией на торговлю алкоголем."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"B2B фулфилмент для CIS-брендов","item":"https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Kyiv hub for CIS brands","url":"https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$10/палет/мес + $0.41/заказ","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"ул. Промышленная","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","postalCode":"08322","addressCountry":"UA","description":"Склад 2 700 м² — основная локация B2B"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","postalCode":"08140","addressCountry":"UA","description":"Склад 1 000 м² — алкоголь, FEFO-зона"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"MD"},{"@type":"Country","name":"GE"},{"@type":"Country","name":"UZ"},{"@type":"Country","name":"AZ"},{"@type":"Country","name":"PL"}]}</script>`;
+---
+<Base
+  title="B2B фулфилмент в Украине для брендов СНГ — киевский склад"
+  description="Бренды Казахстана, Молдовы, Грузии, Узбекистана выходят на украинский B2B-рынок через наш киевский склад. Поставка в Сильпо, АТБ, Watsons без юр.лица в Украине. От $10/палет/мес."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/b2b-fulfilment-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/b2b-fulfilment/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/b2b-fulfillment-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
+</Fragment>
+
+<!-- HERO — Flag Flow Diagram (CIS brands → Ukraine via Kyiv warehouse) -->
+<section class="b2b-hero">
+  <div class="ctr">
+    <div class="b2b-chip">B2B · CIS → УКРАИНА · ОПТОВАЯ ДИСТРИБУЦИЯ</div>
+    <h1>Из Казахстана, Молдовы, Грузии в украинскую B2B-розницу через наш киевский склад</h1>
+    <p class="b2b-hero-sub">Бренды СНГ выходят напрямую в Сильпо, АТБ, Watsons, Eva, Modnakasta, INTERTOP без открытия украинской юр.лица. Палетное хранение от $10/мес, ЭДО Вчасно, расчёты в USD/EUR на ваш CIS-счёт ежемесячно. Cross-border B2B-модель через нашего украинского оператора.</p>
+
+    <!-- Flag Flow Diagram — CSS-only -->
+    <div class="b2b-flow-diagram">
+      <div class="b2b-flow-sources">
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇰🇿</span><span class="b2b-flow-name">КАЗАХСТАН</span><span class="b2b-flow-cat">косметика, food, fashion</span></div>
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇲🇩</span><span class="b2b-flow-name">МОЛДОВА</span><span class="b2b-flow-cat">вино, агро, beauty</span></div>
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇬🇪</span><span class="b2b-flow-name">ГРУЗИЯ</span><span class="b2b-flow-cat">вино, fashion, food</span></div>
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇺🇿</span><span class="b2b-flow-name">УЗБЕКИСТАН</span><span class="b2b-flow-cat">текстиль, сухофрукты</span></div>
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇦🇿</span><span class="b2b-flow-name">АЗЕРБАЙДЖАН</span><span class="b2b-flow-cat">food, beauty</span></div>
+        <div class="b2b-flow-flag"><span class="b2b-flow-icon">🇵🇱</span><span class="b2b-flow-name">ПОЛЬША</span><span class="b2b-flow-cat">beauty, fashion, FMCG</span></div>
+      </div>
+      <div class="b2b-flow-arrows">→</div>
+      <div class="b2b-flow-hub">
+        <div class="b2b-flow-hub-icon">📦</div>
+        <div class="b2b-flow-hub-name">KYIV WAREHOUSE</div>
+        <div class="b2b-flow-hub-sub">MTP B2B-склад<br>3 700 м²</div>
+      </div>
+      <div class="b2b-flow-arrows">→</div>
+      <div class="b2b-flow-dest">
+        <div class="b2b-flow-flag b2b-flow-dest-flag"><span class="b2b-flow-icon">🇺🇦</span><span class="b2b-flow-name">УКРАИНА</span><span class="b2b-flow-cat">30+ розничных сетей</span></div>
+      </div>
+    </div>
+
+    <a href="#b2b-cta" class="b2b-cta-btn">Получить расчёт для CIS-бренда →</a>
+  </div>
+</section>
+
+<!-- DARK STATS BAR -->
+<section class="b2b-statsbar">
+  <div class="ctr">
+    <div class="b2b-sb-grid">
+      <div class="b2b-sb-cell"><div class="b2b-sb-num">$10</div><div class="b2b-sb-lbl">ПАЛЕТНОЕ ХРАНЕНИЕ / МЕС</div></div>
+      <div class="b2b-sb-cell"><div class="b2b-sb-num">24 ч</div><div class="b2b-sb-lbl">SLA ОТГРУЗКИ</div></div>
+      <div class="b2b-sb-cell"><div class="b2b-sb-num">30+</div><div class="b2b-sb-lbl">UA РОЗНИЧНЫХ СЕТЕЙ</div></div>
+      <div class="b2b-sb-cell"><div class="b2b-sb-num">21-30 дней</div><div class="b2b-sb-lbl">ОНБОРДИНГ CIS-БРЕНДА</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UKRAINE FOR CIS BRANDS -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">ПОЧЕМУ УКРАИНА</div>
+    <h2 class="b2b-h2">Шесть причин почему украинский B2B-рынок открыт для CIS-брендов в 2026</h2>
+    <p class="b2b-lede">Украинская розница активно ищет альтернативы российским и белорусским поставщикам которые ушли с рынка с 2022. Категории остаются открытыми, маржа выше национального рынка CIS-бренда, регистрация поставщика в сетях упростилась. Окно возможностей широкое, но конкуренция CIS-брендов между собой растёт — кто заходит первый, занимает полку.</p>
+    <div class="b2b-uc-grid">
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">36 МЛН</div>
+        <h3>Четвёртая по размеру розница Восточной Европы</h3>
+        <p>36 млн человек, медианный доход $580/мес (выше Казахстана, Молдовы, Грузии). Активная B2C-аудитория, развитая розничная инфраструктура (300+ магазинов Сильпо, 1 500+ АТБ, 800+ Watsons и Eva, региональные сети). Объём B2B-логистики $2-3 млрд/год.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">2022</div>
+        <h3>Открытые ниши после ухода RF/BY поставщиков</h3>
+        <p>Косметика, food, fashion, побутова химия — категории где украинская розница активно ищет CIS-альтернативы. Сети сами выходят на CIS-брендов с предложениями. Watsons / Eva имеют отдельные программы для CIS-cosmetics. Сильпо и Метро активно набирают молдавское вино, грузинский food, узбекский текстиль.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">30-50%</div>
+        <h3>Маржа выше национального рынка CIS-бренда</h3>
+        <p>Розничная маржа в Украине типично 30-50% выше чем у бренда дома. Особенно для премиум-косметики (Watsons, Brocard), премиум-food (Сільпо premium), fashion (INTERTOP, Modnakasta). Покупательная способность у среднего класса в Киеве, Львове, Одессе сопоставима с Алматы и Тбилиси.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">DCFTA</div>
+        <h3>Льготные таможенные режимы для большинства CIS-стран</h3>
+        <p>Молдова, Грузия — зона свободной торговли с Украиной (DCFTA) с пониженными или отменёнными пошлинами для большинства категорий. Казахстан, Армения, Кыргызстан — облегчённый режим EAEU CT-1. Польша, Латвия — EU-Ukraine DCFTA. Узбекистан, Азербайджан — стандартные ставки, но рабочие. Cross-border пошлины 0-10% для большинства категорий.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">CROSS-BORDER</div>
+        <h3>Cross-border B2B без украинской юр.лица</h3>
+        <p>Через нашего украинского операционного партнёра по агентской схеме. Ваш CIS-бренд остаётся юридически в Казахстане/Молдове/Грузии — не нужно открывать украинскую ТОВ, нанимать локальных людей, регистрироваться плательщиком НДС. Все эти роли берёт наш оператор. Вы получаете выручку в USD/EUR на CIS-счёт ежемесячно.</p>
+      </div>
+      <div class="b2b-uc-card">
+        <div class="b2b-uc-num">ВАЛЮТА</div>
+        <h3>Стабильные валютные расчёты в USD/EUR</h3>
+        <p>Украинская гривна нестабильна (война, девальвация). Для CIS-бренда работа в гривне = валютный риск. Наша модель: украинская розница платит нам в гривне, мы конвертируем по курсу НБУ дня операции и переводим вам в USD/EUR на банковский счёт в Казахстане/Молдове/Грузии. Комиссия 0.5-1%. SLA выплат — 5 рабочих дней. Валютный риск принимаем на нашу сторону.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS for CIS brand -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">ОПЕРАЦИОННАЯ СХЕМА</div>
+    <h2 class="b2b-h2">Cross-border B2B-модель для CIS-бренда — 8 шагов от договора до украинской розницы</h2>
+    <ol class="b2b-flow-steps">
+      <li><strong>1. Договор с нашим украинским оператором (дни 1-3).</strong> Агентская схема: ваш CIS-бренд остаётся юридически у себя, наш оператор продаёт от вашего имени украинской рознице. Договор включает SLA, тарифы, условия выплат в USD/EUR, ответственность.</li>
+      <li><strong>2. Подготовка документов CIS-стороны (дни 3-7).</strong> Устав вашего юр.лица, банковские реквизиты, коммерческий инвойс на тестовую партию, сертификат происхождения (CT-1 для EAEU, EUR.1 для DCFTA). Для алкоголя — акцизные марки. Для food/фарма — сертификаты качества.</li>
+      <li><strong>3. Cross-border транспортировка партии (дни 7-14).</strong> KZ→UA через Meest 10-14 дней. MD→UA через Meest International 5-7 дней. GE→UA через DHL 8-14 дней или Black Sea sea freight 12-20 дней. UZ→UA 10-14 дней. AZ→UA 7-10 дней. PL→UA 3-5 дней. Украинская импортная декларация на границе, уплата 20% НДС.</li>
+      <li><strong>4. Приёмка и адресное размещение в WMS (дни 14-16).</strong> Принимаем партию, фотофиксируем состояние, проверяем комплектность по инвойсу. Каждый SKU получает ячейку на стеллаже с привязкой к вашему CIS-юр.лицу. Алкоголь — отдельная лицензированная зона в Белогородке. Food/косметика — FEFO-зона.</li>
+      <li><strong>5. Регистрация поставщика в украинских сетях (дни 16-21).</strong> Пакет документов для Сильпо, АТБ, Watsons, Eva, Метро, Modnakasta, INTERTOP. У нашего оператора уже есть статус поставщика в большинстве крупных сетей — поставка от вашего бренда подключается через нашего оператора как нового suppliera в его портфолио.</li>
+      <li><strong>6. Настройка ЭДО-протоколов (дни 21-25).</strong> ЭДО Вчасно/Edin для общего документооборота. Comarch EDI для АТБ, SAP Ariba для Метро. Накладные, рахунок-фактуры, акты приёмки-передачи генерируются в нашем WMS, подписываются КЕП через нашего ЭДО-провайдера.</li>
+      <li><strong>7. Первая тестовая поставка end-to-end (дни 25-30).</strong> Делаем тестовый заказ от украинской сети на 1-2 палеты, чтобы проверить весь цикл: pick → ЭДО-документы → НП Грузовое → приёмка в сети → чекин через ЭДО → статус "доставлено" → выставление счёта сети. Если всё работает — идём в production.</li>
+      <li><strong>8. Production + ежемесячные расчёты в USD/EUR.</strong> Заказы от сетей автоматически летят в WMS, мы pick-pack-document-ship. Раз в месяц расчёт: украинская выручка минус наш fulfillment fee минус таможенные сборы минус наш комиссионный сбор = чистый остаток в USD/EUR на ваш банковский счёт в KZ/MD/GE/UZ/AZ/PL. SLA выплат 5 рабочих дней. Курс конверсии — НБУ дня операции.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- CIS COUNTRY DEEP DIVES -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">CIS-СТРАНЫ ПО КАТЕГОРИЯМ</div>
+    <h2 class="b2b-h2">Конкретные потоки которые мы видим в 2026 — кто, что, куда</h2>
+    <div class="b2b-tech-grid">
+      <div class="b2b-tech-card">
+        <h3>🇰🇿 Казахстан → UA</h3>
+        <p>Натуральная косметика на основе казахстанских трав (мыло, кремы, шампуни) → Eva, Watsons, Prostor. Премиум-tea и казахстанский мёд → Сильпо, Wine.ua food-секции. Казахстанский текстиль → Modnakasta. Объём типового бренда: 3-15 палет/мес. Cross-border KZ→UA: 10-14 дней через Meest.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇲🇩 Молдова → UA</h3>
+        <p>Молдавское вино → Сильпо wine-секция, Novus, Wine.ua, специализированные wine-магазины. Молдавская beauty (натуральная косметика, эфирные масла) → Eva, Watsons. Агро (мёд, орехи) → Сильпо premium. Объём типового бренда: 2-10 палет/мес. Cross-border MD→UA: 5-7 дней через Meest International, отдельный режим для алкоголя с акцизом.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇬🇪 Грузия → UA</h3>
+        <p>Грузинское вино → wine-сети, Сільпо, Novus. Грузинский fashion (женская одежда, авторские принты) → Modnakasta, INTERTOP, Kasta. Грузинский honey/специи → Сільпо food-секция. Объём типового бренда: 3-12 палет/мес. Cross-border GE→UA: 8-14 дней через DHL air freight или 12-20 дней Black Sea sea freight.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇺🇿 Узбекистан → UA</h3>
+        <p>Узбекский текстиль (хлопок, постельное бельё, ковры) → Modnakasta home, Силпо нон-food. Сухофрукты, специи → Сильпо food-секция, Eva супер-фуды. Объём типового бренда: 5-20 палет/мес (текстиль занимает много места). Cross-border UZ→UA: 10-14 дней через специализированных EAEU-перевозчиков.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇦🇿 Азербайджан → UA</h3>
+        <p>Азербайджанский гранатовый сок, орехи, оливки → Сильпо food premium, Метро. Азербайджанская beauty (на основе нефти, например) → нишевые beauty-магазины. Cross-border AZ→UA: 7-10 дней через специализированных перевозчиков. Объём: 2-8 палет/мес.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>🇵🇱 Польша → UA</h3>
+        <p>Польская beauty (Inglot, Bielenda, Eveline и др.) → Eva, Watsons, Prostor, Cosmo. Польский fashion → Modnakasta, INTERTOP. Польский FMCG (food, побутова химия) → Сільпо, АТБ. Объём типового бренда: 5-30 палет/мес. Cross-border PL→UA: 3-5 дней через стандартный freight (короткая граница). DCFTA 0% для большинства категорий.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UKRAINIAN RETAIL NETWORKS -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">КУДА ПОСТАВЛЯЕМ</div>
+    <h2 class="b2b-h2">30+ украинских розничных сетей с готовыми SLA-протоколами для CIS-брендов</h2>
+    <p class="b2b-lede">У нашего оператора есть статус поставщика в крупнейших украинских сетях. CIS-бренд подключается через нашего оператора без отдельной регистрации поставщика в каждой сети с нуля. Это экономит 2-4 месяца традиционного процесса.</p>
+    <div class="b2b-chain-grid">
+      <div class="b2b-chain-cell"><strong>Сильпо</strong><span>Food premium, beauty, Comarch EDI</span></div>
+      <div class="b2b-chain-cell"><strong>АТБ</strong><span>Food эконом, жёсткие сроки</span></div>
+      <div class="b2b-chain-cell"><strong>Watsons</strong><span>Beauty, фарма-сертификаты для нутрицевтиков</span></div>
+      <div class="b2b-chain-cell"><strong>Eva</strong><span>Beauty, активно набирают CIS-cosmetics</span></div>
+      <div class="b2b-chain-cell"><strong>Prostor</strong><span>Косметика, побыт, food</span></div>
+      <div class="b2b-chain-cell"><strong>Cosmo</strong><span>Премиум beauty</span></div>
+      <div class="b2b-chain-cell"><strong>Brocard</strong><span>Селективная парфюмерия</span></div>
+      <div class="b2b-chain-cell"><strong>Метро</strong><span>B2B-канал, SAP Ariba</span></div>
+      <div class="b2b-chain-cell"><strong>Novus</strong><span>Food premium</span></div>
+      <div class="b2b-chain-cell"><strong>Modnakasta</strong><span>Fashion, текстиль для дома</span></div>
+      <div class="b2b-chain-cell"><strong>INTERTOP</strong><span>Обувь, аксессуары</span></div>
+      <div class="b2b-chain-cell"><strong>Kasta</strong><span>Multi-brand fashion</span></div>
+      <div class="b2b-chain-cell"><strong>Wine.ua</strong><span>Специализированные wine-магазины</span></div>
+      <div class="b2b-chain-cell"><strong>Эпицентр</strong><span>DIY, побыт, узбекский текстиль для дома</span></div>
+      <div class="b2b-chain-cell"><strong>Allo</strong><span>Электроника, аксессуары</span></div>
+      <div class="b2b-chain-cell"><strong>Foxtrot</strong><span>Электроника, побытовая техника</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAREHOUSE OPERATIONS for CIS brand inventory -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">ОПЕРАЦИИ НА СКЛАДЕ</div>
+    <h2 class="b2b-h2">Как мы храним и обрабатываем товар CIS-бренда на украинском складе</h2>
+    <p class="b2b-lede">Каждый CIS-бренд получает выделенную зону хранения в WMS, привязанную к юридическому лицу бренда. Это критично для cross-border учёта — украинская таможня видит товар как принадлежащий вашему KZ/MD/GE/UZ/AZ/PL юридическому лицу до момента продажи украинской сети. Складская операционная стандартизирована, но процедуры отличаются для разных категорий товара.</p>
+    <div class="b2b-tech-grid">
+      <div class="b2b-tech-card">
+        <h3>Приёмка и фотофиксация</h3>
+        <p>При каждой cross-border поставке фиксируем количество палет, состояние тары, целостность пломб контейнера. Фотоотчёт отправляем CIS-бренду в течение 4 часов после приёмки. Расхождение по инвойсу >0.5% — стоп-операция, согласование с CIS-бренда. Поштучная пересчётка 100% SKU на электронных весах с фиксацией расхождений в нашем WMS. Среднее время приёмки одной палеты — 12-18 минут.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Зоны хранения по категориям</h3>
+        <p>Алкоголь (молдавское вино, грузинское вино) — лицензированная зона в Белогородке, температура +14...+18°C, контроль влажности. Косметика и нутрицевтики — FEFO-зона (First-Expired-First-Out), +18...+22°C. Электроника — сухая защищённая зона. Текстиль (узбекский хлопок, узбекские ковры) — высокие стеллажи до 6 ярусов, защита от пыли. Food premium — отдельная FEFO-зона с контролем температуры.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>FEFO / FIFO / LIFO учёт</h3>
+        <p>Для food и косметики — строгий FEFO (товар с ближайшим сроком годности отгружается первым). Это критично для CIS-брендов с короткими сроками годности. Для fashion и непродовольственных категорий — FIFO (сезонные коллекции по дате прихода). Для текстиля длительного хранения — LIFO допустим. WMS автоматически выбирает партию по правилу категории.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Возвраты от украинских сетей</h3>
+        <p>Тариф возврата — 9 грн за SKU (половина тарифа отгрузки 18 грн). Принимаем товар обратно от сети, проверяем целостность, фотофиксируем, возвращаем в стеллаж или утилизируем по инструкции CIS-бренда. Типичные причины возвратов: брак производства (брендуется CIS-бренду), просрочка (для food/косметики), несоответствие заказу. Полный отчёт в кабинет бренда раз в неделю.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Инвентаризация и блокировка</h3>
+        <p>Полная инвентаризация склада CIS-бренда — раз в квартал, акт сверки направляем бренду. Циклическая (ABC-анализ топ-20% SKU) — раз в месяц. При расхождении >0.2% — расследование причины (хищение, ошибка приёмки, ошибка отгрузки). Возможна блокировка партии товара по запросу бренда (например, для аудита качества или налоговой проверки) без снятия с хранения.</p>
+      </div>
+      <div class="b2b-tech-card">
+        <h3>Отчётность для CIS-бренда</h3>
+        <p>Ежедневный snapshot остатков в кабинете бренда (excel-выгрузка или API доступ). Еженедельный отчёт по продажам и возвратам в разрезе сетей. Ежемесячный финансовый отчёт с разбивкой: гривневая выручка от сетей, конверсия в USD/EUR по курсу НБУ, наш fulfillment fee, таможенные сборы, чистая сумма к выплате на CIS-счёт. SLA отчётов — 5 рабочих дней после конца месяца.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="b2b-sec" id="b2b-cta">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">СТОИМОСТЬ МОДЕЛИ</div>
+    <h2 class="b2b-h2">Сколько стоит cross-border B2B-модель для CIS-бренда</h2>
+    <p class="b2b-lede">Прозрачный прайс. Палетное хранение $10/мес + комплектация $0.41 за заказ + украинская доставка $30-60/палет (платит сеть-клиент) + cross-border транспортировка ~$50-150/палет (один раз при пополнении запаса) + юр./бух. услуги по cross-border схеме $200-400/мес паушально.</p>
+    <div class="b2b-price-grid">
+      <div class="b2b-price-card">
+        <div class="b2b-price-tier">ХРАНЕНИЕ</div>
+        <div class="b2b-price-num">$10</div>
+        <div class="b2b-price-label">за палет / месяц (450 грн)</div>
+        <ul class="b2b-price-feat">
+          <li>Адресная ячейка в WMS</li>
+          <li>Стеллажи до 2 тонн/ярус</li>
+          <li>Алкоголь — лицензированная зона</li>
+          <li>Food/косметика — FEFO-зона</li>
+          <li>Доступ 24/7 через кабинет</li>
+        </ul>
+      </div>
+      <div class="b2b-price-card b2b-price-card-mid">
+        <div class="b2b-price-tier">КОМПЛЕКТАЦИЯ B2B</div>
+        <div class="b2b-price-num">$0.41</div>
+        <div class="b2b-price-label">за собранный B2B-заказ</div>
+        <ul class="b2b-price-feat">
+          <li>Multi-SKU box-pick или pallet-pick</li>
+          <li>Скан штрих-кодов на 2 этапах</li>
+          <li>QC checkpoint для заказов от $120</li>
+          <li>Накладная + рахунок-фактура через ЭДО</li>
+          <li>Передача перевозчику</li>
+        </ul>
+      </div>
+      <div class="b2b-price-card">
+        <div class="b2b-price-tier">CROSS-BORDER ОПЕРАЦИИ</div>
+        <div class="b2b-price-num">$200-400</div>
+        <div class="b2b-price-label">/мес паушально</div>
+        <ul class="b2b-price-feat">
+          <li>Украинская таможня + ВМД</li>
+          <li>ЭДО Вчасно/Edin/Comarch</li>
+          <li>КЕП от нашего оператора</li>
+          <li>Расчёты в USD/EUR на CIS-счёт</li>
+          <li>SLA выплат 5 рабочих дней</li>
+        </ul>
+      </div>
+    </div>
+    <div class="b2b-price-note">
+      <strong>Минимальный месячный платёж $500</strong> первые 3 месяца, потом покрывается фактическим объёмом. <strong>Cross-border транспортировка</strong> ~$50-150/палет один раз при пополнении запаса (не за заказ). <a href="/ru/calculator/">Рассчитайте для вашего бренда</a> по конкретным KZ/MD/GE/UZ/AZ/PL параметрам.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">ВОПРОСЫ И ОТВЕТЫ</div>
+    <h2 class="b2b-h2">Что обычно спрашивают CIS-бренды перед выходом на украинский B2B-рынок</h2>
+    <div class="b2b-faq">
+      <details><summary>Может ли бренд из Казахстана поставлять напрямую в украинскую розницу без юр.лица в Украине?</summary><p>Да. Cross-border B2B-модель через нашего украинского оператора по агентскому договору. Бренд остаётся в KZ, мы продаём от его имени украинской рознице. Расчёты в USD/EUR на казахстанский счёт ежемесячно.</p></details>
+      <details><summary>Зачем CIS-бренду украинский B2B-рынок а не Россия?</summary><p>Украина — 36 млн человек, 4-я по размеру e-commerce/розница в Восточной Европе. Российский рынок закрыт по санкциям. Украинская розница активно ищет CIS-альтернативы российским/белорусским поставщикам — категории открыты, маржа 30-50% выше национального рынка CIS-бренда.</p></details>
+      <details><summary>Какие украинские розничные сети мы обслуживаем для CIS-брендов?</summary><p>30+ сетей: Сильпо, АТБ, Watsons, Eva, Prostor, Cosmo, Brocard, Метро, Novus, Modnakasta, INTERTOP, Allo, Foxtrot, Эпицентр. У нашего оператора уже есть статус поставщика — CIS-бренд подключается через нас без отдельной регистрации.</p></details>
+      <details><summary>Сколько стоит вся модель для бренда из Молдовы?</summary><p>$10/палет/мес хранение + $0.41/заказ комплектация + украинская доставка $30-60/палет (платит сеть) + cross-border MD→UA $50-80/палет (раз при пополнении) + юр./бух. услуги $200-400/мес. Минимальный платёж $500 первые 3 месяца.</p></details>
+      <details><summary>Как организован cross-border поток для грузинского fashion-бренда?</summary><p>Тбилисский бренд отправляет коллекцию через DHL 8-14 дней или Black Sea sea freight 12-20 дней. На границе UA — импортная декларация, сертификаты соответствия, маркировка УКТ ЗЕД. На складе — стеллажи для одежды. Сеть делает заказ — мы box-pick розфасован за магазинами, ЭДО Вчасно, отправка НП Грузовое.</p></details>
+      <details><summary>Какой украинский ЭДО используется для CIS-брендов?</summary><p>Вчасно (самый популярный), Edin (фарма), Medoc (универсальный). Для специфичных сетей: АТБ — Comarch, Метро — SAP Ariba. Мы работаем в вашем кабинете как оператор. КЕП от нашего оператора — CIS-бренду не нужен украинский КЕП.</p></details>
+      <details><summary>Что с украинским НДС 20% на импорт из CIS?</summary><p>Уплачивается при импорте на украинский склад от таможенной стоимости. При продаже сети НДС включён в цену (для сети это входной НДС). Кеш-флоу момент: уплачен при импорте, возвращается через продажи в 1-3 месяца. Для EAEU стран — облегчённый режим CT-1. Молдова, Грузия — DCFTA. Польша — EU-Ukraine DCFTA.</p></details>
+      <details><summary>Как быстро бренд из Узбекистана может начать поставки?</summary><p>21-30 рабочих дней от договора до первой поставки в сеть. Цикл: договор → документы CIS-стороны → cross-border транспортировка (10-14 дней для UZ) → приёмка в WMS → регистрация в сети → ЭДО-настройка → тестовая поставка → production. Для крупных партий или фарма — до 45 дней.</p></details>
+      <details><summary>Можем ли работать с молдавским винодельческим брендом для поставки в Сильпо/Novus?</summary><p>Да. У нас отдельная лицензированная зона для алкоголя в Белогородке. Cross-border MD→UA 5-7 дней через Meest International с акцизом. На складе — оклейка акцизными марками, контролируемая температура. Поставка в Сильпо/Novus/Wine.ua через нашего оператора с лицензией на торговлю алкоголем.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="b2b-sec">
+  <div class="ctr">
+    <div class="b2b-chip b2b-chip-dark">СВЯЗАННЫЕ УСЛУГИ</div>
+    <h2 class="b2b-h2">Что ещё делаем для CIS-брендов выходящих в Украину</h2>
+    <div class="b2b-rel-grid">
+      <a class="b2b-rel-card" href="/ru/fulfilment-ukraina/"><strong>Фулфилмент для CIS-брендов</strong><span>Cross-border B2C модель для интернет-магазинов</span></a>
+      <a class="b2b-rel-card" href="/ru/komplektaciya-zakazov/"><strong>Сборка заказов 47 секунд</strong><span>Pick & pack из украинского склада</span></a>
+      <a class="b2b-rel-card" href="/ru/fulfilment-dnipro/"><strong>Восточная Украина для CIS</strong><span>Днепропетровская область — 4-й рынок UA</span></a>
+      <a class="b2b-rel-card" href="/ru/calculator/"><strong>Калькулятор стоимости</strong><span>Под ваш CIS-бренд и объём</span></a>
+      <a class="b2b-rel-card" href="/ru/services/"><strong>Все услуги фулфилмента</strong><span>17 операций под одним SLA</span></a>
+      <a class="b2b-rel-card" href="/ru/3pl/"><strong>3PL логистика</strong><span>Полный аутсорсинг для международных брендов</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CLOSING -->
+<section class="b2b-sec b2b-sec-light">
+  <div class="ctr">
+    <h2 class="b2b-h2">Cross-border B2B-модель для CIS-брендов в украинскую розницу — окно возможностей открыто</h2>
+    <p>Украинская розница активно ищет альтернативы российским и белорусским поставщикам которые ушли с рынка с 2022. Категории остаются открытыми во многих сегментах: натуральная косметика, премиум-food, fashion, побутова химия, текстиль для дома, niche-продукты. Сети сами выходят на CIS-брендов с предложениями — Watsons имеет программу для CIS-cosmetics, Сильпо активно набирает молдавское вино и грузинский food, Modnakasta готова работать с грузинским fashion и узбекским текстилем для дома.</p>
+    <p>Наша cross-border B2B-модель устраняет ключевой барьер — необходимость украинской юр.лица. Бренд из Казахстана, Молдовы, Грузии, Узбекистана, Азербайджана, Польши или Латвии остаётся юридически у себя, мы являемся вашим украинским операционным партнёром по агентскому договору. Все украинские роли (юр.лицо для контракта с сетью, плательщик НДС, держатель КЕП для ЭДО, расчётный счёт для приёма платежей, лицензии на алкоголь/фарма) — на нас. CIS-бренд получает выручку в USD/EUR на банковский счёт у себя ежемесячно. Валютный риск гривны — на нас.</p>
+    <p>Экономика: палетное хранение $10/мес (450 грн) + комплектация $0.41/заказ (18 грн) + украинская доставка $30-60/палет (платит сеть-клиент) + cross-border транспортировка $50-150/палет (раз при пополнении запаса, не за заказ) + юр./бух. услуги $200-400/мес паушально. Минимальный месячный платёж $500 первые 3 месяца. Для типичного CIS-бренда с 50 палетами хранения и 200 B2B-заказами/мес — общие расходы $1 000-1 500/мес плюс одноразовая cross-border транспортировка.</p>
+    <p>Цикл онбординга 21-30 рабочих дней от подписания договора до первой поставки в украинскую розничную сеть. Длиннее B2C-онбординга из-за специфики B2B (1С/BAS-интеграция, ЭДО-протоколы для сетей, регистрация поставщика в сети, тестовая поставка). У нашего оператора уже есть статус поставщика в 30+ крупнейших украинских сетях — это экономит 2-4 месяца традиционного процесса где CIS-бренд регистрируется в каждой сети с нуля.</p>
+    <p>Смотрите также: <a href="/ru/fulfilment-ukraina/">фулфилмент в Украине из СНГ</a>, <a href="/ru/komplektaciya-zakazov/">сборка заказов 47 секунд</a>, <a href="/ru/fulfilment-dnipro/">восточная Украина для CIS-брендов</a>, <a href="/ru/calculator/">калькулятор для вашего бренда</a>, <a href="/ru/services/">все услуги фулфилмента</a>, <a href="/ru/3pl/">3PL логистика для международных брендов</a>.</p>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+/* B2B RU CIS — Flag Flow Diagram hero */
+.b2b-hero{background:#fff;color:#000;padding:80px 0 60px}
+.b2b-hero .ctr{max-width:1280px}
+.b2b-hero .b2b-chip{margin-bottom:24px}
+.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:1.05;letter-spacing:-0.03em;margin:0 auto 24px;color:#000;max-width:1020px;text-align:center}
+.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:#333;margin:0 auto 48px;max-width:840px;text-align:center}
+.b2b-cta-btn{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;padding:18px 32px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:background .15s;margin-top:32px}
+.b2b-cta-btn:hover{background:#c12a22}
+.b2b-hero{text-align:center}
+.b2b-hero .b2b-chip{display:inline-block}
+
+/* Flag Flow Diagram */
+.b2b-flow-diagram{display:grid;grid-template-columns:1fr auto 1.4fr auto 1fr;gap:24px;align-items:center;background:#f3f3f3;padding:32px;border:2px solid #000;margin:0 auto;max-width:1100px}
+.b2b-flow-sources{display:grid;grid-template-columns:1fr;gap:12px}
+.b2b-flow-flag{background:#fff;border:1px solid #ddd;border-left:4px solid #e63329;padding:12px 14px;display:flex;align-items:center;gap:12px;text-align:left}
+.b2b-flow-icon{font-size:28px;line-height:1;flex-shrink:0}
+.b2b-flow-name{font-family:Unbounded,sans-serif;font-weight:800;font-size:13px;color:#000;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;min-width:90px}
+.b2b-flow-cat{font-family:'DM Sans',sans-serif;font-size:11px;color:#666;text-align:left;line-height:1.3}
+.b2b-flow-arrows{font-family:Unbounded,sans-serif;font-weight:900;font-size:48px;color:#e63329;line-height:1;text-align:center}
+.b2b-flow-hub{background:#0a0a0a;color:#fff;padding:32px 24px;text-align:center;border:2px solid #000}
+.b2b-flow-hub-icon{font-size:48px;line-height:1;margin-bottom:12px}
+.b2b-flow-hub-name{font-family:Unbounded,sans-serif;font-weight:900;font-size:18px;color:#e63329;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.b2b-flow-hub-sub{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.85);line-height:1.4}
+.b2b-flow-dest{display:flex;align-items:center;justify-content:center}
+.b2b-flow-dest-flag{background:#e63329;border:1px solid #e63329;border-left:4px solid #fff;color:#fff;flex-direction:column;align-items:center;gap:6px;padding:24px;text-align:center}
+.b2b-flow-dest-flag .b2b-flow-icon{font-size:48px}
+.b2b-flow-dest-flag .b2b-flow-name{color:#fff;font-size:18px}
+.b2b-flow-dest-flag .b2b-flow-cat{color:rgba(255,255,255,.9);text-align:center}
+
+/* Stats bar */
+.b2b-statsbar{background:#0a0a0a;color:#fff;padding:48px 0}
+.b2b-sb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.b2b-sb-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(32px,4.5vw,52px);color:#fff;line-height:1;letter-spacing:-0.03em;border-bottom:3px solid #e63329;padding-bottom:8px;display:inline-block}
+.b2b-sb-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#999;margin-top:12px}
+
+/* Section + standard styles (same as UA) */
+.b2b-sec{padding:80px 0;background:#fff}
+.b2b-sec-light{background:#f3f3f3}
+.b2b-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;padding:6px 12px;text-transform:uppercase;border-radius:0}
+.b2b-chip-dark{background:#000}
+.b2b-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.b2b-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+
+.b2b-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b2b-uc-card{background:#fff;border:1px solid #ddd;padding:28px 24px;border-left:4px solid #e63329}
+.b2b-sec-light .b2b-uc-card{background:#fff}
+.b2b-uc-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;letter-spacing:-0.02em;margin-bottom:12px}
+.b2b-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000;line-height:1.25}
+.b2b-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+.b2b-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b2b-tech-card{background:#fff;border:2px solid #000;padding:28px 24px}
+.b2b-tech-card h3{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;margin:0 0 12px;text-transform:uppercase;letter-spacing:.02em}
+.b2b-tech-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+.b2b-flow-steps{list-style:none;padding:0;margin:0;counter-reset:flow}
+.b2b-flow-steps li{padding:20px 0 20px 60px;border-bottom:1px solid #ddd;position:relative;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.55;color:#333;counter-increment:flow}
+.b2b-flow-steps li:before{content:counter(flow);position:absolute;left:0;top:18px;width:40px;height:40px;background:#e63329;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:800;font-size:16px}
+.b2b-flow-steps li strong{color:#000;font-weight:700;display:block;margin-bottom:4px}
+
+.b2b-chain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.b2b-chain-cell{background:#fff;border:1px solid #ddd;padding:18px;font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.45;color:#333}
+.b2b-chain-cell strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:6px}
+.b2b-chain-cell span{display:block;color:#666;font-size:12px}
+
+.b2b-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.b2b-price-card{background:#fff;border:2px solid #000;padding:32px 24px;text-align:center}
+.b2b-price-card-mid{border-color:#e63329;background:#fff5f4}
+.b2b-price-tier{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-bottom:16px}
+.b2b-price-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:42px;color:#e63329;line-height:1}
+.b2b-price-label{font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin:8px 0 24px}
+.b2b-price-feat{list-style:none;padding:0;margin:0;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:#333}
+.b2b-price-feat li{padding:6px 0;border-bottom:1px solid #eee}
+.b2b-price-feat li:before{content:"✓ ";color:#e63329;font-weight:700;margin-right:6px}
+.b2b-price-note{background:#fff;border-left:4px solid #e63329;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.b2b-faq{display:flex;flex-direction:column;gap:8px}
+.b2b-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.b2b-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.b2b-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.b2b-faq details[open] summary::after{content:"−"}
+.b2b-faq summary::-webkit-details-marker{display:none}
+.b2b-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.b2b-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.b2b-rel-card{display:block;background:#fff;border:1px solid #ddd;padding:24px;text-decoration:none;color:#000;transition:border-color .15s}
+.b2b-rel-card:hover{border-color:#e63329}
+.b2b-rel-card strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:8px}
+.b2b-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
+.b2b-sec a{color:#e63329}
+
+@media (max-width:900px){
+  .b2b-flow-diagram{grid-template-columns:1fr;gap:16px}
+  .b2b-flow-arrows{transform:rotate(90deg);font-size:36px}
+  .b2b-sb-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .b2b-uc-grid,.b2b-tech-grid,.b2b-price-grid,.b2b-rel-grid{grid-template-columns:1fr;gap:16px}
+  .b2b-chain-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+</style>
