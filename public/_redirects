@@ -111,7 +111,7 @@
 /en/fulfillment-for-small-business /en/fulfilment-for-small-business/ 301
 /en/fulfillment-for-cosmetics/ /en/fulfilment-for-cosmetics/ 301
 /en/fulfillment-for-electronics/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-for-fashion/ /en/fulfillment-ukraine/ 301
+/en/fulfillment-for-fashion/ /en/fulfilment-for-clothing/ 301
 /en/fulfillment-for-beauty-cosmetics/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-baby-products/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-food-beverages/ /en/fulfillment-ukraine/ 301
@@ -348,6 +348,10 @@
 /2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /blog/ 301
 /ua/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /ua/blog/mtp-group-fast-product-liquidation/ 301
 /en/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /en/blog/post/mtp-group-fast-product-liquidation/ 301
+
+# GSC Coverage Validation 2026-05-11: deleted thin pages should redirect not 404
+/ua/guide/case-study-zrostannya-vid-startapu-do-enterprise/ /ua/3pl-logistyka/ 301
+/ua/guide/case-study-zrostannya-vid-startapu-do-enterprise /ua/3pl-logistyka/ 301
 
 # GSC drilldown 2026-05-11: 5 broken lang-prefix concatenations 404-ing
 # Send them to guide/b2b hubs directly (existing wildcards led to non-existent slugs)
