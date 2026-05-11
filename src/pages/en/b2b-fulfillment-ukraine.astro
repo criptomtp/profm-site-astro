@@ -23,24 +23,34 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
   <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/b2b-fulfilment/">
 </Fragment>
 
-<!-- HERO — 2-col with cost preview chips + CTA on first screen -->
+<!-- HERO — Photo + dark overlay + CTA card (komplektatsiya pattern) -->
 <section class="b2b-hero">
-  <div class="ctr b2b-hero-grid">
-    <div class="b2b-hero-text">
-      <div class="b2b-chip">B2B · INTERNATIONAL → UKRAINE · WHOLESALE</div>
-      <h1>3-5x cheaper than US/EU 3PL — wholesale fulfillment into Ukrainian retail chains</h1>
-      <p class="b2b-hero-sub">International brands (US, UK, Germany, France, Italy, Spain, Poland) enter 30+ Ukrainian retail chains (Silpo, ATB, Watsons, Eva, Metro, Modnakasta) through our Kyiv hub. No Ukrainian legal entity required — agency model. Monthly settlement in USD/EUR.</p>
-      <div class="b2b-cost-preview">
-        <div class="b2b-cost-chip b2b-cost-chip-mtp"><span class="b2b-cost-label">UA · MTP</span><span class="b2b-cost-value">$10/pallet</span></div>
-        <div class="b2b-cost-chip"><span class="b2b-cost-label">US 3PL</span><span class="b2b-cost-value b2b-cost-strike">$35-50</span></div>
-        <div class="b2b-cost-chip"><span class="b2b-cost-label">EU 3PL</span><span class="b2b-cost-value b2b-cost-strike">$40-65</span></div>
+  <img class="b2b-hero-bg" src="/images/b2b-fulfilment-hero.jpg" alt="MTP Group Kyiv B2B warehouse — international brand wholesale fulfillment into Ukrainian retail chains" width="1200" height="630" loading="eager" fetchpriority="high" data-md-skip>
+  <div class="b2b-hero-overlay"></div>
+  <div class="ctr">
+    <div class="b2b-hero-grid">
+      <div class="b2b-hero-left">
+        <div class="b2b-chip">B2B · INTERNATIONAL → UKRAINE · WHOLESALE</div>
+        <h1>3-5x cheaper than US/EU 3PL — wholesale fulfillment into Ukrainian retail chains</h1>
+        <p class="b2b-hero-sub">International brands (US, UK, Germany, France, Italy, Spain, Poland) enter 30+ Ukrainian retail chains (Silpo, ATB, Watsons, Eva, Metro, Modnakasta) through our Kyiv hub. No Ukrainian legal entity required — agency model under our operational partner. Monthly settlement in USD/EUR to your account.</p>
+        <div class="b2b-cost-preview">
+          <div class="b2b-cost-chip b2b-cost-chip-mtp"><span class="b2b-cost-label">UA · MTP</span><span class="b2b-cost-value">$10/pallet/mo</span></div>
+          <div class="b2b-cost-chip"><span class="b2b-cost-label">US 3PL</span><span class="b2b-cost-value b2b-cost-strike">$35-50</span></div>
+          <div class="b2b-cost-chip"><span class="b2b-cost-label">EU 3PL</span><span class="b2b-cost-value b2b-cost-strike">$40-65</span></div>
+        </div>
+      </div>
+      <div class="b2b-hero-right">
+        <div class="b2b-form-card">
+          <div class="b2b-form-title">Cost estimate for your wholesale brand</div>
+          <HeroCTA lang="en" theme="light" button="Get estimate →" microCopy="✓ Reply within 15 min · WhatsApp or phone · international numbers welcome" sourceTag="hero /en/b2b-fulfillment-ukraine/" />
+        </div>
       </div>
     </div>
-    <div class="b2b-hero-cta">
-      <div class="b2b-cta-card">
-        <div class="b2b-cta-title">Cost estimate for your wholesale brand</div>
-        <HeroCTA lang="en" theme="light" button="Get estimate →" microCopy="✓ Reply within 15 min · WhatsApp or phone · international numbers welcome" sourceTag="hero /en/b2b-fulfillment-ukraine/" />
-      </div>
+    <div class="b2b-hero-stats">
+      <div class="b2b-stat"><div class="b2b-stat-num">$10</div><div class="b2b-stat-lbl">PALLET STORAGE / MO</div></div>
+      <div class="b2b-stat"><div class="b2b-stat-num">24h</div><div class="b2b-stat-lbl">SHIPMENT SLA</div></div>
+      <div class="b2b-stat"><div class="b2b-stat-num">30+</div><div class="b2b-stat-lbl">UA RETAIL CHAINS</div></div>
+      <div class="b2b-stat"><div class="b2b-stat-num">21-30 days</div><div class="b2b-stat-lbl">ONBOARDING</div></div>
     </div>
   </div>
 </section>
@@ -369,28 +379,36 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 
 <style is:global>
 /* B2B EN International — Dark Cost Matrix focused */
-.b2b-hero{background:#fff;color:#000;padding:40px 0 32px}
-.b2b-hero .ctr{max-width:1280px}
-.b2b-hero-grid{display:grid;grid-template-columns:1.2fr 420px;gap:40px;align-items:start}
-.b2b-hero-text{min-width:0;text-align:left}
-.b2b-hero .b2b-chip{display:inline-block;margin-bottom:16px}
-.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3vw,42px);line-height:1.08;letter-spacing:-0.025em;margin:0 0 16px;color:#000;text-align:left}
-.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.5;color:#333;margin:0 0 24px;text-align:left}
+/* HERO — photo bg + dark overlay (komplektatsiya pattern) */
+.b2b-hero{position:relative;color:#fff;padding:64px 0 48px;overflow:hidden;background:#0a0a0a;border-bottom:6px solid #e63329}
+.b2b-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.b2b-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.85) 45%,rgba(10,10,10,.55) 100%);z-index:1}
+.b2b-hero .ctr{position:relative;z-index:2;max-width:1280px}
+.b2b-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-bottom:36px}
+.b2b-hero-left{min-width:0;text-align:left}
+.b2b-hero .b2b-chip{display:inline-block;margin-bottom:20px;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;padding:8px 14px;text-transform:uppercase}
+.b2b-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(28px,3.4vw,48px);line-height:1.06;letter-spacing:-0.025em;margin:0 0 20px;color:#fff;text-align:left}
+.b2b-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:rgba(255,255,255,.92);max-width:680px;margin:0 0 24px;text-align:left}
 
-/* Cost preview chips below sub */
+/* Cost preview chips below sub — on dark bg */
 .b2b-cost-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px}
-.b2b-cost-chip{background:#f3f3f3;border:1px solid #ddd;padding:12px 14px;text-align:center}
-.b2b-cost-chip-mtp{background:#e63329;border-color:#e63329;color:#fff}
-.b2b-cost-label{display:block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#666;margin-bottom:4px}
-.b2b-cost-chip-mtp .b2b-cost-label{color:rgba(255,255,255,.85)}
-.b2b-cost-value{display:block;font-family:Unbounded,sans-serif;font-weight:800;font-size:16px;color:#000;line-height:1.1}
-.b2b-cost-chip-mtp .b2b-cost-value{color:#fff}
-.b2b-cost-strike{text-decoration:line-through;text-decoration-thickness:2px;color:#999}
+.b2b-cost-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:12px 14px;text-align:center;backdrop-filter:blur(6px)}
+.b2b-cost-chip-mtp{background:#e63329;border-color:#e63329}
+.b2b-cost-label{display:block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px}
+.b2b-cost-chip-mtp .b2b-cost-label{color:rgba(255,255,255,.9)}
+.b2b-cost-value{display:block;font-family:Unbounded,sans-serif;font-weight:800;font-size:15px;color:#fff;line-height:1.1}
+.b2b-cost-strike{text-decoration:line-through;text-decoration-thickness:2px;color:rgba(255,255,255,.5)}
 
-/* CTA card inside hero */
-.b2b-hero-cta{position:sticky;top:24px}
-.b2b-cta-card{background:#fff;border:2px solid #000;padding:24px;max-width:420px}
-.b2b-cta-title{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#000;margin-bottom:16px;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+/* Form card right column */
+.b2b-form-card{background:#fff;color:#000;padding:24px;border:3px solid #e63329;box-shadow:8px 8px 0 rgba(0,0,0,.25)}
+.b2b-form-title{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;margin-bottom:16px;color:#000;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+
+/* Hero stats row */
+.b2b-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(0,0,0,.85);border:2px solid #000}
+.b2b-stat{padding:18px 16px;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.b2b-stat:last-child{border-right:0}
+.b2b-stat-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(20px,2vw,28px);color:#fff;letter-spacing:-0.02em;line-height:1}
+.b2b-stat-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7);margin-top:6px;text-transform:uppercase}
 
 /* Big savings bar (no green per palette — red+white only) */
 .b2b-savings-bar{background:#0a0a0a;color:#fff;padding:56px 0;border-top:4px solid #e63329;border-bottom:4px solid #e63329}
@@ -469,13 +487,15 @@ const schemaJson = `<script type="application/ld+json">{"@context":"https://sche
 .b2b-sec a{color:#e63329}
 
 @media (max-width:980px){
-  .b2b-hero-grid{grid-template-columns:1fr;gap:24px}
-  .b2b-hero-cta{position:static}
-  .b2b-cta-card{max-width:none}
+  .b2b-hero-grid{grid-template-columns:1fr;gap:28px}
+  .b2b-form-card{max-width:none}
 }
 @media (max-width:900px){
-  .b2b-hero{padding:24px 0 20px}
+  .b2b-hero{padding:40px 0 32px}
   .b2b-cost-preview{grid-template-columns:1fr;gap:6px}
+  .b2b-hero-stats{grid-template-columns:repeat(2,1fr)}
+  .b2b-stat:nth-child(2){border-right:0}
+  .b2b-stat:nth-child(1),.b2b-stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.12)}
   .b2b-savings-grid{grid-template-columns:1fr;gap:16px}
   .b2b-savings-cell:first-child{transform:none}
   .b2b-uc-grid,.b2b-tech-grid,.b2b-price-grid,.b2b-rel-grid{grid-template-columns:1fr;gap:16px}
