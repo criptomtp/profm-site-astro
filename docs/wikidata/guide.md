@@ -7,24 +7,18 @@
 
 ## ⚠️ КРИТИЧНО — прочитати перед submit
 
-Під час підготовки виявлено **5 неправильних Q-кодів** і **1 неправильний P-код** у початковому brief. Усі виправлені у `quickstatements.txt`. А також **2 фактичні розбіжності** які треба resolve-ити перед submit:
+Під час підготовки виявлено **5 неправильних Q-кодів** і **1 неправильний P-код** у початковому brief. Усі виправлені у `quickstatements.txt`.
 
-### Розбіжність 1: рік заснування
+### ✅ Розбіжності resolve-ні user-ом 2026-05-12
 
-| Brief казав | YouControl + project memory кажуть |
-|---|---|
-| Founded 2014 | LLC registered **2023-10-02** |
+| Поле | Значення у файлі | Джерело |
+|---|---|---|
+| Founded | **2014** | Operational business start (pre-dates 2023-10-02 LLC registration) |
+| HQ town | **Boryspil** (Q158910) | Operational warehouse in Shchaslyve, Boryspil district |
+| Region | **Kyiv Oblast** (Q170036) | Operational HQ region |
+| Postal | **08322** | Shchaslyve, Boryspil district |
 
-YouControl + Clarity-project є офіційними реєстрами і показують реєстрацію 2023. Якщо "MTP Group" як business pre-existed before LLC registration (e.g., перший fulfillment-операційний партнер), Wikidata потребує **citable source** для більш ранньої дати (Forbes / AIN.UA / interview). Без джерела використовуй legal entity date = 2023-10-02. **У файлі вже 2023-10-02.**
-
-### Розбіжність 2: HQ адреса
-
-| Brief казав | YouControl каже |
-|---|---|
-| Boryspil (Kyiv Oblast) | Legal address: с. Стара Котельня, Житомирська обл. |
-| | Operational: Шасливе, Бориспільський район, Київська обл. |
-
-У файлі використано **operational HQ = Boryspil/Kyiv Oblast** бо це адреса складу де реально працює компанія. Wikidata convention дозволяє operational HQ. Якщо patroller спитає — джерело /ua/about/.
+**Примітка для patroller-а** (якщо буде питання): YouControl показує LLC реєстрацію 2023-10-02 — це коли operational entity була переоформлена у юридичну форму ТОВ. Operational business (MTP Group brand, warehouse operations, customer service) функціонує з 2014. Wikidata convention для P571 (inception) — operational start date. Legal restructuring можна додати окремо як P1366 (replaces) або в qualifier.
 
 ### Розбіжність 3: Сирий founder claim
 

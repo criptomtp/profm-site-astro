@@ -7,11 +7,10 @@
 # function-representation, disambiguation page). All codes below have been
 # verified via wikidata.org searches on 2026-05-12.
 #
-# Two data discrepancies flagged (resolve before paste):
-#   - Founded year: brief said 2014; YouControl/Clarity say 2023-10-02 (LLC reg)
-#   - HQ city: brief said Boryspil; legal address per YouControl is Zhytomyr
-#     Oblast, but operational HQ is Shchaslyve in Boryspil district. Below uses
-#     Boryspil (Q158910) per operational HQ convention.
+# Data discrepancies — RESOLVED by user 2026-05-12:
+#   - Founded year: 2014 (operational business start, pre-dates LLC registration)
+#   - HQ: Shchaslyve, Boryspil district, Kyiv Oblast (operational warehouse)
+#     Boryspil town = Q158910, Kyiv Oblast = Q170036, postal 08322
 #
 # Lines starting with # are comments and will be skipped by QuickStatements.
 
@@ -35,9 +34,8 @@ LAST	P452	Q1473552	S854	"https://www.fulfillmentmtp.com.ua/poslugy/"
 # Country: Ukraine
 LAST	P17	Q212	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
 
-# Headquarters location: Boryspil (was Q210793=MOSFET, corrected to Q158910)
-# NOTE: operational HQ — legal registered address is in Zhytomyr Oblast per YouControl.
-# If you prefer legal address, replace Q158910 with Q158914 (Zhytomyr) and Q170036 (Kyiv Oblast) with Q170055 (Zhytomyr Oblast).
+# Headquarters location: Boryspil town/district (Shchaslyve village is within
+# Boryspil district). Was Q210793=MOSFET in brief, corrected to Q158910.
 LAST	P159	Q158910	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
 
 # Located in administrative entity: Kyiv Oblast (was Q5193=404, corrected to Q170036)
@@ -46,9 +44,12 @@ LAST	P131	Q170036	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
 # Postal code (operational HQ — Shchaslyve, Boryspil district)
 LAST	P281	"08322"	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
 
-# Inception: 2023-10-02 per YouControl (NOT 2014 — that was an error in brief)
-# Precision /11 = day-precision. If you want year-only, change to /9 and date to +2023-00-00T00:00:00Z
-LAST	P571	+2023-10-02T00:00:00Z/11	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+# Inception: 2014 — operational business start (user-confirmed 2026-05-12)
+# Note: legal LLC entity registered 2023-10-02 per YouControl, but business
+# operationally started 2014. P571 takes operational start year per Wikidata
+# convention (legal-entity-restructuring date sources separately if needed).
+# Precision /9 = year-only.
+LAST	P571	+2014-01-01T00:00:00Z/9	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
 
 # Legal form: limited liability company / ТОВ (was Q12047650=disambig, corrected to Q98834261)
 LAST	P1454	Q98834261	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
