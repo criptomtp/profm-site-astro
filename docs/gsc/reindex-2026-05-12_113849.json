@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-12_113849",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/fulfilment-dlya-elektroniky/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}

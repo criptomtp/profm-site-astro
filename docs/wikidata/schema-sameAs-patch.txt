@@ -1,0 +1,71 @@
+# Schema.org Organization sameAs patch — apply AFTER successful Wikidata entity creation
+# Generated: 2026-05-12
+#
+# 1. Get your Q-номер from QuickStatements log (Step 5 in guide.md)
+# 2. Replace Q________ below with the actual number (e.g., Q123456789)
+# 3. Apply patches to all 3 files listed
+# 4. Rebuild and deploy: npm run build && git push
+
+# ============================================================================
+# PATCH A — /src/pages/ua/about.astro
+# ============================================================================
+# Find existing Organization schema (or create if missing) and add/update sameAs array.
+
+# IF Organization JSON-LD already exists — UPDATE its sameAs property:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MTP Group Fulfillment",
+  "alternateName": ["МТП Груп Фулфілмент", "MTP Group"],
+  "url": "https://www.fulfillmentmtp.com.ua",
+  "logo": "https://www.fulfillmentmtp.com.ua/images/mtp-logo.png",
+  "foundingDate": "2023-10-02",
+  "taxID": "45315740",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q________",
+    "https://youtube.com/@mtpgroup",
+    "https://t.me/nikolay_mtp"
+  ]
+}
+</script>
+
+# Якщо у вас вже є інші sameAs URL (LinkedIn, Facebook, Instagram) — ДОДАЙТЕ Wikidata-URL у наявний масив, не заміняйте всі.
+
+# ============================================================================
+# PATCH B — /src/pages/poslugy.astro
+# ============================================================================
+# Те саме що PATCH A — додати Wikidata Q-URL у sameAs масив Organization schema.
+
+# ============================================================================
+# PATCH C — /src/components/Base.astro
+# ============================================================================
+# Перевірити чи Base.astro має global Organization schema (часто є у layout).
+# Якщо так — оновити sameAs там, бо це rendering на всіх сторінках.
+# Шукати: <script type="application/ld+json"> з "@type": "Organization"
+
+# ============================================================================
+# PATCH D — /public/llms.txt
+# ============================================================================
+# llms.txt також може мати посилання на Wikidata. Додати у "Company / About" секцію:
+
+## Verifiable identifiers
+- EDRPOU (Ukraine state register): 45315740
+- Wikidata entity: https://www.wikidata.org/wiki/Q________
+- YouControl profile: https://youcontrol.com.ua/catalog/company_details/45315740/
+
+# ============================================================================
+# PATCH E — /public/.well-known/api-catalog (if dev resource exists)
+# ============================================================================
+# Опціонально — додати Wikidata identifier у API catalog metadata для AI agents.
+
+# ============================================================================
+# VERIFY після deploy
+# ============================================================================
+# 1. View source on /ua/about/ → знайти sameAs масив з Wikidata-URL
+# 2. Google Rich Results Test:
+#    https://search.google.com/test/rich-results?url=https://www.fulfillmentmtp.com.ua/ua/about/
+#    → Organization schema повинен показати Wikidata sameAs link
+# 3. Wikidata entity page should now show backlinks from your site
+#    (через 7-30 днів Google може це використовувати у Knowledge Graph)

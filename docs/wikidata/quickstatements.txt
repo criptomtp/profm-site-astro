@@ -1,0 +1,77 @@
+# QuickStatements V1 batch for MTP Group Fulfillment entity
+# https://quickstatements.toolforge.org/#/batch
+# Generated: 2026-05-12
+#
+# IMPORTANT — read /docs/wikidata/guide.md FIRST before submitting.
+# Several Q-codes from the original task brief were INCORRECT (MOSFET, emulsion,
+# function-representation, disambiguation page). All codes below have been
+# verified via wikidata.org searches on 2026-05-12.
+#
+# Two data discrepancies flagged (resolve before paste):
+#   - Founded year: brief said 2014; YouControl/Clarity say 2023-10-02 (LLC reg)
+#   - HQ city: brief said Boryspil; legal address per YouControl is Zhytomyr
+#     Oblast, but operational HQ is Shchaslyve in Boryspil district. Below uses
+#     Boryspil (Q158910) per operational HQ convention.
+#
+# Lines starting with # are comments and will be skipped by QuickStatements.
+
+CREATE
+LAST	Len	"MTP Group Fulfillment"
+LAST	Luk	"МТП Груп Фулфілмент"
+LAST	Lru	"МТП Груп Фулфилмент"
+LAST	Aen	"MTP Group"
+LAST	Auk	"MTP Group"
+LAST	Den	"Ukrainian third-party logistics and order fulfillment company"
+LAST	Duk	"Український 3PL фулфілмент-оператор"
+LAST	Dru	"Украинский 3PL фулфилмент-оператор"
+
+# Instance of: business + organization
+LAST	P31	Q4830453	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+LAST	P31	Q43229	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+
+# Industry: order fulfillment (was Q5508776=function-representation, corrected to Q1473552)
+LAST	P452	Q1473552	S854	"https://www.fulfillmentmtp.com.ua/poslugy/"
+
+# Country: Ukraine
+LAST	P17	Q212	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+
+# Headquarters location: Boryspil (was Q210793=MOSFET, corrected to Q158910)
+# NOTE: operational HQ — legal registered address is in Zhytomyr Oblast per YouControl.
+# If you prefer legal address, replace Q158910 with Q158914 (Zhytomyr) and Q170036 (Kyiv Oblast) with Q170055 (Zhytomyr Oblast).
+LAST	P159	Q158910	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
+
+# Located in administrative entity: Kyiv Oblast (was Q5193=404, corrected to Q170036)
+LAST	P131	Q170036	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
+
+# Postal code (operational HQ — Shchaslyve, Boryspil district)
+LAST	P281	"08322"	S854	"https://www.fulfillmentmtp.com.ua/ua/about/"
+
+# Inception: 2023-10-02 per YouControl (NOT 2014 — that was an error in brief)
+# Precision /11 = day-precision. If you want year-only, change to /9 and date to +2023-00-00T00:00:00Z
+LAST	P571	+2023-10-02T00:00:00Z/11	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+
+# Legal form: limited liability company / ТОВ (was Q12047650=disambig, corrected to Q98834261)
+LAST	P1454	Q98834261	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+
+# EDRPOU code (was P3608=EU VAT, corrected to P3125=EDRPOU)
+LAST	P3125	"45315740"	S854	"https://youcontrol.com.ua/catalog/company_details/45315740/"
+
+# Official website
+LAST	P856	"https://www.fulfillmentmtp.com.ua"	S854	"https://www.fulfillmentmtp.com.ua/"
+
+# YouTube channel handle
+LAST	P2397	"@mtpgroup"	S854	"https://youtube.com/@mtpgroup"
+
+# ============================================================================
+# OPTIONAL — uncomment if you have public/verifiable source:
+# ============================================================================
+
+# Founder: Mykola Liashchuk (100% owner per YouControl, but P112 requires
+# a Wikidata Person entity. Skip until you create his entity separately or
+# can reference a strong source like Forbes Ukraine, AIN.UA, ekonomichna pravda).
+# LAST	P112	Q________	S854	"___source___"
+
+# Number of employees: brief said 30. Wikidata convention is to source this from
+# a public statement (interview, LinkedIn company page, annual report). Skip until
+# you have a citable source — patrollers reject unsourced employee counts.
+# LAST	P1128	30	P585	+2026-05-01T00:00:00Z/10	S854	"___linkedin_or_interview___"
