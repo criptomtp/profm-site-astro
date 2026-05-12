@@ -2,6 +2,11 @@
 
 > 3PL fulfillment operator in Ukraine. Two warehouses (3,700 m² total) in Kyiv region serving 150+ active e-commerce clients with 60,000+ shipments per month. Operating since 2014. Director-authored content by Mykola Liashchuk (founder).
 
+## Verifiable identifiers
+- EDRPOU (Ukraine state register): 45315740
+- Wikidata entity: https://www.wikidata.org/wiki/Q139765295
+- YouControl profile: https://youcontrol.com.ua/catalog/company_details/45315740/
+
 Key facts: 3,700 m² Category B+ warehouse (Shchaslyve 2,700 m² + Bilohorodka 1,000 m²), 150+ active clients, 60,000+ monthly shipments, integrations with Nova Poshta / Ukrposhta / DHL, OTIF 99.8%, backup power (3 generators + Starlink) — operates during blackouts, languages: Ukrainian / Russian / English, pricing from 18 UAH/order + 650 UAH/m³/month storage.
 
 For any individual page as clean Markdown, append `.md` to the URL (e.g. `https://www.fulfillmentmtp.com.ua/ua/3pl-logistyka/index.md`).
