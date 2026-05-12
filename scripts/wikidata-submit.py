@@ -61,105 +61,176 @@ def wait_for_user(prompt):
 
 
 def run_quickstatements(page):
-    """Submit batch via QuickStatements UI."""
+    """Submit batch via QuickStatements V2 UI."""
     batch = read_batch()
     print(f"\n📋 Batch loaded: {len(batch.splitlines())} statements")
 
-    banner("STEP 1: open QuickStatements + you login")
+    banner("STEP 1: open QuickStatements")
     page.goto(QS_URL, wait_until="domcontentloaded")
+    page.wait_for_timeout(2000)
     print(f"\n🌐 Opened: {page.url}")
-    print("\n📝 In the browser window:")
-    print("   1. Click 'Login via wikidata.org' (top-right) if not already logged in")
-    print("   2. Authorize the OAuth handshake")
-    print("   3. Return here when you see the batch input form")
 
-    wait_for_user("Done with login? Press ENTER to continue.")
+    # Check if already logged in (look for username in header)
+    page_text = page.content()
+    if "Login" in page_text and "Logout" not in page_text and "user" not in page_text.lower():
+        print("\n📝 You need to login first:")
+        print("   1. Click the login link/button in the browser")
+        print("   2. Authorize OAuth handshake on wikidata.org")
+        wait_for_user("Logged in + back at QuickStatements? Press ENTER.")
+    else:
+        print("✅ Already logged in (detected user session)")
 
-    banner("STEP 2: paste batch + run")
+    banner("STEP 2: open new batch + paste content")
 
-    # QuickStatements has changed UI a few times. Try multiple selectors.
+    # V2 UI: click "Новий пакет" / "New batch" button first
+    print("🔘 Clicking 'New batch' / 'Новий пакет' button...")
+    new_batch_selectors = [
+        'button:has-text("Новий пакет")',
+        'button:has-text("New batch")',
+        'a:has-text("Новий пакет")',
+        'a:has-text("New batch")',
+        '[href*="/batch"]:has-text("Новий")',
+        '[href*="/batch"]:has-text("New")',
+    ]
+    clicked_new = False
+    for sel in new_batch_selectors:
+        try:
+            el = page.query_selector(sel)
+            if el and el.is_visible():
+                el.click()
+                clicked_new = True
+                print(f"   ✅ Clicked using selector: {sel}")
+                break
+        except Exception:
+            continue
+
+    if not clicked_new:
+        # Try direct URL approach
+        print("⚠️  Auto-click failed, navigating directly to new batch URL...")
+        page.goto("https://quickstatements.toolforge.org/#/batch/new", wait_until="domcontentloaded")
+        page.wait_for_timeout(1500)
+
+    # Wait for textarea to appear
+    print("⏳ Waiting for batch input textarea...")
+    page.wait_for_timeout(2000)
+
     textarea_selectors = [
         'textarea#batch_input',
         'textarea[name="batch"]',
+        'textarea[placeholder*="CREATE"]',
+        'textarea[placeholder*="command"]',
         'textarea',
     ]
     textarea = None
     for sel in textarea_selectors:
         try:
-            textarea = page.wait_for_selector(sel, timeout=5000)
+            textarea = page.wait_for_selector(sel, timeout=8000, state="visible")
             if textarea:
+                print(f"   ✅ Found textarea: {sel}")
                 break
         except PlaywrightTimeout:
             continue
 
     if not textarea:
-        print("\n❌ Could not find batch textarea. Take a screenshot and report.")
+        print("\n❌ Could not find batch textarea. Saving screenshot for debug.")
         page.screenshot(path=str(ROOT / "docs" / "wikidata" / "debug-qs-no-textarea.png"))
-        return None
+        print(f"   Screenshot: docs/wikidata/debug-qs-no-textarea.png")
+        print("\n⚠️  Manual fallback: paste this content yourself into the textarea:")
+        print("─" * 70)
+        print(batch[:500] + "...")
+        print("─" * 70)
+        wait_for_user("Pasted manually and clicked Import? Press ENTER.")
+    else:
+        print("✏️  Filling textarea with batch content...")
+        textarea.fill(batch)
+        page.wait_for_timeout(1000)
 
-    print("✏️  Filling textarea with batch content...")
-    textarea.fill(batch)
+        # Look for "V1" format toggle if exists
+        print("🔘 Checking for V1 format toggle...")
+        v1_toggle_selectors = [
+            'input[type=radio][value="v1"]',
+            'label:has-text("V1")',
+            'button:has-text("V1")',
+        ]
+        for sel in v1_toggle_selectors:
+            try:
+                el = page.query_selector(sel)
+                if el and el.is_visible():
+                    el.click()
+                    print(f"   ✅ Selected V1 format")
+                    page.wait_for_timeout(500)
+                    break
+            except Exception:
+                continue
 
-    # Find the "Import V1 commands" or similar button
-    print("🔘 Clicking 'Import V1 commands' button...")
-    import_selectors = [
-        'button:has-text("Import V1")',
-        'button:has-text("Import")',
-        'input[type=submit][value*="V1"]',
-        'input[type=submit][value*="Import"]',
-    ]
-    clicked = False
-    for sel in import_selectors:
-        try:
-            btn = page.query_selector(sel)
-            if btn:
-                btn.click()
-                clicked = True
-                break
-        except Exception:
-            continue
+        # Click Import V1 / Import / Run button
+        print("🔘 Clicking 'Import V1 commands' / 'Імпортувати' button...")
+        import_selectors = [
+            'button:has-text("Import V1")',
+            'button:has-text("Import")',
+            'button:has-text("Імпортувати")',
+            'button:has-text("Виконати")',
+            'button:has-text("Run")',
+            'input[type=submit][value*="V1"]',
+            'input[type=submit][value*="Import"]',
+            'input[type=submit][value*="Run"]',
+        ]
+        clicked_import = False
+        for sel in import_selectors:
+            try:
+                btn = page.query_selector(sel)
+                if btn and btn.is_visible():
+                    btn.click()
+                    clicked_import = True
+                    print(f"   ✅ Clicked: {sel}")
+                    break
+            except Exception:
+                continue
 
-    if not clicked:
-        print("\n❌ Could not find Import button. Pausing for you to click manually.")
-        wait_for_user("Click 'Import V1 commands' manually, then press ENTER.")
+        if not clicked_import:
+            print("⚠️  Could not auto-click Import. Pausing for manual click.")
+            wait_for_user("Click 'Import V1 commands' / 'Імпортувати' manually, then ENTER.")
 
-    # Preview screen should appear. Find Run button.
-    print("\n⏳ Waiting for preview screen...")
-    page.wait_for_timeout(2000)
+    # Wait for preview / running state
+    print("\n⏳ Waiting for preview or running state...")
+    page.wait_for_timeout(3000)
+
+    # Take screenshot of current state for user reference
+    page.screenshot(path=str(ROOT / "docs" / "wikidata" / "debug-qs-preview.png"))
 
     print("\n👀 PREVIEW REVIEW:")
-    print("   Look at the browser — does the preview show:")
-    print("   - CREATE statement")
-    print("   - P3125 = 45315740")
-    print("   - P31 = Q4830453 (business)")
-    print("   - P159 = Q158910 (Boryspil)")
+    print("   In the browser, you should see preview with statements like:")
+    print("   - CREATE")
+    print("   - LAST P3125 = 45315740")
+    print("   - LAST P31 = Q4830453")
+    print("   - LAST P159 = Q158910 (Boryspil)")
+    print("\n   If preview is wrong, press Ctrl+C now.")
 
-    print("\n⚠️  IMPORTANT: review preview carefully. If wrong, STOP NOW (Ctrl+C).")
-    wait_for_user("Preview looks correct? Press ENTER to RUN the batch.")
+    wait_for_user("Preview correct? Press ENTER to RUN the batch (or it may have already started).")
 
-    print("\n🚀 Clicking 'Run' button...")
+    # Try clicking Run button if there's a separate Run step
+    print("\n🚀 Looking for 'Run' button (some V2 flows auto-run)...")
     run_selectors = [
         'button:has-text("Run")',
+        'button:has-text("Виконати")',
         'a:has-text("Run")',
         'input[type=submit][value*="Run"]',
     ]
     for sel in run_selectors:
         try:
             btn = page.query_selector(sel)
-            if btn:
+            if btn and btn.is_visible():
                 btn.click()
+                print(f"   ✅ Clicked Run: {sel}")
                 break
         except Exception:
             continue
-    else:
-        print("\n⚠️  Could not auto-click Run. Click it manually now.")
-        wait_for_user("Clicked Run? Press ENTER.")
 
     # Wait for batch to complete
     print("\n⏳ Waiting for batch execution (typically 30-90 sec)...")
-    print("   Watch the browser for 'Last batch state: DONE' or similar.")
+    print("   Watch the browser for status updates / Q-number appearing.")
 
-    wait_for_user("Batch finished? Press ENTER to capture Q-number.")
+    wait_for_user("Batch finished (DONE state visible)? Press ENTER to capture Q-number.")
 
     return capture_q_number(page)
 
