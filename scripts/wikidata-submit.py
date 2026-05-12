@@ -41,6 +41,7 @@ ROOT = Path(__file__).parent.parent
 BATCH_FILE = ROOT / "docs" / "wikidata" / "quickstatements.txt"
 LOG_FILE = ROOT / "docs" / "wikidata" / "SUBMISSION-LOG.md"
 QS_URL = "https://quickstatements.toolforge.org/#/batch"
+QS_OLD_URL = "https://quickstatements.toolforge.org/old/"
 
 
 def banner(msg, char="="):
@@ -65,54 +66,27 @@ def run_quickstatements(page):
     batch = read_batch()
     print(f"\n📋 Batch loaded: {len(batch.splitlines())} statements")
 
-    banner("STEP 1: open QuickStatements")
-    page.goto(QS_URL, wait_until="domcontentloaded")
-    page.wait_for_timeout(2000)
+    banner("STEP 1: open QuickStatements (legacy interface — has textarea directly)")
+    page.goto(QS_OLD_URL, wait_until="domcontentloaded")
+    page.wait_for_timeout(3000)
     print(f"\n🌐 Opened: {page.url}")
 
-    # Check if already logged in (look for username in header)
+    # Check if already logged in
     page_text = page.content()
-    if "Login" in page_text and "Logout" not in page_text and "user" not in page_text.lower():
-        print("\n📝 You need to login first:")
-        print("   1. Click the login link/button in the browser")
-        print("   2. Authorize OAuth handshake on wikidata.org")
-        wait_for_user("Logged in + back at QuickStatements? Press ENTER.")
-    else:
-        print("✅ Already logged in (detected user session)")
+    if "Login" in page_text and "Logout" not in page_text:
+        # Old interface uses a different login mechanism — check for clear indicators
+        if "logged in" not in page_text.lower() and "user" not in page_text.lower():
+            print("\n📝 Login may be needed in the old interface:")
+            print("   1. Click 'Login' link in the page if visible")
+            print("   2. Or open new tab to V2 UI to login: https://quickstatements.toolforge.org/")
+            wait_for_user("Ready to proceed? Press ENTER.")
 
-    banner("STEP 2: open new batch + paste content")
-
-    # V2 UI: click "Новий пакет" / "New batch" button first
-    print("🔘 Clicking 'New batch' / 'Новий пакет' button...")
-    new_batch_selectors = [
-        'button:has-text("Новий пакет")',
-        'button:has-text("New batch")',
-        'a:has-text("Новий пакет")',
-        'a:has-text("New batch")',
-        '[href*="/batch"]:has-text("Новий")',
-        '[href*="/batch"]:has-text("New")',
-    ]
-    clicked_new = False
-    for sel in new_batch_selectors:
-        try:
-            el = page.query_selector(sel)
-            if el and el.is_visible():
-                el.click()
-                clicked_new = True
-                print(f"   ✅ Clicked using selector: {sel}")
-                break
-        except Exception:
-            continue
-
-    if not clicked_new:
-        # Try direct URL approach
-        print("⚠️  Auto-click failed, navigating directly to new batch URL...")
-        page.goto("https://quickstatements.toolforge.org/#/batch/new", wait_until="domcontentloaded")
-        page.wait_for_timeout(1500)
+    print("✅ At legacy QS interface — textarea should be visible")
+    banner("STEP 2: paste batch + import")
 
     # Wait for textarea to appear
     print("⏳ Waiting for batch input textarea...")
-    page.wait_for_timeout(2000)
+    page.wait_for_timeout(1500)
 
     textarea_selectors = [
         'textarea#batch_input',
