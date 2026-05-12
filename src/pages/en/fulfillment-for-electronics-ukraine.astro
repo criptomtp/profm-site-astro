@@ -1,0 +1,441 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-12","name":"Fulfillment for Electronics in Ukraine — IMEI Tracking & ESD Compliance","description":"Specialized electronics 3PL in Ukraine for international wholesale brands. Rack-level IMEI/SN tracking, ANSI/ESD S20.20 compliant zone, Li-ion segregated storage by IATA Class 9 / UN 3480/3481. Cross-border from US, UK, Germany, UAE, China, Turkey through Kyiv hub. Wholesale supply to Allo, Foxtrot, Comfy, Epicentre, Rozetka. Pallet storage from $10/mo, pick & pack from $0.41/order. Agency model — no Ukrainian legal entity required.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ТОВ МТП Груп Фулфілмент","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"US"},{"@type":"Country","name":"GB"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"FR"},{"@type":"Country","name":"IT"},{"@type":"Country","name":"AE"},{"@type":"Country","name":"CN"},{"@type":"Country","name":"TR"}],"serviceType":"Electronics 3PL Ukraine — IMEI serial tracking, ESD compliance, Li-ion segregation, retail distribution Allo Foxtrot Comfy","keywords":"fulfillment for electronics Ukraine, electronics 3PL Ukraine, IMEI serial number tracking warehouse Ukraine, Kyiv hub for electronics brands, wholesale electronics fulfillment Ukraine, smartphone warehousing Ukraine","audience":{"@type":"BusinessAudience","name":"International consumer electronics brands (US, UK, Germany, France, Italy, China, UAE, Turkey) entering Ukrainian retail market — smartphones, laptops, accessories, audio, premium chargers, gaming peripherals. Use case: brand expansion into Eastern European retail without setting up Ukrainian legal entity"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"10","description":"Pallet storage from $10/pallet/mo (vs US $35-50, EU $40-65). Pick & pack with IMEI scan from $0.41/order (vs US $1.20-1.80, EU $1.80-2.50). ANSI/ESD S20.20 zone, Li-ion segregation, УДЦР (Ukrainian Radio Frequency Center) IMEI registration — all bundled. Minimum monthly fee $500 first 3 months."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a US or German consumer electronics brand sell wholesale into Ukrainian retail without setting up a Ukrainian legal entity?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cross-border B2B model through our Ukrainian operational partner under agency agreement. Your brand remains a US LLC / UK Ltd / German GmbH / French SAS / Italian SpA. We sell on your behalf to Ukrainian retail chains (Allo, Foxtrot, Comfy, Epicentre, Rozetka). All Ukrainian roles (legal entity for chain contracts, VAT registration, qualified electronic signature for EDI, Ukrainian Radio Frequency Center (УДЦР) IMEI registration as importer-of-record, alcohol/pharma licenses where applicable) are on our side. You receive monthly settlement in USD or EUR to your home-country bank account. Currency risk of Ukrainian hryvnia is on us — Ukrainian retail pays us in UAH, we convert at NBU daily rate and remit to you."}},{"@type":"Question","name":"How does Ukrainian electronics 3PL cost compare to US and EU 3PL?","acceptedAnswer":{"@type":"Answer","text":"Pallet storage with ESD zone: $10/mo Ukraine vs $35-50/mo US (Texas/Pennsylvania) vs $40-65/mo EU (Poland/Germany). Pick & pack with IMEI scan: $0.41/order Ukraine vs $1.20-1.80/order US (ShipBob/ShipMonk wholesale) vs $1.80-2.50/order EU (FIEGE, Rhenus). Annual cost for 50 pallets + 200 B2B orders/month: $6,000-7,000 Ukraine vs $24,000-30,000 US vs $30,000-40,000 EU. 3-5x cost arbitrage driven by Ukrainian labor cost ($600-800/mo warehouse worker vs $3,000-4,500 US, $2,200-2,800 EU) and warehouse real estate cost ($35-50/sqm/year vs $120-180 US, $100-150 EU). Quality (99.98% pick accuracy, IMEI rack-level tracking, ANSI/ESD S20.20) is comparable to US/EU specialized electronics 3PL because we run the same WMS technology stack."}},{"@type":"Question","name":"Is rack-level IMEI/serial number tracking actually possible in a Ukrainian 3PL?","acceptedAnswer":{"@type":"Answer","text":"Yes, and this is our key differentiator. Most Ukrainian 3PLs (Unipost, Nova Poshta Fulfillment, Meest, Rozetka FBR) handle electronics as generic SKU — one SKU = one quantity counter without serial number attribution. We track every IMEI/SN at 4 stages: (1) receiving — IMEI bound to import declaration (ВМД) + HS code 8517/8471/8518; (2) rack slotting — IMEI mapped to specific shelf location (e.g., slot A12-B3) in WMS; (3) pick — barcode scan verification of IMEI at pick station with ESD wrist strap; (4) shipping — IMEI populates invoice, packing list, and Nova Poshta Cargo waybill via EDI. Log retained 7 years for warranty trace, customs audit, and anti-grey-market disputes. This is the same model ShipMonk runs in US for electronics clients — but at Ukrainian cost structure."}},{"@type":"Question","name":"What ESD compliance standards does MTP follow?","acceptedAnswer":{"@type":"Answer","text":"Our ESD-protected zone meets ANSI/ESD S20.20:2021 (US standard) + ДСТУ IEC 61340-5-1 (Ukrainian standard, equivalent to IEC 61340-5-1:2016 international). Specifications: antistatic floor coating (resistance 10^6-10^9 ohms), grounded shelving with continuous ESD ground, ESD wrist straps for all handlers, humidity controlled 40-60% RH (prevents both static buildup and capacitor degradation), antistatic packaging materials (Static Shielding Bags, ESD foam, conductive bubble wrap), regular ESD testing of zone with calibrated meter. Critical for: motherboards, GPUs, network cards, premium audio components (audiophile DACs), Apple original accessories where reputation impact of static damage exceeds packaging cost. We also follow IPC-A-610 Class 2 acceptance criteria for electronics handling — same standard used by enterprise IT distributors globally."}},{"@type":"Question","name":"How do you handle Li-ion battery storage and shipping compliance?","acceptedAnswer":{"@type":"Answer","text":"Li-ion batteries are IATA Class 9 dangerous goods (UN 3480 for batteries shipped alone, UN 3481 for batteries packed with or contained in equipment). Our compliance: dedicated Li-ion storage zone with temperature control +10°C to +25°C, isolated electrical wiring (separate breaker), gas-based fire suppression system (water-based suppression damages electronics), minimum 3m separation from other goods, ventilation. For devices with batteries <100 Wh — standard rack storage. For >100 Wh (power stations, large powerbanks, e-bike batteries, laptop main batteries) — restricted to 2 levels per rack maximum, mandatory UN 3480/3481 marking on outer cartons, transport only by IATA Class 9 licensed carriers. Documentation: Material Safety Data Sheet (MSDS) for each battery SKU on file, transport via Nova Poshta Cargo Class 9 or specialized carriers (DHL, FedEx, Schenker for international segments)."}},{"@type":"Question","name":"What does cross-border transportation cost from US, UK, Germany, China, UAE to Ukraine?","acceptedAnswer":{"@type":"Answer","text":"US→Ukraine: $2,500-4,000 per 40ft container by sea (30-45 days via Odesa port) or $8-12/kg by air freight (15-21 days to Boryspil). UK→Ukraine: $1,800-2,800 per 40ft container road+sea (10-15 days) or $5-8/kg air (3-5 days). Germany/Poland/Netherlands→Ukraine: $1,200-2,000 per 40ft truck (5-10 days). China→Ukraine: $2,000-3,500 per 40ft container sea (35-50 days via Black Sea/Odesa) or $6-10/kg air (8-15 days). UAE→Ukraine: $1,500-2,800 for 40ft air freight (7-10 days). Turkey→Ukraine: $1,000-1,800 per 40ft truck (5-8 days via Bulgaria) or sea (12-20 days). This is one-time cost per inventory replenishment, not per order. Averages out to $30-80 per pallet for transportation amortized across order volume. UK and EU brands benefit from UK-Ukraine FTA and EU-Ukraine DCFTA — zero or reduced import duties for most HS 85 (electronics) categories. US brands pay standard MFN tariffs typically 0-5% for consumer electronics."}},{"@type":"Question","name":"What is the onboarding timeline for an international electronics brand?","acceptedAnswer":{"@type":"Answer","text":"21-30 business days from contract signing to first shipment to Ukrainian retail chain. Cycle: days 1-3 contract with our Ukrainian operational partner (agency agreement); days 3-7 documentation prep from your side (corporate registration, banking info, commercial invoice, certificate of origin EUR.1 for EU / UK-Ukraine FTA / US-Ukraine MFN, HS code classification 8517/8471/8518/8528, FCC/CE/UKCA certificates for radio devices); days 7-14 international transportation; days 14-16 inbound at our facility (photo-documented receiving, pallet integrity check, IMEI scan at receive station, УДЦР registration of IMEI batch via our partner — 24 hours after physical arrival); days 16-21 supplier registration with target retail chain through our operator; days 21-25 EDI protocol setup (Vchasno for Allo/general, Comarch for АТБ if applicable, SAP Ariba for Metro); days 25-30 first test shipment with full IMEI trace verification. For brands with complex SKU catalogues (1,000+ items) or pharma/audio-with-mic certifications — up to 45 days."}},{"@type":"Question","name":"How does УДЦР (Ukrainian Radio Frequency Center) IMEI registration work for international brands?","acceptedAnswer":{"@type":"Answer","text":"Since 2009, mandatory IMEI registration in УДЦР is required for all imported smartphones (and Bluetooth/WiFi devices) before legal sale in Ukraine. Without УДЦР status, retailers like Allo/Foxtrot/Comfy will not accept the device — it's classified as grey market. For international brands, the challenge: УДЦР registration requires Ukrainian importer-of-record. Through our agency model, our Ukrainian operator is the importer-of-record for your inventory. After physical receiving at our warehouse, IMEI batch (or full SN range) is registered with УДЦР via our partner-provider within 24 hours. Status visible to retailers in УДЦР database. This is non-trivial — most international brands attempting Ukraine market entry independently hit this barrier and require local distributor setup. We solve it through agency structure."}},{"@type":"Question","name":"What's the war risk for our electronics inventory in Ukraine?","acceptedAnswer":{"@type":"Answer","text":"Real consideration. Our Kyiv-region facilities are 35-45 km from city center (Shchaslyve 2,700 sqm primary B2B site, Bilohorodka 1,000 sqm secondary) — outside primary missile impact zones, but Kyiv region experiences air raid alerts and occasional strikes. Mitigation layers: (1) Inventory war-risk insurance via Ukrainian insurers covering warehoused goods, $0.30-0.80 per $100 of inventory value monthly — electronics typically falls in higher-tier due to high unit value, budget $0.60-0.80 per $100. (2) Standard practice of keeping ~30 days of inventory in Ukraine, not 90+ days — fast replenishment cycle reduces static exposure. (3) Distributed retail delivery means inventory moves out within 3-7 days of pick request. (4) Physical hardening: generator backup (Diesel + LPG), blast-protective measures on critical doors, fire suppression. (5) Zero days of operational downtime since February 2022 across our customer base. (6) Government compensation scheme for war-damaged commercial property available. Most international clients include war-risk insurance as standard line item ($1,200-3,000/mo for typical inventory $300K-500K) and operate normally."}},{"@type":"Question","name":"How is your service different from Ukrainian generalist 3PLs (Nova Poshta Fulfillment, Unipost, Meest)?","acceptedAnswer":{"@type":"Answer","text":"None of the Ukrainian generalist 3PLs has a dedicated electronics fulfillment page or declares rack-level IMEI tracking — verify on their websites directly. They handle electronics as generic SKU: one SKU = one stock counter without serial number attribution. This means: (a) you cannot prove which specific IMEI shipped to which retailer during warranty disputes; (b) no UDCR registration workflow — you'd need to set this up independently; (c) no ESD-compliant zone — risk of static damage to motherboards, GPUs, premium audio components; (d) no Li-ion segregation — fire risk and potential carrier rejection. MTP built this infrastructure specifically because we have critical mass of electronics distributors. Our model is closer to ShipMonk's electronics specialization (US) or Fulfyld (US) — but at Ukrainian labor and real estate cost structure. The 3-5x cost arbitrage versus US/EU is real because the same WMS technology stack runs on cheaper Ukrainian operational layer."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fulfillmentmtp.com.ua/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.fulfillmentmtp.com.ua/en/services/"},{"@type":"ListItem","position":3,"name":"Fulfillment for Electronics Ukraine","item":"https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Kyiv hub for international consumer electronics brands","url":"https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$10/pallet/mo + $0.41/order","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"Promyslova St.","addressLocality":"Shchaslyve, Boryspil district","addressRegion":"Kyiv Oblast","postalCode":"08322","addressCountry":"UA","description":"Warehouse 2,700 sqm — ESD zone, IMEI tracking, Li-ion segregated zone"},{"@type":"PostalAddress","addressLocality":"Bilohorodka","addressRegion":"Kyiv Oblast","postalCode":"08140","addressCountry":"UA","description":"Warehouse 1,000 sqm — accessories FEFO zone"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"US"},{"@type":"Country","name":"GB"},{"@type":"Country","name":"DE"},{"@type":"Country","name":"AE"},{"@type":"Country","name":"CN"}]}</script>`;
+---
+<Base
+  title="Fulfillment for Electronics Ukraine — IMEI Tracking, ESD, Li-ion"
+  description="International electronics brands enter Ukrainian retail (Allo, Foxtrot, Comfy) via our Kyiv hub. Rack-level IMEI tracking, ANSI/ESD S20.20 zone, Li-ion compliance. 3-5x cheaper than US/EU 3PL."
+  canonical="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/"
+  lang="en"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-dlya-elektroniky-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-elektroniky/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-elektroniky/">
+</Fragment>
+
+<!-- HERO — Technical Lab / Cleanroom -->
+<section class="el-hero el-hero-en">
+  <div class="ctr">
+    <div class="el-hero-grid">
+      <div class="el-hero-left">
+        <div class="el-chip">INTERNATIONAL · ELECTRONICS · UKRAINE 3PL</div>
+        <h1>Fulfillment for electronics Ukraine — rack-level IMEI tracking, ANSI/ESD S20.20, 3-5x cheaper than US/EU 3PL</h1>
+        <p class="el-hero-sub">International consumer electronics brands (US, UK, Germany, France, China, UAE, Turkey) enter 30+ Ukrainian retail chains (Allo, Foxtrot, Comfy, Epicentre, Rozetka) via our Kyiv hub. Serialized inventory at rack level, ANSI/ESD S20.20 compliant zone, Li-ion segregated storage. Agency model — no Ukrainian legal entity required.</p>
+      </div>
+      <div class="el-hero-right">
+        <div class="el-form-card">
+          <div class="el-form-title">Cost estimate for your brand</div>
+          <HeroCTA lang="en" theme="light" button="Get estimate →" microCopy="✓ Reply within 15 min · WhatsApp or phone · international numbers welcome" sourceTag="hero /en/fulfillment-for-electronics-ukraine/" />
+        </div>
+      </div>
+    </div>
+    <div class="el-hero-stats">
+      <div class="el-stat"><div class="el-stat-num">$10</div><div class="el-stat-lbl">PALLET / MO</div></div>
+      <div class="el-stat"><div class="el-stat-num">$0.41</div><div class="el-stat-lbl">PICK + IMEI SCAN</div></div>
+      <div class="el-stat"><div class="el-stat-num">3-5×</div><div class="el-stat-lbl">CHEAPER VS US/EU</div></div>
+      <div class="el-stat"><div class="el-stat-num">99.98%</div><div class="el-stat-lbl">PICK ACCURACY</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL COMPLIANCE TABLE (WOW for EN) -->
+<section class="el-sec">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">TECHNICAL COMPLIANCE</div>
+    <h2 class="el-h2">Compliance comparison: MTP Ukraine vs typical US/EU electronics 3PL</h2>
+    <p class="el-lede">For consumer electronics, the compliance bar is high — ESD damage from improper handling, Li-ion fire risk, IMEI traceability requirements, customs serial-number registration. Most generalist 3PLs (anywhere in the world) skip these. Specialized electronics 3PLs in the US (ShipMonk, Fulfyld, Red Stag) and EU (FIEGE Logistics, Rhenus Tech) cover them — and so do we, at 3-5x lower cost.</p>
+    <div class="el-compliance-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Standard / Capability</th>
+            <th class="el-mtp-col">🇺🇦 MTP UKRAINE</th>
+            <th>🇺🇸 US Specialized 3PL</th>
+            <th>🇪🇺 EU Specialized 3PL</th>
+            <th>🇺🇦 Generic UA 3PL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rack-level IMEI/SN tracking</strong></td>
+            <td class="el-mtp-col">✅ All 4 stages</td>
+            <td>✅ Most operators</td>
+            <td>✅ Most operators</td>
+            <td>❌ Not declared</td>
+          </tr>
+          <tr>
+            <td><strong>ANSI/ESD S20.20:2021 zone</strong></td>
+            <td class="el-mtp-col">✅ Full compliance</td>
+            <td>✅ Specialized only</td>
+            <td>✅ Specialized only</td>
+            <td>❌ Not declared</td>
+          </tr>
+          <tr>
+            <td><strong>IEC 61340-5-1 (intl ESD)</strong></td>
+            <td class="el-mtp-col">✅ ДСТУ adopted</td>
+            <td>Variable</td>
+            <td>✅ Most operators</td>
+            <td>❌ Not declared</td>
+          </tr>
+          <tr>
+            <td><strong>IPC-A-610 Class 2 handling</strong></td>
+            <td class="el-mtp-col">✅ Adopted</td>
+            <td>Variable</td>
+            <td>Variable</td>
+            <td>❌ Not adopted</td>
+          </tr>
+          <tr>
+            <td><strong>Li-ion zone IATA Class 9</strong></td>
+            <td class="el-mtp-col">✅ UN 3480/3481</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>❌ Not specialized</td>
+          </tr>
+          <tr>
+            <td><strong>УДЦР IMEI registration (UA req)</strong></td>
+            <td class="el-mtp-col">✅ 24h via partner</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>⚠️ Client must do</td>
+          </tr>
+          <tr>
+            <td><strong>Antistatic packaging supplied</strong></td>
+            <td class="el-mtp-col">✅ +$0.20/order</td>
+            <td>+$0.50-1.00</td>
+            <td>+$0.40-0.80</td>
+            <td>❌ Client supplies</td>
+          </tr>
+          <tr>
+            <td><strong>7-year warranty trace retention</strong></td>
+            <td class="el-mtp-col">✅ Included</td>
+            <td>Variable</td>
+            <td>Variable</td>
+            <td>❌</td>
+          </tr>
+          <tr class="el-compliance-total">
+            <td><strong>Pallet storage with ESD</strong></td>
+            <td class="el-mtp-col"><strong>$10/mo</strong></td>
+            <td><strong>$35-50/mo</strong></td>
+            <td><strong>$40-65/mo</strong></td>
+            <td><strong>$10-15/mo (no ESD)</strong></td>
+          </tr>
+          <tr class="el-compliance-total">
+            <td><strong>Pick & pack with IMEI scan</strong></td>
+            <td class="el-mtp-col"><strong>$0.41/order</strong></td>
+            <td><strong>$1.20-1.80</strong></td>
+            <td><strong>$1.80-2.50</strong></td>
+            <td><strong>$0.35-0.50 (no IMEI)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="el-compliance-note">Cost arbitrage drivers: Ukrainian warehouse worker $600-800/mo (vs US $3,000-4,500, EU $2,200-2,800), warehouse real estate $35-50/sqm/year (vs US $120-180, EU $100-150). Same WMS technology, comparable QC, much lower operational cost base. MTP is positioned as the only Ukrainian 3PL with specialized electronics compliance.</p>
+  </div>
+</section>
+
+<!-- LI-ION SEGREGATION DIAGRAM -->
+<section class="el-sec el-sec-dark">
+  <div class="ctr">
+    <div class="el-chip">LI-ION COMPLIANCE</div>
+    <h2 class="el-h2 el-h2-light">Li-ion battery storage zones — IATA Class 9 watt-hour boundary segregation</h2>
+    <p class="el-lede el-lede-light">Lithium-ion batteries are IATA Class 9 dangerous goods with strict watt-hour boundary rules. Devices with batteries under 100 Wh ship as normal cargo with battery markings (UN 3481). Devices with batteries 100-160 Wh require special handling. Anything above 160 Wh is essentially industrial cargo. Our facility maintains physically separated zones with appropriate fire suppression for each tier.</p>
+    <div class="el-liion-zones">
+      <div class="el-zone-card el-zone-low">
+        <div class="el-zone-label">ZONE A · STANDARD</div>
+        <div class="el-zone-spec">&lt;100 Wh</div>
+        <h3>Smartphones, accessories, small headphones</h3>
+        <ul>
+          <li>Standard rack storage, all levels</li>
+          <li>UN 3481 marking on outer cartons</li>
+          <li>Standard Nova Poshta Cargo carriage</li>
+          <li>Typical battery: 3.6V × 3000-5000 mAh = 11-18 Wh per cell</li>
+          <li>Examples: iPhone 15 Pro Max (4685 mAh × 3.85V = 18 Wh), AirPods Pro (~1 Wh)</li>
+        </ul>
+      </div>
+      <div class="el-zone-card el-zone-mid">
+        <div class="el-zone-label">ZONE B · MID-CAPACITY</div>
+        <div class="el-zone-spec">100-160 Wh</div>
+        <h3>Laptops, tablets, mid-tier powerbanks</h3>
+        <ul>
+          <li>Restricted to 2 rack levels maximum</li>
+          <li>UN 3480/3481 + Class 9 hazmat label</li>
+          <li>Class 9 licensed carrier required for transport</li>
+          <li>Typical battery: MacBook Pro 16" = ~100 Wh, iPad Pro 13" = ~40 Wh</li>
+          <li>Most laptops fall in this zone — segregated separately from smartphones</li>
+        </ul>
+      </div>
+      <div class="el-zone-card el-zone-high">
+        <div class="el-zone-label">ZONE C · INDUSTRIAL</div>
+        <div class="el-zone-spec">&gt;160 Wh</div>
+        <h3>Portable power stations, e-bike batteries, large EcoFlow/Bluetti units</h3>
+        <ul>
+          <li>Dedicated isolated zone, dedicated breaker, 3m minimum separation</li>
+          <li>Full hazmat documentation per UN 38.3 testing</li>
+          <li>Specialized Class 9 carriers only (DHL Hazmat, Schenker, FedEx Premier)</li>
+          <li>Typical: EcoFlow DELTA 2 Max = 2048 Wh, Bluetti AC180 = 1152 Wh</li>
+          <li>Wartime category — Ukrainian demand for portable power +54% YoY since 2022</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES — International brands -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">USE CASES</div>
+    <h2 class="el-h2">Six international electronics brand scenarios we operate in 2026</h2>
+    <div class="el-uc-grid">
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇺🇸 US</div>
+        <h3>US premium audio → Comfy, Rozetka</h3>
+        <p>US audio brands (audiophile DACs, premium headphones, IEMs) targeting Ukrainian Comfy premium segment and Rozetka. Sea container 30-45 days (cost-efficient, non-perishable), air for high-value SKUs 15-21 days. UDCR registration applies if Bluetooth-enabled. Margin in UA retail typically 35-45% above US DTC pricing.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇬🇧 UK</div>
+        <h3>UK gaming peripherals → Foxtrot, Comfy</h3>
+        <p>UK gaming brands (mechanical keyboards, gaming mice, headsets) entering Ukrainian gaming retail. UK-Ukraine FTA = zero import duties. Truck via Bulgaria 8-12 days. ESD-sensitive components (mechanical switches, RGB controllers) — antistatic packaging mandatory. Volume 10-30 pallets/month typical.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇩🇪 DE</div>
+        <h3>German networking → Brain, Citrus, B2B IT</h3>
+        <p>German networking brands (routers, switches, mesh systems, NAS) entering Ukrainian B2B IT distribution. EU-Ukraine DCFTA = zero duties on HS 8517. Truck via Poland 5-7 days. ESD-critical for networking PCBs. Volume 15-50 pallets/month for established distributors.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇨🇳 CN</div>
+        <h3>Chinese smart home → Rozetka, Allo</h3>
+        <p>Chinese smart home brands (cameras, hubs, smart bulbs, smart plugs) entering Ukrainian smart home retail. Sea via Black Sea 35-50 days. UDCR registration required for WiFi-enabled devices. Volume scales: 20-100+ pallets/month for established brands. Air freight for new product launches (8-15 days).</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇦🇪 AE</div>
+        <h3>UAE re-export Apple accessories → Foxtrot, Allo Mobile</h3>
+        <p>UAE distributors as re-export hub for premium Apple accessories (MFi-certified cables, cases, audio adapters). Air freight 7-10 days through Boryspil. High AOV per pallet, fast inventory turn. Standard MFN tariffs 0-5%. Antistatic packaging for premium positioning.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇹🇷 TR</div>
+        <h3>Turkish portable power → Epicentre, EcoFlow-class</h3>
+        <p>Turkish portable power station and generator brands entering Ukrainian DIY/emergency-power retail. Wartime category +54% YoY. Truck via Bulgaria 5-8 days. Turkey-Ukraine FTA = 0% on HS 85. Class 9 hazmat compliance critical (large Li-ion batteries). Specialized transport. Volume 30-80 pallets/month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="el-sec" id="el-cta">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">PRICING</div>
+    <h2 class="el-h2">Transparent unit economics for international electronics brands</h2>
+    <p class="el-lede">Pallet storage with ESD compliance $10/mo + pick & pack with IMEI scan $0.41/order + UDCR registration included + Li-ion segregation included + antistatic packaging $0.20/order optional + Ukrainian delivery $30-60/pallet paid by retail chain + cross-border transportation $30-80/pallet one-time per replenishment + legal/accounting bundle $200-400/mo. Minimum monthly fee $500 first 3 months.</p>
+    <div class="el-price-grid">
+      <div class="el-price-card">
+        <div class="el-price-tier">STORAGE</div>
+        <div class="el-price-num">$10</div>
+        <div class="el-price-label">per pallet / month</div>
+        <ul class="el-price-feat">
+          <li>ANSI/ESD S20.20 zone</li>
+          <li>Li-ion segregation Class 9</li>
+          <li>WMS rack-level tracking</li>
+          <li>Insurance included</li>
+          <li>24/7 dashboard access</li>
+        </ul>
+      </div>
+      <div class="el-price-card el-price-card-mid">
+        <div class="el-price-tier">PICK + IMEI + UDCR</div>
+        <div class="el-price-num">$0.41</div>
+        <div class="el-price-label">per multi-SKU order</div>
+        <ul class="el-price-feat">
+          <li>2-stage IMEI/SN scan</li>
+          <li>UDCR registration included</li>
+          <li>EDI invoice + delivery note</li>
+          <li>7-year warranty trace</li>
+          <li>Carrier handover</li>
+        </ul>
+      </div>
+      <div class="el-price-card">
+        <div class="el-price-tier">LEGAL/ACCT BUNDLE</div>
+        <div class="el-price-num">$200-400</div>
+        <div class="el-price-label">flat per month</div>
+        <ul class="el-price-feat">
+          <li>Ukrainian customs + VAT</li>
+          <li>UDCR partner integration</li>
+          <li>EDI Vchasno/Comarch</li>
+          <li>USD/EUR settlement</li>
+          <li>5-business-day settlement SLA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="el-price-note">
+      <strong>Minimum monthly fee $500</strong> first 3 months. <strong>Cross-border transportation</strong> $30-80/pallet one-time per inventory replenishment (not per order). <a href="/en/calculator/">Calculate cost for your brand</a> with specific HS codes, battery watt-hour profile, target retail chains.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">FAQ</div>
+    <h2 class="el-h2">Common questions from international consumer electronics brands</h2>
+    <div class="el-faq">
+      <details><summary>Can a US or German electronics brand sell wholesale into Ukrainian retail without setting up a Ukrainian legal entity?</summary><p>Yes. Cross-border B2B agency model through our Ukrainian operational partner. Your brand remains in home jurisdiction. We are the Ukrainian importer-of-record + retail counterparty. All Ukrainian compliance (VAT, EDI, UDCR IMEI registration) on our side. Monthly USD/EUR settlement to your account.</p></details>
+      <details><summary>How does Ukrainian electronics 3PL cost compare to US and EU 3PL?</summary><p>Pallet storage with ESD: $10 Ukraine vs $35-50 US vs $40-65 EU. Pick + IMEI: $0.41 vs $1.20-1.80 US vs $1.80-2.50 EU. Annual 50 pallets + 200 orders/mo: $6-7K Ukraine vs $24-30K US vs $30-40K EU. 3-5x arbitrage driven by labor and real estate costs.</p></details>
+      <details><summary>Is rack-level IMEI tracking actually possible in a Ukrainian 3PL?</summary><p>Yes. 4-stage scan: receiving (IMEI→ВМД→HS code), rack slotting (IMEI→shelf location), pick (verification at station), shipping (IMEI→invoice→EDI). 7-year log retention. Generalist UA 3PLs don't do this — we built infrastructure specifically for electronics clients.</p></details>
+      <details><summary>What ESD compliance standards does MTP follow?</summary><p>ANSI/ESD S20.20:2021 + ДСТУ IEC 61340-5-1 (Ukrainian = IEC 61340-5-1:2016). Antistatic floor coating, grounded shelving, ESD wrist straps, 40-60% humidity control, antistatic packaging materials. IPC-A-610 Class 2 handling adopted.</p></details>
+      <details><summary>How do you handle Li-ion battery storage and shipping compliance?</summary><p>3 zones by watt-hour boundary: <100 Wh standard, 100-160 Wh restricted 2 levels + UN 3480/3481, >160 Wh dedicated isolated zone with full hazmat docs per UN 38.3. Gas-based fire suppression (not water — water damages electronics). Class 9 licensed carriers only for restricted tiers.</p></details>
+      <details><summary>What does cross-border transportation cost from US/UK/DE/CN/UAE/TR to Ukraine?</summary><p>US: $2,500-4K sea (30-45 days) or $8-12/kg air. UK: $1.8-2.8K road+sea (10-15) or $5-8/kg air. EU truck: $1.2-2K (5-10 days). China: $2-3.5K sea (35-50). UAE: $1.5-2.8K air (7-10). Turkey: $1-1.8K truck (5-8). Amortizes to $30-80/pallet for transportation.</p></details>
+      <details><summary>What is the onboarding timeline?</summary><p>21-30 business days: contract → documentation → international transport → inbound + UDCR → supplier registration → EDI setup → test shipment → production. Complex SKU catalogues (1,000+) or specialized certs — up to 45 days.</p></details>
+      <details><summary>How does UDCR (Ukrainian Radio Frequency Center) IMEI registration work?</summary><p>Mandatory since 2009 for imported smartphones/Bluetooth/WiFi devices. Requires Ukrainian importer-of-record. Our operator is importer-of-record. After physical receiving, batch IMEI registered with UDCR within 24h via our partner. Status visible to retailers in UDCR database.</p></details>
+      <details><summary>What's the war risk for our electronics inventory in Ukraine?</summary><p>Real consideration. Facilities 35-45km from Kyiv center, outside primary impact zones. Mitigation: war-risk insurance ($0.60-0.80/$100/mo for electronics), 30-day inventory cap, generator backup + blast protection, zero days operational downtime since Feb 2022, government compensation scheme. Most international clients include insurance and operate normally.</p></details>
+      <details><summary>How is your service different from Ukrainian generalist 3PLs?</summary><p>None of Unipost/NP Fulfillment/Meest declares rack-level IMEI tracking, ESD compliance, or Li-ion segregation. They handle electronics as generic SKU. We built specialized electronics infrastructure — same model as ShipMonk (US) or FIEGE (EU) electronics specialization, at Ukrainian cost structure (3-5x cheaper).</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="el-sec">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">RELATED SERVICES</div>
+    <h2 class="el-h2">Other services for international electronics brands entering Ukraine</h2>
+    <div class="el-rel-grid">
+      <a class="el-rel-card" href="/en/b2b-fulfillment-ukraine/"><strong>B2B wholesale fulfillment</strong><span>Cross-border into Ukrainian retail chains</span></a>
+      <a class="el-rel-card" href="/en/fulfillment-ukraine/"><strong>Fulfillment Ukraine</strong><span>General B2C/B2B services overview</span></a>
+      <a class="el-rel-card" href="/en/order-pick-and-pack-ukraine/"><strong>Order pick & pack 47 seconds</strong><span>Multi-SKU operations standard</span></a>
+      <a class="el-rel-card" href="/en/3pl-logistics/"><strong>3PL logistics</strong><span>Full outsourcing for international brands</span></a>
+      <a class="el-rel-card" href="/en/calculator/"><strong>Cost calculator</strong><span>For your specific brand parameters</span></a>
+      <a class="el-rel-card" href="/en/services/"><strong>All fulfillment services</strong><span>17 operations under one SLA</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CLOSING -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <h2 class="el-h2">Specialized electronics 3PL Ukraine — IMEI tracking, ESD compliance, Li-ion segregation at 3-5x cost arbitrage</h2>
+    <p>The Ukrainian consumer electronics market is 31.5% of total e-commerce — approximately $2.1 billion annually. Top retail: Comfy (55.8 billion UAH revenue 2025, +17% YoY), Foxtrot (30% online sales share), Allo (4.5 billion UAH H1 2025), Rozetka B2B and Marketplace, Epicentre, Brain, Citrus, Eldorado. Portable power stations and emergency generators are a high-growth category (+54% YoY since 2022 due to war-related energy infrastructure damage). Average order value in USD-equivalent grew +13%, transaction volume +19% in the past year.</p>
+    <p>Russian and Belarusian suppliers exited the Ukrainian electronics market following the 2022 invasion. Categories remain open across smartphones (budget-to-mid tier), Apple-certified accessories (MFi cables, cases, premium audio), small electronics (headphones, gaming peripherals, gadgets), Bluetooth-enabled devices, networking equipment, smart home, premium audio, and portable power. Ukrainian retail chains have launched programs to actively recruit international suppliers from US/UK/EU/UAE/China/Turkey to replace exited sources.</p>
+    <p>Grey market for electronics in Ukraine doubled since 2022 (per public statements by Foxtrot leadership). Official distributors actively defend their channel — Allo, Foxtrot, Comfy require documented chain-of-custody for every device: customs declaration (ВМД), UDCR (Ukrainian Radio Frequency Center) IMEI registration, warehouse accept-card, EDI invoice. International brands attempting market entry independently hit this barrier — UDCR registration specifically requires Ukrainian importer-of-record. Our agency model solves this — your brand stays in home jurisdiction while our Ukrainian operator handles UDCR, customs, EDI, and retail chain relationships.</p>
+    <p>Cost arbitrage is the second compelling factor. Pallet storage with ESD compliance costs $10/month in Ukraine versus $35-50/month at US specialized 3PL (ShipMonk, Fulfyld, Red Stag electronics packages) versus $40-65/month at EU equivalents (FIEGE Tech, Rhenus Tech). Pick and pack with IMEI scan costs $0.41/order in Ukraine versus $1.20-1.80 US versus $1.80-2.50 EU. Annual cost for a typical international wholesale brand running 50 pallets and 200 B2B orders/month: $6,000-7,000 in Ukraine versus $24,000-30,000 in the US versus $30,000-40,000 in the EU. The 3-5x cost differential is driven by Ukrainian labor cost ($600-800/mo warehouse worker vs $3,000-4,500 US, $2,200-2,800 EU) and warehouse real estate cost ($35-50/sqm/year vs $120-180 US, $100-150 EU). Quality (99.98% pick accuracy, rack-level IMEI tracking, ANSI/ESD S20.20 compliance) is comparable to US/EU specialized electronics 3PLs because we run the same WMS technology stack and follow the same international standards.</p>
+    <p>Compliance specifics. ESD zone meets ANSI/ESD S20.20:2021 + ДСТУ IEC 61340-5-1 (Ukrainian adoption of IEC 61340-5-1:2016 international): antistatic floor coating with resistance 10^6-10^9 ohms, grounded shelving with continuous ESD ground, ESD wrist straps for all handlers, humidity controlled 40-60% RH. Li-ion zones segregated by IATA Class 9 watt-hour boundary: <100 Wh standard storage (smartphones, accessories), 100-160 Wh restricted to 2 rack levels with UN 3480/3481 marking (laptops, mid-tier powerbanks), >160 Wh dedicated isolated zone with full UN 38.3 documentation (portable power stations, e-bike batteries). UDCR IMEI registration via partner-provider within 24 hours of physical receiving. Antistatic packaging materials (Static Shielding Bags, ESD foam, conductive bubble wrap) available for sensitive SKUs.</p>
+    <p>Returns and warranty handling for international electronics brands. Consumer electronics has higher return rates than most categories (8-15% depending on segment — smartphones 5-8%, accessories 10-15%, portable power 18%). Our returns protocol: dedicated receive station with ESD protection, IMEI/SN verification against original packing list (anti-fraud check), photo-documented condition, optional functionality test (if retail chain requests), return to stock or disposal per your protocol. Returns tariff $0.20 per SKU (50% of $0.41 shipping rate). For warranty claims, full chain-of-custody trace available on manufacturer request — IMEI → ВМД → УДЦР record → warehouse slot → ship date → carrier waybill. Daily returns report in your dashboard, weekly summary with reason-code analytics.</p>
+    <p>Additional considerations for international brands. Minimum viable cross-border shipment is approximately 5 pallets (~30 cubic meters) for cost-efficient customs processing — smaller shipments are possible via consolidator (LCL — less than container load) but transit times increase by 5-10 days. For fast-moving SKUs (top-30 smartphones, popular accessories) we recommend maintaining 30-45 days of inventory in Ukraine — covers cross-border lead time plus reserve. For niche SKUs — 15-20 days. We perform optimal inventory level analysis individually based on your historical Ukrainian retail sales data after first 90 days of operations.</p>
+    <p>See also: <a href="/en/b2b-fulfillment-ukraine/">B2B wholesale fulfillment Ukraine</a>, <a href="/en/fulfillment-ukraine/">general fulfillment Ukraine</a>, <a href="/en/order-pick-and-pack-ukraine/">order pick & pack 47 seconds</a>, <a href="/en/3pl-logistics/">3PL logistics</a>, <a href="/en/calculator/">cost calculator</a>, <a href="/en/services/">all fulfillment services</a>.</p>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+/* EN hero — cleanroom feel: white-tone gradient (not photo bg) */
+.el-hero{position:relative;color:#fff;padding:64px 0 48px;overflow:hidden;background:#0a0a0a;border-bottom:6px solid #e63329}
+.el-hero-en{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 60%,#3a1a1a 100%)}
+.el-hero-en:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 75% 50%,rgba(230,51,41,.18) 0%,transparent 50%),repeating-linear-gradient(90deg,transparent 0,transparent 49px,rgba(255,255,255,.04) 49px,rgba(255,255,255,.04) 50px);z-index:0;pointer-events:none}
+.el-hero .ctr{position:relative;z-index:2;max-width:1280px}
+.el-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-bottom:36px}
+.el-hero-left{min-width:0}
+.el-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;padding:8px 14px;text-transform:uppercase;margin-bottom:20px}
+.el-chip-dark{background:#000}
+.el-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3.4vw,46px);line-height:1.06;letter-spacing:-0.025em;margin:0 0 20px;color:#fff}
+.el-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:rgba(255,255,255,.92);max-width:680px;margin:0}
+.el-form-card{background:#fff;color:#000;padding:24px;border:3px solid #e63329;box-shadow:8px 8px 0 rgba(0,0,0,.4)}
+.el-form-title{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;margin-bottom:16px;color:#000;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+.el-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(0,0,0,.85);border:2px solid #000}
+.el-stat{padding:18px 16px;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.el-stat:last-child{border-right:0}
+.el-stat-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(20px,2vw,28px);color:#fff;letter-spacing:-0.02em;line-height:1}
+.el-stat-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7);margin-top:6px;text-transform:uppercase}
+
+/* Sections */
+.el-sec{padding:80px 0;background:#fff}
+.el-sec-light{background:#f3f3f3}
+.el-sec-dark{background:#0a0a0a;color:#fff}
+.el-sec-dark .el-chip{background:#e63329}
+.el-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,38px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.el-h2-light{color:#fff}
+.el-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+.el-lede-light{color:rgba(255,255,255,.85)}
+
+/* Technical Compliance Table — UNIQUE to EN */
+.el-compliance-table{overflow-x:auto;border:2px solid #000}
+.el-compliance-table table{width:100%;border-collapse:collapse;background:#fff;font-family:'DM Sans',sans-serif}
+.el-compliance-table th{background:#0a0a0a;color:#fff;font-weight:700;font-size:12px;padding:16px 12px;text-align:left;letter-spacing:.05em;text-transform:uppercase;border-bottom:2px solid #e63329}
+.el-compliance-table th.el-mtp-col{background:#e63329;color:#fff}
+.el-compliance-table td{padding:14px 12px;font-size:14px;color:#333;border-bottom:1px solid #eee;line-height:1.4}
+.el-compliance-table td.el-mtp-col{background:#fff5f4;color:#000;font-weight:700;border-left:4px solid #e63329;border-right:4px solid #e63329}
+.el-compliance-table tr.el-compliance-total{border-top:2px solid #000;background:#fafafa}
+.el-compliance-table tr.el-compliance-total td{font-size:15px;padding:18px 12px}
+.el-compliance-table tr.el-compliance-total td.el-mtp-col{background:#e63329;color:#fff;border-color:#000}
+.el-compliance-table tr.el-compliance-total td.el-mtp-col strong{color:#fff}
+.el-compliance-note{font-family:'DM Sans',sans-serif;font-size:14px;color:#666;font-style:italic;margin-top:20px;line-height:1.6;max-width:1100px}
+
+/* Li-ion Zones diagram (dark section) */
+.el-liion-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.el-zone-card{background:#1a1a1a;border:2px solid rgba(255,255,255,.15);padding:32px 24px;color:#fff;position:relative}
+.el-zone-low{border-left:6px solid #fff}
+.el-zone-mid{border-left:6px solid #e63329}
+.el-zone-high{border-left:6px solid #e63329;background:#2a0a08}
+.el-zone-label{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:8px}
+.el-zone-spec{font-family:Unbounded,sans-serif;font-weight:900;font-size:36px;color:#e63329;line-height:1;margin-bottom:16px;letter-spacing:-0.02em}
+.el-zone-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;color:#fff;margin:0 0 16px;line-height:1.2}
+.el-zone-card ul{list-style:none;padding:0;margin:0;font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.55;color:rgba(255,255,255,.85)}
+.el-zone-card li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.el-zone-card li:last-child{border:0}
+.el-zone-card li:before{content:"▸ ";color:#e63329;font-weight:700}
+
+/* Use case grid */
+.el-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.el-uc-card{background:#fff;border:1px solid #ddd;border-left:4px solid #e63329;padding:28px 24px}
+.el-uc-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:20px;color:#e63329;letter-spacing:-0.02em;margin-bottom:12px}
+.el-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000;line-height:1.25}
+.el-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+/* Pricing */
+.el-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.el-price-card{background:#fff;border:2px solid #000;padding:32px 24px;text-align:center}
+.el-price-card-mid{border-color:#e63329;background:#fff5f4}
+.el-price-tier{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-bottom:16px}
+.el-price-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:42px;color:#e63329;line-height:1}
+.el-price-label{font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin:8px 0 24px}
+.el-price-feat{list-style:none;padding:0;margin:0;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:#333}
+.el-price-feat li{padding:6px 0;border-bottom:1px solid #eee}
+.el-price-feat li:before{content:"✓ ";color:#e63329;font-weight:700;margin-right:6px}
+.el-price-note{background:#fafafa;border-left:4px solid #e63329;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.el-faq{display:flex;flex-direction:column;gap:8px}
+.el-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.el-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.el-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.el-faq details[open] summary::after{content:"−"}
+.el-faq summary::-webkit-details-marker{display:none}
+.el-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.el-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.el-rel-card{display:block;background:#fff;border:1px solid #ddd;padding:24px;text-decoration:none;color:#000;transition:border-color .15s}
+.el-rel-card:hover{border-color:#e63329}
+.el-rel-card strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:8px}
+.el-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
+.el-sec a{color:#e63329}
+.el-sec-dark a{color:#fff}
+
+@media (max-width:980px){
+  .el-hero-grid{grid-template-columns:1fr;gap:28px}
+  .el-form-card{max-width:none}
+  .el-liion-zones{grid-template-columns:1fr;gap:16px}
+}
+@media (max-width:900px){
+  .el-hero{padding:40px 0 32px}
+  .el-hero-stats{grid-template-columns:repeat(2,1fr)}
+  .el-stat:nth-child(2){border-right:0}
+  .el-stat:nth-child(1),.el-stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.12)}
+  .el-uc-grid,.el-price-grid,.el-rel-grid{grid-template-columns:1fr;gap:16px}
+  .el-compliance-table th,.el-compliance-table td{padding:10px 8px;font-size:12px}
+}
+</style>

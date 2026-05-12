@@ -18,6 +18,8 @@ en/blog/post/protect-store-from-fraud.astro,EN,2,0,0,1441,1.4,minor
 en/blog/post/mtp-group-fast-product-liquidation.astro,EN,2,0,2,1458,1.4,minor
 ua/blog/scho-take-fulfilment.astro,UA,2,0,7,1384,1.4,minor
 en/blog/post/business-in-ukraine-during-war.astro,EN,2,0,6,1822,1.1,minor
+ru/fulfilment-dlya-elektroniky.astro,RU,2,0,28,2351,0.9,minor
+fulfilment-dlya-elektroniky.astro,UA,2,0,20,2380,0.8,minor
 en/blog/post/expand-to-european-marketplaces.astro,EN,2,1,0,2412,0.8,minor
 ua/fulfilment-dlya-kosmetyky.astro,UA,2,0,13,2878,0.7,minor
 blog/fiscal-register-prro-business.astro,RU,1,0,0,460,2.2,OK
@@ -58,7 +60,7 @@ en/what-is-fulfillment.astro,EN,1,2,5,3162,0.3,OK
 fulfilment-prom.astro,UA,0,0,1,1798,0.0,OK
 komplektatsiya-zamovlen.astro,UA,0,0,30,3449,0.0,OK
 index.astro,UA,0,0,11,914,0.0,OK
-b2b-fulfilment.astro,UA,0,0,26,2460,0.0,OK
+b2b-fulfilment.astro,UA,0,0,27,2494,0.0,OK
 glosariy.astro,UA,0,0,0,626,0.0,OK
 thanks.astro,RU,0,0,0,66,0.0,OK
 fulfilment-dlya-odyahu.astro,UA,0,0,10,2653,0.0,OK
@@ -87,7 +89,7 @@ ru/chto-takoe-fulfilment.astro,RU,0,0,23,2377,0.0,OK
 ru/fulfilment-knig.astro,RU,0,0,15,2485,0.0,OK
 ru/tsenu.astro,RU,0,0,10,944,0.0,OK
 ru/fulfilment-rozetka.astro,RU,0,0,11,1297,0.0,OK
-ru/b2b-fulfilment.astro,RU,0,0,21,2477,0.0,OK
+ru/b2b-fulfilment.astro,RU,0,0,21,2489,0.0,OK
 ru/faq.astro,RU,0,0,6,1151,0.0,OK
 ru/3pl-logistika.astro,RU,0,0,4,873,0.0,OK
 ru/fulfilment-vazhkykh-tovariv.astro,RU,0,0,4,962,0.0,OK
@@ -138,12 +140,13 @@ en/fulfillment-kyiv.astro,EN,0,1,7,1218,0.0,OK
 en/order-pick-and-pack-ukraine.astro,EN,0,0,15,3340,0.0,OK
 en/calculator.astro,EN,0,0,0,462,0.0,OK
 en/fulfillment-ukraine.astro,EN,0,0,11,2689,0.0,OK
+en/fulfillment-for-electronics-ukraine.astro,EN,0,0,14,2274,0.0,OK
 en/warehouse-services.astro,EN,0,0,3,760,0.0,OK
 en/thanks.astro,EN,0,0,0,75,0.0,OK
 en/fulfilment-for-small-business.astro,EN,0,0,9,1458,0.0,OK
 en/fulfilment-for-books-and-publishers.astro,EN,0,0,17,2965,0.0,OK
 en/faq.astro,EN,0,3,2,1089,0.0,OK
-en/b2b-fulfillment-ukraine.astro,EN,0,0,16,2788,0.0,OK
+en/b2b-fulfillment-ukraine.astro,EN,0,0,17,2808,0.0,OK
 en/fulfillment-dnipro.astro,EN,0,0,16,2464,0.0,OK
 en/fulfilment-for-marketplaces.astro,EN,0,0,10,1502,0.0,OK
 en/glossary.astro,EN,0,0,0,692,0.0,OK

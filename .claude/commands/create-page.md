@@ -106,23 +106,59 @@ Humanizer pass + Keyword Audit pass + Validate:pillar pass.
 
 **Мета**: показати user ВІЗУАЛ перед написанням коду — approval з картинкою, не з текстом.
 
-1. На базі архетипу і концепції зроби промпт для Stitch:
-   - Mention archetype signals (uppercase labels, stats bar → Industrial; overlay hero + badge → Direct; big typography + category nav → Editorial)
+**🚨 КРИТИЧНЕ ПРАВИЛО — РІЗНОМАНІТТЯ ПРОМПТІВ (lessons learned 2026-05-12):**
+
+Не використовуй ОДИН промпт-шаблон з мінорними правками для кожної сторінки. Stitch інтерпретує однакові promt-сигнали (Industrial, dark+red+white, photo+overlay, 1.4fr/1fr grid) як ОДИН design system → variants виходять як повернення того самого шаблону.
+
+**Кожна нова сторінка ОБОВ'ЯЗКОВО** отримує:
+
+1. **Унікальну візуальну метафору** для hero-фото (не просто "warehouse"):
+   - Що саме у кадрі? closeup smartphone seal / aerial drone shot / picker scanning / palette stacks / hands holding box / ESD-зона з робочим у спецодязі / scanner display макро?
+   - Який mood? Apple unboxing / Tesla factory / customs office / hospital sterile / craft workshop?
+   - Якщо тема має sub-stories (наприклад "anti-grey-market" + "industrial scale" + "individual care") — кожна story = свій кадр.
+
+2. **Унікальний WOW-механізм** (не повторюй timeline/grid з попередньої сторінки):
+   - Used уже: 5-step timeline (electronics base), 2x2 stamp grid (electronics 3a), zones map (electronics 3b), B2B vs B2C dossier (b2b UA), flag flow diagram (b2b RU), cost matrix table (b2b EN), Stats Bar 4 cells (komplektatsiya).
+   - Не повторюй ці механіки на наступних сторінках. Шукай новий: live ticker / certificate wall / process flowchart vertical / before-after pricing slider / decision tree / customer journey map / weight class diagram / time-elapsed comparison.
+
+3. **3 ОКРЕМИХ ВІЗУАЛЬНИХ НАРАТИВИ для UA / RU / EN** — НЕ один base + variants. Кожна мова отримує власну візуальну ідентичність:
+   - UA = primary visual concept (для основної аудиторії — українські підприємці)
+   - RU = принципово ІНША композиція (для СНД-аудиторії — інший кут атаки, інший hero photo, інший WOW)
+   - EN = третя ще-інша композиція (для міжнародної аудиторії — інший photo, інший WOW)
+   - **Приклад b2b-fulfilment**: UA = Bold Red Industrial + B2B-vs-B2C Dossier, RU = Flag Flow Diagram (KZ/MD/GE/UZ/AZ/PL → Kyiv → UA), EN = Dark Savings + Cost Matrix vs US/EU 3PL. Три фундаментально різні візуальні мови.
+
+**Анти-патерн (НЕ робити так)**: один промпт для UA → mirror layout для RU → split-screen для EN. Це не різноманіття, це поворот.
+
+**Pipeline:**
+
+1. На базі архетипу і концепції зроби **СВІЖИЙ промпт для Stitch** (для UA первинно):
+   - **Визначи кадр hero-фото конкретно** — не "warehouse" а "extreme macro of holographic security seal on smartphone box, black velvet bg, side-lighting"
+   - **Прив'яжи WOW-механізм до теми** — не використовуй timeline якщо тема не процес, не используй grid якщо тема не порівняння
    - Color palette: red #e63329, black #000, white #fff only
-   - Specific WOW-element
+   - Archetype signals (uppercase labels, stats bar → Industrial; overlay hero + badge → Direct; big typography + category nav → Editorial)
 
-2. `mcp__stitch__generate_screen_from_text` — base screen
+2. `mcp__stitch__create_project` — створи проект з назвою сторінки
 
-3. `mcp__stitch__generate_variants` — 2-3 варіанти hero (різне розміщення CTA, різна ієрархія)
+3. `mcp__stitch__generate_screen_from_text` — base screen (UA design)
 
-4. Експортуй артефакти в `docs/design-system/stitch-exports/YYYY-MM-DD_[slug]/`:
-   - `concept.md` — archetype, mood, WOW, Stitch prompt (твій), rationale
-   - `screenshot.png` — скрін base + variants (якщо є API для скрінів, використай; якщо ні — скрін через браузер)
-   - `export.html` (опціонально, тільки як reference)
+4. `mcp__stitch__generate_variants` — 2 variants з **РІЗНИМИ ВІЗУАЛЬНИМИ МЕТАФОРАМИ** (не міняй position колонок — міняй що в фото і яка WOW-механіка):
+   - Variant 1 = інший hero photo + інший WOW
+   - Variant 2 = ще інший hero photo + ще інший WOW
+   - Параметри: `variantCount: 2, creativeRange: "EXPLORE", aspects: ["IMAGES", "LAYOUT"]`
 
-5. Показати user базовий screen + варіанти → чекати "approved" або "змінити"
+5. Окремо опиши TEXTOM (без додаткових Stitch-викликів) візуальні концепти для RU і EN — вони мають бути принципово ІНШИМИ ніж UA. Якщо хочеш — генеруй Stitch для RU/EN теж, але це опціонально.
 
-6. Тільки після "approved" → АГЕНТ 3 (Writer)
+6. Експортуй артефакти в `docs/design-system/stitch-exports/YYYY-MM-DD_[slug]/`:
+   - `concept.md` — archetype, mood, WOW, **повний промпт що ти писав** (для майбутнього reference), rationale, RU/EN концепти текстом
+   - `base-screenshot.png` — UA base
+   - `variant-1-[mood].png`, `variant-2-[mood].png` — UA варіанти
+   - (опціонально) `ru-[mood].png`, `en-[mood].png` якщо генерував окремо
+
+7. Показати user всі скріншоти → чекати approval / зміну
+
+8. Тільки після "approved" → АГЕНТ 3 (Writer)
+
+**Перевірка перед запуском Stitch**: відкрий 2-3 останні `docs/design-system/stitch-exports/*/concept.md` і подивись які промпти/WOW-механіки вже використовувались. **Не повторюй.**
 
 ---
 

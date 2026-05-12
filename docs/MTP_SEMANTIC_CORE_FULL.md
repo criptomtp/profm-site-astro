@@ -38,7 +38,7 @@
 |---|------|---------------|-------------------|-----------|
 | 1 | /ua/fulfilment-dlya-kosmetyky/ | фулфілмент косметика Україна | зберігання косметики на складі, логістика б'юті товарів, фулфілмент крему, сироваток | ✅ |
 | 2 | /fulfilment-dlya-odyahu/ | фулфілмент одяг взуття | UA + RU + EN deployed 2026-05-01, Direct mood, Stitch V1 | ✅ |
-| 3 | /ua/fulfilment-dlya-elektroniky/ | фулфілмент електроніка | логістика гаджетів, зберігання техніки, фулфілмент смартфонів, аксесуарів | 🟠 |
+| 3 | /fulfilment-dlya-elektroniky/ | фулфілмент електроніка | UA + RU + EN deployed 2026-05-12. Pillar triplet. IMEI tracking + ANSI/ESD S20.20 + Li-ion IATA Class 9 + УДЦР registration. UA = Premium Trust (Chain of Custody 2x2 stamp grid), RU = Cross-Border Cargo Flow (4-step route map KZ/TR/AE/GE/UZ), EN = Technical Compliance Table vs US/EU 3PL + Li-ion zones diagram. 3 fundamentally different visual concepts per language. | ✅ |
 | 4 | /ua/fulfilment-dlya-dytyachykh-tovariv/ | фулфілмент дитячі товари | логістика іграшок, зберігання дитячого одягу, фулфілмент для дитячих магазинів | 🟡 |
 | 5 | /ua/fulfilment-dlya-sportu/ | фулфілмент спортивні товари | логістика спортивного обладнання, зберігання тренажерів, фулфілмент фітнес | 🟡 |
 | 6 | /ua/fulfilment-dlya-domu/ | фулфілмент товари для дому | логістика домашнього декору, меблів, текстилю для дому | 🟡 |

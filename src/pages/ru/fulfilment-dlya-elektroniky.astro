@@ -1,0 +1,366 @@
+---
+import Base from '../../layouts/Base.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+
+const schemaJson = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","dateModified":"2026-05-12","name":"Фулфилмент электроники в Украине для CIS-брендов и импортеров","description":"Бренды Казахстана, Турции, ОАЭ, Грузии, Узбекистана выходят на украинский рынок электроники через наш киевский склад. Учет IMEI каждого устройства, ESD-зона, Li-ion хранение, регистрация в УДЦР, поставка в Allo, Foxtrot, Comfy, Epicentre. Cross-border логистика из СНГ и из Турции/ОАЭ через Одесский порт. Хранение от $10 за палет/мес, расчеты в USD/EUR на CIS-счет.","provider":{"@type":"Organization","name":"MTP Group Fulfillment","legalName":"ООО \\"МТП Груп Фулфилмент\\"","taxID":"45315740","foundingDate":"2023-10-02","url":"https://www.fulfillmentmtp.com.ua","telephone":"+380501444645"},"areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"TR"},{"@type":"Country","name":"AE"},{"@type":"Country","name":"GE"},{"@type":"Country","name":"UZ"},{"@type":"Country","name":"AZ"},{"@type":"Country","name":"MD"}],"serviceType":"Electronics Fulfillment Ukraine for CIS / Turkey / UAE brands — IMEI tracking, УДЦР registration, cross-border logistics","keywords":"фулфилмент электроники Украина, склад электроники в Киеве для CIS-бренда, учет IMEI на складе Украина, хранение смартфонов на складе Украина, выйти на украинский рынок электроники из Казахстана","audience":{"@type":"BusinessAudience","name":"Бренды Казахстана (смарт-устройства, аксессуары), Турции (small electronics, гарнитуры, кабели), ОАЭ (премиум-электроника, Apple-аксессуары), Грузии (аксессуары Apple, чехлы), Узбекистана (наушники, аксессуары), Азербайджана (small electronics) — выходящие на украинский рынок без украинской юр.лица"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"10","description":"Палетное хранение электроники $10/мес (450 грн). Учет IMEI каждого устройства, регистрация в УДЦР, ESD-зона, Li-ion хранение — включено. Минимальный месячный платеж $500 первые 3 месяца."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Может ли бренд смартфонов из Казахстана выйти на украинский рынок без юр.лица в Украине?","acceptedAnswer":{"@type":"Answer","text":"Да, через cross-border B2B модель. Ваш казахстанский бренд отправляет партию смартфонов на наш киевский склад (через стандартного перевозчика KZ→UA 10-14 дней). Мы оформляем украинскую импортную декларацию (ВМД), регистрируем IMEI в УДЦР (Украинский государственный центр радиочастот — обязательно с 2009), размещаем в ESD-зоне с учетом IMEI на стелажном уровне. Дальше товар продается украинским розничным сетям (Allo, Foxtrot, Comfy, Epicentre) от имени нашего украинского оператора по агентскому договору с вашим казахстанским юр.лицом. Расчеты в USD/EUR на казахстанский банковский счет ежемесячно. Без украинской юр.лица, без локального персонала, без CAPEX."}},{"@type":"Question","name":"Почему наш склад в Киеве — оптимальный hub для электроники из Турции и ОАЭ?","acceptedAnswer":{"@type":"Answer","text":"География. Турция → Одесский порт морем 12-20 дней или через Болгарию автотранспортом 5-8 дней — наш склад под Киевом находится в 500 км от Одесы и 1100 км от Стамбула. ОАЭ → Бориспольский аэропорт 7-10 дней авиадоставкой — наш склад в 35 км от Борисполя (Счастливое, Бориспольский район). Это означает что от прибытия груза в Украину до готовности к отправке в розничные сети — 24 часа на приемку, 24 часа на IMEI scan + УДЦР, 24 часа на адресное размещение. Итого 3 дня от port-to-shelf. Для других украинских 3PL (Юнипост, Нова Пошта) — это 5-7 дней."}},{"@type":"Question","name":"Какие документы нужны бренду из Турции/ОАЭ/Казахстана для cross-border поставки в Украину?","acceptedAnswer":{"@type":"Answer","text":"От вашей стороны: устав/регистрационные документы компании, банковские реквизиты, коммерческий инвойс на партию, сертификат происхождения (для Турции — EUR.1 в рамках Turkey-Ukraine FTA, для Казахстана — CT-1 в рамках EAEU режима, для ОАЭ — стандартный сертификат), УКТ ЗЕД-классификация SKU (8517 для смартфонов, 8471 для ноутбуков, 8518 для аудио). Для электроники дополнительно — заводская декларация о соответствии радиочастотным требованиям для УДЦР-регистрации. Мы помогаем оформить через нашего таможенного партнера за 2-3 дня. От нашей стороны — украинская юр.лица, ЭДО Вчасно с КЕП, лицензии на торговлю электроникой, регистрация поставщика в Allo/Foxtrot/Comfy."}},{"@type":"Question","name":"Что такое УДЦР и почему регистрация IMEI обязательна?","acceptedAnswer":{"@type":"Answer","text":"УДЦР = Український державний центр радіочастот (Ukrainian State Radio Frequency Center). С 2009 года обязательная регистрация IMEI для всех импортных смартфонов в Украине — без УДЦР-регистрации смартфон не может легально продаваться. Украинские розничные сети (Allo, Foxtrot, Comfy) проверяют статус УДЦР перед приемом партии — товар без регистрации классифицируется как серый рынок и не принимается. Сирый рынок электроники в Украине удвоился с 2022, поэтому официальные дистрибьюторы активно вычищают свои каналы. У MTP — налаженная интеграция с УДЦР через партнера-провайдера, регистрация IMEI-партии за 24 часа после приемки."}},{"@type":"Question","name":"Какие украинские розничные сети мы обслуживаем для CIS-брендов электроники?","acceptedAnswer":{"@type":"Answer","text":"30+ крупнейших украинских сетей с готовыми SLA-протоколами для электроники: Allo (флагман по смартфонам и аксессуарам, ~4.5 млрд грн H1 2025), Foxtrot (премиум-электроника, 30% продаж онлайн), Comfy (55.8 млрд грн 2025, +17% YoY), Epicentre (DIY + электроника), Rozetka B2B и Rozetka Marketplace, Brain (компьютерная техника), Citrus (смартфоны), Eldorado, Алло Mobile. Для CIS-бренда регистрация поставщика в этих сетях идет через нашего оператора с пакетом документов (3-5 рабочих дней вместо 2-4 месяцев традиционного процесса)."}},{"@type":"Question","name":"Сколько стоит cross-border модель для бренда из Турции?","acceptedAnswer":{"@type":"Answer","text":"Палетное хранение $10/палет/мес + комплектация $0.41 за заказ (учет IMEI включен) + украинская доставка в розничные сети $30-60/палет (платит сеть, FOB warehouse) + cross-border транспортировка из Турции $50-100/палет (один раз при пополнении запаса, не за заказ) + юр./бух. услуги по cross-border схеме $200-400/мес. Минимальный месячный платеж $500 первые 3 месяца. Для типичного турецкого бренда с 50 палетами хранения и 200 B2B-заказами/мес — общие расходы $1 000-1 500/мес плюс одноразовая cross-border транспортировка."}},{"@type":"Question","name":"Можете ли работать с импортером кабелей, гарнитур, аксессуаров из Узбекистана?","acceptedAnswer":{"@type":"Answer","text":"Да. Узбекистан — растущий регион для small electronics (наушники, кабели, гарнитуры, чехлы). Cross-border UZ→UA через специализированных EAEU-перевозчиков 10-14 дней. Поставка в украинскую розницу: Allo Mobile, Foxtrot Mobile, Rozetka B2B, Comfy. Если ваша продукция содержит Bluetooth/Wi-Fi (наушники с радиомодулем) — требуется УДЦР-регистрация. Если просто кабели/чехлы без радиоактивности — стандартный импорт без УДЦР. Мы консультируем что попадает под какие требования."}},{"@type":"Question","name":"Что с украинским НДС 20% на импорт электроники?","acceptedAnswer":{"@type":"Answer","text":"При импорте электроники на украинский склад уплачивается 20% НДС от таможенной стоимости (включая фрахт, страхование). Это операционный кеш-флоу момент: НДС уплачен при импорте, возвращается через продажи в розничные сети в течение 1-3 месяцев. Для стран EAEU (Казахстан, Армения, Кыргызстан) — облегченный таможенный режим по форме CT-1. Для Турции — снижение или обнуление пошлин по Turkey-Ukraine FTA (2022) для большинства категорий электроники (HS 85 группа). Для ОАЭ — стандартный режим MFN с минимальными пошлинами 0-5%."}},{"@type":"Question","name":"Как быстро мы оформляем cross-border партию электроники?","acceptedAnswer":{"@type":"Answer","text":"21-30 рабочих дней от подписания договора до первой поставки в украинскую сеть. Цикл: дни 1-3 договор с нашим украинским оператором по агентской схеме, дни 3-7 подготовка документов CIS-стороны (устав, банковские реквизиты, инвойс, сертификат происхождения, УКТ ЗЕД-классификация), дни 7-14 cross-border транспортировка (KZ→UA 10-14 дней, TR→UA 5-20 дней, UAE→UA 7-10 дней), дни 14-16 приемка и адресное размещение в WMS + IMEI scan + УДЦР-регистрация, дни 16-21 регистрация поставщика в украинской сети, дни 21-25 настройка ЭДО-протоколов (Comarch для Allo, SAP Ariba для Метро), дни 25-30 первая тестовая поставка end-to-end."}},{"@type":"Question","name":"Как мы защищаем CIS-бренд от серого рынка в Украине?","acceptedAnswer":{"@type":"Answer","text":"Через документированный chain-of-custody. Каждый IMEI привязан к 4 документам: ВМД (украинская таможня), УДЦР-регистрация, складская accept-карта MTP, ЭДО-накладная для розничной сети. Если ваш бренд обнаруживает что параллельный импортер продает якобы вашу продукцию через Rozetka Marketplace без официального канала — вы даете нам IMEI, мы проверяем УДЦР-статус и chain-of-custody. Если IMEI не зарегистрирован у нас — это серый рынок. Эту информацию можно использовать для жалобы Rozetka на нелегитимного продавца. Юристы используют наш chain-of-custody как доказательство в спорах о товарных знаках и неавторизованной дистрибуции."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.fulfillmentmtp.com.ua/ru/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://www.fulfillmentmtp.com.ua/ru/services/"},{"@type":"ListItem","position":3,"name":"Фулфилмент электроники для CIS-брендов","item":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MTP Group Fulfillment — Kyiv electronics hub for CIS brands","url":"https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/","telephone":["+380501444645","+380938277767"],"email":"mtpgrouppromo@gmail.com","priceRange":"$10/палет/мес + $0.41/заказ","geo":{"@type":"GeoCoordinates","latitude":"50.3408","longitude":"30.8595"},"address":[{"@type":"PostalAddress","streetAddress":"ул. Промышленная","addressLocality":"Счастливое, Бориспольский район","addressRegion":"Киевская область","postalCode":"08322","addressCountry":"UA","description":"Склад 2 700 м² — ESD-зона, IMEI учет, Li-ion зона"},{"@type":"PostalAddress","addressLocality":"Белогородка","addressRegion":"Киевская область","postalCode":"08140","addressCountry":"UA","description":"Склад 1 000 м² — FEFO-зона для аксессуаров"}],"openingHours":"Mo-Su 08:00-20:00","areaServed":[{"@type":"Country","name":"UA"},{"@type":"Country","name":"KZ"},{"@type":"Country","name":"TR"},{"@type":"Country","name":"AE"},{"@type":"Country","name":"GE"},{"@type":"Country","name":"UZ"}]}</script>`;
+---
+<Base
+  title="Фулфилмент электроники в Украине для брендов CIS, Турции, ОАЭ"
+  description="Бренды Казахстана, Турции, ОАЭ, Грузии выходят на украинский рынок электроники через наш киевский склад. Учет IMEI, УДЦР-регистрация, ESD-зона, поставка в Allo/Foxtrot. От $10/палет."
+  canonical="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/"
+  lang="ru"
+  ogImage="https://www.fulfillmentmtp.com.ua/images/fulfilment-dlya-elektroniky-hero.jpg"
+  schema={schemaJson}
+  showCTA={true}
+>
+<Fragment slot="head">
+  <link rel="alternate" hreflang="uk" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-elektroniky/">
+  <link rel="alternate" hreflang="ru" href="https://www.fulfillmentmtp.com.ua/ru/fulfilment-dlya-elektroniky/">
+  <link rel="alternate" hreflang="en" href="https://www.fulfillmentmtp.com.ua/en/fulfillment-for-electronics-ukraine/">
+  <link rel="alternate" hreflang="x-default" href="https://www.fulfillmentmtp.com.ua/fulfilment-dlya-elektroniky/">
+</Fragment>
+
+<!-- HERO — Cross-Border Cargo Flow -->
+<section class="el-hero el-hero-ru">
+  <div class="ctr">
+    <div class="el-hero-grid">
+      <div class="el-hero-left">
+        <div class="el-chip">CIS / TR / AE → УКРАИНА · ЭЛЕКТРОНИКА</div>
+        <h1>Из Казахстана, Турции, ОАЭ — на украинский рынок электроники через киевский хаб MTP</h1>
+        <p class="el-hero-sub">CIS-бренды смарт-устройств, импортеры из Турции и ОАЭ выходят в Allo, Foxtrot, Comfy, Epicentre без открытия украинской юр.лица. Учет IMEI каждого устройства, регистрация в УДЦР, ESD-зона. Расчеты в USD/EUR на ваш CIS-счет ежемесячно. Cross-border B2B через украинского оператора.</p>
+      </div>
+      <div class="el-hero-right">
+        <div class="el-form-card">
+          <div class="el-form-title">Расчет для CIS-бренда электроники</div>
+          <HeroCTA lang="ru" theme="light" button="Получить расчет →" microCopy="✓ Ответ за 15 минут · KZ/TR/AE/GE/UZ → UA розничные сети" sourceTag="hero /ru/fulfilment-dlya-elektroniky/" />
+        </div>
+      </div>
+    </div>
+    <div class="el-hero-stats">
+      <div class="el-stat"><div class="el-stat-num">$10</div><div class="el-stat-lbl">ХРАНЕНИЕ/МЕС</div></div>
+      <div class="el-stat"><div class="el-stat-num">100%</div><div class="el-stat-lbl">IMEI В УДЦР</div></div>
+      <div class="el-stat"><div class="el-stat-num">3 дня</div><div class="el-stat-lbl">PORT → SHELF</div></div>
+      <div class="el-stat"><div class="el-stat-num">30+</div><div class="el-stat-lbl">UA РОЗНИЧНЫХ СЕТЕЙ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTE MAP — 4-step horizontal flow -->
+<section class="el-sec">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">МАРШРУТ ПОСТАВКИ</div>
+    <h2 class="el-h2">4-шаговый маршрут партии электроники — от вашего склада до полки украинской сети</h2>
+    <p class="el-lede">Cross-border логистика электроники — это не просто транспорт. Это документооборот в 3 юрисдикциях, регистрация IMEI в УДЦР, ESD-сохранность груза в transit, синхронизация ЭДО с украинскими сетями. Каждая партия проходит 4 контрольные точки за 21-30 дней — от подписания договора до первой отгрузки в магазин Allo или Foxtrot.</p>
+    <div class="el-route-flow">
+      <div class="el-route-step">
+        <div class="el-route-icon">🌍</div>
+        <div class="el-route-num">01</div>
+        <h3>ВАША СТРАНА</h3>
+        <p><strong>🇰🇿 KZ:</strong> 10-14 дней транзита через EAEU-перевозчиков<br><strong>🇹🇷 TR:</strong> 5-8 дней автотранспортом / 12-20 морем<br><strong>🇦🇪 AE:</strong> 7-10 дней авиадоставкой<br><strong>🇬🇪 GE:</strong> 8-14 дней через Чёрное море / DHL air<br><strong>🇺🇿 UZ:</strong> 10-14 дней EAEU-маршрут</p>
+        <div class="el-route-meta">Документы: инвойс, сертификат происхождения (CT-1 / EUR.1), УКТ ЗЕД-классификация</div>
+      </div>
+      <div class="el-route-arrow">→</div>
+      <div class="el-route-step">
+        <div class="el-route-icon">⚓</div>
+        <div class="el-route-num">02</div>
+        <h3>УКРАИНСКАЯ ТАМОЖНЯ</h3>
+        <p>Прибытие в порт Одессы / Николаева (морем) или аэропорт Борисполь (авиа). Украинская импортная декларация (ВМД), уплата 20% НДС от таможенной стоимости. Для Турции — снижение пошлин по Turkey-Ukraine FTA. Для EAEU стран — CT-1 режим. Таможенное оформление 1-3 рабочих дня через нашего таможенного партнера.</p>
+        <div class="el-route-meta">Документ: ВМД с привязкой каждого IMEI к УКТ ЗЕД-коду (8517/8471/8518/8528)</div>
+      </div>
+      <div class="el-route-arrow">→</div>
+      <div class="el-route-step">
+        <div class="el-route-icon">📡</div>
+        <div class="el-route-num">03</div>
+        <h3>УДЦР + СКЛАД MTP KYIV</h3>
+        <p>Доставка в наш склад в Счастливом (35 км от Борисполя). Поштучная приемка + фотофиксация. Скан IMEI каждого устройства, регистрация партии в УДЦР через нашего партнера-провайдера (обязательно с 2009 года для всех импортных смартфонов). Адресное размещение в ESD-зоне с привязкой IMEI → slot WMS.</p>
+        <div class="el-route-meta">Срок port-to-shelf: 3 рабочих дня. Экспресс — 36 часов</div>
+      </div>
+      <div class="el-route-arrow">→</div>
+      <div class="el-route-step el-route-step-dest">
+        <div class="el-route-icon">🛍️</div>
+        <div class="el-route-num">04</div>
+        <h3>UA РОЗНИЧНЫЕ СЕТИ</h3>
+        <p>Поставка в Allo (флагман по смартфонам, 4.5 млрд грн H1 2025), Foxtrot (премиум-электроника, 30% онлайн), Comfy (55.8 млрд грн 2025, +17%), Epicentre, Rozetka B2B, Brain, Citrus. ЭДО-протоколы готовы, регистрация поставщика через нашего оператора 3-5 рабочих дней.</p>
+        <div class="el-route-meta">Документ: ЭДО Вчасно/Comarch с IMEI в накладной + ТТН Нова Пошта</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIS COUNTRY DEEP DIVES -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">CIS-СТРАНЫ И КАТЕГОРИИ</div>
+    <h2 class="el-h2">Конкретные потоки которые мы видим в 2026 — кто привозит что куда</h2>
+    <div class="el-uc-grid">
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇰🇿 KZ</div>
+        <h3>Казахстан → смарт-устройства, аксессуары</h3>
+        <p>Казахстанские бренды смартфонов (например, бюджетные модели), wearables, аксессуары Apple для рынков Центральной Азии. Объем типичного бренда: 200-1000 устройств/мес. Cross-border KZ→UA 10-14 дней через EAEU-перевозчиков. Облегченный режим CT-1 с минимальными пошлинами. Поставка в Allo Mobile, Rozetka.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇹🇷 TR</div>
+        <h3>Турция → гарнитуры, кабели, small electronics</h3>
+        <p>Турецкие бренды наушников, кабелей, чехлов, портативной акустики, гарнитур для рынков Восточной Европы. Высокая маржа в украинской рознице (Foxtrot, Comfy, Rozetka). Cross-border TR→UA: автотранспорт через Болгарию 5-8 дней, морем через Одессу 12-20 дней. Turkey-Ukraine FTA дает 0% пошлины на категории 85 группы HS.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇦🇪 AE</div>
+        <h3>ОАЭ → премиум-электроника, Apple-аксессуары</h3>
+        <p>ОАЭ как реэкспортный хаб для премиум-категорий: оригинальные Apple-аксессуары, JBL/Marshall премиум-акустика, Sony, Bose. Авиадоставка из Дубая в Борисполь 7-10 дней (короткий transit для high-value категорий). Поставка в Foxtrot premium, Comfy, Allo Mobile, Rozetka. Стандартный режим MFN с минимальными пошлинами.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇬🇪 GE</div>
+        <h3>Грузия → Apple-аксессуары, чехлы</h3>
+        <p>Грузинские дистрибьюторы Apple-аксессуаров (чехлы, защитные пленки, кабели MFi), small electronics для постсоветских рынков. Cross-border GE→UA: морем через Одессу 8-14 дней, DHL air 4-7 дней. Поставка в Rozetka Marketplace, Allo, Citrus. Стандартный режим импорта с минимальными пошлинами.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇺🇿 UZ</div>
+        <h3>Узбекистан → наушники, аксессуары</h3>
+        <p>Узбекские производители наушников (Bluetooth и проводные), кабелей, чехлов. Растущий сегмент после ухода российских/белорусских поставщиков. Объем типичного бренда: 500-5000 единиц/мес. Cross-border UZ→UA 10-14 дней через EAEU-маршрут. Если содержит Bluetooth/Wi-Fi (наушники с радиомодулем) — обязательная УДЦР-регистрация.</p>
+      </div>
+      <div class="el-uc-card">
+        <div class="el-uc-num">🇦🇿 AZ</div>
+        <h3>Азербайджан → нишевые категории</h3>
+        <p>Азербайджан как нишевый поставщик small electronics для украинского рынка. Объем меньше (50-300 единиц/мес), но стабильный. Cross-border AZ→UA 7-10 дней через специализированных перевозчиков. Поставка в специализированные сети и Rozetka Marketplace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMEI + УДЦР EXPLAINER -->
+<section class="el-sec el-sec-dark">
+  <div class="ctr">
+    <div class="el-chip">УДЦР + IMEI</div>
+    <h2 class="el-h2 el-h2-light">Регистрация в УДЦР и учет IMEI — обязательное требование украинского рынка электроники</h2>
+    <p class="el-lede el-lede-light">Украинский государственный центр радиочастот (УДЦР) с 2009 года обязывает регистрировать IMEI каждого импортного смартфона перед продажей в Украине. Без УДЦР-статуса устройство классифицируется как серый рынок и не может приниматься официальными розничными сетями (Allo, Foxtrot, Comfy ведут проверку). Для CIS-брендов это потенциальный блокер выхода на украинский рынок — без локального оператора с УДЦР-доступом регистрация занимает месяцы и требует украинского юр.лица.</p>
+    <div class="el-tech-grid">
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>УДЦР-регистрация за 24 часа</h3>
+        <p>У нас интеграция с УДЦР через партнера-провайдера. После приемки контейнера и скана IMEI на receive-станции — партия автоматически уходит на регистрацию в УДЦР. Статус "зарегистрировано" — в течение 24 часов. Розничные сети получают доступ к УДЦР-базе и могут проверить любой IMEI на легитимность перед приемкой партии.</p>
+      </div>
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>IMEI учет на стелажном уровне</h3>
+        <p>Каждое устройство сканируется на 4 этапах: приемка (привязка к ВМД + УДЦР), адресное размещение (IMEI → slot WMS), pick (верификация при сборке), отгрузка (IMEI в накладной для сети). Журнал сохраняется 7 лет — для гарантийных случаев, аудитов сетей, юридических споров о подлинности.</p>
+      </div>
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>Chain-of-custody для anti-grey-market</h3>
+        <p>Сырый рынок электроники в Украине удвоился с 2022. Allo, Foxtrot, Comfy активно вычищают каналы — товар без УДЦР не принимается. У вас как у CIS-бренда есть инструмент защиты: если параллельный импортер продает якобы вашу продукцию через Rozetka Marketplace — мы проверяем УДЦР-статус. Если IMEI не зарегистрирован у нас, это серый рынок — повод для жалобы и блокировки.</p>
+      </div>
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>ESD-защита для чувствительных партий</h3>
+        <p>Электронные компоненты (платы, дисплеи, GPU, чипы памяти) могут быть повреждены статикой при неправильном хранении. У нас ESD-зона по стандарту ANSI/ESD S20.20 + украинский ДСТУ IEC 61340-5-1: антистатическое покрытие пола, заземленные стелажи, ESD-браслеты для сотрудников, контроль влажности 40-60%. Антистатическое packaging для чувствительных категорий — обязательно.</p>
+      </div>
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>Li-ion зона по IATA Class 9</h3>
+        <p>Смартфоны, ноутбуки, портативные зарядные устройства, гарнитуры с аккумулятором — содержат литий-ионные батареи (IATA Class 9). У нас отдельная зона с температурным контролем +10...+25°C, газовой системой пожаротушения, изолированной электропроводкой. Для устройств с батареями >100 Вт·ч — обязательная маркировка UN 3480/3481 на коробах + перевозка только лицензированными Class 9 перевозчиками.</p>
+      </div>
+      <div class="el-tech-card el-tech-card-dark">
+        <h3>Антистатическое packaging</h3>
+        <p>Для ESD-чувствительных позиций — антистатические пакеты (Anti-Static Bags), проводящий bubble wrap, антистатические вкладки в коробки. Это +$0.15-0.22 (5-8 грн) к стоимости отправки, но экономит гарантийную статистику бренда. Для премиум-категорий (Apple, Sony, Bose) — обязательно, ваш бренд защищен от reputation risk при возвратах из-за статики.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="el-sec" id="el-cta">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">СТОИМОСТЬ МОДЕЛИ</div>
+    <h2 class="el-h2">Сколько стоит cross-border фулфилмент электроники для CIS-бренда</h2>
+    <p class="el-lede">Палетное хранение $10/мес + сборка $0.41/заказ (IMEI учет + УДЦР включены) + украинская доставка в розницу $30-60/палет (платит сеть-клиент) + cross-border транспортировка $50-150/палет (раз при пополнении запаса) + юр./бух. услуги $200-400/мес. Минимальный месячный платеж $500 первые 3 месяца.</p>
+    <div class="el-price-grid">
+      <div class="el-price-card">
+        <div class="el-price-tier">ХРАНЕНИЕ</div>
+        <div class="el-price-num">$10</div>
+        <div class="el-price-label">за палет / месяц</div>
+        <ul class="el-price-feat">
+          <li>ESD-зона + антистатика</li>
+          <li>Li-ion зона с T-контролем</li>
+          <li>Адресная комирка WMS</li>
+          <li>Страхование грузов</li>
+          <li>Доступ 24/7 через кабинет</li>
+        </ul>
+      </div>
+      <div class="el-price-card el-price-card-mid">
+        <div class="el-price-tier">PICK + IMEI + УДЦР</div>
+        <div class="el-price-num">$0.41</div>
+        <div class="el-price-label">за заказ (18 грн)</div>
+        <ul class="el-price-feat">
+          <li>Скан IMEI на 2 этапах</li>
+          <li>УДЦР-регистрация включена</li>
+          <li>Антистатическое pack для ESD</li>
+          <li>ЭДО с украинской сетью</li>
+          <li>Гарантийный trace 7 лет</li>
+        </ul>
+      </div>
+      <div class="el-price-card">
+        <div class="el-price-tier">CROSS-BORDER</div>
+        <div class="el-price-num">$200-400</div>
+        <div class="el-price-label">/мес паушально</div>
+        <ul class="el-price-feat">
+          <li>Украинская таможня + ВМД</li>
+          <li>УДЦР-партнер</li>
+          <li>ЭДО Вчасно/Comarch</li>
+          <li>Расчеты USD/EUR на CIS-счет</li>
+          <li>SLA выплат 5 рабочих дней</li>
+        </ul>
+      </div>
+    </div>
+    <div class="el-price-note">
+      <strong>Минимальный месячный платеж $500</strong> первые 3 месяца. <strong>Cross-border транспортировка</strong> $50-150/палет один раз при пополнении запаса (не за заказ). <a href="/ru/calculator/">Рассчитайте для вашего бренда</a> с учетом конкретных KZ/TR/AE/GE/UZ параметров.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">ВОПРОСЫ И ОТВЕТЫ</div>
+    <h2 class="el-h2">Что обычно спрашивают бренды CIS, Турции, ОАЭ перед выходом на украинский рынок электроники</h2>
+    <div class="el-faq">
+      <details><summary>Может ли бренд смартфонов из Казахстана выйти на украинский рынок без юр.лица в Украине?</summary><p>Да, через cross-border B2B модель. Партия отправляется на наш киевский склад (10-14 дней), мы оформляем ВМД, регистрируем IMEI в УДЦР, размещаем в ESD-зоне. Продается украинским сетям (Allo/Foxtrot/Comfy) от имени нашего оператора по агентскому договору с вами. Расчеты в USD/EUR на CIS-счет ежемесячно.</p></details>
+      <details><summary>Почему наш склад в Киеве — оптимальный hub для Турции и ОАЭ?</summary><p>География. Турция → Одесский порт 12-20 дней или авто через Болгарию 5-8. ОАЭ → Борисполь 7-10 авиа. Наш склад в 35 км от Борисполя, 500 км от Одессы. От прибытия до готовности к отгрузке — 3 дня (приемка + IMEI + УДЦР + slot). Юнипост / Нова Пошта — 5-7 дней.</p></details>
+      <details><summary>Какие документы нужны бренду из Турции/ОАЭ/Казахстана?</summary><p>Устав, банковские реквизиты, инвойс, сертификат происхождения (TR — EUR.1, KZ — CT-1), УКТ ЗЕД-классификация (8517/8471/8518), декларация о радиочастотном соответствии для УДЦР. Помогаем оформить через таможенного партнера за 2-3 дня.</p></details>
+      <details><summary>Что такое УДЦР и почему регистрация IMEI обязательна?</summary><p>УДЦР = Украинский государственный центр радиочастот. С 2009 — обязательная регистрация IMEI всех импортных смартфонов. Без УДЦР смартфон не может легально продаваться. Сети (Allo/Foxtrot/Comfy) проверяют статус. У нас интеграция с УДЦР через партнера — регистрация партии за 24 часа.</p></details>
+      <details><summary>Какие украинские сети мы обслуживаем для CIS-брендов?</summary><p>30+ сетей: Allo, Foxtrot, Comfy, Epicentre, Rozetka B2B и Marketplace, Brain, Citrus, Eldorado, Алло Mobile, Foxtrot Mobile. У нашего оператора готовый статус поставщика — CIS-бренд подключается через нас (3-5 дней вместо 2-4 месяцев традиционного процесса).</p></details>
+      <details><summary>Сколько стоит cross-border модель для бренда из Турции?</summary><p>$10/палет/мес хранение + $0.41/заказ сборка с IMEI + $30-60/палет украинская доставка (платит сеть) + $50-100/палет cross-border TR→UA (раз при пополнении) + $200-400/мес юр./бух. услуги. Минимум $500 первые 3 месяца. Для 50 палет и 200 заказов/мес — $1-1.5K/мес.</p></details>
+      <details><summary>Можете работать с импортером кабелей и аксессуаров из Узбекистана?</summary><p>Да. UZ→UA через EAEU-перевозчиков 10-14 дней. Если содержит Bluetooth/Wi-Fi — нужна УДЦР-регистрация. Если просто кабели/чехлы без радио — стандартный импорт. Поставка в Allo Mobile, Foxtrot, Rozetka, Comfy. Консультируем какие категории под какие требования.</p></details>
+      <details><summary>Что с украинским НДС 20% на импорт электроники?</summary><p>Уплачивается при импорте от таможенной стоимости. Кеш-флоу: уплачен при импорте → возвращается через продажи в 1-3 месяца. EAEU стран — режим CT-1 с минимальными пошлинами. Турция — Turkey-Ukraine FTA = 0% пошлины на 85 группу HS. ОАЭ — стандартный MFN 0-5%.</p></details>
+      <details><summary>Как быстро мы оформляем cross-border партию?</summary><p>21-30 рабочих дней от договора до первой поставки. Договор → документы CIS → cross-border транспорт → приемка + IMEI + УДЦР → регистрация в сети → ЭДО → тестовая поставка → production. KZ/UZ — 10-14 дней, TR — 5-20 дней, AE — 7-10 авиа.</p></details>
+      <details><summary>Как мы защищаем CIS-бренд от серого рынка?</summary><p>Через документированный chain-of-custody: ВМД → УДЦР → склад MTP → ЭДО-накладная. Если параллельный импортер продает якобы вашу продукцию — даете нам IMEI, проверяем УДЦР-статус. Не зарегистрирован у нас = серый рынок. Используется юристами для жалоб Rozetka и в спорах о торговых марках.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="el-sec">
+  <div class="ctr">
+    <div class="el-chip el-chip-dark">СМЕЖНЫЕ УСЛУГИ</div>
+    <h2 class="el-h2">Что еще делаем для брендов CIS, Турции, ОАЭ</h2>
+    <div class="el-rel-grid">
+      <a class="el-rel-card" href="/ru/b2b-fulfilment/"><strong>B2B фулфилмент для CIS-брендов</strong><span>Cross-border B2B модель в украинскую розницу</span></a>
+      <a class="el-rel-card" href="/ru/fulfilment-ukraina/"><strong>Фулфилмент в Украине из СНГ</strong><span>Cross-border B2C для интернет-магазинов</span></a>
+      <a class="el-rel-card" href="/ru/komplektaciya-zakazov/"><strong>Сборка заказов</strong><span>Pick & pack из украинского склада</span></a>
+      <a class="el-rel-card" href="/ru/3pl-logistika/"><strong>3PL логистика</strong><span>Полный аутсорсинг для международных брендов</span></a>
+      <a class="el-rel-card" href="/ru/calculator/"><strong>Калькулятор стоимости</strong><span>Под ваш CIS-бренд и объем</span></a>
+      <a class="el-rel-card" href="/ru/services/"><strong>Все услуги фулфилмента</strong><span>17 операций под одним SLA</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CLOSING -->
+<section class="el-sec el-sec-light">
+  <div class="ctr">
+    <h2 class="el-h2">Украинский рынок электроники открыт для CIS-брендов в 2026 — почему именно сейчас</h2>
+    <p>Украинский рынок электроники — 31.5% от всего e-commerce страны, около 80.6 млрд грн ($2.1 млрд) в год. Топ-сегмент: Comfy (55.8 млрд грн выручки за 2025, +17% YoY), Foxtrot (30% продаж онлайн), Allo (4.5 млрд грн за полугодие), Rozetka B2B и Marketplace, Epicentre, Brain, Citrus, Eldorado. Зарядные станции и генераторы дополнительно +54% YoY через войну и энергетический кризис. Покупательная способность среднего класса в Киеве, Львове, Одессе, Днепре сопоставима с Алматы и Тбилиси.</p>
+    <p>С 2022 года российские и белорусские поставщики ушли с украинского рынка — категории остаются открытыми во многих сегментах: смартфоны бюджетного и среднего ценового сегмента (KZ-бренды могут занять место), Apple-аксессуары (TR/AE/GE-импортеры), small electronics (наушники, гарнитуры, кабели — UZ/TR), Bluetooth-устройства (KZ/UZ), премиум-электроника через ОАЭ как реэкспортный хаб. Сети сами активно ищут CIS-альтернативы — Allo и Foxtrot имеют программы для привлечения новых поставщиков из стран-партнеров.</p>
+    <p>Сирый рынок электроники в Украине удвоился с 2022 года (по словам топ-менеджмента Foxtrot публично) — это означает что официальные дистрибьюторы активно борются за защиту official channel. Они требуют от поставщиков документированный chain-of-custody: ВМД (таможня), регистрация IMEI в УДЦР, складская accept-карта, ЭДО-накладная. Если ваш CIS-бренд не может предоставить эти 4 документа — вас не пустят в Allo/Foxtrot/Comfy. У MTP мы строим этот chain автоматически для каждого IMEI на нашем складе. Это конкурентное преимущество вашего бренда против параллельных импортеров.</p>
+    <p>Наша cross-border модель устраняет ключевой барьер — необходимость украинской юр.лица для бренда. Вы остаетесь юридически в Казахстане, Турции, ОАЭ, Грузии, Узбекистане или другой стране. Наш украинский оператор является агентом по договору — он юридически продает вашу продукцию украинским сетям, а вы получаете выручку в USD/EUR на свой CIS-счет ежемесячно. Все украинские роли (юр.лицо, плательщик НДС, держатель КЕП для ЭДО, лицензии на торговлю электроникой, статус поставщика в сетях) — на стороне нашего оператора. Валютный риск гривны — на нас.</p>
+    <p>Экономика для типичного CIS-бренда: палетное хранение $10/мес + сборка $0.41/заказ (IMEI + УДЦР включены) + украинская доставка $30-60/палет (платит сеть) + cross-border транспортировка $50-150/палет (раз при пополнении запаса) + юр./бух. услуги $200-400/мес паушально. Для бренда с 50 палетами и 200 заказами/мес — общие расходы $1 000-1 500/мес плюс одноразовая cross-border транспортировка.</p>
+    <p>Отдельно о возвратах электроники и гарантийных случаях. Электроника имеет более высокую частоту возвратов чем другие категории (8-15% в зависимости от сегмента — смартфоны 5-8%, аксессуары 10-15%, портативная техника до 18%). Наш протокол приёма возвратов: специальная receive-станция с ESD-защитой, проверка IMEI/SN против оригинальной накладной (антифейк-контроль), фотофиксация состояния, тест функциональности (по запросу клиента-сети), возврат в стеллаж или утилизация. Тариф возврата — $0.20 за SKU (половина от $0.41 отгрузки). Для гарантийных случаев — chain-of-custody trace по запросу производителя. Ежедневный отчёт в кабинет, недельный отчёт с аналитикой причин возвратов.</p>
+    <p>Дополнительные параметры для CIS-брендов. Минимальная партия для cross-border — 5 палет (~30 кубометров груза для эффективной таможенной обработки). Меньшие партии возможны через консолидаторов (сборные грузы) но с более длинными сроками — добавляйте 5-10 дней transit. Для часто пополняемых SKU (топ-30 модели смартфонов, ходовые аксессуары) рекомендуем держать 30-45 дней запаса на нашем складе — этого хватает для покрытия cross-border lead-time + reserve. Для нишевых SKU — 15-20 дней. Анализ оптимального уровня запасов делаем индивидуально на основе ваших исторических данных продаж в UA-рознице.</p>
+    <p>Сравнение с альтернативами для CIS-бренда выходящего на украинский рынок электроники. Открытие собственной украинской ТОВ: $3-8K единоразовых расходов на регистрацию, $1.5-3K/мес на бухгалтера и юриста, 2-4 месяца на полную операционную готовность, плюс необходимость физического представительства и подбора кадров. Работа через локального дистрибьютора-партнера: высокая маржа (15-25% реселлеру) плюс отсутствие прямых отношений с украинской розницей и потеря контроля над ценообразованием. Наша агентская модель: 21-30 дней до первой поставки, $200-400/мес юр./бух. услуги, прямые отношения с сетями через нашего оператора, прозрачное ценообразование. Для типичного CIS-бренда экономия первого года составляет $20-40K по сравнению с открытием собственной юр.лица.</p>
+    <p>Цикл онбординга 21-30 рабочих дней от подписания договора до первой поставки в украинскую сеть. См. также: <a href="/ru/b2b-fulfilment/">B2B фулфилмент для CIS-брендов</a>, <a href="/ru/fulfilment-ukraina/">фулфилмент в Украине из СНГ</a>, <a href="/ru/komplektaciya-zakazov/">сборка заказов</a>, <a href="/ru/3pl-logistika/">3PL логистика</a>, <a href="/ru/calculator/">калькулятор стоимости</a>, <a href="/ru/services/">все услуги фулфилмента</a>.</p>
+  </div>
+</section>
+
+</Base>
+
+<style is:global>
+/* RU hero — solid dark with red accent (NO background image, different from UA) */
+.el-hero{position:relative;color:#fff;padding:64px 0 48px;background:#0a0a0a;border-bottom:6px solid #e63329;overflow:hidden}
+.el-hero-ru{background:linear-gradient(135deg,#0a0a0a 0%,#1a0a08 50%,#e63329 200%)}
+.el-hero-ru:before{content:"";position:absolute;top:0;right:-20%;width:60%;height:100%;background:radial-gradient(circle at center,rgba(230,51,41,.35) 0%,transparent 60%);z-index:0;pointer-events:none}
+.el-hero .ctr{position:relative;z-index:2;max-width:1280px}
+.el-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin-bottom:36px}
+.el-hero-left{min-width:0}
+.el-chip{display:inline-block;background:#e63329;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;padding:8px 14px;text-transform:uppercase;margin-bottom:20px}
+.el-chip-dark{background:#000}
+.el-hero h1{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(26px,3.4vw,46px);line-height:1.06;letter-spacing:-0.025em;margin:0 0 20px;color:#fff}
+.el-hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;color:rgba(255,255,255,.92);max-width:680px;margin:0}
+.el-form-card{background:#fff;color:#000;padding:24px;border:3px solid #e63329;box-shadow:8px 8px 0 rgba(0,0,0,.4)}
+.el-form-title{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;margin-bottom:16px;color:#000;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+.el-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(0,0,0,.85);border:2px solid #000}
+.el-stat{padding:18px 16px;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.el-stat:last-child{border-right:0}
+.el-stat-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:clamp(20px,2vw,28px);color:#fff;letter-spacing:-0.02em;line-height:1}
+.el-stat-lbl{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.7);margin-top:6px;text-transform:uppercase}
+
+/* Route Flow Diagram — UNIQUE to RU page */
+.el-route-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:16px;align-items:stretch;background:#fafafa;padding:24px;border:2px solid #000}
+.el-route-step{background:#fff;border:2px solid #ddd;border-left:4px solid #e63329;padding:20px 16px;text-align:left}
+.el-route-step-dest{border-color:#e63329;background:#fff5f4}
+.el-route-icon{font-size:32px;line-height:1;margin-bottom:8px}
+.el-route-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:14px;color:#e63329;letter-spacing:-0.02em;margin-bottom:8px}
+.el-route-step h3{font-family:Unbounded,sans-serif;font-weight:800;font-size:14px;color:#000;margin:0 0 10px;text-transform:uppercase;letter-spacing:.02em}
+.el-route-step p{font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.5;color:#333;margin:0 0 12px}
+.el-route-meta{font-family:'DM Sans',sans-serif;font-size:10px;color:#666;letter-spacing:.05em;border-top:1px solid #eee;padding-top:8px;line-height:1.4}
+.el-route-arrow{font-family:Unbounded,sans-serif;font-weight:900;font-size:32px;color:#e63329;line-height:1;display:flex;align-items:center;justify-content:center}
+
+/* Sections */
+.el-sec{padding:80px 0;background:#fff}
+.el-sec-light{background:#f3f3f3}
+.el-sec-dark{background:#0a0a0a;color:#fff}
+.el-sec-dark .el-chip{background:#e63329}
+.el-h2{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(24px,3vw,40px);line-height:1.15;letter-spacing:-0.02em;margin:16px 0 24px;color:#000}
+.el-h2-light{color:#fff}
+.el-lede{font-family:'DM Sans',sans-serif;font-size:18px;line-height:1.6;color:#333;max-width:880px;margin-bottom:40px}
+.el-lede-light{color:rgba(255,255,255,.85)}
+
+.el-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.el-uc-card{background:#fff;border:1px solid #ddd;border-left:4px solid #e63329;padding:28px 24px}
+.el-uc-num{font-family:Unbounded,sans-serif;font-weight:800;font-size:20px;color:#e63329;letter-spacing:-0.02em;margin-bottom:12px}
+.el-uc-card h3{font-family:Unbounded,sans-serif;font-weight:700;font-size:17px;margin:0 0 12px;color:#000;line-height:1.25}
+.el-uc-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+
+.el-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.el-tech-card{background:#fff;border:2px solid #000;padding:28px 24px}
+.el-tech-card-dark{background:#1a1a1a;border-color:#e63329;color:#fff}
+.el-tech-card h3{font-family:Unbounded,sans-serif;font-weight:800;font-size:18px;color:#e63329;margin:0 0 12px;text-transform:uppercase;letter-spacing:.02em}
+.el-tech-card p{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:#333;margin:0}
+.el-tech-card-dark p{color:rgba(255,255,255,.85)}
+
+.el-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px}
+.el-price-card{background:#fff;border:2px solid #000;padding:32px 24px;text-align:center}
+.el-price-card-mid{border-color:#e63329;background:#fff5f4}
+.el-price-tier{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#666;margin-bottom:16px}
+.el-price-num{font-family:Unbounded,sans-serif;font-weight:900;font-size:42px;color:#e63329;line-height:1}
+.el-price-label{font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin:8px 0 24px}
+.el-price-feat{list-style:none;padding:0;margin:0;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:#333}
+.el-price-feat li{padding:6px 0;border-bottom:1px solid #eee}
+.el-price-feat li:before{content:"✓ ";color:#e63329;font-weight:700;margin-right:6px}
+.el-price-note{background:#fafafa;border-left:4px solid #e63329;padding:24px;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.el-faq{display:flex;flex-direction:column;gap:8px}
+.el-faq details{background:#fff;border:1px solid #ddd;padding:0}
+.el-faq summary{padding:18px 24px;cursor:pointer;font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;color:#000;list-style:none;position:relative}
+.el-faq summary::after{content:"+";position:absolute;right:24px;top:18px;color:#e63329;font-size:24px;line-height:1}
+.el-faq details[open] summary::after{content:"−"}
+.el-faq summary::-webkit-details-marker{display:none}
+.el-faq details p{padding:0 24px 18px;margin:0;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:#333}
+
+.el-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.el-rel-card{display:block;background:#fff;border:1px solid #ddd;padding:24px;text-decoration:none;color:#000;transition:border-color .15s}
+.el-rel-card:hover{border-color:#e63329}
+.el-rel-card strong{display:block;font-family:Unbounded,sans-serif;font-weight:700;font-size:15px;color:#000;margin-bottom:8px}
+.el-rel-card span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;line-height:1.45}
+.el-sec a{color:#e63329}
+.el-sec-dark a{color:#fff}
+
+@media (max-width:980px){
+  .el-hero-grid{grid-template-columns:1fr;gap:28px}
+  .el-form-card{max-width:none}
+  .el-route-flow{grid-template-columns:1fr;gap:12px}
+  .el-route-arrow{transform:rotate(90deg);font-size:24px}
+}
+@media (max-width:900px){
+  .el-hero{padding:40px 0 32px}
+  .el-hero-stats{grid-template-columns:repeat(2,1fr)}
+  .el-stat:nth-child(2){border-right:0}
+  .el-stat:nth-child(1),.el-stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.12)}
+  .el-uc-grid,.el-tech-grid,.el-price-grid,.el-rel-grid{grid-template-columns:1fr;gap:16px}
+}
+</style>
