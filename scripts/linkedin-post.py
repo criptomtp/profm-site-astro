@@ -254,8 +254,34 @@ def main():
                 time.sleep(args.keep_open)
                 browser.close()
                 sys.exit(6)
-            # NOTE: clicking "Готово" finalises the post — no further click needed.
-            # An additional click would open a NEW composer and risk a duplicate post.
+
+            # 2026-05-12 LinkedIn UI update: "Готово" only closes Settings dialog,
+            # does NOT publish. After dialog closes, click "Опублікувати" again.
+            time.sleep(2)
+            screenshot('after-done-click')
+            print('  → settings dialog closed — clicking final Опублікувати', file=sys.stderr)
+            final_post_selectors = [
+                'button:has-text("Опублікувати"):not([disabled])',
+                'button:has-text("Post"):not([disabled])',
+                'div.share-actions button:has-text("Опублікувати")',
+                'div.share-actions button:has-text("Post")',
+            ]
+            final_clicked = False
+            for attempt in range(5):
+                if click_first_visible(final_post_selectors, f'Final Опублікувати (attempt {attempt+1})', timeout_ms=2000):
+                    final_clicked = True
+                    break
+                time.sleep(1)
+            if not final_clicked:
+                print('WARN: could not find final Опублікувати after Settings dialog', file=sys.stderr)
+                screenshot('no-final-post')
+                if args.keep_open:
+                    print(f'KEEP-OPEN: browser open {args.keep_open}s — click "Опублікувати" manually', file=sys.stderr)
+                    time.sleep(args.keep_open)
+                    browser.close()
+                    sys.exit(7)
+            time.sleep(4)
+            screenshot('final-post-clicked')
 
         print('OK: post submitted')
         if args.keep_open:
