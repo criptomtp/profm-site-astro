@@ -6,9 +6,9 @@ const p = lang === 'uk' ? '/ua' : lang === 'en' ? '/en' : '/ru';
 const privacyPath = lang === 'uk' ? '/ua/privacy/' : lang === 'en' ? '/en/privacy/' : '/ru/privacy/';
 
 const t = {
-  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', knowledge:'Знання', developers:'Розробникам', apiDocs:'API документація', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', faq:'FAQ', guide:'Що таке фулфілмент?', prices:'Ціни', calculator:'Калькулятор', glossary:'Глосарій', privacy:'Політика конфіденційності', vacancies:'Вакансії', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.', brandLine:'MTP Group · на ринку з 2014 року', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
-  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', knowledge:'Знания', developers:'Разработчикам', apiDocs:'API документация', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', faq:'FAQ', guide:'Что такое фулфилмент?', prices:'Цены', calculator:'Калькулятор', glossary:'Глоссарий', privacy:'Политика конфиденциальности', vacancies:'Вакансии', copy:'© 2026 MTP Group Fulfillment. Все права защищены.', brandLine:'MTP Group · работаем с 2014 года', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
-  en: { support:'Support', pages:'Pages', social:'Social', knowledge:'Knowledge', developers:'Developers', apiDocs:'API docs', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', faq:'FAQ', guide:'What is fulfillment?', prices:'Prices', calculator:'Calculator', glossary:'Glossary', privacy:'Privacy Policy', vacancies:'Careers', copy:'© 2026 MTP Group Fulfillment. All rights reserved.', brandLine:'MTP Group · operating since 2014', legalLine:'TOV «МТП Груп Фулфілмент» (Ukrainian LLC) · EDRPOU 45315740' },
+  uk: { support:'Підтримка', pages:'Сторінки', social:'Соціальні мережі', knowledge:'Знання', developers:'Розробникам', apiDocs:'API документація', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Послуги', about:'Про нас', reviews:'Відгуки', blog:'Блог', faq:'FAQ', guide:'Що таке фулфілмент?', prices:'Ціни', calculator:'Калькулятор', glossary:'Глосарій', privacy:'Політика конфіденційності', vacancies:'Вакансії', hireBanner:'Шукаємо в команду', hireSub:'4 позиції на склад · від 30 000 ₴ + бонус за виробіток', hireBtn:'Відкриті вакансії →', copy:'© 2026 MTP Group Fulfillment. Всі права захищені.', brandLine:'MTP Group · на ринку з 2014 року', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
+  ru: { support:'Поддержка', pages:'Страницы', social:'Соц. сети', knowledge:'Знания', developers:'Разработчикам', apiDocs:'API документация', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Услуги', about:'О нас', reviews:'Отзывы', blog:'Блог', faq:'FAQ', guide:'Что такое фулфилмент?', prices:'Цены', calculator:'Калькулятор', glossary:'Глоссарий', privacy:'Политика конфиденциальности', vacancies:'Вакансии', hireBanner:'Ищем в команду', hireSub:'4 позиции на склад · от 30 000 ₴ + бонус за выработку', hireBtn:'Открытые вакансии →', copy:'© 2026 MTP Group Fulfillment. Все права защищены.', brandLine:'MTP Group · работаем с 2014 года', legalLine:'ТОВ «МТП Груп Фулфілмент» · ЄДРПОУ 45315740' },
+  en: { support:'Support', pages:'Pages', social:'Social', knowledge:'Knowledge', developers:'Developers', apiDocs:'API docs', openapi:'OpenAPI 3.1 spec', postman:'Postman collection', services:'Services', about:'About', reviews:'Reviews', blog:'Blog', faq:'FAQ', guide:'What is fulfillment?', prices:'Prices', calculator:'Calculator', glossary:'Glossary', privacy:'Privacy Policy', vacancies:'Careers', hireBanner:"We're hiring", hireSub:'4 warehouse positions · from 30,000 UAH + performance bonuses', hireBtn:'Open positions →', copy:'© 2026 MTP Group Fulfillment. All rights reserved.', brandLine:'MTP Group · operating since 2014', legalLine:'TOV «МТП Груп Фулфілмент» (Ukrainian LLC) · EDRPOU 45315740' },
 }[lang];
 
 const pillarHref = lang === 'uk' ? '/ua/shcho-take-fulfilment/' : lang === 'en' ? '/en/what-is-fulfillment/' : '/ru/chto-takoe-fulfilment/';
@@ -16,7 +16,15 @@ const pricesHref = lang === 'uk' ? '/ua/tsiny/' : lang === 'en' ? '/en/prices/' 
 const glossaryHref = lang === 'uk' ? '/glosariy/' : lang === 'en' ? '/en/glossary/' : '/ru/glossariy/';
 const vacanciesHref = lang === 'uk' ? '/vakansiyi/' : lang === 'en' ? '/en/careers/' : '/ru/vakansii/';
 ---
-<footer class="footer"><div class="footer-grid">
+<footer class="footer">
+<a class="footer-hire" href={vacanciesHref}>
+  <div class="footer-hire-text">
+    <div class="footer-hire-title">{t.hireBanner}</div>
+    <div class="footer-hire-sub">{t.hireSub}</div>
+  </div>
+  <div class="footer-hire-btn">{t.hireBtn}</div>
+</a>
+<div class="footer-grid">
 <div><h3>{t.support}</h3><p><a href="mailto:mtpgrouppromo@gmail.com">mtpgrouppromo@gmail.com</a></p><p><a href="tel:+380501444645">+38(050) 144-46-45</a></p><p><a href="tel:+380938277767">+38(093) 827-77-67</a></p></div>
 <div><h3>{t.pages}</h3><p><a href={`${p}/services/`}>{t.services}</a></p><p><a href={`${p}/about/`}>{t.about}</a></p><p><a href={`${p}/recalls/`}>{t.reviews}</a></p><p><a href={lang === 'ru' ? '/blog/' : `${p}/blog/`}>{t.blog}</a></p><p><a href={`${p}/faq/`}>{t.faq}</a></p><p><a href={vacanciesHref}>{t.vacancies}</a></p></div>
 <div><h3>{t.knowledge}</h3><p><a href={pillarHref}>{t.guide}</a></p><p><a href={glossaryHref}>{t.glossary}</a></p><p><a href={pricesHref}>{t.prices}</a></p><p><a href={`${p}/calculator/`}>{t.calculator}</a></p></div>
@@ -26,6 +34,19 @@ const vacanciesHref = lang === 'uk' ? '/vakansiyi/' : lang === 'en' ? '/en/caree
 
 <style>
 .footer{background:#111;color:rgba(255,255,255,.7);padding:60px 24px 30px}
+
+/* Hiring banner — prominent CTA at top of footer */
+.footer-hire{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1200px;margin:0 auto 48px;padding:24px 32px;background:#e63329;color:#fff;text-decoration:none;border:2px solid #000;box-shadow:8px 8px 0 rgba(0,0,0,.35);transition:transform .15s,box-shadow .15s;flex-wrap:wrap}
+.footer-hire:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 rgba(0,0,0,.35);color:#fff}
+.footer-hire-title{font-family:Unbounded,sans-serif;font-weight:900;font-size:22px;color:#fff;line-height:1.1;letter-spacing:-0.01em}
+.footer-hire-sub{font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.92);margin-top:6px}
+.footer-hire-btn{background:#fff;color:#000;font-family:Unbounded,sans-serif;font-weight:800;font-size:14px;letter-spacing:.05em;padding:14px 20px;text-transform:uppercase;border:2px solid #000;white-space:nowrap;flex-shrink:0}
+@media (max-width:640px){
+  .footer-hire{flex-direction:column;align-items:flex-start;padding:20px 24px}
+  .footer-hire-title{font-size:18px}
+  .footer-hire-btn{width:100%;text-align:center}
+}
+
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;max-width:1200px;margin:0 auto}
 .footer h3{color:#fff;font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
 .footer p,.footer a{font-size:14px;line-height:2;color:rgba(255,255,255,.5);transition:color .2s}
