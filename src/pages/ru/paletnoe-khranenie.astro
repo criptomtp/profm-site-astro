@@ -206,7 +206,72 @@ import Base from '../../layouts/Base.astro';
         <span>WMS-учёт</span><span>адресный</span><span class="pz-tariff-incl">Включено</span>
       </div>
     </div>
-    <p class="pz-tariff-footer">Тарифы с 01.01.2026</p>
+    <p class="pz-tariff-footer">Тарифы с 01.01.2026 &middot; <strong>цены без НДС</strong> &middot; палеты выше 500&nbsp;кг обсуждаются индивидуально</p>
+  </div>
+</section>
+
+<!-- S5.5: PALLET CALCULATOR -->
+<section class="pz-calc" id="pz-calc">
+  <div class="ctr">
+    <div class="badge badge-dark">КАЛЬКУЛЯТОР</div>
+    <h2 class="sec-h2">Рассчитайте стоимость палетного хранения</h2>
+    <p class="pz-calc-intro">Тариф &mdash; <strong>500&nbsp;грн/европалета/мес</strong> (до 500&nbsp;кг веса). Палеты тяжелее 500&nbsp;кг &mdash; обсуждаются индивидуально. <strong>Все цены без НДС.</strong></p>
+
+    <div class="pz-calc-wrap">
+      <div class="pz-calc-form">
+        <h3>Параметры хранения</h3>
+        <div class="pz-calc-field">
+          <label>Количество европалет</label>
+          <input type="number" id="pzcPallets" value="10" min="1" max="320" step="1" aria-label="Pallets count">
+          <div class="pz-calc-hint">EUR-палета 1200&times;800 мм. Максимум 320 мест (текущая свободная ёмкость &mdash; 83 палеты)</div>
+        </div>
+        <div class="pz-calc-field">
+          <label>Вес одной палеты</label>
+          <select id="pzcWeight" aria-label="Pallet weight">
+            <option value="500" selected>до 500 кг (стандарт)</option>
+            <option value="800">500&ndash;800 кг (индивидуально)</option>
+            <option value="1200">800&ndash;1200 кг (индивидуально)</option>
+          </select>
+          <div class="pz-calc-hint">Стандартный тариф 500 грн действует до 500 кг. Выше &mdash; индивидуальный расчёт</div>
+        </div>
+        <div class="pz-calc-field">
+          <label>Срок хранения, месяцев</label>
+          <input type="number" id="pzcMonths" value="3" min="1" max="24" step="1" aria-label="Storage months">
+          <div class="pz-calc-hint">Минимальный срок &mdash; 1 месяц</div>
+        </div>
+        <div class="pz-calc-field">
+          <label>Приём + отгрузка (полных циклов)</label>
+          <input type="number" id="pzcCycles" value="1" min="0" max="12" step="1" aria-label="In/out cycles">
+          <div class="pz-calc-hint">Один цикл = разгрузка 80&nbsp;грн + отгрузка 80&nbsp;грн + администрирование 50&nbsp;грн = 210&nbsp;грн/палета</div>
+        </div>
+      </div>
+
+      <div class="pz-calc-results">
+        <h3>Результат</h3>
+        <div class="pz-calc-row"><span class="pz-calc-label">Хранение</span><span><span class="pz-calc-value" id="pzcResStorage">15 000</span> грн <span class="pz-calc-sub" id="pzcResStorageRate">(10 пал &times; 500 грн &times; 3 мес)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Разгрузка (механ.)</span><span><span class="pz-calc-value" id="pzcResIn">800</span> грн <span class="pz-calc-sub">(80 грн/палета)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Отгрузка (механ.)</span><span><span class="pz-calc-value" id="pzcResOut">800</span> грн <span class="pz-calc-sub">(80 грн/палета)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Администрирование заказа</span><span><span class="pz-calc-value" id="pzcResAdmin">500</span> грн <span class="pz-calc-sub">(50 грн/палета)</span></span></div>
+        <div class="pz-calc-total"><div class="pz-calc-row"><span class="pz-calc-label">ИТОГО без НДС</span><span class="pz-calc-value" id="pzcResTotal">15 700</span> <span style="font-size:14px;opacity:.8">грн</span></div></div>
+        <div class="pz-calc-costper"><div class="val" id="pzcResPerMonth">5 233</div><div class="lbl">грн/месяц в среднем</div></div>
+
+        <div class="pz-calc-warn" id="pzcWarnHeavy" style="display:none">
+          <strong>&#9888; Нужен индивидуальный расчёт.</strong> Для палет свыше 500&nbsp;кг тариф определяется отдельно в зависимости от веса, типа товара и сроков. Позвоните нам &mdash; предложим оптимальные условия.
+        </div>
+
+        <div class="pz-calc-compare">
+          <div class="pz-calc-compare-title">Свой склад (расчёт)</div>
+          <div class="pz-calc-compare-row"><span>Аренда помещения под палеты</span><span id="pzcOwnRent">6 000</span> грн</div>
+          <div class="pz-calc-compare-row"><span>Персонал (кладовщик / грузчик)</span><span id="pzcOwnStaff">4 500</span> грн</div>
+          <div class="pz-calc-compare-row"><span>Погрузчик + обслуживание</span><span id="pzcOwnForklift">1 200</span> грн</div>
+          <div class="pz-calc-compare-row"><span>WMS-система</span><span id="pzcOwnWms">500</span> грн</div>
+          <div class="pz-calc-compare-total">Итого: <span id="pzcOwnTotal">12 200</span> грн/мес</div>
+          <div style="text-align:center;margin-top:12px">Экономия с MTP: <strong id="pzcSavingPct">57%</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="pz-calc-footnote">* Все тарифы &mdash; без НДС. Для палет свыше 500&nbsp;кг &mdash; индивидуальный прайс. WMS-учёт и адресное хранение включены. Дополнительные услуги (маркировка, стрейчевание, перекомплектация) &mdash; по отдельному тарифу. Действует минимальная оплата 5&nbsp;000&nbsp;грн/мес.</p>
   </div>
 </section>
 
@@ -435,6 +500,45 @@ import Base from '../../layouts/Base.astro';
 .pz-tariff-footer{text-align:center;font-size:14px;color:var(--muted);margin-top:20px}
 
 /* ========================================
+   S5.5: PALLET CALCULATOR
+   ======================================== */
+.pz-calc{padding:100px 0;background:var(--gray)}
+.pz-calc-intro{font-size:17px;color:var(--muted);line-height:1.7;max-width:780px;margin:8px 0 40px}
+.pz-calc-intro strong{color:var(--black)}
+.pz-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pz-calc-form{background:var(--white);border-radius:12px;padding:40px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+.pz-calc-form h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px}
+.pz-calc-field{margin-bottom:24px}
+.pz-calc-field label{display:block;font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.pz-calc-field input,.pz-calc-field select{width:100%;padding:14px 16px;border:1px solid #e0e0e0;border-radius:6px;font-size:16px;font-family:var(--fb);outline:none;transition:border-color .3s;background:var(--white);color:var(--black)}
+.pz-calc-field input:focus,.pz-calc-field select:focus{border-color:var(--red)}
+.pz-calc-hint{font-size:12px;color:var(--muted);margin-top:4px}
+.pz-calc-results{background:#0a0a0a;border-radius:12px;padding:40px;color:var(--white)}
+.pz-calc-results h3{font-family:var(--fd);font-size:24px;font-weight:400;margin-bottom:32px;color:var(--white)}
+.pz-calc-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.pz-calc-row:last-of-type{border-bottom:none}
+.pz-calc-label{font-size:14px;color:rgba(255,255,255,.6)}
+.pz-calc-value{font-size:16px;font-weight:500;color:var(--white)}
+.pz-calc-sub{font-size:12px;color:rgba(255,255,255,.35);margin-left:8px;font-weight:300}
+.pz-calc-total{margin-top:24px;padding:24px;background:var(--red);border-radius:8px}
+.pz-calc-total .pz-calc-row{border-bottom:none;padding:8px 0}
+.pz-calc-total .pz-calc-label{color:rgba(255,255,255,.85);font-size:16px;font-weight:500}
+.pz-calc-total .pz-calc-value{font-family:var(--fd);font-size:28px}
+.pz-calc-costper{margin-top:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:8px;text-align:center}
+.pz-calc-costper .val{font-family:var(--fd);font-size:32px;color:var(--red)}
+.pz-calc-costper .lbl{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.pz-calc-warn{margin-top:16px;padding:16px 20px;background:rgba(230,51,41,.12);border:1px solid rgba(230,51,41,.35);border-radius:8px;font-size:14px;color:rgba(255,255,255,.85);line-height:1.6}
+.pz-calc-warn strong{color:var(--red)}
+.pz-calc-compare{margin-top:16px;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.pz-calc-compare strong{color:#fff;font-weight:500}
+.pz-calc-compare-title{font-size:13px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:500}
+.pz-calc-compare-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.pz-calc-compare-row:last-child{border-bottom:none}
+.pz-calc-compare-total{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-weight:500;color:rgba(255,255,255,.8)}
+.pz-calc-footnote{font-size:13px;color:var(--muted);margin-top:32px;line-height:1.7;max-width:900px}
+@media(max-width:900px){.pz-calc-wrap{grid-template-columns:1fr;gap:24px}.pz-calc-form,.pz-calc-results{padding:28px}}
+
+/* ========================================
    S6: WHO IT'S FOR
    ======================================== */
 .pz-who{padding:100px 0;background:var(--gray)}
@@ -547,5 +651,54 @@ import Base from '../../layouts/Base.astro';
     form.innerHTML = '<div style="text-align:center;padding:32px 0"><p style="font-size:20px;font-weight:600;color:#fff;margin-bottom:8px">Спасибо за заявку!</p><p style="font-size:15px;color:rgba(255,255,255,.55)">Перезвоним в течение 15 минут</p></div>';
     setTimeout(function(){ window.location.href = '/thanks/'; }, 2000);
   });
+
+  // Pallet calculator
+  var pzCalc=document.getElementById('pz-calc');
+  if(pzCalc){
+    function fmtRu(n){return Math.round(n).toLocaleString('ru-RU');}
+    function calcPzRu(){
+      var pallets=parseInt(document.getElementById('pzcPallets').value)||0;
+      var weight=parseInt(document.getElementById('pzcWeight').value)||500;
+      var months=parseInt(document.getElementById('pzcMonths').value)||1;
+      var cycles=parseInt(document.getElementById('pzcCycles').value)||0;
+      var storagePerPallet=500;
+      var heavy=weight>500;
+      var storage=pallets*storagePerPallet*months;
+      var inCost=pallets*cycles*80;
+      var outCost=pallets*cycles*80;
+      var adminCost=pallets*cycles*50;
+      var total=storage+inCost+outCost+adminCost;
+      if(total<5000&&months<=1)total=5000;
+      var perMonth=months>0?Math.round(total/months):total;
+      var warn=document.getElementById('pzcWarnHeavy');
+      if(warn) warn.style.display=heavy?'':'none';
+      var rateLabel='('+pallets+' пал × '+storagePerPallet+' грн × '+months+' мес)';
+      document.getElementById('pzcResStorage').textContent=fmtRu(storage);
+      document.getElementById('pzcResStorageRate').textContent=rateLabel;
+      document.getElementById('pzcResIn').textContent=fmtRu(inCost);
+      document.getElementById('pzcResOut').textContent=fmtRu(outCost);
+      var adminEl=document.getElementById('pzcResAdmin');if(adminEl)adminEl.textContent=fmtRu(adminCost);
+      document.getElementById('pzcResTotal').textContent=fmtRu(total);
+      document.getElementById('pzcResPerMonth').textContent=fmtRu(perMonth);
+      var palletFactor=Math.max(1,pallets/10);
+      var ownRent=Math.round(6000*palletFactor);
+      var ownStaff=Math.round(4500*palletFactor);
+      var ownForklift=Math.round(1200*Math.min(palletFactor,4));
+      var ownWms=500+Math.round(palletFactor*50);
+      var ownTotal=ownRent+ownStaff+ownForklift+ownWms;
+      document.getElementById('pzcOwnRent').textContent=fmtRu(ownRent);
+      document.getElementById('pzcOwnStaff').textContent=fmtRu(ownStaff);
+      document.getElementById('pzcOwnForklift').textContent=fmtRu(ownForklift);
+      document.getElementById('pzcOwnWms').textContent=fmtRu(ownWms);
+      document.getElementById('pzcOwnTotal').textContent=fmtRu(ownTotal);
+      var savePct=ownTotal>0?Math.max(0,Math.round((1-perMonth/ownTotal)*100)):0;
+      document.getElementById('pzcSavingPct').textContent=savePct+'%';
+    }
+    ['pzcPallets','pzcWeight','pzcMonths','pzcCycles'].forEach(function(id){
+      var n=document.getElementById(id);if(!n)return;
+      n.addEventListener('input',calcPzRu);n.addEventListener('change',calcPzRu);
+    });
+    calcPzRu();
+  }
 })();
 </script>
