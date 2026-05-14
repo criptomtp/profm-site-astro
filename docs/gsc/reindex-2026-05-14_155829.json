@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-14_155829",
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ua/paletne-zberigannya/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/ru/paletnoe-khranenie/",
+      "success": true,
+      "message": "OK ()"
+    },
+    {
+      "url": "https://www.fulfillmentmtp.com.ua/en/pallet-storage/",
+      "success": true,
+      "message": "OK ()"
+    }
+  ]
+}
