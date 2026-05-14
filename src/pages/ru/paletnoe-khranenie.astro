@@ -151,7 +151,7 @@ import Base from '../../layouts/Base.astro';
       <div class="pz-step">
         <div class="pz-step-num">2</div>
         <h3>Принимаем груз</h3>
-        <p>Разгрузка 80 грн/палета, фиксируем каждую единицу в WMS-системе</p>
+        <p>Механическая разгрузка паллеты 80 грн + администрирование заказа 50 грн, фиксируем каждую единицу в WMS</p>
       </div>
       <div class="pz-step">
         <div class="pz-step-num">3</div>
@@ -161,7 +161,7 @@ import Base from '../../layouts/Base.astro';
       <div class="pz-step">
         <div class="pz-step-num">4</div>
         <h3>Выдаём по запросу</h3>
-        <p>Стрейчевание 350 грн/палета, документы &mdash; отгрузка от 4 часов</p>
+        <p>Механическая отгрузка паллеты 80 грн + стрейчевание 350 грн, документы &mdash; отгрузка от 4 часов</p>
       </div>
     </div>
   </div>
@@ -180,10 +180,16 @@ import Base from '../../layouts/Base.astro';
         <span>Хранение</span><span>палет/мес</span><span class="pz-tariff-price">от 450 &#8372;</span>
       </div>
       <div class="pz-tariff-row">
-        <span>Приём</span><span>за палет</span><span class="pz-tariff-price">от 35 &#8372;</span>
+        <span>Разгрузка паллеты</span><span>механическая</span><span class="pz-tariff-price">80 &#8372;</span>
       </div>
       <div class="pz-tariff-row">
-        <span>Отгрузка</span><span>за палет</span><span class="pz-tariff-price">от 35 &#8372;</span>
+        <span>Отгрузка паллеты</span><span>механическая</span><span class="pz-tariff-price">80 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Администрирование</span><span>паллетного заказа</span><span class="pz-tariff-price">50 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Стрейчевание</span><span>за палет</span><span class="pz-tariff-price">350 &#8372;</span>
       </div>
       <div class="pz-tariff-row">
         <span>WMS-учёт</span><span>адресный</span><span class="pz-tariff-incl">Включено</span>
@@ -287,7 +293,7 @@ import Base from '../../layouts/Base.astro';
       </div>
       <div class="faq-item">
         <button class="faq-q" data-faq="6">Сколько стоит разгрузка?</button>
-        <div class="faq-a"><p>Палета &mdash; 80 грн, коробка &mdash; 20 грн. Включает разгрузку с машины и размещение на стеллажи с фиксацией в WMS.</p></div>
+        <div class="faq-a"><p>Механическая разгрузка паллеты &mdash; 80 грн, коробка &mdash; 20 грн. Дополнительно: администрирование паллетного заказа 50 грн (документооборот, привязка к WMS). Механическая отгрузка паллеты &mdash; также 80 грн. Включает работу карщика с погрузчиком, размещение на стеллажи или подачу под отгрузку с фиксацией в WMS.</p></div>
       </div>
     </div>
   </div>

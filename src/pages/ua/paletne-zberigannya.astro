@@ -151,7 +151,7 @@ import Base from '../../layouts/Base.astro';
       <div class="pz-step">
         <div class="pz-step-num">2</div>
         <h3>Приймаємо вантаж</h3>
-        <p>Розвантаження 80 грн/палета, фіксуємо кожну одиницю в WMS-системі</p>
+        <p>Механічне розвантаження палети 80 грн + адміністрування замовлення 50 грн, фіксуємо кожну одиницю в WMS</p>
       </div>
       <div class="pz-step">
         <div class="pz-step-num">3</div>
@@ -183,10 +183,16 @@ import Base from '../../layouts/Base.astro';
         <span>Зберігання палети &gt; 500 кг</span><span>індивідуально</span><span class="pz-tariff-price">за домовленістю</span>
       </div>
       <div class="pz-tariff-row">
-        <span>Прийом</span><span>за палет</span><span class="pz-tariff-price">від 35 &#8372;</span>
+        <span>Розвантаження палети</span><span>механічне</span><span class="pz-tariff-price">80 &#8372;</span>
       </div>
       <div class="pz-tariff-row">
-        <span>Відвантаження</span><span>за палет</span><span class="pz-tariff-price">від 35 &#8372;</span>
+        <span>Відвантаження палети</span><span>механічне</span><span class="pz-tariff-price">80 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Адміністрування</span><span>палетного замовлення</span><span class="pz-tariff-price">50 &#8372;</span>
+      </div>
+      <div class="pz-tariff-row">
+        <span>Стрейчування</span><span>за палет</span><span class="pz-tariff-price">350 &#8372;</span>
       </div>
       <div class="pz-tariff-row">
         <span>WMS-облік</span><span>адресне</span><span class="pz-tariff-incl">Включено</span>
@@ -228,15 +234,16 @@ import Base from '../../layouts/Base.astro';
         <div class="pz-calc-field">
           <label>Прийом + відвантаження (повних циклів)</label>
           <input type="number" id="pzCycles" value="1" min="0" max="12" step="1" aria-label="In/out cycles">
-          <div class="pz-calc-hint">Один цикл = 1 приймання + 1 відвантаження палети (35&nbsp;грн + 35&nbsp;грн)</div>
+          <div class="pz-calc-hint">Один цикл = розвантаження 80&nbsp;грн + відвантаження 80&nbsp;грн + адміністрування 50&nbsp;грн = 210&nbsp;грн/палета</div>
         </div>
       </div>
 
       <div class="pz-calc-results">
         <h3>Результат</h3>
         <div class="pz-calc-row"><span class="pz-calc-label">Зберігання</span><span><span class="pz-calc-value" id="pzResStorage">15 000</span> грн <span class="pz-calc-sub" id="pzResStorageRate">(10 пал &times; 500 грн &times; 3 міс)</span></span></div>
-        <div class="pz-calc-row"><span class="pz-calc-label">Прийом</span><span><span class="pz-calc-value" id="pzResIn">350</span> грн <span class="pz-calc-sub">(35 грн/палета)</span></span></div>
-        <div class="pz-calc-row"><span class="pz-calc-label">Відвантаження</span><span><span class="pz-calc-value" id="pzResOut">350</span> грн <span class="pz-calc-sub">(35 грн/палета)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Розвантаження (механ.)</span><span><span class="pz-calc-value" id="pzResIn">800</span> грн <span class="pz-calc-sub">(80 грн/палета)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Відвантаження (механ.)</span><span><span class="pz-calc-value" id="pzResOut">800</span> грн <span class="pz-calc-sub">(80 грн/палета)</span></span></div>
+        <div class="pz-calc-row"><span class="pz-calc-label">Адміністрування замовл.</span><span><span class="pz-calc-value" id="pzResAdmin">500</span> грн <span class="pz-calc-sub">(50 грн/палета)</span></span></div>
         <div class="pz-calc-total"><div class="pz-calc-row"><span class="pz-calc-label">РАЗОМ без ПДВ</span><span class="pz-calc-value" id="pzResTotal">15 700</span> <span style="font-size:14px;opacity:.8">грн</span></div></div>
         <div class="pz-calc-costper"><div class="val" id="pzResPerMonth">5 233</div><div class="lbl">грн/місяць у середньому</div></div>
 
@@ -354,7 +361,7 @@ import Base from '../../layouts/Base.astro';
       </div>
       <div class="faq-item">
         <button class="faq-q" data-faq="6">Скільки коштує розвантаження?</button>
-        <div class="faq-a"><p>Палета &mdash; 80 грн, коробка &mdash; 20 грн. Включає розвантаження з машини та розміщення на стелажі з фіксацією в WMS.</p></div>
+        <div class="faq-a"><p>Механічне розвантаження палети &mdash; 80 грн, коробка &mdash; 20 грн. Додатково: адміністрування палетного замовлення 50 грн (документообіг, привʼязка до WMS). Механічне відвантаження палети &mdash; також 80 грн. Включає роботу карщика з навантажувачем, розміщення на стелажі або подачу під відвантаження з фіксацією в WMS.</p></div>
       </div>
     </div>
   </div>
@@ -640,9 +647,10 @@ import Base from '../../layouts/Base.astro';
       var storagePerPallet=500;
       var heavy=weight>500;
       var storage=pallets*storagePerPallet*months;
-      var inCost=pallets*cycles*35;
-      var outCost=pallets*cycles*35;
-      var total=storage+inCost+outCost;
+      var inCost=pallets*cycles*80; // механічне розвантаження
+      var outCost=pallets*cycles*80; // механічне відвантаження
+      var adminCost=pallets*cycles*50; // адміністрування палетного замовлення
+      var total=storage+inCost+outCost+adminCost;
       if(total<5000&&months<=1)total=5000;
       var perMonth=months>0?Math.round(total/months):total;
       var warn=document.getElementById('pzWarnHeavy');
@@ -652,6 +660,7 @@ import Base from '../../layouts/Base.astro';
       document.getElementById('pzResStorageRate').textContent=rateLabel;
       document.getElementById('pzResIn').textContent=fmt(inCost);
       document.getElementById('pzResOut').textContent=fmt(outCost);
+      var adminEl=document.getElementById('pzResAdmin');if(adminEl)adminEl.textContent=fmt(adminCost);
       document.getElementById('pzResTotal').textContent=fmt(total);
       document.getElementById('pzResPerMonth').textContent=fmt(perMonth);
       // Own-warehouse estimate scaled by pallet count
