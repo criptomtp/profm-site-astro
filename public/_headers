@@ -43,4 +43,3 @@
 /openapi.json
   Content-Type: application/vnd.oai.openapi+json;version=3.1.0; charset=utf-8
   Access-Control-Allow-Origin: *
-  X-Robots-Tag: noindex, follow

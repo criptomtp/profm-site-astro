@@ -50,6 +50,21 @@
   ],
   "redirects": [
     {
+      "source": "/en/fullfilment-for-rozetka-sellers/",
+      "destination": "/en/fulfillment-for-rozetka-sellers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/fullfillment-for-rozetka-sellers/",
+      "destination": "/en/fulfillment-for-rozetka-sellers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/how-to-integrate-rozetka/",
+      "destination": "/en/fulfillment-for-rozetka-sellers/",
+      "statusCode": 301
+    },
+    {
       "source": "/blog/chto-takoe-fulfilment/",
       "destination": "/ru/chto-takoe-fulfilment/",
       "permanent": true

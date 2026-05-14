@@ -2,6 +2,9 @@
 # DO NOT EDIT MANUALLY — edit vercel.json and re-run the script.
 
 # --- static rules (exact path match) ---
+/en/fullfilment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
+/en/fullfillment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
+/en/how-to-integrate-rozetka/ /en/fulfillment-for-rozetka-sellers/ 301
 /blog/chto-takoe-fulfilment/ /ru/chto-takoe-fulfilment/ 308
 /blog/fulfillment-cost-guide/ /blog/stoimost-fulfilmenta-2026/ 301
 /blog/fulfillment-cost-guide /blog/stoimost-fulfilmenta-2026/ 301
@@ -17,8 +20,7 @@
 /en/blog/post/fulfillment-vs-own-warehouse /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
 /blog/what-is-sla-in-logistics/ /blog/chto-takoe-sla/ 301
 /blog/what-is-sla-in-logistics /blog/chto-takoe-sla/ 301
-/ua/services/ /poslugy/ 301
-/ua/services /poslugy/ 301
+/ua/services/ /ua/3pl-logistyka/ 301
 /en/guide/customer-service/ /en/services/ 301
 /ru/fulfillment-for-art-and-crafts/ /ru/fulfilment-ukraina/ 301
 /ru/fulfillment-for-home-decor/ /ru/fulfilment-ukraina/ 301
@@ -66,24 +68,10 @@
 /en/blog/fulfillment-vs-own-warehouse/ /en/blog/post/fulfillment-vs-own-warehouse-2025/ 301
 /en/blog/case-ecodrive/ /en/blog/ 301
 /en/ua/calculator/ /en/calculator/ 301
-# Tilda technical artifacts — 410 Gone (consciously removed, signals Google to drop fast)
-# Both with and without trailing slash; explicit /404.html destination for CF Pages spec
-/lib/tildaicon/ /404.html 410
-/lib/tildaicon /404.html 410
-/lib/tildaicon/* /404.html 410
-/tilda/popup/rec400471021/opened /404.html 410
-/tilda/popup/* /404.html 410
-/tilda/* /404.html 410
-/css/fonts-tildasans /404.html 410
-/css/fonts-tildasans/ /404.html 410
-/static3.tildacdn.com/ /404.html 410
-/static3.tildacdn.com /404.html 410
-/static3.tildacdn.com/* /404.html 410
-/-/empty/ /404.html 410
-/-/empty /404.html 410
+/-/empty/ / 301
+/static3.tildacdn.com/ / 301
 /ua/fulfilment-dlya-marketpleysov/ /ua/fulfilment-dlya-marketpleysiv/ 301
-/about/ /ua/about/ 301
-/about /ua/about/ 301
+/about/ /ru/about/ 301
 /calculator/ /ua/calculator/ 301
 /fulfilment-dlya-internet-magazynu/ /ru/fulfilment-dlya-internet-magazynu/ 301
 /fulfilment-dlya-marketpleysov/ /ru/fulfilment-dlya-marketpleysov/ 301
@@ -93,12 +81,9 @@
 /guide/ /ru/guide/ 301
 /recalls/ /ru/recalls/ 301
 /recalls /ru/recalls/ 301
-/services/ /poslugy/ 301
-/services /poslugy/ 301
-/skladski-poslugy/ /ua/skladski-poslugy/ 301
-/skladski-poslugy /ua/skladski-poslugy/ 301
-/tsiny/ /ua/tsiny/ 301
-/tsiny /ua/tsiny/ 301
+/services/ /ua/3pl-logistyka/ 301
+/services /ua/3pl-logistyka/ 301
+/skladski-poslugy/ /ru/skladski-poslugy/ 301
 /tsenu/ /ru/tsenu/ 301
 /3pl-logistika/ /ru/3pl-logistika/ 301
 /paletnoe-khranenie/ /ru/paletnoe-khranenie/ 301
@@ -107,11 +92,10 @@
 /ua/fulfilment-rozetka/ /ua/fulfilment-dlya-marketpleysiv/ 301
 /en/fulfillment-for-online-stores/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-marketplaces/ /en/fulfilment-for-marketplaces/ 301
-/en/fulfillment-for-small-business/ /en/fulfilment-for-small-business/ 301
-/en/fulfillment-for-small-business /en/fulfilment-for-small-business/ 301
+/en/fulfillment-for-small-business/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-cosmetics/ /en/fulfilment-for-cosmetics/ 301
 /en/fulfillment-for-electronics/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-for-fashion/ /en/fulfilment-for-clothing/ 301
+/en/fulfillment-for-fashion/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-beauty-cosmetics/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-baby-products/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-food-beverages/ /en/fulfillment-ukraine/ 301
@@ -134,14 +118,14 @@
 /en/fulfillment-for-musical-instruments/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-office-supplies/ /en/fulfillment-ukraine/ 301
 /en/fulfillment-for-used-and-vintage/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-for-wholesale-bulk/ /en/b2b-fulfillment-ukraine/ 301
-/ua/b2b-fulfilment/ /b2b-fulfilment/ 301
+/en/fulfillment-for-wholesale-bulk/ /en/fulfillment-ukraine/ 301
+/ua/b2b-fulfilment/ /ua/3pl-logistyka/ 301
 /ua/enterprise-solutions/ /ua/3pl-logistyka/ 301
 /ua/komplektatsiya-zamovlen/ /ua/3pl-logistyka/ 301
 /ua/garantiya-yakosti/ /ua/3pl-logistyka/ 301
 /ua/mtp-vs-alternativy/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-dlya-fop/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/ua/fulfilment-dlya-distributoriv/ /b2b-fulfilment/ 301
+/ua/fulfilment-dlya-distributoriv/ /ua/3pl-logistyka/ 301
 /ua/fulfilment-boryspil/ /ua/fulfilment-kyiv/ 301
 /ua/fulfilment-po-vsiy-ukraini/ /ua/fulfilment-ukraina/ 301
 /ua/rozetka-fbo/ /ua/fulfilment-dlya-marketpleysiv/ 301
@@ -153,6 +137,8 @@
 /ua/case-studies/roztochna-moda/ /ua/recalls/ 301
 /ua/how-to-choose-fulfillment-provider/ /ua/blog/ 301
 /scho-take-3pl/ /ua/shcho-take-fulfilment/ 301
+/css/fonts-tildasans / 301
+/css/fonts-tildasans/ / 301
 /ua/blog/tpost/5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt/ /ua/blog/10-ways-increase-profit-ecommerce/ 301
 /ua/blog/tpost/5kfyptimc1-10-robochih-sposobv-zblshiti-pributok-nt /ua/blog/10-ways-increase-profit-ecommerce/ 301
 /blog/tpost/iavfdk7371-10-rabochih-sposobov-uvelichit-pribil-in/ /blog/10-ways-increase-profit-ecommerce/ 301
@@ -349,21 +335,9 @@
 /ua/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /ua/blog/mtp-group-fast-product-liquidation/ 301
 /en/2lpu5l5sa1-mtp-group-dinii-v-ukran-servs-z-shvidko/ /en/blog/post/mtp-group-fast-product-liquidation/ 301
 
-# GSC Coverage Validation 2026-05-11: deleted thin pages should redirect not 404
-/ua/guide/case-study-zrostannya-vid-startapu-do-enterprise/ /ua/3pl-logistyka/ 301
-/ua/guide/case-study-zrostannya-vid-startapu-do-enterprise /ua/3pl-logistyka/ 301
-
-# GSC drilldown 2026-05-11: 5 broken lang-prefix concatenations 404-ing
-# Send them to guide/b2b hubs directly (existing wildcards led to non-existent slugs)
-/en/ua/guide/yak-obrate-fulfilment-operatora/ /en/guide/ 301
-/en/ua/guide/yak-obroblaty-povernennya/ /en/guide/ 301
-/en/ua/guide/povertannya-tovariv-u-fulfilmenti/ /en/guide/ 301
-/ru/ua/guide/masshtabuvannya-vid-10-do-1000-zamovlen/ /ru/guide/ 301
-/en/ua/fulfillment-dlya-gurtovyh-zakupivel/ /en/b2b-fulfillment-ukraine/ 301
-
 # --- dynamic rules (wildcards / named params, max 100) ---
-/en/ua/guide/:slug/ /en/guide/ 301
-/ru/ua/guide/:slug/ /ru/guide/ 301
+/en/ua/guide/:slug/ /ua/guide/:slug/ 301
+/ru/ua/guide/:slug/ /ua/guide/:slug/ 301
 /en/ua/:slug/ /ua/:slug/ 301
 /ru/ua/:slug/ /ua/:slug/ 301
 /xz8vfk1jg1*/ /ua/blog/ 301
@@ -438,244 +412,6 @@
 /blog/tpost/:slug /blog/ 301
 /en/blog/tpost/:slug/ /en/blog/ 301
 /en/blog/tpost/:slug /en/blog/ 301
-
-# --- Phantom-URL redirects (GSC 404 audit 2026-05-05) ---
-# Bare-root blog slugs (Tilda historic + Google-guessed variants)
-/scho-take-sla/ /ua/blog/scho-take-sla/ 301
-/scho-take-sla /ua/blog/scho-take-sla/ 301
-/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
-/scho-take-artikul /ua/blog/scho-take-artikul/ 301
-/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
-/chto-takoe-artikul /blog/chto-takoe-artikul/ 301
-/yak-vybrati-fulfilment/ /ua/blog/yak-vybrati-fulfilment/ 301
-/yak-vybrati-fulfilment /ua/blog/yak-vybrati-fulfilment/ 301
-/yak-obroblaty-povernennya/ /ua/blog/ 301
-/povertannya-tovariv-u-fulfilmenti/ /ua/blog/ 301
-/quality-control-accuracy/ /ua/skladski-poslugy/ 301
-/inventory-management/ /ua/skladski-poslugy/ 301
-/common-fulfillment-mistakes/ /ua/blog/ 301
-/fefo-lifo-fifo/ /ua/skladski-poslugy/ 301
-# Bare-root vertical/service slugs (no /ua/ prefix)
-/scho-take-3pl/ /ua/3pl-logistyka/ 301
-/fulfilment-ukraina/ /ua/fulfilment-ukraina/ 301
-/fulfilment-dlya-kosmetiki/ /ua/fulfilment-dlya-kosmetyky/ 301
-/fulfilment-dlya-malogo-biznesa/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/fulfillment-dlya-gurtovyh-zakupivel/ /b2b-fulfilment/ 301
-/fulfillment-dlya-abonentskykh-korobiv/ /ua/fulfilment-ukraina/ 301
-/fulfillment-dlya-harchovyh-tovariv/ /ua/fulfilment-ukraina/ 301
-# Phantom vertical pages Google guessed (we don't have these — redirect to closest)
-/fulfillment-for-clothing-shoes/ /fulfilment-dlya-odyahu/ 301
-/fulfillment-for-musical-instruments/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-toys/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-furniture/ /ua/fulfilment-vazhkykh-tovariv/ 301
-/fulfillment-for-pet-products/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-automotive-parts/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-office-supplies/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-home-improvement/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-food-beverages/ /ua/fulfilment-ukraina/ 301
-# Mixed-prefix /en/ua/services and /ru/ua/services (Google constructed)
-/en/ua/services/ /en/services/ 301
-/ru/ua/services/ /ru/services/ 301
-/en/ua/about/ /en/about/ 301
-/ru/ua/about/ /ru/about/ 301
-/en/ua/faq/ /en/faq/ 301
-/ru/ua/faq/ /ru/about/ 301
-# Phantom RU /ru/fullfillment-for-* not yet captured
-/ru/fulfillment-for-musical-instruments/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-toys/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-electronics/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-subscription-boxes/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-food-beverages/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-home-improvement/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-wholesale-bulk/ /ru/b2b-fulfilment/ 301
-/ru/fulfilment-dlya-internet-magazina/ /ru/fulfilment-dlya-internet-magazynu/ 301
-# Old Tilda token slugs at root that Google still finds
-/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/ /blog/fulfillment-vs-own-warehouse-2025/ 301
-/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/ /ua/blog/product-business-ukraine-guide/ 301
-/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /blog/ 301
-/xz8vfk1jg1-tovarnii-bznes-v-ukran-osoblivost-ta-per/ /ua/blog/product-business-ukraine-guide/ 301
-/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/ /ua/blog/ 301
-# Bare-root + mixed-prefix variants of blog slugs (GSC 2026-05-05 round 2)
-/chto-takoe-sla/ /blog/chto-takoe-sla/ 301
-/chto-takoe-sla /blog/chto-takoe-sla/ 301
-/ua/scho-take-sla/ /ua/blog/scho-take-sla/ 301
-/en/scho-take-sla/ /ua/blog/scho-take-sla/ 301
-/ua/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
-/en/chto-takoe-artikul/ /blog/chto-takoe-artikul/ 301
-/ua/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
-/en/scho-take-artikul/ /ua/blog/scho-take-artikul/ 301
-# Phantom UA vertical pages (GSC drilldown 2026-05-11)
-/ua/fulfillment-for-garden-outdoor/ /ua/fulfilment-ukraina/ 301
-/fulfillment-for-garden-outdoor/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-dlya-tvarin/ /ua/fulfilment-ukraina/ 301
-/fulfillment-dlya-tvarin/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-toys/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-fashion/ /fulfilment-dlya-odyahu/ 301
-/ua/fulfillment-for-clothing/ /fulfilment-dlya-odyahu/ 301
-/ua/fulfillment-for-electronics/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-medical-supplies/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-office-supplies/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-sports-equipment/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-subscription-boxes/ /ua/fulfilment-ukraina/ 301
-/ua/fulfillment-for-medical/ /ua/fulfilment-ukraina/ 301
-# Phantom bare-root /guide/* paths Google constructed
-/guide/how-to-choose-fulfillment-provider/ /ua/blog/yak-vybrati-fulfilment/ 301
-/guide/how-to-choose-fulfillment-operator/ /ua/blog/yak-vybrati-fulfilment/ 301
-/guide/international-shipping/ /ua/blog/ 301
-/guide/customer-service/ /poslugy/ 301
-/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
-/guide/obslugovuvannya-kliyentiv/ /poslugy/ 301
-# Phantom /ua/guide/* paths
-/ua/guide/obslugovuvannya-kliyentiv/ /poslugy/ 301
-/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
-/ua/guide/upravlinnya-zapasamy/ /ua/skladski-poslugy/ 301
-/ua/guide/mizhnarodni-dostavky/ /ua/blog/ 301
-/ua/guide/pidbirannya-ta-pakovanya-tovariv/ /komplektatsiya-zamovlen/ 301
-/ua/guide/sistema-upravlinnya-skladom/ /ua/skladski-poslugy/ 301
-# Phantom RU verticals
-/ru/fulfillment-for-pet-products/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-used-and-vintage/ /ru/fulfilment-ukraina/ 301
-/ru/fulfillment-for-garden-outdoor/ /ru/fulfilment-ukraina/ 301
-# Phantom EN/UA mixed
-/en/ua/guide/obslugovuvannya-kliyentiv/ /en/services/ 301
-/en/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /en/blog/ 301
-/en/ua/fulfillment-dlya-vykorystanyh-ta-antykvarnykh-tovariv/ /en/fulfillment-ukraine/ 301
-/ru/ua/guide/obslugovuvannya-kliyentiv/ /ru/services/ 301
-/ru/ua/guide/yaki-pomilky-robyty-z-fulfilmentom/ /ru/blog/ 301
-/ru/ua/fulfillment-dlya-vykorystanyh-ta-antykvarnykh-tovariv/ /ru/fulfilment-ukraina/ 301
-# Phantom batch (GSC 2026-05-11 round 2 — 334 404 URLs)
-# Wildcard catch-alls for empty-slug variants
-/blog/tpost/ /blog/ 301
-/blog/tpost /blog/ 301
-/ua/blog/tpost/ /ua/blog/ 301
-/ua/blog/tpost /ua/blog/ 301
-/en/blog/post/ /en/blog/ 301
-/en/blog/post /en/blog/ 301
-# Bare-root content slugs (Tilda historic + Google guessing)
-/best-business-ideas-ukraine/ /ua/blog/best-business-ideas-ukraine/ 301
-/case-ecodrive/ /ua/recalls/ 301
-/case-study-startup-to-enterprise/ /ua/blog/ 301
-/chomu-fulfilment-deshevshyy/ /ua/blog/ 301
-/common-fulfillment-mistakes/ /ua/blog/ 301
-/contact /ua/about/ 301
-/contact/ /ua/about/ 301
-/expand-to-european-marketplaces/ /ua/blog/ 301
-/fulfillment-pricing-calculator/ /ua/calculator/ 301
-/fulfillment-small-business/ /ua/fulfilment-dlya-maloho-biznesu/ 301
-/fulfillment-ukraine/ /en/fulfillment-ukraine/ 301
-/fulfillment-woocommerce/ /ua/3pl-logistyka/ 301
-/garantiya-yakosti/ /poslugy/ 301
-/international-shipping/ /ua/mizhnarodni-dostavky/ 301
-/inventory-management/ /ua/skladski-poslugy/ 301
-/masshtabuvannya-vid-10-do-1000-zamovlen/ /ua/blog/ 301
-/mizhnarodni-dostavky/ /ua/mizhnarodni-dostavky/ 301
-/mtp-vs-alternativy/ /ua/about/ 301
-/obslugovuvannya-kliyentiv/ /poslugy/ 301
-/peak-season-logistics-mistakes/ /ua/blog/ 301
-/picking-packing/ /komplektatsiya-zamovlen/ 301
-/pidbirannya-ta-pakovanya-tovariv/ /komplektatsiya-zamovlen/ 301
-/povertannya-tovariv-u-fulfilmenti/ /ua/blog/ 301
-/product-business-ukraine-guide/ /ua/blog/product-business-ukraine-guide/ 301
-/replace-russian-services-ukraine-checklist/ /blog/replace-russian-services-ukraine-checklist/ 301
-/rinok-fulfilmentu-ukraina/ /ua/blog/rinok-fulfilmentu-ukraina/ 301
-/roztochna-moda/ /ua/recalls/ 301
-/skladske-zberihannya/ /ua/skladski-poslugy/ 301
-/upravlinnya-zapasamy/ /ua/skladski-poslugy/ 301
-/vartist-fulfilmentu/ /ua/tsiny/ 301
-/yak-obroblaty-povernennya/ /ua/blog/ 301
-/yak-pidklyuchyty-prom/ /fulfilment-prom/ 301
-/yak-pidklyuchyty-rozetku/ /fulfilment-rozetka/ 301
-/yak-pratsiuie-fulfilment/ /ua/shcho-take-fulfilment/ 301
-/yaki-pomilky-robyty-z-fulfilmentom/ /ua/blog/ 301
-# /ua/* + EN-slug phantom variants
-/ua/blog/yak-pratsiuie-fulfilment/ /ua/shcho-take-fulfilment/ 301
-/ua/common-fulfillment-mistakes/ /ua/blog/ 301
-/ua/inventory-management/ /ua/skladski-poslugy/ 301
-/ua/fulfillment-pricing-calculator/ /ua/calculator/ 301
-/ua/how-to-choose-fulfillment-provider/ /ua/blog/yak-vybrati-fulfilment/ 301
-/ua/how-to-integrate-rozetka/ /fulfilment-rozetka/ 301
-/ua/international-shipping/ /ua/mizhnarodni-dostavky/ 301
-/ua/yak-pidklyuchyty-prom/ /fulfilment-prom/ 301
-/ua/yak-pidklyuchyty-rozetku/ /fulfilment-rozetka/ 301
-/ua/rinok-fulfilmentu-ukraina/ /ua/blog/rinok-fulfilmentu-ukraina/ 301
-/ua/roztochna-moda/ /ua/recalls/ 301
-# /en/* + UA-slug phantom variants (Google permuting prefixes)
-/en/chomu-fulfilment-deshevshyy/ /en/blog/ 301
-/en/customer-service/ /en/services/ 301
-/en/enterprise-solutions/ /en/services/ 301
-/en/fefo-lifo-fifo/ /en/blog/ 301
-/en/fulfillment-pricing-calculator/ /en/calculator/ 301
-/en/fulfillment-small-business/ /en/fulfilment-for-small-business/ 301
-/en/fulfilment-boryspil/ /en/fulfillment-kyiv/ 301
-/en/fulfilment-dlya-distributoriv/ /en/b2b-fulfillment-ukraine/ 301
-/en/fulfilment-dlya-fop/ /en/fulfilment-for-small-business/ 301
-/en/fulfilment-dlya-malogo-biznesa/ /en/fulfilment-for-small-business/ 301
-/en/fulfilment-po-vsiy-ukraini/ /en/fulfillment-ukraine/ 301
-/en/fulfilment-vs-vlasnyy-sklad/ /en/blog/ 301
-/en/garantiya-yakosti/ /en/services/ 301
-/en/how-to-choose-fulfillment-operator/ /en/blog/ 301
-/en/how-to-choose-fulfillment-provider/ /en/blog/ 301
-/en/how-to-integrate-prom/ /en/fulfilment-prom/ 301
-/en/how-to-integrate-rozetka/ /en/fulfillment-for-rozetka-sellers/ 301
-/en/fullfilment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
-/en/fullfillment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
-/en/inventory-management/ /en/warehouse-services/ 301
-/en/masshtabuvannya-vid-10-do-1000-zamovlen/ /en/blog/ 301
-/en/mtp-vs-alternativy/ /en/about/ 301
-/en/obslugovuvannya-kliyentiv/ /en/services/ 301
-/en/peak-season-logistics-mistakes/ /en/blog/ 301
-/en/picking-packing/ /en/order-pick-and-pack-ukraine/ 301
-/en/pidbirannya-ta-pakovanya-tovariv/ /en/order-pick-and-pack-ukraine/ 301
-/en/povertannya-tovariv-u-fulfilmenti/ /en/blog/ 301
-/en/pricing/ /en/prices/ 301
-/en/product-business-ukraine-guide/ /en/blog/ 301
-/en/replace-russian-services-ukraine-checklist/ /en/blog/ 301
-/en/skladske-zberihannya/ /en/warehouse-services/ 301
-/en/upravlinnya-zapasamy/ /en/warehouse-services/ 301
-/en/yak-obroblaty-povernennya/ /en/blog/ 301
-/en/yaki-pomilky-robyty-z-fulfilmentom/ /en/blog/ 301
-/en/contact/ /en/about/ 301
-/en/contact /en/about/ 301
-/en/case-ecodrive/ /en/recalls/ 301
-/en/expand-to-european-marketplaces/ /en/blog/ 301
-/en/best-business-ideas-ukraine/ /en/blog/ 301
-/en/b2b-fulfilment/ /en/b2b-fulfillment-ukraine/ 301
-/en/3pl/ /en/3pl-logistics/ 301
-# Phantom EN /fulfillment-dlya-* (UA slug with EN prefix)
-/en/fulfillment-dlya-abonentskykh-korobiv/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-dlya-gurtovyh-zakupivel/ /en/b2b-fulfillment-ukraine/ 301
-/en/fulfillment-dlya-muzykalnykh-instrumentiv/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-dlya-remontnyh-materialiv/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-dlya-sportyvnogo-zhyvlennya/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-dlya-vykorystanyh-ta-antykvarnykh-tovariv/ /en/fulfillment-ukraine/ 301
-/en/fulfillment-for-clothing-shoes/ /en/fulfilment-for-clothing/ 301
-# More old Tilda token slugs at root that Google still finds (variations)
-/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/ /ua/blog/scho-take-artikul/ 301
-/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/ /blog/ 301
-/bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni/ /ua/blog/ 301
-/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/ /ua/blog/ 301
-/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi/ /blog/business-in-ukraine-during-war/ 301
-/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/ /blog/ 301
-/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/ /ua/blog/ 301
-/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/ /ua/blog/ 301
-/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar/ /blog/ 301
-/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/ /blog/chto-takoe-sla/ 301
-# /en/<tilda-token>/ — EN-prefix on Tilda historical slugs
-/en/2fz7njsgn1-scho-take-artikul-yak-pravilno-iogo-stvo/ /en/blog/ 301
-/en/25m6cs3xd1-svoi-sklad-vs-fulfilment-chto-vibrat-vla/ /en/blog/ 301
-/en/2k76ljgp91-kak-vibrat-fulfilment-operatora-v-ukrain/ /en/blog/ 301
-/en/3tdig7x6z1-rro-dlya-nternet-magazinu-yak-vesti-bzne/ /en/blog/ 301
-/en/8emi42xu61-tovarnii-biznes-v-ukraine-osobennosti-i/ /en/blog/ 301
-/en/bl9h476gp1-top-5-pomilok-u-logstits-pd-chas-sezonni/ /en/blog/ 301
-/en/gdf6pzul31-top-5-pomilok-yak-vbivayut-logstiku-nter/ /en/blog/ 301
-/en/h4mk9ml261-biznes-v-ukraine-vo-vremya-voini-vizovi/ /en/blog/ 301
-/en/ka4rkudet1-kak-podgotovit-internet-magazin-k-8-mart/ /en/blog/ 301
-/en/keantd63p1-kak-rabotaet-fulfilment-v-ukraine-2025-o/ /en/blog/ 301
-/en/ldos1bvrh1-yak-pdgotuvati-nternet-magazin-do-novorc/ /en/blog/ 301
-/en/lgl2mu2gb1-yak-vibrati-fulflment-operatora-v-ukran/ /en/blog/ 301
-/en/o5x60a9nk1-kak-sokratit-kolichestvo-vozvratov-tovar/ /en/blog/ 301
-/en/pdjm77ogc1-chto-takoe-sla-v-logistike-i-pochemu-eto/ /en/blog/ 301
-/en/chto-takoe-sla/ /en/blog/post/what-is-sla-in-logistics/ 301
 
 # --- CF Pages specific (bottom of file — last match wins) ---
 /sitemap.xml  /sitemap-index.xml  301
