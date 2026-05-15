@@ -50,6 +50,41 @@
   ],
   "redirects": [
     {
+      "source": "/en/guide/fulfillment-pricing-calculator/",
+      "destination": "/en/calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/guide/what-is-3pl/",
+      "destination": "/en/3pl-logistics/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/guide/fulfillment-small-business/",
+      "destination": "/en/fulfilment-for-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/guide/how-to-choose-fulfillment-provider/",
+      "destination": "/en/blog/post/top-fulfillment-operators-ukraine-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/guide/vartist-fulfilmentu/",
+      "destination": "/ua/tsiny/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/guide/pidbirannya-ta-pakovanya-tovariv/",
+      "destination": "/komplektatsiya-zamovlen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ua/guide/yak-obrate-fulfilment-operatora/",
+      "destination": "/ua/blog/top-fulfilment-operatoriv-2026/",
+      "statusCode": 301
+    },
+    {
       "source": "/en/fullfilment-for-rozetka-sellers/",
       "destination": "/en/fulfillment-for-rozetka-sellers/",
       "statusCode": 301

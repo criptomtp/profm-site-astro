@@ -12,7 +12,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TOKEN_FILE = os.path.join(SCRIPT_DIR, 'gsc_token.json')
 OUT_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), 'docs', 'gsc')
 SITE = 'sc-domain:fulfillmentmtp.com.ua'
-SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
+SCOPES = ['https://www.googleapis.com/auth/webmasters', 'https://www.googleapis.com/auth/indexing']
 
 def load_creds():
     creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)

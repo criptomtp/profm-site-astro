@@ -2,6 +2,13 @@
 # DO NOT EDIT MANUALLY — edit vercel.json and re-run the script.
 
 # --- static rules (exact path match) ---
+/en/guide/fulfillment-pricing-calculator/ /en/calculator/ 301
+/en/guide/what-is-3pl/ /en/3pl-logistics/ 301
+/en/guide/fulfillment-small-business/ /en/fulfilment-for-small-business/ 301
+/en/guide/how-to-choose-fulfillment-provider/ /en/blog/post/top-fulfillment-operators-ukraine-2026/ 301
+/ua/guide/vartist-fulfilmentu/ /ua/tsiny/ 301
+/ua/guide/pidbirannya-ta-pakovanya-tovariv/ /komplektatsiya-zamovlen/ 301
+/ua/guide/yak-obrate-fulfilment-operatora/ /ua/blog/top-fulfilment-operatoriv-2026/ 301
 /en/fullfilment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
 /en/fullfillment-for-rozetka-sellers/ /en/fulfillment-for-rozetka-sellers/ 301
 /en/how-to-integrate-rozetka/ /en/fulfillment-for-rozetka-sellers/ 301
